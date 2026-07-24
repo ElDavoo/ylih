@@ -1,0 +1,189 @@
+package it.eldavo.ylih.data
+
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
+import androidx.room.Update
+import kotlinx.coroutines.flow.Flow
+
+/** Aggregated row backing the device list and the pair detail screen. */
+data class PairSummary(
+    val pairId: Long,
+    val deviceId: Long,
+    val label: String,
+    val generation: Int,
+    val startedAt: Long,
+    val retiredAt: Long?,
+    val retireReason: String?,
+    val purchaseDate: Long?,
+    val priceCents: Long?,
+    val deviceKey: String,
+    val deviceKind: DeviceKind,
+    val deviceName: String,
+    val deviceIgnored: Boolean,
+    /** Sum of finished sessions only; add `now - openSince` for the live total. */
+    val closedMs: Long,
+    val playingMs: Long,
+    val measuredPlaybackMs: Long,
+    val sessionCount: Int,
+    val openSince: Long?,
+    val lastSeenAt: Long?,
+    val longestMs: Long,
+)
+
+@Dao
+interface DeviceDao {
+    @Query("SELECT * FROM devices WHERE deviceKey = :key LIMIT 1")
+    suspend fun findByKey(key: String): DeviceEntity?
+
+    @Query("SELECT * FROM devices WHERE id = :deviceId")
+    suspend fun byId(deviceId: Long): DeviceEntity?
+
+    @Query("SELECT * FROM devices ORDER BY firstSeenAt")
+    fun observeAll(): Flow<List<DeviceEntity>>
+
+    @Insert
+    suspend fun insert(device: DeviceEntity): Long
+
+    @Update
+    suspend fun update(device: DeviceEntity)
+
+    @Query("UPDATE devices SET ignored = :ignored WHERE id = :deviceId")
+    suspend fun setIgnored(deviceId: Long, ignored: Boolean)
+
+    @Query("SELECT * FROM devices")
+    suspend fun getAll(): List<DeviceEntity>
+
+    /** Cascades to pairs and sessions; used by backup import. */
+    @Query("DELETE FROM devices")
+    suspend fun deleteAll()
+}
+
+@Dao
+interface PairDao {
+    @Query(
+        "SELECT * FROM pairs WHERE deviceId = :deviceId AND retiredAt IS NULL " +
+            "ORDER BY generation DESC LIMIT 1",
+    )
+    suspend fun activeFor(deviceId: Long): PairEntity?
+
+    @Query("SELECT IFNULL(MAX(generation), 0) FROM pairs WHERE deviceId = :deviceId")
+    suspend fun maxGeneration(deviceId: Long): Int
+
+    @Query("SELECT * FROM pairs WHERE id = :pairId")
+    suspend fun byId(pairId: Long): PairEntity?
+
+    @Insert
+    suspend fun insert(pair: PairEntity): Long
+
+    @Update
+    suspend fun update(pair: PairEntity)
+
+    @Query("DELETE FROM pairs WHERE id = :pairId")
+    suspend fun delete(pairId: Long)
+
+    @Query("SELECT * FROM pairs")
+    suspend fun getAll(): List<PairEntity>
+
+    @Query(
+        """
+        SELECT p.id AS pairId, p.deviceId AS deviceId, p.label AS label, p.generation AS generation,
+               p.startedAt AS startedAt, p.retiredAt AS retiredAt, p.retireReason AS retireReason,
+               p.purchaseDate AS purchaseDate, p.priceCents AS priceCents,
+               d.deviceKey AS deviceKey, d.kind AS deviceKind, d.defaultName AS deviceName,
+               d.ignored AS deviceIgnored,
+               IFNULL(SUM(CASE WHEN s.disconnectedAt IS NOT NULL
+                               THEN s.disconnectedAt - s.connectedAt ELSE 0 END), 0) AS closedMs,
+               IFNULL(SUM(s.playingMs), 0) AS playingMs,
+               IFNULL(SUM(CASE WHEN s.playingMs IS NOT NULL AND s.disconnectedAt IS NOT NULL
+                               THEN s.disconnectedAt - s.connectedAt ELSE 0 END), 0) AS measuredPlaybackMs,
+               COUNT(s.id) AS sessionCount,
+               MIN(CASE WHEN s.disconnectedAt IS NULL THEN s.connectedAt END) AS openSince,
+               MAX(IFNULL(s.disconnectedAt, s.connectedAt)) AS lastSeenAt,
+               IFNULL(MAX(CASE WHEN s.disconnectedAt IS NOT NULL
+                               THEN s.disconnectedAt - s.connectedAt ELSE 0 END), 0) AS longestMs
+        FROM pairs p
+        JOIN devices d ON d.id = p.deviceId
+        LEFT JOIN sessions s ON s.pairId = p.id
+        GROUP BY p.id
+        ORDER BY (openSince IS NULL), retiredAt IS NOT NULL, lastSeenAt DESC
+        """,
+    )
+    fun observeSummaries(): Flow<List<PairSummary>>
+
+    @Query(
+        """
+        SELECT p.id AS pairId, p.deviceId AS deviceId, p.label AS label, p.generation AS generation,
+               p.startedAt AS startedAt, p.retiredAt AS retiredAt, p.retireReason AS retireReason,
+               p.purchaseDate AS purchaseDate, p.priceCents AS priceCents,
+               d.deviceKey AS deviceKey, d.kind AS deviceKind, d.defaultName AS deviceName,
+               d.ignored AS deviceIgnored,
+               IFNULL(SUM(CASE WHEN s.disconnectedAt IS NOT NULL
+                               THEN s.disconnectedAt - s.connectedAt ELSE 0 END), 0) AS closedMs,
+               IFNULL(SUM(s.playingMs), 0) AS playingMs,
+               IFNULL(SUM(CASE WHEN s.playingMs IS NOT NULL AND s.disconnectedAt IS NOT NULL
+                               THEN s.disconnectedAt - s.connectedAt ELSE 0 END), 0) AS measuredPlaybackMs,
+               COUNT(s.id) AS sessionCount,
+               MIN(CASE WHEN s.disconnectedAt IS NULL THEN s.connectedAt END) AS openSince,
+               MAX(IFNULL(s.disconnectedAt, s.connectedAt)) AS lastSeenAt,
+               IFNULL(MAX(CASE WHEN s.disconnectedAt IS NOT NULL
+                               THEN s.disconnectedAt - s.connectedAt ELSE 0 END), 0) AS longestMs
+        FROM pairs p
+        JOIN devices d ON d.id = p.deviceId
+        LEFT JOIN sessions s ON s.pairId = p.id
+        WHERE p.id = :pairId
+        GROUP BY p.id
+        """,
+    )
+    fun observeSummary(pairId: Long): Flow<PairSummary?>
+}
+
+@Dao
+interface SessionDao {
+    @Query("SELECT * FROM sessions WHERE pairId = :pairId AND disconnectedAt IS NULL LIMIT 1")
+    suspend fun openFor(pairId: Long): SessionEntity?
+
+    @Query("SELECT MAX(disconnectedAt) FROM sessions WHERE pairId = :pairId")
+    suspend fun lastDisconnectAt(pairId: Long): Long?
+
+    @Query("SELECT * FROM sessions WHERE disconnectedAt IS NULL")
+    suspend fun allOpen(): List<SessionEntity>
+
+    @Query("SELECT * FROM sessions WHERE disconnectedAt IS NULL")
+    fun observeOpen(): Flow<List<SessionEntity>>
+
+    @Insert
+    suspend fun insert(session: SessionEntity): Long
+
+    @Query(
+        "UPDATE sessions SET disconnectedAt = :at, endReason = :reason, heartbeatAt = :at " +
+            "WHERE id = :sessionId AND disconnectedAt IS NULL",
+    )
+    suspend fun close(sessionId: Long, at: Long, reason: EndReason)
+
+    @Query("UPDATE sessions SET heartbeatAt = :at WHERE id = :sessionId AND disconnectedAt IS NULL")
+    suspend fun heartbeat(sessionId: Long, at: Long)
+
+    @Query(
+        "UPDATE sessions SET playingMs = IFNULL(playingMs, 0) + :deltaMs WHERE id = :sessionId",
+    )
+    suspend fun addPlayback(sessionId: Long, deltaMs: Long)
+
+    @Query("UPDATE sessions SET playingMs = 0 WHERE id = :sessionId AND playingMs IS NULL")
+    suspend fun startMeasuringPlayback(sessionId: Long)
+
+    @Query("SELECT * FROM sessions WHERE pairId = :pairId ORDER BY connectedAt DESC")
+    fun observeForPair(pairId: Long): Flow<List<SessionEntity>>
+
+    @Query("SELECT * FROM sessions WHERE pairId = :pairId ORDER BY connectedAt")
+    suspend fun forPair(pairId: Long): List<SessionEntity>
+
+    @Query("SELECT * FROM sessions ORDER BY connectedAt")
+    fun observeAll(): Flow<List<SessionEntity>>
+
+    @Query("SELECT * FROM sessions ORDER BY connectedAt")
+    suspend fun getAll(): List<SessionEntity>
+
+    @Query("DELETE FROM sessions WHERE id = :sessionId")
+    suspend fun delete(sessionId: Long)
+}

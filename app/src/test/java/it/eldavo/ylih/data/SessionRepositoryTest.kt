@@ -1,0 +1,249 @@
+package it.eldavo.ylih.data
+
+import androidx.room.Room
+import androidx.test.core.app.ApplicationProvider
+import kotlinx.coroutines.test.runTest
+import org.junit.After
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotEquals
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
+import org.junit.Before
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.annotation.Config
+
+/**
+ * The bookkeeping rules that decide whether lifetime totals can be trusted:
+ * idempotency, reboot handling and pair generations.
+ */
+@RunWith(RobolectricTestRunner::class)
+@Config(sdk = [34])
+class SessionRepositoryTest {
+
+    private lateinit var db: YlihDatabase
+    private lateinit var repository: SessionRepository
+
+    private val hour = 3_600_000L
+    private var clockNow = 1_800_000_000_000L
+    private val bootAt get() = clockNow - 12 * hour
+
+    private val buds = DeviceIdentity("bt:AA:BB:CC:DD:EE:FF", DeviceKind.BLUETOOTH, "Buds")
+    private val wired = DeviceIdentity("wired:headphones", DeviceKind.WIRED, "Wired headphones")
+
+    @Before
+    fun setUp() {
+        db = Room.inMemoryDatabaseBuilder(
+            ApplicationProvider.getApplicationContext(),
+            YlihDatabase::class.java,
+        ).build()
+        repository = SessionRepository(db) { clockNow }
+    }
+
+    @After
+    fun tearDown() {
+        db.close()
+    }
+
+    private suspend fun sessions() = db.sessionDao().getAll()
+
+    @Test
+    fun `connect then disconnect records one closed session`() = runTest {
+        repository.onConnected(buds, at = clockNow)
+        repository.onDisconnected(buds.key, at = clockNow + 2 * hour)
+
+        val all = sessions()
+        assertEquals(1, all.size)
+        assertEquals(clockNow, all[0].connectedAt)
+        assertEquals(clockNow + 2 * hour, all[0].disconnectedAt)
+        assertEquals(EndReason.DISCONNECTED, all[0].endReason)
+        assertNull("Bluetooth-only mode must not claim to have measured playback", all[0].playingMs)
+    }
+
+    @Test
+    fun `a second connect for the same device does not open a second session`() = runTest {
+        val first = repository.onConnected(buds, at = clockNow)
+        val second = repository.onConnected(buds, at = clockNow + 60_000)
+
+        assertEquals(first, second)
+        assertEquals(1, sessions().size)
+    }
+
+    @Test
+    fun `a connect on top of a stale open session splits instead of stretching it`() = runTest {
+        // Connected, then nothing of ours ran for hours — no disconnect was ever recorded.
+        repository.onConnected(buds, at = clockNow - 5 * hour)
+        repository.heartbeat(at = clockNow - 4 * hour)
+
+        repository.onConnected(buds, at = clockNow)
+
+        val all = sessions().sortedBy { it.connectedAt }
+        assertEquals(2, all.size)
+        assertEquals(clockNow - 4 * hour, all[0].disconnectedAt)
+        assertEquals(EndReason.RECOVERED, all[0].endReason)
+        assertEquals(clockNow, all[1].connectedAt)
+        assertNull(all[1].disconnectedAt)
+    }
+
+    @Test
+    fun `disconnect for an unknown device is a no-op`() = runTest {
+        repository.onDisconnected("bt:00:00:00:00:00:00", at = clockNow)
+        assertTrue(sessions().isEmpty())
+    }
+
+    @Test
+    fun `disconnect before connect cannot produce a negative session`() = runTest {
+        repository.onConnected(buds, at = clockNow)
+        repository.onDisconnected(buds.key, at = clockNow - 5_000)
+
+        val session = sessions().single()
+        assertEquals(session.connectedAt, session.disconnectedAt)
+    }
+
+    @Test
+    fun `ignored devices record nothing`() = runTest {
+        repository.onConnected(buds, at = clockNow)
+        repository.onDisconnected(buds.key, at = clockNow + hour)
+        val deviceId = db.deviceDao().findByKey(buds.key)!!.id
+        repository.setDeviceIgnored(deviceId, ignored = true)
+
+        repository.onConnected(buds, at = clockNow + 2 * hour)
+
+        assertEquals(1, sessions().size)
+    }
+
+    @Test
+    fun `a session left open by a reboot is closed at its heartbeat, never across the downtime`() =
+        runTest {
+            // Connected 14 h ago, last heartbeat 13 h ago; the phone booted 12 h ago.
+            repository.onConnected(buds, at = clockNow - 14 * hour)
+            repository.heartbeat(at = clockNow - 13 * hour)
+
+            repository.reconcile(connected = emptyList(), now = clockNow, bootAt = bootAt)
+
+            val session = sessions().single()
+            assertEquals(clockNow - 13 * hour, session.disconnectedAt)
+            assertEquals(EndReason.RECOVERED, session.endReason)
+        }
+
+    @Test
+    fun `a device still connected across a reboot starts a fresh session`() = runTest {
+        repository.onConnected(buds, at = clockNow - 14 * hour)
+        repository.heartbeat(at = clockNow - 13 * hour)
+
+        repository.reconcile(connected = listOf(buds), now = clockNow, bootAt = bootAt)
+
+        val all = sessions().sortedBy { it.connectedAt }
+        assertEquals(2, all.size)
+        assertEquals(clockNow - 13 * hour, all[0].disconnectedAt)
+        assertEquals(EndReason.RECOVERED, all[0].endReason)
+        assertEquals(clockNow, all[1].connectedAt)
+        assertNull(all[1].disconnectedAt)
+    }
+
+    @Test
+    fun `process death without a reboot keeps a live session open`() = runTest {
+        repository.onConnected(buds, at = clockNow - 2 * hour)
+        repository.heartbeat(at = clockNow - hour)
+
+        repository.reconcile(connected = listOf(buds), now = clockNow, bootAt = bootAt)
+
+        val session = sessions().single()
+        assertNull(session.disconnectedAt)
+        assertEquals(clockNow, session.heartbeatAt)
+    }
+
+    @Test
+    fun `a missed disconnect is closed at the last heartbeat`() = runTest {
+        repository.onConnected(buds, at = clockNow - 3 * hour)
+        repository.heartbeat(at = clockNow - 2 * hour)
+
+        repository.reconcile(connected = emptyList(), now = clockNow, bootAt = bootAt)
+
+        val session = sessions().single()
+        assertEquals(clockNow - 2 * hour, session.disconnectedAt)
+        assertEquals(EndReason.RECOVERED, session.endReason)
+    }
+
+    @Test
+    fun `reconcile racing a fresh disconnect does not resurrect the session`() = runTest {
+        repository.onConnected(buds, at = clockNow - hour)
+        repository.onDisconnected(buds.key, at = clockNow)
+
+        // The audio device list still lists the headset for a moment after the ACL broadcast.
+        repository.reconcile(connected = listOf(buds), now = clockNow + 1_000, bootAt = bootAt)
+
+        assertEquals(1, sessions().size)
+        assertNotNull(sessions().single().disconnectedAt)
+    }
+
+    @Test
+    fun `retiring a pair freezes it and the next connection starts generation two`() = runTest {
+        repository.onConnected(buds, at = clockNow - 3 * hour)
+        repository.onDisconnected(buds.key, at = clockNow - 2 * hour)
+        val firstPair = db.pairDao().getAll().single()
+
+        repository.retirePair(firstPair.id, reason = "died", at = clockNow - hour)
+        repository.onConnected(buds, at = clockNow)
+
+        val pairs = db.pairDao().getAll().sortedBy { it.generation }
+        assertEquals(2, pairs.size)
+        assertEquals(1, pairs[0].generation)
+        assertEquals("died", pairs[0].retireReason)
+        assertEquals(2, pairs[1].generation)
+        assertNull(pairs[1].retiredAt)
+        assertNotEquals(pairs[0].id, sessions().last().pairId)
+    }
+
+    @Test
+    fun `retiring closes the open session so the frozen total is final`() = runTest {
+        repository.onConnected(buds, at = clockNow - hour)
+        val pairId = db.pairDao().getAll().single().id
+
+        repository.retirePair(pairId, reason = null, at = clockNow)
+
+        val session = sessions().single()
+        assertEquals(clockNow, session.disconnectedAt)
+        assertEquals(EndReason.MANUAL, session.endReason)
+    }
+
+    @Test
+    fun `turning detailed tracking off closes wired sessions only`() = runTest {
+        repository.onConnected(buds, at = clockNow - hour, measurePlayback = true)
+        repository.onConnected(wired, at = clockNow - hour, measurePlayback = true)
+
+        repository.closeSessionsForKinds(setOf(DeviceKind.WIRED, DeviceKind.USB), at = clockNow)
+
+        val byKind = sessions().associateBy { session ->
+            val pair = db.pairDao().byId(session.pairId)!!
+            db.deviceDao().byId(pair.deviceId)!!.kind
+        }
+        assertEquals(clockNow, byKind[DeviceKind.WIRED]!!.disconnectedAt)
+        assertEquals(EndReason.TRACKING_DISABLED, byKind[DeviceKind.WIRED]!!.endReason)
+        assertNull(byKind[DeviceKind.BLUETOOTH]!!.disconnectedAt)
+    }
+
+    @Test
+    fun `playback time accumulates on the open session`() = runTest {
+        val sessionId = repository.onConnected(wired, at = clockNow, measurePlayback = true)!!
+
+        repository.addPlayback(sessionId, 20 * 60_000)
+        repository.addPlayback(sessionId, 10 * 60_000)
+        repository.addPlayback(sessionId, -5) // ignored
+
+        assertEquals(30 * 60_000L, sessions().single().playingMs)
+    }
+
+    @Test
+    fun `a device renamed by the user updates without splitting the identity`() = runTest {
+        repository.onConnected(buds, at = clockNow - hour)
+        repository.onDisconnected(buds.key, at = clockNow)
+        repository.onConnected(buds.copy(name = "WH-1000XM5"), at = clockNow + hour)
+
+        assertEquals(1, db.deviceDao().getAll().size)
+        assertEquals("WH-1000XM5", db.deviceDao().findByKey(buds.key)!!.defaultName)
+        assertEquals(1, db.pairDao().getAll().size)
+    }
+}

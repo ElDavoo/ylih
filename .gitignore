@@ -1,0 +1,25 @@
+# Android / Gradle
+*.iml
+.gradle/
+build/
+local.properties
+.cxx/
+release/
+captures/
+*.apk
+*.aab
+*.keystore
+*.jks
+
+# IDE
+.idea/
+.kotlin/
+*.hprof
+
+# Nix / direnv
+result
+result-*
+.direnv/
+
+# OS
+.DS_Store

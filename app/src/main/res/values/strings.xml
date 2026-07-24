@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ylih</string>
+
+    <string name="channel_tracking">Headphone tracking</string>
+    <string name="channel_tracking_description">Shown while ylih is watching for wired headphones and playback. Android does not deliver wired plug events to apps that are not running.</string>
+
+    <string name="notification_title">Tracking headphone time</string>
+    <string name="notification_starting">Starting…</string>
+    <string name="notification_idle">Waiting for headphones</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d connected · %2$s</item>
+        <item quantity="other">%1$d connected · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d connected · %2$s · playing</item>
+        <item quantity="other">%1$d connected · %2$s · playing</item>
+    </plurals>
+
+    <string name="export_done">Backup exported</string>
+    <plurals name="import_done">
+        <item quantity="one">Imported %d session</item>
+        <item quantity="other">Imported %d sessions</item>
+    </plurals>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Compose draws the whole UI; the platform theme only needs to stay out of the way. -->
+    <style name="Theme.Ylih" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar" />
+</resources>
