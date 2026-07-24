@@ -11,10 +11,10 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
-    <!-- Only used in detailed-tracking mode; wired plug events need a running process. -->
+    <!-- Only used in detailed-tracking mode; wired plug events need a running process.
+         The classic flavor adds FOREGROUND_SERVICE_SPECIAL_USE on top of this. -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
 
     <uses-feature
         android:name="android.hardware.bluetooth"
@@ -44,11 +44,7 @@
         <service
             android:name=".tracking.TrackingService"
             android:exported="false"
-            android:foregroundServiceType="connectedDevice|specialUse">
-            <property
-                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
-                android:value="Measures how long wired headphones stay connected. Android only delivers wired plug events to a process that is already running, so the app cannot observe them any other way. Used as a fallback when the user has not granted Bluetooth access." />
-        </service>
+            android:foregroundServiceType="connectedDevice" />
 
         <!--
           ACL_CONNECTED/ACL_DISCONNECTED are on the implicit-broadcast exception list, so this

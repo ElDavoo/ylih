@@ -17,6 +17,8 @@
         <item quantity="other">%1$d connected · %2$s · playing</item>
     </plurals>
 
+    <string name="detailed_needs_bluetooth">This build needs Bluetooth access before it can track wired headphones</string>
+
     <string name="export_done">Backup exported</string>
     <plurals name="import_done">
         <item quantity="one">Imported %d session</item>

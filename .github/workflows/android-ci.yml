@@ -18,6 +18,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # `flavor` is the Gradle source-set name, `variant` its capitalised task-name form.
+          - flavor: classic
+            variant: Classic
+          - flavor: play
+            variant: Play
+
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -31,21 +41,53 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v4
 
+      - name: Cache Android SDK components
+        id: sdk-cache
+        uses: actions/cache@v6
+        with:
+          path: |
+            ${{ env.ANDROID_SDK_ROOT }}/platforms/android-37.0
+            ${{ env.ANDROID_SDK_ROOT }}/build-tools/37.0.0
+          key: android-sdk-${{ runner.os }}-platform37.0-buildtools37.0.0
+
       - name: Install Android SDK components
+        if: steps.sdk-cache.outputs.cache-hit != 'true'
         run: sdkmanager "platform-tools" "platforms;android-37.0" "build-tools;37.0.0"
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v6
+        with:
+          # Dependencies and the Gradle build cache are restored on every run; only builds of
+          # the default branch write them back, so PRs cannot poison the shared cache.
+          cache-read-only: ${{ github.ref_name != github.event.repository.default_branch }}
 
-      - name: Build and test
-        run: ./gradlew --no-daemon --stacktrace lint testDebugUnitTest assembleDebug assembleRelease
+      - name: Cache Robolectric android-all jars
+        uses: actions/cache@v6
+        with:
+          # Robolectric downloads a ~100 MB runtime jar per simulated SDK on first use.
+          path: ~/.m2/repository/org/robolectric
+          key: robolectric-${{ runner.os }}-${{ hashFiles('gradle/libs.versions.toml') }}
+          restore-keys: |
+            robolectric-${{ runner.os }}-
+
+      - name: Build and test (${{ matrix.flavor }})
+        run: >
+          ./gradlew --no-daemon --stacktrace
+          lint${{ matrix.variant }}Debug
+          test${{ matrix.variant }}DebugUnitTest
+          assemble${{ matrix.variant }}Debug
+          assemble${{ matrix.variant }}Release
+
+      - name: Build Play bundle
+        if: matrix.flavor == 'play'
+        run: ./gradlew --no-daemon --stacktrace bundlePlayRelease
 
       - name: Upload APKs and reports
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: apk-artifacts
+          name: ${{ matrix.flavor }}-artifacts
           path: |
-            app/build/outputs/apk/debug/*.apk
-            app/build/outputs/apk/release/*.apk
+            app/build/outputs/apk/${{ matrix.flavor }}/**/*.apk
+            app/build/outputs/bundle/**/*.aab
             app/build/reports/**

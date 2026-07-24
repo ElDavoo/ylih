@@ -23,6 +23,21 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    // Same app, two distributions. The application id is deliberately identical so a sideloaded
+    // install and a Play install are the same app rather than two copies with split history.
+    flavorDimensions += "distribution"
+    productFlavors {
+        create("classic") {
+            dimension = "distribution"
+            // Everything the platform allows, distributed as an APK from GitHub Releases.
+        }
+        create("play") {
+            dimension = "distribution"
+            // Google Play build. See app/src/play/java/.../Distribution.kt for what is dropped
+            // and why; the manifest difference lives in app/src/classic/AndroidManifest.xml.
+        }
+    }
+
     // Release signing is driven by env vars so CI can inject a keystore; without them
     // the release build falls back to the debug key (fine for sideloaded builds).
     val signingKeystorePath = System.getenv("ANDROID_SIGNING_KEYSTORE_PATH")

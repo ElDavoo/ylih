@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Sideloaded build only. `specialUse` lets detailed tracking run for someone who wants wired
+  headphones measured but has not granted Bluetooth access — on Android 14+ the
+  `connectedDevice` type requires holding a Bluetooth permission. The Play flavor omits all of
+  this because that service type needs a case-by-case justification in store review.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+
+    <application>
+        <service
+            android:name=".tracking.TrackingService"
+            android:foregroundServiceType="connectedDevice|specialUse"
+            tools:replace="android:foregroundServiceType">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Measures how long wired headphones stay connected. Android only delivers wired plug events to a process that is already running, so the app cannot observe them any other way. Used when the user has not granted Bluetooth access." />
+        </service>
+    </application>
+</manifest>

@@ -36,6 +36,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import it.eldavo.ylih.BuildConfig
+import it.eldavo.ylih.Distribution
 
 @Composable
 fun SettingsScreen(viewModel: YlihViewModel, contentPadding: PaddingValues) {
@@ -61,6 +62,7 @@ fun SettingsScreen(viewModel: YlihViewModel, contentPadding: PaddingValues) {
                 bottom = contentPadding.calculateBottomPadding() + 24.dp,
             ),
     ) {
+        val detailedSupported = viewModel.detailedTrackingSupported()
         SectionHeader("Tracking")
         Row(
             modifier = Modifier
@@ -78,9 +80,22 @@ fun SettingsScreen(viewModel: YlihViewModel, contentPadding: PaddingValues) {
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
+                if (!detailedSupported) {
+                    Text(
+                        "Unavailable until Bluetooth access is granted: this build only " +
+                            "declares the connectedDevice service type, which Android 14+ ties " +
+                            "to a Bluetooth permission.",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.error,
+                    )
+                }
             }
             Spacer(Modifier.width(12.dp))
-            Switch(checked = detailed, onCheckedChange = { viewModel.setDetailedTracking(it) })
+            Switch(
+                checked = detailed,
+                enabled = detailedSupported || detailed,
+                onCheckedChange = { viewModel.setDetailedTracking(it) },
+            )
         }
         HorizontalDivider()
 
@@ -152,23 +167,33 @@ fun SettingsScreen(viewModel: YlihViewModel, contentPadding: PaddingValues) {
             modifier = Modifier.padding(horizontal = 16.dp),
         )
         Spacer(Modifier.height(8.dp))
-        OutlinedButton(
-            onClick = {
-                context.startActivity(
-                    Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS)
-                        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
-                )
-            },
-            modifier = Modifier.padding(horizontal = 16.dp),
-        ) {
-            Text("Battery settings")
+        if (Distribution.HAS_BATTERY_SHORTCUT) {
+            OutlinedButton(
+                onClick = {
+                    context.startActivity(
+                        Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS)
+                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                    )
+                },
+                modifier = Modifier.padding(horizontal = 16.dp),
+            ) {
+                Text("Battery settings")
+            }
+        } else {
+            Text(
+                "Settings → Apps → ylih → Battery → Unrestricted.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(horizontal = 16.dp),
+            )
         }
         Spacer(Modifier.height(16.dp))
         HorizontalDivider()
 
         SectionHeader("About")
         Text(
-            "ylih ${BuildConfig.VERSION_NAME} — headphone hours, kept locally and forever.",
+            "ylih ${BuildConfig.VERSION_NAME} (${Distribution.ID}) — headphone hours, kept " +
+                "locally and forever.",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(horizontal = 16.dp),

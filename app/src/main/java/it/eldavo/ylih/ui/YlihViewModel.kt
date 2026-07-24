@@ -58,8 +58,16 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
     fun sessions(pairId: Long): Flow<List<SessionEntity>> =
         container.repository.observeSessionsFor(pairId)
 
+    /** False on the Play build until Bluetooth access is granted — see `Distribution`. */
+    fun detailedTrackingSupported(): Boolean =
+        container.trackingController.detailedTrackingSupported()
+
     fun setDetailedTracking(enabled: Boolean) = viewModelScope.launch {
-        container.trackingController.setDetailedTracking(enabled)
+        if (!container.trackingController.setDetailedTracking(enabled)) {
+            messageChannel.send(
+                getApplication<Application>().getString(RES_DETAILED_NEEDS_BLUETOOTH),
+            )
+        }
     }
 
     fun syncWithSystem() = viewModelScope.launch {
@@ -117,6 +125,7 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
     private companion object {
         val RES_EXPORT_OK = it.eldavo.ylih.R.string.export_done
         val RES_IMPORT_OK = it.eldavo.ylih.R.plurals.import_done
+        val RES_DETAILED_NEEDS_BLUETOOTH = it.eldavo.ylih.R.string.detailed_needs_bluetooth
     }
 }
 

@@ -10,10 +10,12 @@ import android.media.AudioManager
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import androidx.core.app.ServiceCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleService
 import androidx.lifecycle.lifecycleScope
+import it.eldavo.ylih.Distribution
 import it.eldavo.ylih.R
 import it.eldavo.ylih.YlihApp
 import it.eldavo.ylih.data.AppContainer
@@ -140,26 +142,33 @@ class TrackingService : LifecycleService() {
                 )
             }
         }
-        ServiceCompat.startForeground(
-            this,
-            Notifications.ID_TRACKING,
-            Notifications.trackingNotification(this, text),
-            foregroundServiceType(),
-        )
-    }
-
-    private fun startForegroundCompat(text: String) {
-        ServiceCompat.startForeground(
-            this,
-            Notifications.ID_TRACKING,
-            Notifications.trackingNotification(this, text),
-            foregroundServiceType(),
-        )
+        startForegroundCompat(text)
     }
 
     /**
-     * `connectedDevice` requires holding a Bluetooth permission on Android 14+; a wired-only
-     * user who denied Bluetooth still needs the service, hence the `specialUse` fallback.
+     * @return false if the platform refused the foreground start, in which case the service has
+     *   already stopped itself rather than waiting to be killed for never calling
+     *   startForeground.
+     */
+    private fun startForegroundCompat(text: String): Boolean = try {
+        ServiceCompat.startForeground(
+            this,
+            Notifications.ID_TRACKING,
+            Notifications.trackingNotification(this, text),
+            foregroundServiceType(),
+        )
+        true
+    } catch (e: Exception) {
+        Log.e(TAG, "Foreground start refused; detailed tracking cannot run", e)
+        stopSelf()
+        false
+    }
+
+    /**
+     * `connectedDevice` requires holding a Bluetooth permission on Android 14+. The classic
+     * flavor also declares `specialUse`, which covers someone who wants wired headphones
+     * tracked but denied Bluetooth; the Play flavor does not, so there
+     * [TrackingController.detailedTrackingSupported] keeps the service from being started at all.
      */
     private fun foregroundServiceType(): Int {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) return 0
@@ -168,7 +177,8 @@ class TrackingService : LifecycleService() {
             PackageManager.PERMISSION_GRANTED
         return when {
             hasBluetooth -> ServiceInfo.FOREGROUND_SERVICE_TYPE_CONNECTED_DEVICE
-            Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE ->
+            Distribution.HAS_SPECIAL_USE_FGS &&
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE ->
                 ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE
 
             else -> ServiceInfo.FOREGROUND_SERVICE_TYPE_CONNECTED_DEVICE
@@ -176,6 +186,7 @@ class TrackingService : LifecycleService() {
     }
 
     private companion object {
+        const val TAG = "TrackingService"
         const val TICK_MS = 60_000L
     }
 }

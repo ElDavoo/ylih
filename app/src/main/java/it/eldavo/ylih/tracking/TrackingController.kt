@@ -1,12 +1,15 @@
 package it.eldavo.ylih.tracking
 
+import android.Manifest
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.media.AudioManager
 import android.os.Build
 import android.os.SystemClock
 import android.util.Log
 import androidx.core.content.ContextCompat
+import it.eldavo.ylih.Distribution
 import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
@@ -33,11 +36,35 @@ class TrackingController(
     fun bootAt(): Long = clock.now() - SystemClock.elapsedRealtime()
 
     /**
+     * Whether the foreground service can legally start right now.
+     *
+     * On Android 14+ the `connectedDevice` service type requires holding a Bluetooth
+     * permission. The classic flavor also declares `specialUse` and so is never blocked; the
+     * Play flavor drops that type, which means detailed tracking there needs Bluetooth access
+     * even when the user only cares about wired headphones.
+     */
+    fun detailedTrackingSupported(): Boolean =
+        Distribution.HAS_SPECIAL_USE_FGS ||
+            Build.VERSION.SDK_INT < Build.VERSION_CODES.UPSIDE_DOWN_CAKE ||
+            hasBluetoothPermission()
+
+    private fun hasBluetoothPermission(): Boolean =
+        Build.VERSION.SDK_INT < Build.VERSION_CODES.S ||
+            ContextCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT) ==
+            PackageManager.PERMISSION_GRANTED
+
+    /**
      * Re-reads what is actually connected and repairs the database, then makes sure the right
      * background machinery is running. Safe to call as often as we like.
      */
     suspend fun syncWithSystem() {
-        val detailed = settings.detailedTrackingNow()
+        val requested = settings.detailedTrackingNow()
+        val detailed = requested && detailedTrackingSupported()
+        if (requested && !detailed) {
+            // Bluetooth access was revoked after the fact on a build without `specialUse`:
+            // fall back to Bluetooth-only rather than leaving wired sessions running forever.
+            repository.closeSessionsForKinds(setOf(DeviceKind.WIRED, DeviceKind.USB))
+        }
         val connected = AudioDevices.currentHeadphones(audioManager, trackedKinds(detailed))
         repository.reconcile(
             connected = connected,
@@ -49,13 +76,16 @@ class TrackingController(
         updateHeartbeatWork(detailed)
     }
 
-    suspend fun setDetailedTracking(enabled: Boolean) {
+    /** @return false if this build cannot run the service right now; nothing was changed. */
+    suspend fun setDetailedTracking(enabled: Boolean): Boolean {
+        if (enabled && !detailedTrackingSupported()) return false
         settings.setDetailedTracking(enabled)
         if (!enabled) {
             // Only the service can see these; leaving them open would count forever.
             repository.closeSessionsForKinds(setOf(DeviceKind.WIRED, DeviceKind.USB))
         }
         syncWithSystem()
+        return true
     }
 
     /** Called after a connect event so the right helper is running. */

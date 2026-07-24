@@ -51,6 +51,36 @@ Long-term totals are worthless if a crash or a reboot quietly adds twelve hours.
 
 These rules are what `app/src/test/java/it/eldavo/ylih/data/SessionRepositoryTest.kt` tests.
 
+## Two build flavors
+
+One codebase, two distributions with the same `applicationId`:
+
+| | `classic` | `play` |
+|---|---|---|
+| Distribution | APK from GitHub Releases | Google Play (AAB) |
+| `specialUse` foreground-service type | declared | **not declared** |
+| Detailed tracking without Bluetooth permission | works | unavailable — the toggle explains why |
+| Battery-optimisation shortcut | button into system settings | text instructions only |
+
+The one that actually costs functionality is `specialUse`. Play reviews that service type case by
+case and expects a justification for why no other type fits, so the store build declares only
+`connectedDevice` — and Android 14+ ties `connectedDevice` to holding a Bluetooth permission.
+Someone on the Play build who wants *only* wired headphones tracked must therefore still grant
+Bluetooth access. The classic build keeps `specialUse` and has no such condition.
+
+Dropping the battery shortcut is conservative rather than required: the app only ever opens the
+system settings screen and never requests `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS`.
+
+The differences live in exactly three places — `app/src/{classic,play}/java/it/eldavo/ylih/Distribution.kt`,
+`app/src/classic/AndroidManifest.xml`, and the `productFlavors` block — so nothing else in the
+codebase has to know which build it is.
+
+```sh
+./gradlew assembleClassicDebug        # or assemblePlayDebug
+./gradlew assembleClassicRelease      # sideload APK
+./gradlew bundlePlayRelease           # Play Console AAB
+```
+
 ## Permissions
 
 | Permission | Why |
@@ -67,16 +97,17 @@ There is no internet permission.
 The repo ships a nix dev shell with the exact JDK, Gradle and Android SDK:
 
 ```sh
-nix develop            # or: direnv allow
-./gradlew assembleDebug
-./gradlew installDebug
+nix develop                       # or: direnv allow
+./gradlew assembleClassicDebug
+./gradlew installClassicDebug
 ```
 
 Without nix, you need JDK 21, Android SDK platform `android-37.0` and build-tools `37.0.0`; the
 Gradle wrapper handles the rest.
 
 ```sh
-./gradlew lint testDebugUnitTest assembleDebug assembleRelease
+# what CI runs, per flavor
+./gradlew lintClassicDebug testClassicDebugUnitTest assembleClassicDebug assembleClassicRelease
 ```
 
 Note that AGP 9 compiles Kotlin itself — the standalone `kotlin-android` plugin is deliberately
