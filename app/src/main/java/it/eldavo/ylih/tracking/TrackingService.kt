@@ -98,6 +98,9 @@ class TrackingService : LifecycleService() {
                     // Any accrued playback belongs to the previous target, not this one.
                     playbackWatcher?.rebase(now)
                     playbackTargetKey = identity.key
+                    // Audio is often already playing when we attach (service start, or swapping
+                    // headphones mid-song). Start the clock now instead of at the first tick.
+                    playbackWatcher?.refresh(now)
                 } else {
                     container.repository.onDisconnected(identity.key, now)
                     if (playbackTargetKey == identity.key) {

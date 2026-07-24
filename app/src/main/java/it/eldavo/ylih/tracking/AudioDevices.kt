@@ -32,7 +32,31 @@ object AudioDevices {
         BluetoothClass.Device.AUDIO_VIDEO_VIDEO_MONITOR,
     )
 
-    fun bluetoothKey(address: String): String = "bt:${address.uppercase()}"
+    private val MAC_SUFFIX = Regex("[0-9A-F]{2}:[0-9A-F]{2}")
+
+    /**
+     * Both platform views of a headset have to produce the same key, or one pair's hours end up
+     * split across two rows.
+     *
+     * They do not report the same address: `AudioDeviceInfo.getAddress()` hands back a
+     * partially redacted MAC (`XX:XX:XX:XX:5E:C2`) while the ACL broadcast reports the full
+     * `80:C3:BA:A6:5E:C2` — observed on Android 16. The last two octets are the only part both
+     * APIs disclose, so that is what identifies the device. Two paired headsets would have to
+     * collide on the final 16 bits of their MAC to be confused for each other.
+     */
+    fun bluetoothKey(address: String?, name: String?): String? {
+        val suffix = address
+            ?.split(":")
+            ?.filter { it.isNotBlank() }
+            ?.takeLast(2)
+            ?.joinToString(":") { it.uppercase() }
+            ?.takeIf { MAC_SUFFIX.matches(it) }
+        return when {
+            suffix != null -> "bt:$suffix"
+            !name.isNullOrBlank() -> "bt:name:$name"
+            else -> null
+        }
+    }
 
     /**
      * @return the identity of a Bluetooth device we should track, or null for anything that
@@ -50,7 +74,7 @@ object AudioDevices {
 
         val address = runCatching { device.address }.getOrNull().orEmpty()
         val name = runCatching { device.name }.getOrNull()?.takeIf { it.isNotBlank() }
-        val key = if (address.isNotBlank()) bluetoothKey(address) else "bt:name:${name ?: return null}"
+        val key = bluetoothKey(address, name) ?: return null
         val kind = when (runCatching { device.type }.getOrNull()) {
             BluetoothDevice.DEVICE_TYPE_LE -> DeviceKind.BLE
             else -> DeviceKind.BLUETOOTH
@@ -93,11 +117,7 @@ object AudioDevices {
     }
 
     private fun bluetoothIdentity(address: String, name: String, kind: DeviceKind): DeviceIdentity? {
-        val key = when {
-            address.isNotBlank() -> bluetoothKey(address)
-            name.isNotBlank() -> "bt:name:$name"
-            else -> return null
-        }
+        val key = bluetoothKey(address, name) ?: return null
         return DeviceIdentity(key, kind, name.ifEmpty { address })
     }
 

@@ -19,6 +19,11 @@
 
     <string name="detailed_needs_bluetooth">This build needs Bluetooth access before it can track wired headphones</string>
 
+    <plurals name="session_count">
+        <item quantity="one">%d session</item>
+        <item quantity="other">%d sessions</item>
+    </plurals>
+
     <string name="export_done">Backup exported</string>
     <plurals name="import_done">
         <item quantity="one">Imported %d session</item>

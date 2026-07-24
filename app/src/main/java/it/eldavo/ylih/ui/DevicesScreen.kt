@@ -21,8 +21,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import it.eldavo.ylih.R
 import it.eldavo.ylih.data.PairSummary
 import it.eldavo.ylih.stats.Span
 import it.eldavo.ylih.stats.Stats
@@ -150,7 +152,18 @@ private fun PairCard(
                         ),
                     )
                 }
-                AssistChip(onClick = onClick, label = { Text("${summary.sessionCount} sessions") })
+                AssistChip(
+                    onClick = onClick,
+                    label = {
+                        Text(
+                            pluralStringResource(
+                                R.plurals.session_count,
+                                summary.sessionCount,
+                                summary.sessionCount,
+                            ),
+                        )
+                    },
+                )
                 if (last7 > 0) {
                     AssistChip(onClick = onClick, label = { Text("${formatHours(last7)} / 7d") })
                 }

@@ -15,8 +15,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import it.eldavo.ylih.R
 import it.eldavo.ylih.stats.Stats
 import java.time.ZoneId
 
@@ -49,8 +51,11 @@ fun StatsScreen(viewModel: YlihViewModel, contentPadding: PaddingValues) {
                     style = MaterialTheme.typography.displaySmall,
                 )
                 Text(
-                    "${summary.sessionCount} sessions" +
-                        (summary.firstAt?.let { " since ${formatDate(it)}" } ?: ""),
+                    pluralStringResource(
+                        R.plurals.session_count,
+                        summary.sessionCount,
+                        summary.sessionCount,
+                    ) + (summary.firstAt?.let { " since ${formatDate(it)}" } ?: ""),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -86,8 +91,12 @@ fun StatsScreen(viewModel: YlihViewModel, contentPadding: PaddingValues) {
                 Column(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 10.dp)) {
                     Text(pair.label, style = MaterialTheme.typography.bodyLarge)
                     Text(
-                        "${formatHours(lifetime)} · ${pair.sessionCount} sessions" +
-                            if (pair.retiredAt != null) " · retired" else "",
+                        formatHours(lifetime) + " · " +
+                            pluralStringResource(
+                                R.plurals.session_count,
+                                pair.sessionCount,
+                                pair.sessionCount,
+                            ) + if (pair.retiredAt != null) " · retired" else "",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
