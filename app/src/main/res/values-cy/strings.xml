@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Welsh. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - eich bywyd mewn clustffonau</string>
+
+    <!-- Llywio -->
+    <string name="nav_headphones">clustffonau</string>
+    <string name="nav_stats">ystadegau</string>
+    <string name="nav_settings">gosodiadau</string>
+
+    <!-- Mathau o ddyfais -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">wedi\'i weirio</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">anhysbys</string>
+
+    <!-- Rhedeg cyntaf -->
+    <string name="welcome_title">croeso i ylih</string>
+    <string name="welcome_intro">mae ylih yn cofnodi faint o amser mae pob pâr o glustffonau yn aros yn gysylltiedig, er mwyn y gallwch ateb yr unig gwestiwn sydd o bwys am bâr: faint o oriau a baraon nhw?</string>
+    <string name="welcome_point_auto_title">cysylltu ac anghofio</string>
+    <string name="welcome_point_auto_body">mae clustffonau bluetooth yn cael eu cofnodi ar eu pennau eu hunain, o\'r eiliad y cysylltiant. nid oes angen cadw dim byd yn rhedeg.</string>
+    <string name="welcome_point_lifetime_title">un pâr, un oes</string>
+    <string name="welcome_point_lifetime_body">pan fydd pâr yn marw, tynnu ef ymaith: mae ei gyfanswm yn rhewi yno ac mae\'r pâr nesaf o\'r clustffonau hynny yn dechrau eto o sero.</string>
+    <string name="welcome_point_detailed_title">wedi\'i weirio a chwarae</string>
+    <string name="welcome_point_detailed_body">mae tracio manwl, mewn gosodiadau, yn ychwanegu clustffonau wedi\'u gweirio ac yn mesur faint o\'r amser yr oedd yn chwarae go iawn.</string>
+    <string name="welcome_privacy">mae popeth yn aros ar y ffôn hwn. nid oes cyfrif, ac nid oes caniatad rhyngrwyd.</string>
+    <string name="welcome_start">cael dechrau</string>
+
+    <!-- Rhestr clustffonau -->
+    <string name="devices_in_use">mewn defnydd</string>
+    <string name="devices_retired">wedi tynnu ymaith</string>
+    <string name="devices_empty_title">dim clustffonau eto</string>
+    <string name="devices_empty_body">cysylltwch bâr o glustffonau bluetooth ac fe fyddant yn ymddangos yma. mae clustffonau wedi\'u gweirio angen tracio manwl, mewn gosodiadau.</string>
+    <string name="devices_generation">pâr #%1$d</string>
+    <string name="devices_retired_on">tynnwyd ymaith %1$s</string>
+    <string name="devices_connected_for">cysylltiedig %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Ystadegau -->
+    <string name="stats_title">holl glustffonau</string>
+    <string name="stats_sessions_since">%1$s ers %2$s</string>
+    <string name="stats_last_7">7 diwrnod diwethaf</string>
+    <string name="stats_last_30">30 diwrnod diwethaf</string>
+    <string name="stats_average_session">sesiwn gyfartalog</string>
+    <string name="stats_playing">chwarae</string>
+    <string name="stats_measured_span">tymor a fesurwyd</string>
+    <string name="stats_share">rhannu</string>
+    <string name="stats_daily_hours_30">oriau bob dydd (30 diwrnod)</string>
+    <string name="stats_by_pair">yn ôl pâr</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · wedi tynnu ymaith</string>
+    <string name="chart_max">%1$s uchaf</string>
+
+    <!-- Manylion pâr -->
+    <string name="pair_fallback_title">pâr</string>
+    <string name="pair_back">yn ôl</string>
+    <string name="pair_more">mwy</string>
+    <string name="pair_menu_rename">ailenwi</string>
+    <string name="pair_menu_purchase">gwybodaeth brynu</string>
+    <string name="pair_menu_retire">tynnu ymaith / disodli</string>
+    <string name="pair_menu_delete">dileu</string>
+    <string name="pair_lifetime">oes ar y pâr hwn</string>
+    <string name="pair_retired_on">tynnwyd ymaith %1$s</string>
+    <string name="pair_retired_with_reason">tynnwyd ymaith %1$s · %2$s</string>
+    <string name="pair_connected_now">cysylltiedig nawr · %1$s</string>
+    <string name="pair_sessions">sesiynau</string>
+    <string name="pair_average">cyfartalog</string>
+    <string name="pair_longest">hiraf</string>
+    <string name="pair_first_seen">gweld yn gyntaf</string>
+    <string name="pair_of_measured">o fesurwyd</string>
+    <string name="pair_measured">mesurwyd</string>
+    <string name="pair_paid">talwyd</string>
+    <string name="pair_per_hour">yr awr</string>
+    <string name="pair_bought">prynu</string>
+    <string name="pair_daily_hours_14">oriau bob dydd (14 diwrnod)</string>
+    <string name="pair_rename_title">ailenwi pâr</string>
+    <string name="pair_rename_label">enw</string>
+    <string name="pair_retire_title">tynnu\'r pâr hwn ymaith</string>
+    <string name="pair_retire_label">rheswm (marw, gwerthu, colli…)</string>
+    <string name="pair_retire_confirm">tynnu ymaith</string>
+    <string name="pair_retire_supporting">mae\'r cyfanswm yn rhewi yma. cysylltu\'r ddyfais yr un peth eto yn dechrau pâr newydd ar sero.</string>
+    <string name="pair_price_title">pris a dalwyd</string>
+    <string name="pair_price_label">swm (unedau cyfan)</string>
+    <string name="pair_price_supporting">defnyddiwyd ar gyfer y ffigur cost fesul awr.</string>
+    <string name="pair_delete_title">dileu\'r pâr hwn?</string>
+    <string name="pair_delete_body">mae pob sesiwn a gofnodwyd ar ei gyfer yn cael ei dileu hefyd. ni ellir chwaith hyn.</string>
+
+    <!-- Rhesi sesiwn -->
+    <string name="session_ongoing">ar y gweill</string>
+    <string name="session_until">hyd %1$s</string>
+    <string name="session_playing">%1$s yn chwarae</string>
+    <string name="session_recovered">adferwyd</string>
+
+    <!-- Gosodiadau -->
+    <string name="settings_tracking">tracio</string>
+    <string name="settings_detailed_title">tracio manwl</string>
+    <string name="settings_detailed_body">yn ychwanegu clustffonau wedi\'u gweirio ac amser atgynhyrchu. android yn unig yn adrodd digwyddiadau plwg wedi\'u gweirio i app sy\'n rhedeg, felly mae hyn yn cadw hysbysiad tawel yn yr ystafell. mae bluetooth yn cael ei dracio p\'un bynnag.</string>
+    <string name="settings_detailed_unavailable">dim ar gael nes y rhoddif mynediad bluetooth: mae\'r adeilad hwn yn unig yn datgan y math gwasanaeth connectedDevice, y mae android 14+ yn ei chlymu i ganiatad bluetooth.</string>
+    <string name="settings_devices">dyfeisiau</string>
+    <string name="settings_devices_body">tynnu\'r tic oddi wrth unrhyw beth nad yw\'n glustffonau — radio ceir neu siaradwr — i roi\'r gorau i\'w gofnodi.</string>
+    <string name="settings_device_subtitle">%1$s · gweld yn gyntaf %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">allforio json</string>
+    <string name="settings_import">mewnforio</string>
+    <string name="settings_import_warning">mae mewnforio yn disodli popeth sy\'n cael ei storio ar hyn o bryd.</string>
+    <string name="settings_troubleshooting">datrys problemau</string>
+    <string name="settings_battery_body">os bydd sesiynau yn rhoi\'r gorau i gael eu cofnodi, gwiriwch fod ylih yn eithriad o optimeiddio batri — app sydd wedi\'i orfodi i stopio byth yn derbyn darllediadau cysylltiad eto nes ei agor.</string>
+    <string name="settings_battery_button">gosodiadau batri</string>
+    <string name="settings_battery_path">gosodiadau → apiau → ylih → batri → heb gyfyngiad.</string>
+    <string name="settings_about">ynghylch</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — oriau clustffonau, wedi\'u cadw\'n lleol ac am byth.</string>
+    <string name="settings_import_confirm_title">disodli\'r holl ddata?</string>
+    <string name="settings_import_confirm_body">mae mewnforio\'r cefnwp hwn yn dileu pob dyfais, pâr a sesiwn wedi\'u storio nawr.</string>
+
+    <!-- Gweithredoedd rhanedig -->
+    <string name="action_save">arbed</string>
+    <string name="action_cancel">canslo</string>
+    <string name="action_delete">dileu</string>
+    <string name="action_import">mewnforio</string>
+
+    <!-- Hysbysiad -->
+    <string name="channel_tracking">tracio clustffonau</string>
+    <string name="channel_tracking_description">dangosir tra mae ylih yn gwylio clustffonau wedi\'u gweirio ac atgynhyrchu. android yn unig yn anfon digwyddiadau plwg wedi\'u gweirio i apiau sydd ddim yn rhedeg.</string>
+    <string name="notification_title">tracio amser clustffonau</string>
+    <string name="notification_starting">dechrau…</string>
+    <string name="notification_idle">aros am glustffonau</string>
+    <plurals name="notification_active">
+        <item quantity="zero">%1$d cysylltiedig · %2$s</item>
+        <item quantity="one">%1$d cysylltiedig · %2$s</item>
+        <item quantity="two">%1$d cysylltiedig · %2$s</item>
+        <item quantity="few">%1$d cysylltiedig · %2$s</item>
+        <item quantity="many">%1$d cysylltiedig · %2$s</item>
+        <item quantity="other">%1$d cysylltiedig · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="zero">%1$d cysylltiedig · %2$s · chwarae</item>
+        <item quantity="one">%1$d cysylltiedig · %2$s · chwarae</item>
+        <item quantity="two">%1$d cysylltiedig · %2$s · chwarae</item>
+        <item quantity="few">%1$d cysylltiedig · %2$s · chwarae</item>
+        <item quantity="many">%1$d cysylltiedig · %2$s · chwarae</item>
+        <item quantity="other">%1$d cysylltiedig · %2$s · chwarae</item>
+    </plurals>
+
+    <!-- Negeseuon bar sglodion -->
+    <string name="detailed_needs_bluetooth">mae angen mynediad bluetooth ar yr adeilad hwn cyn y gall dracio clustffonau wedi\'u gweirio</string>
+    <string name="export_done">cefnwp wedi\'i allforio</string>
+    <string name="export_failed">methodd allforio</string>
+    <string name="import_failed">methodd mewnforio</string>
+    <string name="error_could_not_open">ni allwn agor %1$s</string>
+    <plurals name="import_done">
+        <item quantity="zero">mewnforiwyd %d sesiwn</item>
+        <item quantity="one">mewnforiwyd %d sesiwn</item>
+        <item quantity="two">mewnforiwyd %d sesiwn</item>
+        <item quantity="few">mewnforiwyd %d sesiwn</item>
+        <item quantity="many">mewnforiwyd %d sesiwn</item>
+        <item quantity="other">mewnforiwyd %d sesiwn</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="zero">%d sesiwn</item>
+        <item quantity="one">%d sesiwn</item>
+        <item quantity="two">%d sesiwn</item>
+        <item quantity="few">%d sesiwn</item>
+        <item quantity="many">%d sesiwn</item>
+        <item quantity="other">%d sesiwn</item>
+    </plurals>
+</resources>

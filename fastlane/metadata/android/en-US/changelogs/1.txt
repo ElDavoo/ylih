@@ -1,0 +1,8 @@
+First release.
+
+• Lifetime hours per physical pair of headphones, with generations so a replacement pair starts at zero instead of inheriting the old one's total.
+• Every connection kept permanently, with per-day and per-pair statistics.
+• Optional detailed tracking for wired and USB headphones, and for playback versus connected time.
+• Cost per listening hour.
+• JSON export and import.
+• No internet permission: nothing ever leaves the phone.

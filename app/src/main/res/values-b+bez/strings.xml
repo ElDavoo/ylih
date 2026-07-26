@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Bena. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - maisha yako pa muti</string>
+
+    <!-- Kusogeza kwa chini -->
+    <string name="nav_headphones">muti</string>
+    <string name="nav_stats">takwimu</string>
+    <string name="nav_settings">mipango</string>
+
+    <!-- Aina za vifaa -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">kamba</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">haijulikani</string>
+
+    <!-- Mwanzo wa kwanza -->
+    <string name="welcome_title">karibu sana ylih</string>
+    <string name="welcome_intro">ylih imesijili kumbe kila jozi ya muti inabaki iliyobandika, kwa sababu miaka mingi ijayo unaweza kuweza kujibu swali la muhimu tu kuhusu jozi: saa ngapi walikufa?</string>
+    <string name="welcome_point_auto_title">bandika na sahau</string>
+    <string name="welcome_point_auto_body">muti ya bluetooth ilisijiliwa yenyewe, tangu inapobandika. hakuna kitu kinachohitajika kusaga wakati wote.</string>
+    <string name="welcome_point_lifetime_title">jozi moja, maisha moja</string>
+    <string name="welcome_point_lifetime_body">jozi inapokufa, itengeneze: jumla yake inakaa huko na jozi ijayo ya muti huo huanza tena kutoka kwa sifuri.</string>
+    <string name="welcome_point_detailed_title">kamba na kucheza</string>
+    <string name="welcome_point_detailed_body">kufuatilia kwa undani, katika mipango, kunaongeza kamba na kupima kiasi cha wakati uliyokuwa unacheza.</string>
+    <string name="welcome_privacy">kila kitu kinabaki kwenye simu hii. hakuna akaunti, nde simu haina ruhusa ya intaneti.</string>
+    <string name="welcome_start">kuanza</string>
+
+    <!-- Orodha ya muti -->
+    <string name="devices_in_use">inatumika</string>
+    <string name="devices_retired">imeacha</string>
+    <string name="devices_empty_title">hakuna muti bado</string>
+    <string name="devices_empty_body">bandika jozi ya muti ya bluetooth naisimiswe hapa. muti ya kamba inahitaji kufuatilia kwa undani, katika mipango.</string>
+    <string name="devices_generation">jozi #%1$d</string>
+    <string name="devices_retired_on">imeacha %1$s</string>
+    <string name="devices_connected_for">imebandikaisha %1$s</string>
+    <string name="devices_recent">%1$s / siku 7</string>
+
+    <!-- Takwimu -->
+    <string name="stats_title">muti yote</string>
+    <string name="stats_sessions_since">%1$s tangu %2$s</string>
+    <string name="stats_last_7">siku 7 za mwisho</string>
+    <string name="stats_last_30">siku 30 za mwisho</string>
+    <string name="stats_average_session">kikao cha wastani</string>
+    <string name="stats_playing">kucheza</string>
+    <string name="stats_measured_span">kipimo cha muda</string>
+    <string name="stats_share">funguza</string>
+    <string name="stats_daily_hours_30">masaa ya kila siku (siku 30)</string>
+    <string name="stats_by_pair">kwa jozi</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · imeacha</string>
+    <string name="chart_max">%1$s upeo</string>
+
+    <!-- Undani wa jozi -->
+    <string name="pair_fallback_title">jozi</string>
+    <string name="pair_back">nyuma</string>
+    <string name="pair_more">zaidi</string>
+    <string name="pair_menu_rename">badilisha jina</string>
+    <string name="pair_menu_purchase">habari ya ununuzi</string>
+    <string name="pair_menu_retire">acha / kubadilisha</string>
+    <string name="pair_menu_delete">futa</string>
+    <string name="pair_lifetime">muda wa jozi hii</string>
+    <string name="pair_retired_on">imeacha %1$s</string>
+    <string name="pair_retired_with_reason">imeacha %1$s · %2$s</string>
+    <string name="pair_connected_now">imebandikaisha sasa · %1$s</string>
+    <string name="pair_sessions">vikao</string>
+    <string name="pair_average">wastani</string>
+    <string name="pair_longest">mrefu zaidi</string>
+    <string name="pair_first_seen">iliyoona kwanza</string>
+    <string name="pair_of_measured">ya kipimo</string>
+    <string name="pair_measured">kipimo</string>
+    <string name="pair_paid">iliyolipwa</string>
+    <string name="pair_per_hour">kwa saa</string>
+    <string name="pair_bought">iliyonunuliwa</string>
+    <string name="pair_daily_hours_14">masaa ya kila siku (siku 14)</string>
+    <string name="pair_rename_title">badilisha jina la jozi</string>
+    <string name="pair_rename_label">jina</string>
+    <string name="pair_retire_title">acha jozi hii</string>
+    <string name="pair_retire_label">sababu (kufa, kujualan, kupotea…)</string>
+    <string name="pair_retire_confirm">acha</string>
+    <string name="pair_retire_supporting">kijumla kinakaa huko. kwa kubandikaisha vifaa sawa huanza jozi mpya kwa sifuri.</string>
+    <string name="pair_price_title">bei iliyolipwa</string>
+    <string name="pair_price_label">kiasi (vitengo kamili)</string>
+    <string name="pair_price_supporting">kutumika kwa kielelezo cha gharama kwa saa.</string>
+    <string name="pair_delete_title">futa jozi hii?</string>
+    <string name="pair_delete_body">kila kikao kilichosijiliwa kwa ajili yake kinafutwa pia. hii haiwezi kurudi nyuma.</string>
+
+    <!-- Safu za kikao -->
+    <string name="session_ongoing">inaendelea</string>
+    <string name="session_until">hadi %1$s</string>
+    <string name="session_playing">%1$s kucheza</string>
+    <string name="session_recovered">kukamatia</string>
+
+    <!-- Mipango -->
+    <string name="settings_tracking">kufuatilia</string>
+    <string name="settings_detailed_title">kufuatilia kwa undani</string>
+    <string name="settings_detailed_body">kunaongeza muti ya kamba na wakati wa kucheza. android tu husambaza matukio ya kamba iliyobandika kwa programu inayoendelea, kwa sababu hii inabaki ikiwa na ifikira lakini bila sauti. bluetooth inafuatiliwa kwa njia yoyote.</string>
+    <string name="settings_detailed_unavailable">haipo hadi ruhusa ya bluetooth itolewe: kuundwa hiki kunahakitisha tu aina ya huduma ya connectedDevice, ambayo android 14+ inasungi kwa ruhusa ya bluetooth.</string>
+    <string name="settings_devices">vifaa</string>
+    <string name="settings_devices_body">ondoa herufi kwenye kile ambacho si muti - stereo ya motokaa au kinzani - ili kusimama kurekodi.</string>
+    <string name="settings_device_subtitle">%1$s · iliyoona kwanza %2$s</string>
+    <string name="settings_data">takwimu</string>
+    <string name="settings_export">toleo la json</string>
+    <string name="settings_import">ingiza</string>
+    <string name="settings_import_warning">kuingiza kunaambatisha kila kitu kilichohifadhiwa kwa sasa.</string>
+    <string name="settings_troubleshooting">kutatua matatizo</string>
+    <string name="settings_battery_body">ikiwa vikao vinakoma kurekodi, angalia kuwa ylih imeachwa mbali na uchangamano wa umeme - programu iliyosimamaishwa kwa lazima haipati tena matukio ya kubandikaisha hadi ikaponekaponekwa.</string>
+    <string name="settings_battery_button">mipango ya umeme</string>
+    <string name="settings_battery_path">mipango → programu → ylih → umeme → bila kuzuiliwa.</string>
+    <string name="settings_about">kuhusu</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - masaa ya muti, yanayohifadhiwa katika ndani na milele.</string>
+    <string name="settings_import_confirm_title">kuambatisha takwimu zote?</string>
+    <string name="settings_import_confirm_body">kuingiza hii nyuma inafuta kila vifaa, jozi na kikao kilichohifadhiwa kwa sasa.</string>
+
+    <!-- Hatua za kawaida -->
+    <string name="action_save">hifadhi</string>
+    <string name="action_cancel">tandika</string>
+    <string name="action_delete">futa</string>
+    <string name="action_import">ingiza</string>
+
+    <!-- Ilani -->
+    <string name="channel_tracking">kufuatilia muti</string>
+    <string name="channel_tracking_description">inaonyeshwa wakati ylih inaangalia kamba na kucheza. android haisambazi matukio ya kamba iliyobandika kwa programu ambazo haziendelea.</string>
+    <string name="notification_title">kufuatilia wakati wa muti</string>
+    <string name="notification_starting">kuanza…</string>
+    <string name="notification_idle">kusubiri muti</string>
+    <plurals name="notification_active">
+        <item quantity="one">imebandikaisha %1$d · %2$s</item>
+        <item quantity="other">imebandikaisha %1$d · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">imebandikaisha %1$d · %2$s · kucheza</item>
+        <item quantity="other">imebandikaisha %1$d · %2$s · kucheza</item>
+    </plurals>
+
+    <!-- Ujumbe wa Snackbar -->
+    <string name="detailed_needs_bluetooth">kuundwa hiki kinahitaji ruhusa ya bluetooth kabla haiwezi kufuatilia kamba</string>
+    <string name="export_done">nyuma iliyokamatia</string>
+    <string name="export_failed">toleo lilishindwa</string>
+    <string name="import_failed">kuingiza lilishindwa</string>
+    <string name="error_could_not_open">haiwezi kufungua %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">kuingiza %d kikao</item>
+        <item quantity="other">kuingiza %d vikao</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d kikao</item>
+        <item quantity="other">%d vikao</item>
+    </plurals>
+</resources>

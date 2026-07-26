@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Jola-Fonyi. House style is lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - yoon tuyan ji ha koosan</string>
+
+    <!-- Navigasiyon -->
+    <string name="nav_headphones">koosan</string>
+    <string name="nav_stats">bayati</string>
+    <string name="nav_settings">yaañ</string>
+
+    <!-- Yindoo bu gent -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">koosan ji bambung</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">anaa koof</string>
+
+    <!-- Bayina yontoo -->
+    <string name="welcome_title">bayina ji ylih</string>
+    <string name="welcome_intro">ylih ma tayoy ni koosan yontoon ba dinde ne anoo, je a bayaw ni bujuñ yi tindi: yidi wara koosan yontoo yindoo?</string>
+    <string name="welcome_point_auto_title">conko, caani ñajëra</string>
+    <string name="welcome_point_auto_body">bluetooth koosan yi tayoy yonnal, jabe ba cuko yaa. anaa yidi ba gani yoni du.</string>
+    <string name="welcome_point_lifetime_title">koosan yontoo, yoon jita</string>
+    <string name="welcome_point_lifetime_body">koosan yontoo ka dukoo, ba a cif: yidi ba gani du be jintangu yi, je koosan yontoo yindoo ka yono cayti be.</string>
+    <string name="welcome_point_detailed_title">koosan ji bambung be, be caani</string>
+    <string name="welcome_point_detailed_body">yaañ ba bu coñon, be bayati ba bu tindi koosan ji bambung be be, be a tayoy ni waray ba caani. bluetooth yi tayoy be yonnal du.</string>
+    <string name="welcome_privacy">yidi ba du phone yi la. anaa konto ba gani du, be app yi anaa internet ba gani du.</string>
+    <string name="welcome_start">bayina</string>
+
+    <!-- Kafo koosan -->
+    <string name="devices_in_use">toyol be</string>
+    <string name="devices_retired">ca cif</string>
+    <string name="devices_empty_title">koosan anaa gani</string>
+    <string name="devices_empty_body">conko bluetooth koosan yontoo be, ba dak be jambay. koosan ji bambung yi ba kanu yaañ ba bu coñon, be bayati ba bu tindi.</string>
+    <string name="devices_generation">yontoo #%1$d</string>
+    <string name="devices_retired_on">ca cif %1$s</string>
+    <string name="devices_connected_for">conko %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Bayati -->
+    <string name="stats_title">koosan yontoo bu yidi</string>
+    <string name="stats_sessions_since">%1$s jabe %2$s</string>
+    <string name="stats_last_7">taasu 7 bu dima</string>
+    <string name="stats_last_30">taasu 30 bu dima</string>
+    <string name="stats_average_session">diñun bulkaw</string>
+    <string name="stats_playing">caani</string>
+    <string name="stats_measured_span">waray ba tayoy</string>
+    <string name="stats_share">bayati</string>
+    <string name="stats_daily_hours_30">waray ba dima (30 bu taasu)</string>
+    <string name="stats_by_pair">yontoo ji buuba</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · ca cif</string>
+    <string name="chart_max">%1$s ba bijit</string>
+
+    <!-- Yontoo kaño -->
+    <string name="pair_fallback_title">yontoo</string>
+    <string name="pair_back">ina ju</string>
+    <string name="pair_more">yindi yaa</string>
+    <string name="pair_menu_rename">caani yindoo</string>
+    <string name="pair_menu_purchase">kañante ba kalam</string>
+    <string name="pair_menu_retire">cif / yindoo</string>
+    <string name="pair_menu_delete">sibti</string>
+    <string name="pair_lifetime">waray yontoo yi</string>
+    <string name="pair_retired_on">ca cif %1$s</string>
+    <string name="pair_retired_with_reason">ca cif %1$s · %2$s</string>
+    <string name="pair_connected_now">conko jintangu · %1$s</string>
+    <string name="pair_sessions">diñun</string>
+    <string name="pair_average">bulkaw</string>
+    <string name="pair_longest">diñun ba bijit</string>
+    <string name="pair_first_seen">wambakandoo</string>
+    <string name="pair_of_measured">waray ba tayoy ba</string>
+    <string name="pair_measured">waray ba tayoy</string>
+    <string name="pair_paid">kañante</string>
+    <string name="pair_per_hour">waray yontoo</string>
+    <string name="pair_bought">kañante</string>
+    <string name="pair_daily_hours_14">waray ba dima (14 bu taasu)</string>
+    <string name="pair_rename_title">yontoo caani yindoo</string>
+    <string name="pair_rename_label">caani</string>
+    <string name="pair_retire_title">yontoo yi cif</string>
+    <string name="pair_retire_label">kese (dukoo, buntu, jantoo…)</string>
+    <string name="pair_retire_confirm">cif</string>
+    <string name="pair_retire_supporting">yidi ba gani du jintangu yi. conko yindoo ba bayati, yontoo yindoo ba yono cayti be.</string>
+    <string name="pair_price_title">kañante ba gani</string>
+    <string name="pair_price_label">kañante (yok)</string>
+    <string name="pair_price_supporting">ba gani koosan waray yontoo ba.</string>
+    <string name="pair_delete_title">yontoo yi sibti?</string>
+    <string name="pair_delete_body">diñun bu yidi ba sibti du. anaa tindi ca.</string>
+
+    <!-- Diñun kafo -->
+    <string name="session_ongoing">dukoo</string>
+    <string name="session_until">jabe %1$s</string>
+    <string name="session_playing">%1$s caani</string>
+    <string name="session_recovered">bu kayandi</string>
+
+    <!-- Yaañ -->
+    <string name="settings_tracking">tayoy</string>
+    <string name="settings_detailed_title">tayoy ba bu coñon</string>
+    <string name="settings_detailed_body">coñon koosan ji bambung be, be a tayoy ni caani waray. android ma sandi koosan ji bambung ba conko waray ba bu gani app yi tundi, se notification ba bu kaañ be. bluetooth yi tayoy bu yonnal du.</string>
+    <string name="settings_detailed_unavailable">anaa bayandi jabe bluetooth ba bukandu ba: build yi ma caani connectedDevice ba gani, android 14+ ma gani a bluetooth ba bukandu.</string>
+    <string name="settings_devices">yindoo</string>
+    <string name="settings_devices_body">nofandi yindoo anaa koosan: yindoo ji mobil u be, wulo u be, - sibti a tayoy.</string>
+    <string name="settings_device_subtitle">%1$s · wambakandoo %2$s</string>
+    <string name="settings_data">kalam</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">import</string>
+    <string name="settings_import_warning">import yi ma sibti kalam bu yidi jintangu yi.</string>
+    <string name="settings_troubleshooting">kese ba bu dik</string>
+    <string name="settings_battery_body">diñun yi anaa tayoy be, kañara ylih anaa optimize battery la - app yi bu tugandi anaa conko waray jabe a bukandu ca.</string>
+    <string name="settings_battery_button">battery yaañ</string>
+    <string name="settings_battery_path">yaañ → app → ylih → battery → anaa cik.</string>
+    <string name="settings_about">ylih ca</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — waray koosan, jambay be, caangi du.</string>
+    <string name="settings_import_confirm_title">kalam sibti?</string>
+    <string name="settings_import_confirm_body">import backup yi ma sibti yindoo, yontoo, be diñun bu yidi jintangu yi.</string>
+
+    <!-- Aksyon ba gent -->
+    <string name="action_save">jambay</string>
+    <string name="action_cancel">caani ca</string>
+    <string name="action_delete">sibti</string>
+    <string name="action_import">import</string>
+
+    <!-- Bayti -->
+    <string name="channel_tracking">tayoy koosan</string>
+    <string name="channel_tracking_description">duk ylih ma tayoy koosan ji bambung be, be caani waray. android anaa caani koosan ji bambung ba conko waray ba bu gani app yi anaa tundi.</string>
+    <string name="notification_title">tayoy waray koosan</string>
+    <string name="notification_starting">bayina…</string>
+    <string name="notification_idle">arali koosan</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d conko · %2$s</item>
+        <item quantity="other">%1$d conko · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d conko · %2$s · caani</item>
+        <item quantity="other">%1$d conko · %2$s · caani</item>
+    </plurals>
+
+    <!-- Kese kafo -->
+    <string name="detailed_needs_bluetooth">build yi ba kanu bluetooth bukandu bayandi tayoy koosan ji bambung be</string>
+    <string name="export_done">backup export</string>
+    <string name="export_failed">export anaa bayandi</string>
+    <string name="import_failed">import anaa bayandi</string>
+    <string name="error_could_not_open">anaa bayandi bukandi %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">import %d diñun</item>
+        <item quantity="other">import %d diñun</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d diñun</item>
+        <item quantity="other">%d diñun</item>
+    </plurals>
+</resources>

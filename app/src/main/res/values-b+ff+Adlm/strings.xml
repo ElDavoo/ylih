@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Fula (Adlam script). Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">aylih - jinde maa e kaalangal</string>
+
+    <!-- navigasyon -->
+    <string name="nav_headphones">kaalangal</string>
+    <string name="nav_stats">jannginol</string>
+    <string name="nav_settings">teelirminol</string>
+
+    <!-- nde taruuji -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">jeeɗgal</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">taɗngal</string>
+
+    <!-- hay'i hollito -->
+    <string name="welcome_title">salam maa aylih</string>
+    <string name="welcome_intro">aylih jannginaa jinde kaalangal maa seŋal, haa ko ɓalɓe kaɗa, aɗa waawi deŋel gilla golle ɗum ko jogooɗi e kaalangal: saaji maa ɗum njiyaa?</string>
+    <string name="welcome_point_auto_title">seŋal e jillin</string>
+    <string name="welcome_point_auto_body">kaalangal bluetooth jannginaaɗo ɗiɗe, haa seŋal, baakol to uum fuɗɗugol.</string>
+    <string name="welcome_point_lifetime_title">jeeɓe goɗɗe, kaal goɗɗe</string>
+    <string name="welcome_point_lifetime_body">yiɓɓe jeeɓe hoti, deftugol: jannginol ɗum naati ndee, kaalangal kaɓɓe nde taruuji oo fuɗɗugol haa jemaaku.</string>
+    <string name="welcome_point_detailed_title">jeeɗgal e huulnde</string>
+    <string name="welcome_point_detailed_body">jannginol carminore, e teelirminol, baynu kaalangal jeeɗgal e jannginaa jinde huulnde maa.</string>
+    <string name="welcome_privacy">juulem foti e telefon maa. alal baakɗo, kala aylih heewu internet.</string>
+    <string name="welcome_start">fuɗɗo</string>
+
+    <!-- ndee kaalangal -->
+    <string name="devices_in_use">waɗinitaade</string>
+    <string name="devices_retired">deftuje</string>
+    <string name="devices_empty_title">kaalangal foti baakɗo</string>
+    <string name="devices_empty_body">seŋal kaalangal bluetooth, ɗum waɗi ndee. kaalangal jeeɗgal heewu jannginol carminore, e teelirminol.</string>
+    <string name="devices_generation">jeeɓe #%1$d</string>
+    <string name="devices_retired_on">deftuje %1$s</string>
+    <string name="devices_connected_for">seŋaaɗe %1$s</string>
+    <string name="devices_recent">%1$s / 7ñ</string>
+
+    <!-- jannginol -->
+    <string name="stats_title">kaalangal juulem</string>
+    <string name="stats_sessions_since">%1$s haa %2$s</string>
+    <string name="stats_last_7">liggere 7 ɓalɓacce</string>
+    <string name="stats_last_30">liggere 30 ɓalɓacce</string>
+    <string name="stats_average_session">dhaali jokkol</string>
+    <string name="stats_playing">huulnde</string>
+    <string name="stats_measured_span">jannginol tege</string>
+    <string name="stats_share">baynu</string>
+    <string name="stats_daily_hours_30">saaji ɓalɓaccere (30 ɓalɓacce)</string>
+    <string name="stats_by_pair">jeeɓere-jeeɓere</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · deftuje</string>
+    <string name="chart_max">%1$s maaksiimum</string>
+
+    <!-- panno jeeɓe -->
+    <string name="pair_fallback_title">jeeɓe</string>
+    <string name="pair_back">duum</string>
+    <string name="pair_more">humpay</string>
+    <string name="pair_menu_rename">jooɗin maɓɓe</string>
+    <string name="pair_menu_purchase">hargal garanaa</string>
+    <string name="pair_menu_retire">deftugu / sooɗugo</string>
+    <string name="pair_menu_delete">deleeteeri</string>
+    <string name="pair_lifetime">jinde kaal jeeɓe maa</string>
+    <string name="pair_retired_on">deftuje %1$s</string>
+    <string name="pair_retired_with_reason">deftuje %1$s · %2$s</string>
+    <string name="pair_connected_now">seŋaaɗe jooni · %1$s</string>
+    <string name="pair_sessions">jokkol</string>
+    <string name="pair_average">dhaali</string>
+    <string name="pair_longest">mahdi</string>
+    <string name="pair_first_seen">hay\'i hollito</string>
+    <string name="pair_of_measured">jannginol tege</string>
+    <string name="pair_measured">tege</string>
+    <string name="pair_paid">dilooritaa</string>
+    <string name="pair_per_hour">sa saaji</string>
+    <string name="pair_bought">garanaa</string>
+    <string name="pair_daily_hours_14">saaji ɓalɓaccere (14 ɓalɓacce)</string>
+    <string name="pair_rename_title">jooɗin jeeɓe maa</string>
+    <string name="pair_rename_label">maɓɓe</string>
+    <string name="pair_retire_title">deftugu jeeɓe maa</string>
+    <string name="pair_retire_label">bibe (mujjum, resol, ɓaccu…)</string>
+    <string name="pair_retire_confirm">deftugu</string>
+    <string name="pair_retire_supporting">jannginol huumaare ndee. seŋal kaɓɓe nde taruuji oo waɗi jeeɓe harfo haa jemaaku.</string>
+    <string name="pair_price_title">goɗɗi garanaa</string>
+    <string name="pair_price_label">jumlaa (bijjatol juulem)</string>
+    <string name="pair_price_supporting">waɗ-waɗit suudu sa saaji.</string>
+    <string name="pair_delete_title">deleeteeru jeeɓe maa?</string>
+    <string name="pair_delete_body">jokkol juulem jannginaa ɗum deleete. njukka to ndi.</string>
+
+    <!-- ndee jokkol -->
+    <string name="session_ongoing">ngella jooki</string>
+    <string name="session_until">redu %1$s</string>
+    <string name="session_playing">%1$s huulnde</string>
+    <string name="session_recovered">leerɗi</string>
+
+    <!-- teelirminol -->
+    <string name="settings_tracking">jannginol</string>
+    <string name="settings_detailed_title">jannginol carminore</string>
+    <string name="settings_detailed_body">baynu kaalangal jeeɗgal e jinnde huulnde. android gaɗa seeɗ jeeɗgal njuŋŋu ɗiɗi njuŋŋitere, haa ko ndee teli baɓɓ e teñ. bluetooth jannginaaɗo juulem.</string>
+    <string name="settings_detailed_unavailable">ndilta redu bluetooth heewɗo: taruuji maa seelitoo nde connectedDevice duman, android 14+ gootoo e bluetooth jumnitoore.</string>
+    <string name="settings_devices">taruuji</string>
+    <string name="settings_devices_body">deleete teegno taruuji hakkunde kaalangal baakɗo - oto tummuki wala ɓelɓel - haa ko dum jannginoa baakɗo.</string>
+    <string name="settings_device_subtitle">%1$s · hay\'i hollito %2$s</string>
+    <string name="settings_data">baytal</string>
+    <string name="settings_export">golluki json</string>
+    <string name="settings_import">gaŋŋa</string>
+    <string name="settings_import_warning">gaŋŋa sooɗɗu juulem baytal jooni.</string>
+    <string name="settings_troubleshooting">jannginol ceffal-cofal</string>
+    <string name="settings_battery_body">yiɓɓe jokkol jannginoa baakɗo, teegno ko aylih njuŋŋo baakɗo e batiri suudu - aylih fuɗɗugo to njuŋŋi seŋal njuŋŋu redu dum moofaa.</string>
+    <string name="settings_battery_button">teelirminol batiri</string>
+    <string name="settings_battery_path">teelirminol → apps → ylih → batiri → ndilta-walla.</string>
+    <string name="settings_about">baɓɓe aylih</string>
+    <string name="settings_about_body">aylih %1$s (%2$s) — saaji kaalangal, goɗo jeeɗngal e reyde walla.</string>
+    <string name="settings_import_confirm_title">sooɗɗu baytal juulem?</string>
+    <string name="settings_import_confirm_body">gaŋŋa moofal maa deleete taruuji juulem, jeeɓe, e jokkol goɗngol jooni.</string>
+
+    <!-- akaasɓe ngonngal -->
+    <string name="action_save">dilo</string>
+    <string name="action_cancel">duum</string>
+    <string name="action_delete">deleeteeri</string>
+    <string name="action_import">gaŋŋa</string>
+
+    <!-- njuŋŋu -->
+    <string name="channel_tracking">jannginol kaalangal</string>
+    <string name="channel_tracking_description">yeewtina yiɓɓe aylih jannginaa kaalangal jeeɗgal e huulnde. android gaɗa seeɗ jeeɗgal njuŋŋu ɗiɗi njuŋŋitere.</string>
+    <string name="notification_title">jannginol jinde kaalangal</string>
+    <string name="notification_starting">fuɗɗo…</string>
+    <string name="notification_idle">jaŋngal kaalangal</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d seŋaaɗe · %2$s</item>
+        <item quantity="other">%1$d seŋaaɗe · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d seŋaaɗe · %2$s · huulnde</item>
+        <item quantity="other">%1$d seŋaaɗe · %2$s · huulnde</item>
+    </plurals>
+
+    <!-- baɓɓe teli -->
+    <string name="detailed_needs_bluetooth">taruuji maa heewu bluetooth jumnitoore haa ko kaalangal jeeɗgal jannginaa</string>
+    <string name="export_done">moofal gollugo</string>
+    <string name="export_failed">gollugo ceffal</string>
+    <string name="import_failed">gaŋŋa ceffal</string>
+    <string name="error_could_not_open">njuŋŋu baakŋu buɗɗa %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">gaŋŋo %d jokkol</item>
+        <item quantity="other">gaŋŋo %d jokkol</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d jokkol</item>
+        <item quantity="other">%d jokkol</item>
+    </plurals>
+</resources>

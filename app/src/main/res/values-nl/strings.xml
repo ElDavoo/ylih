@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Dutch. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - je leven in koptelefoons</string>
+
+    <!-- Navigatie -->
+    <string name="nav_headphones">koptelefoons</string>
+    <string name="nav_stats">statistieken</string>
+    <string name="nav_settings">instellingen</string>
+
+    <!-- Soorten toestel -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">bekabeld</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">onbekend</string>
+
+    <!-- Eerste keer opstarten -->
+    <string name="welcome_title">welkom bij ylih</string>
+    <string name="welcome_intro">ylih registreert hoe lang elke koptelefoon verbonden blijft, zodat je over jaren nog steeds de enige vraag kunt beantwoorden die ertoe doet over een koptelefoon: hoeveel uur heeft hij het uitgehouden?</string>
+    <string name="welcome_point_auto_title">aansluiten en vergeten</string>
+    <string name="welcome_point_auto_body">bluetooth-koptelefoons worden vanzelf geregistreerd, vanaf het moment dat ze verbinden. er hoeft niets actief te blijven.</string>
+    <string name="welcome_point_lifetime_title">één koptelefoon, één levensduur</string>
+    <string name="welcome_point_lifetime_body">als een koptelefoon het begeeft, pensioneer je hem: zijn totaal bevriest op dat moment en dezelfde koptelefoon begint bij de volgende aanschaf weer bij nul.</string>
+    <string name="welcome_point_detailed_title">bekabeld en afspelen</string>
+    <string name="welcome_point_detailed_body">gedetailleerd bijhouden, in instellingen, voegt bekabelde koptelefoons toe en meet hoeveel van die tijd er echt werd afgespeeld.</string>
+    <string name="welcome_privacy">alles blijft op deze telefoon. er is geen account en de app heeft geen internettoegang.</string>
+    <string name="welcome_start">beginnen</string>
+
+    <!-- Lijst met koptelefoons -->
+    <string name="devices_in_use">in gebruik</string>
+    <string name="devices_retired">gepensioneerd</string>
+    <string name="devices_empty_title">nog geen koptelefoons</string>
+    <string name="devices_empty_body">verbind een bluetooth-koptelefoon en hij verschijnt hier. bekabelde koptelefoons hebben gedetailleerd bijhouden nodig, in instellingen.</string>
+    <string name="devices_generation">koptelefoon nr. %1$d</string>
+    <string name="devices_retired_on">gepensioneerd op %1$s</string>
+    <string name="devices_connected_for">verbonden %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Statistieken -->
+    <string name="stats_title">alle koptelefoons</string>
+    <!-- %1$s is een reeds vervoegd aantal sessies, %2$s een datum. -->
+    <string name="stats_sessions_since">%1$s sinds %2$s</string>
+    <string name="stats_last_7">laatste 7 dagen</string>
+    <string name="stats_last_30">laatste 30 dagen</string>
+    <string name="stats_average_session">gemiddelde sessie</string>
+    <string name="stats_playing">afspelen</string>
+    <string name="stats_measured_span">gemeten periode</string>
+    <string name="stats_share">delen</string>
+    <string name="stats_daily_hours_30">uren per dag (30 dagen)</string>
+    <string name="stats_by_pair">per koptelefoon</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · gepensioneerd</string>
+    <string name="chart_max">%1$s max</string>
+
+    <!-- Detail koptelefoon -->
+    <string name="pair_fallback_title">koptelefoon</string>
+    <string name="pair_back">terug</string>
+    <string name="pair_more">meer</string>
+    <string name="pair_menu_rename">naam wijzigen</string>
+    <string name="pair_menu_purchase">aankoopgegevens</string>
+    <string name="pair_menu_retire">pensioneren / vervangen</string>
+    <string name="pair_menu_delete">verwijderen</string>
+    <string name="pair_lifetime">totaal van deze koptelefoon</string>
+    <string name="pair_retired_on">gepensioneerd op %1$s</string>
+    <string name="pair_retired_with_reason">gepensioneerd op %1$s · %2$s</string>
+    <string name="pair_connected_now">nu verbonden · %1$s</string>
+    <string name="pair_sessions">sessies</string>
+    <string name="pair_average">gemiddeld</string>
+    <string name="pair_longest">langste</string>
+    <string name="pair_first_seen">eerst gezien</string>
+    <string name="pair_of_measured">van gemeten</string>
+    <string name="pair_measured">gemeten</string>
+    <string name="pair_paid">betaald</string>
+    <string name="pair_per_hour">per uur</string>
+    <string name="pair_bought">gekocht</string>
+    <string name="pair_daily_hours_14">uren per dag (14 dagen)</string>
+    <string name="pair_rename_title">koptelefoon hernoemen</string>
+    <string name="pair_rename_label">naam</string>
+    <string name="pair_retire_title">deze koptelefoon pensioneren</string>
+    <string name="pair_retire_label">reden (kapot, verkocht, kwijt…)</string>
+    <string name="pair_retire_confirm">pensioneren</string>
+    <string name="pair_retire_supporting">totalen bevriezen hier. hetzelfde toestel opnieuw verbinden start een nieuwe koptelefoon bij nul.</string>
+    <string name="pair_price_title">betaalde prijs</string>
+    <string name="pair_price_label">bedrag (hele eenheden)</string>
+    <string name="pair_price_supporting">gebruikt voor de kosten per uur.</string>
+    <string name="pair_delete_title">deze koptelefoon verwijderen?</string>
+    <string name="pair_delete_body">elke sessie die ervoor is opgenomen wordt ook verwijderd. dit kan niet ongedaan worden gemaakt.</string>
+
+    <!-- Sessieregels -->
+    <string name="session_ongoing">bezig</string>
+    <string name="session_until">tot %1$s</string>
+    <string name="session_playing">%1$s afgespeeld</string>
+    <string name="session_recovered">hersteld</string>
+
+    <!-- Instellingen -->
+    <string name="settings_tracking">bijhouden</string>
+    <string name="settings_detailed_title">gedetailleerd bijhouden</string>
+    <string name="settings_detailed_body">voegt bekabelde koptelefoons en afspeeltijd toe. android meldt bekabelde aansluitgebeurtenissen alleen aan een actieve app, dus dit houdt een stille melding in het meldingenpaneel. bluetooth wordt hoe dan ook bijgehouden.</string>
+    <string name="settings_detailed_unavailable">niet beschikbaar totdat bluetoothtoegang is verleend: deze build declareert alleen het servicetype connectedDevice, dat android 14+ koppelt aan een bluetoothtoestemming.</string>
+    <string name="settings_devices">toestellen</string>
+    <string name="settings_devices_body">vink alles uit wat geen koptelefoon is — een autoradio of een luidspreker — om te stoppen met registreren.</string>
+    <string name="settings_device_subtitle">%1$s · eerst gezien %2$s</string>
+    <string name="settings_data">gegevens</string>
+    <string name="settings_export">json exporteren</string>
+    <string name="settings_import">importeren</string>
+    <string name="settings_import_warning">importeren vervangt alles wat nu is opgeslagen.</string>
+    <string name="settings_troubleshooting">problemen oplossen</string>
+    <string name="settings_battery_body">als sessies niet meer worden geregistreerd, controleer dan of ylih is uitgezonderd van batterijoptimalisatie — een app die geforceerd is gestopt, ontvangt geen verbindingsmeldingen meer totdat hij opnieuw wordt geopend.</string>
+    <string name="settings_battery_button">batterij-instellingen</string>
+    <string name="settings_battery_path">instellingen → apps → ylih → batterij → onbeperkt.</string>
+    <string name="settings_about">over</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — koptelefoonuren, lokaal bewaard en voor altijd.</string>
+    <string name="settings_import_confirm_title">alle gegevens vervangen?</string>
+    <string name="settings_import_confirm_body">het importeren van deze back-up verwijdert elk toestel, elke koptelefoon en elke sessie die nu is opgeslagen.</string>
+
+    <!-- Gedeelde acties -->
+    <string name="action_save">opslaan</string>
+    <string name="action_cancel">annuleren</string>
+    <string name="action_delete">verwijderen</string>
+    <string name="action_import">importeren</string>
+
+    <!-- Melding -->
+    <string name="channel_tracking">koptelefoon bijhouden</string>
+    <string name="channel_tracking_description">zichtbaar terwijl ylih let op bekabelde koptelefoons en afspelen. android meldt bekabelde aansluitgebeurtenissen niet aan apps die niet actief zijn.</string>
+    <string name="notification_title">koptelefoontijd bijhouden</string>
+    <string name="notification_starting">starten…</string>
+    <string name="notification_idle">wacht op koptelefoon</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d verbonden · %2$s</item>
+        <item quantity="other">%1$d verbonden · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d verbonden · %2$s · afspelen</item>
+        <item quantity="other">%1$d verbonden · %2$s · afspelen</item>
+    </plurals>
+
+    <!-- Snackbarberichten -->
+    <string name="detailed_needs_bluetooth">deze build heeft bluetoothtoegang nodig voordat hij bekabelde koptelefoons kan bijhouden</string>
+    <string name="export_done">back-up geëxporteerd</string>
+    <string name="export_failed">exporteren mislukt</string>
+    <string name="import_failed">importeren mislukt</string>
+    <string name="error_could_not_open">kon %1$s niet openen</string>
+    <plurals name="import_done">
+        <item quantity="one">%d sessie geïmporteerd</item>
+        <item quantity="other">%d sessies geïmporteerd</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sessie</item>
+        <item quantity="other">%d sessies</item>
+    </plurals>
+</resources>

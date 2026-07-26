@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Romanian. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - viața ta în căști</string>
+
+    <!-- Navigare -->
+    <string name="nav_headphones">căști</string>
+    <string name="nav_stats">statistici</string>
+    <string name="nav_settings">setări</string>
+
+    <!-- Tipuri de dispozitiv -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">prin cablu</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">necunoscut</string>
+
+    <!-- Prima pornire -->
+    <string name="welcome_title">bine ai venit în ylih</string>
+    <string name="welcome_intro">ylih înregistrează cât timp rămâne conectată fiecare pereche de căști, ca peste ani să poți încă răspunde la singura întrebare care contează despre o pereche: câte ore a rezistat?</string>
+    <string name="welcome_point_auto_title">conectează și uită</string>
+    <string name="welcome_point_auto_body">căștile bluetooth sunt înregistrate de la sine, din momentul conectării. nu trebuie lăsat nimic pornit.</string>
+    <string name="welcome_point_lifetime_title">o pereche, o durată de viață</string>
+    <string name="welcome_point_lifetime_body">când o pereche moare, retrage-o: totalul ei se blochează acolo, iar următoarea pereche a acelorași căști pornește din nou de la zero.</string>
+    <string name="welcome_point_detailed_title">cablu și redare</string>
+    <string name="welcome_point_detailed_body">urmărirea detaliată, din setări, adaugă căștile prin cablu și măsoară cât din acel timp s-a redat efectiv sunet.</string>
+    <string name="welcome_privacy">totul rămâne pe acest telefon. nu există niciun cont, iar aplicația nu are permisiune de internet.</string>
+    <string name="welcome_start">să începem</string>
+
+    <!-- Lista de căști -->
+    <string name="devices_in_use">în folosință</string>
+    <string name="devices_retired">retrase</string>
+    <string name="devices_empty_title">încă nicio pereche de căști</string>
+    <string name="devices_empty_body">conectează o pereche de căști bluetooth și vor apărea aici. căștile prin cablu au nevoie de urmărirea detaliată, din setări.</string>
+    <string name="devices_generation">perechea nr. %1$d</string>
+    <string name="devices_retired_on">retrasă pe %1$s</string>
+    <string name="devices_connected_for">conectată de %1$s</string>
+    <string name="devices_recent">%1$s / 7z</string>
+
+    <!-- Statistici -->
+    <string name="stats_title">toate căștile</string>
+    <!-- %1$s este un număr de sesiuni deja pluralizat, %2$s o dată. -->
+    <string name="stats_sessions_since">%1$s din %2$s</string>
+    <string name="stats_last_7">ultimele 7 zile</string>
+    <string name="stats_last_30">ultimele 30 de zile</string>
+    <string name="stats_average_session">sesiune medie</string>
+    <string name="stats_playing">redare</string>
+    <string name="stats_measured_span">perioadă măsurată</string>
+    <string name="stats_share">distribuie</string>
+    <string name="stats_daily_hours_30">ore pe zi (30 de zile)</string>
+    <string name="stats_by_pair">pe perechi</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · retrasă</string>
+    <string name="chart_max">max %1$s</string>
+
+    <!-- Detaliu pereche -->
+    <string name="pair_fallback_title">pereche</string>
+    <string name="pair_back">înapoi</string>
+    <string name="pair_more">mai multe</string>
+    <string name="pair_menu_rename">redenumește</string>
+    <string name="pair_menu_purchase">date de achiziție</string>
+    <string name="pair_menu_retire">retrage / înlocuită</string>
+    <string name="pair_menu_delete">șterge</string>
+    <string name="pair_lifetime">durata de viață a acestei perechi</string>
+    <string name="pair_retired_on">retrasă pe %1$s</string>
+    <string name="pair_retired_with_reason">retrasă pe %1$s · %2$s</string>
+    <string name="pair_connected_now">conectată acum · %1$s</string>
+    <string name="pair_sessions">sesiuni</string>
+    <string name="pair_average">medie</string>
+    <string name="pair_longest">cea mai lungă</string>
+    <string name="pair_first_seen">văzută prima dată</string>
+    <string name="pair_of_measured">din perioada măsurată</string>
+    <string name="pair_measured">măsurat</string>
+    <string name="pair_paid">plătit</string>
+    <string name="pair_per_hour">pe oră</string>
+    <string name="pair_bought">cumpărată</string>
+    <string name="pair_daily_hours_14">ore pe zi (14 zile)</string>
+    <string name="pair_rename_title">redenumește perechea</string>
+    <string name="pair_rename_label">nume</string>
+    <string name="pair_retire_title">retrage această pereche</string>
+    <string name="pair_retire_label">motiv (stricată, vândută, pierdută…)</string>
+    <string name="pair_retire_confirm">retrage</string>
+    <string name="pair_retire_supporting">totalurile se blochează aici. reconectarea aceluiași dispozitiv pornește o pereche nouă de la zero.</string>
+    <string name="pair_price_title">preț plătit</string>
+    <string name="pair_price_label">sumă (unități întregi)</string>
+    <string name="pair_price_supporting">folosit pentru costul pe oră.</string>
+    <string name="pair_delete_title">ștergi această pereche?</string>
+    <string name="pair_delete_body">se șterge și fiecare sesiune înregistrată pentru ea. acțiunea nu poate fi anulată.</string>
+
+    <!-- Rânduri de sesiune -->
+    <string name="session_ongoing">în desfășurare</string>
+    <string name="session_until">până la %1$s</string>
+    <string name="session_playing">%1$s redare</string>
+    <string name="session_recovered">recuperată</string>
+
+    <!-- Setări -->
+    <string name="settings_tracking">urmărire</string>
+    <string name="settings_detailed_title">urmărire detaliată</string>
+    <string name="settings_detailed_body">adaugă căștile prin cablu și timpul de redare. android raportează evenimentele mufei doar unei aplicații deja pornite, așa că rămâne o notificare silențioasă în bara de notificări. bluetooth este urmărit oricum.</string>
+    <string name="settings_detailed_unavailable">indisponibil până nu acorzi acces la bluetooth: această versiune declară doar tipul de serviciu connectedDevice, pe care android 14+ îl leagă de o permisiune bluetooth.</string>
+    <string name="settings_devices">dispozitive</string>
+    <string name="settings_devices_body">debifează ce nu sunt căști — un sistem auto sau o boxă — ca să nu mai fie înregistrat.</string>
+    <string name="settings_device_subtitle">%1$s · văzut prima dată %2$s</string>
+    <string name="settings_data">date</string>
+    <string name="settings_export">exportă json</string>
+    <string name="settings_import">importă</string>
+    <string name="settings_import_warning">importul înlocuiește tot ce este stocat acum.</string>
+    <string name="settings_troubleshooting">depanare</string>
+    <string name="settings_battery_body">dacă sesiunile nu se mai înregistrează, verifică dacă ylih este scutită de optimizarea bateriei — o aplicație oprită forțat nu mai primește evenimente de conectare până nu este deschisă din nou.</string>
+    <string name="settings_battery_button">setări baterie</string>
+    <string name="settings_battery_path">setări → aplicații → ylih → baterie → fără restricții.</string>
+    <string name="settings_about">despre</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — orele căștilor tale, păstrate local și pentru totdeauna.</string>
+    <string name="settings_import_confirm_title">înlocuiești toate datele?</string>
+    <string name="settings_import_confirm_body">importul acestei copii de rezervă șterge fiecare dispozitiv, pereche și sesiune stocate acum.</string>
+
+    <!-- Acțiuni comune -->
+    <string name="action_save">salvează</string>
+    <string name="action_cancel">anulează</string>
+    <string name="action_delete">șterge</string>
+    <string name="action_import">importă</string>
+
+    <!-- Notificare -->
+    <string name="channel_tracking">urmărire căști</string>
+    <string name="channel_tracking_description">afișată cât timp ylih urmărește căștile prin cablu și redarea. android nu livrează evenimentele mufei aplicațiilor care nu rulează.</string>
+    <string name="notification_title">se urmăresc orele de căști</string>
+    <string name="notification_starting">se pornește…</string>
+    <string name="notification_idle">se așteaptă căști</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d conectat · %2$s</item>
+        <item quantity="few">%1$d conectate · %2$s</item>
+        <item quantity="other">%1$d de conectate · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d conectat · %2$s · redare</item>
+        <item quantity="few">%1$d conectate · %2$s · redare</item>
+        <item quantity="other">%1$d de conectate · %2$s · redare</item>
+    </plurals>
+
+    <!-- Mesaje snackbar -->
+    <string name="detailed_needs_bluetooth">această versiune are nevoie de acces la bluetooth înainte de a putea urmări căștile prin cablu</string>
+    <string name="export_done">copie de rezervă exportată</string>
+    <string name="export_failed">exportul a eșuat</string>
+    <string name="import_failed">importul a eșuat</string>
+    <string name="error_could_not_open">nu s-a putut deschide %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">a fost importată %d sesiune</item>
+        <item quantity="few">au fost importate %d sesiuni</item>
+        <item quantity="other">au fost importate %d de sesiuni</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sesiune</item>
+        <item quantity="few">%d sesiuni</item>
+        <item quantity="other">%d de sesiuni</item>
+    </plurals>
+</resources>

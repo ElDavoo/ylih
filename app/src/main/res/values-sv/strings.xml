@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Swedish. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ditt liv i hörlurar</string>
+
+    <!-- Navigering -->
+    <string name="nav_headphones">hörlurar</string>
+    <string name="nav_stats">statistik</string>
+    <string name="nav_settings">inställningar</string>
+
+    <!-- Enhetstyper -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">kabel</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">okänd</string>
+
+    <!-- Första starten -->
+    <string name="welcome_title">välkommen till ylih</string>
+    <string name="welcome_intro">ylih registrerar hur länge varje par hörlurar är anslutet, så att du om flera år fortfarande kan svara på den enda frågan som spelar roll för ett par hörlurar: hur många timmar höll de?</string>
+    <string name="welcome_point_auto_title">anslut och glöm</string>
+    <string name="welcome_point_auto_body">bluetooth-hörlurar registreras av sig själva, från det ögonblick de ansluts. inget behöver köras i bakgrunden.</string>
+    <string name="welcome_point_lifetime_title">ett par, ett liv</string>
+    <string name="welcome_point_lifetime_body">när ett par dör, pensionera det: dess totalsumma fryses där och nästa par av samma hörlurar börjar om från noll.</string>
+    <string name="welcome_point_detailed_title">kabel och uppspelning</string>
+    <string name="welcome_point_detailed_body">detaljerad spårning, i inställningar, lägger till kabelanslutna hörlurar och mäter hur stor del av tiden som faktiskt spelades upp.</string>
+    <string name="welcome_privacy">allt stannar på den här telefonen. det finns inget konto, och appen har ingen internetbehörighet.</string>
+    <string name="welcome_start">kom igång</string>
+
+    <!-- Hörlurslista -->
+    <string name="devices_in_use">i bruk</string>
+    <string name="devices_retired">pensionerade</string>
+    <string name="devices_empty_title">inga hörlurar än</string>
+    <string name="devices_empty_body">anslut ett par bluetooth-hörlurar så dyker de upp här. kabelanslutna hörlurar kräver detaljerad spårning, i inställningar.</string>
+    <string name="devices_generation">par nr %1$d</string>
+    <string name="devices_retired_on">pensionerad %1$s</string>
+    <string name="devices_connected_for">ansluten %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Statistik -->
+    <string name="stats_title">alla hörlurar</string>
+    <!-- %1$s är ett redan pluraliserat sessionsantal, %2$s ett datum. -->
+    <string name="stats_sessions_since">%1$s sedan %2$s</string>
+    <string name="stats_last_7">senaste 7 dagarna</string>
+    <string name="stats_last_30">senaste 30 dagarna</string>
+    <string name="stats_average_session">genomsnittlig session</string>
+    <string name="stats_playing">uppspelning</string>
+    <string name="stats_measured_span">uppmätt period</string>
+    <string name="stats_share">dela</string>
+    <string name="stats_daily_hours_30">timmar per dag (30 dagar)</string>
+    <string name="stats_by_pair">per par</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · pensionerat</string>
+    <string name="chart_max">max %1$s</string>
+
+    <!-- Pardetaljer -->
+    <string name="pair_fallback_title">par</string>
+    <string name="pair_back">tillbaka</string>
+    <string name="pair_more">mer</string>
+    <string name="pair_menu_rename">byt namn</string>
+    <string name="pair_menu_purchase">köpinfo</string>
+    <string name="pair_menu_retire">pensionera / utbytt</string>
+    <string name="pair_menu_delete">ta bort</string>
+    <string name="pair_lifetime">livstid för detta par</string>
+    <string name="pair_retired_on">pensionerad %1$s</string>
+    <string name="pair_retired_with_reason">pensionerad %1$s · %2$s</string>
+    <string name="pair_connected_now">ansluten nu · %1$s</string>
+    <string name="pair_sessions">sessioner</string>
+    <string name="pair_average">genomsnitt</string>
+    <string name="pair_longest">längst</string>
+    <string name="pair_first_seen">sågs först</string>
+    <string name="pair_of_measured">av uppmätt</string>
+    <string name="pair_measured">uppmätt</string>
+    <string name="pair_paid">betalat</string>
+    <string name="pair_per_hour">per timme</string>
+    <string name="pair_bought">köpt</string>
+    <string name="pair_daily_hours_14">timmar per dag (14 dagar)</string>
+    <string name="pair_rename_title">byt namn på par</string>
+    <string name="pair_rename_label">namn</string>
+    <string name="pair_retire_title">pensionera detta par</string>
+    <string name="pair_retire_label">anledning (gick sönder, sålt, tappat bort…)</string>
+    <string name="pair_retire_confirm">pensionera</string>
+    <string name="pair_retire_supporting">totalsumman fryses här. att återansluta samma enhet startar ett nytt par från noll.</string>
+    <string name="pair_price_title">betalat pris</string>
+    <string name="pair_price_label">belopp (hela enheter)</string>
+    <string name="pair_price_supporting">används för kostnad per timme.</string>
+    <string name="pair_delete_title">ta bort detta par?</string>
+    <string name="pair_delete_body">varje registrerad session för det tas också bort. det går inte att ångra.</string>
+
+    <!-- Sessionsrader -->
+    <string name="session_ongoing">pågående</string>
+    <string name="session_until">till %1$s</string>
+    <string name="session_playing">%1$s uppspelning</string>
+    <string name="session_recovered">återställd</string>
+
+    <!-- Inställningar -->
+    <string name="settings_tracking">spårning</string>
+    <string name="settings_detailed_title">detaljerad spårning</string>
+    <string name="settings_detailed_body">lägger till kabelanslutna hörlurar och uppspelningstid. android rapporterar kabelhändelser bara till en app som redan körs, så detta innebär en tyst avisering i aviseringsfältet. bluetooth spåras ändå.</string>
+    <string name="settings_detailed_unavailable">otillgängligt tills bluetoothåtkomst har beviljats: den här versionen deklarerar bara tjänsttypen connectedDevice, som android 14+ kopplar till en bluetoothbehörighet.</string>
+    <string name="settings_devices">enheter</string>
+    <string name="settings_devices_body">avmarkera allt som inte är hörlurar — en bilstereo eller en högtalare — för att sluta registrera det.</string>
+    <string name="settings_device_subtitle">%1$s · sågs först %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">exportera json</string>
+    <string name="settings_import">importera</string>
+    <string name="settings_import_warning">import ersätter allt som lagras just nu.</string>
+    <string name="settings_troubleshooting">felsökning</string>
+    <string name="settings_battery_body">om sessioner slutar registreras, kontrollera att ylih är undantagen från batterioptimering — en app som har tvångsstoppats får inga fler anslutningshändelser förrän den öppnas igen.</string>
+    <string name="settings_battery_button">batteriinställningar</string>
+    <string name="settings_battery_path">inställningar → appar → ylih → batteri → obegränsad.</string>
+    <string name="settings_about">om</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — hörlurstimmar, sparade lokalt och för alltid.</string>
+    <string name="settings_import_confirm_title">ersätta all data?</string>
+    <string name="settings_import_confirm_body">att importera denna säkerhetskopia tar bort varje enhet, par och session som lagras just nu.</string>
+
+    <!-- Delade åtgärder -->
+    <string name="action_save">spara</string>
+    <string name="action_cancel">avbryt</string>
+    <string name="action_delete">ta bort</string>
+    <string name="action_import">importera</string>
+
+    <!-- Avisering -->
+    <string name="channel_tracking">hörlursspårning</string>
+    <string name="channel_tracking_description">visas medan ylih bevakar kabelanslutna hörlurar och uppspelning. android levererar inte kabelhändelser till appar som inte körs.</string>
+    <string name="notification_title">spårar hörlurstid</string>
+    <string name="notification_starting">startar…</string>
+    <string name="notification_idle">väntar på hörlurar</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d ansluten · %2$s</item>
+        <item quantity="other">%1$d anslutna · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d ansluten · %2$s · uppspelning</item>
+        <item quantity="other">%1$d anslutna · %2$s · uppspelning</item>
+    </plurals>
+
+    <!-- Snackbar-meddelanden -->
+    <string name="detailed_needs_bluetooth">den här versionen behöver bluetoothåtkomst innan den kan spåra kabelanslutna hörlurar</string>
+    <string name="export_done">säkerhetskopia exporterad</string>
+    <string name="export_failed">export misslyckades</string>
+    <string name="import_failed">import misslyckades</string>
+    <string name="error_could_not_open">det gick inte att öppna %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">importerade %d session</item>
+        <item quantity="other">importerade %d sessioner</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d session</item>
+        <item quantity="other">%d sessioner</item>
+    </plurals>
+</resources>

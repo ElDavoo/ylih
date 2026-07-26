@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Chechen. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — тахан дозалла наухьанин</string>
+
+    <!-- Навигация -->
+    <string name="nav_headphones">наухьанар</string>
+    <string name="nav_stats">статистика</string>
+    <string name="nav_settings">сеттингар</string>
+
+    <!-- Төрар устройстваш -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">проводан</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">магӏана</string>
+
+    <!-- Анхи ишкхаре -->
+    <string name="welcome_title">ylih-ра дика морша</string>
+    <string name="welcome_intro">ylih нохчалар наухьанар бӏалташца кӏам доза эцишэра яьлча, иза май суьрта шара хета ахира мохалла саьххаллин йоьду вопрос йалла йоьшучу: кийна соьатаяр сос дозалла?</string>
+    <string name="welcome_point_auto_title">жима хилла, забыв</string>
+    <string name="welcome_point_auto_body">bluetooth наухьанар автоматически жима хьалхачу, жима хӏалхо хӏора. какой йоьш работа буц аьккхира деш яц.</string>
+    <string name="welcome_point_lifetime_title">хӏара пара — хӏара дозалла</string>
+    <string name="welcome_point_lifetime_body">кхача пара устукхачу, хӏара дӏаяьллча: дӏахӏаллар сай вевза йацира, а дагахьо паре теллеван паре цӏа нолча гу.</string>
+    <string name="welcome_point_detailed_title">проводан а воспроизведение</string>
+    <string name="welcome_point_detailed_body">омара дӏаяьллер, сеттингареш, проводан наухьанар вогӏуьччу а кӏам доза ахира воспроизведение иза. </string>
+    <string name="welcome_privacy">массала мобилера йалар йа. аккаунт яц, а аппа интернет боьлу-норма яц.</string>
+    <string name="welcome_start">эхьа диян</string>
+
+    <!-- Наухьанар список -->
+    <string name="devices_in_use">ашалар йоьшу</string>
+    <string name="devices_retired">дӏаяьлла</string>
+    <string name="devices_empty_title">энца наухьанар яц</string>
+    <string name="devices_empty_body">bluetooth наухьана пара жима хьалхатӏе, иза сай йе агӏалар. проводан наухьанар омара дӏаяьллерца йолуш йаъ, сеттингареш.</string>
+    <string name="devices_generation">пара №%1$d</string>
+    <string name="devices_retired_on">дӏаяьлла %1$s</string>
+    <string name="devices_connected_for">жимехь %1$s</string>
+    <string name="devices_recent">%1$s / 7ДӀа</string>
+
+    <!-- Статистика -->
+    <string name="stats_title">массала наухьанар</string>
+    <string name="stats_sessions_since">%1$s %2$s хӏара</string>
+    <string name="stats_last_7">охьалойн 7ДӀа</string>
+    <string name="stats_last_30">охьалойн 30 ДӀа</string>
+    <string name="stats_average_session">дӏахалойн сессия</string>
+    <string name="stats_playing">воспроизведение</string>
+    <string name="stats_measured_span">из йоьшу период</string>
+    <string name="stats_share">бахьа</string>
+    <string name="stats_daily_hours_30">сак соьатаяр (30 ДӀа)</string>
+    <string name="stats_by_pair">паран яьлча</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · дӏаяьлла</string>
+    <string name="chart_max">макс. %1$s</string>
+
+    <!-- Пара экран -->
+    <string name="pair_fallback_title">пара</string>
+    <string name="pair_back">хӏора</string>
+    <string name="pair_more">йоших</string>
+    <string name="pair_menu_rename">йиза чӏаргӏалча</string>
+    <string name="pair_menu_purchase">кӏанӏахьара ан</string>
+    <string name="pair_menu_retire">дӏаяьллча / сеъна ду</string>
+    <string name="pair_menu_delete">устӏаяьллча</string>
+    <string name="pair_lifetime">мындара пара доза</string>
+    <string name="pair_retired_on">дӏаяьлла %1$s</string>
+    <string name="pair_retired_with_reason">дӏаяьлла %1$s · %2$s</string>
+    <string name="pair_connected_now">энца жимехь · %1$s</string>
+    <string name="pair_sessions">сессияр</string>
+    <string name="pair_average">дӏахалойн</string>
+    <string name="pair_longest">хӏона сессия</string>
+    <string name="pair_first_seen">анхи гӏаллачу</string>
+    <string name="pair_of_measured">из йоьшу</string>
+    <string name="pair_measured">из йоьшу</string>
+    <string name="pair_paid">харц</string>
+    <string name="pair_per_hour">соьатан яьлча</string>
+    <string name="pair_bought">кӏанӏах</string>
+    <string name="pair_daily_hours_14">сак соьатаяр (14 ДӀа)</string>
+    <string name="pair_rename_title">пара чӏаргӏалча</string>
+    <string name="pair_rename_label">йиза</string>
+    <string name="pair_retire_title">мындара пара дӏаяьллча</string>
+    <string name="pair_retire_label">причина (устукхачу, макъ, хилла…)</string>
+    <string name="pair_retire_confirm">дӏаяьллча</string>
+    <string name="pair_retire_supporting">дӏахӏаллар сай вевза йацира. теллеван устройства жима хьалхачу сайтохх ца паре цӏа нолча гу.</string>
+    <string name="pair_price_title">хархьамалла ана</string>
+    <string name="pair_price_label">сумма (ХӀара единиц)</string>
+    <string name="pair_price_supporting">соьатан баьлгӏалла яьлча йацира.</string>
+    <string name="pair_delete_title">мындара пара устӏаяьллча?</string>
+    <string name="pair_delete_body">массала сессияр мындар яьлча устӏаяьллча йацира. махкачу йоьш яц.</string>
+
+    <!-- Сессия яьлар -->
+    <string name="session_ongoing">йолуш йо</string>
+    <string name="session_until">далаза %1$s</string>
+    <string name="session_playing">%1$s воспроизведение</string>
+    <string name="session_recovered">бӏара</string>
+
+    <!-- Сеттингар -->
+    <string name="settings_tracking">дӏаяьллер</string>
+    <string name="settings_detailed_title">омара дӏаяьллер</string>
+    <string name="settings_detailed_body">проводан наухьанар вогӏуьччу а воспроизведение доза. android проводан жима йоьшу эвен лайла йохьанах яц дӏа пешера, иза тӏе бӏалташча дахьалыр адӏаяьлла арна. bluetooth кхачу огӏаре дӏаяьллам йа.</string>
+    <string name="settings_detailed_unavailable">bluetooth боьлу-норма йалех йаьсса далаза магӏалам. мындара сборка connectedDevice сервис төр огӏуььча, а-дан android 14+ bluetooth боьлу-норма вогӏуьйча.</string>
+    <string name="settings_devices">устройстваш</string>
+    <string name="settings_devices_body">наухьанар магӏа йоьшу йаьхӏаллеш флажок кӏаса — автомобиль радио яккхе валар яьлча шорайтӏе.</string>
+    <string name="settings_device_subtitle">%1$s · анхи гӏаллачу %2$s</string>
+    <string name="settings_data">ан</string>
+    <string name="settings_export">json-а экспорт</string>
+    <string name="settings_import">импорт</string>
+    <string name="settings_import_warning">импорт энца сай йоьшу массала сеъна йацира.</string>
+    <string name="settings_troubleshooting">дефектар шийтар</string>
+    <string name="settings_battery_body">сессияр дӏаяьллер йоьшу йалаз, ylih батарея оптимизацие хӏаьчаьхна тӏе йалара йаяьлча. аппа кхеста йоьшу деш яц жима сигналар йалар.</string>
+    <string name="settings_battery_button">батарея сеттингар</string>
+    <string name="settings_battery_path">сеттингар → аппар → ylih → батарея → ограничение цӏаьхна.</string>
+    <string name="settings_about">мындара тӏе</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — наухьана соьатаяр, локал йо а имме.</string>
+    <string name="settings_import_confirm_title">массала ан сеъна йацира?</string>
+    <string name="settings_import_confirm_body">мындара резервнах копи импорт энца йоьшу устройствар, паран а сессияр массала устӏаяьллча гулар.</string>
+
+    <!-- Общих действий -->
+    <string name="action_save">сохранить</string>
+    <string name="action_cancel">юхьа</string>
+    <string name="action_delete">устӏаяьллча</string>
+    <string name="action_import">импорт</string>
+
+    <!-- Уведомление -->
+    <string name="channel_tracking">наухьана дӏаяьллер</string>
+    <string name="channel_tracking_description">йе йолуш йо ylih проводан наухьанар а воспроизведение дӏаяьллехь. android проводан жима йоьшу эвен йохьанах яц аппар магӏалехь.</string>
+    <string name="notification_title">наухьана доза дӏаяьллер</string>
+    <string name="notification_starting">эхьалаша…</string>
+    <string name="notification_idle">наухьанар караза</string>
+    <plurals name="notification_active">
+        <item quantity="one">жимехь: %1$d · %2$s</item>
+        <item quantity="other">жимехь: %1$d · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">жимехь: %1$d · %2$s · воспроизведение</item>
+        <item quantity="other">жимехь: %1$d · %2$s · воспроизведение</item>
+    </plurals>
+
+    <!-- Сообщения -->
+    <string name="detailed_needs_bluetooth">мындара сборка проводан наухьанар дӏаяьллехь bluetooth боьлу-норма йоьшу йацира</string>
+    <string name="export_done">резервнах копи экспорт йоьшу</string>
+    <string name="export_failed">экспорт йоьшу яц</string>
+    <string name="import_failed">импорт йоьшу яц</string>
+    <string name="error_could_not_open">%1$s оьцуьйти йоьшу яц</string>
+    <plurals name="import_done">
+        <item quantity="one">импортлоьччу %d сессия</item>
+        <item quantity="other">импортлоьччу %d сессияр</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d сессия</item>
+        <item quantity="other">%d сессияр</item>
+    </plurals>
+</resources>

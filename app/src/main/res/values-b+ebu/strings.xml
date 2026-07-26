@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Embu. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — wĩ waku ũrĩa ũrĩ na mahoya</string>
+
+    <!-- Rũraniĩro rwa mũthemba -->
+    <string name="nav_headphones">mahoya</string>
+    <string name="nav_stats">ĩrangĩro</string>
+    <string name="nav_settings">ĩmenyithia</string>
+
+    <!-- Mĩruta ya kĩruta -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">rũruta</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ĩtaarĩ ĩrĩ njũkĩrĩ</string>
+
+    <!-- Mbere ya gũthima -->
+    <string name="welcome_title">karũa njega kwa ylih</string>
+    <string name="welcome_intro">ylih ĩmenyaga mahoya maarũa mana ũmwe ũrĩa ũrĩ na njũkĩrĩ, nĩguo nĩ ũguo kana ĩtũ rũmwe rũa mĩaka ĩrĩa yĩngĩ nĩũũmenyaga ũguo nĩguo ũguo ũrĩa ũguo mahoya maathigaga mĩaka yothe?</string>
+    <string name="welcome_point_auto_title">njũkana o makĩĩo</string>
+    <string name="welcome_point_auto_body">mahoya ma bluetooth memenyagwo mwarũngu, kuuma rĩrĩa meenjũkana. gũtũũ gũtaarĩ kĩndũ kĩa gũtũũ gĩkĩruta.</string>
+    <string name="welcome_point_lifetime_title">mbere ĩmwe, wĩ ũmwe</string>
+    <string name="welcome_point_lifetime_body">rĩrĩa mahoya maruta, mahoya macio ĩrangĩro yothe yooya kũrĩ haarũ, na mahoya ma mwanwa wa ndũ ĩyo ĩyo nimenyaga kuuma kuingĩ.</string>
+    <string name="welcome_point_detailed_title">rũruta na kĩruta</string>
+    <string name="welcome_point_detailed_body">ĩmenyithia ĩrĩa yoona, kũrĩ ĩmenyithia, yoongera mahoya ma rũruta na ĩmenyaga kana riakĩ rĩa ruo ũmwe rĩarĩ na kĩruta.</string>
+    <string name="welcome_privacy">gĩothe kĩgĩkooyaga kũrĩ ĩrĩngĩ rĩĩ. gũtũũ gũtaarĩ akaunti, na ylih ĩtaarĩ na mahoya ma ĩntarineti.</string>
+    <string name="welcome_start">thima</string>
+
+    <!-- Njaandũ cia mahoya -->
+    <string name="devices_in_use">ĩrĩ na gũtũũ</string>
+    <string name="devices_retired">ĩruta</string>
+    <string name="devices_empty_title">mahoya mataarĩ kuo</string>
+    <string name="devices_empty_body">njũkana mahoya ma bluetooth, nayo nĩyoonyitwo haarũ. mahoya ma rũruta nĩmagĩtaka ĩmenyithia ĩrĩa yoona, kũrĩ ĩmenyithia.</string>
+    <string name="devices_generation">mbere #%1$d</string>
+    <string name="devices_retired_on">ĩruta %1$s</string>
+    <string name="devices_connected_for">ĩrĩ na njũkĩrĩ %1$s</string>
+    <string name="devices_recent">%1$s / 7a</string>
+
+    <!-- Ĩrangĩro -->
+    <string name="stats_title">mahoya mothe</string>
+    <string name="stats_sessions_since">%1$s kuuma %2$s</string>
+    <string name="stats_last_7">mahinda 7 makĩrĩngĩra</string>
+    <string name="stats_last_30">mahinda 30 makĩrĩngĩra</string>
+    <string name="stats_average_session">mahinda ma gũkĩngĩra</string>
+    <string name="stats_playing">kĩruta</string>
+    <string name="stats_measured_span">ruo ũrĩa wemenyithĩtwo</string>
+    <string name="stats_share">wĩ</string>
+    <string name="stats_daily_hours_30">mahinda ma rua (mahinda 30)</string>
+    <string name="stats_by_pair">kwa mbere</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · ĩruta</string>
+    <string name="chart_max">%1$s kwa gũtũũ</string>
+
+    <!-- Rũraniĩro rwa mbere -->
+    <string name="pair_fallback_title">mbere</string>
+    <string name="pair_back">rũmĩrũ</string>
+    <string name="pair_more">makĩĩo mao</string>
+    <string name="pair_menu_rename">ĩmenyithia rĩĩta</string>
+    <string name="pair_menu_purchase">ũmenyithia wa gũũru</string>
+    <string name="pair_menu_retire">ruta / yooyitwo</string>
+    <string name="pair_menu_delete">thamba</string>
+    <string name="pair_lifetime">wĩ wa mbere ĩyo</string>
+    <string name="pair_retired_on">ĩruta %1$s</string>
+    <string name="pair_retired_with_reason">ĩruta %1$s · %2$s</string>
+    <string name="pair_connected_now">ĩrĩ na njũkĩrĩ haarũ · %1$s</string>
+    <string name="pair_sessions">mahinda</string>
+    <string name="pair_average">mahinda ma gũkĩngĩra</string>
+    <string name="pair_longest">mahinda ma mwanya ũrĩa mwanya</string>
+    <string name="pair_first_seen">rĩrĩa ĩkooyitwo</string>
+    <string name="pair_of_measured">ĩrĩa yemenyithĩtwo</string>
+    <string name="pair_measured">yemenyithĩtwo</string>
+    <string name="pair_paid">yoothĩtwo mahoya</string>
+    <string name="pair_per_hour">kwa mahinda</string>
+    <string name="pair_bought">yoothĩtwo</string>
+    <string name="pair_daily_hours_14">mahinda ma rua (mahinda 14)</string>
+    <string name="pair_rename_title">ĩmenyithia rĩĩta ria mbere</string>
+    <string name="pair_rename_label">rĩĩta</string>
+    <string name="pair_retire_title">ruta mbere ĩyo</string>
+    <string name="pair_retire_label">o ruo (maruta, maathĩtwo, mataanirio…)</string>
+    <string name="pair_retire_confirm">ruta</string>
+    <string name="pair_retire_supporting">ĩrangĩro yooya kũrĩ haarũ. rĩrĩa kĩruta kĩamanjũkana, mbere ĩmwe ĩthaima kuuma kuingĩ.</string>
+    <string name="pair_price_title">mahoya maathĩtwo</string>
+    <string name="pair_price_label">mahoya (matarĩ ma ũmwe)</string>
+    <string name="pair_price_supporting">ĩrĩ na gũtũũ kwa ũmenyithia wa mahoya kwa mahinda.</string>
+    <string name="pair_delete_title">thamba mbere ĩyo?</string>
+    <string name="pair_delete_body">mahinda mothe maarĩ na njũkĩrĩ nayo nĩthambwo. ĩyo ĩtaarĩ na rũmĩrũ.</string>
+
+    <!-- Rũraniĩro rwa mahinda -->
+    <string name="session_ongoing">ĩrĩ na ruo</string>
+    <string name="session_until">o kana %1$s</string>
+    <string name="session_playing">%1$s ĩrĩ na kĩruta</string>
+    <string name="session_recovered">yooyitwo nĩngĩ</string>
+
+    <!-- Ĩmenyithia -->
+    <string name="settings_tracking">ĩmenyithia</string>
+    <string name="settings_detailed_title">ĩmenyithia ĩrĩa yoona</string>
+    <string name="settings_detailed_body">yoongera mahoya ma rũruta na ruo rĩa kĩruta. android ĩrĩ na ũguo mĩruko ya rũruta ĩrĩa yoonyitwo kwa ruo ũmwe, nĩguo nĩ ũguo kana ũmwene ũrĩa ũrĩ na mahoya. bluetooth ĩmenyagwo kwa ndũ yothe.</string>
+    <string name="settings_detailed_unavailable">ĩtaarĩ na ruo kuona android 14+ ĩmenyaga mahoya: kũruta kĩa ndũ ĩyo kĩroongo connectedDevice ĩrĩa mahoya ma bluetooth.</string>
+    <string name="settings_devices">mĩruta</string>
+    <string name="settings_devices_body">thamba kĩndũ kĩa mahoya - kĩruta kĩa ndũ kana gĩ gĩa mahoya - nĩguo kana mĩmenyithio ĩrĩ na ruo.</string>
+    <string name="settings_device_subtitle">%1$s · rĩrĩa ĩkooyitwo %2$s</string>
+    <string name="settings_data">ũmenyithia</string>
+    <string name="settings_export">thaara nja json</string>
+    <string name="settings_import">ruta mwarũngu</string>
+    <string name="settings_import_warning">ruta mwarũngu rĩgĩthamba gĩothe kĩa haarũ.</string>
+    <string name="settings_troubleshooting">ruo rũa mahoya</string>
+    <string name="settings_battery_body">ruo mahinda maruta ĩmenyithia, menyaga kana ylih ĩrĩ na mahoya kwa kĩruta - kĩruta kĩa android ĩtaarĩ na mahoya o nakĩo kuuma kana kĩooyitwo nĩngĩ.</string>
+    <string name="settings_battery_button">ĩmenyithia ya kĩruta</string>
+    <string name="settings_battery_path">ĩmenyithia → mĩruta → ylih → kĩruta → gũtũũ gwa makĩĩo.</string>
+    <string name="settings_about">o ylih</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — mahinda ma mahoya, meguo kũrĩ ĩrĩngĩ rĩĩ na mahinda ma kũingĩ.</string>
+    <string name="settings_import_confirm_title">thamba gĩothe kĩa ũmenyithia?</string>
+    <string name="settings_import_confirm_body">ruta mwarũngu rĩgĩthamba mĩruta yothe, mbere, na mahinda marĩ haarũ.</string>
+
+    <!-- Ũtũũri wa ruo -->
+    <string name="action_save">rutĩa</string>
+    <string name="action_cancel">kana</string>
+    <string name="action_delete">thamba</string>
+    <string name="action_import">ruta mwarũngu</string>
+
+    <!-- Ũtaarũ -->
+    <string name="channel_tracking">ĩmenyithia ya mahoya</string>
+    <string name="channel_tracking_description">ĩonyitwo rĩrĩa ylih ĩrĩ na mahoya ma rũruta na kĩruta. android ĩtaarĩ na mĩruko ya rũruta kwa mĩruta ĩtaarĩ na ruo.</string>
+    <string name="notification_title">ĩmenyithia ya mahinda ma mahoya</string>
+    <string name="notification_starting">ĩthima…</string>
+    <string name="notification_idle">ĩrĩ na mahoya</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d ĩrĩ na njũkĩrĩ · %2$s</item>
+        <item quantity="other">%1$d ĩrĩ na njũkĩrĩ · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d ĩrĩ na njũkĩrĩ · %2$s · kĩruta</item>
+        <item quantity="other">%1$d ĩrĩ na njũkĩrĩ · %2$s · kĩruta</item>
+    </plurals>
+
+    <!-- Ũtaarũ wa mahoya -->
+    <string name="detailed_needs_bluetooth">kũruta kĩa ndũ kĩa mahoya kwa ĩmenyithia ya rũruta</string>
+    <string name="export_done">thaara nja ĩthaama</string>
+    <string name="export_failed">thaara nja ĩtagĩthaama</string>
+    <string name="import_failed">ruta mwarũngu ĩtagĩthaama</string>
+    <string name="error_could_not_open">ĩtagĩcooka kũruta %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">ruta mwarũngu mahinda %d</item>
+        <item quantity="other">ruta mwarũngu mahinda %d</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">mahinda %d</item>
+        <item quantity="other">mahinda %d</item>
+    </plurals>
+</resources>

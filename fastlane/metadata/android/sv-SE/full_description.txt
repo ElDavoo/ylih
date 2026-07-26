@@ -1,0 +1,40 @@
+Hörlurar dör förr eller senare. Innan de gör det svarar ylih på den enda frågan som verkligen spelar roll för ett par: hur många timmar fick du ut av dem?
+
+Varje gång dina hörlurar ansluts skriver ylih ner när. Varje gång de kopplas från skriver den ner när. Det är hela idén — och eftersom en anslutning bara är två tidsstämplar behöver appen inte köras i bakgrunden för att göra det.
+
+VAD DEN REGISTRERAR
+
+• Livstidstimmar per fysiskt par. När ett par dör, pensionera det — totalsumman fryses, och nästa par av samma modell börjar om från noll som generation 2. Dina gamla siffror blandas aldrig med de nya.
+• Varje session, sparad för alltid: anslutningstid, frånkopplingstid och varför den slutade.
+• Uppspelningstid (valfritt): hur mycket av den anslutna tiden som faktiskt spelade upp ljud, så att "hänger runt halsen" inte räknas som lyssning.
+• Kostnad per timme, om du anger vad du betalade. Det är en tillfredsställande siffra att se sjunka.
+
+TVÅ SPÅRNINGSLÄGEN
+
+Endast bluetooth — standardläget. Inget av appen körs, inget ligger i aviseringsfältet, och det finns ingen batterikostnad, eftersom android levererar anslutningshändelser till appen även när den är stängd.
+
+Detaljerad spårning — valfritt. Lägger till kabelanslutna och usb-hörlurar och mäter uppspelning i förhållande till anslutningstid. Kräver en tyst avisering med lägsta prioritet, eftersom android bara rapporterar kabelhändelser till en app som redan körs. Det, och inget annat, är varför aviseringen finns.
+
+Bluetooth spåras i båda fallen.
+
+SIFFROR DU KAN LITA PÅ ÅRTIONDEN SENARE
+
+Långsiktiga totalsummor är värdelösa om en krasch eller omstart tyst lägger till tolv timmar. Så:
+
+• En session som lämnats öppen av en omstart eller krasch stängs vid sitt senast kända pulsslag, aldrig senare än det ögonblick telefonen startade om. Tid då telefonen var avstängd räknas aldrig med.
+• Om dina hörlurar fortfarande är anslutna efter en omstart startar en ny session, i stället för att den gamla sträcks ut över gapet.
+• Sessioner får pulsslag medan de är öppna, så skadan från en missad frånkoppling begränsas.
+
+PRIVAT PER KONSTRUKTION
+
+ylih har ingen internetbehörighet. Inte "vi lovar att inte skicka något" — appen är tekniskt oförmögen att göra det. Det finns inga konton, ingen analys, ingen reklam och ingen spårning. Allt lever i en databas på din telefon.
+
+Inställningar → Exportera sparar hela din historik som läsbar json, och Importera återställer den, så att byta telefon aldrig kostar dig dina siffror.
+
+BEHÖRIGHETER
+
+• Enheter i närheten (bluetooth): krävs för att ta emot anslutningshändelser och läsa ett headsets namn. Utan den kan bluetoothspårning inte fungera alls.
+• Aviseringar: endast för aviseringen om detaljerad spårning.
+• Kör vid start: för att stänga sessioner som avstängningen aldrig rapporterade.
+
+Öppen källkod under MIT-licensen.

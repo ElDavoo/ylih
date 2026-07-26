@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Finnish. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - elämäsi kuulokkeissa</string>
+
+    <!-- Alanavigointi -->
+    <string name="nav_headphones">kuulokkeet</string>
+    <string name="nav_stats">tilastot</string>
+    <string name="nav_settings">asetukset</string>
+
+    <!-- Laitetyypit -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">langallinen</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">tuntematon</string>
+
+    <!-- Ensimmäinen käynnistys -->
+    <string name="welcome_title">tervetuloa sovellukseen ylih</string>
+    <string name="welcome_intro">ylih tallentaa, kuinka kauan jokainen kuulokepari pysyy yhteydessä, joten vuosien päästä voit yhä vastata ainoaan kysymykseen, joka kuulokkeista oikeasti merkitsee: kuinka monta tuntia ne kestivät?</string>
+    <string name="welcome_point_auto_title">yhdistä ja unohda</string>
+    <string name="welcome_point_auto_body">bluetooth-kuulokkeet tallentuvat itsestään heti, kun ne yhdistetään. mitään ei tarvitse jättää käyntiin.</string>
+    <string name="welcome_point_lifetime_title">yksi pari, yksi elinikä</string>
+    <string name="welcome_point_lifetime_body">kun pari kuolee, poista se käytöstä: sen kokonaisaika jäätyy siihen, ja seuraava saman kuulokemallin pari aloittaa taas nollasta.</string>
+    <string name="welcome_point_detailed_title">langalliset ja toisto</string>
+    <string name="welcome_point_detailed_body">asetuksista löytyvä tarkka seuranta lisää langalliset kuulokkeet ja mittaa, kuinka suuri osa ajasta meni oikeasti toistoon.</string>
+    <string name="welcome_privacy">kaikki pysyy tässä puhelimessa. tiliä ei ole, eikä sovelluksella ole internet-oikeutta.</string>
+    <string name="welcome_start">aloita</string>
+
+    <!-- Kuulokeluettelo -->
+    <string name="devices_in_use">käytössä</string>
+    <string name="devices_retired">käytöstä poistetut</string>
+    <string name="devices_empty_title">ei vielä kuulokkeita</string>
+    <string name="devices_empty_body">yhdistä bluetooth-kuulokkeet, niin ne ilmestyvät tänne. langalliset kuulokkeet vaativat tarkan seurannan asetuksista.</string>
+    <string name="devices_generation">pari %1$d</string>
+    <string name="devices_retired_on">poistettu käytöstä %1$s</string>
+    <string name="devices_connected_for">yhdistettynä %1$s</string>
+    <string name="devices_recent">%1$s / 7 vrk</string>
+
+    <!-- Tilastot -->
+    <string name="stats_title">kaikki kuulokkeet</string>
+    <!-- %1$s is an already-pluralised session count, %2$s a date. -->
+    <string name="stats_sessions_since">%1$s, alkaen %2$s</string>
+    <string name="stats_last_7">viimeiset 7 päivää</string>
+    <string name="stats_last_30">viimeiset 30 päivää</string>
+    <string name="stats_average_session">keskimääräinen sessio</string>
+    <string name="stats_playing">toistoa</string>
+    <string name="stats_measured_span">mitattu ajanjakso</string>
+    <string name="stats_share">jaa</string>
+    <string name="stats_daily_hours_30">tunnit päivässä (30 päivää)</string>
+    <string name="stats_by_pair">pareittain</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · poistettu käytöstä</string>
+    <string name="chart_max">enintään %1$s</string>
+
+    <!-- Parin tiedot -->
+    <string name="pair_fallback_title">pari</string>
+    <string name="pair_back">takaisin</string>
+    <string name="pair_more">lisää</string>
+    <string name="pair_menu_rename">nimeä uudelleen</string>
+    <string name="pair_menu_purchase">ostotiedot</string>
+    <string name="pair_menu_retire">poista käytöstä / vaihdettu</string>
+    <string name="pair_menu_delete">poista</string>
+    <string name="pair_lifetime">tämän parin elinikä</string>
+    <string name="pair_retired_on">poistettu käytöstä %1$s</string>
+    <string name="pair_retired_with_reason">poistettu käytöstä %1$s · %2$s</string>
+    <string name="pair_connected_now">yhdistettynä nyt · %1$s</string>
+    <string name="pair_sessions">sessiot</string>
+    <string name="pair_average">keskiarvo</string>
+    <string name="pair_longest">pisin</string>
+    <string name="pair_first_seen">ensi kerta havaittu</string>
+    <string name="pair_of_measured">mitatusta</string>
+    <string name="pair_measured">mitattu</string>
+    <string name="pair_paid">maksettu</string>
+    <string name="pair_per_hour">tunnilta</string>
+    <string name="pair_bought">ostettu</string>
+    <string name="pair_daily_hours_14">tunnit päivässä (14 päivää)</string>
+    <string name="pair_rename_title">nimeä pari uudelleen</string>
+    <string name="pair_rename_label">nimi</string>
+    <string name="pair_retire_title">poista tämä pari käytöstä</string>
+    <string name="pair_retire_label">syy (rikkoutui, myyty, hukkui…)</string>
+    <string name="pair_retire_confirm">poista käytöstä</string>
+    <string name="pair_retire_supporting">kokonaisajat jäätyvät tähän. saman laitteen yhdistäminen uudelleen aloittaa uuden parin nollasta.</string>
+    <string name="pair_price_title">maksettu hinta</string>
+    <string name="pair_price_label">summa (kokonaisia yksiköitä)</string>
+    <string name="pair_price_supporting">käytetään tuntihinnan laskemiseen.</string>
+    <string name="pair_delete_title">poistetaanko tämä pari?</string>
+    <string name="pair_delete_body">myös kaikki sille tallennetut sessiot poistetaan. tätä ei voi perua.</string>
+
+    <!-- Sessiorivit -->
+    <string name="session_ongoing">käynnissä</string>
+    <string name="session_until">%1$s asti</string>
+    <string name="session_playing">%1$s toistoa</string>
+    <string name="session_recovered">palautettu</string>
+
+    <!-- Asetukset -->
+    <string name="settings_tracking">seuranta</string>
+    <string name="settings_detailed_title">tarkka seuranta</string>
+    <string name="settings_detailed_body">lisää langalliset kuulokkeet ja toistoajan. android ilmoittaa langallisen liittämisen vain käynnissä olevalle sovellukselle, joten tämä pitää ilmoitusalueella hiljaisen ilmoituksen. bluetooth seurataan joka tapauksessa.</string>
+    <string name="settings_detailed_unavailable">ei käytettävissä ennen kuin bluetooth-oikeus on myönnetty: tämä versio ilmoittaa vain connectedDevice-palvelutyypin, jonka android 14+ sitoo bluetooth-oikeuteen.</string>
+    <string name="settings_devices">laitteet</string>
+    <string name="settings_devices_body">poista valinta kaikesta, mikä ei ole kuulokkeita — auton stereot tai kaiutin — jotta niitä ei enää tallenneta.</string>
+    <string name="settings_device_subtitle">%1$s · ensi kerta havaittu %2$s</string>
+    <string name="settings_data">tiedot</string>
+    <string name="settings_export">vie json</string>
+    <string name="settings_import">tuo</string>
+    <string name="settings_import_warning">tuonti korvaa kaiken tällä hetkellä tallennetun.</string>
+    <string name="settings_troubleshooting">vianmääritys</string>
+    <string name="settings_battery_body">jos sessioiden tallennus lakkaa, tarkista, että ylih on vapautettu akun optimoinnista — pakkosuljettu sovellus ei vastaanota yhteysilmoituksia enää ennen kuin se avataan uudelleen.</string>
+    <string name="settings_battery_button">akkuasetukset</string>
+    <string name="settings_battery_path">asetukset → sovellukset → ylih → akku → ei rajoituksia.</string>
+    <string name="settings_about">tietoja</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — kuulokeaikaa, säilytettynä paikallisesti ja ikuisesti.</string>
+    <string name="settings_import_confirm_title">korvataanko kaikki tiedot?</string>
+    <string name="settings_import_confirm_body">tämän varmuuskopion tuominen poistaa kaikki nyt tallennetut laitteet, parit ja sessiot.</string>
+
+    <!-- Yhteiset toiminnot -->
+    <string name="action_save">tallenna</string>
+    <string name="action_cancel">peruuta</string>
+    <string name="action_delete">poista</string>
+    <string name="action_import">tuo</string>
+
+    <!-- Ilmoitus -->
+    <string name="channel_tracking">kuulokeseuranta</string>
+    <string name="channel_tracking_description">näkyy, kun ylih tarkkailee langallisia kuulokkeita ja toistoa. android ei ilmoita langallisen liittämisen tapahtumia sovelluksille, jotka eivät ole käynnissä.</string>
+    <string name="notification_title">kuulokeajan seuranta</string>
+    <string name="notification_starting">käynnistyy…</string>
+    <string name="notification_idle">odottaa kuulokkeita</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d yhdistetty · %2$s</item>
+        <item quantity="other">%1$d yhdistetty · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d yhdistetty · %2$s · toistaa</item>
+        <item quantity="other">%1$d yhdistetty · %2$s · toistaa</item>
+    </plurals>
+
+    <!-- Ilmoitusviestit -->
+    <string name="detailed_needs_bluetooth">tämä versio tarvitsee bluetooth-oikeuden ennen kuin se voi seurata langallisia kuulokkeita</string>
+    <string name="export_done">varmuuskopio viety</string>
+    <string name="export_failed">vienti epäonnistui</string>
+    <string name="import_failed">tuonti epäonnistui</string>
+    <string name="error_could_not_open">kohdetta %1$s ei voitu avata</string>
+    <plurals name="import_done">
+        <item quantity="one">tuotiin %d sessio</item>
+        <item quantity="other">tuotiin %d sessiota</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sessio</item>
+        <item quantity="other">%d sessiota</item>
+    </plurals>
+</resources>

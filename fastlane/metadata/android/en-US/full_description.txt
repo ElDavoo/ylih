@@ -1,0 +1,40 @@
+Headphones die. Before they do, ylih answers the only question that really matters about a pair: how many hours did you get out of them?
+
+Every time your headphones connect, ylih writes down when. Every time they disconnect, it writes down when. That is the whole idea — and because a connection is just two timestamps, the app does not need to run in the background to do it.
+
+WHAT IT TRACKS
+
+• Lifetime hours per physical pair. When a pair dies, retire it — the total freezes, and the next pair of the same model starts again at zero as generation 2. Your old numbers are never mixed in with the new ones.
+• Every session, kept permanently: connected at, disconnected at, and why it ended.
+• Playback time (optional): how much of that connected time was actually playing audio, so "worn around my neck" doesn't count as listening.
+• Cost per hour, if you enter what you paid. It is a satisfying number to watch fall.
+
+TWO TRACKING MODES
+
+Bluetooth only — the default. Nothing of the app runs, nothing sits in your notification shade, and there is no battery cost, because Android delivers connection events to the app even while it is closed.
+
+Detailed tracking — optional. Adds wired and USB headphones, and measures playback versus connected time. It needs one silent, minimum-priority notification, because Android only reports wired plug events to an app that is already running. That, and nothing else, is why the notification exists.
+
+Bluetooth is tracked either way.
+
+NUMBERS YOU CAN TRUST YEARS LATER
+
+Long-term totals are worthless if a crash or a reboot quietly adds twelve hours. So:
+
+• A session left open by a reboot or a crash is closed at its last known heartbeat, never later than the moment the phone booted. Time the phone spent switched off is never counted.
+• If your headphones are still connected after a reboot, a fresh session starts rather than the old one being stretched across the gap.
+• Sessions are heartbeated while open, so the damage from a missed disconnect is bounded.
+
+PRIVATE BY CONSTRUCTION
+
+ylih has no internet permission. Not "we promise not to send anything" — the app is technically incapable of it. There are no accounts, no analytics, no ads, and no tracking. Everything lives in a database on your phone.
+
+Settings → Export writes your whole history as readable JSON, and Import restores it, so moving to a new phone never costs you your numbers.
+
+PERMISSIONS
+
+• Nearby devices (Bluetooth): required to receive connection events and read a headset's name. Without it, Bluetooth tracking cannot work at all.
+• Notifications: only for the detailed-tracking notification.
+• Run at startup: to close sessions the shutdown never reported.
+
+Open source under the MIT licence.

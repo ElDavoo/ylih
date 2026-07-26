@@ -1,0 +1,8 @@
+Phiên bản đầu tiên.
+
+• Số giờ trọn đời cho từng đôi tai nghe vật lý, với các thế hệ để một đôi thay thế bắt đầu lại từ số 0 thay vì kế thừa tổng số của đôi cũ.
+• Mọi kết nối được lưu vĩnh viễn, kèm thống kê theo ngày và theo từng đôi.
+• Theo dõi chi tiết tùy chọn cho tai nghe có dây và USB, cùng thời gian phát nhạc so với thời gian kết nối.
+• Chi phí cho mỗi giờ nghe.
+• Xuất và nhập JSON.
+• Không có quyền truy cập internet: không có gì rời khỏi điện thoại.

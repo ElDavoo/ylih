@@ -1,0 +1,40 @@
+Fones de ouvido morrem. Antes que isso aconteça, o ylih responde à única pergunta que realmente importa sobre um par: quantas horas você tirou deles?
+
+Toda vez que seus fones conectam, o ylih anota quando. Toda vez que desconectam, anota quando também. É essa a ideia toda — e como uma conexão é só dois horários, o app não precisa ficar em execução em segundo plano para registrá-los.
+
+O QUE ELE REGISTRA
+
+• Horas totais de cada par físico. Quando um par morre, aposente-o — o total congela ali, e o próximo par do mesmo modelo começa de novo do zero, como geração 2. Seus números antigos nunca se misturam com os novos.
+• Cada sessão, guardada para sempre: quando conectou, quando desconectou e por quê.
+• Tempo de reprodução (opcional): quanto desse tempo conectado foi realmente áudio tocando, para que "pendurado no pescoço" não conte como uso.
+• Custo por hora, se você informar quanto pagou. É um número satisfatório de ver cair.
+
+DOIS MODOS DE RASTREAMENTO
+
+Somente bluetooth — o padrão. Nada do app fica em execução, nada ocupa sua barra de notificações, e não há custo de bateria, porque o android entrega os eventos de conexão ao app mesmo quando ele está fechado.
+
+Rastreamento detalhado — opcional. Adiciona fones com fio e USB, e mede reprodução versus tempo conectado. Precisa de uma notificação silenciosa, de prioridade mínima, porque o android só informa eventos de conexão por cabo a um app que já está em execução. Só por isso ela existe.
+
+O bluetooth é rastreado de qualquer forma.
+
+NÚMEROS EM QUE VOCÊ PODE CONFIAR ANOS DEPOIS
+
+Totais de longo prazo não valem nada se uma falha ou uma reinicialização adicionarem doze horas silenciosamente. Por isso:
+
+• Uma sessão deixada aberta por uma reinicialização ou uma falha é fechada no último sinal conhecido, nunca depois do momento em que o telefone ligou. O tempo em que o telefone ficou desligado nunca é contado.
+• Se seus fones ainda estiverem conectados depois de uma reinicialização, uma sessão nova começa em vez de esticar a antiga pelo intervalo.
+• As sessões recebem sinais periódicos enquanto abertas, para limitar o estrago de uma desconexão perdida.
+
+PRIVADO POR CONSTRUÇÃO
+
+O ylih não tem permissão de internet. Não é "prometemos não enviar nada" — o app é tecnicamente incapaz disso. Não há contas, não há análises, não há anúncios e não há rastreamento de uso. Tudo vive em um banco de dados no seu telefone.
+
+Ajustes → Exportar grava todo o seu histórico como JSON legível, e Importar o restaura, então trocar de telefone nunca custa seus números.
+
+PERMISSÕES
+
+• Dispositivos próximos (Bluetooth): necessário para receber eventos de conexão e ler o nome de um fone. Sem ela, o rastreamento por bluetooth simplesmente não funciona.
+• Notificações: só para a notificação do rastreamento detalhado.
+• Executar na inicialização: para fechar sessões que o desligamento nunca informou.
+
+Código aberto sob a licença MIT.

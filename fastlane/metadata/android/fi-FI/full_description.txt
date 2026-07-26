@@ -1,0 +1,40 @@
+Kuulokkeet hajoavat ennen pitkää. Ennen sitä ylih vastaa ainoaan kysymykseen, joka kuulokeparista oikeasti merkitsee: kuinka monta tuntia sait niistä irti?
+
+Aina kun kuulokkeesi yhdistetään, ylih kirjaa ylös, milloin. Aina kun ne katkaisevat yhteyden, se kirjaa senkin. Siinä koko idea — ja koska yhteys on vain kaksi aikaleimaa, sovelluksen ei tarvitse pyöriä taustalla tehdäkseen sen.
+
+MITÄ SE SEURAA
+
+• Jokaisen fyysisen parin elinaikaiset tunnit. Kun pari kuolee, poista se käytöstä — kokonaisaika jäätyy, ja saman mallin seuraava pari aloittaa taas nollasta sukupolvena 2. Vanhat luvut eivät koskaan sekoitu uusiin.
+• Jokainen sessio, säilytettynä pysyvästi: yhdistetty, katkaistu ja miksi se päättyi.
+• Toistoaika (valinnainen): kuinka suuri osa yhteysajasta meni oikeasti äänen toistoon, jotta "kaulassa roikkuminen" ei lasketa kuunteluksi.
+• Tuntihinta, jos syötät, mitä maksoit. Sen laskua on tyydyttävä seurata.
+
+KAKSI SEURANTATILAA
+
+Vain bluetooth — oletustila. Mikään sovelluksen osa ei ole käynnissä, ilmoitusalueella ei näy mitään, eikä siitä koidu akkukustannuksia, koska android toimittaa yhteystapahtumat sovellukselle myös silloin, kun se on suljettu.
+
+Tarkka seuranta — valinnainen. Lisää langalliset ja USB-kuulokkeet ja mittaa toistoaikaa suhteessa yhteysaikaan. Se vaatii yhden hiljaisen, mahdollisimman matalan prioriteetin ilmoituksen, koska android ilmoittaa langallisen kuulokkeen liittämisestä vain jo käynnissä olevalle sovellukselle. Se, ja vain se, on syy ilmoituksen olemassaoloon.
+
+Bluetooth seurataan joka tapauksessa.
+
+LUVUT, JOIHIN VOI LUOTTAA VUOSIENKIN PÄÄSTÄ
+
+Pitkän aikavälin kokonaismäärät ovat hyödyttömiä, jos kaatuminen tai uudelleenkäynnistys lisää huomaamatta kaksitoista tuntia. Siksi:
+
+• Uudelleenkäynnistyksen tai kaatumisen auki jättämä sessio suljetaan sen viimeisimmän tunnetun sykkeen kohdalla, korkeintaan siihen hetkeen asti, kun puhelin käynnistyi. Aikaa, jonka puhelin oli sammuksissa, ei koskaan lasketa mukaan.
+• Jos kuulokkeet ovat yhä yhdistettyinä uudelleenkäynnistyksen jälkeen, alkaa uusi sessio sen sijaan, että vanhaa venytettäisiin katkon yli.
+• Avoinna olevia sessioita sykähdytetään, joten kadonneen katkaisutapahtuman aiheuttama vahinko pysyy rajattuna.
+
+YKSITYINEN RAKENTEELTAAN
+
+ylih:llä ei ole internet-oikeutta. Kyse ei ole lupauksesta olla lähettämättä mitään — sovellus on teknisesti kykenemätön siihen. Tilejä, analytiikkaa, mainoksia tai seurantaa ei ole. Kaikki asuu tietokannassa puhelimessasi.
+
+Asetukset → Vie tallentaa koko historiasi luettavana JSON-tiedostona, ja Tuo palauttaa sen, joten uuteen puhelimeen siirtyminen ei koskaan maksa lukujasi.
+
+KÄYTTÖOIKEUDET
+
+• Lähellä olevat laitteet (bluetooth): tarvitaan yhteystapahtumien vastaanottamiseen ja kuulokkeiden nimen lukemiseen. Ilman sitä bluetooth-seuranta ei toimi lainkaan.
+• Ilmoitukset: vain tarkan seurannan ilmoitusta varten.
+• Käynnistys laitteen käynnistyessä: sulkee sessiot, joista sammutus ei koskaan ilmoittanut.
+
+Avoin lähdekoodi, MIT-lisenssi.

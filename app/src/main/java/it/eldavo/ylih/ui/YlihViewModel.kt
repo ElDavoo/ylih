@@ -2,8 +2,10 @@ package it.eldavo.ylih.ui
 
 import android.app.Application
 import android.net.Uri
+import androidx.annotation.StringRes
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import it.eldavo.ylih.R
 import it.eldavo.ylih.YlihApp
 import it.eldavo.ylih.data.DeviceEntity
 import it.eldavo.ylih.data.PairSummary
@@ -41,6 +43,10 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
     val detailedTracking: StateFlow<Boolean> = container.settings.detailedTracking
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), false)
 
+    /** Null until DataStore has answered, so the welcome does not flash on every later launch. */
+    val onboardingDone: StateFlow<Boolean?> = container.settings.onboardingDone
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
+
     val allSpans: StateFlow<List<Span>> = container.repository.observeAllSessions()
         .map { sessions -> sessions.map { it.toSpan() } }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
@@ -64,10 +70,13 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
 
     fun setDetailedTracking(enabled: Boolean) = viewModelScope.launch {
         if (!container.trackingController.setDetailedTracking(enabled)) {
-            messageChannel.send(
-                getApplication<Application>().getString(RES_DETAILED_NEEDS_BLUETOOTH),
-            )
+            messageChannel.send(string(RES_DETAILED_NEEDS_BLUETOOTH))
         }
+    }
+
+    /** Also what releases MainActivity's permission request — see the comment there. */
+    fun completeOnboarding() = viewModelScope.launch {
+        container.settings.setOnboardingDone(true)
     }
 
     fun syncWithSystem() = viewModelScope.launch {
@@ -103,29 +112,35 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
             val payload = JsonBackup.export(container.database, container.clock.now())
             getApplication<Application>().contentResolver.openOutputStream(uri)?.use {
                 it.write(payload.toByteArray())
-            } ?: error("Could not open $uri")
-        }.onSuccess { messageChannel.send(getApplication<Application>().getString(RES_EXPORT_OK)) }
-            .onFailure { messageChannel.send(it.message ?: "Export failed") }
+            } ?: error(string(RES_COULD_NOT_OPEN, uri))
+        }.onSuccess { messageChannel.send(string(RES_EXPORT_OK)) }
+            .onFailure { messageChannel.send(it.message ?: string(RES_EXPORT_FAILED)) }
     }
 
     fun importFrom(uri: Uri) = viewModelScope.launch {
         runCatching {
             val content = getApplication<Application>().contentResolver.openInputStream(uri)
                 ?.use { it.readBytes().decodeToString() }
-                ?: error("Could not open $uri")
+                ?: error(string(RES_COULD_NOT_OPEN, uri))
             JsonBackup.import(container.database, content)
         }.onSuccess { count ->
             messageChannel.send(
                 getApplication<Application>().resources.getQuantityString(RES_IMPORT_OK, count, count),
             )
             container.trackingController.syncWithSystem()
-        }.onFailure { messageChannel.send(it.message ?: "Import failed") }
+        }.onFailure { messageChannel.send(it.message ?: string(RES_IMPORT_FAILED)) }
     }
 
+    private fun string(@StringRes id: Int, vararg args: Any): String =
+        getApplication<Application>().getString(id, *args)
+
     private companion object {
-        val RES_EXPORT_OK = it.eldavo.ylih.R.string.export_done
-        val RES_IMPORT_OK = it.eldavo.ylih.R.plurals.import_done
-        val RES_DETAILED_NEEDS_BLUETOOTH = it.eldavo.ylih.R.string.detailed_needs_bluetooth
+        val RES_EXPORT_OK = R.string.export_done
+        val RES_EXPORT_FAILED = R.string.export_failed
+        val RES_IMPORT_OK = R.plurals.import_done
+        val RES_IMPORT_FAILED = R.string.import_failed
+        val RES_COULD_NOT_OPEN = R.string.error_could_not_open
+        val RES_DETAILED_NEEDS_BLUETOOTH = R.string.detailed_needs_bluetooth
     }
 }
 

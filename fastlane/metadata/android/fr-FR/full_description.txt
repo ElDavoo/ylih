@@ -1,0 +1,40 @@
+Les casques finissent par lâcher. Avant ça, ylih répond à la seule question qui compte vraiment sur une paire : combien d'heures en avez-vous tirées ?
+
+Chaque fois que votre casque se connecte, ylih note quand. Chaque fois qu'il se déconnecte, il note quand aussi. C'est toute l'idée — et comme une connexion n'est jamais que deux horodatages, l'app n'a pas besoin de tourner en arrière-plan pour le faire.
+
+CE QU'IL SUIT
+
+• Les heures totales de chaque paire physique. Quand une paire rend l'âme, retirez-la — le total se fige, et la paire suivante du même modèle repart de zéro en génération 2. Vos anciens chiffres ne se mélangent jamais avec les nouveaux.
+• Chaque session, conservée définitivement : connexion, déconnexion, et pourquoi elle s'est terminée.
+• Le temps de lecture (optionnel) : la part de ce temps de connexion réellement passée à diffuser du son, pour que « autour du cou » ne compte pas comme de l'écoute.
+• Le coût horaire, si vous indiquez ce que vous avez payé. Un chiffre très satisfaisant à voir baisser.
+
+DEUX MODES DE SUIVI
+
+Bluetooth seul — le mode par défaut. Rien de l'app ne tourne, rien n'apparaît dans vos notifications, et il n'y a aucun coût en batterie, car android délivre les événements de connexion à l'app même quand elle est fermée.
+
+Suivi détaillé — optionnel. Ajoute les casques filaires et USB, et mesure la lecture par rapport au temps de connexion. Il nécessite une notification silencieuse, de priorité minimale, car android ne signale les événements de branchement jack qu'à une app déjà en cours d'exécution. C'est la seule raison d'être de cette notification.
+
+Le bluetooth est suivi dans les deux cas.
+
+DES CHIFFRES FIABLES DES ANNÉES PLUS TARD
+
+Des totaux à long terme ne valent rien si un plantage ou un redémarrage ajoute discrètement douze heures. Donc :
+
+• Une session laissée ouverte par un redémarrage ou un plantage est close à son dernier signal connu, jamais plus tard que le moment où le téléphone a démarré. Le temps passé téléphone éteint n'est jamais compté.
+• Si votre casque est toujours connecté après un redémarrage, une nouvelle session démarre plutôt que d'étirer l'ancienne sur l'intervalle.
+• Les sessions sont surveillées régulièrement tant qu'elles sont ouvertes, ce qui limite les dégâts d'une déconnexion manquée.
+
+PRIVÉ PAR CONSTRUCTION
+
+ylih n'a pas la permission internet. Ce n'est pas « nous promettons de ne rien envoyer » — l'app en est techniquement incapable. Aucun compte, aucune analyse, aucune publicité, aucun tracage. Tout vit dans une base de données sur votre téléphone.
+
+Réglages → Exporter écrit tout votre historique en JSON lisible, et Importer le restaure, si bien que changer de téléphone ne vous coûte jamais vos chiffres.
+
+PERMISSIONS
+
+• Appareils à proximité (bluetooth) : nécessaire pour recevoir les événements de connexion et lire le nom d'un casque. Sans elle, le suivi bluetooth ne peut pas fonctionner du tout.
+• Notifications : uniquement pour la notification du suivi détaillé.
+• Exécution au démarrage : pour clore les sessions que l'extinction n'a jamais signalées.
+
+Open source sous licence MIT.

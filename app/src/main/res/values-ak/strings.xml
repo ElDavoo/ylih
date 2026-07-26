@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Akan. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — wo bra wom no a ɛwɔ headphones mu</string>
+
+    <!-- Navigation -->
+    <string name="nav_headphones">headphones</string>
+    <string name="nav_stats">amanneɛbɔ</string>
+    <string name="nav_settings">nsusuiw</string>
+
+    <!-- Device kinds -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">asiân</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">amansan</string>
+
+    <!-- First run -->
+    <string name="welcome_title">maakye aba ylih mu</string>
+    <string name="welcome_intro">ylih ma ɛkyerɛ sɛ sua a ɛwɔ headphones den, na sɛ akra pii kɔɔ so a, ɔbɛtumi abusuabɔ ama su: asraa hɔ na edin?</string>
+    <string name="welcome_point_auto_title">dum na yoo</string>
+    <string name="welcome_point_auto_body">bluetooth headphones din din na wɔkora wɔn so sɛ wɔdum asa. adintin biara nni hia sɛ edan hɔ.</string>
+    <string name="welcome_point_lifetime_title">sua baako, bra baako</string>
+    <string name="welcome_point_lifetime_body">sɛ sua baako adane a, twali so: esum gyina hɔ na sua foforɔ a ɛwɔ headphones no din guan na ɛfirim abɛe.</string>
+    <string name="welcome_point_detailed_title">asiân ne adedie mpo</string>
+    <string name="welcome_point_detailed_body">akontabuo a ɔkɔ ɔ mu wɔ nsusuiw mu, ɔhyɛ asiân headphones na ɔtwie sɛ bere no hweɛ na wɔhyɛ adedie.</string>
+    <string name="welcome_privacy">biribiara din wɔ simu yi so. na mfiri biara nni hɔ, na sikakorabɛ yi nni ɔkwan ama intanɛt.</string>
+    <string name="welcome_start">hyɛ aseɛ</string>
+
+    <!-- Headphones list -->
+    <string name="devices_in_use">wɔde din</string>
+    <string name="devices_retired">na wɔtwali so</string>
+    <string name="devices_empty_title">headphones nni hɔ koraa</string>
+    <string name="devices_empty_body">dum sua baako a ɛwɔ bluetooth na wɔbɛda hɔ. asiân headphones kyɛ akontabuo a ɔkɔ ɔ mu wɔ nsusuiw mu.</string>
+    <string name="devices_generation">sua #%1$d</string>
+    <string name="devices_retired_on">twali so %1$s</string>
+    <string name="devices_connected_for">na ɛdum %1$s</string>
+    <string name="devices_recent">%1$s / nnɔnnum 7</string>
+
+    <!-- Stats -->
+    <string name="stats_title">headphones nyinaa</string>
+    <string name="stats_sessions_since">%1$s fi %2$s</string>
+    <string name="stats_last_7">nnɔnnum 7 akɔ so</string>
+    <string name="stats_last_30">nnɔnnum 30 akɔ so</string>
+    <string name="stats_average_session">bere a ɛkɔ so tẽ</string>
+    <string name="stats_playing">adedie</string>
+    <string name="stats_measured_span">bere a wɔtwie</string>
+    <string name="stats_share">kyɛ</string>
+    <string name="stats_daily_hours_30">manim bere nna (nnɔnnum 30)</string>
+    <string name="stats_by_pair">sua so so</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · twali so</string>
+    <string name="chart_max">%1$s akɔ soɔ</string>
+
+    <!-- Pair detail -->
+    <string name="pair_fallback_title">sua</string>
+    <string name="pair_back">kɔ akɔ</string>
+    <string name="pair_more">biribi foforɔ</string>
+    <string name="pair_menu_rename">sesa din</string>
+    <string name="pair_menu_purchase">din a ɛfa gua ho</string>
+    <string name="pair_menu_retire">twali so / sesa fo</string>
+    <string name="pair_menu_delete">soa</string>
+    <string name="pair_lifetime">bra a ɛwɔ sua yi so</string>
+    <string name="pair_retired_on">twali so %1$s</string>
+    <string name="pair_retired_with_reason">twali so %1$s · %2$s</string>
+    <string name="pair_connected_now">ɛdum na · %1$s</string>
+    <string name="pair_sessions">bere a wɔhyɛ</string>
+    <string name="pair_average">tẽ</string>
+    <string name="pair_longest">akɔ so pa</string>
+    <string name="pair_first_seen">huu aseɛ</string>
+    <string name="pair_of_measured">a wɔtwie</string>
+    <string name="pair_measured">a wɔtwie</string>
+    <string name="pair_paid">gua a wɔtua</string>
+    <string name="pair_per_hour">a manim baako so</string>
+    <string name="pair_bought">agu</string>
+    <string name="pair_daily_hours_14">manim bere nna (nnɔnnum 14)</string>
+    <string name="pair_rename_title">sesa sua din</string>
+    <string name="pair_rename_label">din</string>
+    <string name="pair_retire_title">twali sua yi so</string>
+    <string name="pair_retire_label">ntease (dane, gu, to…)</string>
+    <string name="pair_retire_confirm">twali so</string>
+    <string name="pair_retire_supporting">esum twe din hɔ. sɛ ɛdum asua yi bio a, sua foforɔ na ɛfirim abɛe.</string>
+    <string name="pair_price_title">gua a wɔtua</string>
+    <string name="pair_price_label">dodow (nyinaa baako)</string>
+    <string name="pair_price_supporting">ɛka ma sika a ɛwɔ manim baako so.</string>
+    <string name="pair_delete_title">soa sua yi?</string>
+    <string name="pair_delete_body">bere nyinaa a wɔkora ho nso bɛsoa. eyi ntumi nsa.</string>
+
+    <!-- Session rows -->
+    <string name="session_ongoing">ɛdan hɔ</string>
+    <string name="session_until">akosi %1$s</string>
+    <string name="session_playing">%1$s adedie</string>
+    <string name="session_recovered">baa fa</string>
+
+    <!-- Settings -->
+    <string name="settings_tracking">akontabuo</string>
+    <string name="settings_detailed_title">akontabuo a ɔkɔ ɔ mu</string>
+    <string name="settings_detailed_body">ɔhyɛ asiân headphones ne bere a wɔhyɛ adedie. android na ɔtwe adi asiân dan tẽ ama sikakorabɛ a ɛdan no ara, nti yei dwom sikakorabɛ yi wɔ mu. bluetooth na wɔtwe adi sɛ na ɛkakra.</string>
+    <string name="settings_detailed_unavailable">ntumi nkɔ so akosi sɛ wɔde connectedDevice osuoabɔ nyeε: sikakorabɛ yi na ɔkɔ ne connectedDevice osuoabɔ ara, na android 14+ de ɛne bluetooth kyɛ.</string>
+    <string name="settings_devices">asua</string>
+    <string name="settings_devices_body">too bibiara a ɛnyɛ headphones — motika stereo anaa speaker — na ɛnyina korabɛ no.</string>
+    <string name="settings_device_subtitle">%1$s · huu aseɛ %2$s</string>
+    <string name="settings_data">din</string>
+    <string name="settings_export">dan json</string>
+    <string name="settings_import">fa ba</string>
+    <string name="settings_import_warning">sɛ ɔfa ba a, ɛbɛsesa biribiri a ɛdan hɔ.</string>
+    <string name="settings_troubleshooting">ase din a ɛwɔ soɔ</string>
+    <string name="settings_battery_body">sɛ bere a wɔhyɛ akyir a, hwɛ sɛ ylih nni wɔ aduasa din mu — sikakorabɛ a wɔatwa ase no nka dɛm a ɛfa dum ho bio akosi sɛ wɔbukuw ɛ.</string>
+    <string name="settings_battery_button">aduasa din nsusuiw</string>
+    <string name="settings_battery_path">nsusuiw → apps → ylih → aduasa → so.</string>
+    <string name="settings_about">fa ho</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — manim headphones, na wɔkora wɔ simu yi so daakye.</string>
+    <string name="settings_import_confirm_title">sesa din nyinaa?</string>
+    <string name="settings_import_confirm_body">sɛ ɔfa foforo yi ba a, ɛbɛsoa asua nyinaa, sua nyinaa ne bere nyinaa a ɛdan hɔ.</string>
+
+    <!-- Shared actions -->
+    <string name="action_save">kyerɛ</string>
+    <string name="action_cancel">twa</string>
+    <string name="action_delete">soa</string>
+    <string name="action_import">fa ba</string>
+
+    <!-- Notification -->
+    <string name="channel_tracking">akontabuo a ɛfa headphones ho</string>
+    <string name="channel_tracking_description">ɛda adi sɛ ylih rehwɛ asiân headphones ne adedie. android nka asiân dan tẽ ama sikakorabɛ a ɛndan.</string>
+    <string name="notification_title">akontabuo a ɛfa headphones bere ho</string>
+    <string name="notification_starting">ɛhyɛ aseɛ…</string>
+    <string name="notification_idle">ɛkɔtaa headphones</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d na ɛdum · %2$s</item>
+        <item quantity="other">%1$d na wɔdum · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d na ɛdum · %2$s · adedie</item>
+        <item quantity="other">%1$d na wɔdum · %2$s · adedie</item>
+    </plurals>
+
+    <!-- Snackbar messages -->
+    <string name="detailed_needs_bluetooth">sikakorabɛ yi kyɛ bluetooth ɔkwan na wɔntumi akontabuo asiân headphones.</string>
+    <string name="export_done">foforo dan ɛwɔ.</string>
+    <string name="export_failed">foforo a wɔsan no anempɛn.</string>
+    <string name="import_failed">akosa a wɔsan no anempɛn.</string>
+    <string name="error_could_not_open">nti yoo ntumi bukuu %1$s.</string>
+    <plurals name="import_done">
+        <item quantity="one">akosa bere %d</item>
+        <item quantity="other">akosa bere %d</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">bere %d</item>
+        <item quantity="other">bere %d</item>
+    </plurals>
+</resources>

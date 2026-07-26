@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Basque. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — zure bizitza entzuleak eskuan</string>
+
+    <!-- Nabigazioa -->
+    <string name="nav_headphones">entzuleak</string>
+    <string name="nav_stats">estatistikak</string>
+    <string name="nav_settings">ezarpenak</string>
+
+    <!-- Gailu motak -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">kableak</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ezezaguna</string>
+
+    <!-- Lehenengo abioa -->
+    <string name="welcome_title">ongi etorri ylih-ra</string>
+    <string name="welcome_intro">ylih-ek entzulearen pare bakoitza zenbat denbora lotuta egoten den zenbatzen du, denbora aste batzuetan, entzuleren pare baten inguruko galdera garrantzitsuena erantzun ahal izateko: zenbat ordu iraun zituzten?</string>
+    <string name="welcome_point_auto_title">konektatu eta ahaztu</string>
+    <string name="welcome_point_auto_body">bluetooth entzuleak automatikoki zenbatzen dira, konektatu ordutik. ez da ezer abian mantendu beharrik.</string>
+    <string name="welcome_point_lifetime_title">pare bat, bizi bat</string>
+    <string name="welcome_point_lifetime_body">pare bat hondatzen denean, jubilatua: totala bertan izoztu eta beste pare baten konexio berriak zero-tik hasten da.</string>
+    <string name="welcome_point_detailed_title">kableak eta erreprodukzioa</string>
+    <string name="welcome_point_detailed_body">zenbaketa zehatza, ezarpenetan, entzule kableak gehitzen ditu eta zenbat denbora erreprodukzio egon den neurtzen du.</string>
+    <string name="welcome_privacy">denak telefono honetan geratzen dira. ez da kontua, eta aplikazioak ez du interneterako baimenik.</string>
+    <string name="welcome_start">hasi</string>
+
+    <!-- Entzuleak zerrenda -->
+    <string name="devices_in_use">erabiltzan</string>
+    <string name="devices_retired">jubilatu</string>
+    <string name="devices_empty_title">entzulerik ez oraindik</string>
+    <string name="devices_empty_body">bluetooth entzuleren pare bat konektatu eta hemen azalduko dira. entzule kableak zenbaketa zehatzari beharra du, ezarpenetan.</string>
+    <string name="devices_generation">pare #%1$d</string>
+    <string name="devices_retired_on">jubilatua %1$s</string>
+    <string name="devices_connected_for">konektatu %1$s</string>
+    <string name="devices_recent">%1$s / 7e</string>
+
+    <!-- Estatistikak -->
+    <string name="stats_title">entzule guztiak</string>
+    <!-- %1$s is an already-pluralised session count, %2$s a date. -->
+    <string name="stats_sessions_since">%1$s %2$s-tik</string>
+    <string name="stats_last_7">azkenen 7 eguna</string>
+    <string name="stats_last_30">azkenen 30 eguna</string>
+    <string name="stats_average_session">batezbesteko saioa</string>
+    <string name="stats_playing">erreprodukzioa</string>
+    <string name="stats_measured_span">neurtu den denbora</string>
+    <string name="stats_share">partekatu</string>
+    <string name="stats_daily_hours_30">orduak egunero (30 eguna)</string>
+    <string name="stats_by_pair">pareka</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · jubilatua</string>
+    <string name="chart_max">gehienez %1$s</string>
+
+    <!-- Pararen pantaila -->
+    <string name="pair_fallback_title">pare</string>
+    <string name="pair_back">atzera</string>
+    <string name="pair_more">gehiago</string>
+    <string name="pair_menu_rename">berrizendatu</string>
+    <string name="pair_menu_purchase">erosketaren informazioa</string>
+    <string name="pair_menu_retire">jubilatu / ordezkatua</string>
+    <string name="pair_menu_delete">ezabatu</string>
+    <string name="pair_lifetime">pare honen bizitza</string>
+    <string name="pair_retired_on">jubilatua %1$s</string>
+    <string name="pair_retired_with_reason">jubilatua %1$s · %2$s</string>
+    <string name="pair_connected_now">konektatu orain · %1$s</string>
+    <string name="pair_sessions">saio</string>
+    <string name="pair_average">batezbestekoa</string>
+    <string name="pair_longest">luzeena</string>
+    <string name="pair_first_seen">lehenengo aldiz ikusia</string>
+    <string name="pair_of_measured">neurutik</string>
+    <string name="pair_measured">neurtua</string>
+    <string name="pair_paid">ordaindua</string>
+    <string name="pair_per_hour">orduko</string>
+    <string name="pair_bought">erosita</string>
+    <string name="pair_daily_hours_14">orduak egunero (14 eguna)</string>
+    <string name="pair_rename_title">pareza berrizendatu</string>
+    <string name="pair_rename_label">izena</string>
+    <string name="pair_retire_title">pare hau jubilatu</string>
+    <string name="pair_retire_label">arrazoia (hautsi, saldu, galdu…)</string>
+    <string name="pair_retire_confirm">jubilatu</string>
+    <string name="pair_retire_supporting">totalak bertan izozten dira. gailu berbera denbora berrian konektatzeak zero-tik hasiko da.</string>
+    <string name="pair_price_title">prezioa ordainduta</string>
+    <string name="pair_price_label">zenbakia (osoak)</string>
+    <string name="pair_price_supporting">orduko prezioa kalkulatzeko erabilia.</string>
+    <string name="pair_delete_title">pare hau ezabatu?</string>
+    <string name="pair_delete_body">beraren saio guztiak ere ezabatuko dira. hau desegin ezin da.</string>
+
+    <!-- Saio lerroak -->
+    <string name="session_ongoing">jarraian</string>
+    <string name="session_until">arte %1$s</string>
+    <string name="session_playing">%1$s erreprodukzio</string>
+    <string name="session_recovered">berreskuratua</string>
+
+    <!-- Ezarpenak -->
+    <string name="settings_tracking">zenbaketa</string>
+    <string name="settings_detailed_title">zenbaketa zehatza</string>
+    <string name="settings_detailed_body">entzule kableak eta erreprodukzio denbora gehitzen ditu. android-ek kable plug gertaerak abian dagoen aplikazio bati soilik jakinarazten dizkio, beraz notifikazio isioa atmospferan geratzen da. bluetooth beti zenbatzen da.</string>
+    <string name="settings_detailed_unavailable">disponible ez dela bitartean bluetooth sarbidea baimendu arte: eraikian hau connectedDevice zerbitzuaren mota bakarrik deklaratzen du, android 14+ bluetooth baimena lekutzen duena.</string>
+    <string name="settings_devices">gailuak</string>
+    <string name="settings_devices_body">kendu markak gauzak ez direnak entzuleak — auto estereo edo bozgorailuak — grabatzea gelditzeko.</string>
+    <string name="settings_device_subtitle">%1$s · lehenengo aldiz ikusia %2$s</string>
+    <string name="settings_data">datuak</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">importatu</string>
+    <string name="settings_import_warning">inportazioak gaur egun gordeta dagoen guztia ordezkatzen du.</string>
+    <string name="settings_troubleshooting">arazoak konpontzea</string>
+    <string name="settings_battery_body">saio zenbaketa gelditzen bada, ziurtatu ylih bateria optimizaziotik kanpo dagoela — beherra geldia aplikazio batek ez du konexio emisioak jaso berriro konexio irekitzen den arte.</string>
+    <string name="settings_battery_button">bateria ezarpenak</string>
+    <string name="settings_battery_path">ezarpenak → aplikazioak → ylih → bateria → mugagabea.</string>
+    <string name="settings_about">honi buruz</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — entzuleak ordutan, tokian eta beti zeratzen.</string>
+    <string name="settings_import_confirm_title">datu guztiak ordeztu?</string>
+    <string name="settings_import_confirm_body">backup honen inportazioak gaur egun gordetako gailu, pare eta saio bakoitza ezabatzen du.</string>
+
+    <!-- Ekintza komunak -->
+    <string name="action_save">gorde</string>
+    <!-- Lowercase is the house style, not a missed capital; @android:string/cancel would drag in
+         the platform's sentence case and break it. -->
+    <string name="action_cancel">utzi</string>
+    <string name="action_delete">ezabatu</string>
+    <string name="action_import">importatu</string>
+
+    <!-- Jakinarazpena -->
+    <string name="channel_tracking">entzulearen zenbaketa</string>
+    <string name="channel_tracking_description">ylih-ek entzule kableak eta erreprodukzioa begiratzen duen bitartean erakusten da. android-ek ez dio kable plug gertaerak ez-abian aplikazioei jakinarazten.</string>
+    <string name="notification_title">entzuleak denboraz zenbatzen</string>
+    <string name="notification_starting">hasita…</string>
+    <string name="notification_idle">entzuleak itxoitzearen</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d konektatu · %2$s</item>
+        <item quantity="other">%1$d konektatu · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d konektatu · %2$s · erreprodukzio</item>
+        <item quantity="other">%1$d konektatu · %2$s · erreprodukzio</item>
+    </plurals>
+
+    <!-- Mezu-orriaren mezuak -->
+    <string name="detailed_needs_bluetooth">eraikian hau bluetooth sarbidea behar du entzule kableak zenbatzeko</string>
+    <string name="export_done">backup exportatua</string>
+    <string name="export_failed">exportazioa huts egin du</string>
+    <string name="import_failed">inportazioa huts egin du</string>
+    <string name="error_could_not_open">%1$s ireki ezin zen</string>
+    <plurals name="import_done">
+        <item quantity="one">%d saio inportatua</item>
+        <item quantity="other">%d saio inportatua</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d saio</item>
+        <item quantity="other">%d saio</item>
+    </plurals>
+</resources>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Ewondo. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — mon amin a me msi ve bikule</string>
+
+    <!-- Ɖiembi ye navigation -->
+    <string name="nav_headphones">bikule</string>
+    <string name="nav_stats">tiyo</string>
+    <string name="nav_settings">mbege</string>
+
+    <!-- Nsibidi ze zindong -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">efan</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">a soo</string>
+
+    <!-- Mboa ye ti mbɔ -->
+    <string name="welcome_title">mboa ye ylih</string>
+    <string name="welcome_intro">ylih ateng mekolo me mina ma bikule ekaka enyiman, menguma nkere me zitom ane, a lo wɔ ene koale e vot bot eka ye bikule: mina mele mbe kuε?</string>
+    <string name="welcome_point_auto_title">diamba na tele ka</string>
+    <string name="welcome_point_auto_body">bikule be bluetooth ateng a keme, ti ikala be diamba. abam abam a kwola a mekele mbe e.</string>
+    <string name="welcome_point_lifetime_title">bikule bot a, amin bot a</string>
+    <string name="welcome_point_lifetime_body">bikule bot a mbe kuε manda, kɔtɔ bo: embi ye a tamɛ etala ne, na bikule ye bot a eve ye ndung zeliβo a kelo.</string>
+    <string name="welcome_point_detailed_title">efan na minkolo</string>
+    <string name="welcome_point_detailed_body">tiyo ye a vul me mbege ateng efan na minkolo eme tim. android atɔmba mɔnɔ ye efan menguma kumene a ndung ya mam, menguma zε a vul zε ti ndung bɔtɔ eve. bluetooth ateng a keme mɔli mɔ zə zɔ mɔ.</string>
+    <string name="welcome_privacy">abam abam akuma a telephone ane. a kɔ account, na app ye a kɔ permission ye internet.</string>
+    <string name="welcome_start">tek ka</string>
+
+    <!-- Ndile ye bikule -->
+    <string name="devices_in_use">eme tiyo</string>
+    <string name="devices_retired">azinga</string>
+    <string name="devices_empty_title">bikule a kee tsuwa</string>
+    <string name="devices_empty_body">diamba bikule bot be bluetooth, na azingala akili me ane. bikule be efan kwom mbondibo ye tiyo eme enong, eme mbege.</string>
+    <string name="devices_generation">bikule #%1$d</string>
+    <string name="devices_retired_on">azinga %1$s</string>
+    <string name="devices_connected_for">diamba %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Tiyo -->
+    <string name="stats_title">bikule abam</string>
+    <string name="stats_sessions_since">%1$s ti ɛmva %2$s</string>
+    <string name="stats_last_7">zitom ye 7 ye zepot</string>
+    <string name="stats_last_30">zitom ye 30 ye zepot</string>
+    <string name="stats_average_session">dibulu ye nkɔlɔ</string>
+    <string name="stats_playing">minkolo</string>
+    <string name="stats_measured_span">tim ye a leŋed</string>
+    <string name="stats_share">mepɔ</string>
+    <string name="stats_daily_hours_30">kuε ye zepot (zitom ye 30)</string>
+    <string name="stats_by_pair">ti bikule</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · azinga</string>
+    <string name="chart_max">%1$s max</string>
+
+    <!-- Kuε ye bikule bot -->
+    <string name="pair_fallback_title">bikule</string>
+    <string name="pair_back">yekula</string>
+    <string name="pair_more">eve</string>
+    <string name="pair_menu_rename">basa eve</string>
+    <string name="pair_menu_purchase">tiyo ye bekum</string>
+    <string name="pair_menu_retire">azinga / eve</string>
+    <string name="pair_menu_delete">bula</string>
+    <string name="pair_lifetime">amin eme bikule bot ane</string>
+    <string name="pair_retired_on">azinga %1$s</string>
+    <string name="pair_retired_with_reason">azinga %1$s · %2$s</string>
+    <string name="pair_connected_now">diamba ne · %1$s</string>
+    <string name="pair_sessions">dibulu</string>
+    <string name="pair_average">nkɔlɔ</string>
+    <string name="pair_longest">mina ye a pul</string>
+    <string name="pair_first_seen">mbouma ye mɔ</string>
+    <string name="pair_of_measured">ye tim ye a leŋed</string>
+    <string name="pair_measured">leŋed</string>
+    <string name="pair_paid">menkɔ</string>
+    <string name="pair_per_hour">ti kuε bot</string>
+    <string name="pair_bought">bekum</string>
+    <string name="pair_daily_hours_14">kuε ye zepot (zitom ye 14)</string>
+    <string name="pair_rename_title">basa eve bikule bot</string>
+    <string name="pair_rename_label">zina</string>
+    <string name="pair_retire_title">azinga bikule bot ane</string>
+    <string name="pair_retire_label">koole (kuε, bekum, tsuwa…)</string>
+    <string name="pair_retire_confirm">azinga</string>
+    <string name="pair_retire_supporting">embi ye a tamɛ etala ne ane. diamba eve ye zindong bot ye etɔ bikule bot eve ti zeliβo.</string>
+    <string name="pair_price_title">menkɔ ye bekum</string>
+    <string name="pair_price_label">menkɔ (tim ye a lone)</string>
+    <string name="pair_price_supporting">a tiyo ti menkɔ ye kuε bot eme tiyo.</string>
+    <string name="pair_delete_title">bula bikule bot ane?</string>
+    <string name="pair_delete_body">dibulu abam ye bekul, a lo bula ye. a ka tum eve te.</string>
+
+    <!-- Ndile ye dibulu -->
+    <string name="session_ongoing">mekele mbe e</string>
+    <string name="session_until">ngɔ %1$s</string>
+    <string name="session_playing">%1$s minkolo</string>
+    <string name="session_recovered">kula</string>
+
+    <!-- Mbege -->
+    <string name="settings_tracking">tiyo</string>
+    <string name="settings_detailed_title">tiyo ye a vul</string>
+    <string name="settings_detailed_body">ateng efan na minkolo eme tim. android atɔmba mɔnɔ ye efan menguma kumene a ndung ya mam, menguma zə a vul zə ti ndung bɔtɔ eve eme ɛkɔ. bluetooth ateng a keme mɔli mɔ zə zɔ mɔ.</string>
+    <string name="settings_detailed_unavailable">a kɔ mɔ ndung manda, e mɔ permission ye bluetooth: sɔnda ane atɔmba nsibidi ye connectedDevice kumene a lone, android 14+ a bɔtɔ eve ti permission ye bluetooth.</string>
+    <string name="settings_devices">zindong</string>
+    <string name="settings_devices_body">bɔkɔ abem ye a kɔ bikule — toŋkɔ ye nyuŋ pu speaker — a ka nka tiyo ye e.</string>
+    <string name="settings_device_subtitle">%1$s · mbouma ye mɔ %2$s</string>
+    <string name="settings_data">tiyo</string>
+    <string name="settings_export">ekpɔ json</string>
+    <string name="settings_import">kula</string>
+    <string name="settings_import_warning">kula ye a vul tiyo abam ye a tamɛ ne.</string>
+    <string name="settings_troubleshooting">koole ye a tutɔ</string>
+    <string name="settings_battery_body">dibulu a ka mekele mbe te, keka ylih a kɔ eksetɔ ye bateri — app ye e kɔ mɔ manda ti a ka mbouma mɔnɔ ye connection ngɔ a vul e ngɔ te.</string>
+    <string name="settings_battery_button">mbege ye bateri</string>
+    <string name="settings_battery_path">mbege → app → ylih → bateri → a kɔ mfondo.</string>
+    <string name="settings_about">eme ylih</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — kuε eme bikule, tamɛ a vul eme telephone na mfolo.</string>
+    <string name="settings_import_confirm_title">vul tiyo abam?</string>
+    <string name="settings_import_confirm_body">kula ye bekam ane a bula zindong, bikule na dibulu abam ye a tamɛ ne.</string>
+
+    <!-- Ndimo ye a koule -->
+    <string name="action_save">tamɛ</string>
+    <string name="action_cancel">tele ka</string>
+    <string name="action_delete">bula</string>
+    <string name="action_import">kula</string>
+
+    <!-- Ɛko -->
+    <string name="channel_tracking">tiyo ye bikule</string>
+    <string name="channel_tracking_description">a koule ngɔ ylih a vul efan na minkolo eme tiyo. android a atɔmba mɔnɔ ye efan kumene app ye a kɔ mbekɔ.</string>
+    <string name="notification_title">tiyo ye amin eme bikule</string>
+    <string name="notification_starting">tek…</string>
+    <string name="notification_idle">kela bikule</string>
+    <plurals name="notification_active">
+        <item quantity="one">diamba %1$d · %2$s</item>
+        <item quantity="other">diamba %1$d · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">diamba %1$d · %2$s · minkolo</item>
+        <item quantity="other">diamba %1$d · %2$s · minkolo</item>
+    </plurals>
+
+    <!-- Menkolo ye a koule -->
+    <string name="detailed_needs_bluetooth">sɔnda ane kwom permission ye bluetooth a ka tiyo efan</string>
+    <string name="export_done">bekam ye ekpɔ</string>
+    <string name="export_failed">ekpɔ a tutɔ</string>
+    <string name="import_failed">kula a tutɔ</string>
+    <string name="error_could_not_open">a lo vul %1$s te</string>
+    <plurals name="import_done">
+        <item quantity="one">kula dibulu %d</item>
+        <item quantity="other">kula dibulu %d</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">dibulu %d</item>
+        <item quantity="other">dibulu %d</item>
+    </plurals>
+</resources>

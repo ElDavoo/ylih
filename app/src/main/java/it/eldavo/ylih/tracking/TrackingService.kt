@@ -11,6 +11,7 @@ import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import androidx.annotation.RequiresApi
 import androidx.core.app.ServiceCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleService
@@ -30,7 +31,11 @@ import kotlinx.coroutines.launch
  * Runs only in "detailed tracking" mode. Wired plug events are never delivered to a manifest
  * receiver, so observing them at all requires a live process — that is the entire reason this
  * service (and its notification) exists. While it is up it also measures playback time.
+ *
+ * [TrackingController.detailedTrackingSupported] never starts this below Android 8 (API 26),
+ * where notification channels and [PlaybackWatcher]'s callback both start existing.
  */
+@RequiresApi(Build.VERSION_CODES.O)
 class TrackingService : LifecycleService() {
 
     private lateinit var container: AppContainer

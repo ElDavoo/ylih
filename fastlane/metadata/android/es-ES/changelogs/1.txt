@@ -1,0 +1,8 @@
+Primera versión.
+
+• Horas totales por cada par físico de auriculares, con generaciones para que un par de repuesto empiece de cero en lugar de heredar el total del anterior.
+• Cada conexión guardada para siempre, con estadísticas por día y por par.
+• Seguimiento detallado opcional para auriculares con cable y USB, y para reproducción frente a tiempo conectado.
+• Coste por hora de escucha.
+• Exportación e importación en JSON.
+• Sin permiso de internet: nada sale nunca del teléfono.

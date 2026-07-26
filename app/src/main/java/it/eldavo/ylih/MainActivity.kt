@@ -9,8 +9,10 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
 import it.eldavo.ylih.ui.YlihNavHost
 import it.eldavo.ylih.ui.theme.YlihTheme
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
@@ -29,7 +31,14 @@ class MainActivity : ComponentActivity() {
                 YlihNavHost()
             }
         }
-        requestMissingPermissions()
+        // The system's bluetooth prompt on top of the welcome dialog would be the first thing a
+        // new install ever says, and it would be asking rather than explaining. Wait for the
+        // welcome to be dismissed; on every later launch the flag is already set and this returns
+        // immediately.
+        lifecycleScope.launch {
+            container().settings.onboardingDone.first { it }
+            requestMissingPermissions()
+        }
     }
 
     override fun onStart() {

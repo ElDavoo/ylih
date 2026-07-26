@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Norwegian Bokmål. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - livet ditt i hodetelefoner</string>
+
+    <!-- Navigasjon -->
+    <string name="nav_headphones">hodetelefoner</string>
+    <string name="nav_stats">statistikk</string>
+    <string name="nav_settings">innstillinger</string>
+
+    <!-- Enhetstyper -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">kablet</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ukjent</string>
+
+    <!-- Førstegangsoppstart -->
+    <string name="welcome_title">velkommen til ylih</string>
+    <string name="welcome_intro">ylih registrerer hvor lenge hvert par hodetelefoner er tilkoblet, slik at du om mange år fortsatt kan svare på det eneste spørsmålet som betyr noe for et par: hvor mange timer varte de?</string>
+    <string name="welcome_point_auto_title">koble til og glem</string>
+    <string name="welcome_point_auto_body">bluetooth-hodetelefoner registreres helt automatisk, fra det øyeblikket de kobles til. ingenting trenger å kjøre i bakgrunnen.</string>
+    <string name="welcome_point_lifetime_title">ett par, ett liv</string>
+    <string name="welcome_point_lifetime_body">når et par dør, pensjoner du det: totalen fryses der, og neste par av samme hodetelefoner starter på nytt fra null.</string>
+    <string name="welcome_point_detailed_title">kablet og avspilling</string>
+    <string name="welcome_point_detailed_body">detaljert sporing, i innstillinger, legger til kablede hodetelefoner og måler hvor mye av tiden som faktisk gikk til avspilling.</string>
+    <string name="welcome_privacy">alt blir på denne telefonen. det finnes ingen konto, og appen har ikke internett-tilgang.</string>
+    <string name="welcome_start">kom i gang</string>
+
+    <!-- Liste over hodetelefoner -->
+    <string name="devices_in_use">i bruk</string>
+    <string name="devices_retired">pensjonert</string>
+    <string name="devices_empty_title">ingen hodetelefoner ennå</string>
+    <string name="devices_empty_body">koble til et par bluetooth-hodetelefoner, så dukker de opp her. kablede hodetelefoner krever detaljert sporing, i innstillinger.</string>
+    <string name="devices_generation">par nr. %1$d</string>
+    <string name="devices_retired_on">pensjonert %1$s</string>
+    <string name="devices_connected_for">tilkoblet i %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Statistikk -->
+    <string name="stats_title">alle hodetelefoner</string>
+    <!-- %1$s er et allerede flertallsbøyd øktantall, %2$s en dato. -->
+    <string name="stats_sessions_since">%1$s siden %2$s</string>
+    <string name="stats_last_7">siste 7 dager</string>
+    <string name="stats_last_30">siste 30 dager</string>
+    <string name="stats_average_session">gjennomsnittlig økt</string>
+    <string name="stats_playing">avspilling</string>
+    <string name="stats_measured_span">målt periode</string>
+    <string name="stats_share">del</string>
+    <string name="stats_daily_hours_30">timer per dag (30 dager)</string>
+    <string name="stats_by_pair">per par</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · pensjonert</string>
+    <string name="chart_max">%1$s maks</string>
+
+    <!-- Pardetaljer -->
+    <string name="pair_fallback_title">par</string>
+    <string name="pair_back">tilbake</string>
+    <string name="pair_more">mer</string>
+    <string name="pair_menu_rename">gi nytt navn</string>
+    <string name="pair_menu_purchase">kjøpsinfo</string>
+    <string name="pair_menu_retire">pensjonér / erstattet</string>
+    <string name="pair_menu_delete">slett</string>
+    <string name="pair_lifetime">levetid for dette paret</string>
+    <string name="pair_retired_on">pensjonert %1$s</string>
+    <string name="pair_retired_with_reason">pensjonert %1$s · %2$s</string>
+    <string name="pair_connected_now">tilkoblet nå · %1$s</string>
+    <string name="pair_sessions">økter</string>
+    <string name="pair_average">gjennomsnitt</string>
+    <string name="pair_longest">lengste</string>
+    <string name="pair_first_seen">først sett</string>
+    <string name="pair_of_measured">av målt</string>
+    <string name="pair_measured">målt</string>
+    <string name="pair_paid">betalt</string>
+    <string name="pair_per_hour">per time</string>
+    <string name="pair_bought">kjøpt</string>
+    <string name="pair_daily_hours_14">timer per dag (14 dager)</string>
+    <string name="pair_rename_title">gi paret nytt navn</string>
+    <string name="pair_rename_label">navn</string>
+    <string name="pair_retire_title">pensjonér dette paret</string>
+    <string name="pair_retire_label">årsak (ødelagt, solgt, mistet …)</string>
+    <string name="pair_retire_confirm">pensjonér</string>
+    <string name="pair_retire_supporting">totalen fryses her. ny tilkobling av samme enhet starter et nytt par fra null.</string>
+    <string name="pair_price_title">pris betalt</string>
+    <string name="pair_price_label">beløp (hele enheter)</string>
+    <string name="pair_price_supporting">brukes til kostnad per time.</string>
+    <string name="pair_delete_title">slette dette paret?</string>
+    <string name="pair_delete_body">hver eneste økt registrert for det slettes også. dette kan ikke angres.</string>
+
+    <!-- Øktrader -->
+    <string name="session_ongoing">pågår</string>
+    <string name="session_until">til %1$s</string>
+    <string name="session_playing">%1$s avspilling</string>
+    <string name="session_recovered">gjenopprettet</string>
+
+    <!-- Innstillinger -->
+    <string name="settings_tracking">sporing</string>
+    <string name="settings_detailed_title">detaljert sporing</string>
+    <string name="settings_detailed_body">legger til kablede hodetelefoner og avspillingstid. android rapporterer kun kabelhendelser til en app som kjører, så dette holder en stille varsling i varslingspanelet. bluetooth spores uansett.</string>
+    <string name="settings_detailed_unavailable">utilgjengelig til bluetooth-tilgang er gitt: denne utgaven deklarerer bare tjenestetypen connectedDevice, som android 14+ knytter til en bluetooth-tillatelse.</string>
+    <string name="settings_devices">enheter</string>
+    <string name="settings_devices_body">fjern haken for alt som ikke er hodetelefoner — et bilstereoanlegg eller en høyttaler — for å slutte å registrere det.</string>
+    <string name="settings_device_subtitle">%1$s · først sett %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">eksportér json</string>
+    <string name="settings_import">importér</string>
+    <string name="settings_import_warning">import erstatter alt som er lagret nå.</string>
+    <string name="settings_troubleshooting">feilsøking</string>
+    <string name="settings_battery_body">hvis økter slutter å bli registrert, sjekk at ylih er unntatt fra batterioptimalisering — en app som er tvangsstoppet, mottar aldri tilkoblingshendelser igjen før den åpnes på nytt.</string>
+    <string name="settings_battery_button">batteriinnstillinger</string>
+    <string name="settings_battery_path">innstillinger → apper → ylih → batteri → ubegrenset.</string>
+    <string name="settings_about">om</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — hodetelefontimer, lagret lokalt og for alltid.</string>
+    <string name="settings_import_confirm_title">erstatte alle data?</string>
+    <string name="settings_import_confirm_body">import av denne sikkerhetskopien sletter hver enhet, hvert par og hver økt som er lagret nå.</string>
+
+    <!-- Delte handlinger -->
+    <string name="action_save">lagre</string>
+    <string name="action_cancel">avbryt</string>
+    <string name="action_delete">slett</string>
+    <string name="action_import">importér</string>
+
+    <!-- Varsling -->
+    <string name="channel_tracking">hodetelefonsporing</string>
+    <string name="channel_tracking_description">vises mens ylih ser etter kablede hodetelefoner og avspilling. android leverer ikke kabelhendelser til apper som ikke kjører.</string>
+    <string name="notification_title">sporer hodetelefontid</string>
+    <string name="notification_starting">starter …</string>
+    <string name="notification_idle">venter på hodetelefoner</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d tilkoblet · %2$s</item>
+        <item quantity="other">%1$d tilkoblet · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d tilkoblet · %2$s · avspilling</item>
+        <item quantity="other">%1$d tilkoblet · %2$s · avspilling</item>
+    </plurals>
+
+    <!-- Snackbar-meldinger -->
+    <string name="detailed_needs_bluetooth">denne utgaven trenger bluetooth-tilgang før den kan spore kablede hodetelefoner</string>
+    <string name="export_done">sikkerhetskopi eksportert</string>
+    <string name="export_failed">eksport mislyktes</string>
+    <string name="import_failed">import mislyktes</string>
+    <string name="error_could_not_open">kunne ikke åpne %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">importerte %d økt</item>
+        <item quantity="other">importerte %d økter</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d økt</item>
+        <item quantity="other">%d økter</item>
+    </plurals>
+</resources>

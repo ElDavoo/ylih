@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Russian. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — твоя жизнь в наушниках</string>
+
+    <!-- Навигация -->
+    <string name="nav_headphones">наушники</string>
+    <string name="nav_stats">статистика</string>
+    <string name="nav_settings">настройки</string>
+
+    <!-- Типы устройств -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">проводные</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">неизвестно</string>
+
+    <!-- Первый запуск -->
+    <string name="welcome_title">добро пожаловать в ylih</string>
+    <string name="welcome_intro">ylih записывает, сколько времени каждая пара наушников остаётся подключённой, чтобы через годы вы могли ответить на единственный важный вопрос о паре наушников: сколько часов они прослужили?</string>
+    <string name="welcome_point_auto_title">подключил и забыл</string>
+    <string name="welcome_point_auto_body">bluetooth-наушники записываются сами, с момента подключения. ничего не нужно держать запущенным.</string>
+    <string name="welcome_point_lifetime_title">одна пара — одна жизнь</string>
+    <string name="welcome_point_lifetime_body">когда пара выходит из строя, спишите её: итог замирает на месте, а следующая пара тех же наушников начинает отсчёт заново, с нуля.</string>
+    <string name="welcome_point_detailed_title">провод и воспроизведение</string>
+    <string name="welcome_point_detailed_body">подробное отслеживание, в настройках, добавляет проводные наушники и измеряет, сколько из этого времени реально шло воспроизведение.</string>
+    <string name="welcome_privacy">всё остаётся на этом телефоне. нет ни аккаунта, ни разрешения на доступ в интернет.</string>
+    <string name="welcome_start">начать</string>
+
+    <!-- Список наушников -->
+    <string name="devices_in_use">в использовании</string>
+    <string name="devices_retired">списаны</string>
+    <string name="devices_empty_title">пока нет наушников</string>
+    <string name="devices_empty_body">подключите пару bluetooth-наушников, и они появятся здесь. для проводных наушников нужно подробное отслеживание, в настройках.</string>
+    <string name="devices_generation">пара №%1$d</string>
+    <string name="devices_retired_on">списаны %1$s</string>
+    <string name="devices_connected_for">подключены %1$s</string>
+    <string name="devices_recent">%1$s / 7д</string>
+
+    <!-- Статистика -->
+    <string name="stats_title">все наушники</string>
+    <string name="stats_sessions_since">%1$s с %2$s</string>
+    <string name="stats_last_7">последние 7 дней</string>
+    <string name="stats_last_30">последние 30 дней</string>
+    <string name="stats_average_session">средняя сессия</string>
+    <string name="stats_playing">воспроизведение</string>
+    <string name="stats_measured_span">измеренный период</string>
+    <string name="stats_share">доля</string>
+    <string name="stats_daily_hours_30">часы по дням (30 дней)</string>
+    <string name="stats_by_pair">по парам</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · списана</string>
+    <string name="chart_max">макс. %1$s</string>
+
+    <!-- Экран пары -->
+    <string name="pair_fallback_title">пара</string>
+    <string name="pair_back">назад</string>
+    <string name="pair_more">ещё</string>
+    <string name="pair_menu_rename">переименовать</string>
+    <string name="pair_menu_purchase">данные о покупке</string>
+    <string name="pair_menu_retire">списать / заменена</string>
+    <string name="pair_menu_delete">удалить</string>
+    <string name="pair_lifetime">время этой пары</string>
+    <string name="pair_retired_on">списаны %1$s</string>
+    <string name="pair_retired_with_reason">списаны %1$s · %2$s</string>
+    <string name="pair_connected_now">подключены сейчас · %1$s</string>
+    <string name="pair_sessions">сессии</string>
+    <string name="pair_average">среднее</string>
+    <string name="pair_longest">самая долгая</string>
+    <string name="pair_first_seen">впервые замечены</string>
+    <string name="pair_of_measured">от измеренного</string>
+    <string name="pair_measured">измерено</string>
+    <string name="pair_paid">оплачено</string>
+    <string name="pair_per_hour">за час</string>
+    <string name="pair_bought">куплены</string>
+    <string name="pair_daily_hours_14">часы по дням (14 дней)</string>
+    <string name="pair_rename_title">переименовать пару</string>
+    <string name="pair_rename_label">имя</string>
+    <string name="pair_retire_title">списать эту пару</string>
+    <string name="pair_retire_label">причина (сломались, проданы, потеряны…)</string>
+    <string name="pair_retire_confirm">списать</string>
+    <string name="pair_retire_supporting">итоги замирают здесь. повторное подключение того же устройства начнёт новую пару с нуля.</string>
+    <string name="pair_price_title">уплаченная цена</string>
+    <string name="pair_price_label">сумма (целые единицы)</string>
+    <string name="pair_price_supporting">используется для расчёта стоимости часа.</string>
+    <string name="pair_delete_title">удалить эту пару?</string>
+    <string name="pair_delete_body">все записанные для неё сессии тоже будут удалены. это необратимо.</string>
+
+    <!-- Строки сессий -->
+    <string name="session_ongoing">продолжается</string>
+    <string name="session_until">до %1$s</string>
+    <string name="session_playing">%1$s воспроизведения</string>
+    <string name="session_recovered">восстановлена</string>
+
+    <!-- Настройки -->
+    <string name="settings_tracking">отслеживание</string>
+    <string name="settings_detailed_title">подробное отслеживание</string>
+    <string name="settings_detailed_body">добавляет проводные наушники и время воспроизведения. android сообщает о событиях проводного подключения только запущенному приложению, поэтому в шторке остаётся тихое уведомление. bluetooth отслеживается в любом случае.</string>
+    <string name="settings_detailed_unavailable">недоступно, пока не предоставлен доступ к bluetooth: эта сборка объявляет только тип сервиса connectedDevice, который android 14+ привязывает к разрешению bluetooth.</string>
+    <string name="settings_devices">устройства</string>
+    <string name="settings_devices_body">снимите отметку с того, что не является наушниками — автомагнитолы или колонки, — чтобы прекратить их запись.</string>
+    <string name="settings_device_subtitle">%1$s · впервые замечено %2$s</string>
+    <string name="settings_data">данные</string>
+    <string name="settings_export">экспорт json</string>
+    <string name="settings_import">импорт</string>
+    <string name="settings_import_warning">импорт заменит всё, что сейчас сохранено.</string>
+    <string name="settings_troubleshooting">устранение неполадок</string>
+    <string name="settings_battery_body">если сессии перестали записываться, проверьте, что ylih исключён из оптимизации батареи — принудительно остановленное приложение больше не получает события подключения, пока его не откроют снова.</string>
+    <string name="settings_battery_button">настройки батареи</string>
+    <string name="settings_battery_path">настройки → приложения → ylih → батарея → без ограничений.</string>
+    <string name="settings_about">о приложении</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — часы в наушниках, хранятся локально и навсегда.</string>
+    <string name="settings_import_confirm_title">заменить все данные?</string>
+    <string name="settings_import_confirm_body">импорт этой резервной копии удалит каждое устройство, пару и сессию, сохранённые сейчас.</string>
+
+    <!-- Общие действия -->
+    <string name="action_save">сохранить</string>
+    <string name="action_cancel">отмена</string>
+    <string name="action_delete">удалить</string>
+    <string name="action_import">импорт</string>
+
+    <!-- Уведомление -->
+    <string name="channel_tracking">отслеживание наушников</string>
+    <string name="channel_tracking_description">показывается, пока ylih следит за проводными наушниками и воспроизведением. android не сообщает о событиях проводного подключения не запущенным приложениям.</string>
+    <string name="notification_title">отслеживание времени в наушниках</string>
+    <string name="notification_starting">запуск…</string>
+    <string name="notification_idle">ожидание наушников</string>
+    <!-- No noun to decline here — "connected: N · time" — so the text is identical across
+         categories; only "%1$d" needs the count, and Russian's full one/few/many/other set is
+         still required by lint. -->
+    <plurals name="notification_active">
+        <item quantity="one">подключено: %1$d · %2$s</item>
+        <item quantity="few">подключено: %1$d · %2$s</item>
+        <item quantity="many">подключено: %1$d · %2$s</item>
+        <item quantity="other">подключено: %1$d · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">подключено: %1$d · %2$s · воспроизведение</item>
+        <item quantity="few">подключено: %1$d · %2$s · воспроизведение</item>
+        <item quantity="many">подключено: %1$d · %2$s · воспроизведение</item>
+        <item quantity="other">подключено: %1$d · %2$s · воспроизведение</item>
+    </plurals>
+
+    <!-- Сообщения -->
+    <string name="detailed_needs_bluetooth">этой сборке нужен доступ к bluetooth, чтобы отслеживать проводные наушники</string>
+    <string name="export_done">резервная копия экспортирована</string>
+    <string name="export_failed">не удалось экспортировать</string>
+    <string name="import_failed">не удалось импортировать</string>
+    <string name="error_could_not_open">не удалось открыть %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">импортирована %d сессия</item>
+        <item quantity="few">импортировано %d сессии</item>
+        <item quantity="many">импортировано %d сессий</item>
+        <item quantity="other">импортировано %d сессий</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d сессия</item>
+        <item quantity="few">%d сессии</item>
+        <item quantity="many">%d сессий</item>
+        <item quantity="other">%d сессий</item>
+    </plurals>
+</resources>

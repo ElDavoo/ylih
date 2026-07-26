@@ -1,0 +1,40 @@
+Headphone akhirnya rusak. Sebelum itu terjadi, ylih menjawab satu-satunya pertanyaan yang benar-benar penting tentang sepasang headphone: berapa jam yang kamu dapatkan darinya?
+
+Setiap kali headphone-mu terhubung, ylih mencatat kapan. Setiap kali terputus, ylih mencatat kapan itu juga. Itulah seluruh idenya — dan karena sebuah koneksi hanyalah dua stempel waktu, aplikasi ini tidak perlu berjalan di latar belakang untuk melakukannya.
+
+APA YANG DILACAK
+
+• Jam total masa pakai untuk setiap pasang fisik. Saat sepasang headphone mati, pensiunkan — totalnya berhenti di situ, dan pasangan berikutnya dari model yang sama mulai lagi dari nol sebagai generasi 2. Angka lamamu tidak pernah tercampur dengan yang baru.
+• Setiap sesi, disimpan selamanya: waktu terhubung, waktu terputus, dan alasan berakhirnya.
+• Waktu pemutaran (opsional): berapa banyak dari waktu terhubung itu yang benar-benar digunakan untuk memutar audio, sehingga "tergantung di leher" tidak dihitung sebagai mendengarkan.
+• Biaya per jam, jika kamu memasukkan berapa yang kamu bayar. Angka yang memuaskan untuk dilihat menurun.
+
+DUA MODE PELACAKAN
+
+Hanya bluetooth — mode bawaan. Tidak ada bagian aplikasi yang berjalan, tidak ada yang muncul di panel notifikasimu, dan tidak ada biaya baterai, karena android mengirimkan peristiwa koneksi ke aplikasi bahkan saat sedang ditutup.
+
+Pelacakan detail — opsional. Menambahkan headphone berkabel dan usb, serta mengukur waktu pemutaran dibanding waktu terhubung. Ini membutuhkan satu notifikasi senyap dengan prioritas minimum, karena android hanya melaporkan peristiwa colokan kabel ke aplikasi yang sudah berjalan. Itu, dan hanya itu, alasan notifikasi tersebut ada.
+
+Bluetooth tetap dilacak apa pun pilihannya.
+
+ANGKA YANG BISA DIPERCAYA BERTAHUN-TAHUN KEMUDIAN
+
+Total jangka panjang tidak ada artinya jika crash atau reboot diam-diam menambahkan dua belas jam. Jadi:
+
+• Sesi yang tertinggal terbuka akibat reboot atau crash ditutup pada detak jantung terakhir yang diketahui, tidak pernah lebih lambat dari saat ponsel menyala kembali. Waktu saat ponsel mati tidak pernah dihitung.
+• Jika headphone-mu masih terhubung setelah reboot, sesi baru dimulai alih-alih meregangkan sesi lama melintasi jeda tersebut.
+• Sesi dipantau secara berkala selama masih terbuka, sehingga kerusakan akibat koneksi terputus yang terlewat tetap terbatas.
+
+PRIVAT SECARA KONSTRUKSI
+
+ylih tidak memiliki izin internet. Bukan "kami janji tidak akan mengirim apa pun" — aplikasi ini secara teknis tidak mampu melakukannya. Tidak ada akun, tidak ada analitik, tidak ada iklan, dan tidak ada pelacakan. Semuanya tersimpan dalam basis data di ponselmu.
+
+Pengaturan → Ekspor menulis seluruh riwayatmu sebagai json yang bisa dibaca, dan Impor memulihkannya, sehingga pindah ke ponsel baru tidak pernah membuatmu kehilangan angka-angkamu.
+
+IZIN
+
+• Perangkat di sekitar (bluetooth): diperlukan untuk menerima peristiwa koneksi dan membaca nama headset. Tanpanya, pelacakan bluetooth sama sekali tidak bisa berjalan.
+• Notifikasi: hanya untuk notifikasi pelacakan detail.
+• Jalankan saat perangkat dinyalakan: untuk menutup sesi yang tidak pernah dilaporkan saat perangkat dimatikan.
+
+Sumber terbuka dengan lisensi MIT.

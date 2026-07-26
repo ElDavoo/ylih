@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Català. Mateix estil de casa que la configuració regional predeterminada: minúscules pertot arreu, a propòsit.
+
+  `app_name` està deliberadament absent — l'etiqueta del llançador és un nom, no una paraula, i no es tradueix. Tampoc `value_none`, que és un guió.
+-->
+<resources>
+    <string name="app_title">ylih — la teva vida amb auriculars</string>
+
+    <!-- Navegació inferior -->
+    <string name="nav_headphones">auriculars</string>
+    <string name="nav_stats">estadístiques</string>
+    <string name="nav_settings">configuració</string>
+
+    <!-- Tipus de dispositius -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">filats</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">desconegut</string>
+
+    <!-- Primera execució -->
+    <string name="welcome_title">benvingut a ylih</string>
+    <string name="welcome_intro">ylih enregistra quant temps queda connectat cada parell d\'auriculars, de manera que anys més tard pugues contestar l\'única pregunta que importa sobre un parell: quantes hores van durar?</string>
+    <string name="welcome_point_auto_title">connecta i oblida\'t</string>
+    <string name="welcome_point_auto_body">els auriculars bluetooth s\'enregistren sols, des del moment que es connecten. no cal deixar res en execució.</string>
+    <string name="welcome_point_lifetime_title">un parell, una vida</string>
+    <string name="welcome_point_lifetime_body">quan un parell es trenca, retira\'l: el total es congela aquí i el següent parell dels mateixos auriculars comença de zero.</string>
+    <string name="welcome_point_detailed_title">filats i reproducció</string>
+    <string name="welcome_point_detailed_body">el seguiment detallat, a la configuració, afegeix auriculars filats i mesura quant de temps es va estar realment reproduint.</string>
+    <string name="welcome_privacy">tot roman en aquest telèfon. no hi ha cap compte, ni l\'app té permís per a internet.</string>
+    <string name="welcome_start">comença</string>
+
+    <!-- Llista d\'auriculars -->
+    <string name="devices_in_use">en ús</string>
+    <string name="devices_retired">jubilats</string>
+    <string name="devices_empty_title">cap auricular encara</string>
+    <string name="devices_empty_body">connecta un parell d\'auriculars bluetooth i apareixeran aquí. els auriculars filats necessiten un seguiment detallat, a la configuració.</string>
+    <string name="devices_generation">parell #%1$d</string>
+    <string name="devices_retired_on">jubilats %1$s</string>
+    <string name="devices_connected_for">connectats %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Estadístiques -->
+    <string name="stats_title">tots els auriculars</string>
+    <string name="stats_sessions_since">%1$s des de %2$s</string>
+    <string name="stats_last_7">últims 7 dies</string>
+    <string name="stats_last_30">últims 30 dies</string>
+    <string name="stats_average_session">sessió mitjana</string>
+    <string name="stats_playing">reproduint</string>
+    <string name="stats_measured_span">període mesurat</string>
+    <string name="stats_share">part</string>
+    <string name="stats_daily_hours_30">hores diàries (30 dies)</string>
+    <string name="stats_by_pair">per parell</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · jubilat</string>
+    <string name="chart_max">màx. %1$s</string>
+
+    <!-- Pantalla de parell -->
+    <string name="pair_fallback_title">parell</string>
+    <string name="pair_back">enrere</string>
+    <string name="pair_more">més</string>
+    <string name="pair_menu_rename">canviar nom</string>
+    <string name="pair_menu_purchase">informació de compra</string>
+    <string name="pair_menu_retire">jubilar / substituït</string>
+    <string name="pair_menu_delete">suprimir</string>
+    <string name="pair_lifetime">vida d\'aquest parell</string>
+    <string name="pair_retired_on">jubilats %1$s</string>
+    <string name="pair_retired_with_reason">jubilats %1$s · %2$s</string>
+    <string name="pair_connected_now">connectats ara · %1$s</string>
+    <string name="pair_sessions">sessions</string>
+    <string name="pair_average">mitjana</string>
+    <string name="pair_longest">més llarg</string>
+    <string name="pair_first_seen">primer cop vist</string>
+    <string name="pair_of_measured">del mesurat</string>
+    <string name="pair_measured">mesurat</string>
+    <string name="pair_paid">pagat</string>
+    <string name="pair_per_hour">per hora</string>
+    <string name="pair_bought">comprat</string>
+    <string name="pair_daily_hours_14">hores diàries (14 dies)</string>
+    <string name="pair_rename_title">canviar nom del parell</string>
+    <string name="pair_rename_label">nom</string>
+    <string name="pair_retire_title">jubilar aquest parell</string>
+    <string name="pair_retire_label">raó (trencats, venuts, perduts…)</string>
+    <string name="pair_retire_confirm">jubilar</string>
+    <string name="pair_retire_supporting">els totals es congelen aquí. reconnectar el mateix dispositiu comença un parell nou a zero.</string>
+    <string name="pair_price_title">preu pagat</string>
+    <string name="pair_price_label">quantitat (unitats senceres)</string>
+    <string name="pair_price_supporting">s\'utilitza per al cost per hora.</string>
+    <string name="pair_delete_title">suprimir aquest parell?</string>
+    <string name="pair_delete_body">cada sessió enregistrada per a aquest parell també s\'elimina. això no es pot desfer.</string>
+
+    <!-- Files de sessions -->
+    <string name="session_ongoing">en curs</string>
+    <string name="session_until">fins a %1$s</string>
+    <string name="session_playing">%1$s reproduint</string>
+    <string name="session_recovered">recuperat</string>
+
+    <!-- Configuració -->
+    <string name="settings_tracking">seguiment</string>
+    <string name="settings_detailed_title">seguiment detallat</string>
+    <string name="settings_detailed_body">afegeix auriculars filats i temps de reproducció. android només comunica els events de connexió filada a l\'app si s\'està executant, per tant aquí queda una notificació silenciosa a la barra. bluetooth es segueix de totes formes.</string>
+    <string name="settings_detailed_unavailable">no disponible fins que es concedeixi accés bluetooth: aquesta versió només declara el tipus de servei connectedDevice, que android 14+ vincula a un permís bluetooth.</string>
+    <string name="settings_devices">dispositius</string>
+    <string name="settings_devices_body">desmarca tot el que no sigui auriculars — un sistema estèreo d\'un cotxe o un altaveu — per deixar de gravar-lo.</string>
+    <string name="settings_device_subtitle">%1$s · primer cop vist %2$s</string>
+    <string name="settings_data">dades</string>
+    <string name="settings_export">exportar json</string>
+    <string name="settings_import">importar</string>
+    <string name="settings_import_warning">importar reemplaça tot el que està guardat actualment.</string>
+    <string name="settings_troubleshooting">resolució de problemes</string>
+    <string name="settings_battery_body">si les sessions deixen de ser enregistrades, verifica que ylih està exempt de la optimització de bateria — una app que ha estat forçada a tancar-se mai no rep events de connexió fins que no es torni a obrir.</string>
+    <string name="settings_battery_button">configuració de bateria</string>
+    <string name="settings_battery_path">configuració → apps → ylih → bateria → sense restriccions.</string>
+    <string name="settings_about">sobre</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — hores amb auriculars, guardades localment i per sempre.</string>
+    <string name="settings_import_confirm_title">reemplaçar totes les dades?</string>
+    <string name="settings_import_confirm_body">importar aquesta còpia de seguretat elimina cada dispositiu, parell i sessió guardada actualment.</string>
+
+    <!-- Accions compartides -->
+    <string name="action_save">guardar</string>
+    <string name="action_cancel">cancel·lar</string>
+    <string name="action_delete">suprimir</string>
+    <string name="action_import">importar</string>
+
+    <!-- Notificació -->
+    <string name="channel_tracking">seguiment d\'auriculars</string>
+    <string name="channel_tracking_description">es mostra mentre ylih vigila els auriculars filats i la reproducció. android no comunica els events de connexió filada a les apps que no s\'estan executant.</string>
+    <string name="notification_title">seguint el temps amb auriculars</string>
+    <string name="notification_starting">inici…</string>
+    <string name="notification_idle">esperant auriculars</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d connectat · %2$s</item>
+        <item quantity="other">%1$d connectats · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d connectat · %2$s · reproduint</item>
+        <item quantity="other">%1$d connectats · %2$s · reproduint</item>
+    </plurals>
+
+    <!-- Missatges de snackbar -->
+    <string name="detailed_needs_bluetooth">aquesta versió necessita accés bluetooth per poder seguir auriculars filats</string>
+    <string name="export_done">còpia de seguretat exportada</string>
+    <string name="export_failed">l\'exportació ha fallat</string>
+    <string name="import_failed">l\'importació ha fallat</string>
+    <string name="error_could_not_open">no s\'ha pogut obrir %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">s\'ha importat %d sessió</item>
+        <item quantity="other">s\'han importat %d sessions</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sessió</item>
+        <item quantity="other">%d sessions</item>
+    </plurals>
+</resources>

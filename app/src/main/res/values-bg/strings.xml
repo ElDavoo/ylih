@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Bulgarian. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — вашият живот в слушалки</string>
+
+    <!-- Навигация в долната част -->
+    <string name="nav_headphones">слушалки</string>
+    <string name="nav_stats">статистика</string>
+    <string name="nav_settings">настройки</string>
+
+    <!-- Типове устройства -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">жични</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">неизвестно</string>
+
+    <!-- Първи старт -->
+    <string name="welcome_title">добре дошли в ylih</string>
+    <string name="welcome_intro">ylih записва колко време остава свързана всяка двойка слушалки, за да можете след години да отговорите на единствения важен въпрос за двойка: колко часа продължиха?</string>
+    <string name="welcome_point_auto_title">свържи и забрави</string>
+    <string name="welcome_point_auto_body">bluetooth слушалките се записват сами, от момента на свързване. нищо не трябва да остава пускащо се.</string>
+    <string name="welcome_point_lifetime_title">една двойка, един живот</string>
+    <string name="welcome_point_lifetime_body">когато двойка спре да работи, пенсионирайте я: нейния сбор замръзва на място, а следващата двойка на същите слушалки отново започва от нула.</string>
+    <string name="welcome_point_detailed_title">жици и възпроизвеждане</string>
+    <string name="welcome_point_detailed_body">детайлно проследяване, в настройки, добавя жични слушалки и измерва колко от времето беше действително възпроизвеждане.</string>
+    <string name="welcome_privacy">всичко остава на този телефон. няма профил и приложението няма разрешение за интернет.</string>
+    <string name="welcome_start">начнете</string>
+
+    <!-- Списък на слушалките -->
+    <string name="devices_in_use">в употреба</string>
+    <string name="devices_retired">пенсионирани</string>
+    <string name="devices_empty_title">още нет слушалки</string>
+    <string name="devices_empty_body">свържете двойка bluetooth слушалки и те ще се появят тук. жичните слушалки имат нужда от детайлно проследяване, в настройки.</string>
+    <string name="devices_generation">двойка #%1$d</string>
+    <string name="devices_retired_on">пенсионирани %1$s</string>
+    <string name="devices_connected_for">свързани %1$s</string>
+    <string name="devices_recent">%1$s / 7д</string>
+
+    <!-- Статистика -->
+    <string name="stats_title">всички слушалки</string>
+    <string name="stats_sessions_since">%1$s от %2$s</string>
+    <string name="stats_last_7">последните 7 дни</string>
+    <string name="stats_last_30">последните 30 дни</string>
+    <string name="stats_average_session">средна сесия</string>
+    <string name="stats_playing">възпроизвеждане</string>
+    <string name="stats_measured_span">измерен период</string>
+    <string name="stats_share">сподели</string>
+    <string name="stats_daily_hours_30">часове по дни (30 дни)</string>
+    <string name="stats_by_pair">по двойки</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · пенсионирана</string>
+    <string name="chart_max">макс. %1$s</string>
+
+    <!-- Екран на двойката -->
+    <string name="pair_fallback_title">двойка</string>
+    <string name="pair_back">назад</string>
+    <string name="pair_more">още</string>
+    <string name="pair_menu_rename">преименуване</string>
+    <string name="pair_menu_purchase">информация за покупка</string>
+    <string name="pair_menu_retire">пенсионирай / заменена</string>
+    <string name="pair_menu_delete">изтриване</string>
+    <string name="pair_lifetime">живот на тази двойка</string>
+    <string name="pair_retired_on">пенсионирани %1$s</string>
+    <string name="pair_retired_with_reason">пенсионирани %1$s · %2$s</string>
+    <string name="pair_connected_now">свързани сега · %1$s</string>
+    <string name="pair_sessions">сесии</string>
+    <string name="pair_average">средно</string>
+    <string name="pair_longest">най-дълга</string>
+    <string name="pair_first_seen">първо видяни</string>
+    <string name="pair_of_measured">от измеренното</string>
+    <string name="pair_measured">измерено</string>
+    <string name="pair_paid">платено</string>
+    <string name="pair_per_hour">за час</string>
+    <string name="pair_bought">закупени</string>
+    <string name="pair_daily_hours_14">часове по дни (14 дни)</string>
+    <string name="pair_rename_title">преименуване на двойка</string>
+    <string name="pair_rename_label">име</string>
+    <string name="pair_retire_title">пенсионирайте тази двойка</string>
+    <string name="pair_retire_label">причина (счупени, продадени, загубени…)</string>
+    <string name="pair_retire_confirm">пенсионирай</string>
+    <string name="pair_retire_supporting">сборовете замръзват тук. повторно свързване на същото устройство начина свежа двойка от нула.</string>
+    <string name="pair_price_title">платена цена</string>
+    <string name="pair_price_label">сума (целыh единици)</string>
+    <string name="pair_price_supporting">използва се за цената на час фигура.</string>
+    <string name="pair_delete_title">изтрийте тази двойка?</string>
+    <string name="pair_delete_body">всяка записана за нея сесия също се изтрива. това не може да бъде отменено.</string>
+
+    <!-- Редове на сесията -->
+    <string name="session_ongoing">текущо</string>
+    <string name="session_until">до %1$s</string>
+    <string name="session_playing">%1$s възпроизвеждане</string>
+    <string name="session_recovered">възстановена</string>
+
+    <!-- Настройки -->
+    <string name="settings_tracking">проследяване</string>
+    <string name="settings_detailed_title">детайлно проследяване</string>
+    <string name="settings_detailed_body">добавя жични слушалки и време за възпроизвеждане. android съобщава за жични събития на конекциите само на работещо приложение, така че това пази тихо известие в сянката. bluetooth се проследява във всеки случай.</string>
+    <string name="settings_detailed_unavailable">недостъпно до bluetooth достъп е даден: този вид само деклариира connectedDevice тип услуга, който android 14+ свързва към bluetooth разрешение.</string>
+    <string name="settings_devices">устройства</string>
+    <string name="settings_devices_body">отметнете всичко, което не е слушалки — автомобилен стерео или говорител, — за да спрете записването му.</string>
+    <string name="settings_device_subtitle">%1$s · първо видяно %2$s</string>
+    <string name="settings_data">данни</string>
+    <string name="settings_export">експорт json</string>
+    <string name="settings_import">импорт</string>
+    <string name="settings_import_warning">импортирането замества всичко текущо запазено.</string>
+    <string name="settings_troubleshooting">отстраняване на неполадки</string>
+    <string name="settings_battery_body">ако сесиите спрат да се записват, проверете че ylih е изключен от оптимизация на батерия — принудително спряно приложение никогато не получава конекции отново до да се отвори.</string>
+    <string name="settings_battery_button">настройки на батерия</string>
+    <string name="settings_battery_path">настройки → приложения → ylih → батерия → неограничено.</string>
+    <string name="settings_about">относно</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — часове в слушалки, запазени локално и завинаги.</string>
+    <string name="settings_import_confirm_title">заменете всички данни?</string>
+    <string name="settings_import_confirm_body">импортирането на тази архива изтрива всяко устройство, двойка и сесия текущо запазени.</string>
+
+    <!-- Споделени действия -->
+    <string name="action_save">запази</string>
+    <string name="action_cancel">отмени</string>
+    <string name="action_delete">изтриване</string>
+    <string name="action_import">импорт</string>
+
+    <!-- Известие -->
+    <string name="channel_tracking">проследяване на слушалки</string>
+    <string name="channel_tracking_description">показан докато ylih наблюдава жични слушалки и възпроизвеждане. android не съобщава жични конекционни события за неработещи приложения.</string>
+    <string name="notification_title">проследяване на време на слушалки</string>
+    <string name="notification_starting">начало…</string>
+    <string name="notification_idle">чакане на слушалки</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d свързан · %2$s</item>
+        <item quantity="other">%1$d свързан · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d свързан · %2$s · възпроизвеждане</item>
+        <item quantity="other">%1$d свързан · %2$s · възпроизвеждане</item>
+    </plurals>
+
+    <!-- Съобщения на лента от известия -->
+    <string name="detailed_needs_bluetooth">този вид има нужда от bluetooth достъп преди да следи жични слушалки</string>
+    <string name="export_done">архив експортиран</string>
+    <string name="export_failed">експортирането не успя</string>
+    <string name="import_failed">импортирането не успя</string>
+    <string name="error_could_not_open">не може да отвори %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">импортирана %d сесия</item>
+        <item quantity="other">импортирани %d сесии</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d сесия</item>
+        <item quantity="other">%d сесии</item>
+    </plurals>
+</resources>

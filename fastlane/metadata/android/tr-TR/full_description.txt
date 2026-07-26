@@ -1,0 +1,40 @@
+Kulaklıklar er ya da geç bozulur. Bu olmadan önce ylih, bir kulaklık çifti hakkında gerçekten önemli olan tek soruyu yanıtlar: kaç saat kullandın?
+
+Kulaklıkların her bağlandığında ylih ne zaman olduğunu kaydeder. Her bağlantı kesildiğinde de ne zaman olduğunu kaydeder. Fikrin tamamı bu — ve bir bağlantı sadece iki zaman damgası olduğundan, uygulamanın bunu yapmak için arka planda çalışmasına gerek yoktur.
+
+NELERİ İZLER
+
+• Her fiziksel çift için ömür boyu saat. Bir çift bozulduğunda emekliye ayır — toplam donar ve aynı modelin bir sonraki çifti 2. nesil olarak sıfırdan başlar. Eski sayıların yenileriyle karışması asla olmaz.
+• Her oturum kalıcı olarak saklanır: bağlanma zamanı, bağlantı kesilme zamanı ve neden bittiği.
+• Çalma süresi (isteğe bağlı): o bağlı sürenin ne kadarında gerçekten ses çaldı, böylece "boynuna asılı durması" dinleme sayılmaz.
+• Saat başına maliyet, ne kadar ödediğini girersen. Düşüşünü izlemek tatmin edici bir sayıdır.
+
+İKİ TAKİP MODU
+
+Yalnızca bluetooth — varsayılan mod. Uygulamanın hiçbir parçası çalışmaz, bildirim alanında hiçbir şey durmaz ve pil maliyeti yoktur; çünkü android bağlantı olaylarını uygulama kapalıyken bile iletir.
+
+Ayrıntılı takip — isteğe bağlı. Kablolu ve USB kulaklıkları ekler, çalma süresini bağlı süreyle karşılaştırarak ölçer. Sessiz, minimum öncelikli tek bir bildirim gerektirir; çünkü android kablo takma olaylarını yalnızca zaten çalışan bir uygulamaya bildirir. Bildirimin var olmasının tek sebebi budur.
+
+Bluetooth her iki modda da takip edilir.
+
+YILLAR SONRA BİLE GÜVENİLİR SAYILAR
+
+Bir çökme ya da yeniden başlatma sessizce on iki saat eklerse uzun vadeli toplamların hiçbir değeri kalmaz. Bu yüzden:
+
+• Bir yeniden başlatma ya da çökme yüzünden açık kalan bir oturum, son bilinen kalp atışında kapanır — telefonun açıldığı andan daha geç asla değil. Telefonun kapalı geçirdiği süre hiçbir zaman sayılmaz.
+• Kulaklıklar bir yeniden başlatmadan sonra hâlâ bağlıysa, eski oturum boşluğun üzerine uzatılmak yerine yeni bir oturum başlar.
+• Oturumlar açıkken kalp atışıyla izlenir, böylece kaçırılan bir bağlantı kesilme olayının zararı sınırlı kalır.
+
+YAPISI GEREĞİ GİZLİ
+
+ylih'in internet izni yoktur. Bu bir söz değil — uygulama teknik olarak bir şey göndermeye muktedir değildir. Hesap yok, analitik yok, reklam yok, takip yok. Her şey telefonundaki bir veritabanında yaşar.
+
+Ayarlar → Dışa Aktar, tüm geçmişini okunabilir JSON olarak yazar; İçe Aktar da onu geri yükler — yeni bir telefona geçmek sayılarını asla kaybettirmez.
+
+İZİNLER
+
+• Yakındaki cihazlar (bluetooth): bağlantı olaylarını almak ve bir kulaklığın adını okumak için gerekir. Bu izin olmadan bluetooth takibi hiç çalışamaz.
+• Bildirimler: yalnızca ayrıntılı takip bildirimi için.
+• Başlangıçta çalıştır: kapanışın hiç bildirmediği oturumları kapatmak için.
+
+MIT lisansıyla açık kaynak.

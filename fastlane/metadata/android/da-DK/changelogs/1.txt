@@ -1,0 +1,8 @@
+Første udgivelse.
+
+• Levetidstimer pr. fysisk par høretelefoner, med generationer, så et erstatningspar starter fra nul i stedet for at arve det gamles total.
+• Hver forbindelse gemt for evigt, med statistik pr. dag og pr. par.
+• Valgfri detaljeret sporing for høretelefoner med kabel og usb, og for afspilning i forhold til forbundet tid.
+• Pris pr. lyttetime.
+• Json-eksport og -import.
+• Ingen internettilladelse: intet forlader nogensinde telefonen.

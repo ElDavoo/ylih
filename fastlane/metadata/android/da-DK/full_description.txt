@@ -1,0 +1,40 @@
+Høretelefoner går før eller siden i stykker. Inden det sker, svarer ylih på det eneste spørgsmål, der virkelig betyder noget om et par: hvor mange timer fik du ud af dem?
+
+Hver gang dine høretelefoner forbindes, noterer ylih hvornår. Hver gang de afbrydes, noterer den hvornår. Det er hele idéen — og fordi en forbindelse blot er to tidsstempler, behøver appen ikke køre i baggrunden for at gøre det.
+
+HVAD DEN REGISTRERER
+
+• Levetidstimer pr. fysisk par. Når et par går i stykker, så udfas det — totalen fryses, og næste par af samme model starter igen fra nul som generation 2. Dine gamle tal blandes aldrig sammen med de nye.
+• Hver session, gemt for evigt: hvornår den blev forbundet, hvornår den blev afbrudt, og hvorfor den sluttede.
+• Afspilningstid (valgfrit): hvor meget af den forbundne tid der rent faktisk blev afspillet lyd, så "hænger om halsen" ikke tæller som lytning.
+• Pris pr. time, hvis du angiver, hvad du betalte for dem. Det er et tilfredsstillende tal at se falde.
+
+TO SPORINGSTILSTANDE
+
+Kun bluetooth — standardindstillingen. Intet af appen kører, intet ligger i dit meddelelsespanel, og der er ingen batteriomkostning, fordi android leverer forbindelseshændelser til appen, selv når den er lukket.
+
+Detaljeret sporing — valgfri. Tilføjer høretelefoner med kabel og usb, og måler afspilning i forhold til forbundet tid. Den kræver én lydløs notifikation med minimal prioritet, fordi android kun rapporterer kabelbegivenheder til en app, der allerede kører. Det, og intet andet, er årsagen til, at notifikationen findes.
+
+Bluetooth spores under alle omstændigheder.
+
+TAL DU KAN STOLE PÅ ÅR SENERE
+
+Langsigtede totaler er værdiløse, hvis et nedbrud eller en genstart stille og roligt lægger tolv timer til. Derfor:
+
+• En session, der er efterladt åben af en genstart eller et nedbrud, lukkes ved sit sidst kendte hjerteslag, aldrig senere end det øjeblik telefonen startede op. Tid, telefonen var slukket, tælles aldrig med.
+• Hvis dine høretelefoner stadig er forbundet efter en genstart, starter en ny session i stedet for at strække den gamle hen over pausen.
+• Sessioner overvåges løbende, mens de er åbne, så skaden fra en overset afbrydelse er begrænset.
+
+PRIVAT VED KONSTRUKTION
+
+ylih har ingen internettilladelse. Ikke "vi lover ikke at sende noget" — appen er teknisk ude af stand til det. Der er ingen konti, ingen analyse, ingen reklamer og ingen sporing. Alt ligger i en database på din telefon.
+
+Indstillinger → Eksportér skriver hele din historik som læsbar json, og Importér genskaber den, så det aldrig koster dig dine tal at skifte til en ny telefon.
+
+TILLADELSER
+
+• Enheder i nærheden (bluetooth): nødvendig for at modtage forbindelseshændelser og læse et headsets navn. Uden den kan bluetooth-sporing slet ikke fungere.
+• Notifikationer: kun til notifikationen for detaljeret sporing.
+• Kør ved opstart: for at lukke sessioner, som nedlukningen aldrig fik rapporteret.
+
+Open source under MIT-licensen.

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Vietnamese. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash. Vietnamese's CLDR plural rule has only the
+  "other" category, so every <plurals> below carries a single item.
+-->
+<resources>
+    <string name="app_title">ylih - cuộc sống tai nghe của bạn</string>
+
+    <!-- Điều hướng -->
+    <string name="nav_headphones">tai nghe</string>
+    <string name="nav_stats">thống kê</string>
+    <string name="nav_settings">cài đặt</string>
+
+    <!-- Loại thiết bị -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">có dây</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">không xác định</string>
+
+    <!-- Lần đầu mở app -->
+    <string name="welcome_title">chào mừng đến với ylih</string>
+    <string name="welcome_intro">ylih ghi lại thời gian mỗi đôi tai nghe được kết nối, để nhiều năm sau bạn vẫn có thể trả lời câu hỏi duy nhất thực sự quan trọng về một đôi tai nghe: chúng đã dùng được bao nhiêu giờ?</string>
+    <string name="welcome_point_auto_title">kết nối rồi quên</string>
+    <string name="welcome_point_auto_body">tai nghe bluetooth được ghi lại tự động, ngay từ khi kết nối. không cần để bất cứ thứ gì chạy nền.</string>
+    <string name="welcome_point_lifetime_title">một đôi, một vòng đời</string>
+    <string name="welcome_point_lifetime_body">khi một đôi tai nghe hỏng, hãy cho nó nghỉ hưu: tổng thời gian dừng lại ở đó và đôi tai nghe cùng loại tiếp theo bắt đầu lại từ số 0.</string>
+    <string name="welcome_point_detailed_title">có dây và phát nhạc</string>
+    <string name="welcome_point_detailed_body">chế độ theo dõi chi tiết, trong cài đặt, thêm tai nghe có dây và đo xem bao nhiêu thời gian thực sự đang phát nhạc.</string>
+    <string name="welcome_privacy">mọi thứ đều ở lại trên điện thoại này. không có tài khoản, và ứng dụng không có quyền truy cập internet.</string>
+    <string name="welcome_start">bắt đầu</string>
+
+    <!-- Danh sách tai nghe -->
+    <string name="devices_in_use">đang dùng</string>
+    <string name="devices_retired">đã nghỉ hưu</string>
+    <string name="devices_empty_title">chưa có tai nghe nào</string>
+    <string name="devices_empty_body">kết nối một đôi tai nghe bluetooth và chúng sẽ xuất hiện ở đây. tai nghe có dây cần chế độ theo dõi chi tiết, trong cài đặt.</string>
+    <string name="devices_generation">đôi #%1$d</string>
+    <string name="devices_retired_on">đã nghỉ hưu %1$s</string>
+    <string name="devices_connected_for">đã kết nối %1$s</string>
+    <string name="devices_recent">%1$s / 7 ngày</string>
+
+    <!-- Thống kê -->
+    <string name="stats_title">tất cả tai nghe</string>
+    <string name="stats_sessions_since">%1$s kể từ %2$s</string>
+    <string name="stats_last_7">7 ngày qua</string>
+    <string name="stats_last_30">30 ngày qua</string>
+    <string name="stats_average_session">phiên trung bình</string>
+    <string name="stats_playing">đang phát</string>
+    <string name="stats_measured_span">khoảng thời gian đo được</string>
+    <string name="stats_share">chia sẻ</string>
+    <string name="stats_daily_hours_30">số giờ mỗi ngày (30 ngày)</string>
+    <string name="stats_by_pair">theo từng đôi</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · đã nghỉ hưu</string>
+    <string name="chart_max">tối đa %1$s</string>
+
+    <!-- Chi tiết đôi tai nghe -->
+    <string name="pair_fallback_title">đôi tai nghe</string>
+    <string name="pair_back">quay lại</string>
+    <string name="pair_more">thêm</string>
+    <string name="pair_menu_rename">đổi tên</string>
+    <string name="pair_menu_purchase">thông tin mua hàng</string>
+    <string name="pair_menu_retire">cho nghỉ hưu / đã thay</string>
+    <string name="pair_menu_delete">xóa</string>
+    <string name="pair_lifetime">tổng thời gian của đôi này</string>
+    <string name="pair_retired_on">đã nghỉ hưu %1$s</string>
+    <string name="pair_retired_with_reason">đã nghỉ hưu %1$s · %2$s</string>
+    <string name="pair_connected_now">đang kết nối · %1$s</string>
+    <string name="pair_sessions">phiên</string>
+    <string name="pair_average">trung bình</string>
+    <string name="pair_longest">dài nhất</string>
+    <string name="pair_first_seen">lần đầu thấy</string>
+    <string name="pair_of_measured">trên tổng thời gian đo được</string>
+    <string name="pair_measured">đã đo</string>
+    <string name="pair_paid">đã trả</string>
+    <string name="pair_per_hour">mỗi giờ</string>
+    <string name="pair_bought">đã mua</string>
+    <string name="pair_daily_hours_14">số giờ mỗi ngày (14 ngày)</string>
+    <string name="pair_rename_title">đổi tên đôi tai nghe</string>
+    <string name="pair_rename_label">tên</string>
+    <string name="pair_retire_title">cho đôi này nghỉ hưu</string>
+    <string name="pair_retire_label">lý do (hỏng, bán, mất…)</string>
+    <string name="pair_retire_confirm">cho nghỉ hưu</string>
+    <string name="pair_retire_supporting">tổng thời gian dừng lại ở đây. kết nối lại cùng thiết bị này sẽ bắt đầu một đôi mới từ số 0.</string>
+    <string name="pair_price_title">giá đã trả</string>
+    <string name="pair_price_label">số tiền (đơn vị nguyên)</string>
+    <string name="pair_price_supporting">dùng để tính chi phí mỗi giờ.</string>
+    <string name="pair_delete_title">xóa đôi tai nghe này?</string>
+    <string name="pair_delete_body">mọi phiên đã ghi cho nó cũng sẽ bị xóa. không thể hoàn tác.</string>
+
+    <!-- Dòng phiên -->
+    <string name="session_ongoing">đang diễn ra</string>
+    <string name="session_until">đến %1$s</string>
+    <string name="session_playing">%1$s đang phát</string>
+    <string name="session_recovered">đã khôi phục</string>
+
+    <!-- Cài đặt -->
+    <string name="settings_tracking">theo dõi</string>
+    <string name="settings_detailed_title">theo dõi chi tiết</string>
+    <string name="settings_detailed_body">thêm tai nghe có dây và thời gian phát nhạc. android chỉ báo sự kiện cắm tai nghe có dây cho một ứng dụng đang chạy, nên chế độ này giữ một thông báo im lặng trên thanh trạng thái. bluetooth vẫn luôn được theo dõi dù có bật chế độ này hay không.</string>
+    <string name="settings_detailed_unavailable">chưa dùng được cho đến khi quyền truy cập bluetooth được cấp: bản build này chỉ khai báo loại dịch vụ connectedDevice, mà android 14 trở lên gắn với một quyền bluetooth.</string>
+    <string name="settings_devices">thiết bị</string>
+    <string name="settings_devices_body">bỏ chọn bất cứ thứ gì không phải tai nghe — như loa xe hơi hay loa ngoài — để ngừng ghi lại nó.</string>
+    <string name="settings_device_subtitle">%1$s · lần đầu thấy %2$s</string>
+    <string name="settings_data">dữ liệu</string>
+    <string name="settings_export">xuất json</string>
+    <string name="settings_import">nhập</string>
+    <string name="settings_import_warning">nhập dữ liệu sẽ thay thế toàn bộ dữ liệu hiện có.</string>
+    <string name="settings_troubleshooting">khắc phục sự cố</string>
+    <string name="settings_battery_body">nếu các phiên ngừng được ghi lại, hãy kiểm tra xem ylih có được miễn trừ tối ưu hóa pin không — một ứng dụng đã bị buộc dừng sẽ không nhận được thông báo kết nối nữa cho đến khi được mở lại.</string>
+    <string name="settings_battery_button">cài đặt pin</string>
+    <string name="settings_battery_path">cài đặt → ứng dụng → ylih → pin → không hạn chế.</string>
+    <string name="settings_about">giới thiệu</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — số giờ tai nghe, được lưu tại chỗ và mãi mãi.</string>
+    <string name="settings_import_confirm_title">thay thế toàn bộ dữ liệu?</string>
+    <string name="settings_import_confirm_body">nhập bản sao lưu này sẽ xóa mọi thiết bị, đôi tai nghe và phiên đang được lưu hiện tại.</string>
+
+    <!-- Hành động dùng chung -->
+    <string name="action_save">lưu</string>
+    <string name="action_cancel">hủy</string>
+    <string name="action_delete">xóa</string>
+    <string name="action_import">nhập</string>
+
+    <!-- Thông báo -->
+    <string name="channel_tracking">theo dõi tai nghe</string>
+    <string name="channel_tracking_description">hiển thị khi ylih đang theo dõi tai nghe có dây và việc phát nhạc. android không báo sự kiện cắm tai nghe có dây cho ứng dụng không chạy.</string>
+    <string name="notification_title">đang theo dõi thời gian tai nghe</string>
+    <string name="notification_starting">đang khởi động…</string>
+    <string name="notification_idle">đang chờ tai nghe</string>
+    <plurals name="notification_active">
+        <item quantity="other">%1$d đã kết nối · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="other">%1$d đã kết nối · %2$s · đang phát</item>
+    </plurals>
+
+    <!-- Thông báo dạng snackbar -->
+    <string name="detailed_needs_bluetooth">bản build này cần quyền truy cập bluetooth trước khi có thể theo dõi tai nghe có dây</string>
+    <string name="export_done">đã xuất bản sao lưu</string>
+    <string name="export_failed">xuất thất bại</string>
+    <string name="import_failed">nhập thất bại</string>
+    <string name="error_could_not_open">không thể mở %1$s</string>
+    <plurals name="import_done">
+        <item quantity="other">đã nhập %d phiên</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="other">%d phiên</item>
+    </plurals>
+</resources>

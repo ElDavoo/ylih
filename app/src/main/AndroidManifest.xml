@@ -44,7 +44,8 @@
         <service
             android:name=".tracking.TrackingService"
             android:exported="false"
-            android:foregroundServiceType="connectedDevice" />
+            android:foregroundServiceType="connectedDevice"
+            tools:targetApi="26" />
 
         <!--
           ACL_CONNECTED/ACL_DISCONNECTED are on the implicit-broadcast exception list, so this

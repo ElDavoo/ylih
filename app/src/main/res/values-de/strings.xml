@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  German. Same house style as the default locale where German orthography allows it: lowercase
+  throughout, including sentence starts. German nouns are capitalised regardless, because that is
+  correct orthography, not a style choice — see CLAUDE.md's translation notes.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - dein Leben in Kopfhörern</string>
+
+    <!-- Navigation -->
+    <string name="nav_headphones">Kopfhörer</string>
+    <string name="nav_stats">Statistiken</string>
+    <string name="nav_settings">Einstellungen</string>
+
+    <!-- Gerätearten -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">kabelgebunden</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">unbekannt</string>
+
+    <!-- Erster Start -->
+    <string name="welcome_title">willkommen bei ylih</string>
+    <string name="welcome_intro">ylih zeichnet auf, wie lange jedes Kopfhörerpaar verbunden bleibt, damit du auch in ein paar Jahren noch die einzige Frage beantworten kannst, die bei einem Paar Kopfhörer wirklich zählt: wie viele Stunden haben sie gehalten?</string>
+    <string name="welcome_point_auto_title">verbinden und vergessen</string>
+    <string name="welcome_point_auto_body">bluetooth-Kopfhörer werden von selbst erfasst, sobald sie sich verbinden. es muss nichts dauerhaft laufen.</string>
+    <string name="welcome_point_lifetime_title">ein Paar, ein Leben</string>
+    <string name="welcome_point_lifetime_body">wenn ein Paar kaputtgeht, mustere es aus: seine Gesamtzeit friert dort ein, und das nächste Paar derselben Kopfhörer beginnt wieder bei null.</string>
+    <string name="welcome_point_detailed_title">Kabel und Wiedergabe</string>
+    <string name="welcome_point_detailed_body">das detaillierte Tracking, in den Einstellungen, erfasst zusätzlich kabelgebundene Kopfhörer und misst, wie viel der Zeit tatsächlich Wiedergabe war.</string>
+    <string name="welcome_privacy">alles bleibt auf diesem Gerät. es gibt kein Konto, und die App hat keine Internetberechtigung.</string>
+    <string name="welcome_start">loslegen</string>
+
+    <!-- Kopfhörerliste -->
+    <string name="devices_in_use">in Benutzung</string>
+    <string name="devices_retired">ausgemustert</string>
+    <string name="devices_empty_title">noch keine Kopfhörer</string>
+    <string name="devices_empty_body">verbinde ein Paar bluetooth-Kopfhörer, und sie erscheinen hier. kabelgebundene Kopfhörer benötigen das detaillierte Tracking, in den Einstellungen.</string>
+    <string name="devices_generation">Paar Nr. %1$d</string>
+    <string name="devices_retired_on">ausgemustert am %1$s</string>
+    <string name="devices_connected_for">verbunden seit %1$s</string>
+    <string name="devices_recent">%1$s / 7 Tg.</string>
+
+    <!-- Statistiken -->
+    <string name="stats_title">alle Kopfhörer</string>
+    <!-- %1$s is an already-pluralised session count, %2$s a date. -->
+    <string name="stats_sessions_since">%1$s seit %2$s</string>
+    <string name="stats_last_7">letzte 7 Tage</string>
+    <string name="stats_last_30">letzte 30 Tage</string>
+    <string name="stats_average_session">durchschnittliche Sitzung</string>
+    <string name="stats_playing">Wiedergabe</string>
+    <string name="stats_measured_span">gemessener Zeitraum</string>
+    <string name="stats_share">Anteil</string>
+    <string name="stats_daily_hours_30">Stunden pro Tag (30 Tage)</string>
+    <string name="stats_by_pair">nach Paar</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · ausgemustert</string>
+    <string name="chart_max">max. %1$s</string>
+
+    <!-- Paar-Detail -->
+    <string name="pair_fallback_title">Paar</string>
+    <string name="pair_back">zurück</string>
+    <string name="pair_more">mehr</string>
+    <string name="pair_menu_rename">umbenennen</string>
+    <string name="pair_menu_purchase">Kaufinfo</string>
+    <string name="pair_menu_retire">ausmustern / ersetzt</string>
+    <string name="pair_menu_delete">löschen</string>
+    <string name="pair_lifetime">Gesamtzeit dieses Paars</string>
+    <string name="pair_retired_on">ausgemustert am %1$s</string>
+    <string name="pair_retired_with_reason">ausgemustert am %1$s · %2$s</string>
+    <string name="pair_connected_now">jetzt verbunden · %1$s</string>
+    <string name="pair_sessions">Sitzungen</string>
+    <string name="pair_average">Durchschnitt</string>
+    <string name="pair_longest">Längste</string>
+    <string name="pair_first_seen">zuerst gesehen</string>
+    <string name="pair_of_measured">vom Gemessenen</string>
+    <string name="pair_measured">gemessen</string>
+    <string name="pair_paid">bezahlt</string>
+    <string name="pair_per_hour">pro Stunde</string>
+    <string name="pair_bought">gekauft</string>
+    <string name="pair_daily_hours_14">Stunden pro Tag (14 Tage)</string>
+    <string name="pair_rename_title">Paar umbenennen</string>
+    <string name="pair_rename_label">Name</string>
+    <string name="pair_retire_title">dieses Paar ausmustern</string>
+    <string name="pair_retire_label">Grund (kaputt, verkauft, verloren…)</string>
+    <string name="pair_retire_confirm">ausmustern</string>
+    <string name="pair_retire_supporting">die Summen frieren hier ein. wird dasselbe Gerät erneut verbunden, beginnt ein neues Paar bei null.</string>
+    <string name="pair_price_title">bezahlter Preis</string>
+    <string name="pair_price_label">Betrag (ganze Einheiten)</string>
+    <string name="pair_price_supporting">wird für den Preis pro Stunde verwendet.</string>
+    <string name="pair_delete_title">dieses Paar löschen?</string>
+    <string name="pair_delete_body">auch alle dafür aufgezeichneten Sitzungen werden gelöscht. das lässt sich nicht rückgängig machen.</string>
+
+    <!-- Sitzungszeilen -->
+    <string name="session_ongoing">läuft</string>
+    <string name="session_until">bis %1$s</string>
+    <string name="session_playing">%1$s Wiedergabe</string>
+    <string name="session_recovered">wiederhergestellt</string>
+
+    <!-- Einstellungen -->
+    <string name="settings_tracking">Tracking</string>
+    <string name="settings_detailed_title">detailliertes Tracking</string>
+    <string name="settings_detailed_body">erfasst zusätzlich kabelgebundene Kopfhörer und die Wiedergabezeit. android meldet Kabel-Steckerereignisse nur an eine laufende App, deshalb bleibt dafür eine stille Benachrichtigung in der Leiste. bluetooth wird so oder so erfasst.</string>
+    <string name="settings_detailed_unavailable">nicht verfügbar, solange kein bluetooth-Zugriff erteilt ist: diese Version meldet nur den Diensttyp connectedDevice, den android 14+ an eine bluetooth-Berechtigung knüpft.</string>
+    <string name="settings_devices">Geräte</string>
+    <string name="settings_devices_body">entferne das Häkchen bei allem, was keine Kopfhörer sind — eine Autoanlage oder ein Lautsprecher —, damit es nicht mehr erfasst wird.</string>
+    <string name="settings_device_subtitle">%1$s · erstmals gesehen %2$s</string>
+    <string name="settings_data">Daten</string>
+    <string name="settings_export">json exportieren</string>
+    <string name="settings_import">importieren</string>
+    <string name="settings_import_warning">beim Importieren wird alles ersetzt, was derzeit gespeichert ist.</string>
+    <string name="settings_troubleshooting">Problembehebung</string>
+    <string name="settings_battery_body">wenn Sitzungen nicht mehr aufgezeichnet werden, prüfe, ob ylih von der Akku-Optimierung ausgenommen ist — eine erzwungen beendete App erhält keine Verbindungs-Broadcasts mehr, bis sie erneut geöffnet wird.</string>
+    <string name="settings_battery_button">Akku-Einstellungen</string>
+    <string name="settings_battery_path">Einstellungen → Apps → ylih → Akku → uneingeschränkt.</string>
+    <string name="settings_about">Info</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — Kopfhörerstunden, lokal gespeichert und für immer.</string>
+    <string name="settings_import_confirm_title">alle Daten ersetzen?</string>
+    <string name="settings_import_confirm_body">das Importieren dieses Backups löscht jedes Gerät, Paar und jede Sitzung, die derzeit gespeichert sind.</string>
+
+    <!-- Gemeinsame Aktionen -->
+    <string name="action_save">speichern</string>
+    <string name="action_cancel">abbrechen</string>
+    <string name="action_delete">löschen</string>
+    <string name="action_import">importieren</string>
+
+    <!-- Benachrichtigung -->
+    <string name="channel_tracking">Kopfhörer-Tracking</string>
+    <string name="channel_tracking_description">wird angezeigt, während ylih auf kabelgebundene Kopfhörer und Wiedergabe achtet. android liefert Kabel-Steckerereignisse nicht an Apps, die nicht laufen.</string>
+    <string name="notification_title">Kopfhörerzeit wird erfasst</string>
+    <string name="notification_starting">wird gestartet…</string>
+    <string name="notification_idle">wartet auf Kopfhörer</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d verbunden · %2$s</item>
+        <item quantity="other">%1$d verbunden · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d verbunden · %2$s · Wiedergabe</item>
+        <item quantity="other">%1$d verbunden · %2$s · Wiedergabe</item>
+    </plurals>
+
+    <!-- Snackbar-Meldungen -->
+    <string name="detailed_needs_bluetooth">diese Version benötigt bluetooth-Zugriff, um kabelgebundene Kopfhörer zu erfassen</string>
+    <string name="export_done">Backup exportiert</string>
+    <string name="export_failed">Export fehlgeschlagen</string>
+    <string name="import_failed">Import fehlgeschlagen</string>
+    <string name="error_could_not_open">%1$s konnte nicht geöffnet werden</string>
+    <plurals name="import_done">
+        <item quantity="one">%d Sitzung importiert</item>
+        <item quantity="other">%d Sitzungen importiert</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d Sitzung</item>
+        <item quantity="other">%d Sitzungen</item>
+    </plurals>
+</resources>

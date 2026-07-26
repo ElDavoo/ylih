@@ -27,6 +27,8 @@ class SettingsStore(private val context: Context) {
 
     suspend fun detailedTrackingNow(): Boolean = detailedTracking.first()
 
+    suspend fun onboardingDoneNow(): Boolean = onboardingDone.first()
+
     suspend fun setDetailedTracking(enabled: Boolean) {
         context.dataStore.edit { it[detailedKey] = enabled }
     }

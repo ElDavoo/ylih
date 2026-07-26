@@ -1,0 +1,8 @@
+Eerste release.
+
+• Levenslange uren per fysieke koptelefoon, met generaties zodat een vervangende koptelefoon bij nul begint in plaats van het totaal van de oude over te nemen.
+• Elke verbinding permanent bewaard, met statistieken per dag en per koptelefoon.
+• Optioneel gedetailleerd bijhouden voor bekabelde en usb-koptelefoons, en voor afspelen versus verbonden tijd.
+• Kosten per luisteruur.
+• Json export en import.
+• Geen internettoegang: er verlaat nooit iets de telefoon.

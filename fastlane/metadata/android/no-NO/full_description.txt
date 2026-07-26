@@ -1,0 +1,40 @@
+Hodetelefoner dør. Før de gjør det, svarer ylih på det eneste spørsmålet som virkelig betyr noe for et par: hvor mange timer fikk du ut av dem?
+
+Hver gang hodetelefonene dine kobles til, skriver ylih ned når. Hver gang de kobles fra, skriver den ned når. Det er hele ideen — og fordi en tilkobling bare er to tidsstempler, trenger ikke appen å kjøre i bakgrunnen for å gjøre det.
+
+HVA DEN SPORER
+
+• Levetidstimer per fysisk par. Når et par dør, pensjonerer du det — totalen fryses, og neste par av samme modell starter på nytt fra null som generasjon 2. De gamle tallene dine blandes aldri med de nye.
+• Hver økt, lagret permanent: tilkoblet når, frakoblet når, og hvorfor den endte.
+• Avspillingstid (valgfritt): hvor mye av den tilkoblede tiden som faktisk gikk til lydavspilling, slik at «hengende rundt halsen» ikke teller som lytting.
+• Kostnad per time, hvis du oppgir hva du betalte. Det er et tilfredsstillende tall å se synke.
+
+TO SPORINGSMODUSER
+
+Kun bluetooth — standarden. Ingenting av appen kjører, ingenting ligger i varslingspanelet, og det koster ikke batteri, fordi android leverer tilkoblingshendelser til appen selv når den er lukket.
+
+Detaljert sporing — valgfritt. Legger til kablede hodetelefoner og usb-hodetelefoner, og måler avspilling mot tilkoblet tid. Den krever ett stille varsel med minimal prioritet, fordi android bare rapporterer kabelhendelser til en app som allerede kjører. Det, og ingenting annet, er hvorfor varselet finnes.
+
+Bluetooth spores uansett.
+
+TALL DU KAN STOLE PÅ ÅR SENERE
+
+Langsiktige totaler er verdiløse hvis en krasj eller en omstart stille legger til tolv timer. Derfor:
+
+• En økt som blir stående åpen etter en omstart eller en krasj, avsluttes ved sitt siste kjente hjerteslag, aldri senere enn øyeblikket telefonen startet opp. Tid telefonen var avslått, telles aldri med.
+• Hvis hodetelefonene dine fortsatt er tilkoblet etter en omstart, starter en ny økt i stedet for at den gamle strekkes over gapet.
+• Økter får jevnlige hjerteslag mens de er åpne, slik at skaden fra en tapt frakobling begrenses.
+
+PRIVAT VED KONSTRUKSJON
+
+ylih har ikke internett-tilgang. Ikke «vi lover å ikke sende noe» — appen er teknisk sett ute av stand til det. Det finnes ingen kontoer, ingen analyse, ingen reklame og ingen sporing av deg. Alt lever i en database på telefonen din.
+
+Innstillinger → Eksportér skriver hele historikken din som lesbar json, og Importér gjenoppretter den, slik at det aldri koster deg tallene dine å bytte til en ny telefon.
+
+TILLATELSER
+
+• Enheter i nærheten (bluetooth): kreves for å motta tilkoblingshendelser og lese navnet på et headset. Uten den kan ikke bluetooth-sporing fungere i det hele tatt.
+• Varsler: kun for varselet ved detaljert sporing.
+• Kjør ved oppstart: for å avslutte økter som nedstengingen aldri rapporterte.
+
+Åpen kildekode under MIT-lisensen.

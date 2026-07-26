@@ -1,0 +1,8 @@
+Rilis pertama.
+
+• Jam total masa pakai untuk setiap pasang fisik headphone, dengan generasi sehingga pasangan pengganti mulai dari nol alih-alih mewarisi total pasangan lama.
+• Setiap koneksi disimpan selamanya, dengan statistik per hari dan per pasang.
+• Pelacakan detail opsional untuk headphone berkabel dan usb, serta untuk waktu pemutaran dibanding waktu terhubung.
+• Biaya per jam mendengarkan.
+• Ekspor dan impor json.
+• Tidak ada izin internet: tidak ada yang pernah meninggalkan ponsel.

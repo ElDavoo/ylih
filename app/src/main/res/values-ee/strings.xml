@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Ewe. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — wò agbe le heaphones me</string>
+
+    <!-- Navigation -->
+    <string name="nav_headphones">heaphones</string>
+    <string name="nav_stats">ŋkɔŋkɔ</string>
+    <string name="nav_settings">nusɔsɔwo</string>
+
+    <!-- Device kinds -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">nufia</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">menya o</string>
+
+    <!-- First run -->
+    <string name="welcome_title">wovo nyɔ ylih me</string>
+    <string name="welcome_intro">ylih ŋu heaphones ɖokuɖo siwo le akpa nɔ agadzɔ ŋu, ale be nyɔŋɔ geɖe ɣonɔ, wò ate ŋu aˀsɔ ŋutsu ɖeka si ŋutsu nye: agbe geɖe la wokɔ ye ŋun?</string>
+    <string name="welcome_point_auto_title">tu ɖoɖi gɔ ase</string>
+    <string name="welcome_point_auto_body">bluetooth heaphones nye ŋu dze azɔ ɖe wo tu ŋu. ŋku susu ɖi o.</string>
+    <string name="welcome_point_lifetime_title">ɖokuɖo ɖeka, agbe ɖeka</string>
+    <string name="welcome_point_lifetime_body">ne ɖokuɖo nu, ɖa: agbe ƒo le afi ma gbɔ, ɖokuɖo bubu si nɔ heaphones siawoe gbɔ la dze azɔ tso ŋkeke blibo me.</string>
+    <string name="welcome_point_detailed_title">nufia kple ŋu sua</string>
+    <string name="welcome_point_detailed_body">ŋkɔŋkɔ geɖea, nusɔsɔwo me, wɔ nufia kple ŋu sua ŋkɔ dɔ ŋu gbe geɖe ƒe nusiɖuɖu.</string>
+    <string name="welcome_privacy">ele nyiɖɔ sia me ko. mayɔ ame o, abe nu siwo ŋu inte o hã.</string>
+    <string name="welcome_start">do go azɔ</string>
+
+    <!-- Headphones list -->
+    <string name="devices_in_use">lɔ̃kɔ me</string>
+    <string name="devices_retired">ɖa</string>
+    <string name="devices_empty_title">heaphones meli o</string>
+    <string name="devices_empty_body">tu bluetooth heaphones ɖokuɖo, ale be woade asi gbɔ. nufia heaphones ŋu, nusɔsɔwo me ŋkɔŋkɔ geɖea.</string>
+    <string name="devices_generation">ɖokuɖo #%1$d</string>
+    <string name="devices_retired_on">ɖa %1$s</string>
+    <string name="devices_connected_for">tu %1$s</string>
+    <string name="devices_recent">%1$s / ŋkeke 7</string>
+
+    <!-- Stats -->
+    <string name="stats_title">heaphones blibo</string>
+    <string name="stats_sessions_since">%1$s tso %2$s me</string>
+    <string name="stats_last_7">ŋkeke 7 kpɔtɔ</string>
+    <string name="stats_last_30">ŋkeke 30 kpɔtɔ</string>
+    <string name="stats_average_session">nusẽ me</string>
+    <string name="stats_playing">ŋu sua</string>
+    <string name="stats_measured_span">agbe si woa gblɔ</string>
+    <string name="stats_share">ŋutsu</string>
+    <string name="stats_daily_hours_30">gaƒoƒo ŋkeke ƒe (ŋkeke 30)</string>
+    <string name="stats_by_pair">ɖokuɖo siwo ŋu</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · ɖa</string>
+    <string name="chart_max">%1$s gã</string>
+
+    <!-- Pair detail -->
+    <string name="pair_fallback_title">ɖokuɖo</string>
+    <string name="pair_back">go ɖomevi</string>
+    <string name="pair_more">bubu geɖe</string>
+    <string name="pair_menu_rename">ŋkɔ tsɔ</string>
+    <string name="pair_menu_purchase">ƒe ŋtɔnɔɔnu</string>
+    <string name="pair_menu_retire">ɖa / bubu</string>
+    <string name="pair_menu_delete">ɖe mɔ</string>
+    <string name="pair_lifetime">agbe ƒe ɖokuɖo sia</string>
+    <string name="pair_retired_on">ɖa %1$s</string>
+    <string name="pair_retired_with_reason">ɖa %1$s · %2$s</string>
+    <string name="pair_connected_now">tu azɔ · %1$s</string>
+    <string name="pair_sessions">nusẽ</string>
+    <string name="pair_average">nusẽ me</string>
+    <string name="pair_longest">nusẽ gã</string>
+    <string name="pair_first_seen">ŋkeke blibo si</string>
+    <string name="pair_of_measured">woa gblɔtɔ ƒe gbɔ</string>
+    <string name="pair_measured">woa gblɔtɔ</string>
+    <string name="pair_paid">dze</string>
+    <string name="pair_per_hour">gaƒoƒo ƒe</string>
+    <string name="pair_bought">ƒu</string>
+    <string name="pair_daily_hours_14">gaƒoƒo ŋkeke ƒe (ŋkeke 14)</string>
+    <string name="pair_rename_title">ɖokuɖo ŋkɔ tsɔ</string>
+    <string name="pair_rename_label">ŋkɔ</string>
+    <string name="pair_retire_title">ɖokuɖo sia ɖa</string>
+    <string name="pair_retire_label">seɖa (nu, ƒu, ŋu…)</string>
+    <string name="pair_retire_confirm">ɖa</string>
+    <string name="pair_retire_supporting">agbe ƒo le afi sia gbɔ. nyawo deŋu ŋu tsi tso ŋkeke blibo me.</string>
+    <string name="pair_price_title">ƒu dze</string>
+    <string name="pair_price_label">dze ŋutsu (wodoɖɔ)</string>
+    <string name="pair_price_supporting">wole ŋu gaƒoƒo ƒe ŋtɔnɔɔnu nu.</string>
+    <string name="pair_delete_title">ɖokuɖo sia ɖe mɔ?</string>
+    <string name="pair_delete_body">nusẽ siwo ŋu ŋu dzi le hã. me ate ŋu wodzro o.</string>
+
+    <!-- Session rows -->
+    <string name="session_ongoing">le ŋu me azɔ</string>
+    <string name="session_until">va se %1$s</string>
+    <string name="session_playing">%1$s ŋu sua</string>
+    <string name="session_recovered">tsɔ ɖe megbe</string>
+
+    <!-- Settings -->
+    <string name="settings_tracking">ŋkɔŋkɔ</string>
+    <string name="settings_detailed_title">ŋkɔŋkɔ geɖea</string>
+    <string name="settings_detailed_body">wɔ nufia heaphones kple ŋu sua ŋkɔ. android ŋu kɔ nufia ŋu nɔ program si le ŋu ko, ale be notifikasyon sisi yi ŋu hafi. bluetooth ŋkɔŋkɔ wɔ hã.</string>
+    <string name="settings_detailed_unavailable">mele gbe o va se bluetooth tɔ na: programa sia gblɔ connectedDevice ŋutsu ko, si android 14+ fi bluetooth tɔ ŋu.</string>
+    <string name="settings_devices">nyawo</string>
+    <string name="settings_devices_body">ɖe nyawo si nye heaphones mele o — agbalẽ dze alo ŋu xevi — vo go.</string>
+    <string name="settings_device_subtitle">%1$s · ŋkeke blibo si %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">json lo</string>
+    <string name="settings_import">lo ɖe me</string>
+    <string name="settings_import_warning">lo ɖe me la, wɔ nu siwo le ŋu ko.</string>
+    <string name="settings_troubleshooting">nusɔsɔ siwo va</string>
+    <string name="settings_battery_body">ne nusẽ ɖi o, ɖo ylih mele battery optimization si ko. programa si woa ɖe mɔ o, megatsɔ ŋu kɔ tso akpa ŋu o va se woate sua ko.</string>
+    <string name="settings_battery_button">battery nusɔsɔ</string>
+    <string name="settings_battery_path">nusɔsɔ → programa → ylih → battery → mele nusɔ o.</string>
+    <string name="settings_about">ŋgɔ</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — gaƒoƒo heaphones me, le nyɔ sia me ko kple bubu dzi.</string>
+    <string name="settings_import_confirm_title">wɔ nu siwo le ŋu ko?</string>
+    <string name="settings_import_confirm_body">lo ɖe me sia la, wɔ nyawo, ɖokuɖo kple nusẽ siwo le ŋu le azɔ.</string>
+
+    <!-- Shared actions -->
+    <string name="action_save">ŋ ŋu</string>
+    <string name="action_cancel">ɖo mɔ</string>
+    <string name="action_delete">ɖe mɔ</string>
+    <string name="action_import">lo ɖe me</string>
+
+    <!-- Notification -->
+    <string name="channel_tracking">heaphones ŋkɔŋkɔ</string>
+    <string name="channel_tracking_description">le ŋu me esi ylih lɔ̃ nufia heaphones kple ŋu sua ŋu. android ŋu kɔ nufia ŋu nɔ program si le ŋu o.</string>
+    <string name="notification_title">heaphones agbe ŋkɔŋkɔ</string>
+    <string name="notification_starting">dze azɔ…</string>
+    <string name="notification_idle">heaphones lɔ ŋu</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d tu · %2$s</item>
+        <item quantity="other">%1$d tu · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d tu · %2$s · ŋu sua</item>
+        <item quantity="other">%1$d tu · %2$s · ŋu sua</item>
+    </plurals>
+
+    <!-- Snackbar messages -->
+    <string name="detailed_needs_bluetooth">programa sia ŋu bluetooth tɔ azɔ ale be wɔ nufia heaphones ŋkɔŋkɔ</string>
+    <string name="export_done">data lo va dze</string>
+    <string name="export_failed">data lo mewa o</string>
+    <string name="import_failed">lo mewa o</string>
+    <string name="error_could_not_open">woate ŋu sua %1$s o</string>
+    <plurals name="import_done">
+        <item quantity="one">nusẽ %d lo dze</item>
+        <item quantity="other">nusẽ %d wo lo dze</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d nusẽ</item>
+        <item quantity="other">%d nusẽ wo</item>
+    </plurals>
+</resources>

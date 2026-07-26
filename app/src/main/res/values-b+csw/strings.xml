@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Swampy Cree. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — ki ohc ihtawinahk eti mahcihk</string>
+
+    <!-- Navigation -->
+    <string name="nav_headphones">otisinahk</string>
+    <string name="nav_stats">akayamin</string>
+    <string name="nav_settings">atayakahwin</string>
+
+    <!-- Device kinds -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">sohkawin</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">kakiyaw</string>
+
+    <!-- First run -->
+    <string name="welcome_title">takosiwin ki ylih</string>
+    <string name="welcome_intro">ylih akayasim ka-itahcikew mina isko mahcihk otisinahk, ki-ihtawisiw ka-isko mihcet mahkon ci-atayak ka-ihtawasin ki otisinahk: mista awas mahkohkana ka-ihtawasin?</string>
+    <string name="welcome_point_auto_title">mawocih mina piko</string>
+    <string name="welcome_point_auto_body">bluetooth otisinahk akayasimwa ihtawisiw, ki-mawocihcik. ki-atayakahwewina nika.</string>
+    <string name="welcome_point_lifetime_title">peyak otisinahk peyak mahcihowin</string>
+    <string name="welcome_point_lifetime_body">takosin ki ca-ayinik otisinahk, ki-wakayik: macinohikana ki-atayak eko, mina ayis otisinahk wacistahkamikohk ay-itahcikek mahkohkana ki-ihtawisiw.</string>
+    <string name="welcome_point_detailed_title">sohkawin mina atihcamok</string>
+    <string name="welcome_point_detailed_body">akayasim mina atayakahwin, atayakahwina, ki-mamachotamokew sohkawin otisinahk mina ka-wayacak mahkonak atihcamok.</string>
+    <string name="welcome_privacy">kisisohk ki mihkohk. nika apit mina nika mahciwin musik.</string>
+    <string name="welcome_start">takosiwin</string>
+
+    <!-- Headphones list -->
+    <string name="devices_in_use">ki atayakik</string>
+    <string name="devices_retired">ki wakayik</string>
+    <string name="devices_empty_title">nika otisinahk</string>
+    <string name="devices_empty_body">mawocih bluetooth otisinahk mina ki-mayik enko. sohkawin otisinahk akayasim mina atayakahwin, atayakahwina.</string>
+    <string name="devices_generation">otisinahk #%1$d</string>
+    <string name="devices_retired_on">ki wakayik %1$s</string>
+    <string name="devices_connected_for">ki mawocik %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Stats -->
+    <string name="stats_title">kisisohk otisinahk</string>
+    <string name="stats_sessions_since">%1$s os %2$s</string>
+    <string name="stats_last_7">ay-isko ispimo</string>
+    <string name="stats_last_30">ay-isko mihtik osap</string>
+    <string name="stats_average_session">akwah atihcamowin</string>
+    <string name="stats_playing">atihcamok</string>
+    <string name="stats_measured_span">akayasimohkana mahkonak</string>
+    <string name="stats_share">mawocih</string>
+    <string name="stats_daily_hours_30">mahkohkana ayisiyiniw (30 osap)</string>
+    <string name="stats_by_pair">eto otisinahk</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · ki wakayik</string>
+    <string name="chart_max">%1$s mahkisiwin</string>
+
+    <!-- Pair detail -->
+    <string name="pair_fallback_title">otisinahk</string>
+    <string name="pair_back">pakamiow</string>
+    <string name="pair_more">kita</string>
+    <string name="pair_menu_rename">atayikasow</string>
+    <string name="pair_menu_purchase">atayakahwin ka-atayik</string>
+    <string name="pair_menu_retire">wakay / pakamiow</string>
+    <string name="pair_menu_delete">macinahew</string>
+    <string name="pair_lifetime">mahcihowin ki eso otisinahk</string>
+    <string name="pair_retired_on">ki wakayik %1$s</string>
+    <string name="pair_retired_with_reason">ki wakayik %1$s · %2$s</string>
+    <string name="pair_connected_now">ki mawocik eko · %1$s</string>
+    <string name="pair_sessions">atihcamohkana</string>
+    <string name="pair_average">akwah</string>
+    <string name="pair_longest">mahkisiw</string>
+    <string name="pair_first_seen">peyakohk ki mayik</string>
+    <string name="pair_of_measured">eto akayasimohkana</string>
+    <string name="pair_measured">akayasimohk</string>
+    <string name="pair_paid">atayik</string>
+    <string name="pair_per_hour">eto mahkohk</string>
+    <string name="pair_bought">ki atayik</string>
+    <string name="pair_daily_hours_14">mahkohkana ayisiyiniw (14 osap)</string>
+    <string name="pair_rename_title">atayikasow otisinahk</string>
+    <string name="pair_rename_label">ataya</string>
+    <string name="pair_retire_title">wakay eso otisinahk</string>
+    <string name="pair_retire_label">ka-itahcikew (asiciw, mawacik, kacihciw…)</string>
+    <string name="pair_retire_confirm">wakay</string>
+    <string name="pair_retire_supporting">macinohikana ki-atayak enko. mawocih wacistahkamikohk ay-itahcikek otisinahk ki-itahcikew mahkohkana.</string>
+    <string name="pair_price_title">atayak ki atayik</string>
+    <string name="pair_price_label">mahkisiwin (peyak-pakamihkana)</string>
+    <string name="pair_price_supporting">ki atayakahwew ka-akayasim stayik eto mahkohk.</string>
+    <string name="pair_delete_title">macinahew eso otisinahk?</string>
+    <string name="pair_delete_body">kisisohk atihcamohkana ki-akayasimohk macinahewina. nika ki-pakamiowik.</string>
+
+    <!-- Session rows -->
+    <string name="session_ongoing">ihtawisiw eko</string>
+    <string name="session_until">isko %1$s</string>
+    <string name="session_playing">%1$s atihcamok</string>
+    <string name="session_recovered">ki-macinakik</string>
+
+    <!-- Settings -->
+    <string name="settings_tracking">akayasim</string>
+    <string name="settings_detailed_title">akayasim mina atayakahwin</string>
+    <string name="settings_detailed_body">sohkawin otisinahk mina mahkohkana atihcamok akayasim. android peyakohk ki-itahcikew sohkawin mawocihcikana, ki-itahcikew eko, kiya ka-akayak ki-ihtawisiw. bluetooth akayasim eso mihkohk.</string>
+    <string name="settings_detailed_unavailable">nika ayisiyiniw iko ki-mawak bluetooth akayasim: eso ki-atayak peyakohk connectedDevice ka-atayakahwin, android 14+ ki-atayakahwikew bluetooth akayasim eti.</string>
+    <string name="settings_devices">wacistahkamikohk</string>
+    <string name="settings_devices_body">ki-macinakik ki ca-atayak nika otisinahk — wacistahkamikohk mina atihcamowin — ki-macinahew akayasim.</string>
+    <string name="settings_device_subtitle">%1$s · peyakohk ki mayik %2$s</string>
+    <string name="settings_data">akayasimohkana</string>
+    <string name="settings_export">macinahew json</string>
+    <string name="settings_import">mayik</string>
+    <string name="settings_import_warning">mayik ki-macinakik kisisohk ka-atayasimohk eko.</string>
+    <string name="settings_troubleshooting">pakamiowikana ka-atayak</string>
+    <string name="settings_battery_body">atihcamohkana nika ki-akayasimohk, akayasim ylih nika ki-atayakahwew astewina — eso ki-macinahewik atihcamowin nika mahkohkana iko ki-mayikasow.</string>
+    <string name="settings_battery_button">astewina atayakahwin</string>
+    <string name="settings_battery_path">atayakahwin → eso ki-itahcikew → ylih → astewina → nika asteyik.</string>
+    <string name="settings_about">ka-itahcikew</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — mahkohkana otisinahk, ki-atayakahwew kisisohk mina mahcihowin.</string>
+    <string name="settings_import_confirm_title">macinakik kisisohk akayasimohkana?</string>
+    <string name="settings_import_confirm_body">mayik eso atayakahwin ki-macinakik kisisohk wacistahkamikohk, otisinahk mina atihcamohkana eko ki-akayasimohk.</string>
+
+    <!-- Shared actions -->
+    <string name="action_save">atayakahw</string>
+    <string name="action_cancel">pakamiow</string>
+    <string name="action_delete">macinahew</string>
+    <string name="action_import">mayik</string>
+
+    <!-- Notification -->
+    <string name="channel_tracking">otisinahk akayasim</string>
+    <string name="channel_tracking_description">ki-mayik isko ylih akayasim sohkawin otisinahk mina atihcamok. android peyakohk ki-itahcikew sohkawin mawocihcikana eso ki-akayak ki-ihtawisiw nika.</string>
+    <string name="notification_title">otisinahk mahkohkana akayasim</string>
+    <string name="notification_starting">takosiwin…</string>
+    <string name="notification_idle">akayasim otisinahk</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d mawocik · %2$s</item>
+        <item quantity="other">%1$d mawocik · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d mawocik · %2$s · atihcamok</item>
+        <item quantity="other">%1$d mawocik · %2$s · atihcamok</item>
+    </plurals>
+
+    <!-- Snackbar messages -->
+    <string name="detailed_needs_bluetooth">eso ki-atayak bluetooth akayasim iko ki-akayasim sohkawin otisinahk</string>
+    <string name="export_done">atayakahwin ki-macinahewik</string>
+    <string name="export_failed">macinahew ki-pakamiow</string>
+    <string name="import_failed">mayik ki-pakamiow</string>
+    <string name="error_could_not_open">ki-pakamiow mayik %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">mayik %d atihcamowin</item>
+        <item quantity="other">mayik %d atihcamohkana</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d atihcamowin</item>
+        <item quantity="other">%d atihcamohkana</item>
+    </plurals>
+</resources>

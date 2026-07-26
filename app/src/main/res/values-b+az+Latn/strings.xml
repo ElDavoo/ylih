@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Azerbaijani. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — sizin həyatınız qulaqlıqlarda</string>
+
+    <!-- Aşağı naviqasiya -->
+    <string name="nav_headphones">qulaqlıqlar</string>
+    <string name="nav_stats">statistika</string>
+    <string name="nav_settings">tənzimləmələr</string>
+
+    <!-- Cihaz növləri -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">simlə</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">bilinmir</string>
+
+    <!-- İlk başlama -->
+    <string name="welcome_title">ylih-ə xoş gəldiniz</string>
+    <string name="welcome_intro">ylih hər bir qulaqlıq cütlüyünün qoşulu qaldığı müddəti qeyd edir ki, illərdən sonra siz cütlük haqqında yeganə mühüm suala cavab verə bilərsiniz: neçə saat xidmət etdilər?</string>
+    <string name="welcome_point_auto_title">qoşun və unut</string>
+    <string name="welcome_point_auto_body">bluetooth qulaqlıqları avtomatik qeyd olunur, qoşulma anından başlayaraq. heç nəsi işləməyə bəhs saxlamağa ehtiyac yoxdur.</string>
+    <string name="welcome_point_lifetime_title">bir cütlük, bir ömür</string>
+    <string name="welcome_point_lifetime_body">cütlük qopmasa, onu aradan qaldırın: onun cəmi orada dondurulur və eyni qulaqlığın sonrakı cütlüyü sıfırdan başlayır.</string>
+    <string name="welcome_point_detailed_title">simlə və oynatma</string>
+    <string name="welcome_point_detailed_body">tənzimləmələrdə ətraflı izləmə simlə qulaqlıqlar əlavə edir və vaxtın nə qədərinin həqiqətən oynatıldığını ölçür.</string>
+    <string name="welcome_privacy">hər şey bu telefonda qalır. heç bir hesab yoxdur və tətbiqin internet icazəsi yoxdur.</string>
+    <string name="welcome_start">başlayın</string>
+
+    <!-- Qulaqlıqlar siyahısı -->
+    <string name="devices_in_use">istifadədə</string>
+    <string name="devices_retired">aradan qaldırıldı</string>
+    <string name="devices_empty_title">hələ qulaqlıq yoxdur</string>
+    <string name="devices_empty_body">bluetooth qulaqlıq cütlüyünü qoşun və burada görünəcəklər. simlə qulaqlıqlar tənzimləmələrdə ətraflı izləməni tələb edir.</string>
+    <string name="devices_generation">cütlük #%1$d</string>
+    <string name="devices_retired_on">aradan qaldırıldı %1$s</string>
+    <string name="devices_connected_for">qoşulu %1$s</string>
+    <string name="devices_recent">%1$s / 7g</string>
+
+    <!-- Statistika -->
+    <string name="stats_title">bütün qulaqlıqlar</string>
+    <string name="stats_sessions_since">%1$s %2$s-dən etibarən</string>
+    <string name="stats_last_7">son 7 gün</string>
+    <string name="stats_last_30">son 30 gün</string>
+    <string name="stats_average_session">orta seans</string>
+    <string name="stats_playing">oynatma</string>
+    <string name="stats_measured_span">ölçülmüş dövr</string>
+    <string name="stats_share">paylaş</string>
+    <string name="stats_daily_hours_30">günlük saatlar (30 gün)</string>
+    <string name="stats_by_pair">cütlüyə görə</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · aradan qaldırıldı</string>
+    <string name="chart_max">maks. %1$s</string>
+
+    <!-- Cütlük detalları -->
+    <string name="pair_fallback_title">cütlük</string>
+    <string name="pair_back">geri</string>
+    <string name="pair_more">daha çox</string>
+    <string name="pair_menu_rename">adını dəyiş</string>
+    <string name="pair_menu_purchase">satın alma məlumatı</string>
+    <string name="pair_menu_retire">aradan qaldır / dəyişdirildi</string>
+    <string name="pair_menu_delete">sil</string>
+    <string name="pair_lifetime">bu cütlüyün ömrü</string>
+    <string name="pair_retired_on">aradan qaldırıldı %1$s</string>
+    <string name="pair_retired_with_reason">aradan qaldırıldı %1$s · %2$s</string>
+    <string name="pair_connected_now">indi qoşulu · %1$s</string>
+    <string name="pair_sessions">seanslar</string>
+    <string name="pair_average">orta</string>
+    <string name="pair_longest">ən uzun</string>
+    <string name="pair_first_seen">ilk görülmə</string>
+    <string name="pair_of_measured">ölçülənlərdən</string>
+    <string name="pair_measured">ölçülmüş</string>
+    <string name="pair_paid">ödənildi</string>
+    <string name="pair_per_hour">saat başına</string>
+    <string name="pair_bought">satın alındı</string>
+    <string name="pair_daily_hours_14">günlük saatlar (14 gün)</string>
+    <string name="pair_rename_title">cütlüyü adlandır</string>
+    <string name="pair_rename_label">ad</string>
+    <string name="pair_retire_title">bu cütlüyü aradan qaldır</string>
+    <string name="pair_retire_label">səbəb (qopmadı, satıldı, itildi…)</string>
+    <string name="pair_retire_confirm">aradan qaldır</string>
+    <string name="pair_retire_supporting">cəmlər burada dondurulur. eyni cihazın yenidən qoşulması sıfırdan yeni bir cütlük başlayır.</string>
+    <string name="pair_price_title">ödənilən qiymət</string>
+    <string name="pair_price_label">məbləğ (tam vahidlər)</string>
+    <string name="pair_price_supporting">saat başına xərc hesablanması üçün istifadə olunur.</string>
+    <string name="pair_delete_title">bu cütlüyü silmək istəyirsiniz?</string>
+    <string name="pair_delete_body">onun üçün qeyd edilmiş bütün seanslar da silinir. bu geri alına bilinməz.</string>
+
+    <!-- Seans sıralaları -->
+    <string name="session_ongoing">davam edir</string>
+    <string name="session_until">%1$s-ə qədər</string>
+    <string name="session_playing">%1$s oynatılıb</string>
+    <string name="session_recovered">bərpa edildi</string>
+
+    <!-- Tənzimləmələr -->
+    <string name="settings_tracking">izləmə</string>
+    <string name="settings_detailed_title">ətraflı izləmə</string>
+    <string name="settings_detailed_body">simlə qulaqlıqlar və oynatma vaxtını əlavə edir. android simlə qoşulma hadisələrini yalnız işləyən bir tətbiqə bildirər, buna görə də bildirişlər şkalatosu sakit qalır. bluetooth hər halda izlənir.</string>
+    <string name="settings_detailed_unavailable">bluetooth icazəsi verilənə qədər mövcud deyil: bu qurğu yalnız connectedDevice xidmət tipini elan edir, android 14+ bunu bluetooth icazəsinə bağlayır.</string>
+    <string name="settings_devices">cihazlar</string>
+    <string name="settings_devices_body">qulaqlıq olmayan heç nə — avtomobil stereosistemi və ya akustik — qeyd etməyi dayandırmaq üçün işarəsini çıxarın.</string>
+    <string name="settings_device_subtitle">%1$s · ilk görülmə %2$s</string>
+    <string name="settings_data">məlumatlar</string>
+    <string name="settings_export">json-ə ixrac et</string>
+    <string name="settings_import">idxal et</string>
+    <string name="settings_import_warning">idxal hazırda saxlanılan hər şeyi əvəz edir.</string>
+    <string name="settings_troubleshooting">problemin aradan qaldırılması</string>
+    <string name="settings_battery_body">seanslar qeyd olunmağı dayandırsa, ylih-in batareya optimallaşdırmasından istisna edildiyinə əmin olun — məcburi olaraq dayandırılmış tətbiq açılana qədər qoşulma hadisələrini almır.</string>
+    <string name="settings_battery_button">batareya tənzimləmələri</string>
+    <string name="settings_battery_path">tənzimləmələr → tətbiqlər → ylih → batareya → sınırlamadan azad.</string>
+    <string name="settings_about">haqqında</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — qulaqlıqda saatlar, mərkəzi şəkildə və əbədi saxlanılır.</string>
+    <string name="settings_import_confirm_title">bütün məlumatları əvəz etmək istəyirsiniz?</string>
+    <string name="settings_import_confirm_body">bu ehtiyat nüsxəsini idxal etmək hazırda saxlanılan hər bir cihazı, cütlüyü və seansu silir.</string>
+
+    <!-- Paylaşılan hərəkətlər -->
+    <string name="action_save">saxla</string>
+    <string name="action_cancel">ləğv et</string>
+    <string name="action_delete">sil</string>
+    <string name="action_import">idxal et</string>
+
+    <!-- Bildiriş -->
+    <string name="channel_tracking">qulaqlıq izləməsi</string>
+    <string name="channel_tracking_description">ylih simlə qulaqlıqları və oynatmayı izləyərkən göstərilir. android simlə qoşulma hadisələrini işləməyən tətbiqə bildirmir.</string>
+    <string name="notification_title">qulaqlıq vaxtını izləmə</string>
+    <string name="notification_starting">başladılır…</string>
+    <string name="notification_idle">qulaqlıqlar üçün gözləmə</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d qoşulu · %2$s</item>
+        <item quantity="other">%1$d qoşulu · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d qoşulu · %2$s · oynatma</item>
+        <item quantity="other">%1$d qoşulu · %2$s · oynatma</item>
+    </plurals>
+
+    <!-- Snackbar mesajları -->
+    <string name="detailed_needs_bluetooth">bu qurğu simlə qulaqlıqları izləməsi üçün bluetooth icazəsinə ehtiyac duyur</string>
+    <string name="export_done">ehtiyat nüsxə ixrac edildi</string>
+    <string name="export_failed">ixrac uğursuz oldu</string>
+    <string name="import_failed">idxal uğursuz oldu</string>
+    <string name="error_could_not_open">%1$s açıla bilmədi</string>
+    <plurals name="import_done">
+        <item quantity="one">%d seans idxal edildi</item>
+        <item quantity="other">%d seans idxal edildi</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d seans</item>
+        <item quantity="other">%d seans</item>
+    </plurals>
+</resources>

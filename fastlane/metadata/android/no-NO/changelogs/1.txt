@@ -1,0 +1,8 @@
+Første utgivelse.
+
+• Levetidstimer per fysisk par hodetelefoner, med generasjoner slik at et erstatningspar starter på null i stedet for å arve totalen til det gamle.
+• Hver tilkobling lagret permanent, med statistikk per dag og per par.
+• Valgfri detaljert sporing for kablede og usb-hodetelefoner, og for avspilling mot tilkoblet tid.
+• Kostnad per lyttetime.
+• Json-eksport og -import.
+• Ingen internett-tilgang: ingenting forlater noensinne telefonen.

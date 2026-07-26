@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Korean. Same house style as the default locale: plain, unadorned phrasing throughout.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - 헤드폰과 함께한 삶</string>
+
+    <!-- 하단 내비게이션 -->
+    <string name="nav_headphones">헤드폰</string>
+    <string name="nav_stats">통계</string>
+    <string name="nav_settings">설정</string>
+
+    <!-- 기기 종류 -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">유선</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">알 수 없음</string>
+
+    <!-- 첫 실행 -->
+    <string name="welcome_title">ylih에 오신 것을 환영합니다</string>
+    <string name="welcome_intro">ylih는 각 헤드폰이 연결되어 있던 시간을 기록합니다. 그래서 몇 년이 지나도 헤드폰에 대해 정말 중요한 단 하나의 질문에 답할 수 있습니다: 이 헤드폰은 몇 시간이나 사용했을까요?</string>
+    <string name="welcome_point_auto_title">연결하고 잊어버리기</string>
+    <string name="welcome_point_auto_body">블루투스 헤드폰은 연결되는 순간부터 자동으로 기록됩니다. 아무것도 계속 실행해 둘 필요가 없습니다.</string>
+    <string name="welcome_point_lifetime_title">한 쌍, 하나의 수명</string>
+    <string name="welcome_point_lifetime_body">한 쌍이 수명을 다하면 은퇴시키세요. 그 시점에서 총 사용 시간이 고정되고, 같은 헤드폰의 다음 쌍은 다시 0부터 시작합니다.</string>
+    <string name="welcome_point_detailed_title">유선과 재생</string>
+    <string name="welcome_point_detailed_body">설정의 상세 추적 기능은 유선 헤드폰을 추가하고, 실제로 재생 중이었던 시간을 측정합니다.</string>
+    <string name="welcome_privacy">모든 데이터는 이 휴대폰에만 남습니다. 계정도 없고, 앱에는 인터넷 권한도 없습니다.</string>
+    <string name="welcome_start">시작하기</string>
+
+    <!-- 헤드폰 목록 -->
+    <string name="devices_in_use">사용 중</string>
+    <string name="devices_retired">은퇴함</string>
+    <string name="devices_empty_title">아직 헤드폰이 없습니다</string>
+    <string name="devices_empty_body">블루투스 헤드폰을 연결하면 여기에 표시됩니다. 유선 헤드폰은 설정에서 상세 추적이 필요합니다.</string>
+    <string name="devices_generation">%1$d번째 쌍</string>
+    <string name="devices_retired_on">%1$s에 은퇴함</string>
+    <string name="devices_connected_for">%1$s 연결됨</string>
+    <string name="devices_recent">%1$s / 7일</string>
+
+    <!-- 통계 -->
+    <string name="stats_title">모든 헤드폰</string>
+    <!-- %1$s는 이미 복수 처리된 세션 수, %2$s는 날짜입니다. -->
+    <string name="stats_sessions_since">%2$s부터 %1$s</string>
+    <string name="stats_last_7">최근 7일</string>
+    <string name="stats_last_30">최근 30일</string>
+    <string name="stats_average_session">평균 세션</string>
+    <string name="stats_playing">재생 중</string>
+    <string name="stats_measured_span">측정 기간</string>
+    <string name="stats_share">공유</string>
+    <string name="stats_daily_hours_30">일별 시간 (30일)</string>
+    <string name="stats_by_pair">쌍별</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · 은퇴함</string>
+    <string name="chart_max">최대 %1$s</string>
+
+    <!-- 쌍 상세 -->
+    <string name="pair_fallback_title">쌍</string>
+    <string name="pair_back">뒤로</string>
+    <string name="pair_more">더보기</string>
+    <string name="pair_menu_rename">이름 바꾸기</string>
+    <string name="pair_menu_purchase">구매 정보</string>
+    <string name="pair_menu_retire">은퇴 / 교체</string>
+    <string name="pair_menu_delete">삭제</string>
+    <string name="pair_lifetime">이 쌍의 총 사용 시간</string>
+    <string name="pair_retired_on">%1$s에 은퇴함</string>
+    <string name="pair_retired_with_reason">%1$s에 은퇴함 · %2$s</string>
+    <string name="pair_connected_now">지금 연결됨 · %1$s</string>
+    <string name="pair_sessions">세션</string>
+    <string name="pair_average">평균</string>
+    <string name="pair_longest">최장</string>
+    <string name="pair_first_seen">처음 발견</string>
+    <string name="pair_of_measured">측정된 시간 중</string>
+    <string name="pair_measured">측정됨</string>
+    <string name="pair_paid">지불액</string>
+    <string name="pair_per_hour">시간당</string>
+    <string name="pair_bought">구매일</string>
+    <string name="pair_daily_hours_14">일별 시간 (14일)</string>
+    <string name="pair_rename_title">쌍 이름 바꾸기</string>
+    <string name="pair_rename_label">이름</string>
+    <string name="pair_retire_title">이 쌍 은퇴시키기</string>
+    <string name="pair_retire_label">사유 (고장, 판매, 분실 등)</string>
+    <string name="pair_retire_confirm">은퇴</string>
+    <string name="pair_retire_supporting">총 사용 시간이 여기서 고정됩니다. 같은 기기를 다시 연결하면 새 쌍이 0부터 시작합니다.</string>
+    <string name="pair_price_title">지불한 가격</string>
+    <string name="pair_price_label">금액 (정수 단위)</string>
+    <string name="pair_price_supporting">시간당 비용을 계산하는 데 사용됩니다.</string>
+    <string name="pair_delete_title">이 쌍을 삭제할까요?</string>
+    <string name="pair_delete_body">기록된 모든 세션도 함께 삭제됩니다. 이 작업은 되돌릴 수 없습니다.</string>
+
+    <!-- 세션 행 -->
+    <string name="session_ongoing">진행 중</string>
+    <string name="session_until">%1$s까지</string>
+    <string name="session_playing">%1$s 재생</string>
+    <string name="session_recovered">복구됨</string>
+
+    <!-- 설정 -->
+    <string name="settings_tracking">추적</string>
+    <string name="settings_detailed_title">상세 추적</string>
+    <string name="settings_detailed_body">유선 헤드폰과 재생 시간을 추가로 기록합니다. android는 실행 중인 앱에만 유선 연결 이벤트를 전달하므로, 알림창에 조용한 알림이 하나 유지됩니다. 블루투스는 어느 쪽이든 추적됩니다.</string>
+    <string name="settings_detailed_unavailable">블루투스 접근 권한을 허용해야 사용할 수 있습니다: 이 빌드는 connectedDevice 서비스 유형만 선언하며, android 14 이상에서는 이를 블루투스 권한과 연결합니다.</string>
+    <string name="settings_devices">기기</string>
+    <string name="settings_devices_body">헤드폰이 아닌 것 — 차량 오디오나 스피커 — 은 체크를 해제해 기록을 멈추세요.</string>
+    <string name="settings_device_subtitle">%1$s · 처음 발견 %2$s</string>
+    <string name="settings_data">데이터</string>
+    <string name="settings_export">json으로 내보내기</string>
+    <string name="settings_import">가져오기</string>
+    <string name="settings_import_warning">가져오기를 하면 현재 저장된 모든 데이터가 대체됩니다.</string>
+    <string name="settings_troubleshooting">문제 해결</string>
+    <string name="settings_battery_body">세션이 더 이상 기록되지 않는다면 ylih가 배터리 최적화에서 제외되어 있는지 확인하세요 — 강제 종료된 앱은 다시 열기 전까지 연결 브로드캐스트를 전혀 받지 못합니다.</string>
+    <string name="settings_battery_button">배터리 설정</string>
+    <string name="settings_battery_path">설정 → 앱 → ylih → 배터리 → 제한 없음.</string>
+    <string name="settings_about">정보</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — 헤드폰 사용 시간을, 로컬에 영원히.</string>
+    <string name="settings_import_confirm_title">모든 데이터를 대체할까요?</string>
+    <string name="settings_import_confirm_body">이 백업을 가져오면 현재 저장된 모든 기기, 쌍, 세션이 삭제됩니다.</string>
+
+    <!-- 공통 동작 -->
+    <string name="action_save">저장</string>
+    <string name="action_cancel">취소</string>
+    <string name="action_delete">삭제</string>
+    <string name="action_import">가져오기</string>
+
+    <!-- 알림 -->
+    <string name="channel_tracking">헤드폰 추적</string>
+    <string name="channel_tracking_description">ylih가 유선 헤드폰과 재생을 감시하는 동안 표시됩니다. android는 실행 중이 아닌 앱에는 유선 연결 이벤트를 전달하지 않습니다.</string>
+    <string name="notification_title">헤드폰 시간 추적 중</string>
+    <string name="notification_starting">시작하는 중…</string>
+    <string name="notification_idle">헤드폰 대기 중</string>
+    <plurals name="notification_active">
+        <item quantity="other">%1$d개 연결됨 · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="other">%1$d개 연결됨 · %2$s · 재생 중</item>
+    </plurals>
+
+    <!-- 스낵바 메시지 -->
+    <string name="detailed_needs_bluetooth">이 빌드는 유선 헤드폰을 추적하려면 먼저 블루투스 접근 권한이 필요합니다</string>
+    <string name="export_done">백업을 내보냈습니다</string>
+    <string name="export_failed">내보내기 실패</string>
+    <string name="import_failed">가져오기 실패</string>
+    <string name="error_could_not_open">%1$s을(를) 열 수 없습니다</string>
+    <plurals name="import_done">
+        <item quantity="other">%d개 세션을 가져왔습니다</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="other">%d개 세션</item>
+    </plurals>
+</resources>

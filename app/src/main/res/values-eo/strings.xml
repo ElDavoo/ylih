@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Esperanto. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — via vivo en altkuraj aŭdiloj</string>
+
+    <!-- Fona navigacio -->
+    <string name="nav_headphones">altkuraj aŭdiloj</string>
+    <string name="nav_stats">statistiko</string>
+    <string name="nav_settings">agordoj</string>
+
+    <!-- Aparattipoj -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">kablita</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">nekonata</string>
+
+    <!-- Unua ĉapo -->
+    <string name="welcome_title">bonvenon en ylih</string>
+    <string name="welcome_intro">ylih registras kiom longe ĉiu paro de altkuraj aŭdiloj restas konektita, por ke jaroj poste vi ankoraŭ povu respondi la solan gravan demando pri paro: kiom da horoj ili daŭris?</string>
+    <string name="welcome_point_auto_title">konektu kaj forgesu</string>
+    <string name="welcome_point_auto_body">bluetooth-altkuraj aŭdiloj estas registrataj aŭtomate, de la momento de konekto. nenio devas resti funkcianta.</string>
+    <string name="welcome_point_lifetime_title">unu paro, unu viv-daŭro</string>
+    <string name="welcome_point_lifetime_body">kiam paro fiaskas, pensigu ĝin: ĝia totalo frostiĝas tie kaj la sekva paro de la sama altkuraj aŭdiloj restartadas de nulo.</string>
+    <string name="welcome_point_detailed_title">kablitaj kaj ludado</string>
+    <string name="welcome_point_detailed_body">detala spurado, en agordoj, aldonas kablitajn altkurajn aŭdilojn kaj mezuras kiom da la tempo estis vere ludanta.</string>
+    <string name="welcome_privacy">ĉio restas en ĉi tiu telefono. nenia konto, kaj la aplikaĵo ne havas interretan permeson.</string>
+    <string name="welcome_start">komenci</string>
+
+    <!-- Listo de altkuraj aŭdiloj -->
+    <string name="devices_in_use">en uzo</string>
+    <string name="devices_retired">pensigitaj</string>
+    <string name="devices_empty_title">ankoraŭ neniuj altkuraj aŭdiloj</string>
+    <string name="devices_empty_body">konektu paron de bluetooth-altkuraj aŭdiloj kaj ili aperos ĉi tie. kablitaj altkuraj aŭdiloj bezonas detalon spuradon, en agordoj.</string>
+    <string name="devices_generation">paro #%1$d</string>
+    <string name="devices_retired_on">pensigita %1$s</string>
+    <string name="devices_connected_for">konektita %1$s</string>
+    <string name="devices_recent">%1$s / 7t</string>
+
+    <!-- Statistiko -->
+    <string name="stats_title">ĉiuj altkuraj aŭdiloj</string>
+    <string name="stats_sessions_since">%1$s de %2$s</string>
+    <string name="stats_last_7">lasta 7 tagoj</string>
+    <string name="stats_last_30">lasta 30 tagoj</string>
+    <string name="stats_average_session">averaĝa seanco</string>
+    <string name="stats_playing">ludado</string>
+    <string name="stats_measured_span">mezurita periodo</string>
+    <string name="stats_share">kunhavo</string>
+    <string name="stats_daily_hours_30">horoj po tago (30 tagoj)</string>
+    <string name="stats_by_pair">po paro</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · pensigita</string>
+    <string name="chart_max">%1$s maks</string>
+
+    <!-- Paraj detaloj -->
+    <string name="pair_fallback_title">paro</string>
+    <string name="pair_back">reen</string>
+    <string name="pair_more">pli</string>
+    <string name="pair_menu_rename">renomi</string>
+    <string name="pair_menu_purchase">aĉet-ĉapelo</string>
+    <string name="pair_menu_retire">pensigu / anstataŭigita</string>
+    <string name="pair_menu_delete">forigi</string>
+    <string name="pair_lifetime">viv-daŭro de ĉi tiu paro</string>
+    <string name="pair_retired_on">pensigita %1$s</string>
+    <string name="pair_retired_with_reason">pensigita %1$s · %2$s</string>
+    <string name="pair_connected_now">konektita nun · %1$s</string>
+    <string name="pair_sessions">seancoj</string>
+    <string name="pair_average">averaĝo</string>
+    <string name="pair_longest">plej longa</string>
+    <string name="pair_first_seen">unue vidita</string>
+    <string name="pair_of_measured">el mezurita</string>
+    <string name="pair_measured">mezurita</string>
+    <string name="pair_paid">pagita</string>
+    <string name="pair_per_hour">po horo</string>
+    <string name="pair_bought">aĉetita</string>
+    <string name="pair_daily_hours_14">horoj po tago (14 tagoj)</string>
+    <string name="pair_rename_title">renomi paron</string>
+    <string name="pair_rename_label">nomo</string>
+    <string name="pair_retire_title">pensigu ĉi tiun paron</string>
+    <string name="pair_retire_label">kialo (fiaskis, vendita, perdata…)</string>
+    <string name="pair_retire_confirm">pensigu</string>
+    <string name="pair_retire_supporting">totaloj frostiĝas ĉi tie. rekonekto de la sama aparato startas novan paron de nulo.</string>
+    <string name="pair_price_title">pagita prezo</string>
+    <string name="pair_price_label">kvanto (tutaj unuoj)</string>
+    <string name="pair_price_supporting">uzata por la kosto-po-horo-figuro.</string>
+    <string name="pair_delete_title">forigi ĉi tiun paron?</string>
+    <string name="pair_delete_body">ĉiu seanco registrita por ĝi estas forviŝita. tio ne povas esti malfarita.</string>
+
+    <!-- Seanco-varoj -->
+    <string name="session_ongoing">daŭranta</string>
+    <string name="session_until">ĝis %1$s</string>
+    <string name="session_playing">%1$s ludanta</string>
+    <string name="session_recovered">reakvirita</string>
+
+    <!-- Agordoj -->
+    <string name="settings_tracking">spurado</string>
+    <string name="settings_detailed_title">detala spurado</string>
+    <string name="settings_detailed_body">aldonas kablitajn altkurajn aŭdilojn kaj ludtempo. android raportis kablon-konektajn eventojn nur al rulmemora aplikaĵo, do ĉi tio konservas silentajn avizojn en la ombro. bluetooth estas spurata ambaŭokaze.</string>
+    <string name="settings_detailed_unavailable">ne disponebla antaŭ ol bluetooth-aliro estas donita: ĉi tiu bildaĵo deklaras nur la connectedDevice-servottipo, kiun android 14+ ligas al bluetooth-permeso.</string>
+    <string name="settings_devices">aparatoj</string>
+    <string name="settings_devices_body">malmarku kion ajn, kio ne estas altkuraj aŭdiloj — aŭton-stéreo aŭ parolilo — por ĉesi ĝin registri.</string>
+    <string name="settings_device_subtitle">%1$s · unue vidita %2$s</string>
+    <string name="settings_data">datumoj</string>
+    <string name="settings_export">elportu json</string>
+    <string name="settings_import">enportu</string>
+    <string name="settings_import_warning">enporto anstataŭigas ĉion nuntempe konservita.</string>
+    <string name="settings_troubleshooting">ĉaponaro</string>
+    <string name="settings_battery_body">se seancoj ĉesas esti registrata, kontrolu ke ylih estas sena de baterij-optimigo — aplikaĵo, kiu estis forcigite-haltigita, neniam alprenas konekt-dissendojn denove antaŭ ol ĝi estas malfermita.</string>
+    <string name="settings_battery_button">bateriaj agordoj</string>
+    <string name="settings_battery_path">agordoj → aplikaĵoj → ylih → baterij → senlimita.</string>
+    <string name="settings_about">pri</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — horoj de altkuraj aŭdiloj, konservita loke kaj ĉiam.</string>
+    <string name="settings_import_confirm_title">anstataŭigu ĉiujn datumojn?</string>
+    <string name="settings_import_confirm_body">enporto de ĉi tiu sekurejo forviŝas ĉiun aparaton, paron kaj seanco konservita nun.</string>
+
+    <!-- Komunaj agoj -->
+    <string name="action_save">konservu</string>
+    <string name="action_cancel">nuligo</string>
+    <string name="action_delete">forigi</string>
+    <string name="action_import">enportu</string>
+
+    <!-- Avizo -->
+    <string name="channel_tracking">altkura-aŭdila spurado</string>
+    <string name="channel_tracking_description">montrata dumtempe ylih atentadas kablitajn altkurajn aŭdilojn kaj ludadon. android ne liveras kablon-konektajn eventojn al ne-rulememaj aplikaĵoj.</string>
+    <string name="notification_title">spurado de altkura-aŭdila tempo</string>
+    <string name="notification_starting">startas…</string>
+    <string name="notification_idle">atendante altkurajn aŭdilojn</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d konektita · %2$s</item>
+        <item quantity="other">%1$d konektita · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d konektita · %2$s · ludanta</item>
+        <item quantity="other">%1$d konektita · %2$s · ludanta</item>
+    </plurals>
+
+    <!-- Aviza mesaĝoj -->
+    <string name="detailed_needs_bluetooth">ĉi tiu bildaĵo bezonas bluetooth-aliron antaŭ ol ĝi povas spuradi kablitajn altkurajn aŭdilojn</string>
+    <string name="export_done">sekurejo elportita</string>
+    <string name="export_failed">elporto malsukcesis</string>
+    <string name="import_failed">enporto malsukcesis</string>
+    <string name="error_could_not_open">ne povis malfermi %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">enportita %d seanco</item>
+        <item quantity="other">enportita %d seancoj</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d seanco</item>
+        <item quantity="other">%d seancoj</item>
+    </plurals>
+</resources>

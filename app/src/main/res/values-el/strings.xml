@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Greek. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - η ζωή σου στα ακουστικά</string>
+
+    <!-- Πλοήγηση -->
+    <string name="nav_headphones">ακουστικά</string>
+    <string name="nav_stats">στατιστικά</string>
+    <string name="nav_settings">ρυθμίσεις</string>
+
+    <!-- Τύποι συσκευών -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">ενσύρματα</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">άγνωστο</string>
+
+    <!-- Πρώτη εκκίνηση -->
+    <string name="welcome_title">καλώς ήρθες στο ylih</string>
+    <string name="welcome_intro">το ylih καταγράφει πόση ώρα μένει συνδεδεμένο κάθε ζευγάρι ακουστικών, ώστε ακόμα και μετά από χρόνια να μπορείς να απαντήσεις στο μόνο ερώτημα που μετράει για ένα ζευγάρι: πόσες ώρες άντεξε;</string>
+    <string name="welcome_point_auto_title">σύνδεσε και ξέχνα</string>
+    <string name="welcome_point_auto_body">τα ακουστικά bluetooth καταγράφονται μόνα τους, από τη στιγμή που συνδέονται. δεν χρειάζεται να αφήσεις τίποτα να τρέχει.</string>
+    <string name="welcome_point_lifetime_title">ένα ζευγάρι, μια διάρκεια ζωής</string>
+    <string name="welcome_point_lifetime_body">όταν ένα ζευγάρι χαλάει, απόσυρέ το: το σύνολό του παγώνει εκεί και το επόμενο ζευγάρι των ίδιων ακουστικών ξεκινά ξανά από το μηδέν.</string>
+    <string name="welcome_point_detailed_title">ενσύρματα και αναπαραγωγή</string>
+    <string name="welcome_point_detailed_body">η λεπτομερής καταγραφή, στις ρυθμίσεις, προσθέτει τα ενσύρματα ακουστικά και μετρά πόσο από αυτόν τον χρόνο ήταν πραγματικά αναπαραγωγή.</string>
+    <string name="welcome_privacy">όλα μένουν σε αυτό το τηλέφωνο. δεν υπάρχει λογαριασμός και η εφαρμογή δεν έχει άδεια πρόσβασης στο internet.</string>
+    <string name="welcome_start">ξεκίνα</string>
+
+    <!-- Λίστα ακουστικών -->
+    <string name="devices_in_use">σε χρήση</string>
+    <string name="devices_retired">αποσυρμένα</string>
+    <string name="devices_empty_title">ακόμα κανένα ακουστικό</string>
+    <string name="devices_empty_body">σύνδεσε ένα ζευγάρι ακουστικά bluetooth και θα εμφανιστούν εδώ. τα ενσύρματα ακουστικά χρειάζονται λεπτομερή καταγραφή, στις ρυθμίσεις.</string>
+    <string name="devices_generation">ζευγάρι #%1$d</string>
+    <string name="devices_retired_on">αποσύρθηκε %1$s</string>
+    <string name="devices_connected_for">συνδεδεμένο %1$s</string>
+    <string name="devices_recent">%1$s / 7 ημ.</string>
+
+    <!-- Στατιστικά -->
+    <string name="stats_title">όλα τα ακουστικά</string>
+    <string name="stats_sessions_since">%1$s από %2$s</string>
+    <string name="stats_last_7">τελευταίες 7 ημέρες</string>
+    <string name="stats_last_30">τελευταίες 30 ημέρες</string>
+    <string name="stats_average_session">μέση συνεδρία</string>
+    <string name="stats_playing">αναπαραγωγή</string>
+    <string name="stats_measured_span">μετρημένο διάστημα</string>
+    <string name="stats_share">κοινοποίηση</string>
+    <string name="stats_daily_hours_30">ώρες ανά ημέρα (30 ημέρες)</string>
+    <string name="stats_by_pair">ανά ζευγάρι</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · αποσυρμένο</string>
+    <string name="chart_max">μέγ. %1$s</string>
+
+    <!-- Λεπτομέρειες ζευγαριού -->
+    <string name="pair_fallback_title">ζευγάρι</string>
+    <string name="pair_back">πίσω</string>
+    <string name="pair_more">περισσότερα</string>
+    <string name="pair_menu_rename">μετονομασία</string>
+    <string name="pair_menu_purchase">στοιχεία αγοράς</string>
+    <string name="pair_menu_retire">απόσυρση / αντικατάσταση</string>
+    <string name="pair_menu_delete">διαγραφή</string>
+    <string name="pair_lifetime">συνολικός χρόνος αυτού του ζευγαριού</string>
+    <string name="pair_retired_on">αποσύρθηκε %1$s</string>
+    <string name="pair_retired_with_reason">αποσύρθηκε %1$s · %2$s</string>
+    <string name="pair_connected_now">συνδεδεμένο τώρα · %1$s</string>
+    <string name="pair_sessions">συνεδρίες</string>
+    <string name="pair_average">μέσος όρος</string>
+    <string name="pair_longest">μεγαλύτερη</string>
+    <string name="pair_first_seen">πρώτη εμφάνιση</string>
+    <string name="pair_of_measured">του μετρημένου</string>
+    <string name="pair_measured">μετρημένο</string>
+    <string name="pair_paid">πληρώθηκε</string>
+    <string name="pair_per_hour">ανά ώρα</string>
+    <string name="pair_bought">αγοράστηκε</string>
+    <string name="pair_daily_hours_14">ώρες ανά ημέρα (14 ημέρες)</string>
+    <string name="pair_rename_title">μετονομασία ζευγαριού</string>
+    <string name="pair_rename_label">όνομα</string>
+    <string name="pair_retire_title">απόσυρση αυτού του ζευγαριού</string>
+    <string name="pair_retire_label">λόγος (χάλασε, πουλήθηκε, χάθηκε…)</string>
+    <string name="pair_retire_confirm">απόσυρση</string>
+    <string name="pair_retire_supporting">τα σύνολα παγώνουν εδώ. η επανασύνδεση της ίδιας συσκευής ξεκινά ένα νέο ζευγάρι από το μηδέν.</string>
+    <string name="pair_price_title">τιμή αγοράς</string>
+    <string name="pair_price_label">ποσό (ακέραιες μονάδες)</string>
+    <string name="pair_price_supporting">χρησιμοποιείται για το κόστος ανά ώρα.</string>
+    <string name="pair_delete_title">διαγραφή αυτού του ζευγαριού;</string>
+    <string name="pair_delete_body">διαγράφονται και όλες οι συνεδρίες που έχουν καταγραφεί για αυτό. η ενέργεια δεν αναιρείται.</string>
+
+    <!-- Γραμμές συνεδρίας -->
+    <string name="session_ongoing">σε εξέλιξη</string>
+    <string name="session_until">μέχρι %1$s</string>
+    <string name="session_playing">%1$s αναπαραγωγή</string>
+    <string name="session_recovered">ανακτήθηκε</string>
+
+    <!-- Ρυθμίσεις -->
+    <string name="settings_tracking">καταγραφή</string>
+    <string name="settings_detailed_title">λεπτομερής καταγραφή</string>
+    <string name="settings_detailed_body">προσθέτει τα ενσύρματα ακουστικά και τον χρόνο αναπαραγωγής. το android αναφέρει τα συμβάντα σύνδεσης καλωδίου μόνο σε μια εφαρμογή που ήδη εκτελείται, γι\' αυτό διατηρείται μια σιωπηλή ειδοποίηση στο συρτάρι. το bluetooth καταγράφεται σε κάθε περίπτωση.</string>
+    <string name="settings_detailed_unavailable">μη διαθέσιμο μέχρι να δοθεί πρόσβαση στο bluetooth: αυτή η έκδοση δηλώνει μόνο τον τύπο υπηρεσίας connectedDevice, τον οποίο το android 14+ συνδέει με άδεια bluetooth.</string>
+    <string name="settings_devices">συσκευές</string>
+    <string name="settings_devices_body">αποεπίλεξε ό,τι δεν είναι ακουστικά — ένα ηχοσύστημα αυτοκινήτου ή ένα ηχείο — για να σταματήσει η καταγραφή του.</string>
+    <string name="settings_device_subtitle">%1$s · πρώτη εμφάνιση %2$s</string>
+    <string name="settings_data">δεδομένα</string>
+    <string name="settings_export">εξαγωγή json</string>
+    <string name="settings_import">εισαγωγή</string>
+    <string name="settings_import_warning">η εισαγωγή αντικαθιστά όλα όσα είναι αποθηκευμένα αυτή τη στιγμή.</string>
+    <string name="settings_troubleshooting">επίλυση προβλημάτων</string>
+    <string name="settings_battery_body">αν οι συνεδρίες σταματήσουν να καταγράφονται, έλεγξε αν το ylih εξαιρείται από τη βελτιστοποίηση μπαταρίας — μια εφαρμογή που έχει τερματιστεί βίαια δεν λαμβάνει ποτέ ξανά μεταδόσεις σύνδεσης μέχρι να ανοίξει.</string>
+    <string name="settings_battery_button">ρυθμίσεις μπαταρίας</string>
+    <string name="settings_battery_path">ρυθμίσεις → εφαρμογές → ylih → μπαταρία → χωρίς περιορισμούς.</string>
+    <string name="settings_about">σχετικά</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — ώρες ακουστικών, αποθηκευμένες τοπικά και για πάντα.</string>
+    <string name="settings_import_confirm_title">αντικατάσταση όλων των δεδομένων;</string>
+    <string name="settings_import_confirm_body">η εισαγωγή αυτού του αντιγράφου ασφαλείας διαγράφει κάθε συσκευή, ζευγάρι και συνεδρία που είναι αποθηκευμένα τώρα.</string>
+
+    <!-- Κοινές ενέργειες -->
+    <string name="action_save">αποθήκευση</string>
+    <string name="action_cancel">ακύρωση</string>
+    <string name="action_delete">διαγραφή</string>
+    <string name="action_import">εισαγωγή</string>
+
+    <!-- Ειδοποίηση -->
+    <string name="channel_tracking">καταγραφή ακουστικών</string>
+    <string name="channel_tracking_description">εμφανίζεται όσο το ylih παρακολουθεί για ενσύρματα ακουστικά και αναπαραγωγή. το android δεν παραδίδει συμβάντα σύνδεσης καλωδίου σε εφαρμογές που δεν εκτελούνται.</string>
+    <string name="notification_title">καταγραφή χρόνου ακουστικών</string>
+    <string name="notification_starting">εκκίνηση…</string>
+    <string name="notification_idle">αναμονή για ακουστικά</string>
+    <!-- Greek's CLDR set is one/other only. -->
+    <plurals name="notification_active">
+        <item quantity="one">%1$d συνδεδεμένο · %2$s</item>
+        <item quantity="other">%1$d συνδεδεμένα · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d συνδεδεμένο · %2$s · αναπαραγωγή</item>
+        <item quantity="other">%1$d συνδεδεμένα · %2$s · αναπαραγωγή</item>
+    </plurals>
+
+    <!-- Μηνύματα -->
+    <string name="detailed_needs_bluetooth">αυτή η έκδοση χρειάζεται πρόσβαση στο bluetooth πριν μπορέσει να καταγράψει ενσύρματα ακουστικά</string>
+    <string name="export_done">το αντίγραφο ασφαλείας εξήχθη</string>
+    <string name="export_failed">η εξαγωγή απέτυχε</string>
+    <string name="import_failed">η εισαγωγή απέτυχε</string>
+    <string name="error_could_not_open">δεν ήταν δυνατό το άνοιγμα του %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">εισήχθη %d συνεδρία</item>
+        <item quantity="other">εισήχθησαν %d συνεδρίες</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d συνεδρία</item>
+        <item quantity="other">%d συνεδρίες</item>
+    </plurals>
+</resources>

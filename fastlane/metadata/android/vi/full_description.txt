@@ -1,0 +1,40 @@
+Tai nghe rồi cũng sẽ hỏng. Trước khi điều đó xảy ra, ylih trả lời câu hỏi duy nhất thực sự quan trọng về một đôi tai nghe: bạn đã dùng được bao nhiêu giờ?
+
+Mỗi lần tai nghe kết nối, ylih ghi lại thời điểm đó. Mỗi lần chúng ngắt kết nối, ylih cũng ghi lại thời điểm đó. Chỉ vậy thôi — và vì một lần kết nối chỉ là hai mốc thời gian, ứng dụng không cần chạy nền để làm việc này.
+
+NHỮNG GÌ ĐƯỢC GHI LẠI
+
+• Số giờ trọn đời của từng đôi tai nghe vật lý. Khi một đôi hỏng, hãy cho nó nghỉ hưu — tổng thời gian dừng lại, và đôi tiếp theo cùng mẫu bắt đầu lại từ số 0, gọi là thế hệ 2. Số liệu cũ không bao giờ bị trộn lẫn với số liệu mới.
+• Mọi phiên kết nối, được lưu vĩnh viễn: thời điểm kết nối, thời điểm ngắt kết nối và lý do kết thúc.
+• Thời gian phát nhạc (tùy chọn): bao nhiêu phần trong thời gian kết nối đó thực sự đang phát âm thanh, để việc "đeo quanh cổ" không được tính là đang nghe.
+• Chi phí mỗi giờ, nếu bạn nhập số tiền đã trả. Đây là con số rất thỏa mãn khi nhìn nó giảm dần.
+
+HAI CHẾ ĐỘ THEO DÕI
+
+Chỉ bluetooth — mặc định. Không có gì của ứng dụng chạy nền, không có gì nằm trong thanh thông báo, và không tốn pin, vì android vẫn gửi sự kiện kết nối cho ứng dụng ngay cả khi nó đã đóng.
+
+Theo dõi chi tiết — tùy chọn. Thêm tai nghe có dây và USB, đồng thời đo thời gian phát nhạc so với thời gian kết nối. Cần một thông báo im lặng, ưu tiên thấp nhất, vì android chỉ báo sự kiện cắm tai nghe có dây cho một ứng dụng đang chạy. Đó là lý do duy nhất khiến thông báo đó tồn tại.
+
+Bluetooth luôn được theo dõi trong cả hai chế độ.
+
+NHỮNG CON SỐ CÓ THỂ TIN CẬY SAU NHIỀU NĂM
+
+Tổng số liệu dài hạn sẽ vô nghĩa nếu một lần treo máy hay khởi động lại âm thầm cộng thêm mười hai giờ. Vì vậy:
+
+• Một phiên bị bỏ ngỏ do khởi động lại hoặc treo máy sẽ được đóng lại ở lần báo nhịp cuối cùng đã biết, không bao giờ trễ hơn thời điểm điện thoại khởi động. Thời gian điện thoại tắt nguồn không bao giờ được tính.
+• Nếu tai nghe vẫn đang kết nối sau khi khởi động lại, một phiên mới sẽ bắt đầu thay vì kéo dài phiên cũ qua khoảng gián đoạn đó.
+• Các phiên đang mở được báo nhịp định kỳ, nên thiệt hại từ một lần ngắt kết nối bị bỏ lỡ luôn có giới hạn.
+
+RIÊNG TƯ NGAY TỪ THIẾT KẾ
+
+ylih không có quyền truy cập internet. Đây không phải là lời hứa "chúng tôi sẽ không gửi gì đi" — ứng dụng về mặt kỹ thuật không thể làm điều đó. Không có tài khoản, không phân tích dữ liệu, không quảng cáo và không theo dõi người dùng. Mọi thứ nằm trong một cơ sở dữ liệu trên điện thoại của bạn.
+
+Cài đặt → Xuất json ghi lại toàn bộ lịch sử của bạn dưới dạng JSON có thể đọc được, và Nhập sẽ khôi phục lại, nên việc chuyển sang điện thoại mới không bao giờ khiến bạn mất đi số liệu của mình.
+
+QUYỀN TRUY CẬP
+
+• Thiết bị lân cận (Bluetooth): cần thiết để nhận sự kiện kết nối và đọc tên của tai nghe. Nếu không có quyền này, việc theo dõi bluetooth hoàn toàn không hoạt động được.
+• Thông báo: chỉ dùng cho thông báo của chế độ theo dõi chi tiết.
+• Chạy khi khởi động: để đóng các phiên mà lần tắt máy trước đó không kịp báo lại.
+
+Mã nguồn mở theo giấy phép MIT.

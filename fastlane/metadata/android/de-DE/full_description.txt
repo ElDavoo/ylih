@@ -1,0 +1,40 @@
+Kopfhörer gehen irgendwann kaputt. Bevor sie es tun, beantwortet ylih die einzige Frage, die bei einem Paar wirklich zählt: Wie viele Stunden hast du mit ihnen verbracht?
+
+Jedes Mal, wenn sich deine Kopfhörer verbinden, notiert ylih den Zeitpunkt. Jedes Mal, wenn sie sich trennen, notiert es ihn ebenfalls. Das ist die ganze Idee dahinter – und weil eine Verbindung nur aus zwei Zeitstempeln besteht, muss die App dafür nicht im Hintergrund laufen.
+
+WAS ERFASST WIRD
+
+• Gesamtstunden pro physischem Kopfhörerpaar. Wenn ein Paar kaputtgeht, mustere es aus – die Summe friert dort ein, und das nächste Paar desselben Modells beginnt als Generation 2 wieder bei null. Deine alten Zahlen vermischen sich nie mit den neuen.
+• Jede Sitzung, dauerhaft gespeichert: Verbindungszeit, Trennungszeit und der Grund für das Ende.
+• Wiedergabezeit (optional): wie viel von dieser Verbindungszeit tatsächlich Musik oder Ton lief, damit "um den Hals getragen" nicht als Hören zählt.
+• Kosten pro Stunde, wenn du den Kaufpreis einträgst. Eine Zahl, der man gerne beim Sinken zusieht.
+
+ZWEI TRACKING-MODI
+
+Nur bluetooth – die Standardeinstellung. Nichts von der App läuft, nichts erscheint im Benachrichtigungsbereich, und es entsteht kein Akkuverbrauch, weil android Verbindungsereignisse auch bei geschlossener App an sie weiterleitet.
+
+Detailliertes Tracking – optional. Fügt kabelgebundene und USB-Kopfhörer hinzu und misst Wiedergabe im Verhältnis zur Verbindungszeit. Dafür ist eine einzige stille Benachrichtigung mit niedrigster Priorität nötig, weil android Ereignisse einer Kabelbuchse nur an eine bereits laufende App meldet. Das, und nichts sonst, ist der Grund für diese Benachrichtigung.
+
+Bluetooth wird in beiden Modi erfasst.
+
+ZAHLEN, DENEN DU AUCH JAHRE SPÄTER VERTRAUEN KANNST
+
+Langfristige Summen sind wertlos, wenn ein Absturz oder ein Neustart still zwölf Stunden hinzufügt. Deshalb:
+
+• Eine Sitzung, die durch einen Neustart oder Absturz offen geblieben ist, wird beim letzten bekannten Lebenszeichen geschlossen – nie später als dem Moment, in dem das Telefon hochgefahren ist. Zeit, in der das Telefon ausgeschaltet war, wird nie mitgezählt.
+• Sind deine Kopfhörer nach einem Neustart noch verbunden, beginnt eine neue Sitzung, statt die alte über die Lücke hinweg zu verlängern.
+• Offene Sitzungen erhalten laufend ein Lebenszeichen, sodass der Schaden durch eine verpasste Trennung begrenzt bleibt.
+
+VON NATUR AUS PRIVAT
+
+ylih hat keine Internetberechtigung. Nicht als Versprechen, nichts zu senden – die App ist technisch dazu nicht in der Lage. Es gibt keine Konten, keine Analysen, keine Werbung und kein Tracking. Alles liegt in einer Datenbank auf deinem Telefon.
+
+Einstellungen → JSON exportieren schreibt deine gesamte Historie als lesbares JSON, und Importieren stellt sie wieder her – ein Wechsel auf ein neues Telefon kostet dich nie deine Zahlen.
+
+BERECHTIGUNGEN
+
+• Geräte in der Nähe (bluetooth): nötig, um Verbindungsereignisse zu empfangen und den Namen eines Kopfhörers zu lesen. Ohne diese Berechtigung kann bluetooth-Tracking überhaupt nicht funktionieren.
+• Benachrichtigungen: nur für die Benachrichtigung des detaillierten Trackings.
+• Beim Start ausführen: um Sitzungen zu schließen, die das Herunterfahren nie gemeldet hat.
+
+Open Source unter der MIT-Lizenz.

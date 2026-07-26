@@ -2,6 +2,7 @@ package it.eldavo.ylih.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -10,7 +11,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.AssistChipDefaults
 import androidx.compose.material3.Card
@@ -22,6 +26,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import it.eldavo.ylih.R
@@ -35,6 +40,7 @@ fun DevicesScreen(
     viewModel: YlihViewModel,
     contentPadding: PaddingValues,
     onOpenPair: (Long) -> Unit,
+    listState: LazyListState = rememberLazyListState(),
 ) {
     val summaries by viewModel.summaries.collectAsStateWithLifecycle()
     val spansByPair by viewModel.spansByPair.collectAsStateWithLifecycle()
@@ -45,6 +51,7 @@ fun DevicesScreen(
     val retired = summaries.filter { it.retiredAt != null }
 
     LazyColumn(
+        state = listState,
         modifier = Modifier.fillMaxSize(),
         contentPadding = PaddingValues(
             top = contentPadding.calculateTopPadding() + 8.dp,
@@ -55,7 +62,7 @@ fun DevicesScreen(
             item { EmptyState() }
         }
         if (active.isNotEmpty()) {
-            item { SectionHeader("In use") }
+            item { SectionHeader(stringResource(R.string.devices_in_use)) }
             items(active, key = { it.pairId }) { summary ->
                 PairCard(
                     summary = summary,
@@ -67,7 +74,7 @@ fun DevicesScreen(
             }
         }
         if (retired.isNotEmpty()) {
-            item { SectionHeader("Retired") }
+            item { SectionHeader(stringResource(R.string.devices_retired)) }
             items(retired, key = { it.pairId }) { summary ->
                 PairCard(
                     summary = summary,
@@ -89,11 +96,13 @@ private fun EmptyState() {
             .padding(32.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Text("No headphones yet", style = MaterialTheme.typography.titleMedium)
+        Text(
+            stringResource(R.string.devices_empty_title),
+            style = MaterialTheme.typography.titleMediumEmphasized,
+        )
         Spacer(Modifier.height(8.dp))
         Text(
-            "Connect a pair of Bluetooth headphones and they'll show up here. " +
-                "Wired headphones need detailed tracking, in Settings.",
+            stringResource(R.string.devices_empty_body),
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
@@ -116,7 +125,11 @@ private fun PairCard(
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 6.dp),
-        colors = CardDefaults.cardColors(),
+        // Expressive leans on generous, obviously-rounded containers.
+        shape = RoundedCornerShape(28.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceContainerHigh,
+        ),
     ) {
         Column(Modifier.padding(16.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
@@ -125,27 +138,46 @@ private fun PairCard(
                         text = summary.label,
                         style = MaterialTheme.typography.titleMedium,
                     )
+                    val kind = summary.deviceKind.displayName()
+                    val generation = stringResource(R.string.devices_generation, summary.generation)
+                    val retired = summary.retiredAt
+                        ?.let { stringResource(R.string.devices_retired_on, formatDate(it)) }
                     Text(
-                        text = buildString {
-                            append(summary.deviceKind.displayName())
-                            if (summary.generation > 1) append(" · pair #${summary.generation}")
-                            summary.retiredAt?.let { append(" · retired ${formatDate(it)}") }
-                        },
+                        text = listOfNotNull(
+                            kind,
+                            generation.takeIf { summary.generation > 1 },
+                            retired,
+                        ).joinToString(" · "),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
                 Text(
                     text = formatHours(lifetimeMs),
-                    style = MaterialTheme.typography.headlineSmall,
+                    // The lifetime figure is the reason the app exists; Expressive's emphasized
+                    // cut is heavier and tighter, so it carries the card without growing.
+                    style = MaterialTheme.typography.headlineSmallEmphasized,
                 )
             }
             Spacer(Modifier.height(12.dp))
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            // A connected pair with 7-day history shows three chips, which do not fit across a
+            // 360dp screen. A Row does not wrap: the last chip was squeezed to zero width and its
+            // label then wrapped one character per line, stretching the card to a blank column.
+            FlowRow(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
                 summary.openSince?.let { since ->
                     AssistChip(
                         onClick = onClick,
-                        label = { Text("Connected ${formatDurationShort(now - since)}") },
+                        label = {
+                            Text(
+                                stringResource(
+                                    R.string.devices_connected_for,
+                                    formatDurationShort(now - since),
+                                ),
+                            )
+                        },
                         colors = AssistChipDefaults.assistChipColors(
                             containerColor = MaterialTheme.colorScheme.primaryContainer,
                             labelColor = MaterialTheme.colorScheme.onPrimaryContainer,
@@ -165,7 +197,12 @@ private fun PairCard(
                     },
                 )
                 if (last7 > 0) {
-                    AssistChip(onClick = onClick, label = { Text("${formatHours(last7)} / 7d") })
+                    AssistChip(
+                        onClick = onClick,
+                        label = {
+                            Text(stringResource(R.string.devices_recent, formatHours(last7)))
+                        },
+                    )
                 }
             }
         }

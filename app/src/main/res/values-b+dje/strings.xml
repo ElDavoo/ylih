@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Zarma. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — jinne hayyan hima</string>
+
+    <!-- Navigation -->
+    <string name="nav_headphones">hima</string>
+    <string name="nav_stats">bayante</string>
+    <string name="nav_settings">karkari</string>
+
+    <!-- Device kinds -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">labali</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">kaanu</string>
+
+    <!-- First run -->
+    <string name="welcome_title">i yaa ylih</string>
+    <string name="welcome_intro">ylih ga hangarey jinne hima gonda alaara ko gurfe baani, kabu kul-kul jinnay ga hin ka fuwa yadda ba baani: hima nee sa agandu mey?</string>
+    <string name="welcome_point_auto_title">gasa ra gaba</string>
+    <string name="welcome_point_auto_body">bluetooth hima ga hangarey kabarey anda gasaandi ne. ba yadda hankurey de gida baani.</string>
+    <string name="welcome_point_lifetime_title">hima kooy, hayyan kooy</string>
+    <string name="welcome_point_lifetime_body">anda hima ba du-du ga, i fuley: bayante ga gida kaani kabu ne, a hima gerey gonda gaskuya ga kaani zama nda alaara kooy.</string>
+    <string name="welcome_point_detailed_title">labali ra ido</string>
+    <string name="welcome_point_detailed_body">hangarey gara ganda, karkari ga, labali hima ga kaaji kul-kul agandu mey.</string>
+    <string name="welcome_privacy">kul kaaga dooro borey. wadata baaba, kul-kul interneti ka haya baaba.</string>
+    <string name="welcome_start">bi kaani</string>
+
+    <!-- Headphones list -->
+    <string name="devices_in_use">gaskuya ga</string>
+    <string name="devices_retired">fulande</string>
+    <string name="devices_empty_title">hima baaba sanda</string>
+    <string name="devices_empty_body">bluetooth hima gaskuya ga kanji, a ga bindi kabu ne. labali hima ga hangarey gara ganda, karkari ga.</string>
+    <string name="devices_generation">hima #%1$d</string>
+    <string name="devices_retired_on">fulande %1$s</string>
+    <string name="devices_connected_for">gasaandi %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Stats -->
+    <string name="stats_title">kul hima</string>
+    <string name="stats_sessions_since">%1$s sanda %2$s</string>
+    <string name="stats_last_7">waja 7 jema</string>
+    <string name="stats_last_30">waja 30 jema</string>
+    <string name="stats_average_session">gasa ganda hima</string>
+    <string name="stats_playing">ido</string>
+    <string name="stats_measured_span">alaara jema</string>
+    <string name="stats_share">kunaa</string>
+    <string name="stats_daily_hours_30">agandu jema (30 jema)</string>
+    <string name="stats_by_pair">hima ga</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · fulande</string>
+    <string name="chart_max">%1$s gutu</string>
+
+    <!-- Pair detail -->
+    <string name="pair_fallback_title">hima</string>
+    <string name="pair_back">kara</string>
+    <string name="pair_more">ganda</string>
+    <string name="pair_menu_rename">suubay</string>
+    <string name="pair_menu_purchase">sanda gundey</string>
+    <string name="pair_menu_retire">fuley / jama</string>
+    <string name="pair_menu_delete">kaa</string>
+    <string name="pair_lifetime">hayyan hima kabu</string>
+    <string name="pair_retired_on">fulande %1$s</string>
+    <string name="pair_retired_with_reason">fulande %1$s · %2$s</string>
+    <string name="pair_connected_now">gasaandi sanda · %1$s</string>
+    <string name="pair_sessions">gasaandi</string>
+    <string name="pair_average">ganda</string>
+    <string name="pair_longest">gutu baani</string>
+    <string name="pair_first_seen">kanji zama</string>
+    <string name="pair_of_measured">alaara ga</string>
+    <string name="pair_measured">alaara</string>
+    <string name="pair_paid">kunaa</string>
+    <string name="pair_per_hour">agandu foo</string>
+    <string name="pair_bought">sanda</string>
+    <string name="pair_daily_hours_14">agandu jema (14 jema)</string>
+    <string name="pair_rename_title">suubay hima</string>
+    <string name="pair_rename_label">suuba</string>
+    <string name="pair_retire_title">fuley hima kabu</string>
+    <string name="pair_retire_label">karana (du-du, sanda, goyduma…)</string>
+    <string name="pair_retire_confirm">fuley</string>
+    <string name="pair_retire_supporting">bayante ga gida kaani kabu ne. borey gaskuya zama ga kaani hima gerey ne.</string>
+    <string name="pair_price_title">sanda kunaa</string>
+    <string name="pair_price_label">kunaa (cay)</string>
+    <string name="pair_price_supporting">agandu foo alaara ga gaskuya.</string>
+    <string name="pair_delete_title">kaa hima kabu?</string>
+    <string name="pair_delete_body">kul gasaandi kabu ga kaa gida ne. ba ga ka kaani.</string>
+
+    <!-- Session rows -->
+    <string name="session_ongoing">gaskuya ga</string>
+    <string name="session_until">kabu %1$s</string>
+    <string name="session_playing">%1$s ido</string>
+    <string name="session_recovered">kanji zama</string>
+
+    <!-- Settings -->
+    <string name="settings_tracking">hangarey</string>
+    <string name="settings_detailed_title">hangarey gara ganda</string>
+    <string name="settings_detailed_body">labali hima kul-kul agandu mey. android ga labali gaskuya hankurey de borey ga kaaji, kabu sanda ga gida ganda. bluetooth ga hangarey kabarey de.</string>
+    <string name="settings_detailed_unavailable">ba ga kaa sanda bluetooth ka haya ne: sanda kabu ga connectedDevice gaskuya gonda haali, android 14+ ga bluetooth haya ga kirey ne.</string>
+    <string name="settings_devices">borey</string>
+    <string name="settings_devices_body">hima baaba laybay - baabur woot, baagana - goo unguu kaani, hangarey ganda ne.</string>
+    <string name="settings_device_subtitle">%1$s · kanji zama %2$s</string>
+    <string name="settings_data">gundey</string>
+    <string name="settings_export">json kunaa</string>
+    <string name="settings_import">ga kanji</string>
+    <string name="settings_import_warning">ga kanji ga kul kaagu kundi de.</string>
+    <string name="settings_troubleshooting">kaarey zama</string>
+    <string name="settings_battery_body">anda gasaandi ga hangarey ganda ne, goo ylih ga batari kaarey ga baa - sanda ba du-du ga haw ka gasaandi ne sanda kafara kanji zama ga.</string>
+    <string name="settings_battery_button">batari karkari</string>
+    <string name="settings_battery_path">karkari → sanda → ylih → batari → unguu baaba.</string>
+    <string name="settings_about">waajinay</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — agandu hima ga, borey ga gida kul-kul.</string>
+    <string name="settings_import_confirm_title">kul gundey jama?</string>
+    <string name="settings_import_confirm_body">ga kanji kunaa kabu ga kul borey, hima, gasaandi kaagu kundi de.</string>
+
+    <!-- Shared actions -->
+    <string name="action_save">gida</string>
+    <string name="action_cancel">unguu</string>
+    <string name="action_delete">kaa</string>
+    <string name="action_import">ga kanji</string>
+
+    <!-- Notification -->
+    <string name="channel_tracking">hima hangarey</string>
+    <string name="channel_tracking_description">anda ylih ga labali hima kul-kul agandu mey gaskuya ga. android ga labali gaskuya hankurey de borey baaba.</string>
+    <string name="notification_title">hima agandu hangarey</string>
+    <string name="notification_starting">kanji…</string>
+    <string name="notification_idle">hima guna</string>
+    <plurals name="notification_active">
+        <item quantity="one">gasaandi: %1$d · %2$s</item>
+        <item quantity="other">gasaandi: %1$d · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">gasaandi: %1$d · %2$s · ido</item>
+        <item quantity="other">gasaandi: %1$d · %2$s · ido</item>
+    </plurals>
+
+    <!-- Snackbar messages -->
+    <string name="detailed_needs_bluetooth">sanda kabu ga bluetooth haya kanee, labali hima hangarey kabarey ga</string>
+    <string name="export_done">kunaa kanji</string>
+    <string name="export_failed">kunaa kanji ganda ne</string>
+    <string name="import_failed">ga kanji ganda ne</string>
+    <string name="error_could_not_open">ga hin da fukka %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">gasaandi kanji %d</item>
+        <item quantity="other">gasaandi kanji %d</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">gasaandi %d</item>
+        <item quantity="other">gasaandi %d</item>
+    </plurals>
+</resources>

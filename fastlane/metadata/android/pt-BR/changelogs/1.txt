@@ -1,0 +1,8 @@
+Primeiro lançamento.
+
+• Horas totais de cada par físico de fones, com gerações para que um par de reposição comece do zero em vez de herdar o total do antigo.
+• Toda conexão guardada para sempre, com estatísticas diárias e por par.
+• Rastreamento detalhado opcional para fones com fio e USB, e para reprodução versus tempo conectado.
+• Custo por hora de uso.
+• Exportação e importação em JSON.
+• Sem permissão de internet: nada nunca sai do telefone.

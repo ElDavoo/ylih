@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Lower Sorbian. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — twój žiwjenje w naušnikach</string>
+
+    <!-- Nawigacija dołow -->
+    <string name="nav_headphones">naušniki</string>
+    <string name="nav_stats">statistika</string>
+    <string name="nav_settings">nastajenja</string>
+
+    <!-- Tšypy napšada -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">drótne</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">njeznate</string>
+
+    <!-- Prwy rozjěć -->
+    <string name="welcome_title">dóbry pśichod k ylih</string>
+    <string name="welcome_intro">ylih nanjesywaš, kak długo kuždna para naušnikow zwězana wóstawa, aby si za lět na jedyno wažne pšašanje móžół wótmołwićc: kelko hodinow sta sćadžyła?</string>
+    <string name="welcome_point_auto_title">zwěžaj a zabywaš</string>
+    <string name="welcome_point_auto_body">bluetooth-naušniki se nanjesuju sam, jano ako se zwěžaju. ničo njetrjebaš žywy drěmaś.</string>
+    <string name="welcome_point_lifetime_title">jedna para — jaden byt</string>
+    <string name="welcome_point_lifetime_body">ako para wumrěje, ju pensioniriš: jeje suma sćě tam stajańska a druga para tych samych naušnikow nowy rozjěć nowy zacynaš.</string>
+    <string name="welcome_point_detailed_title">drót a wótwóźenje</string>
+    <string name="welcome_point_detailed_body">detalny slepo w nastajenjach naršywaš drótne naušniki a měriš, kelko časa su realnje wótwóźenje słowo.</string>
+    <string name="welcome_privacy">wšykno na toś tom smartfonu wóstawa. žaden konto njejo a nožeńska nima žadnu internecowu towědnosć.</string>
+    <string name="welcome_start">zachop</string>
+
+    <!-- Lisćina naušnikow -->
+    <string name="devices_in_use">w wužyćanju</string>
+    <string name="devices_retired">pensionira</string>
+    <string name="devices_empty_title">hyšćo žedne naušniki</string>
+    <string name="devices_empty_body">bluetooth-naušniki zwěžaj a zoglěduchu se tu. drótne naušniki trjebaju detalny slepo w nastajenjach.</string>
+    <string name="devices_generation">para #%1$d</string>
+    <string name="devices_retired_on">pensionira %1$s</string>
+    <string name="devices_connected_for">zwězane %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Statistika -->
+    <string name="stats_title">wšykne naušniki</string>
+    <string name="stats_sessions_since">%1$s wót %2$s</string>
+    <string name="stats_last_7">póslednich 7 dnjow</string>
+    <string name="stats_last_30">póslednich 30 dnjow</string>
+    <string name="stats_average_session">pśemerna sejada</string>
+    <string name="stats_playing">wótwóźenje</string>
+    <string name="stats_measured_span">měrjony wobcerk</string>
+    <string name="stats_share">dělenje</string>
+    <string name="stats_daily_hours_30">hodinow na źeń (30 dnjow)</string>
+    <string name="stats_by_pair">po parach</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · pensionira</string>
+    <string name="chart_max">maks %1$s</string>
+
+    <!-- Detajl pary -->
+    <string name="pair_fallback_title">para</string>
+    <string name="pair_back">nazat</string>
+    <string name="pair_more">wěcej</string>
+    <string name="pair_menu_rename">pśemjeniś</string>
+    <string name="pair_menu_purchase">info wó kupljanju</string>
+    <string name="pair_menu_retire">pensioniriś / nadomjenjenja</string>
+    <string name="pair_menu_delete">wulašćiś</string>
+    <string name="pair_lifetime">žiwjenje teje pary</string>
+    <string name="pair_retired_on">pensionira %1$s</string>
+    <string name="pair_retired_with_reason">pensionira %1$s · %2$s</string>
+    <string name="pair_connected_now">zwězane něnto · %1$s</string>
+    <string name="pair_sessions">sejady</string>
+    <string name="pair_average">pśemerna</string>
+    <string name="pair_longest">nejšyra</string>
+    <string name="pair_first_seen">prwy raz wiźity</string>
+    <string name="pair_of_measured">wót měrjonego</string>
+    <string name="pair_measured">měrjony</string>
+    <string name="pair_paid">dopłaćeny</string>
+    <string name="pair_per_hour">za hodinu</string>
+    <string name="pair_bought">kupjeny</string>
+    <string name="pair_daily_hours_14">hodinow na źeń (14 dnjow)</string>
+    <string name="pair_rename_title">pśemjeniś paru</string>
+    <string name="pair_rename_label">mě</string>
+    <string name="pair_retire_title">toś tu paru pensioniriś</string>
+    <string name="pair_retire_label">pśicyna (wumrěły, prodane, zgubane…)</string>
+    <string name="pair_retire_confirm">pensioniriś</string>
+    <string name="pair_retire_supporting">sumy tu stajaju. ako se to samo napšada wěcej zwěžy, nowa para se zacynaš na nulu.</string>
+    <string name="pair_price_title">zapłaćena cena</string>
+    <string name="pair_price_label">suma (cełe jedenotki)</string>
+    <string name="pair_price_supporting">se wužywa za cenu na hodinu.</string>
+    <string name="pair_delete_title">toś tu paru wulašćiś?</string>
+    <string name="pair_delete_body">wšykne sejady teje pary se tež wulašćuju. to njedajo se wróćiś.</string>
+
+    <!-- Řady sejadow -->
+    <string name="session_ongoing">běžaća</string>
+    <string name="session_until">do %1$s</string>
+    <string name="session_playing">%1$s wótwóźenja</string>
+    <string name="session_recovered">wótwórojena</string>
+
+    <!-- Nastajenja -->
+    <string name="settings_tracking">slepo</string>
+    <string name="settings_detailed_title">detalny slepo</string>
+    <string name="settings_detailed_body">naršywaš drótne naušniki a čas wótwóźenja. android zdźělujo drótne napšadeje jano žywjemu programej, togola sćě tu cicny powěźomjenje wóstawa. bluetooth se sćě slepowaš.</string>
+    <string name="settings_detailed_unavailable">njejo dostupny, dokad bluetooth-towědnosć njejo dana: toś ta wersija jano connectedDevice-tšyp słužby prokljamujaš, što android 14+ na bluetooth-towědnosć wěžujaš.</string>
+    <string name="settings_devices">napšada</string>
+    <string name="settings_devices_body">wulašćiš, co njesu naušniki — awtomagnatole abo głośniki — aby ji měł staś nanjesywaś.</string>
+    <string name="settings_device_subtitle">%1$s · prwy raz wiźity %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">eksport json</string>
+    <string name="settings_import">import</string>
+    <string name="settings_import_warning">import wšykno, co se njepšichowujo, wěnšujaš.</string>
+    <string name="settings_troubleshooting">wótgrožowanje problemow</string>
+    <string name="settings_battery_body">ako sejady njenanjesujuju se wěcej, kontroluš, zo je ylih wót optimizacije akumulatora wuzwolnjeny — program, co je mócnje stopnjeny, nigda wěcej napšadeje wobyšcenja njejo, dokad ga njawěrtaš.</string>
+    <string name="settings_battery_button">nastajenja akumulatora</string>
+    <string name="settings_battery_path">nastajenja → programy → ylih → akumulator → njewobmjezjeny.</string>
+    <string name="settings_about">wó programje</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — hodinow w naušnikach, na smartfonu w wjecy.</string>
+    <string name="settings_import_confirm_title">wšykne data wěnšujaš?</string>
+    <string name="settings_import_confirm_body">import teje kopy wšykne napšada, pary a sejady uštranis.</string>
+
+    <!-- Změ akcije -->
+    <string name="action_save">zachowaś</string>
+    <string name="action_cancel">wotkliźiś</string>
+    <string name="action_delete">wulašćiś</string>
+    <string name="action_import">import</string>
+
+    <!-- Powěźomjenje -->
+    <string name="channel_tracking">slepo naušnikow</string>
+    <string name="channel_tracking_description">se pokazywaš, dokad ylih slepo wó drótnych naušnikach a wótwóźenju. android njezdźělujo drótnych napšadow njažywym programej.</string>
+    <string name="notification_title">slepo časa w naušnikach</string>
+    <string name="notification_starting">zacynajaś…</string>
+    <string name="notification_idle">čekamy na naušniki</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d zwězany · %2$s</item>
+        <item quantity="two">%1$d zwězanaj · %2$s</item>
+        <item quantity="few">%1$d zwězane · %2$s</item>
+        <item quantity="other">%1$d zwězanych · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d zwězany · %2$s · wótwóźenje</item>
+        <item quantity="two">%1$d zwězanaj · %2$s · wótwóźenje</item>
+        <item quantity="few">%1$d zwězane · %2$s · wótwóźenje</item>
+        <item quantity="other">%1$d zwězanych · %2$s · wótwóźenje</item>
+    </plurals>
+
+    <!-- Powěźenja -->
+    <string name="detailed_needs_bluetooth">toś ta wersija bluetooth-towědnosć trjebaš, aby drótne naušniki slepowaš</string>
+    <string name="export_done">kopa eksportirowana</string>
+    <string name="export_failed">eksport njewudan</string>
+    <string name="import_failed">import njewudan</string>
+    <string name="error_could_not_open">njemóžym %1$s wócyniś</string>
+    <plurals name="import_done">
+        <item quantity="one">%d sejada importirowana</item>
+        <item quantity="two">%d sejadaj importirowani</item>
+        <item quantity="few">%d sejady importirowani</item>
+        <item quantity="other">%d sejadow importirowanych</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sejada</item>
+        <item quantity="two">%d sejadaj</item>
+        <item quantity="few">%d sejady</item>
+        <item quantity="other">%d sejadow</item>
+    </plurals>
+</resources>

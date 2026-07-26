@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  فارسی (Persian). Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - زندگی‌ات در هدفون‌ها</string>
+
+    <!-- ناوبری -->
+    <string name="nav_headphones">هدفون‌ها</string>
+    <string name="nav_stats">آمار</string>
+    <string name="nav_settings">تنظیمات</string>
+
+    <!-- انواع دستگاه‌ها -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">سیمی</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">نامشخص</string>
+
+    <!-- اولین اجرا -->
+    <string name="welcome_title">خوش آمدید به ylih</string>
+    <string name="welcome_intro">ylih ثبت می‌کند که هر جفت هدفون چند ساعت متصل می‌ماند، تا سال‌ها بعد بتوانی تنها سؤالی را که درباره یک جفت مهم است پاسخ دهی: چند ساعت دوام آورد؟</string>
+    <string name="welcome_point_auto_title">وصل کن و فراموش کن</string>
+    <string name="welcome_point_auto_body">هدفون‌های bluetooth خودکار ثبت می‌شوند، از لحظه وصل شدن. نیازی نیست چیزی درحال کار باشد.</string>
+    <string name="welcome_point_lifetime_title">یک جفت، یک زندگی</string>
+    <string name="welcome_point_lifetime_body">وقتی یک جفت خراب شود، بازنشسته کن: مجموع آن آنجا متوقف می‌شود و جفت بعدی از همان هدفون‌ها دوباره از صفر شروع می‌شود.</string>
+    <string name="welcome_point_detailed_title">سیمی و پخش</string>
+    <string name="welcome_point_detailed_body">پیگیری دقیق، در تنظیمات، هدفون‌های سیمی را اضافه می‌کند و اندازه‌گیری می‌کند که چه مقدار از این زمان واقعاً پخش شده است.</string>
+    <string name="welcome_privacy">همه چیز روی این تلفن می‌ماند. حساب کاربری وجود ندارد و برنامه دسترسی اینترنت ندارد.</string>
+    <string name="welcome_start">شروع کنید</string>
+
+    <!-- فهرست هدفون‌ها -->
+    <string name="devices_in_use">در حال استفاده</string>
+    <string name="devices_retired">بازنشسته</string>
+    <string name="devices_empty_title">هنوز هدفونی نیست</string>
+    <string name="devices_empty_body">یک جفت هدفون bluetooth وصل کن و اینجا نمایان می‌شوند. هدفون‌های سیمی نیاز به پیگیری دقیق در تنظیمات دارند.</string>
+    <string name="devices_generation">جفت #%1$d</string>
+    <string name="devices_retired_on">بازنشسته %1$s</string>
+    <string name="devices_connected_for">متصل %1$s</string>
+    <string name="devices_recent">%1$s / 7روز</string>
+
+    <!-- آمار -->
+    <string name="stats_title">تمام هدفون‌ها</string>
+    <string name="stats_sessions_since">%1$s از %2$s</string>
+    <string name="stats_last_7">7 روز گذشته</string>
+    <string name="stats_last_30">30 روز گذشته</string>
+    <string name="stats_average_session">میانگین جلسه</string>
+    <string name="stats_playing">پخش</string>
+    <string name="stats_measured_span">بازه اندازه‌گیری شده</string>
+    <string name="stats_share">سهم</string>
+    <string name="stats_daily_hours_30">ساعات روزانه (30 روز)</string>
+    <string name="stats_by_pair">بر اساس جفت</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · بازنشسته</string>
+    <string name="chart_max">حداکثر %1$s</string>
+
+    <!-- جزئیات جفت -->
+    <string name="pair_fallback_title">جفت</string>
+    <string name="pair_back">بازگشت</string>
+    <string name="pair_more">بیشتر</string>
+    <string name="pair_menu_rename">تغییر نام</string>
+    <string name="pair_menu_purchase">اطلاعات خریداری</string>
+    <string name="pair_menu_retire">بازنشسته / جایگزین شده</string>
+    <string name="pair_menu_delete">حذف</string>
+    <string name="pair_lifetime">عمر این جفت</string>
+    <string name="pair_retired_on">بازنشسته %1$s</string>
+    <string name="pair_retired_with_reason">بازنشسته %1$s · %2$s</string>
+    <string name="pair_connected_now">اکنون متصل · %1$s</string>
+    <string name="pair_sessions">جلسات</string>
+    <string name="pair_average">میانگین</string>
+    <string name="pair_longest">طولانی‌ترین</string>
+    <string name="pair_first_seen">اولین مشاهده</string>
+    <string name="pair_of_measured">از اندازه‌گیری شده</string>
+    <string name="pair_measured">اندازه‌گیری شده</string>
+    <string name="pair_paid">پرداخت شده</string>
+    <string name="pair_per_hour">در ساعت</string>
+    <string name="pair_bought">خریداری شده</string>
+    <string name="pair_daily_hours_14">ساعات روزانه (14 روز)</string>
+    <string name="pair_rename_title">تغییر نام جفت</string>
+    <string name="pair_rename_label">نام</string>
+    <string name="pair_retire_title">بازنشسته کردن این جفت</string>
+    <string name="pair_retire_label">دلیل (خراب شد، فروخته شد، گم شد…)</string>
+    <string name="pair_retire_confirm">بازنشسته کن</string>
+    <string name="pair_retire_supporting">مجموع‌ها اینجا متوقف می‌شوند. دوباره وصل کردن همان دستگاه یک جفت جدید را از صفر شروع می‌کند.</string>
+    <string name="pair_price_title">قیمت پرداخت شده</string>
+    <string name="pair_price_label">مقدار (واحدهای صحیح)</string>
+    <string name="pair_price_supporting">برای محاسبه هزینه در ساعت استفاده می‌شود.</string>
+    <string name="pair_delete_title">این جفت را حذف کنیم؟</string>
+    <string name="pair_delete_body">هر جلسه ثبت شده برای آن نیز حذف می‌شود. این قابل بازگشت نیست.</string>
+
+    <!-- ردیف‌های جلسه -->
+    <string name="session_ongoing">جاری</string>
+    <string name="session_until">تا %1$s</string>
+    <string name="session_playing">%1$s پخش</string>
+    <string name="session_recovered">بازیافت شده</string>
+
+    <!-- تنظیمات -->
+    <string name="settings_tracking">پیگیری</string>
+    <string name="settings_detailed_title">پیگیری دقیق</string>
+    <string name="settings_detailed_body">هدفون‌های سیمی و زمان پخش را اضافه می‌کند. android فقط رویدادهای اتصال سیمی را به یک برنامه درحال کار گزارش می‌دهد، بنابراین یک اعلان ساکت در سایه نگه داشته می‌شود. bluetooth در هر صورت پیگیری می‌شود.</string>
+    <string name="settings_detailed_unavailable">در دسترس نیست تا زمانی که دسترسی bluetooth اعطا شود: این ساخت فقط نوع سرویس connectedDevice را اعلام می‌کند، که android 14+ آن را به اجازه bluetooth وابسته می‌کند.</string>
+    <string name="settings_devices">دستگاه‌ها</string>
+    <string name="settings_devices_body">هر چیزی که هدفون نیست را غیرفعال کن — یک استریو ماشین یا یک بلندگو — تا ضبط آن متوقف شود.</string>
+    <string name="settings_device_subtitle">%1$s · اولین مشاهده %2$s</string>
+    <string name="settings_data">داده‌ها</string>
+    <string name="settings_export">صادرات json</string>
+    <string name="settings_import">وارد کردن</string>
+    <string name="settings_import_warning">وارد کردن همه چیز ذخیره شده در حال حاضر را جایگزین می‌کند.</string>
+    <string name="settings_troubleshooting">عیب‌یابی</string>
+    <string name="settings_battery_body">اگر جلسات ضبط شدن متوقف شود، بررسی کنید که ylih از بهینه‌سازی باتری مستثنی است — یک برنامه‌ای که اجباری متوقف شده است، تا زمانی که باز نشود، هرگز دوباره پیام‌های اتصال دریافت نمی‌کند.</string>
+    <string name="settings_battery_button">تنظیمات باتری</string>
+    <string name="settings_battery_path">تنظیمات → برنامه‌ها → ylih → باتری → محدود نشده.</string>
+    <string name="settings_about">درباره</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — ساعات هدفون، ذخیره شده محلی و برای همیشه.</string>
+    <string name="settings_import_confirm_title">تمام داده‌ها را جایگزین کنیم؟</string>
+    <string name="settings_import_confirm_body">وارد کردن این پشتیبان هر دستگاه، جفت و جلسه ذخیره شده در حال حاضر را حذف می‌کند.</string>
+
+    <!-- اقدامات مشترک -->
+    <string name="action_save">ذخیره کنید</string>
+    <string name="action_cancel">انصراف</string>
+    <string name="action_delete">حذف</string>
+    <string name="action_import">وارد کردن</string>
+
+    <!-- اعلان -->
+    <string name="channel_tracking">پیگیری هدفون</string>
+    <string name="channel_tracking_description">نمایش داده می‌شود در حالی که ylih در حال مشاهده هدفون‌های سیمی و پخش است. android رویدادهای اتصال سیمی را به برنامه‌هایی که درحال کار نیستند تحویل نمی‌دهد.</string>
+    <string name="notification_title">پیگیری زمان هدفون</string>
+    <string name="notification_starting">شروع…</string>
+    <string name="notification_idle">انتظار برای هدفون‌ها</string>
+    <plurals name="notification_active">
+        <item quantity="one">متصل: %1$d · %2$s</item>
+        <item quantity="other">متصل: %1$d · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">متصل: %1$d · %2$s · پخش</item>
+        <item quantity="other">متصل: %1$d · %2$s · پخش</item>
+    </plurals>
+
+    <!-- پیام‌های snackbar -->
+    <string name="detailed_needs_bluetooth">این ساخت برای پیگیری هدفون‌های سیمی نیاز به دسترسی bluetooth دارد</string>
+    <string name="export_done">پشتیبان صادرات شد</string>
+    <string name="export_failed">صادرات ناموفق</string>
+    <string name="import_failed">وارد کردن ناموفق</string>
+    <string name="error_could_not_open">نتوانست %1$s را باز کند</string>
+    <plurals name="import_done">
+        <item quantity="one">%d جلسه وارد شد</item>
+        <item quantity="other">%d جلسه وارد شدند</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d جلسه</item>
+        <item quantity="other">%d جلسه</item>
+    </plurals>
+</resources>

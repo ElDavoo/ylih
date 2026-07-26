@@ -14,7 +14,8 @@
         <service
             android:name=".tracking.TrackingService"
             android:foregroundServiceType="connectedDevice|specialUse"
-            tools:replace="android:foregroundServiceType">
+            tools:replace="android:foregroundServiceType"
+            tools:targetApi="26">
             <property
                 android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
                 android:value="Measures how long wired headphones stay connected. Android only delivers wired plug events to a process that is already running, so the app cannot observe them any other way. Used when the user has not granted Bluetooth access." />

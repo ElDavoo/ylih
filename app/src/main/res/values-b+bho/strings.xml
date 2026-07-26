@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Bhojpuri. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — तुम्हार जीवन ईयरफोन मा</string>
+
+    <!-- नेविगेशन -->
+    <string name="nav_headphones">ईयरफोन</string>
+    <string name="nav_stats">सांख्यिकी</string>
+    <string name="nav_settings">सेटिंग्स</string>
+
+    <!-- डिवाइस के किसिम -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">तार वाल</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">अनजान</string>
+
+    <!-- पहिली बार चलावल -->
+    <string name="welcome_title">ylih मा स्वागत छै</string>
+    <string name="welcome_intro">ylih रिकॉर्ड करेला कि हर जोड़ी के ईयरफोन कतना समे तक जुड़ल रहेला, ताहि कि साल भर बाद तुम अहिँ एकोए सवाल का जवाब दे सकब — कतना घंटा चलल?</string>
+    <string name="welcome_point_auto_title">जोड़ दे अउर भुला दे</string>
+    <string name="welcome_point_auto_body">bluetooth ईयरफोन खुद ही रिकॉर्ड होलन, जोड़ते ही। कुछु नइखे चलावे के।</string>
+    <string name="welcome_point_lifetime_title">एक जोड़ी, एक जिंदगी</string>
+    <string name="welcome_point_lifetime_body">जब जोड़ी टूट जाय, तो उदा खतम कर दे: कुल वहीँ रुक जाय अउर अगल जोड़ी नया शुरु हो शून्य से।</string>
+    <string name="welcome_point_detailed_title">तार अउर बजावल</string>
+    <string name="welcome_point_detailed_body">विस्तृत ट्रैकिंग, सेटिंग्स मा, तार वाल ईयरफोन जोड़ेला अउर मपेला कि कतना समे सच मा बजावल होल।</string>
+    <string name="welcome_privacy">सब कुछु एही फोन पर रहेला। कोई अकाउंट नइखे, अउर ऐप के इंटरनेट अनुमति नइखे।</string>
+    <string name="welcome_start">शुरु कर</string>
+
+    <!-- ईयरफोन के सूची -->
+    <string name="devices_in_use">इस्तेमाल मा</string>
+    <string name="devices_retired">पुरान</string>
+    <string name="devices_empty_title">अभे तक ईयरफोन नइखे</string>
+    <string name="devices_empty_body">bluetooth ईयरफोन के जोड़ी जोड़े अउर ऊ यहाँ देखाई देब। तार वाल ईयरफोन के लिये विस्तृत ट्रैकिंग, सेटिंग्स मा, चाहिए।</string>
+    <string name="devices_generation">जोड़ी #%1$d</string>
+    <string name="devices_retired_on">पुरान %1$s</string>
+    <string name="devices_connected_for">%1$s से जुड़ल</string>
+    <string name="devices_recent">%1$s / 7द</string>
+
+    <!-- सांख्यिकी -->
+    <string name="stats_title">सब ईयरफोन</string>
+    <string name="stats_sessions_since">%1$s %2$s से</string>
+    <string name="stats_last_7">पिछला 7 दिन</string>
+    <string name="stats_last_30">पिछला 30 दिन</string>
+    <string name="stats_average_session">औसत सत्र</string>
+    <string name="stats_playing">बजावल</string>
+    <string name="stats_measured_span">मपल गइल अवधि</string>
+    <string name="stats_share">साझा कर</string>
+    <string name="stats_daily_hours_30">रोज के घंटा (30 दिन)</string>
+    <string name="stats_by_pair">जोड़ी के अनुसार</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · पुरान</string>
+    <string name="chart_max">%1$s तक</string>
+
+    <!-- जोड़ी विवरण -->
+    <string name="pair_fallback_title">जोड़ी</string>
+    <string name="pair_back">पिछु</string>
+    <string name="pair_more">अउर</string>
+    <string name="pair_menu_rename">दोबारा नाम</string>
+    <string name="pair_menu_purchase">खरीद के जानकारी</string>
+    <string name="pair_menu_retire">पुरान / बदल गइल</string>
+    <string name="pair_menu_delete">मिटा दे</string>
+    <string name="pair_lifetime">एही जोड़ी पर जीवन</string>
+    <string name="pair_retired_on">पुरान %1$s</string>
+    <string name="pair_retired_with_reason">पुरान %1$s · %2$s</string>
+    <string name="pair_connected_now">अभे जुड़ल · %1$s</string>
+    <string name="pair_sessions">सत्र</string>
+    <string name="pair_average">औसत</string>
+    <string name="pair_longest">सबसे लंबा</string>
+    <string name="pair_first_seen">पहिले देखल</string>
+    <string name="pair_of_measured">मपल गइल से</string>
+    <string name="pair_measured">मपल गइल</string>
+    <string name="pair_paid">अदा कइल</string>
+    <string name="pair_per_hour">हर घंटा</string>
+    <string name="pair_bought">खरीदल</string>
+    <string name="pair_daily_hours_14">रोज के घंटा (14 दिन)</string>
+    <string name="pair_rename_title">जोड़ी के नाम बदल</string>
+    <string name="pair_rename_label">नाम</string>
+    <string name="pair_retire_title">एही जोड़ी के पुरान कर</string>
+    <string name="pair_retire_label">कारण (टूटगइल, बेच दिहल, खो गइल…)</string>
+    <string name="pair_retire_confirm">पुरान कर</string>
+    <string name="pair_retire_supporting">कुल यहीँ रुक जाय। अगर अहिँ उहीँ उपकरण जुड़य, तो नई जोड़ी शून्य से शुरु होब।</string>
+    <string name="pair_price_title">भाव दिहल गइल</string>
+    <string name="pair_price_label">रकम (पूरा इकाई)</string>
+    <string name="pair_price_supporting">हर घंटा के लागत के लिये इस्तेमाल होय।</string>
+    <string name="pair_delete_title">एही जोड़ी के मिटा दे?</string>
+    <string name="pair_delete_body">उदा लिये रिकॉर्ड कइल सब सत्र भी मिट जाब। एह के वापस नइखे हो सकत।</string>
+
+    <!-- सत्र पंक्तिया -->
+    <string name="session_ongoing">जारी</string>
+    <string name="session_until">%1$s तक</string>
+    <string name="session_playing">%1$s बजावल</string>
+    <string name="session_recovered">वापस आइल</string>
+
+    <!-- सेटिंग्स -->
+    <string name="settings_tracking">ट्रैकिंग</string>
+    <string name="settings_detailed_title">विस्तृत ट्रैकिंग</string>
+    <string name="settings_detailed_body">तार वाल ईयरफोन जोड़ेला अउर बजावल के समे मपेला। android सिर्फ चलत ऐप के तार वाल घटना भेजेला, तो ऊ छाया मा चुप सूचना रहेला। bluetooth कहिए ट्रैक होय।</string>
+    <string name="settings_detailed_unavailable">तब तक उपलब्ध नइखे जब तक bluetooth अनुमति न दिहल जाय: ई संस्करण सिर्फ connectedDevice सेवा प्रकार घोषित करेला, जे android 14+ bluetooth अनुमति से जोड़ेला।</string>
+    <string name="settings_devices">उपकरण</string>
+    <string name="settings_devices_body">जे कुछु ईयरफोन न होय — कार स्टीरियो या स्पीकर — उदा बंद कर दे रिकॉर्डिंग बंद करे के लिये।</string>
+    <string name="settings_device_subtitle">%1$s · पहिले देखल %2$s</string>
+    <string name="settings_data">डेटा</string>
+    <string name="settings_export">json निर्यात कर</string>
+    <string name="settings_import">आयात कर</string>
+    <string name="settings_import_warning">आयात से अभे सब कुछु बदल जाब।</string>
+    <string name="settings_troubleshooting">समस्या समाधान</string>
+    <string name="settings_battery_body">अगर सत्र रिकॉर्ड न हो रहल होय, तो देख कि ylih बैटरी अनुकूलन से छुट्टा छै — जबरन बंद कइल ऐप फिर से खोले तक कोई जुड़ी घटना न पाय।</string>
+    <string name="settings_battery_button">बैटरी सेटिंग्स</string>
+    <string name="settings_battery_path">सेटिंग्स → ऐप्स → ylih → बैटरी → अप्रतिबंधित।</string>
+    <string name="settings_about">बारे मा</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — ईयरफोन घंटा, स्थानीय अउर हमेसा के लिये रखल गइल।</string>
+    <string name="settings_import_confirm_title">सब डेटा बदल दे?</string>
+    <string name="settings_import_confirm_body">एही बैकअप के आयात करब तो हर उपकरण, जोड़ी अउर सत्र जे अभे बचल होय, मिट जाब।</string>
+
+    <!-- साझा कार्य -->
+    <string name="action_save">बचा</string>
+    <string name="action_cancel">रद्द कर</string>
+    <string name="action_delete">मिटा दे</string>
+    <string name="action_import">आयात कर</string>
+
+    <!-- सूचना -->
+    <string name="channel_tracking">ईयरफोन ट्रैकिंग</string>
+    <string name="channel_tracking_description">जब ylih तार वाल ईयरफोन अउर बजावल देख रहल होय। android न चलत ऐप के तार वाल घटना नइखे भेजेला।</string>
+    <string name="notification_title">ईयरफोन समे ट्रैक कर रहल</string>
+    <string name="notification_starting">शुरु हो रहल…</string>
+    <string name="notification_idle">ईयरफोन का इंतजार</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d जुड़ल · %2$s</item>
+        <item quantity="other">%1$d जुड़ल · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d जुड़ल · %2$s · बजावल</item>
+        <item quantity="other">%1$d जुड़ल · %2$s · बजावल</item>
+    </plurals>
+
+    <!-- संदेश -->
+    <string name="detailed_needs_bluetooth">एही संस्करण तार वाल ईयरफोन ट्रैक करे के लिये bluetooth अनुमति चाहिए</string>
+    <string name="export_done">बैकअप निर्यात हो गइल</string>
+    <string name="export_failed">निर्यात असफल</string>
+    <string name="import_failed">आयात असफल</string>
+    <string name="error_could_not_open">%1$s खोल न सकल</string>
+    <plurals name="import_done">
+        <item quantity="one">%d सत्र आयातित कइल</item>
+        <item quantity="other">%d सत्र आयातित कइल</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d सत्र</item>
+        <item quantity="other">%d सत्र</item>
+    </plurals>
+</resources>

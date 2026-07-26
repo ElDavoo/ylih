@@ -38,15 +38,22 @@ class TrackingController(
     /**
      * Whether the foreground service can legally start right now.
      *
+     * Notification channels don't exist before Android 8 (API 26), and the service's whole
+     * point is its persistent notification, so detailed tracking is unavailable below that —
+     * those installs get Bluetooth-only tracking regardless of the setting.
+     *
      * On Android 14+ the `connectedDevice` service type requires holding a Bluetooth
      * permission. The classic flavor also declares `specialUse` and so is never blocked; the
      * Play flavor drops that type, which means detailed tracking there needs Bluetooth access
      * even when the user only cares about wired headphones.
      */
     fun detailedTrackingSupported(): Boolean =
-        Distribution.HAS_SPECIAL_USE_FGS ||
-            Build.VERSION.SDK_INT < Build.VERSION_CODES.UPSIDE_DOWN_CAKE ||
-            hasBluetoothPermission()
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.O &&
+            (
+                Distribution.HAS_SPECIAL_USE_FGS ||
+                    Build.VERSION.SDK_INT < Build.VERSION_CODES.UPSIDE_DOWN_CAKE ||
+                    hasBluetoothPermission()
+                )
 
     private fun hasBluetoothPermission(): Boolean =
         Build.VERSION.SDK_INT < Build.VERSION_CODES.S ||

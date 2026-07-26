@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Estonian. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - sinu elu kõrvaklappides</string>
+
+    <!-- Alumine navigatsioon -->
+    <string name="nav_headphones">kõrvaklapid</string>
+    <string name="nav_stats">statistika</string>
+    <string name="nav_settings">seadistused</string>
+
+    <!-- Seadmete tüübid -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">juhtmega</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">tundmatu</string>
+
+    <!-- Esimene käivitus -->
+    <string name="welcome_title">tere tulemast ylih-sse</string>
+    <string name="welcome_intro">ylih salvestab, kui kaua iga kõrvaklappide paar jääb ühendatuks, nii et aastate pärast saate endiselt vastata ainsale küsimusele, mis paarist loeb: kui palju tunde kestvad nad?</string>
+    <string name="welcome_point_auto_title">ühenda ja unusta</string>
+    <string name="welcome_point_auto_body">bluetooth kõrvaklapid salvestatakse automaatselt, alates ühenduse hetkest. midagi ei pea tööks jätta.</string>
+    <string name="welcome_point_lifetime_title">üks paar, üks elu</string>
+    <string name="welcome_point_lifetime_body">kui paar rikki läheb, pensioneeri see: selle kogusumma jääb sinna paigale ja sama kõrvaklappide järgmine paar alustab nullist uuesti.</string>
+    <string name="welcome_point_detailed_title">juhtmega ja taasesitus</string>
+    <string name="welcome_point_detailed_body">detailne jälgimine, seadistustes, lisab juhtmega kõrvaklapid ja mõõdab, kui palju ajast oli tegelikult taasesitus.</string>
+    <string name="welcome_privacy">kõik jääb sellesse telefoni. kasutajakontot ei ole ja rakendusel pole interneti lubadust.</string>
+    <string name="welcome_start">alusta</string>
+
+    <!-- Kõrvaklappide loend -->
+    <string name="devices_in_use">kasutuses</string>
+    <string name="devices_retired">pensioneeritud</string>
+    <string name="devices_empty_title">kõrvaklappe veel pole</string>
+    <string name="devices_empty_body">ühenda bluetooth kõrvaklappide paar ja need ilmuvad siin. juhtmega kõrvaklapid nõuavad detailset jälgimist seadistustes.</string>
+    <string name="devices_generation">paar #%1$d</string>
+    <string name="devices_retired_on">pensioneeritud %1$s</string>
+    <string name="devices_connected_for">ühendatud %1$s</string>
+    <string name="devices_recent">%1$s / 7p</string>
+
+    <!-- Statistika -->
+    <string name="stats_title">kõik kõrvaklapid</string>
+    <string name="stats_sessions_since">%1$s alates %2$s</string>
+    <string name="stats_last_7">viimased 7 päeva</string>
+    <string name="stats_last_30">viimased 30 päeva</string>
+    <string name="stats_average_session">keskmine seanss</string>
+    <string name="stats_playing">taasesitus</string>
+    <string name="stats_measured_span">mõõdetud periood</string>
+    <string name="stats_share">jaga</string>
+    <string name="stats_daily_hours_30">tunni päevas (30 päeva)</string>
+    <string name="stats_by_pair">paaride kaupa</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · pensioneeritud</string>
+    <string name="chart_max">%1$s max</string>
+
+    <!-- Paari detail -->
+    <string name="pair_fallback_title">paar</string>
+    <string name="pair_back">tagasi</string>
+    <string name="pair_more">rohkem</string>
+    <string name="pair_menu_rename">nimeta ümber</string>
+    <string name="pair_menu_purchase">ostuandmed</string>
+    <string name="pair_menu_retire">pensioneeri / asendatud</string>
+    <string name="pair_menu_delete">kustuta</string>
+    <string name="pair_lifetime">selle paari eluiga</string>
+    <string name="pair_retired_on">pensioneeritud %1$s</string>
+    <string name="pair_retired_with_reason">pensioneeritud %1$s · %2$s</string>
+    <string name="pair_connected_now">ühendatud nüüd · %1$s</string>
+    <string name="pair_sessions">seansid</string>
+    <string name="pair_average">keskmine</string>
+    <string name="pair_longest">pikim</string>
+    <string name="pair_first_seen">esimest korda nähtud</string>
+    <string name="pair_of_measured">mõõdetust</string>
+    <string name="pair_measured">mõõdetud</string>
+    <string name="pair_paid">makstud</string>
+    <string name="pair_per_hour">tunni kohta</string>
+    <string name="pair_bought">ostetud</string>
+    <string name="pair_daily_hours_14">tunni päevas (14 päeva)</string>
+    <string name="pair_rename_title">nimeta paar ümber</string>
+    <string name="pair_rename_label">nimi</string>
+    <string name="pair_retire_title">pensioneeri see paar</string>
+    <string name="pair_retire_label">põhjus (rikki, müüdud, kadunud…)</string>
+    <string name="pair_retire_confirm">pensioneeri</string>
+    <string name="pair_retire_supporting">kogusummad jäävad siia. sama seadme uuesti ühendamine alustab uut paari nullist.</string>
+    <string name="pair_price_title">makstud hind</string>
+    <string name="pair_price_label">summa (täisühikud)</string>
+    <string name="pair_price_supporting">kasutatakse tunni maksumuse arvutamiseks.</string>
+    <string name="pair_delete_title">kustuta see paar?</string>
+    <string name="pair_delete_body">kõik selle jaoks salvestatud seansid kustutatakse ka. seda ei saa tagasi võtta.</string>
+
+    <!-- Seansi read -->
+    <string name="session_ongoing">käimas</string>
+    <string name="session_until">kuni %1$s</string>
+    <string name="session_playing">%1$s taasesitust</string>
+    <string name="session_recovered">taastatud</string>
+
+    <!-- Seadistused -->
+    <string name="settings_tracking">jälgimine</string>
+    <string name="settings_detailed_title">detailne jälgimine</string>
+    <string name="settings_detailed_body">lisab juhtmega kõrvaklapid ja taasesituse aja. android teatab juhtmega ühenduse sündmustest ainult töötavale rakendusele, seega see hoiab vaikset teatist varjus. bluetooth jälgitakse igal juhul.</string>
+    <string name="settings_detailed_unavailable">saadaval alles pärast bluetooth juurdepääsu andmist: see versioon kuulutab ainult connectedDevice teenuse tüüpi, mille android 14+ seob bluetooth loaga.</string>
+    <string name="settings_devices">seadmed</string>
+    <string name="settings_devices_body">märgi välja kõik, mis ei ole kõrvaklapid - automagnitofon või kõlari - et lõpetada selle salvestamine.</string>
+    <string name="settings_device_subtitle">%1$s · esimest korda nähtud %2$s</string>
+    <string name="settings_data">andmed</string>
+    <string name="settings_export">ekspordi json</string>
+    <string name="settings_import">import</string>
+    <string name="settings_import_warning">importimine asendab kõik praegu salvestatud.</string>
+    <string name="settings_troubleshooting">tõrkeotsing</string>
+    <string name="settings_battery_body">kui seansid ei salvestu enam, kontrollige, kas ylih on välistatud aku optimeerimisest - sunniviisiliselt peatatud rakendus ei saa kuni selle avamiseni uuesti ühenduse teadaandeid.</string>
+    <string name="settings_battery_button">akuseadistused</string>
+    <string name="settings_battery_path">seadistused → rakendused → ylih → aku → piiramata.</string>
+    <string name="settings_about">ylihst</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — kõrvaklappide tunnid, salvestatud kohalikult ja igaveselt.</string>
+    <string name="settings_import_confirm_title">asenda kõik andmed?</string>
+    <string name="settings_import_confirm_body">selle varunduse importimine kustutab iga praegu salvestatud seadme, paari ja seansi.</string>
+
+    <!-- Jagatavad tegevused -->
+    <string name="action_save">salvesta</string>
+    <string name="action_cancel">tühista</string>
+    <string name="action_delete">kustuta</string>
+    <string name="action_import">import</string>
+
+    <!-- Teatamine -->
+    <string name="channel_tracking">kõrvaklappide jälgimine</string>
+    <string name="channel_tracking_description">kuvatakse, kui ylih jälgib juhtmega kõrvaklappe ja taasesitust. android ei teategi juhtmega ühenduse sündmustest mittetöötavatele rakendustele.</string>
+    <string name="notification_title">kõrvaklappide aja jälgimine</string>
+    <string name="notification_starting">alustamine…</string>
+    <string name="notification_idle">kõrvaklappe oodatakse</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d ühendatud · %2$s</item>
+        <item quantity="other">%1$d ühendatud · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d ühendatud · %2$s · taasesitus</item>
+        <item quantity="other">%1$d ühendatud · %2$s · taasesitus</item>
+    </plurals>
+
+    <!-- Teatiste sõnumid -->
+    <string name="detailed_needs_bluetooth">see versioon vajab bluetooth juurdepääsu, et saaks juhtmega kõrvaklappe jälgida</string>
+    <string name="export_done">varukoopia eksporditud</string>
+    <string name="export_failed">eksportimine ebaõnnestus</string>
+    <string name="import_failed">importimine ebaõnnestus</string>
+    <string name="error_could_not_open">ei saanud avada %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">imporditud %d seanss</item>
+        <item quantity="other">imporditud %d seansid</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d seanss</item>
+        <item quantity="other">%d seansid</item>
+    </plurals>
+</resources>

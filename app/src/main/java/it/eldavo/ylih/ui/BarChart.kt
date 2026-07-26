@@ -14,7 +14,9 @@ import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import it.eldavo.ylih.R
 import java.time.LocalDate
 
 /**
@@ -69,7 +71,7 @@ fun DailyBarChart(
             )
             Spacer(Modifier.weight(1f))
             Text(
-                text = "${formatHours(maxMs)} max",
+                text = stringResource(R.string.chart_max, formatHours(maxMs)),
                 style = MaterialTheme.typography.labelSmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )

@@ -1,0 +1,40 @@
+A fejhallgatók előbb-utóbb tönkremennek. Mielőtt ez megtörténne, a ylih megválaszolja az egyetlen kérdést, ami egy pár esetében valóban számít: hány órát bírtál ki vele?
+
+Minden alkalommal, amikor a fejhallgatód csatlakozik, a ylih feljegyzi, hogy mikor. Minden alkalommal, amikor lecsatlakozik, azt is feljegyzi. Ennyi az egész — és mivel egy csatlakozás mindössze két időbélyeg, az alkalmazásnak nem kell a háttérben futnia ahhoz, hogy ezt rögzítse.
+
+MIT KÖVET
+
+• Az összes órát fizikai párok szerint, egész élettartamra. Amikor egy pár tönkremegy, vond ki: az összideje lezárul, és ugyanannak a modellnek a következő párja nulláról indul, 2. generációként. A régi számok soha nem keverednek az újakkal.
+• Minden munkamenetet, örökre megőrizve: mikor csatlakozott, mikor szakadt le, és miért ért véget.
+• A lejátszási időt (opcionálisan): a csatlakoztatott időből mennyi telt tényleges zenehallgatással, hogy a nyakban lógó fejhallgató ne számítson hallgatásnak.
+• Az óránkénti költséget, ha megadod, mennyibe került. Jó érzés nézni, ahogy csökken.
+
+KÉT KÖVETÉSI MÓD
+
+Csak bluetooth — ez az alapértelmezett. Az alkalmazásból semmi sem fut, semmi sem ül az értesítési sávban, és nincs akkumulátorköltség, mert az android a kapcsolódási eseményeket akkor is eljuttatja az alkalmazáshoz, ha az be van zárva.
+
+Részletes követés — opcionális. Hozzáadja a vezetékes és USB-s fejhallgatókat, és méri a lejátszást a csatlakoztatott időhöz képest. Egy néma, minimális prioritású értesítésre van szükség hozzá, mert az android a vezetékes csatlakozási eseményeket csak egy már futó alkalmazásnak jelzi. Kizárólag emiatt létezik az értesítés.
+
+A bluetooth mindkét esetben követve van.
+
+SZÁMOK, AMIKBEN ÉVEK MÚLVA IS MEGBÍZHATSZ
+
+Egy hosszú távú összeg semmit sem ér, ha egy összeomlás vagy egy újraindítás csendben hozzácsap tizenkét órát. Ezért:
+
+• Egy újraindítás vagy összeomlás miatt nyitva maradt munkamenet az utolsó ismert életjelnél zárul le, legkésőbb abban a pillanatban, amikor a telefon elindult. A kikapcsolva töltött idő soha nem kerül beszámításra.
+• Ha a fejhallgató még mindig csatlakoztatva van az újraindítás után, egy új munkamenet indul, ahelyett hogy a régit nyújtanák át a szünetén.
+• A nyitott munkamenetek életjeleket küldenek, így egy elveszett lecsatlakozás okozta kár korlátozott marad.
+
+TERVEZÉS SZERINT MAGÁNJELLEGŰ
+
+A ylih-nek nincs internet-hozzáférési engedélye. Nem csak azt ígérjük, hogy nem küldünk semmit — az alkalmazás technikailag képtelen rá. Nincsenek fiókok, nincs analitika, nincsenek hirdetések, és nincs nyomkövetés. Minden egy adatbázisban él a telefonodon.
+
+A Beállítások → Exportálás olvasható JSON-ként írja ki a teljes előzményedet, az Importálás pedig visszaállítja, így egy új telefonra váltás soha nem kerül a számaidba.
+
+ENGEDÉLYEK
+
+• A közeli eszközök (bluetooth): szükséges a kapcsolódási események fogadásához és a fejhallgató nevének kiolvasásához. Nélküle a bluetooth-követés egyáltalán nem működhet.
+• Értesítések: csak a részletes követés értesítéséhez.
+• Indítás rendszerindításkor: hogy le tudja zárni azokat a munkameneteket, amiket a leállás sosem jelentett.
+
+Nyílt forráskódú, MIT licenc alatt.

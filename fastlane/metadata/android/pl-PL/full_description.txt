@@ -1,0 +1,40 @@
+Słuchawki w końcu się psują. Zanim to się stanie, ylih odpowiada na jedyne pytanie, które naprawdę liczy się w przypadku pary słuchawek: ile godzin z nich wyciągnąłeś?
+
+Za każdym razem, gdy słuchawki się łączą, ylih zapisuje kiedy. Za każdym razem, gdy się rozłączają, zapisuje kiedy. To cały pomysł — a ponieważ połączenie to tylko dwa znaczniki czasu, aplikacja nie musi działać w tle, żeby to robić.
+
+CO REJESTRUJE
+
+• Łączne godziny każdej fizycznej pary. Kiedy para umiera, wycofaj ją — suma zostaje zamrożona, a kolejna para tego samego modelu zaczyna znów od zera, jako generacja 2. Stare liczby nigdy nie mieszają się z nowymi.
+• Każdą sesję, przechowywaną na zawsze: kiedy połączono, kiedy rozłączono i dlaczego się skończyła.
+• Czas odtwarzania (opcjonalnie): ile z tego czasu połączenia faktycznie trwało odtwarzanie audio, więc "wiszące na szyi" się nie liczy jako słuchanie.
+• Koszt za godzinę, jeśli podasz, ile zapłaciłeś. To satysfakcjonująca liczba do obserwowania, jak spada.
+
+DWA TRYBY ŚLEDZENIA
+
+Tylko bluetooth — domyślny. Nic z aplikacji nie działa, nic nie siedzi w powiadomieniach, i nie ma kosztu baterii, ponieważ android dostarcza zdarzenia połączenia do aplikacji nawet gdy jest zamknięta.
+
+Szczegółowe śledzenie — opcjonalne. Dodaje słuchawki przewodowe i USB oraz mierzy odtwarzanie w stosunku do czasu połączenia. Wymaga jednej cichej notyfikacji o minimalnym priorytecie, ponieważ android zgłasza zdarzenia podłączenia jacka tylko już działającej aplikacji. To, i nic więcej, jest powodem istnienia tej notyfikacji.
+
+Bluetooth jest śledzony tak czy inaczej.
+
+LICZBY, KTÓRYM MOŻNA UFAĆ PO LATACH
+
+Długoterminowe sumy są bezwartościowe, jeśli awaria lub restart po cichu dodadzą dwanaście godzin. Więc:
+
+• Sesja pozostawiona otwartą przez restart lub awarię jest zamykana przy ostatnim znanym potwierdzeniu, nigdy później niż w momencie uruchomienia telefonu. Czas, gdy telefon był wyłączony, nigdy nie jest liczony.
+• Jeśli słuchawki są nadal połączone po restarcie, zaczyna się nowa sesja zamiast rozciągania starej na całą przerwę.
+• Otwarte sesje są regularnie potwierdzane, więc szkoda z powodu pominiętego rozłączenia jest ograniczona.
+
+PRYWATNA Z ZAŁOŻENIA
+
+ylih nie ma uprawnienia dostępu do internetu. To nie jest obietnica, że nic nie wyślemy — aplikacja jest technicznie niezdolna do tego. Nie ma kont, analityki, reklam ani śledzenia użytkownika. Wszystko żyje w bazie danych na twoim telefonie.
+
+Ustawienia → Eksportuj zapisuje całą twoją historię jako czytelny JSON, a Importuj ją przywraca, więc przejście na nowy telefon nigdy nie kosztuje cię twoich liczb.
+
+UPRAWNIENIA
+
+• Urządzenia w pobliżu (bluetooth): wymagane do odbierania zdarzeń połączenia i odczytu nazwy słuchawek. Bez tego śledzenie bluetooth w ogóle nie może działać.
+• Powiadomienia: tylko dla notyfikacji szczegółowego śledzenia.
+• Uruchamianie przy starcie: aby zamykać sesje, o których zamknięcie systemu nigdy nie poinformowało.
+
+Open source na licencji MIT.

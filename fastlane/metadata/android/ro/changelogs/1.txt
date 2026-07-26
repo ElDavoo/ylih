@@ -1,0 +1,8 @@
+Prima versiune.
+
+• Orele totale ale fiecărei perechi fizice de căști, cu generații, ca o pereche de înlocuire să pornească de la zero în loc să moștenească totalul celei vechi.
+• Fiecare conectare păstrată pentru totdeauna, cu statistici pe zi și pe pereche.
+• Urmărire detaliată opțională pentru căștile prin cablu și USB, și pentru redare față de timp conectat.
+• Cost pe oră de ascultare.
+• Export și import JSON.
+• Fără permisiune de internet: nimic nu părăsește telefonul.

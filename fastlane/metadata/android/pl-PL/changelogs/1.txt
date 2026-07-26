@@ -1,0 +1,8 @@
+Pierwsze wydanie.
+
+• Łączne godziny każdej fizycznej pary słuchawek, z generacjami, dzięki czemu para zastępcza zaczyna od zera zamiast dziedziczyć sumę poprzedniej.
+• Każde połączenie zachowane na zawsze, ze statystykami dziennymi i dla poszczególnych par.
+• Opcjonalne szczegółowe śledzenie słuchawek przewodowych i USB oraz czasu odtwarzania względem czasu połączenia.
+• Koszt za godzinę słuchania.
+• Eksport i import w formacie JSON.
+• Brak uprawnienia dostępu do internetu: nic nigdy nie opuszcza telefonu.

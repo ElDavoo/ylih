@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Fula (Latn script). Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — duunyaa maa e hiirde</string>
+
+    <!-- Navigatsiyon -->
+    <string name="nav_headphones">hiirde</string>
+    <string name="nav_stats">haasiraa</string>
+    <string name="nav_settings">teggite</string>
+
+    <!-- Leydi kuuseeje -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">kaable</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">njugunte</string>
+
+    <!-- Jiiɗɓal fuɗɗo -->
+    <string name="welcome_title">jonngol kiisima e ylih</string>
+    <string name="welcome_intro">ylih notere waktu peere hiirde miiɗum keewdo, haŋka yaawde ɓe waawi ko jaybade roggo duuɗe maɓɓe sella peere: waktuuji njooni ko faareema?</string>
+    <string name="welcome_point_auto_title">seedd\'a kana sagal</string>
+    <string name="welcome_point_auto_body">hiirde bluetooth notere kaɗtee hoo, to peere seedd\'u. alaa sifa mum danɓal ko tee hakkunde.</string>
+    <string name="welcome_point_lifetime_title">peere duuɗe, ndiyam duuɗe</string>
+    <string name="welcome_point_lifetime_body">peere cuɓo, dum binde: liseede feewo cugal, peere kadi hiirde suutaa sey jiiɗɓal humpito e nolla.</string>
+    <string name="welcome_point_detailed_title">kaable e sekii</string>
+    <string name="welcome_point_detailed_body">haasiraa jamano, e teggite, dan kaable hiirde e mesur waktu sekii. android-a ngol ɗee gaŋki kaable hadde ko njawla ko ko-sey, haŋka dina tule yiitere koom. bluetooth haasiraa ko-waawi haa ko-haa.</string>
+    <string name="welcome_privacy">haɓunde foofe ngon telefoonaagu. alaa koonjo, alaa permisyon intarnet.</string>
+    <string name="welcome_start">fuɗɓal</string>
+
+    <!-- Liiste hiirde -->
+    <string name="devices_in_use">ko faale</string>
+    <string name="devices_retired">ko binte</string>
+    <string name="devices_empty_title">alaa hiirde yet</string>
+    <string name="devices_empty_body">seedd peere hiirde bluetooth, haŋka yeeso ne. hiirde kaable ɗuuɓa haasiraa jamano, e teggite.</string>
+    <string name="devices_generation">peere #%1$d</string>
+    <string name="devices_retired_on">ko binte %1$s</string>
+    <string name="devices_connected_for">seedd\'i %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Haasiraa -->
+    <string name="stats_title">hiirde foofe</string>
+    <string name="stats_sessions_since">%1$s haa %2$s</string>
+    <string name="stats_last_7">joomuuji 7 sannde</string>
+    <string name="stats_last_30">joomuuji 30 sannde</string>
+    <string name="stats_average_session">sekii hakkilinaa</string>
+    <string name="stats_playing">sekii</string>
+    <string name="stats_measured_span">waktu mesuri</string>
+    <string name="stats_share">roona</string>
+    <string name="stats_daily_hours_30">waktuuji baŋko (joomuuji 30)</string>
+    <string name="stats_by_pair">to peere peere</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · ko binte</string>
+    <string name="chart_max">%1$s gonŋu</string>
+
+    <!-- Woowu peere -->
+    <string name="pair_fallback_title">peere</string>
+    <string name="pair_back">woto</string>
+    <string name="pair_more">hini</string>
+    <string name="pair_menu_rename">mare maa</string>
+    <string name="pair_menu_purchase">ɗoo kayannde</string>
+    <string name="pair_menu_retire">binde / santi</string>
+    <string name="pair_menu_delete">miiɗ</string>
+    <string name="pair_lifetime">ndiyam peere ngii</string>
+    <string name="pair_retired_on">ko binte %1$s</string>
+    <string name="pair_retired_with_reason">ko binte %1$s · %2$s</string>
+    <string name="pair_connected_now">seedd\'i haŋ-tii · %1$s</string>
+    <string name="pair_sessions">sekkuuji</string>
+    <string name="pair_average">hakkilinaa</string>
+    <string name="pair_longest">gonŋude</string>
+    <string name="pair_first_seen">yehe fuɗɗo</string>
+    <string name="pair_of_measured">haa mesuri</string>
+    <string name="pair_measured">mesuri</string>
+    <string name="pair_paid">kayanni</string>
+    <string name="pair_per_hour">to waktuu duuɗe</string>
+    <string name="pair_bought">kaye</string>
+    <string name="pair_daily_hours_14">waktuuji baŋko (joomuuji 14)</string>
+    <string name="pair_rename_title">mare peere maa</string>
+    <string name="pair_rename_label">ɗowol</string>
+    <string name="pair_retire_title">binde peere ngii</string>
+    <string name="pair_retire_label">caraa (deɓo kuɓɓo, gurta, naa…)</string>
+    <string name="pair_retire_confirm">binde</string>
+    <string name="pair_retire_supporting">haasiraa cugal ne. seedd peere sama sey haŋka humpito e nolla.</string>
+    <string name="pair_price_title">kayannde koode</string>
+    <string name="pair_price_label">soŋ mum (waɗu foofe)</string>
+    <string name="pair_price_supporting">ko faale e mesur soŋ waktuu.</string>
+    <string name="pair_delete_title">miiɗ peere ngii?</string>
+    <string name="pair_delete_body">sekkuuji notere foofe ko miiɗo haa. han alaa ko ko-molo.</string>
+
+    <!-- Roowu sekkuuji -->
+    <string name="session_ongoing">ko-waawi</string>
+    <string name="session_until">haa %1$s</string>
+    <string name="session_playing">%1$s sekii</string>
+    <string name="session_recovered">aylo ko</string>
+
+    <!-- Teggite -->
+    <string name="settings_tracking">haasiraa</string>
+    <string name="settings_detailed_title">haasiraa jamano</string>
+    <string name="settings_detailed_body">dan kaable hiirde e mesur waktu sekii. android-a ngol ɗee gaŋki kaable hadde ko njawla ko ko-sey, haŋka dina tule yiitere koom. bluetooth haasiraa ko-waawi haa ko-haa.</string>
+    <string name="settings_detailed_unavailable">ko kala walla hiji bluetooth permisyon ko-nafo: ful ngii ɗee ɓata connectedDevice gonngal duuɗe, ndi android 14+ joɓi e bluetooth permisyon.</string>
+    <string name="settings_devices">kuuseeje</string>
+    <string name="settings_devices_body">koone sifa alaa hiirde — stereo otoomobil walla speaker — haŋka sumuji notere.</string>
+    <string name="settings_device_subtitle">%1$s · yehe fuɗɗo %2$s</string>
+    <string name="settings_data">joɓinol</string>
+    <string name="settings_export">soxra json</string>
+    <string name="settings_import">seeɗ</string>
+    <string name="settings_import_warning">seeɗ ko miiɗ ɓunde notere haŋ-tii.</string>
+    <string name="settings_troubleshooting">ngoni deɓo</string>
+    <string name="settings_battery_body">sekkuuji sumuji kuɓo haa, loor ylih ko-ma battery optimizatiyon — njawla ko-sumaala alaa sifa gaŋki seedd, haa wadi ko ko-fuɗɗo.</string>
+    <string name="settings_battery_button">teggite battery</string>
+    <string name="settings_battery_path">teggite → njawlaaji → ylih → battery → ko-kala jukka.</string>
+    <string name="settings_about">baɗte ylih</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — waktuuji hiirde, notere ko-soɗɗinde.</string>
+    <string name="settings_import_confirm_title">miiɗ joɓinol foofe?</string>
+    <string name="settings_import_confirm_body">seede backup ngii ko miiɗ kuuseeje, peere, sekkuuji notere haŋ-tii.</string>
+
+    <!-- Jinna sifa foofe -->
+    <string name="action_save">seede</string>
+    <string name="action_cancel">tuuɗ</string>
+    <string name="action_delete">miiɗ</string>
+    <string name="action_import">seede</string>
+
+    <!-- Yaasugal -->
+    <string name="channel_tracking">haasiraa hiirde</string>
+    <string name="channel_tracking_description">ko yeeso ko-waawi ylih haasiraa kaable hiirde e sekii. android-a ngol ɗee ɗee gaŋki kaable hadde ko njawla ko ko-sey.</string>
+    <string name="notification_title">haasiraa waktu hiirde</string>
+    <string name="notification_starting">fuɗɗal…</string>
+    <string name="notification_idle">miijo hiirde</string>
+    <plurals name="notification_active">
+        <item quantity="one">seedd\'i: %1$d · %2$s</item>
+        <item quantity="other">seedd\'i: %1$d · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">seedd\'i: %1$d · %2$s · sekii</item>
+        <item quantity="other">seedd\'i: %1$d · %2$s · sekii</item>
+    </plurals>
+
+    <!-- Sekkuuji jinnaje -->
+    <string name="detailed_needs_bluetooth">ful ngii ɗee bluetooth permisyon haŋka haasiraa kaable hiirde</string>
+    <string name="export_done">backup soxri</string>
+    <string name="export_failed">soxra kuɓo</string>
+    <string name="import_failed">seede kuɓo</string>
+    <string name="error_could_not_open">buutu ko buɗoo %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">seede %d sekkuu</item>
+        <item quantity="other">seede %d sekkuuji</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sekkuu</item>
+        <item quantity="other">%d sekkuuji</item>
+    </plurals>
+</resources>

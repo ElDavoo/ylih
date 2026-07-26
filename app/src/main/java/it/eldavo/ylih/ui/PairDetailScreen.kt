@@ -31,8 +31,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import it.eldavo.ylih.R
 import it.eldavo.ylih.data.EndReason
 import it.eldavo.ylih.data.SessionEntity
 import it.eldavo.ylih.stats.Stats
@@ -64,33 +66,39 @@ fun PairDetailScreen(
         modifier = Modifier.padding(bottom = contentPadding.calculateBottomPadding()),
         topBar = {
             TopAppBar(
-                title = { Text(current?.label ?: "Pair") },
+                title = { Text(current?.label ?: stringResource(R.string.pair_fallback_title)) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
+                        Icon(
+                            Icons.AutoMirrored.Filled.ArrowBack,
+                            contentDescription = stringResource(R.string.pair_back),
+                        )
                     }
                 },
                 actions = {
                     IconButton(onClick = { menuOpen = true }) {
-                        Icon(Icons.Default.MoreVert, contentDescription = "More")
+                        Icon(
+                            Icons.Default.MoreVert,
+                            contentDescription = stringResource(R.string.pair_more),
+                        )
                     }
                     DropdownMenu(expanded = menuOpen, onDismissRequest = { menuOpen = false }) {
                         DropdownMenuItem(
-                            text = { Text("Rename") },
+                            text = { Text(stringResource(R.string.pair_menu_rename)) },
                             onClick = { menuOpen = false; renaming = true },
                         )
                         DropdownMenuItem(
-                            text = { Text("Purchase info") },
+                            text = { Text(stringResource(R.string.pair_menu_purchase)) },
                             onClick = { menuOpen = false; editingPurchase = true },
                         )
                         if (current?.retiredAt == null) {
                             DropdownMenuItem(
-                                text = { Text("Retire / replaced") },
+                                text = { Text(stringResource(R.string.pair_menu_retire)) },
                                 onClick = { menuOpen = false; retiring = true },
                             )
                         }
                         DropdownMenuItem(
-                            text = { Text("Delete") },
+                            text = { Text(stringResource(R.string.pair_menu_delete)) },
                             onClick = { menuOpen = false; deleting = true },
                         )
                     }
@@ -107,55 +115,77 @@ fun PairDetailScreen(
         ) {
             item {
                 Column(Modifier.padding(16.dp)) {
-                    Text(formatHours(stats.totalMs), style = MaterialTheme.typography.displaySmall)
                     Text(
-                        buildString {
-                            append("lifetime on this pair")
-                            current?.let { append(" · ${it.deviceKind.displayName()}") }
-                            if ((current?.generation ?: 1) > 1) append(" · pair #${current?.generation}")
-                        },
+                        formatHours(stats.totalMs),
+                        style = MaterialTheme.typography.displaySmallEmphasized,
+                    )
+                    val generation = current?.generation ?: 1
+                    Text(
+                        listOfNotNull(
+                            stringResource(R.string.pair_lifetime),
+                            current?.deviceKind?.displayName(),
+                            stringResource(R.string.devices_generation, generation)
+                                .takeIf { generation > 1 },
+                        ).joinToString(" · "),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
-                    current?.retiredAt?.let {
+                    current?.retiredAt?.let { at ->
+                        val reason = current.retireReason
                         Text(
-                            "Retired ${formatDate(it)}" +
-                                (current.retireReason?.let { reason -> " · $reason" } ?: ""),
+                            if (reason != null) {
+                                stringResource(R.string.pair_retired_with_reason, formatDate(at), reason)
+                            } else {
+                                stringResource(R.string.pair_retired_on, formatDate(at))
+                            },
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.error,
                         )
                     }
                     stats.openSince?.let {
                         Text(
-                            "Connected now · ${formatDurationShort(now - it)}",
+                            stringResource(
+                                R.string.pair_connected_now,
+                                formatDurationShort(now - it),
+                            ),
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.primary,
                         )
                     }
 
                     Spacer(Modifier.height(16.dp))
+                    val none = stringResource(R.string.value_none)
                     StatRow(
                         listOf(
-                            "Sessions" to stats.sessionCount.toString(),
-                            "Average" to formatDurationShort(stats.averageMs),
-                            "Longest" to formatDurationShort(stats.longestMs),
+                            stringResource(R.string.pair_sessions) to
+                                stats.sessionCount.toString(),
+                            stringResource(R.string.pair_average) to
+                                formatDurationShort(stats.averageMs),
+                            stringResource(R.string.pair_longest) to
+                                formatDurationShort(stats.longestMs),
                         ),
                     )
                     Spacer(Modifier.height(8.dp))
                     StatRow(
                         listOf(
-                            "Last 7 days" to formatHours(Stats.recentMs(spans, zone, now, 7)),
-                            "Last 30 days" to formatHours(Stats.recentMs(spans, zone, now, 30)),
-                            "First seen" to (stats.firstAt?.let { formatDate(it) } ?: "—"),
+                            stringResource(R.string.stats_last_7) to
+                                formatHours(Stats.recentMs(spans, zone, now, 7)),
+                            stringResource(R.string.stats_last_30) to
+                                formatHours(Stats.recentMs(spans, zone, now, 30)),
+                            stringResource(R.string.pair_first_seen) to
+                                (stats.firstAt?.let { formatDate(it) } ?: none),
                         ),
                     )
                     if (stats.hasPlaybackData) {
                         Spacer(Modifier.height(8.dp))
                         StatRow(
                             listOf(
-                                "Playing" to formatHours(stats.playingMs),
-                                "Of measured" to percent(stats.playingMs, stats.measuredMs),
-                                "Measured" to formatHours(stats.measuredMs),
+                                stringResource(R.string.stats_playing) to
+                                    formatHours(stats.playingMs),
+                                stringResource(R.string.pair_of_measured) to
+                                    percent(stats.playingMs, stats.measuredMs),
+                                stringResource(R.string.pair_measured) to
+                                    formatHours(stats.measuredMs),
                             ),
                         )
                     }
@@ -164,21 +194,26 @@ fun PairDetailScreen(
                             Spacer(Modifier.height(8.dp))
                             StatRow(
                                 listOf(
-                                    "Paid" to formatMoney(price),
-                                    "Per hour" to formatPerHour(perHour),
-                                    "Bought" to (current.purchaseDate?.let { formatDate(it) } ?: "—"),
+                                    stringResource(R.string.pair_paid) to formatMoney(price),
+                                    stringResource(R.string.pair_per_hour) to
+                                        formatPerHour(perHour),
+                                    stringResource(R.string.pair_bought) to
+                                        (current.purchaseDate?.let { formatDate(it) } ?: none),
                                 ),
                             )
                         }
                     }
 
                     Spacer(Modifier.height(24.dp))
-                    Text("Daily hours (14 days)", style = MaterialTheme.typography.titleSmall)
+                    Text(
+                        stringResource(R.string.pair_daily_hours_14),
+                        style = MaterialTheme.typography.titleSmallEmphasized,
+                    )
                     Spacer(Modifier.height(8.dp))
                     DailyBarChart(series = Stats.dailySeries(spans, zone, now, days = 14))
                 }
             }
-            item { SectionHeader("Sessions") }
+            item { SectionHeader(stringResource(R.string.pair_sessions)) }
             items(sessions, key = { it.id }) { session ->
                 SessionRow(session = session, now = now)
                 HorizontalDivider()
@@ -188,9 +223,9 @@ fun PairDetailScreen(
 
     if (renaming && current != null) {
         TextFieldDialog(
-            title = "Rename pair",
+            title = stringResource(R.string.pair_rename_title),
             initial = current.label,
-            label = "Name",
+            label = stringResource(R.string.pair_rename_label),
             onDismiss = { renaming = false },
             onConfirm = { viewModel.renamePair(pairId, it); renaming = false },
         )
@@ -198,11 +233,11 @@ fun PairDetailScreen(
 
     if (retiring && current != null) {
         TextFieldDialog(
-            title = "Retire this pair",
+            title = stringResource(R.string.pair_retire_title),
             initial = "",
-            label = "Reason (died, sold, lost…)",
-            confirmText = "Retire",
-            supporting = "Totals freeze here. Reconnecting the same device starts a fresh pair at zero.",
+            label = stringResource(R.string.pair_retire_label),
+            confirmText = stringResource(R.string.pair_retire_confirm),
+            supporting = stringResource(R.string.pair_retire_supporting),
             onDismiss = { retiring = false },
             onConfirm = { viewModel.retirePair(pairId, it); retiring = false },
         )
@@ -210,10 +245,10 @@ fun PairDetailScreen(
 
     if (editingPurchase && current != null) {
         TextFieldDialog(
-            title = "Price paid",
+            title = stringResource(R.string.pair_price_title),
             initial = current.priceCents?.let { (it / 100).toString() }.orEmpty(),
-            label = "Amount (whole units)",
-            supporting = "Used for the cost-per-hour figure.",
+            label = stringResource(R.string.pair_price_label),
+            supporting = stringResource(R.string.pair_price_supporting),
             onDismiss = { editingPurchase = false },
             onConfirm = { value ->
                 val cents = value.trim().toDoubleOrNull()?.let { (it * 100).toLong() }
@@ -230,16 +265,20 @@ fun PairDetailScreen(
     if (deleting) {
         AlertDialog(
             onDismissRequest = { deleting = false },
-            title = { Text("Delete this pair?") },
-            text = { Text("Every session recorded for it is deleted too. This cannot be undone.") },
+            title = { Text(stringResource(R.string.pair_delete_title)) },
+            text = { Text(stringResource(R.string.pair_delete_body)) },
             confirmButton = {
                 TextButton(onClick = {
                     viewModel.deletePair(pairId)
                     deleting = false
                     onBack()
-                }) { Text("Delete") }
+                }) { Text(stringResource(R.string.action_delete)) }
             },
-            dismissButton = { TextButton(onClick = { deleting = false }) { Text("Cancel") } },
+            dismissButton = {
+                TextButton(onClick = { deleting = false }) {
+                    Text(stringResource(R.string.action_cancel))
+                }
+            },
         )
     }
 }
@@ -254,17 +293,20 @@ private fun SessionRow(session: SessionEntity, now: Long) {
     ) {
         Column(Modifier.weight(1f)) {
             Text(formatDateTime(session.connectedAt), style = MaterialTheme.typography.bodyMedium)
+            val end = session.disconnectedAt
             Text(
-                buildString {
-                    append(
-                        when {
-                            session.disconnectedAt == null -> "ongoing"
-                            else -> "until ${formatDateTime(session.disconnectedAt)}"
-                        },
-                    )
-                    session.playingMs?.let { append(" · ${formatDurationShort(it)} playing") }
-                    if (session.endReason == EndReason.RECOVERED) append(" · recovered")
-                },
+                listOfNotNull(
+                    if (end == null) {
+                        stringResource(R.string.session_ongoing)
+                    } else {
+                        stringResource(R.string.session_until, formatDateTime(end))
+                    },
+                    session.playingMs?.let {
+                        stringResource(R.string.session_playing, formatDurationShort(it))
+                    },
+                    stringResource(R.string.session_recovered)
+                        .takeIf { session.endReason == EndReason.RECOVERED },
+                ).joinToString(" · "),
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
@@ -280,7 +322,7 @@ private fun TextFieldDialog(
     label: String,
     onDismiss: () -> Unit,
     onConfirm: (String) -> Unit,
-    confirmText: String = "Save",
+    confirmText: String = stringResource(R.string.action_save),
     supporting: String? = null,
 ) {
     var value by remember { mutableStateOf(initial) }
@@ -302,6 +344,8 @@ private fun TextFieldDialog(
             }
         },
         confirmButton = { TextButton(onClick = { onConfirm(value) }) { Text(confirmText) } },
-        dismissButton = { TextButton(onClick = onDismiss) { Text("Cancel") } },
+        dismissButton = {
+            TextButton(onClick = onDismiss) { Text(stringResource(R.string.action_cancel)) }
+        },
     )
 }

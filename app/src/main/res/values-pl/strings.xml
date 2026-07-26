@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Polish. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - twoje życie w słuchawkach</string>
+
+    <!-- Nawigacja -->
+    <string name="nav_headphones">słuchawki</string>
+    <string name="nav_stats">statystyki</string>
+    <string name="nav_settings">ustawienia</string>
+
+    <!-- Typy urządzeń -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">przewodowe</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">nieznane</string>
+
+    <!-- Pierwsze uruchomienie -->
+    <string name="welcome_title">witaj w ylih</string>
+    <string name="welcome_intro">ylih zapisuje, jak długo każda para słuchawek pozostaje połączona, żeby za lata można było odpowiedzieć na jedyne pytanie, które naprawdę liczy się w przypadku pary słuchawek: ile godzin wytrzymała?</string>
+    <string name="welcome_point_auto_title">połącz i zapomnij</string>
+    <string name="welcome_point_auto_body">słuchawki bluetooth są rejestrowane same, od chwili połączenia. nic nie musi działać w tle.</string>
+    <string name="welcome_point_lifetime_title">jedna para, jedno życie</string>
+    <string name="welcome_point_lifetime_body">kiedy para umiera, wycofaj ją: jej suma zostaje tam zamrożona, a kolejna para tych samych słuchawek zaczyna znów od zera.</string>
+    <string name="welcome_point_detailed_title">przewodowe i odtwarzanie</string>
+    <string name="welcome_point_detailed_body">szczegółowe śledzenie, w ustawieniach, dodaje słuchawki przewodowe i mierzy, ile z tego czasu faktycznie trwało odtwarzanie.</string>
+    <string name="welcome_privacy">wszystko zostaje na tym telefonie. nie ma żadnego konta, a aplikacja nie ma uprawnienia dostępu do internetu.</string>
+    <string name="welcome_start">zaczynajmy</string>
+
+    <!-- Lista słuchawek -->
+    <string name="devices_in_use">w użyciu</string>
+    <string name="devices_retired">wycofane</string>
+    <string name="devices_empty_title">jeszcze brak słuchawek</string>
+    <string name="devices_empty_body">połącz parę słuchawek bluetooth, a pojawią się tutaj. słuchawki przewodowe wymagają szczegółowego śledzenia, w ustawieniach.</string>
+    <string name="devices_generation">para nr %1$d</string>
+    <string name="devices_retired_on">wycofano %1$s</string>
+    <string name="devices_connected_for">połączone %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Statystyki -->
+    <string name="stats_title">wszystkie słuchawki</string>
+    <string name="stats_sessions_since">%1$s od %2$s</string>
+    <string name="stats_last_7">ostatnie 7 dni</string>
+    <string name="stats_last_30">ostatnie 30 dni</string>
+    <string name="stats_average_session">średnia sesja</string>
+    <string name="stats_playing">odtwarzanie</string>
+    <string name="stats_measured_span">zmierzony okres</string>
+    <string name="stats_share">udostępnij</string>
+    <string name="stats_daily_hours_30">godziny dziennie (30 dni)</string>
+    <string name="stats_by_pair">według pary</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · wycofana</string>
+    <string name="chart_max">maks. %1$s</string>
+
+    <!-- Szczegóły pary -->
+    <string name="pair_fallback_title">para</string>
+    <string name="pair_back">wstecz</string>
+    <string name="pair_more">więcej</string>
+    <string name="pair_menu_rename">zmień nazwę</string>
+    <string name="pair_menu_purchase">dane zakupu</string>
+    <string name="pair_menu_retire">wycofaj / wymieniona</string>
+    <string name="pair_menu_delete">usuń</string>
+    <string name="pair_lifetime">łączny czas tej pary</string>
+    <string name="pair_retired_on">wycofano %1$s</string>
+    <string name="pair_retired_with_reason">wycofano %1$s · %2$s</string>
+    <string name="pair_connected_now">połączone teraz · %1$s</string>
+    <string name="pair_sessions">sesje</string>
+    <string name="pair_average">średnia</string>
+    <string name="pair_longest">najdłuższa</string>
+    <string name="pair_first_seen">pierwszy raz</string>
+    <string name="pair_of_measured">z mierzonego</string>
+    <string name="pair_measured">mierzone</string>
+    <string name="pair_paid">zapłacono</string>
+    <string name="pair_per_hour">za godzinę</string>
+    <string name="pair_bought">kupiono</string>
+    <string name="pair_daily_hours_14">godziny dziennie (14 dni)</string>
+    <string name="pair_rename_title">zmień nazwę pary</string>
+    <string name="pair_rename_label">nazwa</string>
+    <string name="pair_retire_title">wycofaj tę parę</string>
+    <string name="pair_retire_label">powód (zepsuta, sprzedana, zgubiona…)</string>
+    <string name="pair_retire_confirm">wycofaj</string>
+    <string name="pair_retire_supporting">suma zostaje tu zamrożona. ponowne połączenie tego samego urządzenia rozpoczyna nową parę od zera.</string>
+    <string name="pair_price_title">zapłacona cena</string>
+    <string name="pair_price_label">kwota (pełne jednostki)</string>
+    <string name="pair_price_supporting">używane do wyliczenia kosztu za godzinę.</string>
+    <string name="pair_delete_title">usunąć tę parę?</string>
+    <string name="pair_delete_body">wszystkie zarejestrowane dla niej sesje też zostaną usunięte. tej operacji nie można cofnąć.</string>
+
+    <!-- Wiersze sesji -->
+    <string name="session_ongoing">trwa</string>
+    <string name="session_until">do %1$s</string>
+    <string name="session_playing">%1$s odtwarzania</string>
+    <string name="session_recovered">odzyskana</string>
+
+    <!-- Ustawienia -->
+    <string name="settings_tracking">śledzenie</string>
+    <string name="settings_detailed_title">szczegółowe śledzenie</string>
+    <string name="settings_detailed_body">dodaje słuchawki przewodowe i czas odtwarzania. android zgłasza zdarzenia podłączenia jacka tylko działającej aplikacji, dlatego utrzymuje to cichą notyfikację na pasku. bluetooth jest śledzony tak czy inaczej.</string>
+    <string name="settings_detailed_unavailable">niedostępne, dopóki nie przyznasz dostępu do bluetooth: ta wersja deklaruje tylko typ usługi connectedDevice, który android 14+ wiąże z uprawnieniem bluetooth.</string>
+    <string name="settings_devices">urządzenia</string>
+    <string name="settings_devices_body">odznacz wszystko, co nie jest słuchawkami — np. radio samochodowe lub głośnik — aby przestać to rejestrować.</string>
+    <string name="settings_device_subtitle">%1$s · pierwszy raz %2$s</string>
+    <string name="settings_data">dane</string>
+    <string name="settings_export">eksportuj json</string>
+    <string name="settings_import">importuj</string>
+    <string name="settings_import_warning">import zastępuje wszystko, co jest obecnie zapisane.</string>
+    <string name="settings_troubleshooting">rozwiązywanie problemów</string>
+    <string name="settings_battery_body">jeśli sesje przestaną być rejestrowane, sprawdź, czy ylih jest wyłączony z optymalizacji baterii — aplikacja wymuszenie zatrzymana nigdy więcej nie otrzyma powiadomień o połączeniu, dopóki nie zostanie otwarta.</string>
+    <string name="settings_battery_button">ustawienia baterii</string>
+    <string name="settings_battery_path">ustawienia → aplikacje → ylih → bateria → brak ograniczeń.</string>
+    <string name="settings_about">o aplikacji</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — godziny w słuchawkach, przechowywane lokalnie i na zawsze.</string>
+    <string name="settings_import_confirm_title">zastąpić wszystkie dane?</string>
+    <string name="settings_import_confirm_body">import tej kopii zapasowej usuwa każde urządzenie, parę i sesję zapisane obecnie.</string>
+
+    <!-- Wspólne akcje -->
+    <string name="action_save">zapisz</string>
+    <string name="action_cancel">anuluj</string>
+    <string name="action_delete">usuń</string>
+    <string name="action_import">importuj</string>
+
+    <!-- Powiadomienie -->
+    <string name="channel_tracking">śledzenie słuchawek</string>
+    <string name="channel_tracking_description">widoczne, gdy ylih obserwuje słuchawki przewodowe i odtwarzanie. android nie dostarcza zdarzeń podłączenia jacka aplikacjom, które nie działają.</string>
+    <string name="notification_title">śledzenie czasu w słuchawkach</string>
+    <string name="notification_starting">uruchamianie…</string>
+    <string name="notification_idle">oczekiwanie na słuchawki</string>
+    <!-- "połączone" is the same neuter-singular / non-masculine-personal-plural adjective form for
+         every count, so all four Polish categories carry identical text on purpose. -->
+    <plurals name="notification_active">
+        <item quantity="one">%1$d połączone · %2$s</item>
+        <item quantity="few">%1$d połączone · %2$s</item>
+        <item quantity="many">%1$d połączone · %2$s</item>
+        <item quantity="other">%1$d połączone · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d połączone · %2$s · odtwarzanie</item>
+        <item quantity="few">%1$d połączone · %2$s · odtwarzanie</item>
+        <item quantity="many">%1$d połączone · %2$s · odtwarzanie</item>
+        <item quantity="other">%1$d połączone · %2$s · odtwarzanie</item>
+    </plurals>
+
+    <!-- Komunikaty -->
+    <string name="detailed_needs_bluetooth">ta wersja potrzebuje dostępu do bluetooth, zanim będzie mogła śledzić słuchawki przewodowe</string>
+    <string name="export_done">kopia zapasowa wyeksportowana</string>
+    <string name="export_failed">eksport nie powiódł się</string>
+    <string name="import_failed">import nie powiódł się</string>
+    <string name="error_could_not_open">nie można otworzyć %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">zaimportowano %d sesję</item>
+        <item quantity="few">zaimportowano %d sesje</item>
+        <item quantity="many">zaimportowano %d sesji</item>
+        <item quantity="other">zaimportowano %d sesji</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sesja</item>
+        <item quantity="few">%d sesje</item>
+        <item quantity="many">%d sesji</item>
+        <item quantity="other">%d sesji</item>
+    </plurals>
+</resources>

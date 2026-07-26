@@ -1,0 +1,8 @@
+Erste Version.
+
+• Gesamtstunden pro physischem Kopfhörerpaar, mit Generationen, sodass ein Ersatzpaar bei null beginnt, statt die Summe des alten Paares zu erben.
+• Jede Verbindung dauerhaft gespeichert, mit Statistiken pro Tag und pro Paar.
+• Optionales, detailliertes Tracking für kabelgebundene und USB-Kopfhörer sowie für Wiedergabezeit im Verhältnis zur Verbindungszeit.
+• Kosten pro Hörstunde.
+• JSON-Export und -Import.
+• Keine Internetberechtigung: Nichts verlässt jemals das Telefon.

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Arabic. Same house style as the default locale where Arabic orthography allows it — Arabic has
+  no letter case, so the "lowercase throughout" rule does not apply; standard Arabic spelling is
+  used instead.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - حياتك في السماعات</string>
+
+    <!-- التنقل السفلي -->
+    <string name="nav_headphones">سماعات</string>
+    <string name="nav_stats">إحصاءات</string>
+    <string name="nav_settings">الإعدادات</string>
+
+    <!-- أنواع الأجهزة -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">سلكي</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">غير معروف</string>
+
+    <!-- التشغيل الأول -->
+    <string name="welcome_title">مرحبًا بك في ylih</string>
+    <string name="welcome_intro">يسجّل ylih المدة التي تبقى فيها كل زوج سماعات متصلًا، حتى تتمكن بعد سنوات من الإجابة عن السؤال الوحيد المهم بخصوص أي زوج سماعات: كم ساعة دام؟</string>
+    <string name="welcome_point_auto_title">وصّل وانسَ الأمر</string>
+    <string name="welcome_point_auto_body">تُسجَّل سماعات bluetooth تلقائيًا من لحظة اتصالها. لا حاجة لإبقاء أي شيء يعمل.</string>
+    <string name="welcome_point_lifetime_title">زوج واحد، عمر واحد</string>
+    <string name="welcome_point_lifetime_body">عندما يتعطل زوج، أحِله إلى التقاعد: يتجمد إجماليه عند تلك النقطة، ويبدأ الزوج التالي من نفس السماعات من الصفر من جديد.</string>
+    <string name="welcome_point_detailed_title">سلكي وتشغيل الصوت</string>
+    <string name="welcome_point_detailed_body">التتبع التفصيلي، في الإعدادات، يضيف السماعات السلكية ويقيس كم من ذلك الوقت كان تشغيلًا فعليًا للصوت.</string>
+    <string name="welcome_privacy">يبقى كل شيء على هذا الهاتف. لا يوجد حساب، ولا يملك التطبيق إذن الوصول إلى الإنترنت.</string>
+    <string name="welcome_start">ابدأ</string>
+
+    <!-- قائمة السماعات -->
+    <string name="devices_in_use">قيد الاستخدام</string>
+    <string name="devices_retired">متقاعدة</string>
+    <string name="devices_empty_title">لا توجد سماعات بعد</string>
+    <string name="devices_empty_body">وصّل زوج سماعات bluetooth وستظهر هنا. تحتاج السماعات السلكية إلى التتبع التفصيلي، في الإعدادات.</string>
+    <string name="devices_generation">الزوج رقم %1$d</string>
+    <string name="devices_retired_on">أُحيل إلى التقاعد في %1$s</string>
+    <string name="devices_connected_for">متصل منذ %1$s</string>
+    <string name="devices_recent">%1$s / 7ي</string>
+
+    <!-- الإحصاءات -->
+    <string name="stats_title">كل السماعات</string>
+    <string name="stats_sessions_since">%1$s منذ %2$s</string>
+    <string name="stats_last_7">آخر 7 أيام</string>
+    <string name="stats_last_30">آخر 30 يومًا</string>
+    <string name="stats_average_session">متوسط الجلسة</string>
+    <string name="stats_playing">التشغيل</string>
+    <string name="stats_measured_span">المدة المقاسة</string>
+    <string name="stats_share">مشاركة</string>
+    <string name="stats_daily_hours_30">الساعات اليومية (30 يومًا)</string>
+    <string name="stats_by_pair">حسب الزوج</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · متقاعد</string>
+    <string name="chart_max">الحد الأقصى %1$s</string>
+
+    <!-- تفاصيل الزوج -->
+    <string name="pair_fallback_title">زوج</string>
+    <string name="pair_back">رجوع</string>
+    <string name="pair_more">المزيد</string>
+    <string name="pair_menu_rename">إعادة تسمية</string>
+    <string name="pair_menu_purchase">معلومات الشراء</string>
+    <string name="pair_menu_retire">تقاعد / استُبدل</string>
+    <string name="pair_menu_delete">حذف</string>
+    <string name="pair_lifetime">إجمالي عمر هذا الزوج</string>
+    <string name="pair_retired_on">أُحيل إلى التقاعد في %1$s</string>
+    <string name="pair_retired_with_reason">أُحيل إلى التقاعد في %1$s · %2$s</string>
+    <string name="pair_connected_now">متصل الآن · %1$s</string>
+    <string name="pair_sessions">الجلسات</string>
+    <string name="pair_average">المتوسط</string>
+    <string name="pair_longest">الأطول</string>
+    <string name="pair_first_seen">أول ظهور</string>
+    <string name="pair_of_measured">من المُقاس</string>
+    <string name="pair_measured">مُقاس</string>
+    <string name="pair_paid">مدفوع</string>
+    <string name="pair_per_hour">في الساعة</string>
+    <string name="pair_bought">الشراء</string>
+    <string name="pair_daily_hours_14">الساعات اليومية (14 يومًا)</string>
+    <string name="pair_rename_title">إعادة تسمية الزوج</string>
+    <string name="pair_rename_label">الاسم</string>
+    <string name="pair_retire_title">إحالة هذا الزوج إلى التقاعد</string>
+    <string name="pair_retire_label">السبب (تعطل، بيع، فُقد…)</string>
+    <string name="pair_retire_confirm">تقاعد</string>
+    <string name="pair_retire_supporting">تتجمد الإجماليات هنا. إعادة توصيل نفس الجهاز تبدأ زوجًا جديدًا من الصفر.</string>
+    <string name="pair_price_title">السعر المدفوع</string>
+    <string name="pair_price_label">المبلغ (أرقام صحيحة)</string>
+    <string name="pair_price_supporting">يُستخدم لحساب التكلفة في الساعة.</string>
+    <string name="pair_delete_title">حذف هذا الزوج؟</string>
+    <string name="pair_delete_body">تُحذف أيضًا كل جلسة مسجَّلة له. لا يمكن التراجع عن هذا.</string>
+
+    <!-- صفوف الجلسات -->
+    <string name="session_ongoing">جارية</string>
+    <string name="session_until">حتى %1$s</string>
+    <string name="session_playing">%1$s قيد التشغيل</string>
+    <string name="session_recovered">مستردَّة</string>
+
+    <!-- الإعدادات -->
+    <string name="settings_tracking">التتبع</string>
+    <string name="settings_detailed_title">التتبع التفصيلي</string>
+    <string name="settings_detailed_body">يضيف السماعات السلكية ووقت التشغيل. لا يُبلّغ android عن أحداث توصيل السماعة السلكية إلا لتطبيق قيد التشغيل، لذا يبقي هذا إشعارًا صامتًا في لوحة الإشعارات. يُتتبَّع bluetooth في الحالتين.</string>
+    <string name="settings_detailed_unavailable">غير متاح حتى يُمنح الوصول إلى bluetooth: يعلن هذا الإصدار فقط عن نوع الخدمة connectedDevice، الذي يربطه android 14 وما بعده بإذن bluetooth.</string>
+    <string name="settings_devices">الأجهزة</string>
+    <string name="settings_devices_body">ألغِ تحديد أي شيء ليس سماعات — مثل نظام صوت السيارة أو مكبر صوت — لإيقاف تسجيله.</string>
+    <string name="settings_device_subtitle">%1$s · أول ظهور %2$s</string>
+    <string name="settings_data">البيانات</string>
+    <string name="settings_export">تصدير json</string>
+    <string name="settings_import">استيراد</string>
+    <string name="settings_import_warning">الاستيراد يستبدل كل ما هو مخزَّن حاليًا.</string>
+    <string name="settings_troubleshooting">استكشاف الأخطاء وإصلاحها</string>
+    <string name="settings_battery_body">إذا توقف تسجيل الجلسات، تحقق من أن ylih مستثنى من تحسين البطارية — التطبيق الذي أُوقف قسرًا لا يتلقى بعدها أي إشعارات اتصال إلى أن يُفتح مجددًا.</string>
+    <string name="settings_battery_button">إعدادات البطارية</string>
+    <string name="settings_battery_path">الإعدادات ← التطبيقات ← ylih ← البطارية ← غير مقيّد.</string>
+    <string name="settings_about">حول</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — ساعات السماعات، محفوظة محليًا وإلى الأبد.</string>
+    <string name="settings_import_confirm_title">استبدال كل البيانات؟</string>
+    <string name="settings_import_confirm_body">استيراد هذه النسخة الاحتياطية يحذف كل جهاز وزوج وجلسة مخزَّنة الآن.</string>
+
+    <!-- إجراءات مشتركة -->
+    <string name="action_save">حفظ</string>
+    <string name="action_cancel">إلغاء</string>
+    <string name="action_delete">حذف</string>
+    <string name="action_import">استيراد</string>
+
+    <!-- الإشعار -->
+    <string name="channel_tracking">تتبع السماعات</string>
+    <string name="channel_tracking_description">يظهر أثناء مراقبة ylih للسماعات السلكية والتشغيل. لا يرسل android أحداث توصيل السماعة السلكية إلى التطبيقات غير العاملة.</string>
+    <string name="notification_title">تتبع وقت السماعات</string>
+    <string name="notification_starting">جارٍ البدء…</string>
+    <string name="notification_idle">في انتظار السماعات</string>
+    <!-- Arabic's CLDR set is zero/one/two/few/many/other; numbers 3-10 take a plural noun, 11-99
+         a singular accusative noun, and 0 follows the same plural noun as 3-10. -->
+    <plurals name="notification_active">
+        <item quantity="zero">%1$d أجهزة متصلة · %2$s</item>
+        <item quantity="one">%1$d جهاز متصل · %2$s</item>
+        <item quantity="two">%1$d جهازان متصلان · %2$s</item>
+        <item quantity="few">%1$d أجهزة متصلة · %2$s</item>
+        <item quantity="many">%1$d جهازًا متصلًا · %2$s</item>
+        <item quantity="other">%1$d جهاز متصل · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="zero">%1$d أجهزة متصلة · %2$s · قيد التشغيل</item>
+        <item quantity="one">%1$d جهاز متصل · %2$s · قيد التشغيل</item>
+        <item quantity="two">%1$d جهازان متصلان · %2$s · قيد التشغيل</item>
+        <item quantity="few">%1$d أجهزة متصلة · %2$s · قيد التشغيل</item>
+        <item quantity="many">%1$d جهازًا متصلًا · %2$s · قيد التشغيل</item>
+        <item quantity="other">%1$d جهاز متصل · %2$s · قيد التشغيل</item>
+    </plurals>
+
+    <!-- رسائل التنبيه -->
+    <string name="detailed_needs_bluetooth">يحتاج هذا الإصدار إلى الوصول لـbluetooth قبل أن يتمكن من تتبع السماعات السلكية</string>
+    <string name="export_done">تم تصدير النسخة الاحتياطية</string>
+    <string name="export_failed">فشل التصدير</string>
+    <string name="import_failed">فشل الاستيراد</string>
+    <string name="error_could_not_open">تعذّر فتح %1$s</string>
+    <plurals name="import_done">
+        <item quantity="zero">تم استيراد %d جلسات</item>
+        <item quantity="one">تم استيراد %d جلسة</item>
+        <item quantity="two">تم استيراد %d جلستين</item>
+        <item quantity="few">تم استيراد %d جلسات</item>
+        <item quantity="many">تم استيراد %d جلسة</item>
+        <item quantity="other">تم استيراد %d جلسة</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="zero">%d جلسات</item>
+        <item quantity="one">%d جلسة</item>
+        <item quantity="two">%d جلستين</item>
+        <item quantity="few">%d جلسات</item>
+        <item quantity="many">%d جلسة</item>
+        <item quantity="other">%d جلسة</item>
+    </plurals>
+</resources>

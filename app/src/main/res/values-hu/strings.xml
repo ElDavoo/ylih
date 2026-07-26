@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Hungarian. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - az életed fejhallgatóban</string>
+
+    <!-- Alsó navigáció -->
+    <string name="nav_headphones">fejhallgatók</string>
+    <string name="nav_stats">statisztika</string>
+    <string name="nav_settings">beállítások</string>
+
+    <!-- Eszköztípusok -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">vezetékes</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ismeretlen</string>
+
+    <!-- Első indítás -->
+    <string name="welcome_title">üdv a ylih-ben</string>
+    <string name="welcome_intro">a ylih rögzíti, hogy egy-egy fejhallgatópár mennyi ideig marad csatlakoztatva, hogy évekkel később is meg tudd válaszolni az egyetlen kérdést, ami egy pár esetében valóban számít: hány órát bírtak ki?</string>
+    <string name="welcome_point_auto_title">csatlakoztasd, és felejtsd el</string>
+    <string name="welcome_point_auto_body">a bluetooth-os fejhallgatók automatikusan, önmaguktól rögzülnek, a csatlakozás pillanatától kezdve. semmit sem kell futva hagyni.</string>
+    <string name="welcome_point_lifetime_title">egy pár, egy élettartam</string>
+    <string name="welcome_point_lifetime_body">amikor egy pár tönkremegy, vond ki: az összideje ott lezárul, és ugyanannak a fejhallgatónak a következő párja újra nulláról indul.</string>
+    <string name="welcome_point_detailed_title">vezetékes és lejátszás</string>
+    <string name="welcome_point_detailed_body">a beállításokban bekapcsolható részletes követés hozzáadja a vezetékes fejhallgatókat, és méri, hogy az idő mekkora részében szólt ténylegesen zene.</string>
+    <string name="welcome_privacy">minden ezen a telefonon marad. nincs fiók, és az alkalmazásnak nincs internet-hozzáférési engedélye.</string>
+    <string name="welcome_start">kezdjük</string>
+
+    <!-- Fejhallgatólista -->
+    <string name="devices_in_use">használatban</string>
+    <string name="devices_retired">kivonva</string>
+    <string name="devices_empty_title">még nincs fejhallgató</string>
+    <string name="devices_empty_body">csatlakoztass egy bluetooth-os fejhallgatópárt, és megjelenik itt. a vezetékes fejhallgatókhoz a beállításokban elérhető részletes követés szükséges.</string>
+    <string name="devices_generation">%1$d. pár</string>
+    <string name="devices_retired_on">kivonva: %1$s</string>
+    <string name="devices_connected_for">csatlakoztatva %1$s</string>
+    <string name="devices_recent">%1$s / 7n</string>
+
+    <!-- Statisztika -->
+    <string name="stats_title">összes fejhallgató</string>
+    <!-- %1$s már pluralizált munkamenetszám, %2$s egy dátum. -->
+    <string name="stats_sessions_since">%1$s, %2$s óta</string>
+    <string name="stats_last_7">utolsó 7 nap</string>
+    <string name="stats_last_30">utolsó 30 nap</string>
+    <string name="stats_average_session">átlagos munkamenet</string>
+    <string name="stats_playing">lejátszás</string>
+    <string name="stats_measured_span">mért időszak</string>
+    <string name="stats_share">megosztás</string>
+    <string name="stats_daily_hours_30">napi órák (30 nap)</string>
+    <string name="stats_by_pair">párok szerint</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · kivonva</string>
+    <string name="chart_max">max %1$s</string>
+
+    <!-- Pár részletei -->
+    <string name="pair_fallback_title">pár</string>
+    <string name="pair_back">vissza</string>
+    <string name="pair_more">több</string>
+    <string name="pair_menu_rename">átnevezés</string>
+    <string name="pair_menu_purchase">vásárlási adatok</string>
+    <string name="pair_menu_retire">kivonás / cserélve</string>
+    <string name="pair_menu_delete">törlés</string>
+    <string name="pair_lifetime">ennek a párnak az összideje</string>
+    <string name="pair_retired_on">kivonva: %1$s</string>
+    <string name="pair_retired_with_reason">kivonva: %1$s · %2$s</string>
+    <string name="pair_connected_now">most csatlakoztatva · %1$s</string>
+    <string name="pair_sessions">munkamenetek</string>
+    <string name="pair_average">átlag</string>
+    <string name="pair_longest">leghosszabb</string>
+    <string name="pair_first_seen">először látva</string>
+    <string name="pair_of_measured">a mértből</string>
+    <string name="pair_measured">mért</string>
+    <string name="pair_paid">fizetve</string>
+    <string name="pair_per_hour">óránként</string>
+    <string name="pair_bought">vásárolva</string>
+    <string name="pair_daily_hours_14">napi órák (14 nap)</string>
+    <string name="pair_rename_title">pár átnevezése</string>
+    <string name="pair_rename_label">név</string>
+    <string name="pair_retire_title">pár kivonása</string>
+    <string name="pair_retire_label">ok (elromlott, eladva, elveszett…)</string>
+    <string name="pair_retire_confirm">kivonás</string>
+    <string name="pair_retire_supporting">az összegek itt lezárulnak. ugyanannak az eszköznek az újracsatlakoztatása egy új párral, nulláról kezdődik.</string>
+    <string name="pair_price_title">vételár</string>
+    <string name="pair_price_label">összeg (egész egység)</string>
+    <string name="pair_price_supporting">az óránkénti költség számításához használjuk.</string>
+    <string name="pair_delete_title">törlöd ezt a párt?</string>
+    <string name="pair_delete_body">a hozzá tartozó összes munkamenet is törlődik. ez nem vonható vissza.</string>
+
+    <!-- Munkamenet sorok -->
+    <string name="session_ongoing">folyamatban</string>
+    <string name="session_until">eddig: %1$s</string>
+    <string name="session_playing">%1$s lejátszás</string>
+    <string name="session_recovered">helyreállítva</string>
+
+    <!-- Beállítások -->
+    <string name="settings_tracking">követés</string>
+    <string name="settings_detailed_title">részletes követés</string>
+    <string name="settings_detailed_body">hozzáadja a vezetékes fejhallgatókat és a lejátszási időt. az android a vezetékes csatlakozási eseményeket csak egy futó alkalmazásnak jelzi, ezért ez egy néma értesítést tart a lehúzható panelen. a bluetooth mindkét esetben követve van.</string>
+    <string name="settings_detailed_unavailable">nem érhető el, amíg nincs engedélyezve a bluetooth-hozzáférés: ez a build csak a connectedDevice szolgáltatástípust deklarálja, amelyet az android 14+ egy bluetooth-engedélyhez köt.</string>
+    <string name="settings_devices">eszközök</string>
+    <string name="settings_devices_body">vedd ki a pipát mindenből, ami nem fejhallgató — például egy autórádióból vagy egy hangszóróból —, hogy leállítsd a rögzítését.</string>
+    <string name="settings_device_subtitle">%1$s · először látva: %2$s</string>
+    <string name="settings_data">adatok</string>
+    <string name="settings_export">json exportálása</string>
+    <string name="settings_import">importálás</string>
+    <string name="settings_import_warning">az importálás lecseréli az összes jelenleg tárolt adatot.</string>
+    <string name="settings_troubleshooting">hibaelhárítás</string>
+    <string name="settings_battery_body">ha a munkamenetek rögzítése leáll, ellenőrizd, hogy a ylih mentesítve van-e az akkumulátor-optimalizálás alól — egy kényszerítve leállított alkalmazás soha többé nem kap kapcsolódási eseményeket, amíg meg nem nyitod újra.</string>
+    <string name="settings_battery_button">akkumulátor-beállítások</string>
+    <string name="settings_battery_path">beállítások → alkalmazások → ylih → akkumulátor → korlátozás nélkül.</string>
+    <string name="settings_about">névjegy</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — a fejhallgatóid órái, helyben tárolva, örökre.</string>
+    <string name="settings_import_confirm_title">lecseréled az összes adatot?</string>
+    <string name="settings_import_confirm_body">ennek a mentésnek az importálása törli az összes jelenleg tárolt eszközt, párt és munkamenetet.</string>
+
+    <!-- Közös műveletek -->
+    <string name="action_save">mentés</string>
+    <string name="action_cancel">mégse</string>
+    <string name="action_delete">törlés</string>
+    <string name="action_import">importálás</string>
+
+    <!-- Értesítés -->
+    <string name="channel_tracking">fejhallgató-követés</string>
+    <string name="channel_tracking_description">akkor jelenik meg, amikor a ylih figyeli a vezetékes fejhallgatókat és a lejátszást. az android nem küld vezetékes csatlakozási eseményeket a nem futó alkalmazásoknak.</string>
+    <string name="notification_title">fejhallgató-idő követése</string>
+    <string name="notification_starting">indítás…</string>
+    <string name="notification_idle">várakozás fejhallgatóra</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d csatlakoztatva · %2$s</item>
+        <item quantity="other">%1$d csatlakoztatva · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d csatlakoztatva · %2$s · lejátszás</item>
+        <item quantity="other">%1$d csatlakoztatva · %2$s · lejátszás</item>
+    </plurals>
+
+    <!-- Snackbar üzenetek -->
+    <string name="detailed_needs_bluetooth">ehhez a buildhez bluetooth-hozzáférés szükséges a vezetékes fejhallgatók követéséhez</string>
+    <string name="export_done">mentés exportálva</string>
+    <string name="export_failed">exportálás sikertelen</string>
+    <string name="import_failed">importálás sikertelen</string>
+    <string name="error_could_not_open">%1$s nem nyitható meg</string>
+    <plurals name="import_done">
+        <item quantity="one">%d munkamenet importálva</item>
+        <item quantity="other">%d munkamenet importálva</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d munkamenet</item>
+        <item quantity="other">%d munkamenet</item>
+    </plurals>
+</resources>

@@ -1,0 +1,40 @@
+Căștile mor, mai devreme sau mai târziu. Înainte să se întâmple, ylih răspunde la singura întrebare care contează cu adevărat despre o pereche: câte ore ai scos din ea?
+
+De fiecare dată când căștile tale se conectează, ylih notează când. De fiecare dată când se deconectează, notează când. Asta e toată ideea — și, cum o conectare înseamnă doar două momente, aplicația nu trebuie să ruleze în fundal ca să le înregistreze.
+
+CE ÎNREGISTREAZĂ
+
+• Orele totale ale fiecărei perechi fizice. Când o pereche moare, retrage-o — totalul se blochează, iar următoarea pereche a aceluiași model pornește din nou de la zero, ca generația 2. Numerele vechi nu se amestecă niciodată cu cele noi.
+• Fiecare sesiune, păstrată pentru totdeauna: momentul conectării, al deconectării și motivul pentru care s-a încheiat.
+• Timpul de redare (opțional): cât din acel timp conectat s-a redat efectiv sunet, ca purtatul căștilor la gât fără muzică să nu conteze ca ascultare.
+• Costul pe oră, dacă introduci cât ai plătit pentru ele. E un număr satisfăcător de urmărit cum scade.
+
+DOUĂ MODURI DE URMĂRIRE
+
+Doar bluetooth — cel implicit. Nimic din aplicație nu rulează, nimic nu stă în bara de notificări, iar consumul de baterie e zero, pentru că android livrează evenimentele de conectare aplicației chiar și atunci când e închisă.
+
+Urmărire detaliată — opțională. Adaugă căștile prin cablu și USB și măsoară redarea față de timpul conectat. Are nevoie de o singură notificare silențioasă, cu prioritate minimă, pentru că android raportează evenimentele mufei doar unei aplicații deja pornite. Acesta, și numai acesta, e motivul pentru care există notificarea.
+
+Bluetooth este urmărit oricum.
+
+NUMERE ÎN CARE POȚI AVEA ÎNCREDERE PESTE ANI
+
+Totalurile pe termen lung nu valorează nimic dacă o defecțiune sau o repornire adaugă în tăcere douăsprezece ore. Așadar:
+
+• O sesiune rămasă deschisă din cauza unei reporniri sau a unei defecțiuni este închisă la ultima ei confirmare cunoscută, niciodată mai târziu de momentul în care telefonul a pornit. Timpul cât telefonul a stat oprit nu este numărat niciodată.
+• Dacă căștile tale sunt încă conectate după o repornire, începe o sesiune nouă, în loc ca cea veche să fie întinsă peste pauză.
+• Sesiunile primesc confirmări periodice cât timp sunt deschise, ca daunele unei deconectări nesesizate să fie limitate.
+
+PRIVATĂ PRIN CONSTRUCȚIE
+
+ylih nu are permisiune de internet. Nu „promitem că nu trimitem nimic” — aplicația este tehnic incapabilă de asta. Nu există conturi, analitice, reclame sau urmărire în scopuri de marketing. Totul trăiește într-o bază de date de pe telefonul tău.
+
+Setări → Exportă scrie întreg istoricul tău ca JSON lizibil, iar Importă îl restaurează, așa că trecerea la un telefon nou nu te costă niciodată numerele tale.
+
+PERMISIUNI
+
+• Dispozitive din apropiere (Bluetooth): necesară pentru a primi evenimentele de conectare și a citi numele unor căști. Fără ea, urmărirea bluetooth nu poate funcționa deloc.
+• Notificări: doar pentru notificarea urmăririi detaliate.
+• Rulare la pornire: pentru a închide sesiunile pe care oprirea nu le-a raportat niciodată.
+
+Open source, sub licența MIT.

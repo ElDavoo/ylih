@@ -6,6 +6,8 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import it.eldavo.ylih.MainActivity
 import it.eldavo.ylih.R
@@ -14,6 +16,11 @@ object Notifications {
     const val CHANNEL_TRACKING = "tracking"
     const val ID_TRACKING = 1
 
+    /**
+     * Only ever called from [TrackingService], which [TrackingController.detailedTrackingSupported]
+     * keeps off below Android 8 (API 26) — that's where notification channels start existing.
+     */
+    @RequiresApi(Build.VERSION_CODES.O)
     fun ensureChannel(context: Context) {
         val manager = context.getSystemService(NotificationManager::class.java)
         if (manager.getNotificationChannel(CHANNEL_TRACKING) != null) return

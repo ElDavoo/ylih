@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Japanese. Same house style as the default locale: lowercase throughout, on purpose, wherever the
+  script has case at all — Japanese orthography itself has none, so this mostly affects the ASCII
+  fragments (bluetooth, usb, le audio) that stay untranslated.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ヘッドホンと過ごした時間</string>
+
+    <!-- ボトムナビゲーション -->
+    <string name="nav_headphones">ヘッドホン</string>
+    <string name="nav_stats">統計</string>
+    <string name="nav_settings">設定</string>
+
+    <!-- デバイスの種類 -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">有線</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">不明</string>
+
+    <!-- 初回起動 -->
+    <string name="welcome_title">ylihへようこそ</string>
+    <string name="welcome_intro">ylihは、それぞれのヘッドホンがどれだけの時間つながっていたかを記録する。何年後でも、そのヘッドホンについて本当に大事な問いに答えられるように — 何時間使えたか。</string>
+    <string name="welcome_point_auto_title">つないで、あとは忘れる</string>
+    <string name="welcome_point_auto_body">bluetoothのヘッドホンは、つないだ瞬間から自動で記録される。何かを起動しっぱなしにする必要はない。</string>
+    <string name="welcome_point_lifetime_title">一つのペアに、一つの生涯</string>
+    <string name="welcome_point_lifetime_body">ヘッドホンが壊れたら引退させる。合計時間はそこで固定され、同じ機種の次のペアはまたゼロから始まる。</string>
+    <string name="welcome_point_detailed_title">有線と再生時間</string>
+    <string name="welcome_point_detailed_body">設定の詳細トラッキングを使うと、有線のヘッドホンも記録でき、実際に再生していた時間も測れる。</string>
+    <string name="welcome_privacy">すべてこの端末の中だけで完結する。アカウントは不要で、このアプリにはインターネットへのアクセス権限もない。</string>
+    <string name="welcome_start">はじめる</string>
+
+    <!-- ヘッドホン一覧 -->
+    <string name="devices_in_use">使用中</string>
+    <string name="devices_retired">引退</string>
+    <string name="devices_empty_title">まだヘッドホンがない</string>
+    <string name="devices_empty_body">bluetoothのヘッドホンをつなぐと、ここに表示される。有線のヘッドホンには設定の詳細トラッキングが必要。</string>
+    <string name="devices_generation">ペア #%1$d</string>
+    <string name="devices_retired_on">%1$s に引退</string>
+    <string name="devices_connected_for">%1$s 接続</string>
+    <string name="devices_recent">%1$s / 7日</string>
+
+    <!-- 統計 -->
+    <string name="stats_title">すべてのヘッドホン</string>
+    <!-- %1$s is an already-pluralised session count, %2$s a date. -->
+    <string name="stats_sessions_since">%2$s から %1$s</string>
+    <string name="stats_last_7">過去7日間</string>
+    <string name="stats_last_30">過去30日間</string>
+    <string name="stats_average_session">平均セッション</string>
+    <string name="stats_playing">再生時間</string>
+    <string name="stats_measured_span">計測期間</string>
+    <string name="stats_share">共有</string>
+    <string name="stats_daily_hours_30">1日あたりの時間（30日間）</string>
+    <string name="stats_by_pair">ペア別</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · 引退</string>
+    <string name="chart_max">最大 %1$s</string>
+
+    <!-- ペアの詳細 -->
+    <string name="pair_fallback_title">ペア</string>
+    <string name="pair_back">戻る</string>
+    <string name="pair_more">その他</string>
+    <string name="pair_menu_rename">名前を変更</string>
+    <string name="pair_menu_purchase">購入情報</string>
+    <string name="pair_menu_retire">引退・交換</string>
+    <string name="pair_menu_delete">削除</string>
+    <string name="pair_lifetime">このペアの合計時間</string>
+    <string name="pair_retired_on">%1$s に引退</string>
+    <string name="pair_retired_with_reason">%1$s に引退 · %2$s</string>
+    <string name="pair_connected_now">現在接続中 · %1$s</string>
+    <string name="pair_sessions">セッション数</string>
+    <string name="pair_average">平均</string>
+    <string name="pair_longest">最長</string>
+    <string name="pair_first_seen">初回接続</string>
+    <string name="pair_of_measured">計測時間中</string>
+    <string name="pair_measured">計測時間</string>
+    <string name="pair_paid">支払額</string>
+    <string name="pair_per_hour">1時間あたり</string>
+    <string name="pair_bought">購入日</string>
+    <string name="pair_daily_hours_14">1日あたりの時間（14日間）</string>
+    <string name="pair_rename_title">ペアの名前を変更</string>
+    <string name="pair_rename_label">名前</string>
+    <string name="pair_retire_title">このペアを引退させる</string>
+    <string name="pair_retire_label">理由（故障、売却、紛失など）</string>
+    <string name="pair_retire_confirm">引退させる</string>
+    <string name="pair_retire_supporting">合計時間はここで固定される。同じ端末を再接続すると、新しいペアがゼロから始まる。</string>
+    <string name="pair_price_title">支払った金額</string>
+    <string name="pair_price_label">金額（整数）</string>
+    <string name="pair_price_supporting">1時間あたりのコストの計算に使われる。</string>
+    <string name="pair_delete_title">このペアを削除する？</string>
+    <string name="pair_delete_body">記録されたセッションもすべて削除される。元に戻すことはできない。</string>
+
+    <!-- セッションの行 -->
+    <string name="session_ongoing">進行中</string>
+    <string name="session_until">%1$s まで</string>
+    <string name="session_playing">再生 %1$s</string>
+    <string name="session_recovered">復元</string>
+
+    <!-- 設定 -->
+    <string name="settings_tracking">トラッキング</string>
+    <string name="settings_detailed_title">詳細トラッキング</string>
+    <string name="settings_detailed_body">有線のヘッドホンと再生時間を記録できるようになる。androidは有線プラグのイベントを実行中のアプリにしか通知しないため、通知欄にサイレント通知が常に表示される。bluetoothはどちらの設定でも記録される。</string>
+    <string name="settings_detailed_unavailable">bluetoothへのアクセスを許可するまで利用できない。このビルドはconnectedDeviceのサービスタイプのみを宣言しており、android 14以降ではこれにbluetoothの権限が必要になる。</string>
+    <string name="settings_devices">デバイス</string>
+    <string name="settings_devices_body">ヘッドホン以外のもの（カーステレオやスピーカーなど）はチェックを外すと記録されなくなる。</string>
+    <string name="settings_device_subtitle">%1$s · 初回接続 %2$s</string>
+    <string name="settings_data">データ</string>
+    <string name="settings_export">jsonをエクスポート</string>
+    <string name="settings_import">インポート</string>
+    <string name="settings_import_warning">インポートすると、現在保存されているデータがすべて置き換えられる。</string>
+    <string name="settings_troubleshooting">トラブルシューティング</string>
+    <string name="settings_battery_body">セッションが記録されなくなった場合は、ylihがバッテリーの最適化から除外されているか確認する。強制停止されたアプリは、開くまで接続の通知を二度と受け取れない。</string>
+    <string name="settings_battery_button">バッテリー設定</string>
+    <string name="settings_battery_path">設定 → アプリ → ylih → バッテリー → 制限なし。</string>
+    <string name="settings_about">アプリについて</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — ヘッドホンの利用時間を、この端末にずっと記録する。</string>
+    <string name="settings_import_confirm_title">すべてのデータを置き換える？</string>
+    <string name="settings_import_confirm_body">このバックアップをインポートすると、現在保存されているすべてのデバイス、ペア、セッションが削除される。</string>
+
+    <!-- 共通アクション -->
+    <string name="action_save">保存</string>
+    <string name="action_cancel">キャンセル</string>
+    <string name="action_delete">削除</string>
+    <string name="action_import">インポート</string>
+
+    <!-- 通知 -->
+    <string name="channel_tracking">ヘッドホントラッキング</string>
+    <string name="channel_tracking_description">ylihが有線のヘッドホンと再生を監視している間表示される。androidは実行中でないアプリに有線プラグのイベントを届けない。</string>
+    <string name="notification_title">ヘッドホンの利用時間を記録中</string>
+    <string name="notification_starting">起動中…</string>
+    <string name="notification_idle">ヘッドホンを待機中</string>
+    <!-- Japanese's CLDR set is "other" only. -->
+    <plurals name="notification_active">
+        <item quantity="other">%1$d台接続中 · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="other">%1$d台接続中 · %2$s · 再生中</item>
+    </plurals>
+
+    <!-- スナックバーのメッセージ -->
+    <string name="detailed_needs_bluetooth">このビルドで有線のヘッドホンを記録するには、先にbluetoothへのアクセスが必要</string>
+    <string name="export_done">バックアップをエクスポートした</string>
+    <string name="export_failed">エクスポートに失敗した</string>
+    <string name="import_failed">インポートに失敗した</string>
+    <string name="error_could_not_open">%1$s を開けなかった</string>
+    <plurals name="import_done">
+        <item quantity="other">%d件のセッションをインポートした</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="other">%dセッション</item>
+    </plurals>
+</resources>

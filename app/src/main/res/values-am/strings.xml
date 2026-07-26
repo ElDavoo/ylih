@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  አማርኛ። ከነባሪ ቋንቋው ጋር ተመሳሳይ የቤት ስታይል: በአጠቃላይ ትናንሽ ፊደል፣ በሙሉ።
+
+  `app_name` በውሰድ ግልጽ — ማስጀምሪያ ስያሜ ብቻ ሲሆን ተርጉም ያልተደረገበት። `value_none` እንዲሁ — ሰድ አሞሪክ።
+-->
+<resources>
+    <string name="app_title">ylih — ሕይወትህ በዋቅ ውስጥ</string>
+
+    <!-- ታች ዳሰሳ -->
+    <string name="nav_headphones">ዋቅ</string>
+    <string name="nav_stats">ስታቲስቲክስ</string>
+    <string name="nav_settings">ቅንብራት</string>
+
+    <!-- መሳሪያ ዓይነቶች -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">በሽመል</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ያልታወቀ</string>
+
+    <!-- መጀመሪያ ጫገታ -->
+    <string name="welcome_title">ylih ውስጥ ደህና መጡ</string>
+    <string name="welcome_intro">ylih እያንዳንዱ ጥንድ ዋቅ ምን ያህል ጊዜ ተገናኝተው እንደሚቀሩ ይመዝግባል፣ ስለዚህም ከበርካታ ዓመታት በኋላ ከአንድ ጥንድ ጋር ያሉ ጠቃሚ ጥያቄ መመለስ ይችላሉ: ስንት ሰዓት ቆዩ?</string>
+    <string name="welcome_point_auto_title">ያገናኙ እና ይርሱ</string>
+    <string name="welcome_point_auto_body">bluetooth ዋቅ ከተገናኙ ጀምሮ በራሳቸው ይመዝገባሉ። ምንም ነገር ሮጦ ሊቀር አያስፈልግም።</string>
+    <string name="welcome_point_lifetime_title">አንድ ጥንድ፣ አንድ ህይወት</string>
+    <string name="welcome_point_lifetime_body">ጥንድ ሲሞት ከስራ ተወቅ: ጠቅላላ እዚያ ተቀር ነበር እና ተመሳሳይ ዋቅ ያለው ሌላ ጥንድ ከዜሮ ይጀምራል።</string>
+    <string name="welcome_point_detailed_title">በሽመል እና ፍጻሜ</string>
+    <string name="welcome_point_detailed_body">ዝርዝር ምልከታ፣ ቅንብራትን ውስጥ፣ በሽመል ዋቅ ይጨምራል እና ምን ያህል ወቅት ቁም በሚወጣ ጊዜ ይለካል።</string>
+    <string name="welcome_privacy">ሁሉም ነገር በዚህ ስልክ ላይ ይቀራል። ምንም ሂሳብ የለም እና ትግበራው ለኢንተርኔት ምንም ግቤት የለም።</string>
+    <string name="welcome_start">ጀምር</string>
+
+    <!-- ዋቅ ዝርዝር -->
+    <string name="devices_in_use">ስር ላይ</string>
+    <string name="devices_retired">ከስራ ተወቅ</string>
+    <string name="devices_empty_title">ገና ዋቅ የለም</string>
+    <string name="devices_empty_body">ጥንድ bluetooth ዋቅ ያገናኙ እና እዚህ ይታያል። በሽመል ዋቅ ዝርዝር ምልከታ ይፈልግ ቅንብራትን ውስጥ።</string>
+    <string name="devices_generation">ጥንድ #%1$d</string>
+    <string name="devices_retired_on">ከስራ ተወቅ %1$s</string>
+    <string name="devices_connected_for">ተገናኝተዋል %1$s</string>
+    <string name="devices_recent">%1$s / 7ሰ</string>
+
+    <!-- ስታቲስቲክስ -->
+    <string name="stats_title">ሁሉም ዋቅ</string>
+    <string name="stats_sessions_since">%1$s ከ %2$s</string>
+    <string name="stats_last_7">ባለፉት 7 ቀናት</string>
+    <string name="stats_last_30">ባለፉት 30 ቀናት</string>
+    <string name="stats_average_session">አማካይ ስብሰባ</string>
+    <string name="stats_playing">ፍጻሜ</string>
+    <string name="stats_measured_span">የተለካ ጊዜ</string>
+    <string name="stats_share">ክፍል</string>
+    <string name="stats_daily_hours_30">ዕለታዊ ሰዓታት (30 ቀናት)</string>
+    <string name="stats_by_pair">በጥንድ</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · ከስራ ተወቅ</string>
+    <string name="chart_max">%1$s ከፍተኛ</string>
+
+    <!-- ጥንድ ዝርዝር -->
+    <string name="pair_fallback_title">ጥንድ</string>
+    <string name="pair_back">ተመለስ</string>
+    <string name="pair_more">ተጨማሪ</string>
+    <string name="pair_menu_rename">እንደገና ሰይም</string>
+    <string name="pair_menu_purchase">ሙያ ውሂብ</string>
+    <string name="pair_menu_retire">ከስራ ተወቅ / ተተካ</string>
+    <string name="pair_menu_delete">ሰርዝ</string>
+    <string name="pair_lifetime">በዚህ ጥንድ ላይ ሕይወት</string>
+    <string name="pair_retired_on">ከስራ ተወቅ %1$s</string>
+    <string name="pair_retired_with_reason">ከስራ ተወቅ %1$s · %2$s</string>
+    <string name="pair_connected_now">አሁን ተገናኝተዋል · %1$s</string>
+    <string name="pair_sessions">ስብሰባ</string>
+    <string name="pair_average">አማካይ</string>
+    <string name="pair_longest">ረጅም</string>
+    <string name="pair_first_seen">በመጀመሪያ ታየ</string>
+    <string name="pair_of_measured">የተለካ ውስጥ</string>
+    <string name="pair_measured">ታሊ</string>
+    <string name="pair_paid">ወጪ ተደረገ</string>
+    <string name="pair_per_hour">በሰዓት</string>
+    <string name="pair_bought">ገዛ</string>
+    <string name="pair_daily_hours_14">ዕለታዊ ሰዓታት (14 ቀናት)</string>
+    <string name="pair_rename_title">ጥንድ እንደገና ሰይም</string>
+    <string name="pair_rename_label">ስም</string>
+    <string name="pair_retire_title">ይህን ጥንድ ከስራ ተወቅ</string>
+    <string name="pair_retire_label">ምክንያት (ተሰበረ, ተሸጠ, ጠፍ…)</string>
+    <string name="pair_retire_confirm">ከስራ ተወቅ</string>
+    <string name="pair_retire_supporting">ጠቅላላ እዚያ ተቀር ነበር። ተመሳሳይ መሳሪያ እንደገና ተገናኘ ወደ አዲስ ጥንድ ከዜሮ ይጀምራል።</string>
+    <string name="pair_price_title">ዋጋ ተከፈለ</string>
+    <string name="pair_price_label">መጠን (ሙሉ ክፍሎች)</string>
+    <string name="pair_price_supporting">ለወጣ ስሌት ይውላል።</string>
+    <string name="pair_delete_title">ይህን ጥንድ ሰርዝ?</string>
+    <string name="pair_delete_body">ሁሉም ሰብስባ ይሰረዛል። ይህ ደጋግሞ አይቻልም።</string>
+
+    <!-- ስብሰባ ረድፍ -->
+    <string name="session_ongoing">በሂደት ውስጥ</string>
+    <string name="session_until">ይህ ድረስ %1$s</string>
+    <string name="session_playing">%1$s ፍጻሜ</string>
+    <string name="session_recovered">ተመልስ ነበር</string>
+
+    <!-- ቅንብራት -->
+    <string name="settings_tracking">ምልከታ</string>
+    <string name="settings_detailed_title">ዝርዝር ምልከታ</string>
+    <string name="settings_detailed_body">በሽመል ዋቅ ይጨምራል እና ፍጻሜ ጊዜ ይለካል። android በተሂድ ትግበራ ውስጥ በሽመል ተገናኝ ክንውኖች ሪፖርት ማድረግ ብቻ ይችላል, ስለዚህም ታዎ በውስጥ ዝምታ ሙሉመታ ይቀራል። bluetooth በክንፍ ሁሉ ጊዜ ይታዘዙ።</string>
+    <string name="settings_detailed_unavailable">bluetooth ግቤት እስከተሰጠ ድረስ አይገኝም: ይህ ሙያ connectedDevice ዓይነት ብቻ ያወጣ, android 14+ በ bluetooth ግቤት ጠብቅ።</string>
+    <string name="settings_devices">መሳሪያ</string>
+    <string name="settings_devices_body">ዋቅ ያልሆነ ነገር ማብራት — ሙዞ ወይም ዘወዝ — ሪኮርዲንግ ሊቀር።</string>
+    <string name="settings_device_subtitle">%1$s · በመጀመሪያ ታየ %2$s</string>
+    <string name="settings_data">ውሂብ</string>
+    <string name="settings_export">json ወደ ውጪ ላክ</string>
+    <string name="settings_import">ወደ ውስጥ አምጡ</string>
+    <string name="settings_import_warning">ወደ ውስጥ አምጡ ሁሉ ነገር አሁን ያለ ነገር ተተክላል።</string>
+    <string name="settings_troubleshooting">ችግር ወቅ</string>
+    <string name="settings_battery_body">ስብሰባ ሰብስቡ ከቆሙ, ylih ምንም ኃይል ማጠቃለያ ውስጥ ነገ ጎን ለጎን ይወሰድ — ሃይሉ የታጠቀ ትግበራ ከ ተገናኝ ፍላጐት ወዲህ ሮጫ ውስጥ አይቀበልም።</string>
+    <string name="settings_battery_button">ኃይል ቅንብራት</string>
+    <string name="settings_battery_path">ቅንብራት → ትግበራ → ylih → ኃይል → ገደብ ራሳቸው።</string>
+    <string name="settings_about">ስለ ይህ</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — ሰዓታት በዋቅ, ተከላ በራሳቸው ቦታ ምንባር ተከላ።</string>
+    <string name="settings_import_confirm_title">ሁሉም ውሂብ ተተክሎ ይሁን?</string>
+    <string name="settings_import_confirm_body">ይህ መቀመጥ ወደ ውስጥ አምጡ ሁሉም መሳሪያ ጥንድ ስብሰባ ታሁንኋል ይሰረዛሉ።</string>
+
+    <!-- የጋራ ድርጊት -->
+    <string name="action_save">አስቀምጥ</string>
+    <string name="action_cancel">ይቅር</string>
+    <string name="action_delete">ሰርዝ</string>
+    <string name="action_import">ወደ ውስጥ አምጡ</string>
+
+    <!-- ሙሉመታ -->
+    <string name="channel_tracking">ዋቅ ምልከታ</string>
+    <string name="channel_tracking_description">ylih በሽመል ዋቅ እና ፍጻሜ ምልከታ ሳቢ ይታያል። android በውስጥ ያልጠነ ትግበራ በሽመል ተገናኝ ክንውኖች ሪፖርት ሪፖርት ማድረግ አይችልም።</string>
+    <string name="notification_title">ዋቅ ሰዓት ምልከታ</string>
+    <string name="notification_starting">ጀምር…</string>
+    <string name="notification_idle">ዋቅ ለ ጓ</string>
+    <plurals name="notification_active">
+        <item quantity="one">ተገናኝተዋል %1$d · %2$s</item>
+        <item quantity="other">ተገናኝተዋል %1$d · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">ተገናኝተዋል %1$d · %2$s · ፍጻሜ</item>
+        <item quantity="other">ተገናኝተዋል %1$d · %2$s · ፍጻሜ</item>
+    </plurals>
+
+    <!-- ስናክ ባር ታሪክ -->
+    <string name="detailed_needs_bluetooth">ይህ ሙያ በሽመል ዋቅ ምልከታ ይፈልግ bluetooth ግቤት</string>
+    <string name="export_done">መቀመጥ ወደ ውጪ ተላክ</string>
+    <string name="export_failed">ወደ ውጪ ላክ አልተሳካም</string>
+    <string name="import_failed">ወደ ውስጥ አምጦ አልተሳካም</string>
+    <string name="error_could_not_open">ሊክ አልተቻለም %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">ወደ ውስጥ አመጠ %d ስብሰባ</item>
+        <item quantity="other">ወደ ውስጥ አመጠ %d ስብሰባ</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d ስብሰባ</item>
+        <item quantity="other">%d ስብሰባ</item>
+    </plurals>
+</resources>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Italian. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - la tua vita in cuffia</string>
+
+    <!-- Navigazione -->
+    <string name="nav_headphones">cuffie</string>
+    <string name="nav_stats">statistiche</string>
+    <string name="nav_settings">impostazioni</string>
+
+    <!-- Tipi di dispositivo -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">via cavo</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">sconosciuto</string>
+
+    <!-- Primo avvio -->
+    <string name="welcome_title">benvenuto in ylih</string>
+    <string name="welcome_intro">ylih registra per quanto tempo ogni paio di cuffie resta connesso, così fra anni potrai ancora rispondere all\'unica domanda che conta su un paio di cuffie: quante ore sono durate?</string>
+    <string name="welcome_point_auto_title">collega e dimentica</string>
+    <string name="welcome_point_auto_body">le cuffie bluetooth vengono registrate da sole, dal momento in cui si connettono. non serve lasciare in esecuzione nulla.</string>
+    <string name="welcome_point_lifetime_title">un paio, una vita</string>
+    <string name="welcome_point_lifetime_body">quando un paio muore, ritiralo: il suo totale si ferma lì e il paio successivo delle stesse cuffie riparte da zero.</string>
+    <string name="welcome_point_detailed_title">cavo e riproduzione</string>
+    <string name="welcome_point_detailed_body">il tracciamento dettagliato, nelle impostazioni, aggiunge le cuffie via cavo e misura quanta parte del tempo stavi davvero ascoltando.</string>
+    <string name="welcome_privacy">tutto resta su questo telefono. non c\'è nessun account e l\'app non ha il permesso di accedere a internet.</string>
+    <string name="welcome_start">iniziamo</string>
+
+    <!-- Elenco cuffie -->
+    <string name="devices_in_use">in uso</string>
+    <string name="devices_retired">ritirate</string>
+    <string name="devices_empty_title">ancora nessuna cuffia</string>
+    <string name="devices_empty_body">collega un paio di cuffie bluetooth e compariranno qui. per le cuffie via cavo serve il tracciamento dettagliato, nelle impostazioni.</string>
+    <string name="devices_generation">paio n. %1$d</string>
+    <string name="devices_retired_on">ritirate il %1$s</string>
+    <string name="devices_connected_for">connesse da %1$s</string>
+    <string name="devices_recent">%1$s / 7g</string>
+
+    <!-- Statistiche -->
+    <string name="stats_title">tutte le cuffie</string>
+    <string name="stats_sessions_since">%1$s dal %2$s</string>
+    <string name="stats_last_7">ultimi 7 giorni</string>
+    <string name="stats_last_30">ultimi 30 giorni</string>
+    <string name="stats_average_session">sessione media</string>
+    <string name="stats_playing">in riproduzione</string>
+    <string name="stats_measured_span">periodo misurato</string>
+    <string name="stats_share">quota</string>
+    <string name="stats_daily_hours_30">ore al giorno (30 giorni)</string>
+    <string name="stats_by_pair">per paio</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · ritirate</string>
+    <string name="chart_max">max %1$s</string>
+
+    <!-- Dettaglio paio -->
+    <string name="pair_fallback_title">paio</string>
+    <string name="pair_back">indietro</string>
+    <string name="pair_more">altro</string>
+    <string name="pair_menu_rename">rinomina</string>
+    <string name="pair_menu_purchase">dati d\'acquisto</string>
+    <string name="pair_menu_retire">ritira / sostituite</string>
+    <string name="pair_menu_delete">elimina</string>
+    <string name="pair_lifetime">totale di questo paio</string>
+    <string name="pair_retired_on">ritirate il %1$s</string>
+    <string name="pair_retired_with_reason">ritirate il %1$s · %2$s</string>
+    <string name="pair_connected_now">connesse ora · %1$s</string>
+    <string name="pair_sessions">sessioni</string>
+    <string name="pair_average">media</string>
+    <string name="pair_longest">più lunga</string>
+    <string name="pair_first_seen">prima volta</string>
+    <string name="pair_of_measured">del misurato</string>
+    <string name="pair_measured">misurato</string>
+    <string name="pair_paid">pagate</string>
+    <string name="pair_per_hour">all\'ora</string>
+    <string name="pair_bought">acquistate</string>
+    <string name="pair_daily_hours_14">ore al giorno (14 giorni)</string>
+    <string name="pair_rename_title">rinomina paio</string>
+    <string name="pair_rename_label">nome</string>
+    <string name="pair_retire_title">ritira questo paio</string>
+    <string name="pair_retire_label">motivo (rotte, vendute, perse…)</string>
+    <string name="pair_retire_confirm">ritira</string>
+    <string name="pair_retire_supporting">i totali si fermano qui. ricollegando lo stesso dispositivo parte un paio nuovo da zero.</string>
+    <string name="pair_price_title">prezzo pagato</string>
+    <string name="pair_price_label">importo (unità intere)</string>
+    <string name="pair_price_supporting">serve per il costo orario.</string>
+    <string name="pair_delete_title">eliminare questo paio?</string>
+    <string name="pair_delete_body">verranno eliminate anche tutte le sessioni registrate. l\'operazione non è reversibile.</string>
+
+    <!-- Righe sessione -->
+    <string name="session_ongoing">in corso</string>
+    <string name="session_until">fino a %1$s</string>
+    <string name="session_playing">%1$s in riproduzione</string>
+    <string name="session_recovered">recuperata</string>
+
+    <!-- Impostazioni -->
+    <string name="settings_tracking">tracciamento</string>
+    <string name="settings_detailed_title">tracciamento dettagliato</string>
+    <string name="settings_detailed_body">aggiunge le cuffie via cavo e il tempo di riproduzione. android segnala gli eventi del jack solo a un\'app già in esecuzione, quindi resta una notifica silenziosa nel pannello. il bluetooth è tracciato in ogni caso.</string>
+    <string name="settings_detailed_unavailable">non disponibile finché non concedi l\'accesso al bluetooth: questa build dichiara solo il tipo di servizio connectedDevice, che android 14+ lega a un permesso bluetooth.</string>
+    <string name="settings_devices">dispositivi</string>
+    <string name="settings_devices_body">togli la spunta a ciò che non sono cuffie — l\'impianto dell\'auto, una cassa — per smettere di registrarlo.</string>
+    <string name="settings_device_subtitle">%1$s · prima volta %2$s</string>
+    <string name="settings_data">dati</string>
+    <string name="settings_export">esporta json</string>
+    <string name="settings_import">importa</string>
+    <string name="settings_import_warning">l\'importazione sostituisce tutto quello che c\'è ora.</string>
+    <string name="settings_troubleshooting">problemi</string>
+    <string name="settings_battery_body">se le sessioni smettono di essere registrate, controlla che ylih sia esente dall\'ottimizzazione della batteria — un\'app arrestata forzatamente non riceve più alcun evento di connessione finché non la riapri.</string>
+    <string name="settings_battery_button">impostazioni batteria</string>
+    <string name="settings_battery_path">impostazioni → app → ylih → batteria → senza restrizioni.</string>
+    <string name="settings_about">informazioni</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — le ore delle tue cuffie, in locale e per sempre.</string>
+    <string name="settings_import_confirm_title">sostituire tutti i dati?</string>
+    <string name="settings_import_confirm_body">importare questo backup elimina ogni dispositivo, paio e sessione registrati finora.</string>
+
+    <!-- Azioni comuni -->
+    <string name="action_save">salva</string>
+    <string name="action_cancel">annulla</string>
+    <string name="action_delete">elimina</string>
+    <string name="action_import">importa</string>
+
+    <!-- Notifica -->
+    <string name="channel_tracking">tracciamento cuffie</string>
+    <string name="channel_tracking_description">visibile mentre ylih sorveglia le cuffie via cavo e la riproduzione. android non segnala gli eventi del jack alle app che non sono in esecuzione.</string>
+    <string name="notification_title">registrazione ore in cuffia</string>
+    <string name="notification_starting">avvio…</string>
+    <string name="notification_idle">in attesa di cuffie</string>
+    <!-- Italian's CLDR set is one/many/other; "many" covers compound figures like "3 milioni". -->
+    <plurals name="notification_active">
+        <item quantity="one">%1$d connesso · %2$s</item>
+        <item quantity="many">%1$d connessi · %2$s</item>
+        <item quantity="other">%1$d connessi · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d connesso · %2$s · in riproduzione</item>
+        <item quantity="many">%1$d connessi · %2$s · in riproduzione</item>
+        <item quantity="other">%1$d connessi · %2$s · in riproduzione</item>
+    </plurals>
+
+    <!-- Messaggi -->
+    <string name="detailed_needs_bluetooth">questa build ha bisogno dell\'accesso al bluetooth per tracciare le cuffie via cavo</string>
+    <string name="export_done">backup esportato</string>
+    <string name="export_failed">esportazione non riuscita</string>
+    <string name="import_failed">importazione non riuscita</string>
+    <string name="error_could_not_open">impossibile aprire %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">importata %d sessione</item>
+        <item quantity="many">importate %d sessioni</item>
+        <item quantity="other">importate %d sessioni</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sessione</item>
+        <item quantity="many">%d sessioni</item>
+        <item quantity="other">%d sessioni</item>
+    </plurals>
+</resources>

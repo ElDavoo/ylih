@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Breton. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ho buhez en tonelloù</string>
+
+    <!-- Niañ-voned -->
+    <string name="nav_headphones">tonelloù</string>
+    <string name="nav_stats">stadegezh</string>
+    <string name="nav_settings">arventennoù</string>
+
+    <!-- Sortoù tachenn -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">gwiriek</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">dizanvet</string>
+
+    <!-- Kentañ ober -->
+    <string name="welcome_title">degemer mat e ylih</string>
+    <string name="welcome_intro">ylih a noa an hañsoñj a-se e-pad ma vo stag ur parol a doneloù, evit ma c\'halloc\'h digañ ar muiañ a vloazvezhioù a-raok da respont an hevelep er-maez a-zegouezh a zo gwir a-zivout ur parol: pegen a eurvezhioù hag a servijas anezhañ?</string>
+    <string name="welcome_point_auto_title">stagañ hag ankouañ</string>
+    <string name="welcome_point_auto_body">tonelloù bluetooth a vo enrollet e-unan, adalek an amzer ma int staget. nemet tra ebet hag a c\'helle chom lanv.</string>
+    <string name="welcome_point_lifetime_title">ur parol, unn buhez</string>
+    <string name="welcome_point_lifetime_body">pa c\'h ez ur parol da ziorzh, digemer a c\'helloc\'h anezhi: he zivout a stoñk da-heul hag ur parol nevez eus an hevelep tonelloù a ya adalek zero.</string>
+    <string name="welcome_point_detailed_title">gwiriek hag kanañ</string>
+    <string name="welcome_point_detailed_body">heuliadur kuzh, en arventennoù, a ouzhpennañ tonelloù gwiriek hag a mejur pezh eus an amzer a oa war-lerc\'h.</string>
+    <string name="welcome_privacy">a-bezh a chom war ar bellgomz-mañ. nemet kont ebet, hag an arload neus nemet gwele-kennaskañ.</string>
+    <string name="welcome_start">da-geñver</string>
+
+    <!-- Rolloù tonelloù -->
+    <string name="devices_in_use">en ober</string>
+    <string name="devices_retired">digemerz</string>
+    <string name="devices_empty_title">tonelloù ebet c\'hoazh</string>
+    <string name="devices_empty_body">stagañ ur parol a doneloù bluetooth hag e tigont e-ba-ma. tonelloù gwiriek a c\'hellac\'h heuliadur kuzh, en arventennoù.</string>
+    <string name="devices_generation">parol #%1$d</string>
+    <string name="devices_retired_on">digemerz %1$s</string>
+    <string name="devices_connected_for">staget %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Stadegezh -->
+    <string name="stats_title">tonelloù a-bezh</string>
+    <string name="stats_sessions_since">%1$s abaoe %2$s</string>
+    <string name="stats_last_7">ar 7 devezhioù diwezhañ</string>
+    <string name="stats_last_30">ar 30 devezhioù diwezhañ</string>
+    <string name="stats_average_session">kurmediañ an daolenn</string>
+    <string name="stats_playing">kanañ</string>
+    <string name="stats_measured_span">span mesurvet</string>
+    <string name="stats_share">rannañ</string>
+    <string name="stats_daily_hours_30">eurvezhioù dre deiz (30 devezhioù)</string>
+    <string name="stats_by_pair">dre barol</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · digemerz</string>
+    <string name="chart_max">%1$s uhelañ</string>
+
+    <!-- Muntr parol -->
+    <string name="pair_fallback_title">parol</string>
+    <string name="pair_back">distreiñ</string>
+    <string name="pair_more">muioc\'h</string>
+    <string name="pair_menu_rename">adenvel</string>
+    <string name="pair_menu_purchase">stlennoù prenañ</string>
+    <string name="pair_menu_retire">digemer / cheñchet</string>
+    <string name="pair_menu_delete">diverkañ</string>
+    <string name="pair_lifetime">buhez ar parol-mañ</string>
+    <string name="pair_retired_on">digemerz %1$s</string>
+    <string name="pair_retired_with_reason">digemerz %1$s · %2$s</string>
+    <string name="pair_connected_now">staget bremañ · %1$s</string>
+    <string name="pair_sessions">taolennoù</string>
+    <string name="pair_average">kurmediañ</string>
+    <string name="pair_longest">ar re hirañ</string>
+    <string name="pair_first_seen">gwelet evit ar wechañ</string>
+    <string name="pair_of_measured">eus mesurvet</string>
+    <string name="pair_measured">mesurvet</string>
+    <string name="pair_paid">prantañ</string>
+    <string name="pair_per_hour">dre eurvezh</string>
+    <string name="pair_bought">prenet</string>
+    <string name="pair_daily_hours_14">eurvezhioù dre deiz (14 devezhioù)</string>
+    <string name="pair_rename_title">adenvel ur parol</string>
+    <string name="pair_rename_label">anv</string>
+    <string name="pair_retire_title">digemer ar parol-mañ</string>
+    <string name="pair_retire_label">abeg (maro, gwerzhet, kollet…)</string>
+    <string name="pair_retire_confirm">digemer</string>
+    <string name="pair_retire_supporting">en amzer a-heul e stoñk an dotal. stagañ an hevelep tachenn a-nevez a zro ur parol nevez adalek zero.</string>
+    <string name="pair_price_title">prizhañ graet</string>
+    <string name="pair_price_label">sammad (unizoù a-zeskar)</string>
+    <string name="pair_price_supporting">ober gant ar mesur prizhañ dre eurvezh.</string>
+    <string name="pair_delete_title">diverkañ ar parol-mañ?</string>
+    <string name="pair_delete_body">e sesiun a zo enrollet eus anezhi a vo diverket ivez. ne c\'heller ket disteurel ar brezel-se.</string>
+
+    <!-- Rannoù daolenn -->
+    <string name="session_ongoing">en ur deus</string>
+    <string name="session_until">betek %1$s</string>
+    <string name="session_playing">%1$s a ganañ</string>
+    <string name="session_recovered">adkavet</string>
+
+    <!-- Arventennoù -->
+    <string name="settings_tracking">heuliadur</string>
+    <string name="settings_detailed_title">heuliadur en diwantet</string>
+    <string name="settings_detailed_body">ouzhpennañ tonelloù gwiriek hag amzer kanañ. android ne roue kendaol gwele-kennaskañ nemet d\'ur prog a zo lanv, evit-se e tistro kuñviñ amañ en droed. bluetooth a heulier a-boa ur c\'hentañ.</string>
+    <string name="settings_detailed_unavailable">c\'hortoz bi-se bluetooth da vezout graet kuzh: ar stajenn-mañ neus nemet sorzhioù connectedDevice, ar pezh a zo stag android 14+ d\'ur retlaij bluetooth.</string>
+    <string name="settings_devices">tachenn</string>
+    <string name="settings_devices_body">nullañ nemet tra n\'eo ket tonelloù — ur garantell pe ur ganer — da staoañ e enrollañ.</string>
+    <string name="settings_device_subtitle">%1$s · gwelet evit ar wechañ %2$s</string>
+    <string name="settings_data">roadennoù</string>
+    <string name="settings_export">ezporzhañ json</string>
+    <string name="settings_import">enderzhañ</string>
+    <string name="settings_import_warning">enderzhañ a c\'hellac\'h holl tra zo bet gwarchañ bremañ.</string>
+    <string name="settings_troubleshooting">diskar a valoù</string>
+    <string name="settings_battery_body">ma ne vo ket enrollet daolenn, gwiriañ ylih n\'eo ket digarget eus sturmañ baterienn — ur prog harzet n\'hall ket kaout kemennadenn kennaskañ, betek ma vez digeriñ anezhi c\'hoazh.</string>
+    <string name="settings_battery_button">arventennoù baterienn</string>
+    <string name="settings_battery_path">arventennoù → progidi → ylih → baterienn → distelleget.</string>
+    <string name="settings_about">diwar-benn</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — eurvezhioù en tonelloù, gwarchañ e-lec\'h hag bepred.</string>
+    <string name="settings_import_confirm_title">c\'hellac\'h holl roadennoù?</string>
+    <string name="settings_import_confirm_body">enderzhañ ar savegezh-mañ a c\'hellac\'h bep tachenn, parol hag daolenn gwarchañ bremañ.</string>
+
+    <!-- Oberoù a-zivout -->
+    <string name="action_save">gwarzhiañ</string>
+    <string name="action_cancel">nullañ</string>
+    <string name="action_delete">diverkañ</string>
+    <string name="action_import">enderzhañ</string>
+
+    <!-- Kemennadenn -->
+    <string name="channel_tracking">heuliadur tonelloù</string>
+    <string name="channel_tracking_description">diskouezet e-pad ylih a seul tonelloù gwiriek hag kanañ. android ne skignañ kemennadenn gwiñzoñ d\'ur prog n\'eo ket lanv.</string>
+    <string name="notification_title">heuliadur amzer tonelloù</string>
+    <string name="notification_starting">startañ…</string>
+    <string name="notification_idle">gortozañ tonelloù</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d staget · %2$s</item>
+        <item quantity="two">%1$d staget · %2$s</item>
+        <item quantity="few">%1$d staget · %2$s</item>
+        <item quantity="many">%1$d staget · %2$s</item>
+        <item quantity="other">%1$d staget · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d staget · %2$s · kanañ</item>
+        <item quantity="two">%1$d staget · %2$s · kanañ</item>
+        <item quantity="few">%1$d staget · %2$s · kanañ</item>
+        <item quantity="many">%1$d staget · %2$s · kanañ</item>
+        <item quantity="other">%1$d staget · %2$s · kanañ</item>
+    </plurals>
+
+    <!-- Kemennadoù -->
+    <string name="detailed_needs_bluetooth">ar stajenn-mañ a c\'hallac\'h bluetooth da heuliadur tonelloù gwiriek</string>
+    <string name="export_done">ezporzhañ graet</string>
+    <string name="export_failed">ezporzhañ c\'hwall</string>
+    <string name="import_failed">enderzhañ c\'hwall</string>
+    <string name="error_could_not_open">ne c\'hallan ket digeriñ %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">enderzhañ %d daolenn</item>
+        <item quantity="two">enderzhañ %d daolenn</item>
+        <item quantity="few">enderzhañ %d daolenn</item>
+        <item quantity="many">enderzhañ %d daolenn</item>
+        <item quantity="other">enderzhañ %d daolenn</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d daolenn</item>
+        <item quantity="two">%d daolenn</item>
+        <item quantity="few">%d daolenn</item>
+        <item quantity="many">%d daolenn</item>
+        <item quantity="other">%d daolenn</item>
+    </plurals>
+</resources>

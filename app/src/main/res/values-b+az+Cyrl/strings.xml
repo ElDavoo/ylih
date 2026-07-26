@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Azərbaycanca (Cyrl). House style is lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — сизин һәм дәстә куллану өмірі</string>
+
+    <!-- Навигация -->
+    <string name="nav_headphones">наўсыбырлыршы</string>
+    <string name="nav_stats">статистика</string>
+    <string name="nav_settings">әйланмәләр</string>
+
+    <!-- Қосылыш түрләрі -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">сызыңлы</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">белгісіз</string>
+
+    <!-- Бастапқы іс-әрекет -->
+    <string name="welcome_title">ylih-ә хош келдіңіз</string>
+    <string name="welcome_intro">ylih әр дәстә наўсыбырлыныњ қанше уақыт қосылғалы тұрғанын есептейді, сондықтан келесі жылдардан сіз бір дәстә тура осындай ғана маңызды сұраққа жауап бере аласыз: олар қанше сағат іскерлік істеген?</string>
+    <string name="welcome_point_auto_title">қосы қойға мен ұмыт</string>
+    <string name="welcome_point_auto_body">bluetooth наўсыбырлысы өз-өзінен есептеледі, қосылыс сәттінің өзінен. ешнәрсе жүргіксіз істеу қажет емес.</string>
+    <string name="welcome_point_lifetime_title">бір дәстә, бір өмір</string>
+    <string name="welcome_point_lifetime_body">дәстә ісслі болса, оны зақрытия: оның жиынты бұл жерде тоқталады және сол наўсыбырлыныњ келесі дәстәсі нөлден сәтіліке барлай бастайды.</string>
+    <string name="welcome_point_detailed_title">сызыңлы және ойнау</string>
+    <string name="welcome_point_detailed_body">толық іс-әрекет, әйланмәләрде, сызыңлы наўсыбырлысын қосады және оның қанше уақыты хақылап ойналғанын өлшейді.</string>
+    <string name="welcome_privacy">барлығы осы телефонда қалды. ешқандай есептік емес, және қосынша интернет рұқсаты жоқ.</string>
+    <string name="welcome_start">бастау</string>
+
+    <!-- Наўсыбырлыс тізімі -->
+    <string name="devices_in_use">пайдаланыста</string>
+    <string name="devices_retired">зақрытия</string>
+    <string name="devices_empty_title">әлі наўсыбырлыс жоқ</string>
+    <string name="devices_empty_body">bluetooth наўсыбырлысын қосыңыз және олар мұнда көрінеді. сызыңлы наўсыбырлысы әйланмәләрде толық іс-әрекет қажет.</string>
+    <string name="devices_generation">дәстә №%1$d</string>
+    <string name="devices_retired_on">зақрытия %1$s</string>
+    <string name="devices_connected_for">қосылыс %1$s</string>
+    <string name="devices_recent">%1$s / 7к</string>
+
+    <!-- Статистика -->
+    <string name="stats_title">барлық наўсыбырлыс</string>
+    <string name="stats_sessions_since">%1$s %2$s-тан</string>
+    <string name="stats_last_7">соңғы 7 күн</string>
+    <string name="stats_last_30">соңғы 30 күн</string>
+    <string name="stats_average_session">орташа сеанс</string>
+    <string name="stats_playing">ойнау</string>
+    <string name="stats_measured_span">өлшенген кешені</string>
+    <string name="stats_share">пайлау</string>
+    <string name="stats_daily_hours_30">күндік сағат (30 күн)</string>
+    <string name="stats_by_pair">дәстә бойынша</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · зақрытия</string>
+    <string name="chart_max">макс %1$s</string>
+
+    <!-- Дәстә ішінді -->
+    <string name="pair_fallback_title">дәстә</string>
+    <string name="pair_back">артқа</string>
+    <string name="pair_more">тағы</string>
+    <string name="pair_menu_rename">қайта аталау</string>
+    <string name="pair_menu_purchase">сатып алу ақпараты</string>
+    <string name="pair_menu_retire">зақрытия / ауыстырты</string>
+    <string name="pair_menu_delete">өшіру</string>
+    <string name="pair_lifetime">бұл дәстәнің өмірі</string>
+    <string name="pair_retired_on">зақрытия %1$s</string>
+    <string name="pair_retired_with_reason">зақрытия %1$s · %2$s</string>
+    <string name="pair_connected_now">қазі қосылған · %1$s</string>
+    <string name="pair_sessions">сеанстар</string>
+    <string name="pair_average">орташа</string>
+    <string name="pair_longest">ең ұзақ</string>
+    <string name="pair_first_seen">бірінші рет көрінді</string>
+    <string name="pair_of_measured">өлшенінен</string>
+    <string name="pair_measured">өлшенді</string>
+    <string name="pair_paid">төленді</string>
+    <string name="pair_per_hour">сағатына</string>
+    <string name="pair_bought">сатып алынды</string>
+    <string name="pair_daily_hours_14">күндік сағат (14 күн)</string>
+    <string name="pair_rename_title">дәстәнің атын қайта аталау</string>
+    <string name="pair_rename_label">ата</string>
+    <string name="pair_retire_title">бұл дәстәнің зақрытия</string>
+    <string name="pair_retire_label">себебі (сынды, сатты, жоғалтты…)</string>
+    <string name="pair_retire_confirm">зақрытия</string>
+    <string name="pair_retire_supporting">жиынты мұнда тоқталады. сол құрылғыны қайта қосу нөлінен жаңа дәстә бастайды.</string>
+    <string name="pair_price_title">төленген баға</string>
+    <string name="pair_price_label">сома (бүтін бірліктер)</string>
+    <string name="pair_price_supporting">сағатына құны есептеу үшін пайдаланылады.</string>
+    <string name="pair_delete_title">бұл дәстәнің өшіру?</string>
+    <string name="pair_delete_body">оның барлық есептелген сеанстары да өшіріледі. бұнь қайтарылмайтын.</string>
+
+    <!-- Сеанс қатарлары -->
+    <string name="session_ongoing">ағымды</string>
+    <string name="session_until">%1$s-ге дейін</string>
+    <string name="session_playing">%1$s ойнау</string>
+    <string name="session_recovered">қалпына келтірілді</string>
+
+    <!-- Әйланмәләр -->
+    <string name="settings_tracking">іс-әрекет</string>
+    <string name="settings_detailed_title">толық іс-әрекет</string>
+    <string name="settings_detailed_body">сызыңлы наўсыбырлысын және ойнау уақытын қосады. android сызыңлы қосылу оқиғаларын тек ұстағы қосынша құлға хабарлайды, сондықтан қіл сілтеме құсында құлайды. bluetooth кез келген жағдайда іс-әрекет.</string>
+    <string name="settings_detailed_unavailable">bluetooth қосынша берілгенге дейін қолжетімсіз: бұл құрылым connectedDevice қызмет түрін ғана жариялайды, android 14+ оны bluetooth рұқсатына байланыстырады.</string>
+    <string name="settings_devices">құрылғылар</string>
+    <string name="settings_devices_body">наўсыбырлыс емес нәрселерді - автомобиль немесе динамик - құсылып есептеуін тоқтату үшін табында орнатпау.</string>
+    <string name="settings_device_subtitle">%1$s · бірінші рет көрінді %2$s</string>
+    <string name="settings_data">деректер</string>
+    <string name="settings_export">экспорт json</string>
+    <string name="settings_import">импорт</string>
+    <string name="settings_import_warning">импорт қазі сақталғанның барлығын ауысырады.</string>
+    <string name="settings_troubleshooting">жараққа шешу</string>
+    <string name="settings_battery_body">сеанстар есептелінуді тоқтатса, ylih батарея оңайтығынан босатылғанын қараңыз — әлеуметті тоқтатылған құсынша оны ашқанша қосылу оқиғаларын ала алмайды.</string>
+    <string name="settings_battery_button">батарея әйланмәләрі</string>
+    <string name="settings_battery_path">әйланмәләр → құсыншалар → ylih → батарея → шектеулегі емес.</string>
+    <string name="settings_about">туралы</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — наўсыбырлыс сағаттары, ішінде сақталды және әрқашан.</string>
+    <string name="settings_import_confirm_title">барлық деректерді ауысыру?</string>
+    <string name="settings_import_confirm_body">бұл дайындыктың импорты қазі сақталған әрбір құрылғыны, дәстәнің және сеансты өшіреді.</string>
+
+    <!-- Ортақ әрекеттер -->
+    <string name="action_save">сақтау</string>
+    <string name="action_cancel">болдыру</string>
+    <string name="action_delete">өшіру</string>
+    <string name="action_import">импорт</string>
+
+    <!-- Сілтеме -->
+    <string name="channel_tracking">наўсыбырлыс іс-әрекеті</string>
+    <string name="channel_tracking_description">ylih сызыңлы наўсыбырлысы және ойнауды бақылағанда көрсетіледі. android сызыңлы қосылу оқиғаларын іскеленбеген құсыншалыға хабарламайды.</string>
+    <string name="notification_title">наўсыбырлыс уақытын іс-әрекет</string>
+    <string name="notification_starting">бастау…</string>
+    <string name="notification_idle">наўсыбырлысты күте</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d қосылды · %2$s</item>
+        <item quantity="other">%1$d қосылды · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d қосылды · %2$s · ойнау</item>
+        <item quantity="other">%1$d қосылды · %2$s · ойнау</item>
+    </plurals>
+
+    <!-- Сообщәстер -->
+    <string name="detailed_needs_bluetooth">бұл құрылым сызыңлы наўсыбырлысын іс-әрекет істету үшін bluetooth қосынша қажет</string>
+    <string name="export_done">дайындық экспорттала</string>
+    <string name="export_failed">экспорт сәтсіз болды</string>
+    <string name="import_failed">импорт сәтсіз болды</string>
+    <string name="error_could_not_open">ашу мүмкін емес %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">импорттала %d сеанс</item>
+        <item quantity="other">импорттала %d сеанс</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d сеанс</item>
+        <item quantity="other">%d сеанс</item>
+    </plurals>
+</resources>

@@ -1,0 +1,8 @@
+Prima versione.
+
+• Ore totali per ogni paio fisico di cuffie, con le generazioni: un paio sostitutivo riparte da zero invece di ereditare il totale del precedente.
+• Ogni connessione conservata per sempre, con statistiche per giorno e per paio.
+• Tracciamento dettagliato opzionale per cuffie via cavo e USB e per il tempo di riproduzione.
+• Costo per ora di ascolto.
+• Esportazione e importazione in JSON.
+• Nessun permesso internet: niente lascia mai il telefono.

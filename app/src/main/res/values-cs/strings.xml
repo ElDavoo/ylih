@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Czech. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - tvůj život ve sluchátkách</string>
+
+    <!-- Navigace -->
+    <string name="nav_headphones">sluchátka</string>
+    <string name="nav_stats">statistiky</string>
+    <string name="nav_settings">nastavení</string>
+
+    <!-- Typy zařízení -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">kabelová</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">neznámá</string>
+
+    <!-- První spuštění -->
+    <string name="welcome_title">vítej v ylih</string>
+    <string name="welcome_intro">ylih zaznamenává, jak dlouho zůstává každý pár sluchátek připojený, abys i za pár let dokázal zodpovědět jedinou otázku, na které u páru sluchátek záleží: kolik hodin vydržel?</string>
+    <string name="welcome_point_auto_title">připoj a zapomeň</string>
+    <string name="welcome_point_auto_body">bluetooth sluchátka se zaznamenávají sama, od chvíle, kdy se připojí. nic nemusí zůstat spuštěné.</string>
+    <string name="welcome_point_lifetime_title">jeden pár, jedna životnost</string>
+    <string name="welcome_point_lifetime_body">když pár dosluhuje, vyřaď ho: jeho součet se tam zastaví a další pár stejných sluchátek začíná znovu od nuly.</string>
+    <string name="welcome_point_detailed_title">kabel a přehrávání</string>
+    <string name="welcome_point_detailed_body">podrobné sledování, v nastavení, přidává kabelová sluchátka a měří, kolik z toho času se opravdu přehrávalo.</string>
+    <string name="welcome_privacy">všechno zůstává v tomto telefonu. neexistuje žádný účet a aplikace nemá oprávnění k internetu.</string>
+    <string name="welcome_start">začít</string>
+
+    <!-- Seznam sluchátek -->
+    <string name="devices_in_use">používaná</string>
+    <string name="devices_retired">vyřazená</string>
+    <string name="devices_empty_title">zatím žádná sluchátka</string>
+    <string name="devices_empty_body">připoj pár bluetooth sluchátek a objeví se tady. kabelová sluchátka potřebují podrobné sledování, v nastavení.</string>
+    <string name="devices_generation">pár č. %1$d</string>
+    <string name="devices_retired_on">vyřazeno %1$s</string>
+    <string name="devices_connected_for">připojeno %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Statistiky -->
+    <string name="stats_title">všechna sluchátka</string>
+    <string name="stats_sessions_since">%1$s od %2$s</string>
+    <string name="stats_last_7">posledních 7 dní</string>
+    <string name="stats_last_30">posledních 30 dní</string>
+    <string name="stats_average_session">průměrná relace</string>
+    <string name="stats_playing">přehrávání</string>
+    <string name="stats_measured_span">měřené období</string>
+    <string name="stats_share">sdílet</string>
+    <string name="stats_daily_hours_30">hodiny denně (30 dní)</string>
+    <string name="stats_by_pair">podle páru</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · vyřazeno</string>
+    <string name="chart_max">max %1$s</string>
+
+    <!-- Detail páru -->
+    <string name="pair_fallback_title">pár</string>
+    <string name="pair_back">zpět</string>
+    <string name="pair_more">více</string>
+    <string name="pair_menu_rename">přejmenovat</string>
+    <string name="pair_menu_purchase">údaje o koupi</string>
+    <string name="pair_menu_retire">vyřadit / nahrazeno</string>
+    <string name="pair_menu_delete">smazat</string>
+    <string name="pair_lifetime">životnost tohoto páru</string>
+    <string name="pair_retired_on">vyřazeno %1$s</string>
+    <string name="pair_retired_with_reason">vyřazeno %1$s · %2$s</string>
+    <string name="pair_connected_now">právě připojeno · %1$s</string>
+    <string name="pair_sessions">relace</string>
+    <string name="pair_average">průměr</string>
+    <string name="pair_longest">nejdelší</string>
+    <string name="pair_first_seen">poprvé viděno</string>
+    <string name="pair_of_measured">z měřeného</string>
+    <string name="pair_measured">měřeno</string>
+    <string name="pair_paid">zaplaceno</string>
+    <string name="pair_per_hour">za hodinu</string>
+    <string name="pair_bought">koupeno</string>
+    <string name="pair_daily_hours_14">hodiny denně (14 dní)</string>
+    <string name="pair_rename_title">přejmenovat pár</string>
+    <string name="pair_rename_label">název</string>
+    <string name="pair_retire_title">vyřadit tento pár</string>
+    <string name="pair_retire_label">důvod (rozbitá, prodaná, ztracená…)</string>
+    <string name="pair_retire_confirm">vyřadit</string>
+    <string name="pair_retire_supporting">součty se tady zastaví. opětovné připojení stejného zařízení začne nový pár od nuly.</string>
+    <string name="pair_price_title">zaplacená cena</string>
+    <string name="pair_price_label">částka (celé jednotky)</string>
+    <string name="pair_price_supporting">použije se pro výpočet ceny za hodinu.</string>
+    <string name="pair_delete_title">smazat tento pár?</string>
+    <string name="pair_delete_body">smažou se i všechny relace, které pro něj byly zaznamenány. tuto akci nelze vrátit zpět.</string>
+
+    <!-- Řádky relací -->
+    <string name="session_ongoing">probíhá</string>
+    <string name="session_until">do %1$s</string>
+    <string name="session_playing">%1$s přehrávání</string>
+    <string name="session_recovered">obnoveno</string>
+
+    <!-- Nastavení -->
+    <string name="settings_tracking">sledování</string>
+    <string name="settings_detailed_title">podrobné sledování</string>
+    <string name="settings_detailed_body">přidává kabelová sluchátka a čas přehrávání. android hlásí připojení kabelu jen běžící aplikaci, proto tohle udržuje tichou notifikaci v liště. bluetooth se sleduje v obou případech.</string>
+    <string name="settings_detailed_unavailable">nedostupné, dokud nepovolíš přístup k bluetooth: tato verze deklaruje jen typ služby connectedDevice, který android 14+ váže na oprávnění bluetooth.</string>
+    <string name="settings_devices">zařízení</string>
+    <string name="settings_devices_body">odškrtni cokoli, co nejsou sluchátka — autorádio nebo reproduktor — aby se to přestalo zaznamenávat.</string>
+    <string name="settings_device_subtitle">%1$s · poprvé viděno %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">exportovat json</string>
+    <string name="settings_import">import</string>
+    <string name="settings_import_warning">import nahradí vše, co je teď uložené.</string>
+    <string name="settings_troubleshooting">řešení potíží</string>
+    <string name="settings_battery_body">pokud se relace přestanou zaznamenávat, zkontroluj, že je ylih vyňat z optimalizace baterie — aplikace, která byla vynuceně zastavena, už nedostává žádná oznámení o připojení, dokud se znovu neotevře.</string>
+    <string name="settings_battery_button">nastavení baterie</string>
+    <string name="settings_battery_path">nastavení → aplikace → ylih → baterie → bez omezení.</string>
+    <string name="settings_about">o aplikaci</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — hodiny ve sluchátkách, uložené lokálně a navždy.</string>
+    <string name="settings_import_confirm_title">nahradit všechna data?</string>
+    <string name="settings_import_confirm_body">import této zálohy smaže každé zařízení, pár a relaci, které jsou teď uložené.</string>
+
+    <!-- Společné akce -->
+    <string name="action_save">uložit</string>
+    <string name="action_cancel">zrušit</string>
+    <string name="action_delete">smazat</string>
+    <string name="action_import">importovat</string>
+
+    <!-- Notifikace -->
+    <string name="channel_tracking">sledování sluchátek</string>
+    <string name="channel_tracking_description">zobrazuje se, dokud ylih sleduje kabelová sluchátka a přehrávání. android nedoručuje události kabelu aplikacím, které neběží.</string>
+    <string name="notification_title">sledování času ve sluchátkách</string>
+    <string name="notification_starting">spouští se…</string>
+    <string name="notification_idle">čeká na sluchátka</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d připojeno · %2$s</item>
+        <item quantity="few">%1$d připojeno · %2$s</item>
+        <item quantity="many">%1$d připojeno · %2$s</item>
+        <item quantity="other">%1$d připojeno · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d připojeno · %2$s · přehrává se</item>
+        <item quantity="few">%1$d připojeno · %2$s · přehrává se</item>
+        <item quantity="many">%1$d připojeno · %2$s · přehrává se</item>
+        <item quantity="other">%1$d připojeno · %2$s · přehrává se</item>
+    </plurals>
+
+    <!-- Zprávy -->
+    <string name="detailed_needs_bluetooth">tato verze potřebuje přístup k bluetooth, aby mohla sledovat kabelová sluchátka</string>
+    <string name="export_done">záloha exportována</string>
+    <string name="export_failed">export se nezdařil</string>
+    <string name="import_failed">import se nezdařil</string>
+    <string name="error_could_not_open">nepodařilo se otevřít %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">importována %d relace</item>
+        <item quantity="few">importovány %d relace</item>
+        <item quantity="many">importováno %d relace</item>
+        <item quantity="other">importováno %d relací</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d relace</item>
+        <item quantity="few">%d relace</item>
+        <item quantity="many">%d relace</item>
+        <item quantity="other">%d relací</item>
+    </plurals>
+</resources>

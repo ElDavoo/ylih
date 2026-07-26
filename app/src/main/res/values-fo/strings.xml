@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Faroese. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — tín lív í heyrnirtólum</string>
+
+    <!-- Botnnavigatiónur -->
+    <string name="nav_headphones">heyrnirtól</string>
+    <string name="nav_stats">talva</string>
+    <string name="nav_settings">stillingar</string>
+
+    <!-- Tækjasløg -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">táðað</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ókennt</string>
+
+    <!-- Fyrsti køyri -->
+    <string name="welcome_title">valkemna til ylih</string>
+    <string name="welcome_intro">ylih skrásetur, hvor longu hvørj pair av heyrnirtólum helst tengt, so tú mange ár framá kunt svar spurninginum um ein pair: hvor mong tímar deildu tey?</string>
+    <string name="welcome_point_auto_title">tengi og gleymdu</string>
+    <string name="welcome_point_auto_body">bluetooth heyrnirtól verða skrásett sær, frá teimum stundi, tey verða tengt. einki umboð at halda keyrt.</string>
+    <string name="welcome_point_lifetime_title">ein pair, ein lív</string>
+    <string name="welcome_point_lifetime_body">tá ein pair fer til enda, lattu hana fara: heildartølini frystast þar, og næsta pair av somu heyrnirtólum byrjar aftur frá null.</string>
+    <string name="welcome_point_detailed_title">táðað og spælun</string>
+    <string name="welcome_point_detailed_body">útbroytað fylgja, í stillingum, leggur til táðað heyrnirtól og mætir, hvor nógvur av tídini var spield.</string>
+    <string name="welcome_privacy">alt helst á hesum símlanum. tað er eingin reikningur, og appin hevur ongan internetarlov.</string>
+    <string name="welcome_start">byrja nú</string>
+
+    <!-- Heyrnirtóla listi -->
+    <string name="devices_in_use">í brúki</string>
+    <string name="devices_retired">útfasað</string>
+    <string name="devices_empty_title">ongin heyrnirtól enn</string>
+    <string name="devices_empty_body">tengi ein pair av bluetooth heyrnirtólum, og tey framboða hær. táðað heyrnirtól tørva útbroytað fylgja, í stillingum.</string>
+    <string name="devices_generation">pair #%1$d</string>
+    <string name="devices_retired_on">útfasað %1$s</string>
+    <string name="devices_connected_for">tengt %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Talva -->
+    <string name="stats_title">öll heyrnirtól</string>
+    <string name="stats_sessions_since">%1$s síðan %2$s</string>
+    <string name="stats_last_7">síðstu 7 dagar</string>
+    <string name="stats_last_30">síðstu 30 dagar</string>
+    <string name="stats_average_session">miðalstuðul seta</string>
+    <string name="stats_playing">spælun</string>
+    <string name="stats_measured_span">mætingartíðarjöld</string>
+    <string name="stats_share">deili</string>
+    <string name="stats_daily_hours_30">daglig tímar (30 dagar)</string>
+    <string name="stats_by_pair">við pörum</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · útfasað</string>
+    <string name="chart_max">%1$s max</string>
+
+    <!-- Pair nágreining -->
+    <string name="pair_fallback_title">pair</string>
+    <string name="pair_back">aftur</string>
+    <string name="pair_more">fleira</string>
+    <string name="pair_menu_rename">endurnefna</string>
+    <string name="pair_menu_purchase">kaupupplýsingar</string>
+    <string name="pair_menu_retire">útfasa / bytt út</string>
+    <string name="pair_menu_delete">strika</string>
+    <string name="pair_lifetime">lívskaar á hesi pairi</string>
+    <string name="pair_retired_on">útfasað %1$s</string>
+    <string name="pair_retired_with_reason">útfasað %1$s · %2$s</string>
+    <string name="pair_connected_now">tengt nú · %1$s</string>
+    <string name="pair_sessions">setir</string>
+    <string name="pair_average">miðal</string>
+    <string name="pair_longest">lengsta</string>
+    <string name="pair_first_seen">fyrst sæt</string>
+    <string name="pair_of_measured">av mættu</string>
+    <string name="pair_measured">mætt</string>
+    <string name="pair_paid">borgað</string>
+    <string name="pair_per_hour">um tíman</string>
+    <string name="pair_bought">keypt</string>
+    <string name="pair_daily_hours_14">daglig tímar (14 dagar)</string>
+    <string name="pair_rename_title">endurnefna pair</string>
+    <string name="pair_rename_label">navn</string>
+    <string name="pair_retire_title">útfasa hesa pair</string>
+    <string name="pair_retire_label">orsøk (bliðu, seld, týnd…)</string>
+    <string name="pair_retire_confirm">útfasa</string>
+    <string name="pair_retire_supporting">heildartølini frystast her. endurtenging av somu tækjum byrjar ferska pair frá null.</string>
+    <string name="pair_price_title">gjöld galdið</string>
+    <string name="pair_price_label">størð (heilir einir)</string>
+    <string name="pair_price_supporting">brúkt til kostnaðinum um tíman.</string>
+    <string name="pair_delete_title">strika hesa pair?</string>
+    <string name="pair_delete_body">allar setir skrásaðar henni eru eisini strikaðar. hetta kann ikki ógjøras.</string>
+
+    <!-- Seta røðir -->
+    <string name="session_ongoing">um gongd</string>
+    <string name="session_until">til %1$s</string>
+    <string name="session_playing">%1$s spælun</string>
+    <string name="session_recovered">endurkoma</string>
+
+    <!-- Stillingar -->
+    <string name="settings_tracking">fylgja</string>
+    <string name="settings_detailed_title">útbroytað fylgja</string>
+    <string name="settings_detailed_body">leggur til táðað heyrnirtól og spælutíð. android fræðir um táðað tengibreytingar bara til app, sum er keypandi, so hetta helst þógil skyggja. bluetooth er fylgt í øllum høpum.</string>
+    <string name="settings_detailed_unavailable">ótiliglig til bluetooth lov er givið: henda bygning segir bara connectedDevice tænastunáð, sum android 14+ bundnast til bluetooth lov.</string>
+    <string name="settings_devices">tækjir</string>
+    <string name="settings_devices_body">avhaka hvat, ið ikki er heyrnirtól — bilvágd ella talari — til at standa av at skráseta hani.</string>
+    <string name="settings_device_subtitle">%1$s · fyrst sæt %2$s</string>
+    <string name="settings_data">dátir</string>
+    <string name="settings_export">útflyt json</string>
+    <string name="settings_import">innflyt</string>
+    <string name="settings_import_warning">innflyt ynskar alt, sum nú er goymt.</string>
+    <string name="settings_troubleshooting">útrøðing vandamála</string>
+    <string name="settings_battery_body">um setir standa av at verða skrásattar, kanna, at ylih er útilokin frá batteríbótandi — ein app, sum er tvang-stopp, fær aldri tengibreytingar aftur, til hani er opnað.</string>
+    <string name="settings_battery_button">batterísillingar</string>
+    <string name="settings_battery_path">stillingar → apps → ylih → batteri → óbundið.</string>
+    <string name="settings_about">um</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — heyrnirtóla tímar, haldir lokal og til eilivíl.</string>
+    <string name="settings_import_confirm_title">ynskra allar dátir?</string>
+    <string name="settings_import_confirm_body">innflyt av hesi búðarskrá strikar hvørt tækji, pair og setu, sum nú er goymt.</string>
+
+    <!-- Sameiginlig virki -->
+    <string name="action_save">goyma</string>
+    <string name="action_cancel">avlýsa</string>
+    <string name="action_delete">strika</string>
+    <string name="action_import">innflyt</string>
+
+    <!-- Varandi -->
+    <string name="channel_tracking">heyrnirtóla fylgja</string>
+    <string name="channel_tracking_description">sýnt, meðan ylih fylgir táðuðum heyrnirtólum og spælun. android synjar ikki um táðað tengibreytingar til apps, ið ikki eru keypandi.</string>
+    <string name="notification_title">fylgja heyrnirtóla tíðum</string>
+    <string name="notification_starting">byrjandi…</string>
+    <string name="notification_idle">ventin heyrnirtóla</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d tengt · %2$s</item>
+        <item quantity="other">%1$d tengt · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d tengt · %2$s · spælun</item>
+        <item quantity="other">%1$d tengt · %2$s · spælun</item>
+    </plurals>
+
+    <!-- Boð -->
+    <string name="detailed_needs_bluetooth">henda bygning tørvar bluetooth lov, til at kunna fylgja táðuðum heyrnirtólum</string>
+    <string name="export_done">búðarskrá útflytt</string>
+    <string name="export_failed">útflyt bjarði</string>
+    <string name="import_failed">innflyt bjarði</string>
+    <string name="error_could_not_open">kunni ikki opna %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">innflytt %d seta</item>
+        <item quantity="other">innflytt %d setir</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d seta</item>
+        <item quantity="other">%d setir</item>
+    </plurals>
+</resources>

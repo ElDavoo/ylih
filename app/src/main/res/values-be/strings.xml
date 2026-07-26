@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Беларускі. Той жа стыль як ў англійскай версіі: только малыя літары, нарочна.
+
+  `app_name` нарочна адсутнічае — лаўндчэр позначка гэта імя, а не слова, і гэта не
+  перавядзецца. Адсутнічае і `value_none`, якая з\'яўляецца доўгім вызыватачам.
+-->
+<resources>
+    <string name="app_title">ylih — твая жыццё ў наушніках</string>
+
+    <!-- Навігацыя пры дне -->
+    <string name="nav_headphones">наушніки</string>
+    <string name="nav_stats">статыстыка</string>
+    <string name="nav_settings">налады</string>
+
+    <!-- Тыпы прыладаў -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">праводныя</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">невядома</string>
+
+    <!-- Першы запуск -->
+    <string name="welcome_title">вітаем у ylih</string>
+    <string name="welcome_intro">ylih запісвае, як долга кожная пара наушніка застаецца падключанай, каб праз гады вы маглі адказаць на адзінае важнае пытанне аб паре: колькі гадзін яна адслужыла?</string>
+    <string name="welcome_point_auto_title">падключыце і забудьце</string>
+    <string name="welcome_point_auto_body">bluetooth-наушніки запісваюцца самі, з момента падключэння. нічога не трэба дзържаць запушчаным.</string>
+    <string name="welcome_point_lifetime_title">адна пара, адна жыццё</string>
+    <string name="welcome_point_lifetime_body">калі пара выходзіць з ладу, выключыце яе: адсумаванне замрэзне там, і наступная пара тых жа наушніка пачынае адлік з нуля.</string>
+    <string name="welcome_point_detailed_title">праводныя і адтворэнне</string>
+    <string name="welcome_point_detailed_body">падрабязнае адсочванне ў наладах дадае праводныя наушніки і вымяраць, колькі гэтага часу рэальна бацца адтворэнне.</string>
+    <string name="welcome_privacy">усё застаецца на гэтым тэлефоне. няма ні рахунку, ні дазволу на доступ ў інтэрнэт.</string>
+    <string name="welcome_start">пачаць</string>
+
+    <!-- Спіс наушніка -->
+    <string name="devices_in_use">ў выкарыстанні</string>
+    <string name="devices_retired">заліквідаваны</string>
+    <string name="devices_empty_title">яшчэ няма наушніка</string>
+    <string name="devices_empty_body">падключыце пару bluetooth-наушніка, і яны пояўяцца тут. для праводных наушніка трэба падрабязнае адсочванне ў наладах.</string>
+    <string name="devices_generation">пара №%1$d</string>
+    <string name="devices_retired_on">заліквідаваны %1$s</string>
+    <string name="devices_connected_for">падключаны %1$s</string>
+    <string name="devices_recent">%1$s / 7д</string>
+
+    <!-- Статыстыка -->
+    <string name="stats_title">усе наушніки</string>
+    <string name="stats_sessions_since">%1$s з %2$s</string>
+    <string name="stats_last_7">апошнія 7 дзён</string>
+    <string name="stats_last_30">апошнія 30 дзён</string>
+    <string name="stats_average_session">средняя сесія</string>
+    <string name="stats_playing">адтворэнне</string>
+    <string name="stats_measured_span">вымераны перыяд</string>
+    <string name="stats_share">абмен</string>
+    <string name="stats_daily_hours_30">гадзіны па днях (30 дзён)</string>
+    <string name="stats_by_pair">па парах</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · заліквідавана</string>
+    <string name="chart_max">макс. %1$s</string>
+
+    <!-- Экран пары -->
+    <string name="pair_fallback_title">пара</string>
+    <string name="pair_back">назад</string>
+    <string name="pair_more">яшчэ</string>
+    <string name="pair_menu_rename">перайменаваць</string>
+    <string name="pair_menu_purchase">інфармацыя аб пакупцы</string>
+    <string name="pair_menu_retire">выключыце / замененыя</string>
+    <string name="pair_menu_delete">выдаліць</string>
+    <string name="pair_lifetime">тэрмін жыцця гэтай пары</string>
+    <string name="pair_retired_on">заліквідаваны %1$s</string>
+    <string name="pair_retired_with_reason">заліквідаваны %1$s · %2$s</string>
+    <string name="pair_connected_now">падключаны зараз · %1$s</string>
+    <string name="pair_sessions">сесіі</string>
+    <string name="pair_average">сярэдняе</string>
+    <string name="pair_longest">найдоўжэйшая</string>
+    <string name="pair_first_seen">першы раз замечаны</string>
+    <string name="pair_of_measured">ад вымераных</string>
+    <string name="pair_measured">вымерана</string>
+    <string name="pair_paid">аплачана</string>
+    <string name="pair_per_hour">за гадзіну</string>
+    <string name="pair_bought">куплены</string>
+    <string name="pair_daily_hours_14">гадзіны па днях (14 дзён)</string>
+    <string name="pair_rename_title">перайменаваць пару</string>
+    <string name="pair_rename_label">імя</string>
+    <string name="pair_retire_title">выключыце гэту пару</string>
+    <string name="pair_retire_label">прычына (сломаны, праданы, тэрачаны…)</string>
+    <string name="pair_retire_confirm">выключыць</string>
+    <string name="pair_retire_supporting">адсумаванне замрэзне там. паўторнае падключэнне тайго ж прыстасавання пачынае новую пару з нуля.</string>
+    <string name="pair_price_title">цана задарма</string>
+    <string name="pair_price_label">сума (цэлыя адзінкі)</string>
+    <string name="pair_price_supporting">выкарыстоўваецца для фігуры вартасці за гадзіну.</string>
+    <string name="pair_delete_title">выдаліць гэту пару?</string>
+    <string name="pair_delete_body">усе запісаныя для яе сесіі будуць выдалены. гэта немажліва скасаваць.</string>
+
+    <!-- Радкі сесій -->
+    <string name="session_ongoing">тзцаг</string>
+    <string name="session_until">да %1$s</string>
+    <string name="session_playing">%1$s адтворэння</string>
+    <string name="session_recovered">адноўлены</string>
+
+    <!-- Налады -->
+    <string name="settings_tracking">адсочванне</string>
+    <string name="settings_detailed_title">падрабязнае адсочванне</string>
+    <string name="settings_detailed_body">дадае праводныя наушніки і час адтворэння. android паведамляе пра падзеі праводнога падключэння толькі запушчанаму прыстасаванню, таму ў затэні застаецца цівая націзацыя. bluetooth адсочваецца у любым выпадку.</string>
+    <string name="settings_detailed_unavailable">недаступна, пакуль не даозвілены доступ да bluetooth: гэта зборка толькі абвяшчае тып сервісу connectedDevice, які android 14+ прывязваеце да дазвол bluetooth.</string>
+    <string name="settings_devices">прыстасаванні</string>
+    <string name="settings_devices_body">звярніце на тое, што не з\'яўляецца наушніком — аўтамагнітола або дынамік, — каб адключыць яго запіс.</string>
+    <string name="settings_device_subtitle">%1$s · першы раз замечана %2$s</string>
+    <string name="settings_data">дадзеныя</string>
+    <string name="settings_export">экспорт json</string>
+    <string name="settings_import">імпорт</string>
+    <string name="settings_import_warning">імпорт замяніць усё, што зараз захавана.</string>
+    <string name="settings_troubleshooting">ліквідацыя праблем</string>
+    <string name="settings_battery_body">калі сесіі перастаю быць запісаны, пракаверыце, што ylih выключаны з оптымізацыі батарэі — прымусова заспана прыстасаванне больш не атрымліваць падзеі падключэння, пакуль яго не адкрыюць.</string>
+    <string name="settings_battery_button">налады батарэі</string>
+    <string name="settings_battery_path">налады → прыстасаванні → ylih → батарэя → без абмежаванняў.</string>
+    <string name="settings_about">пра ўзнаёмленне</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — гадзіны ў наушніках, захаваны мясцова і вечна.</string>
+    <string name="settings_import_confirm_title">замяніць усе дадзеныя?</string>
+    <string name="settings_import_confirm_body">імпорт гэтай рэзервной копіі выдаліць кожнае прыстасаванне, пару і сесію, захавана зараз.</string>
+
+    <!-- Асобныя дзеянні -->
+    <string name="action_save">захаваць</string>
+    <string name="action_cancel">адмена</string>
+    <string name="action_delete">выдаліць</string>
+    <string name="action_import">імпорт</string>
+
+    <!-- Націзацыя -->
+    <string name="channel_tracking">адсочванне наушніка</string>
+    <string name="channel_tracking_description">паказана, калі ylih адсочвае праводныя наушніки і адтворэнне. android не паведамляе пра падзеі праводнога падключэння не запушчаным прыстасаванням.</string>
+    <string name="notification_title">адсочванне часу наушніка</string>
+    <string name="notification_starting">запуск…</string>
+    <string name="notification_idle">чаканне наушніка</string>
+    <plurals name="notification_active">
+        <item quantity="one">падключана: %1$d · %2$s</item>
+        <item quantity="few">падключана: %1$d · %2$s</item>
+        <item quantity="many">падключана: %1$d · %2$s</item>
+        <item quantity="other">падключана: %1$d · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">падключана: %1$d · %2$s · адтворэнне</item>
+        <item quantity="few">падключана: %1$d · %2$s · адтворэнне</item>
+        <item quantity="many">падключана: %1$d · %2$s · адтворэнне</item>
+        <item quantity="other">падключана: %1$d · %2$s · адтворэнне</item>
+    </plurals>
+
+    <!-- Паведамленні -->
+    <string name="detailed_needs_bluetooth">гэтай зборцы трэба доступ да bluetooth, каб адсочваць праводныя наушніки</string>
+    <string name="export_done">рэзервная копія экспартирана</string>
+    <string name="export_failed">не ўдалося экспартаваць</string>
+    <string name="import_failed">не ўдалося імпартаваць</string>
+    <string name="error_could_not_open">не ўдалося адкрыць %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">імпартавана %d сесія</item>
+        <item quantity="few">імпартавана %d сесіі</item>
+        <item quantity="many">імпартавана %d сесій</item>
+        <item quantity="other">імпартавана %d сесій</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d сесія</item>
+        <item quantity="few">%d сесіі</item>
+        <item quantity="many">%d сесій</item>
+        <item quantity="other">%d сесій</item>
+    </plurals>
+</resources>

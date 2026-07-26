@@ -1,3 +1,5 @@
+@file:OptIn(com.github.takahirom.roborazzi.ExperimentalRoborazziApi::class)
+
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -6,6 +8,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.roborazzi)
 }
 
 android {
@@ -15,10 +18,10 @@ android {
 
     defaultConfig {
         applicationId = "it.eldavo.ylih"
-        minSdk = 26
+        minSdk = 23
         targetSdk = 37
         versionCode = 1
-        versionName = "0.1.0"
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -84,9 +87,20 @@ android {
         buildConfig = true
     }
 
+    androidResources {
+        // Generates res/xml/locales_config and android:localeConfig from the values-* folders,
+        // which is what makes the app appear under Settings > System > Languages > App languages.
+        // The locale list is derived from the translations, so a new values-xx folder is enough.
+        // Needs res/resources.properties to name the locale the unqualified values/ folder holds.
+        generateLocaleConfig = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+        // java.time (ZoneId etc., used throughout stats/Stats.kt) is only native from API 26;
+        // desugaring backports it to the API 23 floor instead of rewriting that arithmetic.
+        isCoreLibraryDesugaringEnabled = true
     }
 
     testOptions {
@@ -119,6 +133,17 @@ kotlin {
 ksp {
     // Room's generated schema history, committed so migrations can be diffed in review.
     arg("room.schemaLocation", "$projectDir/schemas")
+}
+
+roborazzi {
+    // Not a golden-image baseline: this is the Play Console upload set, written straight into a
+    // directory the release workflow can hand to actions/upload-artifact. See docs/play-store.md.
+    outputDir.set(layout.buildDirectory.dir("outputs/play-listing").get().asFile)
+
+    // Every record task otherwise shares one output directory. Running the classic and play
+    // record tasks in a single Gradle invocation then races on it, which Gradle 9 turns into a
+    // hard "Cannot access input property 'roborazziImageInput'" failure rather than a warning.
+    separateOutputDirs.set(true)
 }
 
 // KSP registers its output through kotlin.sourceSets (see android.disallowKotlinSourceSets in
@@ -155,9 +180,22 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
 
+    coreLibraryDesugaring(libs.android.desugar.jdk.libs)
+
     testImplementation(libs.junit)
     testImplementation(libs.robolectric)
     testImplementation(libs.androidx.test.core)
     testImplementation(libs.androidx.room.runtime)
     testImplementation(libs.kotlinx.coroutines.test)
+
+    // Store-listing asset generation (StoreScreenshots). Roborazzi's capture calls are inert
+    // unless a record/verify task turns them on, so these ride along in the normal unit-test run
+    // without doing anything.
+    testImplementation(libs.androidx.compose.ui.test.junit4)
+    testImplementation(libs.roborazzi)
+    testImplementation(libs.roborazzi.compose)
+    testImplementation(libs.roborazzi.junit.rule)
+    // createAndroidComposeRule needs an activity to launch, and ui-test-manifest is what
+    // contributes ComponentActivity to the debug manifest.
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
 }

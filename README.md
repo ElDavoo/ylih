@@ -118,6 +118,47 @@ Release builds are signed with the debug key unless `ANDROID_SIGNING_KEYSTORE_PA
 `ANDROID_SIGNING_STORE_PASSWORD`, `ANDROID_SIGNING_KEY_ALIAS` and `ANDROID_SIGNING_KEY_PASSWORD`
 are set, which is what the release workflow does from repository secrets.
 
+## Design and languages
+
+The UI is Material 3 Expressive — `MaterialExpressiveTheme` with the expressive motion scheme, the
+emphasized type scale on the figures that matter, and Expressive's own components
+(`ShortNavigationBar`, `ButtonGroup`, a flexible top app bar that collapses as you scroll). That
+needs `material3` 1.5.0-alpha, pinned ahead of the Compose BOM, which puts Compose itself on
+`1.12.0-beta01`. Dynamic colour is used from Android 12; below it the app falls back to its own
+tonal palette, seeded from the blue the launcher icon sits on.
+
+All copy is lowercase, on purpose.
+
+Every user-visible string is a resource, and the app ships **77 languages** — one
+`res/values-<lang>/strings.xml` each, with `res/xml/locales_config` generated from those folders
+so the app appears under *Settings → System → Languages → App languages*. Lint treats a missing
+translation as an error, so an untranslated string fails the build rather than shipping. Adding a
+language means one `res/values-<lang>/strings.xml`, and — if it should also get a Play listing —
+one `StoreScreenshots` subclass and one `fastlane/metadata/android/<locale>/` directory.
+
+## Store listing
+
+The Play Console assets are generated, not drawn by hand:
+
+```sh
+./gradlew recordRoborazziPlayDebug    # app/build/outputs/play-listing/playDebug/
+```
+
+That renders the five phone screenshots, the 512×512 icon and the 1024×500 feature graphic on the
+JVM through Roborazzi and Robolectric's native graphics — there is no emulator in this project's
+toolchain and a screenshot is not a good reason to add one. The screenshots run the real Compose
+UI against a seeded database, and the icon is rendered from `@mipmap/ic_launcher` itself, so
+neither can drift away from the shipped app. Tagging a release produces the same images in CI as
+the `play-listing-assets` artifact.
+
+Screenshots are captured once per Play listing language (29 of them, one directory each), so every
+listing translation gets images in its own language.
+
+Listing text lives in `fastlane/metadata/android/<locale>/`. [`docs/play-store.md`](docs/play-store.md)
+is the submission runbook, and holds the prepared answers for the Data safety form, the
+content rating questionnaire and the `connectedDevice` foreground-service declaration.
+The privacy policy is [`PRIVACY.md`](PRIVACY.md).
+
 ## Data
 
 Room database, three tables: `devices` (an identity as Android reports it), `pairs` (a physical

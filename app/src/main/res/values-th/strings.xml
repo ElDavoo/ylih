@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Thai. Same house style as the default locale: lowercase throughout, on purpose — Thai has no
+  letter case, so this simply means plain, unadorned wording.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ชีวิตคุณในหูฟัง</string>
+
+    <!-- แถบนำทางด้านล่าง -->
+    <string name="nav_headphones">หูฟัง</string>
+    <string name="nav_stats">สถิติ</string>
+    <string name="nav_settings">ตั้งค่า</string>
+
+    <!-- ประเภทอุปกรณ์ -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">แบบมีสาย</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ไม่ทราบชนิด</string>
+
+    <!-- เริ่มใช้งานครั้งแรก -->
+    <string name="welcome_title">ยินดีต้อนรับสู่ ylih</string>
+    <string name="welcome_intro">ylih บันทึกว่าหูฟังแต่ละคู่เชื่อมต่ออยู่นานเท่าไร เพื่อให้อีกหลายปีข้างหน้าคุณยังตอบคำถามเดียวที่สำคัญเกี่ยวกับหูฟังคู่หนึ่งได้ นั่นคือมันใช้งานได้กี่ชั่วโมง</string>
+    <string name="welcome_point_auto_title">เชื่อมต่อแล้วลืมไปได้เลย</string>
+    <string name="welcome_point_auto_body">หูฟังบลูทูธจะถูกบันทึกเองตั้งแต่วินาทีที่เชื่อมต่อ ไม่ต้องเปิดแอปทิ้งไว้</string>
+    <string name="welcome_point_lifetime_title">หนึ่งคู่ หนึ่งอายุการใช้งาน</string>
+    <string name="welcome_point_lifetime_body">เมื่อหูฟังคู่หนึ่งพัง ให้เลิกใช้มัน ยอดรวมของมันจะหยุดนิ่งตรงนั้น และหูฟังรุ่นเดียวกันคู่ถัดไปจะเริ่มนับใหม่จากศูนย์</string>
+    <string name="welcome_point_detailed_title">แบบมีสายและการเล่นเสียง</string>
+    <string name="welcome_point_detailed_body">การติดตามแบบละเอียดในหน้าตั้งค่า จะเพิ่มหูฟังแบบมีสายและวัดว่าเวลาที่เชื่อมต่อนั้นมีการเล่นเสียงจริงเท่าไร</string>
+    <string name="welcome_privacy">ทุกอย่างอยู่ในเครื่องนี้เท่านั้น ไม่มีบัญชีผู้ใช้ และแอปไม่มีสิทธิ์เข้าถึงอินเทอร์เน็ต</string>
+    <string name="welcome_start">เริ่มต้นใช้งาน</string>
+
+    <!-- รายการหูฟัง -->
+    <string name="devices_in_use">กำลังใช้งาน</string>
+    <string name="devices_retired">เลิกใช้แล้ว</string>
+    <string name="devices_empty_title">ยังไม่มีหูฟัง</string>
+    <string name="devices_empty_body">เชื่อมต่อหูฟังบลูทูธสักคู่แล้วมันจะปรากฏที่นี่ หูฟังแบบมีสายต้องใช้การติดตามแบบละเอียดในหน้าตั้งค่า</string>
+    <string name="devices_generation">คู่ที่ %1$d</string>
+    <string name="devices_retired_on">เลิกใช้เมื่อ %1$s</string>
+    <string name="devices_connected_for">เชื่อมต่อแล้ว %1$s</string>
+    <string name="devices_recent">%1$s / 7 วัน</string>
+
+    <!-- สถิติ -->
+    <string name="stats_title">หูฟังทั้งหมด</string>
+    <string name="stats_sessions_since">%1$s ตั้งแต่ %2$s</string>
+    <string name="stats_last_7">7 วันล่าสุด</string>
+    <string name="stats_last_30">30 วันล่าสุด</string>
+    <string name="stats_average_session">ช่วงใช้งานเฉลี่ย</string>
+    <string name="stats_playing">กำลังเล่น</string>
+    <string name="stats_measured_span">ช่วงเวลาที่วัดได้</string>
+    <string name="stats_share">แชร์</string>
+    <string name="stats_daily_hours_30">ชั่วโมงต่อวัน (30 วัน)</string>
+    <string name="stats_by_pair">แยกตามคู่</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · เลิกใช้แล้ว</string>
+    <string name="chart_max">สูงสุด %1$s</string>
+
+    <!-- รายละเอียดคู่หูฟัง -->
+    <string name="pair_fallback_title">คู่หูฟัง</string>
+    <string name="pair_back">กลับ</string>
+    <string name="pair_more">เพิ่มเติม</string>
+    <string name="pair_menu_rename">เปลี่ยนชื่อ</string>
+    <string name="pair_menu_purchase">ข้อมูลการซื้อ</string>
+    <string name="pair_menu_retire">เลิกใช้ / เปลี่ยนคู่ใหม่</string>
+    <string name="pair_menu_delete">ลบ</string>
+    <string name="pair_lifetime">อายุการใช้งานของคู่นี้</string>
+    <string name="pair_retired_on">เลิกใช้เมื่อ %1$s</string>
+    <string name="pair_retired_with_reason">เลิกใช้เมื่อ %1$s · %2$s</string>
+    <string name="pair_connected_now">กำลังเชื่อมต่ออยู่ · %1$s</string>
+    <string name="pair_sessions">ช่วงการใช้งาน</string>
+    <string name="pair_average">เฉลี่ย</string>
+    <string name="pair_longest">นานที่สุด</string>
+    <string name="pair_first_seen">พบครั้งแรก</string>
+    <string name="pair_of_measured">จากเวลาที่วัดได้</string>
+    <string name="pair_measured">วัดได้</string>
+    <string name="pair_paid">ราคาที่จ่าย</string>
+    <string name="pair_per_hour">ต่อชั่วโมง</string>
+    <string name="pair_bought">ซื้อเมื่อ</string>
+    <string name="pair_daily_hours_14">ชั่วโมงต่อวัน (14 วัน)</string>
+    <string name="pair_rename_title">เปลี่ยนชื่อคู่หูฟัง</string>
+    <string name="pair_rename_label">ชื่อ</string>
+    <string name="pair_retire_title">เลิกใช้คู่นี้</string>
+    <string name="pair_retire_label">เหตุผล (พัง, ขายไป, ทำหาย…)</string>
+    <string name="pair_retire_confirm">เลิกใช้</string>
+    <string name="pair_retire_supporting">ยอดรวมจะหยุดนิ่งตรงนี้ การเชื่อมต่ออุปกรณ์เดียวกันอีกครั้งจะเริ่มคู่ใหม่จากศูนย์</string>
+    <string name="pair_price_title">ราคาที่จ่าย</string>
+    <string name="pair_price_label">จำนวนเงิน (หน่วยเต็ม)</string>
+    <string name="pair_price_supporting">ใช้สำหรับคำนวณค่าใช้จ่ายต่อชั่วโมง</string>
+    <string name="pair_delete_title">ลบคู่หูฟังนี้หรือไม่</string>
+    <string name="pair_delete_body">ทุกช่วงการใช้งานที่บันทึกไว้จะถูกลบไปด้วย การกระทำนี้ไม่สามารถย้อนกลับได้</string>
+
+    <!-- รายการช่วงการใช้งาน -->
+    <string name="session_ongoing">กำลังดำเนินอยู่</string>
+    <string name="session_until">จนถึง %1$s</string>
+    <string name="session_playing">เล่น %1$s</string>
+    <string name="session_recovered">กู้คืนแล้ว</string>
+
+    <!-- ตั้งค่า -->
+    <string name="settings_tracking">การติดตาม</string>
+    <string name="settings_detailed_title">การติดตามแบบละเอียด</string>
+    <string name="settings_detailed_body">เพิ่มหูฟังแบบมีสายและเวลาการเล่นเสียง android จะรายงานเหตุการณ์เสียบสายให้กับแอปที่กำลังทำงานอยู่เท่านั้น จึงต้องมีการแจ้งเตือนแบบเงียบค้างอยู่ ส่วนบลูทูธจะถูกติดตามอยู่แล้วไม่ว่ากรณีใด</string>
+    <string name="settings_detailed_unavailable">ใช้งานไม่ได้จนกว่าจะให้สิทธิ์เข้าถึงบลูทูธ บิลด์นี้ประกาศเฉพาะประเภทบริการ connectedDevice ซึ่ง android 14 ขึ้นไปผูกไว้กับสิทธิ์บลูทูธ</string>
+    <string name="settings_devices">อุปกรณ์</string>
+    <string name="settings_devices_body">ยกเลิกการเลือกสิ่งที่ไม่ใช่หูฟัง เช่น ลำโพงรถยนต์หรือลำโพง เพื่อหยุดการบันทึก</string>
+    <string name="settings_device_subtitle">%1$s · พบครั้งแรก %2$s</string>
+    <string name="settings_data">ข้อมูล</string>
+    <string name="settings_export">ส่งออก json</string>
+    <string name="settings_import">นำเข้า</string>
+    <string name="settings_import_warning">การนำเข้าจะแทนที่ข้อมูลทั้งหมดที่มีอยู่ในขณะนี้</string>
+    <string name="settings_troubleshooting">การแก้ปัญหา</string>
+    <string name="settings_battery_body">หากช่วงการใช้งานหยุดถูกบันทึก ให้ตรวจสอบว่า ylih ได้รับการยกเว้นจากการจำกัดแบตเตอรี่ แอปที่ถูกบังคับหยุดจะไม่ได้รับการแจ้งเตือนการเชื่อมต่ออีกจนกว่าจะเปิดแอปใหม่</string>
+    <string name="settings_battery_button">ตั้งค่าแบตเตอรี่</string>
+    <string name="settings_battery_path">ตั้งค่า → แอป → ylih → แบตเตอรี่ → ไม่จำกัด</string>
+    <string name="settings_about">เกี่ยวกับ</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — ชั่วโมงการใช้หูฟัง เก็บไว้ในเครื่องตลอดไป</string>
+    <string name="settings_import_confirm_title">แทนที่ข้อมูลทั้งหมดหรือไม่</string>
+    <string name="settings_import_confirm_body">การนำเข้าไฟล์สำรองนี้จะลบทุกอุปกรณ์ คู่หูฟัง และช่วงการใช้งานที่บันทึกไว้ในขณะนี้</string>
+
+    <!-- การกระทำที่ใช้ร่วมกัน -->
+    <string name="action_save">บันทึก</string>
+    <string name="action_cancel">ยกเลิก</string>
+    <string name="action_delete">ลบ</string>
+    <string name="action_import">นำเข้า</string>
+
+    <!-- การแจ้งเตือน -->
+    <string name="channel_tracking">การติดตามหูฟัง</string>
+    <string name="channel_tracking_description">แสดงขณะที่ ylih เฝ้าดูหูฟังแบบมีสายและการเล่นเสียง android ไม่ส่งเหตุการณ์เสียบสายให้แอปที่ไม่ได้ทำงานอยู่</string>
+    <string name="notification_title">กำลังติดตามเวลาใช้หูฟัง</string>
+    <string name="notification_starting">กำลังเริ่ม…</string>
+    <string name="notification_idle">กำลังรอหูฟัง</string>
+    <!-- Thai's CLDR plural set is "other" only. -->
+    <plurals name="notification_active">
+        <item quantity="other">เชื่อมต่อ %1$d เครื่อง · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="other">เชื่อมต่อ %1$d เครื่อง · %2$s · กำลังเล่น</item>
+    </plurals>
+
+    <!-- ข้อความแจ้งเตือนแบบ snackbar -->
+    <string name="detailed_needs_bluetooth">บิลด์นี้ต้องมีสิทธิ์เข้าถึงบลูทูธก่อนจึงจะติดตามหูฟังแบบมีสายได้</string>
+    <string name="export_done">ส่งออกไฟล์สำรองแล้ว</string>
+    <string name="export_failed">ส่งออกไม่สำเร็จ</string>
+    <string name="import_failed">นำเข้าไม่สำเร็จ</string>
+    <string name="error_could_not_open">ไม่สามารถเปิด %1$s ได้</string>
+    <plurals name="import_done">
+        <item quantity="other">นำเข้าแล้ว %d ช่วงการใช้งาน</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="other">%d ช่วงการใช้งาน</item>
+    </plurals>
+</resources>

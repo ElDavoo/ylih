@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Bemba. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — ubwino ba lwe mu ifu</string>
+
+    <!-- Ichalo chitatu -->
+    <string name="nav_headphones">ifu</string>
+    <string name="nav_stats">amakamu</string>
+    <string name="nav_settings">imilikilo</string>
+
+    <!-- Imipela ya amalendo -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">imipala</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">icitukidwe</string>
+
+    <!-- Ukwali wambuka -->
+    <string name="welcome_title">kamukalile ku ylih</string>
+    <string name="welcome_intro">ylih inikilila ifipela fya lwe ya ifu ifyonse, ili kuti imyaka imine namuyandwanya, makwefukila ifyonse abantu bakuupoka ifipela: ifipela fya lwe na ifu nshaba chikali?</string>
+    <string name="welcome_point_auto_title">kufika apo ukwisa</string>
+    <string name="welcome_point_auto_body">ifu ya bluetooth inikiliwa yenyene, pakati pa kufika kwayo. icakushele kalimina kwakwa.</string>
+    <string name="welcome_point_lifetime_title">ifipela imwe, ubwino umwe</string>
+    <string name="welcome_point_lifetime_body">pakali ifipela ifumilila, ilefuze: amakamu amitikilila pankokolo lino, apo ifipela ifilinga lya ifu iliyonse ifumuka ifyupela pakali ni wapili.</string>
+    <string name="welcome_point_detailed_title">imipala apo kusekesa</string>
+    <string name="welcome_point_detailed_body">inshumu ifingilila, mu imilikilo, isamitikilila imipala apo kukalakala ni inshuba iyofi ya pa kusekesa.</string>
+    <string name="welcome_privacy">ifyonse fifumilila pano mu foni yinu. palefwe umuntu, apo na foni yinu palefwe lumino lwa intaneti.</string>
+    <string name="welcome_start">kolankela</string>
+
+    <!-- Inshumi ya ifu -->
+    <string name="devices_in_use">kukulipila</string>
+    <string name="devices_retired">inafikila</string>
+    <string name="devices_empty_title">palefwe ifu pakali</string>
+    <string name="devices_empty_body">konekete ifipela fya ifu ya bluetooth, apo ifipela ifilinga lipilila pano. imipala ifuna inshumu ifingilila, mu imilikilo.</string>
+    <string name="devices_generation">ifipela #%1$d</string>
+    <string name="devices_retired_on">inafikila %1$s</string>
+    <string name="devices_connected_for">konekete %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Amakamu -->
+    <string name="stats_title">ifu ifyonse</string>
+    <string name="stats_sessions_since">%1$s pakali %2$s</string>
+    <string name="stats_last_7">inshuba 7 inafikila</string>
+    <string name="stats_last_30">inshuba 30 inafikila</string>
+    <string name="stats_average_session">inshuba ya kusekesa</string>
+    <string name="stats_playing">kusekesa</string>
+    <string name="stats_measured_span">inkokolo ifutibulile</string>
+    <string name="stats_share">amakamu</string>
+    <string name="stats_daily_hours_30">amahola pa inshuba (30 inshuba)</string>
+    <string name="stats_by_pair">ifipela pa ifipela</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · inafikila</string>
+    <string name="chart_max">%1$s kololo</string>
+
+    <!-- Ichalo cha ifipela -->
+    <string name="pair_fallback_title">ifipela</string>
+    <string name="pair_back">ibila</string>
+    <string name="pair_more">impala</string>
+    <string name="pair_menu_rename">lifumine ilina ilingi</string>
+    <string name="pair_menu_purchase">amakamu ya kuwomba</string>
+    <string name="pair_menu_retire">lefuze / inasubumina</string>
+    <string name="pair_menu_delete">ilefuze</string>
+    <string name="pair_lifetime">ubwino ba lwe wa ifipela</string>
+    <string name="pair_retired_on">inafikila %1$s</string>
+    <string name="pair_retired_with_reason">inafikila %1$s · %2$s</string>
+    <string name="pair_connected_now">konekete pakali · %1$s</string>
+    <string name="pair_sessions">ifikapililo</string>
+    <string name="pair_average">pakati</string>
+    <string name="pair_longest">ifilinga ifilakula</string>
+    <string name="pair_first_seen">inatonwilwe pakali</string>
+    <string name="pair_of_measured">ya ifutibulilwe</string>
+    <string name="pair_measured">ifutibulilwe</string>
+    <string name="pair_paid">iwalipilwe</string>
+    <string name="pair_per_hour">pakati ya mahola</string>
+    <string name="pair_bought">ikombilwe</string>
+    <string name="pair_daily_hours_14">amahola pa inshuba (14 inshuba)</string>
+    <string name="pair_rename_title">lifumine ilina ilingi ya ifipela</string>
+    <string name="pair_rename_label">ilina</string>
+    <string name="pair_retire_title">lefuze ifipela fino</string>
+    <string name="pair_retire_label">ifuleu (ifumilila, iwalipilwe, ipatilwe…)</string>
+    <string name="pair_retire_confirm">lefuze</string>
+    <string name="pair_retire_supporting">amakamu aminikibilila pano. ifipela ifilinga lya amalendo iliyonse ikoneketefye ifupilila ifyupela pakali ni wapili.</string>
+    <string name="pair_price_title">umwino wa kuwomba</string>
+    <string name="pair_price_label">inkwashi (amakamu akompute)</string>
+    <string name="pair_price_supporting">kukulipila pa amakamu ya umwino pakati ya mahola.</string>
+    <string name="pair_delete_title">ilefuze ifipela fino?</string>
+    <string name="pair_delete_body">ifikapililo fyonse ifutibulilwe pakali na fyofi ifutumiwa. icasenseke ici.</string>
+
+    <!-- Inshumi ya ifikapililo -->
+    <string name="session_ongoing">pakubuika</string>
+    <string name="session_until">pakali %1$s</string>
+    <string name="session_playing">%1$s kusekesa</string>
+    <string name="session_recovered">inafulukulapo</string>
+
+    <!-- Imilikilo -->
+    <string name="settings_tracking">inshumu</string>
+    <string name="settings_detailed_title">inshumu ifingilila</string>
+    <string name="settings_detailed_body">isamitikilila imipala apo inshuba ya kusekesa. android ikakunika amakamu ya imipala pakati pa foni ifwaile kukulipila, ululasa foniyo ifuna ukwifuna kwakwa. bluetooth inikiliwa ici ne ici.</string>
+    <string name="settings_detailed_unavailable">palefwe pakali bluetooth ifuminile: nkola yino yatika ikulika connectedDevice shani walobo, ulo android 14+ ulitilakila bluetooth lumino.</string>
+    <string name="settings_devices">amalendo</string>
+    <string name="settings_devices_body">kwezepo ifyonse ifisena ifu — akanji akwa, amipale — ili kusiya inshumu yonse.</string>
+    <string name="settings_device_subtitle">%1$s · inatonwilwe pakali %2$s</string>
+    <string name="settings_data">amakamu</string>
+    <string name="settings_export">kutumbulula json</string>
+    <string name="settings_import">kufitika</string>
+    <string name="settings_import_warning">kufitika kulimina fyonse icakala pakali.</string>
+    <string name="settings_troubleshooting">kusosa amakamu</string>
+    <string name="settings_battery_body">ifikapililo ifinu kusiyilila kunikiliwa, tontonela ylih isinfilwe mu kulipila ka batadi — foni ifwaile ilefinya palefwe kukunika amakamu, pakali ifwaile kufukilula.</string>
+    <string name="settings_battery_button">imilikilo ya batadi</string>
+    <string name="settings_battery_path">imilikilo → fifile → ylih → batadi → alipumuikiliwe.</string>
+    <string name="settings_about">pa ylih</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — amahola mu ifu, akabilibililwa pakali alina ulubuka.</string>
+    <string name="settings_import_confirm_title">kulimina fyonse amakamu?</string>
+    <string name="settings_import_confirm_body">kufitika isameki ino kulimina amalendo, ifipela apo ifikapililo ifyonse icakala pakali.</string>
+
+    <!-- Imilikilo ya ifyonse -->
+    <string name="action_save">kabilibili</string>
+    <string name="action_cancel">kwala</string>
+    <string name="action_delete">ilefuze</string>
+    <string name="action_import">kufitika</string>
+
+    <!-- Umpela wa foni -->
+    <string name="channel_tracking">inshumu ya ifu</string>
+    <string name="channel_tracking_description">ikalinina pakali ylih ifwaile kushemuka imipala apo kusekesa. android ikakunika amakamu ya imipala pakati pa foni ifusena kukulipila.</string>
+    <string name="notification_title">inshumu ya ubwino mu ifu</string>
+    <string name="notification_starting">kukolankela…</string>
+    <string name="notification_idle">kulindila ifu</string>
+    <plurals name="notification_active">
+        <item quantity="one">konekete: %1$d · %2$s</item>
+        <item quantity="other">konekete: %1$d · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">konekete: %1$d · %2$s · kusekesa</item>
+        <item quantity="other">konekete: %1$d · %2$s · kusekesa</item>
+    </plurals>
+
+    <!-- Umpela wa ifikapililo -->
+    <string name="detailed_needs_bluetooth">nkola yino ifuna bluetooth lumino ili kufutikila imipala</string>
+    <string name="export_done">isameki inatumbulukilwe</string>
+    <string name="export_failed">kututumbulula ifwalikilwe</string>
+    <string name="import_failed">kufitika ifwalikilwe</string>
+    <string name="error_could_not_open">ifupili kufukula %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">ifitike %d fikapililo</item>
+        <item quantity="other">ifitike %d ifikapililo</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d fikapililo</item>
+        <item quantity="other">%d ifikapililo</item>
+    </plurals>
+</resources>

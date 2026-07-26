@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Turkish. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - kulaklıktaki hayatın</string>
+
+    <!-- Alt gezinme -->
+    <string name="nav_headphones">kulaklıklar</string>
+    <string name="nav_stats">istatistik</string>
+    <string name="nav_settings">ayarlar</string>
+
+    <!-- Cihaz türleri -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">kablolu</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">bilinmiyor</string>
+
+    <!-- İlk açılış -->
+    <string name="welcome_title">ylih\'e hoş geldin</string>
+    <string name="welcome_intro">ylih her kulaklığın ne kadar süre bağlı kaldığını kaydeder, böylece yıllar sonra bile bir kulaklık çifti hakkında önemli olan tek soruyu yanıtlayabilirsin: kaç saat dayandı?</string>
+    <string name="welcome_point_auto_title">tak ve unut</string>
+    <string name="welcome_point_auto_body">bluetooth kulaklıklar bağlandığı andan itibaren kendiliğinden kaydedilir. hiçbir şeyin açık kalması gerekmez.</string>
+    <string name="welcome_point_lifetime_title">bir çift, bir ömür</string>
+    <string name="welcome_point_lifetime_body">bir çift bozulduğunda emekliye ayır: toplamı orada donar ve aynı modelin bir sonraki çifti sıfırdan başlar.</string>
+    <string name="welcome_point_detailed_title">kablolu ve çalma süresi</string>
+    <string name="welcome_point_detailed_body">ayarlardaki ayrıntılı takip, kablolu kulaklıkları ekler ve sürenin ne kadarında gerçekten ses çaldığını ölçer.</string>
+    <string name="welcome_privacy">her şey bu telefonda kalır. hesap yoktur ve uygulamanın internet izni yoktur.</string>
+    <string name="welcome_start">başla</string>
+
+    <!-- Kulaklık listesi -->
+    <string name="devices_in_use">kullanımda</string>
+    <string name="devices_retired">emekli</string>
+    <string name="devices_empty_title">henüz kulaklık yok</string>
+    <string name="devices_empty_body">bir bluetooth kulaklık bağla, burada görünecek. kablolu kulaklıklar için ayarlardan ayrıntılı takip gerekir.</string>
+    <string name="devices_generation">çift #%1$d</string>
+    <string name="devices_retired_on">%1$s tarihinde emekliye ayrıldı</string>
+    <string name="devices_connected_for">%1$s\'dir bağlı</string>
+    <string name="devices_recent">%1$s / 7g</string>
+
+    <!-- İstatistik -->
+    <string name="stats_title">tüm kulaklıklar</string>
+    <!-- %1$s is an already-pluralised session count, %2$s a date. -->
+    <string name="stats_sessions_since">%2$s\'den beri %1$s</string>
+    <string name="stats_last_7">son 7 gün</string>
+    <string name="stats_last_30">son 30 gün</string>
+    <string name="stats_average_session">ortalama oturum</string>
+    <string name="stats_playing">çalma</string>
+    <string name="stats_measured_span">ölçülen süre</string>
+    <string name="stats_share">paylaş</string>
+    <string name="stats_daily_hours_30">günlük saat (30 gün)</string>
+    <string name="stats_by_pair">çiftlere göre</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · emekli</string>
+    <string name="chart_max">en fazla %1$s</string>
+
+    <!-- Çift ayrıntısı -->
+    <string name="pair_fallback_title">çift</string>
+    <string name="pair_back">geri</string>
+    <string name="pair_more">diğer</string>
+    <string name="pair_menu_rename">yeniden adlandır</string>
+    <string name="pair_menu_purchase">satın alma bilgisi</string>
+    <string name="pair_menu_retire">emekliye ayır / değiştirildi</string>
+    <string name="pair_menu_delete">sil</string>
+    <string name="pair_lifetime">bu çiftin ömrü</string>
+    <string name="pair_retired_on">%1$s tarihinde emekliye ayrıldı</string>
+    <string name="pair_retired_with_reason">%1$s tarihinde emekliye ayrıldı · %2$s</string>
+    <string name="pair_connected_now">şu an bağlı · %1$s</string>
+    <string name="pair_sessions">oturumlar</string>
+    <string name="pair_average">ortalama</string>
+    <string name="pair_longest">en uzun</string>
+    <string name="pair_first_seen">ilk görülme</string>
+    <string name="pair_of_measured">ölçülenin</string>
+    <string name="pair_measured">ölçülen</string>
+    <string name="pair_paid">ödenen</string>
+    <string name="pair_per_hour">saat başına</string>
+    <string name="pair_bought">satın alındı</string>
+    <string name="pair_daily_hours_14">günlük saat (14 gün)</string>
+    <string name="pair_rename_title">çifti yeniden adlandır</string>
+    <string name="pair_rename_label">ad</string>
+    <string name="pair_retire_title">bu çifti emekliye ayır</string>
+    <string name="pair_retire_label">sebep (bozuldu, satıldı, kayboldu…)</string>
+    <string name="pair_retire_confirm">emekliye ayır</string>
+    <string name="pair_retire_supporting">toplamlar burada donar. aynı cihazı yeniden bağlamak sıfırdan yeni bir çift başlatır.</string>
+    <string name="pair_price_title">ödenen fiyat</string>
+    <string name="pair_price_label">tutar (tam birim)</string>
+    <string name="pair_price_supporting">saat başına maliyet için kullanılır.</string>
+    <string name="pair_delete_title">bu çift silinsin mi?</string>
+    <string name="pair_delete_body">onun için kaydedilen her oturum da silinir. bu geri alınamaz.</string>
+
+    <!-- Oturum satırları -->
+    <string name="session_ongoing">devam ediyor</string>
+    <string name="session_until">%1$s\'e kadar</string>
+    <string name="session_playing">%1$s çalma</string>
+    <string name="session_recovered">kurtarıldı</string>
+
+    <!-- Ayarlar -->
+    <string name="settings_tracking">takip</string>
+    <string name="settings_detailed_title">ayrıntılı takip</string>
+    <string name="settings_detailed_body">kablolu kulaklıkları ve çalma süresini ekler. android kablo takma olaylarını yalnızca çalışan bir uygulamaya bildirir, bu yüzden bildirim alanında sessiz bir bildirim tutar. bluetooth her durumda takip edilir.</string>
+    <string name="settings_detailed_unavailable">bluetooth erişimi verilene kadar kullanılamaz: bu sürüm yalnızca connectedDevice servis türünü bildirir; android 14+ bunu bir bluetooth iznine bağlar.</string>
+    <string name="settings_devices">cihazlar</string>
+    <string name="settings_devices_body">kulaklık olmayanların işaretini kaldır — bir araba stereosu ya da hoparlör gibi — kaydedilmesin.</string>
+    <string name="settings_device_subtitle">%1$s · ilk görülme %2$s</string>
+    <string name="settings_data">veri</string>
+    <string name="settings_export">json dışa aktar</string>
+    <string name="settings_import">içe aktar</string>
+    <string name="settings_import_warning">içe aktarma şu anda saklanan her şeyin yerini alır.</string>
+    <string name="settings_troubleshooting">sorun giderme</string>
+    <string name="settings_battery_body">oturumlar kaydedilmemeye başlarsa ylih\'in pil optimizasyonundan muaf olduğunu kontrol et — zorla durdurulmuş bir uygulama, açılana kadar bağlantı yayınlarını bir daha almaz.</string>
+    <string name="settings_battery_button">pil ayarları</string>
+    <string name="settings_battery_path">ayarlar → uygulamalar → ylih → pil → kısıtlanmamış.</string>
+    <string name="settings_about">hakkında</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — kulaklık saatlerin, yerel olarak ve sonsuza dek saklanır.</string>
+    <string name="settings_import_confirm_title">tüm veriler değiştirilsin mi?</string>
+    <string name="settings_import_confirm_body">bu yedeği içe aktarmak, şu anda kayıtlı olan her cihazı, çifti ve oturumu siler.</string>
+
+    <!-- Ortak eylemler -->
+    <string name="action_save">kaydet</string>
+    <string name="action_cancel">vazgeç</string>
+    <string name="action_delete">sil</string>
+    <string name="action_import">içe aktar</string>
+
+    <!-- Bildirim -->
+    <string name="channel_tracking">kulaklık takibi</string>
+    <string name="channel_tracking_description">ylih kablolu kulaklıkları ve çalmayı izlerken gösterilir. android kablo takma olaylarını çalışmayan uygulamalara bildirmez.</string>
+    <string name="notification_title">kulaklık süresi kaydediliyor</string>
+    <string name="notification_starting">başlıyor…</string>
+    <string name="notification_idle">kulaklık bekleniyor</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d bağlı · %2$s</item>
+        <item quantity="other">%1$d bağlı · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d bağlı · %2$s · çalıyor</item>
+        <item quantity="other">%1$d bağlı · %2$s · çalıyor</item>
+    </plurals>
+
+    <!-- Anlık iletiler -->
+    <string name="detailed_needs_bluetooth">bu sürümün kablolu kulaklıkları takip edebilmesi için önce bluetooth erişimi gerekir</string>
+    <string name="export_done">yedek dışa aktarıldı</string>
+    <string name="export_failed">dışa aktarma başarısız oldu</string>
+    <string name="import_failed">içe aktarma başarısız oldu</string>
+    <string name="error_could_not_open">%1$s açılamadı</string>
+    <plurals name="import_done">
+        <item quantity="one">%d oturum içe aktarıldı</item>
+        <item quantity="other">%d oturum içe aktarıldı</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d oturum</item>
+        <item quantity="other">%d oturum</item>
+    </plurals>
+</resources>

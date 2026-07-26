@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Cebuano. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ang iyong buhay sa mga headphones</string>
+
+    <!-- Pag-navigate -->
+    <string name="nav_headphones">mga headphones</string>
+    <string name="nav_stats">istatistika</string>
+    <string name="nav_settings">mga setting</string>
+
+    <!-- Mga uri ng device -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">may kable</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">hindi kilala</string>
+
+    <!-- Unang pagbubukas -->
+    <string name="welcome_title">maligayang pagdating sa ylih</string>
+    <string name="welcome_intro">ang ylih ay nagtitala kung gaano katagal ang bawat pares ng headphones ay nananatiling konektado, upang sa mga taon sa hinaharap ay maaari mo pa ring sagutin ang iisang tanong na tunay na mahalaga tungkol sa isang pares: ilang oras ang tumagal?</string>
+    <string name="welcome_point_auto_title">kumonekta at kalimutan</string>
+    <string name="welcome_point_auto_body">ang bluetooth headphones ay awtomatikong naitutala, simula sa sandaling kumonekta sila. walang kailangang manatiling tumatakbo.</string>
+    <string name="welcome_point_lifetime_title">isang pares, isang habambuhay</string>
+    <string name="welcome_point_lifetime_body">kapag ang isang pares ay nasira, iwan ito: ang kabuuang oras ay humihinto doon at ang susunod na pares ng parehong headphones ay magsisimula muli mula sa zero.</string>
+    <string name="welcome_point_detailed_title">may kable at pagtugtog</string>
+    <string name="welcome_point_detailed_body">ang detalyadong subaybay, sa mga setting, ay nagdadagdag ng mga headphones na may kable at sinusukat kung gaano karaming oras ang aktwal na pagtugtog.</string>
+    <string name="welcome_privacy">lahat ay nananatili sa telepono na ito. walang account, at ang app ay walang pahintulot sa internet.</string>
+    <string name="welcome_start">magsimula</string>
+
+    <!-- Listahan ng mga headphones -->
+    <string name="devices_in_use">ginagamit</string>
+    <string name="devices_retired">na-retire</string>
+    <string name="devices_empty_title">walang mga headphones pa</string>
+    <string name="devices_empty_body">kumonekta ng pares ng bluetooth headphones at makikita mo dito. ang mga headphones na may kable ay nangangailangan ng detalyadong subaybay, sa mga setting.</string>
+    <string name="devices_generation">pares #%1$d</string>
+    <string name="devices_retired_on">na-retire %1$s</string>
+    <string name="devices_connected_for">konektado %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Istatistika -->
+    <string name="stats_title">lahat ng mga headphones</string>
+    <string name="stats_sessions_since">%1$s mula %2$s</string>
+    <string name="stats_last_7">nakaraang 7 araw</string>
+    <string name="stats_last_30">nakaraang 30 araw</string>
+    <string name="stats_average_session">average na session</string>
+    <string name="stats_playing">tumutugtog</string>
+    <string name="stats_measured_span">nasusukat na panahon</string>
+    <string name="stats_share">ibahagi</string>
+    <string name="stats_daily_hours_30">pang-araw-araw na oras (30 araw)</string>
+    <string name="stats_by_pair">bawat pares</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · na-retire</string>
+    <string name="chart_max">%1$s max</string>
+
+    <!-- Detalye ng pares -->
+    <string name="pair_fallback_title">pares</string>
+    <string name="pair_back">bumalik</string>
+    <string name="pair_more">higit pa</string>
+    <string name="pair_menu_rename">baguhin ang pangalan</string>
+    <string name="pair_menu_purchase">impormasyon sa pagbili</string>
+    <string name="pair_menu_retire">iwan / kapalit</string>
+    <string name="pair_menu_delete">tanggalin</string>
+    <string name="pair_lifetime">habambuhay sa pares na ito</string>
+    <string name="pair_retired_on">na-retire %1$s</string>
+    <string name="pair_retired_with_reason">na-retire %1$s · %2$s</string>
+    <string name="pair_connected_now">konektado ngayon · %1$s</string>
+    <string name="pair_sessions">mga session</string>
+    <string name="pair_average">average</string>
+    <string name="pair_longest">pinakamahaba</string>
+    <string name="pair_first_seen">una nakita</string>
+    <string name="pair_of_measured">ng nasusukat</string>
+    <string name="pair_measured">nasusukat</string>
+    <string name="pair_paid">binayaran</string>
+    <string name="pair_per_hour">kada oras</string>
+    <string name="pair_bought">binili</string>
+    <string name="pair_daily_hours_14">pang-araw-araw na oras (14 araw)</string>
+    <string name="pair_rename_title">baguhin ang pangalan ng pares</string>
+    <string name="pair_rename_label">pangalan</string>
+    <string name="pair_retire_title">iwan ang pares na ito</string>
+    <string name="pair_retire_label">dahilan (nasira, nabenta, nawala…)</string>
+    <string name="pair_retire_confirm">iwan</string>
+    <string name="pair_retire_supporting">ang mga kabuuan ay humihinto dito. ang muling pagkonekta ng parehong device ay nagsisimula ng bagong pares sa zero.</string>
+    <string name="pair_price_title">presyong binayaran</string>
+    <string name="pair_price_label">halaga (buong yunit)</string>
+    <string name="pair_price_supporting">ginagamit para sa halaga ng gastos bawat oras.</string>
+    <string name="pair_delete_title">tanggalin ang pares na ito?</string>
+    <string name="pair_delete_body">bawat session na naitala para dito ay matanggal din. hindi ito mababawi.</string>
+
+    <!-- Mga hanay ng session -->
+    <string name="session_ongoing">patuloy</string>
+    <string name="session_until">hanggang %1$s</string>
+    <string name="session_playing">%1$s tumutugtog</string>
+    <string name="session_recovered">nahita</string>
+
+    <!-- Mga setting -->
+    <string name="settings_tracking">subaybay</string>
+    <string name="settings_detailed_title">detalyadong subaybay</string>
+    <string name="settings_detailed_body">nagdadagdag ng mga headphones na may kable at oras ng pagtugtog. ang android ay sumusulong lamang sa mga kaganapang plug ng kable sa tumatakbong app, kaya nagpanatili ito ng tahimik na notification. ang bluetooth ay sinusubaybayan sa lahat ng paraan.</string>
+    <string name="settings_detailed_unavailable">hindi available hanggang hindi ipagkaloob ang access sa bluetooth: ang build na ito ay nag-declare lamang ng connectedDevice service type, na ang android 14+ ay natatali sa isang bluetooth permission.</string>
+    <string name="settings_devices">mga device</string>
+    <string name="settings_devices_body">aalis-alisan ang mga hindi ito headphones — isang car stereo o isang speaker — upang tumigil sa pag-record nito.</string>
+    <string name="settings_device_subtitle">%1$s · una nakita %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">i-export ang json</string>
+    <string name="settings_import">mag-import</string>
+    <string name="settings_import_warning">ang pag-import ay papalit ng lahat ng kasalukuyang nakatala.</string>
+    <string name="settings_troubleshooting">paglutas ng mga problema</string>
+    <string name="settings_battery_body">kung hindi na nakatala ang mga session, tingnan kung ang ylih ay exempt mula sa battery optimization — isang app na na-force stop ay hindi na makakatanggap ng connection broadcasts hanggang sa muling buksan ito.</string>
+    <string name="settings_battery_button">battery settings</string>
+    <string name="settings_battery_path">settings → apps → ylih → battery → unrestricted.</string>
+    <string name="settings_about">tungkol sa</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — oras sa mga headphones, napanatili nang lokal at magpakailanman.</string>
+    <string name="settings_import_confirm_title">palit ang lahat ng data?</string>
+    <string name="settings_import_confirm_body">ang pag-import ng backup na ito ay magbabura ng bawat device, pares at session na kasalukuyang nakalagay.</string>
+
+    <!-- Mga ibinahaging aksyon -->
+    <string name="action_save">i-save</string>
+    <string name="action_cancel">kanselahin</string>
+    <string name="action_delete">tanggalin</string>
+    <string name="action_import">mag-import</string>
+
+    <!-- Notipikasyon -->
+    <string name="channel_tracking">subaybay sa mga headphones</string>
+    <string name="channel_tracking_description">ipinapakita habang ang ylih ay bantay ng mga headphones na may kable at pagtugtog. ang android ay hindi nagpapadala ng mga kaganapang plug ng kable sa mga apps na hindi tumatakbo.</string>
+    <string name="notification_title">subaybay sa oras ng mga headphones</string>
+    <string name="notification_starting">nagsisimula…</string>
+    <string name="notification_idle">naghihintay ng mga headphones</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d konektado · %2$s</item>
+        <item quantity="other">%1$d konektado · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d konektado · %2$s · tumutugtog</item>
+        <item quantity="other">%1$d konektado · %2$s · tumutugtog</item>
+    </plurals>
+
+    <!-- Mga mensahe ng snackbar -->
+    <string name="detailed_needs_bluetooth">ang build na ito ay kailangan ng bluetooth access upang sumubaybay sa mga headphones na may kable</string>
+    <string name="export_done">backup ay na-export</string>
+    <string name="export_failed">na-fail ang pag-export</string>
+    <string name="import_failed">na-fail ang pag-import</string>
+    <string name="error_could_not_open">hindi mabuksan %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">na-import %d session</item>
+        <item quantity="other">na-import %d sessions</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d session</item>
+        <item quantity="other">%d sessions</item>
+    </plurals>
+</resources>

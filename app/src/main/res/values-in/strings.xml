@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Indonesian. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - hidupmu bersama headphone</string>
+
+    <!-- Navigasi -->
+    <string name="nav_headphones">headphone</string>
+    <string name="nav_stats">statistik</string>
+    <string name="nav_settings">pengaturan</string>
+
+    <!-- Jenis perangkat -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">kabel</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">tidak diketahui</string>
+
+    <!-- Pertama kali dibuka -->
+    <string name="welcome_title">selamat datang di ylih</string>
+    <string name="welcome_intro">ylih mencatat berapa lama setiap pasang headphone tetap terhubung, agar bertahun-tahun kemudian kamu masih bisa menjawab satu-satunya pertanyaan penting tentang sepasang headphone: berapa jam headphone itu bertahan?</string>
+    <string name="welcome_point_auto_title">hubungkan dan lupakan</string>
+    <string name="welcome_point_auto_body">headphone bluetooth tercatat dengan sendirinya, sejak saat terhubung. tidak ada yang perlu dibiarkan tetap berjalan.</string>
+    <string name="welcome_point_lifetime_title">satu pasang, satu masa pakai</string>
+    <string name="welcome_point_lifetime_body">saat sepasang headphone mati, pensiunkan: totalnya berhenti di situ dan pasangan headphone yang sama berikutnya mulai lagi dari nol.</string>
+    <string name="welcome_point_detailed_title">kabel dan pemutaran</string>
+    <string name="welcome_point_detailed_body">pelacakan detail, di pengaturan, menambahkan headphone berkabel dan mengukur berapa banyak dari waktu itu benar-benar digunakan untuk memutar audio.</string>
+    <string name="welcome_privacy">semuanya tetap di ponsel ini. tidak ada akun, dan aplikasi ini tidak memiliki izin internet.</string>
+    <string name="welcome_start">mulai</string>
+
+    <!-- Daftar headphone -->
+    <string name="devices_in_use">sedang digunakan</string>
+    <string name="devices_retired">dipensiunkan</string>
+    <string name="devices_empty_title">belum ada headphone</string>
+    <string name="devices_empty_body">hubungkan sepasang headphone bluetooth dan mereka akan muncul di sini. headphone berkabel memerlukan pelacakan detail, di pengaturan.</string>
+    <string name="devices_generation">pasangan #%1$d</string>
+    <string name="devices_retired_on">dipensiunkan %1$s</string>
+    <string name="devices_connected_for">terhubung %1$s</string>
+    <string name="devices_recent">%1$s / 7h</string>
+
+    <!-- Statistik -->
+    <string name="stats_title">semua headphone</string>
+    <string name="stats_sessions_since">%1$s sejak %2$s</string>
+    <string name="stats_last_7">7 hari terakhir</string>
+    <string name="stats_last_30">30 hari terakhir</string>
+    <string name="stats_average_session">rata-rata sesi</string>
+    <string name="stats_playing">memutar</string>
+    <string name="stats_measured_span">rentang terukur</string>
+    <string name="stats_share">bagikan</string>
+    <string name="stats_daily_hours_30">jam harian (30 hari)</string>
+    <string name="stats_by_pair">per pasang</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · dipensiunkan</string>
+    <string name="chart_max">maks %1$s</string>
+
+    <!-- Detail pasangan -->
+    <string name="pair_fallback_title">pasangan</string>
+    <string name="pair_back">kembali</string>
+    <string name="pair_more">lainnya</string>
+    <string name="pair_menu_rename">ganti nama</string>
+    <string name="pair_menu_purchase">info pembelian</string>
+    <string name="pair_menu_retire">pensiunkan / diganti</string>
+    <string name="pair_menu_delete">hapus</string>
+    <string name="pair_lifetime">masa pakai pasangan ini</string>
+    <string name="pair_retired_on">dipensiunkan %1$s</string>
+    <string name="pair_retired_with_reason">dipensiunkan %1$s · %2$s</string>
+    <string name="pair_connected_now">terhubung sekarang · %1$s</string>
+    <string name="pair_sessions">sesi</string>
+    <string name="pair_average">rata-rata</string>
+    <string name="pair_longest">terlama</string>
+    <string name="pair_first_seen">pertama terlihat</string>
+    <string name="pair_of_measured">dari yang terukur</string>
+    <string name="pair_measured">terukur</string>
+    <string name="pair_paid">dibayar</string>
+    <string name="pair_per_hour">per jam</string>
+    <string name="pair_bought">dibeli</string>
+    <string name="pair_daily_hours_14">jam harian (14 hari)</string>
+    <string name="pair_rename_title">ganti nama pasangan</string>
+    <string name="pair_rename_label">nama</string>
+    <string name="pair_retire_title">pensiunkan pasangan ini</string>
+    <string name="pair_retire_label">alasan (rusak, dijual, hilang…)</string>
+    <string name="pair_retire_confirm">pensiunkan</string>
+    <string name="pair_retire_supporting">total berhenti di sini. menghubungkan kembali perangkat yang sama memulai pasangan baru dari nol.</string>
+    <string name="pair_price_title">harga yang dibayar</string>
+    <string name="pair_price_label">jumlah (satuan penuh)</string>
+    <string name="pair_price_supporting">digunakan untuk angka biaya per jam.</string>
+    <string name="pair_delete_title">hapus pasangan ini?</string>
+    <string name="pair_delete_body">setiap sesi yang tercatat untuknya juga akan terhapus. tindakan ini tidak bisa dibatalkan.</string>
+
+    <!-- Baris sesi -->
+    <string name="session_ongoing">sedang berlangsung</string>
+    <string name="session_until">hingga %1$s</string>
+    <string name="session_playing">%1$s memutar</string>
+    <string name="session_recovered">dipulihkan</string>
+
+    <!-- Pengaturan -->
+    <string name="settings_tracking">pelacakan</string>
+    <string name="settings_detailed_title">pelacakan detail</string>
+    <string name="settings_detailed_body">menambahkan headphone berkabel dan waktu pemutaran. android hanya melaporkan peristiwa colokan kabel ke aplikasi yang sedang berjalan, jadi ini mempertahankan notifikasi senyap di panel notifikasi. bluetooth tetap dilacak apa pun pilihannya.</string>
+    <string name="settings_detailed_unavailable">tidak tersedia sampai akses bluetooth diberikan: build ini hanya mendeklarasikan jenis layanan connectedDevice, yang di android 14+ terikat pada izin bluetooth.</string>
+    <string name="settings_devices">perangkat</string>
+    <string name="settings_devices_body">hilangkan centang pada apa pun yang bukan headphone — sistem audio mobil atau speaker — untuk berhenti mencatatnya.</string>
+    <string name="settings_device_subtitle">%1$s · pertama terlihat %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">ekspor json</string>
+    <string name="settings_import">impor</string>
+    <string name="settings_import_warning">mengimpor akan menggantikan semua yang tersimpan saat ini.</string>
+    <string name="settings_troubleshooting">pemecahan masalah</string>
+    <string name="settings_battery_body">jika sesi berhenti tercatat, periksa apakah ylih dikecualikan dari pengoptimalan baterai — aplikasi yang telah dihentikan paksa tidak akan menerima siaran koneksi lagi sampai dibuka.</string>
+    <string name="settings_battery_button">pengaturan baterai</string>
+    <string name="settings_battery_path">pengaturan → aplikasi → ylih → baterai → tanpa batasan.</string>
+    <string name="settings_about">tentang</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — jam headphone, disimpan secara lokal dan selamanya.</string>
+    <string name="settings_import_confirm_title">ganti semua data?</string>
+    <string name="settings_import_confirm_body">mengimpor cadangan ini menghapus setiap perangkat, pasangan, dan sesi yang tersimpan sekarang.</string>
+
+    <!-- Aksi bersama -->
+    <string name="action_save">simpan</string>
+    <string name="action_cancel">batal</string>
+    <string name="action_delete">hapus</string>
+    <string name="action_import">impor</string>
+
+    <!-- Notifikasi -->
+    <string name="channel_tracking">pelacakan headphone</string>
+    <string name="channel_tracking_description">ditampilkan selama ylih memantau headphone berkabel dan pemutaran. android tidak mengirimkan peristiwa colokan kabel ke aplikasi yang tidak sedang berjalan.</string>
+    <string name="notification_title">melacak waktu headphone</string>
+    <string name="notification_starting">memulai…</string>
+    <string name="notification_idle">menunggu headphone</string>
+    <!-- Indonesian's CLDR set is "other" only. -->
+    <plurals name="notification_active">
+        <item quantity="other">%1$d terhubung · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="other">%1$d terhubung · %2$s · memutar</item>
+    </plurals>
+
+    <!-- Pesan snackbar -->
+    <string name="detailed_needs_bluetooth">build ini memerlukan akses bluetooth sebelum bisa melacak headphone berkabel</string>
+    <string name="export_done">cadangan diekspor</string>
+    <string name="export_failed">ekspor gagal</string>
+    <string name="import_failed">impor gagal</string>
+    <string name="error_could_not_open">tidak dapat membuka %1$s</string>
+    <plurals name="import_done">
+        <item quantity="other">%d sesi diimpor</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="other">%d sesi</item>
+    </plurals>
+</resources>

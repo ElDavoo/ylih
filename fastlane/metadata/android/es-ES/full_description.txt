@@ -1,0 +1,40 @@
+Los auriculares acaban rompiéndose. Antes de que eso pase, ylih responde a la única pregunta que de verdad importa sobre un par: ¿cuántas horas les sacaste?
+
+Cada vez que tus auriculares se conectan, ylih anota cuándo. Cada vez que se desconectan, anota cuándo. Esa es toda la idea, y como una conexión son solo dos marcas de tiempo, la app no necesita ejecutarse en segundo plano para hacerlo.
+
+QUÉ REGISTRA
+
+• Horas totales por par físico. Cuando un par se estropea, retíralo: el total se congela, y el siguiente par del mismo modelo empieza de nuevo desde cero como generación 2. Tus cifras antiguas nunca se mezclan con las nuevas.
+• Cada sesión, guardada para siempre: hora de conexión, hora de desconexión y por qué terminó.
+• Tiempo de reproducción (opcional): cuánto de ese tiempo conectado se estuvo reproduciendo audio de verdad, para que «colgados al cuello» no cuente como escuchar.
+• Coste por hora, si indicas cuánto pagaste. Es un número muy satisfactorio de ver bajar.
+
+DOS MODOS DE SEGUIMIENTO
+
+Solo bluetooth, el predeterminado. Nada de la app se ejecuta, nada ocupa tu barra de notificaciones y no hay coste de batería, porque android entrega los eventos de conexión a la app incluso mientras está cerrada.
+
+Seguimiento detallado, opcional. Añade auriculares con cable y USB, y mide la reproducción frente al tiempo conectado. Necesita una notificación silenciosa de prioridad mínima, porque android solo informa de los eventos del jack a una app que ya está en ejecución. Ese, y ningún otro, es el motivo por el que existe la notificación.
+
+El bluetooth se rastrea en ambos casos.
+
+CIFRAS EN LAS QUE CONFIAR AÑOS DESPUÉS
+
+Un total a largo plazo no vale nada si un fallo o un reinicio le suman doce horas sin más. Así que:
+
+• Una sesión que quede abierta por un reinicio o un fallo se cierra en su último latido conocido, nunca después del momento en que el teléfono arrancó. El tiempo con el teléfono apagado nunca se cuenta.
+• Si tus auriculares siguen conectados después de un reinicio, empieza una sesión nueva en lugar de estirar la anterior sobre el hueco.
+• Las sesiones abiertas se monitorizan con latidos, así el daño de una desconexión perdida queda limitado.
+
+PRIVADA POR CONSTRUCCIÓN
+
+ylih no tiene permiso de internet. No es «prometemos no enviar nada»: la app es técnicamente incapaz de hacerlo. No hay cuentas, ni analítica, ni anuncios, ni rastreo. Todo vive en una base de datos de tu teléfono.
+
+Ajustes → Exportar guarda todo tu historial como JSON legible, e Importar lo restaura, así que cambiar de teléfono nunca te cuesta tus cifras.
+
+PERMISOS
+
+• Dispositivos cercanos (bluetooth): necesario para recibir los eventos de conexión y leer el nombre de unos auriculares. Sin él, el seguimiento por bluetooth no puede funcionar en absoluto.
+• Notificaciones: solo para la notificación del seguimiento detallado.
+• Ejecutar al iniciar: para cerrar las sesiones que el apagado nunca notificó.
+
+Código abierto bajo licencia MIT.

@@ -1,0 +1,8 @@
+Első kiadás.
+
+• Az órák fizikai fejhallgatópáronként, egész élettartamra, generációkkal, hogy egy csereparr nullaról induljon a régi összidejének öröklése helyett.
+• Minden csatlakozás örökre megőrizve, napi és páronkénti statisztikákkal.
+• Opcionális részletes követés vezetékes és USB-s fejhallgatókhoz, valamint a lejátszás és a csatlakoztatott idő arányához.
+• Óránkénti hallgatási költség.
+• JSON exportálás és importálás.
+• Nincs internet-hozzáférési engedély: semmi sem hagyja el a telefont.

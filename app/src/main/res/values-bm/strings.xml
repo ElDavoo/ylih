@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Bambara. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - i duumini kopilabi</string>
+
+    <!-- Jiginna sumarako -->
+    <string name="nav_headphones">kopila</string>
+    <string name="nav_stats">denbara</string>
+    <string name="nav_settings">soriyasoo</string>
+
+    <!-- Aparatigi jɔ -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">silamun</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">a tɛ se</string>
+
+    <!-- A jɔjɔnna maɲininkɔ -->
+    <string name="welcome_title">akasigɛ ylih ma</string>
+    <string name="welcome_intro">ylih bi kopila joli kɔ jiginna duumi kɔrɔ dafa sira, o yɛrɛ sɔrɔ jɛ ka ko sisan jyi ni kopila di ko fɔ dumuni kɔrɔ?</string>
+    <string name="welcome_point_auto_title">jiginna ni dɔn</string>
+    <string name="welcome_point_auto_body">bluetooth kopila bi kɔrɔ jiginna ma kɔnɔ, jiginna maɲininkɔ jɛ. a waliman kelen na ma gɛ.</string>
+    <string name="welcome_point_lifetime_title">kopila kɔ - duumi kɔ</string>
+    <string name="welcome_point_lifetime_body">kopila kɔ ka wɛlɛ tɛ, a soroina: ɛ denbara bi ma sigida yen, ani kopila jɔ gɔ kɔ a ɲɛfɔ jɛ ziro jɛ.</string>
+    <string name="welcome_point_detailed_title">silamun ni taara</string>
+    <string name="welcome_point_detailed_body">duuma surun kɛ, soriyasoo ma, silamun kopila ni taara duumi ma sigida kɔrɔ.</string>
+    <string name="welcome_privacy">bɛn bɛ telefɔne yen ma gara. akawu tɛ, ani aparatigi bi intɛrɛ sigida tɛ.</string>
+    <string name="welcome_start">ka jɔ</string>
+
+    <!-- Kopila lisigiyi -->
+    <string name="devices_in_use">gɛna jiginna</string>
+    <string name="devices_retired">sorɔja</string>
+    <string name="devices_empty_title">kopila tɛ sisan</string>
+    <string name="devices_empty_body">bluetooth kopila kɔ jiginna, o bi ma sɔrɔ yen jɛ. silamun kopila joli bi duuma surun la, soriyasoo ma.</string>
+    <string name="devices_generation">kopila #%1$d</string>
+    <string name="devices_retired_on">sorɔja %1$s</string>
+    <string name="devices_connected_for">jiginna %1$s</string>
+    <string name="devices_recent">%1$s / gɛrɛ 7</string>
+
+    <!-- Denbara -->
+    <string name="stats_title">kopila bɛ</string>
+    <string name="stats_sessions_since">%1$s jɛ %2$s wɛrɛ</string>
+    <string name="stats_last_7">gɛrɛ 7 sira</string>
+    <string name="stats_last_30">gɛrɛ 30 sira</string>
+    <string name="stats_average_session">gɛrɛ kabini</string>
+    <string name="stats_playing">taara</string>
+    <string name="stats_measured_span">kuma ka jira maɲininkɔ</string>
+    <string name="stats_share">partage</string>
+    <string name="stats_daily_hours_30">kɔrɔ-juman (gɛrɛ 30)</string>
+    <string name="stats_by_pair">kopila kɔrɔ</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · sorɔja</string>
+    <string name="chart_max">%1$s gara</string>
+
+    <!-- Kopila damba -->
+    <string name="pair_fallback_title">kopila</string>
+    <string name="pair_back">saba</string>
+    <string name="pair_more">tuma</string>
+    <string name="pair_menu_rename">tɔgɔ sɛbɛ</string>
+    <string name="pair_menu_purchase">satɛ kuma</string>
+    <string name="pair_menu_retire">sorɔ / jɔli jɔ</string>
+    <string name="pair_menu_delete">kɔsa</string>
+    <string name="pair_lifetime">kopila yen duumi</string>
+    <string name="pair_retired_on">sorɔja %1$s</string>
+    <string name="pair_retired_with_reason">sorɔja %1$s · %2$s</string>
+    <string name="pair_connected_now">jiginna sisan · %1$s</string>
+    <string name="pair_sessions">jiginna sutu</string>
+    <string name="pair_average">kabini</string>
+    <string name="pair_longest">gara fɔ</string>
+    <string name="pair_first_seen">a jɔ maɲininkɔ</string>
+    <string name="pair_of_measured">kuma jira jɛ</string>
+    <string name="pair_measured">kuma jira</string>
+    <string name="pair_paid">satɛ jɛ</string>
+    <string name="pair_per_hour">kɔrɔ kɔ</string>
+    <string name="pair_bought">satɛ kɛ</string>
+    <string name="pair_daily_hours_14">kɔrɔ-juman (gɛrɛ 14)</string>
+    <string name="pair_rename_title">kopila tɔgɔ sɛbɛ</string>
+    <string name="pair_rename_label">tɔgɔ</string>
+    <string name="pair_retire_title">kopila yen sorɔ</string>
+    <string name="pair_retire_label">sababu (wɛlɛ, satɛ, sɔgɔ…)</string>
+    <string name="pair_retire_confirm">sorɔ</string>
+    <string name="pair_retire_supporting">denbara bi ma sigida yen jɛ. aparatigi yen jiginna jɔ, kopila jɔ ziro jɛ ka jɔ.</string>
+    <string name="pair_price_title">satɛ wari</string>
+    <string name="pair_price_label">wari jɔ (gara jɔ)</string>
+    <string name="pair_price_supporting">kɔrɔ kɔ wari denbara la gɛna.</string>
+    <string name="pair_delete_title">kopila yen kɔsa?</string>
+    <string name="pair_delete_body">jiginna sutu bɛ bɛ kɔsa. o ma se se ka jɔ.</string>
+
+    <!-- Jiginna sutu -->
+    <string name="session_ongoing">gɛna jiginna</string>
+    <string name="session_until">%1$s wɛrɛ</string>
+    <string name="session_playing">%1$s taara</string>
+    <string name="session_recovered">jɔli jɔ</string>
+
+    <!-- Soriyasoo -->
+    <string name="settings_tracking">jiginna duuma</string>
+    <string name="settings_detailed_title">duuma surun</string>
+    <string name="settings_detailed_body">silamun kopila ni taara duumi ma sigida kɔrɔ. android bi silamun jiginna kuma dafa sira bari jɔrɔ kɔnɔ gara, o yɛrɛ jɛ kɔnɔ biɔ ma sigida sumarako ma gɛ. bluetooth bi ma jiginna duuma bɛ.</string>
+    <string name="settings_detailed_unavailable">a ma se se dɔrɔn ka bluetooth sigida wɛrɛ: aparatigi yen connectedDevice sɛrvi jɔ dafa dɔ, android 14+ bi bluetooth sigida ma jɛ ka cogo.</string>
+    <string name="settings_devices">aparatigi</string>
+    <string name="settings_devices_body">aparatigi jɔ tɛ kopila kɔ - gara ni korobo - a sigida kɛrɛ dɔn ka jiginna duuma kɛrɛ dɔn.</string>
+    <string name="settings_device_subtitle">%1$s · a jɔ maɲininkɔ %2$s</string>
+    <string name="settings_data">kuma</string>
+    <string name="settings_export">json sira</string>
+    <string name="settings_import">kɛ jigɛn</string>
+    <string name="settings_import_warning">kɛ jigɛn bi ma kuma bɛ bɛ jɔli jɔ sisan.</string>
+    <string name="settings_troubleshooting">gɛrɛya taɲini</string>
+    <string name="settings_battery_body">jiginna sutu bi wɛrɛ, ylih apparatigi bi batiri dɔrɔ jɔ tɛ - aparatigi jɛ damɛ jɛ ka jiginna kuma se se ka wɛrɛ dɔrɔn.</string>
+    <string name="settings_battery_button">batiri soriyasoo</string>
+    <string name="settings_battery_path">soriyasoo → aparatigi → ylih → batiri → a sigida tɛ.</string>
+    <string name="settings_about">ylih kuma</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — kopila kɔrɔ duumi, telefɔne yen ma gara ni ka sigida sira jɛ.</string>
+    <string name="settings_import_confirm_title">kuma bɛ jɔli jɔ?</string>
+    <string name="settings_import_confirm_body">kɛ jigɛn yen bi aparatigi, kopila ni jiginna sutu bɛ kɔsa sisan.</string>
+
+    <!-- Gɛrɛya gɛrɛ -->
+    <string name="action_save">sigida</string>
+    <string name="action_cancel">dɔn</string>
+    <string name="action_delete">kɔsa</string>
+    <string name="action_import">kɛ jigɛn</string>
+
+    <!-- Biɔ sigida -->
+    <string name="channel_tracking">kopila jiginna duuma</string>
+    <string name="channel_tracking_description">ylih bi kopila silamun ni taara duuma jɛ gɛna maɲininkɔ. android bi silamun jiginna kuma dafa sira bari aparatigi jɔrɔ kɔnɔ tɛ.</string>
+    <string name="notification_title">kopila jiginna duuma gɛna</string>
+    <string name="notification_starting">ka jɔ…</string>
+    <string name="notification_idle">kopila jiginna ta</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d jiginna · %2$s</item>
+        <item quantity="other">%1$d jiginna · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d jiginna · %2$s · taara</item>
+        <item quantity="other">%1$d jiginna · %2$s · taara</item>
+    </plurals>
+
+    <!-- Biɔ kuma -->
+    <string name="detailed_needs_bluetooth">aparatigi yen bluetooth sigida jɛ ka silamun kopila duuma kɛ</string>
+    <string name="export_done">kuma sira jɛ</string>
+    <string name="export_failed">kuma sira gara kɛ tɛ</string>
+    <string name="import_failed">kuma kɛ jigɛn gara kɛ tɛ</string>
+    <string name="error_could_not_open">%1$s jigɛn ma se se tɛ</string>
+    <plurals name="import_done">
+        <item quantity="one">jiginna sutu %d kɛ jigɛn jɛ</item>
+        <item quantity="other">jiginna sutu %d kɛ jigɛn jɛ</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">jiginna sutu %d</item>
+        <item quantity="other">jiginna sutu %d</item>
+    </plurals>
+</resources>

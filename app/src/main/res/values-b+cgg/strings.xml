@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Chiga. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — omutindo gwayo mu mahembe</string>
+
+    <!-- Okusimbula omutenyi -->
+    <string name="nav_headphones">mahembe</string>
+    <string name="nav_stats">amakati</string>
+    <string name="nav_settings">amateekate</string>
+
+    <!-- Ekika kya ekyuma -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">agacwire</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">kitakira</string>
+
+    <!-- Okwambuka kwanza -->
+    <string name="welcome_title">mukaribire mu ylih</string>
+    <string name="welcome_intro">ylih iwandika omugeni wegukira enandi imwe ya mahembe ikunyiikirize, amasigara n\'akakyo wihayo nate wiyinzirize okubaza okubazo ekika ekamu ekigira nini ku nandi: saati ngaahi zayigabiire?</string>
+    <string name="welcome_point_auto_title">oyunie, arikaho</string>
+    <string name="welcome_point_auto_body">mahembe ya bluetooth andikibwa okweyene, okuva agakubanya. tatembekeza okukumaniza ekigwe.</string>
+    <string name="welcome_point_lifetime_title">enandi imwe, omutindo umwe</string>
+    <string name="welcome_point_lifetime_body">nkoora enandi eyafirize, izikire: oniyimba yayo izikira aho, n\'enandi enteka eya mahembe agakora anza okuva nti zero.</string>
+    <string name="welcome_point_detailed_title">agacwire n\'okusigira</string>
+    <string name="welcome_point_detailed_body">okuwandika okukweru, mu amateekate, akongeeza mahembe agacwire n\'akamanya amasigara magakoresebwa mu kwesigira.</string>
+    <string name="welcome_privacy">byona byakuuma mu mugambi ugu. ntekina akawonto, n\'applicesheni nayo ntakina ichaato ca ntiniti.</string>
+    <string name="welcome_start">terekezaaga</string>
+
+    <!-- Omusolo gwa mahembe -->
+    <string name="devices_in_use">akoreebwa</string>
+    <string name="devices_retired">azikireho</string>
+    <string name="devices_empty_title">mahembe ntaku nata</string>
+    <string name="devices_empty_body">oyunie enandi ya mahembe ya bluetooth, ni balikuza hano. mahembe agacwire akayasigira okuwandika okukweru, mu amateekate.</string>
+    <string name="devices_generation">enandi #%1$d</string>
+    <string name="devices_retired_on">azikireho %1$s</string>
+    <string name="devices_connected_for">okunyana %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Amakati -->
+    <string name="stats_title">mahembe gose</string>
+    <string name="stats_sessions_since">%1$s kuva %2$s</string>
+    <string name="stats_last_7">amasigara 7 agakwata</string>
+    <string name="stats_last_30">amasigara 30 agakwata</string>
+    <string name="stats_average_session">kasooti yo mu kazo</string>
+    <string name="stats_playing">okusigira</string>
+    <string name="stats_measured_span">omugeni gwawandiikiirwe</string>
+    <string name="stats_share">okukosa</string>
+    <string name="stats_daily_hours_30">saati ku musi (30 amasigara)</string>
+    <string name="stats_by_pair">nka enandi</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · azikireho</string>
+    <string name="chart_max">%1$s max</string>
+
+    <!-- Akahanga ka enandi -->
+    <string name="pair_fallback_title">enandi</string>
+    <string name="pair_back">wamu</string>
+    <string name="pair_more">indi</string>
+    <string name="pair_menu_rename">tyoma aha ikina</string>
+    <string name="pair_menu_purchase">amakumbi ga gukura</string>
+    <string name="pair_menu_retire">zikira / yiboshiireho</string>
+    <string name="pair_menu_delete">bura</string>
+    <string name="pair_lifetime">omutindo ku nandi ayo</string>
+    <string name="pair_retired_on">azikireho %1$s</string>
+    <string name="pair_retired_with_reason">azikireho %1$s · %2$s</string>
+    <string name="pair_connected_now">okunyana nkano · %1$s</string>
+    <string name="pair_sessions">okussozo</string>
+    <string name="pair_average">kasooti</string>
+    <string name="pair_longest">okugyaala okukira</string>
+    <string name="pair_first_seen">okwambuka okukora</string>
+    <string name="pair_of_measured">okukoma ku wandiikirwe</string>
+    <string name="pair_measured">wandiikirwe</string>
+    <string name="pair_paid">akagaseekwa</string>
+    <string name="pair_per_hour">ku saati</string>
+    <string name="pair_bought">agakurirwe</string>
+    <string name="pair_daily_hours_14">saati ku musi (14 amasigara)</string>
+    <string name="pair_rename_title">tyoma ikina lya enandi</string>
+    <string name="pair_rename_label">ikina</string>
+    <string name="pair_retire_title">zikira enandi ayo</string>
+    <string name="pair_retire_label">kabona (yafirize, ayagurirwe, yakaganiza…)</string>
+    <string name="pair_retire_confirm">zikira</string>
+    <string name="pair_retire_supporting">oniyimba yayo ikuzikira aho. okubanza okunyana ekyuma kigakora enandi enteka okutangira kuziro.</string>
+    <string name="pair_price_title">kazo kagaseekwa</string>
+    <string name="pair_price_label">omugeni (amikira)</string>
+    <string name="pair_price_supporting">akoreebwa mu makeri ya kazo ku saati.</string>
+    <string name="pair_delete_title">bura enandi ayo?</string>
+    <string name="pair_delete_body">okussozo kusosere kwayo kusosora. tino yokubigenza aha.</string>
+
+    <!-- Omusolo gwa okussozo -->
+    <string name="session_ongoing">akoreebwa nkano</string>
+    <string name="session_until">kuza %1$s</string>
+    <string name="session_playing">%1$s akasigira</string>
+    <string name="session_recovered">akatembekezebwa</string>
+
+    <!-- Amateekate -->
+    <string name="settings_tracking">okuwandika</string>
+    <string name="settings_detailed_title">okuwandika okukweru</string>
+    <string name="settings_detailed_body">akongeza mahembe agacwire n\'amasigara ga okusigira. android abamanya okumanya amasigara ga agacwire kuko ku applicesheni itazikira okukora, abasigalira okukuba okukwereza mu ntiniti. bluetooth andikibwa kigwe.</string>
+    <string name="settings_detailed_unavailable">ntakiboneka kuza kwoha ichaato ca bluetooth: akakakona guno kasigala kananga connectDevice ekika kya service, ekyuma ka android 14+ ekikwata ku ichaato ca bluetooth.</string>
+    <string name="settings_devices">ekyuma</string>
+    <string name="settings_devices_body">tangura ekyuma ekitali mahembe — emotoka oba espeekeri — kwonka okukumaniza okuwandika.</string>
+    <string name="settings_device_subtitle">%1$s · okwambuka okukora %2$s</string>
+    <string name="settings_data">amakumbi</string>
+    <string name="settings_export">kukyata json</string>
+    <string name="settings_import">okushyira</string>
+    <string name="settings_import_warning">okushyira kubabyiza byona ekakumaniza nkano.</string>
+    <string name="settings_troubleshooting">okurindaganya okutagasima</string>
+    <string name="settings_battery_body">nkoba okussozo taandikibwa, tekeza atiyini ylih antakwere nka ekikumaaniza — applicesheni eyafirize yaayagirwe tategembana okuwandika kuza ekikwata aba ntakwengereza okwacumbura ichaato.</string>
+    <string name="settings_battery_button">amateekate ga batireeri</string>
+    <string name="settings_battery_path">amateekate → applicesheni → ylih → batireeri → etakyamibaza.</string>
+    <string name="settings_about">ku ka egi</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — saati mu mahembe, ekuuma locally n\'inini.</string>
+    <string name="settings_import_confirm_title">babyiza byona?</string>
+    <string name="settings_import_confirm_body">okushyira oku ka gakuba gubabyiza ekyuma, enandi n\'okussozo kusosere kose kusigala nkano.</string>
+
+    <!-- Amashindano ga gose -->
+    <string name="action_save">kuba</string>
+    <string name="action_cancel">gabana</string>
+    <string name="action_delete">bura</string>
+    <string name="action_import">okushyira</string>
+
+    <!-- Okuyinziriza -->
+    <string name="channel_tracking">okuwandika mahembe</string>
+    <string name="channel_tracking_description">akakibakiliza kwoha ylih agukubanya mahembe agacwire n\'okusigira. android atabamanye amasigara ga agacwire ku applicesheni etakorekera.</string>
+    <string name="notification_title">okuwandika omugeni wa mahembe</string>
+    <string name="notification_starting">akuterekeza…</string>
+    <string name="notification_idle">akwemeza mahembe</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d okunyana · %2$s</item>
+        <item quantity="other">%1$d okunyana · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d okunyana · %2$s · akasigira</item>
+        <item quantity="other">%1$d okunyana · %2$s · akasigira</item>
+    </plurals>
+
+    <!-- Amakumbi -->
+    <string name="detailed_needs_bluetooth">akakakona guno akasigala ichaato ca bluetooth kwonka okuwandika mahembe agacwire</string>
+    <string name="export_done">gakuba akukyata</string>
+    <string name="export_failed">gakuba atafufirize okukota</string>
+    <string name="import_failed">gakuba atafufirize okushyira</string>
+    <string name="error_could_not_open">atakyali okwacumbura %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">shyiirikwire okussozo %d</item>
+        <item quantity="other">shyiirikwire okussozo %d</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">okussozo %d</item>
+        <item quantity="other">okussozo %d</item>
+    </plurals>
+</resources>

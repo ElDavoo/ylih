@@ -1,0 +1,8 @@
+İlk sürüm.
+
+• Her fiziksel kulaklık çifti için ömür boyu saat, ve nesiller sayesinde yedek bir çift eskisinin toplamını devralmak yerine sıfırdan başlar.
+• Her bağlantı kalıcı olarak saklanır, günlük ve çift bazında istatistiklerle.
+• Kablolu ve USB kulaklıklar, ve bağlı süreye karşı çalma süresi için isteğe bağlı ayrıntılı takip.
+• Dinleme saati başına maliyet.
+• JSON dışa ve içe aktarma.
+• İnternet izni yok: hiçbir şey telefondan çıkmaz.

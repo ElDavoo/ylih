@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Basaa. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — wé wo kó ba ŋgɛ</string>
+
+    <!-- Navigation -->
+    <string name="nav_headphones">ŋgɛ</string>
+    <string name="nav_stats">tóó</string>
+    <string name="nav_settings">mbol</string>
+
+    <!-- Device kinds -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">wìm</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">mbɔk</string>
+
+    <!-- First run -->
+    <string name="welcome_title">wé yan ní ylih</string>
+    <string name="welcome_intro">ylih sɔŋ kwé bi ŋgɛ ŋ kuɓ e bun, so ñen mia ŋ bá kuɓ e, ba wó só mbɛn mbón: ndé bi kwé bá dɔ́ ŋgɛ?</string>
+    <string name="welcome_point_auto_title">bón tɔ́ tɔ́p bwa</string>
+    <string name="welcome_point_auto_body">ŋgɛ bluetooth ba sɔŋ bo, wa so ó bun. ku nà nàŋ kuʔ jí kó tóʔ.</string>
+    <string name="welcome_point_lifetime_title">kuɓ-moʔ, kwé-moʔ</string>
+    <string name="welcome_point_lifetime_body">wa kuɓ yaa, dím lí; tóó ba dib ko, so kuɓ ñen ba bísá sa, sa nò.</string>
+    <string name="welcome_point_detailed_title">wìm mɛ dɔ́</string>
+    <string name="welcome_point_detailed_body">tóó bu mbol, ba dím wìm mɛ dɔ́ bi ndé dɔ́ yaa. bluetooth ba sɔŋ bi nàŋ.</string>
+    <string name="welcome_privacy">kuɓ kó ba dib ko si ñen. ku ca nà, mɛ app ku ca internet.</string>
+    <string name="welcome_start">bísá</string>
+
+    <!-- Headphones list -->
+    <string name="devices_in_use">ba sɔŋ</string>
+    <string name="devices_retired">ba nyɔ</string>
+    <string name="devices_empty_title">kuɓ ku nà nti</string>
+    <string name="devices_empty_body">bón ŋgɛ bluetooth, ba ka nà dí. ŋgɛ wìm ba dím tóó bu mbol.</string>
+    <string name="devices_generation">kuɓ #%1$d</string>
+    <string name="devices_retired_on">nyɔ %1$s</string>
+    <string name="devices_connected_for">bun %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Stats -->
+    <string name="stats_title">ŋgɛ kuɓ</string>
+    <string name="stats_sessions_since">%1$s sa %2$s</string>
+    <string name="stats_last_7">ñen 7 ba tóʔ</string>
+    <string name="stats_last_30">ñen 30 ba tóʔ</string>
+    <string name="stats_average_session">sɔŋ bu jí</string>
+    <string name="stats_playing">dɔ́</string>
+    <string name="stats_measured_span">ñen ba sɔŋ</string>
+    <string name="stats_share">gí</string>
+    <string name="stats_daily_hours_30">kwé/ñen (30 ñen)</string>
+    <string name="stats_by_pair">bo kuɓ</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · nyɔ</string>
+    <string name="chart_max">%1$s max</string>
+
+    <!-- Pair detail -->
+    <string name="pair_fallback_title">kuɓ</string>
+    <string name="pair_back">bakun</string>
+    <string name="pair_more">kɔ́</string>
+    <string name="pair_menu_rename">sɔŋ nà</string>
+    <string name="pair_menu_purchase">bìn ma gɛ́</string>
+    <string name="pair_menu_retire">nyɔ / nà tóp</string>
+    <string name="pair_menu_delete">bá</string>
+    <string name="pair_lifetime">kwé ba kuɓ</string>
+    <string name="pair_retired_on">nyɔ %1$s</string>
+    <string name="pair_retired_with_reason">nyɔ %1$s · %2$s</string>
+    <string name="pair_connected_now">bun ti · %1$s</string>
+    <string name="pair_sessions">sɔŋ</string>
+    <string name="pair_average">jí bu</string>
+    <string name="pair_longest">kwé bu dó</string>
+    <string name="pair_first_seen">kénsé a dí</string>
+    <string name="pair_of_measured">bi sɔŋ</string>
+    <string name="pair_measured">sɔŋ</string>
+    <string name="pair_paid">gɛ́</string>
+    <string name="pair_per_hour">mu kwé</string>
+    <string name="pair_bought">gɛ́</string>
+    <string name="pair_daily_hours_14">kwé/ñen (14 ñen)</string>
+    <string name="pair_rename_title">sɔŋ nà kuɓ</string>
+    <string name="pair_rename_label">cam</string>
+    <string name="pair_retire_title">nyɔ kuɓ</string>
+    <string name="pair_retire_label">nàŋ (yaa, gɛ̀, dub…)</string>
+    <string name="pair_retire_confirm">nyɔ</string>
+    <string name="pair_retire_supporting">tóó ba dib ko. bun ŋ nà bi, kuɓ nà ba bísá sa.</string>
+    <string name="pair_price_title">gɛ́ bi dib</string>
+    <string name="pair_price_label">tóó (kuɓ-ɓón)</string>
+    <string name="pair_price_supporting">ba sɔŋ bo gɛ́ mu kwé.</string>
+    <string name="pair_delete_title">bá kuɓ?</string>
+    <string name="pair_delete_body">sɔŋ kuɓ ba bá kó. ku ka sɔŋ bi nàŋ.</string>
+
+    <!-- Session rows -->
+    <string name="session_ongoing">ba sɔŋ ti</string>
+    <string name="session_until">sa %1$s</string>
+    <string name="session_playing">%1$s dɔ́</string>
+    <string name="session_recovered">bísá</string>
+
+    <!-- Settings -->
+    <string name="settings_tracking">sɔŋ</string>
+    <string name="settings_detailed_title">sɔŋ bu dɔ́</string>
+    <string name="settings_detailed_body">ba dím wìm mɛ dɔ́ bi. android ka gɛ̀ événement wìm sa app ba jí, so notification ba nà ba shady. bluetooth ba sɔŋ nàŋ.</string>
+    <string name="settings_detailed_unavailable">ku ka toʔ sa bluetooth permission ba dib: app ba dém connectedDevice so android 14+ ba sɔŋ bi bluetooth permission.</string>
+    <string name="settings_devices">kuɓ</string>
+    <string name="settings_devices_body">tɔ́p nàŋ ku nà ŋgɛ — bìn mɛ speaker — so ku ka sɔŋ.</string>
+    <string name="settings_device_subtitle">%1$s · kénsé %2$s</string>
+    <string name="settings_data">dàta</string>
+    <string name="settings_export">gí json</string>
+    <string name="settings_import">sɔŋ ku</string>
+    <string name="settings_import_warning">sɔŋ ku ba tóp kuɓ ba.</string>
+    <string name="settings_troubleshooting">tuum bu gɛ̀</string>
+    <string name="settings_battery_body">wa sɔŋ ba tɔ́, sɔŋ ylih ku ka battery optimization — app ba tóp ba ku bun sa nàŋ sa man ba kénsé.</string>
+    <string name="settings_battery_button">battery mbol</string>
+    <string name="settings_battery_path">mbol → kuɓ → ylih → battery → ku ndu.</string>
+    <string name="settings_about">kó ylih</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — kwé ŋgɛ, ba dib sa nòŋ mɛ forever.</string>
+    <string name="settings_import_confirm_title">tóp kuɓ ba?</string>
+    <string name="settings_import_confirm_body">sɔŋ ku backup ba bá kuɓ, kuɓ mɛ sɔŋ ba.</string>
+
+    <!-- Shared actions -->
+    <string name="action_save">tém</string>
+    <string name="action_cancel">tɔ́p</string>
+    <string name="action_delete">bá</string>
+    <string name="action_import">sɔŋ ku</string>
+
+    <!-- Notification -->
+    <string name="channel_tracking">sɔŋ ŋgɛ</string>
+    <string name="channel_tracking_description">ba nà wa ylih ba sɔŋ wìm mɛ dɔ́. android ka gɛ̀ événement wìm sa app ba ndu.</string>
+    <string name="notification_title">sɔŋ kwé ŋgɛ</string>
+    <string name="notification_starting">bísá…</string>
+    <string name="notification_idle">gúrúm ŋgɛ</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d bun · %2$s</item>
+        <item quantity="other">%1$d bun · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d bun · %2$s · dɔ́</item>
+        <item quantity="other">%1$d bun · %2$s · dɔ́</item>
+    </plurals>
+
+    <!-- Snackbar messages -->
+    <string name="detailed_needs_bluetooth">app ba dím bluetooth permission so ka sɔŋ wìm</string>
+    <string name="export_done">backup gí</string>
+    <string name="export_failed">gí ba gɛ̀</string>
+    <string name="import_failed">sɔŋ ku ba gɛ̀</string>
+    <string name="error_could_not_open">ku tuum tó %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">sɔŋ ku %d sɔŋ</item>
+        <item quantity="other">sɔŋ ku %d sɔŋ</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sɔŋ</item>
+        <item quantity="other">%d sɔŋ</item>
+    </plurals>
+</resources>

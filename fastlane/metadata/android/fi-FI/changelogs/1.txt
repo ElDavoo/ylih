@@ -1,0 +1,8 @@
+Ensimmäinen julkaisu.
+
+• Jokaisen fyysisen kuulokeparin elinaikaiset tunnit, sukupolvineen, joten korvaava pari aloittaa nollasta perimättä edellisen kokonaismäärää.
+• Jokainen yhteys säilytetään pysyvästi, päivä- ja parikohtaisin tilastoin.
+• Valinnainen tarkka seuranta langallisille ja USB-kuulokkeille sekä toistoajalle suhteessa yhteysaikaan.
+• Kuunteluhinta tunnilta.
+• JSON-vienti ja -tuonti.
+• Ei internet-oikeutta: mikään ei koskaan poistu puhelimesta.

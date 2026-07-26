@@ -1,0 +1,40 @@
+Koptelefoons gaan een keer stuk. Voordat het zover is, beantwoordt ylih de enige vraag die er echt toe doet: hoeveel uur heb je eruit gehaald?
+
+Elke keer dat je koptelefoon verbindt, noteert ylih wanneer. Elke keer dat hij verbreekt, noteert het wanneer. Dat is het hele idee — en omdat een verbinding niet meer is dan twee tijdstippen, hoeft de app niet op de achtergrond te draaien om dit te doen.
+
+WAT HET BIJHOUDT
+
+• Levenslange uren per fysieke koptelefoon. Als een koptelefoon het begeeft, pensioneer je hem — het totaal bevriest, en de volgende koptelefoon van hetzelfde model begint weer bij nul, als generatie 2. Je oude cijfers worden nooit vermengd met de nieuwe.
+• Elke sessie, permanent bewaard: verbonden om, verbroken om, en waarom hij eindigde.
+• Afspeeltijd (optioneel): hoeveel van die verbonden tijd er echt audio afspeelde, zodat "om mijn nek hangen" niet meetelt als luisteren.
+• Kosten per uur, als je invoert wat je hebt betaald. Een bevredigend getal om te zien dalen.
+
+TWEE MANIEREN VAN BIJHOUDEN
+
+Alleen bluetooth — de standaard. Er draait niets van de app, er staat niets in je meldingenpaneel en er is geen batterijkost, omdat android verbindingsgebeurtenissen aan de app doorgeeft, ook terwijl die gesloten is.
+
+Gedetailleerd bijhouden — optioneel. Voegt bekabelde en usb-koptelefoons toe en meet afspelen versus verbonden tijd. Hiervoor is één stille melding met minimale prioriteit nodig, omdat android bekabelde aansluitgebeurtenissen alleen meldt aan een app die al draait. Dat, en niets anders, is waarom die melding bestaat.
+
+Bluetooth wordt hoe dan ook bijgehouden.
+
+CIJFERS DIE JE JAREN LATER NOG KUNT VERTROUWEN
+
+Cijfers op lange termijn zijn waardeloos als een crash of een herstart er stilletjes twaalf uur bij optelt. Daarom:
+
+• Een sessie die openbleef door een herstart of crash wordt afgesloten op het laatst bekende hartslagmoment, nooit later dan het moment waarop de telefoon opstartte. Tijd dat de telefoon uitstond, telt nooit mee.
+• Als je koptelefoon na een herstart nog steeds verbonden is, begint een nieuwe sessie in plaats van dat de oude wordt opgerekt over de onderbreking.
+• Sessies krijgen een hartslag zolang ze open staan, zodat de schade van een gemiste verbreking beperkt blijft.
+
+PRIVÉ VAN NATURE
+
+ylih heeft geen internettoegang. Niet "we beloven niets te versturen" — de app kan het technisch niet. Geen accounts, geen analyse, geen advertenties en geen tracking. Alles staat in een database op je telefoon.
+
+Instellingen → Exporteren schrijft je hele geschiedenis als leesbare json, en Importeren zet die terug, zodat overstappen naar een nieuwe telefoon je nooit je cijfers kost.
+
+MACHTIGINGEN
+
+• Apparaten in de buurt (bluetooth): nodig om verbindingsgebeurtenissen te ontvangen en de naam van een koptelefoon te lezen. Zonder deze machtiging kan bluetooth-tracking helemaal niet werken.
+• Meldingen: alleen voor de melding van gedetailleerd bijhouden.
+• Uitvoeren bij opstarten: om sessies af te sluiten die het afsluiten nooit heeft gemeld.
+
+Open source onder de MIT-licentie.

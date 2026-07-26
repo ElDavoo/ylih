@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Asturian. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ta vida en auriculares</string>
+
+    <!-- Navegación -->
+    <string name="nav_headphones">auriculares</string>
+    <string name="nav_stats">estadístiques</string>
+    <string name="nav_settings">axustes</string>
+
+    <!-- Tipos de dispositivu -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">cableáu</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">desconocíu</string>
+
+    <!-- Primer usu -->
+    <string name="welcome_title">bienventu a ylih</string>
+    <string name="welcome_intro">ylih guarda cuántu tiempu cada par d\'auriculares permanez conectáu, pa que dientro de muchos años entá puedas responder la única pregunta que importa sobre un par: ¿cuántes hores duraron?</string>
+    <string name="welcome_point_auto_title">conecta y escuéyate</string>
+    <string name="welcome_point_auto_body">los auriculares bluetooth se graben solos, dende\'l momentu en que se conecten. nun hai d\'axar nada corriendo.</string>
+    <string name="welcome_point_lifetime_title">una par, una vida</string>
+    <string name="welcome_point_lifetime_body">cuando una par se muere, xubildala: \'l total s\'azota equí y\'l siguiente par d\'esos mesmos auriculares empieza de nuevu dende cero.</string>
+    <string name="welcome_point_detailed_title">cableáu y reproducción</string>
+    <string name="welcome_point_detailed_body">el rastrexu detallau, nos axustes, añade auriculares cableáu y mide cuántu d\'esi tiempu yera reproducción de verdá.</string>
+    <string name="welcome_privacy">tou permanez nesti teléfonu. nun hai cuentes, ni l\'app tien permisu d\'internet.</string>
+    <string name="welcome_start">comienza</string>
+
+    <!-- Llista d\'auriculares -->
+    <string name="devices_in_use">n\'usu</string>
+    <string name="devices_retired">xubildaos</string>
+    <string name="devices_empty_title">sin auriculares entá</string>
+    <string name="devices_empty_body">conecta un par d\'auriculares bluetooth y apaecerán equí. los auriculares cableáu necesiten rastrexu detallau, nos axustes.</string>
+    <string name="devices_generation">par #%1$d</string>
+    <string name="devices_retired_on">xubildaos %1$s</string>
+    <string name="devices_connected_for">conectáu %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Estadístiques -->
+    <string name="stats_title">tolos auriculares</string>
+    <string name="stats_sessions_since">%1$s dende %2$s</string>
+    <string name="stats_last_7">últimos 7 díes</string>
+    <string name="stats_last_30">últimos 30 díes</string>
+    <string name="stats_average_session">media de sesión</string>
+    <string name="stats_playing">reproducción</string>
+    <string name="stats_measured_span">períodu midíu</string>
+    <string name="stats_share">compartir</string>
+    <string name="stats_daily_hours_30">hores diariu (30 díes)</string>
+    <string name="stats_by_pair">por par</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · xubildao</string>
+    <string name="chart_max">máx. %1$s</string>
+
+    <!-- Detalles de par -->
+    <string name="pair_fallback_title">par</string>
+    <string name="pair_back">atrás</string>
+    <string name="pair_more">más</string>
+    <string name="pair_menu_rename">renombrar</string>
+    <string name="pair_menu_purchase">información de compra</string>
+    <string name="pair_menu_retire">xubildar / reemplazáu</string>
+    <string name="pair_menu_delete">desaniciar</string>
+    <string name="pair_lifetime">tiempu d\'esta par</string>
+    <string name="pair_retired_on">xubildaos %1$s</string>
+    <string name="pair_retired_with_reason">xubildaos %1$s · %2$s</string>
+    <string name="pair_connected_now">conectáu agora · %1$s</string>
+    <string name="pair_sessions">sesiones</string>
+    <string name="pair_average">media</string>
+    <string name="pair_longest">la más llarga</string>
+    <string name="pair_first_seen">primera vegada visto</string>
+    <string name="pair_of_measured">de lo midíu</string>
+    <string name="pair_measured">midíu</string>
+    <string name="pair_paid">pagáu</string>
+    <string name="pair_per_hour">per hora</string>
+    <string name="pair_bought">compráu</string>
+    <string name="pair_daily_hours_14">hores diariu (14 díes)</string>
+    <string name="pair_rename_title">renombrar par</string>
+    <string name="pair_rename_label">nome</string>
+    <string name="pair_retire_title">xubildar esta par</string>
+    <string name="pair_retire_label">razón (rompíen, vendíen, perdíen…)</string>
+    <string name="pair_retire_confirm">xubildar</string>
+    <string name="pair_retire_supporting">los totales se conguen equí. reconectando\'l mesmu dispositivu empieza una par nueva dende cero.</string>
+    <string name="pair_price_title">preciu pagáu</string>
+    <string name="pair_price_label">cantidá (unidaes enteres)</string>
+    <string name="pair_price_supporting">usáu pa\'l preciu per hora.</string>
+    <string name="pair_delete_title">¿desaniciar esta par?</string>
+    <string name="pair_delete_body">toles sesiones grabáes pa ella también se desanicien. esto nun se pue deshacer.</string>
+
+    <!-- Fileres de sesión -->
+    <string name="session_ongoing">en cursu</string>
+    <string name="session_until">hasta %1$s</string>
+    <string name="session_playing">%1$s reproduciendo</string>
+    <string name="session_recovered">recuperáu</string>
+
+    <!-- Axustes -->
+    <string name="settings_tracking">rastrexu</string>
+    <string name="settings_detailed_title">rastrexu detallau</string>
+    <string name="settings_detailed_body">añade auriculares cableáu y tiempu de reproducción. android namái reporta eventos de conexón de cable a una app corriendo, asina que guarda una notificación silenciosa na cortina. bluetooth siempre se rastrea.</string>
+    <string name="settings_detailed_unavailable">nun ta disponible hasta que se conceda accesu a bluetooth: esta compilación namái declara\'l tipu de serviciu connectedDevice, que android 14+ enlaza a un permisu de bluetooth.</string>
+    <string name="settings_devices">dispositivus</string>
+    <string name="settings_devices_body">desclinca too lo que nun seya auriculares — un sistema d\'auto o un altavoz — pa dexa de grabalo.</string>
+    <string name="settings_device_subtitle">%1$s · primera vegada visto %2$s</string>
+    <string name="settings_data">datos</string>
+    <string name="settings_export">esportar json</string>
+    <string name="settings_import">importar</string>
+    <string name="settings_import_warning">importar reemplaza too lo qu\'agora tá guardáu.</string>
+    <string name="settings_troubleshooting">solucionar problemes</string>
+    <string name="settings_battery_body">si les sesiones dexen de grabarse, comprueba que ylih ta escluyíu de l\'optimización de batería — una app parada a la fuerza nunca vuelve a recibir eventos de conexón hasta que se abre de nuevu.</string>
+    <string name="settings_battery_button">axustes de batería</string>
+    <string name="settings_battery_path">axustes → apps → ylih → batería → non restrinxíu.</string>
+    <string name="settings_about">acerca de</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — hores en auriculares, guaardaes localmente pa siempre.</string>
+    <string name="settings_import_confirm_title">¿reemplazar tolos datos?</string>
+    <string name="settings_import_confirm_body">importar esta copia de seguridá desanicia cada dispositivu, par y sesión guardáu agora.</string>
+
+    <!-- Acciones compartíes -->
+    <string name="action_save">guardar</string>
+    <string name="action_cancel">cancelar</string>
+    <string name="action_delete">desaniciar</string>
+    <string name="action_import">importar</string>
+
+    <!-- Notificación -->
+    <string name="channel_tracking">rastrexu d\'auriculares</string>
+    <string name="channel_tracking_description">apaez mentre ylih ta mirando por auriculares cableáu y reproducción. android nun entrega eventos de conexón de cable a apps que nun tán corriendo.</string>
+    <string name="notification_title">rastrexando tiempu en auriculares</string>
+    <string name="notification_starting">iniciando…</string>
+    <string name="notification_idle">esperando auriculares</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d conectáu · %2$s</item>
+        <item quantity="other">%1$d conectáu · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d conectáu · %2$s · reproduciendo</item>
+        <item quantity="other">%1$d conectáu · %2$s · reproduciendo</item>
+    </plurals>
+
+    <!-- Mensaxes de snackbar -->
+    <string name="detailed_needs_bluetooth">esta compilación precisa accesu a bluetooth pa poder rastrexar auriculares cableáu</string>
+    <string name="export_done">copia de seguridá esportáa</string>
+    <string name="export_failed">falló l\'esportación</string>
+    <string name="import_failed">falló l\'importación</string>
+    <string name="error_could_not_open">nun se pudo abrir %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">importáa %d sesión</item>
+        <item quantity="other">importáes %d sesiones</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sesión</item>
+        <item quantity="other">%d sesiones</item>
+    </plurals>
+</resources>

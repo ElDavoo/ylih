@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Afrikaans. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - jou lewe in koptelefone</string>
+
+    <!-- Onderste navigasie -->
+    <string name="nav_headphones">koptelefone</string>
+    <string name="nav_stats">statistieke</string>
+    <string name="nav_settings">instellings</string>
+
+    <!-- Toesteltype -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">bedraad</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">onbekend</string>
+
+    <!-- Eerste keer -->
+    <string name="welcome_title">welkom by ylih</string>
+    <string name="welcome_intro">ylih neem aan hoe lank elke koptelefoonpaar gekonnekteer bly, sodat jy jare later nog steeds die enigste belangrike vraag oor \'n paar kan beantwoord: hoeveel uur het hulle gelees?</string>
+    <string name="welcome_point_auto_title">konnekteer en vergeet</string>
+    <string name="welcome_point_auto_body">bluetooth-koptelefone word self opgeneem, vanaf die oomblik wat hulle konnekteer. niks hoef aanlêend te wees nie.</string>
+    <string name="welcome_point_lifetime_title">een paar, een lewe</string>
+    <string name="welcome_point_lifetime_body">wanneer \'n paar sterf, pensioneer dit: sy totaal bevries daar en die volgende paar van dieselfde koptelefone begin weer van nul af.</string>
+    <string name="welcome_point_detailed_title">bedraad en afspeel</string>
+    <string name="welcome_point_detailed_body">gedetailleerde opvolging, in instellings, voeg bedraad koptelefone by en meet hoeveel van die tyd werklik afspeel was.</string>
+    <string name="welcome_privacy">alles bly op hierdie foon. daar is geen rekening nie, en die program het geen internettoestemming nie.</string>
+    <string name="welcome_start">begin</string>
+
+    <!-- Koptelefone lys -->
+    <string name="devices_in_use">in gebruik</string>
+    <string name="devices_retired">afgetree</string>
+    <string name="devices_empty_title">nog geen koptelefone nie</string>
+    <string name="devices_empty_body">konnekteer \'n paar bluetooth-koptelefone en hulle sal hier verskyn. bedraad koptelefone benodig gedetailleerde opvolging, in instellings.</string>
+    <string name="devices_generation">paar #%1$d</string>
+    <string name="devices_retired_on">afgetree %1$s</string>
+    <string name="devices_connected_for">gekonnekteer %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Statistieke -->
+    <string name="stats_title">alle koptelefone</string>
+    <string name="stats_sessions_since">%1$s sedert %2$s</string>
+    <string name="stats_last_7">laaste 7 dae</string>
+    <string name="stats_last_30">laaste 30 dae</string>
+    <string name="stats_average_session">gemiddelde sessie</string>
+    <string name="stats_playing">afspeel</string>
+    <string name="stats_measured_span">gemete tydperk</string>
+    <string name="stats_share">aandeel</string>
+    <string name="stats_daily_hours_30">daaglikse ure (30 dae)</string>
+    <string name="stats_by_pair">per paar</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · afgetree</string>
+    <string name="chart_max">%1$s maks</string>
+
+    <!-- Paar besonderhede -->
+    <string name="pair_fallback_title">paar</string>
+    <string name="pair_back">terug</string>
+    <string name="pair_more">meer</string>
+    <string name="pair_menu_rename">hernoem</string>
+    <string name="pair_menu_purchase">koopinligting</string>
+    <string name="pair_menu_retire">pensioneer / vervang</string>
+    <string name="pair_menu_delete">uitwis</string>
+    <string name="pair_lifetime">lewe van hierdie paar</string>
+    <string name="pair_retired_on">afgetree %1$s</string>
+    <string name="pair_retired_with_reason">afgetree %1$s · %2$s</string>
+    <string name="pair_connected_now">nou gekonnekteer · %1$s</string>
+    <string name="pair_sessions">sessies</string>
+    <string name="pair_average">gemiddelde</string>
+    <string name="pair_longest">langste</string>
+    <string name="pair_first_seen">eerste keer gesien</string>
+    <string name="pair_of_measured">van gemeet</string>
+    <string name="pair_measured">gemeet</string>
+    <string name="pair_paid">betaal</string>
+    <string name="pair_per_hour">per uur</string>
+    <string name="pair_bought">gekoop</string>
+    <string name="pair_daily_hours_14">daaglikse ure (14 dae)</string>
+    <string name="pair_rename_title">hernoem paar</string>
+    <string name="pair_rename_label">naam</string>
+    <string name="pair_retire_title">pensioneer hierdie paar</string>
+    <string name="pair_retire_label">rede (stukkend, verkoop, verloor…)</string>
+    <string name="pair_retire_confirm">pensioneer</string>
+    <string name="pair_retire_supporting">totale bevries hier. wanneer dieselfde toestel weer gekonnekteer word, begin \'n nuwe paar op nul.</string>
+    <string name="pair_price_title">betaalde prys</string>
+    <string name="pair_price_label">bedrag (heeleenhede)</string>
+    <string name="pair_price_supporting">gebruik vir koste per uur.</string>
+    <string name="pair_delete_title">uitwis hierdie paar?</string>
+    <string name="pair_delete_body">elke sessie wat daarvoor opgeneem is, word ook uitgewis. dit kan nie ongedaan gemaak word nie.</string>
+
+    <!-- Sessie rye -->
+    <string name="session_ongoing">lopende</string>
+    <string name="session_until">tot %1$s</string>
+    <string name="session_playing">%1$s afspeel</string>
+    <string name="session_recovered">herwin</string>
+
+    <!-- Instellings -->
+    <string name="settings_tracking">opvolging</string>
+    <string name="settings_detailed_title">gedetailleerde opvolging</string>
+    <string name="settings_detailed_body">voeg bedraad koptelefone en afspeeltyd by. android deel bedradestekkergebeure slegs met lopende toepassings, dus sal dit \'n stille kennisgeving in die skyf hou. bluetooth word in beide gevalle opgevolg.</string>
+    <string name="settings_detailed_unavailable">onbeskikbaar totdat bluetooth-toegang verleen word: hierdie bou verklaar slegs die connectedDevice-dienstipe, wat android 14+ aan \'n bluetooth-toestemming bind.</string>
+    <string name="settings_devices">toestelle</string>
+    <string name="settings_devices_body">teken alles uit wat nie koptelefone is nie — motorstereo\'s of sprekers — om dit nie op te neem nie.</string>
+    <string name="settings_device_subtitle">%1$s · eerste keer gesien %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">voer json uit</string>
+    <string name="settings_import">voer in</string>
+    <string name="settings_import_warning">invoer vervang alles wat tans gestoor is.</string>
+    <string name="settings_troubleshooting">probleemoplossing</string>
+    <string name="settings_battery_body">as sessies nie meer opgeneem word, kontroleer dat ylih van batterybesparing uitgesluit is — \'n toepassing wat geforseer gestop is, sal geen konneksieuitsendings meer ontvang totdat dit geoopend word nie.</string>
+    <string name="settings_battery_button">battery-instellings</string>
+    <string name="settings_battery_path">instellings → toepassings → ylih → battery → onbeperkt.</string>
+    <string name="settings_about">aangaande</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — koptelefoonure, lokaal en vir ewig gehou.</string>
+    <string name="settings_import_confirm_title">vervang alle data?</string>
+    <string name="settings_import_confirm_body">invoer van hierdie rugsteun wis elke toestel, paar en sessie wat nou gestoor is, uit.</string>
+
+    <!-- Gedeelde aksies -->
+    <string name="action_save">stoor</string>
+    <string name="action_cancel">kanselleer</string>
+    <string name="action_delete">uitwis</string>
+    <string name="action_import">voer in</string>
+
+    <!-- Kennisgeving -->
+    <string name="channel_tracking">koptelefoon-opvolging</string>
+    <string name="channel_tracking_description">gewys terwyl ylih vir bedraad koptelefone en afspeel waak. android lewer bedradestekkergebeure nie aan toepassings wat nie loop nie.</string>
+    <string name="notification_title">koptelefoon-opvolging</string>
+    <string name="notification_starting">begin…</string>
+    <string name="notification_idle">wag vir koptelefone</string>
+    <plurals name="notification_active">
+        <item quantity="one">gekonnekteer: %1$d · %2$s</item>
+        <item quantity="other">gekonnekteer: %1$d · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">gekonnekteer: %1$d · %2$s · afspeel</item>
+        <item quantity="other">gekonnekteer: %1$d · %2$s · afspeel</item>
+    </plurals>
+
+    <!-- Snackbar boodskappe -->
+    <string name="detailed_needs_bluetooth">hierdie bou benodig bluetooth-toegang voordat dit bedraad koptelefone kan opvolg</string>
+    <string name="export_done">rugsteun uitgevoer</string>
+    <string name="export_failed">uitvoer het misluk</string>
+    <string name="import_failed">invoer het misluk</string>
+    <string name="error_could_not_open">kon nie %1$s oopmaak nie</string>
+    <plurals name="import_done">
+        <item quantity="one">%d sessie geïmporteer</item>
+        <item quantity="other">%d sessies geïmporteer</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sessie</item>
+        <item quantity="other">%d sessies</item>
+    </plurals>
+</resources>

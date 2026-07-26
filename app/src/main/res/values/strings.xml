@@ -1,13 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">ylih</string>
+<!--
+  Every user-visible string lives here, including the ones only Compose reads. The screens used to
+  carry their copy inline, which stopped being tenable the moment the app shipped a second
+  language.
 
-    <string name="channel_tracking">Headphone tracking</string>
-    <string name="channel_tracking_description">Shown while ylih is watching for wired headphones and playback. Android does not deliver wired plug events to apps that are not running.</string>
+  House style is lowercase throughout, deliberately — it is not a mistake for a translator to
+  "correct". Only names the app does not own (Android's own `connectedDevice` service type, a
+  vendor's product name) keep their capitals.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Launcher label; stays short. app_title is the one the app bar shows. A made-up word, so
+         there is nothing to translate. -->
+    <string name="app_name" translatable="false">ylih</string>
+    <string name="app_title">ylih - your life in headphones</string>
 
-    <string name="notification_title">Tracking headphone time</string>
-    <string name="notification_starting">Starting…</string>
-    <string name="notification_idle">Waiting for headphones</string>
+    <!-- Bottom navigation -->
+    <string name="nav_headphones">headphones</string>
+    <string name="nav_stats">stats</string>
+    <string name="nav_settings">settings</string>
+
+    <!-- Device kinds -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">wired</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">unknown</string>
+
+    <!-- First run -->
+    <string name="welcome_title">welcome to ylih</string>
+    <string name="welcome_intro">ylih records how long each pair of headphones stays connected, so that years from now you can still answer the only question that matters about a pair: how many hours did they last?</string>
+    <string name="welcome_point_auto_title">connect and forget</string>
+    <string name="welcome_point_auto_body">bluetooth headphones are recorded on their own, from the moment they connect. nothing has to be left running.</string>
+    <string name="welcome_point_lifetime_title">one pair, one lifetime</string>
+    <string name="welcome_point_lifetime_body">when a pair dies, retire it: its total freezes there and the next pair of the same headphones starts again from zero.</string>
+    <string name="welcome_point_detailed_title">wired and playback</string>
+    <string name="welcome_point_detailed_body">detailed tracking, in settings, adds wired headphones and measures how much of the time was actually playing.</string>
+    <string name="welcome_privacy">everything stays on this phone. there is no account, and the app has no internet permission.</string>
+    <string name="welcome_start">get started</string>
+
+    <!-- Headphones list -->
+    <string name="devices_in_use">in use</string>
+    <string name="devices_retired">retired</string>
+    <string name="devices_empty_title">no headphones yet</string>
+    <string name="devices_empty_body">connect a pair of bluetooth headphones and they\'ll show up here. wired headphones need detailed tracking, in settings.</string>
+    <string name="devices_generation">pair #%1$d</string>
+    <string name="devices_retired_on">retired %1$s</string>
+    <string name="devices_connected_for">connected %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Stats -->
+    <string name="stats_title">all headphones</string>
+    <!-- %1$s is an already-pluralised session count, %2$s a date. -->
+    <string name="stats_sessions_since">%1$s since %2$s</string>
+    <string name="stats_last_7">last 7 days</string>
+    <string name="stats_last_30">last 30 days</string>
+    <string name="stats_average_session">average session</string>
+    <string name="stats_playing">playing</string>
+    <string name="stats_measured_span">measured span</string>
+    <string name="stats_share">share</string>
+    <string name="stats_daily_hours_30">daily hours (30 days)</string>
+    <string name="stats_by_pair">by pair</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · retired</string>
+    <string name="chart_max">%1$s max</string>
+
+    <!-- Pair detail -->
+    <string name="pair_fallback_title">pair</string>
+    <string name="pair_back">back</string>
+    <string name="pair_more">more</string>
+    <string name="pair_menu_rename">rename</string>
+    <string name="pair_menu_purchase">purchase info</string>
+    <string name="pair_menu_retire">retire / replaced</string>
+    <string name="pair_menu_delete">delete</string>
+    <string name="pair_lifetime">lifetime on this pair</string>
+    <string name="pair_retired_on">retired %1$s</string>
+    <string name="pair_retired_with_reason">retired %1$s · %2$s</string>
+    <string name="pair_connected_now">connected now · %1$s</string>
+    <string name="pair_sessions">sessions</string>
+    <string name="pair_average">average</string>
+    <string name="pair_longest">longest</string>
+    <string name="pair_first_seen">first seen</string>
+    <string name="pair_of_measured">of measured</string>
+    <string name="pair_measured">measured</string>
+    <string name="pair_paid">paid</string>
+    <string name="pair_per_hour">per hour</string>
+    <string name="pair_bought">bought</string>
+    <string name="pair_daily_hours_14">daily hours (14 days)</string>
+    <string name="pair_rename_title">rename pair</string>
+    <string name="pair_rename_label">name</string>
+    <string name="pair_retire_title">retire this pair</string>
+    <string name="pair_retire_label">reason (died, sold, lost…)</string>
+    <string name="pair_retire_confirm">retire</string>
+    <string name="pair_retire_supporting">totals freeze here. reconnecting the same device starts a fresh pair at zero.</string>
+    <string name="pair_price_title">price paid</string>
+    <string name="pair_price_label">amount (whole units)</string>
+    <string name="pair_price_supporting">used for the cost-per-hour figure.</string>
+    <string name="pair_delete_title">delete this pair?</string>
+    <string name="pair_delete_body">every session recorded for it is deleted too. this cannot be undone.</string>
+    <!-- Placeholder for a figure the app does not have. An em dash in every language. -->
+    <string name="value_none" translatable="false">—</string>
+
+    <!-- Session rows -->
+    <string name="session_ongoing">ongoing</string>
+    <string name="session_until">until %1$s</string>
+    <string name="session_playing">%1$s playing</string>
+    <string name="session_recovered">recovered</string>
+
+    <!-- Settings -->
+    <string name="settings_tracking">tracking</string>
+    <string name="settings_detailed_title">detailed tracking</string>
+    <string name="settings_detailed_body">adds wired headphones and playback time. android only reports wired plug events to a running app, so this keeps a silent notification in the shade. bluetooth is tracked either way.</string>
+    <string name="settings_detailed_unavailable">unavailable until bluetooth access is granted: this build only declares the connectedDevice service type, which android 14+ ties to a bluetooth permission.</string>
+    <string name="settings_devices">devices</string>
+    <string name="settings_devices_body">uncheck anything that isn\'t headphones — a car stereo or a speaker — to stop recording it.</string>
+    <string name="settings_device_subtitle">%1$s · first seen %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">import</string>
+    <string name="settings_import_warning">importing replaces everything currently stored.</string>
+    <string name="settings_troubleshooting">troubleshooting</string>
+    <string name="settings_battery_body">if sessions stop being recorded, check that ylih is exempt from battery optimisation — an app that has been force-stopped never receives connection broadcasts again until it is opened.</string>
+    <string name="settings_battery_button">battery settings</string>
+    <string name="settings_battery_path">settings → apps → ylih → battery → unrestricted.</string>
+    <string name="settings_about">about</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — headphone hours, kept locally and forever.</string>
+    <string name="settings_import_confirm_title">replace all data?</string>
+    <string name="settings_import_confirm_body">importing this backup deletes every device, pair and session stored now.</string>
+
+    <!-- Shared actions -->
+    <string name="action_save">save</string>
+    <!-- Lowercase is the house style, not a missed capital; @android:string/cancel would drag in
+         the platform's sentence case and break it. -->
+    <string name="action_cancel" tools:ignore="ButtonCase">cancel</string>
+    <string name="action_delete">delete</string>
+    <string name="action_import">import</string>
+
+    <!-- Notification -->
+    <string name="channel_tracking">headphone tracking</string>
+    <string name="channel_tracking_description">shown while ylih is watching for wired headphones and playback. android does not deliver wired plug events to apps that are not running.</string>
+    <string name="notification_title">tracking headphone time</string>
+    <string name="notification_starting">starting…</string>
+    <string name="notification_idle">waiting for headphones</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d connected · %2$s</item>
         <item quantity="other">%1$d connected · %2$s</item>
@@ -17,16 +150,19 @@
         <item quantity="other">%1$d connected · %2$s · playing</item>
     </plurals>
 
-    <string name="detailed_needs_bluetooth">This build needs Bluetooth access before it can track wired headphones</string>
+    <!-- Snackbar messages -->
+    <string name="detailed_needs_bluetooth">this build needs bluetooth access before it can track wired headphones</string>
+    <string name="export_done">backup exported</string>
+    <string name="export_failed">export failed</string>
+    <string name="import_failed">import failed</string>
+    <string name="error_could_not_open">could not open %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">imported %d session</item>
+        <item quantity="other">imported %d sessions</item>
+    </plurals>
 
     <plurals name="session_count">
         <item quantity="one">%d session</item>
         <item quantity="other">%d sessions</item>
-    </plurals>
-
-    <string name="export_done">Backup exported</string>
-    <plurals name="import_done">
-        <item quantity="one">Imported %d session</item>
-        <item quantity="other">Imported %d sessions</item>
     </plurals>
 </resources>

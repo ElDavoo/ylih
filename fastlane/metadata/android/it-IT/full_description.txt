@@ -1,0 +1,40 @@
+Le cuffie prima o poi si rompono. Prima che succeda, ylih risponde all'unica domanda che conta davvero: quante ore ci hai passato dentro?
+
+Ogni volta che le cuffie si connettono, ylih segna quando. Ogni volta che si disconnettono, segna quando. Tutto qui — e siccome una connessione sono solo due orari, l'app non ha bisogno di restare in esecuzione per registrarli.
+
+COSA REGISTRA
+
+• Le ore totali di ogni paio fisico. Quando un paio muore, ritiralo: il totale si congela e il paio successivo dello stesso modello riparte da zero, come generazione 2. I numeri vecchi non si mescolano mai con i nuovi.
+• Ogni sessione, conservata per sempre: connessione, disconnessione e il motivo per cui è finita.
+• Il tempo di riproduzione (opzionale): quanto di quel tempo stavi davvero ascoltando, così le cuffie appese al collo non contano.
+• Il costo orario, se inserisci quanto le hai pagate. È un numero molto soddisfacente da veder scendere.
+
+DUE MODALITÀ
+
+Solo bluetooth — quella predefinita. Non resta in esecuzione niente, non c'è nessuna notifica e non c'è consumo di batteria, perché android consegna gli eventi di connessione anche ad app chiuse.
+
+Tracciamento dettagliato — opzionale. Aggiunge le cuffie via cavo e USB e misura la riproduzione rispetto al tempo di connessione. Richiede una notifica silenziosa a priorità minima, perché android segnala gli eventi del jack solo a un'app già in esecuzione. È l'unico motivo per cui quella notifica esiste.
+
+Il bluetooth è tracciato in entrambi i casi.
+
+NUMERI DI CUI FIDARSI ANNI DOPO
+
+Un totale a lungo termine non vale niente se un riavvio ci aggiunge dodici ore per sbaglio. Quindi:
+
+• Una sessione lasciata aperta da un crash o da un riavvio viene chiusa all'ultimo battito noto, mai dopo il momento in cui il telefono si è acceso. Il tempo a telefono spento non viene mai conteggiato.
+• Se le cuffie sono ancora connesse dopo un riavvio, parte una sessione nuova invece di allungare quella vecchia.
+• Le sessioni aperte vengono monitorate, così il danno di una disconnessione persa resta limitato.
+
+PRIVATA PER COSTRUZIONE
+
+ylih non ha il permesso internet. Non è una promessa: l'app è tecnicamente incapace di mandare qualcosa da qualche parte. Nessun account, nessuna analitica, nessuna pubblicità, nessun tracciamento. Tutto vive in un database sul tuo telefono.
+
+Impostazioni → Esporta salva l'intera cronologia in JSON leggibile, e Importa la ripristina: cambiare telefono non ti costa i tuoi numeri.
+
+PERMESSI
+
+• Dispositivi nelle vicinanze (bluetooth): serve a ricevere gli eventi di connessione e a leggere il nome delle cuffie. Senza, il tracciamento bluetooth non può funzionare.
+• Notifiche: solo per la notifica del tracciamento dettagliato.
+• Avvio automatico: per chiudere le sessioni che lo spegnimento non ha mai segnalato.
+
+Open source con licenza MIT.

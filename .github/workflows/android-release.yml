@@ -69,6 +69,19 @@ jobs:
         # what Play Console accepts.
         run: ./gradlew --no-daemon --stacktrace clean assembleClassicRelease bundlePlayRelease
 
+      # Screenshots, the 512px icon and the feature graphic, rendered on the JVM by Roborazzi —
+      # no emulator involved. Generated from the tagged commit so the store listing can never
+      # show a version other than the one being released. See docs/play-store.md.
+      - name: Generate Play listing assets
+        run: ./gradlew --no-daemon --stacktrace recordRoborazziPlayDebug
+
+      - name: Upload Play listing assets
+        uses: actions/upload-artifact@v7
+        with:
+          name: play-listing-assets
+          path: app/build/outputs/play-listing/**/*.png
+          if-no-files-found: error
+
       - name: Prepare release files
         run: |
           set -euo pipefail

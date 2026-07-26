@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Danish. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - dit liv i høretelefoner</string>
+
+    <!-- Bundnavigation -->
+    <string name="nav_headphones">høretelefoner</string>
+    <string name="nav_stats">statistik</string>
+    <string name="nav_settings">indstillinger</string>
+
+    <!-- Enhedstyper -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">kabel</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ukendt</string>
+
+    <!-- Første opstart -->
+    <string name="welcome_title">velkommen til ylih</string>
+    <string name="welcome_intro">ylih registrerer, hvor længe hvert par høretelefoner er forbundet, så du om mange år stadig kan svare på det eneste spørgsmål, der betyder noget om et par høretelefoner: hvor mange timer holdt de?</string>
+    <string name="welcome_point_auto_title">forbind og glem</string>
+    <string name="welcome_point_auto_body">bluetooth-høretelefoner registreres af sig selv, fra det øjeblik de forbindes. intet skal blive ved med at køre.</string>
+    <string name="welcome_point_lifetime_title">ét par, ét liv</string>
+    <string name="welcome_point_lifetime_body">når et par går i stykker, så udfas det: dets total fryses der, og det næste par af de samme høretelefoner starter igen fra nul.</string>
+    <string name="welcome_point_detailed_title">kabel og afspilning</string>
+    <string name="welcome_point_detailed_body">detaljeret sporing, i indstillinger, tilføjer høretelefoner med kabel og måler, hvor meget af tiden der rent faktisk blev afspillet.</string>
+    <string name="welcome_privacy">alt bliver på denne telefon. der er ingen konto, og appen har ingen internetadgang.</string>
+    <string name="welcome_start">kom i gang</string>
+
+    <!-- Liste over høretelefoner -->
+    <string name="devices_in_use">i brug</string>
+    <string name="devices_retired">udfaset</string>
+    <string name="devices_empty_title">ingen høretelefoner endnu</string>
+    <string name="devices_empty_body">forbind et par bluetooth-høretelefoner, så dukker de op her. høretelefoner med kabel kræver detaljeret sporing, i indstillinger.</string>
+    <string name="devices_generation">par #%1$d</string>
+    <string name="devices_retired_on">udfaset %1$s</string>
+    <string name="devices_connected_for">forbundet %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <!-- Statistik -->
+    <string name="stats_title">alle høretelefoner</string>
+    <!-- %1$s is an already-pluralised session count, %2$s a date. -->
+    <string name="stats_sessions_since">%1$s siden %2$s</string>
+    <string name="stats_last_7">sidste 7 dage</string>
+    <string name="stats_last_30">sidste 30 dage</string>
+    <string name="stats_average_session">gennemsnitlig session</string>
+    <string name="stats_playing">afspilning</string>
+    <string name="stats_measured_span">målt periode</string>
+    <string name="stats_share">del</string>
+    <string name="stats_daily_hours_30">timer pr. dag (30 dage)</string>
+    <string name="stats_by_pair">pr. par</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · udfaset</string>
+    <string name="chart_max">%1$s maks.</string>
+
+    <!-- Pardetaljer -->
+    <string name="pair_fallback_title">par</string>
+    <string name="pair_back">tilbage</string>
+    <string name="pair_more">mere</string>
+    <string name="pair_menu_rename">omdøb</string>
+    <string name="pair_menu_purchase">købsoplysninger</string>
+    <string name="pair_menu_retire">udfas / udskiftet</string>
+    <string name="pair_menu_delete">slet</string>
+    <string name="pair_lifetime">levetid for dette par</string>
+    <string name="pair_retired_on">udfaset %1$s</string>
+    <string name="pair_retired_with_reason">udfaset %1$s · %2$s</string>
+    <string name="pair_connected_now">forbundet nu · %1$s</string>
+    <string name="pair_sessions">sessioner</string>
+    <string name="pair_average">gennemsnit</string>
+    <string name="pair_longest">længste</string>
+    <string name="pair_first_seen">først set</string>
+    <string name="pair_of_measured">af målt</string>
+    <string name="pair_measured">målt</string>
+    <string name="pair_paid">betalt</string>
+    <string name="pair_per_hour">pr. time</string>
+    <string name="pair_bought">købt</string>
+    <string name="pair_daily_hours_14">timer pr. dag (14 dage)</string>
+    <string name="pair_rename_title">omdøb par</string>
+    <string name="pair_rename_label">navn</string>
+    <string name="pair_retire_title">udfas dette par</string>
+    <string name="pair_retire_label">årsag (gik i stykker, solgt, mistet…)</string>
+    <string name="pair_retire_confirm">udfas</string>
+    <string name="pair_retire_supporting">totalen fryses her. genforbindelse af samme enhed starter et nyt par fra nul.</string>
+    <string name="pair_price_title">pris betalt</string>
+    <string name="pair_price_label">beløb (hele enheder)</string>
+    <string name="pair_price_supporting">bruges til prisen pr. time.</string>
+    <string name="pair_delete_title">slet dette par?</string>
+    <string name="pair_delete_body">hver session, der er registreret for det, bliver også slettet. dette kan ikke fortrydes.</string>
+
+    <!-- Sessionslinjer -->
+    <string name="session_ongoing">i gang</string>
+    <string name="session_until">indtil %1$s</string>
+    <string name="session_playing">%1$s afspilning</string>
+    <string name="session_recovered">gendannet</string>
+
+    <!-- Indstillinger -->
+    <string name="settings_tracking">sporing</string>
+    <string name="settings_detailed_title">detaljeret sporing</string>
+    <string name="settings_detailed_body">tilføjer høretelefoner med kabel og afspilningstid. android rapporterer kun kabelbegivenheder til en kørende app, så dette bevarer en lydløs notifikation i meddelelsespanelet. bluetooth spores under alle omstændigheder.</string>
+    <string name="settings_detailed_unavailable">ikke tilgængelig, før bluetooth-adgang er givet: denne build angiver kun tjenestetypen connectedDevice, som android 14+ knytter til en bluetooth-tilladelse.</string>
+    <string name="settings_devices">enheder</string>
+    <string name="settings_devices_body">fjern fluebenet ved alt, der ikke er høretelefoner — et bilstereoanlæg eller en højttaler — for at holde op med at registrere det.</string>
+    <string name="settings_device_subtitle">%1$s · først set %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">eksportér json</string>
+    <string name="settings_import">importér</string>
+    <string name="settings_import_warning">import erstatter alt, der er gemt nu.</string>
+    <string name="settings_troubleshooting">fejlfinding</string>
+    <string name="settings_battery_body">hvis sessioner holder op med at blive registreret, så tjek at ylih er undtaget fra batterioptimering — en app, der er blevet tvangsstoppet, modtager aldrig forbindelsesbegivenheder igen, før den åbnes.</string>
+    <string name="settings_battery_button">batteriindstillinger</string>
+    <string name="settings_battery_path">indstillinger → apps → ylih → batteri → ubegrænset.</string>
+    <string name="settings_about">om</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — høretelefontimer, gemt lokalt og for altid.</string>
+    <string name="settings_import_confirm_title">erstat alle data?</string>
+    <string name="settings_import_confirm_body">import af denne sikkerhedskopi sletter hver enhed, hvert par og hver session, der er gemt nu.</string>
+
+    <!-- Fælles handlinger -->
+    <string name="action_save">gem</string>
+    <string name="action_cancel">annullér</string>
+    <string name="action_delete">slet</string>
+    <string name="action_import">importér</string>
+
+    <!-- Notifikation -->
+    <string name="channel_tracking">høretelefonsporing</string>
+    <string name="channel_tracking_description">vises, mens ylih holder øje med høretelefoner med kabel og afspilning. android leverer ikke kabelbegivenheder til apps, der ikke kører.</string>
+    <string name="notification_title">sporer høretelefontid</string>
+    <string name="notification_starting">starter…</string>
+    <string name="notification_idle">venter på høretelefoner</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d forbundet · %2$s</item>
+        <item quantity="other">%1$d forbundet · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d forbundet · %2$s · afspilning</item>
+        <item quantity="other">%1$d forbundet · %2$s · afspilning</item>
+    </plurals>
+
+    <!-- Beskeder -->
+    <string name="detailed_needs_bluetooth">denne build har brug for bluetooth-adgang, før den kan spore høretelefoner med kabel</string>
+    <string name="export_done">sikkerhedskopi eksporteret</string>
+    <string name="export_failed">eksport mislykkedes</string>
+    <string name="import_failed">import mislykkedes</string>
+    <string name="error_could_not_open">kunne ikke åbne %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">importerede %d session</item>
+        <item quantity="other">importerede %d sessioner</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d session</item>
+        <item quantity="other">%d sessioner</item>
+    </plurals>
+</resources>

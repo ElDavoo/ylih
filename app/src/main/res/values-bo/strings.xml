@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Tibetan. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ཁྱེད་ཀྱི་ཡུན་ལ་གོ་སྒྲིག</string>
+
+    <!-- མཐོང་སྐུལ་ -->
+    <string name="nav_headphones">གོ་སྒྲིག</string>
+    <string name="nav_stats">གླེང་སྟེགས</string>
+    <string name="nav_settings">སྒྲིག་འདེགས</string>
+
+    <!-- སྐུ་གཤེགས་རིགས་ -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">སྲེད་པའི</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">མ་ཕྲད་པ</string>
+
+    <!-- དང་པོ་ཐེངས་ལ་ལོ་གཏོགས་ -->
+    <string name="welcome_title">ylih ལ་ཕེབས་པ་བསྡུས་མཉེས་ཞུ</string>
+    <string name="welcome_intro">ylih ནི་གོ་སྒྲིག་སོགས་ཅིག་རང་གིས་དུས་ཁ་རིས་ཇུས་དུས་ཚོད་རེ་མོ་སྲེད་ལ་གླེང་སྟེགས་འདེགས་ཡིན། དེས་ཉིན་མོ་མང་པོ་ལོན་རྗེས་གོ་སྒྲིག་སོགས་ཅིག་གི་ལ་དུས་གླེང་ལ་རྐྱེན་ཆེས་གཏུབ་བྱེད་པར་ཡོད།</string>
+    <string name="welcome_point_auto_title">སྦྱོར་ནས་བྲེལ་མེད་ཀྱིས</string>
+    <string name="welcome_point_auto_body">bluetooth གོ་སྒྲིག་ཕྱོགས་ཕུད་ནས་སྲེད་དགོས་མེད་ཀྱིས། དུས་ཕྱོགས་ཞིག་ལ་ལས་སེ་ལ་གླེང་སྟེགས་འདེགས་ཀྱི་ཡིན།</string>
+    <string name="welcome_point_lifetime_title">གོ་སྒྲིག་ཅིག་ནི་ཡུན་གཅིག</string>
+    <string name="welcome_point_lifetime_body">གོ་སྒྲིག་སོགས་ཅིག་ཕོང་སོང་ཞེ་དགོས་པ་བྱུང་ན་སྐུར་དགོས། དེ་ནས་གོ་སྒྲིག་སོགས་དཀར་ཆའི་གླེང་སྟེགས་ནི་ཕོགས་གསར་དུ་སླེབ་གི་ཡིན།</string>
+    <string name="welcome_point_detailed_title">སྲེད་དང་སྒྲ་སྲིད</string>
+    <string name="welcome_point_detailed_body">གླེང་སྟེགས་ཁ་གསལ་བའི་སྒྲིག་འདེགས་ནི་སྲེད་དང་སྒྲ་སྲིད་གི་དུས་ཚོད་ཀྱང་གླེང་སྟེགས་འདེགས་ཀྱི་ཡིན།</string>
+    <string name="welcome_privacy">ཆ་ཚང་ལ་ཚེས་ལ་དགེ་སོགས་ཁུག་ཏུ་གནས་གི་ཡིན། ཐོབ་ཐུབ་གཙོ་བོ་བྲེལ་དང་ངེས་འབྲེལ་ཕྱོགས་གསར་གཏོར་མེད།</string>
+    <string name="welcome_start">གླེང་སྟེགས་འདེགས</string>
+
+    <!-- གོ་སྒྲིག་ཀ་ཞིབ་ -->
+    <string name="devices_in_use">གཟིགས་ཀ་ཡིན་</string>
+    <string name="devices_retired">སྐུར་ཞུགས</string>
+    <string name="devices_empty_title">གོ་སྒྲིག་མེད</string>
+    <string name="devices_empty_body">bluetooth གོ་སྒྲིག་སོགས་ཅིག་སྦྱོར་ན་ལ་ཞིབ་ལ་སྟེགས་ཀ་ཡིན་གི་ཡིན། སྲེད་དེ་ནི་གླེང་སྟེགས་ཁ་གསལ་བའི་སྒྲིག་འདེགས་དགོས་ཡིན།</string>
+    <string name="devices_generation">སོགས་ཅིག་#%1$d</string>
+    <string name="devices_retired_on">%1$s ལ་སྐུར་</string>
+    <string name="devices_connected_for">%1$s ལ་སྦྱོར་</string>
+    <string name="devices_recent">%1$s / ༧དི།</string>
+
+    <!-- གླེང་སྟེགས་ -->
+    <string name="stats_title">གོ་སྒྲིག་ཆ་ཚང་</string>
+    <string name="stats_sessions_since">%1$s ལ་%2$s ནས་</string>
+    <string name="stats_last_7">ཉིན་མོ་བདུན་ལ་</string>
+    <string name="stats_last_30">ཉིན་མོ་སུམ་ཅུ་ལ་</string>
+    <string name="stats_average_session">དང་ལ་རིས་མཐུན་</string>
+    <string name="stats_playing">སྒྲ་སྲིད</string>
+    <string name="stats_measured_span">གླེང་སྟེགས་ཡིན་པའི་དུས་གླེང་</string>
+    <string name="stats_share">གཏོགས་སྒྲིགས</string>
+    <string name="stats_daily_hours_30">ཉིན་རེར་དུས་ཆུ་ཙམ་ (ཉིན་མོ་སུམ་ཅུ་)</string>
+    <string name="stats_by_pair">སོགས་ཅིག་རེ་རེར་</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · སྐུར་ཞུགས</string>
+    <string name="chart_max">%1$s མེ་ཏོག</string>
+
+    <!-- སོགས་ཅིག་གི་ཁ་དོག་ -->
+    <string name="pair_fallback_title">སོགས་ཅིག</string>
+    <string name="pair_back">ལ་ལོག</string>
+    <string name="pair_more">གཅིག་ལྷག་</string>
+    <string name="pair_menu_rename">མིང་ལ་བསྒྱུར་</string>
+    <string name="pair_menu_purchase">ཕུལ་གླེང་</string>
+    <string name="pair_menu_retire">སྐུར་ / ལོ་གསར་</string>
+    <string name="pair_menu_delete">སྤོ་རྩ</string>
+    <string name="pair_lifetime">སོགས་ཅིག་ལ་ཡུན་</string>
+    <string name="pair_retired_on">%1$s ལ་སྐུར་</string>
+    <string name="pair_retired_with_reason">%1$s ལ་སྐུར་ · %2$s</string>
+    <string name="pair_connected_now">དུས་ད་ལྟ་ སྦྱོར་ · %1$s</string>
+    <string name="pair_sessions">དུས་དྭངས་</string>
+    <string name="pair_average">དང་ལ་རིས་མཐུན་</string>
+    <string name="pair_longest">དུས་རིང་ཤོས་</string>
+    <string name="pair_first_seen">དང་པོ་མཐོང་</string>
+    <string name="pair_of_measured">གླེང་སྟེགས་ཀྱི་ནང་ནས་</string>
+    <string name="pair_measured">གླེང་སྟེགས་དུས་</string>
+    <string name="pair_paid">གླེང་སྟེགས་ལ་ལོག་</string>
+    <string name="pair_per_hour">ཆུ་ཙམ་རེ་</string>
+    <string name="pair_bought">ཕུལ་</string>
+    <string name="pair_daily_hours_14">ཉིན་རེར་དུས་ཆུ་ཙམ་ (ཉིན་མོ་བཅུ་བཞི་)</string>
+    <string name="pair_rename_title">སོགས་ཅིག་མིང་བསྒྱུར་</string>
+    <string name="pair_rename_label">མིང་</string>
+    <string name="pair_retire_title">སོགས་ཅིག་སྐུར་</string>
+    <string name="pair_retire_label">རྐྱེན་ (ཕོང་/ཕུལ་/ཕྲོགས་གཞིས་…)</string>
+    <string name="pair_retire_confirm">སྐུར་</string>
+    <string name="pair_retire_supporting">གླེང་སྟེགས་ཀ་ལ་གནས་ཀ། གོ་སྒྲིག་སོགས་དཀར་ཆའི་སྦྱོར་དུས་གླེང་ལ་སོགས་ཅིག་གསར་དུ་སླེབ་གི་ཡིན།</string>
+    <string name="pair_price_title">ཕུལ་གླེང་གི་གོ</string>
+    <string name="pair_price_label">གོ (ཚིག་མཐུན་)</string>
+    <string name="pair_price_supporting">དུས་ཆུ་ཙམ་གི་གོར་གཏོགས་སྒྲིགས་དུས་བེད་སྤེལ།</string>
+    <string name="pair_delete_title">སོགས་ཅིག་དེ་སྤོ་རྩའམ་</string>
+    <string name="pair_delete_body">དུས་དྭངས་ཆ་ཚང་ཀྱང་སྤོ་རྩའི་ཡིན། དེ་ནི་རིས་མེ་དུས་ཡིན།</string>
+
+    <!-- དུས་དྭངས་གླེང་ -->
+    <string name="session_ongoing">དུས་ཁ་སོགས་ཀ་</string>
+    <string name="session_until">%1$s ལ་ཚད་</string>
+    <string name="session_playing">%1$s སྒྲ་སྲིད་</string>
+    <string name="session_recovered">ཕིར་སླེབས་</string>
+
+    <!-- སྒྲིག་འདེགས་ -->
+    <string name="settings_tracking">གླེང་སྟེགས་</string>
+    <string name="settings_detailed_title">གླེང་སྟེགས་ཁ་གསལ་</string>
+    <string name="settings_detailed_body">སྲེད་དང་སྒྲ་སྲིད་གི་དུས་ཚོད་ཀྱང་གླེང་སྟེགས་འདེགས་ཀྱི་ཡིན། android ནི་སྲེད་གི་གླེང་སྟེགས་ཀ་མ་སྔགས་པའི་ཞེ་དགོས། དེས་ནས་glengs གླེང་གི་དགེ་རྒྱལ་གནས་གི་ཡིན། bluetooth ཀ་ལ་གླེང་སྟེགས་འདེགས་ཀྱི་ཡིན།</string>
+    <string name="settings_detailed_unavailable">bluetooth དམིགས་བསལ་འཐུས་ཤོག་ཡིན་ཚེ་ལས་མ། དེ་ཡིས་connectedDevice སེར་ཀའི་རེས་ལ་android 14+ ལ་bluetooth དམིགས་བསལ་དགོས་ཡིན།</string>
+    <string name="settings_devices">ཆ་གཤེགས་</string>
+    <string name="settings_devices_body">གོ་སྒྲིག་མིན་པའི་རྣམས་ (སྐུ་རྒྱབ་གླེང་དང་སྒྲ་སྒུར་སོགས་) ཕྱོགས་སྤོས་ལ་གླེང་སྟེགས་མ་འདེགས་ཀྱི།</string>
+    <string name="settings_device_subtitle">%1$s · དང་པོ་མཐོང་ %2$s</string>
+    <string name="settings_data">གླེང་སྟེགས་</string>
+    <string name="settings_export">json ལ་བཏོན་</string>
+    <string name="settings_import">གླེང་སྟེགས་སླེབ་</string>
+    <string name="settings_import_warning">གླེང་སྟེགས་སླེབ་དུས་ད་ལྟའི་སྟེགས་ཞིབ་ཆ་ཚང་བསྒྱུར་ཡིན།</string>
+    <string name="settings_troubleshooting">གཞི་འཆོད་</string>
+    <string name="settings_battery_body">དུས་དྭངས་གླེང་སྟེགས་བཞག་ཞེ་དགོས་པ་བྱུང་ན་ylih ནི་བེ་དུ་ཡི་བསྲེག་སྒྲིག་ཀ་མ་གཏུབ་བྱེད་དགོས། ཕོགས་གསྲོགས་གླེང་ཐོགས་དུས་གླེང་སྟེགས་འདེགས་མ་ཡིན།</string>
+    <string name="settings_battery_button">བེ་དུ་གི་སྒྲིག་འདེགས་</string>
+    <string name="settings_battery_path">སྒྲིག་འདེགས་ → ཞེ་དགོས་ → ylih → བེ་དུ་ → ཁ་རྒྱུགས་མེད།</string>
+    <string name="settings_about">ylih ཡི་རྒྱུ་ཁུག་</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — གོ་སྒྲིག་དུས་ཆུ་ཙམ་གི་སྐུ་ཚེ་ཁུག་ལ་དགེ་སོགས།</string>
+    <string name="settings_import_confirm_title">སྟེགས་ཞིབ་ཆ་ཚང་བསྒྱུར་འམ་</string>
+    <string name="settings_import_confirm_body">གླེང་སྟེགས་སླེབ་དུས་ཆ་གཤེགས་དང་སོགས་ཅིག་དང་དུས་དྭངས་ཆ་ཚང་བསྤོས་ཀྱི་ཡིན།</string>
+
+    <!-- གཏུབ་བྱེད་གཅིག་ -->
+    <string name="action_save">དགེ་སོགས་</string>
+    <string name="action_cancel">སྤོས་</string>
+    <string name="action_delete">སྤོ་རྩ</string>
+    <string name="action_import">གླེང་སྟེགས་སླེབ་</string>
+
+    <!-- སྔགས་གླེང་ -->
+    <string name="channel_tracking">གོ་སྒྲིག་གླེང་སྟེགས་</string>
+    <string name="channel_tracking_description">ylih ནི་སྲེད་དང་སྒྲ་སྲིད་གི་དུས་ཚོད་རེ་མོ་གླེང་སྟེགས་ཡིན་དུས་ལ། android ནི་སྲེད་གི་གླེང་སྟེགས་ཀ་མ་སྔགས་པའི་ཞེ་དགོས།</string>
+    <string name="notification_title">གོ་སྒྲིག་དུས་ཚོད་རེ་མོ་གླེང་སྟེགས་</string>
+    <string name="notification_starting">གླེང་སྟེགས་འདེགས་ཕུལ་…</string>
+    <string name="notification_idle">གོ་སྒྲིག་ལ་རེ་</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d སྦྱོར་ · %2$s</item>
+        <item quantity="other">%1$d སྦྱོར་ · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d སྦྱོར་ · %2$s · སྒྲ་སྲིད་</item>
+        <item quantity="other">%1$d སྦྱོར་ · %2$s · སྒྲ་སྲིད་</item>
+    </plurals>
+
+    <!-- སྔགས་གླེང་ཁ་ -->
+    <string name="detailed_needs_bluetooth">དེ་ཡིས་སྲེད་གི་གླེང་སྟེགས་དུས་bluetooth དམིགས་བསལ་དགོས་ཡིན།</string>
+    <string name="export_done">གླེང་སྟེགས་སྐྱོ་ཚགས་དགེ་སོགས་</string>
+    <string name="export_failed">སྐྱོ་ཚགས་དགེ་སོགས་མི་ཐུབ་</string>
+    <string name="import_failed">གླེང་སྟེགས་སླེབ་མི་ཐུབ་</string>
+    <string name="error_could_not_open">%1$s ལ་ཁ་འདེགས་མི་ཐུབ་</string>
+    <plurals name="import_done">
+        <item quantity="one">དུས་དྭངས་ %d སླེབས་</item>
+        <item quantity="other">དུས་དྭངས་ %d སླེབས་</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d དུས་དྭངས་</item>
+        <item quantity="other">%d དུས་དྭངས་</item>
+    </plurals>
+</resources>

@@ -15,10 +15,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.ButtonGroup
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -33,13 +36,20 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import it.eldavo.ylih.BuildConfig
+import it.eldavo.ylih.R
 import it.eldavo.ylih.Distribution
 
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
-fun SettingsScreen(viewModel: YlihViewModel, contentPadding: PaddingValues) {
+fun SettingsScreen(
+    viewModel: YlihViewModel,
+    contentPadding: PaddingValues,
+    scrollState: ScrollState = rememberScrollState(),
+) {
     val context = LocalContext.current
     val detailed by viewModel.detailedTracking.collectAsStateWithLifecycle()
     val devices by viewModel.devices.collectAsStateWithLifecycle()
@@ -56,14 +66,14 @@ fun SettingsScreen(viewModel: YlihViewModel, contentPadding: PaddingValues) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .verticalScroll(rememberScrollState())
+            .verticalScroll(scrollState)
             .padding(
                 top = contentPadding.calculateTopPadding(),
                 bottom = contentPadding.calculateBottomPadding() + 24.dp,
             ),
     ) {
         val detailedSupported = viewModel.detailedTrackingSupported()
-        SectionHeader("Tracking")
+        SectionHeader(stringResource(R.string.settings_tracking))
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -72,19 +82,18 @@ fun SettingsScreen(viewModel: YlihViewModel, contentPadding: PaddingValues) {
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Column(Modifier.weight(1f)) {
-                Text("Detailed tracking", style = MaterialTheme.typography.bodyLarge)
                 Text(
-                    "Adds wired headphones and playback time. Android only reports wired plug " +
-                        "events to a running app, so this keeps a silent notification in the " +
-                        "shade. Bluetooth is tracked either way.",
+                    stringResource(R.string.settings_detailed_title),
+                    style = MaterialTheme.typography.bodyLarge,
+                )
+                Text(
+                    stringResource(R.string.settings_detailed_body),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
                 if (!detailedSupported) {
                     Text(
-                        "Unavailable until Bluetooth access is granted: this build only " +
-                            "declares the connectedDevice service type, which Android 14+ ties " +
-                            "to a Bluetooth permission.",
+                        stringResource(R.string.settings_detailed_unavailable),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.error,
                     )
@@ -100,10 +109,9 @@ fun SettingsScreen(viewModel: YlihViewModel, contentPadding: PaddingValues) {
         HorizontalDivider()
 
         if (devices.isNotEmpty()) {
-            SectionHeader("Devices")
+            SectionHeader(stringResource(R.string.settings_devices))
             Text(
-                "Uncheck anything that isn't headphones — a car stereo or a speaker — to stop " +
-                    "recording it.",
+                stringResource(R.string.settings_devices_body),
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(horizontal = 16.dp),
@@ -125,7 +133,11 @@ fun SettingsScreen(viewModel: YlihViewModel, contentPadding: PaddingValues) {
                     Column(Modifier.weight(1f)) {
                         Text(device.defaultName, style = MaterialTheme.typography.bodyLarge)
                         Text(
-                            "${device.kind.displayName()} · first seen ${formatDate(device.firstSeenAt)}",
+                            stringResource(
+                                R.string.settings_device_subtitle,
+                                device.kind.displayName(),
+                                formatDate(device.firstSeenAt),
+                            ),
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
@@ -135,21 +147,28 @@ fun SettingsScreen(viewModel: YlihViewModel, contentPadding: PaddingValues) {
             HorizontalDivider()
         }
 
-        SectionHeader("Data")
-        Row(
-            Modifier.padding(horizontal = 16.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
+        SectionHeader(stringResource(R.string.settings_data))
+        // ButtonGroupScope is not a composable scope, so the labels are resolved out here.
+        val exportLabel = stringResource(R.string.settings_export)
+        val importLabel = stringResource(R.string.settings_import)
+        // A ButtonGroup rather than two loose buttons: these are one choice with two answers, and
+        // Expressive's group squashes its neighbours as you press, which reads as exactly that.
+        ButtonGroup(
+            modifier = Modifier.padding(horizontal = 16.dp),
+            overflowIndicator = {},
         ) {
-            OutlinedButton(onClick = { exportLauncher.launch("ylih-backup.json") }) {
-                Text("Export JSON")
-            }
-            OutlinedButton(onClick = { importLauncher.launch(arrayOf("application/json", "text/plain")) }) {
-                Text("Import")
-            }
+            clickableItem(
+                onClick = { exportLauncher.launch("ylih-backup.json") },
+                label = exportLabel,
+            )
+            clickableItem(
+                onClick = { importLauncher.launch(arrayOf("application/json", "text/plain")) },
+                label = importLabel,
+            )
         }
         Spacer(Modifier.height(8.dp))
         Text(
-            "Importing replaces everything currently stored.",
+            stringResource(R.string.settings_import_warning),
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(horizontal = 16.dp),
@@ -157,11 +176,9 @@ fun SettingsScreen(viewModel: YlihViewModel, contentPadding: PaddingValues) {
         Spacer(Modifier.height(16.dp))
         HorizontalDivider()
 
-        SectionHeader("Troubleshooting")
+        SectionHeader(stringResource(R.string.settings_troubleshooting))
         Text(
-            "If sessions stop being recorded, check that ylih is exempt from battery " +
-                "optimisation — an app that has been force-stopped never receives connection " +
-                "broadcasts again until it is opened.",
+            stringResource(R.string.settings_battery_body),
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(horizontal = 16.dp),
@@ -177,11 +194,11 @@ fun SettingsScreen(viewModel: YlihViewModel, contentPadding: PaddingValues) {
                 },
                 modifier = Modifier.padding(horizontal = 16.dp),
             ) {
-                Text("Battery settings")
+                Text(stringResource(R.string.settings_battery_button))
             }
         } else {
             Text(
-                "Settings → Apps → ylih → Battery → Unrestricted.",
+                stringResource(R.string.settings_battery_path),
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(horizontal = 16.dp),
@@ -190,10 +207,13 @@ fun SettingsScreen(viewModel: YlihViewModel, contentPadding: PaddingValues) {
         Spacer(Modifier.height(16.dp))
         HorizontalDivider()
 
-        SectionHeader("About")
+        SectionHeader(stringResource(R.string.settings_about))
         Text(
-            "ylih ${BuildConfig.VERSION_NAME} (${Distribution.ID}) — headphone hours, kept " +
-                "locally and forever.",
+            stringResource(
+                R.string.settings_about_body,
+                BuildConfig.VERSION_NAME,
+                Distribution.ID,
+            ),
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(horizontal = 16.dp),
@@ -203,16 +223,18 @@ fun SettingsScreen(viewModel: YlihViewModel, contentPadding: PaddingValues) {
     confirmImport?.let { uri ->
         AlertDialog(
             onDismissRequest = { confirmImport = null },
-            title = { Text("Replace all data?") },
-            text = { Text("Importing this backup deletes every device, pair and session stored now.") },
+            title = { Text(stringResource(R.string.settings_import_confirm_title)) },
+            text = { Text(stringResource(R.string.settings_import_confirm_body)) },
             confirmButton = {
                 TextButton(onClick = {
                     viewModel.importFrom(uri)
                     confirmImport = null
-                }) { Text("Import") }
+                }) { Text(stringResource(R.string.action_import)) }
             },
             dismissButton = {
-                TextButton(onClick = { confirmImport = null }) { Text("Cancel") }
+                TextButton(onClick = { confirmImport = null }) {
+                    Text(stringResource(R.string.action_cancel))
+                }
             },
         )
     }

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Cherokee. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih — ᎿᏲ ᎬᎾᏕᏓ ᎠᏎᎩ ᎦᏵᏕ ᎦᎾᏕᏛ</string>
+
+    <!-- ᎠᎦᏟᏘᏒ ᎠᏗᎨ -->
+    <string name="nav_headphones">ᎠᏎᎩ</string>
+    <string name="nav_stats">ᎠᏓᏠᏴᏩᏗᏳ</string>
+    <string name="nav_settings">ᎠᏤᏣᏓᏅᏖ</string>
+
+    <!-- ᎦᏵᏕ ᏙᏦᎵ -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">ᏗᎲᎵᎭ</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ᎠᎾᏩᎮᏫ</string>
+
+    <!-- ᎠᏓᏛᎾᏗ ᏍᏗᏛ -->
+    <string name="welcome_title">ᏑᏓᏩ ᎠᏂᏆᏍᏗ ylih ᏍᏍᎦ</string>
+    <string name="welcome_intro">ylih ᎠᏥᏃᏗ ᏰᎳ ᏙᏦᎵ ᎠᏎᎩ ᏒᏂ ᎾᎬᎾᏓ ᎦᏵᏕ ᎦᏴ ᎤᎬᏬᏌᏛ, ᏰᎳ ᎤᏃᏫᏓᏗ ᎬᏒ ᎶᎩᎵᏒ ᏅᎯᏑ ᎤᎧᎨ ᏫᎪᎰᏓ ᏂᏗᏪᏦ ᏫᎪᎵᏒ ᏙᎦᏒ ᎠᏎᎩ: ᏰᎳ ᎨᎮᎵᏍᎬ ᏒᏂ ᎿᏲᏒ?</string>
+    <string name="welcome_point_auto_title">ᏙᏦᎵ ᎠᎴ ᏫᎩᏘᏓ</string>
+    <string name="welcome_point_auto_body">bluetooth ᎠᏎᎩ ᎠᏥᏃᏗ ᎢᏳᎾᏢᎩ, ᏙᏦᎵ ᎪᏛᎩᏃ ᎦᏴ, ᎾᎿ ᎤᏂᏎᎵᏍ ᏆᎬᏒ ᎠᏃᏗ ᎢᏉᎪᏫ.</string>
+    <string name="welcome_point_lifetime_title">ᎡᏚᎭ ᏂᏗᏪᏦ, ᎡᏚᎭ ᎿᏲ</string>
+    <string name="welcome_point_lifetime_body">ᏙᏦᎵ ᎧᎵᏍᏗ ᏙᎦᏒ, ᎢᎬᏩᏛᎩᏗ: ᎥᏝ ᏗᏓᎵᏛᏅ ᏰᎳ ᏒᏂ ᎤᏂᏈᎸᏴᏒ, ᎠᎴ ᏙᏦᎵ ᏫᎴ ᏂᎬᎾᏓ ᎦᏴ ᏙᎾᏁᏛ ᎡᏁᎵ ᎢᎬᏩᏛᏛᎾ.</string>
+    <string name="welcome_point_detailed_title">ᏗᎲᎵᎭ ᎠᎴ ᎾᎪᎾᏓ</string>
+    <string name="welcome_point_detailed_body">ᏰᎩᏂᏃᎩ ᏆᎬᏒ ᏙᏦᎵ, ᎠᏤᏣᏓᏅᏖ ᎤᏙᎦᎵᎩ, ᎠᏕᎥ ᏗᎲᎵᎭ ᎠᏎᎩ ᎠᎴ ᎾᎪᎾᏓ ᎦᏴ ᏭᏗ ᎯᎾᏕᎾ ᎦᏵᏕ.</string>
+    <string name="welcome_privacy">ᏚᏁᏇ ᏂᏂ ᎠᏍᏌ ᎠᏍᏗ. ᎾᎿ ᎠᎾᏘᏘ ᎦᏌᏅᎩ ᏆᎬᏒ, ᎠᎴ ᎠᏆᎾᏗ ᎠᏃᏗ ᎤᏂᏈᎸᏴᏒ ᏃᎩᏲᏍ ᏗᎾ.</string>
+    <string name="welcome_start">ᏫᎩᏅᏒ</string>
+
+    <!-- ᎠᏎᎩ ᏃᎩᎩᏰᏒ -->
+    <string name="devices_in_use">ᎪᏀᎱᏉ ᎦᏵᏕ</string>
+    <string name="devices_retired">ᎠᎾᏈᎸᏴᏒ</string>
+    <string name="devices_empty_title">ᎾᎿ ᎠᏎᎩ ᏆᏯ</string>
+    <string name="devices_empty_body">bluetooth ᎠᏎᎩ ᏙᏦᎵ ᎠᎴ ᎤᏎᏗᏬ, ᏰᎳ ᎤᏂᏈᎸᏴ ᎠᏣᏗ. ᏗᎲᎵᎭ ᎠᏎᎩ ᏰᎩᏂᏃᎩ ᏆᎬᏒ ᎠᏤᏣᏓᏅᏖ ᎤᏙᎦᎵᎩ ᎢᎦᎳ.</string>
+    <string name="devices_generation">ᏂᏗᏪᏦ #%1$d</string>
+    <string name="devices_retired_on">ᎠᎾᏈᎸᏴᏒ %1$s</string>
+    <string name="devices_connected_for">ᏙᏦᎵ %1$s</string>
+    <string name="devices_recent">%1$s / 7 ᎾᎬᎾᎴ</string>
+
+    <!-- ᎠᏓᏠᏴᏩᏗᏳ -->
+    <string name="stats_title">ᎦᎾᏕᏛ ᎠᏎᎩ</string>
+    <string name="stats_sessions_since">%1$s ᏂᏂ %2$s</string>
+    <string name="stats_last_7">ᏗᏓᏅᎯ 7 ᎾᎬᎾᎴ</string>
+    <string name="stats_last_30">ᏗᏓᏅᎯ 30 ᎾᎬᎾᎴ</string>
+    <string name="stats_average_session">ᎾᏕᎴᏴᏍ ᎠᏟᏎᎵᏗ</string>
+    <string name="stats_playing">ᎾᎪᎾᏓ</string>
+    <string name="stats_measured_span">ᎾᎪᏗᏴᏛ ᎦᏵᏕ</string>
+    <string name="stats_share">ᏗᎨᏞᎩᏗ</string>
+    <string name="stats_daily_hours_30">ᎠᎵᏁᏟᏒ ᏒᏂ ᎨᎮᎵᏍᎬ (30 ᎾᎬᎾᎴ)</string>
+    <string name="stats_by_pair">ᏂᏗᏪᏦ ᏍᏍᎦ</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · ᎠᎾᏈᎸᏴᏒ</string>
+    <string name="chart_max">%1$s ᎨᏒ</string>
+
+    <!-- ᏂᏗᏪᏦ ᏕᎭᎸᏛ -->
+    <string name="pair_fallback_title">ᏂᏗᏪᏦ</string>
+    <string name="pair_back">ᎠᎸᎩᏁᏛ</string>
+    <string name="pair_more">ᎠᏛᏁᏙ</string>
+    <string name="pair_menu_rename">ᎠᏑᏝ ᎠᎵᏁᏟᏗ</string>
+    <string name="pair_menu_purchase">ᏔᎰᏗ ᏚᎵᏌᏗᏱ</string>
+    <string name="pair_menu_retire">ᎠᎾᏈᎸᏴᏗ / ᎠᏧᏍᎯ</string>
+    <string name="pair_menu_delete">ᎠᏅᏎᏗ</string>
+    <string name="pair_lifetime">ᏂᏗᏪᏦ ᏂᏂ ᎿᏲ</string>
+    <string name="pair_retired_on">ᎠᎾᏈᎸᏴᏒ %1$s</string>
+    <string name="pair_retired_with_reason">ᎠᎾᏈᎸᏴᏒ %1$s · %2$s</string>
+    <string name="pair_connected_now">ᏙᏦᎵ ᏆᏯ · %1$s</string>
+    <string name="pair_sessions">ᎠᏟᏎᎵᏗ</string>
+    <string name="pair_average">ᎾᏕᎴᏴᏍ</string>
+    <string name="pair_longest">ᎤᏃᏫᏓᏗ ᎨᏒ</string>
+    <string name="pair_first_seen">ᎠᎦᏕᎶᎩ ᎤᏎᏗᏬ</string>
+    <string name="pair_of_measured">ᎾᎪᏗᏴᏛ ᎦᏴ</string>
+    <string name="pair_measured">ᎾᎪᏗᏴᏛ</string>
+    <string name="pair_paid">ᏔᎰᏗ ᎤᏂᏈᎸᏴ</string>
+    <string name="pair_per_hour">ᎨᎮᎵᏍᎬ ᏍᏍᎦ</string>
+    <string name="pair_bought">ᏔᎰᏗ ᏂᏂ</string>
+    <string name="pair_daily_hours_14">ᎠᎵᏁᏟᏒ ᏒᏂ ᎨᎮᎵᏍᎬ (14 ᎾᎬᎾᎴ)</string>
+    <string name="pair_rename_title">ᏂᏗᏪᏦ ᎠᏑᏝ ᎠᎵᏁᏟᏗ</string>
+    <string name="pair_rename_label">ᎠᏑᏝ</string>
+    <string name="pair_retire_title">ᏂᏗᏪᏦ ᎠᎾᏈᎸᏴᏗ</string>
+    <string name="pair_retire_label">ᎢᎦᎳ (ᏗᎴᏒ, ᎤᏚᎵᏗ, ᎦᏅᏰᏒ…)</string>
+    <string name="pair_retire_confirm">ᎠᎾᏈᎸᏴᏗ</string>
+    <string name="pair_retire_supporting">ᏗᏓᎵᏛᏅ ᎤᏂᏈᎸᏴ ᎠᏣᏗ. ᏙᏦᎵ ᎡᏴᏗ ᎤᏎᏗᏬ ᏂᏗᏪᏦ ᏰᎴ ᏚᎵᏌᏗᏱ ᏙᎾᏁᏛ ᏆᏯ.</string>
+    <string name="pair_price_title">ᏔᎰᏗ ᎦᏴ</string>
+    <string name="pair_price_label">ᎠᏆᏓᎴ (ᎠᏫᎩᎨ ᎠᏁᎩ)</string>
+    <string name="pair_price_supporting">ᏔᎰᏗ ᎨᎮᎵᏍᎬ ᎦᏴ ᎦᏵᏕ ᏃᏙᏛ ᎤᏂᏈᎸᏴᏒ.</string>
+    <string name="pair_delete_title">ᏂᏗᏪᏦ ᎠᏅᏎᏗ ᎢᎦᎳ?</string>
+    <string name="pair_delete_body">ᎦᎾᏕᏛ ᎠᏟᏎᎵᏗ ᏰᎩᎦᎵ ᎠᏅᏎᏗ ᏱᎰᏐᏒ. ᎠᏘᎫ ᎤᏁᏗ ᎾᎿ ᏍᏗᏘᏓ ᏘᎤᏫ.</string>
+
+    <!-- ᎠᏟᏎᎵᏗ ᏃᎩᎩᏰᏒ -->
+    <string name="session_ongoing">ᎪᏀᎱᏉ ᎦᏵᏕ</string>
+    <string name="session_until">ᎲᏗᎳ %1$s</string>
+    <string name="session_playing">%1$s ᎾᎪᎾᏓ</string>
+    <string name="session_recovered">ᎤᎾᏈᎸᎩ ᎠᏍᏗ</string>
+
+    <!-- ᎠᏤᏣᏓᏅᏖ -->
+    <string name="settings_tracking">ᏰᎩᏂᏃᎩ</string>
+    <string name="settings_detailed_title">ᏰᎩᏂᏃᎩ ᏚᏐᏕ</string>
+    <string name="settings_detailed_body">ᎠᏕᎥ ᏗᎲᎵᎭ ᎠᏎᎩ ᎠᎴ ᎾᎪᎾᏓ ᎦᏴ ᎯᎾᏕᎾ. android ᎠᎬᎾᏓ ᏗᎲᎵᎭ ᎤᏂᏏᏗ ᏆᏎᏯᏙ ᎠᏆᏓᏗ ᏭᏤᏢ ᎦᏴ ᏅᎫᏟ ᏃᏀᏚ ᎠᎾᏎᏗᏘᏏ ᎤᏙᎦᎵᎩ ᎾᎿ ᎠᏐᏒ ᎳᏓ. bluetooth ᏰᎩᏂᏃᎩ ᏗᎬᎾ ᏂᏂ ᏃᏀᏚ.</string>
+    <string name="settings_detailed_unavailable">ᎤᏁᎩᏰᏒ bluetooth ᎨᎮᎵᏍᎬ ᎠᏂᏜᎩ ᎢᎦᎳ: ᏕᎦᏚ ᏄᏤ connectedDevice ᏕᏓᎳᎵ ᎦᏴ ᏥᏟ, android 14+ ᏰᎩᏁ bluetooth ᎨᎮᎵᏍᎬ ᎨᏒ.</string>
+    <string name="settings_devices">ᏙᏦᎵ</string>
+    <string name="settings_devices_body">ᏓᏅᎯ ᎠᏍᏗ ᏓᏂᏙᎴ ᎾᎿ ᎠᏎᎩ — ᎠᏰᏛ ᏌᏀᏙ ᎠᎴ ᏎᎫᎪ — ᏰᎩᏂᏃᎩ ᎭᎴ.</string>
+    <string name="settings_device_subtitle">%1$s · ᎠᎦᏕᎶᎩ ᎤᏎᏗᏬ %2$s</string>
+    <string name="settings_data">ᏕᎶᏗᏎᏚ</string>
+    <string name="settings_export">json ᎠᏚᏗᏎᏗ</string>
+    <string name="settings_import">ᎠᏚᏗᏎᏗ</string>
+    <string name="settings_import_warning">ᎠᏚᏗᏎᏗ ᏕᎦᏚ ᏕᎭᎸᏛ ᏆᎯ ᏄᏤ ᎠᎬᎾ.</string>
+    <string name="settings_troubleshooting">ᎢᏁᏏ ᎠᏅᏛᏗ</string>
+    <string name="settings_battery_body">ᎠᏟᏎᎵᏗ ᏰᎩᏂᏃᎩ ᎭᎴ ᏆᏯ, ᏗᎬᏩᏚ ylih ᎾᎿ ᎠᏐᏒ ᏄᏤ ᏄᎪᏨᏴ ᎤᎬᏬᏌᏛ — ᏭᏤᏢ ᎠᎬᎾᏓ ᏓᎭᏚ ᎠᏐᏒ ᎾᎿ ᏃᏀᏚ ᏖᏑᏐ ᏙᏦᎵ ᏗᎾ ᎢᏉᎪᏫ.</string>
+    <string name="settings_battery_button">ᎨᎪᎶ ᎠᏤᏣᏓᏅᏖ</string>
+    <string name="settings_battery_path">ᎠᏤᏣᏓᏅᏖ → ᏓᎭᏚ → ylih → ᎨᎪᎶ → ᎠᏓᏂᏤᏒ.</string>
+    <string name="settings_about">ᎭᏳᎦ</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — ᎠᏎᎩ ᏒᏂ ᎨᎮᎵᏍᎬ, ᎠᏍᏌ ᎠᎶᏅᏆ ᎠᎴ ᏆᏯ ᎦᏌᏅᎩ.</string>
+    <string name="settings_import_confirm_title">ᏕᎦᏚ ᏕᎭᎸᏛ ᎠᏚᏗᏎᏗ ᎢᎦᎳ?</string>
+    <string name="settings_import_confirm_body">ᎠᏚᏗᏎᏗ ᎨᏒ ᏕᎦᏚ ᏙᏦᎵ, ᏂᏗᏪᏦ ᎠᎴ ᎠᏟᏎᎵᏗ ᏰᎩᎦᎵ ᎠᏅᏎᏗ ᏆᏯ.</string>
+
+    <!-- ᏗᎭᏚ ᏙᏚᏛ -->
+    <string name="action_save">ᎤᏂᏈᎸᎩ</string>
+    <string name="action_cancel">ᎭᎴ</string>
+    <string name="action_delete">ᎠᏅᏎᏗ</string>
+    <string name="action_import">ᎠᏚᏗᏎᏗ</string>
+
+    <!-- ᏎᎫᎪ -->
+    <string name="channel_tracking">ᎠᏎᎩ ᏰᎩᏂᏃᎩ</string>
+    <string name="channel_tracking_description">ᎤᏂᏎᎵ ylih ᏰᎩᏂᏃᎩ ᏗᎲᎵᎭ ᎠᏎᎩ ᎠᎴ ᎾᎪᎾᏓ. android ᎠᎬᎾᏓ ᏗᎲᎵᎭ ᎤᏂᏏᏗ ᏆᏎᏯᏙ ᏙᏦᎵ ᏰᎩᏗ ᎾᎿ ᏃᏀᏚ ᏗᎾ.</string>
+    <string name="notification_title">ᎠᏎᎩ ᏒᏂ ᏰᎩᏂᏃᎩ</string>
+    <string name="notification_starting">ᏫᎩᏅᏒ…</string>
+    <string name="notification_idle">ᎠᏎᎩ ᎧᏙᏔᏅ</string>
+    <plurals name="notification_active">
+        <item quantity="one">ᏙᏦᎵ %1$d · %2$s</item>
+        <item quantity="other">ᏙᏦᎵ %1$d · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">ᏙᏦᎵ %1$d · %2$s · ᎾᎪᎾᏓ</item>
+        <item quantity="other">ᏙᏦᎵ %1$d · %2$s · ᎾᎪᎾᏓ</item>
+    </plurals>
+
+    <!-- ᏑᏓᏩ ᏚᎵᏌᏗᏱ -->
+    <string name="detailed_needs_bluetooth">ᏕᎦᏚ ᏄᏤ bluetooth ᎨᎮᎵᏍᎬ ᏰᎩᏂᏃᎩ ᏗᎲᎵᎭ ᎠᏎᎩ ᎢᎦᎳ</string>
+    <string name="export_done">ᎾᏙᎫ ᎠᏚᏗᏎᏗ ᎤᏗᎩᎭ</string>
+    <string name="export_failed">ᎠᏚᏗᏎᏗ ᏗᎴᏒ</string>
+    <string name="import_failed">ᎠᏚᏗᏎᏗ ᏗᎴᏒ</string>
+    <string name="error_could_not_open">ᎠᏚᎩᏍᎬ ᎾᎿ ᏙᏦᎵ %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">ᎠᏚᏗᏎᏗ ᎤᏗᎩᎭ %d ᎠᏟᏎᎵᏗ</item>
+        <item quantity="other">ᎠᏚᏗᏎᏗ ᎤᏗᎩᎭ %d ᎠᏟᏎᎵᏗ</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d ᎠᏟᏎᎵᏗ</item>
+        <item quantity="other">%d ᎠᏟᏎᎵᏗ</item>
+    </plurals>
+</resources>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Traditional Chinese. Same house style as the default locale where it applies: lowercase for
+  Latin terms that are kept as-is (bluetooth, usb, json, android, connectedDevice, MIT).
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - 耳機使用紀錄</string>
+
+    <!-- 底部導覽 -->
+    <string name="nav_headphones">耳機</string>
+    <string name="nav_stats">統計</string>
+    <string name="nav_settings">設定</string>
+
+    <!-- 裝置類型 -->
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">有線</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">未知</string>
+
+    <!-- 首次啟動 -->
+    <string name="welcome_title">歡迎使用 ylih</string>
+    <string name="welcome_intro">ylih 會記錄每副耳機連線的時間，讓你多年後仍能回答關於一副耳機唯一重要的問題：它究竟撐了多少小時？</string>
+    <string name="welcome_point_auto_title">接上就好，不用理會</string>
+    <string name="welcome_point_auto_body">藍牙耳機一連線就會自動開始記錄，不需要任何東西持續執行。</string>
+    <string name="welcome_point_lifetime_title">一副耳機，一段生命週期</string>
+    <string name="welcome_point_lifetime_body">耳機壞掉時，將它退役：總時數就此凍結，換上同款新耳機會重新從零開始計算。</string>
+    <string name="welcome_point_detailed_title">有線耳機與播放時間</string>
+    <string name="welcome_point_detailed_body">設定中的詳細追蹤功能可加入有線耳機，並測量其中實際在播放的時間比例。</string>
+    <string name="welcome_privacy">所有資料只留在這支手機上。沒有帳號，應用程式也沒有網路權限。</string>
+    <string name="welcome_start">開始使用</string>
+
+    <!-- 耳機清單 -->
+    <string name="devices_in_use">使用中</string>
+    <string name="devices_retired">已退役</string>
+    <string name="devices_empty_title">尚未有耳機紀錄</string>
+    <string name="devices_empty_body">連接一副藍牙耳機，它就會顯示在這裡。有線耳機需要在設定中開啟詳細追蹤。</string>
+    <string name="devices_generation">第 %1$d 副</string>
+    <string name="devices_retired_on">於 %1$s 退役</string>
+    <string name="devices_connected_for">已連線 %1$s</string>
+    <string name="devices_recent">%1$s / 7天</string>
+
+    <!-- 統計 -->
+    <string name="stats_title">所有耳機</string>
+    <!-- %1$s is an already-pluralised session count, %2$s a date. -->
+    <string name="stats_sessions_since">自 %2$s 起 %1$s</string>
+    <string name="stats_last_7">最近 7 天</string>
+    <string name="stats_last_30">最近 30 天</string>
+    <string name="stats_average_session">平均單次連線</string>
+    <string name="stats_playing">播放中</string>
+    <string name="stats_measured_span">測量期間</string>
+    <string name="stats_share">分享</string>
+    <string name="stats_daily_hours_30">每日小時數（30 天）</string>
+    <string name="stats_by_pair">依耳機</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · 已退役</string>
+    <string name="chart_max">最高 %1$s</string>
+
+    <!-- 耳機詳情 -->
+    <string name="pair_fallback_title">耳機</string>
+    <string name="pair_back">返回</string>
+    <string name="pair_more">更多</string>
+    <string name="pair_menu_rename">重新命名</string>
+    <string name="pair_menu_purchase">購買資訊</string>
+    <string name="pair_menu_retire">退役／已更換</string>
+    <string name="pair_menu_delete">刪除</string>
+    <string name="pair_lifetime">此耳機累積時數</string>
+    <string name="pair_retired_on">於 %1$s 退役</string>
+    <string name="pair_retired_with_reason">於 %1$s 退役 · %2$s</string>
+    <string name="pair_connected_now">目前連線中 · %1$s</string>
+    <string name="pair_sessions">連線次數</string>
+    <string name="pair_average">平均</string>
+    <string name="pair_longest">最長</string>
+    <string name="pair_first_seen">首次出現</string>
+    <string name="pair_of_measured">佔測量時間比例</string>
+    <string name="pair_measured">已測量</string>
+    <string name="pair_paid">已付金額</string>
+    <string name="pair_per_hour">每小時</string>
+    <string name="pair_bought">購買於</string>
+    <string name="pair_daily_hours_14">每日小時數（14 天）</string>
+    <string name="pair_rename_title">重新命名耳機</string>
+    <string name="pair_rename_label">名稱</string>
+    <string name="pair_retire_title">將此耳機退役</string>
+    <string name="pair_retire_label">原因（壞掉、售出、遺失…）</string>
+    <string name="pair_retire_confirm">退役</string>
+    <string name="pair_retire_supporting">總時數將就此凍結。重新連接同一裝置會開始一副全新的耳機，從零計算。</string>
+    <string name="pair_price_title">購買價格</string>
+    <string name="pair_price_label">金額（整數單位）</string>
+    <string name="pair_price_supporting">用於計算每小時成本。</string>
+    <string name="pair_delete_title">要刪除這副耳機嗎？</string>
+    <string name="pair_delete_body">其所有連線紀錄也會一併刪除，且無法復原。</string>
+
+    <!-- 連線紀錄項目 -->
+    <string name="session_ongoing">進行中</string>
+    <string name="session_until">直到 %1$s</string>
+    <string name="session_playing">播放 %1$s</string>
+    <string name="session_recovered">已還原</string>
+
+    <!-- 設定 -->
+    <string name="settings_tracking">追蹤</string>
+    <string name="settings_detailed_title">詳細追蹤</string>
+    <string name="settings_detailed_body">加入有線耳機與播放時間。android 只會在應用程式執行中時回報有線插拔事件，因此需要在通知欄保留一則無聲通知。無論如何都會追蹤藍牙。</string>
+    <string name="settings_detailed_unavailable">需先授予藍牙存取權限才能使用：此版本只宣告 connectedDevice 服務類型，而 android 14 以上將此與藍牙權限綁定。</string>
+    <string name="settings_devices">裝置</string>
+    <string name="settings_devices_body">取消勾選不是耳機的項目——例如車用喇叭或藍牙音箱——即可停止記錄它。</string>
+    <string name="settings_device_subtitle">%1$s · 首次出現於 %2$s</string>
+    <string name="settings_data">資料</string>
+    <string name="settings_export">匯出 json</string>
+    <string name="settings_import">匯入</string>
+    <string name="settings_import_warning">匯入會取代目前儲存的所有資料。</string>
+    <string name="settings_troubleshooting">疑難排解</string>
+    <string name="settings_battery_body">如果連線紀錄不再更新，請確認 ylih 已排除在電池最佳化之外——被強制停止的應用程式在再次開啟前，將不會收到任何連線廣播。</string>
+    <string name="settings_battery_button">電池設定</string>
+    <string name="settings_battery_path">設定 → 應用程式 → ylih → 電池 → 不受限制。</string>
+    <string name="settings_about">關於</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — 耳機使用時數，永久保存於本機。</string>
+    <string name="settings_import_confirm_title">要取代所有資料嗎？</string>
+    <string name="settings_import_confirm_body">匯入此備份會刪除目前儲存的所有裝置、耳機與連線紀錄。</string>
+
+    <!-- 共用操作 -->
+    <string name="action_save">儲存</string>
+    <string name="action_cancel">取消</string>
+    <string name="action_delete">刪除</string>
+    <string name="action_import">匯入</string>
+
+    <!-- 通知 -->
+    <string name="channel_tracking">耳機追蹤</string>
+    <string name="channel_tracking_description">在 ylih 監測有線耳機與播放狀態時顯示。android 不會將有線插拔事件回報給未在執行中的應用程式。</string>
+    <string name="notification_title">正在記錄耳機使用時間</string>
+    <string name="notification_starting">啟動中…</string>
+    <string name="notification_idle">等待耳機連線</string>
+    <plurals name="notification_active">
+        <item quantity="other">已連線 %1$d 個 · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="other">已連線 %1$d 個 · %2$s · 播放中</item>
+    </plurals>
+
+    <!-- 提示訊息 -->
+    <string name="detailed_needs_bluetooth">此版本需要先取得藍牙存取權限才能追蹤有線耳機</string>
+    <string name="export_done">備份已匯出</string>
+    <string name="export_failed">匯出失敗</string>
+    <string name="import_failed">匯入失敗</string>
+    <string name="error_could_not_open">無法開啟 %1$s</string>
+    <plurals name="import_done">
+        <item quantity="other">已匯入 %d 筆連線紀錄</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="other">%d 次連線</item>
+    </plurals>
+</resources>

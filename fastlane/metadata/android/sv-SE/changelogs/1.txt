@@ -1,0 +1,8 @@
+Första utgåvan.
+
+• Livstidstimmar per fysiskt par hörlurar, med generationer så att ett ersättningspar börjar om från noll i stället för att ärva det gamla parets totalsumma.
+• Varje anslutning sparad för alltid, med statistik per dag och per par.
+• Valfri detaljerad spårning för kabelanslutna och usb-hörlurar, samt för uppspelning kontra anslutningstid.
+• Kostnad per lyssningstimme.
+• Export och import i json.
+• Ingen internetbehörighet: inget lämnar någonsin telefonen.
