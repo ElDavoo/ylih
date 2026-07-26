@@ -27,15 +27,59 @@ Every Gradle task is flavor-qualified — there is no plain `assembleDebug`:
 ./gradlew bundlePlayRelease             # Play Console AAB
 
 # what CI runs, per flavor (matrix over classic/play)
-./gradlew lintClassicDebug testClassicDebugUnitTest assembleClassicDebug assembleClassicRelease
+./gradlew lintClassicDebug createClassicDebugUnitTestCoverageReport \
+          assembleClassicDebug assembleClassicRelease
 
 # a single test class or method
 ./gradlew testClassicDebugUnitTest --tests '*SessionRepositoryTest'
 ./gradlew testClassicDebugUnitTest --tests '*SessionRepositoryTest.a reconcile racing*'
+
+# tests + JaCoCo report, then the same summary CI prints
+./gradlew createClassicDebugUnitTestCoverageReport
+python3 .github/scripts/coverage-summary.py \
+    app/build/reports/coverage/test/classic/debug/report.xml classic
 ```
 
 Debug builds carry `applicationIdSuffix = ".debug"`, so a debug and a release install coexist.
-Lint runs with `abortOnError = true`.
+
+### Lint is a hard gate
+
+`checkAllWarnings`, `warningsAsErrors` and `abortOnError` are all on, and `checkTestSources`
+extends that to `src/test`. There is no baseline file and there should not be one: a baseline
+hides a finding instead of deciding about it. So a warning — including the checks lint ships
+disabled — fails the build exactly like an error.
+
+That means the only two ways to land a finding are to fix it or to turn the check off in
+`app/lint.xml` **with a reason**. The checks currently off are the ones that cannot hold here:
+`NewerVersionAvailable`/`GradleDependency` (they hit the network, and the versions are pinned on
+purpose), `DuplicateStrings` (77 translations of ~150 strings collide legitimately),
+`TypographyQuotes` (it would rewrite translator-supplied text), and `NewApi`/`InlinedApi`
+*scoped to `src/test`* only, because Robolectric runs against the compile SDK rather than the
+minSdk 23 floor those checks enforce.
+
+One consequence in the app code: a few members are `internal` rather than `private` purely so a
+nested class can reach them without a synthetic accessor. They carry a comment saying so.
+
+The Kotlin compiler is held to the same standard — `allWarningsAsErrors` is set, so a deprecation
+fails the build rather than scrolling past. The usual way one arrives is a Dependabot bump, and
+failing that PR is the intended behaviour. The tests use
+`androidx.compose.ui.test.junit4.v2.createComposeRule` for exactly this reason; the v2 rule
+dispatches with `StandardTestDispatcher` rather than `UnconfinedTestDispatcher`, which the
+Roborazzi listing captures were re-recorded and eyeballed against before the switch landed.
+
+### Coverage
+
+`enableUnitTestCoverage = true` on the debug build type gives AGP a
+`create<Variant>DebugUnitTestCoverageReport` task; the report lands in
+`app/build/reports/coverage/test/<flavor>/debug/` and CI uploads it with the other reports and
+prints the summary table into the job summary.
+
+The one non-obvious bit is in `testOptions.unitTests.all`: Robolectric loads the classes under
+test through its own sandbox classloader, so they reach the JaCoCo agent with no code-source
+location and are dropped unless `isIncludeNoLocationClasses` is set. Without it the report reads
+~2% — only `stats/Stats.kt`, the one package with plain JVM tests — and every Robolectric-covered
+class silently reports zero. If coverage ever collapses to a couple of percent again, that
+setting is the first thing to check.
 
 ## Architecture
 
@@ -106,8 +150,12 @@ there are 77 `res/values-<lang>/strings.xml` translations beside it; lint runs w
 `abortOnError = true` and `MissingTranslation` is an error, so adding an English string without
 translating it into all 77 breaks the build. `res/resources.properties` names the unqualified
 folder's locale, which `generateLocaleConfig` needs to emit `res/xml/locales_config`. Deliberate exceptions carry `translatable="false"` (`app_name`, `value_none`). House style
-is **lowercase throughout** — `action_cancel` carries `tools:ignore="ButtonCase"` because lint
-would otherwise insist on "Cancel".
+is **lowercase throughout** — `action_cancel` carries `tools:ignore="ButtonCase"` and the
+Norwegian `welcome_privacy` carries `tools:ignore="Typos"`, because lint would otherwise insist on
+"Cancel" and "Internett".
+
+Since lint is a hard gate, `UnusedResources` is one too: a string added before the UI that reads
+it fails the build until something uses it.
 
 Two consequences worth knowing: `DeviceKind.displayName()` is `@Composable` because it resolves a
 resource, and `ButtonGroupScope` is *not* a composable scope, so labels for it must be hoisted out

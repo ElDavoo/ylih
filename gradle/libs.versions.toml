@@ -29,6 +29,8 @@ androidxTestCore = "1.7.0"
 # Play listing screenshots are generated without an emulator anywhere in the toolchain.
 roborazzi = "1.70.0"
 desugarJdkLibs = "2.1.5"
+# Drives android.testCoverage.jacocoVersion; AGP's bundled default predates JDK 21 class files.
+jacoco = "0.8.13"
 
 [libraries]
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }

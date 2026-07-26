@@ -5,7 +5,7 @@
   `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
   translate. So is `value_none`, which is an em dash.
 -->
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_title">ylih - livet ditt i hodetelefoner</string>
 
     <!-- Navigasjon -->
@@ -29,7 +29,9 @@
     <string name="welcome_point_lifetime_body">når et par dør, pensjoner du det: totalen fryses der, og neste par av samme hodetelefoner starter på nytt fra null.</string>
     <string name="welcome_point_detailed_title">kablet og avspilling</string>
     <string name="welcome_point_detailed_body">detaljert sporing, i innstillinger, legger til kablede hodetelefoner og måler hvor mye av tiden som faktisk gikk til avspilling.</string>
-    <string name="welcome_privacy">alt blir på denne telefonen. det finnes ingen konto, og appen har ikke internett-tilgang.</string>
+    <!-- "Internett" is normally capitalised in Norwegian; the house style is lowercase everywhere,
+         which is the same reason action_cancel carries a ButtonCase suppression. -->
+    <string name="welcome_privacy" tools:ignore="Typos">alt blir på denne telefonen. det finnes ingen konto, og appen har ikke internett-tilgang.</string>
     <string name="welcome_start">kom i gang</string>
 
     <!-- Liste over hodetelefoner -->

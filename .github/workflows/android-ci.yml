@@ -70,13 +70,22 @@ jobs:
           restore-keys: |
             robolectric-${{ runner.os }}-
 
+      # create<Variant>DebugUnitTestCoverageReport runs the unit tests and then the JaCoCo report
+      # over them, so it stands in for test<Variant>DebugUnitTest rather than adding a second run.
       - name: Build and test (${{ matrix.flavor }})
         run: >
           ./gradlew --no-daemon --stacktrace
           lint${{ matrix.variant }}Debug
-          test${{ matrix.variant }}DebugUnitTest
+          create${{ matrix.variant }}DebugUnitTestCoverageReport
           assemble${{ matrix.variant }}Debug
           assemble${{ matrix.variant }}Release
+
+      - name: Report coverage (${{ matrix.flavor }})
+        if: always()
+        run: >
+          python3 .github/scripts/coverage-summary.py
+          app/build/reports/coverage/test/${{ matrix.flavor }}/debug/report.xml
+          ${{ matrix.flavor }}
 
       - name: Build Play bundle
         if: matrix.flavor == 'play'

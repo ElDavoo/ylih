@@ -1,5 +1,6 @@
 @file:OptIn(com.github.takahirom.roborazzi.ExperimentalRoborazziApi::class)
 
+import org.gradle.testing.jacoco.plugins.JacocoTaskExtension
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -70,6 +71,9 @@ android {
             isMinifyEnabled = false
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
+            // JaCoCo-instruments the unit tests, which is what gives AGP a
+            // create<Variant>UnitTestCoverageReport task to hang the coverage report off.
+            enableUnitTestCoverage = true
         }
 
         release {
@@ -106,7 +110,26 @@ android {
     testOptions {
         unitTests {
             isIncludeAndroidResources = true
+
+            all {
+                // Robolectric loads the classes under test through its own sandbox classloader,
+                // so they arrive at the JaCoCo agent with no code-source location and are dropped
+                // unless this is set. Without it the report shows ~2% — only stats/Stats.kt, the
+                // one package with plain JVM tests — while everything Robolectric touches
+                // silently reads as zero. jdk.internal is excluded because the agent cannot
+                // instrument it and warns on every run.
+                it.extensions.configure(JacocoTaskExtension::class) {
+                    isIncludeNoLocationClasses = true
+                    excludes = listOf("jdk.internal.*")
+                }
+            }
         }
+    }
+
+    testCoverage {
+        // AGP's default is older than the JDK 21 the dev shell pins; 0.8.13 is the first release
+        // that reads Java 21+ class files without falling over on instrumentation.
+        jacocoVersion = libs.versions.jacoco.get()
     }
 
     packaging {
@@ -116,14 +139,26 @@ android {
     }
 
     lint {
-        warningsAsErrors = false
+        // Nothing is allowed to accumulate: every check lint has is on, including the ones that
+        // ship disabled, and a warning fails the build exactly like an error does. The handful of
+        // checks that genuinely cannot hold here are turned off with a reason in app/lint.xml
+        // rather than tolerated as warnings or hidden behind a baseline.
+        checkAllWarnings = true
+        warningsAsErrors = true
         abortOnError = true
+        // The Roborazzi listing generators and the repository tests are real code with real
+        // resource and API usage, so they get checked too.
+        checkTestSources = true
     }
 }
 
 kotlin {
     compilerOptions {
         jvmTarget.set(JvmTarget.JVM_17)
+        // Same bargain as lint's warningsAsErrors, on the other half of the build: a compiler
+        // warning is a finding too, and the usual way one lands is a Dependabot bump deprecating
+        // something. Failing that PR is the point — it says so while the change is still small.
+        allWarningsAsErrors.set(true)
         // Material 3 still marks staples like TopAppBar experimental; opting in once here
         // keeps the annotation noise out of every screen.
         freeCompilerArgs.add("-opt-in=androidx.compose.material3.ExperimentalMaterial3Api")

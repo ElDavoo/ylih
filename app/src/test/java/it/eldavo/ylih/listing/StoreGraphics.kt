@@ -23,6 +23,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.withTranslation
 import com.github.takahirom.roborazzi.captureRoboImage
 import it.eldavo.ylih.R
 import org.junit.Rule
@@ -31,7 +32,7 @@ import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 import org.robolectric.annotation.GraphicsMode
-import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.test.junit4.v2.createComposeRule
 import androidx.compose.ui.test.onRoot
 
 /**
@@ -117,19 +118,18 @@ class StoreGraphics {
         val bleed = ((full - size.width) / 2f).toInt()
         drawIntoCanvas { canvas ->
             val native = canvas.nativeCanvas
-            val checkpoint = native.save()
-            native.translate(-bleed.toFloat(), -bleed.toFloat())
-            if (withBackground) {
-                icon.background?.apply {
+            native.withTranslation(-bleed.toFloat(), -bleed.toFloat()) {
+                if (withBackground) {
+                    icon.background?.apply {
+                        setBounds(0, 0, full, full)
+                        draw(native)
+                    }
+                }
+                icon.foreground?.apply {
                     setBounds(0, 0, full, full)
                     draw(native)
                 }
             }
-            icon.foreground?.apply {
-                setBounds(0, 0, full, full)
-                draw(native)
-            }
-            native.restoreToCount(checkpoint)
         }
     }
 

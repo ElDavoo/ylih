@@ -72,7 +72,9 @@ class PlaybackWatcher(
         }
     }
 
-    private fun AudioAttributes.isMediaLike(): Boolean = usage in MEDIA_USAGES
+    // Not private: the callback below is a separate class, so a private helper would cost a
+    // synthetic accessor on every playback-config change (lint's SyntheticAccessor).
+    internal fun AudioAttributes.isMediaLike(): Boolean = usage in MEDIA_USAGES
 
     private companion object {
         val MEDIA_USAGES = setOf(

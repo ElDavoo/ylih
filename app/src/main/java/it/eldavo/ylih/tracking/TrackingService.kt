@@ -92,7 +92,9 @@ class TrackingService : LifecycleService() {
         super.onDestroy()
     }
 
-    private fun onDevicesChanged(identities: List<DeviceIdentity>, connected: Boolean) {
+    // Not private: deviceCallback above is a separate class, so a private method would be
+    // reached through a synthetic accessor (lint's SyntheticAccessor).
+    internal fun onDevicesChanged(identities: List<DeviceIdentity>, connected: Boolean) {
         if (identities.isEmpty()) return
         val kinds = trackedKinds(detailedTracking = true)
         lifecycleScope.launch {

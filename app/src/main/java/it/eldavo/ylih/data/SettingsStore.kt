@@ -10,7 +10,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 
-private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+// Not private: SettingsStore is a separate class, so a private top-level delegate would be
+// reached through a synthetic accessor on every read (lint's SyntheticAccessor).
+internal val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
 /**
  * Two-mode switch described in the README: Bluetooth tracking needs nothing running, while

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Lint runs with checkAllWarnings + warningsAsErrors, so every check that is off by default is
+  on and every warning fails the build. The exceptions below are the checks that cannot hold in
+  this project; each one needs a reason, not a baseline file. There is deliberately no
+  lint-baseline.xml — a baseline hides findings instead of deciding about them.
+-->
+<lint>
+
+    <!-- Reaches out to Maven Central on every run, so the build result depends on the network and
+         on what was published that day. The versions here are also pinned on purpose: kotlin/ksp
+         must stay equal and follow KSP's release cadence, and material3 is held ahead of the
+         Compose BOM. See the comments in gradle/libs.versions.toml. -->
+    <issue id="NewerVersionAvailable" severity="ignore" />
+    <issue id="GradleDependency" severity="ignore" />
+
+    <!-- 77 translations of a ~150-string vocabulary. Two distinct keys landing on the same word in
+         some language ("headphones" as both a tab label and a fallback title) is ordinary, and the
+         keys still have to stay separate because other languages do distinguish them. -->
+    <issue id="DuplicateStrings" severity="ignore" />
+
+    <!-- Wants ' rewritten as the typographic ’. The text is translator-supplied and languages
+         disagree about which mark is correct, so rewriting it here would be editing translations
+         to satisfy a style check. -->
+    <issue id="TypographyQuotes" severity="ignore" />
+
+    <!-- The unit tests are Robolectric tests: they run against the compile SDK on the JVM, so the
+         minSdk 23 floor these checks enforce does not apply to them. It still applies to
+         everything in src/main, which is where these checks earn their keep. -->
+    <issue id="NewApi">
+        <ignore regexp="src/test/" />
+    </issue>
+    <issue id="InlinedApi">
+        <ignore regexp="src/test/" />
+    </issue>
+
+</lint>

@@ -3,7 +3,7 @@ package it.eldavo.ylih.listing
 import android.Manifest
 import android.app.Application
 import android.os.Build
-import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.test.junit4.v2.createComposeRule
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.onRoot
