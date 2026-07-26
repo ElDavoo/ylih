@@ -1,21 +1,19 @@
 name: Nix dev shell
 
-# The Android SDK closure is around a gigabyte, so this only runs when the flake itself
-# changes (plus a weekly canary) rather than on every push.
+# The Android SDK closure is around a gigabyte, so the expensive part only runs when the flake
+# itself changes (plus a weekly canary) rather than on every push.
+#
+# The trigger deliberately carries no `paths:` filter even though the work is path-conditional. A
+# path-filtered workflow does not report a neutral check on the runs it skips — it reports nothing
+# at all — so `devshell` could never become a required check without blocking every PR that leaves
+# the flake alone. Instead the job always runs and decides for itself whether there is work to do,
+# which costs a checkout on unrelated PRs and reports a green `devshell` either way.
 on:
   push:
     branches:
       - main
       - master
-    paths:
-      - "flake.nix"
-      - "flake.lock"
-      - ".github/workflows/nix.yml"
   pull_request:
-    paths:
-      - "flake.nix"
-      - "flake.lock"
-      - ".github/workflows/nix.yml"
   schedule:
     - cron: "0 5 * * 1"
   workflow_dispatch:
@@ -30,14 +28,49 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Did the flake change?
+        id: flake
+        env:
+          EVENT: ${{ github.event_name }}
+          BASE: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          set -euo pipefail
+
+          # The weekly canary and a manual dispatch are the whole point of running unconditionally.
+          if [ "$EVENT" != "pull_request" ] && [ "$EVENT" != "push" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # A branch's first push reports an all-zero `before`, and a force-push can leave a base
+          # that is no longer an ancestor. Neither can be diffed, so build rather than assume.
+          if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ] \
+             || ! git cat-file -e "$BASE^{commit}" 2>/dev/null; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if git diff --name-only "$BASE" HEAD -- flake.nix flake.lock .github/workflows/nix.yml \
+             | grep -q .; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "flake untouched — nothing to build" >> "$GITHUB_STEP_SUMMARY"
+          fi
 
       - name: Install Nix
+        if: steps.flake.outputs.changed == 'true'
         uses: DeterminateSystems/nix-installer-action@v22
 
       - name: Check flake
+        if: steps.flake.outputs.changed == 'true'
         run: nix flake check --no-build
 
       - name: Enter dev shell
+        if: steps.flake.outputs.changed == 'true'
         run: |
           nix develop --command bash -c '
             set -euo pipefail
