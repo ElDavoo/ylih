@@ -5,7 +5,7 @@ agp = "9.3.1"
 # Gradle plugin these two pull onto the buildscript classpath overrides the one AGP bundles,
 # so they must stay equal to each other: KSP has no release for Kotlin 2.4.x yet, which is
 # what pins Kotlin here rather than at the newest release.
-kotlin = "2.3.10"
+kotlin = "2.4.10"
 ksp = "2.3.10"
 coreKtx = "1.19.0"
 lifecycle = "2.11.0"
