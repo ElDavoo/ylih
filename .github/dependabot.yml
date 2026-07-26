@@ -13,6 +13,22 @@ updates:
         patterns:
           - "*"
 
+  # flake.lock only — the nixpkgs/flake-utils inputs. The pinned build-tools and
+  # platform versions inside flake.nix are duplicated in libs.versions.toml and the
+  # CI workflow, so Dependabot cannot touch those; it just moves the lock forward.
+  - package-ecosystem: "nix"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:30"
+      timezone: "UTC"
+    open-pull-requests-limit: 10
+    groups:
+      nix-inputs:
+        patterns:
+          - "*"
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
