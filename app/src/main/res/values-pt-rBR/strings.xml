@@ -132,10 +132,12 @@
     <string name="notification_idle">aguardando fones</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d conectado · %2$s</item>
+        <item quantity="many">%1$d conectados · %2$s</item>
         <item quantity="other">%1$d conectados · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">%1$d conectado · %2$s · em reprodução</item>
+        <item quantity="many">%1$d conectados · %2$s · em reprodução</item>
         <item quantity="other">%1$d conectados · %2$s · em reprodução</item>
     </plurals>
 
@@ -147,11 +149,13 @@
     <string name="error_could_not_open">não foi possível abrir %1$s</string>
     <plurals name="import_done">
         <item quantity="one">importada %d sessão</item>
+        <item quantity="many">importadas %d sessões</item>
         <item quantity="other">importadas %d sessões</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">%d sessão</item>
+        <item quantity="many">%d sessões</item>
         <item quantity="other">%d sessões</item>
     </plurals>
 </resources>

@@ -132,10 +132,12 @@
     <string name="notification_idle">hima guna</string>
     <plurals name="notification_active">
         <item quantity="one">gasaandi: %1$d · %2$s</item>
+        <item quantity="many">gasaandi: %1$d · %2$s</item>
         <item quantity="other">gasaandi: %1$d · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">gasaandi: %1$d · %2$s · ido</item>
+        <item quantity="many">gasaandi: %1$d · %2$s · ido</item>
         <item quantity="other">gasaandi: %1$d · %2$s · ido</item>
     </plurals>
 
@@ -147,11 +149,13 @@
     <string name="error_could_not_open">ga hin da fukka %1$s</string>
     <plurals name="import_done">
         <item quantity="one">gasaandi kanji %d</item>
+        <item quantity="many">gasaandi kanji %d</item>
         <item quantity="other">gasaandi kanji %d</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">gasaandi %d</item>
+        <item quantity="many">gasaandi %d</item>
         <item quantity="other">gasaandi %d</item>
     </plurals>
 </resources>

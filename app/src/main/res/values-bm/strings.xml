@@ -131,11 +131,9 @@
     <string name="notification_starting">ka jɔ…</string>
     <string name="notification_idle">kopila jiginna ta</string>
     <plurals name="notification_active">
-        <item quantity="one">%1$d jiginna · %2$s</item>
         <item quantity="other">%1$d jiginna · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
-        <item quantity="one">%1$d jiginna · %2$s · taara</item>
         <item quantity="other">%1$d jiginna · %2$s · taara</item>
     </plurals>
 
@@ -146,12 +144,10 @@
     <string name="import_failed">kuma kɛ jigɛn gara kɛ tɛ</string>
     <string name="error_could_not_open">%1$s jigɛn ma se se tɛ</string>
     <plurals name="import_done">
-        <item quantity="one">jiginna sutu %d kɛ jigɛn jɛ</item>
         <item quantity="other">jiginna sutu %d kɛ jigɛn jɛ</item>
     </plurals>
 
     <plurals name="session_count">
-        <item quantity="one">jiginna sutu %d</item>
         <item quantity="other">jiginna sutu %d</item>
     </plurals>
 </resources>

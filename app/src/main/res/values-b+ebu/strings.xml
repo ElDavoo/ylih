@@ -132,10 +132,12 @@
     <string name="notification_idle">ĩrĩ na mahoya</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d ĩrĩ na njũkĩrĩ · %2$s</item>
+        <item quantity="many">%1$d ĩrĩ na njũkĩrĩ · %2$s</item>
         <item quantity="other">%1$d ĩrĩ na njũkĩrĩ · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">%1$d ĩrĩ na njũkĩrĩ · %2$s · kĩruta</item>
+        <item quantity="many">%1$d ĩrĩ na njũkĩrĩ · %2$s · kĩruta</item>
         <item quantity="other">%1$d ĩrĩ na njũkĩrĩ · %2$s · kĩruta</item>
     </plurals>
 
@@ -147,11 +149,13 @@
     <string name="error_could_not_open">ĩtagĩcooka kũruta %1$s</string>
     <plurals name="import_done">
         <item quantity="one">ruta mwarũngu mahinda %d</item>
+        <item quantity="many">ruta mwarũngu mahinda %d</item>
         <item quantity="other">ruta mwarũngu mahinda %d</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">mahinda %d</item>
+        <item quantity="many">mahinda %d</item>
         <item quantity="other">mahinda %d</item>
     </plurals>
 </resources>

@@ -132,10 +132,12 @@
     <string name="notification_idle">arali koosan</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d conko · %2$s</item>
+        <item quantity="many">%1$d conko · %2$s</item>
         <item quantity="other">%1$d conko · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">%1$d conko · %2$s · caani</item>
+        <item quantity="many">%1$d conko · %2$s · caani</item>
         <item quantity="other">%1$d conko · %2$s · caani</item>
     </plurals>
 
@@ -147,11 +149,13 @@
     <string name="error_could_not_open">anaa bayandi bukandi %1$s</string>
     <plurals name="import_done">
         <item quantity="one">import %d diñun</item>
+        <item quantity="many">import %d diñun</item>
         <item quantity="other">import %d diñun</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">%d diñun</item>
+        <item quantity="many">%d diñun</item>
         <item quantity="other">%d diñun</item>
     </plurals>
 </resources>

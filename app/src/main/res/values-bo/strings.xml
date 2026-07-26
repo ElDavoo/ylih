@@ -131,11 +131,9 @@
     <string name="notification_starting">གླེང་སྟེགས་འདེགས་ཕུལ་…</string>
     <string name="notification_idle">གོ་སྒྲིག་ལ་རེ་</string>
     <plurals name="notification_active">
-        <item quantity="one">%1$d སྦྱོར་ · %2$s</item>
         <item quantity="other">%1$d སྦྱོར་ · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
-        <item quantity="one">%1$d སྦྱོར་ · %2$s · སྒྲ་སྲིད་</item>
         <item quantity="other">%1$d སྦྱོར་ · %2$s · སྒྲ་སྲིད་</item>
     </plurals>
 
@@ -146,12 +144,10 @@
     <string name="import_failed">གླེང་སྟེགས་སླེབ་མི་ཐུབ་</string>
     <string name="error_could_not_open">%1$s ལ་ཁ་འདེགས་མི་ཐུབ་</string>
     <plurals name="import_done">
-        <item quantity="one">དུས་དྭངས་ %d སླེབས་</item>
         <item quantity="other">དུས་དྭངས་ %d སླེབས་</item>
     </plurals>
 
     <plurals name="session_count">
-        <item quantity="one">%d དུས་དྭངས་</item>
         <item quantity="other">%d དུས་དྭངས་</item>
     </plurals>
 </resources>

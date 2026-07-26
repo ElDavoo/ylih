@@ -132,10 +132,12 @@
     <string name="notification_idle">gúrúm ŋgɛ</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d bun · %2$s</item>
+        <item quantity="many">%1$d bun · %2$s</item>
         <item quantity="other">%1$d bun · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">%1$d bun · %2$s · dɔ́</item>
+        <item quantity="many">%1$d bun · %2$s · dɔ́</item>
         <item quantity="other">%1$d bun · %2$s · dɔ́</item>
     </plurals>
 
@@ -147,11 +149,13 @@
     <string name="error_could_not_open">ku tuum tó %1$s</string>
     <plurals name="import_done">
         <item quantity="one">sɔŋ ku %d sɔŋ</item>
+        <item quantity="many">sɔŋ ku %d sɔŋ</item>
         <item quantity="other">sɔŋ ku %d sɔŋ</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">%d sɔŋ</item>
+        <item quantity="many">%d sɔŋ</item>
         <item quantity="other">%d sɔŋ</item>
     </plurals>
 </resources>

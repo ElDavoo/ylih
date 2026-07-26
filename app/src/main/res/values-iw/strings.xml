@@ -135,13 +135,11 @@
     <plurals name="notification_active">
         <item quantity="one">%1$d מחובר · %2$s</item>
         <item quantity="two">%1$d מחוברים · %2$s</item>
-        <item quantity="many">%1$d מחוברים · %2$s</item>
         <item quantity="other">%1$d מחוברים · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">%1$d מחובר · %2$s · מתנגן</item>
         <item quantity="two">%1$d מחוברים · %2$s · מתנגן</item>
-        <item quantity="many">%1$d מחוברים · %2$s · מתנגן</item>
         <item quantity="other">%1$d מחוברים · %2$s · מתנגן</item>
     </plurals>
 
@@ -154,14 +152,12 @@
     <plurals name="import_done">
         <item quantity="one">יובא מפגש %d</item>
         <item quantity="two">יובאו %d מפגשים</item>
-        <item quantity="many">יובאו %d מפגשים</item>
         <item quantity="other">יובאו %d מפגשים</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">מפגש %d</item>
         <item quantity="two">%d מפגשים</item>
-        <item quantity="many">%d מפגשים</item>
         <item quantity="other">%d מפגשים</item>
     </plurals>
 </resources>

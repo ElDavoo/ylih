@@ -134,11 +134,9 @@
          categories; only "%1$d" needs the count, and Dzongkha's simple one/other set is
          still required by lint. -->
     <plurals name="notification_active">
-        <item quantity="one">མཐུད་ཡོདྭ། %1$d · %2$s</item>
         <item quantity="other">མཐུད་ཡོདྭ། %1$d · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
-        <item quantity="one">མཐུད་ཡོདྭ། %1$d · %2$s · གླེང་སྡེབ།</item>
         <item quantity="other">མཐུད་ཡོདྭ། %1$d · %2$s · གླེང་སྡེབ།</item>
     </plurals>
 
@@ -149,12 +147,10 @@
     <string name="import_failed">ཞུགས་འདྲེན་མི་ཐུབ་པ།</string>
     <string name="error_could_not_open">%1$s ལ་ཁ་ཕྱེ་ཐུབ་མེད།</string>
     <plurals name="import_done">
-        <item quantity="one">གླེང་སྟེགས་ %d ཞུགས་འདྲེན་བྱུང་།</item>
         <item quantity="other">གླེང་སྟེགས་ %d ཞུགས་འདྲེན་བྱུང་།</item>
     </plurals>
 
     <plurals name="session_count">
-        <item quantity="one">གླེང་སྟེགས་ %d</item>
         <item quantity="other">གླེང་སྟེགས་ %d</item>
     </plurals>
 </resources>

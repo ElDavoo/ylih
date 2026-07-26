@@ -133,10 +133,12 @@
     <string name="notification_idle">en attente de casques</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d connecté · %2$s</item>
+        <item quantity="many">%1$d connectés · %2$s</item>
         <item quantity="other">%1$d connectés · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">%1$d connecté · %2$s · lecture</item>
+        <item quantity="many">%1$d connectés · %2$s · lecture</item>
         <item quantity="other">%1$d connectés · %2$s · lecture</item>
     </plurals>
 
@@ -148,11 +150,13 @@
     <string name="error_could_not_open">impossible d\'ouvrir %1$s</string>
     <plurals name="import_done">
         <item quantity="one">%d session importée</item>
+        <item quantity="many">%d sessions importées</item>
         <item quantity="other">%d sessions importées</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">%d session</item>
+        <item quantity="many">%d sessions</item>
         <item quantity="other">%d sessions</item>
     </plurals>
 </resources>

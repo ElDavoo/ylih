@@ -131,10 +131,12 @@
     <string name="notification_idle">esperant auriculars</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d connectat · %2$s</item>
+        <item quantity="many">%1$d connectats · %2$s</item>
         <item quantity="other">%1$d connectats · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">%1$d connectat · %2$s · reproduint</item>
+        <item quantity="many">%1$d connectats · %2$s · reproduint</item>
         <item quantity="other">%1$d connectats · %2$s · reproduint</item>
     </plurals>
 
@@ -146,11 +148,13 @@
     <string name="error_could_not_open">no s\'ha pogut obrir %1$s</string>
     <plurals name="import_done">
         <item quantity="one">s\'ha importat %d sessió</item>
+        <item quantity="many">s\'han importat %d sessions</item>
         <item quantity="other">s\'han importat %d sessions</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">%d sessió</item>
+        <item quantity="many">%d sessions</item>
         <item quantity="other">%d sessions</item>
     </plurals>
 </resources>

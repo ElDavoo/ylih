@@ -132,10 +132,12 @@
     <string name="notification_idle">kela bikule</string>
     <plurals name="notification_active">
         <item quantity="one">diamba %1$d · %2$s</item>
+        <item quantity="many">diamba %1$d · %2$s</item>
         <item quantity="other">diamba %1$d · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">diamba %1$d · %2$s · minkolo</item>
+        <item quantity="many">diamba %1$d · %2$s · minkolo</item>
         <item quantity="other">diamba %1$d · %2$s · minkolo</item>
     </plurals>
 
@@ -147,11 +149,13 @@
     <string name="error_could_not_open">a lo vul %1$s te</string>
     <plurals name="import_done">
         <item quantity="one">kula dibulu %d</item>
+        <item quantity="many">kula dibulu %d</item>
         <item quantity="other">kula dibulu %d</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">dibulu %d</item>
+        <item quantity="many">dibulu %d</item>
         <item quantity="other">dibulu %d</item>
     </plurals>
 </resources>

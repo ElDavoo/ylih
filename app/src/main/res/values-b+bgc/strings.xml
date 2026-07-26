@@ -132,10 +132,12 @@
     <string name="notification_idle">हेडफोन्स की प्रतीक्षा में</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d जुड़ा हुआ · %2$s</item>
+        <item quantity="many">%1$d जुड़े हुए · %2$s</item>
         <item quantity="other">%1$d जुड़े हुए · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">%1$d जुड़ा हुआ · %2$s · चल रहा है</item>
+        <item quantity="many">%1$d जुड़े हुए · %2$s · चल रहा है</item>
         <item quantity="other">%1$d जुड़े हुए · %2$s · चल रहा है</item>
     </plurals>
 
@@ -147,11 +149,13 @@
     <string name="error_could_not_open">%1$s को खोल नहीं सके</string>
     <plurals name="import_done">
         <item quantity="one">%d सत्र आयात किया</item>
+        <item quantity="many">%d सत्र आयात किए</item>
         <item quantity="other">%d सत्र आयात किए</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">%d सत्र</item>
+        <item quantity="many">%d सत्र</item>
         <item quantity="other">%d सत्र</item>
     </plurals>
 </resources>

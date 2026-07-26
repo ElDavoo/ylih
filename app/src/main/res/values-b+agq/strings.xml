@@ -132,10 +132,12 @@
     <string name="notification_idle">à bàn ndap</string>
     <plurals name="notification_active">
         <item quantity="one">à bùŋ: %1$d · %2$s</item>
+        <item quantity="many">à bùŋ: %1$d · %2$s</item>
         <item quantity="other">à bùŋ: %1$d · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">à bùŋ: %1$d · %2$s · à zán</item>
+        <item quantity="many">à bùŋ: %1$d · %2$s · à zán</item>
         <item quantity="other">à bùŋ: %1$d · %2$s · à zán</item>
     </plurals>
 
@@ -147,11 +149,13 @@
     <string name="error_could_not_open">ŋ tóŋ gó %1$s</string>
     <plurals name="import_done">
         <item quantity="one">gó ì búŋ %d</item>
+        <item quantity="many">gó ì búŋ %d</item>
         <item quantity="other">gó ì búŋ %d</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">búŋ %d</item>
+        <item quantity="many">búŋ %d</item>
         <item quantity="other">búŋ %d</item>
     </plurals>
 </resources>
