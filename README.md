@@ -1,4 +1,4 @@
-# ylih
+# ylih - your life in headphones
 
 An Android app that records how long your headphones stay connected, so that months later you
 can answer the only question that matters about a pair of headphones: **how many hours did they
