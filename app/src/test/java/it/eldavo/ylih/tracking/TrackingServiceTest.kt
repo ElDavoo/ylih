@@ -1,0 +1,279 @@
+package it.eldavo.ylih.tracking
+
+import android.Manifest
+import android.media.AudioDeviceInfo
+import android.media.AudioManager
+import android.os.Build
+import android.os.Looper
+import androidx.test.core.app.ApplicationProvider
+import androidx.work.testing.WorkManagerTestInitHelper
+import it.eldavo.ylih.R
+import it.eldavo.ylih.YlihApp
+import it.eldavo.ylih.data.SessionEntity
+import kotlinx.coroutines.runBlocking
+import org.junit.After
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
+import org.junit.Before
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.Robolectric
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.Shadows.shadowOf
+import org.robolectric.android.controller.ServiceController
+import org.robolectric.annotation.Config
+import java.time.Duration
+
+/**
+ * The service is the only thing in the app that ever sees a wired plug or measures playback, and
+ * it is the one component that keeps running while nobody is looking — so what matters is that
+ * the audio callbacks reach the database and that the minute tick keeps the session alive.
+ */
+@RunWith(RobolectricTestRunner::class)
+@Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
+class TrackingServiceTest {
+
+    private val app: YlihApp = ApplicationProvider.getApplicationContext()
+    private val db get() = app.container.database
+    private val audioManager = app.getSystemService(AudioManager::class.java)
+
+    private lateinit var controller: ServiceController<TrackingService>
+    private val service get() = controller.get()
+
+    private var running = false
+
+    @Before
+    fun setUp() = runBlocking {
+        // syncWithSystem() reaches WorkManager, whose androidx.startup initializer never runs here.
+        WorkManagerTestInitHelper.initializeTestWorkManager(app)
+        // Without `specialUse` the Play build needs Bluetooth access before it will run the
+        // service at all, and this test is about what the service does, not about that rule.
+        shadowOf(app).grantPermissions(Manifest.permission.BLUETOOTH_CONNECT)
+        db.deviceDao().deleteAll()
+        // The service only ever runs in detailed mode; with the setting off its first sync would
+        // close, as untracked, every session its own audio callback had just opened.
+        app.container.settings.setDetailedTracking(true)
+        shadowOf(audioManager).setOutputDevices(emptyList())
+        controller = Robolectric.buildService(TrackingService::class.java)
+    }
+
+    @After
+    fun tearDown() = runBlocking {
+        stop()
+        // The preferences file is real and the DataStore behind it is a process singleton.
+        app.container.settings.setDetailedTracking(false)
+    }
+
+    private fun stop() {
+        if (!running) return
+        running = false
+        controller.destroy()
+    }
+
+    private fun start(awaitSync: Boolean = true) {
+        running = true
+        controller.create()
+        if (awaitSync) awaitFirstSync()
+    }
+
+    /**
+     * The first sync finishes on Room's threads, and only then does the tick loop reach its
+     * `delay`. Idling the looper forward before that steps straight over the tick, which is
+     * scheduled against the clock as it is when the loop finally gets there.
+     */
+    private fun awaitFirstSync() {
+        settle("the first sync") {
+            notificationText() != app.getString(R.string.notification_starting)
+        }
+    }
+
+    private fun buds() =
+        outputDevice(AudioDeviceInfo.TYPE_BLUETOOTH_A2DP, "XX:XX:XX:XX:5E:C2", "ACCENTUM Plus")
+
+    private fun wired() =
+        outputDevice(AudioDeviceInfo.TYPE_WIRED_HEADPHONES, productName = "Plugged in")
+
+    /** The service's work is launched on the main looper and finished on Room's own threads. */
+    private fun settle(what: String = "the service to catch up", until: () -> Boolean) {
+        repeat(500) {
+            shadowOf(Looper.getMainLooper()).idle()
+            if (until()) return
+            Thread.sleep(10)
+        }
+        throw AssertionError("timed out waiting for $what")
+    }
+
+    private fun sessions(): List<SessionEntity> = runBlocking { db.sessionDao().getAll() }
+
+    private fun notificationText(): String? = shadowOf(service).lastForegroundNotification
+        ?.extras?.getCharSequence("android.text")?.toString()
+
+    /**
+     * The notification carries how long the pair has been connected, and that runs on the wall
+     * clock rather than the looper's, so the assertion is on everything around the duration.
+     */
+    private fun assertNotificationReads(plural: Int, count: Int) {
+        val blank = "\u0000"
+        val (prefix, suffix) = app.resources.getQuantityString(plural, count, count, blank)
+            .split(blank)
+        val actual = notificationText()
+        assertTrue(
+            "\"$actual\" does not read like \"$prefix…$suffix\"",
+            actual != null && actual.startsWith(prefix) && actual.endsWith(suffix),
+        )
+    }
+
+    /**
+     * [PlaybackWatcher] measures wall-clock milliseconds, which idling the looper does not move —
+     * so a slice of real time has to pass before a tick has anything to credit.
+     */
+    private fun playFor(realMillis: Long) {
+        Thread.sleep(realMillis)
+        shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(TICK))
+    }
+
+    private fun connect(device: AudioDeviceInfo) {
+        shadowOf(audioManager).addOutputDevice(device, /* notifyAudioDeviceCallbacks = */ true)
+    }
+
+    private fun disconnect(device: AudioDeviceInfo) {
+        shadowOf(audioManager).removeOutputDevice(device, /* notifyAudioDeviceCallbacks = */ true)
+    }
+
+    @Test
+    fun `starting the service adopts whatever is already plugged in`() {
+        shadowOf(audioManager).setOutputDevices(listOf(wired()))
+
+        start()
+        controller.startCommand(0, 0)
+
+        settle("the plugged-in pair to be adopted") { sessions().isNotEmpty() }
+        assertNull("still plugged in", sessions().single().disconnectedAt)
+        // Only the service can measure playback, so only it opens sessions that record it.
+        assertEquals(0L, sessions().single().playingMs)
+    }
+
+    @Test
+    fun `the notification says what is being tracked and for how long`() {
+        start(awaitSync = false)
+
+        // It says "starting…" until the first sync has told it what is actually connected.
+        assertEquals(app.getString(R.string.notification_starting), notificationText())
+        awaitFirstSync()
+        assertEquals(app.getString(R.string.notification_idle), notificationText())
+
+        connect(buds())
+
+        settle("the notification to mention the connected pair") {
+            notificationText() != app.getString(R.string.notification_idle)
+        }
+        assertNotificationReads(R.plurals.notification_active, count = 1)
+    }
+
+    @Test
+    fun `plugging in and unplugging opens and closes exactly one session`() {
+        start()
+
+        connect(buds())
+        settle("the session to open") { sessions().isNotEmpty() }
+
+        disconnect(buds())
+        settle("the session to close") { sessions().single().disconnectedAt != null }
+
+        assertEquals(1, sessions().size)
+    }
+
+    @Test
+    fun `outputs that are not headphones never reach the database`() {
+        start()
+
+        connect(outputDevice(AudioDeviceInfo.TYPE_BUILTIN_SPEAKER, productName = "Speaker"))
+        shadowOf(Looper.getMainLooper()).idle()
+
+        assertTrue(sessions().isEmpty())
+    }
+
+    @Test
+    fun `the minute tick keeps the open session's heartbeat moving`() {
+        start()
+        connect(buds())
+        settle("the session to open") { sessions().isNotEmpty() }
+        val before = sessions().single().heartbeatAt
+
+        shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(TICK))
+        settle("the heartbeat to advance") { sessions().single().heartbeatAt > before }
+
+        assertNull("a tick must never close anything", sessions().single().disconnectedAt)
+    }
+
+    @Test
+    fun `time spent playing is credited to the pair that was connected last`() {
+        shadowOf(audioManager).setIsMusicActive(true)
+        start()
+        connect(buds())
+        settle("the session to open") { sessions().isNotEmpty() }
+
+        playFor(50)
+        settle("playback to be credited") { sessions().single().playingMs!! > 0 }
+
+        // Measured playback can never exceed the span it was measured inside.
+        val session = sessions().single()
+        assertTrue(session.playingMs!! <= app.container.clock.now() - session.connectedAt)
+        assertNotificationReads(R.plurals.notification_active_playing, count = 1)
+    }
+
+    @Test
+    fun `unplugging the pair that was playing stops the playback clock`() {
+        shadowOf(audioManager).setIsMusicActive(true)
+        start()
+        connect(buds())
+        settle("the session to open") { sessions().isNotEmpty() }
+
+        playFor(50)
+        settle("playback to be credited") { sessions().single().playingMs!! > 0 }
+        disconnect(buds())
+        settle("the session to close") { sessions().single().disconnectedAt != null }
+        val credited = sessions().single().playingMs
+
+        // Music is still playing — out loud, now — and none of it belongs to the headphones.
+        playFor(50)
+        playFor(50)
+        assertEquals(credited, sessions().single().playingMs)
+    }
+
+    @Test
+    fun `the service asks to be restarted if the system kills it`() {
+        start()
+
+        assertEquals(
+            android.app.Service.START_STICKY,
+            service.onStartCommand(null, 0, 1),
+        )
+    }
+
+    @Test
+    fun `stopping the service banks the playback it had measured`() {
+        shadowOf(audioManager).setIsMusicActive(true)
+        start()
+        connect(buds())
+        settle("the session to open") { sessions().isNotEmpty() }
+        playFor(50)
+        settle("playback to be credited") { sessions().single().playingMs!! > 0 }
+
+        stop()
+        shadowOf(Looper.getMainLooper()).idle()
+
+        assertNotNull(sessions().single().playingMs)
+        // A destroyed service must not keep listening to the audio stack.
+        connect(wired())
+        shadowOf(Looper.getMainLooper()).idle()
+        assertEquals(1, sessions().size)
+    }
+
+    private companion object {
+        /** One service tick, plus enough to be sure the delayed coroutine has come due. */
+        const val TICK = 61_000L
+    }
+}

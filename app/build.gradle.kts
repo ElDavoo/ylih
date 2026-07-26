@@ -222,6 +222,10 @@ dependencies {
     testImplementation(libs.androidx.test.core)
     testImplementation(libs.androidx.room.runtime)
     testImplementation(libs.kotlinx.coroutines.test)
+    // TrackingController schedules and cancels the heartbeat through WorkManager, so testing it
+    // needs a WorkManager that initialises without its androidx.startup provider and runs its
+    // workers on the test thread.
+    testImplementation(libs.androidx.work.testing)
 
     // Store-listing asset generation (StoreScreenshots). Roborazzi's capture calls are inert
     // unless a record/verify task turns them on, so these ride along in the normal unit-test run
