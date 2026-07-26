@@ -1,6 +1,10 @@
 package it.eldavo.ylih.ui
 
 import androidx.annotation.StringRes
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.gestures.ScrollableState
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
@@ -51,6 +55,13 @@ private val destinations = listOf(
 )
 
 private const val PAIR_ROUTE = "pair/{pairId}"
+
+// Destinations crossfade. The app bar is not one of them — it sits in the Scaffold, outside the
+// NavHost — so it has to be faded by hand to stay in step, and the two only stay in step if they
+// read the same spec. Hence the NavHost gets its transitions passed explicitly below rather than
+// inheriting navigation-compose's default (identical today: fadeIn/fadeOut of tween(700)); an
+// inherited default is a number that can change under us in a dependency bump.
+private val NAV_FADE = tween<Float>(durationMillis = 700)
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
@@ -108,7 +119,19 @@ fun YlihNavHost(viewModel: YlihViewModel = viewModel()) {
             // Pair detail brings its own app bar with a back arrow, so the app-level one is only
             // for the three tabs. The flexible medium bar is what lets the full name wrap onto a
             // second line instead of being ellipsised down to "ylih - your life in…".
-            if (currentRoute != PAIR_ROUTE) {
+            //
+            // Fading rather than swapping it: the route flips the moment navigate() is called, so
+            // dropping the bar on `currentRoute` alone made it vanish a beat before the screen it
+            // belongs to had finished crossfading — and took its height with it, jerking the list
+            // underneath upwards mid-animation. AnimatedVisibility holds the height for the whole
+            // exit and hands it back at the start of the enter, so the two bars trade places in
+            // step with the destinations behind them. Tab-to-tab keeps the bar untouched, which is
+            // the point of hoisting it here.
+            AnimatedVisibility(
+                visible = currentRoute != PAIR_ROUTE,
+                enter = fadeIn(NAV_FADE),
+                exit = fadeOut(NAV_FADE),
+            ) {
                 MediumFlexibleTopAppBar(
                     title = {
                         Text(
@@ -143,7 +166,14 @@ fun YlihNavHost(viewModel: YlihViewModel = viewModel()) {
             }
         },
     ) { padding ->
-        NavHost(navController = navController, startDestination = "devices") {
+        NavHost(
+            navController = navController,
+            startDestination = "devices",
+            enterTransition = { fadeIn(NAV_FADE) },
+            exitTransition = { fadeOut(NAV_FADE) },
+            popEnterTransition = { fadeIn(NAV_FADE) },
+            popExitTransition = { fadeOut(NAV_FADE) },
+        ) {
             composable("devices") {
                 DevicesScreen(
                     viewModel = viewModel,
