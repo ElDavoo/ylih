@@ -19,12 +19,12 @@ import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonGroup
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -185,7 +185,10 @@ fun SettingsScreen(
         )
         Spacer(Modifier.height(8.dp))
         if (Distribution.HAS_BATTERY_SHORTCUT) {
-            OutlinedButton(
+            // Filled, like the export/import group above: ButtonGroup's items are always a filled
+            // Button, so an outlined one here read as a different kind of control rather than a
+            // lower-priority one.
+            Button(
                 onClick = {
                     context.startActivity(
                         Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS)
