@@ -175,9 +175,6 @@ interface SessionDao {
     @Query("SELECT * FROM sessions WHERE pairId = :pairId ORDER BY connectedAt DESC")
     fun observeForPair(pairId: Long): Flow<List<SessionEntity>>
 
-    @Query("SELECT * FROM sessions WHERE pairId = :pairId ORDER BY connectedAt")
-    suspend fun forPair(pairId: Long): List<SessionEntity>
-
     @Query("SELECT * FROM sessions ORDER BY connectedAt")
     fun observeAll(): Flow<List<SessionEntity>>
 
