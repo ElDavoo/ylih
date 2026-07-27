@@ -59,7 +59,14 @@ class TrackingControllerTest {
 
     @Before
     fun setUp() = runBlocking {
-        WorkManagerTestInitHelper.initializeTestWorkManager(context)
+        // The heartbeat is enqueued and cancelled on WorkManager's own threads, so reading the
+        // unique work's state straight after asking for a change otherwise races the worker that
+        // the enqueue starts — which showed up as this class passing or failing on what ran
+        // before it in the same JVM.
+        WorkManagerTestInitHelper.initializeTestWorkManager(
+            context,
+            WorkManagerTestInitHelper.ExecutorsMode.LEGACY_OVERRIDE_WITH_SYNCHRONOUS_EXECUTORS,
+        )
         db = Room.inMemoryDatabaseBuilder(context, YlihDatabase::class.java).build()
         repository = SessionRepository(db) { clockNow }
         settings = SettingsStore(context)
