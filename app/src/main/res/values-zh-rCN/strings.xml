@@ -46,12 +46,14 @@
     <!-- 统计 -->
     <string name="stats_title">所有耳机</string>
     <string name="stats_sessions_since">自 %2$s 起 %1$s</string>
+    <string name="stats_today">今天</string>
     <string name="stats_last_7">最近7天</string>
     <string name="stats_last_30">最近30天</string>
     <string name="stats_average_session">平均单次时长</string>
-    <string name="stats_playing">播放中</string>
-    <string name="stats_measured_span">统计时间跨度</string>
-    <string name="stats_share">分享</string>
+    <string name="stats_longest_session">最长单次时长</string>
+    <string name="stats_playing">音频播放时长</string>
+    <string name="stats_measured_span">播放统计时长</string>
+    <string name="stats_share">播放占比</string>
     <string name="stats_daily_hours_30">每日时长(30天)</string>
     <string name="stats_by_pair">按耳机</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -73,9 +75,9 @@
     <string name="pair_sessions">连接次数</string>
     <string name="pair_average">平均</string>
     <string name="pair_longest">最长</string>
-    <string name="pair_first_seen">首次出现</string>
-    <string name="pair_of_measured">占统计时长</string>
-    <string name="pair_measured">已统计</string>
+    <string name="pair_since">自 %1$s 起</string>
+    <string name="pair_of_measured">播放占比</string>
+    <string name="pair_measured">播放统计时长</string>
     <string name="pair_paid">花费</string>
     <string name="pair_per_hour">每小时</string>
     <string name="pair_bought">购买日期</string>

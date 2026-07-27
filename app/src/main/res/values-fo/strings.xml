@@ -45,12 +45,14 @@
     <!-- Talva -->
     <string name="stats_title">öll heyrnirtól</string>
     <string name="stats_sessions_since">%1$s síðan %2$s</string>
+    <string name="stats_today">í dag</string>
     <string name="stats_last_7">síðstu 7 dagar</string>
     <string name="stats_last_30">síðstu 30 dagar</string>
     <string name="stats_average_session">miðalstuðul seta</string>
-    <string name="stats_playing">spælun</string>
-    <string name="stats_measured_span">mætingartíðarjöld</string>
-    <string name="stats_share">deili</string>
+    <string name="stats_longest_session">longsta seta</string>
+    <string name="stats_playing">ljóðspæling</string>
+    <string name="stats_measured_span">mátað fyri spæling</string>
+    <string name="stats_share">partur við spæling</string>
     <string name="stats_daily_hours_30">daglig tímar (30 dagar)</string>
     <string name="stats_by_pair">við pörum</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -72,9 +74,9 @@
     <string name="pair_sessions">setir</string>
     <string name="pair_average">miðal</string>
     <string name="pair_longest">lengsta</string>
-    <string name="pair_first_seen">fyrst sæt</string>
-    <string name="pair_of_measured">av mættu</string>
-    <string name="pair_measured">mætt</string>
+    <string name="pair_since">síðan %1$s</string>
+    <string name="pair_of_measured">partur við spæling</string>
+    <string name="pair_measured">mátað fyri spæling</string>
     <string name="pair_paid">borgað</string>
     <string name="pair_per_hour">um tíman</string>
     <string name="pair_bought">keypt</string>

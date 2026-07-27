@@ -52,12 +52,14 @@
     <string name="stats_title">all headphones</string>
     <!-- %1$s is an already-pluralised session count, %2$s a date. -->
     <string name="stats_sessions_since">%1$s since %2$s</string>
+    <string name="stats_today">today</string>
     <string name="stats_last_7">last 7 days</string>
     <string name="stats_last_30">last 30 days</string>
     <string name="stats_average_session">average session</string>
-    <string name="stats_playing">playing</string>
-    <string name="stats_measured_span">measured span</string>
-    <string name="stats_share">share</string>
+    <string name="stats_longest_session">longest session</string>
+    <string name="stats_playing">audio playing</string>
+    <string name="stats_measured_span">measured for playback</string>
+    <string name="stats_share">playing share</string>
     <string name="stats_daily_hours_30">daily hours (30 days)</string>
     <string name="stats_by_pair">by pair</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -79,9 +81,10 @@
     <string name="pair_sessions">sessions</string>
     <string name="pair_average">average</string>
     <string name="pair_longest">longest</string>
-    <string name="pair_first_seen">first seen</string>
-    <string name="pair_of_measured">of measured</string>
-    <string name="pair_measured">measured</string>
+    <!-- Trails the pair subtitle: "lifetime on this pair · bluetooth · since 3 jan". -->
+    <string name="pair_since">since %1$s</string>
+    <string name="pair_of_measured">playing share</string>
+    <string name="pair_measured">measured for playback</string>
     <string name="pair_paid">paid</string>
     <string name="pair_per_hour">per hour</string>
     <string name="pair_bought">bought</string>

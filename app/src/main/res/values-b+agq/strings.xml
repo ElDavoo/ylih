@@ -45,12 +45,14 @@
     <!-- Stats -->
     <string name="stats_title">ndap bí bùŋ</string>
     <string name="stats_sessions_since">%1$s zú %2$s</string>
+    <string name="stats_today">nɛ</string>
     <string name="stats_last_7">búŋ 7 yál</string>
     <string name="stats_last_30">búŋ 30 yál</string>
     <string name="stats_average_session">à bùl à kàm</string>
+    <string name="stats_longest_session">à kàm sú nábè</string>
     <string name="stats_playing">à zán</string>
-    <string name="stats_measured_span">ìkí à sù</string>
-    <string name="stats_share">gó</string>
+    <string name="stats_measured_span">ìkí à sù nò zán</string>
+    <string name="stats_share">ǹkì à zán</string>
     <string name="stats_daily_hours_30">nábè à yál (30 yál)</string>
     <string name="stats_by_pair">ndap nà</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -72,9 +74,9 @@
     <string name="pair_sessions">búŋ</string>
     <string name="pair_average">à kàm</string>
     <string name="pair_longest">sú nábè</string>
-    <string name="pair_first_seen">à gá wíã</string>
-    <string name="pair_of_measured">yí à sù</string>
-    <string name="pair_measured">à sù</string>
+    <string name="pair_since">zú %1$s</string>
+    <string name="pair_of_measured">ǹkì à zán</string>
+    <string name="pair_measured">ìkí à sù nò zán</string>
     <string name="pair_paid">à zák</string>
     <string name="pair_per_hour">nábè kà</string>
     <string name="pair_bought">à wùm</string>

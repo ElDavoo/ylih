@@ -45,12 +45,14 @@
     <!-- Statistika -->
     <string name="stats_title">bütün qulaqlıqlar</string>
     <string name="stats_sessions_since">%1$s %2$s-dən etibarən</string>
+    <string name="stats_today">bu gün</string>
     <string name="stats_last_7">son 7 gün</string>
     <string name="stats_last_30">son 30 gün</string>
     <string name="stats_average_session">orta seans</string>
-    <string name="stats_playing">oynatma</string>
-    <string name="stats_measured_span">ölçülmüş dövr</string>
-    <string name="stats_share">paylaş</string>
+    <string name="stats_longest_session">ən uzun seans</string>
+    <string name="stats_playing">səs oxunur</string>
+    <string name="stats_measured_span">oxutma üçün ölçülüb</string>
+    <string name="stats_share">oxutma payı</string>
     <string name="stats_daily_hours_30">günlük saatlar (30 gün)</string>
     <string name="stats_by_pair">cütlüyə görə</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -72,9 +74,9 @@
     <string name="pair_sessions">seanslar</string>
     <string name="pair_average">orta</string>
     <string name="pair_longest">ən uzun</string>
-    <string name="pair_first_seen">ilk görülmə</string>
-    <string name="pair_of_measured">ölçülənlərdən</string>
-    <string name="pair_measured">ölçülmüş</string>
+    <string name="pair_since">%1$s-dən bəri</string>
+    <string name="pair_of_measured">oxutma payı</string>
+    <string name="pair_measured">oxutma üçün ölçülüb</string>
     <string name="pair_paid">ödənildi</string>
     <string name="pair_per_hour">saat başına</string>
     <string name="pair_bought">satın alındı</string>

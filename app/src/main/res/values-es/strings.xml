@@ -46,12 +46,14 @@
     <string name="stats_title">todos los auriculares</string>
     <!-- %1$s ya es un recuento de sesiones pluralizado, %2$s una fecha. -->
     <string name="stats_sessions_since">%1$s desde %2$s</string>
+    <string name="stats_today">hoy</string>
     <string name="stats_last_7">últimos 7 días</string>
     <string name="stats_last_30">últimos 30 días</string>
     <string name="stats_average_session">sesión media</string>
-    <string name="stats_playing">reproduciendo</string>
-    <string name="stats_measured_span">periodo medido</string>
-    <string name="stats_share">compartir</string>
+    <string name="stats_longest_session">sesión más larga</string>
+    <string name="stats_playing">audio en reproducción</string>
+    <string name="stats_measured_span">medido para reproducción</string>
+    <string name="stats_share">proporción reproduciendo</string>
     <string name="stats_daily_hours_30">horas diarias (30 días)</string>
     <string name="stats_by_pair">por par</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -73,9 +75,9 @@
     <string name="pair_sessions">sesiones</string>
     <string name="pair_average">media</string>
     <string name="pair_longest">más larga</string>
-    <string name="pair_first_seen">primera vez</string>
-    <string name="pair_of_measured">del medido</string>
-    <string name="pair_measured">medido</string>
+    <string name="pair_since">desde %1$s</string>
+    <string name="pair_of_measured">proporción reproduciendo</string>
+    <string name="pair_measured">medido para reproducción</string>
     <string name="pair_paid">pagado</string>
     <string name="pair_per_hour">por hora</string>
     <string name="pair_bought">comprado</string>

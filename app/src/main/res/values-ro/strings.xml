@@ -46,12 +46,14 @@
     <string name="stats_title">toate căștile</string>
     <!-- %1$s este un număr de sesiuni deja pluralizat, %2$s o dată. -->
     <string name="stats_sessions_since">%1$s din %2$s</string>
+    <string name="stats_today">azi</string>
     <string name="stats_last_7">ultimele 7 zile</string>
     <string name="stats_last_30">ultimele 30 de zile</string>
     <string name="stats_average_session">sesiune medie</string>
-    <string name="stats_playing">redare</string>
-    <string name="stats_measured_span">perioadă măsurată</string>
-    <string name="stats_share">distribuie</string>
+    <string name="stats_longest_session">cea mai lungă sesiune</string>
+    <string name="stats_playing">redare audio</string>
+    <string name="stats_measured_span">măsurat pentru redare</string>
+    <string name="stats_share">proporție de redare</string>
     <string name="stats_daily_hours_30">ore pe zi (30 de zile)</string>
     <string name="stats_by_pair">pe perechi</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -73,9 +75,9 @@
     <string name="pair_sessions">sesiuni</string>
     <string name="pair_average">medie</string>
     <string name="pair_longest">cea mai lungă</string>
-    <string name="pair_first_seen">văzută prima dată</string>
-    <string name="pair_of_measured">din perioada măsurată</string>
-    <string name="pair_measured">măsurat</string>
+    <string name="pair_since">din %1$s</string>
+    <string name="pair_of_measured">proporție de redare</string>
+    <string name="pair_measured">măsurat pentru redare</string>
     <string name="pair_paid">plătit</string>
     <string name="pair_per_hour">pe oră</string>
     <string name="pair_bought">cumpărată</string>

@@ -45,12 +45,14 @@
     <!-- Statistics -->
     <string name="stats_title">lahat ng headphones</string>
     <string name="stats_sessions_since">%1$s mula %2$s</string>
+    <string name="stats_today">ngayon</string>
     <string name="stats_last_7">huling 7 araw</string>
     <string name="stats_last_30">huling 30 araw</string>
     <string name="stats_average_session">average na session</string>
-    <string name="stats_playing">tumutugtog</string>
-    <string name="stats_measured_span">sinusukat na span</string>
-    <string name="stats_share">ibahagi</string>
+    <string name="stats_longest_session">pinakamahabang session</string>
+    <string name="stats_playing">tumutugtog na audio</string>
+    <string name="stats_measured_span">sinukat para sa pagtugtog</string>
+    <string name="stats_share">bahagi ng pagtugtog</string>
     <string name="stats_daily_hours_30">oras bawat araw (30 araw)</string>
     <string name="stats_by_pair">ayon sa pares</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -72,9 +74,9 @@
     <string name="pair_sessions">mga session</string>
     <string name="pair_average">average</string>
     <string name="pair_longest">pinakamatagal</string>
-    <string name="pair_first_seen">unang nakita</string>
-    <string name="pair_of_measured">ng sinusukat</string>
-    <string name="pair_measured">sinusukat</string>
+    <string name="pair_since">mula %1$s</string>
+    <string name="pair_of_measured">bahagi ng pagtugtog</string>
+    <string name="pair_measured">sinukat para sa pagtugtog</string>
     <string name="pair_paid">binayaran</string>
     <string name="pair_per_hour">bawat oras</string>
     <string name="pair_bought">binili</string>

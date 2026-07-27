@@ -126,6 +126,9 @@ fun PairDetailScreen(
                             current?.deviceKind?.displayName(),
                             stringResource(R.string.devices_generation, generation)
                                 .takeIf { generation > 1 },
+                            stats.firstAt?.let {
+                                stringResource(R.string.pair_since, formatDate(it))
+                            },
                         ).joinToString(" · "),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -168,12 +171,12 @@ fun PairDetailScreen(
                     Spacer(Modifier.height(8.dp))
                     StatRow(
                         listOf(
+                            stringResource(R.string.stats_today) to
+                                formatHours(Stats.recentMs(spans, zone, now, 1)),
                             stringResource(R.string.stats_last_7) to
                                 formatHours(Stats.recentMs(spans, zone, now, 7)),
                             stringResource(R.string.stats_last_30) to
                                 formatHours(Stats.recentMs(spans, zone, now, 30)),
-                            stringResource(R.string.pair_first_seen) to
-                                (stats.firstAt?.let { formatDate(it) } ?: none),
                         ),
                     )
                     if (stats.hasPlaybackData) {

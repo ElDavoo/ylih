@@ -45,12 +45,14 @@
     <!-- Takwimu -->
     <string name="stats_title">muti yote</string>
     <string name="stats_sessions_since">%1$s tangu %2$s</string>
+    <string name="stats_today">leo</string>
     <string name="stats_last_7">siku 7 za mwisho</string>
     <string name="stats_last_30">siku 30 za mwisho</string>
     <string name="stats_average_session">kikao cha wastani</string>
-    <string name="stats_playing">kucheza</string>
-    <string name="stats_measured_span">kipimo cha muda</string>
-    <string name="stats_share">funguza</string>
+    <string name="stats_longest_session">kikao kirefu zaidi</string>
+    <string name="stats_playing">sauti inacheza</string>
+    <string name="stats_measured_span">kipimo cha kucheza</string>
+    <string name="stats_share">sehemu ya kucheza</string>
     <string name="stats_daily_hours_30">masaa ya kila siku (siku 30)</string>
     <string name="stats_by_pair">kwa jozi</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -72,9 +74,9 @@
     <string name="pair_sessions">vikao</string>
     <string name="pair_average">wastani</string>
     <string name="pair_longest">mrefu zaidi</string>
-    <string name="pair_first_seen">iliyoona kwanza</string>
-    <string name="pair_of_measured">ya kipimo</string>
-    <string name="pair_measured">kipimo</string>
+    <string name="pair_since">tangu %1$s</string>
+    <string name="pair_of_measured">sehemu ya kucheza</string>
+    <string name="pair_measured">kipimo cha kucheza</string>
     <string name="pair_paid">iliyolipwa</string>
     <string name="pair_per_hour">kwa saa</string>
     <string name="pair_bought">iliyonunuliwa</string>

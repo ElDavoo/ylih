@@ -46,12 +46,14 @@
     <string name="stats_title">kaikki kuulokkeet</string>
     <!-- %1$s is an already-pluralised session count, %2$s a date. -->
     <string name="stats_sessions_since">%1$s, alkaen %2$s</string>
+    <string name="stats_today">tänään</string>
     <string name="stats_last_7">viimeiset 7 päivää</string>
     <string name="stats_last_30">viimeiset 30 päivää</string>
     <string name="stats_average_session">keskimääräinen sessio</string>
-    <string name="stats_playing">toistoa</string>
-    <string name="stats_measured_span">mitattu ajanjakso</string>
-    <string name="stats_share">jaa</string>
+    <string name="stats_longest_session">pisin sessio</string>
+    <string name="stats_playing">äänen toistoa</string>
+    <string name="stats_measured_span">mitattu toistoa varten</string>
+    <string name="stats_share">toiston osuus</string>
     <string name="stats_daily_hours_30">tunnit päivässä (30 päivää)</string>
     <string name="stats_by_pair">pareittain</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -73,9 +75,9 @@
     <string name="pair_sessions">sessiot</string>
     <string name="pair_average">keskiarvo</string>
     <string name="pair_longest">pisin</string>
-    <string name="pair_first_seen">ensi kerta havaittu</string>
-    <string name="pair_of_measured">mitatusta</string>
-    <string name="pair_measured">mitattu</string>
+    <string name="pair_since">alkaen %1$s</string>
+    <string name="pair_of_measured">toiston osuus</string>
+    <string name="pair_measured">mitattu toistoa varten</string>
     <string name="pair_paid">maksettu</string>
     <string name="pair_per_hour">tunnilta</string>
     <string name="pair_bought">ostettu</string>

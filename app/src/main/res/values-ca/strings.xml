@@ -44,12 +44,14 @@
     <!-- Estadístiques -->
     <string name="stats_title">tots els auriculars</string>
     <string name="stats_sessions_since">%1$s des de %2$s</string>
+    <string name="stats_today">avui</string>
     <string name="stats_last_7">últims 7 dies</string>
     <string name="stats_last_30">últims 30 dies</string>
     <string name="stats_average_session">sessió mitjana</string>
-    <string name="stats_playing">reproduint</string>
-    <string name="stats_measured_span">període mesurat</string>
-    <string name="stats_share">part</string>
+    <string name="stats_longest_session">sessió més llarga</string>
+    <string name="stats_playing">àudio reproduint-se</string>
+    <string name="stats_measured_span">mesurat per a la reproducció</string>
+    <string name="stats_share">proporció reproduint</string>
     <string name="stats_daily_hours_30">hores diàries (30 dies)</string>
     <string name="stats_by_pair">per parell</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -71,9 +73,9 @@
     <string name="pair_sessions">sessions</string>
     <string name="pair_average">mitjana</string>
     <string name="pair_longest">més llarg</string>
-    <string name="pair_first_seen">primer cop vist</string>
-    <string name="pair_of_measured">del mesurat</string>
-    <string name="pair_measured">mesurat</string>
+    <string name="pair_since">des de %1$s</string>
+    <string name="pair_of_measured">proporció reproduint</string>
+    <string name="pair_measured">mesurat per a la reproducció</string>
     <string name="pair_paid">pagat</string>
     <string name="pair_per_hour">per hora</string>
     <string name="pair_bought">comprat</string>

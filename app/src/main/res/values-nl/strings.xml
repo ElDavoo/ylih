@@ -46,12 +46,14 @@
     <string name="stats_title">alle koptelefoons</string>
     <!-- %1$s is een reeds vervoegd aantal sessies, %2$s een datum. -->
     <string name="stats_sessions_since">%1$s sinds %2$s</string>
+    <string name="stats_today">vandaag</string>
     <string name="stats_last_7">laatste 7 dagen</string>
     <string name="stats_last_30">laatste 30 dagen</string>
     <string name="stats_average_session">gemiddelde sessie</string>
-    <string name="stats_playing">afspelen</string>
-    <string name="stats_measured_span">gemeten periode</string>
-    <string name="stats_share">delen</string>
+    <string name="stats_longest_session">langste sessie</string>
+    <string name="stats_playing">audio speelt af</string>
+    <string name="stats_measured_span">gemeten voor afspelen</string>
+    <string name="stats_share">aandeel afspelen</string>
     <string name="stats_daily_hours_30">uren per dag (30 dagen)</string>
     <string name="stats_by_pair">per koptelefoon</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -73,9 +75,9 @@
     <string name="pair_sessions">sessies</string>
     <string name="pair_average">gemiddeld</string>
     <string name="pair_longest">langste</string>
-    <string name="pair_first_seen">eerst gezien</string>
-    <string name="pair_of_measured">van gemeten</string>
-    <string name="pair_measured">gemeten</string>
+    <string name="pair_since">sinds %1$s</string>
+    <string name="pair_of_measured">aandeel afspelen</string>
+    <string name="pair_measured">gemeten voor afspelen</string>
     <string name="pair_paid">betaald</string>
     <string name="pair_per_hour">per uur</string>
     <string name="pair_bought">gekocht</string>

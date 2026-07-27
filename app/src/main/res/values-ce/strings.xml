@@ -45,12 +45,14 @@
     <!-- Статистика -->
     <string name="stats_title">массала наухьанар</string>
     <string name="stats_sessions_since">%1$s %2$s хӏара</string>
+    <string name="stats_today">тахана</string>
     <string name="stats_last_7">охьалойн 7ДӀа</string>
     <string name="stats_last_30">охьалойн 30 ДӀа</string>
     <string name="stats_average_session">дӏахалойн сессия</string>
-    <string name="stats_playing">воспроизведение</string>
-    <string name="stats_measured_span">из йоьшу период</string>
-    <string name="stats_share">бахьа</string>
+    <string name="stats_longest_session">уггаре йоккха сессия</string>
+    <string name="stats_playing">аз ловзадар</string>
+    <string name="stats_measured_span">ловзадарна из йина</string>
+    <string name="stats_share">ловзадаран дакъа</string>
     <string name="stats_daily_hours_30">сак соьатаяр (30 ДӀа)</string>
     <string name="stats_by_pair">паран яьлча</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -72,9 +74,9 @@
     <string name="pair_sessions">сессияр</string>
     <string name="pair_average">дӏахалойн</string>
     <string name="pair_longest">хӏона сессия</string>
-    <string name="pair_first_seen">анхи гӏаллачу</string>
-    <string name="pair_of_measured">из йоьшу</string>
-    <string name="pair_measured">из йоьшу</string>
+    <string name="pair_since">%1$s дуьйна</string>
+    <string name="pair_of_measured">ловзадаран дакъа</string>
+    <string name="pair_measured">ловзадарна из йина</string>
     <string name="pair_paid">харц</string>
     <string name="pair_per_hour">соьатан яьлча</string>
     <string name="pair_bought">кӏанӏах</string>

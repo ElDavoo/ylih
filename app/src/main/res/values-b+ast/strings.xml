@@ -45,12 +45,14 @@
     <!-- Estadístiques -->
     <string name="stats_title">tolos auriculares</string>
     <string name="stats_sessions_since">%1$s dende %2$s</string>
+    <string name="stats_today">güei</string>
     <string name="stats_last_7">últimos 7 díes</string>
     <string name="stats_last_30">últimos 30 díes</string>
     <string name="stats_average_session">media de sesión</string>
-    <string name="stats_playing">reproducción</string>
-    <string name="stats_measured_span">períodu midíu</string>
-    <string name="stats_share">compartir</string>
+    <string name="stats_longest_session">sesión más llarga</string>
+    <string name="stats_playing">audiu reproduciéndose</string>
+    <string name="stats_measured_span">midíu pa la reproducción</string>
+    <string name="stats_share">proporción reproduciendo</string>
     <string name="stats_daily_hours_30">hores diariu (30 díes)</string>
     <string name="stats_by_pair">por par</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -72,9 +74,9 @@
     <string name="pair_sessions">sesiones</string>
     <string name="pair_average">media</string>
     <string name="pair_longest">la más llarga</string>
-    <string name="pair_first_seen">primera vegada visto</string>
-    <string name="pair_of_measured">de lo midíu</string>
-    <string name="pair_measured">midíu</string>
+    <string name="pair_since">dende %1$s</string>
+    <string name="pair_of_measured">proporción reproduciendo</string>
+    <string name="pair_measured">midíu pa la reproducción</string>
     <string name="pair_paid">pagáu</string>
     <string name="pair_per_hour">per hora</string>
     <string name="pair_bought">compráu</string>

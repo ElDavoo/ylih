@@ -45,12 +45,14 @@
     <!-- Stats -->
     <string name="stats_title">kisisohk otisinahk</string>
     <string name="stats_sessions_since">%1$s os %2$s</string>
+    <string name="stats_today">anohc kīsikāw</string>
     <string name="stats_last_7">ay-isko ispimo</string>
     <string name="stats_last_30">ay-isko mihtik osap</string>
     <string name="stats_average_session">akwah atihcamowin</string>
+    <string name="stats_longest_session">mahkisiw atihcamowin</string>
     <string name="stats_playing">atihcamok</string>
-    <string name="stats_measured_span">akayasimohkana mahkonak</string>
-    <string name="stats_share">mawocih</string>
+    <string name="stats_measured_span">akayasimohkana atihcamok</string>
+    <string name="stats_share">atihcamok pahkwe</string>
     <string name="stats_daily_hours_30">mahkohkana ayisiyiniw (30 osap)</string>
     <string name="stats_by_pair">eto otisinahk</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -72,9 +74,9 @@
     <string name="pair_sessions">atihcamohkana</string>
     <string name="pair_average">akwah</string>
     <string name="pair_longest">mahkisiw</string>
-    <string name="pair_first_seen">peyakohk ki mayik</string>
-    <string name="pair_of_measured">eto akayasimohkana</string>
-    <string name="pair_measured">akayasimohk</string>
+    <string name="pair_since">os %1$s</string>
+    <string name="pair_of_measured">atihcamok pahkwe</string>
+    <string name="pair_measured">akayasimohkana atihcamok</string>
     <string name="pair_paid">atayik</string>
     <string name="pair_per_hour">eto mahkohk</string>
     <string name="pair_bought">ki atayik</string>

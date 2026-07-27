@@ -45,12 +45,14 @@
     <!-- Denbara -->
     <string name="stats_title">kopila bɛ</string>
     <string name="stats_sessions_since">%1$s jɛ %2$s wɛrɛ</string>
+    <string name="stats_today">bi</string>
     <string name="stats_last_7">gɛrɛ 7 sira</string>
     <string name="stats_last_30">gɛrɛ 30 sira</string>
     <string name="stats_average_session">gɛrɛ kabini</string>
-    <string name="stats_playing">taara</string>
-    <string name="stats_measured_span">kuma ka jira maɲininkɔ</string>
-    <string name="stats_share">partage</string>
+    <string name="stats_longest_session">waati janman</string>
+    <string name="stats_playing">kumakan taara</string>
+    <string name="stats_measured_span">sumanini taara kama</string>
+    <string name="stats_share">taara niyɔrɔ</string>
     <string name="stats_daily_hours_30">kɔrɔ-juman (gɛrɛ 30)</string>
     <string name="stats_by_pair">kopila kɔrɔ</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -72,9 +74,9 @@
     <string name="pair_sessions">jiginna sutu</string>
     <string name="pair_average">kabini</string>
     <string name="pair_longest">gara fɔ</string>
-    <string name="pair_first_seen">a jɔ maɲininkɔ</string>
-    <string name="pair_of_measured">kuma jira jɛ</string>
-    <string name="pair_measured">kuma jira</string>
+    <string name="pair_since">kabini %1$s</string>
+    <string name="pair_of_measured">taara niyɔrɔ</string>
+    <string name="pair_measured">sumanini taara kama</string>
     <string name="pair_paid">satɛ jɛ</string>
     <string name="pair_per_hour">kɔrɔ kɔ</string>
     <string name="pair_bought">satɛ kɛ</string>

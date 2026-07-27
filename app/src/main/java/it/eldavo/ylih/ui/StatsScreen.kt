@@ -76,12 +76,21 @@ fun StatsScreen(
                 Spacer(Modifier.height(16.dp))
                 StatRow(
                     listOf(
+                        stringResource(R.string.stats_today) to
+                            formatHours(Stats.recentMs(spans, zone, now, 1)),
                         stringResource(R.string.stats_last_7) to
                             formatHours(Stats.recentMs(spans, zone, now, 7)),
                         stringResource(R.string.stats_last_30) to
                             formatHours(Stats.recentMs(spans, zone, now, 30)),
+                    ),
+                )
+                Spacer(Modifier.height(8.dp))
+                StatRow(
+                    listOf(
                         stringResource(R.string.stats_average_session) to
                             formatDurationShort(summary.averageMs),
+                        stringResource(R.string.stats_longest_session) to
+                            formatDurationShort(summary.longestMs),
                     ),
                 )
                 if (summary.hasPlaybackData) {

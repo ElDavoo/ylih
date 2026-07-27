@@ -45,12 +45,14 @@
     <!-- Statistika -->
     <string name="stats_title">kõik kõrvaklapid</string>
     <string name="stats_sessions_since">%1$s alates %2$s</string>
+    <string name="stats_today">täna</string>
     <string name="stats_last_7">viimased 7 päeva</string>
     <string name="stats_last_30">viimased 30 päeva</string>
     <string name="stats_average_session">keskmine seanss</string>
-    <string name="stats_playing">taasesitus</string>
-    <string name="stats_measured_span">mõõdetud periood</string>
-    <string name="stats_share">jaga</string>
+    <string name="stats_longest_session">pikim seanss</string>
+    <string name="stats_playing">heli taasesitus</string>
+    <string name="stats_measured_span">mõõdetud taasesituse jaoks</string>
+    <string name="stats_share">taasesituse osakaal</string>
     <string name="stats_daily_hours_30">tunni päevas (30 päeva)</string>
     <string name="stats_by_pair">paaride kaupa</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -72,9 +74,9 @@
     <string name="pair_sessions">seansid</string>
     <string name="pair_average">keskmine</string>
     <string name="pair_longest">pikim</string>
-    <string name="pair_first_seen">esimest korda nähtud</string>
-    <string name="pair_of_measured">mõõdetust</string>
-    <string name="pair_measured">mõõdetud</string>
+    <string name="pair_since">alates %1$s</string>
+    <string name="pair_of_measured">taasesituse osakaal</string>
+    <string name="pair_measured">mõõdetud taasesituse jaoks</string>
     <string name="pair_paid">makstud</string>
     <string name="pair_per_hour">tunni kohta</string>
     <string name="pair_bought">ostetud</string>

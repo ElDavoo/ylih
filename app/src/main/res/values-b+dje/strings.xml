@@ -45,12 +45,14 @@
     <!-- Stats -->
     <string name="stats_title">kul hima</string>
     <string name="stats_sessions_since">%1$s sanda %2$s</string>
+    <string name="stats_today">hunkuna</string>
     <string name="stats_last_7">waja 7 jema</string>
     <string name="stats_last_30">waja 30 jema</string>
     <string name="stats_average_session">gasa ganda hima</string>
-    <string name="stats_playing">ido</string>
-    <string name="stats_measured_span">alaara jema</string>
-    <string name="stats_share">kunaa</string>
+    <string name="stats_longest_session">gasa kaŋ ga ku</string>
+    <string name="stats_playing">jinde ido</string>
+    <string name="stats_measured_span">neesi ido se</string>
+    <string name="stats_share">ido baa</string>
     <string name="stats_daily_hours_30">agandu jema (30 jema)</string>
     <string name="stats_by_pair">hima ga</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -72,9 +74,9 @@
     <string name="pair_sessions">gasaandi</string>
     <string name="pair_average">ganda</string>
     <string name="pair_longest">gutu baani</string>
-    <string name="pair_first_seen">kanji zama</string>
-    <string name="pair_of_measured">alaara ga</string>
-    <string name="pair_measured">alaara</string>
+    <string name="pair_since">sanda %1$s</string>
+    <string name="pair_of_measured">ido baa</string>
+    <string name="pair_measured">neesi ido se</string>
     <string name="pair_paid">kunaa</string>
     <string name="pair_per_hour">agandu foo</string>
     <string name="pair_bought">sanda</string>

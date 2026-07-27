@@ -46,12 +46,14 @@
     <string name="stats_title">entzule guztiak</string>
     <!-- %1$s is an already-pluralised session count, %2$s a date. -->
     <string name="stats_sessions_since">%1$s %2$s-tik</string>
+    <string name="stats_today">gaur</string>
     <string name="stats_last_7">azkenen 7 eguna</string>
     <string name="stats_last_30">azkenen 30 eguna</string>
     <string name="stats_average_session">batezbesteko saioa</string>
-    <string name="stats_playing">erreprodukzioa</string>
-    <string name="stats_measured_span">neurtu den denbora</string>
-    <string name="stats_share">partekatu</string>
+    <string name="stats_longest_session">saiorik luzeena</string>
+    <string name="stats_playing">audioa erreproduzitzen</string>
+    <string name="stats_measured_span">erreprodukziorako neurtua</string>
+    <string name="stats_share">erreprodukzio-proportzioa</string>
     <string name="stats_daily_hours_30">orduak egunero (30 eguna)</string>
     <string name="stats_by_pair">pareka</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -73,9 +75,9 @@
     <string name="pair_sessions">saio</string>
     <string name="pair_average">batezbestekoa</string>
     <string name="pair_longest">luzeena</string>
-    <string name="pair_first_seen">lehenengo aldiz ikusia</string>
-    <string name="pair_of_measured">neurutik</string>
-    <string name="pair_measured">neurtua</string>
+    <string name="pair_since">%1$s-tik</string>
+    <string name="pair_of_measured">erreprodukzio-proportzioa</string>
+    <string name="pair_measured">erreprodukziorako neurtua</string>
     <string name="pair_paid">ordaindua</string>
     <string name="pair_per_hour">orduko</string>
     <string name="pair_bought">erosita</string>

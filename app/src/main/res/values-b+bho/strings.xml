@@ -45,12 +45,14 @@
     <!-- सांख्यिकी -->
     <string name="stats_title">सब ईयरफोन</string>
     <string name="stats_sessions_since">%1$s %2$s से</string>
+    <string name="stats_today">आज</string>
     <string name="stats_last_7">पिछला 7 दिन</string>
     <string name="stats_last_30">पिछला 30 दिन</string>
     <string name="stats_average_session">औसत सत्र</string>
-    <string name="stats_playing">बजावल</string>
-    <string name="stats_measured_span">मपल गइल अवधि</string>
-    <string name="stats_share">साझा कर</string>
+    <string name="stats_longest_session">सबसे लंबा सत्र</string>
+    <string name="stats_playing">ऑडियो बजत बा</string>
+    <string name="stats_measured_span">प्लेबैक खातिर मपल</string>
+    <string name="stats_share">प्लेबैक के हिस्सा</string>
     <string name="stats_daily_hours_30">रोज के घंटा (30 दिन)</string>
     <string name="stats_by_pair">जोड़ी के अनुसार</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -72,9 +74,9 @@
     <string name="pair_sessions">सत्र</string>
     <string name="pair_average">औसत</string>
     <string name="pair_longest">सबसे लंबा</string>
-    <string name="pair_first_seen">पहिले देखल</string>
-    <string name="pair_of_measured">मपल गइल से</string>
-    <string name="pair_measured">मपल गइल</string>
+    <string name="pair_since">%1$s से</string>
+    <string name="pair_of_measured">प्लेबैक के हिस्सा</string>
+    <string name="pair_measured">प्लेबैक खातिर मपल</string>
     <string name="pair_paid">अदा कइल</string>
     <string name="pair_per_hour">हर घंटा</string>
     <string name="pair_bought">खरीदल</string>

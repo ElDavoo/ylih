@@ -81,6 +81,18 @@ class StatsTest {
     }
 
     @Test
+    fun `a one day window is today from local midnight, not the last 24 hours`() {
+        val now = at(2026, 5, 20, 12)
+        val spans = listOf(
+            // Overnight: only the three hours after midnight belong to today.
+            Span(at(2026, 5, 19, 22), at(2026, 5, 20, 3), null),
+            // Still connected: counted up to now.
+            Span(at(2026, 5, 20, 11), null, null),
+        )
+        assertEquals(4 * 3_600_000L, Stats.recentMs(spans, rome, now, days = 1))
+    }
+
+    @Test
     fun `summary separates measured playback from unmeasured sessions`() {
         val now = at(2026, 5, 20, 12)
         val spans = listOf(

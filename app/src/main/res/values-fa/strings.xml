@@ -45,12 +45,14 @@
     <!-- آمار -->
     <string name="stats_title">تمام هدفون‌ها</string>
     <string name="stats_sessions_since">%1$s از %2$s</string>
+    <string name="stats_today">امروز</string>
     <string name="stats_last_7">7 روز گذشته</string>
     <string name="stats_last_30">30 روز گذشته</string>
     <string name="stats_average_session">میانگین جلسه</string>
-    <string name="stats_playing">پخش</string>
-    <string name="stats_measured_span">بازه اندازه‌گیری شده</string>
-    <string name="stats_share">سهم</string>
+    <string name="stats_longest_session">طولانی‌ترین جلسه</string>
+    <string name="stats_playing">پخش صدا</string>
+    <string name="stats_measured_span">اندازه‌گیری‌شده برای پخش</string>
+    <string name="stats_share">سهم پخش</string>
     <string name="stats_daily_hours_30">ساعات روزانه (30 روز)</string>
     <string name="stats_by_pair">بر اساس جفت</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -72,9 +74,9 @@
     <string name="pair_sessions">جلسات</string>
     <string name="pair_average">میانگین</string>
     <string name="pair_longest">طولانی‌ترین</string>
-    <string name="pair_first_seen">اولین مشاهده</string>
-    <string name="pair_of_measured">از اندازه‌گیری شده</string>
-    <string name="pair_measured">اندازه‌گیری شده</string>
+    <string name="pair_since">از %1$s</string>
+    <string name="pair_of_measured">سهم پخش</string>
+    <string name="pair_measured">اندازه‌گیری‌شده برای پخش</string>
     <string name="pair_paid">پرداخت شده</string>
     <string name="pair_per_hour">در ساعت</string>
     <string name="pair_bought">خریداری شده</string>

@@ -45,12 +45,14 @@
     <!-- Statistika -->
     <string name="stats_title">wšykne naušniki</string>
     <string name="stats_sessions_since">%1$s wót %2$s</string>
+    <string name="stats_today">źinsa</string>
     <string name="stats_last_7">póslednich 7 dnjow</string>
     <string name="stats_last_30">póslednich 30 dnjow</string>
     <string name="stats_average_session">pśemerna sejada</string>
-    <string name="stats_playing">wótwóźenje</string>
-    <string name="stats_measured_span">měrjony wobcerk</string>
-    <string name="stats_share">dělenje</string>
+    <string name="stats_longest_session">nejdlejša sejada</string>
+    <string name="stats_playing">wótwóźenje zuka</string>
+    <string name="stats_measured_span">měrjone za wótwóźenje</string>
+    <string name="stats_share">źěl wótwóźenja</string>
     <string name="stats_daily_hours_30">hodinow na źeń (30 dnjow)</string>
     <string name="stats_by_pair">po parach</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -72,9 +74,9 @@
     <string name="pair_sessions">sejady</string>
     <string name="pair_average">pśemerna</string>
     <string name="pair_longest">nejšyra</string>
-    <string name="pair_first_seen">prwy raz wiźity</string>
-    <string name="pair_of_measured">wót měrjonego</string>
-    <string name="pair_measured">měrjony</string>
+    <string name="pair_since">wót %1$s</string>
+    <string name="pair_of_measured">źěl wótwóźenja</string>
+    <string name="pair_measured">měrjone za wótwóźenje</string>
     <string name="pair_paid">dopłaćeny</string>
     <string name="pair_per_hour">za hodinu</string>
     <string name="pair_bought">kupjeny</string>

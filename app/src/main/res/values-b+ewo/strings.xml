@@ -45,12 +45,14 @@
     <!-- Tiyo -->
     <string name="stats_title">bikule abam</string>
     <string name="stats_sessions_since">%1$s ti ɛmva %2$s</string>
+    <string name="stats_today">dén</string>
     <string name="stats_last_7">zitom ye 7 ye zepot</string>
     <string name="stats_last_30">zitom ye 30 ye zepot</string>
     <string name="stats_average_session">dibulu ye nkɔlɔ</string>
-    <string name="stats_playing">minkolo</string>
-    <string name="stats_measured_span">tim ye a leŋed</string>
-    <string name="stats_share">mepɔ</string>
+    <string name="stats_longest_session">dibulu ye a pul</string>
+    <string name="stats_playing">minkolo mi wulu</string>
+    <string name="stats_measured_span">leŋed a minkolo</string>
+    <string name="stats_share">abui minkolo</string>
     <string name="stats_daily_hours_30">kuε ye zepot (zitom ye 30)</string>
     <string name="stats_by_pair">ti bikule</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -72,9 +74,9 @@
     <string name="pair_sessions">dibulu</string>
     <string name="pair_average">nkɔlɔ</string>
     <string name="pair_longest">mina ye a pul</string>
-    <string name="pair_first_seen">mbouma ye mɔ</string>
-    <string name="pair_of_measured">ye tim ye a leŋed</string>
-    <string name="pair_measured">leŋed</string>
+    <string name="pair_since">ti ɛmva %1$s</string>
+    <string name="pair_of_measured">abui minkolo</string>
+    <string name="pair_measured">leŋed a minkolo</string>
     <string name="pair_paid">menkɔ</string>
     <string name="pair_per_hour">ti kuε bot</string>
     <string name="pair_bought">bekum</string>

@@ -47,12 +47,14 @@
     <string name="stats_title">所有耳機</string>
     <!-- %1$s is an already-pluralised session count, %2$s a date. -->
     <string name="stats_sessions_since">自 %2$s 起 %1$s</string>
+    <string name="stats_today">今天</string>
     <string name="stats_last_7">最近 7 天</string>
     <string name="stats_last_30">最近 30 天</string>
     <string name="stats_average_session">平均單次連線</string>
-    <string name="stats_playing">播放中</string>
-    <string name="stats_measured_span">測量期間</string>
-    <string name="stats_share">分享</string>
+    <string name="stats_longest_session">最長單次連線</string>
+    <string name="stats_playing">音訊播放時間</string>
+    <string name="stats_measured_span">播放測量時間</string>
+    <string name="stats_share">播放佔比</string>
     <string name="stats_daily_hours_30">每日小時數（30 天）</string>
     <string name="stats_by_pair">依耳機</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -74,9 +76,9 @@
     <string name="pair_sessions">連線次數</string>
     <string name="pair_average">平均</string>
     <string name="pair_longest">最長</string>
-    <string name="pair_first_seen">首次出現</string>
-    <string name="pair_of_measured">佔測量時間比例</string>
-    <string name="pair_measured">已測量</string>
+    <string name="pair_since">自 %1$s 起</string>
+    <string name="pair_of_measured">播放佔比</string>
+    <string name="pair_measured">播放測量時間</string>
     <string name="pair_paid">已付金額</string>
     <string name="pair_per_hour">每小時</string>
     <string name="pair_bought">購買於</string>

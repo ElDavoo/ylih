@@ -46,12 +46,14 @@
     <string name="stats_title">tüm kulaklıklar</string>
     <!-- %1$s is an already-pluralised session count, %2$s a date. -->
     <string name="stats_sessions_since">%2$s\'den beri %1$s</string>
+    <string name="stats_today">bugün</string>
     <string name="stats_last_7">son 7 gün</string>
     <string name="stats_last_30">son 30 gün</string>
     <string name="stats_average_session">ortalama oturum</string>
-    <string name="stats_playing">çalma</string>
-    <string name="stats_measured_span">ölçülen süre</string>
-    <string name="stats_share">paylaş</string>
+    <string name="stats_longest_session">en uzun oturum</string>
+    <string name="stats_playing">ses çalıyor</string>
+    <string name="stats_measured_span">çalma için ölçülen</string>
+    <string name="stats_share">çalma oranı</string>
     <string name="stats_daily_hours_30">günlük saat (30 gün)</string>
     <string name="stats_by_pair">çiftlere göre</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -73,9 +75,9 @@
     <string name="pair_sessions">oturumlar</string>
     <string name="pair_average">ortalama</string>
     <string name="pair_longest">en uzun</string>
-    <string name="pair_first_seen">ilk görülme</string>
-    <string name="pair_of_measured">ölçülenin</string>
-    <string name="pair_measured">ölçülen</string>
+    <string name="pair_since">%1$s\'den beri</string>
+    <string name="pair_of_measured">çalma oranı</string>
+    <string name="pair_measured">çalma için ölçülen</string>
     <string name="pair_paid">ödenen</string>
     <string name="pair_per_hour">saat başına</string>
     <string name="pair_bought">satın alındı</string>

@@ -45,12 +45,14 @@
     <!-- Amakamu -->
     <string name="stats_title">ifu ifyonse</string>
     <string name="stats_sessions_since">%1$s pakali %2$s</string>
+    <string name="stats_today">lelo</string>
     <string name="stats_last_7">inshuba 7 inafikila</string>
     <string name="stats_last_30">inshuba 30 inafikila</string>
     <string name="stats_average_session">inshuba ya kusekesa</string>
-    <string name="stats_playing">kusekesa</string>
-    <string name="stats_measured_span">inkokolo ifutibulile</string>
-    <string name="stats_share">amakamu</string>
+    <string name="stats_longest_session">inshita ilepesha</string>
+    <string name="stats_playing">ukusekesa</string>
+    <string name="stats_measured_span">ifyapimwa ku kusekesa</string>
+    <string name="stats_share">icipande ca kusekesa</string>
     <string name="stats_daily_hours_30">amahola pa inshuba (30 inshuba)</string>
     <string name="stats_by_pair">ifipela pa ifipela</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -72,9 +74,9 @@
     <string name="pair_sessions">ifikapililo</string>
     <string name="pair_average">pakati</string>
     <string name="pair_longest">ifilinga ifilakula</string>
-    <string name="pair_first_seen">inatonwilwe pakali</string>
-    <string name="pair_of_measured">ya ifutibulilwe</string>
-    <string name="pair_measured">ifutibulilwe</string>
+    <string name="pair_since">pakali %1$s</string>
+    <string name="pair_of_measured">icipande ca kusekesa</string>
+    <string name="pair_measured">ifyapimwa ku kusekesa</string>
     <string name="pair_paid">iwalipilwe</string>
     <string name="pair_per_hour">pakati ya mahola</string>
     <string name="pair_bought">ikombilwe</string>

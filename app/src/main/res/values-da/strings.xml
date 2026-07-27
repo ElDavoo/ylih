@@ -46,12 +46,14 @@
     <string name="stats_title">alle høretelefoner</string>
     <!-- %1$s is an already-pluralised session count, %2$s a date. -->
     <string name="stats_sessions_since">%1$s siden %2$s</string>
+    <string name="stats_today">i dag</string>
     <string name="stats_last_7">sidste 7 dage</string>
     <string name="stats_last_30">sidste 30 dage</string>
     <string name="stats_average_session">gennemsnitlig session</string>
-    <string name="stats_playing">afspilning</string>
-    <string name="stats_measured_span">målt periode</string>
-    <string name="stats_share">del</string>
+    <string name="stats_longest_session">længste session</string>
+    <string name="stats_playing">lydafspilning</string>
+    <string name="stats_measured_span">målt for afspilning</string>
+    <string name="stats_share">andel afspilning</string>
     <string name="stats_daily_hours_30">timer pr. dag (30 dage)</string>
     <string name="stats_by_pair">pr. par</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -73,9 +75,9 @@
     <string name="pair_sessions">sessioner</string>
     <string name="pair_average">gennemsnit</string>
     <string name="pair_longest">længste</string>
-    <string name="pair_first_seen">først set</string>
-    <string name="pair_of_measured">af målt</string>
-    <string name="pair_measured">målt</string>
+    <string name="pair_since">siden %1$s</string>
+    <string name="pair_of_measured">andel afspilning</string>
+    <string name="pair_measured">målt for afspilning</string>
     <string name="pair_paid">betalt</string>
     <string name="pair_per_hour">pr. time</string>
     <string name="pair_bought">købt</string>

@@ -45,12 +45,14 @@
     <!-- Stadegezh -->
     <string name="stats_title">tonelloù a-bezh</string>
     <string name="stats_sessions_since">%1$s abaoe %2$s</string>
+    <string name="stats_today">hiziv</string>
     <string name="stats_last_7">ar 7 devezhioù diwezhañ</string>
     <string name="stats_last_30">ar 30 devezhioù diwezhañ</string>
     <string name="stats_average_session">kurmediañ an daolenn</string>
-    <string name="stats_playing">kanañ</string>
-    <string name="stats_measured_span">span mesurvet</string>
-    <string name="stats_share">rannañ</string>
+    <string name="stats_longest_session">an dalc\'h hirañ</string>
+    <string name="stats_playing">son o seniñ</string>
+    <string name="stats_measured_span">muzuliet evit ar seniñ</string>
+    <string name="stats_share">lodenn o seniñ</string>
     <string name="stats_daily_hours_30">eurvezhioù dre deiz (30 devezhioù)</string>
     <string name="stats_by_pair">dre barol</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -72,9 +74,9 @@
     <string name="pair_sessions">taolennoù</string>
     <string name="pair_average">kurmediañ</string>
     <string name="pair_longest">ar re hirañ</string>
-    <string name="pair_first_seen">gwelet evit ar wechañ</string>
-    <string name="pair_of_measured">eus mesurvet</string>
-    <string name="pair_measured">mesurvet</string>
+    <string name="pair_since">abaoe %1$s</string>
+    <string name="pair_of_measured">lodenn o seniñ</string>
+    <string name="pair_measured">muzuliet evit ar seniñ</string>
     <string name="pair_paid">prantañ</string>
     <string name="pair_per_hour">dre eurvezh</string>
     <string name="pair_bought">prenet</string>

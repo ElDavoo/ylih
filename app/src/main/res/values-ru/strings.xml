@@ -45,12 +45,14 @@
     <!-- Статистика -->
     <string name="stats_title">все наушники</string>
     <string name="stats_sessions_since">%1$s с %2$s</string>
+    <string name="stats_today">сегодня</string>
     <string name="stats_last_7">последние 7 дней</string>
     <string name="stats_last_30">последние 30 дней</string>
     <string name="stats_average_session">средняя сессия</string>
-    <string name="stats_playing">воспроизведение</string>
-    <string name="stats_measured_span">измеренный период</string>
-    <string name="stats_share">доля</string>
+    <string name="stats_longest_session">самая долгая сессия</string>
+    <string name="stats_playing">воспроизведение звука</string>
+    <string name="stats_measured_span">измерено для воспроизведения</string>
+    <string name="stats_share">доля воспроизведения</string>
     <string name="stats_daily_hours_30">часы по дням (30 дней)</string>
     <string name="stats_by_pair">по парам</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -72,9 +74,9 @@
     <string name="pair_sessions">сессии</string>
     <string name="pair_average">среднее</string>
     <string name="pair_longest">самая долгая</string>
-    <string name="pair_first_seen">впервые замечены</string>
-    <string name="pair_of_measured">от измеренного</string>
-    <string name="pair_measured">измерено</string>
+    <string name="pair_since">с %1$s</string>
+    <string name="pair_of_measured">доля воспроизведения</string>
+    <string name="pair_measured">измерено для воспроизведения</string>
     <string name="pair_paid">оплачено</string>
     <string name="pair_per_hour">за час</string>
     <string name="pair_bought">куплены</string>

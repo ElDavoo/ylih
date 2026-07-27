@@ -45,12 +45,14 @@
     <!-- Stats -->
     <string name="stats_title">heaphones blibo</string>
     <string name="stats_sessions_since">%1$s tso %2$s me</string>
+    <string name="stats_today">egbe</string>
     <string name="stats_last_7">ŋkeke 7 kpɔtɔ</string>
     <string name="stats_last_30">ŋkeke 30 kpɔtɔ</string>
     <string name="stats_average_session">nusẽ me</string>
+    <string name="stats_longest_session">nusẽ didito wu</string>
     <string name="stats_playing">ŋu sua</string>
-    <string name="stats_measured_span">agbe si woa gblɔ</string>
-    <string name="stats_share">ŋutsu</string>
+    <string name="stats_measured_span">wodzidze na ŋu sua</string>
+    <string name="stats_share">ŋu sua ƒe akpa</string>
     <string name="stats_daily_hours_30">gaƒoƒo ŋkeke ƒe (ŋkeke 30)</string>
     <string name="stats_by_pair">ɖokuɖo siwo ŋu</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -72,9 +74,9 @@
     <string name="pair_sessions">nusẽ</string>
     <string name="pair_average">nusẽ me</string>
     <string name="pair_longest">nusẽ gã</string>
-    <string name="pair_first_seen">ŋkeke blibo si</string>
-    <string name="pair_of_measured">woa gblɔtɔ ƒe gbɔ</string>
-    <string name="pair_measured">woa gblɔtɔ</string>
+    <string name="pair_since">tso %1$s me</string>
+    <string name="pair_of_measured">ŋu sua ƒe akpa</string>
+    <string name="pair_measured">wodzidze na ŋu sua</string>
     <string name="pair_paid">dze</string>
     <string name="pair_per_hour">gaƒoƒo ƒe</string>
     <string name="pair_bought">ƒu</string>

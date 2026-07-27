@@ -45,12 +45,14 @@
     <!-- Statystyki -->
     <string name="stats_title">wszystkie słuchawki</string>
     <string name="stats_sessions_since">%1$s od %2$s</string>
+    <string name="stats_today">dzisiaj</string>
     <string name="stats_last_7">ostatnie 7 dni</string>
     <string name="stats_last_30">ostatnie 30 dni</string>
     <string name="stats_average_session">średnia sesja</string>
-    <string name="stats_playing">odtwarzanie</string>
-    <string name="stats_measured_span">zmierzony okres</string>
-    <string name="stats_share">udostępnij</string>
+    <string name="stats_longest_session">najdłuższa sesja</string>
+    <string name="stats_playing">odtwarzanie dźwięku</string>
+    <string name="stats_measured_span">mierzone dla odtwarzania</string>
+    <string name="stats_share">udział odtwarzania</string>
     <string name="stats_daily_hours_30">godziny dziennie (30 dni)</string>
     <string name="stats_by_pair">według pary</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -72,9 +74,9 @@
     <string name="pair_sessions">sesje</string>
     <string name="pair_average">średnia</string>
     <string name="pair_longest">najdłuższa</string>
-    <string name="pair_first_seen">pierwszy raz</string>
-    <string name="pair_of_measured">z mierzonego</string>
-    <string name="pair_measured">mierzone</string>
+    <string name="pair_since">od %1$s</string>
+    <string name="pair_of_measured">udział odtwarzania</string>
+    <string name="pair_measured">mierzone dla odtwarzania</string>
     <string name="pair_paid">zapłacono</string>
     <string name="pair_per_hour">za godzinę</string>
     <string name="pair_bought">kupiono</string>
