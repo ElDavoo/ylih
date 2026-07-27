@@ -107,6 +107,8 @@
     <string name="settings_detailed_title">detaljert sporing</string>
     <string name="settings_detailed_body">legger til kablede hodetelefoner og avspillingstid. android rapporterer kun kabelhendelser til en app som kjører, så dette holder en stille varsling i varslingspanelet. bluetooth spores uansett.</string>
     <string name="settings_detailed_unavailable">utilgjengelig til bluetooth-tilgang er gitt: denne utgaven deklarerer bare tjenestetypen connectedDevice, som android 14+ knytter til en bluetooth-tillatelse.</string>
+    <string name="settings_language">språk</string>
+    <string name="settings_language_system">systemspråk</string>
     <string name="settings_devices">enheter</string>
     <string name="settings_devices_body">fjern haken for alt som ikke er hodetelefoner — et bilstereoanlegg eller en høyttaler — for å slutte å registrere det.</string>
     <string name="settings_device_subtitle">%1$s · først sett %2$s</string>

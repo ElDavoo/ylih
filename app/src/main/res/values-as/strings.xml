@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">বিস্তৃত ট্ৰেকিং</string>
     <string name="settings_detailed_body">তাৰযুক্ত শিৰোফোন আৰু প্লেবেক সময় যোগ কৰে। android কেৱল চলি থকা এপটোলৈ তাৰযুক্ত প্লাগ ইভেন্ট জানায়, তাই এটি ছাঁয়াত এটা নীৰৱ বিজ্ঞপ্তি ৰাখে। bluetooth যিকোনো ক্ষেত্রে ট্র্যাক কৰা হয়।</string>
     <string name="settings_detailed_unavailable">bluetooth অ্যাক্সেস প্রদান না হোৱা পৰ্যন্ত উপলব্ধ নহয়: এই বিল্ড কেৱল connectedDevice সেবা প্ৰকাৰ ঘোষণা কৰে, যি android 14+ bluetooth অনুমতিত বান্ধে।</string>
+    <string name="settings_language">ভাষা</string>
+    <string name="settings_language_system">ছিষ্টেমৰ ভাষা</string>
     <string name="settings_devices">ডিভাইস</string>
     <string name="settings_devices_body">যিটো শিৰোফোন নহয় — এটা গাড়ি স্টেৰিও বা এটা স্পিকাৰ — তাৰ পৰা টিক চিন আঁতৰাই তাৰ লিপিবদ্ধ বন্ধ কৰক।</string>
     <string name="settings_device_subtitle">%1$s · %2$s ত প্ৰথমে দেখা</string>

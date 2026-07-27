@@ -105,6 +105,8 @@
     <string name="settings_detailed_title">részletes követés</string>
     <string name="settings_detailed_body">hozzáadja a vezetékes fejhallgatókat és a lejátszási időt. az android a vezetékes csatlakozási eseményeket csak egy futó alkalmazásnak jelzi, ezért ez egy néma értesítést tart a lehúzható panelen. a bluetooth mindkét esetben követve van.</string>
     <string name="settings_detailed_unavailable">nem érhető el, amíg nincs engedélyezve a bluetooth-hozzáférés: ez a build csak a connectedDevice szolgáltatástípust deklarálja, amelyet az android 14+ egy bluetooth-engedélyhez köt.</string>
+    <string name="settings_language">nyelv</string>
+    <string name="settings_language_system">rendszernyelv</string>
     <string name="settings_devices">eszközök</string>
     <string name="settings_devices_body">vedd ki a pipát mindenből, ami nem fejhallgató — például egy autórádióból vagy egy hangszóróból —, hogy leállítsd a rögzítését.</string>
     <string name="settings_device_subtitle">%1$s · először látva: %2$s</string>

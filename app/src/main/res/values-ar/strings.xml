@@ -106,6 +106,8 @@
     <string name="settings_detailed_title">التتبع التفصيلي</string>
     <string name="settings_detailed_body">يضيف السماعات السلكية ووقت التشغيل. لا يُبلّغ android عن أحداث توصيل السماعة السلكية إلا لتطبيق قيد التشغيل، لذا يبقي هذا إشعارًا صامتًا في لوحة الإشعارات. يُتتبَّع bluetooth في الحالتين.</string>
     <string name="settings_detailed_unavailable">غير متاح حتى يُمنح الوصول إلى bluetooth: يعلن هذا الإصدار فقط عن نوع الخدمة connectedDevice، الذي يربطه android 14 وما بعده بإذن bluetooth.</string>
+    <string name="settings_language">اللغة</string>
+    <string name="settings_language_system">لغة النظام</string>
     <string name="settings_devices">الأجهزة</string>
     <string name="settings_devices_body">ألغِ تحديد أي شيء ليس سماعات — مثل نظام صوت السيارة أو مكبر صوت — لإيقاف تسجيله.</string>
     <string name="settings_device_subtitle">%1$s · أول ظهور %2$s</string>

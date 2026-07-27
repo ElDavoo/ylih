@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">падрабязнае адсочванне</string>
     <string name="settings_detailed_body">дадае праводныя наушніки і час адтворэння. android паведамляе пра падзеі праводнога падключэння толькі запушчанаму прыстасаванню, таму ў затэні застаецца цівая націзацыя. bluetooth адсочваецца у любым выпадку.</string>
     <string name="settings_detailed_unavailable">недаступна, пакуль не даозвілены доступ да bluetooth: гэта зборка толькі абвяшчае тып сервісу connectedDevice, які android 14+ прывязваеце да дазвол bluetooth.</string>
+    <string name="settings_language">мова</string>
+    <string name="settings_language_system">мова сістэмы</string>
     <string name="settings_devices">прыстасаванні</string>
     <string name="settings_devices_body">звярніце на тое, што не з\'яўляецца наушніком — аўтамагнітола або дынамік, — каб адключыць яго запіс.</string>
     <string name="settings_device_subtitle">%1$s · першы раз замечана %2$s</string>

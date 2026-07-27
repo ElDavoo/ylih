@@ -5,6 +5,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
@@ -21,15 +22,24 @@ internal val Context.dataStore: DataStore<Preferences> by preferencesDataStore(n
 class SettingsStore(private val context: Context) {
     private val detailedKey = booleanPreferencesKey("detailed_tracking")
     private val onboardedKey = booleanPreferencesKey("onboarding_done")
+    private val languageKey = stringPreferencesKey("language")
 
     /** Wired headphones + playback measurement, at the cost of a persistent notification. */
     val detailedTracking: Flow<Boolean> = context.dataStore.data.map { it[detailedKey] ?: false }
 
     val onboardingDone: Flow<Boolean> = context.dataStore.data.map { it[onboardedKey] ?: false }
 
+    /**
+     * A BCP 47 tag, or `AppLocale.SYSTEM` for the system language. Only ever written below
+     * Android 13, where the platform has no per-app language setting of its own — see `AppLocale`.
+     */
+    val language: Flow<String> = context.dataStore.data.map { it[languageKey] ?: "" }
+
     suspend fun detailedTrackingNow(): Boolean = detailedTracking.first()
 
     suspend fun onboardingDoneNow(): Boolean = onboardingDone.first()
+
+    suspend fun languageNow(): String = language.first()
 
     suspend fun setDetailedTracking(enabled: Boolean) {
         context.dataStore.edit { it[detailedKey] = enabled }
@@ -37,6 +47,10 @@ class SettingsStore(private val context: Context) {
 
     suspend fun setOnboardingDone(done: Boolean) {
         context.dataStore.edit { it[onboardedKey] = done }
+    }
+
+    suspend fun setLanguage(tag: String) {
+        context.dataStore.edit { it[languageKey] = tag }
     }
 }
 

@@ -105,6 +105,8 @@
     <string name="settings_detailed_title">детальне відстеження</string>
     <string name="settings_detailed_body">додає дротові навушники та час відтворення. android повідомляє про підключення дротового роз\'єму лише запущеному застосунку, тож у шторці залишається тихе сповіщення. bluetooth відстежується у будь-якому разі.</string>
     <string name="settings_detailed_unavailable">недоступно, доки не надано доступ до bluetooth: ця збірка оголошує лише тип служби connectedDevice, який android 14+ прив\'язує до дозволу bluetooth.</string>
+    <string name="settings_language">мова</string>
+    <string name="settings_language_system">мова системи</string>
     <string name="settings_devices">пристрої</string>
     <string name="settings_devices_body">зніми позначку з усього, що не є навушниками — автомагнітоли чи колонки, — щоб припинити це записувати.</string>
     <string name="settings_device_subtitle">%1$s · вперше побачено %2$s</string>

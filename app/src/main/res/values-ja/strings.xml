@@ -107,6 +107,8 @@
     <string name="settings_detailed_title">詳細トラッキング</string>
     <string name="settings_detailed_body">有線のヘッドホンと再生時間を記録できるようになる。androidは有線プラグのイベントを実行中のアプリにしか通知しないため、通知欄にサイレント通知が常に表示される。bluetoothはどちらの設定でも記録される。</string>
     <string name="settings_detailed_unavailable">bluetoothへのアクセスを許可するまで利用できない。このビルドはconnectedDeviceのサービスタイプのみを宣言しており、android 14以降ではこれにbluetoothの権限が必要になる。</string>
+    <string name="settings_language">言語</string>
+    <string name="settings_language_system">システムの言語</string>
     <string name="settings_devices">デバイス</string>
     <string name="settings_devices_body">ヘッドホン以外のもの（カーステレオやスピーカーなど）はチェックを外すと記録されなくなる。</string>
     <string name="settings_device_subtitle">%1$s · 初回接続 %2$s</string>

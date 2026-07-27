@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">rastrexu detallau</string>
     <string name="settings_detailed_body">añade auriculares cableáu y tiempu de reproducción. android namái reporta eventos de conexón de cable a una app corriendo, asina que guarda una notificación silenciosa na cortina. bluetooth siempre se rastrea.</string>
     <string name="settings_detailed_unavailable">nun ta disponible hasta que se conceda accesu a bluetooth: esta compilación namái declara\'l tipu de serviciu connectedDevice, que android 14+ enlaza a un permisu de bluetooth.</string>
+    <string name="settings_language">llingua</string>
+    <string name="settings_language_system">llingua del sistema</string>
     <string name="settings_devices">dispositivus</string>
     <string name="settings_devices_body">desclinca too lo que nun seya auriculares — un sistema d\'auto o un altavoz — pa dexa de grabalo.</string>
     <string name="settings_device_subtitle">%1$s · primera vegada visto %2$s</string>

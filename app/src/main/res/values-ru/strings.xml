@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">подробное отслеживание</string>
     <string name="settings_detailed_body">добавляет проводные наушники и время воспроизведения. android сообщает о событиях проводного подключения только запущенному приложению, поэтому в шторке остаётся тихое уведомление. bluetooth отслеживается в любом случае.</string>
     <string name="settings_detailed_unavailable">недоступно, пока не предоставлен доступ к bluetooth: эта сборка объявляет только тип сервиса connectedDevice, который android 14+ привязывает к разрешению bluetooth.</string>
+    <string name="settings_language">язык</string>
+    <string name="settings_language_system">язык системы</string>
     <string name="settings_devices">устройства</string>
     <string name="settings_devices_body">снимите отметку с того, что не является наушниками — автомагнитолы или колонки, — чтобы прекратить их запись.</string>
     <string name="settings_device_subtitle">%1$s · впервые замечено %2$s</string>

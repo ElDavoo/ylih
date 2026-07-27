@@ -103,6 +103,8 @@
     <string name="settings_detailed_title">seguiment detallat</string>
     <string name="settings_detailed_body">afegeix auriculars filats i temps de reproducció. android només comunica els events de connexió filada a l\'app si s\'està executant, per tant aquí queda una notificació silenciosa a la barra. bluetooth es segueix de totes formes.</string>
     <string name="settings_detailed_unavailable">no disponible fins que es concedeixi accés bluetooth: aquesta versió només declara el tipus de servei connectedDevice, que android 14+ vincula a un permís bluetooth.</string>
+    <string name="settings_language">idioma</string>
+    <string name="settings_language_system">idioma del sistema</string>
     <string name="settings_devices">dispositius</string>
     <string name="settings_devices_body">desmarca tot el que no sigui auriculars — un sistema estèreo d\'un cotxe o un altaveu — per deixar de gravar-lo.</string>
     <string name="settings_device_subtitle">%1$s · primer cop vist %2$s</string>

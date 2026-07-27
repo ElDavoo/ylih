@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">útbroytað fylgja</string>
     <string name="settings_detailed_body">leggur til táðað heyrnirtól og spælutíð. android fræðir um táðað tengibreytingar bara til app, sum er keypandi, so hetta helst þógil skyggja. bluetooth er fylgt í øllum høpum.</string>
     <string name="settings_detailed_unavailable">ótiliglig til bluetooth lov er givið: henda bygning segir bara connectedDevice tænastunáð, sum android 14+ bundnast til bluetooth lov.</string>
+    <string name="settings_language">mál</string>
+    <string name="settings_language_system">mál kervisins</string>
     <string name="settings_devices">tækjir</string>
     <string name="settings_devices_body">avhaka hvat, ið ikki er heyrnirtól — bilvágd ella talari — til at standa av at skráseta hani.</string>
     <string name="settings_device_subtitle">%1$s · fyrst sæt %2$s</string>

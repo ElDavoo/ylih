@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">duuma surun</string>
     <string name="settings_detailed_body">silamun kopila ni taara duumi ma sigida kɔrɔ. android bi silamun jiginna kuma dafa sira bari jɔrɔ kɔnɔ gara, o yɛrɛ jɛ kɔnɔ biɔ ma sigida sumarako ma gɛ. bluetooth bi ma jiginna duuma bɛ.</string>
     <string name="settings_detailed_unavailable">a ma se se dɔrɔn ka bluetooth sigida wɛrɛ: aparatigi yen connectedDevice sɛrvi jɔ dafa dɔ, android 14+ bi bluetooth sigida ma jɛ ka cogo.</string>
+    <string name="settings_language">kan</string>
+    <string name="settings_language_system">sistɛmu kan</string>
     <string name="settings_devices">aparatigi</string>
     <string name="settings_devices_body">aparatigi jɔ tɛ kopila kɔ - gara ni korobo - a sigida kɛrɛ dɔn ka jiginna duuma kɛrɛ dɔn.</string>
     <string name="settings_device_subtitle">%1$s · a jɔ maɲininkɔ %2$s</string>

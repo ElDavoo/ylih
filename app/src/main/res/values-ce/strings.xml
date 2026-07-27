@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">омара дӏаяьллер</string>
     <string name="settings_detailed_body">проводан наухьанар вогӏуьччу а воспроизведение доза. android проводан жима йоьшу эвен лайла йохьанах яц дӏа пешера, иза тӏе бӏалташча дахьалыр адӏаяьлла арна. bluetooth кхачу огӏаре дӏаяьллам йа.</string>
     <string name="settings_detailed_unavailable">bluetooth боьлу-норма йалех йаьсса далаза магӏалам. мындара сборка connectedDevice сервис төр огӏуььча, а-дан android 14+ bluetooth боьлу-норма вогӏуьйча.</string>
+    <string name="settings_language">мотт</string>
+    <string name="settings_language_system">системин мотт</string>
     <string name="settings_devices">устройстваш</string>
     <string name="settings_devices_body">наухьанар магӏа йоьшу йаьхӏаллеш флажок кӏаса — автомобиль радио яккхе валар яьлча шорайтӏе.</string>
     <string name="settings_device_subtitle">%1$s · анхи гӏаллачу %2$s</string>

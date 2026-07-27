@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">विस्तृत ट्रैकिंग</string>
     <string name="settings_detailed_body">तार वाल ईयरफोन जोड़ेला अउर बजावल के समे मपेला। android सिर्फ चलत ऐप के तार वाल घटना भेजेला, तो ऊ छाया मा चुप सूचना रहेला। bluetooth कहिए ट्रैक होय।</string>
     <string name="settings_detailed_unavailable">तब तक उपलब्ध नइखे जब तक bluetooth अनुमति न दिहल जाय: ई संस्करण सिर्फ connectedDevice सेवा प्रकार घोषित करेला, जे android 14+ bluetooth अनुमति से जोड़ेला।</string>
+    <string name="settings_language">भाषा</string>
+    <string name="settings_language_system">सिस्टम के भाषा</string>
     <string name="settings_devices">उपकरण</string>
     <string name="settings_devices_body">जे कुछु ईयरफोन न होय — कार स्टीरियो या स्पीकर — उदा बंद कर दे रिकॉर्डिंग बंद करे के लिये।</string>
     <string name="settings_device_subtitle">%1$s · पहिले देखल %2$s</string>

@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">podrobné sledování</string>
     <string name="settings_detailed_body">přidává kabelová sluchátka a čas přehrávání. android hlásí připojení kabelu jen běžící aplikaci, proto tohle udržuje tichou notifikaci v liště. bluetooth se sleduje v obou případech.</string>
     <string name="settings_detailed_unavailable">nedostupné, dokud nepovolíš přístup k bluetooth: tato verze deklaruje jen typ služby connectedDevice, který android 14+ váže na oprávnění bluetooth.</string>
+    <string name="settings_language">jazyk</string>
+    <string name="settings_language_system">jazyk systému</string>
     <string name="settings_devices">zařízení</string>
     <string name="settings_devices_body">odškrtni cokoli, co nejsou sluchátka — autorádio nebo reproduktor — aby se to přestalo zaznamenávat.</string>
     <string name="settings_device_subtitle">%1$s · poprvé viděno %2$s</string>

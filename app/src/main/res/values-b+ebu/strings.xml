@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">ĩmenyithia ĩrĩa yoona</string>
     <string name="settings_detailed_body">yoongera mahoya ma rũruta na ruo rĩa kĩruta. android ĩrĩ na ũguo mĩruko ya rũruta ĩrĩa yoonyitwo kwa ruo ũmwe, nĩguo nĩ ũguo kana ũmwene ũrĩa ũrĩ na mahoya. bluetooth ĩmenyagwo kwa ndũ yothe.</string>
     <string name="settings_detailed_unavailable">ĩtaarĩ na ruo kuona android 14+ ĩmenyaga mahoya: kũruta kĩa ndũ ĩyo kĩroongo connectedDevice ĩrĩa mahoya ma bluetooth.</string>
+    <string name="settings_language">rũthiomi</string>
+    <string name="settings_language_system">rũthiomi rwa sisitemu</string>
     <string name="settings_devices">mĩruta</string>
     <string name="settings_devices_body">thamba kĩndũ kĩa mahoya - kĩruta kĩa ndũ kana gĩ gĩa mahoya - nĩguo kana mĩmenyithio ĩrĩ na ruo.</string>
     <string name="settings_device_subtitle">%1$s · rĩrĩa ĩkooyitwo %2$s</string>

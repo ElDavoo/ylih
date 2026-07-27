@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">λεπτομερής καταγραφή</string>
     <string name="settings_detailed_body">προσθέτει τα ενσύρματα ακουστικά και τον χρόνο αναπαραγωγής. το android αναφέρει τα συμβάντα σύνδεσης καλωδίου μόνο σε μια εφαρμογή που ήδη εκτελείται, γι\' αυτό διατηρείται μια σιωπηλή ειδοποίηση στο συρτάρι. το bluetooth καταγράφεται σε κάθε περίπτωση.</string>
     <string name="settings_detailed_unavailable">μη διαθέσιμο μέχρι να δοθεί πρόσβαση στο bluetooth: αυτή η έκδοση δηλώνει μόνο τον τύπο υπηρεσίας connectedDevice, τον οποίο το android 14+ συνδέει με άδεια bluetooth.</string>
+    <string name="settings_language">γλώσσα</string>
+    <string name="settings_language_system">γλώσσα συστήματος</string>
     <string name="settings_devices">συσκευές</string>
     <string name="settings_devices_body">αποεπίλεξε ό,τι δεν είναι ακουστικά — ένα ηχοσύστημα αυτοκινήτου ή ένα ηχείο — για να σταματήσει η καταγραφή του.</string>
     <string name="settings_device_subtitle">%1$s · πρώτη εμφάνιση %2$s</string>

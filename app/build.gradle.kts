@@ -138,6 +138,17 @@ android {
         }
     }
 
+    bundle {
+        language {
+            // Play would otherwise install only the resources for the system language and fetch
+            // the rest on demand — and the app's own language setting (see AppLocale, which is
+            // what Android 12 and below get instead of a per-app language) has no way to ask for
+            // a split. Picking a language the system is not set to is the entire point, so every
+            // translation has to be in the install.
+            enableSplit = false
+        }
+    }
+
     lint {
         // Nothing is allowed to accumulate: every check lint has is on, including the ones that
         // ship disabled, and a warning fails the build exactly like an error does. The handful of

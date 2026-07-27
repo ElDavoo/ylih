@@ -107,6 +107,8 @@
     <string name="settings_detailed_title">विस्तृत ट्रैकिंग</string>
     <string name="settings_detailed_body">तार वाले हेडफ़ोन और प्लेबैक समय जोड़ता है। android वायर प्लग इवेंट सिर्फ चल रहे ऐप को भेजता है, इसलिए यह नोटिफिकेशन शेड में एक शांत सूचना बनाए रखता है। ब्लूटूथ हर हाल में ट्रैक होता है।</string>
     <string name="settings_detailed_unavailable">ब्लूटूथ की अनुमति मिलने तक उपलब्ध नहीं: यह बिल्ड सिर्फ connectedDevice सेवा प्रकार घोषित करता है, जिसे android 14+ ब्लूटूथ अनुमति से जोड़ता है।</string>
+    <string name="settings_language">भाषा</string>
+    <string name="settings_language_system">सिस्टम की भाषा</string>
     <string name="settings_devices">डिवाइस</string>
     <string name="settings_devices_body">जो हेडफ़ोन नहीं है — जैसे कार स्टीरियो या स्पीकर — उसे अनचेक करें ताकि उसकी रिकॉर्डिंग रुक जाए।</string>
     <string name="settings_device_subtitle">%1$s · पहली बार %2$s को दिखी</string>

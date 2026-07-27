@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">szczegółowe śledzenie</string>
     <string name="settings_detailed_body">dodaje słuchawki przewodowe i czas odtwarzania. android zgłasza zdarzenia podłączenia jacka tylko działającej aplikacji, dlatego utrzymuje to cichą notyfikację na pasku. bluetooth jest śledzony tak czy inaczej.</string>
     <string name="settings_detailed_unavailable">niedostępne, dopóki nie przyznasz dostępu do bluetooth: ta wersja deklaruje tylko typ usługi connectedDevice, który android 14+ wiąże z uprawnieniem bluetooth.</string>
+    <string name="settings_language">język</string>
+    <string name="settings_language_system">język systemu</string>
     <string name="settings_devices">urządzenia</string>
     <string name="settings_devices_body">odznacz wszystko, co nie jest słuchawkami — np. radio samochodowe lub głośnik — aby przestać to rejestrować.</string>
     <string name="settings_device_subtitle">%1$s · pierwszy raz %2$s</string>

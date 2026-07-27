@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">tiyo ye a vul</string>
     <string name="settings_detailed_body">ateng efan na minkolo eme tim. android atɔmba mɔnɔ ye efan menguma kumene a ndung ya mam, menguma zə a vul zə ti ndung bɔtɔ eve eme ɛkɔ. bluetooth ateng a keme mɔli mɔ zə zɔ mɔ.</string>
     <string name="settings_detailed_unavailable">a kɔ mɔ ndung manda, e mɔ permission ye bluetooth: sɔnda ane atɔmba nsibidi ye connectedDevice kumene a lone, android 14+ a bɔtɔ eve ti permission ye bluetooth.</string>
+    <string name="settings_language">nkobo</string>
+    <string name="settings_language_system">nkobo sistɛm</string>
     <string name="settings_devices">zindong</string>
     <string name="settings_devices_body">bɔkɔ abem ye a kɔ bikule — toŋkɔ ye nyuŋ pu speaker — a ka nka tiyo ye e.</string>
     <string name="settings_device_subtitle">%1$s · mbouma ye mɔ %2$s</string>

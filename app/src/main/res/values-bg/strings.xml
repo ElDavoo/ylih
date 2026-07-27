@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">детайлно проследяване</string>
     <string name="settings_detailed_body">добавя жични слушалки и време за възпроизвеждане. android съобщава за жични събития на конекциите само на работещо приложение, така че това пази тихо известие в сянката. bluetooth се проследява във всеки случай.</string>
     <string name="settings_detailed_unavailable">недостъпно до bluetooth достъп е даден: този вид само деклариира connectedDevice тип услуга, който android 14+ свързва към bluetooth разрешение.</string>
+    <string name="settings_language">език</string>
+    <string name="settings_language_system">език на системата</string>
     <string name="settings_devices">устройства</string>
     <string name="settings_devices_body">отметнете всичко, което не е слушалки — автомобилен стерео или говорител, — за да спрете записването му.</string>
     <string name="settings_device_subtitle">%1$s · първо видяно %2$s</string>

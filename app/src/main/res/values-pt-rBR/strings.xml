@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">rastreamento detalhado</string>
     <string name="settings_detailed_body">adiciona fones com fio e tempo de reprodução. o android só informa eventos de conexão por cabo a um app em execução, então isso mantém uma notificação silenciosa na barra. o bluetooth é rastreado de qualquer forma.</string>
     <string name="settings_detailed_unavailable">indisponível até que o acesso ao bluetooth seja concedido: esta build declara apenas o tipo de serviço connectedDevice, que o android 14+ vincula a uma permissão de bluetooth.</string>
+    <string name="settings_language">idioma</string>
+    <string name="settings_language_system">idioma do sistema</string>
     <string name="settings_devices">dispositivos</string>
     <string name="settings_devices_body">desmarque tudo que não for fone de ouvido — um som do carro ou uma caixa de som — para parar de registrá-lo.</string>
     <string name="settings_device_subtitle">%1$s · visto pela primeira vez em %2$s</string>

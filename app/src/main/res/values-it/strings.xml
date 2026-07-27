@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">tracciamento dettagliato</string>
     <string name="settings_detailed_body">aggiunge le cuffie via cavo e il tempo di riproduzione. android segnala gli eventi del jack solo a un\'app già in esecuzione, quindi resta una notifica silenziosa nel pannello. il bluetooth è tracciato in ogni caso.</string>
     <string name="settings_detailed_unavailable">non disponibile finché non concedi l\'accesso al bluetooth: questa build dichiara solo il tipo di servizio connectedDevice, che android 14+ lega a un permesso bluetooth.</string>
+    <string name="settings_language">lingua</string>
+    <string name="settings_language_system">lingua di sistema</string>
     <string name="settings_devices">dispositivi</string>
     <string name="settings_devices_body">togli la spunta a ciò che non sono cuffie — l\'impianto dell\'auto, una cassa — per smettere di registrarlo.</string>
     <string name="settings_device_subtitle">%1$s · prima volta %2$s</string>

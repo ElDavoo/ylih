@@ -5,6 +5,7 @@ import android.os.Looper
 import androidx.test.core.app.ApplicationProvider
 import androidx.work.testing.WorkManagerTestInitHelper
 import kotlinx.coroutines.runBlocking
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
@@ -15,6 +16,7 @@ import org.robolectric.Robolectric
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
+import java.util.Locale
 
 /**
  * Smoke test: the whole startup path — Application container, Room opening the real database,
@@ -44,6 +46,27 @@ class MainActivityTest {
 
         Robolectric.buildActivity(MainActivity::class.java).setup().use { controller ->
             assertNotNull(controller.get())
+        }
+    }
+
+    @Test
+    @Config(sdk = [Build.VERSION_CODES.S])
+    fun `below android 13 the activity is attached with the language the app was told to use`() {
+        runBlocking {
+            app.container.settings.setOnboardingDone(true)
+            app.container.settings.setLanguage("it")
+        }
+
+        try {
+            Robolectric.buildActivity(MainActivity::class.java).setup().use { controller ->
+                assertEquals(
+                    "it",
+                    controller.get().resources.configuration.locales[0].language,
+                )
+            }
+        } finally {
+            runBlocking { app.container.settings.setLanguage(AppLocale.SYSTEM) }
+            Locale.setDefault(Locale.US)
         }
     }
 

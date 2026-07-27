@@ -105,6 +105,8 @@
     <string name="settings_detailed_title">tarkka seuranta</string>
     <string name="settings_detailed_body">lisää langalliset kuulokkeet ja toistoajan. android ilmoittaa langallisen liittämisen vain käynnissä olevalle sovellukselle, joten tämä pitää ilmoitusalueella hiljaisen ilmoituksen. bluetooth seurataan joka tapauksessa.</string>
     <string name="settings_detailed_unavailable">ei käytettävissä ennen kuin bluetooth-oikeus on myönnetty: tämä versio ilmoittaa vain connectedDevice-palvelutyypin, jonka android 14+ sitoo bluetooth-oikeuteen.</string>
+    <string name="settings_language">kieli</string>
+    <string name="settings_language_system">järjestelmän kieli</string>
     <string name="settings_devices">laitteet</string>
     <string name="settings_devices_body">poista valinta kaikesta, mikä ei ole kuulokkeita — auton stereot tai kaiutin — jotta niitä ei enää tallenneta.</string>
     <string name="settings_device_subtitle">%1$s · ensi kerta havaittu %2$s</string>

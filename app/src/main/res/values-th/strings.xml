@@ -105,6 +105,8 @@
     <string name="settings_detailed_title">การติดตามแบบละเอียด</string>
     <string name="settings_detailed_body">เพิ่มหูฟังแบบมีสายและเวลาการเล่นเสียง android จะรายงานเหตุการณ์เสียบสายให้กับแอปที่กำลังทำงานอยู่เท่านั้น จึงต้องมีการแจ้งเตือนแบบเงียบค้างอยู่ ส่วนบลูทูธจะถูกติดตามอยู่แล้วไม่ว่ากรณีใด</string>
     <string name="settings_detailed_unavailable">ใช้งานไม่ได้จนกว่าจะให้สิทธิ์เข้าถึงบลูทูธ บิลด์นี้ประกาศเฉพาะประเภทบริการ connectedDevice ซึ่ง android 14 ขึ้นไปผูกไว้กับสิทธิ์บลูทูธ</string>
+    <string name="settings_language">ภาษา</string>
+    <string name="settings_language_system">ภาษาของระบบ</string>
     <string name="settings_devices">อุปกรณ์</string>
     <string name="settings_devices_body">ยกเลิกการเลือกสิ่งที่ไม่ใช่หูฟัง เช่น ลำโพงรถยนต์หรือลำโพง เพื่อหยุดการบันทึก</string>
     <string name="settings_device_subtitle">%1$s · พบครั้งแรก %2$s</string>

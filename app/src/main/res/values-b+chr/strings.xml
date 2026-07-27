@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">ᏰᎩᏂᏃᎩ ᏚᏐᏕ</string>
     <string name="settings_detailed_body">ᎠᏕᎥ ᏗᎲᎵᎭ ᎠᏎᎩ ᎠᎴ ᎾᎪᎾᏓ ᎦᏴ ᎯᎾᏕᎾ. android ᎠᎬᎾᏓ ᏗᎲᎵᎭ ᎤᏂᏏᏗ ᏆᏎᏯᏙ ᎠᏆᏓᏗ ᏭᏤᏢ ᎦᏴ ᏅᎫᏟ ᏃᏀᏚ ᎠᎾᏎᏗᏘᏏ ᎤᏙᎦᎵᎩ ᎾᎿ ᎠᏐᏒ ᎳᏓ. bluetooth ᏰᎩᏂᏃᎩ ᏗᎬᎾ ᏂᏂ ᏃᏀᏚ.</string>
     <string name="settings_detailed_unavailable">ᎤᏁᎩᏰᏒ bluetooth ᎨᎮᎵᏍᎬ ᎠᏂᏜᎩ ᎢᎦᎳ: ᏕᎦᏚ ᏄᏤ connectedDevice ᏕᏓᎳᎵ ᎦᏴ ᏥᏟ, android 14+ ᏰᎩᏁ bluetooth ᎨᎮᎵᏍᎬ ᎨᏒ.</string>
+    <string name="settings_language">ᎦᏬᏂᎯᏍᏗ</string>
+    <string name="settings_language_system">ᏙᏦᎵ ᎦᏬᏂᎯᏍᏗ</string>
     <string name="settings_devices">ᏙᏦᎵ</string>
     <string name="settings_devices_body">ᏓᏅᎯ ᎠᏍᏗ ᏓᏂᏙᎴ ᎾᎿ ᎠᏎᎩ — ᎠᏰᏛ ᏌᏀᏙ ᎠᎴ ᏎᎫᎪ — ᏰᎩᏂᏃᎩ ᎭᎴ.</string>
     <string name="settings_device_subtitle">%1$s · ᎠᎦᏕᎶᎩ ᎤᏎᏗᏬ %2$s</string>

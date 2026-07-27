@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">विस्तृत ट्रैकिंग</string>
     <string name="settings_detailed_body">तारयुक्त हेडफोन और प्लेबैक समय जोड़ता है। android केवल एक चल रही ऐप को तारयुक्त प्लग ईवेंट की रिपोर्ट करता है, इसलिए यह शेड में एक शांत सूचना रखता है। bluetooth किसी भी तरह से ट्रैक किया जाता है।</string>
     <string name="settings_detailed_unavailable">जब तक bluetooth अनुमति दी नहीं जाती तब तक उपलब्ध नहीं है: यह बिल्ड केवल connectedDevice सेवा प्रकार घोषित करता है, जिसे android 14+ एक bluetooth अनुमति से जोड़ता है।</string>
+    <string name="settings_language">राव</string>
+    <string name="settings_language_system">सिस्टेमनि राव</string>
     <string name="settings_devices">डिवाइस</string>
     <string name="settings_devices_body">हेडफोन नहीं होने वाली किसी भी चीज को अनचेक करें — कार स्टीरियो या स्पीकर — इसे रिकॉर्ड करना बंद करने के लिए।</string>
     <string name="settings_device_subtitle">%1$s · पहली बार देखा गया %2$s</string>

@@ -105,6 +105,8 @@
     <string name="settings_detailed_title">detaljeret sporing</string>
     <string name="settings_detailed_body">tilføjer høretelefoner med kabel og afspilningstid. android rapporterer kun kabelbegivenheder til en kørende app, så dette bevarer en lydløs notifikation i meddelelsespanelet. bluetooth spores under alle omstændigheder.</string>
     <string name="settings_detailed_unavailable">ikke tilgængelig, før bluetooth-adgang er givet: denne build angiver kun tjenestetypen connectedDevice, som android 14+ knytter til en bluetooth-tilladelse.</string>
+    <string name="settings_language">sprog</string>
+    <string name="settings_language_system">systemsprog</string>
     <string name="settings_devices">enheder</string>
     <string name="settings_devices_body">fjern fluebenet ved alt, der ikke er høretelefoner — et bilstereoanlæg eller en højttaler — for at holde op med at registrere det.</string>
     <string name="settings_device_subtitle">%1$s · først set %2$s</string>

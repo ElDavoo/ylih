@@ -105,6 +105,8 @@
     <string name="settings_detailed_title">상세 추적</string>
     <string name="settings_detailed_body">유선 헤드폰과 재생 시간을 추가로 기록합니다. android는 실행 중인 앱에만 유선 연결 이벤트를 전달하므로, 알림창에 조용한 알림이 하나 유지됩니다. 블루투스는 어느 쪽이든 추적됩니다.</string>
     <string name="settings_detailed_unavailable">블루투스 접근 권한을 허용해야 사용할 수 있습니다: 이 빌드는 connectedDevice 서비스 유형만 선언하며, android 14 이상에서는 이를 블루투스 권한과 연결합니다.</string>
+    <string name="settings_language">언어</string>
+    <string name="settings_language_system">시스템 언어</string>
     <string name="settings_devices">기기</string>
     <string name="settings_devices_body">헤드폰이 아닌 것 — 차량 오디오나 스피커 — 은 체크를 해제해 기록을 멈추세요.</string>
     <string name="settings_device_subtitle">%1$s · 처음 발견 %2$s</string>

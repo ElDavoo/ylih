@@ -105,6 +105,8 @@
     <string name="settings_detailed_title">theo dõi chi tiết</string>
     <string name="settings_detailed_body">thêm tai nghe có dây và thời gian phát nhạc. android chỉ báo sự kiện cắm tai nghe có dây cho một ứng dụng đang chạy, nên chế độ này giữ một thông báo im lặng trên thanh trạng thái. bluetooth vẫn luôn được theo dõi dù có bật chế độ này hay không.</string>
     <string name="settings_detailed_unavailable">chưa dùng được cho đến khi quyền truy cập bluetooth được cấp: bản build này chỉ khai báo loại dịch vụ connectedDevice, mà android 14 trở lên gắn với một quyền bluetooth.</string>
+    <string name="settings_language">ngôn ngữ</string>
+    <string name="settings_language_system">ngôn ngữ hệ thống</string>
     <string name="settings_devices">thiết bị</string>
     <string name="settings_devices_body">bỏ chọn bất cứ thứ gì không phải tai nghe — như loa xe hơi hay loa ngoài — để ngừng ghi lại nó.</string>
     <string name="settings_device_subtitle">%1$s · lần đầu thấy %2$s</string>

@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">detalyadong subaybay</string>
     <string name="settings_detailed_body">nagdadagdag ng mga headphones na may kable at oras ng pagtugtog. ang android ay sumusulong lamang sa mga kaganapang plug ng kable sa tumatakbong app, kaya nagpanatili ito ng tahimik na notification. ang bluetooth ay sinusubaybayan sa lahat ng paraan.</string>
     <string name="settings_detailed_unavailable">hindi available hanggang hindi ipagkaloob ang access sa bluetooth: ang build na ito ay nag-declare lamang ng connectedDevice service type, na ang android 14+ ay natatali sa isang bluetooth permission.</string>
+    <string name="settings_language">pinulongan</string>
+    <string name="settings_language_system">pinulongan sa sistema</string>
     <string name="settings_devices">mga device</string>
     <string name="settings_devices_body">aalis-alisan ang mga hindi ito headphones — isang car stereo o isang speaker — upang tumigil sa pag-record nito.</string>
     <string name="settings_device_subtitle">%1$s · una nakita %2$s</string>

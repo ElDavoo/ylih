@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">akayasim mina atayakahwin</string>
     <string name="settings_detailed_body">sohkawin otisinahk mina mahkohkana atihcamok akayasim. android peyakohk ki-itahcikew sohkawin mawocihcikana, ki-itahcikew eko, kiya ka-akayak ki-ihtawisiw. bluetooth akayasim eso mihkohk.</string>
     <string name="settings_detailed_unavailable">nika ayisiyiniw iko ki-mawak bluetooth akayasim: eso ki-atayak peyakohk connectedDevice ka-atayakahwin, android 14+ ki-atayakahwikew bluetooth akayasim eti.</string>
+    <string name="settings_language">pîkiskwêwin</string>
+    <string name="settings_language_system">wacistahkamikohk pîkiskwêwin</string>
     <string name="settings_devices">wacistahkamikohk</string>
     <string name="settings_devices_body">ki-macinakik ki ca-atayak nika otisinahk — wacistahkamikohk mina atihcamowin — ki-macinahew akayasim.</string>
     <string name="settings_device_subtitle">%1$s · peyakohk ki mayik %2$s</string>

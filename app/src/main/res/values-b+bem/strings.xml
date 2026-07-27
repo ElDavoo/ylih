@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">inshumu ifingilila</string>
     <string name="settings_detailed_body">isamitikilila imipala apo inshuba ya kusekesa. android ikakunika amakamu ya imipala pakati pa foni ifwaile kukulipila, ululasa foniyo ifuna ukwifuna kwakwa. bluetooth inikiliwa ici ne ici.</string>
     <string name="settings_detailed_unavailable">palefwe pakali bluetooth ifuminile: nkola yino yatika ikulika connectedDevice shani walobo, ulo android 14+ ulitilakila bluetooth lumino.</string>
+    <string name="settings_language">ululimi</string>
+    <string name="settings_language_system">ululimi lwa sistemu</string>
     <string name="settings_devices">amalendo</string>
     <string name="settings_devices_body">kwezepo ifyonse ifisena ifu — akanji akwa, amipale — ili kusiya inshumu yonse.</string>
     <string name="settings_device_subtitle">%1$s · inatonwilwe pakali %2$s</string>

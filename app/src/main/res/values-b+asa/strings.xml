@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">irekodi ileile</string>
     <string name="settings_detailed_body">inaongeza sambamano iburani na muda wa kuiga. android inakamatia matukio ya sambamano kwa app inaendelea tu, kwa hiyo hili linatuma onyo lenye sauti mungi mu mabingu. bluetooth inarekodiwwa kila saa.</string>
     <string name="settings_detailed_unavailable">haipatikani hadi bluetooth ruhusa ipatiwe: binafu hii inaeleza aina ya serbis ya connectedDevice tu, ambayo android 14+ inakamatia kwa ruhusa ya bluetooth.</string>
+    <string name="settings_language">lugha</string>
+    <string name="settings_language_system">lugha ya mfumo</string>
     <string name="settings_devices">isimu</string>
     <string name="settings_devices_body">ondoa alamu kutoka kile kisicho kama iburani — muswirifu au sango — ili kusimamishia kurekodi kwayo.</string>
     <string name="settings_device_subtitle">%1$s · ililiobiwa kwanza %2$s</string>

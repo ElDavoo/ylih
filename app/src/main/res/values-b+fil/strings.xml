@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">detalyadong pagsubaybay</string>
     <string name="settings_detailed_body">nagdadagdag ng naka-wire na headphones at playback time. android ay nag-ulat lamang ng wired plug events sa tumatakbong app, kaya pinapanatili nito ang silent notification. ang bluetooth ay sinusubaybayan sa anumang paraan.</string>
     <string name="settings_detailed_unavailable">hindi available hanggang ang bluetooth access ay ibigay: ang build na ito ay nag-declare lamang ng connectedDevice service type, na ang android 14+ ay nakatali sa bluetooth permission.</string>
+    <string name="settings_language">wika</string>
+    <string name="settings_language_system">wika ng system</string>
     <string name="settings_devices">mga device</string>
     <string name="settings_devices_body">i-uncheck ang anumang hindi headphones — car stereo o speaker — upang ihinto ang pag-record nito.</string>
     <string name="settings_device_subtitle">%1$s · unang nakita %2$s</string>

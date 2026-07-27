@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">detailne jälgimine</string>
     <string name="settings_detailed_body">lisab juhtmega kõrvaklapid ja taasesituse aja. android teatab juhtmega ühenduse sündmustest ainult töötavale rakendusele, seega see hoiab vaikset teatist varjus. bluetooth jälgitakse igal juhul.</string>
     <string name="settings_detailed_unavailable">saadaval alles pärast bluetooth juurdepääsu andmist: see versioon kuulutab ainult connectedDevice teenuse tüüpi, mille android 14+ seob bluetooth loaga.</string>
+    <string name="settings_language">keel</string>
+    <string name="settings_language_system">süsteemi keel</string>
     <string name="settings_devices">seadmed</string>
     <string name="settings_devices_body">märgi välja kõik, mis ei ole kõrvaklapid - automagnitofon või kõlari - et lõpetada selle salvestamine.</string>
     <string name="settings_device_subtitle">%1$s · esimest korda nähtud %2$s</string>

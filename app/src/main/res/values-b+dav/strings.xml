@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">ufuataji wa kina</string>
     <string name="settings_detailed_body">inaongeza masikilizaji wenye waya na muda wa kucheza. android inakubali matukio ya waya tu kwa programu inayoendelea, kwa hiyo hii inabaki notisi yenye sauti ndogo katika maeneo. bluetooth inafuatwa kila wakati.</string>
     <string name="settings_detailed_unavailable">haipatikani mpaka ruhusa ya bluetooth itolewe: jumba hili linashangilia aina tu ya huduma ya connectedDevice, ambayo android 14+ inaambatana na ruhusa ya bluetooth.</string>
+    <string name="settings_language">lugha</string>
+    <string name="settings_language_system">lugha ya mfumo</string>
     <string name="settings_devices">vifaa</string>
     <string name="settings_devices_body">burudisha kila kitu ambacho si masikilizaji — stereo ya gari au spika — kuacha kurekodi.</string>
     <string name="settings_device_subtitle">%1$s · iliyoonekana kwanza %2$s</string>

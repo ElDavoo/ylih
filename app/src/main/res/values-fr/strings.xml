@@ -105,6 +105,8 @@
     <string name="settings_detailed_title">suivi détaillé</string>
     <string name="settings_detailed_body">ajoute les casques filaires et le temps de lecture. android ne signale les événements de branchement jack qu\'à une app déjà en cours d\'exécution, ce qui maintient donc une notification silencieuse dans le panneau. le bluetooth est suivi dans tous les cas.</string>
     <string name="settings_detailed_unavailable">indisponible tant que l\'accès bluetooth n\'est pas accordé : cette build ne déclare que le type de service connectedDevice, qu\'android 14+ lie à une permission bluetooth.</string>
+    <string name="settings_language">langue</string>
+    <string name="settings_language_system">langue du système</string>
     <string name="settings_devices">appareils</string>
     <string name="settings_devices_body">décochez ce qui n\'est pas des casques — une autoradio, une enceinte — pour arrêter de l\'enregistrer.</string>
     <string name="settings_device_subtitle">%1$s · vu pour la première fois le %2$s</string>

@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">གླེང་སྟེགས་ཁ་གསལ་</string>
     <string name="settings_detailed_body">སྲེད་དང་སྒྲ་སྲིད་གི་དུས་ཚོད་ཀྱང་གླེང་སྟེགས་འདེགས་ཀྱི་ཡིན། android ནི་སྲེད་གི་གླེང་སྟེགས་ཀ་མ་སྔགས་པའི་ཞེ་དགོས། དེས་ནས་glengs གླེང་གི་དགེ་རྒྱལ་གནས་གི་ཡིན། bluetooth ཀ་ལ་གླེང་སྟེགས་འདེགས་ཀྱི་ཡིན།</string>
     <string name="settings_detailed_unavailable">bluetooth དམིགས་བསལ་འཐུས་ཤོག་ཡིན་ཚེ་ལས་མ། དེ་ཡིས་connectedDevice སེར་ཀའི་རེས་ལ་android 14+ ལ་bluetooth དམིགས་བསལ་དགོས་ཡིན།</string>
+    <string name="settings_language">སྐད་ཡིག</string>
+    <string name="settings_language_system">མ་ལག་གི་སྐད་ཡིག</string>
     <string name="settings_devices">ཆ་གཤེགས་</string>
     <string name="settings_devices_body">གོ་སྒྲིག་མིན་པའི་རྣམས་ (སྐུ་རྒྱབ་གླེང་དང་སྒྲ་སྒུར་སོགས་) ཕྱོགས་སྤོས་ལ་གླེང་སྟེགས་མ་འདེགས་ཀྱི།</string>
     <string name="settings_device_subtitle">%1$s · དང་པོ་མཐོང་ %2$s</string>

@@ -105,6 +105,8 @@
     <string name="settings_detailed_title">zenbaketa zehatza</string>
     <string name="settings_detailed_body">entzule kableak eta erreprodukzio denbora gehitzen ditu. android-ek kable plug gertaerak abian dagoen aplikazio bati soilik jakinarazten dizkio, beraz notifikazio isioa atmospferan geratzen da. bluetooth beti zenbatzen da.</string>
     <string name="settings_detailed_unavailable">disponible ez dela bitartean bluetooth sarbidea baimendu arte: eraikian hau connectedDevice zerbitzuaren mota bakarrik deklaratzen du, android 14+ bluetooth baimena lekutzen duena.</string>
+    <string name="settings_language">hizkuntza</string>
+    <string name="settings_language_system">sistemaren hizkuntza</string>
     <string name="settings_devices">gailuak</string>
     <string name="settings_devices_body">kendu markak gauzak ez direnak entzuleak — auto estereo edo bozgorailuak — grabatzea gelditzeko.</string>
     <string name="settings_device_subtitle">%1$s · lehenengo aldiz ikusia %2$s</string>

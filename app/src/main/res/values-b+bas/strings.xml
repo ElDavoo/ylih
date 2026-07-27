@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">sɔŋ bu dɔ́</string>
     <string name="settings_detailed_body">ba dím wìm mɛ dɔ́ bi. android ka gɛ̀ événement wìm sa app ba jí, so notification ba nà ba shady. bluetooth ba sɔŋ nàŋ.</string>
     <string name="settings_detailed_unavailable">ku ka toʔ sa bluetooth permission ba dib: app ba dém connectedDevice so android 14+ ba sɔŋ bi bluetooth permission.</string>
+    <string name="settings_language">hɔp</string>
+    <string name="settings_language_system">hɔp sistɛm</string>
     <string name="settings_devices">kuɓ</string>
     <string name="settings_devices_body">tɔ́p nàŋ ku nà ŋgɛ — bìn mɛ speaker — so ku ka sɔŋ.</string>
     <string name="settings_device_subtitle">%1$s · kénsé %2$s</string>

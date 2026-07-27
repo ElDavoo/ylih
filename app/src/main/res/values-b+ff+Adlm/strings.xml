@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">jannginol carminore</string>
     <string name="settings_detailed_body">baynu kaalangal jeeɗgal e jinnde huulnde. android gaɗa seeɗ jeeɗgal njuŋŋu ɗiɗi njuŋŋitere, haa ko ndee teli baɓɓ e teñ. bluetooth jannginaaɗo juulem.</string>
     <string name="settings_detailed_unavailable">ndilta redu bluetooth heewɗo: taruuji maa seelitoo nde connectedDevice duman, android 14+ gootoo e bluetooth jumnitoore.</string>
+    <string name="settings_language">𞤸𞤢𞥄𞤤𞤢</string>
+    <string name="settings_language_system">𞤸𞤢𞥄𞤤𞤢 𞤧𞤭𞤧𞤼𞤫𞤥</string>
     <string name="settings_devices">taruuji</string>
     <string name="settings_devices_body">deleete teegno taruuji hakkunde kaalangal baakɗo - oto tummuki wala ɓelɓel - haa ko dum jannginoa baakɗo.</string>
     <string name="settings_device_subtitle">%1$s · hay\'i hollito %2$s</string>

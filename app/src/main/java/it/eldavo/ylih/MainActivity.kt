@@ -1,6 +1,7 @@
 package it.eldavo.ylih
 
 import android.Manifest
+import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -22,6 +23,15 @@ class MainActivity : ComponentActivity() {
             // Denied Bluetooth just means no Bluetooth tracking; the UI explains the state.
             container().scope.launch { container().trackingController.syncWithSystem() }
         }
+
+    /**
+     * Below Android 13 the app carries its own language setting, and a context only ever gets one
+     * configuration — the one it is attached with. Recreating the activity is what applies a
+     * change; see [AppLocale].
+     */
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(AppLocale.wrap(newBase))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

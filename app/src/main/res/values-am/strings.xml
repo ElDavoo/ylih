@@ -103,6 +103,8 @@
     <string name="settings_detailed_title">ዝርዝር ምልከታ</string>
     <string name="settings_detailed_body">በሽመል ዋቅ ይጨምራል እና ፍጻሜ ጊዜ ይለካል። android በተሂድ ትግበራ ውስጥ በሽመል ተገናኝ ክንውኖች ሪፖርት ማድረግ ብቻ ይችላል, ስለዚህም ታዎ በውስጥ ዝምታ ሙሉመታ ይቀራል። bluetooth በክንፍ ሁሉ ጊዜ ይታዘዙ።</string>
     <string name="settings_detailed_unavailable">bluetooth ግቤት እስከተሰጠ ድረስ አይገኝም: ይህ ሙያ connectedDevice ዓይነት ብቻ ያወጣ, android 14+ በ bluetooth ግቤት ጠብቅ።</string>
+    <string name="settings_language">ቋንቋ</string>
+    <string name="settings_language_system">የስርዓቱ ቋንቋ</string>
     <string name="settings_devices">መሳሪያ</string>
     <string name="settings_devices_body">ዋቅ ያልሆነ ነገር ማብራት — ሙዞ ወይም ዘወዝ — ሪኮርዲንግ ሊቀር።</string>
     <string name="settings_device_subtitle">%1$s · በመጀመሪያ ታየ %2$s</string>

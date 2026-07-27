@@ -2,6 +2,7 @@ package it.eldavo.ylih.ui
 
 import android.content.Intent
 import android.provider.Settings
+import androidx.activity.compose.LocalActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.clickable
@@ -16,7 +17,10 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.ScrollState
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -25,10 +29,12 @@ import androidx.compose.material3.Checkbox
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -37,8 +43,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import it.eldavo.ylih.AppLocale
 import it.eldavo.ylih.BuildConfig
 import it.eldavo.ylih.R
 import it.eldavo.ylih.Distribution
@@ -49,11 +57,24 @@ fun SettingsScreen(
     viewModel: YlihViewModel,
     contentPadding: PaddingValues,
     scrollState: ScrollState = rememberScrollState(),
+    onLanguageChanged: () -> Unit = rememberActivityRestart(),
 ) {
     val context = LocalContext.current
     val detailed by viewModel.detailedTracking.collectAsStateWithLifecycle()
     val devices by viewModel.devices.collectAsStateWithLifecycle()
+    val language by viewModel.language.collectAsStateWithLifecycle()
     var confirmImport by remember { mutableStateOf<android.net.Uri?>(null) }
+    var pickingLanguage by remember { mutableStateOf(false) }
+    var pendingLanguage by remember { mutableStateOf<String?>(null) }
+
+    // The write goes through DataStore and the new configuration is only readable once it has
+    // landed: restarting any earlier reattaches the activity with the language it already had.
+    LaunchedEffect(pendingLanguage, language) {
+        if (pendingLanguage != null && pendingLanguage == language) {
+            pendingLanguage = null
+            onLanguageChanged()
+        }
+    }
 
     val exportLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.CreateDocument("application/json"),
@@ -107,6 +128,23 @@ fun SettingsScreen(
             )
         }
         HorizontalDivider()
+
+        // Android 13 took per-app language over: the generated locale config puts ylih in
+        // Settings > System > Languages there, and a second switch inside the app would be a
+        // second answer to the same question. Below 13 there is no such setting to defer to.
+        if (AppLocale.NEEDS_IN_APP_PICKER) {
+            SectionHeader(stringResource(R.string.settings_language))
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable { pickingLanguage = true }
+                    .padding(16.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Text(languageLabel(language), style = MaterialTheme.typography.bodyLarge)
+            }
+            HorizontalDivider()
+        }
 
         if (devices.isNotEmpty()) {
             SectionHeader(stringResource(R.string.settings_devices))
@@ -240,5 +278,87 @@ fun SettingsScreen(
                 }
             },
         )
+    }
+
+    if (pickingLanguage) {
+        LanguageDialog(
+            current = language.orEmpty(),
+            onPick = { tag ->
+                pickingLanguage = false
+                if (tag != language) {
+                    pendingLanguage = tag
+                    viewModel.setLanguage(tag)
+                }
+            },
+            onDismiss = { pickingLanguage = false },
+        )
+    }
+}
+
+/**
+ * Applying a language means rebuilding every context that was created under the old one, and the
+ * activity is the only one alive by then. Hoisted into a parameter so a test can watch for the
+ * restart rather than have its own activity torn down mid-composition.
+ */
+@Composable
+fun rememberActivityRestart(): () -> Unit {
+    val activity = LocalActivity.current
+    return remember(activity) { { activity?.recreate() } }
+}
+
+@Composable
+private fun languageLabel(tag: String?): String =
+    if (tag.isNullOrEmpty()) {
+        stringResource(R.string.settings_language_system)
+    } else {
+        AppLocale.displayName(tag)
+    }
+
+@Composable
+private fun LanguageDialog(current: String, onPick: (String) -> Unit, onDismiss: () -> Unit) {
+    val context = LocalContext.current
+    val tags = remember(context) { AppLocale.pickerTags(context) }
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text(stringResource(R.string.settings_language)) },
+        text = {
+            // 77 translations and counting, so the list is lazy and scrolls inside the dialog.
+            LazyColumn {
+                item {
+                    LanguageRow(
+                        label = stringResource(R.string.settings_language_system),
+                        selected = current == AppLocale.SYSTEM,
+                        onClick = { onPick(AppLocale.SYSTEM) },
+                    )
+                }
+                items(tags) { tag ->
+                    LanguageRow(
+                        label = AppLocale.displayName(tag),
+                        selected = current == tag,
+                        onClick = { onPick(tag) },
+                    )
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = onDismiss) { Text(stringResource(R.string.action_cancel)) }
+        },
+    )
+}
+
+@Composable
+private fun LanguageRow(label: String, selected: Boolean, onClick: () -> Unit) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            // selectable rather than clickable, with the radio button along for the ride: one
+            // click target and one thing for a screen reader to announce, not two.
+            .selectable(selected = selected, role = Role.RadioButton, onClick = onClick)
+            .padding(vertical = 6.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        RadioButton(selected = selected, onClick = null)
+        Spacer(Modifier.width(8.dp))
+        Text(label, style = MaterialTheme.typography.bodyLarge)
     }
 }

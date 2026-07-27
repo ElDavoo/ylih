@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">толық іс-әрекет</string>
     <string name="settings_detailed_body">сызыңлы наўсыбырлысын және ойнау уақытын қосады. android сызыңлы қосылу оқиғаларын тек ұстағы қосынша құлға хабарлайды, сондықтан қіл сілтеме құсында құлайды. bluetooth кез келген жағдайда іс-әрекет.</string>
     <string name="settings_detailed_unavailable">bluetooth қосынша берілгенге дейін қолжетімсіз: бұл құрылым connectedDevice қызмет түрін ғана жариялайды, android 14+ оны bluetooth рұқсатына байланыстырады.</string>
+    <string name="settings_language">дил</string>
+    <string name="settings_language_system">систем дили</string>
     <string name="settings_devices">құрылғылар</string>
     <string name="settings_devices_body">наўсыбырлыс емес нәрселерді - автомобиль немесе динамик - құсылып есептеуін тоқтату үшін табында орнатпау.</string>
     <string name="settings_device_subtitle">%1$s · бірінші рет көрінді %2$s</string>

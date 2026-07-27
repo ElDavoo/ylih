@@ -105,6 +105,8 @@
     <string name="settings_detailed_title">ayrıntılı takip</string>
     <string name="settings_detailed_body">kablolu kulaklıkları ve çalma süresini ekler. android kablo takma olaylarını yalnızca çalışan bir uygulamaya bildirir, bu yüzden bildirim alanında sessiz bir bildirim tutar. bluetooth her durumda takip edilir.</string>
     <string name="settings_detailed_unavailable">bluetooth erişimi verilene kadar kullanılamaz: bu sürüm yalnızca connectedDevice servis türünü bildirir; android 14+ bunu bir bluetooth iznine bağlar.</string>
+    <string name="settings_language">dil</string>
+    <string name="settings_language_system">sistem dili</string>
     <string name="settings_devices">cihazlar</string>
     <string name="settings_devices_body">kulaklık olmayanların işaretini kaldır — bir araba stereosu ya da hoparlör gibi — kaydedilmesin.</string>
     <string name="settings_device_subtitle">%1$s · ilk görülme %2$s</string>

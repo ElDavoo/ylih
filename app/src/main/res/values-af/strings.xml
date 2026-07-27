@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">gedetailleerde opvolging</string>
     <string name="settings_detailed_body">voeg bedraad koptelefone en afspeeltyd by. android deel bedradestekkergebeure slegs met lopende toepassings, dus sal dit \'n stille kennisgeving in die skyf hou. bluetooth word in beide gevalle opgevolg.</string>
     <string name="settings_detailed_unavailable">onbeskikbaar totdat bluetooth-toegang verleen word: hierdie bou verklaar slegs die connectedDevice-dienstipe, wat android 14+ aan \'n bluetooth-toestemming bind.</string>
+    <string name="settings_language">taal</string>
+    <string name="settings_language_system">stelseltaal</string>
     <string name="settings_devices">toestelle</string>
     <string name="settings_devices_body">teken alles uit wat nie koptelefone is nie — motorstereo\'s of sprekers — om dit nie op te neem nie.</string>
     <string name="settings_device_subtitle">%1$s · eerste keer gesien %2$s</string>

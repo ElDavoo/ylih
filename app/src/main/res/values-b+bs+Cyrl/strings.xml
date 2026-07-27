@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">детаљно праћење</string>
     <string name="settings_detailed_body">додаје жичне слушалице и време репродукције. android пријављује догађаје жичног повезивања само покренутој апликацији, тако да остаје позадинско обавештење. bluetooth се прати у сваком случају.</string>
     <string name="settings_detailed_unavailable">није доступно док се не одобри приступ bluetooth-у: ова верзија декларише само connectedDevice тип услуге, коју android 14+ везује за bluetooth дозволу.</string>
+    <string name="settings_language">језик</string>
+    <string name="settings_language_system">језик система</string>
     <string name="settings_devices">уређаји</string>
     <string name="settings_devices_body">одзначи било шта што није слушалица — аутомобилски стерео или звучник — да прекинеш јој бележење.</string>
     <string name="settings_device_subtitle">%1$s · први пут виђено %2$s</string>

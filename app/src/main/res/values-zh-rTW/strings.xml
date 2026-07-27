@@ -106,6 +106,8 @@
     <string name="settings_detailed_title">詳細追蹤</string>
     <string name="settings_detailed_body">加入有線耳機與播放時間。android 只會在應用程式執行中時回報有線插拔事件，因此需要在通知欄保留一則無聲通知。無論如何都會追蹤藍牙。</string>
     <string name="settings_detailed_unavailable">需先授予藍牙存取權限才能使用：此版本只宣告 connectedDevice 服務類型，而 android 14 以上將此與藍牙權限綁定。</string>
+    <string name="settings_language">語言</string>
+    <string name="settings_language_system">系統語言</string>
     <string name="settings_devices">裝置</string>
     <string name="settings_devices_body">取消勾選不是耳機的項目——例如車用喇叭或藍牙音箱——即可停止記錄它。</string>
     <string name="settings_device_subtitle">%1$s · 首次出現於 %2$s</string>

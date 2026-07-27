@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">okuwandika okukweru</string>
     <string name="settings_detailed_body">akongeza mahembe agacwire n\'amasigara ga okusigira. android abamanya okumanya amasigara ga agacwire kuko ku applicesheni itazikira okukora, abasigalira okukuba okukwereza mu ntiniti. bluetooth andikibwa kigwe.</string>
     <string name="settings_detailed_unavailable">ntakiboneka kuza kwoha ichaato ca bluetooth: akakakona guno kasigala kananga connectDevice ekika kya service, ekyuma ka android 14+ ekikwata ku ichaato ca bluetooth.</string>
+    <string name="settings_language">orurimi</string>
+    <string name="settings_language_system">orurimi rwa sisitemu</string>
     <string name="settings_devices">ekyuma</string>
     <string name="settings_devices_body">tangura ekyuma ekitali mahembe — emotoka oba espeekeri — kwonka okukumaniza okuwandika.</string>
     <string name="settings_device_subtitle">%1$s · okwambuka okukora %2$s</string>

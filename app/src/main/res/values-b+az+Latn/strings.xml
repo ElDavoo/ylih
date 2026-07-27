@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">ətraflı izləmə</string>
     <string name="settings_detailed_body">simlə qulaqlıqlar və oynatma vaxtını əlavə edir. android simlə qoşulma hadisələrini yalnız işləyən bir tətbiqə bildirər, buna görə də bildirişlər şkalatosu sakit qalır. bluetooth hər halda izlənir.</string>
     <string name="settings_detailed_unavailable">bluetooth icazəsi verilənə qədər mövcud deyil: bu qurğu yalnız connectedDevice xidmət tipini elan edir, android 14+ bunu bluetooth icazəsinə bağlayır.</string>
+    <string name="settings_language">dil</string>
+    <string name="settings_language_system">sistem dili</string>
     <string name="settings_devices">cihazlar</string>
     <string name="settings_devices_body">qulaqlıq olmayan heç nə — avtomobil stereosistemi və ya akustik — qeyd etməyi dayandırmaq üçün işarəsini çıxarın.</string>
     <string name="settings_device_subtitle">%1$s · ilk görülmə %2$s</string>

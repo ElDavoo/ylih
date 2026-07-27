@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">kufuatilia kwa undani</string>
     <string name="settings_detailed_body">kunaongeza muti ya kamba na wakati wa kucheza. android tu husambaza matukio ya kamba iliyobandika kwa programu inayoendelea, kwa sababu hii inabaki ikiwa na ifikira lakini bila sauti. bluetooth inafuatiliwa kwa njia yoyote.</string>
     <string name="settings_detailed_unavailable">haipo hadi ruhusa ya bluetooth itolewe: kuundwa hiki kunahakitisha tu aina ya huduma ya connectedDevice, ambayo android 14+ inasungi kwa ruhusa ya bluetooth.</string>
+    <string name="settings_language">lugha</string>
+    <string name="settings_language_system">lugha ya mfumo</string>
     <string name="settings_devices">vifaa</string>
     <string name="settings_devices_body">ondoa herufi kwenye kile ambacho si muti - stereo ya motokaa au kinzani - ili kusimama kurekodi.</string>
     <string name="settings_device_subtitle">%1$s · iliyoona kwanza %2$s</string>

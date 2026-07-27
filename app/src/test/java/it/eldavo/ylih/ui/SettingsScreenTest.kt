@@ -23,6 +23,7 @@ import androidx.core.net.toUri
 import androidx.test.core.app.ApplicationProvider
 import androidx.activity.ComponentActivity
 import androidx.work.testing.WorkManagerTestInitHelper
+import it.eldavo.ylih.AppLocale
 import it.eldavo.ylih.BuildConfig
 import it.eldavo.ylih.Distribution
 import it.eldavo.ylih.R
@@ -68,6 +69,9 @@ class SettingsScreenTest {
         shadowOf(app).grantPermissions(Manifest.permission.BLUETOOTH_CONNECT)
         db.deviceDao().deleteAll()
         settings.setDetailedTracking(false)
+        // Left over, this would compose the whole screen in whichever language the last test
+        // picked — see the note on awaitDetailedTracking about why it is put back from here.
+        settings.setLanguage(AppLocale.SYSTEM)
     }
 
     private fun seedDevice(name: String = "ACCENTUM Plus", ignored: Boolean = false): Long =
@@ -83,10 +87,16 @@ class SettingsScreenTest {
             )
         }
 
-    private fun show() {
+    private fun show(onLanguageChanged: () -> Unit = {}) {
         val viewModel = YlihViewModel(app)
         compose.setContent {
-            YlihTheme { SettingsScreen(viewModel = viewModel, contentPadding = PaddingValues()) }
+            YlihTheme {
+                SettingsScreen(
+                    viewModel = viewModel,
+                    contentPadding = PaddingValues(),
+                    onLanguageChanged = onLanguageChanged,
+                )
+            }
         }
         settle("the screen to compose") { nodeCount(text(R.string.settings_about)) > 0 }
     }
@@ -282,6 +292,37 @@ class SettingsScreenTest {
             assertTrue(nodeCount(text(R.string.settings_battery_path)) > 0)
             assertEquals(0, nodeCount(text(R.string.settings_battery_button)))
         }
+    }
+
+    @Test
+    @Config(sdk = [Build.VERSION_CODES.S])
+    fun `below android 13 a language can be picked, and applying it restarts the activity`() {
+        var restarts = 0
+        show(onLanguageChanged = { restarts++ })
+
+        scrollTo(text(R.string.settings_language))
+        // The row shows what is in force, which with nothing stored is the system's own language.
+        compose.onNodeWithText(text(R.string.settings_language_system)).performClick()
+        settle("the picker to open") { nodeCount(text(R.string.action_cancel)) > 0 }
+
+        // The first translation in the list, so it is on screen without scrolling the dialog.
+        val tag = AppLocale.pickerTags(app).first()
+        compose.onNode(hasAnyAncestor(isDialog()) and hasText(AppLocale.displayName(tag)))
+            .performClick()
+
+        settle("the language to be stored") { runBlocking { settings.languageNow() } == tag }
+        // Restarting before the write lands would reattach the activity with the old language.
+        settle("the activity to be restarted") { restarts == 1 }
+    }
+
+    @Test
+    fun `from android 13 the app defers to the system language setting`() {
+        show()
+
+        // The platform owns per-app language there, and two answers to one question is worse
+        // than one: the locale config already puts ylih in Settings > System > Languages.
+        assertEquals(0, nodeCount(text(R.string.settings_language)))
+        assertEquals(0, nodeCount(text(R.string.settings_language_system)))
     }
 
     @Test

@@ -114,6 +114,8 @@
     <string name="settings_detailed_title">detailed tracking</string>
     <string name="settings_detailed_body">adds wired headphones and playback time. android only reports wired plug events to a running app, so this keeps a silent notification in the shade. bluetooth is tracked either way.</string>
     <string name="settings_detailed_unavailable">unavailable until bluetooth access is granted: this build only declares the connectedDevice service type, which android 14+ ties to a bluetooth permission.</string>
+    <string name="settings_language">language</string>
+    <string name="settings_language_system">system language</string>
     <string name="settings_devices">devices</string>
     <string name="settings_devices_body">uncheck anything that isn\'t headphones — a car stereo or a speaker — to stop recording it.</string>
     <string name="settings_device_subtitle">%1$s · first seen %2$s</string>

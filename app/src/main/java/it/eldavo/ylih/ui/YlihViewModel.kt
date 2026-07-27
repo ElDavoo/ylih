@@ -47,6 +47,13 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
     val onboardingDone: StateFlow<Boolean?> = container.settings.onboardingDone
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
+    /**
+     * Null until DataStore has answered. The settings screen restarts the activity when this
+     * changes, so it must not see the default before the stored tag arrives.
+     */
+    val language: StateFlow<String?> = container.settings.language
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
+
     val allSpans: StateFlow<List<Span>> = container.repository.observeAllSessions()
         .map { sessions -> sessions.map { it.toSpan() } }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
@@ -72,6 +79,10 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
         if (!container.trackingController.setDetailedTracking(enabled)) {
             messageChannel.send(string(RES_DETAILED_NEEDS_BLUETOOTH))
         }
+    }
+
+    fun setLanguage(tag: String) = viewModelScope.launch {
+        container.settings.setLanguage(tag)
     }
 
     /** Also what releases MainActivity's permission request — see the comment there. */
@@ -145,3 +156,4 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
 }
 
 fun SessionEntity.toSpan(): Span = Span(connectedAt, disconnectedAt, playingMs)
+

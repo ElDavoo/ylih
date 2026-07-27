@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">detaljno praćenje</string>
     <string name="settings_detailed_body">dodaje žičane slušalice i vreme puštanja. android samo prijavljuje događaje žičane veze pokrenuto aplikaciji, tako da ovo čuva tiho obaveštenje u senci. bluetooth se prati svakako.</string>
     <string name="settings_detailed_unavailable">nije dostupno dok se ne odobri bluetooth pristup: ova gradnja samo deklarira vrstu usluge connectedDevice, koju android 14+ veže na dozvolu za bluetooth.</string>
+    <string name="settings_language">jezik</string>
+    <string name="settings_language_system">jezik sistema</string>
     <string name="settings_devices">uređaji</string>
     <string name="settings_devices_body">odmah označi sve što nije slušalice — automobilske zvučnike ili zvučnike — da biste prestali da ih snimate.</string>
     <string name="settings_device_subtitle">%1$s · prvi put viđeno %2$s</string>

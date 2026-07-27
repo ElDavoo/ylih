@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">detalny slepo</string>
     <string name="settings_detailed_body">naršywaš drótne naušniki a čas wótwóźenja. android zdźělujo drótne napšadeje jano žywjemu programej, togola sćě tu cicny powěźomjenje wóstawa. bluetooth se sćě slepowaš.</string>
     <string name="settings_detailed_unavailable">njejo dostupny, dokad bluetooth-towědnosć njejo dana: toś ta wersija jano connectedDevice-tšyp słužby prokljamujaš, što android 14+ na bluetooth-towědnosć wěžujaš.</string>
+    <string name="settings_language">rěc</string>
+    <string name="settings_language_system">rěc systema</string>
     <string name="settings_devices">napšada</string>
     <string name="settings_devices_body">wulašćiš, co njesu naušniki — awtomagnatole abo głośniki — aby ji měł staś nanjesywaś.</string>
     <string name="settings_device_subtitle">%1$s · prwy raz wiźity %2$s</string>

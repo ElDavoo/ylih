@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">tracio manwl</string>
     <string name="settings_detailed_body">yn ychwanegu clustffonau wedi\'u gweirio ac amser atgynhyrchu. android yn unig yn adrodd digwyddiadau plwg wedi\'u gweirio i app sy\'n rhedeg, felly mae hyn yn cadw hysbysiad tawel yn yr ystafell. mae bluetooth yn cael ei dracio p\'un bynnag.</string>
     <string name="settings_detailed_unavailable">dim ar gael nes y rhoddif mynediad bluetooth: mae\'r adeilad hwn yn unig yn datgan y math gwasanaeth connectedDevice, y mae android 14+ yn ei chlymu i ganiatad bluetooth.</string>
+    <string name="settings_language">iaith</string>
+    <string name="settings_language_system">iaith y system</string>
     <string name="settings_devices">dyfeisiau</string>
     <string name="settings_devices_body">tynnu\'r tic oddi wrth unrhyw beth nad yw\'n glustffonau — radio ceir neu siaradwr — i roi\'r gorau i\'w gofnodi.</string>
     <string name="settings_device_subtitle">%1$s · gweld yn gyntaf %2$s</string>

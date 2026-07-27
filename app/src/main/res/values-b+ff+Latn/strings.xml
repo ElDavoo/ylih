@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">haasiraa jamano</string>
     <string name="settings_detailed_body">dan kaable hiirde e mesur waktu sekii. android-a ngol ɗee gaŋki kaable hadde ko njawla ko ko-sey, haŋka dina tule yiitere koom. bluetooth haasiraa ko-waawi haa ko-haa.</string>
     <string name="settings_detailed_unavailable">ko kala walla hiji bluetooth permisyon ko-nafo: ful ngii ɗee ɓata connectedDevice gonngal duuɗe, ndi android 14+ joɓi e bluetooth permisyon.</string>
+    <string name="settings_language">haala</string>
+    <string name="settings_language_system">haala sistem</string>
     <string name="settings_devices">kuuseeje</string>
     <string name="settings_devices_body">koone sifa alaa hiirde — stereo otoomobil walla speaker — haŋka sumuji notere.</string>
     <string name="settings_device_subtitle">%1$s · yehe fuɗɗo %2$s</string>

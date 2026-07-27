@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">ŋkɔŋkɔ geɖea</string>
     <string name="settings_detailed_body">wɔ nufia heaphones kple ŋu sua ŋkɔ. android ŋu kɔ nufia ŋu nɔ program si le ŋu ko, ale be notifikasyon sisi yi ŋu hafi. bluetooth ŋkɔŋkɔ wɔ hã.</string>
     <string name="settings_detailed_unavailable">mele gbe o va se bluetooth tɔ na: programa sia gblɔ connectedDevice ŋutsu ko, si android 14+ fi bluetooth tɔ ŋu.</string>
+    <string name="settings_language">gbe</string>
+    <string name="settings_language_system">sistem ƒe gbe</string>
     <string name="settings_devices">nyawo</string>
     <string name="settings_devices_body">ɖe nyawo si nye heaphones mele o — agbalẽ dze alo ŋu xevi — vo go.</string>
     <string name="settings_device_subtitle">%1$s · ŋkeke blibo si %2$s</string>

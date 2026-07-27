@@ -1,6 +1,7 @@
 package it.eldavo.ylih.tracking
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.pm.ServiceInfo
@@ -16,6 +17,7 @@ import androidx.core.app.ServiceCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleService
 import androidx.lifecycle.lifecycleScope
+import it.eldavo.ylih.AppLocale
 import it.eldavo.ylih.Distribution
 import it.eldavo.ylih.R
 import it.eldavo.ylih.YlihApp
@@ -56,6 +58,14 @@ class TrackingService : LifecycleService() {
             val identities = removedDevices.orEmpty().mapNotNull { AudioDevices.identityOf(it) }
             onDevicesChanged(identities, connected = false)
         }
+    }
+
+    /**
+     * The notification is the one piece of the app that speaks outside the activity, so it follows
+     * the same in-app language below Android 13 rather than reverting to the system one.
+     */
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(AppLocale.wrap(newBase))
     }
 
     override fun onCreate() {

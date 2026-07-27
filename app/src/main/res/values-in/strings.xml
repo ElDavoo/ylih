@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">pelacakan detail</string>
     <string name="settings_detailed_body">menambahkan headphone berkabel dan waktu pemutaran. android hanya melaporkan peristiwa colokan kabel ke aplikasi yang sedang berjalan, jadi ini mempertahankan notifikasi senyap di panel notifikasi. bluetooth tetap dilacak apa pun pilihannya.</string>
     <string name="settings_detailed_unavailable">tidak tersedia sampai akses bluetooth diberikan: build ini hanya mendeklarasikan jenis layanan connectedDevice, yang di android 14+ terikat pada izin bluetooth.</string>
+    <string name="settings_language">bahasa</string>
+    <string name="settings_language_system">bahasa sistem</string>
     <string name="settings_devices">perangkat</string>
     <string name="settings_devices_body">hilangkan centang pada apa pun yang bukan headphone — sistem audio mobil atau speaker — untuk berhenti mencatatnya.</string>
     <string name="settings_device_subtitle">%1$s · pertama terlihat %2$s</string>

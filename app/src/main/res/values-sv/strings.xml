@@ -105,6 +105,8 @@
     <string name="settings_detailed_title">detaljerad spårning</string>
     <string name="settings_detailed_body">lägger till kabelanslutna hörlurar och uppspelningstid. android rapporterar kabelhändelser bara till en app som redan körs, så detta innebär en tyst avisering i aviseringsfältet. bluetooth spåras ändå.</string>
     <string name="settings_detailed_unavailable">otillgängligt tills bluetoothåtkomst har beviljats: den här versionen deklarerar bara tjänsttypen connectedDevice, som android 14+ kopplar till en bluetoothbehörighet.</string>
+    <string name="settings_language">språk</string>
+    <string name="settings_language_system">systemspråk</string>
     <string name="settings_devices">enheter</string>
     <string name="settings_devices_body">avmarkera allt som inte är hörlurar — en bilstereo eller en högtalare — för att sluta registrera det.</string>
     <string name="settings_device_subtitle">%1$s · sågs först %2$s</string>

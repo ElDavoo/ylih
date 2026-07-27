@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">tàten à sù</string>
     <string name="settings_detailed_body">gó ñúm ndap ìkobò à à zán. android yí kó ìkobò à tìn búŋ à sú nà à app à búŋ tàn nù, à gó sé sìnòte ìkí. bluetooth à sù nábè.</string>
     <string name="settings_detailed_unavailable">ŋ fù zú bluetooth à dúm: app ìyà yí kó connectedDevice sèp nù, android 14+ à gó à bluetooth àdí.</string>
+    <string name="settings_language">langaj</string>
+    <string name="settings_language_system">langaj sistɛm</string>
     <string name="settings_devices">divaïs</string>
     <string name="settings_devices_body">gó sú yí ŋ dúm ndap — ká sténo ò sìkò — zú à gó tàten.</string>
     <string name="settings_device_subtitle">%1$s · à gá wíã %2$s</string>

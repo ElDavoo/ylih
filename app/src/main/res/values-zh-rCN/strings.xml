@@ -105,6 +105,8 @@
     <string name="settings_detailed_title">详细追踪</string>
     <string name="settings_detailed_body">记录有线耳机及播放时长。android 只会将插拔事件报告给正在运行的应用,因此会在通知栏保留一条静默通知。蓝牙耳机始终都会被追踪。</string>
     <string name="settings_detailed_unavailable">在授予蓝牙权限之前不可用:此版本只声明了 connectedDevice 服务类型,而 android 14 及以上系统要求该类型必须具有蓝牙权限。</string>
+    <string name="settings_language">语言</string>
+    <string name="settings_language_system">系统语言</string>
     <string name="settings_devices">设备</string>
     <string name="settings_devices_body">取消勾选不是耳机的设备——比如车载音响或音箱——即可停止记录它。</string>
     <string name="settings_device_subtitle">%1$s · 首次出现于 %2$s</string>

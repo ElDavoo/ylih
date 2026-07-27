@@ -105,6 +105,8 @@
     <string name="settings_detailed_title">seguimiento detallado</string>
     <string name="settings_detailed_body">añade los auriculares con cable y el tiempo de reproducción. android solo notifica los eventos del jack a una app que ya está en ejecución, así que esto mantiene una notificación silenciosa en la barra. el bluetooth se rastrea de todos modos.</string>
     <string name="settings_detailed_unavailable">no disponible hasta conceder acceso a bluetooth: esta build solo declara el tipo de servicio connectedDevice, que android 14+ vincula a un permiso de bluetooth.</string>
+    <string name="settings_language">idioma</string>
+    <string name="settings_language_system">idioma del sistema</string>
     <string name="settings_devices">dispositivos</string>
     <string name="settings_devices_body">desmarca lo que no sean auriculares — un equipo de coche o un altavoz — para dejar de registrarlo.</string>
     <string name="settings_device_subtitle">%1$s · primera vez %2$s</string>

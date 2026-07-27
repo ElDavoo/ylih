@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">پیگیری دقیق</string>
     <string name="settings_detailed_body">هدفون‌های سیمی و زمان پخش را اضافه می‌کند. android فقط رویدادهای اتصال سیمی را به یک برنامه درحال کار گزارش می‌دهد، بنابراین یک اعلان ساکت در سایه نگه داشته می‌شود. bluetooth در هر صورت پیگیری می‌شود.</string>
     <string name="settings_detailed_unavailable">در دسترس نیست تا زمانی که دسترسی bluetooth اعطا شود: این ساخت فقط نوع سرویس connectedDevice را اعلام می‌کند، که android 14+ آن را به اجازه bluetooth وابسته می‌کند.</string>
+    <string name="settings_language">زبان</string>
+    <string name="settings_language_system">زبان سیستم</string>
     <string name="settings_devices">دستگاه‌ها</string>
     <string name="settings_devices_body">هر چیزی که هدفون نیست را غیرفعال کن — یک استریو ماشین یا یک بلندگو — تا ضبط آن متوقف شود.</string>
     <string name="settings_device_subtitle">%1$s · اولین مشاهده %2$s</string>

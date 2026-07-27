@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">isela isoki mayale</string>
     <string name="settings_detailed_body">ekoká bilonga nsele mfane wa mani. android enene bilonga nsele mbuá moto ilon muula moto, njiba ilinga mbuá ilinga nsele. bluetooth isele mu elongo.</string>
     <string name="settings_detailed_unavailable">ilinga ilambe ngaka bluetooth masolo osambé: likolo mota isela connectedDevice emoto moto, njiba android 14+ iya mbakara mi bluetooth masolo.</string>
+    <string name="settings_language">eyala</string>
+    <string name="settings_language_system">eyala a sistɛm</string>
     <string name="settings_devices">moto esuala</string>
     <string name="settings_devices_body">sumbela masolo ilinga ndúmu ndúmu — masolo moto isela mfane — njiba lemba isela isoki.</string>
     <string name="settings_device_subtitle">%1$s · osombé mbuá %2$s</string>

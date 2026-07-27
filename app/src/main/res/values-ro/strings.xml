@@ -105,6 +105,8 @@
     <string name="settings_detailed_title">urmărire detaliată</string>
     <string name="settings_detailed_body">adaugă căștile prin cablu și timpul de redare. android raportează evenimentele mufei doar unei aplicații deja pornite, așa că rămâne o notificare silențioasă în bara de notificări. bluetooth este urmărit oricum.</string>
     <string name="settings_detailed_unavailable">indisponibil până nu acorzi acces la bluetooth: această versiune declară doar tipul de serviciu connectedDevice, pe care android 14+ îl leagă de o permisiune bluetooth.</string>
+    <string name="settings_language">limbă</string>
+    <string name="settings_language_system">limba sistemului</string>
     <string name="settings_devices">dispozitive</string>
     <string name="settings_devices_body">debifează ce nu sunt căști — un sistem auto sau o boxă — ca să nu mai fie înregistrat.</string>
     <string name="settings_device_subtitle">%1$s · văzut prima dată %2$s</string>

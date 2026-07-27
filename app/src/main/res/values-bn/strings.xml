@@ -104,6 +104,8 @@
     <string name="settings_detailed_title">বিস্তারিত ট্র্যাকিং</string>
     <string name="settings_detailed_body">তারযুক্ত হেডফোন এবং প্লেব্যাক সময় যোগ করে। android শুধুমাত্র তারযুক্ত প্লাগ ইভেন্টগুলি একটি চলমান অ্যাপে রিপোর্ট করে, তাই এটি ছায়ায় একটি নীরব বিজ্ঞপ্তি রাখে। bluetooth যেভাবেই ট্র্যাক করা হয়।</string>
     <string name="settings_detailed_unavailable">bluetooth অ্যাক্সেস দেওয়া না হওয়া পর্যন্ত উপলব্ধ নয়: এই বিল্ড শুধুমাত্র connectedDevice সেবা প্রকার ঘোষণা করে, যা android 14+ একটি bluetooth অনুমতির সাথে বাঁধে।</string>
+    <string name="settings_language">ভাষা</string>
+    <string name="settings_language_system">সিস্টেমের ভাষা</string>
     <string name="settings_devices">ডিভাইস</string>
     <string name="settings_devices_body">যা কিছু হেডফোন নয় তা আনচেক করুন — একটি গাড়ির স্টেরিও বা একটি স্পিকার — এটি রেকর্ড করা বন্ধ করতে।</string>
     <string name="settings_device_subtitle">%1$s · প্রথম দেখা %2$s</string>
