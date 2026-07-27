@@ -2,14 +2,20 @@ package it.eldavo.ylih.tracking
 
 import android.Manifest
 import android.app.Application
+import android.content.Context
 import android.media.AudioDeviceInfo
 import android.media.AudioManager
 import android.os.Build
 import android.os.SystemClock
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
+import androidx.work.Configuration
+import androidx.work.ListenableWorker
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
+import androidx.work.Worker
+import androidx.work.WorkerFactory
+import androidx.work.WorkerParameters
 import androidx.work.testing.WorkManagerTestInitHelper
 import it.eldavo.ylih.Distribution
 import it.eldavo.ylih.data.DeviceKind
@@ -63,8 +69,18 @@ class TrackingControllerTest {
         // unique work's state straight after asking for a change otherwise races the worker that
         // the enqueue starts — which showed up as this class passing or failing on what ran
         // before it in the same JVM.
+        //
+        // Synchronous executors are not enough on their own: the test scheduler starts the
+        // heartbeat the moment it is enqueued, and the real HeartbeatWorker is a CoroutineWorker,
+        // so its body runs on Dispatchers.Default whatever executor is installed — against the
+        // real container rather than this test's database. CI caught that work reaching a
+        // terminal state before cancelUniqueWork got to it, which made the cancel a no-op and
+        // left the work reading as still scheduled. What this class asserts is which work the
+        // controller schedules, never what the worker does (ReceiversTest covers that), so the
+        // worker is replaced by a plain one that finishes inline on the synchronous executor.
         WorkManagerTestInitHelper.initializeTestWorkManager(
             context,
+            Configuration.Builder().setWorkerFactory(InertWorkers).build(),
             WorkManagerTestInitHelper.ExecutorsMode.LEGACY_OVERRIDE_WITH_SYNCHRONOUS_EXECUTORS,
         )
         db = Room.inMemoryDatabaseBuilder(context, YlihDatabase::class.java).build()
@@ -275,5 +291,17 @@ class TrackingControllerTest {
             TrackingService::class.java.name,
             shadowOf(context).nextStoppedService.component?.className,
         )
+    }
+
+    /** Stands in for whatever the controller schedules, so only the scheduling is under test. */
+    private object InertWorkers : WorkerFactory() {
+        override fun createWorker(
+            appContext: Context,
+            workerClassName: String,
+            workerParameters: WorkerParameters,
+        ): ListenableWorker =
+            object : Worker(appContext, workerParameters) {
+                override fun doWork(): Result = Result.success()
+            }
     }
 }

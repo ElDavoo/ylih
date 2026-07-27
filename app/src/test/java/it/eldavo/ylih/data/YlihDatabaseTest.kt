@@ -119,8 +119,10 @@ class YlihDatabaseTest {
     @Test
     fun `a database whose columns have drifted is refused rather than silently repaired`() {
         SQLiteDatabase.openOrCreateDatabase(context.getDatabasePath("ylih.db"), null).use { drifted ->
-            SCHEMA_V1.forEach(drifted::execSQL)
-            drifted.execSQL("ALTER TABLE sessions DROP COLUMN playingMs")
+            // The drift is created rather than carved out of a correct schema: `ALTER TABLE ...
+            // DROP COLUMN` needs SQLite 3.35, and the version Robolectric runs against on CI is
+            // older than that, so the statement is a syntax error there while it works locally.
+            SCHEMA_V1.forEach { statement -> drifted.execSQL(statement.withoutPlayingMs()) }
             drifted.version = 1
         }
 
@@ -182,6 +184,9 @@ class YlihDatabaseTest {
     }
 
     private companion object {
+        /** Leaves every statement but the `sessions` table alone, which loses one column. */
+        fun String.withoutPlayingMs() = replace("`playingMs` INTEGER, ", "")
+
         /** Verbatim from `app/schemas/it.eldavo.ylih.data.YlihDatabase/1.json`. */
         val SCHEMA_V1 = listOf(
             "CREATE TABLE IF NOT EXISTS `devices` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
