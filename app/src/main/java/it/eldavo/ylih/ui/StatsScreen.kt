@@ -22,6 +22,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import it.eldavo.ylih.R
+import it.eldavo.ylih.stats.Counting
 import it.eldavo.ylih.stats.Stats
 import java.time.ZoneId
 
@@ -34,13 +35,12 @@ fun StatsScreen(
     val spans by viewModel.allSpans.collectAsStateWithLifecycle()
     val summaries by viewModel.summaries.collectAsStateWithLifecycle()
     val now by viewModel.now.collectAsStateWithLifecycle()
+    val counting by viewModel.counting.collectAsStateWithLifecycle()
     val zone = ZoneId.systemDefault()
 
-    val summary = Stats.summarize(spans, now)
-    val series = Stats.dailySeries(spans, zone, now, days = 30)
-    val ranking = summaries.sortedByDescending {
-        it.closedMs + (it.openSince?.let { since -> now - since } ?: 0L)
-    }
+    val summary = Stats.summarize(spans, now, counting)
+    val series = Stats.dailySeries(spans, zone, now, days = 30, counting = counting)
+    val ranking = summaries.sortedByDescending { it.countedMs(now, counting) }
 
     LazyColumn(
         state = listState,
@@ -73,15 +73,24 @@ fun StatsScreen(
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
+                // Without this the headline just quietly shrinks, and a lifetime total that
+                // dropped by half with no explanation is exactly what this app must never do.
+                if (counting == Counting.PLAYBACK) {
+                    Text(
+                        stringResource(R.string.stats_playback_only_note),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.primary,
+                    )
+                }
                 Spacer(Modifier.height(16.dp))
                 StatRow(
                     listOf(
                         stringResource(R.string.stats_today) to
-                            formatHours(Stats.recentMs(spans, zone, now, 1)),
+                            formatHours(Stats.recentMs(spans, zone, now, 1, counting)),
                         stringResource(R.string.stats_last_7) to
-                            formatHours(Stats.recentMs(spans, zone, now, 7)),
+                            formatHours(Stats.recentMs(spans, zone, now, 7, counting)),
                         stringResource(R.string.stats_last_30) to
-                            formatHours(Stats.recentMs(spans, zone, now, 30)),
+                            formatHours(Stats.recentMs(spans, zone, now, 30, counting)),
                     ),
                 )
                 Spacer(Modifier.height(8.dp))
@@ -96,9 +105,11 @@ fun StatsScreen(
                 if (summary.hasPlaybackData) {
                     Spacer(Modifier.height(8.dp))
                     StatRow(
-                        listOf(
-                            stringResource(R.string.stats_playing) to
-                                formatHours(summary.playingMs),
+                        listOfNotNull(
+                            // Counting playback, the headline above already *is* this figure.
+                            (stringResource(R.string.stats_playing) to
+                                formatHours(summary.playingMs))
+                                .takeIf { counting == Counting.CONNECTED },
                             stringResource(R.string.stats_measured_span) to
                                 formatHours(summary.measuredMs),
                             stringResource(R.string.stats_share) to
@@ -118,7 +129,7 @@ fun StatsScreen(
         }
         item { SectionHeader(stringResource(R.string.stats_by_pair)) }
         items(ranking, key = { it.pairId }) { pair ->
-            val lifetime = pair.closedMs + (pair.openSince?.let { now - it } ?: 0L)
+            val lifetime = pair.countedMs(now, counting)
             Column {
                 Column(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 10.dp)) {
                     Text(pair.label, style = MaterialTheme.typography.bodyLarge)

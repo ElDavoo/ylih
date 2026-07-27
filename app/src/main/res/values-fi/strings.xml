@@ -54,6 +54,7 @@
     <string name="stats_playing">äänen toistoa</string>
     <string name="stats_measured_span">mitattu toistoa varten</string>
     <string name="stats_share">toiston osuus</string>
+    <string name="stats_playback_only_note">lasketaan vain toistoaika</string>
     <string name="stats_daily_hours_30">tunnit päivässä (30 päivää)</string>
     <string name="stats_by_pair">pareittain</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -105,6 +106,8 @@
     <string name="settings_detailed_title">tarkka seuranta</string>
     <string name="settings_detailed_body">lisää langalliset kuulokkeet ja toistoajan. android ilmoittaa langallisen liittämisen vain käynnissä olevalle sovellukselle, joten tämä pitää ilmoitusalueella hiljaisen ilmoituksen. bluetooth seurataan joka tapauksessa.</string>
     <string name="settings_detailed_unavailable">ei käytettävissä ennen kuin bluetooth-oikeus on myönnetty: tämä versio ilmoittaa vain connectedDevice-palvelutyypin, jonka android 14+ sitoo bluetooth-oikeuteen.</string>
+    <string name="settings_playback_only_title">laske vain toisto</string>
+    <string name="settings_playback_only_body">tilastot laskevat ajan, jolloin ääntä todella toistettiin, yhdistettynä olon sijaan. vain istunnot, jotka tallennettiin tarkan seurannan ollessa päällä, mittasivat toiston; loput jätetään pois.</string>
     <string name="settings_language">kieli</string>
     <string name="settings_language_system">järjestelmän kieli</string>
     <string name="settings_devices">laitteet</string>

@@ -54,6 +54,7 @@
     <string name="stats_playing">audio speelt af</string>
     <string name="stats_measured_span">gemeten voor afspelen</string>
     <string name="stats_share">aandeel afspelen</string>
+    <string name="stats_playback_only_note">telt alleen afspeeltijd</string>
     <string name="stats_daily_hours_30">uren per dag (30 dagen)</string>
     <string name="stats_by_pair">per koptelefoon</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -105,6 +106,8 @@
     <string name="settings_detailed_title">gedetailleerd bijhouden</string>
     <string name="settings_detailed_body">voegt bekabelde koptelefoons en afspeeltijd toe. android meldt bekabelde aansluitgebeurtenissen alleen aan een actieve app, dus dit houdt een stille melding in het meldingenpaneel. bluetooth wordt hoe dan ook bijgehouden.</string>
     <string name="settings_detailed_unavailable">niet beschikbaar totdat bluetoothtoegang is verleend: deze build declareert alleen het servicetype connectedDevice, dat android 14+ koppelt aan een bluetoothtoestemming.</string>
+    <string name="settings_playback_only_title">tel alleen afspelen</string>
+    <string name="settings_playback_only_body">de statistieken tellen de tijd dat er echt audio speelde in plaats van de tijd verbonden. alleen sessies die zijn vastgelegd met gedetailleerd bijhouden aan hebben afspelen gemeten; de rest blijft buiten beschouwing.</string>
     <string name="settings_language">taal</string>
     <string name="settings_language_system">systeemtaal</string>
     <string name="settings_devices">toestellen</string>

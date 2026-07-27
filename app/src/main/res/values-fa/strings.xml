@@ -53,6 +53,7 @@
     <string name="stats_playing">پخش صدا</string>
     <string name="stats_measured_span">اندازه‌گیری‌شده برای پخش</string>
     <string name="stats_share">سهم پخش</string>
+    <string name="stats_playback_only_note">فقط زمان پخش شمرده می‌شود</string>
     <string name="stats_daily_hours_30">ساعات روزانه (30 روز)</string>
     <string name="stats_by_pair">بر اساس جفت</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">پیگیری دقیق</string>
     <string name="settings_detailed_body">هدفون‌های سیمی و زمان پخش را اضافه می‌کند. android فقط رویدادهای اتصال سیمی را به یک برنامه درحال کار گزارش می‌دهد، بنابراین یک اعلان ساکت در سایه نگه داشته می‌شود. bluetooth در هر صورت پیگیری می‌شود.</string>
     <string name="settings_detailed_unavailable">در دسترس نیست تا زمانی که دسترسی bluetooth اعطا شود: این ساخت فقط نوع سرویس connectedDevice را اعلام می‌کند، که android 14+ آن را به اجازه bluetooth وابسته می‌کند.</string>
+    <string name="settings_playback_only_title">فقط پخش شمرده شود</string>
+    <string name="settings_playback_only_body">آمار به‌جای زمان اتصال، زمانی را می‌شمارد که صدا واقعاً پخش می‌شده است. فقط جلسه‌هایی که با پیگیری دقیق روشن ضبط شده‌اند پخش را اندازه گرفته‌اند؛ بقیه کنار گذاشته می‌شوند.</string>
     <string name="settings_language">زبان</string>
     <string name="settings_language_system">زبان سیستم</string>
     <string name="settings_devices">دستگاه‌ها</string>

@@ -53,6 +53,7 @@
     <string name="stats_playing">audio diputar</string>
     <string name="stats_measured_span">diukur untuk pemutaran</string>
     <string name="stats_share">porsi pemutaran</string>
+    <string name="stats_playback_only_note">hanya waktu pemutaran yang dihitung</string>
     <string name="stats_daily_hours_30">jam harian (30 hari)</string>
     <string name="stats_by_pair">per pasang</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">pelacakan detail</string>
     <string name="settings_detailed_body">menambahkan headphone berkabel dan waktu pemutaran. android hanya melaporkan peristiwa colokan kabel ke aplikasi yang sedang berjalan, jadi ini mempertahankan notifikasi senyap di panel notifikasi. bluetooth tetap dilacak apa pun pilihannya.</string>
     <string name="settings_detailed_unavailable">tidak tersedia sampai akses bluetooth diberikan: build ini hanya mendeklarasikan jenis layanan connectedDevice, yang di android 14+ terikat pada izin bluetooth.</string>
+    <string name="settings_playback_only_title">hitung hanya pemutaran</string>
+    <string name="settings_playback_only_body">statistik menghitung waktu saat audio benar-benar diputar, bukan waktu terhubung. hanya sesi yang direkam saat pelacakan detail aktif yang mengukur pemutaran; sisanya tidak disertakan.</string>
     <string name="settings_language">bahasa</string>
     <string name="settings_language_system">bahasa sistem</string>
     <string name="settings_devices">perangkat</string>

@@ -56,6 +56,7 @@
     <string name="stats_playing">ऑडियो चल रहा है</string>
     <string name="stats_measured_span">प्लेबैक के लिए मापा गया</string>
     <string name="stats_share">प्लेबैक का हिस्सा</string>
+    <string name="stats_playback_only_note">सिर्फ़ प्लेबैक का समय गिना जाता है</string>
     <string name="stats_daily_hours_30">रोज़ाना घंटे (30 दिन)</string>
     <string name="stats_by_pair">जोड़ी अनुसार</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -107,6 +108,8 @@
     <string name="settings_detailed_title">विस्तृत ट्रैकिंग</string>
     <string name="settings_detailed_body">तार वाले हेडफ़ोन और प्लेबैक समय जोड़ता है। android वायर प्लग इवेंट सिर्फ चल रहे ऐप को भेजता है, इसलिए यह नोटिफिकेशन शेड में एक शांत सूचना बनाए रखता है। ब्लूटूथ हर हाल में ट्रैक होता है।</string>
     <string name="settings_detailed_unavailable">ब्लूटूथ की अनुमति मिलने तक उपलब्ध नहीं: यह बिल्ड सिर्फ connectedDevice सेवा प्रकार घोषित करता है, जिसे android 14+ ब्लूटूथ अनुमति से जोड़ता है।</string>
+    <string name="settings_playback_only_title">सिर्फ़ प्लेबैक गिनें</string>
+    <string name="settings_playback_only_body">आँकड़े कनेक्ट रहने के समय की जगह ऑडियो के असल में चलने का समय गिनते हैं। सिर्फ़ वे सेशन जो विस्तृत ट्रैकिंग चालू रहते रिकॉर्ड हुए, उनमें प्लेबैक मापा गया; बाक़ी छोड़ दिए जाते हैं।</string>
     <string name="settings_language">भाषा</string>
     <string name="settings_language_system">सिस्टम की भाषा</string>
     <string name="settings_devices">डिवाइस</string>

@@ -53,6 +53,7 @@
     <string name="stats_playing">adedie</string>
     <string name="stats_measured_span">wɔasusu ama adedie</string>
     <string name="stats_share">adedie kyɛfa</string>
+    <string name="stats_playback_only_note">kan adedie berɛ nkoaa</string>
     <string name="stats_daily_hours_30">manim bere nna (nnɔnnum 30)</string>
     <string name="stats_by_pair">sua so so</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">akontabuo a ɔkɔ ɔ mu</string>
     <string name="settings_detailed_body">ɔhyɛ asiân headphones ne bere a wɔhyɛ adedie. android na ɔtwe adi asiân dan tẽ ama sikakorabɛ a ɛdan no ara, nti yei dwom sikakorabɛ yi wɔ mu. bluetooth na wɔtwe adi sɛ na ɛkakra.</string>
     <string name="settings_detailed_unavailable">ntumi nkɔ so akosi sɛ wɔde connectedDevice osuoabɔ nyeε: sikakorabɛ yi na ɔkɔ ne connectedDevice osuoabɔ ara, na android 14+ de ɛne bluetooth kyɛ.</string>
+    <string name="settings_playback_only_title">kan adedie nkoaa</string>
+    <string name="settings_playback_only_body">akontabuo no kan berɛ a adedie kɔɔ so ampa, na ɛnyɛ berɛ a wɔakyekyere. mmerɛ a wɔde akontabuo a ɔkɔ ɔ mu twerɛeɛ nko ara na wɔsusuu adedie; nkaeɛ no wɔgyaw.</string>
     <string name="settings_language">kasa</string>
     <string name="settings_language_system">sistem kasa</string>
     <string name="settings_devices">asua</string>

@@ -53,6 +53,7 @@
     <string name="stats_playing">atihcamok</string>
     <string name="stats_measured_span">akayasimohkana atihcamok</string>
     <string name="stats_share">atihcamok pahkwe</string>
+    <string name="stats_playback_only_note">atihcamok piko akayasimohcikatek</string>
     <string name="stats_daily_hours_30">mahkohkana ayisiyiniw (30 osap)</string>
     <string name="stats_by_pair">eto otisinahk</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">akayasim mina atayakahwin</string>
     <string name="settings_detailed_body">sohkawin otisinahk mina mahkohkana atihcamok akayasim. android peyakohk ki-itahcikew sohkawin mawocihcikana, ki-itahcikew eko, kiya ka-akayak ki-ihtawisiw. bluetooth akayasim eso mihkohk.</string>
     <string name="settings_detailed_unavailable">nika ayisiyiniw iko ki-mawak bluetooth akayasim: eso ki-atayak peyakohk connectedDevice ka-atayakahwin, android 14+ ki-atayakahwikew bluetooth akayasim eti.</string>
+    <string name="settings_playback_only_title">atihcamok piko akayasim</string>
+    <string name="settings_playback_only_body">kiskinowatasiwina atihcamok tahto kesikaw akayasimohcikatewa, namoya nesowatisiwin kesikaw. akayasim mina atayakahwin ekwa ekosi masinahikatek piko atihcamok akayasimohkana; kotaka namoya.</string>
     <string name="settings_language">pîkiskwêwin</string>
     <string name="settings_language_system">wacistahkamikohk pîkiskwêwin</string>
     <string name="settings_devices">wacistahkamikohk</string>

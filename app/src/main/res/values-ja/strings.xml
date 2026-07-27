@@ -56,6 +56,7 @@
     <string name="stats_playing">音声再生時間</string>
     <string name="stats_measured_span">再生の計測時間</string>
     <string name="stats_share">再生の割合</string>
+    <string name="stats_playback_only_note">再生時間のみを集計</string>
     <string name="stats_daily_hours_30">1日あたりの時間（30日間）</string>
     <string name="stats_by_pair">ペア別</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -107,6 +108,8 @@
     <string name="settings_detailed_title">詳細トラッキング</string>
     <string name="settings_detailed_body">有線のヘッドホンと再生時間を記録できるようになる。androidは有線プラグのイベントを実行中のアプリにしか通知しないため、通知欄にサイレント通知が常に表示される。bluetoothはどちらの設定でも記録される。</string>
     <string name="settings_detailed_unavailable">bluetoothへのアクセスを許可するまで利用できない。このビルドはconnectedDeviceのサービスタイプのみを宣言しており、android 14以降ではこれにbluetoothの権限が必要になる。</string>
+    <string name="settings_playback_only_title">再生時間のみを数える</string>
+    <string name="settings_playback_only_body">統計は接続時間ではなく、実際に音声が再生されていた時間を数えます。再生を計測できたのは詳細トラッキングを有効にして記録したセッションだけで、それ以外は除外されます。</string>
     <string name="settings_language">言語</string>
     <string name="settings_language_system">システムの言語</string>
     <string name="settings_devices">デバイス</string>

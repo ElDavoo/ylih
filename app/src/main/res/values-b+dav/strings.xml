@@ -53,6 +53,7 @@
     <string name="stats_playing">sauti inacheza</string>
     <string name="stats_measured_span">kilichopimwa kwa kucheza</string>
     <string name="stats_share">sehemu ya kucheza</string>
+    <string name="stats_playback_only_note">muda wa kucheza tu</string>
     <string name="stats_daily_hours_30">saati za kila siku (siku 30)</string>
     <string name="stats_by_pair">kwa jozi</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">ufuataji wa kina</string>
     <string name="settings_detailed_body">inaongeza masikilizaji wenye waya na muda wa kucheza. android inakubali matukio ya waya tu kwa programu inayoendelea, kwa hiyo hii inabaki notisi yenye sauti ndogo katika maeneo. bluetooth inafuatwa kila wakati.</string>
     <string name="settings_detailed_unavailable">haipatikani mpaka ruhusa ya bluetooth itolewe: jumba hili linashangilia aina tu ya huduma ya connectedDevice, ambayo android 14+ inaambatana na ruhusa ya bluetooth.</string>
+    <string name="settings_playback_only_title">hesabu kucheza tu</string>
+    <string name="settings_playback_only_body">takwimu zinahesabu muda ambao sauti ilicheza kweli badala ya muda wa kuunganishwa. vipindi vilivyorekodiwa ufuataji wa kina ukiwa umewashwa pekee ndivyo vilivyopima kucheza; vingine vinaachwa.</string>
     <string name="settings_language">lugha</string>
     <string name="settings_language_system">lugha ya mfumo</string>
     <string name="settings_devices">vifaa</string>

@@ -53,6 +53,7 @@
     <string name="stats_playing">воспроизведение звука</string>
     <string name="stats_measured_span">измерено для воспроизведения</string>
     <string name="stats_share">доля воспроизведения</string>
+    <string name="stats_playback_only_note">считается только время воспроизведения</string>
     <string name="stats_daily_hours_30">часы по дням (30 дней)</string>
     <string name="stats_by_pair">по парам</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">подробное отслеживание</string>
     <string name="settings_detailed_body">добавляет проводные наушники и время воспроизведения. android сообщает о событиях проводного подключения только запущенному приложению, поэтому в шторке остаётся тихое уведомление. bluetooth отслеживается в любом случае.</string>
     <string name="settings_detailed_unavailable">недоступно, пока не предоставлен доступ к bluetooth: эта сборка объявляет только тип сервиса connectedDevice, который android 14+ привязывает к разрешению bluetooth.</string>
+    <string name="settings_playback_only_title">считать только воспроизведение</string>
+    <string name="settings_playback_only_body">статистика считает время, когда звук действительно играл, а не время подключения. воспроизведение измерили только сеансы, записанные при включённом подробном отслеживании; остальные не учитываются.</string>
     <string name="settings_language">язык</string>
     <string name="settings_language_system">язык системы</string>
     <string name="settings_devices">устройства</string>

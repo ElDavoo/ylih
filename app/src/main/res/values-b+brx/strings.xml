@@ -53,6 +53,7 @@
     <string name="stats_playing">अडियो जायो</string>
     <string name="stats_measured_span">प्लेबैक ना मापित</string>
     <string name="stats_share">प्लेबैक नि हिस्सा</string>
+    <string name="stats_playback_only_note">प्लेबैक नि सम खालि हिसाब खालामो</string>
     <string name="stats_daily_hours_30">दैनिक घंटे (30 दिन)</string>
     <string name="stats_by_pair">जोड़ी के अनुसार</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">विस्तृत ट्रैकिंग</string>
     <string name="settings_detailed_body">तारयुक्त हेडफोन और प्लेबैक समय जोड़ता है। android केवल एक चल रही ऐप को तारयुक्त प्लग ईवेंट की रिपोर्ट करता है, इसलिए यह शेड में एक शांत सूचना रखता है। bluetooth किसी भी तरह से ट्रैक किया जाता है।</string>
     <string name="settings_detailed_unavailable">जब तक bluetooth अनुमति दी नहीं जाती तब तक उपलब्ध नहीं है: यह बिल्ड केवल connectedDevice सेवा प्रकार घोषित करता है, जिसे android 14+ एक bluetooth अनुमति से जोड़ता है।</string>
+    <string name="settings_playback_only_title">खालि प्लेबैक हिसाब खालाम</string>
+    <string name="settings_playback_only_body">जोनोम खालामनाय सम नि सोलायथाव अडियो थार थारै जायो नाय समखौ आंखिदुंगारि हिसाब खालामो। खालि विस्तृत ट्रैकिंग ओन थानाय समाव रेकर्ड जानाय सेसनआव प्लेबैक मापित जादों; गुबुनखौ नागारो।</string>
     <string name="settings_language">राव</string>
     <string name="settings_language_system">सिस्टेमनि राव</string>
     <string name="settings_devices">डिवाइस</string>

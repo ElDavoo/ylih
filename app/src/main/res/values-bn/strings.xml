@@ -53,6 +53,7 @@
     <string name="stats_playing">অডিও চলছে</string>
     <string name="stats_measured_span">প্লেব্যাকের জন্য মাপা</string>
     <string name="stats_share">প্লেব্যাকের অংশ</string>
+    <string name="stats_playback_only_note">শুধু প্লেব্যাকের সময় গোনা হচ্ছে</string>
     <string name="stats_daily_hours_30">দৈনিক ঘন্টা (৩০ দিন)</string>
     <string name="stats_by_pair">জোড়া দ্বারা</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">বিস্তারিত ট্র্যাকিং</string>
     <string name="settings_detailed_body">তারযুক্ত হেডফোন এবং প্লেব্যাক সময় যোগ করে। android শুধুমাত্র তারযুক্ত প্লাগ ইভেন্টগুলি একটি চলমান অ্যাপে রিপোর্ট করে, তাই এটি ছায়ায় একটি নীরব বিজ্ঞপ্তি রাখে। bluetooth যেভাবেই ট্র্যাক করা হয়।</string>
     <string name="settings_detailed_unavailable">bluetooth অ্যাক্সেস দেওয়া না হওয়া পর্যন্ত উপলব্ধ নয়: এই বিল্ড শুধুমাত্র connectedDevice সেবা প্রকার ঘোষণা করে, যা android 14+ একটি bluetooth অনুমতির সাথে বাঁধে।</string>
+    <string name="settings_playback_only_title">শুধু প্লেব্যাক গুনুন</string>
+    <string name="settings_playback_only_body">পরিসংখ্যান সংযুক্ত থাকার সময়ের বদলে অডিও আসলে যতক্ষণ চলেছে তা গোনে। শুধু বিস্তারিত ট্র্যাকিং চালু রেখে রেকর্ড হওয়া সেশনেই প্লেব্যাক মাপা হয়েছে; বাকিগুলো বাদ যায়।</string>
     <string name="settings_language">ভাষা</string>
     <string name="settings_language_system">সিস্টেমের ভাষা</string>
     <string name="settings_devices">ডিভাইস</string>

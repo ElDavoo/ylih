@@ -53,6 +53,7 @@
     <string name="stats_playing">ऑडियो चाल रह्या</string>
     <string name="stats_measured_span">प्लेबैक खातर मापी गई</string>
     <string name="stats_share">प्लेबैक का हिस्सा</string>
+    <string name="stats_playback_only_note">बस प्लेबैक का टेम गिणै</string>
     <string name="stats_daily_hours_30">दैनिक घंटे (30 दिन)</string>
     <string name="stats_by_pair">जोड़ी के अनुसार</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">विस्तृत ट्रैकिंग</string>
     <string name="settings_detailed_body">तार वाले हेडफोन्स और प्लेबैक समय जोड़ता है। android केवल चलते ऐप को तार वाले प्लग इवेंट की रिपोर्ट करता है, इसलिए यह छाया में एक शांत सूचना रखता है। bluetooth किसी भी तरह से ट्रैक किया जाता है।</string>
     <string name="settings_detailed_unavailable">जब तक bluetooth एक्सेस नहीं दिया जाता तब तक उपलब्ध नहीं है: यह बिल्ड केवल connectedDevice सेवा प्रकार घोषित करता है, जिसे android 14+ एक bluetooth अनुमति से जोड़ता है।</string>
+    <string name="settings_playback_only_title">बस प्लेबैक गिणो</string>
+    <string name="settings_playback_only_body">आंकड़े जुड़े रहण के टेम की जगह ऑडियो असल म्ह चालण का टेम गिणै सै। बस वे सेशन जो विस्तृत ट्रैकिंग चालू होण पै रिकॉर्ड होए, उननै प्लेबैक नापी; बाकी छोड़ दिए जावै सै।</string>
     <string name="settings_language">भाषा</string>
     <string name="settings_language_system">सिस्टम की भाषा</string>
     <string name="settings_devices">डिवाइस</string>

@@ -53,6 +53,7 @@
     <string name="stats_playing">mũgambo kũruta</string>
     <string name="stats_measured_span">yemenyithĩtwo kwa kũruta</string>
     <string name="stats_share">gĩcunjĩ kĩa kũruta</string>
+    <string name="stats_playback_only_note">gũtara ĩhinda rĩa kũruta rĩoka</string>
     <string name="stats_daily_hours_30">mahinda ma rua (mahinda 30)</string>
     <string name="stats_by_pair">kwa mbere</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">ĩmenyithia ĩrĩa yoona</string>
     <string name="settings_detailed_body">yoongera mahoya ma rũruta na ruo rĩa kĩruta. android ĩrĩ na ũguo mĩruko ya rũruta ĩrĩa yoonyitwo kwa ruo ũmwe, nĩguo nĩ ũguo kana ũmwene ũrĩa ũrĩ na mahoya. bluetooth ĩmenyagwo kwa ndũ yothe.</string>
     <string name="settings_detailed_unavailable">ĩtaarĩ na ruo kuona android 14+ ĩmenyaga mahoya: kũruta kĩa ndũ ĩyo kĩroongo connectedDevice ĩrĩa mahoya ma bluetooth.</string>
+    <string name="settings_playback_only_title">tara kũruta gwoka</string>
+    <string name="settings_playback_only_body">mĩtarĩre ĩtaraga ĩhinda rĩrĩa mũgambo waarutaga kwĩ ma, ti ĩhinda rĩa kũnyiitithania. o mĩthenya ĩrĩa yaandĩkirwo ĩmenyithia ĩrĩa yoona ĩrĩ na mwaki niyo yathimire kũruta; ĩngĩ nĩĩtigagwa.</string>
     <string name="settings_language">rũthiomi</string>
     <string name="settings_language_system">rũthiomi rwa sisitemu</string>
     <string name="settings_devices">mĩruta</string>

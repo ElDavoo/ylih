@@ -53,6 +53,7 @@
     <string name="stats_playing">son o seniñ</string>
     <string name="stats_measured_span">muzuliet evit ar seniñ</string>
     <string name="stats_share">lodenn o seniñ</string>
+    <string name="stats_playback_only_note">ne vez kontet nemet an amzer seniñ</string>
     <string name="stats_daily_hours_30">eurvezhioù dre deiz (30 devezhioù)</string>
     <string name="stats_by_pair">dre barol</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">heuliadur en diwantet</string>
     <string name="settings_detailed_body">ouzhpennañ tonelloù gwiriek hag amzer kanañ. android ne roue kendaol gwele-kennaskañ nemet d\'ur prog a zo lanv, evit-se e tistro kuñviñ amañ en droed. bluetooth a heulier a-boa ur c\'hentañ.</string>
     <string name="settings_detailed_unavailable">c\'hortoz bi-se bluetooth da vezout graet kuzh: ar stajenn-mañ neus nemet sorzhioù connectedDevice, ar pezh a zo stag android 14+ d\'ur retlaij bluetooth.</string>
+    <string name="settings_playback_only_title">kontañ ar seniñ hepken</string>
+    <string name="settings_playback_only_body">ar stadegoù a gont an amzer ma oa ar son o seniñ e gwirionez e-lec\'h an amzer kevreet. n\'eus nemet ar prantadoù enrollet gant an heuliadur en diwantet gweredekaet o deus muzuliet ar seniñ; ar re all a vez lezet er-maez.</string>
     <string name="settings_language">yezh</string>
     <string name="settings_language_system">yezh ar reizhiad</string>
     <string name="settings_devices">tachenn</string>

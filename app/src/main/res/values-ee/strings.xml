@@ -53,6 +53,7 @@
     <string name="stats_playing">ŋu sua</string>
     <string name="stats_measured_span">wodzidze na ŋu sua</string>
     <string name="stats_share">ŋu sua ƒe akpa</string>
+    <string name="stats_playback_only_note">ŋu sua ƒe ɣeyiɣi ko wobuna</string>
     <string name="stats_daily_hours_30">gaƒoƒo ŋkeke ƒe (ŋkeke 30)</string>
     <string name="stats_by_pair">ɖokuɖo siwo ŋu</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">ŋkɔŋkɔ geɖea</string>
     <string name="settings_detailed_body">wɔ nufia heaphones kple ŋu sua ŋkɔ. android ŋu kɔ nufia ŋu nɔ program si le ŋu ko, ale be notifikasyon sisi yi ŋu hafi. bluetooth ŋkɔŋkɔ wɔ hã.</string>
     <string name="settings_detailed_unavailable">mele gbe o va se bluetooth tɔ na: programa sia gblɔ connectedDevice ŋutsu ko, si android 14+ fi bluetooth tɔ ŋu.</string>
+    <string name="settings_playback_only_title">bu ŋu sua ko</string>
+    <string name="settings_playback_only_body">akɔntabubuwo bua ɣeyiɣi si me ŋu la nɔ suam ŋutɔ, ke menye ɣeyiɣi si wode dɔa ŋu o. ɣeyiɣi siwo wolé esime ŋkɔŋkɔ geɖea nɔ dɔ wɔm ko dzidze ŋu sua; wogblẽa mamlɛawo ɖi.</string>
     <string name="settings_language">gbe</string>
     <string name="settings_language_system">sistem ƒe gbe</string>
     <string name="settings_devices">nyawo</string>

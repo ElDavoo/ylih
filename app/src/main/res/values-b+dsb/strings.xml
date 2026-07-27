@@ -53,6 +53,7 @@
     <string name="stats_playing">wótwóźenje zuka</string>
     <string name="stats_measured_span">měrjone za wótwóźenje</string>
     <string name="stats_share">źěl wótwóźenja</string>
+    <string name="stats_playback_only_note">liczy se jano cas wótwóźenja</string>
     <string name="stats_daily_hours_30">hodinow na źeń (30 dnjow)</string>
     <string name="stats_by_pair">po parach</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">detalny slepo</string>
     <string name="settings_detailed_body">naršywaš drótne naušniki a čas wótwóźenja. android zdźělujo drótne napšadeje jano žywjemu programej, togola sćě tu cicny powěźomjenje wóstawa. bluetooth se sćě slepowaš.</string>
     <string name="settings_detailed_unavailable">njejo dostupny, dokad bluetooth-towědnosć njejo dana: toś ta wersija jano connectedDevice-tšyp słužby prokljamujaš, što android 14+ na bluetooth-towědnosć wěžujaš.</string>
+    <string name="settings_playback_only_title">jano wótwóźenje liczyś</string>
+    <string name="settings_playback_only_body">statistika licy cas, gaž zuk napšawdu grajašo, město casa zwězanja. jano pósejźenja, kótarež su se z zapinjonym detalnym slepom nagrawali, su wótwóźenje měrili; te druge se wuwóstaju.</string>
     <string name="settings_language">rěc</string>
     <string name="settings_language_system">rěc systema</string>
     <string name="settings_devices">napšada</string>

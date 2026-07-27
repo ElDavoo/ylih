@@ -53,6 +53,7 @@
     <string name="stats_playing">nagpatugtog nga audio</string>
     <string name="stats_measured_span">gisukod para sa pagpatugtog</string>
     <string name="stats_share">bahin nga nagpatugtog</string>
+    <string name="stats_playback_only_note">oras sa pagpatugtog lang ang giihap</string>
     <string name="stats_daily_hours_30">pang-araw-araw na oras (30 araw)</string>
     <string name="stats_by_pair">bawat pares</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">detalyadong subaybay</string>
     <string name="settings_detailed_body">nagdadagdag ng mga headphones na may kable at oras ng pagtugtog. ang android ay sumusulong lamang sa mga kaganapang plug ng kable sa tumatakbong app, kaya nagpanatili ito ng tahimik na notification. ang bluetooth ay sinusubaybayan sa lahat ng paraan.</string>
     <string name="settings_detailed_unavailable">hindi available hanggang hindi ipagkaloob ang access sa bluetooth: ang build na ito ay nag-declare lamang ng connectedDevice service type, na ang android 14+ ay natatali sa isang bluetooth permission.</string>
+    <string name="settings_playback_only_title">ihapa ang pagpatugtog lang</string>
+    <string name="settings_playback_only_body">ang estadistika mag-ihap sa oras nga nagpatugtog gyud ang audio imbis sa oras nga konektado. ang mga sesyon lang nga narekord samtang naka-on ang detalyadong subaybay ang nakasukod sa pagpatugtog; ang uban dili apilon.</string>
     <string name="settings_language">pinulongan</string>
     <string name="settings_language_system">pinulongan sa sistema</string>
     <string name="settings_devices">mga device</string>

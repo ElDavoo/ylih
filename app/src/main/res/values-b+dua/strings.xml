@@ -53,6 +53,7 @@
     <string name="stats_playing">mfane ma jita</string>
     <string name="stats_measured_span">isoki o mfane</string>
     <string name="stats_share">epasi a mfane</string>
+    <string name="stats_playback_only_note">tanga póndá a mfane tɔ́</string>
     <string name="stats_daily_hours_30">mabe wa mílu (mílu 30)</string>
     <string name="stats_by_pair">ndúmu ndúmu emoto</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">isela isoki mayale</string>
     <string name="settings_detailed_body">ekoká bilonga nsele mfane wa mani. android enene bilonga nsele mbuá moto ilon muula moto, njiba ilinga mbuá ilinga nsele. bluetooth isele mu elongo.</string>
     <string name="settings_detailed_unavailable">ilinga ilambe ngaka bluetooth masolo osambé: likolo mota isela connectedDevice emoto moto, njiba android 14+ iya mbakara mi bluetooth masolo.</string>
+    <string name="settings_playback_only_title">tanga mfane tɔ́</string>
+    <string name="settings_playback_only_body">makwalɛ ma tanga póndá jita di ta di mafana mbale, esibe póndá a bwaba. mangenda ma tilabe na isela isoki mayale e busaka ma nde ma isi mfane; mape ma si tangabe.</string>
     <string name="settings_language">eyala</string>
     <string name="settings_language_system">eyala a sistɛm</string>
     <string name="settings_devices">moto esuala</string>

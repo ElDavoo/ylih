@@ -54,6 +54,7 @@
     <string name="stats_playing">відтворення звуку</string>
     <string name="stats_measured_span">виміряно для відтворення</string>
     <string name="stats_share">частка відтворення</string>
+    <string name="stats_playback_only_note">рахується лише час відтворення</string>
     <string name="stats_daily_hours_30">години на день (30 днів)</string>
     <string name="stats_by_pair">за парами</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -105,6 +106,8 @@
     <string name="settings_detailed_title">детальне відстеження</string>
     <string name="settings_detailed_body">додає дротові навушники та час відтворення. android повідомляє про підключення дротового роз\'єму лише запущеному застосунку, тож у шторці залишається тихе сповіщення. bluetooth відстежується у будь-якому разі.</string>
     <string name="settings_detailed_unavailable">недоступно, доки не надано доступ до bluetooth: ця збірка оголошує лише тип служби connectedDevice, який android 14+ прив\'язує до дозволу bluetooth.</string>
+    <string name="settings_playback_only_title">рахувати лише відтворення</string>
+    <string name="settings_playback_only_body">статистика рахує час, коли звук справді грав, а не час підключення. відтворення виміряли лише сеанси, записані з увімкненим детальним відстеженням; решта не враховується.</string>
     <string name="settings_language">мова</string>
     <string name="settings_language_system">мова системи</string>
     <string name="settings_devices">пристрої</string>

@@ -54,6 +54,7 @@
     <string name="stats_playing">오디오 재생 시간</string>
     <string name="stats_measured_span">재생 측정 시간</string>
     <string name="stats_share">재생 비율</string>
+    <string name="stats_playback_only_note">재생 시간만 집계</string>
     <string name="stats_daily_hours_30">일별 시간 (30일)</string>
     <string name="stats_by_pair">쌍별</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -105,6 +106,8 @@
     <string name="settings_detailed_title">상세 추적</string>
     <string name="settings_detailed_body">유선 헤드폰과 재생 시간을 추가로 기록합니다. android는 실행 중인 앱에만 유선 연결 이벤트를 전달하므로, 알림창에 조용한 알림이 하나 유지됩니다. 블루투스는 어느 쪽이든 추적됩니다.</string>
     <string name="settings_detailed_unavailable">블루투스 접근 권한을 허용해야 사용할 수 있습니다: 이 빌드는 connectedDevice 서비스 유형만 선언하며, android 14 이상에서는 이를 블루투스 권한과 연결합니다.</string>
+    <string name="settings_playback_only_title">재생 시간만 계산</string>
+    <string name="settings_playback_only_body">통계가 연결 시간 대신 실제로 오디오가 재생된 시간을 계산합니다. 재생을 측정한 것은 상세 추적을 켠 상태로 기록된 세션뿐이며, 나머지는 제외됩니다.</string>
     <string name="settings_language">언어</string>
     <string name="settings_language_system">시스템 언어</string>
     <string name="settings_devices">기기</string>

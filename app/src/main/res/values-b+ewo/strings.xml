@@ -53,6 +53,7 @@
     <string name="stats_playing">minkolo mi wulu</string>
     <string name="stats_measured_span">leŋed a minkolo</string>
     <string name="stats_share">abui minkolo</string>
+    <string name="stats_playback_only_note">lañ ntsogan minkolo mi wulu etam</string>
     <string name="stats_daily_hours_30">kuε ye zepot (zitom ye 30)</string>
     <string name="stats_by_pair">ti bikule</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">tiyo ye a vul</string>
     <string name="settings_detailed_body">ateng efan na minkolo eme tim. android atɔmba mɔnɔ ye efan menguma kumene a ndung ya mam, menguma zə a vul zə ti ndung bɔtɔ eve eme ɛkɔ. bluetooth ateng a keme mɔli mɔ zə zɔ mɔ.</string>
     <string name="settings_detailed_unavailable">a kɔ mɔ ndung manda, e mɔ permission ye bluetooth: sɔnda ane atɔmba nsibidi ye connectedDevice kumene a lone, android 14+ a bɔtɔ eve ti permission ye bluetooth.</string>
+    <string name="settings_playback_only_title">lañ minkolo mi wulu etam</string>
+    <string name="settings_playback_only_body">mimfeg mi lañ ntsogan minkolo mi nga wulu benyo, ke ntsogan ya nkobo. bibok bi nga tili ye tiyo ye a vul e bo etam bi nga leŋ minkolo; bifé bi ne osu.</string>
     <string name="settings_language">nkobo</string>
     <string name="settings_language_system">nkobo sistɛm</string>
     <string name="settings_devices">zindong</string>

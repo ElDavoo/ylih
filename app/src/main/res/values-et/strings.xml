@@ -53,6 +53,7 @@
     <string name="stats_playing">heli taasesitus</string>
     <string name="stats_measured_span">mõõdetud taasesituse jaoks</string>
     <string name="stats_share">taasesituse osakaal</string>
+    <string name="stats_playback_only_note">loeb ainult taasesituse aega</string>
     <string name="stats_daily_hours_30">tunni päevas (30 päeva)</string>
     <string name="stats_by_pair">paaride kaupa</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">detailne jälgimine</string>
     <string name="settings_detailed_body">lisab juhtmega kõrvaklapid ja taasesituse aja. android teatab juhtmega ühenduse sündmustest ainult töötavale rakendusele, seega see hoiab vaikset teatist varjus. bluetooth jälgitakse igal juhul.</string>
     <string name="settings_detailed_unavailable">saadaval alles pärast bluetooth juurdepääsu andmist: see versioon kuulutab ainult connectedDevice teenuse tüüpi, mille android 14+ seob bluetooth loaga.</string>
+    <string name="settings_playback_only_title">loe ainult taasesitust</string>
+    <string name="settings_playback_only_body">statistika loeb aega, mil heli tegelikult mängis, ühendatud aja asemel. taasesitust mõõtsid ainult seansid, mis salvestati sisselülitatud detailse jälgimisega; ülejäänud jäetakse välja.</string>
     <string name="settings_language">keel</string>
     <string name="settings_language_system">süsteemi keel</string>
     <string name="settings_devices">seadmed</string>

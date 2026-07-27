@@ -53,6 +53,7 @@
     <string name="stats_playing">сәс охунур</string>
     <string name="stats_measured_span">охутма үчүн өлчүлүб</string>
     <string name="stats_share">охутма пайы</string>
+    <string name="stats_playback_only_note">тәкҹә охутма вахты сајылыр</string>
     <string name="stats_daily_hours_30">күндік сағат (30 күн)</string>
     <string name="stats_by_pair">дәстә бойынша</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">толық іс-әрекет</string>
     <string name="settings_detailed_body">сызыңлы наўсыбырлысын және ойнау уақытын қосады. android сызыңлы қосылу оқиғаларын тек ұстағы қосынша құлға хабарлайды, сондықтан қіл сілтеме құсында құлайды. bluetooth кез келген жағдайда іс-әрекет.</string>
     <string name="settings_detailed_unavailable">bluetooth қосынша берілгенге дейін қолжетімсіз: бұл құрылым connectedDevice қызмет түрін ғана жариялайды, android 14+ оны bluetooth рұқсатына байланыстырады.</string>
+    <string name="settings_playback_only_title">тәкҹә охутманы сај</string>
+    <string name="settings_playback_only_body">статистика гошулма вахты јеринә сәсин һәгигәтән охундуғу вахты сајыр. тәкҹә әтрафлы изләмә ачыг икән гејдә алынан сессијалар охутманы өлчүб; галанлары чыхарылыр.</string>
     <string name="settings_language">дил</string>
     <string name="settings_language_system">систем дили</string>
     <string name="settings_devices">құрылғылар</string>

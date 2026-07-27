@@ -37,6 +37,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import it.eldavo.ylih.R
 import it.eldavo.ylih.data.EndReason
 import it.eldavo.ylih.data.SessionEntity
+import it.eldavo.ylih.stats.Counting
 import it.eldavo.ylih.stats.Stats
 import java.time.ZoneId
 
@@ -50,6 +51,7 @@ fun PairDetailScreen(
     val summary by viewModel.summary(pairId).collectAsStateWithLifecycle(initialValue = null)
     val sessions by viewModel.sessions(pairId).collectAsStateWithLifecycle(initialValue = emptyList())
     val now by viewModel.now.collectAsStateWithLifecycle()
+    val counting by viewModel.counting.collectAsStateWithLifecycle()
     val zone = ZoneId.systemDefault()
 
     var menuOpen by remember { mutableStateOf(false) }
@@ -60,7 +62,7 @@ fun PairDetailScreen(
 
     val current = summary
     val spans = sessions.map { it.toSpan() }
-    val stats = Stats.summarize(spans, now)
+    val stats = Stats.summarize(spans, now, counting)
 
     Scaffold(
         modifier = Modifier.padding(bottom = contentPadding.calculateBottomPadding()),
@@ -122,7 +124,13 @@ fun PairDetailScreen(
                     val generation = current?.generation ?: 1
                     Text(
                         listOfNotNull(
-                            stringResource(R.string.pair_lifetime),
+                            // The headline is no longer a lifetime when it counts playback, and
+                            // this line is the only place on the screen that can say which.
+                            if (counting == Counting.PLAYBACK) {
+                                stringResource(R.string.stats_playback_only_note)
+                            } else {
+                                stringResource(R.string.pair_lifetime)
+                            },
                             current?.deviceKind?.displayName(),
                             stringResource(R.string.devices_generation, generation)
                                 .takeIf { generation > 1 },
@@ -172,19 +180,21 @@ fun PairDetailScreen(
                     StatRow(
                         listOf(
                             stringResource(R.string.stats_today) to
-                                formatHours(Stats.recentMs(spans, zone, now, 1)),
+                                formatHours(Stats.recentMs(spans, zone, now, 1, counting)),
                             stringResource(R.string.stats_last_7) to
-                                formatHours(Stats.recentMs(spans, zone, now, 7)),
+                                formatHours(Stats.recentMs(spans, zone, now, 7, counting)),
                             stringResource(R.string.stats_last_30) to
-                                formatHours(Stats.recentMs(spans, zone, now, 30)),
+                                formatHours(Stats.recentMs(spans, zone, now, 30, counting)),
                         ),
                     )
                     if (stats.hasPlaybackData) {
                         Spacer(Modifier.height(8.dp))
                         StatRow(
-                            listOf(
-                                stringResource(R.string.stats_playing) to
-                                    formatHours(stats.playingMs),
+                            listOfNotNull(
+                                // Counting playback, the headline above already *is* this figure.
+                                (stringResource(R.string.stats_playing) to
+                                    formatHours(stats.playingMs))
+                                    .takeIf { counting == Counting.CONNECTED },
                                 stringResource(R.string.pair_of_measured) to
                                     percent(stats.playingMs, stats.measuredMs),
                                 stringResource(R.string.pair_measured) to
@@ -213,7 +223,9 @@ fun PairDetailScreen(
                         style = MaterialTheme.typography.titleSmallEmphasized,
                     )
                     Spacer(Modifier.height(8.dp))
-                    DailyBarChart(series = Stats.dailySeries(spans, zone, now, days = 14))
+                    DailyBarChart(
+                        series = Stats.dailySeries(spans, zone, now, days = 14, counting = counting),
+                    )
                 }
             }
             item { SectionHeader(stringResource(R.string.pair_sessions)) }

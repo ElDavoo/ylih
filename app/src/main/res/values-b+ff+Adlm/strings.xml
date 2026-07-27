@@ -53,6 +53,7 @@
     <string name="stats_playing">huulnde</string>
     <string name="stats_measured_span">betaango ngam huulnde</string>
     <string name="stats_share">geɓal huulnde</string>
+    <string name="stats_playback_only_note">limtude tan sahaa huulnde</string>
     <string name="stats_daily_hours_30">saaji ɓalɓaccere (30 ɓalɓacce)</string>
     <string name="stats_by_pair">jeeɓere-jeeɓere</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">jannginol carminore</string>
     <string name="settings_detailed_body">baynu kaalangal jeeɗgal e jinnde huulnde. android gaɗa seeɗ jeeɗgal njuŋŋu ɗiɗi njuŋŋitere, haa ko ndee teli baɓɓ e teñ. bluetooth jannginaaɗo juulem.</string>
     <string name="settings_detailed_unavailable">ndilta redu bluetooth heewɗo: taruuji maa seelitoo nde connectedDevice duman, android 14+ gootoo e bluetooth jumnitoore.</string>
+    <string name="settings_playback_only_title">limtu tan huulnde</string>
+    <string name="settings_playback_only_body">limlimte ɗe limta sahaa mo hito ngo huuli goonga, wanaa sahaa jokkondiral. kojolli ɗi winndaa e jannginol carminore uddaa tan ɗi betii huulnde; keddiiɗi ina acce.</string>
     <string name="settings_language">𞤸𞤢𞥄𞤤𞤢</string>
     <string name="settings_language_system">𞤸𞤢𞥄𞤤𞤢 𞤧𞤭𞤧𞤼𞤫𞤥</string>
     <string name="settings_devices">taruuji</string>

@@ -69,6 +69,7 @@ class SettingsScreenTest {
         shadowOf(app).grantPermissions(Manifest.permission.BLUETOOTH_CONNECT)
         db.deviceDao().deleteAll()
         settings.setDetailedTracking(false)
+        settings.setPlaybackOnly(false)
         // Left over, this would compose the whole screen in whichever language the last test
         // picked — see the note on awaitDetailedTracking about why it is put back from here.
         settings.setLanguage(AppLocale.SYSTEM)
@@ -132,16 +133,30 @@ class SettingsScreenTest {
         }
     }
 
+    private fun awaitPlaybackOnly(on: Boolean) {
+        settle("playback-only stats to be $on") {
+            runBlocking { settings.playbackOnlyNow() } == on
+        }
+    }
+
     /** Settings is a plain scrolling column, so the target brings itself into view. */
     private fun scrollTo(value: String) {
         compose.onAllNodesWithText(value, substring = true).onFirst().performScrollTo()
     }
 
+    /**
+     * `isToggleable()` alone is ambiguous — there are two switches in the tracking section and a
+     * checkbox per known device. Each row merges its own labels, so the label beside a control is
+     * what tells them apart, and it keeps working when another row is added above.
+     */
+    private fun toggleBesides(label: String) =
+        compose.onNode(isToggleable() and hasAnyAncestor(hasText(label)))
+
     @Test
     fun `the tracking switch writes the setting through, both ways`() {
         show()
 
-        val switch = compose.onNode(isToggleable())
+        val switch = toggleBesides(text(R.string.settings_detailed_title))
         switch.assertIsOff()
         switch.performClick()
         awaitDetailedTracking(on = true)
@@ -178,6 +193,35 @@ class SettingsScreenTest {
     }
 
     @Test
+    fun `the playback switch writes the setting through, both ways`() {
+        show()
+
+        val switch = toggleBesides(text(R.string.settings_playback_only_title))
+        switch.assertIsOff()
+        switch.performClick()
+        awaitPlaybackOnly(on = true)
+        switch.assertIsOn()
+
+        switch.performClick()
+        awaitPlaybackOnly(on = false)
+        switch.assertIsOff()
+    }
+
+    @Test
+    fun `a build that cannot measure playback does not offer to count it`() {
+        shadowOf(app).denyPermissions(Manifest.permission.BLUETOOTH_CONNECT)
+
+        show()
+
+        assertEquals(
+            "only the foreground service ever measures playback, so without it the switch " +
+                "would offer a column of zeroes",
+            if (Distribution.HAS_SPECIAL_USE_FGS) 1 else 0,
+            nodeCount(text(R.string.settings_playback_only_title)),
+        )
+    }
+
+    @Test
     fun `each known device can be excluded from tracking`() {
         val deviceId = seedDevice()
         show()
@@ -198,7 +242,7 @@ class SettingsScreenTest {
         show()
 
         scrollTo("ACCENTUM Plus")
-        compose.onAllNodes(isToggleable())[1].performClick()
+        toggleBesides("ACCENTUM Plus").performClick()
 
         settle("the device to be tracked again") {
             runBlocking { !db.deviceDao().byId(deviceId)!!.ignored }
@@ -280,8 +324,10 @@ class SettingsScreenTest {
     fun `the battery advice is a shortcut or a path, never nothing`() {
         show()
 
-        scrollTo(text(R.string.settings_troubleshooting))
         if (Distribution.HAS_BATTERY_SHORTCUT) {
+            // The button itself, not the section header above it: a row added higher up the
+            // screen otherwise pushes it back out of the viewport and the tap lands on nothing.
+            scrollTo(text(R.string.settings_battery_button))
             compose.onNodeWithText(text(R.string.settings_battery_button)).performClick()
             assertEquals(
                 Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS,

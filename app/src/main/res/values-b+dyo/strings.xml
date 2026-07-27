@@ -53,6 +53,7 @@
     <string name="stats_playing">caani</string>
     <string name="stats_measured_span">waray ba tayoy caani</string>
     <string name="stats_share">pak bu caani</string>
+    <string name="stats_playback_only_note">furak caani mati ɔrɔ</string>
     <string name="stats_daily_hours_30">waray ba dima (30 bu taasu)</string>
     <string name="stats_by_pair">yontoo ji buuba</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">tayoy ba bu coñon</string>
     <string name="settings_detailed_body">coñon koosan ji bambung be, be a tayoy ni caani waray. android ma sandi koosan ji bambung ba conko waray ba bu gani app yi tundi, se notification ba bu kaañ be. bluetooth yi tayoy bu yonnal du.</string>
     <string name="settings_detailed_unavailable">anaa bayandi jabe bluetooth ba bukandu ba: build yi ma caani connectedDevice ba gani, android 14+ ma gani a bluetooth ba bukandu.</string>
+    <string name="settings_playback_only_title">furak caani ɔrɔ</string>
+    <string name="settings_playback_only_body">furakaŋ e furak waktu bu caani ecaan bare, bare waktu bu tayoy. sesyoŋ su e sikat na tayoy ba bu coñon ɔrɔ su e waray caani; su siyaŋ su e bɔ.</string>
     <string name="settings_language">kalanŋ</string>
     <string name="settings_language_system">kalanŋ ka sistem</string>
     <string name="settings_devices">yindoo</string>

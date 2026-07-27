@@ -55,6 +55,7 @@
     <string name="stats_playing">تشغيل الصوت</string>
     <string name="stats_measured_span">المقاس للتشغيل</string>
     <string name="stats_share">نسبة التشغيل</string>
+    <string name="stats_playback_only_note">احتساب وقت التشغيل فقط</string>
     <string name="stats_daily_hours_30">الساعات اليومية (30 يومًا)</string>
     <string name="stats_by_pair">حسب الزوج</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -106,6 +107,8 @@
     <string name="settings_detailed_title">التتبع التفصيلي</string>
     <string name="settings_detailed_body">يضيف السماعات السلكية ووقت التشغيل. لا يُبلّغ android عن أحداث توصيل السماعة السلكية إلا لتطبيق قيد التشغيل، لذا يبقي هذا إشعارًا صامتًا في لوحة الإشعارات. يُتتبَّع bluetooth في الحالتين.</string>
     <string name="settings_detailed_unavailable">غير متاح حتى يُمنح الوصول إلى bluetooth: يعلن هذا الإصدار فقط عن نوع الخدمة connectedDevice، الذي يربطه android 14 وما بعده بإذن bluetooth.</string>
+    <string name="settings_playback_only_title">احتساب التشغيل فقط</string>
+    <string name="settings_playback_only_body">تحتسب الإحصاءات الوقت الذي كان الصوت يعمل فيه فعلاً بدلاً من وقت الاتصال. الجلسات المسجّلة أثناء تفعيل التتبع التفصيلي وحدها قاست التشغيل، أما البقية فتُستبعد.</string>
     <string name="settings_language">اللغة</string>
     <string name="settings_language_system">لغة النظام</string>
     <string name="settings_devices">الأجهزة</string>

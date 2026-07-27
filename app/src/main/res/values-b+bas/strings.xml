@@ -53,6 +53,7 @@
     <string name="stats_playing">dɔ́ i hɔp</string>
     <string name="stats_measured_span">ba sɔŋ inyu dɔ́</string>
     <string name="stats_share">ngim i dɔ́</string>
+    <string name="stats_playback_only_note">làŋ nkɛ́ i dɔ́ tɔ́</string>
     <string name="stats_daily_hours_30">kwé/ñen (30 ñen)</string>
     <string name="stats_by_pair">bo kuɓ</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">sɔŋ bu dɔ́</string>
     <string name="settings_detailed_body">ba dím wìm mɛ dɔ́ bi. android ka gɛ̀ événement wìm sa app ba jí, so notification ba nà ba shady. bluetooth ba sɔŋ nàŋ.</string>
     <string name="settings_detailed_unavailable">ku ka toʔ sa bluetooth permission ba dib: app ba dém connectedDevice so android 14+ ba sɔŋ bi bluetooth permission.</string>
+    <string name="settings_playback_only_title">làŋ dɔ́ tɔ́</string>
+    <string name="settings_playback_only_body">makidik ma làŋ nkɛ́ dɔ́ i bi hɔp, ha nkɛ́ i kɔblag bé. mahop ma ba tila ni sɔŋ bu dɔ́ ma nyɛn ma sɔŋ dɔ́; ma pɛ ma nlo bé.</string>
     <string name="settings_language">hɔp</string>
     <string name="settings_language_system">hɔp sistɛm</string>
     <string name="settings_devices">kuɓ</string>

@@ -55,6 +55,7 @@
     <string name="stats_playing">אודיו מתנגן</string>
     <string name="stats_measured_span">נמדד עבור השמעה</string>
     <string name="stats_share">אחוז השמעה</string>
+    <string name="stats_playback_only_note">נספר רק זמן ההשמעה</string>
     <string name="stats_daily_hours_30">שעות יומיות (30 ימים)</string>
     <string name="stats_by_pair">לפי זוג</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -106,6 +107,8 @@
     <string name="settings_detailed_title">מעקב מפורט</string>
     <string name="settings_detailed_body">מוסיף אוזניות חוטיות וזמן השמעה. android מדווח על חיבור חוטי רק לאפליקציה שרצה, ולכן זה משאיר התראה שקטה במגירת ההתראות. אחרי bluetooth עוקבים כך או כך.</string>
     <string name="settings_detailed_unavailable">לא זמין עד שתינתן גישה ל-bluetooth: הגרסה הזאת מצהירה רק על סוג השירות connectedDevice, ש-android 14+ קושר להרשאת bluetooth.</string>
+    <string name="settings_playback_only_title">לספור רק השמעה</string>
+    <string name="settings_playback_only_body">הסטטיסטיקה סופרת את הזמן שבו האודיו באמת התנגן במקום את זמן החיבור. רק הפעלות שנרשמו כשמעקב מפורט היה פעיל מדדו השמעה; השאר נשארות בחוץ.</string>
     <string name="settings_language">שפה</string>
     <string name="settings_language_system">שפת המערכת</string>
     <string name="settings_devices">התקנים</string>

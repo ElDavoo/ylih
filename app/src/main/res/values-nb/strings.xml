@@ -56,6 +56,7 @@
     <string name="stats_playing">lydavspilling</string>
     <string name="stats_measured_span">målt for avspilling</string>
     <string name="stats_share">andel avspilling</string>
+    <string name="stats_playback_only_note">teller bare avspillingstid</string>
     <string name="stats_daily_hours_30">timer per dag (30 dager)</string>
     <string name="stats_by_pair">per par</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -107,6 +108,8 @@
     <string name="settings_detailed_title">detaljert sporing</string>
     <string name="settings_detailed_body">legger til kablede hodetelefoner og avspillingstid. android rapporterer kun kabelhendelser til en app som kjører, så dette holder en stille varsling i varslingspanelet. bluetooth spores uansett.</string>
     <string name="settings_detailed_unavailable">utilgjengelig til bluetooth-tilgang er gitt: denne utgaven deklarerer bare tjenestetypen connectedDevice, som android 14+ knytter til en bluetooth-tillatelse.</string>
+    <string name="settings_playback_only_title">tell bare avspilling</string>
+    <string name="settings_playback_only_body">statistikken teller tiden lyden faktisk spilte i stedet for tiden tilkoblet. bare økter som ble registrert med detaljert sporing på, målte avspilling; resten holdes utenfor.</string>
     <string name="settings_language">språk</string>
     <string name="settings_language_system">systemspråk</string>
     <string name="settings_devices">enheter</string>

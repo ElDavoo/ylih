@@ -50,6 +50,7 @@ import it.eldavo.ylih.AppLocale
 import it.eldavo.ylih.BuildConfig
 import it.eldavo.ylih.R
 import it.eldavo.ylih.Distribution
+import it.eldavo.ylih.stats.Counting
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
@@ -61,6 +62,7 @@ fun SettingsScreen(
 ) {
     val context = LocalContext.current
     val detailed by viewModel.detailedTracking.collectAsStateWithLifecycle()
+    val counting by viewModel.counting.collectAsStateWithLifecycle()
     val devices by viewModel.devices.collectAsStateWithLifecycle()
     val language by viewModel.language.collectAsStateWithLifecycle()
     var confirmImport by remember { mutableStateOf<android.net.Uri?>(null) }
@@ -126,6 +128,36 @@ fun SettingsScreen(
                 enabled = detailedSupported || detailed,
                 onCheckedChange = { viewModel.setDetailedTracking(it) },
             )
+        }
+        // Playback is only ever measured by the foreground service, so on a build that cannot run
+        // it the choice would be between real hours and a column of zeroes. Offering it once the
+        // service is possible, rather than once it is running, keeps history recorded earlier
+        // readable after detailed tracking is switched back off.
+        if (detailedSupported || detailed) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable { viewModel.setPlaybackOnly(counting != Counting.PLAYBACK) }
+                    .padding(16.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Column(Modifier.weight(1f)) {
+                    Text(
+                        stringResource(R.string.settings_playback_only_title),
+                        style = MaterialTheme.typography.bodyLarge,
+                    )
+                    Text(
+                        stringResource(R.string.settings_playback_only_body),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+                Spacer(Modifier.width(12.dp))
+                Switch(
+                    checked = counting == Counting.PLAYBACK,
+                    onCheckedChange = { viewModel.setPlaybackOnly(it) },
+                )
+            }
         }
         HorizontalDivider()
 

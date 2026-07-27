@@ -53,6 +53,7 @@
     <string name="stats_playing">སྒྲ་གཏང་ནི།</string>
     <string name="stats_measured_span">གཏང་ནིའི་དོན་ལུ་ཆ་ཚད།</string>
     <string name="stats_share">གཏང་ནིའི་བརྒྱ་ཆ།</string>
+    <string name="stats_playback_only_note">སྒྲ་གཏང་ནིའི་དུས་ཚོད་རྐྱངམ་ཅིག་རྩིས།</string>
     <string name="stats_daily_hours_30">ཉིན་རེའི་ཆུ་ཙོ་ (༧དགུ་ ཉིན་)</string>
     <string name="stats_by_pair">ཕོ་ཉ་ནས།</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">ཞིབ་ཕྲ་གླེང་སྟེགས།</string>
     <string name="settings_detailed_body">གའུ་མཐུད་པའི་གོ་སང་ཕོ་ཉ་དང་གླེང་སྡེབའི་དུས་ཚོད་ཀ་བསྲེས་དུ། android ནི་གའུ་མཐུད་པའི་དུས་ལ་དུས་གཏུབ་གནས་པའི་གཏུབ་གཅིག་ལ་དབྱེ་བ་གནས་དུ་སྲིད་པས། མེ་མདེན་དུ་སེང་གིས་གླེང་བརྗོད་ལ་གནས་དུ་སྲིད་པ། bluetooth དེ་ལས་གླེང་སྟེགས་བྱུང་ལ། </string>
     <string name="settings_detailed_unavailable">bluetooth ལ་ལེབ་ལེབ་བྱིན་པའི་དུས་སུ་དེ་ཐུབ་ཀྱི་ཡིན་ གླེང་སྐོར་འདི་ནི་bluetooth དེའི་ལེབ་ལེབ་གདན་པའི་connectedDevice དེ་ལ་དབྱེ་བ་གནས་དུ་སྲིད་པས། </string>
+    <string name="settings_playback_only_title">སྒྲ་གཏང་ནི་རྐྱངམ་ཅིག་རྩིས།</string>
+    <string name="settings_playback_only_body">གྲངས་ཐོ་གིས་མཐུད་ཡོད་པའི་དུས་ཚོད་ཀྱི་ཚབ་ལུ་སྒྲ་ངོ་མ་གཏང་ཡོད་པའི་དུས་ཚོད་རྩིསཝ་ཨིན། ཞིབ་ཕྲ་གླེང་སྟེགས་ཁ་ཕྱེ་སྟེ་བཟུང་ཡོད་པའི་ལཱ་ཐེངས་ཚུ་རྐྱངམ་ཅིག་གིས་སྒྲ་གཏང་ནི་ཆ་ཚད་བཟུང་ནུག གཞན་ཚུ་བཞག་ནུག</string>
     <string name="settings_language">སྐད་ཡིག</string>
     <string name="settings_language_system">རིམ་ལུགས་ཀྱི་སྐད་ཡིག</string>
     <string name="settings_devices">སྒྲིག་ཆས།</string>

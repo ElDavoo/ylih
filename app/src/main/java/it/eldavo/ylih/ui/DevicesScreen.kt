@@ -31,6 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import it.eldavo.ylih.R
 import it.eldavo.ylih.data.PairSummary
+import it.eldavo.ylih.stats.Counting
 import it.eldavo.ylih.stats.Span
 import it.eldavo.ylih.stats.Stats
 import java.time.ZoneId
@@ -45,6 +46,7 @@ fun DevicesScreen(
     val summaries by viewModel.summaries.collectAsStateWithLifecycle()
     val spansByPair by viewModel.spansByPair.collectAsStateWithLifecycle()
     val now by viewModel.now.collectAsStateWithLifecycle()
+    val counting by viewModel.counting.collectAsStateWithLifecycle()
     val zone = ZoneId.systemDefault()
 
     val active = summaries.filter { it.retiredAt == null }
@@ -69,6 +71,7 @@ fun DevicesScreen(
                     spans = spansByPair[summary.pairId].orEmpty(),
                     now = now,
                     zone = zone,
+                    counting = counting,
                     onClick = { onOpenPair(summary.pairId) },
                 )
             }
@@ -81,6 +84,7 @@ fun DevicesScreen(
                     spans = spansByPair[summary.pairId].orEmpty(),
                     now = now,
                     zone = zone,
+                    counting = counting,
                     onClick = { onOpenPair(summary.pairId) },
                 )
             }
@@ -115,10 +119,11 @@ private fun PairCard(
     spans: List<Span>,
     now: Long,
     zone: ZoneId,
+    counting: Counting,
     onClick: () -> Unit,
 ) {
-    val lifetimeMs = summary.closedMs + (summary.openSince?.let { now - it } ?: 0L)
-    val last7 = Stats.recentMs(spans, zone, now, days = 7)
+    val lifetimeMs = summary.countedMs(now, counting)
+    val last7 = Stats.recentMs(spans, zone, now, days = 7, counting = counting)
 
     Card(
         onClick = onClick,

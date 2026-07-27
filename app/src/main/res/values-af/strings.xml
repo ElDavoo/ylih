@@ -53,6 +53,7 @@
     <string name="stats_playing">klank speel</string>
     <string name="stats_measured_span">gemeet vir terugspeel</string>
     <string name="stats_share">speelaandeel</string>
+    <string name="stats_playback_only_note">tel net terugspeeltyd</string>
     <string name="stats_daily_hours_30">daaglikse ure (30 dae)</string>
     <string name="stats_by_pair">per paar</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">gedetailleerde opvolging</string>
     <string name="settings_detailed_body">voeg bedraad koptelefone en afspeeltyd by. android deel bedradestekkergebeure slegs met lopende toepassings, dus sal dit \'n stille kennisgeving in die skyf hou. bluetooth word in beide gevalle opgevolg.</string>
     <string name="settings_detailed_unavailable">onbeskikbaar totdat bluetooth-toegang verleen word: hierdie bou verklaar slegs die connectedDevice-dienstipe, wat android 14+ aan \'n bluetooth-toestemming bind.</string>
+    <string name="settings_playback_only_title">tel net terugspeel</string>
+    <string name="settings_playback_only_body">statistieke tel die tyd wat klank werklik gespeel het, nie die tyd gekoppel nie. net sessies wat met gedetailleerde opvolging aan opgeneem is, het terugspeel gemeet; die res word weggelaat.</string>
     <string name="settings_language">taal</string>
     <string name="settings_language_system">stelseltaal</string>
     <string name="settings_devices">toestelle</string>

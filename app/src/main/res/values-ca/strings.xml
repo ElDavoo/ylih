@@ -52,6 +52,7 @@
     <string name="stats_playing">àudio reproduint-se</string>
     <string name="stats_measured_span">mesurat per a la reproducció</string>
     <string name="stats_share">proporció reproduint</string>
+    <string name="stats_playback_only_note">només es compta el temps de reproducció</string>
     <string name="stats_daily_hours_30">hores diàries (30 dies)</string>
     <string name="stats_by_pair">per parell</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -103,6 +104,8 @@
     <string name="settings_detailed_title">seguiment detallat</string>
     <string name="settings_detailed_body">afegeix auriculars filats i temps de reproducció. android només comunica els events de connexió filada a l\'app si s\'està executant, per tant aquí queda una notificació silenciosa a la barra. bluetooth es segueix de totes formes.</string>
     <string name="settings_detailed_unavailable">no disponible fins que es concedeixi accés bluetooth: aquesta versió només declara el tipus de servei connectedDevice, que android 14+ vincula a un permís bluetooth.</string>
+    <string name="settings_playback_only_title">compta només la reproducció</string>
+    <string name="settings_playback_only_body">les estadístiques compten el temps que l\'àudio s\'estava reproduint de debò en lloc del temps connectat. només les sessions enregistrades amb el seguiment detallat activat van mesurar la reproducció; la resta queden fora.</string>
     <string name="settings_language">idioma</string>
     <string name="settings_language_system">idioma del sistema</string>
     <string name="settings_devices">dispositius</string>

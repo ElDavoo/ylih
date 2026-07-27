@@ -53,6 +53,7 @@
     <string name="stats_playing">odtwarzanie dźwięku</string>
     <string name="stats_measured_span">mierzone dla odtwarzania</string>
     <string name="stats_share">udział odtwarzania</string>
+    <string name="stats_playback_only_note">liczy się tylko czas odtwarzania</string>
     <string name="stats_daily_hours_30">godziny dziennie (30 dni)</string>
     <string name="stats_by_pair">według pary</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">szczegółowe śledzenie</string>
     <string name="settings_detailed_body">dodaje słuchawki przewodowe i czas odtwarzania. android zgłasza zdarzenia podłączenia jacka tylko działającej aplikacji, dlatego utrzymuje to cichą notyfikację na pasku. bluetooth jest śledzony tak czy inaczej.</string>
     <string name="settings_detailed_unavailable">niedostępne, dopóki nie przyznasz dostępu do bluetooth: ta wersja deklaruje tylko typ usługi connectedDevice, który android 14+ wiąże z uprawnieniem bluetooth.</string>
+    <string name="settings_playback_only_title">licz tylko odtwarzanie</string>
+    <string name="settings_playback_only_body">statystyki liczą czas, przez który dźwięk naprawdę grał, zamiast czasu połączenia. odtwarzanie zmierzyły tylko sesje zapisane przy włączonym szczegółowym śledzeniu; reszta jest pomijana.</string>
     <string name="settings_language">język</string>
     <string name="settings_language_system">język systemu</string>
     <string name="settings_devices">urządzenia</string>

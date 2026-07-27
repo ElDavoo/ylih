@@ -53,6 +53,7 @@
     <string name="stats_playing">kumakan taara</string>
     <string name="stats_measured_span">sumanini taara kama</string>
     <string name="stats_share">taara niyɔrɔ</string>
+    <string name="stats_playback_only_note">taara waati dɔrɔn de jate</string>
     <string name="stats_daily_hours_30">kɔrɔ-juman (gɛrɛ 30)</string>
     <string name="stats_by_pair">kopila kɔrɔ</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">duuma surun</string>
     <string name="settings_detailed_body">silamun kopila ni taara duumi ma sigida kɔrɔ. android bi silamun jiginna kuma dafa sira bari jɔrɔ kɔnɔ gara, o yɛrɛ jɛ kɔnɔ biɔ ma sigida sumarako ma gɛ. bluetooth bi ma jiginna duuma bɛ.</string>
     <string name="settings_detailed_unavailable">a ma se se dɔrɔn ka bluetooth sigida wɛrɛ: aparatigi yen connectedDevice sɛrvi jɔ dafa dɔ, android 14+ bi bluetooth sigida ma jɛ ka cogo.</string>
+    <string name="settings_playback_only_title">taara dɔrɔn jate</string>
+    <string name="settings_playback_only_body">jatebɔ bɛ waati min na kumakan tun bɛ taara tiɲɛ na, o de jate, sigi waati tɛ. sɛgɛsɛgɛli minnu sɛbɛnna duuma surun bɛ senkan, olu dɔrɔn ye taara suman; tɔw bɛ bɔ.</string>
     <string name="settings_language">kan</string>
     <string name="settings_language_system">sistɛmu kan</string>
     <string name="settings_devices">aparatigi</string>

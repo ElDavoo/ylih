@@ -54,6 +54,7 @@
     <string name="stats_playing">เสียงกำลังเล่น</string>
     <string name="stats_measured_span">วัดสำหรับการเล่น</string>
     <string name="stats_share">สัดส่วนการเล่น</string>
+    <string name="stats_playback_only_note">นับเฉพาะเวลาที่เล่นเสียง</string>
     <string name="stats_daily_hours_30">ชั่วโมงต่อวัน (30 วัน)</string>
     <string name="stats_by_pair">แยกตามคู่</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -105,6 +106,8 @@
     <string name="settings_detailed_title">การติดตามแบบละเอียด</string>
     <string name="settings_detailed_body">เพิ่มหูฟังแบบมีสายและเวลาการเล่นเสียง android จะรายงานเหตุการณ์เสียบสายให้กับแอปที่กำลังทำงานอยู่เท่านั้น จึงต้องมีการแจ้งเตือนแบบเงียบค้างอยู่ ส่วนบลูทูธจะถูกติดตามอยู่แล้วไม่ว่ากรณีใด</string>
     <string name="settings_detailed_unavailable">ใช้งานไม่ได้จนกว่าจะให้สิทธิ์เข้าถึงบลูทูธ บิลด์นี้ประกาศเฉพาะประเภทบริการ connectedDevice ซึ่ง android 14 ขึ้นไปผูกไว้กับสิทธิ์บลูทูธ</string>
+    <string name="settings_playback_only_title">นับเฉพาะการเล่น</string>
+    <string name="settings_playback_only_body">สถิติจะนับเวลาที่เสียงเล่นจริงแทนเวลาที่เชื่อมต่อ มีเพียงเซสชันที่บันทึกขณะเปิดการติดตามแบบละเอียดเท่านั้นที่วัดการเล่นไว้ ที่เหลือจะไม่ถูกนับ</string>
     <string name="settings_language">ภาษา</string>
     <string name="settings_language_system">ภาษาของระบบ</string>
     <string name="settings_devices">อุปกรณ์</string>

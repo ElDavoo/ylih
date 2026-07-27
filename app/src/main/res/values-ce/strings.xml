@@ -53,6 +53,7 @@
     <string name="stats_playing">аз ловзадар</string>
     <string name="stats_measured_span">ловзадарна из йина</string>
     <string name="stats_share">ловзадаран дакъа</string>
+    <string name="stats_playback_only_note">ловзадаран хан бен ца лору</string>
     <string name="stats_daily_hours_30">сак соьатаяр (30 ДӀа)</string>
     <string name="stats_by_pair">паран яьлча</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">омара дӏаяьллер</string>
     <string name="settings_detailed_body">проводан наухьанар вогӏуьччу а воспроизведение доза. android проводан жима йоьшу эвен лайла йохьанах яц дӏа пешера, иза тӏе бӏалташча дахьалыр адӏаяьлла арна. bluetooth кхачу огӏаре дӏаяьллам йа.</string>
     <string name="settings_detailed_unavailable">bluetooth боьлу-норма йалех йаьсса далаза магӏалам. мындара сборка connectedDevice сервис төр огӏуььча, а-дан android 14+ bluetooth боьлу-норма вогӏуьйча.</string>
+    <string name="settings_playback_only_title">ловзадар бен ма лара</string>
+    <string name="settings_playback_only_body">статистико лору аз бакъдолуш ловзийна хан, хӀоттийна хан яц. омара дӏаяьллер деллачу хенахь язйина сессеш бен ловзадар ца дийцина; кхин йолчарна тӀера дӏаоьху.</string>
     <string name="settings_language">мотт</string>
     <string name="settings_language_system">системин мотт</string>
     <string name="settings_devices">устройстваш</string>

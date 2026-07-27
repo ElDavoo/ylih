@@ -13,7 +13,9 @@ Every connection is stored forever, locally. Nothing leaves the phone.
   headphones, which Android cannot tell apart from each other at all.
 - **Every session**, kept permanently: connected at, disconnected at, and why it ended.
 - **Playback time** (optional): how much of the connected time was actually playing audio, so
-  "worn around my neck" doesn't count as listening.
+  "worn around my neck" doesn't count as listening. A switch in Settings makes every figure in the
+  app count that instead of connected time; sessions recorded before detailed tracking was on never
+  measured playback, so they are left out rather than counted as zero.
 - **Cost per hour**, if you enter what you paid.
 
 ## The two tracking modes

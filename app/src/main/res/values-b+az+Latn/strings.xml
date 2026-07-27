@@ -53,6 +53,7 @@
     <string name="stats_playing">səs oxunur</string>
     <string name="stats_measured_span">oxutma üçün ölçülüb</string>
     <string name="stats_share">oxutma payı</string>
+    <string name="stats_playback_only_note">yalnız oxutma vaxtı sayılır</string>
     <string name="stats_daily_hours_30">günlük saatlar (30 gün)</string>
     <string name="stats_by_pair">cütlüyə görə</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">ətraflı izləmə</string>
     <string name="settings_detailed_body">simlə qulaqlıqlar və oynatma vaxtını əlavə edir. android simlə qoşulma hadisələrini yalnız işləyən bir tətbiqə bildirər, buna görə də bildirişlər şkalatosu sakit qalır. bluetooth hər halda izlənir.</string>
     <string name="settings_detailed_unavailable">bluetooth icazəsi verilənə qədər mövcud deyil: bu qurğu yalnız connectedDevice xidmət tipini elan edir, android 14+ bunu bluetooth icazəsinə bağlayır.</string>
+    <string name="settings_playback_only_title">yalnız oxutmanı say</string>
+    <string name="settings_playback_only_body">statistika qoşulma vaxtı əvəzinə səsin həqiqətən oxunduğu vaxtı sayır. yalnız ətraflı izləmə açıq ikən qeydə alınan sessiyalar oxutmanı ölçüb; qalanları çıxarılır.</string>
     <string name="settings_language">dil</string>
     <string name="settings_language_system">sistem dili</string>
     <string name="settings_devices">cihazlar</string>

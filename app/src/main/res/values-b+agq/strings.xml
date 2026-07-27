@@ -53,6 +53,7 @@
     <string name="stats_playing">à zán</string>
     <string name="stats_measured_span">ìkí à sù nò zán</string>
     <string name="stats_share">ǹkì à zán</string>
+    <string name="stats_playback_only_note">ìkí à zán nò tsuŋ</string>
     <string name="stats_daily_hours_30">nábè à yál (30 yál)</string>
     <string name="stats_by_pair">ndap nà</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">tàten à sù</string>
     <string name="settings_detailed_body">gó ñúm ndap ìkobò à à zán. android yí kó ìkobò à tìn búŋ à sú nà à app à búŋ tàn nù, à gó sé sìnòte ìkí. bluetooth à sù nábè.</string>
     <string name="settings_detailed_unavailable">ŋ fù zú bluetooth à dúm: app ìyà yí kó connectedDevice sèp nù, android 14+ à gó à bluetooth àdí.</string>
+    <string name="settings_playback_only_title">kí à zán tsuŋ</string>
+    <string name="settings_playback_only_body">tàten kí ǹkì à zán nò, à kì ǹkì à bɛ̀ nò bɔ̀. mbɨ̀ tàten à sù nò à kí à zán; à mɔ̀ɔ̀ à bɛ̀ nò.</string>
     <string name="settings_language">langaj</string>
     <string name="settings_language_system">langaj sistɛm</string>
     <string name="settings_devices">divaïs</string>

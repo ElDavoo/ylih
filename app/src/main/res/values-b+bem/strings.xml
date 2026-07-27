@@ -53,6 +53,7 @@
     <string name="stats_playing">ukusekesa</string>
     <string name="stats_measured_span">ifyapimwa ku kusekesa</string>
     <string name="stats_share">icipande ca kusekesa</string>
+    <string name="stats_playback_only_note">ukupenda fye inshita ya kusekesa</string>
     <string name="stats_daily_hours_30">amahola pa inshuba (30 inshuba)</string>
     <string name="stats_by_pair">ifipela pa ifipela</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">inshumu ifingilila</string>
     <string name="settings_detailed_body">isamitikilila imipala apo inshuba ya kusekesa. android ikakunika amakamu ya imipala pakati pa foni ifwaile kukulipila, ululasa foniyo ifuna ukwifuna kwakwa. bluetooth inikiliwa ici ne ici.</string>
     <string name="settings_detailed_unavailable">palefwe pakali bluetooth ifuminile: nkola yino yatika ikulika connectedDevice shani walobo, ulo android 14+ ulitilakila bluetooth lumino.</string>
+    <string name="settings_playback_only_title">penda fye ukusekesa</string>
+    <string name="settings_playback_only_body">amapendo yapenda inshita iyo ukusekesa kwaliko cine, te nshita ya kwikatana. inshita fye isho shalembwa ne nshumu ifingilila shilipima ukusekesa; ishashele shilashiwa.</string>
     <string name="settings_language">ululimi</string>
     <string name="settings_language_system">ululimi lwa sistemu</string>
     <string name="settings_devices">amalendo</string>

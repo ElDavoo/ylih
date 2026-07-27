@@ -53,6 +53,7 @@
     <string name="stats_playing">ऑडियो बजत बा</string>
     <string name="stats_measured_span">प्लेबैक खातिर मपल</string>
     <string name="stats_share">प्लेबैक के हिस्सा</string>
+    <string name="stats_playback_only_note">खाली प्लेबैक के समय गिनल जाला</string>
     <string name="stats_daily_hours_30">रोज के घंटा (30 दिन)</string>
     <string name="stats_by_pair">जोड़ी के अनुसार</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">विस्तृत ट्रैकिंग</string>
     <string name="settings_detailed_body">तार वाल ईयरफोन जोड़ेला अउर बजावल के समे मपेला। android सिर्फ चलत ऐप के तार वाल घटना भेजेला, तो ऊ छाया मा चुप सूचना रहेला। bluetooth कहिए ट्रैक होय।</string>
     <string name="settings_detailed_unavailable">तब तक उपलब्ध नइखे जब तक bluetooth अनुमति न दिहल जाय: ई संस्करण सिर्फ connectedDevice सेवा प्रकार घोषित करेला, जे android 14+ bluetooth अनुमति से जोड़ेला।</string>
+    <string name="settings_playback_only_title">खाली प्लेबैक गिनीं</string>
+    <string name="settings_playback_only_body">आँकड़ा जुड़ल रहे के समय के जगह ऑडियो सचमुच बजे के समय गिनेला। खाली ऊ सेशन जे विस्तृत ट्रैकिंग चालू रहते रिकॉर्ड भइल, ऊहे प्लेबैक नापले; बाकी छोड़ दिहल जाला।</string>
     <string name="settings_language">भाषा</string>
     <string name="settings_language_system">सिस्टम के भाषा</string>
     <string name="settings_devices">उपकरण</string>

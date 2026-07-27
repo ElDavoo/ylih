@@ -113,6 +113,74 @@ class StatsTest {
     }
 
     @Test
+    fun `counting playback leaves out the sessions that never measured it`() {
+        val now = at(2026, 5, 20, 12)
+        val spans = listOf(
+            Span(at(2026, 5, 20, 8), at(2026, 5, 20, 10), 3_600_000L),
+            // Recorded in Bluetooth-only mode: zero listening is not something it observed, so
+            // counting it as zero would halve the average and backdate the first-seen day.
+            Span(at(2026, 5, 19, 8), at(2026, 5, 19, 12), null),
+        )
+        val summary = Stats.summarize(spans, now, Counting.PLAYBACK)
+
+        assertEquals(1, summary.sessionCount)
+        assertEquals(3_600_000L, summary.totalMs)
+        assertEquals(3_600_000L, summary.longestMs)
+        assertEquals(3_600_000L, summary.averageMs)
+        assertEquals(at(2026, 5, 20, 8), summary.firstAt)
+    }
+
+    @Test
+    fun `playback with nothing ever measured is empty, not zero sessions of history`() {
+        val now = at(2026, 5, 20, 12)
+        val spans = listOf(Span(at(2026, 5, 19, 8), at(2026, 5, 19, 12), null))
+        val summary = Stats.summarize(spans, now, Counting.PLAYBACK)
+
+        assertEquals(0, summary.sessionCount)
+        assertEquals(0L, summary.totalMs)
+        assertNull(summary.firstAt)
+    }
+
+    @Test
+    fun `playback can never exceed the session that recorded it`() {
+        // A clock step between two of the watcher's slices can bank more than really elapsed.
+        val start = at(2026, 5, 20, 8)
+        val end = start + 3_600_000L
+        val span = Span(start, end, 5 * 3_600_000L)
+        assertEquals(3_600_000L, Stats.durationMs(span, end, Counting.PLAYBACK))
+    }
+
+    @Test
+    fun `an overnight session spreads its playback over the days it covers`() {
+        // Only a per-session total is stored, never when inside it the audio ran, so the split is
+        // proportional: two of the three connected hours fall on the 10th.
+        val start = at(2026, 3, 10, 22)
+        val end = at(2026, 3, 11, 1)
+        val buckets = Stats.dailyMs(
+            listOf(Span(start, end, 90 * 60_000L)),
+            rome,
+            end,
+            Counting.PLAYBACK,
+        )
+
+        assertEquals(60 * 60_000L, buckets[LocalDate.of(2026, 3, 10)])
+        assertEquals(30 * 60_000L, buckets[LocalDate.of(2026, 3, 11)])
+    }
+
+    @Test
+    fun `a recent window counting playback ignores unmeasured sessions entirely`() {
+        val now = at(2026, 5, 20, 12)
+        val spans = listOf(
+            Span(at(2026, 5, 19, 9), at(2026, 5, 19, 11), 1_800_000L),
+            Span(at(2026, 5, 18, 9), at(2026, 5, 18, 15), null),
+        )
+        assertEquals(
+            1_800_000L,
+            Stats.recentMs(spans, rome, now, days = 7, counting = Counting.PLAYBACK),
+        )
+    }
+
+    @Test
     fun `summary of nothing is all zeroes`() {
         val summary = Stats.summarize(emptyList(), at(2026, 5, 20, 12))
         assertEquals(0, summary.sessionCount)

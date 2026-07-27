@@ -55,6 +55,7 @@
     <string name="stats_playing">音訊播放時間</string>
     <string name="stats_measured_span">播放測量時間</string>
     <string name="stats_share">播放佔比</string>
+    <string name="stats_playback_only_note">僅統計播放時間</string>
     <string name="stats_daily_hours_30">每日小時數（30 天）</string>
     <string name="stats_by_pair">依耳機</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -106,6 +107,8 @@
     <string name="settings_detailed_title">詳細追蹤</string>
     <string name="settings_detailed_body">加入有線耳機與播放時間。android 只會在應用程式執行中時回報有線插拔事件，因此需要在通知欄保留一則無聲通知。無論如何都會追蹤藍牙。</string>
     <string name="settings_detailed_unavailable">需先授予藍牙存取權限才能使用：此版本只宣告 connectedDevice 服務類型，而 android 14 以上將此與藍牙權限綁定。</string>
+    <string name="settings_playback_only_title">只計播放時間</string>
+    <string name="settings_playback_only_body">統計以音訊真正播放的時間計算，而不是連線時間。只有在開啟詳細追蹤時記錄的工作階段測量了播放，其餘不計入。</string>
     <string name="settings_language">語言</string>
     <string name="settings_language_system">系統語言</string>
     <string name="settings_devices">裝置</string>

@@ -60,6 +60,7 @@
     <string name="stats_playing">audio playing</string>
     <string name="stats_measured_span">measured for playback</string>
     <string name="stats_share">playing share</string>
+    <string name="stats_playback_only_note">counting playback time only</string>
     <string name="stats_daily_hours_30">daily hours (30 days)</string>
     <string name="stats_by_pair">by pair</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -114,6 +115,8 @@
     <string name="settings_detailed_title">detailed tracking</string>
     <string name="settings_detailed_body">adds wired headphones and playback time. android only reports wired plug events to a running app, so this keeps a silent notification in the shade. bluetooth is tracked either way.</string>
     <string name="settings_detailed_unavailable">unavailable until bluetooth access is granted: this build only declares the connectedDevice service type, which android 14+ ties to a bluetooth permission.</string>
+    <string name="settings_playback_only_title">count only playback</string>
+    <string name="settings_playback_only_body">stats count the time audio was actually playing instead of the time connected. only sessions recorded with detailed tracking on measured playback; the rest are left out.</string>
     <string name="settings_language">language</string>
     <string name="settings_language_system">system language</string>
     <string name="settings_devices">devices</string>

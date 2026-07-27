@@ -54,6 +54,7 @@
     <string name="stats_playing">lydafspilning</string>
     <string name="stats_measured_span">målt for afspilning</string>
     <string name="stats_share">andel afspilning</string>
+    <string name="stats_playback_only_note">tæller kun afspilningstid</string>
     <string name="stats_daily_hours_30">timer pr. dag (30 dage)</string>
     <string name="stats_by_pair">pr. par</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -105,6 +106,8 @@
     <string name="settings_detailed_title">detaljeret sporing</string>
     <string name="settings_detailed_body">tilføjer høretelefoner med kabel og afspilningstid. android rapporterer kun kabelbegivenheder til en kørende app, så dette bevarer en lydløs notifikation i meddelelsespanelet. bluetooth spores under alle omstændigheder.</string>
     <string name="settings_detailed_unavailable">ikke tilgængelig, før bluetooth-adgang er givet: denne build angiver kun tjenestetypen connectedDevice, som android 14+ knytter til en bluetooth-tilladelse.</string>
+    <string name="settings_playback_only_title">tæl kun afspilning</string>
+    <string name="settings_playback_only_body">statistikken tæller den tid, lyden faktisk spillede, i stedet for tiden tilsluttet. kun sessioner optaget med detaljeret sporing slået til har målt afspilning; resten udelades.</string>
     <string name="settings_language">sprog</string>
     <string name="settings_language_system">systemsprog</string>
     <string name="settings_devices">enheder</string>

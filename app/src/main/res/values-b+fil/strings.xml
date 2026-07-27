@@ -53,6 +53,7 @@
     <string name="stats_playing">tumutugtog na audio</string>
     <string name="stats_measured_span">sinukat para sa pagtugtog</string>
     <string name="stats_share">bahagi ng pagtugtog</string>
+    <string name="stats_playback_only_note">oras lang ng pagtugtog ang binibilang</string>
     <string name="stats_daily_hours_30">oras bawat araw (30 araw)</string>
     <string name="stats_by_pair">ayon sa pares</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">detalyadong pagsubaybay</string>
     <string name="settings_detailed_body">nagdadagdag ng naka-wire na headphones at playback time. android ay nag-ulat lamang ng wired plug events sa tumatakbong app, kaya pinapanatili nito ang silent notification. ang bluetooth ay sinusubaybayan sa anumang paraan.</string>
     <string name="settings_detailed_unavailable">hindi available hanggang ang bluetooth access ay ibigay: ang build na ito ay nag-declare lamang ng connectedDevice service type, na ang android 14+ ay nakatali sa bluetooth permission.</string>
+    <string name="settings_playback_only_title">bilangin lang ang pagtugtog</string>
+    <string name="settings_playback_only_body">binibilang ng istatistika ang oras na talagang tumutugtog ang audio sa halip na ang oras na nakakonekta. ang mga sesyon lang na naitala habang naka-on ang detalyadong pagsubaybay ang may sukat ng pagtugtog; ang iba ay hindi isinasama.</string>
     <string name="settings_language">wika</string>
     <string name="settings_language_system">wika ng system</string>
     <string name="settings_devices">mga device</string>

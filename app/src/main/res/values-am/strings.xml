@@ -52,6 +52,7 @@
     <string name="stats_playing">ኦዲዮ በመጫወት ላይ</string>
     <string name="stats_measured_span">ለማጫወት የተለካ</string>
     <string name="stats_share">የማጫወት ድርሻ</string>
+    <string name="stats_playback_only_note">የማጫወት ጊዜ ብቻ ይቆጠራል</string>
     <string name="stats_daily_hours_30">ዕለታዊ ሰዓታት (30 ቀናት)</string>
     <string name="stats_by_pair">በጥንድ</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -103,6 +104,8 @@
     <string name="settings_detailed_title">ዝርዝር ምልከታ</string>
     <string name="settings_detailed_body">በሽመል ዋቅ ይጨምራል እና ፍጻሜ ጊዜ ይለካል። android በተሂድ ትግበራ ውስጥ በሽመል ተገናኝ ክንውኖች ሪፖርት ማድረግ ብቻ ይችላል, ስለዚህም ታዎ በውስጥ ዝምታ ሙሉመታ ይቀራል። bluetooth በክንፍ ሁሉ ጊዜ ይታዘዙ።</string>
     <string name="settings_detailed_unavailable">bluetooth ግቤት እስከተሰጠ ድረስ አይገኝም: ይህ ሙያ connectedDevice ዓይነት ብቻ ያወጣ, android 14+ በ bluetooth ግቤት ጠብቅ።</string>
+    <string name="settings_playback_only_title">ማጫወትን ብቻ ቁጠር</string>
+    <string name="settings_playback_only_body">ስታቲስቲክስ ኦዲዮ በትክክል የተጫወተበትን ጊዜ ይቆጥራል እንጂ የተገናኘበትን ጊዜ አይደለም። ዝርዝር ምልከታ በርቶ የተመዘገቡ ክፍለ ጊዜዎች ብቻ ማጫወትን ለክተዋል፤ የቀሩት ይተዋሉ።</string>
     <string name="settings_language">ቋንቋ</string>
     <string name="settings_language_system">የስርዓቱ ቋንቋ</string>
     <string name="settings_devices">መሳሪያ</string>

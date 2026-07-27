@@ -53,6 +53,7 @@
     <string name="stats_playing">přehrávání zvuku</string>
     <string name="stats_measured_span">měřeno pro přehrávání</string>
     <string name="stats_share">podíl přehrávání</string>
+    <string name="stats_playback_only_note">počítá se jen čas přehrávání</string>
     <string name="stats_daily_hours_30">hodiny denně (30 dní)</string>
     <string name="stats_by_pair">podle páru</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">podrobné sledování</string>
     <string name="settings_detailed_body">přidává kabelová sluchátka a čas přehrávání. android hlásí připojení kabelu jen běžící aplikaci, proto tohle udržuje tichou notifikaci v liště. bluetooth se sleduje v obou případech.</string>
     <string name="settings_detailed_unavailable">nedostupné, dokud nepovolíš přístup k bluetooth: tato verze deklaruje jen typ služby connectedDevice, který android 14+ váže na oprávnění bluetooth.</string>
+    <string name="settings_playback_only_title">počítat jen přehrávání</string>
+    <string name="settings_playback_only_body">statistiky počítají čas, kdy zvuk skutečně hrál, místo času připojení. přehrávání změřily jen relace zaznamenané při zapnutém podrobném sledování; ostatní se vynechají.</string>
     <string name="settings_language">jazyk</string>
     <string name="settings_language_system">jazyk systému</string>
     <string name="settings_devices">zařízení</string>

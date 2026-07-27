@@ -53,6 +53,7 @@
     <string name="stats_playing">reprodukcija zvuka</string>
     <string name="stats_measured_span">mjereno za reprodukciju</string>
     <string name="stats_share">udio reprodukcije</string>
+    <string name="stats_playback_only_note">računa se samo vrijeme reprodukcije</string>
     <string name="stats_daily_hours_30">dnevni sati (30 dana)</string>
     <string name="stats_by_pair">po pari</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">detaljno praćenje</string>
     <string name="settings_detailed_body">dodaje žičane slušalice i vreme puštanja. android samo prijavljuje događaje žičane veze pokrenuto aplikaciji, tako da ovo čuva tiho obaveštenje u senci. bluetooth se prati svakako.</string>
     <string name="settings_detailed_unavailable">nije dostupno dok se ne odobri bluetooth pristup: ova gradnja samo deklarira vrstu usluge connectedDevice, koju android 14+ veže na dozvolu za bluetooth.</string>
+    <string name="settings_playback_only_title">računaj samo reprodukciju</string>
+    <string name="settings_playback_only_body">statistika računa vrijeme dok se zvuk zaista reprodukovao umjesto vremena povezanosti. samo sesije snimljene uz uključeno detaljno praćenje su mjerile reprodukciju; ostale se izostavljaju.</string>
     <string name="settings_language">jezik</string>
     <string name="settings_language_system">jezik sistema</string>
     <string name="settings_devices">uređaji</string>

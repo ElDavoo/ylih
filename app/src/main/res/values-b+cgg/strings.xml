@@ -53,6 +53,7 @@
     <string name="stats_playing">okusigira kw\'amaraka</string>
     <string name="stats_measured_span">ekyapimirwe okusigira</string>
     <string name="stats_share">ekicweka ky\'okusigira</string>
+    <string name="stats_playback_only_note">kubara obwire bw\'okusigira bwonka</string>
     <string name="stats_daily_hours_30">saati ku musi (30 amasigara)</string>
     <string name="stats_by_pair">nka enandi</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">okuwandika okukweru</string>
     <string name="settings_detailed_body">akongeza mahembe agacwire n\'amasigara ga okusigira. android abamanya okumanya amasigara ga agacwire kuko ku applicesheni itazikira okukora, abasigalira okukuba okukwereza mu ntiniti. bluetooth andikibwa kigwe.</string>
     <string name="settings_detailed_unavailable">ntakiboneka kuza kwoha ichaato ca bluetooth: akakakona guno kasigala kananga connectDevice ekika kya service, ekyuma ka android 14+ ekikwata ku ichaato ca bluetooth.</string>
+    <string name="settings_playback_only_title">bara okusigira kwonka</string>
+    <string name="settings_playback_only_body">ebibaruzo nibibara obwire amaraka gaabaire nigasigirwa buzima, ti obwire bw\'okwehanguraho. sesyoni ezaandiikirwe okuwandika okukweru kuriho zonka nizo zaapimire okusigira; ezindi nizirekwa.</string>
     <string name="settings_language">orurimi</string>
     <string name="settings_language_system">orurimi rwa sisitemu</string>
     <string name="settings_devices">ekyuma</string>

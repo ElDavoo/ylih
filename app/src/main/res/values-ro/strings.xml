@@ -54,6 +54,7 @@
     <string name="stats_playing">redare audio</string>
     <string name="stats_measured_span">măsurat pentru redare</string>
     <string name="stats_share">proporție de redare</string>
+    <string name="stats_playback_only_note">se numără doar timpul de redare</string>
     <string name="stats_daily_hours_30">ore pe zi (30 de zile)</string>
     <string name="stats_by_pair">pe perechi</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -105,6 +106,8 @@
     <string name="settings_detailed_title">urmărire detaliată</string>
     <string name="settings_detailed_body">adaugă căștile prin cablu și timpul de redare. android raportează evenimentele mufei doar unei aplicații deja pornite, așa că rămâne o notificare silențioasă în bara de notificări. bluetooth este urmărit oricum.</string>
     <string name="settings_detailed_unavailable">indisponibil până nu acorzi acces la bluetooth: această versiune declară doar tipul de serviciu connectedDevice, pe care android 14+ îl leagă de o permisiune bluetooth.</string>
+    <string name="settings_playback_only_title">numără doar redarea</string>
+    <string name="settings_playback_only_body">statisticile numără timpul în care sunetul chiar a rulat, în loc de timpul conectat. doar sesiunile înregistrate cu urmărirea detaliată activată au măsurat redarea; restul sunt lăsate deoparte.</string>
     <string name="settings_language">limbă</string>
     <string name="settings_language_system">limba sistemului</string>
     <string name="settings_devices">dispozitive</string>

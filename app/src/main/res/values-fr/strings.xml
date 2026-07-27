@@ -54,6 +54,7 @@
     <string name="stats_playing">audio en lecture</string>
     <string name="stats_measured_span">mesuré pour la lecture</string>
     <string name="stats_share">part en lecture</string>
+    <string name="stats_playback_only_note">seul le temps de lecture est compté</string>
     <string name="stats_daily_hours_30">heures par jour (30 jours)</string>
     <string name="stats_by_pair">par paire</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -105,6 +106,8 @@
     <string name="settings_detailed_title">suivi détaillé</string>
     <string name="settings_detailed_body">ajoute les casques filaires et le temps de lecture. android ne signale les événements de branchement jack qu\'à une app déjà en cours d\'exécution, ce qui maintient donc une notification silencieuse dans le panneau. le bluetooth est suivi dans tous les cas.</string>
     <string name="settings_detailed_unavailable">indisponible tant que l\'accès bluetooth n\'est pas accordé : cette build ne déclare que le type de service connectedDevice, qu\'android 14+ lie à une permission bluetooth.</string>
+    <string name="settings_playback_only_title">compter seulement la lecture</string>
+    <string name="settings_playback_only_body">les statistiques comptent le temps pendant lequel l\'audio jouait vraiment plutôt que le temps connecté. seules les sessions enregistrées avec le suivi détaillé activé ont mesuré la lecture ; les autres sont laissées de côté.</string>
     <string name="settings_language">langue</string>
     <string name="settings_language_system">langue du système</string>
     <string name="settings_devices">appareils</string>

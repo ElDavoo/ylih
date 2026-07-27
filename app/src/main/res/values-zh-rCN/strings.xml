@@ -54,6 +54,7 @@
     <string name="stats_playing">音频播放时长</string>
     <string name="stats_measured_span">播放统计时长</string>
     <string name="stats_share">播放占比</string>
+    <string name="stats_playback_only_note">仅统计播放时长</string>
     <string name="stats_daily_hours_30">每日时长(30天)</string>
     <string name="stats_by_pair">按耳机</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -105,6 +106,8 @@
     <string name="settings_detailed_title">详细追踪</string>
     <string name="settings_detailed_body">记录有线耳机及播放时长。android 只会将插拔事件报告给正在运行的应用,因此会在通知栏保留一条静默通知。蓝牙耳机始终都会被追踪。</string>
     <string name="settings_detailed_unavailable">在授予蓝牙权限之前不可用:此版本只声明了 connectedDevice 服务类型,而 android 14 及以上系统要求该类型必须具有蓝牙权限。</string>
+    <string name="settings_playback_only_title">只计播放时长</string>
+    <string name="settings_playback_only_body">统计以音频真正播放的时长计算，而不是连接时长。只有在开启详细追踪时记录的会话测量了播放，其余会话不计入。</string>
     <string name="settings_language">语言</string>
     <string name="settings_language_system">系统语言</string>
     <string name="settings_devices">设备</string>

@@ -53,6 +53,7 @@
     <string name="stats_playing">прайграванне гуку</string>
     <string name="stats_measured_span">вымерана для прайгравання</string>
     <string name="stats_share">доля прайгравання</string>
+    <string name="stats_playback_only_note">лічыцца толькі час прайгравання</string>
     <string name="stats_daily_hours_30">гадзіны па днях (30 дзён)</string>
     <string name="stats_by_pair">па парах</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">падрабязнае адсочванне</string>
     <string name="settings_detailed_body">дадае праводныя наушніки і час адтворэння. android паведамляе пра падзеі праводнога падключэння толькі запушчанаму прыстасаванню, таму ў затэні застаецца цівая націзацыя. bluetooth адсочваецца у любым выпадку.</string>
     <string name="settings_detailed_unavailable">недаступна, пакуль не даозвілены доступ да bluetooth: гэта зборка толькі абвяшчае тып сервісу connectedDevice, які android 14+ прывязваеце да дазвол bluetooth.</string>
+    <string name="settings_playback_only_title">лічыць толькі прайграванне</string>
+    <string name="settings_playback_only_body">статыстыка лічыць час, калі гук сапраўды граў, а не час падлучэння. толькі сеансы, запісаныя з уключаным падрабязным адсочваннем, вымералі прайграванне; астатнія не ўлічваюцца.</string>
     <string name="settings_language">мова</string>
     <string name="settings_language_system">мова сістэмы</string>
     <string name="settings_devices">прыстасаванні</string>

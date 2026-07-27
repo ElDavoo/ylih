@@ -53,6 +53,7 @@
     <string name="stats_playing">áudio tocando</string>
     <string name="stats_measured_span">medido para reprodução</string>
     <string name="stats_share">proporção tocando</string>
+    <string name="stats_playback_only_note">conta só o tempo de reprodução</string>
     <string name="stats_daily_hours_30">horas diárias (30 dias)</string>
     <string name="stats_by_pair">por par</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">rastreamento detalhado</string>
     <string name="settings_detailed_body">adiciona fones com fio e tempo de reprodução. o android só informa eventos de conexão por cabo a um app em execução, então isso mantém uma notificação silenciosa na barra. o bluetooth é rastreado de qualquer forma.</string>
     <string name="settings_detailed_unavailable">indisponível até que o acesso ao bluetooth seja concedido: esta build declara apenas o tipo de serviço connectedDevice, que o android 14+ vincula a uma permissão de bluetooth.</string>
+    <string name="settings_playback_only_title">contar só a reprodução</string>
+    <string name="settings_playback_only_body">as estatísticas contam o tempo em que o áudio estava mesmo tocando em vez do tempo conectado. só as sessões gravadas com o rastreamento detalhado ligado mediram a reprodução; as demais ficam de fora.</string>
     <string name="settings_language">idioma</string>
     <string name="settings_language_system">idioma do sistema</string>
     <string name="settings_devices">dispositivos</string>

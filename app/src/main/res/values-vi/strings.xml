@@ -54,6 +54,7 @@
     <string name="stats_playing">âm thanh đang phát</string>
     <string name="stats_measured_span">đo cho phát lại</string>
     <string name="stats_share">tỷ lệ phát</string>
+    <string name="stats_playback_only_note">chỉ tính thời gian phát</string>
     <string name="stats_daily_hours_30">số giờ mỗi ngày (30 ngày)</string>
     <string name="stats_by_pair">theo từng đôi</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -105,6 +106,8 @@
     <string name="settings_detailed_title">theo dõi chi tiết</string>
     <string name="settings_detailed_body">thêm tai nghe có dây và thời gian phát nhạc. android chỉ báo sự kiện cắm tai nghe có dây cho một ứng dụng đang chạy, nên chế độ này giữ một thông báo im lặng trên thanh trạng thái. bluetooth vẫn luôn được theo dõi dù có bật chế độ này hay không.</string>
     <string name="settings_detailed_unavailable">chưa dùng được cho đến khi quyền truy cập bluetooth được cấp: bản build này chỉ khai báo loại dịch vụ connectedDevice, mà android 14 trở lên gắn với một quyền bluetooth.</string>
+    <string name="settings_playback_only_title">chỉ tính phát lại</string>
+    <string name="settings_playback_only_body">thống kê tính thời gian âm thanh thực sự phát thay vì thời gian kết nối. chỉ những phiên được ghi khi bật theo dõi chi tiết mới đo được phát lại; phần còn lại bị bỏ qua.</string>
     <string name="settings_language">ngôn ngữ</string>
     <string name="settings_language_system">ngôn ngữ hệ thống</string>
     <string name="settings_devices">thiết bị</string>

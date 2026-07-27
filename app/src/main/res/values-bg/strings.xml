@@ -53,6 +53,7 @@
     <string name="stats_playing">възпроизвеждане на звук</string>
     <string name="stats_measured_span">измерено за възпроизвеждане</string>
     <string name="stats_share">дял на възпроизвеждане</string>
+    <string name="stats_playback_only_note">брои се само времето на възпроизвеждане</string>
     <string name="stats_daily_hours_30">часове по дни (30 дни)</string>
     <string name="stats_by_pair">по двойки</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">детайлно проследяване</string>
     <string name="settings_detailed_body">добавя жични слушалки и време за възпроизвеждане. android съобщава за жични събития на конекциите само на работещо приложение, така че това пази тихо известие в сянката. bluetooth се проследява във всеки случай.</string>
     <string name="settings_detailed_unavailable">недостъпно до bluetooth достъп е даден: този вид само деклариира connectedDevice тип услуга, който android 14+ свързва към bluetooth разрешение.</string>
+    <string name="settings_playback_only_title">брой само възпроизвеждането</string>
+    <string name="settings_playback_only_body">статистиките броят времето, през което звукът наистина се е възпроизвеждал, вместо времето на свързване. само сесиите, записани с включено детайлно проследяване, са измерили възпроизвеждането; останалите отпадат.</string>
     <string name="settings_language">език</string>
     <string name="settings_language_system">език на системата</string>
     <string name="settings_devices">устройства</string>

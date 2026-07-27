@@ -53,6 +53,7 @@
     <string name="stats_playing">sekii</string>
     <string name="stats_measured_span">betaango ngam sekii</string>
     <string name="stats_share">geɓal sekii</string>
+    <string name="stats_playback_only_note">limtude tan sahaa sekii</string>
     <string name="stats_daily_hours_30">waktuuji baŋko (joomuuji 30)</string>
     <string name="stats_by_pair">to peere peere</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">haasiraa jamano</string>
     <string name="settings_detailed_body">dan kaable hiirde e mesur waktu sekii. android-a ngol ɗee gaŋki kaable hadde ko njawla ko ko-sey, haŋka dina tule yiitere koom. bluetooth haasiraa ko-waawi haa ko-haa.</string>
     <string name="settings_detailed_unavailable">ko kala walla hiji bluetooth permisyon ko-nafo: ful ngii ɗee ɓata connectedDevice gonngal duuɗe, ndi android 14+ joɓi e bluetooth permisyon.</string>
+    <string name="settings_playback_only_title">limtu tan sekii</string>
+    <string name="settings_playback_only_body">limlimte ɗe limta sahaa mo hito ngo sekii goonga, wanaa sahaa jokkondiral. kojolli ɗi winndaa e haasiraa jamano uddaa tan ɗi betii sekii; keddiiɗi ina acce.</string>
     <string name="settings_language">haala</string>
     <string name="settings_language_system">haala sistem</string>
     <string name="settings_devices">kuuseeje</string>

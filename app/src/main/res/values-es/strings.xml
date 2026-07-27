@@ -54,6 +54,7 @@
     <string name="stats_playing">audio en reproducción</string>
     <string name="stats_measured_span">medido para reproducción</string>
     <string name="stats_share">proporción reproduciendo</string>
+    <string name="stats_playback_only_note">solo se cuenta el tiempo de reproducción</string>
     <string name="stats_daily_hours_30">horas diarias (30 días)</string>
     <string name="stats_by_pair">por par</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -105,6 +106,8 @@
     <string name="settings_detailed_title">seguimiento detallado</string>
     <string name="settings_detailed_body">añade los auriculares con cable y el tiempo de reproducción. android solo notifica los eventos del jack a una app que ya está en ejecución, así que esto mantiene una notificación silenciosa en la barra. el bluetooth se rastrea de todos modos.</string>
     <string name="settings_detailed_unavailable">no disponible hasta conceder acceso a bluetooth: esta build solo declara el tipo de servicio connectedDevice, que android 14+ vincula a un permiso de bluetooth.</string>
+    <string name="settings_playback_only_title">contar solo la reproducción</string>
+    <string name="settings_playback_only_body">las estadísticas cuentan el tiempo que el audio estuvo sonando de verdad en lugar del tiempo conectado. solo las sesiones grabadas con el seguimiento detallado activado midieron la reproducción; el resto se deja fuera.</string>
     <string name="settings_language">idioma</string>
     <string name="settings_language_system">idioma del sistema</string>
     <string name="settings_devices">dispositivos</string>

@@ -11,6 +11,7 @@ import it.eldavo.ylih.data.DeviceEntity
 import it.eldavo.ylih.data.PairSummary
 import it.eldavo.ylih.data.SessionEntity
 import it.eldavo.ylih.export.JsonBackup
+import it.eldavo.ylih.stats.Counting
 import it.eldavo.ylih.stats.Span
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
@@ -42,6 +43,11 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
 
     val detailedTracking: StateFlow<Boolean> = container.settings.detailedTracking
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), false)
+
+    /** What every figure on the three screens counts; connected time until told otherwise. */
+    val counting: StateFlow<Counting> = container.settings.playbackOnly
+        .map { if (it) Counting.PLAYBACK else Counting.CONNECTED }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), Counting.CONNECTED)
 
     /** Null until DataStore has answered, so the welcome does not flash on every later launch. */
     val onboardingDone: StateFlow<Boolean?> = container.settings.onboardingDone
@@ -79,6 +85,10 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
         if (!container.trackingController.setDetailedTracking(enabled)) {
             messageChannel.send(string(RES_DETAILED_NEEDS_BLUETOOTH))
         }
+    }
+
+    fun setPlaybackOnly(enabled: Boolean) = viewModelScope.launch {
+        container.settings.setPlaybackOnly(enabled)
     }
 
     fun setLanguage(tag: String) = viewModelScope.launch {
@@ -157,3 +167,13 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
 
 fun SessionEntity.toSpan(): Span = Span(connectedAt, disconnectedAt, playingMs)
 
+/**
+ * The lifetime figure a pair's card and the ranking show, straight off the aggregate rather than
+ * off its sessions. `closedMs` is finished sessions only, so connected time has to add the open
+ * one's live tail; the playback sum already includes it, because the watcher banks playback into
+ * the open session as it goes.
+ */
+fun PairSummary.countedMs(now: Long, counting: Counting): Long = when (counting) {
+    Counting.CONNECTED -> closedMs + (openSince?.let { now - it } ?: 0L)
+    Counting.PLAYBACK -> playingMs
+}

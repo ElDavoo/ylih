@@ -53,6 +53,7 @@
     <string name="stats_playing">ᎾᎪᎾᏓ</string>
     <string name="stats_measured_span">ᎾᎪᏗᏴᏛ ᎾᎪᎾᏓ</string>
     <string name="stats_share">ᎢᎦᏛ ᎾᎪᎾᏓ</string>
+    <string name="stats_playback_only_note">ᎾᎪᎾᏓ ᎠᏟᎶᏍᏗ ᎤᏩᏒ</string>
     <string name="stats_daily_hours_30">ᎠᎵᏁᏟᏒ ᏒᏂ ᎨᎮᎵᏍᎬ (30 ᎾᎬᎾᎴ)</string>
     <string name="stats_by_pair">ᏂᏗᏪᏦ ᏍᏍᎦ</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">ᏰᎩᏂᏃᎩ ᏚᏐᏕ</string>
     <string name="settings_detailed_body">ᎠᏕᎥ ᏗᎲᎵᎭ ᎠᏎᎩ ᎠᎴ ᎾᎪᎾᏓ ᎦᏴ ᎯᎾᏕᎾ. android ᎠᎬᎾᏓ ᏗᎲᎵᎭ ᎤᏂᏏᏗ ᏆᏎᏯᏙ ᎠᏆᏓᏗ ᏭᏤᏢ ᎦᏴ ᏅᎫᏟ ᏃᏀᏚ ᎠᎾᏎᏗᏘᏏ ᎤᏙᎦᎵᎩ ᎾᎿ ᎠᏐᏒ ᎳᏓ. bluetooth ᏰᎩᏂᏃᎩ ᏗᎬᎾ ᏂᏂ ᏃᏀᏚ.</string>
     <string name="settings_detailed_unavailable">ᎤᏁᎩᏰᏒ bluetooth ᎨᎮᎵᏍᎬ ᎠᏂᏜᎩ ᎢᎦᎳ: ᏕᎦᏚ ᏄᏤ connectedDevice ᏕᏓᎳᎵ ᎦᏴ ᏥᏟ, android 14+ ᏰᎩᏁ bluetooth ᎨᎮᎵᏍᎬ ᎨᏒ.</string>
+    <string name="settings_playback_only_title">ᎾᎪᎾᏓ ᎤᏩᏒ ᎠᏎᏍᏗ</string>
+    <string name="settings_playback_only_body">ᏗᎦᏎᏍᏗ ᏓᏎᏍᎦ ᎢᎪᎯᏛ ᎾᎪᎾᏓ ᎤᏙᎯᏳᏒ ᎨᏒᎢ, ᎥᏝ ᎢᎪᎯᏛ ᏗᎧᏁᏤᎸᎯ ᏱᎩ. ᏰᎩᏂᏃᎩ ᏚᏐᏕ ᎠᎧᎵᎢ ᎨᏒ ᏥᏓᏥᏲᏒ ᎤᏩᏒ ᏚᏟᎶᏒ ᎾᎪᎾᏓ; ᎠᏂᏐᎢ ᎨᏥᏯᏙᎸᎯ.</string>
     <string name="settings_language">ᎦᏬᏂᎯᏍᏗ</string>
     <string name="settings_language_system">ᏙᏦᎵ ᎦᏬᏂᎯᏍᏗ</string>
     <string name="settings_devices">ᏙᏦᎵ</string>

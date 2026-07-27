@@ -53,6 +53,7 @@
     <string name="stats_playing">sauti inacheza</string>
     <string name="stats_measured_span">kilichopimwa kwa uchezaji</string>
     <string name="stats_share">sehemu ya uchezaji</string>
+    <string name="stats_playback_only_note">muda wa uchezaji pekee</string>
     <string name="stats_daily_hours_30">saa kila siku (siku 30)</string>
     <string name="stats_by_pair">kwa pair</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">irekodi ileile</string>
     <string name="settings_detailed_body">inaongeza sambamano iburani na muda wa kuiga. android inakamatia matukio ya sambamano kwa app inaendelea tu, kwa hiyo hili linatuma onyo lenye sauti mungi mu mabingu. bluetooth inarekodiwwa kila saa.</string>
     <string name="settings_detailed_unavailable">haipatikani hadi bluetooth ruhusa ipatiwe: binafu hii inaeleza aina ya serbis ya connectedDevice tu, ambayo android 14+ inakamatia kwa ruhusa ya bluetooth.</string>
+    <string name="settings_playback_only_title">hesabu uchezaji pekee</string>
+    <string name="settings_playback_only_body">takwimu zinahesabu muda ambao sauti ilikuwa ikicheza kweli badala ya muda wa kuunganishwa. vipindi vilivyorekodiwa irekodi ileile ikiwa imewashwa pekee ndivyo vilivyopima uchezaji; vingine vinaachwa.</string>
     <string name="settings_language">lugha</string>
     <string name="settings_language_system">lugha ya mfumo</string>
     <string name="settings_devices">isimu</string>

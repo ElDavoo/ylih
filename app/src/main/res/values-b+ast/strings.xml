@@ -53,6 +53,7 @@
     <string name="stats_playing">audiu reproduciéndose</string>
     <string name="stats_measured_span">midíu pa la reproducción</string>
     <string name="stats_share">proporción reproduciendo</string>
+    <string name="stats_playback_only_note">cuntando namás el tiempu de reproducción</string>
     <string name="stats_daily_hours_30">hores diariu (30 díes)</string>
     <string name="stats_by_pair">por par</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">rastrexu detallau</string>
     <string name="settings_detailed_body">añade auriculares cableáu y tiempu de reproducción. android namái reporta eventos de conexón de cable a una app corriendo, asina que guarda una notificación silenciosa na cortina. bluetooth siempre se rastrea.</string>
     <string name="settings_detailed_unavailable">nun ta disponible hasta que se conceda accesu a bluetooth: esta compilación namái declara\'l tipu de serviciu connectedDevice, que android 14+ enlaza a un permisu de bluetooth.</string>
+    <string name="settings_playback_only_title">cuntar namás la reproducción</string>
+    <string name="settings_playback_only_body">les estadístiques cunten el tiempu que l\'audiu tuvo reproduciéndose de verdá en cuenta del tiempu coneutáu. namás les sesiones rexistraes col rastrexu detallau activáu midieron la reproducción; les demás quéden fuera.</string>
     <string name="settings_language">llingua</string>
     <string name="settings_language_system">llingua del sistema</string>
     <string name="settings_devices">dispositivus</string>

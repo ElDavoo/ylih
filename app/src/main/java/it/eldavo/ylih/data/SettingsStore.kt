@@ -22,12 +22,20 @@ internal val Context.dataStore: DataStore<Preferences> by preferencesDataStore(n
 class SettingsStore(private val context: Context) {
     private val detailedKey = booleanPreferencesKey("detailed_tracking")
     private val onboardedKey = booleanPreferencesKey("onboarding_done")
+    private val playbackOnlyKey = booleanPreferencesKey("playback_only_stats")
     private val languageKey = stringPreferencesKey("language")
 
     /** Wired headphones + playback measurement, at the cost of a persistent notification. */
     val detailedTracking: Flow<Boolean> = context.dataStore.data.map { it[detailedKey] ?: false }
 
     val onboardingDone: Flow<Boolean> = context.dataStore.data.map { it[onboardedKey] ?: false }
+
+    /**
+     * Report listening time rather than connected time. Purely a way of reading the same history
+     * — nothing about what is recorded changes — so it is never forced off, and a mode that
+     * cannot measure playback simply leaves it out of the settings screen.
+     */
+    val playbackOnly: Flow<Boolean> = context.dataStore.data.map { it[playbackOnlyKey] ?: false }
 
     /**
      * A BCP 47 tag, or `AppLocale.SYSTEM` for the system language. Only ever written below
@@ -39,10 +47,16 @@ class SettingsStore(private val context: Context) {
 
     suspend fun onboardingDoneNow(): Boolean = onboardingDone.first()
 
+    suspend fun playbackOnlyNow(): Boolean = playbackOnly.first()
+
     suspend fun languageNow(): String = language.first()
 
     suspend fun setDetailedTracking(enabled: Boolean) {
         context.dataStore.edit { it[detailedKey] = enabled }
+    }
+
+    suspend fun setPlaybackOnly(enabled: Boolean) {
+        context.dataStore.edit { it[playbackOnlyKey] = enabled }
     }
 
     suspend fun setOnboardingDone(done: Boolean) {

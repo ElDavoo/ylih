@@ -53,6 +53,7 @@
     <string name="stats_playing">jinde ido</string>
     <string name="stats_measured_span">neesi ido se</string>
     <string name="stats_share">ido baa</string>
+    <string name="stats_playback_only_note">ido alwaati hinne no cindi</string>
     <string name="stats_daily_hours_30">agandu jema (30 jema)</string>
     <string name="stats_by_pair">hima ga</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">hangarey gara ganda</string>
     <string name="settings_detailed_body">labali hima kul-kul agandu mey. android ga labali gaskuya hankurey de borey ga kaaji, kabu sanda ga gida ganda. bluetooth ga hangarey kabarey de.</string>
     <string name="settings_detailed_unavailable">ba ga kaa sanda bluetooth ka haya ne: sanda kabu ga connectedDevice gaskuya gonda haali, android 14+ ga bluetooth haya ga kirey ne.</string>
+    <string name="settings_playback_only_title">ido hinne cindi</string>
+    <string name="settings_playback_only_body">hisaabey ga alwaati kaŋ jinde goono ga ido cimi cindi, manti alwaati kaŋ i margu. sessiyon kaŋ i hantum hangarey gara ganda go ga tunandi hinne no ka ido neesi; cindey i g\'i naŋ.</string>
     <string name="settings_language">sanni</string>
     <string name="settings_language_system">sistem sanni</string>
     <string name="settings_devices">borey</string>

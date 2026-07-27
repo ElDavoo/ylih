@@ -53,6 +53,7 @@
     <string name="stats_playing">sono ludanta</string>
     <string name="stats_measured_span">mezurita por ludado</string>
     <string name="stats_share">parto ludanta</string>
+    <string name="stats_playback_only_note">nur la ludtempo estas kalkulata</string>
     <string name="stats_daily_hours_30">horoj po tago (30 tagoj)</string>
     <string name="stats_by_pair">po paro</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">detala spurado</string>
     <string name="settings_detailed_body">aldonas kablitajn altkurajn aŭdilojn kaj ludtempo. android raportis kablon-konektajn eventojn nur al rulmemora aplikaĵo, do ĉi tio konservas silentajn avizojn en la ombro. bluetooth estas spurata ambaŭokaze.</string>
     <string name="settings_detailed_unavailable">ne disponebla antaŭ ol bluetooth-aliro estas donita: ĉi tiu bildaĵo deklaras nur la connectedDevice-servottipo, kiun android 14+ ligas al bluetooth-permeso.</string>
+    <string name="settings_playback_only_title">kalkuli nur ludadon</string>
+    <string name="settings_playback_only_body">la statistikoj kalkulas la tempon dum kiu la sono vere ludis anstataŭ la konektitan tempon. nur seancoj registritaj kun detala spurado ŝaltita mezuris la ludadon; la ceteraj estas ellasitaj.</string>
     <string name="settings_language">lingvo</string>
     <string name="settings_language_system">sistema lingvo</string>
     <string name="settings_devices">aparatoj</string>

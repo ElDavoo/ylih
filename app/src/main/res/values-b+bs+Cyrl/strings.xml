@@ -53,6 +53,7 @@
     <string name="stats_playing">репродукција звука</string>
     <string name="stats_measured_span">мјерено за репродукцију</string>
     <string name="stats_share">удио репродукције</string>
+    <string name="stats_playback_only_note">рачуна се само вријеме репродукције</string>
     <string name="stats_daily_hours_30">дневни сати (30 дана)</string>
     <string name="stats_by_pair">по паровима</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">детаљно праћење</string>
     <string name="settings_detailed_body">додаје жичне слушалице и време репродукције. android пријављује догађаје жичног повезивања само покренутој апликацији, тако да остаје позадинско обавештење. bluetooth се прати у сваком случају.</string>
     <string name="settings_detailed_unavailable">није доступно док се не одобри приступ bluetooth-у: ова верзија декларише само connectedDevice тип услуге, коју android 14+ везује за bluetooth дозволу.</string>
+    <string name="settings_playback_only_title">рачунај само репродукцију</string>
+    <string name="settings_playback_only_body">статистика рачуна вријеме док се звук заиста репродуковао умјесто времена повезаности. само сесије снимљене уз укључено детаљно праћење су мјериле репродукцију; остале се изостављају.</string>
     <string name="settings_language">језик</string>
     <string name="settings_language_system">језик система</string>
     <string name="settings_devices">уређаји</string>

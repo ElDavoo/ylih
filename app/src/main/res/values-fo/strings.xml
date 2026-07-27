@@ -53,6 +53,7 @@
     <string name="stats_playing">ljóðspæling</string>
     <string name="stats_measured_span">mátað fyri spæling</string>
     <string name="stats_share">partur við spæling</string>
+    <string name="stats_playback_only_note">bert spælitíðin verður talin</string>
     <string name="stats_daily_hours_30">daglig tímar (30 dagar)</string>
     <string name="stats_by_pair">við pörum</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -104,6 +105,8 @@
     <string name="settings_detailed_title">útbroytað fylgja</string>
     <string name="settings_detailed_body">leggur til táðað heyrnirtól og spælutíð. android fræðir um táðað tengibreytingar bara til app, sum er keypandi, so hetta helst þógil skyggja. bluetooth er fylgt í øllum høpum.</string>
     <string name="settings_detailed_unavailable">ótiliglig til bluetooth lov er givið: henda bygning segir bara connectedDevice tænastunáð, sum android 14+ bundnast til bluetooth lov.</string>
+    <string name="settings_playback_only_title">tel bert spæling</string>
+    <string name="settings_playback_only_body">hagtøl telja tíðina, tá ið ljóðið veruliga spældi, í staðin fyri tíðina sambundin. bert setur, sum vórðu skrásett við útbroytt fylgja tendrað, mátaðu spælingina; hini verða latin úti.</string>
     <string name="settings_language">mál</string>
     <string name="settings_language_system">mál kervisins</string>
     <string name="settings_devices">tækjir</string>
