@@ -22,6 +22,7 @@ import it.eldavo.ylih.data.PairEntity
 import it.eldavo.ylih.data.SessionEntity
 import it.eldavo.ylih.ui.theme.YlihTheme
 import kotlinx.coroutines.runBlocking
+import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
@@ -53,9 +54,16 @@ class PairDetailScreenTest {
 
     private var backs = 0
 
+    // Settings outlive a test method — the DataStore is the app container's, not the rule's.
     @Before
     fun setUp() = runBlocking {
         db.deviceDao().deleteAll()
+        app.container.settings.setPlaybackOnly(false)
+    }
+
+    @After
+    fun tearDown() = runBlocking {
+        app.container.settings.setPlaybackOnly(false)
     }
 
     private fun seedPair(
@@ -307,6 +315,21 @@ class PairDetailScreenTest {
         compose.waitUntil(timeoutMillis = 10_000) { pair(pairId) == null }
         assertEquals("the page it was showing no longer exists", 1, backs)
         assertNull(runBlocking { db.sessionDao().getAll().firstOrNull() })
+    }
+
+    @Test
+    fun `counting playback, the headline stops calling itself a lifetime`() {
+        // The figure above this line changes meaning with the mode, and this is the only place on
+        // the page that can say which of the two the reader is looking at.
+        runBlocking { app.container.settings.setPlaybackOnly(true) }
+        val pairId = seedPair()
+
+        show(pairId)
+
+        compose.waitUntil(timeoutMillis = 10_000) {
+            nodeCount(text(R.string.stats_playback_only_note), substring = true) > 0
+        }
+        assertEquals(0, nodeCount(text(R.string.pair_lifetime), substring = true))
     }
 
     @Test

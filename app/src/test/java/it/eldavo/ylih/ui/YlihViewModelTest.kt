@@ -1,5 +1,10 @@
 package it.eldavo.ylih.ui
 
+import android.content.ContentProvider
+import android.content.ContentValues
+import android.content.pm.ProviderInfo
+import android.content.res.AssetFileDescriptor
+import android.database.Cursor
 import android.net.Uri
 import android.os.Build
 import androidx.core.net.toUri
@@ -32,6 +37,7 @@ import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
+import org.robolectric.shadows.ShadowContentResolver
 import java.io.ByteArrayOutputStream
 import java.io.IOException
 import java.io.OutputStream
@@ -157,6 +163,54 @@ class YlihViewModelTest {
 
         assertTrue(viewModel.messages.first().isNotEmpty())
         assertEquals("the existing history survives", 1, db.pairDao().getAll().size)
+    }
+
+    @Test
+    fun `a document the picker no longer opens is named in the failure`() = runTest {
+        // A provider that has lost the file answers null rather than throwing, and both halves of
+        // backup have to notice: a restore that quietly did nothing reads exactly like a restore
+        // of an empty backup.
+        seed()
+        registerGoneProvider()
+        resolver.registerOutputStreamSupplier(uri) { null }
+
+        viewModel.exportTo(uri).join()
+        assertEquals(app.getString(R.string.error_could_not_open, uri), viewModel.messages.first())
+
+        viewModel.importFrom(uri).join()
+        assertEquals(app.getString(R.string.error_could_not_open, uri), viewModel.messages.first())
+        assertEquals("the existing history survives", 1, db.pairDao().getAll().size)
+    }
+
+    /**
+     * Registered rather than stubbed through [ShadowContentResolver.registerInputStreamSupplier]:
+     * a supplier that yields null falls back to the shadow's own unregistered stream, which throws
+     * on the first read instead of handing back the null the real resolver would.
+     */
+    private fun registerGoneProvider() {
+        val provider = object : ContentProvider() {
+            override fun onCreate() = true
+            override fun openAssetFile(uri: Uri, mode: String): AssetFileDescriptor? = null
+            override fun getType(uri: Uri): String? = null
+            override fun query(
+                uri: Uri,
+                projection: Array<out String>?,
+                selection: String?,
+                selectionArgs: Array<out String>?,
+                sortOrder: String?,
+            ): Cursor? = null
+            override fun insert(uri: Uri, values: ContentValues?): Uri? = null
+            override fun update(
+                uri: Uri,
+                values: ContentValues?,
+                selection: String?,
+                selectionArgs: Array<out String>?,
+            ) = 0
+            override fun delete(uri: Uri, selection: String?, selectionArgs: Array<out String>?) = 0
+        }
+        val authority = checkNotNull(uri.authority)
+        provider.attachInfo(app, ProviderInfo().apply { this.authority = authority; exported = true })
+        ShadowContentResolver.registerProviderInternal(authority, provider)
     }
 
     @Test

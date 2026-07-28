@@ -272,6 +272,21 @@ class TrackingServiceTest {
         assertEquals(1, sessions().size)
     }
 
+    @Test
+    fun `a foreground start the platform refuses stops the service rather than waiting to be killed`() {
+        // A service that never reaches startForeground is killed with an ANR-shaped crash a few
+        // seconds later. Standing down deliberately loses detailed tracking until the next sync,
+        // which is the recoverable half of a bad situation.
+        shadowOf(service).setThrowInStartForeground(
+            IllegalStateException("startForeground not allowed"),
+        )
+
+        start(awaitSync = false)
+
+        assertTrue("the service took itself down", shadowOf(service).isStoppedBySelf)
+        assertNull("and nothing was ever posted", notificationText())
+    }
+
     private companion object {
         /** One service tick, plus enough to be sure the delayed coroutine has come due. */
         const val TICK = 61_000L

@@ -3,9 +3,14 @@ package it.eldavo.ylih.tracking
 import android.bluetooth.BluetoothClass
 import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothManager
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.media.AudioDeviceInfo
+import android.media.AudioManager
 import android.os.Build
 import android.os.Looper
+import android.util.Log
 import androidx.test.core.app.ApplicationProvider
 import androidx.work.ListenableWorker
 import androidx.work.testing.TestListenableWorkerBuilder
@@ -26,7 +31,9 @@ import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
+import org.robolectric.shadows.ShadowLog
 import org.robolectric.util.ReflectionHelpers
+import java.util.concurrent.atomic.AtomicBoolean
 
 /**
  * In the default mode these two receivers *are* the app: nothing of ours is resident, so a
@@ -41,6 +48,7 @@ class ReceiversTest {
     private val app: YlihApp = ApplicationProvider.getApplicationContext()
     private val db get() = app.container.database
     private val adapter = app.getSystemService(BluetoothManager::class.java).adapter
+    private val audioManager = app.getSystemService(AudioManager::class.java)
 
     private val hour = 3_600_000L
     private val now get() = app.container.clock.now()
@@ -75,6 +83,64 @@ class ReceiversTest {
         device?.let { intent.putExtra(BluetoothDevice.EXTRA_DEVICE, it) }
         app.sendBroadcast(intent)
         shadowOf(Looper.getMainLooper()).idle()
+    }
+
+    /**
+     * `goAsync()` borrows the process from Android and hands back a token; returning it in a
+     * `finally` is the only reason a receiver that failed is a lost session rather than a
+     * process Android complains about and eventually stops trusting. An ordered broadcast is
+     * what makes that observable — the result receiver runs only once every receiver has
+     * finished, so this timing out *is* the assertion that the token leaked.
+     */
+    private fun broadcastAndAwaitFinish(action: String, device: BluetoothDevice? = null) {
+        val intent = Intent(action)
+        device?.let { intent.putExtra(BluetoothDevice.EXTRA_DEVICE, it) }
+        val finished = AtomicBoolean(false)
+        app.sendOrderedBroadcast(
+            intent,
+            null,
+            object : BroadcastReceiver() {
+                override fun onReceive(context: Context, intent: Intent) {
+                    finished.set(true)
+                }
+            },
+            null,
+            0,
+            null,
+            null,
+        )
+        settle("the receiver to hand its broadcast token back") { finished.get() }
+    }
+
+    /**
+     * Also the proof that the ordered broadcast reached the manifest receiver at all: with
+     * nothing to observe in a database that is closed, a dispatch that quietly went nowhere
+     * would finish just as promptly.
+     */
+    private fun assertFailureWasLoggedBy(tag: String) {
+        assertTrue(
+            "nothing was logged under $tag: ${ShadowLog.getLogs().map { it.tag }}",
+            ShadowLog.getLogsForTag(tag).any { it.type == Log.ERROR && it.throwable != null },
+        )
+    }
+
+    /**
+     * What the audio stack reports while the headset is on. Opening a session schedules the
+     * heartbeat, and under the test scheduler that worker starts the moment it is enqueued —
+     * against the real container — so it reconciles the row the broadcast has just written
+     * against this list. Left empty, it reads as a pair that is already gone again, which is
+     * what made these tests pass or fail on how fast the rest of the JVM was.
+     */
+    private fun listHeadsetAsConnected() {
+        shadowOf(audioManager).setOutputDevices(
+            listOf(
+                outputDevice(
+                    AudioDeviceInfo.TYPE_BLUETOOTH_A2DP,
+                    address = "XX:XX:XX:XX:5E:C2",
+                    productName = "ACCENTUM Plus",
+                ),
+            ),
+        )
     }
 
     /** The receivers hand their work to a background scope and finish on Room's own threads. */
@@ -118,6 +184,8 @@ class ReceiversTest {
 
     @Test
     fun `a connect broadcast is the whole of Bluetooth-only tracking`() {
+        listHeadsetAsConnected()
+
         broadcast(BluetoothDevice.ACTION_ACL_CONNECTED, headset())
 
         settle("the session to open") { sessions().isNotEmpty() }
@@ -134,6 +202,9 @@ class ReceiversTest {
 
     @Test
     fun `a disconnect broadcast closes the session the connect opened`() {
+        // Still listed as connected, so the close under test is the broadcast's and not a
+        // reconcile deciding the pair had vanished.
+        listHeadsetAsConnected()
         broadcast(BluetoothDevice.ACTION_ACL_CONNECTED, headset())
         settle("the session to open") { sessions().isNotEmpty() }
 
@@ -199,6 +270,27 @@ class ReceiversTest {
         shadowOf(Looper.getMainLooper()).idle()
 
         assertNull(sessions().single().disconnectedAt)
+    }
+
+    @Test
+    fun `a connect the database cannot record costs one session, not the process`() {
+        // Nothing of the app is resident in this mode, so the receiver is the only thing that can
+        // put the process back. Closing the database is the cheapest honest way to make the work
+        // it hands to the background scope throw.
+        db.close()
+
+        broadcastAndAwaitFinish(BluetoothDevice.ACTION_ACL_CONNECTED, headset())
+
+        assertFailureWasLoggedBy("BtConnectionReceiver")
+    }
+
+    @Test
+    fun `a boot reconcile that fails still hands the process back`() {
+        db.close()
+
+        broadcastAndAwaitFinish(Intent.ACTION_BOOT_COMPLETED)
+
+        assertFailureWasLoggedBy("BootReceiver")
     }
 
     @Test

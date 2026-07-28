@@ -20,6 +20,9 @@ import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
+import org.robolectric.annotation.Implementation
+import org.robolectric.annotation.Implements
+import org.robolectric.shadows.ShadowBluetoothDevice
 import org.robolectric.shadows.ShadowBuild
 import org.robolectric.util.ReflectionHelpers
 import org.robolectric.util.ReflectionHelpers.ClassParameter
@@ -253,6 +256,45 @@ class AudioDevicesTest {
     }
 
     @Test
+    fun `a headset the app may no longer ask about is still counted`() {
+        // Revoking BLUETOOTH_CONNECT makes every guarded getter throw. Each one is wrapped
+        // separately so that costs the *name*, not the identity: resolving to null here would
+        // start the pair's lifetime again from zero the next time it connected.
+        val device = bluetoothDevice()
+        shadowOf(device).setShouldThrowSecurityExceptions(true)
+
+        val identity = AudioDevices.identityOf(device)
+
+        assertEquals("bt:5E:C2", identity?.key)
+        assertEquals("the address is the only label left", mac, identity?.name)
+        assertEquals("an unreadable type is a plain headset, not a skipped one", DeviceKind.BLUETOOTH, identity?.kind)
+    }
+
+    @Test
+    @Config(shadows = [ShadowAddresslessBluetoothDevice::class])
+    fun `a device the app cannot read at all is skipped rather than crashed`() {
+        // The other half of the same promise: with nothing identifiable left there is no session
+        // to record, and a manifest receiver that threw here would take the broadcast down.
+        val device = bluetoothDevice()
+        shadowOf(device).setShouldThrowSecurityExceptions(true)
+
+        assertNull(AudioDevices.identityOf(device))
+    }
+
+    @Test
+    @Config(sdk = [Build.VERSION_CODES.O_MR1])
+    fun `before android 9 the audio stack discloses no address at all`() {
+        // AudioDeviceInfo.getAddress() only exists from API 28, so on older installs the product
+        // name is the whole of a Bluetooth output's identity.
+        assertEquals(
+            "bt:name:$name",
+            AudioDevices.identityOf(
+                outputDevice(AudioDeviceInfo.TYPE_BLUETOOTH_A2DP, redactedMac, name),
+            )?.key,
+        )
+    }
+
+    @Test
     fun `what is connected right now is filtered to the kinds this mode tracks`() {
         val audioManager = context.getSystemService(AudioManager::class.java)
         shadowOf(audioManager).setOutputDevices(
@@ -283,4 +325,15 @@ class AudioDevicesTest {
         const val AUDIO_VIDEO_CAR_AUDIO = 0x240420
         const val PHONE_CELLULAR = 0x5A020C
     }
+}
+
+/**
+ * `setShouldThrowSecurityExceptions` covers the getters [ShadowBluetoothDevice] implements
+ * itself, but not `getAddress()` — and the address is what decides whether a device can be
+ * identified at all once the name has gone with it.
+ */
+@Implements(BluetoothDevice::class)
+class ShadowAddresslessBluetoothDevice : ShadowBluetoothDevice() {
+    @Implementation
+    fun getAddress(): String = throw SecurityException("BLUETOOTH_CONNECT denied")
 }

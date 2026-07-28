@@ -50,6 +50,44 @@ class SessionRepositoryTest {
     private suspend fun sessions() = db.sessionDao().getAll()
 
     @Test
+    fun `a caller that names no time gets the clock the repository was built with`() = runTest {
+        // The receivers pass a timestamp captured before `goAsync`, because the work runs later
+        // than the event; everything else lets these default, and both routes have to agree.
+        repository.onConnected(buds)
+        assertEquals(clockNow, sessions().single().connectedAt)
+
+        clockNow += hour
+        repository.heartbeat()
+        assertEquals(clockNow, sessions().single().heartbeatAt)
+
+        clockNow += hour
+        repository.reconcile(connected = listOf(buds), bootAt = bootAt)
+        assertEquals(
+            "a pair that is still connected is heartbeaten, not reopened",
+            clockNow,
+            sessions().single().heartbeatAt,
+        )
+
+        clockNow += hour
+        repository.onDisconnected(buds.key)
+        assertEquals(clockNow, sessions().single().disconnectedAt)
+    }
+
+    @Test
+    fun `built without one, the clock is the wall clock`() = runTest {
+        // How AppContainer builds it in production; only the tests ever inject time.
+        val before = System.currentTimeMillis()
+
+        SessionRepository(db).onConnected(buds)
+
+        val at = sessions().single().connectedAt
+        assertTrue(
+            "$at is not a wall-clock instant",
+            at >= before && at <= System.currentTimeMillis(),
+        )
+    }
+
+    @Test
     fun `connect then disconnect records one closed session`() = runTest {
         repository.onConnected(buds, at = clockNow)
         repository.onDisconnected(buds.key, at = clockNow + 2 * hour)

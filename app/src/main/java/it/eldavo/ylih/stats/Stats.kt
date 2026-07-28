@@ -49,8 +49,6 @@ object Stats {
         }
     }
 
-    fun totalMs(spans: List<Span>, now: Long): Long = spans.sumOf { durationMs(it, now) }
-
     /**
      * Spans that can answer the question [counting] asks. A session recorded in Bluetooth-only
      * mode has no playback figure at all, and treating that as "zero minutes listened" would drag

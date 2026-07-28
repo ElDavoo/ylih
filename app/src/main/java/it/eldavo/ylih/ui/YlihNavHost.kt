@@ -37,6 +37,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import it.eldavo.ylih.R
 import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -65,8 +66,15 @@ private val NAV_FADE = tween<Float>(durationMillis = 700)
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
-fun YlihNavHost(viewModel: YlihViewModel = viewModel()) {
-    val navController = rememberNavController()
+fun YlihNavHost(
+    viewModel: YlihViewModel = viewModel(),
+    /**
+     * Hoisted only so a test can reach a destination the UI has no way of asking for. A route
+     * argument is a string, so the pair route has to cope with one that is not a number, and
+     * every button that navigates there builds it from a Long.
+     */
+    navController: NavHostController = rememberNavController(),
+) {
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = backStackEntry?.destination?.route
     val snackbarHostState = remember { SnackbarHostState() }
