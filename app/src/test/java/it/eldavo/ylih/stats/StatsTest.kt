@@ -168,6 +168,33 @@ class StatsTest {
     }
 
     @Test
+    fun `a session that never ran contributes no day at all`() {
+        // A connect and a disconnect in the same millisecond — the bar chart must not grow a
+        // zero-height day for it, and the proportional split below would divide by zero.
+        val start = at(2026, 5, 20, 8)
+        assertEquals(emptyMap<LocalDate, Long>(), Stats.dailyMs(listOf(Span(start, start, null)), rome, start))
+    }
+
+    @Test
+    fun `a measured session with nothing played contributes no day either`() {
+        val start = at(2026, 5, 20, 8)
+        val end = start + 2 * 3_600_000L
+        assertEquals(
+            emptyMap<LocalDate, Long>(),
+            Stats.dailyMs(listOf(Span(start, end, 0L)), rome, end, Counting.PLAYBACK),
+        )
+    }
+
+    @Test
+    fun `an unmeasured span asked for playback answers zero rather than its length`() {
+        // Bluetooth-only sessions have no playback figure. `counted` keeps them out of the
+        // aggregates, but the per-row duration is reachable on its own.
+        val start = at(2026, 5, 20, 8)
+        val end = start + 3_600_000L
+        assertEquals(0L, Stats.durationMs(Span(start, end, null), end, Counting.PLAYBACK))
+    }
+
+    @Test
     fun `a recent window counting playback ignores unmeasured sessions entirely`() {
         val now = at(2026, 5, 20, 12)
         val spans = listOf(

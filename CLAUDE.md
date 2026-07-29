@@ -81,6 +81,28 @@ location and are dropped unless `isIncludeNoLocationClasses` is set. Without it 
 class silently reports zero. If coverage ever collapses to a couple of percent again, that
 setting is the first thing to check.
 
+`coverage-summary.py` reports the number over code this repository actually wrote. The report
+holds a good deal that nobody here can write a test for: Room's KSP output (`*Dao_Impl`, about a
+fifth of the instructions) and the stdlib and coroutines sources the compiler inlines into our
+classes and attributes to our packages — `SafeCollector.common.kt`, `Emitters.kt`, `LazyDsl.kt`,
+`Comparisons.kt`. The rule is one line: a class counts if its source file exists under `app/src`.
+The excluded total is printed underneath rather than dropped silently, and the report on disk is
+untouched — AGP's `JacocoReportTask` has no exclusion setting, and reaching into it would be one
+more thing to break on an AGP bump.
+
+Two things the remaining gap is *not* worth chasing. Branch coverage sits in the seventies
+because the Compose compiler emits a `$changed`/default-argument bitmask branch per composable
+parameter, and no test drives those; the Compose-heavy files hold about two thirds of the missed
+branches. And a handful of never-executed lines are unreachable by construction — the closing
+brace of a `collect` on a channel that never closes, and the `$default` constructor bridges of
+`JsonBackup`'s DTOs, which only a Kotlin caller omitting arguments would reach.
+
+The other thing to know is that neither flavor's report is the whole picture: `Distribution`
+constants are compile-time, so the branch a `HAS_SPECIAL_USE_FGS` check does not take reads as
+uncovered on that flavor and is covered on the other. CI runs both. Where a path can be reached
+without the flavor split — the API 23 floor, say, where no build can run the foreground service —
+prefer that, and the `*LegacyTest` classes are where it lives.
+
 ## Architecture
 
 ### Everything writes through one funnel

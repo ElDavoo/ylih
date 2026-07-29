@@ -218,6 +218,20 @@ class SessionRepositoryTest {
     }
 
     @Test
+    fun `the grace window only looks forward, never back over a clock correction`() = runTest {
+        // The window exists to absorb a device list that lags a disconnect by a moment. A
+        // connect dated *before* that disconnect is the clock having been put back instead, and
+        // swallowing it would drop a real session on the floor.
+        repository.onConnected(buds, at = clockNow - hour)
+        repository.onDisconnected(buds.key, at = clockNow)
+
+        repository.reconcile(connected = listOf(buds), now = clockNow - 1_000, bootAt = bootAt)
+
+        assertEquals(2, sessions().size)
+        assertNull("the second one is live", sessions().last().disconnectedAt)
+    }
+
+    @Test
     fun `retiring a pair freezes it and the next connection starts generation two`() = runTest {
         repository.onConnected(buds, at = clockNow - 3 * hour)
         repository.onDisconnected(buds.key, at = clockNow - 2 * hour)

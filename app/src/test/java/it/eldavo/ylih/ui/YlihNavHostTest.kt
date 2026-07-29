@@ -7,6 +7,7 @@ import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
+import androidx.core.net.toUri
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import androidx.test.core.app.ApplicationProvider
@@ -27,6 +28,8 @@ import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
+import java.io.IOException
+import java.io.OutputStream
 
 /**
  * The shell that puts the three tabs and the pair page in front of the user. What it owns that
@@ -44,6 +47,7 @@ class YlihNavHostTest {
     private val db get() = app.container.database
 
     private lateinit var nav: NavHostController
+    private lateinit var viewModel: YlihViewModel
 
     @Before
     fun setUp() = runBlocking {
@@ -59,7 +63,7 @@ class YlihNavHostTest {
         // Built here rather than left to `viewModel()`: without an activity the store owner is
         // process-wide, so the second test in this class would inherit the first one's view model
         // — and with it Room flows still bound to the database instance that test had.
-        val viewModel = YlihViewModel(app)
+        viewModel = YlihViewModel(app)
         compose.setContent {
             nav = rememberNavController()
             YlihTheme { YlihNavHost(viewModel = viewModel, navController = nav) }
@@ -146,6 +150,28 @@ class YlihNavHostTest {
 
         assertEquals("and no half-drawn pair page is left behind", 0, nodeCount(text(R.string.pair_fallback_title)))
         compose.onNodeWithText(text(R.string.app_title)).assertExists()
+    }
+
+    @Test
+    fun `a message from the view model is shown wherever the user happens to be`() {
+        // The shell owns the only snackbar host in the app, so an export that failed on the
+        // settings tab has nowhere else to be reported — including after the user has moved on.
+        val failure = "no space left on device"
+        val uri = "content://test/backup.json".toUri()
+        shadowOf(app.contentResolver).registerOutputStream(
+            uri,
+            object : OutputStream() {
+                override fun write(b: Int) = throw IOException(failure)
+                override fun write(b: ByteArray) = throw IOException(failure)
+            },
+        )
+        show()
+
+        tap(R.string.nav_stats)
+        compose.waitUntil(timeoutMillis = 10_000) { route() == "stats" }
+        compose.runOnUiThread { viewModel.exportTo(uri) }
+
+        compose.waitUntil(timeoutMillis = 10_000) { nodeCount(failure) > 0 }
     }
 
     private companion object {

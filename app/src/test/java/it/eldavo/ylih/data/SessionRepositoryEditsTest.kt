@@ -99,6 +99,51 @@ class SessionRepositoryEditsTest {
     }
 
     @Test
+    fun `retiring a pair that no longer exists is a no-op`() = runTest {
+        repository.retirePair(pairId = 404, reason = "died", at = clockNow)
+
+        assertTrue(db.pairDao().getAll().isEmpty())
+    }
+
+    @Test
+    fun `retiring with a blank reason records no reason at all`() = runTest {
+        // The reason is free text and the field is nullable, so whitespace has to land as null
+        // rather than as a reason that renders an empty line on the pair's page forever.
+        repository.onConnected(buds, at = clockNow - hour)
+        val pairId = onlyPairId()
+
+        repository.retirePair(pairId, reason = "   ", at = clockNow)
+
+        val pair = db.pairDao().byId(pairId)!!
+        assertEquals(clockNow, pair.retiredAt)
+        assertNull(pair.retireReason)
+    }
+
+    @Test
+    fun `disconnecting a device whose pair was retired is a no-op`() = runTest {
+        // Retiring closes the open session and leaves no active pair, so the ACL_DISCONNECTED
+        // that follows the user pulling the buds out has nothing left to close.
+        repository.onConnected(buds, at = clockNow - hour)
+        repository.retirePair(onlyPairId(), reason = null, at = clockNow)
+        val before = db.sessionDao().getAll()
+
+        repository.onDisconnected(buds.key, at = clockNow + hour)
+
+        assertEquals(before, db.sessionDao().getAll())
+    }
+
+    @Test
+    fun `a device that comes back nameless keeps the name it already had`() = runTest {
+        // Names arrive from a permission-guarded call, so the same headset can report a good
+        // name once and nothing at all the next time. Overwriting would blank the card.
+        repository.onConnected(buds, at = clockNow - hour)
+
+        repository.onConnected(buds.copy(name = ""), at = clockNow)
+
+        assertEquals("Buds", db.deviceDao().findByKey(buds.key)!!.defaultName)
+    }
+
+    @Test
     fun `deleting a pair takes its sessions with it but leaves the device known`() = runTest {
         repository.onConnected(buds, at = clockNow - hour)
         repository.onDisconnected(buds.key, at = clockNow)
