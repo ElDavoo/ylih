@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">ᏰᎩᏂᏃᎩ ᏆᎬᏒ ᏙᏦᎵ, ᎠᏤᏣᏓᏅᏖ ᎤᏙᎦᎵᎩ, ᎠᏕᎥ ᏗᎲᎵᎭ ᎠᏎᎩ ᎠᎴ ᎾᎪᎾᏓ ᎦᏴ ᏭᏗ ᎯᎾᏕᎾ ᎦᏵᏕ.</string>
     <string name="welcome_privacy">ᏚᏁᏇ ᏂᏂ ᎠᏍᏌ ᎠᏍᏗ. ᎾᎿ ᎠᎾᏘᏘ ᎦᏌᏅᎩ ᏆᎬᏒ, ᎠᎴ ᎠᏆᎾᏗ ᎠᏃᏗ ᎤᏂᏈᎸᏴᏒ ᏃᎩᏲᏍ ᏗᎾ.</string>
     <string name="welcome_start">ᏫᎩᏅᏒ</string>
+    <string name="hibernation_title">ᎬᏂᎨᏒ ᎢᏳᏍᏗ ᎢᏣᏅᏓᏗᏍᏙᏗ ᎨᏒ ᎢᏳᏃ ᎢᏣᏅᏛᎩ</string>
+    <string name="hibernation_body">android ᏗᎪᏢᏔᏅ ᎾᏍᎩ ᎦᏳᎳᏗᏒ ᎾᏛᎪᏔᏅᎾ ᎨᏒ ᏚᏂᏲᎯᎯᏒᎩ, ᎠᎴ ᏓᏂᏲᎯᏎᎲ ᎡᎳᏗᏗᏍᎪᎢ. ᎾᏍᎩ ylih ᎪᎱᏍᏗ ᎥᏝ ᏱᎦᏫᏍᎪ ᏂᎯ ᎢᏣᏂᏱᏍᎬ ᎢᏳᎢᏗᏒ. ᎠᏅᏓᏗᏍᏙᏗ ᎾᏍᎩ ᎠᏓᏅᏙ ᎠᏂ ᎠᏰᎸᏓ ᏥᎩ, ᎾᏍᎩᏃ ᎠᎳᏱᏂᏙᎲ ᎠᏥᎩᏗᏍᏙᏗ ᏂᎦᏓ.</string>
+    <string name="action_not_now">ᎥᏝ ᎪᎯ</string>
 
     <!-- ᎠᏎᎩ ᏃᎩᎩᏰᏒ -->
     <string name="devices_in_use">ᎪᏀᎱᏉ ᎦᏵᏕ</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">ᎠᏟᏎᎵᏗ ᏰᎩᏂᏃᎩ ᎭᎴ ᏆᏯ, ᏗᎬᏩᏚ ylih ᎾᎿ ᎠᏐᏒ ᏄᏤ ᏄᎪᏨᏴ ᎤᎬᏬᏌᏛ — ᏭᏤᏢ ᎠᎬᎾᏓ ᏓᎭᏚ ᎠᏐᏒ ᎾᎿ ᏃᏀᏚ ᏖᏑᏐ ᏙᏦᎵ ᏗᎾ ᎢᏉᎪᏫ.</string>
     <string name="settings_battery_button">ᎨᎪᎶ ᎠᏤᏣᏓᏅᏖ</string>
     <string name="settings_battery_path">ᎠᏤᏣᏓᏅᏖ → ᏓᎭᏚ → ylih → ᎨᎪᎶ → ᎠᏓᏂᏤᏒ.</string>
+    <string name="settings_hibernation_body">ylih ᎦᏳᎳᏗᏒ ᎾᏛᎪᏔᏅᎾ ᏱᎩ, android ᎠᏰᎸᏓ ᏱᏓᏅᏓᏗᏍᏙᏗᏍᎪ ᎠᎴ ᏓᏲᎯᏎᎲ ᎡᎳᏗᏍᎪᎢ, ᎠᎴ ᎪᎱᏍᏗ ᎥᏝ ᏱᎦᏫᏍᎪ ᏂᎯ ᎢᏣᏂᏱᏍᎬ ᎢᏳᎢᏗᏒ.</string>
+    <string name="settings_hibernation_on">android ᏰᎵᏊ ᏱᏓᏅᏓᏗᏍᏙᏗᏍᎪ ylih.</string>
+    <string name="settings_hibernation_off">ylih ᎠᏓᏁᎳ ᎠᎴ ᎠᏅᏓᏗᏍᏙᏗᏍᎪ.</string>
+    <string name="settings_hibernation_button">ᏂᎦᎸᏫᏍᏓᎡᎲᎾ ᏗᎪᏢᏔᏅ ᏗᎦᎸᏫᏍᏓᏂᏱ</string>
     <string name="settings_about">ᎭᏳᎦ</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — ᎠᏎᎩ ᏒᏂ ᎨᎮᎵᏍᎬ, ᎠᏍᏌ ᎠᎶᏅᏆ ᎠᎴ ᏆᏯ ᎦᏌᏅᎩ.</string>
     <string name="settings_import_confirm_title">ᏕᎦᏚ ᏕᎭᎸᏛ ᎠᏚᏗᏎᏗ ᎢᎦᎳ?</string>

@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">विस्तृत ट्रैकिंग, सेटिंग्स में, तार वाले हेडफोन जोड़ता है और मापता है कि कितना समय वास्तव में प्लेबैक था।</string>
     <string name="welcome_privacy">सब कुछ इस फोन पर रहता है। कोई खाता नहीं है, और ऐप्लिकेशन के पास कोई इंटरनेट अनुमति नहीं है।</string>
     <string name="welcome_start">शुरू करो</string>
+    <string name="hibernation_title">भुल्लने पर बी गिनतरी जारी रक्खो</string>
+    <string name="hibernation_body">android कुछ म्हीनें तगर न खुल्ली गेई ऐप्स गी रोक दिंदा ऐ ते उंदी अनुमतियां बापस लै लेंदा ऐ, जिस कन्नै जदूं तगर तुस इसगी फेर नेईं खोलदे तदूं तगर ylih कुछ बी रिकॉर्ड नेईं करग। भुल्ली जाना ई इस ऐप दा मकसद ऐ, इस करी हुण इसगी बंद करी देना ठीक ऐ।</string>
+    <string name="action_not_now">हुण नेईं</string>
 
     <!-- हेडफोन सूची -->
     <string name="devices_in_use">उपयोग में</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">यदि सत्र रिकॉर्ड किए जाना बंद हो जाते हैं, तो जांचें कि ylih बैटरी अनुकूलन से मुक्त है - एक बलपूर्वक बंद की गई ऐप्लिकेशन को फिर से खोलने तक कनेक्शन प्रसारण नहीं मिलता है।</string>
     <string name="settings_battery_button">बैटरी सेटिंग्स</string>
     <string name="settings_battery_path">सेटिंग्स → ऐप्लिकेशन → ylih → बैटरी → असीमित।</string>
+    <string name="settings_hibernation_body">जे ylih कुछ म्हीनें तगर न खोलेआ जा, तां android इसगी रोक दिंदा ऐ ते इसदी अनुमतियां बापस लै लेंदा ऐ, ते जदूं तगर तुस इसगी नेईं खोलदे तदूं तगर कुछ बी फेर रिकॉर्ड नेईं होंदा। इसगी बंद करना ई ओह ऐ जेह्ड़ा जोड़ी गी उस मौसम च बी गिनतरी जारी रक्खण दिंदा ऐ जिस च तुस ऐप बारे सोचदे बी नेईं।</string>
+    <string name="settings_hibernation_on">android ylih गी रोक सकदा ऐ।</string>
+    <string name="settings_hibernation_off">ylih गी छूट ऐ ते ओह् रिकॉर्ड करदा रौंदा ऐ।</string>
+    <string name="settings_hibernation_button">बिना इस्तेमाल ऐप सेटिंगां</string>
     <string name="settings_about">के बारे में</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — हेडफोन घंटे, स्थानीय और हमेशा के लिए रखे जाते हैं।</string>
     <string name="settings_import_confirm_title">सभी डेटा को बदलो?</string>

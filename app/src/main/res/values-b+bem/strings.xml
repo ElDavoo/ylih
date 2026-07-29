@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">inshumu ifingilila, mu imilikilo, isamitikilila imipala apo kukalakala ni inshuba iyofi ya pa kusekesa.</string>
     <string name="welcome_privacy">ifyonse fifumilila pano mu foni yinu. palefwe umuntu, apo na foni yinu palefwe lumino lwa intaneti.</string>
     <string name="welcome_start">kolankela</string>
+    <string name="hibernation_title">ilekelesha ukubelenganya, nangu bafwaya ukwilaba</string>
+    <string name="hibernation_body">android ilekesha fifile ifishaisale imyeshi iingi, no kufumya insambu shabo. e ico ylih tekakwete ukulembe kanya mpaka mwaisungule kabili. ukwilaba emulimo wa fifile ifi, e ico kwaleni ici nomba.</string>
+    <string name="action_not_now">te nomba iyi</string>
 
     <!-- Inshumi ya ifu -->
     <string name="devices_in_use">kukulipila</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">ifikapililo ifinu kusiyilila kunikiliwa, tontonela ylih isinfilwe mu kulipila ka batadi — foni ifwaile ilefinya palefwe kukunika amakamu, pakali ifwaile kufukilula.</string>
     <string name="settings_battery_button">imilikilo ya batadi</string>
     <string name="settings_battery_path">imilikilo → fifile → ylih → batadi → alipumuikiliwe.</string>
+    <string name="settings_hibernation_body">ngo ylih tailasungula imyeshi iingi, android ilaisunga no kufumyapo insambu shakwe, tekwakwete ukulembe kanya mpaka wisungule kabili. kwaleni ici pakuti fifile fitwalilile ukubelenganya nangu mwaisungwa nga icika ico mwaimikilwe pa fifile.</string>
+    <string name="settings_hibernation_on">android kuti aleka ylih.</string>
+    <string name="settings_hibernation_off">ylih taalekakwa — ilalembo bwangu.</string>
+    <string name="settings_hibernation_button">imilikilo ya fifile ifishaisale</string>
     <string name="settings_about">pa ylih</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — amahola mu ifu, akabilibililwa pakali alina ulubuka.</string>
     <string name="settings_import_confirm_title">kulimina fyonse amakamu?</string>

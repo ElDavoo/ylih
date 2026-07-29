@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">jannginol carminore, e teelirminol, baynu kaalangal jeeɗgal e jannginaa jinde huulnde maa.</string>
     <string name="welcome_privacy">juulem foti e telefon maa. alal baakɗo, kala aylih heewu internet.</string>
     <string name="welcome_start">fuɗɗo</string>
+    <string name="hibernation_title">jokku limougol hay so yejjitaa</string>
+    <string name="hibernation_body">android hippay application ɗe seeɗtaaki yoga lewbi, nanngira jamirooje mum en, ɗum waawi wontude ylih hisataa hay huunde haa aan udditu ɗum kadi. yejjitegol ko ɗum tigi woni faandaare application ɗii, ɗum waɗi jogagol hippude ɗum jooni ina himmi.</string>
+    <string name="action_not_now">wonaa jooni</string>
 
     <!-- ndee kaalangal -->
     <string name="devices_in_use">waɗinitaade</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">yiɓɓe jokkol jannginoa baakɗo, teegno ko aylih njuŋŋo baakɗo e batiri suudu - aylih fuɗɗugo to njuŋŋi seŋal njuŋŋu redu dum moofaa.</string>
     <string name="settings_battery_button">teelirminol batiri</string>
     <string name="settings_battery_path">teelirminol → apps → ylih → batiri → ndilta-walla.</string>
+    <string name="settings_hibernation_body">so ylih seeɗtaaki yoga lewbi, android hippay ɗum, nanngira jamirooje mum, hay huunde hisataa kadi haa aan udditu ɗum. hippude ɗum ko ɗum waawnata gootel jokku limougol e nder yontere aan miijitaaki application nden fes.</string>
+    <string name="settings_hibernation_on">android waawi hippude ylih.</string>
+    <string name="settings_hibernation_off">ylih daɗndaama, ina heddii hisude.</string>
+    <string name="settings_hibernation_button">teelde application ɗe huutoraaka</string>
     <string name="settings_about">baɓɓe aylih</string>
     <string name="settings_about_body">aylih %1$s (%2$s) — saaji kaalangal, goɗo jeeɗngal e reyde walla.</string>
     <string name="settings_import_confirm_title">sooɗɗu baytal juulem?</string>

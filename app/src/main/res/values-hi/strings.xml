@@ -33,6 +33,9 @@
     <string name="welcome_point_detailed_body">सेटिंग्स में मौजूद विस्तृत ट्रैकिंग, तार वाले हेडफ़ोन जोड़ती है और यह मापती है कि कितना समय असल में प्लेबैक हो रहा था।</string>
     <string name="welcome_privacy">सब कुछ इसी फ़ोन पर रहता है। कोई अकाउंट नहीं है, और ऐप के पास इंटरनेट की अनुमति नहीं है।</string>
     <string name="welcome_start">शुरू करें</string>
+    <string name="hibernation_title">भूलने पर भी गिनती जारी रखो</string>
+    <string name="hibernation_body">android कुछ महीनों तक न खोले गए ऐप को रोक देता है और उनकी अनुमतियां वापस ले लेता है, जिससे जब तक आप इसे दोबारा नहीं खोलते तब तक ylih कुछ भी रिकॉर्ड नहीं करेगा। भुला दिया जाना ही इस ऐप का मकसद है, इसलिए अभी इसे बंद कर देना उचित है।</string>
+    <string name="action_not_now">अभी नहीं</string>
 
     <!-- हेडफ़ोन सूची -->
     <string name="devices_in_use">उपयोग में</string>
@@ -123,6 +126,10 @@
     <string name="settings_battery_body">अगर सत्र दर्ज होना बंद हो जाएं, तो जांचें कि ylih बैटरी ऑप्टिमाइज़ेशन से मुक्त है — जिस ऐप को ज़बरदस्ती रोका गया हो, वह खोले जाने तक फिर कभी कनेक्शन ब्रॉडकास्ट नहीं पाता।</string>
     <string name="settings_battery_button">बैटरी सेटिंग्स</string>
     <string name="settings_battery_path">सेटिंग्स → ऐप्स → ylih → बैटरी → अप्रतिबंधित।</string>
+    <string name="settings_hibernation_body">अगर ylih कुछ महीनों तक न खोला जाए, तो android इसे रोक देता है और इसकी अनुमतियां वापस ले लेता है, और जब तक आप इसे नहीं खोलते तब तक कुछ भी दोबारा रिकॉर्ड नहीं होता। इसे बंद करना ही वह है जो एक जोड़ी को उस मौसम में भी गिनती जारी रखने देता है जिसमें आप ऐप के बारे में सोचते तक नहीं।</string>
+    <string name="settings_hibernation_on">android ylih को रोक सकता है।</string>
+    <string name="settings_hibernation_off">ylih को छूट है और यह रिकॉर्ड करता रहता है।</string>
+    <string name="settings_hibernation_button">अप्रयुक्त ऐप सेटिंग</string>
     <string name="settings_about">जानकारी</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — हेडफ़ोन के घंटे, स्थानीय रूप से और हमेशा के लिए सुरक्षित।</string>
     <string name="settings_import_confirm_title">सारा डेटा बदलें?</string>

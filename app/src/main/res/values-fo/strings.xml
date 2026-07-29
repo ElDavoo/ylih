@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">útbroytað fylgja, í stillingum, leggur til táðað heyrnirtól og mætir, hvor nógvur av tídini var spield.</string>
     <string name="welcome_privacy">alt helst á hesum símlanum. tað er eingin reikningur, og appin hevur ongan internetarlov.</string>
     <string name="welcome_start">byrja nú</string>
+    <string name="hibernation_title">hann heldur fram at telja, meðan tú gloymir hann</string>
+    <string name="hibernation_body">android steðgar app, sum ikki verða opnað í nakrar mánaðir, og tekur loyvini aftur, so ylih hevði einki upptikið, til tú opnaði hann næstu ferð. at verða gloymdur er beint tað, sum hesin appurin er til, so tað er tess vert at sláa tað frá nú.</string>
+    <string name="action_not_now">ikki nú</string>
 
     <!-- Heyrnirtóla listi -->
     <string name="devices_in_use">í brúki</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">um setir standa av at verða skrásattar, kanna, at ylih er útilokin frá batteríbótandi — ein app, sum er tvang-stopp, fær aldri tengibreytingar aftur, til hani er opnað.</string>
     <string name="settings_battery_button">batterísillingar</string>
     <string name="settings_battery_path">stillingar → apps → ylih → batteri → óbundið.</string>
+    <string name="settings_hibernation_body">verður ylih ikki opnaður í nakrar mánaðir, steðgar android honum og tekur loyvini aftur, og einki verður upptikið aftur, fyrr enn tú opnar hann. at sláa tað frá er tað, sum letur eitt sett halda fram at telja gjøgnum eina tíð, tá tú ongantíð hugsar um appin.</string>
+    <string name="settings_hibernation_on">android kann steðga ylih.</string>
+    <string name="settings_hibernation_off">ylih er undantikin og heldur fram at taka upp.</string>
+    <string name="settings_hibernation_button">stillingar fyri óbrúkt app</string>
     <string name="settings_about">um</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — heyrnirtóla tímar, haldir lokal og til eilivíl.</string>
     <string name="settings_import_confirm_title">ynskra allar dátir?</string>

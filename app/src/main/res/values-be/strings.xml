@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">падрабязнае адсочванне ў наладах дадае праводныя наушніки і вымяраць, колькі гэтага часу рэальна бацца адтворэнне.</string>
     <string name="welcome_privacy">усё застаецца на гэтым тэлефоне. няма ні рахунку, ні дазволу на доступ ў інтэрнэт.</string>
     <string name="welcome_start">пачаць</string>
+    <string name="hibernation_title">лічы далей, нават калі забудзешся пра яе</string>
+    <string name="hibernation_body">android прыпыняе праграмы, якія не адкрываліся некалькі месяцаў, і забірае іх дазволы, з-за чаго ylih перастане нешта запісваць, пакуль ты зноў яе не адкрыеш. быць забытым — гэта якраз тое, для чаго створана гэта праграма, таму варта адключыць гэта прама цяпер.</string>
+    <string name="action_not_now">не цяпер</string>
 
     <!-- Спіс наушніка -->
     <string name="devices_in_use">ў выкарыстанні</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">калі сесіі перастаю быць запісаны, пракаверыце, што ylih выключаны з оптымізацыі батарэі — прымусова заспана прыстасаванне больш не атрымліваць падзеі падключэння, пакуль яго не адкрыюць.</string>
     <string name="settings_battery_button">налады батарэі</string>
     <string name="settings_battery_path">налады → прыстасаванні → ylih → батарэя → без абмежаванняў.</string>
+    <string name="settings_hibernation_body">калі ylih некалькі месяцаў не адкрываецца, android прыпыняе яе і забірае яе дазволы, і нічога не запісваецца зноў, пакуль ты яе не адкрыеш. адключэнне гэтага дазваляе пары лічыцца далей праз сезон, калі ты наогул не думаеш пра гэту праграму.</string>
+    <string name="settings_hibernation_on">android можа прыпыніць ylih.</string>
+    <string name="settings_hibernation_off">ylih вызвалена і працягвае запіс.</string>
+    <string name="settings_hibernation_button">налады невыкарыстаных праграм</string>
     <string name="settings_about">пра ўзнаёмленне</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — гадзіны ў наушніках, захаваны мясцова і вечна.</string>
     <string name="settings_import_confirm_title">замяніць усе дадзеныя?</string>

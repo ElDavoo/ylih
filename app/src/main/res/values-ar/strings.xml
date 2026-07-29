@@ -33,6 +33,9 @@
     <string name="welcome_point_detailed_body">التتبع التفصيلي، في الإعدادات، يضيف السماعات السلكية ويقيس كم من ذلك الوقت كان تشغيلًا فعليًا للصوت.</string>
     <string name="welcome_privacy">يبقى كل شيء على هذا الهاتف. لا يوجد حساب، ولا يملك التطبيق إذن الوصول إلى الإنترنت.</string>
     <string name="welcome_start">ابدأ</string>
+    <string name="hibernation_title">استمر في العد وأنت تنساه</string>
+    <string name="hibernation_body">يوقف android التطبيقات التي لم تُفتح لعدة أشهر ويسحب أذوناتها، ما قد يترك ylih لا يسجل شيئًا حتى تفتحه مجددًا. أن يُنسى هذا التطبيق هو بالضبط ما صُمم من أجله، لذا يستحق إيقاف ذلك الآن.</string>
+    <string name="action_not_now">ليس الآن</string>
 
     <!-- قائمة السماعات -->
     <string name="devices_in_use">قيد الاستخدام</string>
@@ -122,6 +125,10 @@
     <string name="settings_battery_body">إذا توقف تسجيل الجلسات، تحقق من أن ylih مستثنى من تحسين البطارية — التطبيق الذي أُوقف قسرًا لا يتلقى بعدها أي إشعارات اتصال إلى أن يُفتح مجددًا.</string>
     <string name="settings_battery_button">إعدادات البطارية</string>
     <string name="settings_battery_path">الإعدادات ← التطبيقات ← ylih ← البطارية ← غير مقيّد.</string>
+    <string name="settings_hibernation_body">إذا بقي ylih بدون فتح لعدة أشهر، يوقفه android ويسحب أذوناته، ولا يُسجَّل شيء بعد ذلك حتى تفتحه. إيقاف هذا الخيار هو ما يجعل الزوج يستمر في العد طوال موسم لا تفكر فيه بالتطبيق أصلًا.</string>
+    <string name="settings_hibernation_on">قد يوقف android تطبيق ylih.</string>
+    <string name="settings_hibernation_off">ylih مستثنى ويستمر في التسجيل.</string>
+    <string name="settings_hibernation_button">إعدادات التطبيقات غير المستخدمة</string>
     <string name="settings_about">حول</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — ساعات السماعات، محفوظة محليًا وإلى الأبد.</string>
     <string name="settings_import_confirm_title">استبدال كل البيانات؟</string>

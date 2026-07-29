@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">detaljerad spårning, i inställningar, lägger till kabelanslutna hörlurar och mäter hur stor del av tiden som faktiskt spelades upp.</string>
     <string name="welcome_privacy">allt stannar på den här telefonen. det finns inget konto, och appen har ingen internetbehörighet.</string>
     <string name="welcome_start">kom igång</string>
+    <string name="hibernation_title">fortsätter räkna medan du glömmer bort den</string>
+    <string name="hibernation_body">android pausar appar som inte öppnas på ett par månader och tar tillbaka deras behörigheter, vilket skulle få ylih att inte spela in något förrän du öppnade den igen. att bli bortglömd är precis vad den här appen är till för, så det är värt att stänga av det nu.</string>
+    <string name="action_not_now">inte nu</string>
 
     <!-- Hörlurslista -->
     <string name="devices_in_use">i bruk</string>
@@ -121,6 +124,10 @@
     <string name="settings_battery_body">om sessioner slutar registreras, kontrollera att ylih är undantagen från batterioptimering — en app som har tvångsstoppats får inga fler anslutningshändelser förrän den öppnas igen.</string>
     <string name="settings_battery_button">batteriinställningar</string>
     <string name="settings_battery_path">inställningar → appar → ylih → batteri → obegränsad.</string>
+    <string name="settings_hibernation_body">om ylih inte öppnas på ett par månader pausar android den och tar tillbaka dess behörigheter, och inget spelas in igen förrän du öppnar den. att stänga av det är vad som låter ett par fortsätta räkna genom en säsong då du aldrig tänker på appen.</string>
+    <string name="settings_hibernation_on">android kan pausa ylih.</string>
+    <string name="settings_hibernation_off">ylih är undantagen och fortsätter spela in.</string>
+    <string name="settings_hibernation_button">inställningar för oanvända appar</string>
     <string name="settings_about">om</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — hörlurstimmar, sparade lokalt och för alltid.</string>
     <string name="settings_import_confirm_title">ersätta all data?</string>

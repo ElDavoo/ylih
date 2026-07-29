@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">isela isoki, mu mbandja, ekoká bilonga nsele mfane mwa mani mwe mbe isela.</string>
     <string name="welcome_privacy">elongo elonga moto moto. ilinga konto, ilinga internet permission.</string>
     <string name="welcome_start">busala</string>
+    <string name="hibernation_title">e mbenda i sanga, njika sika o si bolane</string>
+    <string name="hibernation_body">android e tomba moto esuala i si tanga mwa mingi, e longa manda mao. na nika ylih e si eleya te te o tanga na tea. njika sika ese le muma moto esuala, longa nika sika.</string>
+    <string name="action_not_now">si mbaki nde</string>
 
     <!-- Headphones list -->
     <string name="devices_in_use">mu masolo</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">sike isela ilinga osambé, losombela mbe ylih ilinga battery optimization — moto esuala iye lemba mbuá ilinga osambé ngaka ilon muula.</string>
     <string name="settings_battery_button">mbandja battery</string>
     <string name="settings_battery_path">mbandja → moto esuala → ylih → battery → ilinga ilambe.</string>
+    <string name="settings_hibernation_body">njika ylih e si tanga mwa mingi, android e tomba yango na longa manda mao, na e si eleya te te o tanga na tea. longa nika sika ediba moto esuala ese mbenda i sanga, njika sika o si bolane moto esuala nunu.</string>
+    <string name="settings_hibernation_on">android e ka tomba ylih.</string>
+    <string name="settings_hibernation_off">ylih e langwedi te — e sombe eleya.</string>
+    <string name="settings_hibernation_button">mbandja ya moto esuala i si sadi</string>
     <string name="settings_about">wóma ylih</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — mabe wa ndúmu ndúmu, osambé likolo nsele woro.</string>
     <string name="settings_import_confirm_title">tundu iso elongo?</string>

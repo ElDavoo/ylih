@@ -22,6 +22,7 @@ internal val Context.dataStore: DataStore<Preferences> by preferencesDataStore(n
 class SettingsStore(private val context: Context) {
     private val detailedKey = booleanPreferencesKey("detailed_tracking")
     private val onboardedKey = booleanPreferencesKey("onboarding_done")
+    private val hibernationAskedKey = booleanPreferencesKey("hibernation_asked")
     private val playbackOnlyKey = booleanPreferencesKey("playback_only_stats")
     private val languageKey = stringPreferencesKey("language")
 
@@ -29,6 +30,14 @@ class SettingsStore(private val context: Context) {
     val detailedTracking: Flow<Boolean> = context.dataStore.data.map { it[detailedKey] ?: false }
 
     val onboardingDone: Flow<Boolean> = context.dataStore.data.map { it[onboardedKey] ?: false }
+
+    /**
+     * Whether the one-off "let ylih keep its permissions" prompt has been answered. Asked once and
+     * never again either way: the same request lives in settings for anyone who said no, and an
+     * app that nags about a system setting is an app people force-stop.
+     */
+    val hibernationAsked: Flow<Boolean> =
+        context.dataStore.data.map { it[hibernationAskedKey] ?: false }
 
     /**
      * Report listening time rather than connected time. Purely a way of reading the same history
@@ -61,6 +70,10 @@ class SettingsStore(private val context: Context) {
 
     suspend fun setOnboardingDone(done: Boolean) {
         context.dataStore.edit { it[onboardedKey] = done }
+    }
+
+    suspend fun setHibernationAsked(asked: Boolean) {
+        context.dataStore.edit { it[hibernationAskedKey] = asked }
     }
 
     suspend fun setLanguage(tag: String) {

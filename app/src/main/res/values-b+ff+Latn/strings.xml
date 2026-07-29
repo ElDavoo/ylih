@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">haasiraa jamano, e teggite, dan kaable hiirde e mesur waktu sekii. android-a ngol ɗee gaŋki kaable hadde ko njawla ko ko-sey, haŋka dina tule yiitere koom. bluetooth haasiraa ko-waawi haa ko-haa.</string>
     <string name="welcome_privacy">haɓunde foofe ngon telefoonaagu. alaa koonjo, alaa permisyon intarnet.</string>
     <string name="welcome_start">fuɗɓal</string>
+    <string name="hibernation_title">jokk limtugol e ko a yejjitii</string>
+    <string name="hibernation_body">android taƴa gollal ngal seedaaki yoga lebbi, ittira jamirooje makko; ɗum firti ylih alaa ko winnda haa aɗa udditu ngal kadi. yejjitegol ko ɗum woni faandaare gollal ngal, ɗum waɗi haaɗtingol ɗum jooni ina moƴƴi.</string>
+    <string name="action_not_now">wonah jooni</string>
 
     <!-- Liiste hiirde -->
     <string name="devices_in_use">ko faale</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">sekkuuji sumuji kuɓo haa, loor ylih ko-ma battery optimizatiyon — njawla ko-sumaala alaa sifa gaŋki seedd, haa wadi ko ko-fuɗɗo.</string>
     <string name="settings_battery_button">teggite battery</string>
     <string name="settings_battery_path">teggite → njawlaaji → ylih → battery → ko-kala jukka.</string>
+    <string name="settings_hibernation_body">so ylih seedaaki yoga lebbi, android taƴay ngal, ittira jamirooje makko, alaa ko winnda kadi haa aɗa udditu ngal. haaɗtingol ɗum ko ɗum yamira gootal jokk limtugol e nder yontere aɗa miijitaaki gollal ngal fes.</string>
+    <string name="settings_hibernation_on">android waawi taƴde ylih.</string>
+    <string name="settings_hibernation_off">ylih daɗndaama, ina heddii winndude.</string>
+    <string name="settings_hibernation_button">teelde gollal ɗe huutoraaka</string>
     <string name="settings_about">baɗte ylih</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — waktuuji hiirde, notere ko-soɗɗinde.</string>
     <string name="settings_import_confirm_title">miiɗ joɓinol foofe?</string>

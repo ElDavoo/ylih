@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">okuwandika okukweru, mu amateekate, akongeeza mahembe agacwire n\'akamanya amasigara magakoresebwa mu kwesigira.</string>
     <string name="welcome_privacy">byona byakuuma mu mugambi ugu. ntekina akawonto, n\'applicesheni nayo ntakina ichaato ca ntiniti.</string>
     <string name="welcome_start">terekezaaga</string>
+    <string name="hibernation_title">nikaguma nyekubara, n\'obu otaijukira</string>
+    <string name="hibernation_body">android neegabana applicesheni ezitakuguzirwe emyezi mingi, kandi neegyihakwo ichaato zaayo. baitu ylih terigire kubara kintu kihi kutungatunga oshoboole kwiguza. okwijukirwa nikyo ekikwo applicesheni egi neegira, n\'ahabw\'ekyo gabana kinu hati.</string>
+    <string name="action_not_now">tikwo hati</string>
 
     <!-- Omusolo gwa mahembe -->
     <string name="devices_in_use">akoreebwa</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">nkoba okussozo taandikibwa, tekeza atiyini ylih antakwere nka ekikumaaniza — applicesheni eyafirize yaayagirwe tategembana okuwandika kuza ekikwata aba ntakwengereza okwacumbura ichaato.</string>
     <string name="settings_battery_button">amateekate ga batireeri</string>
     <string name="settings_battery_path">amateekate → applicesheni → ylih → batireeri → etakyamibaza.</string>
+    <string name="settings_hibernation_body">ylih yaataijukurwe emyezi mingi, android neegihi n\'okugihakwo ichaato zaayo, kandi tikirimu kubara kintu kihi kutungatunga oshoboole kwiguza. gabana kinu ngu applicesheni ecomorre kubara n\'omu mwanya ogu otaijukira applicesheni egi.</string>
+    <string name="settings_hibernation_on">android nibaasa gabana ylih.</string>
+    <string name="settings_hibernation_off">ylih tigabaine — neegukomeza kubara.</string>
+    <string name="settings_hibernation_button">amateekate g\'applicesheni ezitakuguzirwe</string>
     <string name="settings_about">ku ka egi</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — saati mu mahembe, ekuuma locally n\'inini.</string>
     <string name="settings_import_confirm_title">babyiza byona?</string>

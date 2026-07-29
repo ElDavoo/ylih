@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">tənzimləmələrdə ətraflı izləmə simlə qulaqlıqlar əlavə edir və vaxtın nə qədərinin həqiqətən oynatıldığını ölçür.</string>
     <string name="welcome_privacy">hər şey bu telefonda qalır. heç bir hesab yoxdur və tətbiqin internet icazəsi yoxdur.</string>
     <string name="welcome_start">başlayın</string>
+    <string name="hibernation_title">unutsan da saymağa davam et</string>
+    <string name="hibernation_body">android bir neçə ay açılmayan tətbiqləri dayandırır və icazələrini geri alır ki, bu da ylih-i sən onu yenidən açana qədər heç nə qeyd etməyən vəziyyətə salar. unudulmaq bu tətbiqin var olmaq səbəbidir, ona görə də indi bunu deaktiv etməyə dəyər.</string>
+    <string name="action_not_now">indi yox</string>
 
     <!-- Qulaqlıqlar siyahısı -->
     <string name="devices_in_use">istifadədə</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">seanslar qeyd olunmağı dayandırsa, ylih-in batareya optimallaşdırmasından istisna edildiyinə əmin olun — məcburi olaraq dayandırılmış tətbiq açılana qədər qoşulma hadisələrini almır.</string>
     <string name="settings_battery_button">batareya tənzimləmələri</string>
     <string name="settings_battery_path">tənzimləmələr → tətbiqlər → ylih → batareya → sınırlamadan azad.</string>
+    <string name="settings_hibernation_body">ylih bir neçə ay açılmadan qalarsa, android onu dayandırır və icazələrini geri alır, sən açana qədər heç nə yenidən qeyd olunmur. bunu deaktiv etmək cütlüyün tətbiq haqqında düşünmədiyin bir mövsüm boyu saymağa davam etməsinə imkan verir.</string>
+    <string name="settings_hibernation_on">android ylih-i dayandıra bilər.</string>
+    <string name="settings_hibernation_off">ylih istisna edilib və qeydə almağa davam edir.</string>
+    <string name="settings_hibernation_button">istifadə edilməyən tətbiq ayarları</string>
     <string name="settings_about">haqqında</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — qulaqlıqda saatlar, mərkəzi şəkildə və əbədi saxlanılır.</string>
     <string name="settings_import_confirm_title">bütün məlumatları əvəz etmək istəyirsiniz?</string>

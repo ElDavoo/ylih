@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">ĩmenyithia ĩrĩa yoona, kũrĩ ĩmenyithia, yoongera mahoya ma rũruta na ĩmenyaga kana riakĩ rĩa ruo ũmwe rĩarĩ na kĩruta.</string>
     <string name="welcome_privacy">gĩothe kĩgĩkooyaga kũrĩ ĩrĩngĩ rĩĩ. gũtũũ gũtaarĩ akaunti, na ylih ĩtaarĩ na mahoya ma ĩntarineti.</string>
     <string name="welcome_start">thima</string>
+    <string name="hibernation_title">ĩgeriragia gũkarania o na ĩrĩa wariganirwo</string>
+    <string name="hibernation_body">android nĩĩtigithagia kĩruta kĩrĩa gĩtekũhingũrwo ĩmĩeri mĩingĩ, na ĩgatunya mahoya makĩo. nĩguo ylih ĩtakoreka ũndũ kuuma ĩyo nginya wanahingũra ringĩ. kũriganĩrwo nĩkĩo mũrimo wa kĩruta gĩkĩ, nĩ ũndũ ũcio kana ũndũ ũyũ rĩu.</string>
+    <string name="action_not_now">tĩrĩ rĩu</string>
 
     <!-- Njaandũ cia mahoya -->
     <string name="devices_in_use">ĩrĩ na gũtũũ</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">ruo mahinda maruta ĩmenyithia, menyaga kana ylih ĩrĩ na mahoya kwa kĩruta - kĩruta kĩa android ĩtaarĩ na mahoya o nakĩo kuuma kana kĩooyitwo nĩngĩ.</string>
     <string name="settings_battery_button">ĩmenyithia ya kĩruta</string>
     <string name="settings_battery_path">ĩmenyithia → mĩruta → ylih → kĩruta → gũtũũ gwa makĩĩo.</string>
+    <string name="settings_hibernation_body">ylih ĩngĩtiga kũhingũrwo ĩmĩeri mĩingĩ, android nĩĩgĩtigithagia na ĩgatunya mahoya makĩo, ndĩgacooka koma ũndũ kuuma ĩyo nginya wanahingũra ringĩ. kana ũndũ ũyũ nĩguo kĩruta kĩgayanie gũkarania o na ĩrĩa wariganirwo nĩ kĩruta gĩkĩ ihinda iraihu.</string>
+    <string name="settings_hibernation_on">android no ĩtigithie ylih.</string>
+    <string name="settings_hibernation_off">ylih ndĩrĩ na kĩmenyithia — ĩrathiĩ na mbere kũreka.</string>
+    <string name="settings_hibernation_button">ĩmenyithia ya kĩruta gĩtekũtũmagĩrwo</string>
     <string name="settings_about">o ylih</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — mahinda ma mahoya, meguo kũrĩ ĩrĩngĩ rĩĩ na mahinda ma kũingĩ.</string>
     <string name="settings_import_confirm_title">thamba gĩothe kĩa ũmenyithia?</string>

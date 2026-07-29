@@ -37,6 +37,9 @@
     <string name="welcome_point_detailed_body">detailed tracking, in settings, adds wired headphones and measures how much of the time was actually playing.</string>
     <string name="welcome_privacy">everything stays on this phone. there is no account, and the app has no internet permission.</string>
     <string name="welcome_start">get started</string>
+    <string name="hibernation_title">keep counting while you forget about it</string>
+    <string name="hibernation_body">android pauses apps that go unopened for a few months and takes their permissions back, which would leave ylih recording nothing until you next opened it. being forgotten about is exactly what this app is for, so it is worth turning that off now.</string>
+    <string name="action_not_now">not now</string>
 
     <!-- Headphones list -->
     <string name="devices_in_use">in use</string>
@@ -130,6 +133,10 @@
     <string name="settings_battery_body">if sessions stop being recorded, check that ylih is exempt from battery optimisation — an app that has been force-stopped never receives connection broadcasts again until it is opened.</string>
     <string name="settings_battery_button">battery settings</string>
     <string name="settings_battery_path">settings → apps → ylih → battery → unrestricted.</string>
+    <string name="settings_hibernation_body">if ylih goes unopened for a few months, android pauses it and takes its permissions back, and nothing is recorded again until you open it. turning that off is what lets a pair keep counting through a season you never think about the app.</string>
+    <string name="settings_hibernation_on">android may pause ylih.</string>
+    <string name="settings_hibernation_off">ylih is exempt and keeps recording.</string>
+    <string name="settings_hibernation_button">unused app settings</string>
     <string name="settings_about">about</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — headphone hours, kept locally and forever.</string>
     <string name="settings_import_confirm_title">replace all data?</string>

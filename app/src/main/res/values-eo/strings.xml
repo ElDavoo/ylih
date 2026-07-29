@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">detala spurado, en agordoj, aldonas kablitajn altkurajn aŭdilojn kaj mezuras kiom da la tempo estis vere ludanta.</string>
     <string name="welcome_privacy">ĉio restas en ĉi tiu telefono. nenia konto, kaj la aplikaĵo ne havas interretan permeson.</string>
     <string name="welcome_start">komenci</string>
+    <string name="hibernation_title">daŭre kalkulas dum vi forgesas ĝin</string>
+    <string name="hibernation_body">android paŭzas aplikaĵojn kiuj restas nemalfermitaj dum kelkaj monatoj kaj reprenas iliajn permesojn, kio lasus ylih registranta nenion ĝis vi denove malfermus ĝin. esti forgesita estas ĝuste tio por kio ĉi tiu aplikaĵo ekzistas, do indas malŝalti tion nun.</string>
+    <string name="action_not_now">ne nun</string>
 
     <!-- Listo de altkuraj aŭdiloj -->
     <string name="devices_in_use">en uzo</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">se seancoj ĉesas esti registrata, kontrolu ke ylih estas sena de baterij-optimigo — aplikaĵo, kiu estis forcigite-haltigita, neniam alprenas konekt-dissendojn denove antaŭ ol ĝi estas malfermita.</string>
     <string name="settings_battery_button">bateriaj agordoj</string>
     <string name="settings_battery_path">agordoj → aplikaĵoj → ylih → baterij → senlimita.</string>
+    <string name="settings_hibernation_body">se ylih restas nemalfermita dum kelkaj monatoj, android paŭzas ĝin kaj reprenas ĝiajn permesojn, kaj nenio plu registriĝas ĝis vi malfermas ĝin. malŝalti tion estas kio lasas paron daŭre kalkuli tra sezono dum kiu vi neniam pensas pri la aplikaĵo.</string>
+    <string name="settings_hibernation_on">android povas paŭzi ylih.</string>
+    <string name="settings_hibernation_off">ylih estas escepta kaj daŭre registras.</string>
+    <string name="settings_hibernation_button">agordoj de neuzataj aplikaĵoj</string>
     <string name="settings_about">pri</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — horoj de altkuraj aŭdiloj, konservita loke kaj ĉiam.</string>
     <string name="settings_import_confirm_title">anstataŭigu ĉiujn datumojn?</string>

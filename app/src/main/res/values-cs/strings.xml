@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">podrobné sledování, v nastavení, přidává kabelová sluchátka a měří, kolik z toho času se opravdu přehrávalo.</string>
     <string name="welcome_privacy">všechno zůstává v tomto telefonu. neexistuje žádný účet a aplikace nemá oprávnění k internetu.</string>
     <string name="welcome_start">začít</string>
+    <string name="hibernation_title">počítá dál, i když na ni zapomeneš</string>
+    <string name="hibernation_body">android pozastaví aplikace, které se pár měsíců neotevřou, a odebere jim oprávnění, takže by ylih nezaznamenávala nic až do dalšího otevření. být zapomenuta je přesně to, k čemu tahle aplikace je, takže se to vyplatí hned vypnout.</string>
+    <string name="action_not_now">teď ne</string>
 
     <!-- Seznam sluchátek -->
     <string name="devices_in_use">používaná</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">pokud se relace přestanou zaznamenávat, zkontroluj, že je ylih vyňat z optimalizace baterie — aplikace, která byla vynuceně zastavena, už nedostává žádná oznámení o připojení, dokud se znovu neotevře.</string>
     <string name="settings_battery_button">nastavení baterie</string>
     <string name="settings_battery_path">nastavení → aplikace → ylih → baterie → bez omezení.</string>
+    <string name="settings_hibernation_body">pokud se ylih pár měsíců neotevře, android ji pozastaví a odebere jí oprávnění a nic se znovu nezaznamená, dokud ji neotevřeš. vypnutí téhle věci je to, co nechá sluchátka počítat i přes období, kdy na aplikaci vůbec nepomyslíš.</string>
+    <string name="settings_hibernation_on">android může ylih pozastavit.</string>
+    <string name="settings_hibernation_off">ylih je vyjmuta a zaznamenává dál.</string>
+    <string name="settings_hibernation_button">nastavení nepoužívaných aplikací</string>
     <string name="settings_about">o aplikaci</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — hodiny ve sluchátkách, uložené lokálně a navždy.</string>
     <string name="settings_import_confirm_title">nahradit všechna data?</string>

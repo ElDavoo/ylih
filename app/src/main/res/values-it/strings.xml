@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">il tracciamento dettagliato, nelle impostazioni, aggiunge le cuffie via cavo e misura quanta parte del tempo stavi davvero ascoltando.</string>
     <string name="welcome_privacy">tutto resta su questo telefono. non c\'è nessun account e l\'app non ha il permesso di accedere a internet.</string>
     <string name="welcome_start">iniziamo</string>
+    <string name="hibernation_title">continua a contare mentre te ne dimentichi</string>
+    <string name="hibernation_body">android mette in pausa le app che restano qualche mese senza essere aperte e ne revoca i permessi, il che lascerebbe ylih a non registrare nulla fino alla volta successiva in cui la apri. essere dimenticata è esattamente lo scopo di questa app, quindi conviene disattivarlo subito.</string>
+    <string name="action_not_now">non ora</string>
 
     <!-- Elenco cuffie -->
     <string name="devices_in_use">in uso</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">se le sessioni smettono di essere registrate, controlla che ylih sia esente dall\'ottimizzazione della batteria — un\'app arrestata forzatamente non riceve più alcun evento di connessione finché non la riapri.</string>
     <string name="settings_battery_button">impostazioni batteria</string>
     <string name="settings_battery_path">impostazioni → app → ylih → batteria → senza restrizioni.</string>
+    <string name="settings_hibernation_body">se ylih resta qualche mese senza essere aperta, android la mette in pausa e ne revoca i permessi, e non viene registrato più nulla finché non la apri. disattivarlo è ciò che permette a un paio di cuffie di continuare a contare per una stagione intera in cui non pensi mai all\'app.</string>
+    <string name="settings_hibernation_on">android può mettere ylih in pausa.</string>
+    <string name="settings_hibernation_off">ylih è esente e continua a registrare.</string>
+    <string name="settings_hibernation_button">impostazioni app inutilizzate</string>
     <string name="settings_about">informazioni</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — le ore delle tue cuffie, in locale e per sempre.</string>
     <string name="settings_import_confirm_title">sostituire tutti i dati?</string>

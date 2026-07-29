@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">asetuksista löytyvä tarkka seuranta lisää langalliset kuulokkeet ja mittaa, kuinka suuri osa ajasta meni oikeasti toistoon.</string>
     <string name="welcome_privacy">kaikki pysyy tässä puhelimessa. tiliä ei ole, eikä sovelluksella ole internet-oikeutta.</string>
     <string name="welcome_start">aloita</string>
+    <string name="hibernation_title">laskee edelleen, vaikka unohdat sen</string>
+    <string name="hibernation_body">android pysäyttää sovellukset, joita ei avata pariin kuukauteen, ja ottaa niiden luvat pois, jolloin ylih ei tallentaisi mitään ennen kuin avaisit sen seuraavan kerran. unohtuminen on juuri se, mitä varten tämä sovellus on, joten se kannattaa kytkeä pois nyt.</string>
+    <string name="action_not_now">ei nyt</string>
 
     <!-- Kuulokeluettelo -->
     <string name="devices_in_use">käytössä</string>
@@ -121,6 +124,10 @@
     <string name="settings_battery_body">jos sessioiden tallennus lakkaa, tarkista, että ylih on vapautettu akun optimoinnista — pakkosuljettu sovellus ei vastaanota yhteysilmoituksia enää ennen kuin se avataan uudelleen.</string>
     <string name="settings_battery_button">akkuasetukset</string>
     <string name="settings_battery_path">asetukset → sovellukset → ylih → akku → ei rajoituksia.</string>
+    <string name="settings_hibernation_body">jos ylihiä ei avata pariin kuukauteen, android pysäyttää sen ja ottaa luvat pois, eikä mitään tallenneta uudelleen ennen kuin avaat sen. tämän kytkeminen pois on se, mikä antaa kuulokkeiden laskea läpi kauden, jolloin et ajattele sovellusta lainkaan.</string>
+    <string name="settings_hibernation_on">android voi pysäyttää ylihin.</string>
+    <string name="settings_hibernation_off">ylih on vapautettu ja tallentaa edelleen.</string>
+    <string name="settings_hibernation_button">käyttämättömien sovellusten asetukset</string>
     <string name="settings_about">tietoja</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — kuulokeaikaa, säilytettynä paikallisesti ja ikuisesti.</string>
     <string name="settings_import_confirm_title">korvataanko kaikki tiedot?</string>

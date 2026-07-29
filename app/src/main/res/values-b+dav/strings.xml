@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">ufuataji wa kina, katika mipangilio, inaongeza masikilizaji wenye waya na kupima ni kiasi gani cha muda ulichokuwa kucheza muziki.</string>
     <string name="welcome_privacy">kila kitu kinabaki katika simu hii. hakuna akaunti, na programu haina ruhusa ya intaneti.</string>
     <string name="welcome_start">anza</string>
+    <string name="hibernation_title">yaendelea kuhesabu hata ukisahau</string>
+    <string name="hibernation_body">android inasitisha programu zisizofunguliwa kwa miezi, na inaondoa ruhusa zake. hapo ylih haitaandika chochote mpaka uifungue tena. kusahaulika ndiyo kazi ya programu hii, hivyo tatakamatia jambo hili sasa.</string>
+    <string name="action_not_now">sio sasa</string>
 
     <!-- Headphones list -->
     <string name="devices_in_use">inayotumika</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">ikiwa mkutano unaacha kurekodi, hakikisha ylih imepunguzwa kutoka ubora wa betri — programu iliyosimamishwa kwa nguvu hairithi ujumbe wa kuunganishwa mpaka haiwakiwi tena.</string>
     <string name="settings_battery_button">mipangilio ya betri</string>
     <string name="settings_battery_path">mipangilio → programu → ylih → betri → haihidiwa.</string>
+    <string name="settings_hibernation_body">ikiwa ylih haitafunguliwa kwa miezi, android inaisitisha na kuondoa ruhusa yake, na haiandiki tena mpaka uifungue. tatakamatia jambo hili ili ylih iendelee kuhesabu hata katika kipindi usipowaza juu ya programu hii.</string>
+    <string name="settings_hibernation_on">android inaweza kusitisha ylih.</string>
+    <string name="settings_hibernation_off">ylih haihusiki — inaendelea kuandika.</string>
+    <string name="settings_hibernation_button">mipangilio ya programu zisizotumika</string>
     <string name="settings_about">kuhusu</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — saati za masikilizaji, zilizohifadhiwa mahali na kila wakati.</string>
     <string name="settings_import_confirm_title">badilisha data yote?</string>

@@ -33,6 +33,9 @@
          which is the same reason action_cancel carries a ButtonCase suppression. -->
     <string name="welcome_privacy" tools:ignore="Typos">alt blir på denne telefonen. det finnes ingen konto, og appen har ikke internett-tilgang.</string>
     <string name="welcome_start">kom i gang</string>
+    <string name="hibernation_title">fortsetter å telle mens du glemmer den</string>
+    <string name="hibernation_body">android setter apper som ikke blir åpnet på et par måneder på pause og tar tillatelsene deres tilbake, noe som ville latt ylih registrere ingenting før du åpnet den igjen. å bli glemt er nettopp det denne appen er til for, så det er verdt å slå det av nå.</string>
+    <string name="action_not_now">ikke nå</string>
 
     <!-- Liste over hodetelefoner -->
     <string name="devices_in_use">i bruk</string>
@@ -123,6 +126,10 @@
     <string name="settings_battery_body">hvis økter slutter å bli registrert, sjekk at ylih er unntatt fra batterioptimalisering — en app som er tvangsstoppet, mottar aldri tilkoblingshendelser igjen før den åpnes på nytt.</string>
     <string name="settings_battery_button">batteriinnstillinger</string>
     <string name="settings_battery_path">innstillinger → apper → ylih → batteri → ubegrenset.</string>
+    <string name="settings_hibernation_body">hvis ylih ikke blir åpnet på et par måneder, setter android den på pause og tar tillatelsene tilbake, og ingenting registreres igjen før du åpner den. å slå det av er det som lar et par fortsette å telle gjennom en sesong der du aldri tenker på appen.</string>
+    <string name="settings_hibernation_on">android kan sette ylih på pause.</string>
+    <string name="settings_hibernation_off">ylih er unntatt og fortsetter å registrere.</string>
+    <string name="settings_hibernation_button">innstillinger for ubrukte apper</string>
     <string name="settings_about">om</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — hodetelefontimer, lagret lokalt og for alltid.</string>
     <string name="settings_import_confirm_title">erstatte alle data?</string>

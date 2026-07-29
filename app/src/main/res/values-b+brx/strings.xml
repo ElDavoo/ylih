@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">विस्तृत ट्रैकिंग, सेटिंग्स में, तारयुक्त हेडफोन जोड़ता है और मापता है कि वास्तव में कितना समय प्लेबैक चल रहा था।</string>
     <string name="welcome_privacy">सब कुछ इस फोन पर रहता है। कोई खाता नहीं है, और ऐप के पास कोई इंटरनेट अनुमति नहीं है।</string>
     <string name="welcome_start">शुरुआत करें</string>
+    <string name="hibernation_title">भूलने पर भी गिनती जारी रखें</string>
+    <string name="hibernation_body">android कुछ महीनों तक न खोले गए ऐप को रोक देता है और उनकी अनुमति वापस ले लेता है, जिससे जब तक आप इसे फिर से नहीं खोलते तब तक ylih कुछ भी रिकॉर्ड नहीं करेगा। भुला दिया जाना ही इस ऐप का मकसद है, इसलिए अभी इसे बंद करना उचित है।</string>
+    <string name="action_not_now">अभी नहीं</string>
 
     <!-- हेडफोन सूची -->
     <string name="devices_in_use">उपयोग में</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">यदि सत्र रिकॉर्ड किए जाना बंद हो जाते हैं, तो जांचें कि ylih बैटरी अनुकूलन से मुक्त है — एक बलपूर्वक बंद की गई ऐप को जब तक खोला नहीं जाता तब तक कनेक्शन प्रसारण नहीं मिलते।</string>
     <string name="settings_battery_button">बैटरी सेटिंग्स</string>
     <string name="settings_battery_path">सेटिंग्स → ऐप्स → ylih → बैटरी → अप्रतिबंधित।</string>
+    <string name="settings_hibernation_body">यदि ylih कुछ महीनों तक न खोला जाए, तो android इसे रोक देता है और इसकी अनुमति वापस ले लेता है, और जब तक आप इसे नहीं खोलते तब तक कुछ भी फिर से रिकॉर्ड नहीं होता। इसे बंद करना ही वह है जो जोड़ी को उस मौसम में भी गिनती जारी रखने देता है जिसमें आप ऐप के बारे में सोचते भी नहीं।</string>
+    <string name="settings_hibernation_on">android ylih को रोक सकता है।</string>
+    <string name="settings_hibernation_off">ylih को छूट है और यह रिकॉर्ड करता रहता है।</string>
+    <string name="settings_hibernation_button">अप्रयुक्त ऐप सेटिंग</string>
     <string name="settings_about">के बारे में</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — हेडफोन घंटे, स्थानीय रूप से और हमेशा के लिए रखे गए।</string>
     <string name="settings_import_confirm_title">सभी डेटा बदलें?</string>

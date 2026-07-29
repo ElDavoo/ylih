@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">pelacakan detail, di pengaturan, menambahkan headphone berkabel dan mengukur berapa banyak dari waktu itu benar-benar digunakan untuk memutar audio.</string>
     <string name="welcome_privacy">semuanya tetap di ponsel ini. tidak ada akun, dan aplikasi ini tidak memiliki izin internet.</string>
     <string name="welcome_start">mulai</string>
+    <string name="hibernation_title">tetap terhitung meski kamu melupakannya</string>
+    <string name="hibernation_body">android menghentikan aplikasi yang tidak dibuka selama beberapa bulan dan mencabut izinnya, yang membuat ylih tidak mencatat apa pun sampai kamu membukanya lagi. dilupakan justru itulah tujuan aplikasi ini, jadi sebaiknya matikan ini sekarang.</string>
+    <string name="action_not_now">nanti saja</string>
 
     <!-- Daftar headphone -->
     <string name="devices_in_use">sedang digunakan</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">jika sesi berhenti tercatat, periksa apakah ylih dikecualikan dari pengoptimalan baterai — aplikasi yang telah dihentikan paksa tidak akan menerima siaran koneksi lagi sampai dibuka.</string>
     <string name="settings_battery_button">pengaturan baterai</string>
     <string name="settings_battery_path">pengaturan → aplikasi → ylih → baterai → tanpa batasan.</string>
+    <string name="settings_hibernation_body">jika ylih tidak dibuka selama beberapa bulan, android menghentikannya dan mencabut izinnya, dan tidak ada yang tercatat lagi sampai kamu membukanya. mematikan itu adalah yang membuat sepasang headphone tetap terhitung sepanjang musim yang bahkan tidak kamu pikirkan aplikasinya.</string>
+    <string name="settings_hibernation_on">android dapat menghentikan ylih.</string>
+    <string name="settings_hibernation_off">ylih dikecualikan dan tetap mencatat.</string>
+    <string name="settings_hibernation_button">pengaturan aplikasi yang tidak digunakan</string>
     <string name="settings_about">tentang</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — jam headphone, disimpan secara lokal dan selamanya.</string>
     <string name="settings_import_confirm_title">ganti semua data?</string>

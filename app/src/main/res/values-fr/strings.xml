@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">le suivi détaillé, dans les réglages, ajoute les casques filaires et mesure la part du temps réellement passée en lecture.</string>
     <string name="welcome_privacy">tout reste sur ce téléphone. il n\'y a pas de compte, et l\'app n\'a pas la permission internet.</string>
     <string name="welcome_start">commencer</string>
+    <string name="hibernation_title">continue à compter pendant que vous l\'oubliez</string>
+    <string name="hibernation_body">android met en pause les applis qui restent quelques mois sans être ouvertes et leur retire leurs autorisations, ce qui laisserait ylih n\'enregistrer plus rien jusqu\'à la prochaine ouverture. être oubliée est précisément ce à quoi cette appli sert, alors il vaut mieux désactiver cela tout de suite.</string>
+    <string name="action_not_now">pas maintenant</string>
 
     <!-- Liste des casques -->
     <string name="devices_in_use">en service</string>
@@ -121,6 +124,10 @@
     <string name="settings_battery_body">si les sessions cessent d\'être enregistrées, vérifiez que ylih est exempté de l\'optimisation de la batterie — une app qui a été arrêtée de force ne reçoit plus jamais de diffusions de connexion tant qu\'elle n\'est pas rouverte.</string>
     <string name="settings_battery_button">réglages de batterie</string>
     <string name="settings_battery_path">réglages → applications → ylih → batterie → sans restriction.</string>
+    <string name="settings_hibernation_body">si ylih reste quelques mois sans être ouverte, android la met en pause et lui retire ses autorisations, et plus rien n\'est enregistré jusqu\'à ce que vous l\'ouvriez. désactiver cela est ce qui permet à un casque de continuer à compter pendant une saison où vous ne pensez jamais à l\'appli.</string>
+    <string name="settings_hibernation_on">android peut mettre ylih en pause.</string>
+    <string name="settings_hibernation_off">ylih est exemptée et continue d\'enregistrer.</string>
+    <string name="settings_hibernation_button">paramètres des applis inutilisées</string>
     <string name="settings_about">à propos</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — les heures de vos casques, conservées en local et pour toujours.</string>
     <string name="settings_import_confirm_title">remplacer toutes les données ?</string>

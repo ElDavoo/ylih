@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">el rastrexu detallau, nos axustes, añade auriculares cableáu y mide cuántu d\'esi tiempu yera reproducción de verdá.</string>
     <string name="welcome_privacy">tou permanez nesti teléfonu. nun hai cuentes, ni l\'app tien permisu d\'internet.</string>
     <string name="welcome_start">comienza</string>
+    <string name="hibernation_title">sigui contando mentanto te escaeces d\'ella</string>
+    <string name="hibernation_body">android detién les aplicaciones que llevan ensin abrise dellos meses y retira-yos los permisos, lo que dexaría a ylih ensin rexistrar nada hasta que la vuelvas abrir. que te escaezas d\'ella ye exactamente pa lo que ta pensada esta app, asina que val la pena desactivar eso agora.</string>
+    <string name="action_not_now">agora non</string>
 
     <!-- Llista d\'auriculares -->
     <string name="devices_in_use">n\'usu</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">si les sesiones dexen de grabarse, comprueba que ylih ta escluyíu de l\'optimización de batería — una app parada a la fuerza nunca vuelve a recibir eventos de conexón hasta que se abre de nuevu.</string>
     <string name="settings_battery_button">axustes de batería</string>
     <string name="settings_battery_path">axustes → apps → ylih → batería → non restrinxíu.</string>
+    <string name="settings_hibernation_body">si ylih pasa dellos meses ensin abrise, android detiénla y retira-y los permisos, y nada se vuelve rexistrar hasta que la abras. desactivar eso ye lo que dexa que un par siga contando mientres una temporada na que nin te alcuerdes de la app.</string>
+    <string name="settings_hibernation_on">android pue detener ylih.</string>
+    <string name="settings_hibernation_off">ylih ta exenta y sigui rexistrando.</string>
+    <string name="settings_hibernation_button">axustes d\'aplicaciones ensin usar</string>
     <string name="settings_about">acerca de</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — hores en auriculares, guaardaes localmente pa siempre.</string>
     <string name="settings_import_confirm_title">¿reemplazar tolos datos?</string>

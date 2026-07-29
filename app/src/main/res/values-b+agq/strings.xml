@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">tàten yí ndap ìkobò à à zán, íkí sèp, yí ñúm ìkobò à ndáp àdí yí à bùl àyùm à nû.</string>
     <string name="welcome_privacy">bìkí bí aká yè àsú yí fon ìyà. bìkí bí ŋ kón, à app yì ŋ fù ínténèt.</string>
     <string name="welcome_start">dém</string>
+    <string name="hibernation_title">ŋ gó tàten gó, ŋ zú à yì sú</string>
+    <string name="hibernation_body">android ŋ dúm app à yì kó gó mwa fu, à gó fù à dúm zú. ylih zú ŋ tàten kayʉ gó tàten sèp nù. app ìyà kwɔ à zú ŋ dúm gó, zú sú íkí ìyà zú tàten.</string>
+    <string name="action_not_now">sú ndu</string>
 
     <!-- Headphones list -->
     <string name="devices_in_use">à búŋ tàn</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">búŋ yì ŋ tàn, dém ylih ŋ yí baterì — app à yì a dúm bù búŋ zú à gá wùm.</string>
     <string name="settings_battery_button">ìkí baterì</string>
     <string name="settings_battery_path">íkí sèp → app → ylih → baterì → ŋ dúm.</string>
+    <string name="settings_hibernation_body">búŋ yì ylih ŋ tàn gó mwa fu, android à dúm zú à gó fù à dúm ìyà. ylih zú ŋ tàten kayʉ gó tàten sèp nù. sú íkí ìyà zú, ndap ìkobò gó zú tàten gó ǒ zú kwɔ app ìyà.</string>
+    <string name="settings_hibernation_on">android à yì dúm ylih.</string>
+    <string name="settings_hibernation_off">ylih ŋ dúm — à zú tàten.</string>
+    <string name="settings_hibernation_button">íkí app ŋ gó fù</string>
     <string name="settings_about">yí ylih</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — nábè ndap, à kó àsú à ŋ súm.</string>
     <string name="settings_import_confirm_title">gó sú bí bùŋ?</string>

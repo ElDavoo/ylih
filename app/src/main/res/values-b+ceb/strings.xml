@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">ang detalyadong subaybay, sa mga setting, ay nagdadagdag ng mga headphones na may kable at sinusukat kung gaano karaming oras ang aktwal na pagtugtog.</string>
     <string name="welcome_privacy">lahat ay nananatili sa telepono na ito. walang account, at ang app ay walang pahintulot sa internet.</string>
     <string name="welcome_start">magsimula</string>
+    <string name="hibernation_title">padayon sa pag-ihap bisan makalimtan nimo kini</string>
+    <string name="hibernation_body">gipahunong sa android ang mga app nga wala giablihi sa pipila ka bulan ug gikuha ang ilang mga pagtugot, nga mahimong mobiya sa ylih nga wala nagrekord bisan unsa hangtod nga imong ablihan pag-usab. ang pagkalimtan mao gyud ang katuyoan niini nga app, mao nga angay nang i-off kini karon.</string>
+    <string name="action_not_now">dili karon</string>
 
     <!-- Listahan ng mga headphones -->
     <string name="devices_in_use">ginagamit</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">kung hindi na nakatala ang mga session, tingnan kung ang ylih ay exempt mula sa battery optimization — isang app na na-force stop ay hindi na makakatanggap ng connection broadcasts hanggang sa muling buksan ito.</string>
     <string name="settings_battery_button">battery settings</string>
     <string name="settings_battery_path">settings → apps → ylih → battery → unrestricted.</string>
+    <string name="settings_hibernation_body">kung ang ylih dili maablihan sa pipila ka bulan, gipahunong kini sa android ug gikuha ang mga pagtugot niini, ug walay marekord pag-usab hangtod nga imong ablihan kini. ang pag-off niini mao ang nagpahimo sa usa ka parisan sa padayon nga pag-ihap bisan sa panahon nga wala gyud nimo hunahunaa ang app.</string>
+    <string name="settings_hibernation_on">mahimong pahunongon sa android ang ylih.</string>
+    <string name="settings_hibernation_off">gawasnon ang ylih ug padayon nga nagrekord.</string>
+    <string name="settings_hibernation_button">mga setting sa wala magamit nga app</string>
     <string name="settings_about">tungkol sa</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — oras sa mga headphones, napanatili nang lokal at magpakailanman.</string>
     <string name="settings_import_confirm_title">palit ang lahat ng data?</string>

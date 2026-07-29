@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">irekodi ileile, mu mawania, inaongeza sambamano iburani na kusuubu saa ngapi ileile ilikuwa inaiga.</string>
     <string name="welcome_privacy">vitu vyote vinabakia mu simu ino. hakuna akaunti, na app haina ruhusa ya intaneti.</string>
     <string name="welcome_start">anza</string>
+    <string name="hibernation_title">haiachi kuhesabu, hata ukiisahau</string>
+    <string name="hibernation_body">android inasimamisha app zisizofunguliwa kwa miezi, na inaondoa ruhusa zake. hapo ylih haitarekodi kitu chochote mpaka uifungue tena. kusahaulika ndilo lengo la app hii, hivyo zima jambo hili sasa.</string>
+    <string name="action_not_now">sio sasa</string>
 
     <!-- Orodha ya iburani -->
     <string name="devices_in_use">inatumika</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">ikiwa mgogoro haujarikibishwa kurekodiwwa, angalia kwamba ylih haijahusivwa kutokamizwa bateria — app iliyosimama mwenyewe hairisii matukio ya kuunga, saa imbapo haijafunguliwa.</string>
     <string name="settings_battery_button">mawania ya bateria</string>
     <string name="settings_battery_path">mawania → apps → ylih → bateria → ingizwa.</string>
+    <string name="settings_hibernation_body">ikiwa ylih haitafunguliwa kwa miezi, android inaisimamisha na kuondoa ruhusa zake, na hairekodi tena mpaka uifungue. zima jambo hili ili ylih iendelee kuhesabu hata msimu usipofikiria juu ya app hii.</string>
+    <string name="settings_hibernation_on">android inaweza kusimamisha ylih.</string>
+    <string name="settings_hibernation_off">ylih haihusiki — inaendelea kurekodi.</string>
+    <string name="settings_hibernation_button">mawania ya app zisizotumika</string>
     <string name="settings_about">kuhusu</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — saa mu iburani, zinabakia kwenyewe na kwa milele.</string>
     <string name="settings_import_confirm_title">badilisha habari zote?</string>

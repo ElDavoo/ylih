@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">གླེང་སྟེགས་ཁ་གསལ་བའི་སྒྲིག་འདེགས་ནི་སྲེད་དང་སྒྲ་སྲིད་གི་དུས་ཚོད་ཀྱང་གླེང་སྟེགས་འདེགས་ཀྱི་ཡིན།</string>
     <string name="welcome_privacy">ཆ་ཚང་ལ་ཚེས་ལ་དགེ་སོགས་ཁུག་ཏུ་གནས་གི་ཡིན། ཐོབ་ཐུབ་གཙོ་བོ་བྲེལ་དང་ངེས་འབྲེལ་ཕྱོགས་གསར་གཏོར་མེད།</string>
     <string name="welcome_start">གླེང་སྟེགས་འདེགས</string>
+    <string name="hibernation_title">བརྗེད་ནའང་གྲངས་བརྩི་མུ་མཐུད།</string>
+    <string name="hibernation_body">android གིས་ཟླ་བ་འགའ་རིང་མ་ཁ་ཕྱེས་པའི་ཉེར་སྤྱོད་རྣམས་མཚམས་འཇོག་ཅིང་ཆོག་མཆན་ཡང་ལོག་སྟེ་ལེན། དེས་ylih ཁྱེད་ཀྱིས་སླར་ཡང་མ་ཁ་ཕྱེས་བར་དུ་ཅི་ཡང་ཟིན་ཐོ་མི་བྱེད། བརྗེད་ངེས་པ་ནི་ཉེར་སྤྱོད་འདིའི་དམིགས་ཡུལ་ཉིད་ཡིན་སྟབས་ད་ལྟ་ཉིད་ནས་དེ་ཉིད་མེད་པར་བཟོ་ན་ཕན་ཐོགས་ཡོད།</string>
+    <string name="action_not_now">ད་ལྟ་མིན།</string>
 
     <!-- གོ་སྒྲིག་ཀ་ཞིབ་ -->
     <string name="devices_in_use">གཟིགས་ཀ་ཡིན་</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">དུས་དྭངས་གླེང་སྟེགས་བཞག་ཞེ་དགོས་པ་བྱུང་ན་ylih ནི་བེ་དུ་ཡི་བསྲེག་སྒྲིག་ཀ་མ་གཏུབ་བྱེད་དགོས། ཕོགས་གསྲོགས་གླེང་ཐོགས་དུས་གླེང་སྟེགས་འདེགས་མ་ཡིན།</string>
     <string name="settings_battery_button">བེ་དུ་གི་སྒྲིག་འདེགས་</string>
     <string name="settings_battery_path">སྒྲིག་འདེགས་ → ཞེ་དགོས་ → ylih → བེ་དུ་ → ཁ་རྒྱུགས་མེད།</string>
+    <string name="settings_hibernation_body">ylih ཟླ་བ་འགའ་རིང་མ་ཁ་ཕྱེས་ན་android གིས་མཚམས་འཇོག་ཅིང་ཆོག་མཆན་ལོག་སྟེ་ལེན་ལ། ཁྱེད་ཀྱིས་མ་ཁ་ཕྱེས་བར་དུ་ཅི་ཡང་སླར་ཟིན་ཐོ་མི་བྱེད། དེ་མེད་པར་བཟོ་ན་ཁྱེད་ཀྱིས་ཉེར་སྤྱོད་བསམ་བློ་མི་གཏོང་བའི་དུས་ཚོད་ཅིག་གི་ནང་ཡང་ཆ་ཕྲན་གྱིས་གྲངས་བརྩི་མུ་མཐུད་ཐུབ།</string>
+    <string name="settings_hibernation_on">android གིས་ylih མཚམས་འཇོག་སྲིད།</string>
+    <string name="settings_hibernation_off">ylih ལ་ཁེ་ཕན་ཡོད་ཅིང་ཟིན་ཐོ་མུ་མཐུད།</string>
+    <string name="settings_hibernation_button">སྤྱོད་མེད་ཉེར་སྤྱོད་སྒྲིག་འདེགས།</string>
     <string name="settings_about">ylih ཡི་རྒྱུ་ཁུག་</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — གོ་སྒྲིག་དུས་ཆུ་ཙམ་གི་སྐུ་ཚེ་ཁུག་ལ་དགེ་སོགས།</string>
     <string name="settings_import_confirm_title">སྟེགས་ཞིབ་ཆ་ཚང་བསྒྱུར་འམ་</string>

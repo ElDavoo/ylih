@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">সেটিংসে বিস্তারিত ট্র্যাকিং তারযুক্ত হেডফোন যোগ করে এবং কতটা সময় প্রকৃতপক্ষে চলছিল তা পরিমাপ করে।</string>
     <string name="welcome_privacy">সবকিছু এই ফোনে থাকে। কোন অ্যাকাউন্ট নেই, এবং অ্যাপের কোন ইন্টারনেট অনুমতি নেই।</string>
     <string name="welcome_start">শুরু করুন</string>
+    <string name="hibernation_title">ভুলে গেলেও গণনা চলতে থাকুক</string>
+    <string name="hibernation_body">android কয়েক মাস না খোলা অ্যাপগুলিকে থামিয়ে দেয় এবং তাদের অনুমতি ফিরিয়ে নেয়, যার ফলে আপনি আবার না খোলা পর্যন্ত ylih কিছুই রেকর্ড করবে না। ভুলে যাওয়াটাই এই অ্যাপের আসল উদ্দেশ্য, তাই এখনই সেটা বন্ধ করে রাখা ভালো।</string>
+    <string name="action_not_now">এখন নয়</string>
 
     <!-- হেডফোন তালিকা -->
     <string name="devices_in_use">ব্যবহারে</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">যদি সেশনগুলি রেকর্ড করা বন্ধ হয়, তবে পরীক্ষা করুন যে ylih ব্যাটারি অপ্টিমাইজেশন থেকে অব্যাহত রয়েছে। জোর করে বন্ধ করা অ্যাপটি খোলা না হওয়া পর্যন্ত আর সংযোগ সম্প্রচার পায় না।</string>
     <string name="settings_battery_button">ব্যাটারি সেটিংস</string>
     <string name="settings_battery_path">সেটিংস → অ্যাপ → ylih → ব্যাটারি → সীমাহীন।</string>
+    <string name="settings_hibernation_body">ylih কয়েক মাস না খোলা থাকলে, android সেটিকে থামিয়ে দেয় এবং এর অনুমতি ফিরিয়ে নেয়, আর আপনি না খোলা পর্যন্ত আবার কিছুই রেকর্ড হয় না। সেটা বন্ধ করাই একটি জোড়াকে এমন একটা মরসুম জুড়ে গণনা করে যেতে দেয় যখন আপনি অ্যাপটির কথা একেবারেই ভাবেন না।</string>
+    <string name="settings_hibernation_on">android ylih কে থামিয়ে দিতে পারে।</string>
+    <string name="settings_hibernation_off">ylih ছাড় পেয়েছে এবং রেকর্ড করেই চলেছে।</string>
+    <string name="settings_hibernation_button">অব্যবহৃত অ্যাপ সেটিংস</string>
     <string name="settings_about">সম্পর্কে</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — হেডফোন ঘন্টা, স্থানীয়ভাবে এবং চিরকালের জন্য রাখা হয়েছে।</string>
     <string name="settings_import_confirm_title">সমস্ত ডেটা প্রতিস্থাপন করুন?</string>

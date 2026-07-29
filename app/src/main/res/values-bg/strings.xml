@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">детайлно проследяване, в настройки, добавя жични слушалки и измерва колко от времето беше действително възпроизвеждане.</string>
     <string name="welcome_privacy">всичко остава на този телефон. няма профил и приложението няма разрешение за интернет.</string>
     <string name="welcome_start">начнете</string>
+    <string name="hibernation_title">продължи да броиш, докато я забравяш</string>
+    <string name="hibernation_body">android спира приложенията, които не са отваряни от няколко месеца, и отнема разрешенията им, което би оставило ylih без нищо записано, докато не го отвориш отново. да бъдеш забравено е точно предназначението на това приложение, затова си струва да изключиш това още сега.</string>
+    <string name="action_not_now">не сега</string>
 
     <!-- Списък на слушалките -->
     <string name="devices_in_use">в употреба</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">ако сесиите спрат да се записват, проверете че ylih е изключен от оптимизация на батерия — принудително спряно приложение никогато не получава конекции отново до да се отвори.</string>
     <string name="settings_battery_button">настройки на батерия</string>
     <string name="settings_battery_path">настройки → приложения → ylih → батерия → неограничено.</string>
+    <string name="settings_hibernation_body">ако ylih остане неотворено няколко месеца, android го спира и отнема разрешенията му, и нищо не се записва отново, докато не го отвориш. изключването на това позволява на един чифт да продължи да се брои през сезон, в който изобщо не мислиш за приложението.</string>
+    <string name="settings_hibernation_on">android може да спре ylih.</string>
+    <string name="settings_hibernation_off">ylih е изключено от ограниченията и продължава да записва.</string>
+    <string name="settings_hibernation_button">настройки за неизползвани приложения</string>
     <string name="settings_about">относно</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — часове в слушалки, запазени локално и завинаги.</string>
     <string name="settings_import_confirm_title">заменете всички данни?</string>

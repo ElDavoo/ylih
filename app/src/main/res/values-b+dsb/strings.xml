@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">detalny slepo w nastajenjach naršywaš drótne naušniki a měriš, kelko časa su realnje wótwóźenje słowo.</string>
     <string name="welcome_privacy">wšykno na toś tom smartfonu wóstawa. žaden konto njejo a nožeńska nima žadnu internecowu towědnosć.</string>
     <string name="welcome_start">zachop</string>
+    <string name="hibernation_title">licy dalej, mjaztym až na nju zabydnjoš</string>
+    <string name="hibernation_body">android zastanjo nałoženja, kótarež se pśez někotare mjasece njewócynjaju, a wzejo jim dowólnosći, tak až ylih by nic wěcej njenagrawał, až doniž jo znowego njewócyniš. byś zabyty jo rowno to, za což toś to nałoženje jo, togodla se wupłaśijo to něnto wupinaś.</string>
+    <string name="action_not_now">nic něnto</string>
 
     <!-- Lisćina naušnikow -->
     <string name="devices_in_use">w wužyćanju</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">ako sejady njenanjesujuju se wěcej, kontroluš, zo je ylih wót optimizacije akumulatora wuzwolnjeny — program, co je mócnje stopnjeny, nigda wěcej napšadeje wobyšcenja njejo, dokad ga njawěrtaš.</string>
     <string name="settings_battery_button">nastajenja akumulatora</string>
     <string name="settings_battery_path">nastajenja → programy → ylih → akumulator → njewobmjezjeny.</string>
+    <string name="settings_hibernation_body">jolic se ylih pśez někotare mjasece njewócynijo, android ju zastanjo a wzejo jej dowólnosći, a nic se wěcej njenagrawa, až doniž ju njewócyniš. to wupinaś jo to, což dowólijo słuchatkam dalej licyś pśez cas, w kótaremž na nałoženje nigda njemysliš.</string>
+    <string name="settings_hibernation_on">android móžo ylih zastaś.</string>
+    <string name="settings_hibernation_off">ylih jo wuwzeta a nagrawa dalej.</string>
+    <string name="settings_hibernation_button">nastajenja njewužywanych nałoženjow</string>
     <string name="settings_about">wó programje</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — hodinow w naušnikach, na smartfonu w wjecy.</string>
     <string name="settings_import_confirm_title">wšykne data wěnšujaš?</string>

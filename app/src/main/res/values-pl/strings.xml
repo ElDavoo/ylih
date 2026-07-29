@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">szczegółowe śledzenie, w ustawieniach, dodaje słuchawki przewodowe i mierzy, ile z tego czasu faktycznie trwało odtwarzanie.</string>
     <string name="welcome_privacy">wszystko zostaje na tym telefonie. nie ma żadnego konta, a aplikacja nie ma uprawnienia dostępu do internetu.</string>
     <string name="welcome_start">zaczynajmy</string>
+    <string name="hibernation_title">liczy dalej, kiedy o niej zapomnisz</string>
+    <string name="hibernation_body">android wstrzymuje aplikacje, których nie otwierano przez kilka miesięcy, i odbiera im uprawnienia, przez co ylih nie zapisywałaby niczego aż do następnego otwarcia. bycie zapomnianą to dokładnie to, do czego ta aplikacja służy, więc warto to teraz wyłączyć.</string>
+    <string name="action_not_now">nie teraz</string>
 
     <!-- Lista słuchawek -->
     <string name="devices_in_use">w użyciu</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">jeśli sesje przestaną być rejestrowane, sprawdź, czy ylih jest wyłączony z optymalizacji baterii — aplikacja wymuszenie zatrzymana nigdy więcej nie otrzyma powiadomień o połączeniu, dopóki nie zostanie otwarta.</string>
     <string name="settings_battery_button">ustawienia baterii</string>
     <string name="settings_battery_path">ustawienia → aplikacje → ylih → bateria → brak ograniczeń.</string>
+    <string name="settings_hibernation_body">jeśli ylih nie zostanie otwarta przez kilka miesięcy, android ją wstrzyma i odbierze jej uprawnienia, i nic nie zostanie zapisane, dopóki jej nie otworzysz. wyłączenie tego jest tym, co pozwala słuchawkom liczyć dalej przez cały okres, w którym w ogóle nie myślisz o aplikacji.</string>
+    <string name="settings_hibernation_on">android może wstrzymać ylih.</string>
+    <string name="settings_hibernation_off">ylih jest zwolniona i nadal zapisuje.</string>
+    <string name="settings_hibernation_button">ustawienia nieużywanych aplikacji</string>
     <string name="settings_about">o aplikacji</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — godziny w słuchawkach, przechowywane lokalnie i na zawsze.</string>
     <string name="settings_import_confirm_title">zastąpić wszystkie dane?</string>

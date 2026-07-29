@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">detailne jälgimine, seadistustes, lisab juhtmega kõrvaklapid ja mõõdab, kui palju ajast oli tegelikult taasesitus.</string>
     <string name="welcome_privacy">kõik jääb sellesse telefoni. kasutajakontot ei ole ja rakendusel pole interneti lubadust.</string>
     <string name="welcome_start">alusta</string>
+    <string name="hibernation_title">loeb edasi, kuni sa selle unustad</string>
+    <string name="hibernation_body">android peatab rakendused, mida paar kuud ei avata, ja võtab neilt load tagasi, mis jätaks ylihi mitte midagi salvestama kuni järgmise avamiseni. unustatud saada on täpselt see, milleks see rakendus on, nii et tasub see kohe välja lülitada.</string>
+    <string name="action_not_now">mitte praegu</string>
 
     <!-- Kõrvaklappide loend -->
     <string name="devices_in_use">kasutuses</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">kui seansid ei salvestu enam, kontrollige, kas ylih on välistatud aku optimeerimisest - sunniviisiliselt peatatud rakendus ei saa kuni selle avamiseni uuesti ühenduse teadaandeid.</string>
     <string name="settings_battery_button">akuseadistused</string>
     <string name="settings_battery_path">seadistused → rakendused → ylih → aku → piiramata.</string>
+    <string name="settings_hibernation_body">kui ylihi paar kuud ei avata, peatab android selle ja võtab load tagasi ning midagi ei salvestata enne, kui sa selle avad. selle väljalülitamine on see, mis laseb kõrvaklappidel edasi lugeda terve hooaja, mil sa rakendusele üldse ei mõtle.</string>
+    <string name="settings_hibernation_on">android võib ylihi peatada.</string>
+    <string name="settings_hibernation_off">ylih on vabastatud ja salvestab edasi.</string>
+    <string name="settings_hibernation_button">kasutamata rakenduste seaded</string>
     <string name="settings_about">ylihst</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — kõrvaklappide tunnid, salvestatud kohalikult ja igaveselt.</string>
     <string name="settings_import_confirm_title">asenda kõik andmed?</string>

@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">o rastreamento detalhado, nos ajustes, adiciona fones com fio e mede quanto desse tempo foi realmente reprodução.</string>
     <string name="welcome_privacy">tudo fica neste telefone. não há conta, e o app não tem permissão de internet.</string>
     <string name="welcome_start">começar</string>
+    <string name="hibernation_title">continua contando enquanto você esquece dele</string>
+    <string name="hibernation_body">o android pausa apps que ficam alguns meses sem ser abertos e retoma suas permissões, o que deixaria o ylih sem registrar nada até você abri-lo de novo. ser esquecido é exatamente para o que este app serve, então vale a pena desativar isso agora.</string>
+    <string name="action_not_now">agora não</string>
 
     <!-- Lista de fones -->
     <string name="devices_in_use">em uso</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">se as sessões pararem de ser registradas, verifique se o ylih está isento da otimização de bateria — um app que foi parado à força nunca mais recebe transmissões de conexão até ser aberto novamente.</string>
     <string name="settings_battery_button">ajustes de bateria</string>
     <string name="settings_battery_path">ajustes → apps → ylih → bateria → sem restrições.</string>
+    <string name="settings_hibernation_body">se o ylih ficar alguns meses sem ser aberto, o android o pausa e retoma suas permissões, e nada volta a ser registrado até você abri-lo. desativar isso é o que deixa um par continuar contando por uma temporada inteira em que você nunca pensa no app.</string>
+    <string name="settings_hibernation_on">o android pode pausar o ylih.</string>
+    <string name="settings_hibernation_off">o ylih está isento e continua registrando.</string>
+    <string name="settings_hibernation_button">configurações de apps não usados</string>
     <string name="settings_about">sobre</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — horas de fones de ouvido, guardadas localmente e para sempre.</string>
     <string name="settings_import_confirm_title">substituir todos os dados?</string>

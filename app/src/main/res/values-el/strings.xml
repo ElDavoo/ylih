@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">η λεπτομερής καταγραφή, στις ρυθμίσεις, προσθέτει τα ενσύρματα ακουστικά και μετρά πόσο από αυτόν τον χρόνο ήταν πραγματικά αναπαραγωγή.</string>
     <string name="welcome_privacy">όλα μένουν σε αυτό το τηλέφωνο. δεν υπάρχει λογαριασμός και η εφαρμογή δεν έχει άδεια πρόσβασης στο internet.</string>
     <string name="welcome_start">ξεκίνα</string>
+    <string name="hibernation_title">συνεχίζει να μετράει όσο την ξεχνάς</string>
+    <string name="hibernation_body">το android βάζει σε παύση τις εφαρμογές που δεν ανοίγουν για μερικούς μήνες και τους αφαιρεί τις άδειες, οπότε το ylih δεν θα κατέγραφε τίποτα μέχρι να το ξανανοίξεις. το να ξεχαστεί είναι ακριβώς ο λόγος ύπαρξης αυτής της εφαρμογής, γι\' αυτό αξίζει να το απενεργοποιήσεις τώρα.</string>
+    <string name="action_not_now">όχι τώρα</string>
 
     <!-- Λίστα ακουστικών -->
     <string name="devices_in_use">σε χρήση</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">αν οι συνεδρίες σταματήσουν να καταγράφονται, έλεγξε αν το ylih εξαιρείται από τη βελτιστοποίηση μπαταρίας — μια εφαρμογή που έχει τερματιστεί βίαια δεν λαμβάνει ποτέ ξανά μεταδόσεις σύνδεσης μέχρι να ανοίξει.</string>
     <string name="settings_battery_button">ρυθμίσεις μπαταρίας</string>
     <string name="settings_battery_path">ρυθμίσεις → εφαρμογές → ylih → μπαταρία → χωρίς περιορισμούς.</string>
+    <string name="settings_hibernation_body">αν το ylih δεν ανοίξει για μερικούς μήνες, το android το βάζει σε παύση και του αφαιρεί τις άδειες, και δεν καταγράφεται τίποτα ξανά μέχρι να το ανοίξεις. η απενεργοποίηση αυτού είναι που αφήνει ένα ζευγάρι να συνεχίσει να μετράει σε μια περίοδο που δεν σκέφτεσαι καθόλου την εφαρμογή.</string>
+    <string name="settings_hibernation_on">το android μπορεί να βάλει το ylih σε παύση.</string>
+    <string name="settings_hibernation_off">το ylih εξαιρείται και συνεχίζει να καταγράφει.</string>
+    <string name="settings_hibernation_button">ρυθμίσεις αχρησιμοποίητων εφαρμογών</string>
     <string name="settings_about">σχετικά</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — ώρες ακουστικών, αποθηκευμένες τοπικά και για πάντα.</string>
     <string name="settings_import_confirm_title">αντικατάσταση όλων των δεδομένων;</string>

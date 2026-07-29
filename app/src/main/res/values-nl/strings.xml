@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">gedetailleerd bijhouden, in instellingen, voegt bekabelde koptelefoons toe en meet hoeveel van die tijd er echt werd afgespeeld.</string>
     <string name="welcome_privacy">alles blijft op deze telefoon. er is geen account en de app heeft geen internettoegang.</string>
     <string name="welcome_start">beginnen</string>
+    <string name="hibernation_title">blijft tellen terwijl je haar vergeet</string>
+    <string name="hibernation_body">android pauzeert apps die een paar maanden niet worden geopend en neemt hun rechten terug, waardoor ylih niets meer zou opnemen tot je haar weer opende. vergeten worden is precies waar deze app voor is, dus het is de moeite waard om dat nu uit te zetten.</string>
+    <string name="action_not_now">niet nu</string>
 
     <!-- Lijst met koptelefoons -->
     <string name="devices_in_use">in gebruik</string>
@@ -121,6 +124,10 @@
     <string name="settings_battery_body">als sessies niet meer worden geregistreerd, controleer dan of ylih is uitgezonderd van batterijoptimalisatie — een app die geforceerd is gestopt, ontvangt geen verbindingsmeldingen meer totdat hij opnieuw wordt geopend.</string>
     <string name="settings_battery_button">batterij-instellingen</string>
     <string name="settings_battery_path">instellingen → apps → ylih → batterij → onbeperkt.</string>
+    <string name="settings_hibernation_body">als ylih een paar maanden niet wordt geopend, pauzeert android haar en neemt haar rechten terug, en wordt er niets meer opgenomen tot je haar opent. dat uitzetten is wat een koptelefoon laat doortellen door een seizoen waarin je nooit aan de app denkt.</string>
+    <string name="settings_hibernation_on">android mag ylih pauzeren.</string>
+    <string name="settings_hibernation_off">ylih is uitgezonderd en blijft opnemen.</string>
+    <string name="settings_hibernation_button">instellingen voor ongebruikte apps</string>
     <string name="settings_about">over</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — koptelefoonuren, lokaal bewaard en voor altijd.</string>
     <string name="settings_import_confirm_title">alle gegevens vervangen?</string>

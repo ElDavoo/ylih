@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">zenbaketa zehatza, ezarpenetan, entzule kableak gehitzen ditu eta zenbat denbora erreprodukzio egon den neurtzen du.</string>
     <string name="welcome_privacy">denak telefono honetan geratzen dira. ez da kontua, eta aplikazioak ez du interneterako baimenik.</string>
     <string name="welcome_start">hasi</string>
+    <string name="hibernation_title">kontatzen jarraitzen du zuk ahaztu bitartean</string>
+    <string name="hibernation_body">androidek hilabete batzuetan irekitzen ez diren aplikazioak pausatu eta baimenak kentzen dizkie, eta horrek ylih ezer grabatu gabe utziko luke hurrengoz ireki arte. ahaztua izatea da hain zuzen ere aplikazio honen zeregina, beraz merezi du hori orain desaktibatzea.</string>
+    <string name="action_not_now">orain ez</string>
 
     <!-- Entzuleak zerrenda -->
     <string name="devices_in_use">erabiltzan</string>
@@ -121,6 +124,10 @@
     <string name="settings_battery_body">saio zenbaketa gelditzen bada, ziurtatu ylih bateria optimizaziotik kanpo dagoela — beherra geldia aplikazio batek ez du konexio emisioak jaso berriro konexio irekitzen den arte.</string>
     <string name="settings_battery_button">bateria ezarpenak</string>
     <string name="settings_battery_path">ezarpenak → aplikazioak → ylih → bateria → mugagabea.</string>
+    <string name="settings_hibernation_body">ylih hilabete batzuetan irekitzen ez bada, androidek pausatu eta baimenak kentzen dizkio, eta ez da ezer grabatzen ireki arte. hori desaktibatzeak uzten dio entzungailu pare bati kontatzen jarraitzen aplikazioan inoiz pentsatzen ez duzun garai batean.</string>
+    <string name="settings_hibernation_on">androidek ylih pausatu dezake.</string>
+    <string name="settings_hibernation_off">ylih salbuetsita dago eta grabatzen jarraitzen du.</string>
+    <string name="settings_hibernation_button">erabili gabeko aplikazioen ezarpenak</string>
     <string name="settings_about">honi buruz</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — entzuleak ordutan, tokian eta beti zeratzen.</string>
     <string name="settings_import_confirm_title">datu guztiak ordeztu?</string>

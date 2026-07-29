@@ -37,6 +37,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -51,6 +52,8 @@ import it.eldavo.ylih.BuildConfig
 import it.eldavo.ylih.R
 import it.eldavo.ylih.Distribution
 import it.eldavo.ylih.stats.Counting
+import it.eldavo.ylih.tracking.Hibernation
+import it.eldavo.ylih.tracking.Restrictions
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
@@ -276,6 +279,44 @@ fun SettingsScreen(
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(horizontal = 16.dp),
             )
+        }
+
+        // Read once per composition rather than observed: hibernation only ever changes on the
+        // system screen the button below opens, which takes the activity away first.
+        val hibernation by produceState(Hibernation.UNAVAILABLE, context) {
+            value = Restrictions.hibernation(context)
+        }
+        if (hibernation != Hibernation.UNAVAILABLE) {
+            Spacer(Modifier.height(16.dp))
+            Text(
+                stringResource(R.string.settings_hibernation_body),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(horizontal = 16.dp),
+            )
+            Spacer(Modifier.height(8.dp))
+            Text(
+                stringResource(
+                    if (hibernation == Hibernation.ENABLED) {
+                        R.string.settings_hibernation_on
+                    } else {
+                        R.string.settings_hibernation_off
+                    },
+                ),
+                style = MaterialTheme.typography.bodySmall,
+                modifier = Modifier.padding(horizontal = 16.dp),
+            )
+            // Still offered once exempt: the exemption is the user's to withdraw, and a button
+            // that vanishes on success leaves no way back to the screen that set it.
+            Restrictions.settingsIntent(context)?.let { intent ->
+                Spacer(Modifier.height(8.dp))
+                Button(
+                    onClick = { context.startActivity(intent) },
+                    modifier = Modifier.padding(horizontal = 16.dp),
+                ) {
+                    Text(stringResource(R.string.settings_hibernation_button))
+                }
+            }
         }
         Spacer(Modifier.height(16.dp))
         HorizontalDivider()

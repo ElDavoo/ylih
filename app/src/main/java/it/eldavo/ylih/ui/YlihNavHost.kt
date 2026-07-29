@@ -28,14 +28,18 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import it.eldavo.ylih.R
+import it.eldavo.ylih.tracking.Hibernation
+import it.eldavo.ylih.tracking.Restrictions
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -225,5 +229,27 @@ fun YlihNavHost(
     val onboardingDone by viewModel.onboardingDone.collectAsStateWithLifecycle()
     if (onboardingDone == false) {
         WelcomeDialog(onDismiss = viewModel::completeOnboarding)
+    }
+
+    // Strictly after the welcome, and never beside it: the first run already spends one dialog
+    // explaining the app, and two stacked would be a wall to dismiss before seeing anything.
+    val hibernationAsked by viewModel.hibernationAsked.collectAsStateWithLifecycle()
+    if (onboardingDone == true && hibernationAsked == false) {
+        val context = LocalContext.current
+        val hibernation by produceState(Hibernation.UNAVAILABLE, context) {
+            value = Restrictions.hibernation(context)
+        }
+        // Nothing to ask for where the platform does not hibernate apps, or where the user has
+        // already exempted ylih — and asking anyway would spend the one prompt on a no-op.
+        if (hibernation == Hibernation.ENABLED) {
+            val intent = remember(context) { Restrictions.settingsIntent(context) }
+            HibernationDialog(
+                onOpenSettings = {
+                    viewModel.dismissHibernationPrompt()
+                    intent?.let { context.startActivity(it) }
+                },
+                onDismiss = viewModel::dismissHibernationPrompt,
+            )
+        }
     }
 }

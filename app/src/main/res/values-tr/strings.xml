@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">ayarlardaki ayrıntılı takip, kablolu kulaklıkları ekler ve sürenin ne kadarında gerçekten ses çaldığını ölçer.</string>
     <string name="welcome_privacy">her şey bu telefonda kalır. hesap yoktur ve uygulamanın internet izni yoktur.</string>
     <string name="welcome_start">başla</string>
+    <string name="hibernation_title">onu unutsan bile saymaya devam et</string>
+    <string name="hibernation_body">android birkaç aydır açılmayan uygulamaları durdurur ve izinlerini geri alır; bu da ylih\'in sen onu yeniden açana kadar hiçbir şey kaydetmemesine yol açar. unutulmak zaten bu uygulamanın var oluş amacı, o yüzden bunu şimdi kapatmakta fayda var.</string>
+    <string name="action_not_now">şimdi değil</string>
 
     <!-- Kulaklık listesi -->
     <string name="devices_in_use">kullanımda</string>
@@ -121,6 +124,10 @@
     <string name="settings_battery_body">oturumlar kaydedilmemeye başlarsa ylih\'in pil optimizasyonundan muaf olduğunu kontrol et — zorla durdurulmuş bir uygulama, açılana kadar bağlantı yayınlarını bir daha almaz.</string>
     <string name="settings_battery_button">pil ayarları</string>
     <string name="settings_battery_path">ayarlar → uygulamalar → ylih → pil → kısıtlanmamış.</string>
+    <string name="settings_hibernation_body">ylih birkaç aydır açılmazsa android onu durdurur ve izinlerini geri alır, sen onu açana kadar hiçbir şey yeniden kaydedilmez. bunu kapatmak, uygulamayı hiç düşünmediğin bir mevsim boyunca bile bir çiftin sayılmaya devam etmesini sağlayan şeydir.</string>
+    <string name="settings_hibernation_on">android ylih\'i durdurabilir.</string>
+    <string name="settings_hibernation_off">ylih muaf ve kaydetmeye devam ediyor.</string>
+    <string name="settings_hibernation_button">kullanılmayan uygulama ayarları</string>
     <string name="settings_about">hakkında</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — kulaklık saatlerin, yerel olarak ve sonsuza dek saklanır.</string>
     <string name="settings_import_confirm_title">tüm veriler değiştirilsin mi?</string>

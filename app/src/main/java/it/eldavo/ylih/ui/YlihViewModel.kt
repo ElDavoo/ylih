@@ -53,6 +53,10 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
     val onboardingDone: StateFlow<Boolean?> = container.settings.onboardingDone
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
+    /** Null until DataStore has answered, for the same reason as [onboardingDone]. */
+    val hibernationAsked: StateFlow<Boolean?> = container.settings.hibernationAsked
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
+
     /**
      * Null until DataStore has answered. The settings screen restarts the activity when this
      * changes, so it must not see the default before the stored tag arrives.
@@ -98,6 +102,11 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
     /** Also what releases MainActivity's permission request — see the comment there. */
     fun completeOnboarding() = viewModelScope.launch {
         container.settings.setOnboardingDone(true)
+    }
+
+    /** Answered either way: opening the settings screen is no promise that anything changed. */
+    fun dismissHibernationPrompt() = viewModelScope.launch {
+        container.settings.setHibernationAsked(true)
     }
 
     fun syncWithSystem() = viewModelScope.launch {

@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">tiyo ye a vul me mbege ateng efan na minkolo eme tim. android atɔmba mɔnɔ ye efan menguma kumene a ndung ya mam, menguma zε a vul zε ti ndung bɔtɔ eve. bluetooth ateng a keme mɔli mɔ zə zɔ mɔ.</string>
     <string name="welcome_privacy">abam abam akuma a telephone ane. a kɔ account, na app ye a kɔ permission ye internet.</string>
     <string name="welcome_start">tek ka</string>
+    <string name="hibernation_title">a ka téte akuma, akéé a wu wuke</string>
+    <string name="hibernation_body">android a kɔ tele app ye a ne kɔ mɔ ndung mwa ye ai, e nyoo permission ye. na nyoo ylih a ka tiye eyoŋ te akéé a bulu tele. wu wuke a ne mfombo ye app ye, jon tele ka mbe te.</string>
+    <string name="action_not_now">te mbe te</string>
 
     <!-- Ndile ye bikule -->
     <string name="devices_in_use">eme tiyo</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">dibulu a ka mekele mbe te, keka ylih a kɔ eksetɔ ye bateri — app ye e kɔ mɔ manda ti a ka mbouma mɔnɔ ye connection ngɔ a vul e ngɔ te.</string>
     <string name="settings_battery_button">mbege ye bateri</string>
     <string name="settings_battery_path">mbege → app → ylih → bateri → a kɔ mfondo.</string>
+    <string name="settings_hibernation_body">ylih a ne kɔ mɔ ndung mwa ye ai, android a kɔ tele nyoo e nyoo permission ye, akéé a bulu tele te akéé a kɔ tiye eyoŋ. tele ka mbe te ediba app ye a ka téte akuma, akéé a wu wuke app ye ai.</string>
+    <string name="settings_hibernation_on">android a ka tele ylih.</string>
+    <string name="settings_hibernation_off">ylih a si tele te — a ka tiye eyoŋ.</string>
+    <string name="settings_hibernation_button">mbege ye app ye a bé kwom</string>
     <string name="settings_about">eme ylih</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — kuε eme bikule, tamɛ a vul eme telephone na mfolo.</string>
     <string name="settings_import_confirm_title">vul tiyo abam?</string>

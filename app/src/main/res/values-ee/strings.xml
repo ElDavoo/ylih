@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">ŋkɔŋkɔ geɖea, nusɔsɔwo me, wɔ nufia kple ŋu sua ŋkɔ dɔ ŋu gbe geɖe ƒe nusiɖuɖu.</string>
     <string name="welcome_privacy">ele nyiɖɔ sia me ko. mayɔ ame o, abe nu siwo ŋu inte o hã.</string>
     <string name="welcome_start">do go azɔ</string>
+    <string name="hibernation_title">eyɔa akɔntabubu dzi ɖe, ne ŋlɔbe hã</string>
+    <string name="hibernation_body">android tɔ programa siwo womeʋu o ɣleti geɖe, hexɔ woƒe permission le wo si. ekema ylih maŋlɔ naneke o va se ɖe esime nàʋui akpɔ. ŋlɔbe koe nye programa sia ƒe tameɖoɖo, eyata tɔ nu sia fifia.</string>
+    <string name="action_not_now">menye fifia o</string>
 
     <!-- Headphones list -->
     <string name="devices_in_use">lɔ̃kɔ me</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">ne nusẽ ɖi o, ɖo ylih mele battery optimization si ko. programa si woa ɖe mɔ o, megatsɔ ŋu kɔ tso akpa ŋu o va se woate sua ko.</string>
     <string name="settings_battery_button">battery nusɔsɔ</string>
     <string name="settings_battery_path">nusɔsɔ → programa → ylih → battery → mele nusɔ o.</string>
+    <string name="settings_hibernation_body">ne ylih tsi ʋuʋu manɔmee ɣleti geɖe, android tɔe hexɔ eƒe permission, maŋlɔ naneke o va se ɖe esime nàʋui akpɔ. tɔ nu sia be programa nayi edzi le akɔntabubu me, ne ɣeyiɣi aɖe va yi si mèbu programa sia ŋu o hã.</string>
+    <string name="settings_hibernation_on">android ate ŋu atɔ ylih.</string>
+    <string name="settings_hibernation_off">ylih ŋu wotɔ o — eyi edzi le ŋlɔbubu.</string>
+    <string name="settings_hibernation_button">nusɔsɔ na programa siwo womezãna o</string>
     <string name="settings_about">ŋgɔ</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — gaƒoƒo heaphones me, le nyɔ sia me ko kple bubu dzi.</string>
     <string name="settings_import_confirm_title">wɔ nu siwo le ŋu ko?</string>

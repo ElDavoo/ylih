@@ -30,6 +30,9 @@
     <string name="welcome_point_detailed_body">el seguiment detallat, a la configuració, afegeix auriculars filats i mesura quant de temps es va estar realment reproduint.</string>
     <string name="welcome_privacy">tot roman en aquest telèfon. no hi ha cap compte, ni l\'app té permís per a internet.</string>
     <string name="welcome_start">comença</string>
+    <string name="hibernation_title">continua comptant mentre te n\'oblides</string>
+    <string name="hibernation_body">android atura les aplicacions que no s\'obren durant uns mesos i els retira els permisos, cosa que deixaria ylih sense registrar res fins que la tornessis a obrir. que se n\'oblidin és exactament per al que serveix aquesta aplicació, així que val la pena desactivar-ho ara.</string>
+    <string name="action_not_now">ara no</string>
 
     <!-- Llista d\'auriculars -->
     <string name="devices_in_use">en ús</string>
@@ -119,6 +122,10 @@
     <string name="settings_battery_body">si les sessions deixen de ser enregistrades, verifica que ylih està exempt de la optimització de bateria — una app que ha estat forçada a tancar-se mai no rep events de connexió fins que no es torni a obrir.</string>
     <string name="settings_battery_button">configuració de bateria</string>
     <string name="settings_battery_path">configuració → apps → ylih → bateria → sense restriccions.</string>
+    <string name="settings_hibernation_body">si ylih no s\'obre durant uns mesos, android l\'atura i li retira els permisos, i no es torna a registrar res fins que l\'obris. desactivar-ho és el que permet que uns auriculars continuïn comptant durant una temporada en què no penses mai en l\'aplicació.</string>
+    <string name="settings_hibernation_on">android pot aturar ylih.</string>
+    <string name="settings_hibernation_off">ylih està exempta i continua registrant.</string>
+    <string name="settings_hibernation_button">configuració d\'aplicacions no utilitzades</string>
     <string name="settings_about">sobre</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — hores amb auriculars, guardades localment i per sempre.</string>
     <string name="settings_import_confirm_title">reemplaçar totes les dades?</string>

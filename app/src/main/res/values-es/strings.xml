@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">el seguimiento detallado, en ajustes, añade los auriculares con cable y mide cuánto de ese tiempo se estuvo reproduciendo audio de verdad.</string>
     <string name="welcome_privacy">todo permanece en este teléfono. no hay cuenta y la app no tiene permiso de internet.</string>
     <string name="welcome_start">empezar</string>
+    <string name="hibernation_title">sigue contando mientras te olvidas de ella</string>
+    <string name="hibernation_body">android pausa las aplicaciones que pasan unos meses sin abrirse y les retira los permisos, con lo que ylih no registraría nada hasta que la abrieras de nuevo. que se olviden de ella es exactamente para lo que sirve esta aplicación, así que vale la pena desactivarlo ahora.</string>
+    <string name="action_not_now">ahora no</string>
 
     <!-- Lista de auriculares -->
     <string name="devices_in_use">en uso</string>
@@ -121,6 +124,10 @@
     <string name="settings_battery_body">si las sesiones dejan de registrarse, comprueba que ylih esté exenta de la optimización de batería — una app que se ha forzado a detener deja de recibir difusiones de conexión hasta que se abre de nuevo.</string>
     <string name="settings_battery_button">ajustes de batería</string>
     <string name="settings_battery_path">ajustes → aplicaciones → ylih → batería → sin restricciones.</string>
+    <string name="settings_hibernation_body">si ylih pasa unos meses sin abrirse, android la pausa y le retira los permisos, y no se vuelve a registrar nada hasta que la abras. desactivarlo es lo que permite que unos auriculares sigan contando durante una temporada en la que nunca piensas en la aplicación.</string>
+    <string name="settings_hibernation_on">android puede pausar ylih.</string>
+    <string name="settings_hibernation_off">ylih está exenta y sigue registrando.</string>
+    <string name="settings_hibernation_button">ajustes de aplicaciones no utilizadas</string>
     <string name="settings_about">acerca de</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — horas de tus auriculares, guardadas en local y para siempre.</string>
     <string name="settings_import_confirm_title">¿reemplazar todos los datos?</string>

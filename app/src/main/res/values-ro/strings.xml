@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">urmărirea detaliată, din setări, adaugă căștile prin cablu și măsoară cât din acel timp s-a redat efectiv sunet.</string>
     <string name="welcome_privacy">totul rămâne pe acest telefon. nu există niciun cont, iar aplicația nu are permisiune de internet.</string>
     <string name="welcome_start">să începem</string>
+    <string name="hibernation_title">continuă să numere cât timp o uiți</string>
+    <string name="hibernation_body">android pune pe pauză aplicațiile care nu sunt deschise câteva luni și le retrage permisiunile, ceea ce ar lăsa ylih să nu înregistreze nimic până la următoarea deschidere. tocmai pentru a fi uitată există această aplicație, așa că merită dezactivat acum.</string>
+    <string name="action_not_now">nu acum</string>
 
     <!-- Lista de căști -->
     <string name="devices_in_use">în folosință</string>
@@ -121,6 +124,10 @@
     <string name="settings_battery_body">dacă sesiunile nu se mai înregistrează, verifică dacă ylih este scutită de optimizarea bateriei — o aplicație oprită forțat nu mai primește evenimente de conectare până nu este deschisă din nou.</string>
     <string name="settings_battery_button">setări baterie</string>
     <string name="settings_battery_path">setări → aplicații → ylih → baterie → fără restricții.</string>
+    <string name="settings_hibernation_body">dacă ylih nu este deschisă câteva luni, android o pune pe pauză și îi retrage permisiunile, iar nimic nu mai este înregistrat până când o deschizi. dezactivarea acestui lucru este ceea ce lasă o pereche să numere mai departe printr-un sezon în care nu te gândești niciodată la aplicație.</string>
+    <string name="settings_hibernation_on">android poate pune ylih pe pauză.</string>
+    <string name="settings_hibernation_off">ylih este exceptată și înregistrează în continuare.</string>
+    <string name="settings_hibernation_button">setări pentru aplicații nefolosite</string>
     <string name="settings_about">despre</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — orele căștilor tale, păstrate local și pentru totdeauna.</string>
     <string name="settings_import_confirm_title">înlocuiești toate datele?</string>

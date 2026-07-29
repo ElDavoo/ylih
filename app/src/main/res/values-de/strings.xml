@@ -33,6 +33,9 @@
     <string name="welcome_point_detailed_body">das detaillierte Tracking, in den Einstellungen, erfasst zusätzlich kabelgebundene Kopfhörer und misst, wie viel der Zeit tatsächlich Wiedergabe war.</string>
     <string name="welcome_privacy">alles bleibt auf diesem Gerät. es gibt kein Konto, und die App hat keine Internetberechtigung.</string>
     <string name="welcome_start">loslegen</string>
+    <string name="hibernation_title">zählt weiter, während du sie vergisst</string>
+    <string name="hibernation_body">android pausiert apps, die ein paar monate nicht geöffnet werden, und nimmt ihnen die berechtigungen wieder weg — ylih würde dann nichts mehr aufzeichnen, bis du sie das nächste mal öffnest. vergessen zu werden ist genau der zweck dieser app, deshalb lohnt es sich, das jetzt abzuschalten.</string>
+    <string name="action_not_now">jetzt nicht</string>
 
     <!-- Kopfhörerliste -->
     <string name="devices_in_use">in Benutzung</string>
@@ -123,6 +126,10 @@
     <string name="settings_battery_body">wenn Sitzungen nicht mehr aufgezeichnet werden, prüfe, ob ylih von der Akku-Optimierung ausgenommen ist — eine erzwungen beendete App erhält keine Verbindungs-Broadcasts mehr, bis sie erneut geöffnet wird.</string>
     <string name="settings_battery_button">Akku-Einstellungen</string>
     <string name="settings_battery_path">Einstellungen → Apps → ylih → Akku → uneingeschränkt.</string>
+    <string name="settings_hibernation_body">wenn ylih ein paar monate nicht geöffnet wird, pausiert android sie und nimmt ihr die berechtigungen weg, und es wird nichts mehr aufgezeichnet, bis du sie öffnest. das abzuschalten ist es, was einen kopfhörer über eine ganze zeit weiterzählen lässt, in der du nie an die app denkst.</string>
+    <string name="settings_hibernation_on">android darf ylih pausieren.</string>
+    <string name="settings_hibernation_off">ylih ist ausgenommen und zeichnet weiter auf.</string>
+    <string name="settings_hibernation_button">einstellungen für ungenutzte apps</string>
     <string name="settings_about">Info</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — Kopfhörerstunden, lokal gespeichert und für immer.</string>
     <string name="settings_import_confirm_title">alle Daten ersetzen?</string>

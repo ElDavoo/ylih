@@ -341,6 +341,24 @@ class SettingsScreenTest {
     }
 
     @Test
+    fun `the restrictions section reports the hibernation state it found`() {
+        shadowOf(app.packageManager).setAutoRevokeWhitelisted(false)
+        show()
+
+        // Read at compose time rather than typed in, so this fails if the reporting stops
+        // reflecting what the platform actually says about this app.
+        settle("the hibernation check to answer") {
+            nodeCount(text(R.string.settings_hibernation_on)) > 0
+        }
+        assertEquals(0, nodeCount(text(R.string.settings_hibernation_off)))
+
+        scrollTo(text(R.string.settings_hibernation_button))
+        compose.onNodeWithText(text(R.string.settings_hibernation_button)).performClick()
+        // The exemption is only the system's to grant, so the button has to leave the app.
+        assertNotNull(shadowOf(app).nextStartedActivity)
+    }
+
+    @Test
     @Config(sdk = [Build.VERSION_CODES.S])
     fun `below android 13 a language can be picked, and applying it restarts the activity`() {
         var restarts = 0

@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">подробное отслеживание, в настройках, добавляет проводные наушники и измеряет, сколько из этого времени реально шло воспроизведение.</string>
     <string name="welcome_privacy">всё остаётся на этом телефоне. нет ни аккаунта, ни разрешения на доступ в интернет.</string>
     <string name="welcome_start">начать</string>
+    <string name="hibernation_title">продолжай считать, даже забыв о нём</string>
+    <string name="hibernation_body">android останавливает приложения, которые не открывались несколько месяцев, и забирает их разрешения, из-за чего ylih перестанет что-либо записывать, пока ты не откроешь его снова. быть забытым — это именно то, для чего создано это приложение, поэтому стоит отключить это прямо сейчас.</string>
+    <string name="action_not_now">не сейчас</string>
 
     <!-- Список наушников -->
     <string name="devices_in_use">в использовании</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">если сессии перестали записываться, проверьте, что ylih исключён из оптимизации батареи — принудительно остановленное приложение больше не получает события подключения, пока его не откроют снова.</string>
     <string name="settings_battery_button">настройки батареи</string>
     <string name="settings_battery_path">настройки → приложения → ylih → батарея → без ограничений.</string>
+    <string name="settings_hibernation_body">если ylih не открывается несколько месяцев, android останавливает его и забирает его разрешения, и ничего больше не записывается, пока ты его не откроешь. отключение этого позволяет паре продолжать считаться даже в сезон, когда ты вообще не вспоминаешь об этом приложении.</string>
+    <string name="settings_hibernation_on">android может остановить ylih.</string>
+    <string name="settings_hibernation_off">ylih исключён из ограничений и продолжает запись.</string>
+    <string name="settings_hibernation_button">настройки неиспользуемых приложений</string>
     <string name="settings_about">о приложении</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — часы в наушниках, хранятся локально и навсегда.</string>
     <string name="settings_import_confirm_title">заменить все данные?</string>

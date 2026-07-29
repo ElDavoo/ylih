@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">akayasim mina atayakahwin, atayakahwina, ki-mamachotamokew sohkawin otisinahk mina ka-wayacak mahkonak atihcamok.</string>
     <string name="welcome_privacy">kisisohk ki mihkohk. nika apit mina nika mahciwin musik.</string>
     <string name="welcome_start">takosiwin</string>
+    <string name="hibernation_title">ka-ki-kiskisitotawiht namoya ka-atayak</string>
+    <string name="hibernation_body">android ki-nakatamawew otisinahikana eso pisim ka-mawaci namoya ki-yohtenamihk, kiiwe otayamna akayasimowina; eyako ylih namoya ka-nayahtahk kikway ata ki-yohtenaman miina. ka-kiskisitotawiht eyako tapiskoc ta-ohcitaw eyako app, mena kwayask ta-kipihtinamihk anohc.</string>
+    <string name="action_not_now">namoya anohc</string>
 
     <!-- Headphones list -->
     <string name="devices_in_use">ki atayakik</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">atihcamohkana nika ki-akayasimohk, akayasim ylih nika ki-atayakahwew astewina — eso ki-macinahewik atihcamowin nika mahkohkana iko ki-mayikasow.</string>
     <string name="settings_battery_button">astewina atayakahwin</string>
     <string name="settings_battery_path">atayakahwin → eso ki-itahcikew → ylih → astewina → nika asteyik.</string>
+    <string name="settings_hibernation_body">kispin ylih eso pisim namoya ki-yohtenamihk, android ki-nakatamawew miina ki-otinamawew akayasimowina, ekwa namoya kikway ka-nayahtahk ata ki-yohtenaman. ka-kipihtinamihk eyako ka-pakitinamihk otisinahikan ta-mawocih tahto pisim eka ka-kiskisitotawiht eyako app.</string>
+    <string name="settings_hibernation_on">android ta-kipihtinam ylih.</string>
+    <string name="settings_hibernation_off">ylih namoya kipihtinamihk ekwa kihci-nayahtahk.</string>
+    <string name="settings_hibernation_button">namoya-atoskehk otisinahikana astewina</string>
     <string name="settings_about">ka-itahcikew</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — mahkohkana otisinahk, ki-atayakahwew kisisohk mina mahcihowin.</string>
     <string name="settings_import_confirm_title">macinakik kisisohk akayasimohkana?</string>

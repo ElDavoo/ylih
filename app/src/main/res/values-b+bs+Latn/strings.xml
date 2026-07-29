@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">detaljno praćenje, u postavkama, dodaje žičane slušalice i meri koliko vremena je bilo stvarno puštanja muzike.</string>
     <string name="welcome_privacy">sve ostaje na ovom telefonu. nema naloga, niti aplikacija ima dozvolu za internet.</string>
     <string name="welcome_start">počni</string>
+    <string name="hibernation_title">nastavi brojati i dok je zaboravljaš</string>
+    <string name="hibernation_body">android zaustavlja aplikacije koje nisu otvarane nekoliko mjeseci i oduzima im dozvole, zbog čega ylih ne bi ništa bilježio dok je ponovo ne otvoriš. upravo to da bude zaboravljena je svrha ove aplikacije, zato vrijedi to isključiti odmah.</string>
+    <string name="action_not_now">ne sada</string>
 
     <!-- Lista slušalica -->
     <string name="devices_in_use">u upotrebi</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">ako sesije prestanu da se beleže, proverite da je ylih izuzet od optimizacije baterije — aplikacija koja je prisilno zaustavljena više ne prima događaje povezivanja dok je ponovo ne otvorite.</string>
     <string name="settings_battery_button">postavke baterije</string>
     <string name="settings_battery_path">postavke → aplikacije → ylih → baterija → bez ograničenja.</string>
+    <string name="settings_hibernation_body">ako ylih ostane neotvoren nekoliko mjeseci, android ga zaustavlja i oduzima mu dozvole, i ništa se ponovo ne bilježi dok ga ne otvoriš. isključivanje toga je ono što omogućava paru da nastavi brojati kroz sezonu u kojoj uopće ne misliš na aplikaciju.</string>
+    <string name="settings_hibernation_on">android može zaustaviti ylih.</string>
+    <string name="settings_hibernation_off">ylih je izuzet i nastavlja bilježiti.</string>
+    <string name="settings_hibernation_button">postavke nekorištenih aplikacija</string>
     <string name="settings_about">o aplikaciji</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — sati u slušalicama, čuva se lokalno i zauvek.</string>
     <string name="settings_import_confirm_title">zameni sve podatke?</string>

@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">детальне відстеження, у налаштуваннях, додає дротові навушники та вимірює, скільки з цього часу справді відтворювався звук.</string>
     <string name="welcome_privacy">усе залишається на цьому телефоні. немає жодного облікового запису, і застосунок не має дозволу на інтернет.</string>
     <string name="welcome_start">почати</string>
+    <string name="hibernation_title">рахуй далі, навіть коли забудеш про нього</string>
+    <string name="hibernation_body">android зупиняє застосунки, які не відкривали кілька місяців, і забирає їхні дозволи, через що ylih нічого не записуватиме, поки ти не відкриєш його знову. бути забутим — це саме те, для чого існує цей застосунок, тож варто вимкнути це просто зараз.</string>
+    <string name="action_not_now">не зараз</string>
 
     <!-- Список навушників -->
     <string name="devices_in_use">використовується</string>
@@ -121,6 +124,10 @@
     <string name="settings_battery_body">якщо сесії перестали записуватися, перевір, що ylih звільнено від оптимізації акумулятора — примусово зупинений застосунок більше не отримує сповіщень про з\'єднання, доки його не відкриють знову.</string>
     <string name="settings_battery_button">налаштування акумулятора</string>
     <string name="settings_battery_path">налаштування → застосунки → ylih → акумулятор → без обмежень.</string>
+    <string name="settings_hibernation_body">якщо ylih не відкривати кілька місяців, android зупиняє його і забирає його дозволи, і нічого не записується знову, доки ти його не відкриєш. вимкнення цього дає змогу парі рахуватися далі навіть у сезон, коли ти взагалі не думаєш про застосунок.</string>
+    <string name="settings_hibernation_on">android може зупинити ylih.</string>
+    <string name="settings_hibernation_off">ylih звільнено від обмежень і він продовжує запис.</string>
+    <string name="settings_hibernation_button">налаштування невикористовуваних застосунків</string>
     <string name="settings_about">про застосунок</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — години в навушниках, збережені локально й назавжди.</string>
     <string name="settings_import_confirm_title">замінити всі дані?</string>

@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">tóó bu mbol, ba dím wìm mɛ dɔ́ bi ndé dɔ́ yaa. bluetooth ba sɔŋ bi nàŋ.</string>
     <string name="welcome_privacy">kuɓ kó ba dib ko si ñen. ku ca nà, mɛ app ku ca internet.</string>
     <string name="welcome_start">bísá</string>
+    <string name="hibernation_title">a ntɔ́ŋ ku bí, tap wɛ́ɛ u nlémél nyɛ</string>
+    <string name="hibernation_body">android a tɔ́p app i ka bé wóŋ mwa ma bíbaa, a nlɔ́ permission wap. hala ylih a ka bé kɛnsɛ pɛɛ so u noo wóŋ le. u nlémél nyɛ i mbɛn nu app inyu, jon tɔ́p nu inyu we.</string>
+    <string name="action_not_now">hala nau</string>
 
     <!-- Headphones list -->
     <string name="devices_in_use">ba sɔŋ</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">wa sɔŋ ba tɔ́, sɔŋ ylih ku ka battery optimization — app ba tóp ba ku bun sa nàŋ sa man ba kénsé.</string>
     <string name="settings_battery_button">battery mbol</string>
     <string name="settings_battery_path">mbol → kuɓ → ylih → battery → ku ndu.</string>
+    <string name="settings_hibernation_body">ku ka toʔ ylih wóŋ mwa ma bíbaa, android a tɔ́p nyi a nlɔ́ permission nyi, a ka bé kɛnsɛ pɛɛ so u nôŋ wóŋ le. tɔ́p nu inyu ylih i ka dib kɛnsɛ, to ki u nlémél nyɛ app inyu.</string>
+    <string name="settings_hibernation_on">android a nla tɔ́p ylih.</string>
+    <string name="settings_hibernation_off">ylih a bé tɔ́p — a ka dib kɛnsɛ.</string>
+    <string name="settings_hibernation_button">mbol app i ka bé wóŋ</string>
     <string name="settings_about">kó ylih</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — kwé ŋgɛ, ba dib sa nòŋ mɛ forever.</string>
     <string name="settings_import_confirm_title">tóp kuɓ ba?</string>

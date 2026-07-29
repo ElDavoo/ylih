@@ -32,6 +32,9 @@
     <string name="welcome_point_detailed_body">在设置中开启详细追踪,可记录有线耳机,并统计其中实际播放的时长。</string>
     <string name="welcome_privacy">所有数据都只保存在这部手机上。没有账户,应用也没有联网权限。</string>
     <string name="welcome_start">开始使用</string>
+    <string name="hibernation_title">即使你忘了它,计时也会继续</string>
+    <string name="hibernation_body">android 会停止几个月未打开的应用并收回其权限,这会导致 ylih 在你下次打开它之前不再记录任何内容。被遗忘正是这款应用存在的意义,所以现在就关闭这项限制很值得。</string>
+    <string name="action_not_now">暂不</string>
 
     <!-- 耳机列表 -->
     <string name="devices_in_use">使用中</string>
@@ -121,6 +124,10 @@
     <string name="settings_battery_body">如果连接记录停止更新,请检查 ylih 是否已从电池优化中排除——被强行停止的应用在再次打开之前,不会再收到任何连接广播。</string>
     <string name="settings_battery_button">电池设置</string>
     <string name="settings_battery_path">设置 → 应用 → ylih → 电池 → 无限制。</string>
+    <string name="settings_hibernation_body">如果 ylih 几个月未被打开,android 会停止它并收回其权限,在你打开它之前不会再记录任何内容。关闭此限制,就能让一副耳机在你完全没想起这个应用的那段时间里继续被计时。</string>
+    <string name="settings_hibernation_on">android 可能会停止 ylih。</string>
+    <string name="settings_hibernation_off">ylih 已被排除在外,持续记录。</string>
+    <string name="settings_hibernation_button">未使用的应用设置</string>
     <string name="settings_about">关于</string>
     <string name="settings_about_body">ylih %1$s (%2$s) —— 耳机时长,永久保存在本地。</string>
     <string name="settings_import_confirm_title">替换所有数据?</string>

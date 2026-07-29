@@ -33,6 +33,9 @@
     <string name="welcome_point_detailed_body">מעקב מפורט, בהגדרות, מוסיף אוזניות חוטיות ומודד כמה מהזמן באמת התנגנה מוזיקה.</string>
     <string name="welcome_privacy">הכול נשאר בטלפון הזה. אין חשבון, ולאפליקציה אין הרשאת אינטרנט.</string>
     <string name="welcome_start">אפשר להתחיל</string>
+    <string name="hibernation_title">תמשיך לספור גם כשתשכח ממנו</string>
+    <string name="hibernation_body">android עוצר אפליקציות שלא נפתחו כמה חודשים ולוקח בחזרה את ההרשאות שלהן, מה שיגרום ל-ylih לא לתעד שום דבר עד שתפתח אותו שוב. להישכח זו בדיוק המטרה של האפליקציה הזו, אז כדאי לכבות את זה כבר עכשיו.</string>
+    <string name="action_not_now">לא עכשיו</string>
 
     <!-- רשימת האוזניות -->
     <string name="devices_in_use">בשימוש</string>
@@ -122,6 +125,10 @@
     <string name="settings_battery_body">אם מפגשים מפסיקים להירשם, בדקו ש-ylih פטור מאופטימיזציית סוללה — אפליקציה שנעצרה בכפייה לא מקבלת יותר שידורי חיבור עד שפותחים אותה.</string>
     <string name="settings_battery_button">הגדרות סוללה</string>
     <string name="settings_battery_path">הגדרות ← אפליקציות ← ylih ← סוללה ← ללא הגבלה.</string>
+    <string name="settings_hibernation_body">אם ylih לא נפתח כמה חודשים, android עוצר אותו ולוקח בחזרה את ההרשאות שלו, ושום דבר לא מתועד שוב עד שתפתח אותו. כיבוי זה הוא מה שמאפשר לזוג להמשיך להיספר לאורך עונה שאתה אפילו לא חושב בה על האפליקציה.</string>
+    <string name="settings_hibernation_on">android עלול לעצור את ylih.</string>
+    <string name="settings_hibernation_off">ylih פטור וממשיך לתעד.</string>
+    <string name="settings_hibernation_button">הגדרות אפליקציות לא בשימוש</string>
     <string name="settings_about">אודות</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — שעות אוזניות, נשמרות מקומית ולתמיד.</string>
     <string name="settings_import_confirm_title">להחליף את כל הנתונים?</string>

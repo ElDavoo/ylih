@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">མེ་མདེན་ནས་ཡོད་པའི་ཞིབ་ཕྲ་གླེང་སྟེགས་ནི་གའུ་མཐུད་པའི་གོ་སང་ཕོ་ཉ་དང་གླེང་སྡེབའི་དུས་ཚོད་ཆ་ཚད་བྱེད་ཀྱི་ཡིན། bluetooth དེ་ལས་གླེང་སྟེགས་བྱུང་ལ།</string>
     <string name="welcome_privacy">ཡིན་པ་ཚང་མ་འདི་ལག་ཕོ་ཕན་ཏོག་དུ་གནས་ཀྱི་འདུག གླེང་སྟེགས་རྩའ་ཞིག་ཡང་མེད། གཏུབ་དེ་ཀུན་གྱི་ནང་ཕེབས་གི་ཐོབ་ཆོག་ཡང་མེད།</string>
     <string name="welcome_start">འགོ་ཚུགས་ལེགས།</string>
+    <string name="hibernation_title">བརྗེད་ནའང་གྲངས་བརྩི་མུ་མཐུད།</string>
+    <string name="hibernation_body">android གིས་ཟླ་ཁ་ཤས་རིང་མ་ཁ་ཕྱེ་བའི་ཉེར་སྤྱོད་མཚམས་བཞག་སྟེ་ཆོག་མཆན་ཡང་ལོག་སྟེ་ལེན་དོ། དེ་གིས་ylih ཁྱོད་ཀྱིས་ལོག་སྟེ་མ་ཁ་ཕྱེ་བའི་བར་ཅི་ཡང་དྲན་དེབ་མི་འབད། བརྗེད་ནི་ཉེར་སྤྱོད་འདི་གི་དམིགས་ཡུལ་ཨིན་མི་ལས་ད་ལྟོ་ནང་ལས་དེ་མེད་བཟོ་ནི་གནམ་མེད་ས་མེད་ཨིན།</string>
+    <string name="action_not_now">ད་ལྟོ་མེན།</string>
 
     <!-- གོ་སང་ཕོ་ཉའི་ཐོ། -->
     <string name="devices_in_use">ཀ་བཞག་དུ་ཡོད།</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">གླེང་སྟེགས་ལག་ལེན་བྱེད་མི་ཐུབ་པར་ལོག་ན་ ylih དེ་ཕོ་ཕན་གསོག་གྲུབ་དེ་མི་ཟིན་ཞིག་ལ་མི་དབྱེ་བ་གནས་ཡོདྭ་ཡིན་དགེ་ལ་གཏུབ་མ་གཡོགས་པའི་གླེང་སྐོར་འདི་ནི་དེ་ཡོད་རྟེན་དུ་མེད་དུ་སྲིད་དུ་ཡིན།</string>
     <string name="settings_battery_button">ཕོ་ཕན་གསོག་གྲུབའི་སེང་ཞུགས།</string>
     <string name="settings_battery_path">སེང་ཞུགས། → གཏུབ་མ། → ylih → ཕོ་ཕན་གསོག་གྲུབ། → མི་དབྱེ་བ།</string>
+    <string name="settings_hibernation_body">ylih ཟླ་ཁ་ཤས་རིང་མ་ཁ་ཕྱེ་བ་ཅིན་ android གིས་མཚམས་བཞག་སྟེ་ཆོག་མཆན་ལོག་སྟེ་ལེན་དོ། ཁྱོད་ཀྱིས་མ་ཁ་ཕྱེ་བའི་བར་ན་ཅི་ཡང་ལོག་དྲན་དེབ་མི་འབད། དེ་མེད་བཟོ་ནི་གིས་ཁྱོད་ཀྱིས་ཉེར་སྤྱོད་ལུ་བསམ་བློ་མི་བཏང་བའི་དུས་ཚོད་ནང་ཡང་ཆ་ཕྲན་གིས་གྲངས་བརྩི་མུ་མཐུད་ཚུགས།</string>
+    <string name="settings_hibernation_on">android གིས་ylih མཚམས་བཞག་བཏུབ།</string>
+    <string name="settings_hibernation_off">ylih ལུ་ཁ་ཐུག་ཡོད་མི་ལས་དྲན་དེབ་མུ་མཐུད་དེ་འབད་དོ།</string>
+    <string name="settings_hibernation_button">ལག་ལེན་མེད་པའི་ཉེར་སྤྱོད་སྒྲིག་སྟངས།</string>
     <string name="settings_about">སྐར་མ།</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — གོ་སང་ཕོ་ཉའི་ཆུ་ཙོ། གནས་ཡོད་ཀྱི་དང་གཏུབ་ཡིན།</string>
     <string name="settings_import_confirm_title">གླེང་སྲེ་ཚང་མ་སྒྱུར་དོ།</string>

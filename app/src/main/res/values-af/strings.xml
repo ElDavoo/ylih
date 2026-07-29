@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">gedetailleerde opvolging, in instellings, voeg bedraad koptelefone by en meet hoeveel van die tyd werklik afspeel was.</string>
     <string name="welcome_privacy">alles bly op hierdie foon. daar is geen rekening nie, en die program het geen internettoestemming nie.</string>
     <string name="welcome_start">begin</string>
+    <string name="hibernation_title">hou tel terwyl jy dit vergeet</string>
+    <string name="hibernation_body">android laat programme wat \'n paar maande lank nie oopgemaak word nie pouseer en neem hul toestemmings terug, wat ylih niks sou laat opneem tot jy dit weer oopmaak nie. om vergeet te word is presies waarvoor hierdie program is, so dit is die moeite werd om dit nou af te skakel.</string>
+    <string name="action_not_now">nie nou nie</string>
 
     <!-- Koptelefone lys -->
     <string name="devices_in_use">in gebruik</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">as sessies nie meer opgeneem word, kontroleer dat ylih van batterybesparing uitgesluit is — \'n toepassing wat geforseer gestop is, sal geen konneksieuitsendings meer ontvang totdat dit geoopend word nie.</string>
     <string name="settings_battery_button">battery-instellings</string>
     <string name="settings_battery_path">instellings → toepassings → ylih → battery → onbeperkt.</string>
+    <string name="settings_hibernation_body">as ylih \'n paar maande lank nie oopgemaak word nie, laat android dit pouseer en neem sy toestemmings terug, en niks word weer opgeneem tot jy dit oopmaak nie. om dit af te skakel is wat \'n paar laat aanhou tel deur \'n seisoen waarin jy nooit aan die program dink nie.</string>
+    <string name="settings_hibernation_on">android mag ylih laat pouseer.</string>
+    <string name="settings_hibernation_off">ylih is vrygestel en hou aan opneem.</string>
+    <string name="settings_hibernation_button">instellings vir ongebruikte programme</string>
     <string name="settings_about">aangaande</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — koptelefoonure, lokaal en vir ewig gehou.</string>
     <string name="settings_import_confirm_title">vervang alle data?</string>

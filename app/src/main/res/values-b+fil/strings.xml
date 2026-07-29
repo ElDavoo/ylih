@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">ang detalyadong pagsubaybay, sa mga setting, ay nagdadagdag ng naka-wire na headphones at sinusukat kung gaano kalaki ang bahagi ng oras na tunay na tumutugtog.</string>
     <string name="welcome_privacy">lahat ay nanatili sa telepono. walang account, at walang internet permission ang app.</string>
     <string name="welcome_start">magsimula</string>
+    <string name="hibernation_title">magpatuloy sa pagbibilang kahit malimutan mo ito</string>
+    <string name="hibernation_body">pinapahinto ng android ang mga app na hindi nabuksan sa loob ng ilang buwan at binabawi ang kanilang mga pahintulot, na magiging dahilan para huminto sa pagre-record ang ylih hanggang sa buksan mo itong muli. ang malimutan ay eksaktong dahilan kung bakit ginawa ang app na ito, kaya sulit na patayin na ito ngayon.</string>
+    <string name="action_not_now">huwag muna</string>
 
     <!-- Listahan ng headphones -->
     <string name="devices_in_use">ginagamit</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">kung huminto ang pag-record ng mga session, suriin na ang ylih ay exempt sa battery optimisation — ang app na force-stopped ay hindi na makakatanggap ng connection broadcasts hanggang ito ay buksan.</string>
     <string name="settings_battery_button">battery settings</string>
     <string name="settings_battery_path">settings → apps → ylih → battery → unrestricted.</string>
+    <string name="settings_hibernation_body">kung hindi mabuksan ang ylih sa loob ng ilang buwan, ihihinto ito ng android at babawiin ang mga pahintulot nito, at wala nang irerecord hanggang sa buksan mo ito. ang pagpatay dito ang nagpapahintulot sa isang pares na magpatuloy sa pagbibilang sa buong panahon na hindi mo man lang naiisip ang app.</string>
+    <string name="settings_hibernation_on">maaaring ihinto ng android ang ylih.</string>
+    <string name="settings_hibernation_off">exempted ang ylih at patuloy na nagre-record.</string>
+    <string name="settings_hibernation_button">mga setting ng hindi ginagamit na app</string>
     <string name="settings_about">tungkol</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — oras ng headphone, itinatago nang lokal at magpakailanman.</string>
     <string name="settings_import_confirm_title">palitan ang lahat ng data?</string>

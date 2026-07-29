@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">विस्तृत ट्रैकिंग, सेटिंग्स मा, तार वाल ईयरफोन जोड़ेला अउर मपेला कि कतना समे सच मा बजावल होल।</string>
     <string name="welcome_privacy">सब कुछु एही फोन पर रहेला। कोई अकाउंट नइखे, अउर ऐप के इंटरनेट अनुमति नइखे।</string>
     <string name="welcome_start">शुरु कर</string>
+    <string name="hibernation_title">बिसरला पर भी गिनती चलत रही</string>
+    <string name="hibernation_body">android ओह ऐप सभ के रोक देला जे कई महीना ले ना खोलल गइल होखे, आ ओकर अनुमति वापस ले लेला, एहसे ylih तब ले कुछो रिकॉर्ड ना करी जब ले रउआ एकरा फेर से ना खोलब। बिसरा जाईं – ई एह्हे ऐप के मकसद बा, एहसे अबहीं एकरा बंद कर देब बढ़िया बा।</string>
+    <string name="action_not_now">अबहीं ना</string>
 
     <!-- ईयरफोन के सूची -->
     <string name="devices_in_use">इस्तेमाल मा</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">अगर सत्र रिकॉर्ड न हो रहल होय, तो देख कि ylih बैटरी अनुकूलन से छुट्टा छै — जबरन बंद कइल ऐप फिर से खोले तक कोई जुड़ी घटना न पाय।</string>
     <string name="settings_battery_button">बैटरी सेटिंग्स</string>
     <string name="settings_battery_path">सेटिंग्स → ऐप्स → ylih → बैटरी → अप्रतिबंधित।</string>
+    <string name="settings_hibernation_body">अगर ylih कई महीना ले ना खोलल जाव, त android एकरा रोक देला आ एकर अनुमति वापस ले लेला, आ जब ले रउआ एकरा ना खोलब तब ले कुछो फेर से रिकॉर्ड ना होई। एकरा बंद करब ओहि से जोड़ी ओह मौसम में भी गिनत रह सकेला जब रउआ ऐप के बारे में सोचबे ना करीं।</string>
+    <string name="settings_hibernation_on">android ylih के रोक सकेला।</string>
+    <string name="settings_hibernation_off">ylih छूट में बा आ रिकॉर्ड करत रहेला।</string>
+    <string name="settings_hibernation_button">बिना इस्तेमाल ऐप के सेटिंग</string>
     <string name="settings_about">बारे मा</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — ईयरफोन घंटा, स्थानीय अउर हमेसा के लिये रखल गइल।</string>
     <string name="settings_import_confirm_title">सब डेटा बदल दे?</string>

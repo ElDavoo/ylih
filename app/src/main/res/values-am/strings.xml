@@ -30,6 +30,9 @@
     <string name="welcome_point_detailed_body">ዝርዝር ምልከታ፣ ቅንብራትን ውስጥ፣ በሽመል ዋቅ ይጨምራል እና ምን ያህል ወቅት ቁም በሚወጣ ጊዜ ይለካል።</string>
     <string name="welcome_privacy">ሁሉም ነገር በዚህ ስልክ ላይ ይቀራል። ምንም ሂሳብ የለም እና ትግበራው ለኢንተርኔት ምንም ግቤት የለም።</string>
     <string name="welcome_start">ጀምር</string>
+    <string name="hibernation_title">ስትረሱት እንኳ መቁጠር ይቀጥላል</string>
+    <string name="hibernation_body">android ለወራት ያልተከፈቱ መተግበሪያዎችን ያቆማል እና ፍቃዶቻቸውን ይመልሳል፣ ይህም ylih እንደገና እስከሚከፍቱት ድረስ ምንም ነገር እንዳይመዘግብ ያደርገዋል። መረሳት ይህ መተግበሪያ የተሰራለት ትክክለኛ ምክንያት ስለሆነ፣ አሁኑኑ ይህን ማጥፋት ተገቢ ነው።</string>
+    <string name="action_not_now">አሁን አይደለም</string>
 
     <!-- ዋቅ ዝርዝር -->
     <string name="devices_in_use">ስር ላይ</string>
@@ -119,6 +122,10 @@
     <string name="settings_battery_body">ስብሰባ ሰብስቡ ከቆሙ, ylih ምንም ኃይል ማጠቃለያ ውስጥ ነገ ጎን ለጎን ይወሰድ — ሃይሉ የታጠቀ ትግበራ ከ ተገናኝ ፍላጐት ወዲህ ሮጫ ውስጥ አይቀበልም።</string>
     <string name="settings_battery_button">ኃይል ቅንብራት</string>
     <string name="settings_battery_path">ቅንብራት → ትግበራ → ylih → ኃይል → ገደብ ራሳቸው።</string>
+    <string name="settings_hibernation_body">ylih ለወራት ካልተከፈተ android ያቆመዋል እና ፍቃዶቹን ይመልሳል፣ እርስዎ እስከሚከፍቱት ድረስም ምንም አይመዘገብም። ይህን ማጥፋት መተግበሪያውን ስለማታስቡበት ወቅት እንኳ ጥንዱ መቁጠሩን እንዲቀጥል ያደርገዋል።</string>
+    <string name="settings_hibernation_on">android ylihን ሊያቆመው ይችላል።</string>
+    <string name="settings_hibernation_off">ylih ነጻ ነው እና መመዝገቡን ይቀጥላል።</string>
+    <string name="settings_hibernation_button">ያልተጠቀሙ የመተግበሪያ ቅንብሮች</string>
     <string name="settings_about">ስለ ይህ</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — ሰዓታት በዋቅ, ተከላ በራሳቸው ቦታ ምንባር ተከላ።</string>
     <string name="settings_import_confirm_title">ሁሉም ውሂብ ተተክሎ ይሁን?</string>

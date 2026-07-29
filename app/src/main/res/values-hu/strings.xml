@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">a beállításokban bekapcsolható részletes követés hozzáadja a vezetékes fejhallgatókat, és méri, hogy az idő mekkora részében szólt ténylegesen zene.</string>
     <string name="welcome_privacy">minden ezen a telefonon marad. nincs fiók, és az alkalmazásnak nincs internet-hozzáférési engedélye.</string>
     <string name="welcome_start">kezdjük</string>
+    <string name="hibernation_title">számol tovább, miközben elfelejted</string>
+    <string name="hibernation_body">az android szünetelteti a néhány hónapja meg nem nyitott alkalmazásokat, és visszaveszi az engedélyeiket, így a ylih semmit sem rögzítene a következő megnyitásig. éppen az a lényege ennek az alkalmazásnak, hogy elfelejtsd, ezért érdemes ezt most kikapcsolni.</string>
+    <string name="action_not_now">most nem</string>
 
     <!-- Fejhallgatólista -->
     <string name="devices_in_use">használatban</string>
@@ -121,6 +124,10 @@
     <string name="settings_battery_body">ha a munkamenetek rögzítése leáll, ellenőrizd, hogy a ylih mentesítve van-e az akkumulátor-optimalizálás alól — egy kényszerítve leállított alkalmazás soha többé nem kap kapcsolódási eseményeket, amíg meg nem nyitod újra.</string>
     <string name="settings_battery_button">akkumulátor-beállítások</string>
     <string name="settings_battery_path">beállítások → alkalmazások → ylih → akkumulátor → korlátozás nélkül.</string>
+    <string name="settings_hibernation_body">ha a ylih néhány hónapig nincs megnyitva, az android szünetelteti és visszaveszi az engedélyeit, és semmi sem kerül rögzítésre, amíg meg nem nyitod. ennek kikapcsolása az, ami hagyja, hogy egy fejhallgató számoljon tovább egy olyan időszakon át, amikor eszedbe sem jut az alkalmazás.</string>
+    <string name="settings_hibernation_on">az android szüneteltetheti a ylih-t.</string>
+    <string name="settings_hibernation_off">a ylih mentesült, és tovább rögzít.</string>
+    <string name="settings_hibernation_button">nem használt alkalmazások beállításai</string>
     <string name="settings_about">névjegy</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — a fejhallgatóid órái, helyben tárolva, örökre.</string>
     <string name="settings_import_confirm_title">lecseréled az összes adatot?</string>

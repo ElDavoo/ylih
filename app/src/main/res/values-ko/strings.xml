@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">설정의 상세 추적 기능은 유선 헤드폰을 추가하고, 실제로 재생 중이었던 시간을 측정합니다.</string>
     <string name="welcome_privacy">모든 데이터는 이 휴대폰에만 남습니다. 계정도 없고, 앱에는 인터넷 권한도 없습니다.</string>
     <string name="welcome_start">시작하기</string>
+    <string name="hibernation_title">잊고 있어도 계속 기록됩니다</string>
+    <string name="hibernation_body">android는 몇 달간 열리지 않은 앱을 중지시키고 권한을 회수하는데, 이렇게 되면 다시 열기 전까지 ylih는 아무것도 기록하지 않게 됩니다. 잊혀지는 것이야말로 이 앱이 존재하는 이유이므로, 지금 이 기능을 꺼두는 것이 좋습니다.</string>
+    <string name="action_not_now">나중에</string>
 
     <!-- 헤드폰 목록 -->
     <string name="devices_in_use">사용 중</string>
@@ -121,6 +124,10 @@
     <string name="settings_battery_body">세션이 더 이상 기록되지 않는다면 ylih가 배터리 최적화에서 제외되어 있는지 확인하세요 — 강제 종료된 앱은 다시 열기 전까지 연결 브로드캐스트를 전혀 받지 못합니다.</string>
     <string name="settings_battery_button">배터리 설정</string>
     <string name="settings_battery_path">설정 → 앱 → ylih → 배터리 → 제한 없음.</string>
+    <string name="settings_hibernation_body">ylih가 몇 달간 열리지 않으면 android가 이를 중지시키고 권한을 회수하며, 다시 열기 전까지 아무것도 기록되지 않습니다. 이 기능을 꺼두면 앱을 전혀 생각하지 않는 계절에도 헤드폰 한 쌍의 기록이 계속됩니다.</string>
+    <string name="settings_hibernation_on">android가 ylih를 중지시킬 수 있습니다.</string>
+    <string name="settings_hibernation_off">ylih는 예외 처리되어 계속 기록됩니다.</string>
+    <string name="settings_hibernation_button">사용하지 않는 앱 설정</string>
     <string name="settings_about">정보</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — 헤드폰 사용 시간을, 로컬에 영원히.</string>
     <string name="settings_import_confirm_title">모든 데이터를 대체할까요?</string>

@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">детаљно праћење, у поставкама, додаје жичне слушалице и мери колико од времена је било стварна репродукција.</string>
     <string name="welcome_privacy">све остаје на овом телефону. нема налога и апликација нема дозволе за интернет.</string>
     <string name="welcome_start">почни</string>
+    <string name="hibernation_title">настави да бројиш и док је заборављаш</string>
+    <string name="hibernation_body">android зауставља апликације које нису отваране неколико месеци и одузима им дозволе, због чега ylih не би ништа бележио док га поново не отвориш. управо то да буде заборављена је сврха ове апликације, зато вреди то искључити одмах.</string>
+    <string name="action_not_now">не сада</string>
 
     <!-- Листа слушалица -->
     <string name="devices_in_use">у употреби</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">ако сесије престану бити бележене, проверите да је ylih искључен из оптимизације батерије — апликација која је принудно заустављена више не прима догађаје повезивања док је не отворите поново.</string>
     <string name="settings_battery_button">поставке батерије</string>
     <string name="settings_battery_path">поставке → апликације → ylih → батерија → неограничено.</string>
+    <string name="settings_hibernation_body">ако ylih остане неотворен неколико месеци, android га зауставља и одузима му дозволе, и ништа се поново не бележи док га не отвориш. искључивање тога је оно што омогућава да пар настави бројати кроз сезону у којој уопште не мислиш на апликацију.</string>
+    <string name="settings_hibernation_on">android може зауставити ylih.</string>
+    <string name="settings_hibernation_off">ylih је изузет и наставља да бележи.</string>
+    <string name="settings_hibernation_button">подешавања некоришћених апликација</string>
     <string name="settings_about">о апликацији</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — сати у слушалицама, чувани локално и заувек.</string>
     <string name="settings_import_confirm_title">заменити све податке?</string>

@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">mae tracio manwl, mewn gosodiadau, yn ychwanegu clustffonau wedi\'u gweirio ac yn mesur faint o\'r amser yr oedd yn chwarae go iawn.</string>
     <string name="welcome_privacy">mae popeth yn aros ar y ffôn hwn. nid oes cyfrif, ac nid oes caniatad rhyngrwyd.</string>
     <string name="welcome_start">cael dechrau</string>
+    <string name="hibernation_title">dal i gyfrif tra byddwch chi\'n anghofio amdani</string>
+    <string name="hibernation_body">mae android yn oedi apiau nad ydynt yn cael eu hagor am ychydig fisoedd ac yn cymryd eu caniatâd yn ôl, a fyddai\'n gadael ylih heb gofnodi dim nes i chi ei hagor nesaf. cael eich anghofio yw union bwrpas yr ap hwn, felly mae\'n werth diffodd hynny nawr.</string>
+    <string name="action_not_now">nid nawr</string>
 
     <!-- Rhestr clustffonau -->
     <string name="devices_in_use">mewn defnydd</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">os bydd sesiynau yn rhoi\'r gorau i gael eu cofnodi, gwiriwch fod ylih yn eithriad o optimeiddio batri — app sydd wedi\'i orfodi i stopio byth yn derbyn darllediadau cysylltiad eto nes ei agor.</string>
     <string name="settings_battery_button">gosodiadau batri</string>
     <string name="settings_battery_path">gosodiadau → apiau → ylih → batri → heb gyfyngiad.</string>
+    <string name="settings_hibernation_body">os na chaiff ylih ei hagor am ychydig fisoedd, mae android yn ei hoedi ac yn cymryd ei chaniatâd yn ôl, ac ni chofnodir dim eto nes i chi ei hagor. diffodd hynny sy\'n gadael i bâr ddal i gyfrif drwy dymor pan nad ydych byth yn meddwl am yr ap.</string>
+    <string name="settings_hibernation_on">gall android oedi ylih.</string>
+    <string name="settings_hibernation_off">mae ylih wedi\'i heithrio ac yn dal i gofnodi.</string>
+    <string name="settings_hibernation_button">gosodiadau apiau nas defnyddir</string>
     <string name="settings_about">ynghylch</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — oriau clustffonau, wedi\'u cadw\'n lleol ac am byth.</string>
     <string name="settings_import_confirm_title">disodli\'r holl ddata?</string>

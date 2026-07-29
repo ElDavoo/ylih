@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">омара дӏаяьллер, сеттингареш, проводан наухьанар вогӏуьччу а кӏам доза ахира воспроизведение иза. </string>
     <string name="welcome_privacy">массала мобилера йалар йа. аккаунт яц, а аппа интернет боьлу-норма яц.</string>
     <string name="welcome_start">эхьа диян</string>
+    <string name="hibernation_title">дицдалча а лорура тӀаьхьа</string>
+    <string name="hibernation_body">android шараш дӀаяьллачу апех ялийна совцу, важа хӀаьчаьхна бохург дуьйцу, ylih хьуна тӀаьхьа схьа даьллачу хенахь цхьаккха хила йиш йолуш яц. дицдалар и приложени долчу хӀуманна лерина ду, важа хӀинца дӀаяккха бакъдоьзна ду.</string>
+    <string name="action_not_now">хӀинца дац</string>
 
     <!-- Наухьанар список -->
     <string name="devices_in_use">ашалар йоьшу</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">сессияр дӏаяьллер йоьшу йалаз, ylih батарея оптимизацие хӏаьчаьхна тӏе йалара йаяьлча. аппа кхеста йоьшу деш яц жима сигналар йалар.</string>
     <string name="settings_battery_button">батарея сеттингар</string>
     <string name="settings_battery_path">сеттингар → аппар → ylih → батарея → ограничение цӏаьхна.</string>
+    <string name="settings_hibernation_body">ylih шараш дӀаяьллачу хенахь android гӀо ялийна совцу, важа хӀаьчаьхна бохург дуьйцу, хьуна тӀаьхьа схьа даьллачу хенахь цхьаккха дӀаяздан йиш яц. и дӀаяккха, хьайна юха приложени хьалха а ца хеташ долчу заманахь а совцур яц.</string>
+    <string name="settings_hibernation_on">android ялийна ylih совцур ю.</string>
+    <string name="settings_hibernation_off">ylih чекхбоьллуш яц, дӀаязден йолуш ю.</string>
+    <string name="settings_hibernation_button">лелош йоцу приложенеш сеттингаш</string>
     <string name="settings_about">мындара тӏе</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — наухьана соьатаяр, локал йо а имме.</string>
     <string name="settings_import_confirm_title">массала ан сеъна йацира?</string>

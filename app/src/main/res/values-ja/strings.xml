@@ -33,6 +33,9 @@
     <string name="welcome_point_detailed_body">設定の詳細トラッキングを使うと、有線のヘッドホンも記録でき、実際に再生していた時間も測れる。</string>
     <string name="welcome_privacy">すべてこの端末の中だけで完結する。アカウントは不要で、このアプリにはインターネットへのアクセス権限もない。</string>
     <string name="welcome_start">はじめる</string>
+    <string name="hibernation_title">忘れていても、カウントは続く</string>
+    <string name="hibernation_body">androidは数か月開かれなかったアプリを停止し、権限を取り消す。そうなるとylihは次に開くまで何も記録しなくなる。忘れられることこそこのアプリの本来の目的なので、今のうちにこれをオフにしておく価値がある。</string>
+    <string name="action_not_now">今はしない</string>
 
     <!-- ヘッドホン一覧 -->
     <string name="devices_in_use">使用中</string>
@@ -123,6 +126,10 @@
     <string name="settings_battery_body">セッションが記録されなくなった場合は、ylihがバッテリーの最適化から除外されているか確認する。強制停止されたアプリは、開くまで接続の通知を二度と受け取れない。</string>
     <string name="settings_battery_button">バッテリー設定</string>
     <string name="settings_battery_path">設定 → アプリ → ylih → バッテリー → 制限なし。</string>
+    <string name="settings_hibernation_body">ylihが数か月開かれないと、androidはそれを停止し権限を取り消す。開くまで二度と何も記録されない。これをオフにすることで、アプリのことを考えもしない季節の間も、ペアはカウントを続けられる。</string>
+    <string name="settings_hibernation_on">androidがylihを停止する可能性がある。</string>
+    <string name="settings_hibernation_off">ylihは対象外で、記録を続ける。</string>
+    <string name="settings_hibernation_button">未使用のアプリの設定</string>
     <string name="settings_about">アプリについて</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — ヘッドホンの利用時間を、この端末にずっと記録する。</string>
     <string name="settings_import_confirm_title">すべてのデータを置き換える？</string>

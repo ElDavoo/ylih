@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">kufuatilia kwa undani, katika mipango, kunaongeza kamba na kupima kiasi cha wakati uliyokuwa unacheza.</string>
     <string name="welcome_privacy">kila kitu kinabaki kwenye simu hii. hakuna akaunti, nde simu haina ruhusa ya intaneti.</string>
     <string name="welcome_start">kuanza</string>
+    <string name="hibernation_title">ihendelela kuhesabu hata paukisahau</string>
+    <string name="hibernation_body">android itandika programu ambazo hazijafunguliwa kwa miezi, na inaondoa ruhusa zake. hapo ylih haitarekodi lolote mpaka uifungue tena. kusahaulika ndiyo kazi ya programu hii, hivyo tandika jambo hili sasa.</string>
+    <string name="action_not_now">sio sasa</string>
 
     <!-- Orodha ya muti -->
     <string name="devices_in_use">inatumika</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">ikiwa vikao vinakoma kurekodi, angalia kuwa ylih imeachwa mbali na uchangamano wa umeme - programu iliyosimamaishwa kwa lazima haipati tena matukio ya kubandikaisha hadi ikaponekaponekwa.</string>
     <string name="settings_battery_button">mipango ya umeme</string>
     <string name="settings_battery_path">mipango → programu → ylih → umeme → bila kuzuiliwa.</string>
+    <string name="settings_hibernation_body">ikiwa ylih haitafunguliwa kwa miezi, android inaitandika na kuondoa ruhusa yake, na hairekodi tena mpaka uifungue. tandika jambo hili ili ylih iendelee kuhesabu hata mu kipindi usipowaza juu ya programu hii.</string>
+    <string name="settings_hibernation_on">android inaweza kutandika ylih.</string>
+    <string name="settings_hibernation_off">ylih haihusiki — inaendelea kurekodi.</string>
+    <string name="settings_hibernation_button">mipango ya programu zisizotumika</string>
     <string name="settings_about">kuhusu</string>
     <string name="settings_about_body">ylih %1$s (%2$s) - masaa ya muti, yanayohifadhiwa katika ndani na milele.</string>
     <string name="settings_import_confirm_title">kuambatisha takwimu zote?</string>

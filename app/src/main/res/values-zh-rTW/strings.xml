@@ -32,6 +32,9 @@
     <string name="welcome_point_detailed_body">設定中的詳細追蹤功能可加入有線耳機，並測量其中實際在播放的時間比例。</string>
     <string name="welcome_privacy">所有資料只留在這支手機上。沒有帳號，應用程式也沒有網路權限。</string>
     <string name="welcome_start">開始使用</string>
+    <string name="hibernation_title">就算你忘了它,計時也會繼續</string>
+    <string name="hibernation_body">android 會停止數個月未開啟的應用程式並收回其權限,這會導致 ylih 在你下次開啟它之前都不再記錄任何內容。被遺忘正是這款應用程式存在的意義,所以現在就關閉這項限制很值得。</string>
+    <string name="action_not_now">暫不</string>
 
     <!-- 耳機清單 -->
     <string name="devices_in_use">使用中</string>
@@ -122,6 +125,10 @@
     <string name="settings_battery_body">如果連線紀錄不再更新，請確認 ylih 已排除在電池最佳化之外——被強制停止的應用程式在再次開啟前，將不會收到任何連線廣播。</string>
     <string name="settings_battery_button">電池設定</string>
     <string name="settings_battery_path">設定 → 應用程式 → ylih → 電池 → 不受限制。</string>
+    <string name="settings_hibernation_body">如果 ylih 數個月未被開啟，android 會停止它並收回其權限，在你開啟它之前都不會再記錄任何內容。關閉這項限制，就能讓一副耳機在你完全沒想起這個應用程式的那段時間裡繼續被計時。</string>
+    <string name="settings_hibernation_on">android 可能會停止 ylih。</string>
+    <string name="settings_hibernation_off">ylih 已被排除在外，持續記錄。</string>
+    <string name="settings_hibernation_button">未使用的應用程式設定</string>
     <string name="settings_about">關於</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — 耳機使用時數，永久保存於本機。</string>
     <string name="settings_import_confirm_title">要取代所有資料嗎？</string>

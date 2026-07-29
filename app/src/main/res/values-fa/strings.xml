@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">پیگیری دقیق، در تنظیمات، هدفون‌های سیمی را اضافه می‌کند و اندازه‌گیری می‌کند که چه مقدار از این زمان واقعاً پخش شده است.</string>
     <string name="welcome_privacy">همه چیز روی این تلفن می‌ماند. حساب کاربری وجود ندارد و برنامه دسترسی اینترنت ندارد.</string>
     <string name="welcome_start">شروع کنید</string>
+    <string name="hibernation_title">حتی وقتی فراموشش می‌کنی، شمارش را ادامه بده</string>
+    <string name="hibernation_body">android برنامه‌هایی را که چند ماه باز نشده‌اند متوقف می‌کند و دسترسی‌هایشان را پس می‌گیرد، که این باعث می‌شود ylih تا زمانی که دوباره بازش نکنی چیزی ثبت نکند. فراموش‌شدن دقیقاً همان چیزی است که این برنامه برایش ساخته شده، پس ارزشش را دارد که همین حالا این را خاموش کنی.</string>
+    <string name="action_not_now">الان نه</string>
 
     <!-- فهرست هدفون‌ها -->
     <string name="devices_in_use">در حال استفاده</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">اگر جلسات ضبط شدن متوقف شود، بررسی کنید که ylih از بهینه‌سازی باتری مستثنی است — یک برنامه‌ای که اجباری متوقف شده است، تا زمانی که باز نشود، هرگز دوباره پیام‌های اتصال دریافت نمی‌کند.</string>
     <string name="settings_battery_button">تنظیمات باتری</string>
     <string name="settings_battery_path">تنظیمات → برنامه‌ها → ylih → باتری → محدود نشده.</string>
+    <string name="settings_hibernation_body">اگر ylih چند ماه باز نشود، android متوقفش می‌کند و دسترسی‌هایش را پس می‌گیرد، و تا زمانی که بازش نکنی چیزی دوباره ثبت نمی‌شود. خاموش کردن این همان چیزی است که اجازه می‌دهد یک جفت در فصلی که اصلاً به برنامه فکر نمی‌کنی هم به شمارش ادامه دهد.</string>
+    <string name="settings_hibernation_on">android ممکن است ylih را متوقف کند.</string>
+    <string name="settings_hibernation_off">ylih مستثنی است و همچنان ثبت می‌کند.</string>
+    <string name="settings_hibernation_button">تنظیمات برنامه‌های استفاده‌نشده</string>
     <string name="settings_about">درباره</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — ساعات هدفون، ذخیره شده محلی و برای همیشه.</string>
     <string name="settings_import_confirm_title">تمام داده‌ها را جایگزین کنیم؟</string>

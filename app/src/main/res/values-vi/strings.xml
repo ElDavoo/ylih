@@ -32,6 +32,9 @@
     <string name="welcome_point_detailed_body">chế độ theo dõi chi tiết, trong cài đặt, thêm tai nghe có dây và đo xem bao nhiêu thời gian thực sự đang phát nhạc.</string>
     <string name="welcome_privacy">mọi thứ đều ở lại trên điện thoại này. không có tài khoản, và ứng dụng không có quyền truy cập internet.</string>
     <string name="welcome_start">bắt đầu</string>
+    <string name="hibernation_title">vẫn tiếp tục đếm dù bạn có quên nó</string>
+    <string name="hibernation_body">android tạm dừng các ứng dụng không được mở trong vài tháng và thu hồi quyền của chúng, khiến ylih không ghi lại gì cho đến khi bạn mở lại. bị lãng quên chính là mục đích của ứng dụng này, vì vậy nên tắt tính năng đó ngay từ bây giờ.</string>
+    <string name="action_not_now">để sau</string>
 
     <!-- Danh sách tai nghe -->
     <string name="devices_in_use">đang dùng</string>
@@ -121,6 +124,10 @@
     <string name="settings_battery_body">nếu các phiên ngừng được ghi lại, hãy kiểm tra xem ylih có được miễn trừ tối ưu hóa pin không — một ứng dụng đã bị buộc dừng sẽ không nhận được thông báo kết nối nữa cho đến khi được mở lại.</string>
     <string name="settings_battery_button">cài đặt pin</string>
     <string name="settings_battery_path">cài đặt → ứng dụng → ylih → pin → không hạn chế.</string>
+    <string name="settings_hibernation_body">nếu ylih không được mở trong vài tháng, android sẽ tạm dừng và thu hồi quyền của nó, và sẽ không có gì được ghi lại cho đến khi bạn mở nó. tắt tính năng đó là điều giúp một đôi tai nghe tiếp tục được đếm suốt cả mùa mà bạn còn chẳng nghĩ đến ứng dụng.</string>
+    <string name="settings_hibernation_on">android có thể tạm dừng ylih.</string>
+    <string name="settings_hibernation_off">ylih được miễn trừ và tiếp tục ghi lại.</string>
+    <string name="settings_hibernation_button">cài đặt ứng dụng không sử dụng</string>
     <string name="settings_about">giới thiệu</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — số giờ tai nghe, được lưu tại chỗ và mãi mãi.</string>
     <string name="settings_import_confirm_title">thay thế toàn bộ dữ liệu?</string>

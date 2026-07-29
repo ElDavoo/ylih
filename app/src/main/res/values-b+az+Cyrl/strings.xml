@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">толық іс-әрекет, әйланмәләрде, сызыңлы наўсыбырлысын қосады және оның қанше уақыты хақылап ойналғанын өлшейді.</string>
     <string name="welcome_privacy">барлығы осы телефонда қалды. ешқандай есептік емес, және қосынша интернет рұқсаты жоқ.</string>
     <string name="welcome_start">бастау</string>
+    <string name="hibernation_title">унутсан да саймаға давам ет</string>
+    <string name="hibernation_body">android бир нечә ай ачылмайан тәтбигләри дайандырыр вә иҹазәләрини ҝери алыр ки, бу да ylih-и сән ону йенидән ачана гәдәр һеч нә гейд етмәйән вәзиййәтә салар. унудулмаг бу тәтбигин вар олмаг сәбәбидир, она ҝөрә дә инди буну деактив етмәйә дәйәр.</string>
+    <string name="action_not_now">инди йох</string>
 
     <!-- Наўсыбырлыс тізімі -->
     <string name="devices_in_use">пайдаланыста</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">сеанстар есептелінуді тоқтатса, ylih батарея оңайтығынан босатылғанын қараңыз — әлеуметті тоқтатылған құсынша оны ашқанша қосылу оқиғаларын ала алмайды.</string>
     <string name="settings_battery_button">батарея әйланмәләрі</string>
     <string name="settings_battery_path">әйланмәләр → құсыншалар → ylih → батарея → шектеулегі емес.</string>
+    <string name="settings_hibernation_body">ylih бир нечә ай ачылмадан галарса, android ону дайандырыр вә иҹазәләрини ҝери алыр, сән ачана гәдәр һеч нә йенидән гейд олунмур. буну деактив етмәк ҹүтлүйүн тәтбиг һаггында дүшүнмәдийин бир мөвсүм бойу саймаға давам етмәсинә имкан верир.</string>
+    <string name="settings_hibernation_on">android ylih-и дайандыра биләр.</string>
+    <string name="settings_hibernation_off">ylih истисна едилиб вә гейдә алмаға давам едир.</string>
+    <string name="settings_hibernation_button">истифадә едилмәйән тәтбиг айарлары</string>
     <string name="settings_about">туралы</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — наўсыбырлыс сағаттары, ішінде сақталды және әрқашан.</string>
     <string name="settings_import_confirm_title">барлық деректерді ауысыру?</string>

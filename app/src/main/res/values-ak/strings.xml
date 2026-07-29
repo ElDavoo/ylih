@@ -31,6 +31,9 @@
     <string name="welcome_point_detailed_body">akontabuo a ɔkɔ ɔ mu wɔ nsusuiw mu, ɔhyɛ asiân headphones na ɔtwie sɛ bere no hweɛ na wɔhyɛ adedie.</string>
     <string name="welcome_privacy">biribiara din wɔ simu yi so. na mfiri biara nni hɔ, na sikakorabɛ yi nni ɔkwan ama intanɛt.</string>
     <string name="welcome_start">hyɛ aseɛ</string>
+    <string name="hibernation_title">ɛkan kɔ so ɛtɔ mmerɛ a wo werɛ afiri</string>
+    <string name="hibernation_body">android gyae sikakorabɛ a wɔammfa anni dwuma abosome pii, na ɔfa ne ɔkwan nyinaa. ɛno bɛma ylih annkyerɛw hwee kosi sɛ wobue bio. sɛ wo werɛ fi app yi ho no ara ne dwuma a ɛyɛ, ɛno nti twa saa hwɛbea yi mprempren.</string>
+    <string name="action_not_now">ɛnyɛ seesei</string>
 
     <!-- Headphones list -->
     <string name="devices_in_use">wɔde din</string>
@@ -120,6 +123,10 @@
     <string name="settings_battery_body">sɛ bere a wɔhyɛ akyir a, hwɛ sɛ ylih nni wɔ aduasa din mu — sikakorabɛ a wɔatwa ase no nka dɛm a ɛfa dum ho bio akosi sɛ wɔbukuw ɛ.</string>
     <string name="settings_battery_button">aduasa din nsusuiw</string>
     <string name="settings_battery_path">nsusuiw → apps → ylih → aduasa → so.</string>
+    <string name="settings_hibernation_body">sɛ wanhwɛ ylih mfa abosome pii a, android gyae no na ɔfa ne ɔkwan nyinaa, na ɔnkyerɛw hwee kosi sɛ wobue bio. twa eyi na ama sikakorabɛ kɔ so kan mpo sɛ wo werɛ fi app yi ho mmerɛ tenten.</string>
+    <string name="settings_hibernation_on">android betumi agyae ylih.</string>
+    <string name="settings_hibernation_off">wɔmfaa ylih anka mu — ɛkɔ so kyerɛw.</string>
+    <string name="settings_hibernation_button">nsusuiw a ɛfa sikakorabɛ a wonni dwuma ho</string>
     <string name="settings_about">fa ho</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — manim headphones, na wɔkora wɔ simu yi so daakye.</string>
     <string name="settings_import_confirm_title">sesa din nyinaa?</string>
