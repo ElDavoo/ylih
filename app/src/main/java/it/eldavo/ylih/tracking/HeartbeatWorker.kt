@@ -17,8 +17,9 @@ class HeartbeatWorker(
 
     override suspend fun doWork(): Result {
         val container = (applicationContext as YlihApp).container
+        // syncWithSystem's reconcile already heartbeats every session it still finds connected,
+        // and closes the ones it does not, so a second pass writes the same rows the same values.
         container.trackingController.syncWithSystem()
-        container.repository.heartbeat()
         return Result.success()
     }
 

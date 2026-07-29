@@ -9,6 +9,8 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.work.testing.WorkManagerTestInitHelper
 import it.eldavo.ylih.R
 import it.eldavo.ylih.YlihApp
+import it.eldavo.ylih.data.DeviceIdentity
+import it.eldavo.ylih.data.DeviceKind
 import it.eldavo.ylih.data.SessionEntity
 import kotlinx.coroutines.runBlocking
 import org.junit.After
@@ -126,6 +128,23 @@ class TrackingServiceTest {
     }
 
     /**
+     * Like [settle], but moving the clock a tick on every round.
+     *
+     * The tick loop is armed asynchronously: it starts once the open-session flow reports there
+     * is something to watch, which is a Room invalidation behind the write that opened the
+     * session. A single clock jump that lands before the loop reaches its `delay` would schedule
+     * the tick past the moment we had just advanced to, and nothing would ever come due.
+     */
+    private fun settleAcrossTicks(what: String, until: () -> Boolean) {
+        repeat(500) {
+            shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(TICK))
+            if (until()) return
+            Thread.sleep(10)
+        }
+        throw AssertionError("timed out waiting for $what")
+    }
+
+    /**
      * [PlaybackWatcher] measures wall-clock milliseconds, which idling the looper does not move —
      * so a slice of real time has to pass before a tick has anything to credit.
      */
@@ -202,10 +221,50 @@ class TrackingServiceTest {
         settle("the session to open") { sessions().isNotEmpty() }
         val before = sessions().single().heartbeatAt
 
-        shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(TICK))
-        settle("the heartbeat to advance") { sessions().single().heartbeatAt > before }
+        settleAcrossTicks("the heartbeat to advance") { sessions().single().heartbeatAt > before }
 
         assertNull("a tick must never close anything", sessions().single().disconnectedAt)
+    }
+
+    /**
+     * The tick idles while nothing is connected, and what wakes it is the open-session flow
+     * rather than this service's own audio callback — so a session the manifest Bluetooth
+     * receiver opened, which the service never saw arrive, is still kept alive by it.
+     */
+    @Test
+    fun `a session the service never saw open is heartbeaten all the same`() {
+        start()
+        runBlocking {
+            app.container.repository.onConnected(
+                DeviceIdentity("bt:5E:C2", DeviceKind.BLUETOOTH, "ACCENTUM Plus"),
+            )
+        }
+        settle("the session to open") { sessions().isNotEmpty() }
+        val before = sessions().single().heartbeatAt
+
+        settleAcrossTicks("the heartbeat to advance") { sessions().single().heartbeatAt > before }
+    }
+
+    @Test
+    fun `the tick stops with the last session and starts again with the next one`() {
+        start()
+        connect(buds())
+        settle("the session to open") { sessions().isNotEmpty() }
+        disconnect(buds())
+        settle("the session to close") { sessions().single().disconnectedAt != null }
+
+        // Nothing is connected: a tick here would heartbeat an empty table and re-post an
+        // unchanged notification, which is the wakeup a minute this loop exists to avoid.
+        shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(5 * TICK))
+        assertEquals(app.getString(R.string.notification_idle), notificationText())
+
+        connect(wired())
+        settle("the second session to open") { sessions().size == 2 }
+        val before = sessions().last().heartbeatAt
+
+        settleAcrossTicks("the tick to be running again") {
+            sessions().last().heartbeatAt > before
+        }
     }
 
     @Test
@@ -215,8 +274,8 @@ class TrackingServiceTest {
         connect(buds())
         settle("the session to open") { sessions().isNotEmpty() }
 
-        playFor(50)
-        settle("playback to be credited") { sessions().single().playingMs!! > 0 }
+        Thread.sleep(50)
+        settleAcrossTicks("playback to be credited") { sessions().single().playingMs!! > 0 }
 
         // Measured playback can never exceed the span it was measured inside.
         val session = sessions().single()
@@ -231,8 +290,8 @@ class TrackingServiceTest {
         connect(buds())
         settle("the session to open") { sessions().isNotEmpty() }
 
-        playFor(50)
-        settle("playback to be credited") { sessions().single().playingMs!! > 0 }
+        Thread.sleep(50)
+        settleAcrossTicks("playback to be credited") { sessions().single().playingMs!! > 0 }
         disconnect(buds())
         settle("the session to close") { sessions().single().disconnectedAt != null }
         val credited = sessions().single().playingMs
@@ -259,8 +318,8 @@ class TrackingServiceTest {
         start()
         connect(buds())
         settle("the session to open") { sessions().isNotEmpty() }
-        playFor(50)
-        settle("playback to be credited") { sessions().single().playingMs!! > 0 }
+        Thread.sleep(50)
+        settleAcrossTicks("playback to be credited") { sessions().single().playingMs!! > 0 }
 
         stop()
         shadowOf(Looper.getMainLooper()).idle()

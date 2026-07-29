@@ -55,10 +55,19 @@ class SessionRepository(
         db.withTransaction { closeSession(key, at, reason) }
     }
 
-    /** Marks every open session as still alive at [at]; recovery later closes here. */
-    suspend fun heartbeat(at: Long = clock.now()): Unit = mutex.withLock {
+    /**
+     * Marks every open session as still alive at [at]; recovery later closes here.
+     *
+     * Returns the sessions as they now stand, so a caller that also needs the list — the
+     * service's tick, which turns it into notification text — reads the table once rather than
+     * twice on every wakeup.
+     */
+    suspend fun heartbeat(at: Long = clock.now()): List<SessionEntity> = mutex.withLock {
         db.withTransaction {
-            sessions.allOpen().forEach { sessions.heartbeat(it.id, at) }
+            sessions.allOpen().map {
+                sessions.heartbeat(it.id, at)
+                it.copy(heartbeatAt = at)
+            }
         }
     }
 

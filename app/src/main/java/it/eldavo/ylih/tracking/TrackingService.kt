@@ -23,9 +23,14 @@ import it.eldavo.ylih.R
 import it.eldavo.ylih.YlihApp
 import it.eldavo.ylih.data.AppContainer
 import it.eldavo.ylih.data.DeviceIdentity
+import it.eldavo.ylih.data.SessionEntity
 import it.eldavo.ylih.data.trackedKinds
 import it.eldavo.ylih.ui.formatDurationShort
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 
@@ -47,6 +52,13 @@ class TrackingService : LifecycleService() {
     /** Playback is credited to the most recently connected pair. */
     private var playbackTargetKey: String? = null
     private var playbackWatcher: PlaybackWatcher? = null
+
+    /**
+     * What the notification already reads, so text that has not changed is not posted again.
+     * Beyond the wakeup it saves, the notification is dismissible on Android 13+, and re-posting
+     * it would keep putting back something the user had just swiped away.
+     */
+    private var postedText: String? = null
 
     private val deviceCallback = object : AudioDeviceCallback() {
         override fun onAudioDevicesAdded(addedDevices: Array<out AudioDeviceInfo>?) {
@@ -81,11 +93,26 @@ class TrackingService : LifecycleService() {
 
         lifecycleScope.launch {
             container.trackingController.syncWithSystem()
-            refreshNotification()
-            while (isActive) {
-                delay(TICK_MS)
-                tick()
-            }
+            // Detailed tracking is a setting, not a state: this service is up whether or not
+            // anything is plugged in, and a tick with nothing connected heartbeats an empty
+            // table and re-posts an unchanged notification. So the loop only runs while a
+            // session is open — for most days a couple of hours rather than all of them.
+            // Reading that from the open-session flow rather than from our own device callback
+            // is what keeps a session the Bluetooth receiver opened heartbeaten too.
+            container.repository.observeOpenSessions()
+                .map { it.isNotEmpty() }
+                .distinctUntilChanged()
+                .collectLatest { anyOpen ->
+                    refreshNotification()
+                    if (anyOpen) tickLoop()
+                }
+        }
+    }
+
+    private suspend fun tickLoop(): Unit = coroutineScope {
+        while (isActive) {
+            delay(TICK_MS)
+            tick()
         }
     }
 
@@ -132,9 +159,9 @@ class TrackingService : LifecycleService() {
 
     private suspend fun tick() {
         val now = container.clock.now()
-        container.repository.heartbeat(now)
+        val open = container.repository.heartbeat(now)
         playbackWatcher?.refresh(now)
-        refreshNotification()
+        refreshNotification(open)
     }
 
     private fun creditPlayback(deltaMs: Long) {
@@ -146,9 +173,10 @@ class TrackingService : LifecycleService() {
         }
     }
 
-    private suspend fun refreshNotification() {
+    /** @param known the open sessions if the caller has just read them, saving a second query. */
+    private suspend fun refreshNotification(known: List<SessionEntity>? = null) {
         val now = container.clock.now()
-        val open = container.repository.openSessionsSnapshot()
+        val open = known ?: container.repository.openSessionsSnapshot()
         val text = when {
             open.isEmpty() -> getString(R.string.notification_idle)
             else -> {
@@ -166,17 +194,20 @@ class TrackingService : LifecycleService() {
     }
 
     /**
+     * Posts [text], unless it is already what the notification says.
+     *
      * @return false if the platform refused the foreground start, in which case the service has
      *   already stopped itself rather than waiting to be killed for never calling
      *   startForeground.
      */
-    private fun startForegroundCompat(text: String): Boolean = try {
+    private fun startForegroundCompat(text: String): Boolean = if (text == postedText) true else try {
         ServiceCompat.startForeground(
             this,
             Notifications.ID_TRACKING,
             Notifications.trackingNotification(this, text),
             foregroundServiceType(),
         )
+        postedText = text
         true
     } catch (e: Exception) {
         Log.e(TAG, "Foreground start refused; detailed tracking cannot run", e)

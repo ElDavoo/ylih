@@ -31,7 +31,7 @@ class PlaybackWatcher(
     private val callback = object : AudioManager.AudioPlaybackCallback() {
         override fun onPlaybackConfigChanged(configs: MutableList<AudioPlaybackConfiguration>) {
             configsActive = configs.any { it.audioAttributes.isMediaLike() }
-            refresh(System.currentTimeMillis())
+            refresh(System.currentTimeMillis(), minSliceMs = MIN_BANKED_SLICE_MS)
         }
     }
 
@@ -44,12 +44,22 @@ class PlaybackWatcher(
         update(active = false, now = now)
     }
 
-    /** Re-evaluates playback state and credits time accumulated so far. */
-    fun refresh(now: Long) {
+    /**
+     * Re-evaluates playback state and credits time accumulated so far.
+     *
+     * [minSliceMs] leaves a slice shorter than that accruing instead of banking it. The callback
+     * fires whenever *any* app on the phone changes a player — a chime, an ad, a video starting
+     * in something else entirely — so without a floor a talkative phone turns each of those into
+     * a database write while music plays. Nothing is lost by waiting: the slice keeps accruing,
+     * and the edges that actually end a span ([update], [stop]) always credit it in full.
+     */
+    fun refresh(now: Long, minSliceMs: Long = 0L) {
         val active = configsActive || audioManager.isMusicActive
         if (active && playingSince != null) {
             // Still playing: bank the elapsed slice so long sessions are credited as they go.
-            onDelta(now - playingSince!!)
+            val slice = now - playingSince!!
+            if (slice < minSliceMs) return
+            onDelta(slice)
             playingSince = now
             return
         }
@@ -77,6 +87,13 @@ class PlaybackWatcher(
     internal fun AudioAttributes.isMediaLike(): Boolean = usage in MEDIA_USAGES
 
     private companion object {
+        /**
+         * Below this a still-playing refresh leaves the slice where it is. Well under the
+         * service's tick, which passes no floor, so what a process death can cost is still one
+         * tick's worth and no more.
+         */
+        const val MIN_BANKED_SLICE_MS = 30_000L
+
         val MEDIA_USAGES = setOf(
             AudioAttributes.USAGE_MEDIA,
             AudioAttributes.USAGE_GAME,

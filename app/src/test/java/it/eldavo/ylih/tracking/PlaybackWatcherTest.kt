@@ -75,6 +75,32 @@ class PlaybackWatcherTest {
     }
 
     @Test
+    fun `a slice too short to be worth a write keeps accruing instead`() {
+        // What the floor is for: the callback fires on any app's player changing state, and
+        // without it a chatty phone writes to the database on every one of them.
+        shadowAudio.setIsMusicActive(true)
+        watcher.refresh(now = 0)
+
+        watcher.refresh(now = 5_000, minSliceMs = 30_000)
+        assertEquals("too small a slice to bank", 0L, credited)
+
+        watcher.refresh(now = 40_000, minSliceMs = 30_000)
+        assertEquals("and none of it was dropped", 40_000L, credited)
+    }
+
+    @Test
+    fun `the floor never costs a span that has actually ended`() {
+        shadowAudio.setIsMusicActive(true)
+        watcher.refresh(now = 0)
+        watcher.refresh(now = 1_000, minSliceMs = 30_000)
+
+        shadowAudio.setIsMusicActive(false)
+        watcher.refresh(now = 2_000, minSliceMs = 30_000)
+
+        assertEquals("stopping credits in full, floor or no floor", 2_000L, credited)
+    }
+
+    @Test
     fun `pausing credits the slice played and then stops the clock`() {
         shadowAudio.setIsMusicActive(true)
         watcher.refresh(now = 1_000)
