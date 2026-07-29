@@ -23,3 +23,7 @@ result-*
 
 # OS
 .DS_Store
+
+# Claude Code scratch worktrees — checkouts of this same repository, and an
+# embedded git repo is not something to commit into it by accident.
+.claude/worktrees/
