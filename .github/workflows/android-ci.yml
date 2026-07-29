@@ -15,6 +15,22 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # Store listing text is the one part of the app that no compiler or lint check reads, and
+  # both F-Droid and Play truncate it silently rather than rejecting it. Cheap to check, and
+  # it needs no JDK or SDK, so it runs on its own rather than twice inside the flavor matrix.
+  listing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Check store listing metadata
+        run: >
+          python3 .github/scripts/listing-metadata-check.py
+          fastlane/metadata/android
+          "$(sed -n 's/^ *versionCode = \([0-9]*\)$/\1/p' app/build.gradle.kts)"
+
   build:
     runs-on: ubuntu-latest
 

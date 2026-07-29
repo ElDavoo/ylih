@@ -2,7 +2,7 @@ Première version.
 
 • Heures totales par paire physique de casques, avec des générations pour qu'une paire de remplacement reparte de zéro au lieu d'hériter du total de l'ancienne.
 • Chaque connexion conservée définitivement, avec des statistiques par jour et par paire.
-• Suivi détaillé optionnel pour les casques filaires et USB, et pour la lecture par rapport au temps de connexion.
+• Suivi détaillé optionnel pour les casques filaires et USB, et pour la lecture face au temps de connexion.
 • Coût par heure d'écoute.
 • Export et import JSON.
 • Aucune permission internet : rien ne quitte jamais le téléphone.
