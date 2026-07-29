@@ -80,10 +80,19 @@ jobs:
         if: ${{ env.KEYSTORE_BASE64 != '' }}
         run: |
           set -euo pipefail
-          apksigner=$(find "$ANDROID_SDK_ROOT/build-tools" -name apksigner | sort | tail -1)
-          "$apksigner" verify --print-certs \
-            "$(find app/build/outputs/apk/classic/release -name '*.apk' | head -1)" \
-            | sed -n 's/^Signer #1 certificate SHA-256 digest: //p'
+          apk=$(find app/build/outputs/apk/classic/release -maxdepth 1 -name '*.apk' | head -1)
+          apksigner=$(find "$ANDROID_SDK_ROOT/build-tools" -name apksigner -type f | sort | tail -1)
+          echo "apk=${apk:-<none>} apksigner=${apksigner:-<none>}"
+          "$apksigner" verify --print-certs "$apk" | tee /tmp/certs.txt
+          digest=$(sed -n 's/^Signer #1 certificate SHA-256 digest: //p' /tmp/certs.txt)
+          # An empty digest means the sed pattern has drifted from apksigner's output rather than
+          # that the APK is unsigned — apksigner would have exited non-zero for that. Fail here,
+          # because a silently empty fingerprint is one that gets noticed at verification time.
+          if [ -z "$digest" ]; then
+            echo "::error::no SHA-256 digest in apksigner output (see above)"
+            exit 1
+          fi
+          echo "AllowedAPKSigningKeys: $digest" | tee -a "$GITHUB_STEP_SUMMARY"
 
       # Screenshots, the 512px icon and the feature graphic, rendered on the JVM by Roborazzi —
       # no emulator involved. Generated from the tagged commit so the store listing can never
