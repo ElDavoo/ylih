@@ -191,7 +191,7 @@ class TrackingControllerTest {
     }
 
     @Test
-    fun `detailed tracking sees the wired pair and runs the service instead of the heartbeat`() =
+    fun `detailed tracking sees the wired pair and keeps the safety net behind the service`() =
         runTest {
             enableDetailedTracking()
             connect(wired(), buds())
@@ -203,7 +203,9 @@ class TrackingControllerTest {
                 db.deviceDao().getAll().map { it.deviceKey }.toSet(),
             )
             assertNotNull("the foreground service does the watching now", startedService())
-            assertFalse("the heartbeat is the fallback for the other mode", heartbeatScheduled())
+            // The service is the better watcher, not a guaranteed one: an OEM battery manager
+            // that kills it must not leave this mode with nothing at all behind it.
+            assertTrue("the heartbeat backs up the service too", heartbeatScheduled())
             // Only the service can measure playback, so only it opts sessions into it.
             assertTrue(db.sessionDao().getAll().all { it.playingMs != null })
         }
@@ -274,7 +276,7 @@ class TrackingControllerTest {
         assertNull("bluetooth-only mode starts nothing", startedService())
 
         controller.onSessionOpened(detailedTracking = true)
-        assertFalse("the service replaces the heartbeat", heartbeatScheduled())
+        assertTrue("the service adds to the heartbeat, it does not replace it", heartbeatScheduled())
         assertNotNull("detailed mode starts the service", startedService())
     }
 

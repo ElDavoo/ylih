@@ -89,7 +89,7 @@ class TrackingController(
             measurePlayback = detailed,
         )
         if (detailed) startService() else stopService()
-        updateHeartbeatWork(detailed)
+        updateHeartbeatWork()
     }
 
     /** @return false if this build cannot run the service right now; nothing was changed. */
@@ -107,12 +107,12 @@ class TrackingController(
     /** Called after a connect event so the right helper is running. */
     suspend fun onSessionOpened(detailedTracking: Boolean) {
         if (detailedTracking) startService()
-        updateHeartbeatWork(detailedTracking)
+        updateHeartbeatWork()
     }
 
     /** Called after a disconnect event; drops the heartbeat when there is nothing to watch. */
     suspend fun onSessionClosed() {
-        updateHeartbeatWork(settings.detailedTrackingNow())
+        updateHeartbeatWork()
     }
 
     fun startService() {
@@ -137,14 +137,21 @@ class TrackingController(
     }
 
     /**
-     * In Bluetooth-only mode nothing of ours is running, so a missed ACL_DISCONNECTED (link
-     * loss, battery death, force-stop) would leave a session open forever. A 15-minute
-     * periodic check bounds that error, and only exists while a session is actually open.
+     * A missed ACL_DISCONNECTED (link loss, battery death, force-stop) would leave a session open
+     * forever, so a 15-minute periodic check bounds that error. It only exists while a session is
+     * actually open.
+     *
+     * It runs in *both* modes. Detailed tracking's foreground service is the better watcher while
+     * it is alive, but an OEM battery manager that kills it would otherwise leave that mode with
+     * no safety net at all — strictly worse than the mode with no service. Against a service
+     * already ticking every minute the marginal cost is nothing, and the worker's `syncWithSystem`
+     * attempts `startService()` as well, so it doubles as the thing that brings a killed service
+     * back; on Android 12+ that start may be refused from a worker and merely logged, but the
+     * reconcile lands either way.
      */
-    private suspend fun updateHeartbeatWork(detailedTracking: Boolean) {
+    private suspend fun updateHeartbeatWork() {
         val workManager = WorkManager.getInstance(context)
-        val needed = !detailedTracking && repository.hasOpenSessions()
-        if (needed) {
+        if (repository.hasOpenSessions()) {
             workManager.enqueueUniquePeriodicWork(
                 HeartbeatWorker.NAME,
                 ExistingPeriodicWorkPolicy.KEEP,
