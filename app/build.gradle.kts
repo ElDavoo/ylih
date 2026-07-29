@@ -42,8 +42,11 @@ android {
         }
     }
 
-    // Release signing is driven by env vars so CI can inject a keystore; without them
-    // the release build falls back to the debug key (fine for sideloaded builds).
+    // Release signing is driven by env vars so CI can inject a keystore. Without them the
+    // release build is left *unsigned* rather than falling back to the debug key: F-Droid
+    // builds from source on a machine that has no keystore of ours and signs the result
+    // itself, and a debug key is both generated fresh per machine — which makes the APK
+    // unreproducible — and something apksigner would then have to strip back off.
     val signingKeystorePath = System.getenv("ANDROID_SIGNING_KEYSTORE_PATH")
     val signingStorePassword = System.getenv("ANDROID_SIGNING_STORE_PASSWORD")
     val signingKeyAlias = System.getenv("ANDROID_SIGNING_KEY_ALIAS")
@@ -64,7 +67,7 @@ android {
         }
     }
 
-    val releaseSigningConfig = signingConfigs.findByName("release") ?: signingConfigs.getByName("debug")
+    val releaseSigningConfig = signingConfigs.findByName("release")
 
     buildTypes {
         debug {
