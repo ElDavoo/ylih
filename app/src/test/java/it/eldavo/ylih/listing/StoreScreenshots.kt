@@ -74,6 +74,10 @@ abstract class StoreScreenshots(
             app.container.settings.setDetailedTracking(true)
             // Otherwise every shot is taken through the first-run welcome dialog.
             app.container.settings.setOnboardingDone(true)
+            // And the hibernation prompt is the next thing that opens over the app once the
+            // welcome is out of the way — Robolectric reports hibernation as ENABLED, so every
+            // shot would otherwise be of that dialog rather than of the screen behind it.
+            app.container.settings.setHibernationAsked(true)
         }
     }
 
