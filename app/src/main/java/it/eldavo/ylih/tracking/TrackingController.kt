@@ -15,6 +15,7 @@ import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import it.eldavo.ylih.data.Clock
 import it.eldavo.ylih.data.DeviceKind
+import it.eldavo.ylih.data.EndReason
 import it.eldavo.ylih.data.SessionRepository
 import it.eldavo.ylih.data.SettingsStore
 import it.eldavo.ylih.data.trackedKinds
@@ -70,7 +71,15 @@ class TrackingController(
         if (requested && !detailed) {
             // Bluetooth access was revoked after the fact on a build without `specialUse`:
             // fall back to Bluetooth-only rather than leaving wired sessions running forever.
-            repository.closeSessionsForKinds(setOf(DeviceKind.WIRED, DeviceKind.USB))
+            // The service died with the permission, most likely along with the whole process, so
+            // nothing has watched that session since — hence `stillLive = false`, which ends it at
+            // its last heartbeat rather than crediting the unwatched gap. That end time is a
+            // guess, which is what RECOVERED means to the session list.
+            repository.closeSessionsForKinds(
+                setOf(DeviceKind.WIRED, DeviceKind.USB),
+                reason = EndReason.RECOVERED,
+                stillLive = false,
+            )
         }
         val connected = AudioDevices.currentHeadphones(audioManager, trackedKinds(detailed))
         repository.reconcile(

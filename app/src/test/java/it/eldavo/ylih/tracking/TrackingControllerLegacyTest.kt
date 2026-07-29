@@ -114,12 +114,15 @@ class TrackingControllerLegacyTest {
             )
             settings.setDetailedTracking(true)
 
+            // Nothing runs between these two lines: no service, no heartbeat, no process even.
+            // The hour is exactly the gap this session was unwatched for.
+            val lastProof = clockNow
             clockNow += hour
             controller.syncWithSystem()
 
             assertEquals(
                 "closed where we last had proof, not stretched over the gap",
-                listOf(clockNow),
+                listOf(lastProof),
                 db.sessionDao().getAll().map { it.disconnectedAt },
             )
             assertNull("the service was never asked for", shadowOf(context).nextStartedService)

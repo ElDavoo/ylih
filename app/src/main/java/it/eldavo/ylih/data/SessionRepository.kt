@@ -122,19 +122,34 @@ class SessionRepository(
         }
     }
 
-    /** Closes open sessions for kinds that only the foreground service can observe. */
+    /**
+     * Closes open sessions for kinds that only the foreground service can observe.
+     *
+     * The two callers mean different things by "close it", which is what [stillLive] separates.
+     * Turning detailed tracking off happens with the app in front of the user and the service
+     * still running, so the wired session genuinely is alive at [at]. The permission-revoked
+     * fallback in `TrackingController` is the opposite: nothing of ours has watched that session
+     * since the process last died, so [at] is not evidence of anything and closing there would
+     * credit the whole unwatched gap. That caller ends the session at the last heartbeat instead,
+     * which is the rule the rest of this file follows — never later than the last proof of life.
+     */
     suspend fun closeSessionsForKinds(
         kinds: Set<DeviceKind>,
         at: Long = clock.now(),
         reason: EndReason = EndReason.TRACKING_DISABLED,
+        stillLive: Boolean = true,
     ): Unit = mutex.withLock {
         db.withTransaction {
             for (session in sessions.allOpen()) {
                 val pair = pairs.byId(session.pairId) ?: continue
                 val device = devices.byId(pair.deviceId) ?: continue
-                if (device.kind in kinds) {
-                    sessions.close(session.id, maxOf(session.connectedAt, at), reason)
+                if (device.kind !in kinds) continue
+                val endAt = if (stillLive) {
+                    maxOf(session.connectedAt, at)
+                } else {
+                    maxOf(session.connectedAt, session.heartbeatAt)
                 }
+                sessions.close(session.id, endAt, reason)
             }
         }
     }

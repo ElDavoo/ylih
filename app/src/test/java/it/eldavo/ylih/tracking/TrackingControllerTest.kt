@@ -19,6 +19,7 @@ import androidx.work.WorkerParameters
 import androidx.work.testing.WorkManagerTestInitHelper
 import it.eldavo.ylih.Distribution
 import it.eldavo.ylih.data.DeviceKind
+import it.eldavo.ylih.data.EndReason
 import it.eldavo.ylih.data.SessionRepository
 import it.eldavo.ylih.data.SettingsStore
 import it.eldavo.ylih.data.YlihDatabase
@@ -249,16 +250,22 @@ class TrackingControllerTest {
             enableDetailedTracking()
             connect(wired())
             controller.setDetailedTracking(enabled = true)
+            val lastProof = clockNow
 
+            // The permission went, and the service went with it — probably along with the whole
+            // process, and long before we were woken up to notice. The hour in between is not
+            // listening time, so the session ends back where we last had evidence of it.
             advance(hour)
             shadowOf(context).denyPermissions(Manifest.permission.BLUETOOTH_CONNECT)
             controller.syncWithSystem()
 
-            assertEquals(clockNow, db.sessionDao().getAll().single().disconnectedAt)
+            val session = db.sessionDao().getAll().single()
+            assertEquals(lastProof, session.disconnectedAt)
+            assertEquals(EndReason.RECOVERED, session.endReason)
         }
 
     @Test
-    fun `an opened session arms whichever helper the current mode uses`() = runTest {
+    fun `an opened session arms the safety net in either mode`() = runTest {
         connect(buds())
         repository.onConnected(AudioDevices.identityOf(buds())!!, at = clockNow)
 

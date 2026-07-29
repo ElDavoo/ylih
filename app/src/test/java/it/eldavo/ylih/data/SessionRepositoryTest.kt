@@ -278,6 +278,31 @@ class SessionRepositoryTest {
     }
 
     @Test
+    fun `a fallback that has not been watching closes at the proof, not at now`() = runTest {
+        // The other caller: bluetooth access was revoked, so the service died — most likely with
+        // the whole process, hours ago. "Now" is when we noticed, not when the plug came out, and
+        // counting the difference would invent listening time out of a permission change.
+        repository.onConnected(wired, at = clockNow - 5 * hour, measurePlayback = true)
+        repository.onConnected(buds, at = clockNow - 5 * hour, measurePlayback = true)
+        repository.heartbeat(at = clockNow - 4 * hour)
+
+        repository.closeSessionsForKinds(
+            setOf(DeviceKind.WIRED, DeviceKind.USB),
+            at = clockNow,
+            reason = EndReason.RECOVERED,
+            stillLive = false,
+        )
+
+        val byKind = sessions().associateBy { session ->
+            val pair = db.pairDao().byId(session.pairId)!!
+            db.deviceDao().byId(pair.deviceId)!!.kind
+        }
+        assertEquals(clockNow - 4 * hour, byKind[DeviceKind.WIRED]!!.disconnectedAt)
+        assertEquals(EndReason.RECOVERED, byKind[DeviceKind.WIRED]!!.endReason)
+        assertNull("bluetooth is still observable, so it stays open", byKind[DeviceKind.BLUETOOTH]!!.disconnectedAt)
+    }
+
+    @Test
     fun `playback time accumulates on the open session`() = runTest {
         val sessionId = repository.onConnected(wired, at = clockNow, measurePlayback = true)!!
 
