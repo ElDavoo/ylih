@@ -141,6 +141,10 @@ class SettingsScreenTest {
 
     /** Settings is a plain scrolling column, so the target brings itself into view. */
     private fun scrollTo(value: String) {
+        // The static sections compose before Room has answered, so `show()` returning says
+        // nothing about a device row being on the screen yet; scrolling to one that is not there
+        // is what fails, and only on a machine slow enough for the query to lose the race.
+        settle("$value to be drawn") { nodeCount(value, substring = true) > 0 }
         compose.onAllNodesWithText(value, substring = true).onFirst().performScrollTo()
     }
 

@@ -123,7 +123,7 @@ class PairDetailScreenTest {
         pairId
     }
 
-    private fun show(pairId: Long) {
+    private fun show(pairId: Long, known: Boolean = true) {
         val viewModel = YlihViewModel(app)
         compose.setContent {
             YlihTheme {
@@ -135,8 +135,18 @@ class PairDetailScreenTest {
                 )
             }
         }
-        // The summary arrives from Room a frame or two after the first composition.
-        compose.waitUntil(timeoutMillis = 10_000) { nodeCount(text(R.string.pair_sessions)) > 0 }
+        // The stats header is drawn on the first composition, before Room has answered, so
+        // waiting for a label in it waits for nothing — everything that comes *from* the pair
+        // (its name, generation, price, the retired note) lands a frame or more later, and on a
+        // slow machine that was long enough for the assertions below to run against the empty
+        // page. The title is the one thing on the screen that says the summary has not arrived.
+        compose.waitUntil(timeoutMillis = 10_000) {
+            if (known) {
+                nodeCount(text(R.string.pair_fallback_title)) == 0
+            } else {
+                nodeCount(text(R.string.pair_sessions)) > 0
+            }
+        }
     }
 
     private fun text(id: Int, vararg args: Any): String = app.getString(id, *args)
@@ -335,7 +345,7 @@ class PairDetailScreenTest {
     @Test
     fun `a pair that is not in the database still draws a page`() {
         // Reachable by deleting a pair on one screen while the other is in the back stack.
-        show(pairId = 404)
+        show(pairId = 404, known = false)
 
         compose.onNodeWithText(text(R.string.pair_fallback_title)).assertExists()
         compose.onNodeWithText(text(R.string.pair_lifetime), substring = true).assertExists()
