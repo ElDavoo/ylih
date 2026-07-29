@@ -122,6 +122,19 @@ class AudioDevicesTest {
     }
 
     @Test
+    fun `a headset that only carries calls is the same pair as one that carries media`() {
+        // A mono call headset never appears as A2DP, and a stereo one is SCO for as long as its
+        // media profile takes to come up. Dropping SCO made those invisible to the audio-stack
+        // view, so the next reconcile closed a live session at its last heartbeat.
+        assertEquals(
+            DeviceIdentity("bt:5E:C2", DeviceKind.BLUETOOTH, name),
+            AudioDevices.identityOf(
+                outputDevice(AudioDeviceInfo.TYPE_BLUETOOTH_SCO, redactedMac, name),
+            ),
+        )
+    }
+
+    @Test
     fun `a low-energy headset is recorded as its own kind`() {
         assertEquals(
             DeviceKind.BLE,
@@ -302,8 +315,10 @@ class AudioDevicesTest {
                 outputDevice(AudioDeviceInfo.TYPE_BUILTIN_SPEAKER, productName = "Speaker"),
                 outputDevice(AudioDeviceInfo.TYPE_WIRED_HEADPHONES, productName = "Plugged in"),
                 outputDevice(AudioDeviceInfo.TYPE_BLUETOOTH_A2DP, redactedMac, name),
-                // The same headset again as an LE output, which real phones do report.
+                // The same headset again as an LE output and as a call route, both of which real
+                // phones list alongside the A2DP one. Three rows, one pair.
                 outputDevice(AudioDeviceInfo.TYPE_BLE_HEADSET, redactedMac, name),
+                outputDevice(AudioDeviceInfo.TYPE_BLUETOOTH_SCO, redactedMac, name),
             ),
         )
 

@@ -106,7 +106,11 @@ object AudioDevices {
                     name = name.ifEmpty { "USB headphones" },
                 )
 
-            AudioDeviceInfo.TYPE_BLUETOOTH_A2DP ->
+            // SCO alongside A2DP because a headset that carries calls but not media — a mono
+            // call headset, or one whose media profile has not come up yet — is only ever
+            // reported as SCO. Leaving it out made it invisible to [currentHeadphones], so
+            // `reconcile` closed a session that was still live at its last heartbeat.
+            AudioDeviceInfo.TYPE_BLUETOOTH_A2DP, AudioDeviceInfo.TYPE_BLUETOOTH_SCO ->
                 bluetoothIdentity(address, name, DeviceKind.BLUETOOTH)
 
             AudioDeviceInfo.TYPE_BLE_HEADSET ->
