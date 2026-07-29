@@ -16,8 +16,10 @@ shipped. The AAB must be the **play** flavor: the classic APK declares the `spec
 foreground-service type, which is exactly what the store build drops.
 
 Release signing reads `ANDROID_SIGNING_KEYSTORE_PATH`, `ANDROID_SIGNING_STORE_PASSWORD`,
-`ANDROID_SIGNING_KEY_ALIAS` and `ANDROID_SIGNING_KEY_PASSWORD`. Without them the build silently
-falls back to the **debug** key, which Play rejects — check the signer before uploading.
+`ANDROID_SIGNING_KEY_ALIAS` and `ANDROID_SIGNING_KEY_PASSWORD`. Without them the build produces an
+**unsigned** artifact, which Play rejects just as surely as a debug-signed one — check the signer
+before uploading. (It used to fall back to the debug key; F-Droid builds this same source with no
+keystore at all, and unsigned is the output that leaves it something clean to sign.)
 
 ## 2. The generated images
 
@@ -54,16 +56,19 @@ worse: those schemes set only `primary`, `secondary` and `tertiary`, so every co
 back to Material 3's default purple under a blue primary. Worth fixing one day as a full tonal
 palette; not worth faking in a screenshot.
 
-Nothing generated is committed. `fastlane/metadata/.../images/` is deliberately absent — the
-images come from the build, and checking in binaries that a Gradle task reproduces exactly would
-only create diff noise.
+Nothing generated is committed *for Play*, which takes the images by upload and so has no reason
+to carry binaries a Gradle task reproduces exactly. The one exception is
+`fastlane/metadata/android/en-US/images/`, which is checked in for F-Droid: F-Droid has no upload
+step and reads the images out of the repository or shows none at all. Those are recorded from the
+**classic** flavor, because that is the build F-Droid ships and its settings screen differs from
+this one. See [`fdroid.md`](fdroid.md).
 
 ## 3. Store listing
 
-Listing text lives in `fastlane/metadata/android/<locale>/`, currently 27 locales. Screenshots are
-rendered for 29 (`cs-CZ` and `el-GR` have images but no listing copy yet — either write it or drop
-those two `StoreScreenshots` subclasses before submitting). Add each non-English listing in Play
-Console under *Store presence → Main store listing → Manage translations*.
+Listing text lives in `fastlane/metadata/android/<locale>/`, currently 26 locales. Screenshots are
+rendered for 29 (`cs-CZ`, `el-GR` and `iw-IL` have images but no listing copy yet — either write
+it or drop those three `StoreScreenshots` subclasses before submitting). Add each non-English
+listing in Play Console under *Store presence → Main store listing → Manage translations*.
 
 | Field | Value |
 |---|---|

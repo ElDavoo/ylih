@@ -1,0 +1,50 @@
+# The F-Droid build recipe for ylih, kept here so it is reviewed alongside the code it builds.
+#
+# This file is *not* read by anything in this repository. It is the file that has to be copied
+# to `metadata/it.eldavo.ylih.yml` in a fork of https://gitlab.com/fdroid/fdroiddata and opened
+# as a merge request there. Keeping a copy next to the source is what makes a version bump one
+# change rather than two disconnected ones — see docs/fdroid.md for the procedure.
+#
+# Summary, Description, screenshots and changelogs are deliberately absent: F-Droid reads them
+# from fastlane/metadata/android/<locale>/ in this repository, which is also what the Play
+# listing uses, so there is exactly one copy of the listing text and it is translated.
+
+# Both are in fdroiddata's config/categories.yml, which is the whole of the valid list.
+Categories:
+  - Multimedia
+  - Time Tracker
+
+License: MIT
+AuthorName: Davide Palma
+AuthorEmail: dpfuturehacker@gmail.com
+WebSite: https://github.com/ElDavoo/ylih
+SourceCode: https://github.com/ElDavoo/ylih
+IssueTracker: https://github.com/ElDavoo/ylih/issues
+Changelog: https://github.com/ElDavoo/ylih/releases
+
+RepoType: git
+Repo: https://github.com/ElDavoo/ylih.git
+
+Builds:
+  - versionName: 1.0.0
+    versionCode: 1
+    commit: v1.0.0
+    subdir: app
+    # The sideloaded distribution. `play` is the Google Play build and differs only by dropping
+    # the specialUse foreground-service type and the battery-optimisation shortcut; F-Droid ships
+    # the one with fewer restrictions.
+    gradle:
+      - classic
+    # No `sudo: sdkmanager ...` line to install platform 37 / build-tools 37.0.0, even though
+    # the buildserver image preinstalls nothing past 33: its provisioning pre-accepts the SDK
+    # licences and makes $ANDROID_HOME/{platforms,build-tools} group-writable *specifically* so
+    # AGP downloads what compileSdk asks for. A sudo line would also break — fdroidserver runs
+    # it through `sudo bash -e -u`, which neither sources /etc/profile.d/bsenv.sh nor passes
+    # ANDROID_HOME through, so sdkmanager would fall back to /opt/android-sdk and abort.
+    # No `output:` either: fdroidserver already appends the flavor's own
+    # build/outputs/apk/classic/release/ to the globs it searches. See docs/fdroid.md §2.
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags ^v[0-9.]+$
+CurrentVersion: 1.0.0
+CurrentVersionCode: 1

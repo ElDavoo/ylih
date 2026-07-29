@@ -116,9 +116,11 @@ Note that AGP 9 compiles Kotlin itself — the standalone `kotlin-android` plugi
 absent, and the Kotlin, Compose-compiler and KSP versions in `gradle/libs.versions.toml` must
 stay aligned with the Kotlin Gradle plugin that AGP bundles.
 
-Release builds are signed with the debug key unless `ANDROID_SIGNING_KEYSTORE_PATH`,
+Release builds are left **unsigned** unless `ANDROID_SIGNING_KEYSTORE_PATH`,
 `ANDROID_SIGNING_STORE_PASSWORD`, `ANDROID_SIGNING_KEY_ALIAS` and `ANDROID_SIGNING_KEY_PASSWORD`
-are set, which is what the release workflow does from repository secrets.
+are set, which is what the release workflow does from repository secrets. Unsigned rather than
+debug-signed because F-Droid builds this from source on a machine that has no key of ours and
+signs the result itself, and a per-machine debug key would make that build unreproducible.
 
 ## Design and languages
 
@@ -138,12 +140,13 @@ translation as an error, so an untranslated string fails the build rather than s
 language means one `res/values-<lang>/strings.xml`, and — if it should also get a Play listing —
 one `StoreScreenshots` subclass and one `fastlane/metadata/android/<locale>/` directory.
 
-## Store listing
+## Store listings
 
-The Play Console assets are generated, not drawn by hand:
+The store assets are generated, not drawn by hand:
 
 ```sh
-./gradlew recordRoborazziPlayDebug    # app/build/outputs/play-listing/playDebug/
+./gradlew recordRoborazziPlayDebug       # app/build/outputs/play-listing/playDebug/
+./gradlew recordRoborazziClassicDebug    # the same, for the flavor F-Droid ships
 ```
 
 That renders the five phone screenshots, the 512×512 icon and the 1024×500 feature graphic on the
@@ -156,9 +159,19 @@ the `play-listing-assets` artifact.
 Screenshots are captured once per Play listing language (29 of them, one directory each), so every
 listing translation gets images in its own language.
 
-Listing text lives in `fastlane/metadata/android/<locale>/`. [`docs/play-store.md`](docs/play-store.md)
-is the submission runbook, and holds the prepared answers for the Data safety form, the
-content rating questionnaire and the `connectedDevice` foreground-service declaration.
+Listing text lives in `fastlane/metadata/android/<locale>/`, shared by both stores, and
+`.github/scripts/listing-metadata-check.py` holds it to the character limits in CI — both stores
+truncate an over-long summary silently rather than rejecting it.
+
+- [`docs/play-store.md`](docs/play-store.md) — the Play runbook: prepared answers for the Data
+  safety form, the content rating questionnaire and the `connectedDevice` foreground-service
+  declaration.
+- [`docs/fdroid.md`](docs/fdroid.md) — the F-Droid runbook. F-Droid builds from a tag on this
+  repository rather than accepting an upload, so the listing images for `en-US` are committed
+  under `fastlane/metadata/android/en-US/images/` and the build recipe lives at
+  [`metadata/it.eldavo.ylih.yml`](metadata/it.eldavo.ylih.yml), ready to copy into an fdroiddata
+  merge request.
+
 The privacy policy is [`PRIVACY.md`](PRIVACY.md).
 
 ## Data

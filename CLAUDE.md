@@ -217,7 +217,12 @@ Robolectric native graphics — `./gradlew recordRoborazziPlayDebug`, output in
 `app/build/outputs/play-listing/`. Roborazzi captures are inert outside a record task, so these
 classes cost one composition in the ordinary unit-test run and write nothing.
 
-These are *listing assets*, not golden-image tests: nothing is committed and nothing is compared.
+These are *listing assets*, not golden-image tests: nothing is compared, and the only thing
+committed is `fastlane/metadata/android/en-US/images/` — F-Droid builds from a tag on this
+repository instead of taking an upload, so an image outside the repository does not exist for it.
+Those seven files are recorded from the **classic** flavor (`recordRoborazziClassicDebug`), since
+that is the build F-Droid ships and its settings screen differs from the Play one; `docs/fdroid.md`
+has the copy commands. Everything else stays generated-only.
 `DemoData.kt` writes through the DAOs rather than `SessionRepository`, deliberately — the
 repository's whole job is to refuse backdated history. Sizes come from Robolectric qualifiers
 (mdpi means 1dp = 1px).
@@ -226,7 +231,13 @@ repository's whole job is to refuse backdated history. Sizes come from Robolectr
 its own resource qualifier *and* `Locale.setDefault`, because `ui/Format.kt` runs every date and
 duration through `Locale.getDefault()`, which no resource qualifier reaches. Labels are looked up
 as resources, never typed in, so a new language costs one subclass.
-`docs/play-store.md` explains the rest, including why the screenshots keep dynamic colours on.
+`docs/play-store.md` explains the rest, including why the screenshots keep dynamic colours on;
+`docs/fdroid.md` is the same document for F-Droid.
+
+The listing *text* under `fastlane/metadata/android/<locale>/` is shared by both stores and is
+held to the character limits by `.github/scripts/listing-metadata-check.py`, which CI runs in its
+own job. Both stores truncate an over-long summary silently instead of rejecting it, so nothing
+else would ever catch it.
 
 ## Build-system constraints
 
@@ -243,6 +254,9 @@ These are easy to break and the failures are confusing:
   race KSP and fail on a missing `*_Impl.kt`.
 - **Version pins are duplicated in three files** — `gradle/libs.versions.toml`, `flake.nix` and
   `.github/workflows/*.yml` all name build-tools `37.0.0` / platform `37.0`. Change together.
+  The F-Droid recipe (`metadata/it.eldavo.ylih.yml`) deliberately names no SDK version: its
+  buildserver preinstalls nothing past 33 and relies on AGP downloading what `compileSdk` and
+  `buildToolsVersion` ask for — see `docs/fdroid.md` §2.
 
 ## Room migrations
 
