@@ -116,11 +116,36 @@ Note that AGP 9 compiles Kotlin itself — the standalone `kotlin-android` plugi
 absent, and the Kotlin, Compose-compiler and KSP versions in `gradle/libs.versions.toml` must
 stay aligned with the Kotlin Gradle plugin that AGP bundles.
 
+### Release signing
+
 Release builds are left **unsigned** unless `ANDROID_SIGNING_KEYSTORE_PATH`,
 `ANDROID_SIGNING_STORE_PASSWORD`, `ANDROID_SIGNING_KEY_ALIAS` and `ANDROID_SIGNING_KEY_PASSWORD`
 are set, which is what the release workflow does from repository secrets. Unsigned rather than
 debug-signed because F-Droid builds this from source on a machine that has no key of ours and
 signs the result itself, and a per-machine debug key would make that build unreproducible.
+
+The key itself, made once and kept off this machine's repository directory:
+
+```sh
+keytool -genkeypair -keystore ylih-release.keystore -storetype pkcs12 \
+        -alias ylih -keyalg RSA -keysize 4096 -validity 10000 \
+        -dname "CN=Davide Palma, O=ylih, C=IT"
+```
+
+PKCS12 holds one password rather than two, so the store and key passwords are the same string —
+both env vars still have to be set, because the build treats a blank one as "no signing config".
+10000 days is to 2053; Play rejects a key expiring before October 2033. Then, once:
+
+```sh
+gh secret set ANDROID_SIGNING_KEYSTORE_BASE64 < <(base64 -w0 ylih-release.keystore)
+gh secret set ANDROID_SIGNING_KEY_ALIAS --body ylih
+gh secret set ANDROID_SIGNING_STORE_PASSWORD
+gh secret set ANDROID_SIGNING_KEY_PASSWORD
+```
+
+Back the keystore up somewhere that survives this disk. With reproducible builds enabled F-Droid
+publishes our signed APK rather than one of its own, so losing the key means every user has to
+uninstall before they can update again.
 
 ## Design and languages
 

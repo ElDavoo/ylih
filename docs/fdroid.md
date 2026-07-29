@@ -208,21 +208,57 @@ One `fdroid lint` quirk to know about: it checks the `Summary:` field for traili
 they come from the fastlane files — so the check never fires. Do not "fix" that by copying the
 text into the YAML; it would fork the English listing away from the other 25 languages.
 
-## 6. Reproducible builds — not yet
+## 6. Reproducible builds
 
 [Reproducible builds](https://f-droid.org/docs/Reproducible_Builds/) let F-Droid publish *our*
-signed APK after verifying it byte-for-byte matches one it built itself, which means an F-Droid
-user and a GitHub-release user can update from either source. It needs two things this repository
-does not have yet:
+signed APK after verifying it matches one it built itself, which means an F-Droid user and a
+GitHub-release user can update from either source instead of having to uninstall to switch. It is
+not needed for the first submission — F-Droid signs with its own key either way — and the recipe
+below stays commented out until there is a signed release to point it at.
 
-1. A release signing key that exists and is used by `android-release.yml` — the
-   `ANDROID_SIGNING_*` secrets. Until then the published APK is unsigned.
-2. `Binaries:` and `AllowedAPKSigningKeys:` in the recipe, pointing at the GitHub release asset
-   URL and the key's SHA-256 fingerprint (`apksigner verify --print-certs`).
+### What the build already guarantees
 
-Making the release signed is now the whole blocker: the build itself no longer has a
-nondeterministic debug key in it, `isMinifyEnabled = false` means no obfuscation to vary, and
-there is no native code. Worth doing on the second release rather than holding up the first.
+Determinism is the prerequisite, and it holds. Two clean `assembleClassicRelease` builds of the
+same commit produce a byte-identical APK:
+
+```sh
+./gradlew clean assembleClassicRelease && sha256sum app/build/outputs/apk/classic/release/*.apk
+./gradlew clean assembleClassicRelease && sha256sum app/build/outputs/apk/classic/release/*.apk
+```
+
+Every zip entry carries one fixed timestamp rather than the build clock, `isMinifyEnabled = false`
+means there is no R8 dictionary to vary, and there is no native code. Dropping the debug-key
+fallback is what made this possible at all — that key is generated per machine, so no two machines
+could ever have agreed.
+
+Two things do vary and are worth knowing before a verification failure sends you hunting:
+
+- AGP embeds `META-INF/version-control-info.textproto`, holding the git revision. Its
+  `local_root_path` is normalised to `$PROJECT_DIR`, so it is not machine-specific, but it does
+  mean **two builds of different commits never match** even when the sources are identical. F-Droid
+  builds the tag the recipe names and so gets the same value the release workflow did.
+- The JDK. F-Droid's buildserver compiles with Debian's `default-jdk-headless`; the release
+  workflow uses Temurin 21 and the nix shell OpenJDK 21. Almost everything here is Kotlin, whose
+  compiler is pinned by the wrapper, so the exposure is small — but this is the axis that cannot be
+  tested from this repository, and it is the usual reason a first verification attempt fails.
+
+### Enabling it
+
+1. Create the signing key and set the `ANDROID_SIGNING_*` secrets, so the release stops being
+   `…-classic-unsigned.apk`. See "Release signing" in `README.md` for the `keytool` invocation.
+2. Tag a release. The `Signing certificate fingerprint` step in `android-release.yml` prints the
+   SHA-256 of the certificate in exactly the format `AllowedAPKSigningKeys` wants — lowercase hex,
+   no colons — so it can be read out of the job log rather than off the machine holding the key.
+3. Uncomment `Binaries:` and `AllowedAPKSigningKeys:` in `metadata/it.eldavo.ylih.yml`, paste that
+   fingerprint in, and open the fdroiddata merge request as in section 5.
+
+F-Droid then builds from source, downloads the release asset, copies the signature across with
+`apksigcopier` and compares. The source build being unsigned is not a problem for this — it is what
+the tooling expects.
+
+One consequence to accept knowingly: this makes the GitHub-release APK and the F-Droid APK
+interchangeable, but neither is interchangeable with the Play build, which Play App Signing signs
+with Google's key. That is already true today and is not something the recipe can fix.
 
 ## 7. Pre-flight checklist
 

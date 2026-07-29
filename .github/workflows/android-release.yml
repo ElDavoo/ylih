@@ -73,6 +73,18 @@ jobs:
         # what Play Console accepts.
         run: ./gradlew --no-daemon --stacktrace clean assembleClassicRelease bundlePlayRelease
 
+      # F-Droid's AllowedAPKSigningKeys wants the SHA-256 of the signing certificate as lowercase
+      # hex with no colons, which is exactly what apksigner prints. Emitting it here means the
+      # recipe can be filled in from a job log rather than from whoever is holding the keystore.
+      - name: Signing certificate fingerprint
+        if: ${{ env.KEYSTORE_BASE64 != '' }}
+        run: |
+          set -euo pipefail
+          apksigner=$(find "$ANDROID_SDK_ROOT/build-tools" -name apksigner | sort | tail -1)
+          "$apksigner" verify --print-certs \
+            "$(find app/build/outputs/apk/classic/release -name '*.apk' | head -1)" \
+            | sed -n 's/^Signer #1 certificate SHA-256 digest: //p'
+
       # Screenshots, the 512px icon and the feature graphic, rendered on the JVM by Roborazzi —
       # no emulator involved. Generated from the tagged commit so the store listing can never
       # show a version other than the one being released. See docs/play-store.md.

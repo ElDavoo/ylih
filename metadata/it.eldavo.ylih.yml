@@ -44,6 +44,18 @@ Builds:
     # No `output:` either: fdroidserver already appends the flavor's own
     # build/outputs/apk/classic/release/ to the globs it searches. See docs/fdroid.md §2.
 
+# Reproducible builds, once there is a signed release to compare against. With these two set,
+# F-Droid builds from source, downloads the release asset below, copies its signature across with
+# apksigcopier and publishes *our* APK if the two match — which is what lets someone move between
+# a GitHub release and F-Droid without uninstalling. Both stay commented out until the
+# ANDROID_SIGNING_* secrets exist, because until then the release asset is unsigned and named
+# ylih-v%v-classic-unsigned.apk instead. The fingerprint is the SHA-256 of the signing certificate
+# in lowercase hex with no colons, which the release workflow prints into its job log.
+# See docs/fdroid.md §6.
+#
+# Binaries: https://github.com/ElDavoo/ylih/releases/download/v%v/ylih-v%v-classic.apk
+# AllowedAPKSigningKeys: <paste the fingerprint from the release job here>
+
 AutoUpdateMode: Version
 UpdateCheckMode: Tags ^v[0-9.]+$
 CurrentVersion: 1.0.0
