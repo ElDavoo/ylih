@@ -58,6 +58,14 @@ class TrackingServiceTest {
         // close, as untracked, every session its own audio callback had just opened.
         app.container.settings.setDetailedTracking(true)
         shadowOf(audioManager).setOutputDevices(emptyList())
+        // `TrackingController.bootAt()` is the wall clock minus SystemClock.elapsedRealtime(), and
+        // only the first of those two moves on its own here: Robolectric's elapsed clock starts at
+        // zero and advances only when a test idles the looper forward. So the fake phone reads as
+        // having booted a moment ago, and that moment creeps forward in real time — a session
+        // opened 30 ms before a reconcile looks pre-boot to it, is closed as RECOVERED, and the
+        // reconnect grace then refuses to reopen it. On a busy machine that is most of a test.
+        // Booting an hour ago puts every session this class opens comfortably after it.
+        shadowOf(Looper.getMainLooper()).idleFor(Duration.ofHours(1))
         controller = Robolectric.buildService(TrackingService::class.java)
     }
 
@@ -142,6 +150,30 @@ class TrackingServiceTest {
             Thread.sleep(10)
         }
         throw AssertionError("timed out waiting for $what")
+    }
+
+    /**
+     * Reads [value] once the service has stopped changing it.
+     *
+     * A [settle] returns on the first moment its condition holds, which for anything the service
+     * does in more than one step is the middle of the story: unplugging credits the last slice of
+     * playback from a coroutine launched behind the one that closed the session, so the session
+     * reads as closed a moment before the number this file asserts on is final. Nothing here moves
+     * the clock and the watcher only credits on a tick or a callback edge, so a value that has
+     * held across several drained rounds is not going to move again.
+     */
+    private fun <T> settled(what: String, value: () -> T): T {
+        var last = value()
+        var unchanged = 0
+        repeat(500) {
+            shadowOf(Looper.getMainLooper()).idle()
+            val current = value()
+            unchanged = if (current == last) unchanged + 1 else 0
+            last = current
+            if (unchanged == 10) return last
+            Thread.sleep(10)
+        }
+        throw AssertionError("timed out waiting for $what to settle")
     }
 
     /**
@@ -253,10 +285,18 @@ class TrackingServiceTest {
         disconnect(buds())
         settle("the session to close") { sessions().single().disconnectedAt != null }
 
+        // The close reaches the notification a Room round trip after it reaches the table, so
+        // reading the text straight after the session closed reads what the connect had posted.
+        settle("the notification to go idle") {
+            notificationText() == app.getString(R.string.notification_idle)
+        }
+
         // Nothing is connected: a tick here would heartbeat an empty table and re-post an
         // unchanged notification, which is the wakeup a minute this loop exists to avoid.
+        val quiet = sessions().single().heartbeatAt
         shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(5 * TICK))
         assertEquals(app.getString(R.string.notification_idle), notificationText())
+        assertEquals("a tick ran with nothing connected", quiet, sessions().single().heartbeatAt)
 
         connect(wired())
         settle("the second session to open") { sessions().size == 2 }
@@ -294,7 +334,9 @@ class TrackingServiceTest {
         settleAcrossTicks("playback to be credited") { sessions().single().playingMs!! > 0 }
         disconnect(buds())
         settle("the session to close") { sessions().single().disconnectedAt != null }
-        val credited = sessions().single().playingMs
+        val credited = settled("what the unplugged pair was credited") {
+            sessions().single().playingMs
+        }
 
         // Music is still playing — out loud, now — and none of it belongs to the headphones.
         playFor(50)
