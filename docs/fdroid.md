@@ -213,8 +213,8 @@ text into the YAML; it would fork the English listing away from the other 25 lan
 [Reproducible builds](https://f-droid.org/docs/Reproducible_Builds/) let F-Droid publish *our*
 signed APK after verifying it matches one it built itself, which means an F-Droid user and a
 GitHub-release user can update from either source instead of having to uninstall to switch. It is
-not needed for the first submission — F-Droid signs with its own key either way — and the recipe
-below stays commented out until there is a signed release to point it at.
+not needed for the first submission — F-Droid signs with its own key either way — but v1.0.0 is
+signed and published, so the recipe points at it and asks for verification from the start.
 
 ### What the build already guarantees
 
@@ -242,15 +242,19 @@ Two things do vary and are worth knowing before a verification failure sends you
   compiler is pinned by the wrapper, so the exposure is small — but this is the axis that cannot be
   tested from this repository, and it is the usual reason a first verification attempt fails.
 
-### Enabling it
+### How it was enabled
 
-1. Create the signing key and set the `ANDROID_SIGNING_*` secrets, so the release stops being
-   `…-classic-unsigned.apk`. See "Release signing" in `README.md` for the `keytool` invocation.
-2. Tag a release. The `Signing certificate fingerprint` step in `android-release.yml` prints the
-   SHA-256 of the certificate in exactly the format `AllowedAPKSigningKeys` wants — lowercase hex,
-   no colons — so it can be read out of the job log rather than off the machine holding the key.
-3. Uncomment `Binaries:` and `AllowedAPKSigningKeys:` in `metadata/it.eldavo.ylih.yml`, paste that
-   fingerprint in, and open the fdroiddata merge request as in section 5.
+1. The signing key was created and the `ANDROID_SIGNING_*` secrets set, so the release asset is
+   `ylih-v1.0.0-classic.apk` rather than `…-classic-unsigned.apk`. See "Release signing" in
+   `README.md` for the `keytool` invocation.
+2. Tagging v1.0.0 ran the `Signing certificate fingerprint` step in `android-release.yml`, which
+   prints the certificate SHA-256 in exactly the format `AllowedAPKSigningKeys` wants — lowercase
+   hex, no colons — so it was read out of the job log rather than off the machine holding the key.
+3. `Binaries:` and `AllowedAPKSigningKeys:` in `metadata/it.eldavo.ylih.yml` now carry that URL and
+   that fingerprint. Both are app-level fields rather than per-build ones, so a version bump does
+   not touch them: `%v` expands to the versionName, and the fingerprint only changes if the signing
+   key does — at which point F-Droid refuses the new APK until this line is updated too, which is
+   the protection the field exists for.
 
 F-Droid then builds from source, downloads the release asset, copies the signature across with
 `apksigcopier` and compares. The source build being unsigned is not a problem for this — it is what
