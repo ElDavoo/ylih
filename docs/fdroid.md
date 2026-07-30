@@ -226,12 +226,22 @@ same commit produce a byte-identical APK:
 ./gradlew clean assembleClassicRelease && sha256sum app/build/outputs/apk/classic/release/*.apk
 ```
 
-Every zip entry carries one fixed timestamp rather than the build clock, `isMinifyEnabled = false`
-means there is no R8 dictionary to vary, and there is no native code. Dropping the debug-key
-fallback is what made this possible at all — that key is generated per machine, so no two machines
-could ever have agreed.
+Every zip entry carries one fixed timestamp rather than the build clock and `isMinifyEnabled =
+false` means there is no R8 dictionary to vary. Dropping the debug-key fallback is what made this
+possible at all — that key is generated per machine, so no two machines could ever have agreed.
 
-Two things do vary and are worth knowing before a verification failure sends you hunting:
+Three things do vary and are worth knowing before a verification failure sends you hunting:
+
+- **Native libraries, which this app has despite writing no native code.** The APK ships eight
+  `.so` files pulled in by dependencies: `libandroidx.graphics.path.so` and
+  `libdatastore_shared_counter.so`, one of each per ABI. AGP's `stripDebugSymbols` strips them
+  with the NDK's `strip` — *if the build machine has an NDK*, and silently copies them through
+  unstripped if it does not. `libandroidx.graphics.path.so` arrives already stripped and is
+  identical either way; `libdatastore_shared_counter.so` does not, and grows by about 2.5 KB per
+  ABI on a machine with no NDK. Two builds on one machine agree, which is why this went unnoticed;
+  a GitHub runner and a machine without an NDK do not. `packaging { jniLibs { keepDebugSymbols } }`
+  for that one library would make the answer the same everywhere at a cost of ~10 KB, which is
+  the fix if F-Droid's buildserver turns out to disagree with the release runner.
 
 - AGP embeds `META-INF/version-control-info.textproto`, holding the git revision. Its
   `local_root_path` is normalised to `$PROJECT_DIR`, so it is not machine-specific, but it does
@@ -264,7 +274,50 @@ One consequence to accept knowingly: this makes the GitHub-release APK and the F
 interchangeable, but neither is interchangeable with the Play build, which Play App Signing signs
 with Google's key. That is already true today and is not something the recipe can fix.
 
-## 7. Pre-flight checklist
+## 7. Running F-Droid's checks in CI
+
+Everything above describes a feedback loop measured in days: the recipe is a copy of a file that
+lives somewhere else, nothing in the ordinary build reads it, and getting it wrong surfaces as a
+merge request review. `.github/workflows/fdroid.yml` closes that loop by running fdroidserver's
+own tools rather than an approximation of them. Three jobs:
+
+- **recipe** — `fdroid readmeta`, `fdroid lint`, and a check that `fdroid rewritemeta` changes
+  nothing but comments, plus `.github/scripts/fdroid-recipe-check.py` for the part lint cannot
+  know: whether the recipe still describes this repository (tags that exist, changelogs that
+  exist, flavors that exist, a `CurrentVersion` matching the newest build entry).
+- **scanner** — `fdroid scanner`, the source scan F-Droid runs before it will build anything:
+  tracked binaries, dependency files with no lockfile, maven repositories off its allowlist.
+- **build** — `fdroid build`, which checks out the tag, deletes the Gradle wrapper, strips
+  `signingConfigs` out of `build.gradle.kts`, builds through `gradlew-fdroid`, and — because
+  `Binaries:` is set — downloads the published APK and compares. Then `fdroid verify` runs the
+  same comparison standalone.
+
+Both `scanner` and `build` clone the tag the recipe names, so on a pull request they say nothing
+about the change under review. That is why the triggers are path-filtered and why there is a
+weekly run: the interesting failures here come from things outside this repository moving.
+
+Two setup details are load-bearing, both handled by `.github/scripts/fdroid-workdir.sh`:
+
+- fdroidserver only runs from a directory shaped like fdroiddata, and it must be a **git**
+  repository — `fdroid build` reads `SOURCE_DATE_EPOCH` off the commit that last touched
+  `metadata/<appid>.yml`, and with no git repository that returns `None` and the build dies
+  inside `os.environ` with `str expected, not NoneType`.
+- **`gradlew-fdroid` has to come from its own repository**, not from the fdroidserver release.
+  F-Droid deletes our wrapper and builds with this instead, resolving the Gradle version from
+  `distributionUrl` against a transparency log of known checksums. It was split out of
+  fdroidserver, and the copy still bundled in the 2.4.5 release is the old bash one, whose
+  hardcoded table stops at Gradle 8.14.2 — it refuses to build this app with `No hash for gradle
+  version 9.6.1! Exiting...`. The standalone version knows 9.6.1, and cloning it is what the
+  buildserver itself does (`buildserver/provision-gradle`). A Gradle wrapper bump that lands
+  before the transparency log has the new version would fail F-Droid the same way, which is why
+  `gradle-wrapper.properties` is one of the paths that triggers this workflow.
+
+The jobs need no secrets and the build one needs no preinstalled platform 37 or build-tools
+37.0.0 — it deliberately omits them so that AGP's own SDK download, which §2 explains the recipe
+depends on, is exercised rather than assumed. A step afterwards fails the job if they did not
+appear.
+
+## 8. Pre-flight checklist
 
 - [ ] `versionCode` bumped; `en-US/changelogs/<versionCode>.txt` written and under 500 chars
 - [ ] `python3 .github/scripts/listing-metadata-check.py fastlane/metadata/android <versionCode>`
@@ -274,4 +327,7 @@ with Google's key. That is already true today and is not something the recipe ca
 - [ ] The release APK really is `app-classic-release-unsigned.apk` when no keystore is configured
 - [ ] Tag pushed, matching `^v[0-9.]+$` and equal to `versionName`
 - [ ] `metadata/it.eldavo.ylih.yml` updated with the new build entry and the tag as `commit:`
+- [ ] The `F-Droid` workflow green on the release commit — it runs readmeta, lint, rewritemeta,
+      scanner, `fdroid build` and `fdroid verify`, so a green run is the fork's `fdroid lint`
+      and build already answered (section 7)
 - [ ] `fdroid lint it.eldavo.ylih` clean in the fdroiddata fork

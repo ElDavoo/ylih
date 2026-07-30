@@ -39,8 +39,6 @@ Builds:
     # The sideloaded distribution. `play` is the Google Play build and differs only by dropping
     # the specialUse foreground-service type and the battery-optimisation shortcut; F-Droid ships
     # the one with fewer restrictions.
-    gradle:
-      - classic
     # No `sudo: sdkmanager ...` line to install platform 37 / build-tools 37.0.0, even though
     # the buildserver image preinstalls nothing past 33: its provisioning pre-accepts the SDK
     # licences and makes $ANDROID_HOME/{platforms,build-tools} group-writable *specifically* so
@@ -49,14 +47,16 @@ Builds:
     # ANDROID_HOME through, so sdkmanager would fall back to /opt/android-sdk and abort.
     # No `output:` either: fdroidserver already appends the flavor's own
     # build/outputs/apk/classic/release/ to the globs it searches. See docs/fdroid.md §2.
-
-AutoUpdateMode: Version
-UpdateCheckMode: Tags ^v[0-9.]+$
-CurrentVersion: 1.0.0
-CurrentVersionCode: 1
+    gradle:
+      - classic
 
 # The SHA-256 of the signing certificate, lowercase hex with no colons, read out of the
 # `Signing certificate fingerprint` step of the v1.0.0 release run rather than off the machine
 # holding the keystore. Changing the signing key means changing this line, and an APK signed with
 # anything else is refused rather than published — which is the point of the field.
 AllowedAPKSigningKeys: ba4f1511f0d1e49d468387ab6fac6b2df748b887e7018f8ebe4fccd207cf417a
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags ^v[0-9.]+$
+CurrentVersion: 1.0.0
+CurrentVersionCode: 1

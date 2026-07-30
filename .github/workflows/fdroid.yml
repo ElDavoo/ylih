@@ -1,0 +1,257 @@
+# What F-Droid will do to this repository, run here instead of finding out in a merge request.
+#
+# `metadata/it.eldavo.ylih.yml` is a copy of a file that lives in fdroiddata, and nothing in the
+# ordinary build reads it, so it is the one part of this repository with no compiler behind it.
+# The feedback loop for getting it wrong is a merge request review measured in days. These jobs
+# close that loop by running fdroidserver's own tools — the same readmeta/lint/scanner/build/verify
+# it runs — rather than an approximation of them.
+#
+# Three differences from a real buildserver run are worth knowing, because they bound what a pass
+# here proves. The buildserver is Debian trixie with `default-jdk-headless`, and `build` below uses
+# Ubuntu's packaged OpenJDK rather than Temurin to get closer to that, but it is not the same
+# image. It builds in a VM with no network for parts of the build. And its Android SDK is
+# provisioned to let AGP download what `compileSdk` asks for, which `build` reproduces by
+# deliberately *not* preinstalling platform 37 / build-tools 37.0.0 — see docs/fdroid.md §2.
+name: F-Droid
+
+on:
+  # Path-filtered, unlike android-ci.yml, because two of the three jobs below clone the tag the
+  # recipe names rather than the commit under test: on a pull request that touches neither the
+  # recipe nor the toolchain, they would spend twenty minutes recomputing a constant. The paths
+  # are the ones that can change the answer -- the recipe and its checks, the version and flavors
+  # F-Droid reads out of build.gradle.kts, the listing files it serves, the repositories the
+  # scanner allowlists, and the Gradle version, which gradlew-fdroid has to know a checksum for.
+  #
+  # The two lists are duplicated rather than shared through a YAML anchor: GitHub's workflow
+  # parser does not support anchors, however happily every other YAML tool reads them.
+  push:
+    branches:
+      - main
+    paths:
+      - "metadata/**"
+      - ".github/workflows/fdroid.yml"
+      - ".github/scripts/fdroid-*"
+      - "app/build.gradle.kts"
+      - "settings.gradle.kts"
+      - "gradle/wrapper/gradle-wrapper.properties"
+      - "fastlane/**"
+  pull_request:
+    paths:
+      - "metadata/**"
+      - ".github/workflows/fdroid.yml"
+      - ".github/scripts/fdroid-*"
+      - "app/build.gradle.kts"
+      - "settings.gradle.kts"
+      - "gradle/wrapper/gradle-wrapper.properties"
+      - "fastlane/**"
+  # Nothing here has to change for the answer to change: fdroidserver moves, gradlew-fdroid's
+  # checksum log moves, and the released APK either still reproduces or quietly stops doing so.
+  # The weekly run is the only thing that would notice.
+  schedule:
+    - cron: "17 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # fdroidserver's releases lag its master branch, and fdroiddata runs master. Pinning keeps a
+  # bad day from being a mystery; bumping it is a deliberate change with a job log behind it.
+  FDROIDSERVER_VERSION: "2.4.5"
+
+jobs:
+  # The recipe as a document: does fdroidserver accept it, does yamllint accept it, and does it
+  # still describe this repository. Needs no JDK and no SDK, so it answers in about a minute.
+  recipe:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install fdroidserver
+        run: pip install "fdroidserver==${FDROIDSERVER_VERSION}"
+
+      # fdroidserver only runs from a directory shaped like fdroiddata, and `fdroid build` reads
+      # the metadata file's own commit timestamp for SOURCE_DATE_EPOCH, so it has to be a git
+      # repository too — not a detail, it is a hard crash otherwise.
+      - name: Assemble an fdroiddata-shaped directory
+        run: .github/scripts/fdroid-workdir.sh "$RUNNER_TEMP/fdroiddata"
+
+      - name: fdroid readmeta
+        working-directory: ${{ runner.temp }}/fdroiddata
+        run: fdroid readmeta
+
+      # `fdroid lint` exits 0 even when it has findings — fdroiddata's own CI reads its output, so
+      # so does this. Any line that is not the apksigner warning (there is no SDK in this job) is
+      # a finding.
+      - name: fdroid lint
+        working-directory: ${{ runner.temp }}/fdroiddata
+        run: |
+          set -euo pipefail
+          # Not a pipeline: grep exits 1 when it filters everything out, which is precisely the
+          # clean case, and `fdroid lint` itself exits 0 whether or not it found anything.
+          fdroid lint it.eldavo.ylih > raw.out 2>&1 || true
+          grep -v 'apksigner' raw.out > lint.out || true
+          cat lint.out
+          if [ -s lint.out ]; then
+            echo "::error file=metadata/it.eldavo.ylih.yml::fdroid lint reported the findings above"
+            exit 1
+          fi
+          echo "fdroid lint is clean"
+
+      # `fdroid rewritemeta` is run in the fdroiddata fork before the merge request, and it
+      # rewrites the file into canonical form. It also deletes every comment, so this cannot
+      # demand the file come back unchanged — the comments are the point of keeping a copy here.
+      # What it can demand is that the *data* and the field order survive the rewrite, which is
+      # what catches a field written in the wrong place.
+      - name: fdroid rewritemeta changes nothing but comments
+        working-directory: ${{ runner.temp }}/fdroiddata
+        run: |
+          set -euo pipefail
+          cp metadata/it.eldavo.ylih.yml before.yml
+          fdroid rewritemeta it.eldavo.ylih
+          python3 - <<'PY'
+          import sys, yaml
+          before = yaml.safe_load(open('before.yml', encoding='utf-8'))
+          after = yaml.safe_load(open('metadata/it.eldavo.ylih.yml', encoding='utf-8'))
+          if before != after:
+              sys.exit(f'::error::rewritemeta changed the recipe data:\n{before}\n{after}')
+          if list(before) != list(after):
+              sys.exit('::error file=metadata/it.eldavo.ylih.yml::rewritemeta reorders the '
+                       f'fields: {list(before)} -> {list(after)}')
+          print('rewritemeta is a no-op apart from comments')
+          PY
+
+      # Everything fdroid lint cannot know: whether the recipe still matches the source tree.
+      - name: Recipe describes this repository
+        run: python3 .github/scripts/fdroid-recipe-check.py .
+
+  # The source scan F-Droid runs before it will build anything: tracked binaries, dependency
+  # files with no lockfile beside them, and maven repositories outside its allowlist.
+  scanner:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install fdroidserver
+        run: pip install "fdroidserver==${FDROIDSERVER_VERSION}"
+
+      - name: Assemble an fdroiddata-shaped directory
+        run: .github/scripts/fdroid-workdir.sh "$RUNNER_TEMP/fdroiddata"
+
+      # The scanner clones the tag from GitHub itself, so this scans what F-Droid would scan
+      # rather than the working tree. It exits non-zero on a finding.
+      - name: fdroid scanner
+        working-directory: ${{ runner.temp }}/fdroiddata
+        run: fdroid scanner --verbose it.eldavo.ylih
+
+  # The build itself, through fdroidserver rather than through Gradle directly, so that the
+  # source preparation F-Droid does happens too: the Gradle wrapper is deleted and replaced with
+  # gradlew-fdroid, signingConfigs are stripped out of build.gradle.kts, and debuggable flags are
+  # removed. Then `fdroid verify` downloads the published APK and compares it with what was just
+  # built, which is the reproducible-builds check the recipe is asking F-Droid to run.
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      # Ubuntu's packaged OpenJDK, not Temurin: the buildserver uses Debian's
+      # `default-jdk-headless`, and the JDK is the one axis docs/fdroid.md §6 calls untestable
+      # from this repository. This is as close to it as a GitHub runner gets.
+      - name: Set up Debian-style OpenJDK 21
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends openjdk-21-jdk-headless
+          echo "JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64" >> "$GITHUB_ENV"
+
+      - name: Install fdroidserver
+        run: pip install "fdroidserver==${FDROIDSERVER_VERSION}"
+
+      # The Android SDK with *no* platform 37 and no build-tools 37.0.0. The recipe deliberately
+      # carries no `sudo: sdkmanager ...` line and relies on AGP downloading them itself, which
+      # is an assumption about a buildserver nobody here can log into. Leaving them out is how
+      # that assumption gets tested; if AGP's auto-download breaks, this job fails and the
+      # F-Droid build would have failed the same way.
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v4
+
+      # The Gradle home the script writes the daemon/toolchain settings into, matching what the
+      # buildserver puts in ~/.gradle. Set here rather than in the job's `env:` because
+      # runner.temp is not a context that job-level env can read.
+      - name: Assemble an fdroiddata-shaped directory
+        run: |
+          set -euo pipefail
+          .github/scripts/fdroid-workdir.sh "$RUNNER_TEMP/fdroiddata"
+          echo "GRADLE_USER_HOME=$RUNNER_TEMP/fdroiddata/gradle-home" >> "$GITHUB_ENV"
+
+      # With Binaries: set, `fdroid build` downloads the published APK and compares it against
+      # what it just built as part of the build, so a build that succeeds and an APK that
+      # reproduces are not two separate results here — this step fails for either.
+      - name: fdroid build
+        working-directory: ${{ runner.temp }}/fdroiddata
+        run: fdroid build --verbose it.eldavo.ylih
+
+      # apksigner lives in build-tools, which nothing installed — so if this finds it, AGP really
+      # did download build-tools 37.0.0 during the build, which is the assumption above holding.
+      # `fdroid verify` needs it to compare signatures.
+      - name: Confirm AGP downloaded the SDK it needs, and put apksigner on PATH
+        run: |
+          set -euo pipefail
+          for component in "platforms/android-37.0" "build-tools/37.0.0"; do
+            if [ ! -d "$ANDROID_HOME/$component" ]; then
+              echo "::error::$component is missing: AGP did not download it, so the recipe's" \
+                   "assumption that it needs no sdkmanager line no longer holds"
+              exit 1
+            fi
+          done
+          echo "$ANDROID_HOME/build-tools/37.0.0" >> "$GITHUB_PATH"
+
+      # The same comparison again, standalone and with apksigner now on PATH: download the APK
+      # named by Binaries:, copy its signature across with apksigcopier and compare byte for
+      # byte. This is what F-Droid runs to decide whether to publish our APK instead of its own.
+      #
+      # It verifies the *released tag*, not this commit, so on a pull request it says nothing
+      # about the change under review — it says whether the published release still reproduces.
+      # Which is not a given: what a machine strips out of a prebuilt .so depends on whether it
+      # has an NDK, so this can fail on the difference between two build machines rather than on
+      # anything in the source. See docs/fdroid.md §6.
+      - name: fdroid verify
+        working-directory: ${{ runner.temp }}/fdroiddata
+        run: fdroid verify --verbose it.eldavo.ylih
+
+      - name: Upload the built APK and logs
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: fdroid-build
+          path: |
+            ${{ runner.temp }}/fdroiddata/unsigned/**
+            ${{ runner.temp }}/fdroiddata/logs/**
+            ${{ runner.temp }}/fdroiddata/tmp/**
+          if-no-files-found: warn
