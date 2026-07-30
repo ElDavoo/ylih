@@ -84,12 +84,18 @@ jobs:
           apksigner=$(find "$ANDROID_SDK_ROOT/build-tools" -name apksigner -type f | sort | tail -1)
           echo "apk=${apk:-<none>} apksigner=${apksigner:-<none>}"
           "$apksigner" verify --print-certs "$apk" | tee /tmp/certs.txt
-          digest=$(sed -n 's/^Signer #1 certificate SHA-256 digest: //p' /tmp/certs.txt)
-          # An empty digest means the sed pattern has drifted from apksigner's output rather than
-          # that the APK is unsigned — apksigner would have exited non-zero for that. Fail here,
-          # because a silently empty fingerprint is one that gets noticed at verification time.
-          if [ -z "$digest" ]; then
-            echo "::error::no SHA-256 digest in apksigner output (see above)"
+          # Every line naming a certificate digest, not `Signer #1` specifically: build-tools
+          # 37.0.0's apksigner labels the signer by the scheme that carries it ("V2 Signer:",
+          # and "V3 Signer:" where a v3 block exists) and prints one line per scheme. They all
+          # name the same certificate, so the fingerprint is whatever they agree on.
+          digest=$(sed -n 's/.*certificate SHA-256 digest: //p' /tmp/certs.txt | sort -u)
+          # An empty digest means the pattern has drifted from apksigner's output rather than
+          # that the APK is unsigned — apksigner would have exited non-zero for that. More than
+          # one means the schemes disagree, which AllowedAPKSigningKeys cannot express. Fail on
+          # either, because a silently wrong fingerprint is one that gets noticed at
+          # verification time.
+          if [ "$(printf '%s' "$digest" | grep -c .)" != 1 ]; then
+            echo "::error::expected exactly one certificate SHA-256 in apksigner output (see above)"
             exit 1
           fi
           echo "AllowedAPKSigningKeys: $digest" | tee -a "$GITHUB_STEP_SUMMARY"
