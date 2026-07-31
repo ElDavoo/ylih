@@ -72,19 +72,22 @@ listing in Play Console under *Store presence → Main store listing → Manage 
 
 | Field | Value |
 |---|---|
-| App name | `<locale>/title.txt` (21 / 19 chars, limit 30) |
+| App name | `<locale>/title.txt` (30 / 28 chars, limit 30) |
 | Short description | `<locale>/short_description.txt` (78 / 77 chars, limit 80) |
 | Full description | `<locale>/full_description.txt` (2717 / 2824 chars, limit 4000) |
 | Release notes | `<locale>/changelogs/1.txt`, named for `versionCode` (limit 500) |
 | Category | Tools |
 | Tags | Suggested: utilities, personal |
 | Contact email | dpfuturehacker@gmail.com |
-| Website | The GitHub repository, once it is public |
+| Website | https://github.com/ElDavoo/ylih |
 | Privacy policy | `PRIVACY.md`, served over HTTPS — see "Blockers" |
 
-The launcher label stays `ylih`; the store title adds "Headphone Hours" because a four-letter
-invented word is unsearchable on its own. Inside the app the bar spells the name out in full —
-"ylih - your life in headphones" — which is where the word comes from.
+The launcher label stays `ylih`; the store title spells the name out in full — "ylih - your life
+in headphones", the same phrase the app's own top bar uses, which is where the four-letter word
+comes from. It is exactly 30 characters, Play's limit, so there is no room to add to it. Each
+translated `title.txt` is that same tagline in its own language rather than a transliteration, and
+the per-locale limit is Play's 30, not the 50 that `listing-metadata-check.py` enforces for
+F-Droid — check any new title against 30 by hand.
 
 ## 4. Data safety form
 
@@ -148,12 +151,23 @@ outcome is "Everyone" / PEGI 3.
 - **Financial features:** none. The price field is a number the user types for their own
   cost-per-hour arithmetic; no payment is processed.
 - **Data deletion:** the in-app path is Settings and uninstall, per the Data safety section.
+- **App access:** all functionality is available without logging in. There are no accounts, so
+  there are no credentials to hand review. Say so explicitly rather than leaving it blank — an
+  unanswered App access form blocks the submission on its own.
+- **Advertising ID:** no. The app declares no `AD_ID` permission and pulls in no ads,
+  analytics or attribution SDK; answering "yes" here would fail review against the manifest.
+- **Photos and videos / other restricted permissions:** none requested.
+
+One thing to have ready if review reads the manifest: the merged manifest does contain
+`ACCESS_NETWORK_STATE`, added by `androidx.work:work-runtime`, not by this app. It reads
+connectivity state and cannot transmit anything; `INTERNET` is still absent, so the listing's
+"no internet permission" claim holds exactly as written.
 
 ## 8. Blockers that cannot be closed from this repository
 
 1. **A public HTTPS URL for the privacy policy.** Play will not accept a submission without one.
-   The repository has no git remote configured yet; push it and serve `PRIVACY.md` (GitHub Pages,
-   or the rendered file's URL) before submitting.
+   The repository is now public, so `https://github.com/ElDavoo/ylih/blob/main/PRIVACY.md` is a
+   usable URL; a GitHub Pages copy reads better if it is worth the setup.
 2. **The upload keystore.** It must exist, be registered with Play App Signing, and be present in
    the repository secrets the release workflow reads.
 3. **A demo video** for the foreground-service declaration, if review asks for one. It has to show
