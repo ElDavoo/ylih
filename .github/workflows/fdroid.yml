@@ -232,18 +232,47 @@ jobs:
           done
           echo "$ANDROID_HOME/build-tools/37.0.0" >> "$GITHUB_PATH"
 
-      # The same comparison again, standalone and with apksigner now on PATH: download the APK
-      # named by Binaries:, copy its signature across with apksigcopier and compare byte for
-      # byte. This is what F-Droid runs to decide whether to publish our APK instead of its own.
+      # The same comparison again, standalone and with apksigner now on PATH: copy the published
+      # signature across with apksigcopier and compare byte for byte.
       #
-      # It verifies the *released tag*, not this commit, so on a pull request it says nothing
-      # about the change under review — it says whether the published release still reproduces.
-      # Which is not a given: what a machine strips out of a prebuilt .so depends on whether it
-      # has an NDK, so this can fail on the difference between two build machines rather than on
-      # anything in the source. See docs/fdroid.md §6.
+      # The APK it compares against is the one in *F-Droid's own repo* — it fetches
+      # f-droid.org/repo/<package>_<versionCode>.apk and falls back to /archive — not the one
+      # `Binaries:` names. ylih has not been published there yet, so that download can only 404,
+      # and fdroidserver reports the 404 as "NOT verified". Read literally that says the release
+      # stopped reproducing, which is the opposite of what happened, so the two cases are told
+      # apart here: a 404 from f-droid.org means there is nothing to compare against yet and is
+      # not a failure, anything else is.
+      #
+      # This does not leave the reproducibility claim unchecked. `Binaries:` is set, so the
+      # `fdroid build` step above already downloaded the release asset and compared it, and that
+      # step fails if it disagrees — which is the check that can actually be made before F-Droid
+      # publishes anything. Once it does, this step starts comparing too and the skip stops firing.
+      #
+      # Either way it verifies the *released tag*, not this commit, so on a pull request it says
+      # nothing about the change under review. Whether the published release still reproduces is
+      # not a given: what a machine strips out of a prebuilt .so depends on whether it has an NDK,
+      # so this can fail on the difference between two build machines rather than on anything in
+      # the source. See docs/fdroid.md §6.
       - name: fdroid verify
         working-directory: ${{ runner.temp }}/fdroiddata
-        run: fdroid verify --verbose it.eldavo.ylih
+        run: |
+          set -euo pipefail
+          status=0
+          fdroid verify --verbose it.eldavo.ylih > verify.out 2>&1 || status=$?
+          cat verify.out
+          if [ "$status" -eq 0 ]; then
+            echo "the published APK still reproduces"
+            exit 0
+          fi
+          if grep -qE 'NOT verified.*Downloading https://f-droid\.org/.*failed\. 404' verify.out; then
+            echo "::notice file=metadata/it.eldavo.ylih.yml::it.eldavo.ylih is not in F-Droid's" \
+                 "repo yet, so fdroid verify has nothing to download and compare. The Binaries:" \
+                 "comparison against the GitHub release asset ran in fdroid build above."
+            exit 0
+          fi
+          echo "::error file=metadata/it.eldavo.ylih.yml::fdroid verify failed for a reason other" \
+               "than the app being unpublished — the released APK no longer reproduces"
+          exit "$status"
 
       - name: Upload the built APK and logs
         if: always()

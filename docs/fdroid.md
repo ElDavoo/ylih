@@ -289,8 +289,13 @@ own tools rather than an approximation of them. Three jobs:
   tracked binaries, dependency files with no lockfile, maven repositories off its allowlist.
 - **build** — `fdroid build`, which checks out the tag, deletes the Gradle wrapper, strips
   `signingConfigs` out of `build.gradle.kts`, builds through `gradlew-fdroid`, and — because
-  `Binaries:` is set — downloads the published APK and compares. Then `fdroid verify` runs the
-  same comparison standalone.
+  `Binaries:` is set — downloads the published APK and compares. Then `fdroid verify` runs a
+  comparison standalone, against a *different* APK: it fetches
+  `f-droid.org/repo/<package>_<versionCode>.apk`, falling back to `/archive`, rather than the URL
+  `Binaries:` names. Until F-Droid publishes ylih there is nothing at either address, and
+  fdroidserver reports that 404 as "NOT verified" — which reads as "the release stopped
+  reproducing" and is not that. The step tells the two apart and treats only the 404 as a skip, so
+  the reproducibility check that runs today is the `Binaries:` one inside `fdroid build`.
 
 Both `scanner` and `build` clone the tag the recipe names, so on a pull request they say nothing
 about the change under review. That is why the triggers are path-filtered and why there is a
