@@ -1,0 +1,57 @@
+# Keep rules for the *app* APK the instrumented tests install — the releaseTest build type only.
+# Nothing here reaches `release`: src/releaseTest/keepRules is read by the R8 run for that build
+# type alone, the same trick releaseTestImplementation(ui-test-manifest) uses one file over.
+#
+# Why any of this is needed. AGP builds the androidTest APK with `-keep class * {*;}` plus
+# `-applymapping` against the app's mapping file, and it packages nothing the app already
+# provides — no Kotlin runtime, no app classes, not even androidx.tracing. So every symbol the
+# test code links against has to still exist in the app APK under the name the mapping gave it.
+# A class R8 *removed* from the app has no mapping entry, so the reference keeps its original
+# name and resolves to nothing: NoClassDefFoundError on a device, invisible to every unit test
+# and to the mapping-file check. That is not a hypothetical — it is what
+# `connectedClassicReleaseTestAndroidTest` failed with before this file existed.
+#
+# The rules are grouped by what forced them, because that is what tells a later reader whether
+# one can go away.
+
+# 1. The instrumentation runner. AndroidJUnitRunner.onCreate calls androidx.tracing.Trace, which
+#    arrives as a transitive dependency of both the app and androidx.test and so is packaged in
+#    neither APK once the app stops using it. The crash is at process start, before a single test
+#    runs — "Starting 0 tests", then "Instrumentation run failed due to Process crashed".
+-keep class androidx.tracing.Trace { *; }
+
+# 2. Kotlin's runtime. The test source set is Kotlin, so its compiled code calls into the stdlib
+#    and the coroutines runtime for things it never mentions: `runBlocking` is BuildersKt, every
+#    suspend call is IntrinsicsKt/Boxing/SpillingKt/DebugProbesKt, `use` is CloseableKt, `by lazy`
+#    is LazyKt. R8 inlines most of those facades away in the app, since the app's own call sites
+#    are all it can see. Kept wholesale rather than enumerated: the list is a by-product of
+#    whatever the tests happen to compile to, so an enumeration would drift into this same crash
+#    the next time a test gains a `use` or a `withTimeout`. These are library packages — app code
+#    under it.eldavo.ylih is still shrunk, renamed and merged exactly as it is for release, which
+#    is the part the tests are here to check.
+-keep class kotlin.** { *; }
+-keep class kotlinx.coroutines.** { *; }
+# androidx.test:core reaches its Kotlin helpers through these; same story as above.
+#
+# One reference this cannot satisfy: androidx.test:core asks for concurrent-futures-ktx 1.2.0,
+# AGP pins the test classpath to whatever the app resolved — 1.1.0, via work-runtime-ktx — and
+# SuspendToFutureAdapter only exists from 1.2.0, so the class is in no version on the classpath
+# and no keep rule can hold it. Only ViewCapture and WindowCapture touch it, neither of which
+# this suite calls, so the reference is dormant. Raising the app's own dependency to 1.2.0 for
+# the sake of a screenshot helper the tests never use is the more expensive of the two mistakes.
+-keep class androidx.concurrent.futures.** { *; }
+
+# 3. The three app symbols MinifiedReleaseTest names that nothing in the app itself reaches, so
+#    R8 is right to delete them and the test is the only thing that misses them:
+#      - Clock is a fun interface the app only ever passes Clock.Wall to, so R8 devirtualises it
+#        away; the test injects a fake to move time by assignment.
+#      - the DAO interfaces are each implemented once, so R8 merges them into their _Impl; the
+#        test reads sessions back through sessionDao().
+#      - YlihDatabase.Companion holds the single call to Room.databaseBuilder and is inlined into
+#        its caller; the test opens the real database through it.
+#    Keeping them changes how three data-layer types are shrunk in the build under test and
+#    nothing about Room's generated code, the worker, the serializers or Compose — the four
+#    things MinifiedReleaseTest actually asserts on.
+-keep class it.eldavo.ylih.data.Clock { *; }
+-keep interface it.eldavo.ylih.data.SessionDao { *; }
+-keep class it.eldavo.ylih.data.YlihDatabase$Companion { *; }
