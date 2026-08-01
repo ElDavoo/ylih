@@ -360,11 +360,27 @@ database and drives `MainActivity` to RESUMED. Repository tests use an in-memory
 injected clock (`SessionRepository(db) { clockNow }`), so time is moved by assignment rather than
 by sleeping.
 
-**Both test source sets live on the `releaseTest` build type**, which is why every test task is
-`…ReleaseTest…` rather than `…Debug…`. That is `testBuildType`, and it is set for the sake of
-`src/androidTest`: R8 only runs for a release build, so the only way to test what R8 produced is
-to point androidTest at a minified one. AGP binds the whole test suite to that one build type, so
-`src/test` came along; nothing changes for it, since R8 never ran for unit tests either way.
+**`src/androidTest` lives on the `releaseTest` build type.** That is `testBuildType`, and it is
+set for its sake: R8 only runs for a release build, so the only way to test what R8 produced is to
+point androidTest at a minified one.
+
+`src/test` used to be dragged along with it — AGP creates unit tests only for `testBuildType` —
+which is why every test task was `…ReleaseTest…`. `android.onlyEnableUnitTestForTheTestedBuildType=false`
+in `gradle.properties` undoes that, so each build type now has its own unit test variant and CI
+runs the suite twice, on `releaseTest` and on `debug`. Only the `releaseTest` one is instrumented
+for coverage, so `create<Variant>ReleaseTestUnitTestCoverageReport` is still the single source of
+the numbers the gate reads. One consequence to know: that flag hands `release` a unit test
+variant too, and `release` is the one build type that must never carry `ui-test-manifest` — so
+`test<Flavor>ReleaseUnitTest` is explicitly disabled in `app/build.gradle.kts` rather than left
+to fail on the first `./gradlew check`.
+
+`testBuildType` itself reads `-Pylih.testBuildType`, defaulting to `releaseTest`. Passing `debug`
+aims the same androidTest source set at an unminified build; CI runs both legs, and comparing
+them is what separates "R8 broke it" from "it was always broken" without bisecting keep rules:
+
+```sh
+./gradlew -Pylih.testBuildType=debug connectedClassicDebugAndroidTest
+```
 
 `releaseTest` is `initWith(release)` — same shrinking, same signing — plus
 `releaseTestImplementation(ui-test-manifest)`. That dependency is the whole reason it is a build
@@ -383,6 +399,17 @@ a device and the four `ANDROID_SIGNING_*` variables, because an unsigned APK wil
 ```sh
 ./gradlew connectedClassicReleaseTestAndroidTest
 ```
+
+Two things make that APK reach this suite at all, and both are worth reading before touching
+either. `app/src/releaseTest/keepRules/instrumented-test.keep` holds what the app APK must keep
+for the test APK to link against it: AGP builds androidTest with `-keep class * {*;}` plus
+`-applymapping`, packaging nothing the app already provides — no Kotlin runtime, not even
+`androidx.tracing` — so anything R8 deleted resolves to nothing on a device, and anything R8
+*reshaped* (a staticised method, say) breaks the call site even where the class survived. And
+`app/build.gradle.kts` pins the `releaseTest` L8 runs to the unshrunk, unrenamed desugared
+library: L8 runs once per variant and renames independently when minified, so the two APKs
+otherwise define hundreds of the same `j$.**` names as different classes and the app's own code
+picks up the test APK's copies. Neither reaches `release`.
 
 The static counterpart is `.github/scripts/r8-keep-check.py`, which reads R8's mapping file and
 needs no device. Between them: the script proves nothing was stripped or renamed on every push,

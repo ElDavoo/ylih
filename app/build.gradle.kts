@@ -118,10 +118,19 @@ android {
         }
     }
 
-    // Both test source sets move here: src/androidTest, which is the point — it installs the
-    // minified APK on a device — and src/test, which AGP does not let us leave behind. R8 never
-    // runs for unit tests either way, so for them this is a rename rather than a change.
-    testBuildType = "releaseTest"
+    // Where src/androidTest points, and the whole reason releaseTest exists: R8 only runs for a
+    // release build, so this is the only way to install a minified APK on a device and run the
+    // suite against it. src/test used to be dragged along with it; since
+    // android.onlyEnableUnitTestForTheTestedBuildType went off in gradle.properties the unit
+    // tests have their own variant per build type and no longer care what this says.
+    //
+    // -Pylih.testBuildType=debug aims the same androidTest source set at an unminified build.
+    // Nothing in the suite is written for one or the other — the point is the comparison. Run
+    // both and a failure that only happens minified is R8's doing, while one that happens in
+    // both is a bug in the app or the test. Both halves of that came up the day this landed: two
+    // linkage errors that only existed minified, and a missing backup formatVersion that had
+    // been broken in every build since 1.0.0. CI runs both; see .github/workflows/android-ci.yml.
+    testBuildType = providers.gradleProperty("ylih.testBuildType").getOrElse("releaseTest")
 
     buildFeatures {
         compose = true
@@ -155,7 +164,13 @@ android {
                 // one package with plain JVM tests — while everything Robolectric touches
                 // silently reads as zero. jdk.internal is excluded because the agent cannot
                 // instrument it and warns on every run.
-                it.extensions.configure(JacocoTaskExtension::class) {
+                //
+                // findByType, not configure: only releaseTest sets enableUnitTestCoverage, so it
+                // is the only build type whose unit test task AGP gives a JaCoCo extension, and
+                // since the debug suite runs uninstrumented beside it this block now sees tasks
+                // that have none. `configure` throws on those, which surfaces as the useless
+                // "Could not create task ':app:testClassicDebugUnitTest'".
+                it.extensions.findByType(JacocoTaskExtension::class.java)?.apply {
                     isIncludeNoLocationClasses = true
                     excludes = listOf("jdk.internal.*")
                 }
@@ -250,6 +265,17 @@ tasks.matching { it.name.startsWith("lint") }.configureEach {
     dependsOn(kspTasks)
 }
 
+// Turning off onlyEnableUnitTestForTheTestedBuildType hands *every* build type a unit test
+// variant, `release` included — and release is precisely the one that must never carry
+// ui-test-manifest, because that would ship a test activity to users. Without it
+// createAndroidComposeRule cannot resolve an activity and the Compose tests fail as a body.
+// The variant is unusable by construction rather than merely unused, so take the task away
+// instead of leaving one that looks runnable and detonates the first time anyone types
+// `./gradlew check`. debug and releaseTest are the two that are meant to run.
+tasks.matching { it.name.matches(Regex("test(Classic|Play)ReleaseUnitTest")) }.configureEach {
+    enabled = false
+}
+
 // The desugared library (`j$.**`, what backports java.time to the minSdk 23 floor) is dexed by
 // its own L8 run per variant, and AGP tells L8 to leave names alone only when that variant is
 // unminified. releaseTest and the androidTest APK beside it are both minified, so each L8 run
@@ -324,6 +350,10 @@ dependencies {
     // contributes ComponentActivity to the merged manifest. Scoped to releaseTest — the build
     // type the unit tests run on — precisely so it cannot reach the shipped release APK.
     "releaseTestImplementation"(libs.androidx.compose.ui.test.manifest)
+    // And on debug, which now runs the same suite uninstrumented (see gradle.properties). A
+    // debug APK is a development convenience rather than something anyone is shipped, so this
+    // one is an ordinary debugImplementation rather than a build type invented to hold it.
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
 
     // The instrumented suite. Deliberately thin: it runs on an emulator against the minified
     // APK, so it holds only what a Robolectric test cannot answer. Room, coroutines and the app's

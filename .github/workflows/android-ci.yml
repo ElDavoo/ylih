@@ -86,18 +86,25 @@ jobs:
           restore-keys: |
             robolectric-${{ runner.os }}-
 
-      # ReleaseTest rather than Debug because that is the build type `testBuildType` puts both
-      # test source sets on — so it is the variant whose lint sees src/test and src/androidTest,
-      # and the one that has unit tests to measure coverage over at all. The two assemble tasks
-      # are still Debug and Release: those are the artifacts anyone ships or installs.
+      # Lint is ReleaseTest because that is where `testBuildType` puts src/androidTest, so it is
+      # the variant whose lint sees both test source sets. The two assemble tasks are Debug and
+      # Release: those are the artifacts anyone ships or installs.
       #
       # create<Variant>UnitTestCoverageReport runs the unit tests and then the JaCoCo report over
-      # them, so it stands in for test<Variant>UnitTest rather than adding a second run.
+      # them, so it stands in for test<Variant>ReleaseTestUnitTest rather than adding a second run.
+      #
+      # The suite then runs a second time on debug, which it can since
+      # android.onlyEnableUnitTestForTheTestedBuildType went off. Not a duplicate: the build type
+      # is a compile-time input like any other, and debug differs by BuildConfig.DEBUG, the
+      # .debug applicationId suffix and an unshrunk resource table. Uninstrumented, so it costs
+      # the run but not the JaCoCo overhead, and the coverage gate below still reads exactly one
+      # report — the releaseTest one — rather than trying to reconcile two.
       - name: Build and test (${{ matrix.flavor }})
         run: >
           ./gradlew --no-daemon --stacktrace
           lint${{ matrix.variant }}ReleaseTest
           create${{ matrix.variant }}ReleaseTestUnitTestCoverageReport
+          test${{ matrix.variant }}DebugUnitTest
           assemble${{ matrix.variant }}Debug
           assemble${{ matrix.variant }}Release
 
@@ -145,11 +152,32 @@ jobs:
   # needs a real Android runtime. Hence an emulator, and hence a job of its own: it is far slower
   # than the rest of CI and fails for its own reasons.
   #
+  # Run twice, against the same source set. `releaseTest` is the one that matters and `debug` is
+  # its control: identical tests against an unminified build, so a failure in one and not the
+  # other says which half is broken without anyone having to bisect keep rules to find out.
+  # Both halves of that distinction showed up the day this landed — two linkage errors that only
+  # existed minified, and a backup missing its formatVersion in every build ever made. Six
+  # minutes, in parallel with the minified leg, to never have to guess.
+  #
   # Only the classic flavor. The flavors differ by compile-time constants in Distribution.kt and
   # one manifest overlay, not by anything R8 sees, so running both would double the slowest job
   # in the workflow to re-test identical shrinking.
   instrumented:
     runs-on: ubuntu-latest
+
+    name: instrumented (${{ matrix.label }})
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # `buildType` is what -Pylih.testBuildType takes, `variant` its task-name form.
+          - buildType: releaseTest
+            variant: ReleaseTest
+            label: minified
+          - buildType: debug
+            variant: Debug
+            label: unminified
 
     steps:
       - name: Checkout
@@ -197,6 +225,10 @@ jobs:
       # install. So the job makes a key it throws away. AGP signs the androidTest APK with the
       # tested variant's config, so both sides match and the instrumentation is allowed to attach
       # to the app's process; the real signing key is never involved.
+      #
+      # Unconditional rather than skipped on the debug leg, which signs itself with AGP's debug
+      # key and never reads these: one step that always runs beats a conditional whose two sides
+      # would then have to be kept in step with each other.
       - name: Generate a throwaway signing key
         run: |
           keytool -genkeypair \
@@ -205,7 +237,7 @@ jobs:
             -keyalg RSA -keysize 2048 -validity 30 \
             -dname 'CN=ylih instrumented tests, O=throwaway'
 
-      - name: Instrumented tests on the minified APK
+      - name: Instrumented tests on the ${{ matrix.label }} APK
         uses: reactivecircus/android-emulator-runner@v2
         env:
           ANDROID_SIGNING_KEYSTORE_PATH: ${{ runner.temp }}/instrumented.keystore
@@ -219,13 +251,14 @@ jobs:
           disable-animations: true
           script: >
             ./gradlew --no-daemon --stacktrace
-            connectedClassicReleaseTestAndroidTest
+            -Pylih.testBuildType=${{ matrix.buildType }}
+            connectedClassic${{ matrix.variant }}AndroidTest
 
       - name: Upload instrumented test reports
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: instrumented-reports
+          name: instrumented-reports-${{ matrix.buildType }}
           path: |
             app/build/reports/androidTests/**
             app/build/outputs/androidTest-results/**

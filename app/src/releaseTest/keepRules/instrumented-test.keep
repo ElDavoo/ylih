@@ -55,7 +55,7 @@
 #    tests exist to check — it is what breaks a lookup that goes through a string — so the tested
 #    build still renames these classes and the mapping still has to carry the test APK onto them.
 #    What is given up is shrinking and optimisation across two packages of the data layer, which
-#    is not what any of the four tests assert on: Room's generated _Impl still has to survive
+#    is not what any test in the suite asserts on: Room's generated _Impl still has to survive
 #    under its own name (Room's consumer keep rules, not this file, are what hold it), the worker
 #    still has to be reachable by class name, the serializers still have to carry their generated
 #    descriptors, and Compose still has to start.
