@@ -80,11 +80,18 @@ android {
         }
 
         release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro",
-            )
+            // Play Console reports an unoptimized upload — "No R8 metadata included" — and the
+            // shrinking is worth having on its own: Compose and Room are most of the dex and
+            // almost none of either is reachable from this app.
+            //
+            // AGP 9.3's optimization block replaces isMinifyEnabled + isShrinkResources and
+            // carries the platform keep rules that
+            // proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt")) used to
+            // supply, so that call is deleted rather than left as a no-op. Keep rules now live
+            // in src/main/keepRules/*.keep, which is the source set AGP 9.3 reads them from.
+            optimization {
+                enable = true
+            }
             signingConfig = releaseSigningConfig
         }
     }

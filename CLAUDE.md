@@ -257,6 +257,14 @@ These are easy to break and the failures are confusing:
   The F-Droid recipe (`metadata/it.eldavo.ylih.yml`) deliberately names no SDK version: its
   buildserver preinstalls nothing past 33 and relies on AGP downloading what `compileSdk` and
   `buildToolsVersion` ask for — see `docs/fdroid.md` §2.
+- **R8 runs on release builds** via AGP 9.3's `optimization { enable = true }`, which turns on
+  code *and* resource shrinking and supplies the platform keep rules — so there is no
+  `proguardFiles` call and no `proguard-rules.pro`. Keep rules, if any are ever needed, go in
+  `app/src/main/keepRules/*.keep`; today the app authors none and every rule in the build comes
+  from AGP's defaults or a library's consumer rules. The thing to remember is that **nothing in
+  the test suite exercises minified code** — unit tests run on the JVM against unshrunk classes,
+  so an R8 regression reaches a device, not a red build. Anything reached only reflectively needs
+  a keep rule and a manual check of a release install.
 
 ## Room migrations
 

@@ -226,9 +226,15 @@ same commit produce a byte-identical APK:
 ./gradlew clean assembleClassicRelease && sha256sum app/build/outputs/apk/classic/release/*.apk
 ```
 
-Every zip entry carries one fixed timestamp rather than the build clock and `isMinifyEnabled =
-false` means there is no R8 dictionary to vary. Dropping the debug-key fallback is what made this
-possible at all — that key is generated per machine, so no two machines could ever have agreed.
+Every zip entry carries one fixed timestamp rather than the build clock. Dropping the debug-key
+fallback is what made this possible at all — that key is generated per machine, so no two
+machines could ever have agreed.
+
+R8 runs on the release build (see the `optimization` block in `app/build.gradle.kts`) and does
+not threaten this: it renames deterministically from the input program, and the R8 that runs is
+the one AGP bundles, which the version catalogue pins. It would only become a hazard if someone
+supplied `-obfuscationdictionary` with a generated file, or let the AGP version float. The check
+above was re-run across the change and both builds still agree.
 
 Three things do vary and are worth knowing before a verification failure sends you hunting:
 
