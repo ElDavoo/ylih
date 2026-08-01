@@ -76,6 +76,19 @@ see Testing — gives AGP a `create<Variant>UnitTestCoverageReport` task; the re
 `app/build/reports/coverage/test/<flavor>/releaseTest/` and CI uploads it with the other reports
 and prints the summary table into the job summary.
 
+**It is a gate, not just a report.** CI passes `--min-instruction=95 --min-line=99
+--min-branch=75` and the job fails below any of them. The floors sit just under where the suite
+actually is (96.4 / 99.6 / 75.7 on classic), so they catch a regression rather than track noise;
+the failure message prints the miss budget, not just the percentage.
+
+Two things to know before moving those numbers. Branch at 75 is not a lenient version of 95 — it
+measures something different, for the reason two paragraphs down, and raising it means writing
+tests for compiler-generated dispatch. It is also the tightest of the three, with roughly ten
+missed branches of headroom, so one new composable with enough parameters can breach it without
+any coverage having regressed; check what it fails *on* before adding tests to appease it. Method
+and class are ungated on purpose: at ~95% they are six classes from a 90 floor, close enough that
+ordinary work would trip them.
+
 The one non-obvious bit is in `testOptions.unitTests.all`: Robolectric loads the classes under
 test through its own sandbox classloader, so they reach the JaCoCo agent with no code-source
 location and are dropped unless `isIncludeNoLocationClasses` is set. Without it the report reads

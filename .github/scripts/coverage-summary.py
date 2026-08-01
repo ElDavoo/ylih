@@ -14,7 +14,23 @@ file actually exists under the source tree. What was dropped is printed undernea
 quietly left out; AGP's coverage task has no exclusion setting, so the full report on disk still
 has everything.
 
-Usage: coverage-summary.py <report.xml> [label] [--sources DIR]
+`--min-<metric>=N` turns the summary into a gate: the run fails if that counter, over the authored
+code, falls below N percent. CI sets instruction 95, line 99 and branch 75, each a little under
+where the suite actually sits, so the gate catches a regression rather than tracking noise.
+
+Branch is the one to understand before touching these numbers. It sits in the seventies rather
+than the nineties because the Compose compiler emits a `$changed`/default-argument bitmask branch
+for every composable parameter and no test drives those — the Compose-heavy files hold about two
+thirds of the missed branches. So 75 is not a weak version of 95; it is a different measurement,
+and raising it would mean writing tests for compiler-generated dispatch. It is also the tightest
+floor of the three: around ten missed branches of headroom, which one new composable with enough
+parameters can spend without any real regression. If it fails, check what it is failing *on*
+before adding tests to appease it.
+
+Method and class are left ungated deliberately. At ~95% they sit six classes above a 90 floor,
+close enough that ordinary work trips them without coverage having actually regressed.
+
+Usage: coverage-summary.py <report.xml> [label] [--sources=DIR] [--min-instruction=N ...]
 """
 
 import os
@@ -25,6 +41,10 @@ import xml.etree.ElementTree as ET
 COUNTERS = ("INSTRUCTION", "LINE", "BRANCH", "METHOD", "CLASS")
 
 DEFAULT_SOURCES = "app/src"
+
+# Floors arrive as --min-<metric>=N, so the set that is gated is whatever CI passes rather than
+# something baked in here. See the module docstring for what the numbers mean.
+MIN_PREFIX = "--min-"
 
 # A line belongs to its source file, not to each of the classes compiled out of it; taking LINE
 # off the classes would count a file once per Compose lambda it contains.
@@ -90,23 +110,68 @@ def tally(root, ours):
     return mine, theirs, packages
 
 
-def table(totals):
-    rows = ["| metric | covered | total | % |", "| --- | ---: | ---: | ---: |"]
+def table(totals, floors):
+    header = "| metric | covered | total | % |"
+    divider = "| --- | ---: | ---: | ---: |"
+    if floors:
+        header += " floor |"
+        divider += " ---: |"
+    rows = [header, divider]
     for name in COUNTERS:
         if name in totals:
             covered, total = totals[name]
-            rows.append(f"| {name.lower()} | {covered} | {total} | {pct(covered, total)} |")
+            row = f"| {name.lower()} | {covered} | {total} | {pct(covered, total)} |"
+            if floors:
+                floor = floors.get(name)
+                row += f" {floor:g}% |" if floor is not None else " — |"
+            rows.append(row)
     return rows
+
+
+def breaches(totals, floors):
+    """Gated counters that fall below their floor, as ready-made messages.
+
+    A gated counter with nothing in it fails rather than passes: a report with no instructions to
+    cover means the run measured nothing, and a gate must not read that as success.
+    """
+    problems = []
+    for name, floor in floors.items():
+        covered, total = totals.get(name, (0, 0))
+        if not total:
+            problems.append(f"{name.lower()} coverage is missing from the report entirely")
+        elif 100.0 * covered / total < floor:
+            # Spell out the budget: "below 75%" is far less actionable than the count of misses
+            # that would have been allowed, which is what tells you how far off the change is.
+            allowed = int(total * (100.0 - floor) / 100.0)
+            problems.append(
+                f"{name.lower()} coverage is {pct(covered, total)}, below the {floor:g}% floor — "
+                f"{total - covered} of {total} missed, and the floor allows {allowed}"
+            )
+    return problems
 
 
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     sources = DEFAULT_SOURCES
+    floors = {}
     for arg in sys.argv[1:]:
         if arg.startswith("--sources="):
             sources = arg.split("=", 1)[1]
+        elif arg.startswith(MIN_PREFIX):
+            name, _, value = arg[len(MIN_PREFIX):].partition("=")
+            metric = name.upper()
+            # A typo in a floor's name would otherwise disable that gate silently, which is the
+            # one failure mode a coverage gate must not have.
+            if metric not in COUNTERS:
+                sys.exit(f"{arg}: no such counter; expected one of "
+                         f"{', '.join(c.lower() for c in COUNTERS)}")
+            try:
+                floors[metric] = float(value)
+            except ValueError:
+                sys.exit(f"{arg}: wants a percentage, got {value!r}")
     if not args:
-        sys.exit("usage: coverage-summary.py <report.xml> [label] [--sources=DIR]")
+        sys.exit("usage: coverage-summary.py <report.xml> [label] [--sources=DIR] "
+                 "[--min-instruction=N ...]")
     path = args[0]
     label = args[1] if len(args) > 1 else os.path.basename(path)
 
@@ -118,7 +183,7 @@ def main():
     root = ET.parse(path).getroot()
     mine, theirs, packages = tally(root, authored(sources))
 
-    lines = [f"### coverage — {label}", ""] + table(mine)
+    lines = [f"### coverage — {label}", ""] + table(mine, floors)
 
     lines += ["", "| package | instructions | lines |", "| --- | ---: | ---: |"]
     # Biggest packages first: a 0% package of twelve instructions is not the interesting one.
@@ -137,6 +202,10 @@ def main():
             "compiler inlined into our packages.",
         ]
 
+    problems = breaches(mine, floors)
+    if problems:
+        lines += ["", f"**Below the floor on {label}:**"] + [f"- {p}" for p in problems]
+
     report = "\n".join(lines)
     print(report)
 
@@ -145,6 +214,10 @@ def main():
         with open(summary, "a", encoding="utf-8") as handle:
             handle.write(report + "\n\n")
 
+    for problem in problems:
+        print(f"::error::coverage ({label}): {problem}", file=sys.stderr)
+    return 1 if problems else 0
+
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

@@ -109,12 +109,20 @@ jobs:
           python3 .github/scripts/r8-keep-check.py
           app/build/outputs/mapping/${{ matrix.flavor }}Release
 
+      # Also the gate. The floors sit just under where the suite actually is — instruction 96.4,
+      # line 99.6, branch 75.7 — so they catch a regression without tracking noise. Branch is low
+      # because the Compose compiler emits a $changed bitmask branch per composable parameter and
+      # nothing drives those; it is a different measurement, not a lenient one. See the script's
+      # docstring before moving any of these.
       - name: Report coverage (${{ matrix.flavor }})
         if: always()
         run: >
           python3 .github/scripts/coverage-summary.py
           app/build/reports/coverage/test/${{ matrix.flavor }}/releaseTest/report.xml
           ${{ matrix.flavor }}
+          --min-instruction=95
+          --min-line=99
+          --min-branch=75
 
       - name: Build Play bundle
         if: matrix.flavor == 'play'
