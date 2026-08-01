@@ -78,6 +78,13 @@
       "sourceType": "github",
       "skillPath": "skills/gplay-vitals-monitoring/SKILL.md",
       "computedHash": "914d9f930751a5f4168c36b7d234e86e341f0fe00a7331f7f95843e38cc5a70d"
+    },
+    "r8-analyzer": {
+      "source": "android/skills",
+      "ref": "main",
+      "sourceType": "github",
+      "skillPath": "performance/r8-analyzer/SKILL.md",
+      "computedHash": "9d0aae2891e38a0ac9f6912b92a526bfcc487df5f50c6301b329e2c42d81095e"
     }
   }
 }
