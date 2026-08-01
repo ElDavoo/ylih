@@ -31,6 +31,14 @@ The manifest components are cheaper insurance. AAPT2 generates keep rules for an
 the merged manifest, so they should never move; they are listed because "should never" is worth
 asserting when the cost is one line.
 
+The third invariant is about the *resource* shrinker, which runs beside R8 and has the same blind
+spot. A resource nothing references from code is kept only if some other resource or the manifest
+points at it, and the home-screen widgets are a chain of exactly that: the manifest names
+`res/xml/widget_*_info.xml`, which names the preview PNG and the description string, and none of
+it appears in any `R.` field. Break a link and the build still succeeds — the widget picker just
+shows a blank tile. `resources.txt` records the shrinker's own verdict per resource, so the check
+is to read it back.
+
 Not checked here, because it does not depend on R8: the JSON export keys. kotlinx.serialization
 bakes descriptor element names into the generated serializer as string constants at compile time,
 so obfuscating the Kotlin properties cannot move them — verified by finding `formatVersion`,
@@ -71,9 +79,30 @@ KEEP_BY_NAME = {
         "named in the merged manifest, same route as LifetimeWidgetReceiver",
 }
 
+# Resource -> why nothing in code points at it, so the shrinker's verdict is the only evidence.
+KEEP_RESOURCES = {
+    "xml:widget_lifetime_info":
+        "the <receiver>'s android.appwidget.provider meta-data; without it the launcher has no "
+        "widget to offer at all",
+    "xml:widget_activity_info": "same, for the activity widget",
+    "xml:widget_chart_info": "same, for the chart widget",
+    "drawable:widget_preview_lifetime":
+        "android:previewImage, named only from res/xml — a stripped preview is a blank tile in "
+        "the widget picker rather than a crash",
+    "drawable:widget_preview_activity": "same, for the activity widget",
+    "drawable:widget_preview_chart": "same, for the chart widget",
+    "string:widget_lifetime_description":
+        "android:description, named only from res/xml, so the picker has nothing to say about it",
+    "string:widget_activity_description": "same, for the activity widget",
+    "string:widget_chart_description": "same, for the chart widget",
+}
+
 # A class line in mapping.txt: `<original> -> <obfuscated>:` at column 0. Members are indented,
 # so anchoring at the start is what keeps this from matching a method whose name contains one.
 CLASS_LINE = re.compile(r"^(\S+) -> (\S+):$", re.M)
+
+# A resources.txt line: `<type>:<name>:<id> reachable from …`, or `… is not reachable.`
+RESOURCE_LINE = re.compile(r"^(\w+:[\w.]+):\d+ (reachable from|is not reachable)", re.M)
 
 
 def main() -> int:
@@ -101,16 +130,35 @@ def main() -> int:
         elif actual != name:
             problems.append(f"{name} was renamed to {actual} — {why}")
 
+    resources = mapping_dir / "resources.txt"
+    if not resources.is_file():
+        problems.append(f"{resources} does not exist — resource shrinking is off, or AGP stopped "
+                        f"writing the shrinker's report where this expects it")
+    else:
+        verdicts = dict(RESOURCE_LINE.findall(resources.read_text(encoding="utf-8")))
+        if not verdicts:
+            problems.append(f"{resources} parsed to zero resources — the format has changed and "
+                            f"this check is no longer reading anything")
+        for name, why in sorted(KEEP_RESOURCES.items()):
+            verdict = verdicts.get(name)
+            if verdict is None:
+                problems.append(f"{name} is absent from resources.txt, so it is not in the build "
+                                f"at all — {why}")
+            elif verdict != "reachable from":
+                problems.append(f"{name} was shrunk away as unreachable — {why}")
+
     for problem in problems:
         print(f"::error file=app/build.gradle.kts::{problem}", file=sys.stderr)
 
     if problems:
         print(f"\n{len(problems)} R8 keep problem(s); a keep rule in app/src/main/keepRules/ "
-              f"is the fix", file=sys.stderr)
+              f"is the fix for a class, and a tools:keep on the referring resource for a resource",
+              file=sys.stderr)
         return 1
 
-    print(f"R8 ran ({len(renames)} classes in the output) and all {len(KEEP_BY_NAME)} "
-          f"reflectively-reached classes kept their names")
+    print(f"R8 ran ({len(renames)} classes in the output), all {len(KEEP_BY_NAME)} "
+          f"reflectively-reached classes kept their names, and all {len(KEEP_RESOURCES)} "
+          f"resources reached only from the manifest survived shrinking")
     return 0
 
 

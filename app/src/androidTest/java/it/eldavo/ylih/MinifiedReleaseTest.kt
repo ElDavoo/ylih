@@ -3,7 +3,6 @@ package it.eldavo.ylih
 import android.content.Context
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
-import androidx.core.content.ContextCompat
 import androidx.glance.appwidget.GlanceAppWidgetReceiver
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.GrantPermissionRule
@@ -41,6 +40,7 @@ import org.junit.runner.RunWith
  * - Room loads `YlihDatabase_Impl` reflectively, from a name it derives from the @Database class.
  * - WorkManager instantiates workers from a class name it stored in its own database.
  * - kotlinx.serialization maps JSON keys through a generated descriptor.
+ * - A launcher instantiates a home-screen widget's receiver from the name in the manifest.
  * - Compose and the activity are simply the largest thing R8 rewrites in this app.
  *
  * `.github/scripts/r8-keep-check.py` asserts the same classes survive by reading R8's mapping
@@ -145,13 +145,15 @@ class MinifiedReleaseTest {
      * instantiating every receiver the manifest names and asking each which `GlanceAppWidget` it
      * hosts. Neither route is a symbol the compiler can check.
      *
-     * The resources are the other half, and the half a keep rule would not cover: `previewImage`
-     * and `description` are referenced only from `res/xml/widget_*_info.xml`, which is exactly the
-     * shape of reference the *resource* shrinker is free to decide nothing uses. A stripped
-     * preview is not a crash — it is a blank tile in the widget picker.
+     * Only the classes are checked here. The widgets' resources are reached by name too —
+     * `previewImage` and `description` are named only from `res/xml/widget_*_info.xml` — but a
+     * test APK cannot ask about them: `R$drawable` is inlined away in the app it is testing, so
+     * naming a resource from here is a `ClassNotFoundException` rather than an assertion.
+     * `.github/scripts/r8-keep-check.py` reads the shrinker's own verdict on them instead, which
+     * also means it runs on both flavors without an emulator.
      */
     @Test
-    fun theWidgetsAreStillReachableByNameAndKeptTheirResources() {
+    fun theWidgetReceiversAreStillReachableByName() {
         val hosted = mapOf(
             "it.eldavo.ylih.widget.LifetimeWidgetReceiver" to LifetimeWidget::class.java,
             "it.eldavo.ylih.widget.ActivityWidgetReceiver" to ActivityWidget::class.java,
@@ -164,18 +166,6 @@ class MinifiedReleaseTest {
                 receiver is GlanceAppWidgetReceiver,
             )
             assertEquals(widget, (receiver as GlanceAppWidgetReceiver).glanceAppWidget.javaClass)
-        }
-
-        for (preview in listOf(
-            R.drawable.widget_preview_lifetime,
-            R.drawable.widget_preview_activity,
-            R.drawable.widget_preview_chart,
-        )) {
-            assertNotNull("the widget picker preview was shrunk away", ContextCompat.getDrawable(context, preview))
-        }
-        // Throws Resources.NotFoundException if the shrinker decided nothing pointed at it.
-        for (info in listOf(R.xml.widget_lifetime_info, R.xml.widget_activity_info, R.xml.widget_chart_info)) {
-            context.resources.getXml(info).close()
         }
     }
 
