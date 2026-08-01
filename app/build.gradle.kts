@@ -139,6 +139,18 @@ android {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+
+        jniLibs {
+            // This app writes no native code, but DataStore brings a .so per ABI. AGP's
+            // stripDebugSymbols runs the NDK's `strip` over it *if the build machine has an NDK*
+            // and silently copies it through unstripped if not, so the APK depends on something
+            // no source tree records: the release runner has an NDK, F-Droid's buildserver and
+            // this dev shell do not, and the file differs by ~2.5 KB per ABI between them.
+            // Reproducibility is the point (docs/fdroid.md §6), so pick the answer every machine
+            // can give — keep the symbols — at a cost of ~10 KB. The other library the app ships,
+            // libandroidx.graphics.path.so, arrives already stripped and is unaffected either way.
+            keepDebugSymbols += "**/libdatastore_shared_counter.so"
+        }
     }
 
     bundle {

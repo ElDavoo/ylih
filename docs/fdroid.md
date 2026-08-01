@@ -235,13 +235,26 @@ Three things do vary and are worth knowing before a verification failure sends y
 - **Native libraries, which this app has despite writing no native code.** The APK ships eight
   `.so` files pulled in by dependencies: `libandroidx.graphics.path.so` and
   `libdatastore_shared_counter.so`, one of each per ABI. AGP's `stripDebugSymbols` strips them
-  with the NDK's `strip` — *if the build machine has an NDK*, and silently copies them through
-  unstripped if it does not. `libandroidx.graphics.path.so` arrives already stripped and is
-  identical either way; `libdatastore_shared_counter.so` does not, and grows by about 2.5 KB per
-  ABI on a machine with no NDK. Two builds on one machine agree, which is why this went unnoticed;
-  a GitHub runner and a machine without an NDK do not. `packaging { jniLibs { keepDebugSymbols } }`
-  for that one library would make the answer the same everywhere at a cost of ~10 KB, which is
-  the fix if F-Droid's buildserver turns out to disagree with the release runner.
+  with the NDK's `strip` — *if the build machine has an NDK it can use*, and silently copies them
+  through unstripped if it does not. `libandroidx.graphics.path.so` arrives already stripped and
+  is identical either way; `libdatastore_shared_counter.so` does not.
+
+  The gap is measured, not estimated: unzip the published v1.0.0 APK, which the release runner
+  built, and `libdatastore_shared_counter.so` is 7784 / 5916 / 6124 / 7336 bytes across
+  arm64-v8a, armeabi-v7a, x86 and x86_64. Build the same tag in the nix dev shell, which has no
+  NDK, and it is 10360 / 8432 / 7976 / 9424 — the sizes the AAR ships, copied through untouched.
+  8.8 KB over the four ABIs. Two builds on one machine agree, which is why this went unnoticed,
+  and why CI does not catch it either: both sides of the `fdroid build` comparison in section 7
+  are GitHub runners, so both are stripped and both match.
+
+  `app/build.gradle.kts` therefore keeps that library's symbols
+  (`packaging { jniLibs { keepDebugSymbols += "**/libdatastore_shared_counter.so" } }`), which
+  picks the one answer every machine can give — the unstripped file — for ~10 KB. **The fix is
+  not in v1.0.0.** F-Droid builds the tag the recipe names, that tag predates this, and the
+  published v1.0.0 asset is the stripped variant, so the v1.0.0 build entry is expected to fail
+  verification on exactly these eight files. The first version F-Droid can verify is the first
+  one tagged after the fix; until then, `Binaries:` describes an APK that reproduces only on a
+  machine whose NDK situation matches the release runner's.
 
 - AGP embeds `META-INF/version-control-info.textproto`, holding the git revision. Its
   `local_root_path` is normalised to `$PROJECT_DIR`, so it is not machine-specific, but it does
