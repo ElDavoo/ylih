@@ -27,17 +27,17 @@ Every Gradle task is flavor-qualified — there is no plain `assembleDebug`:
 ./gradlew bundlePlayRelease             # Play Console AAB
 
 # what CI runs, per flavor (matrix over classic/play)
-./gradlew lintClassicDebug createClassicDebugUnitTestCoverageReport \
+./gradlew lintClassicReleaseTest createClassicReleaseTestUnitTestCoverageReport \
           assembleClassicDebug assembleClassicRelease
 
 # a single test class or method
-./gradlew testClassicDebugUnitTest --tests '*SessionRepositoryTest'
-./gradlew testClassicDebugUnitTest --tests '*SessionRepositoryTest.a reconcile racing*'
+./gradlew testClassicReleaseTestUnitTest --tests '*SessionRepositoryTest'
+./gradlew testClassicReleaseTestUnitTest --tests '*SessionRepositoryTest.a reconcile racing*'
 
 # tests + JaCoCo report, then the same summary CI prints
-./gradlew createClassicDebugUnitTestCoverageReport
+./gradlew createClassicReleaseTestUnitTestCoverageReport
 python3 .github/scripts/coverage-summary.py \
-    app/build/reports/coverage/test/classic/debug/report.xml classic
+    app/build/reports/coverage/test/classic/releaseTest/report.xml classic
 ```
 
 Debug builds carry `applicationIdSuffix = ".debug"`, so a debug and a release install coexist.
@@ -45,9 +45,11 @@ Debug builds carry `applicationIdSuffix = ".debug"`, so a debug and a release in
 ### Lint is a hard gate
 
 `checkAllWarnings`, `warningsAsErrors` and `abortOnError` are all on, and `checkTestSources`
-extends that to `src/test`. There is no baseline file and there should not be one: a baseline
-hides a finding instead of deciding about it. So a warning — including the checks lint ships
-disabled — fails the build exactly like an error.
+extends that to `src/test` and `src/androidTest`. Both belong to the `releaseTest` build type, so
+`lint<Flavor>ReleaseTest` is the task that sees them — `lint<Flavor>Debug` still runs but has no
+test sources to check. There is no baseline file and there should not be one: a baseline hides a
+finding instead of deciding about it. So a warning — including the checks lint ships disabled —
+fails the build exactly like an error.
 
 That means the only two ways to land a finding are to fix it or to turn the check off in
 `app/lint.xml` **with a reason**. The checks currently off are the ones that cannot hold here:
@@ -69,10 +71,10 @@ Roborazzi listing captures were re-recorded and eyeballed against before the swi
 
 ### Coverage
 
-`enableUnitTestCoverage = true` on the debug build type gives AGP a
-`create<Variant>DebugUnitTestCoverageReport` task; the report lands in
-`app/build/reports/coverage/test/<flavor>/debug/` and CI uploads it with the other reports and
-prints the summary table into the job summary.
+`enableUnitTestCoverage = true` on the `releaseTest` build type — the one the unit tests run on,
+see Testing — gives AGP a `create<Variant>UnitTestCoverageReport` task; the report lands in
+`app/build/reports/coverage/test/<flavor>/releaseTest/` and CI uploads it with the other reports
+and prints the summary table into the job summary.
 
 The one non-obvious bit is in `testOptions.unitTests.all`: Robolectric loads the classes under
 test through its own sandbox classloader, so they reach the JaCoCo agent with no code-source
@@ -213,14 +215,14 @@ adding `BuildConfig.FLAVOR` checks around the codebase.
 ## Store listing assets
 
 `app/src/test/java/it/eldavo/ylih/listing/` generates the Play Console images with Roborazzi over
-Robolectric native graphics — `./gradlew recordRoborazziPlayDebug`, output in
+Robolectric native graphics — `./gradlew recordRoborazziPlayReleaseTest`, output in
 `app/build/outputs/play-listing/`. Roborazzi captures are inert outside a record task, so these
 classes cost one composition in the ordinary unit-test run and write nothing.
 
 These are *listing assets*, not golden-image tests: nothing is compared, and the only thing
 committed is `fastlane/metadata/android/en-US/images/` — F-Droid builds from a tag on this
 repository instead of taking an upload, so an image outside the repository does not exist for it.
-Those seven files are recorded from the **classic** flavor (`recordRoborazziClassicDebug`), since
+Those seven files are recorded from the **classic** flavor (`recordRoborazziClassicReleaseTest`), since
 that is the build F-Droid ships and its settings screen differs from the Play one; `docs/fdroid.md`
 has the copy commands. Everything else stays generated-only.
 `DemoData.kt` writes through the DAOs rather than `SessionRepository`, deliberately — the
@@ -261,24 +263,23 @@ These are easy to break and the failures are confusing:
   code *and* resource shrinking and supplies the platform keep rules — so there is no
   `proguardFiles` call and no `proguard-rules.pro`. Keep rules, if any are ever needed, go in
   `app/src/main/keepRules/*.keep`; today the app authors none and every rule in the build comes
-  from AGP's defaults or a library's consumer rules. The thing to remember is that **nothing in
-  the test suite exercises minified code** — unit tests run on the JVM against unshrunk classes,
-  so an R8 regression reaches a device, not a red build. Anything reached only reflectively needs
-  a keep rule and a manual check of a release install.
+  from AGP's defaults or a library's consumer rules. Unit tests run on the JVM against unshrunk
+  classes, so they never execute what R8 produced; two things cover that gap instead, and both
+  are described under Testing.
 
-  `.github/scripts/r8-keep-check.py` is what stands in for the missing test. It reads the
-  `mapping.txt` an `assemble<Variant>Release` writes and asserts R8 ran at all and that the
-  classes reached only by name — `HeartbeatWorker` above all, whose name WorkManager persists in
-  its own database — survived with their names intact. CI runs it per flavor; run it locally with
+  `.github/scripts/r8-keep-check.py` is the cheap half. It reads the `mapping.txt` an
+  `assemble<Variant>Release` writes and asserts R8 ran at all and that the classes reached only
+  by name — `HeartbeatWorker` above all, whose name WorkManager persists in its own database —
+  survived with their names intact. No device, so CI runs it per flavor on every push:
 
   ```sh
   ./gradlew assembleClassicRelease
   python3 .github/scripts/r8-keep-check.py app/build/outputs/mapping/classicRelease
   ```
 
-  It is a static check over R8's output, not a running app: it proves nothing was stripped or
-  renamed, and nothing about whether the optimized build actually works. Only an install does
-  that.
+  `app/src/androidTest` is the expensive half: it installs the minified APK on an emulator and
+  runs it. The script proves nothing was stripped or renamed; only that proves what survived
+  still works.
 
 ## Room migrations
 
@@ -288,11 +289,39 @@ crash on open — and this app's entire premise is that history is never lost.
 
 ## Testing
 
-Unit tests only, run under Robolectric (`@Config(sdk = [...])`); there is no `androidTest` source
-set despite the runner being configured. `MainActivityTest` is a startup smoke test that boots the
-Application, opens the real Room database and drives `MainActivity` to RESUMED. Repository tests
-use an in-memory database with an injected clock (`SessionRepository(db) { clockNow }`), so time
-is moved by assignment rather than by sleeping.
+Almost everything is a unit test run under Robolectric (`@Config(sdk = [...])`).
+`MainActivityTest` is a startup smoke test that boots the Application, opens the real Room
+database and drives `MainActivity` to RESUMED. Repository tests use an in-memory database with an
+injected clock (`SessionRepository(db) { clockNow }`), so time is moved by assignment rather than
+by sleeping.
+
+**Both test source sets live on the `releaseTest` build type**, which is why every test task is
+`…ReleaseTest…` rather than `…Debug…`. That is `testBuildType`, and it is set for the sake of
+`src/androidTest`: R8 only runs for a release build, so the only way to test what R8 produced is
+to point androidTest at a minified one. AGP binds the whole test suite to that one build type, so
+`src/test` came along; nothing changes for it, since R8 never ran for unit tests either way.
+
+`releaseTest` is `initWith(release)` — same shrinking, same signing — plus
+`releaseTestImplementation(ui-test-manifest)`. That dependency is the whole reason it is a build
+type of its own rather than plain `release`: `createAndroidComposeRule<ComponentActivity>` needs
+the activity ui-test-manifest contributes to the merged manifest, and on `release` its absence
+fails 197 unit tests with "Unable to resolve activity". Satisfying it there would mean shipping a
+test activity to users.
+
+`app/src/androidTest/MinifiedReleaseTest.kt` is the only place the shipped code is executed. It
+runs on an emulator in CI and covers what a name rather than a symbol reaches — Room's
+`_Impl` lookup, WorkManager instantiating `HeartbeatWorker` from a stored class name,
+serialization's generated descriptors, and the app starting at all. Its `-dontwarn` rules live in
+`app/src/androidTest/keepRules/`; nothing there touches the shipped APK. Running it locally needs
+a device and the four `ANDROID_SIGNING_*` variables, because an unsigned APK will not install:
+
+```sh
+./gradlew connectedClassicReleaseTestAndroidTest
+```
+
+The static counterpart is `.github/scripts/r8-keep-check.py`, which reads R8's mapping file and
+needs no device. Between them: the script proves nothing was stripped or renamed on every push,
+the emulator proves what survived still works.
 
 ## Style
 

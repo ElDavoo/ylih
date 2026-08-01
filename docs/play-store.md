@@ -7,7 +7,7 @@ Everything the Play Console asks for, prepared in advance. The listing text live
 
 ```sh
 ./gradlew bundlePlayRelease            # app/build/outputs/bundle/playRelease/*.aab
-./gradlew recordRoborazziPlayDebug     # app/build/outputs/play-listing/playDebug/*.png
+./gradlew recordRoborazziPlayReleaseTest     # app/build/outputs/play-listing/playReleaseTest/*.png
 ```
 
 Tagging a release runs both in CI (`.github/workflows/android-release.yml`) and attaches the
@@ -176,7 +176,7 @@ connectivity state and cannot transmit anything; `INTERNET` is still absent, so 
 ## 9. Pre-flight checklist
 
 - [ ] `versionCode` incremented; `changelogs/<versionCode>.txt` exists
-- [ ] `./gradlew lintPlayDebug testPlayDebugUnitTest bundlePlayRelease` passes
+- [ ] `./gradlew lintPlayReleaseTest testPlayReleaseTestUnitTest bundlePlayRelease` passes
 - [ ] AAB is signed with the upload key, not the debug key
 - [ ] Screenshots re-recorded for this version and eyeballed — they contain live demo data, so a
       UI regression shows up as a bad image rather than a failing test

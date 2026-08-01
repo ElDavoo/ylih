@@ -109,7 +109,7 @@ Gradle wrapper handles the rest.
 
 ```sh
 # what CI runs, per flavor
-./gradlew lintClassicDebug testClassicDebugUnitTest assembleClassicDebug assembleClassicRelease
+./gradlew lintClassicReleaseTest testClassicReleaseTestUnitTest assembleClassicDebug assembleClassicRelease
 ```
 
 Note that AGP 9 compiles Kotlin itself — the standalone `kotlin-android` plugin is deliberately
@@ -170,8 +170,8 @@ one `StoreScreenshots` subclass and one `fastlane/metadata/android/<locale>/` di
 The store assets are generated, not drawn by hand:
 
 ```sh
-./gradlew recordRoborazziPlayDebug       # app/build/outputs/play-listing/playDebug/
-./gradlew recordRoborazziClassicDebug    # the same, for the flavor F-Droid ships
+./gradlew recordRoborazziPlayReleaseTest       # app/build/outputs/play-listing/playReleaseTest/
+./gradlew recordRoborazziClassicReleaseTest    # the same, for the flavor F-Droid ships
 ```
 
 That renders the five phone screenshots, the 512×512 icon and the 1024×500 feature graphic on the

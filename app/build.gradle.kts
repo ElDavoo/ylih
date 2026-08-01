@@ -74,9 +74,6 @@ android {
             isMinifyEnabled = false
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
-            // JaCoCo-instruments the unit tests, which is what gives AGP a
-            // create<Variant>UnitTestCoverageReport task to hang the coverage report off.
-            enableUnitTestCoverage = true
         }
 
         release {
@@ -94,7 +91,36 @@ android {
             }
             signingConfig = releaseSigningConfig
         }
+
+        // Everything `release` is, plus the one thing a test run needs and a shipped build must
+        // not have. R8 is only worth testing if the tests run against what R8 produced, and
+        // `testBuildType` is the only way to point androidTest at a minified build.
+        //
+        // Why not point it straight at `release`: AGP binds the *whole* test suite to
+        // testBuildType, unit tests included, and the Compose tests use
+        // createAndroidComposeRule<ComponentActivity> — which needs the activity that
+        // ui-test-manifest contributes to the merged manifest. Against `release` that fails 197
+        // unit tests with "Unable to resolve activity", and the only way to satisfy it there
+        // would be shipping a test activity to users. A build type of its own takes the
+        // dependency (see releaseTestImplementation below) without the shipped APK seeing it.
+        create("releaseTest") {
+            // Minification, resource shrinking and signing all come from release, so what the
+            // tests install differs from what ships only by the test manifest entry.
+            initWith(getByName("release"))
+            // Nothing here has library modules today, but a build type with no match in one is
+            // the kind of thing that fails confusingly later.
+            matchingFallbacks += "release"
+            // The unit tests live on this build type now, so this is where JaCoCo has to
+            // instrument them — it is what gives AGP a create<Variant>UnitTestCoverageReport
+            // task to hang the coverage report off.
+            enableUnitTestCoverage = true
+        }
     }
+
+    // Both test source sets move here: src/androidTest, which is the point — it installs the
+    // minified APK on a device — and src/test, which AGP does not let us leave behind. R8 never
+    // runs for unit tests either way, so for them this is a rename rather than a change.
+    testBuildType = "releaseTest"
 
     buildFeatures {
         compose = true
@@ -268,6 +294,19 @@ dependencies {
     testImplementation(libs.roborazzi.compose)
     testImplementation(libs.roborazzi.junit.rule)
     // createAndroidComposeRule needs an activity to launch, and ui-test-manifest is what
-    // contributes ComponentActivity to the debug manifest.
-    debugImplementation(libs.androidx.compose.ui.test.manifest)
+    // contributes ComponentActivity to the merged manifest. Scoped to releaseTest — the build
+    // type the unit tests run on — precisely so it cannot reach the shipped release APK.
+    "releaseTestImplementation"(libs.androidx.compose.ui.test.manifest)
+
+    // The instrumented suite. Deliberately thin: it runs on an emulator against the minified
+    // APK, so it holds only what a Robolectric test cannot answer. Room, coroutines and the app's
+    // own classes come from the variant under test — AGP minifies this APK with the app's mapping
+    // applied, which is what lets these tests call app code by name at all.
+    androidTestImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.core)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.androidx.test.runner)
+    // GrantPermissionRule: launching MainActivity on API 33+ would otherwise race a permission
+    // dialog, and a dialog on top is the difference between RESUMED and not.
+    androidTestImplementation(libs.androidx.test.rules)
 }

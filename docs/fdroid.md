@@ -157,12 +157,12 @@ They are regenerated from the **classic** flavor, since that is the build F-Droi
 settings screen differs from the Play one:
 
 ```sh
-./gradlew recordRoborazziClassicDebug
-cp app/build/outputs/play-listing/classicDebug/en-US/*.png \
+./gradlew recordRoborazziClassicReleaseTest
+cp app/build/outputs/play-listing/classicReleaseTest/en-US/*.png \
    fastlane/metadata/android/en-US/images/phoneScreenshots/
-cp app/build/outputs/play-listing/classicDebug/icon-512.png \
+cp app/build/outputs/play-listing/classicReleaseTest/icon-512.png \
    fastlane/metadata/android/en-US/images/icon.png
-cp app/build/outputs/play-listing/classicDebug/feature-graphic-1024x500.png \
+cp app/build/outputs/play-listing/classicReleaseTest/feature-graphic-1024x500.png \
    fastlane/metadata/android/en-US/images/featureGraphic.png
 ```
 
@@ -345,9 +345,9 @@ appear.
 
 - [ ] `versionCode` bumped; `en-US/changelogs/<versionCode>.txt` written and under 500 chars
 - [ ] `python3 .github/scripts/listing-metadata-check.py fastlane/metadata/android <versionCode>`
-- [ ] Listing images re-recorded from `recordRoborazziClassicDebug` and eyeballed — they contain
+- [ ] Listing images re-recorded from `recordRoborazziClassicReleaseTest` and eyeballed — they contain
       live demo data, so a UI regression shows up as a bad image rather than a failing test
-- [ ] `./gradlew lintClassicDebug testClassicDebugUnitTest assembleClassicRelease` passes
+- [ ] `./gradlew lintClassicReleaseTest testClassicReleaseTestUnitTest assembleClassicRelease` passes
 - [ ] The release APK really is `app-classic-release-unsigned.apk` when no keystore is configured
 - [ ] Tag pushed, matching `^v[0-9.]+$` and equal to `versionName`
 - [ ] `metadata/it.eldavo.ylih.yml` updated with the new build entry and the tag as `commit:`

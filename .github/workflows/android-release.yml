@@ -104,7 +104,7 @@ jobs:
       # no emulator involved. Generated from the tagged commit so the store listing can never
       # show a version other than the one being released. See docs/play-store.md.
       - name: Generate Play listing assets
-        run: ./gradlew --no-daemon --stacktrace recordRoborazziPlayDebug
+        run: ./gradlew --no-daemon --stacktrace recordRoborazziPlayReleaseTest
 
       - name: Upload Play listing assets
         uses: actions/upload-artifact@v7

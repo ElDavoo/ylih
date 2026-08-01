@@ -1,0 +1,9 @@
+# Keep rules for the instrumented test APK only — testBuildType = "release" means R8 processes
+# it too, and androidx.test's classes carry Error Prone annotations whose classes are not on any
+# runtime classpath. They are compile-time-only annotations, so nothing looks for them at run
+# time and the warning is the whole of the problem.
+#
+# This suppresses warnings; it does not keep anything. Nothing here applies to the app APK — a
+# keep rule that weakened the shipped build would defeat the point of testing the shipped build.
+-dontwarn com.google.errorprone.annotations.CanIgnoreReturnValue
+-dontwarn com.google.errorprone.annotations.MustBeClosed
