@@ -41,17 +41,23 @@
 # the sake of a screenshot helper the tests never use is the more expensive of the two mistakes.
 -keep class androidx.concurrent.futures.** { *; }
 
-# 3. The three app symbols MinifiedReleaseTest names that nothing in the app itself reaches, so
-#    R8 is right to delete them and the test is the only thing that misses them:
-#      - Clock is a fun interface the app only ever passes Clock.Wall to, so R8 devirtualises it
-#        away; the test injects a fake to move time by assignment.
-#      - the DAO interfaces are each implemented once, so R8 merges them into their _Impl; the
-#        test reads sessions back through sessionDao().
-#      - YlihDatabase.Companion holds the single call to Room.databaseBuilder and is inlined into
-#        its caller; the test opens the real database through it.
-#    Keeping them changes how three data-layer types are shrunk in the build under test and
-#    nothing about Room's generated code, the worker, the serializers or Compose — the four
-#    things MinifiedReleaseTest actually asserts on.
--keep class it.eldavo.ylih.data.Clock { *; }
--keep interface it.eldavo.ylih.data.SessionDao { *; }
--keep class it.eldavo.ylih.data.YlihDatabase$Companion { *; }
+# 3. The app API the tests call. `-applymapping` renames the test APK's references; it cannot
+#    reshape them, so any *optimisation* R8 applies to a method the tests call breaks the call
+#    site even when the class survives. Both halves of that were observed here:
+#      - deleted outright — Clock is a fun interface the app only ever hands Clock.Wall, the DAO
+#        interfaces are each implemented once and get merged into their _Impl, and
+#        YlihDatabase.Companion holds a single call and is inlined into it. The mapping file says
+#        so in as many words: YlihDatabase$Companion -> R8$$REMOVED$$CLASS$$508.
+#      - reshaped — JsonBackup.export survived and was staticised, so the test APK's
+#        invoke-virtual found nothing: "No virtual method a(YlihDatabase, long, Continuation)".
+#
+#    allowobfuscation rather than a plain -keep, deliberately. Renaming is the part of R8 these
+#    tests exist to check — it is what breaks a lookup that goes through a string — so the tested
+#    build still renames these classes and the mapping still has to carry the test APK onto them.
+#    What is given up is shrinking and optimisation across two packages of the data layer, which
+#    is not what any of the four tests assert on: Room's generated _Impl still has to survive
+#    under its own name (Room's consumer keep rules, not this file, are what hold it), the worker
+#    still has to be reachable by class name, the serializers still have to carry their generated
+#    descriptors, and Compose still has to start.
+-keep,allowobfuscation class it.eldavo.ylih.data.** { *; }
+-keep,allowobfuscation class it.eldavo.ylih.export.** { *; }

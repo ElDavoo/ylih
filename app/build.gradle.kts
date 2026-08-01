@@ -1,5 +1,6 @@
 @file:OptIn(com.github.takahirom.roborazzi.ExperimentalRoborazziApi::class)
 
+import com.android.build.gradle.internal.tasks.L8DexDesugarLibTask
 import org.gradle.testing.jacoco.plugins.JacocoTaskExtension
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -247,6 +248,27 @@ roborazzi {
 val kspTasks = tasks.matching { it.name.startsWith("ksp") && it.name.endsWith("Kotlin") }
 tasks.matching { it.name.startsWith("lint") }.configureEach {
     dependsOn(kspTasks)
+}
+
+// The desugared library (`j$.**`, what backports java.time to the minSdk 23 floor) is dexed by
+// its own L8 run per variant, and AGP tells L8 to leave names alone only when that variant is
+// unminified. releaseTest and the androidTest APK beside it are both minified, so each L8 run
+// shrank and renamed the library independently and the two APKs ended up defining 472 of the
+// same class names as different classes. Instrumentation loads both dexes into one classloader,
+// so the app's own code then resolves j$.util.stream.a to whichever copy came first:
+//
+//   java.lang.VerifyError: Verifier rejected class j$.util.concurrent.ThreadLocalRandom:
+//     'this' argument 'Uninitialized Reference: j$.util.stream.w0'
+//     not instance of 'Reference: j$.util.stream.a'
+//
+// Pinning both runs to the unshrunk, unrenamed library makes the two copies identical, which is
+// what every unminified build has always relied on. Matched by task name so it reaches only the
+// build type the tests install: l8DexDesugarLibClassicRelease and its play twin keep AGP's
+// default, and the shipped APKs are untouched.
+tasks.withType<L8DexDesugarLibTask>().configureEach {
+    if (name.contains("ReleaseTest")) {
+        keepRulesConfigurations.addAll("-dontshrink", "-dontobfuscate", "-dontoptimize")
+    }
 }
 
 dependencies {
