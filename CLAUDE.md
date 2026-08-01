@@ -77,17 +77,17 @@ see Testing — gives AGP a `create<Variant>UnitTestCoverageReport` task; the re
 and prints the summary table into the job summary.
 
 **It is a gate, not just a report.** CI passes `--min-instruction=95 --min-line=99
---min-branch=75` and the job fails below any of them. The floors sit just under where the suite
-actually is (96.4 / 99.6 / 75.7 on classic), so they catch a regression rather than track noise;
-the failure message prints the miss budget, not just the percentage.
+--min-branch=70` and the job fails below any of them. Instruction and line sit just under where
+the suite actually is (96.4 and 99.6 on classic), so they catch a regression rather than track
+noise; the failure message prints the miss budget, not just the percentage.
 
-Two things to know before moving those numbers. Branch at 75 is not a lenient version of 95 — it
-measures something different, for the reason two paragraphs down, and raising it means writing
-tests for compiler-generated dispatch. It is also the tightest of the three, with roughly ten
-missed branches of headroom, so one new composable with enough parameters can breach it without
-any coverage having regressed; check what it fails *on* before adding tests to appease it. Method
-and class are ungated on purpose: at ~95% they are six classes from a 90 floor, close enough that
-ordinary work would trip them.
+Branch is gated differently and is worth understanding before moving it. The suite is at 75.7 and
+the floor is 70 — deliberately loose, because the counter does not measure what the other two do.
+For the reason two paragraphs down, it moves when a composable gains a parameter rather than when
+testing gets worse, so a floor set just under it would fail ordinary UI work as a coverage
+regression. 70 leaves about eighty missed branches of headroom, enough that a breach means
+something real. Method and class are ungated for a smaller reason: at ~95% they are six classes
+from a 90 floor, close enough that ordinary work would trip them.
 
 The one non-obvious bit is in `testOptions.unitTests.all`: Robolectric loads the classes under
 test through its own sandbox classloader, so they reach the JaCoCo agent with no code-source

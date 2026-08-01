@@ -15,17 +15,18 @@ quietly left out; AGP's coverage task has no exclusion setting, so the full repo
 has everything.
 
 `--min-<metric>=N` turns the summary into a gate: the run fails if that counter, over the authored
-code, falls below N percent. CI sets instruction 95, line 99 and branch 75, each a little under
-where the suite actually sits, so the gate catches a regression rather than tracking noise.
+code, falls below N percent. CI sets instruction 95 and line 99, each a little under where the
+suite actually sits, so the gate catches a regression rather than tracking noise.
 
-Branch is the one to understand before touching these numbers. It sits in the seventies rather
-than the nineties because the Compose compiler emits a `$changed`/default-argument bitmask branch
-for every composable parameter and no test drives those — the Compose-heavy files hold about two
-thirds of the missed branches. So 75 is not a weak version of 95; it is a different measurement,
-and raising it would mean writing tests for compiler-generated dispatch. It is also the tightest
-floor of the three: around ten missed branches of headroom, which one new composable with enough
-parameters can spend without any real regression. If it fails, check what it is failing *on*
-before adding tests to appease it.
+Branch is set differently and is the one to understand before touching these numbers. It sits at
+75.7 but is gated at 70, a deliberately loose floor, because the counter does not measure what
+the other two do: the Compose compiler emits a `$changed`/default-argument bitmask branch for
+every composable parameter and no test drives those, which is where about two thirds of the
+missed branches are. The number therefore moves when a composable gains an argument, not when
+testing gets worse — so a floor set just under it would report ordinary UI work as a coverage
+failure. 70 leaves roughly eighty missed branches of headroom, enough that a breach means
+something real. Raising it toward the other two would mean writing tests for compiler-generated
+dispatch; if it ever fails, check what it failed *on* before adding tests to appease it.
 
 Method and class are left ungated deliberately. At ~95% they sit six classes above a 90 floor,
 close enough that ordinary work trips them without coverage having actually regressed.
