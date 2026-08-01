@@ -106,6 +106,23 @@ class JsonBackupTest {
         )
     }
 
+    /**
+     * Every other assertion here decodes the export before looking at it, and decoding refills
+     * `formatVersion` from its default — so an export that never wrote the key read exactly like
+     * one that did, which is how shipping without it went unnoticed. This one reads the text.
+     */
+    @Test
+    fun `the exported document carries its format version as text`() = runTest {
+        seed(db)
+
+        val exported = JsonBackup.export(db, now)
+
+        assertTrue(
+            "export omitted formatVersion, so import() cannot tell what wrote the file: $exported",
+            exported.contains("\"formatVersion\": ${JsonBackup.FORMAT_VERSION}"),
+        )
+    }
+
     @Test
     fun `the exported document names every row exactly once`() = runTest {
         seed(db)

@@ -7,6 +7,8 @@ import it.eldavo.ylih.data.EndReason
 import it.eldavo.ylih.data.PairEntity
 import it.eldavo.ylih.data.SessionEntity
 import it.eldavo.ylih.data.YlihDatabase
+import kotlinx.serialization.EncodeDefault
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 
@@ -21,6 +23,15 @@ object JsonBackup {
 
     @Serializable
     data class Backup(
+        // The default is what lets a file written before this annotation existed still import,
+        // so it cannot go away — but a default is exactly what kotlinx.serialization omits when
+        // encoding, and omitting this one left every exported backup with no version in it at
+        // all. import()'s `formatVersion <= FORMAT_VERSION` guard then read every file as
+        // version 1 whatever wrote it, which is the one thing the field is for. Encode it
+        // always; the remaining defaults below are optional fields where absent and null mean
+        // the same thing.
+        @OptIn(ExperimentalSerializationApi::class)
+        @EncodeDefault
         val formatVersion: Int = FORMAT_VERSION,
         val exportedAt: Long,
         val devices: List<Device>,
