@@ -266,6 +266,20 @@ These are easy to break and the failures are confusing:
   so an R8 regression reaches a device, not a red build. Anything reached only reflectively needs
   a keep rule and a manual check of a release install.
 
+  `.github/scripts/r8-keep-check.py` is what stands in for the missing test. It reads the
+  `mapping.txt` an `assemble<Variant>Release` writes and asserts R8 ran at all and that the
+  classes reached only by name — `HeartbeatWorker` above all, whose name WorkManager persists in
+  its own database — survived with their names intact. CI runs it per flavor; run it locally with
+
+  ```sh
+  ./gradlew assembleClassicRelease
+  python3 .github/scripts/r8-keep-check.py app/build/outputs/mapping/classicRelease
+  ```
+
+  It is a static check over R8's output, not a running app: it proves nothing was stripped or
+  renamed, and nothing about whether the optimized build actually works. Only an install does
+  that.
+
 ## Room migrations
 
 `exportSchema = true` with schemas committed under `app/schemas/`, and the database is built with

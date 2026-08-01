@@ -96,6 +96,14 @@ jobs:
           assemble${{ matrix.variant }}Debug
           assemble${{ matrix.variant }}Release
 
+      # The release build is the only one R8 touches, and no test in the suite runs minified
+      # code — so this is the only place a stripped or renamed reflective entry point can be
+      # caught before a device finds it. Reads the mapping.txt the assemble step just wrote.
+      - name: Check R8 keep invariants (${{ matrix.flavor }})
+        run: >
+          python3 .github/scripts/r8-keep-check.py
+          app/build/outputs/mapping/${{ matrix.flavor }}Release
+
       - name: Report coverage (${{ matrix.flavor }})
         if: always()
         run: >
