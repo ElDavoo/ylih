@@ -132,6 +132,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — koptelefoonuren, lokaal bewaard en voor altijd.</string>
     <string name="settings_import_confirm_title">alle gegevens vervangen?</string>
     <string name="settings_import_confirm_body">het importeren van deze back-up verwijdert elk toestel, elke koptelefoon en elke sessie die nu is opgeslagen.</string>
+    <string name="widget_lifetime_label">ylih · totaal</string>
+    <string name="widget_lifetime_description">uren per koptelefoon, met een lopende teller op wat verbonden is</string>
+    <string name="widget_activity_label">ylih · activiteit</string>
+    <string name="widget_activity_description">de uren van alle koptelefoons samen, plus vandaag, 7 dagen en 30 dagen</string>
+    <string name="widget_chart_label">ylih · 30 dagen</string>
+    <string name="widget_chart_description">dagelijkse luisteruren over de laatste 30 dagen</string>
 
     <!-- Gedeelde acties -->
     <string name="action_save">opslaan</string>

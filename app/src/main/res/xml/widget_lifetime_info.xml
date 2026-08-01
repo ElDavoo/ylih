@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  targetCellWidth/Height, description, previewLayout and maxResizeWidth/Height all arrived in
+  API 31. Older platforms ignore them and fall back to minWidth/minHeight and previewImage, which
+  is why both sets are here — but lint's UnusedAttribute is a warning, and a warning fails this
+  build, so the element carries tools:targetApi the way the manifest's TrackingService does.
+
+  updatePeriodMillis is 0 on purpose: nothing polls. While a session is open the existing
+  15-minute heartbeat calls syncWithSystem(), which pokes the widgets, and the Chronometer covers
+  every second in between. While nothing is connected nothing changes.
+
+  minResizeHeight is above the 40dp floor the others use because this is the one widget whose
+  shortest layout is two lines: a pair's name with the live timer under it. Letting it be dragged
+  down to 40dp only buys a clipped timer. minResizeWidth matches the narrowest SizeMode.Responsive
+  bucket for the same reason, and WidgetProvidersTest is what keeps the two files agreeing.
+-->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:description="@string/widget_lifetime_description"
+    android:initialLayout="@layout/glance_default_loading_layout"
+    android:maxResizeHeight="450dp"
+    android:maxResizeWidth="320dp"
+    android:minHeight="40dp"
+    android:minResizeHeight="60dp"
+    android:minResizeWidth="250dp"
+    android:minWidth="250dp"
+    android:previewImage="@drawable/widget_preview_lifetime"
+    android:resizeMode="horizontal|vertical"
+    android:targetCellHeight="2"
+    android:targetCellWidth="4"
+    android:updatePeriodMillis="0"
+    android:widgetCategory="home_screen"
+    tools:targetApi="31" />

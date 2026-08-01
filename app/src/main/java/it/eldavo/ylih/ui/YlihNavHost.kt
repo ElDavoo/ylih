@@ -46,6 +46,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.emptyFlow
 
 private data class Destination(
     val route: String,
@@ -78,6 +80,12 @@ fun YlihNavHost(
      * every button that navigates there builds it from a Long.
      */
     navController: NavHostController = rememberNavController(),
+    /**
+     * Pair ids tapped on a home-screen widget. The activity hoists this for the same reason it
+     * hoists [navController]: the widget knows which pair it means, and this is the seam that
+     * carries that through without the NavHost having to read an Intent.
+     */
+    openPair: Flow<Long> = emptyFlow(),
 ) {
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = backStackEntry?.destination?.route
@@ -120,6 +128,14 @@ fun YlihNavHost(
 
     LaunchedEffect(Unit) {
         viewModel.messages.collect { snackbarHostState.showSnackbar(it) }
+    }
+
+    LaunchedEffect(openPair) {
+        openPair.collect { pairId ->
+            // launchSingleTop so tapping the same widget row twice does not stack two copies of
+            // the same detail screen behind the back button.
+            navController.navigate("pair/$pairId") { launchSingleTop = true }
+        }
     }
 
     Scaffold(

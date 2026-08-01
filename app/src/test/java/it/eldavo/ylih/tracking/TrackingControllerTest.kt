@@ -61,6 +61,9 @@ class TrackingControllerTest {
     private val hour = 3_600_000L
     private var clockNow = 1_800_000_000_000L
 
+    /** Stands in for the Glance `updateAll` the app wires in here. */
+    private var dataChanges = 0
+
     private val budsMac = "XX:XX:XX:XX:5E:C2"
     private val budsName = "ACCENTUM Plus"
 
@@ -87,7 +90,13 @@ class TrackingControllerTest {
         db = Room.inMemoryDatabaseBuilder(context, YlihDatabase::class.java).build()
         repository = SessionRepository(db) { clockNow }
         settings = SettingsStore(context)
-        controller = TrackingController(context, repository, settings) { clockNow }
+        dataChanges = 0
+        controller = TrackingController(
+            context,
+            repository,
+            settings,
+            onDataChanged = { dataChanges++ },
+        ) { clockNow }
         // The preferences file is a real one and the DataStore behind it is a process
         // singleton, so a setting written by one test method is still there in the next.
         settings.setDetailedTracking(false)
@@ -300,6 +309,21 @@ class TrackingControllerTest {
             TrackingService::class.java.name,
             shadowOf(context).nextStoppedService.component?.className,
         )
+    }
+
+    @Test
+    fun `every entry point tells the home screen something changed`() = runTest {
+        // All four background write sources converge here, so this is the app's only chance to
+        // notice. Miss one and a widget sits on a stale figure until something else happens to
+        // redraw it — which, with updatePeriodMillis at 0, may be never.
+        controller.syncWithSystem()
+        assertEquals("the repair path, called from boot, onStart, the worker and the service", 1, dataChanges)
+
+        controller.onSessionOpened(detailedTracking = false)
+        assertEquals(2, dataChanges)
+
+        controller.onSessionClosed()
+        assertEquals(3, dataChanges)
     }
 
     /** Stands in for whatever the controller schedules, so only the scheduling is under test. */

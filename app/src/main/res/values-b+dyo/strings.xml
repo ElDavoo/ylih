@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — waray koosan, jambay be, caangi du.</string>
     <string name="settings_import_confirm_title">kalam sibti?</string>
     <string name="settings_import_confirm_body">import backup yi ma sibti yindoo, yontoo, be diñun bu yidi jintangu yi.</string>
+    <string name="widget_lifetime_label">ylih · waray</string>
+    <string name="widget_lifetime_description">waray ba yontoo yontoo, ni waati bu conko</string>
+    <string name="widget_activity_label">ylih · usanoo</string>
+    <string name="widget_activity_description">waray ba yontoo yaayi, ni kabaka, 7 bu taasu ni 30 bu taasu</string>
+    <string name="widget_chart_label">ylih · 30 bu taasu</string>
+    <string name="widget_chart_description">waray ba dima ni 30 bu taasu bu dima</string>
 
     <!-- Aksyon ba gent -->
     <string name="action_save">jambay</string>

@@ -132,6 +132,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — entzuleak ordutan, tokian eta beti zeratzen.</string>
     <string name="settings_import_confirm_title">datu guztiak ordeztu?</string>
     <string name="settings_import_confirm_body">backup honen inportazioak gaur egun gordetako gailu, pare eta saio bakoitza ezabatzen du.</string>
+    <string name="widget_lifetime_label">ylih · bizitza</string>
+    <string name="widget_lifetime_description">orduak pare bakoitzeko, konektatuta dagoenaren kronometro biziarekin</string>
+    <string name="widget_activity_label">ylih · jarduera</string>
+    <string name="widget_activity_description">pare guztien orduak batera, gaur, 7 eguna eta 30 eguna</string>
+    <string name="widget_chart_label">ylih · 30 eguna</string>
+    <string name="widget_chart_description">azken 30 eguneko eguneroko entzute-orduak</string>
 
     <!-- Ekintza komunak -->
     <string name="action_save">gorde</string>

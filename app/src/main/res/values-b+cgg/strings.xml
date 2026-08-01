@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — saati mu mahembe, ekuuma locally n\'inini.</string>
     <string name="settings_import_confirm_title">babyiza byona?</string>
     <string name="settings_import_confirm_body">okushyira oku ka gakuba gubabyiza ekyuma, enandi n\'okussozo kusosere kose kusigala nkano.</string>
+    <string name="widget_lifetime_label">ylih · omutindo</string>
+    <string name="widget_lifetime_description">saati aha buri nandi, hamwe n\'esaha erikwenda aha ekunyana</string>
+    <string name="widget_activity_label">ylih · emirimo</string>
+    <string name="widget_activity_description">saati z\'enandi zoona hamwe, na erizooba, amasigara 7 n\'amasigara 30</string>
+    <string name="widget_chart_label">ylih · amasigara 30</string>
+    <string name="widget_chart_description">saati z\'okuhurira buri musi omu masigara 30 agakwata</string>
 
     <!-- Amashindano ga gose -->
     <string name="action_save">kuba</string>

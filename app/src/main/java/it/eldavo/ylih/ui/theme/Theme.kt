@@ -42,7 +42,10 @@ private val Tertiary40 = Color(0xFF625A7C)
 private val Tertiary80 = Color(0xFFCBC1E9)
 private val Tertiary90 = Color(0xFFE7DEFF)
 
-private val LightColors = lightColorScheme(
+// Not private: the home-screen widgets have their own theme entry point (glance's GlanceTheme
+// cannot be nested inside this one) and it wraps these two schemes, so the app and the widgets
+// cannot end up on different palettes.
+internal val LightColors = lightColorScheme(
     primary = Primary40,
     onPrimary = Color.White,
     primaryContainer = Primary90,
@@ -74,7 +77,8 @@ private val LightColors = lightColorScheme(
     outlineVariant = Color(0xFFC1C7CE),
 )
 
-private val DarkColors = darkColorScheme(
+/** Internal for the same reason as [LightColors]. */
+internal val DarkColors = darkColorScheme(
     primary = Primary80,
     onPrimary = Primary20,
     primaryContainer = Primary30,

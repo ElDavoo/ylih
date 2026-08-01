@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — saa mu iburani, zinabakia kwenyewe na kwa milele.</string>
     <string name="settings_import_confirm_title">badilisha habari zote?</string>
     <string name="settings_import_confirm_body">kuweka hofu ino kufuta kila isimu, pair na mgogoro ulichohifadhiwa sasa.</string>
+    <string name="widget_lifetime_label">ylih · muda</string>
+    <string name="widget_lifetime_description">saa kwa kila pair, na saa hai kwa kile kilichounganishwa</string>
+    <string name="widget_activity_label">ylih · shughuli</string>
+    <string name="widget_activity_description">saa za pair zote pamoja, na iyoo, siku 7 na siku 30</string>
+    <string name="widget_chart_label">ylih · siku 30</string>
+    <string name="widget_chart_description">saa za kusikiliza kila siku katika siku 30 zilizokwisha</string>
 
     <!-- Zitendo za kawaida -->
     <string name="action_save">hifadhi</string>

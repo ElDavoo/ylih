@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — oras ng headphone, itinatago nang lokal at magpakailanman.</string>
     <string name="settings_import_confirm_title">palitan ang lahat ng data?</string>
     <string name="settings_import_confirm_body">ang pag-import ng backup na ito ay buburahin ang bawat device, pares at session na naka-store ngayon.</string>
+    <string name="widget_lifetime_label">ylih · habambuhay</string>
+    <string name="widget_lifetime_description">oras bawat pares, may live na timer sa kung ano ang konektado</string>
+    <string name="widget_activity_label">ylih · aktibidad</string>
+    <string name="widget_activity_description">oras ng lahat ng pares nang magkasama, plus ngayon, 7 araw at 30 araw</string>
+    <string name="widget_chart_label">ylih · 30 araw</string>
+    <string name="widget_chart_description">araw-araw na oras ng pakikinig sa huling 30 araw</string>
 
     <!-- Mga aksyon -->
     <string name="action_save">i-save</string>

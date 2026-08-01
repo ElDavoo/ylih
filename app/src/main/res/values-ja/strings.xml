@@ -134,6 +134,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — ヘッドホンの利用時間を、この端末にずっと記録する。</string>
     <string name="settings_import_confirm_title">すべてのデータを置き換える？</string>
     <string name="settings_import_confirm_body">このバックアップをインポートすると、現在保存されているすべてのデバイス、ペア、セッションが削除される。</string>
+    <string name="widget_lifetime_label">ylih · 累計</string>
+    <string name="widget_lifetime_description">ペアごとの時間と、接続中のペアのライブタイマー</string>
+    <string name="widget_activity_label">ylih · アクティビティ</string>
+    <string name="widget_activity_description">全ペアの合計時間に加えて、今日・7日間・30日間</string>
+    <string name="widget_chart_label">ylih · 30日間</string>
+    <string name="widget_chart_description">過去30日間の1日あたりの再生時間</string>
 
     <!-- 共通アクション -->
     <string name="action_save">保存</string>

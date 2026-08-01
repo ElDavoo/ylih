@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — amahola mu ifu, akabilibililwa pakali alina ulubuka.</string>
     <string name="settings_import_confirm_title">kulimina fyonse amakamu?</string>
     <string name="settings_import_confirm_body">kufitika isameki ino kulimina amalendo, ifipela apo ifikapililo ifyonse icakala pakali.</string>
+    <string name="widget_lifetime_label">ylih · ubwino</string>
+    <string name="widget_lifetime_description">amahola pa cipela cimo cimo, na kabalilo pa ico caconekete</string>
+    <string name="widget_activity_label">ylih · imilimo</string>
+    <string name="widget_activity_description">amahola ya fipela fyonse pamo, na lelo, inshuba 7 na inshuba 30</string>
+    <string name="widget_chart_label">ylih · inshuba 30</string>
+    <string name="widget_chart_description">amahola ya kuumfwa pa bushiku mu inshuba 30 inafikila</string>
 
     <!-- Imilikilo ya ifyonse -->
     <string name="action_save">kabilibili</string>

@@ -466,7 +466,17 @@ cmds.check = (argv) => {
   if (!argv.includes('--no-usage') && existsSync('app/src/main/java')) {
     const code = filesUnder('app/src/main/java').filter((p) => /\.(kt|java)$/.test(p))
       .map((p) => readFileSync(p, 'utf8')).join('\n')
-    const unused = [...want.keys()].filter((k) => !code.includes(`R.string.${k}`) && !code.includes(`R.plurals.${k}`))
+    // Not every string is reached from Kotlin. The widget picker labels and descriptions are
+    // named only by android:label in the manifest and android:description in
+    // res/xml/widget_*_info.xml, and lint counts those as uses — so scanning code alone reports
+    // them as unused forever, which is how a checker teaches people to ignore it.
+    const markup = [
+      ...(existsSync('app/src/main/AndroidManifest.xml') ? ['app/src/main/AndroidManifest.xml'] : []),
+      ...filesUnder(RES).filter((p) => p.endsWith('.xml') && !/[/\\]values(-|[/\\])/.test(p)),
+    ].map((p) => readFileSync(p, 'utf8')).join('\n')
+    const unused = [...want.keys()].filter((k) =>
+      !code.includes(`R.string.${k}`) && !code.includes(`R.plurals.${k}`) &&
+      !markup.includes(`@string/${k}`) && !markup.includes(`@plurals/${k}`))
     if (unused.length) add('values', `UnusedResources: no R.string/R.plurals reference for ${unused.join(',')}`)
   }
 

@@ -2,6 +2,7 @@ package it.eldavo.ylih.data
 
 import android.content.Context
 import it.eldavo.ylih.tracking.TrackingController
+import it.eldavo.ylih.widget.refreshWidgets
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -17,6 +18,14 @@ class AppContainer(context: Context, val clock: Clock = Clock.Wall) {
     val repository: SessionRepository by lazy { SessionRepository(database, clock) }
     val settings: SettingsStore by lazy { SettingsStore(appContext) }
     val trackingController: TrackingController by lazy {
-        TrackingController(appContext, repository, settings, clock)
+        TrackingController(
+            appContext,
+            repository,
+            settings,
+            // The four background write sources all converge on this controller, so this is where
+            // the home screen finds out anything changed.
+            onDataChanged = { refreshWidgets(appContext) },
+            clock = clock,
+        )
     }
 }

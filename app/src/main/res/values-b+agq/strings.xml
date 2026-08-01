@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — nábè ndap, à kó àsú à ŋ súm.</string>
     <string name="settings_import_confirm_title">gó sú bí bùŋ?</string>
     <string name="settings_import_confirm_body">gó ì ìyà gó sú divaïs à ndap à búŋ tàn.</string>
+    <string name="widget_lifetime_label">ylih · ìgòñ</string>
+    <string name="widget_lifetime_description">nábè à mbɨ̀ ndzɨ̀, nɨ̀ ŋgwɛ̀ à bùŋ</string>
+    <string name="widget_activity_label">ylih · ndzɨ̀</string>
+    <string name="widget_activity_description">nábè à mbɨ̀ tsɨ̀, nɛ, 7 yál nɨ̀ 30 yál</string>
+    <string name="widget_chart_label">ylih · 30 yál</string>
+    <string name="widget_chart_description">nábè à yál à búŋ 30 yál</string>
 
     <!-- Shared actions -->
     <string name="action_save">kó</string>

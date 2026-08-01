@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — godziny w słuchawkach, przechowywane lokalnie i na zawsze.</string>
     <string name="settings_import_confirm_title">zastąpić wszystkie dane?</string>
     <string name="settings_import_confirm_body">import tej kopii zapasowej usuwa każde urządzenie, parę i sesję zapisane obecnie.</string>
+    <string name="widget_lifetime_label">ylih · łączny czas</string>
+    <string name="widget_lifetime_description">godziny na parę, z działającym licznikiem dla połączonej</string>
+    <string name="widget_activity_label">ylih · aktywność</string>
+    <string name="widget_activity_description">godziny wszystkich par razem, a także dzisiaj, 7 dni i 30 dni</string>
+    <string name="widget_chart_label">ylih · 30 dni</string>
+    <string name="widget_chart_description">dzienne godziny słuchania z ostatnich 30 dni</string>
 
     <!-- Wspólne akcje -->
     <string name="action_save">zapisz</string>

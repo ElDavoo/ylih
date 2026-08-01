@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — ساعات هدفون، ذخیره شده محلی و برای همیشه.</string>
     <string name="settings_import_confirm_title">تمام داده‌ها را جایگزین کنیم؟</string>
     <string name="settings_import_confirm_body">وارد کردن این پشتیبان هر دستگاه، جفت و جلسه ذخیره شده در حال حاضر را حذف می‌کند.</string>
+    <string name="widget_lifetime_label">ylih · عمر</string>
+    <string name="widget_lifetime_description">ساعت‌ها برای هر جفت، با زمان‌سنج زنده روی آنچه متصل است</string>
+    <string name="widget_activity_label">ylih · فعالیت</string>
+    <string name="widget_activity_description">ساعت همه جفت‌ها با هم، به‌علاوه امروز، ۷ روز و ۳۰ روز</string>
+    <string name="widget_chart_label">ylih · ۳۰ روز</string>
+    <string name="widget_chart_description">ساعات روزانه شنیدن در ۳۰ روز گذشته</string>
 
     <!-- اقدامات مشترک -->
     <string name="action_save">ذخیره کنید</string>

@@ -62,6 +62,13 @@ KEEP_BY_NAME = {
         "named in the merged manifest, and the process is started by this broadcast",
     "it.eldavo.ylih.tracking.BootReceiver":
         "named in the merged manifest, and the process is started by this broadcast",
+    "it.eldavo.ylih.widget.LifetimeWidgetReceiver":
+        "named in the merged manifest, and Glance finds a widget's receiver by instantiating "
+        "every manifest receiver and asking each one which GlanceAppWidget it hosts",
+    "it.eldavo.ylih.widget.ActivityWidgetReceiver":
+        "named in the merged manifest, same route as LifetimeWidgetReceiver",
+    "it.eldavo.ylih.widget.ChartWidgetReceiver":
+        "named in the merged manifest, same route as LifetimeWidgetReceiver",
 }
 
 # A class line in mapping.txt: `<original> -> <obfuscated>:` at column 0. Members are indented,

@@ -133,6 +133,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — ساعات السماعات، محفوظة محليًا وإلى الأبد.</string>
     <string name="settings_import_confirm_title">استبدال كل البيانات؟</string>
     <string name="settings_import_confirm_body">استيراد هذه النسخة الاحتياطية يحذف كل جهاز وزوج وجلسة مخزَّنة الآن.</string>
+    <string name="widget_lifetime_label">ylih · العمر</string>
+    <string name="widget_lifetime_description">الساعات لكل زوج، مع مؤقت مباشر لما هو متصل</string>
+    <string name="widget_activity_label">ylih · النشاط</string>
+    <string name="widget_activity_description">ساعات كل الأزواج معًا، إضافة إلى اليوم و7 أيام و30 يومًا</string>
+    <string name="widget_chart_label">ylih · 30 يومًا</string>
+    <string name="widget_chart_description">ساعات الاستماع اليومية خلال آخر 30 يومًا</string>
 
     <!-- إجراءات مشتركة -->
     <string name="action_save">حفظ</string>

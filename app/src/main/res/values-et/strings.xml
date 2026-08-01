@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — kõrvaklappide tunnid, salvestatud kohalikult ja igaveselt.</string>
     <string name="settings_import_confirm_title">asenda kõik andmed?</string>
     <string name="settings_import_confirm_body">selle varunduse importimine kustutab iga praegu salvestatud seadme, paari ja seansi.</string>
+    <string name="widget_lifetime_label">ylih · eluiga</string>
+    <string name="widget_lifetime_description">tunnid paari kohta, ühendatud paaril jooksev taimer</string>
+    <string name="widget_activity_label">ylih · aktiivsus</string>
+    <string name="widget_activity_description">kõigi paaride tunnid kokku, lisaks täna, 7 päeva ja 30 päeva</string>
+    <string name="widget_chart_label">ylih · 30 päeva</string>
+    <string name="widget_chart_description">igapäevased kuulamistunnid viimase 30 päeva jooksul</string>
 
     <!-- Jagatavad tegevused -->
     <string name="action_save">salvesta</string>

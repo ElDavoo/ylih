@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — наўсыбырлыс сағаттары, ішінде сақталды және әрқашан.</string>
     <string name="settings_import_confirm_title">барлық деректерді ауысыру?</string>
     <string name="settings_import_confirm_body">бұл дайындыктың импорты қазі сақталған әрбір құрылғыны, дәстәнің және сеансты өшіреді.</string>
+    <string name="widget_lifetime_label">ylih · өмүр</string>
+    <string name="widget_lifetime_description">һәр дәст үчүн саатлар, гошулу олана ҹанлы сајғаҹ</string>
+    <string name="widget_activity_label">ylih · фәалијјәт</string>
+    <string name="widget_activity_description">бүтүн дәстләрин саатлары бирликдә, бу ҝүн, 7 күн вә 30 күн</string>
+    <string name="widget_chart_label">ylih · 30 күн</string>
+    <string name="widget_chart_description">соңғы 30 күн әрзиндә ҝүндәлик динләмә саатлары</string>
 
     <!-- Ортақ әрекеттер -->
     <string name="action_save">сақтау</string>

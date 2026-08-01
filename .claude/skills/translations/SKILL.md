@@ -34,10 +34,13 @@ tree's string resources have broken the build:
 | `MissingQuantity` | `<plurals>` missing a CLDR category — lint error |
 | `unescaped apostrophe` | aapt2 rejects it, and AGP reports it as a bare `java.lang.NullPointerException` from `ResourceCompilerRunnable` naming **no file** |
 | `placeholders %2$s != source %1$s` | `StringFormatMatches` — a renumbered arg is a runtime crash |
-| `UnusedResources` | a new string no Kotlin file references — **lint error in this project** |
+| `UnusedResources` | a new string nothing references — **lint error in this project** |
 | `folder values-xx/ has no strings.xml` | an *empty* locale folder. Invisible to `git status`; lint reads folder names and reports every string missing for it. Cost 113 errors once |
 
-Pass `--no-usage` to skip the `R.string.*` scan (it reads every file under `app/src/main/java`).
+Pass `--no-usage` to skip the reference scan. It reads every file under `app/src/main/java` for
+`R.string.<name>`, and `AndroidManifest.xml` plus the non-`values` resource XML for `@string/<name>`
+— the widget picker labels are named only from `android:label` and `res/xml/widget_*_info.xml`, and
+lint counts those as uses.
 
 ## Add or edit strings across every locale
 
@@ -190,9 +193,10 @@ ar         values-ar              113 keys  plurals: zero,one,two,few,many,other
 
 ## Gotchas
 
-- **`UnusedResources` is an error here, not a warning.** Adding a string with no `R.string.<name>`
-  reference in `app/src/main/java` fails `lintClassicDebug`. Adding copy and adding its call site
-  are one change. `check` catches this; lint takes 69s to say the same thing.
+- **`UnusedResources` is an error here, not a warning.** Adding a string that nothing references —
+  no `R.string.<name>` in `app/src/main/java`, no `@string/<name>` in the manifest or a resource
+  XML — fails `lintClassicDebug`. Adding copy and adding its call site are one change. `check`
+  catches this; lint takes 69s to say the same thing.
 - **ICU is a *superset* of lint's plural table.** CLDR gives `fr`, `ca`, `pt-BR` and `it` a `many`
   category (multiples of a million); Android lint does not require it. The driver emits the ICU set
   deliberately — the extra category is only an `UnusedQuantity` **warning** and

@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — mahinda ma mahoya, meguo kũrĩ ĩrĩngĩ rĩĩ na mahinda ma kũingĩ.</string>
     <string name="settings_import_confirm_title">thamba gĩothe kĩa ũmenyithia?</string>
     <string name="settings_import_confirm_body">ruta mwarũngu rĩgĩthamba mĩruta yothe, mbere, na mahinda marĩ haarũ.</string>
+    <string name="widget_lifetime_label">ylih · wĩ</string>
+    <string name="widget_lifetime_description">mahinda kũrĩ mbere ĩmwe ĩmwe, na thaa ĩrĩ na njũkĩrĩ</string>
+    <string name="widget_activity_label">ylih · wĩra</string>
+    <string name="widget_activity_description">mahinda ma mbere ciothe hamwe, na ũmũnthĩ, mahinda 7 na mahinda 30</string>
+    <string name="widget_chart_label">ylih · mahinda 30</string>
+    <string name="widget_chart_description">mahinda ma gũthikĩrĩria o mũthenya mahinda 30 makĩrĩngĩra</string>
 
     <!-- Ũtũũri wa ruo -->
     <string name="action_save">rutĩa</string>

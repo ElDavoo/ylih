@@ -132,6 +132,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — 헤드폰 사용 시간을, 로컬에 영원히.</string>
     <string name="settings_import_confirm_title">모든 데이터를 대체할까요?</string>
     <string name="settings_import_confirm_body">이 백업을 가져오면 현재 저장된 모든 기기, 쌍, 세션이 삭제됩니다.</string>
+    <string name="widget_lifetime_label">ylih · 누적</string>
+    <string name="widget_lifetime_description">쌍별 사용 시간과 연결된 쌍의 실시간 타이머</string>
+    <string name="widget_activity_label">ylih · 활동</string>
+    <string name="widget_activity_description">모든 쌍의 시간 합계와 오늘, 7일, 30일</string>
+    <string name="widget_chart_label">ylih · 30일</string>
+    <string name="widget_chart_description">최근 30일간의 일별 청취 시간</string>
 
     <!-- 공통 동작 -->
     <string name="action_save">저장</string>

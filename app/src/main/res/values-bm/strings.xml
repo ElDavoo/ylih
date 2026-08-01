@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — kopila kɔrɔ duumi, telefɔne yen ma gara ni ka sigida sira jɛ.</string>
     <string name="settings_import_confirm_title">kuma bɛ jɔli jɔ?</string>
     <string name="settings_import_confirm_body">kɛ jigɛn yen bi aparatigi, kopila ni jiginna sutu bɛ kɔsa sisan.</string>
+    <string name="widget_lifetime_label">ylih · duumi</string>
+    <string name="widget_lifetime_description">lɛrɛw kopila kelen kelen na, ani wagati min jiginna</string>
+    <string name="widget_activity_label">ylih · baara</string>
+    <string name="widget_activity_description">kopilaw bɛɛ lɛrɛw ɲɔgɔn kan, ani bi, gɛrɛ 7 ani gɛrɛ 30</string>
+    <string name="widget_chart_label">ylih · gɛrɛ 30</string>
+    <string name="widget_chart_description">don o don lamɛnni lɛrɛw gɛrɛ 30 sira kɔnɔ</string>
 
     <!-- Gɛrɛya gɛrɛ -->
     <string name="action_save">sigida</string>

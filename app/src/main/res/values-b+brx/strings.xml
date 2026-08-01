@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — हेडफोन घंटे, स्थानीय रूप से और हमेशा के लिए रखे गए।</string>
     <string name="settings_import_confirm_title">सभी डेटा बदलें?</string>
     <string name="settings_import_confirm_body">इस बैकअप को आयात करने से अभी संग्रहीत हर डिवाइस, जोड़ी और सत्र हटा दिया जाता है।</string>
+    <string name="widget_lifetime_label">ylih · जीवनकाल</string>
+    <string name="widget_lifetime_description">हर जोड़ी के घंटे, जुड़ी जोड़ी पर चलता टाइमर</string>
+    <string name="widget_activity_label">ylih · गतिविधि</string>
+    <string name="widget_activity_description">सभी जोड़ियों के घंटे मिलाकर, और दिनै, 7 दिन और 30 दिन</string>
+    <string name="widget_chart_label">ylih · 30 दिन</string>
+    <string name="widget_chart_description">पिछले 30 दिन के रोज सुनने के घंटे</string>
 
     <!-- साझा कार्य -->
     <string name="action_save">सहेजें</string>

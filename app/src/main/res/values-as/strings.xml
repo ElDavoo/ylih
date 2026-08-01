@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — শিৰোফোন ঘণ্টা, স্থানীয়ভাৱে আৰু চিৰকালৰ বাবে ৰাখা।</string>
     <string name="settings_import_confirm_title">সকল ডেটা প্রতিস্থাপন কৰব?</string>
     <string name="settings_import_confirm_body">এই ব্যাকআপ আমদানি এখন সংৰক্ষিত প্রতিটি ডিভাইস, যোৰ আৰু সেশন মুছি পেলায়।</string>
+    <string name="widget_lifetime_label">ylih · আজীৱন</string>
+    <string name="widget_lifetime_description">প্ৰতি যোৰৰ ঘণ্টা, সংযুক্ত হৈ থকাটোৰ বাবে জীৱন্ত সময় গণনা</string>
+    <string name="widget_activity_label">ylih · কাৰ্যকলাপ</string>
+    <string name="widget_activity_description">সকলো যোৰৰ ঘণ্টা একেলগে, লগতে আজি, 7 দিন আৰু 30 দিন</string>
+    <string name="widget_chart_label">ylih · 30 দিন</string>
+    <string name="widget_chart_description">গত 30 দিনৰ দৈনিক শুনা ঘণ্টা</string>
 
     <!-- ভাগকৃত কর্ম -->
     <string name="action_save">সংৰক্ষণ কৰক</string>

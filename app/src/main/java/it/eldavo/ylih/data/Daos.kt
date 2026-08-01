@@ -181,6 +181,18 @@ interface SessionDao {
     @Query("SELECT * FROM sessions ORDER BY connectedAt")
     suspend fun getAll(): List<SessionEntity>
 
+    /**
+     * Everything that can contribute to a window opening at [from]: still running, or finished
+     * inside it. A session that both started and ended before the window contributes nothing and
+     * is dropped — which is the point, since the home-screen widgets ask this on every refresh and
+     * the table grows forever.
+     */
+    @Query(
+        "SELECT * FROM sessions WHERE disconnectedAt IS NULL OR disconnectedAt >= :from " +
+            "ORDER BY connectedAt",
+    )
+    suspend fun since(from: Long): List<SessionEntity>
+
     @Query("DELETE FROM sessions WHERE id = :sessionId")
     suspend fun delete(sessionId: Long)
 }

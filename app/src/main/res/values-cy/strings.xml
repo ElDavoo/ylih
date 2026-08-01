@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — oriau clustffonau, wedi\'u cadw\'n lleol ac am byth.</string>
     <string name="settings_import_confirm_title">disodli\'r holl ddata?</string>
     <string name="settings_import_confirm_body">mae mewnforio\'r cefnwp hwn yn dileu pob dyfais, pâr a sesiwn wedi\'u storio nawr.</string>
+    <string name="widget_lifetime_label">ylih · oes</string>
+    <string name="widget_lifetime_description">oriau fesul pâr, gydag amserydd byw ar yr un cysylltiedig</string>
+    <string name="widget_activity_label">ylih · gweithgarwch</string>
+    <string name="widget_activity_description">oriau pob pâr gyda\'i gilydd, a heddiw, 7 diwrnod a 30 diwrnod</string>
+    <string name="widget_chart_label">ylih · 30 diwrnod</string>
+    <string name="widget_chart_description">oriau gwrando bob dydd dros y 30 diwrnod diwethaf</string>
 
     <!-- Gweithredoedd rhanedig -->
     <string name="action_save">arbed</string>

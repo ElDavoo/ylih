@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — гадзіны ў наушніках, захаваны мясцова і вечна.</string>
     <string name="settings_import_confirm_title">замяніць усе дадзеныя?</string>
     <string name="settings_import_confirm_body">імпорт гэтай рэзервной копіі выдаліць кожнае прыстасаванне, пару і сесію, захавана зараз.</string>
+    <string name="widget_lifetime_label">ylih · тэрмін жыцця</string>
+    <string name="widget_lifetime_description">гадзіны на кожную пару з жывым таймерам для падключанай</string>
+    <string name="widget_activity_label">ylih · актыўнасць</string>
+    <string name="widget_activity_description">гадзіны ўсіх пар разам, а таксама сёння, 7 дзён і 30 дзён</string>
+    <string name="widget_chart_label">ylih · 30 дзён</string>
+    <string name="widget_chart_description">штодзённыя гадзіны праслухоўвання за апошнія 30 дзён</string>
 
     <!-- Асобныя дзеянні -->
     <string name="action_save">захаваць</string>

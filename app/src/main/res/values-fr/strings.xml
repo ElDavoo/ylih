@@ -132,6 +132,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — les heures de vos casques, conservées en local et pour toujours.</string>
     <string name="settings_import_confirm_title">remplacer toutes les données ?</string>
     <string name="settings_import_confirm_body">importer cette sauvegarde supprime chaque appareil, paire et session stockés actuellement.</string>
+    <string name="widget_lifetime_label">ylih · durée de vie</string>
+    <string name="widget_lifetime_description">heures par paire, avec un chrono en direct sur celle qui est connectée</string>
+    <string name="widget_activity_label">ylih · activité</string>
+    <string name="widget_activity_description">les heures de toutes les paires réunies, plus aujourd\'hui, 7 jours et 30 jours</string>
+    <string name="widget_chart_label">ylih · 30 jours</string>
+    <string name="widget_chart_description">heures d\'écoute quotidiennes sur les 30 derniers jours</string>
 
     <!-- Actions communes -->
     <string name="action_save">enregistrer</string>

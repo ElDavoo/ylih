@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — qulaqlıqda saatlar, mərkəzi şəkildə və əbədi saxlanılır.</string>
     <string name="settings_import_confirm_title">bütün məlumatları əvəz etmək istəyirsiniz?</string>
     <string name="settings_import_confirm_body">bu ehtiyat nüsxəsini idxal etmək hazırda saxlanılan hər bir cihazı, cütlüyü və seansu silir.</string>
+    <string name="widget_lifetime_label">ylih · ömür</string>
+    <string name="widget_lifetime_description">hər cüt üçün saatlar, qoşulu olana canlı sayğac</string>
+    <string name="widget_activity_label">ylih · fəaliyyət</string>
+    <string name="widget_activity_description">bütün cütlərin saatları birlikdə, üstəgəl bu gün, 7 gün və 30 gün</string>
+    <string name="widget_chart_label">ylih · 30 gün</string>
+    <string name="widget_chart_description">son 30 gün ərzində gündəlik dinləmə saatları</string>
 
     <!-- Paylaşılan hərəkətlər -->
     <string name="action_save">saxla</string>

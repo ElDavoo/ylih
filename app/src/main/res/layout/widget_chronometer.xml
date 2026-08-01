@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The one live element on the home screen. A Chronometer is ticked by the system with no app
+  involvement at all, which is what makes it the honest choice here: repainted text would be as
+  stale as the last widget update, and in Bluetooth-only mode there is no other sign that
+  background tracking is even alive.
+
+  The text colour is a resource rather than a setTextColor() call so the launcher resolves it in
+  its own configuration when it inflates these RemoteViews — that is what makes the timer follow
+  dark mode without waiting for the next update.
+
+  It counts in h:mm:ss rather than the app's "2h 07m": Chronometer owns its format and there is
+  no way to ask it for another one.
+-->
+<Chronometer xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_chronometer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:includeFontPadding="false"
+    android:textColor="@color/widget_accent"
+    android:textSize="12sp" />

@@ -131,6 +131,12 @@
     <string name="settings_about_body">aylih %1$s (%2$s) — saaji kaalangal, goɗo jeeɗngal e reyde walla.</string>
     <string name="settings_import_confirm_title">sooɗɗu baytal juulem?</string>
     <string name="settings_import_confirm_body">gaŋŋa moofal maa deleete taruuji juulem, jeeɓe, e jokkol goɗngol jooni.</string>
+    <string name="widget_lifetime_label">ylih · jinde</string>
+    <string name="widget_lifetime_description">waktuuji e kala jeeɓe, e waktu wuurɗo e ko seŋaaɗe</string>
+    <string name="widget_activity_label">ylih · golle</string>
+    <string name="widget_activity_description">waktuuji jeeɓe fof e denndaangal, e hannde, 7 ɓalɓacce e 30 ɓalɓacce</string>
+    <string name="widget_chart_label">ylih · 30 ɓalɓacce</string>
+    <string name="widget_chart_description">waktuuji heɗagol ɓalɓaccere e nder liggere 30 ɓalɓacce</string>
 
     <!-- akaasɓe ngonngal -->
     <string name="action_save">dilo</string>

@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — agandu hima ga, borey ga gida kul-kul.</string>
     <string name="settings_import_confirm_title">kul gundey jama?</string>
     <string name="settings_import_confirm_body">ga kanji kunaa kabu ga kul borey, hima, gasaandi kaagu kundi de.</string>
+    <string name="widget_lifetime_label">ylih · hayyan</string>
+    <string name="widget_lifetime_description">jerbi ka nda afo kul, nda alwaati kaŋ ga gasaandi</string>
+    <string name="widget_activity_label">ylih · goy</string>
+    <string name="widget_activity_description">jerbi kul care banda, nda hunkuna, jema 7 nda jema 30</string>
+    <string name="widget_chart_label">ylih · jema 30</string>
+    <string name="widget_chart_description">zaari kul hanga jerbi waja 30 jema ra</string>
 
     <!-- Shared actions -->
     <string name="action_save">gida</string>

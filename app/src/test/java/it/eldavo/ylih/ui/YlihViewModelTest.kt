@@ -257,6 +257,18 @@ class YlihViewModelTest {
     }
 
     @Test
+    fun `an edit lands even with no home screen to redraw`() = runTest {
+        val pairId = seed()
+
+        // Every foreground edit is followed by a Glance updateAll, and nothing here is hosting a
+        // widget for it to update. That the rename still arrives is the assertion: a cosmetic
+        // redraw must never be able to fail a write the user asked for.
+        viewModel.renamePair(pairId, "Sennheiser HD 25").join()
+
+        assertEquals("Sennheiser HD 25", db.pairDao().byId(pairId)?.label)
+    }
+
+    @Test
     fun `finishing onboarding is remembered`() = runTest {
         app.container.settings.setOnboardingDone(false)
 

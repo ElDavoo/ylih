@@ -31,9 +31,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ylih">
 
+        <!--
+          singleTop so a second tap on a widget row re-navigates the activity that is already up
+          (see onNewIntent) instead of stacking another copy of the app behind it.
+        -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
+            android:launchMode="singleTop"
             android:theme="@style/Theme.Ylih">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -69,6 +74,50 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
             </intent-filter>
+        </receiver>
+
+        <!--
+          The three home-screen widgets. Exported because the launcher — another app — is what
+          binds and updates them; APPWIDGET_UPDATE is a protected broadcast only the system sends.
+          android:label is the name shown in the widget picker.
+
+          Nothing here is flavor-specific: a widget needs no permission the classic build has and
+          the play build does not, so these stay out of the classic manifest overlay.
+        -->
+        <receiver
+            android:name=".widget.LifetimeWidgetReceiver"
+            android:exported="true"
+            android:label="@string/widget_lifetime_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_lifetime_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.ActivityWidgetReceiver"
+            android:exported="true"
+            android:label="@string/widget_activity_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_activity_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.ChartWidgetReceiver"
+            android:exported="true"
+            android:label="@string/widget_chart_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_chart_info" />
         </receiver>
     </application>
 </manifest>

@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — གོ་སྒྲིག་དུས་ཆུ་ཙམ་གི་སྐུ་ཚེ་ཁུག་ལ་དགེ་སོགས།</string>
     <string name="settings_import_confirm_title">སྟེགས་ཞིབ་ཆ་ཚང་བསྒྱུར་འམ་</string>
     <string name="settings_import_confirm_body">གླེང་སྟེགས་སླེབ་དུས་ཆ་གཤེགས་དང་སོགས་ཅིག་དང་དུས་དྭངས་ཆ་ཚང་བསྤོས་ཀྱི་ཡིན།</string>
+    <string name="widget_lifetime_label">ylih · ཡུན་</string>
+    <string name="widget_lifetime_description">སོགས་ཅིག་རེར་དུས་ཆུ་ཙམ་དང་། སྦྱོར་ཡོད་པར་གསོན་པོའི་དུས་འཛིན།</string>
+    <string name="widget_activity_label">ylih · བྱ་བ་</string>
+    <string name="widget_activity_description">སོགས་ཅིག་ཚང་མའི་དུས་ཆུ་ཙམ་མཉམ་དུ། དེ་རིང་དང་། ཉིན་ ༧ དང་ ཉིན་ ༣༠</string>
+    <string name="widget_chart_label">ylih · ཉིན་ ༣༠</string>
+    <string name="widget_chart_description">ཉིན་ ༣༠ ནང་གི་ཉིན་རེའི་ཉན་པའི་དུས་ཆུ་ཙམ།</string>
 
     <!-- གཏུབ་བྱེད་གཅིག་ -->
     <string name="action_save">དགེ་སོགས་</string>

@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — часове в слушалки, запазени локално и завинаги.</string>
     <string name="settings_import_confirm_title">заменете всички данни?</string>
     <string name="settings_import_confirm_body">импортирането на тази архива изтрива всяко устройство, двойка и сесия текущо запазени.</string>
+    <string name="widget_lifetime_label">ylih · живот</string>
+    <string name="widget_lifetime_description">часове за всеки чифт, с жив таймер за свързания</string>
+    <string name="widget_activity_label">ylih · активност</string>
+    <string name="widget_activity_description">часовете на всички чифтове заедно, плюс днес, 7 дни и 30 дни</string>
+    <string name="widget_chart_label">ylih · 30 дни</string>
+    <string name="widget_chart_description">дневни часове слушане през последните 30 дни</string>
 
     <!-- Споделени действия -->
     <string name="action_save">запази</string>

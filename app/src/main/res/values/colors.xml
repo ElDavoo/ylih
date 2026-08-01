@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  The three widget colours below are here as *resources* rather than as Compose values because
+  two parts of a home-screen widget are not Glance: the raw RemoteViews holding the Chronometer,
+  which Glance's theming cannot reach inside, and the bar chart, which is drawn into a bitmap.
+  Both need a plain colour int.
+
+  Splitting them across values/, values-night/ and the -v31 pair is what keeps them in step with
+  the rest of the widget: below API 31 that is this app's own palette (ui/theme/Theme.kt), and
+  from 31 it is the same wallpaper-derived tokens Glance's own dynamic theme uses, so the timer
+  and the bars cannot end up a different blue from the text beside them.
+-->
 <resources>
     <color name="ic_launcher_background">#00344B</color>
+
+    <!-- LightColors.surfaceContainer -->
+    <color name="widget_background">#EDEDF0</color>
+    <!-- Primary40, i.e. LightColors.primary -->
+    <color name="widget_accent">#00658E</color>
+    <!-- LightColors.surfaceVariant -->
+    <color name="widget_track">#DDE3EA</color>
 </resources>

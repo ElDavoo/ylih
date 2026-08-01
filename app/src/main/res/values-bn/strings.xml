@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — হেডফোন ঘন্টা, স্থানীয়ভাবে এবং চিরকালের জন্য রাখা হয়েছে।</string>
     <string name="settings_import_confirm_title">সমস্ত ডেটা প্রতিস্থাপন করুন?</string>
     <string name="settings_import_confirm_body">এই ব্যাকআপ আমদানি করা এখন সংরক্ষিত প্রতিটি ডিভাইস, জোড়া এবং সেশন মুছে ফেলে।</string>
+    <string name="widget_lifetime_label">ylih · আজীবন</string>
+    <string name="widget_lifetime_description">প্রতি জোড়ায় ঘন্টা, যেটি সংযুক্ত তার জন্য চলমান টাইমার</string>
+    <string name="widget_activity_label">ylih · কার্যকলাপ</string>
+    <string name="widget_activity_description">সব জোড়ার ঘন্টা একসাথে, সঙ্গে আজ, ৭ দিন ও ৩০ দিন</string>
+    <string name="widget_chart_label">ylih · ৩০ দিন</string>
+    <string name="widget_chart_description">গত ৩০ দিনে দৈনিক শোনার ঘন্টা</string>
 
     <!-- ভাগ করা ক্রিয়া -->
     <string name="action_save">সংরক্ষণ করুন</string>

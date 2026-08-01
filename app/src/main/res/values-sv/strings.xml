@@ -132,6 +132,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — hörlurstimmar, sparade lokalt och för alltid.</string>
     <string name="settings_import_confirm_title">ersätta all data?</string>
     <string name="settings_import_confirm_body">att importera denna säkerhetskopia tar bort varje enhet, par och session som lagras just nu.</string>
+    <string name="widget_lifetime_label">ylih · livstid</string>
+    <string name="widget_lifetime_description">timmar per par, med en levande timer på det som är anslutet</string>
+    <string name="widget_activity_label">ylih · aktivitet</string>
+    <string name="widget_activity_description">alla pars timmar tillsammans, plus i dag, 7 dagar och 30 dagar</string>
+    <string name="widget_chart_label">ylih · 30 dagar</string>
+    <string name="widget_chart_description">dagliga lyssningstimmar de senaste 30 dagarna</string>
 
     <!-- Delade åtgärder -->
     <string name="action_save">spara</string>

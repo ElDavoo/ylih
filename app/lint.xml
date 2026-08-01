@@ -24,6 +24,15 @@
          to satisfy a style check. -->
     <issue id="TypographyQuotes" severity="ignore" />
 
+    <!-- The widget picker previews are generated, not drawn: WidgetPreviews records them with
+         Roborazzi, which writes PNG and only PNG. Converting them by hand after every re-record is
+         a step that gets skipped, and the whole folder is under 45 kB — the saving WebP is asking
+         for here is a few kilobytes in exchange for a stale-image failure mode. Scoped to that
+         folder so a hand-drawn asset elsewhere still gets the advice. -->
+    <issue id="ConvertToWebp">
+        <ignore regexp="src/main/res/drawable-nodpi/" />
+    </issue>
+
     <!-- The unit tests are Robolectric tests: they run against the compile SDK on the JVM, so the
          minSdk 23 floor these checks enforce does not apply to them. It still applies to
          everything in src/main, which is where these checks earn their keep. -->

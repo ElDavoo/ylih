@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — hodiny ve sluchátkách, uložené lokálně a navždy.</string>
     <string name="settings_import_confirm_title">nahradit všechna data?</string>
     <string name="settings_import_confirm_body">import této zálohy smaže každé zařízení, pár a relaci, které jsou teď uložené.</string>
+    <string name="widget_lifetime_label">ylih · životnost</string>
+    <string name="widget_lifetime_description">hodiny na každý pár, s živým časovačem u připojeného</string>
+    <string name="widget_activity_label">ylih · aktivita</string>
+    <string name="widget_activity_description">hodiny všech párů dohromady, plus dnes, 7 dní a 30 dní</string>
+    <string name="widget_chart_label">ylih · 30 dní</string>
+    <string name="widget_chart_description">denní hodiny poslechu za posledních 30 dní</string>
 
     <!-- Společné akce -->
     <string name="action_save">uložit</string>

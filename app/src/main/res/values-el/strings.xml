@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — ώρες ακουστικών, αποθηκευμένες τοπικά και για πάντα.</string>
     <string name="settings_import_confirm_title">αντικατάσταση όλων των δεδομένων;</string>
     <string name="settings_import_confirm_body">η εισαγωγή αυτού του αντιγράφου ασφαλείας διαγράφει κάθε συσκευή, ζευγάρι και συνεδρία που είναι αποθηκευμένα τώρα.</string>
+    <string name="widget_lifetime_label">ylih · διάρκεια ζωής</string>
+    <string name="widget_lifetime_description">ώρες ανά ζευγάρι, με ζωντανό χρονόμετρο σε ό,τι είναι συνδεδεμένο</string>
+    <string name="widget_activity_label">ylih · δραστηριότητα</string>
+    <string name="widget_activity_description">οι ώρες όλων των ζευγαριών μαζί, καθώς και σήμερα, 7 ημέρες και 30 ημέρες</string>
+    <string name="widget_chart_label">ylih · 30 ημέρες</string>
+    <string name="widget_chart_description">ημερήσιες ώρες ακρόασης τις τελευταίες 30 ημέρες</string>
 
     <!-- Κοινές ενέργειες -->
     <string name="action_save">αποθήκευση</string>

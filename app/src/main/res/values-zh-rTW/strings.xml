@@ -133,6 +133,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — 耳機使用時數，永久保存於本機。</string>
     <string name="settings_import_confirm_title">要取代所有資料嗎？</string>
     <string name="settings_import_confirm_body">匯入此備份會刪除目前儲存的所有裝置、耳機與連線紀錄。</string>
+    <string name="widget_lifetime_label">ylih · 累積時數</string>
+    <string name="widget_lifetime_description">每副耳機的時數，已連線的那副附即時計時</string>
+    <string name="widget_activity_label">ylih · 活動</string>
+    <string name="widget_activity_description">所有耳機的時數合計，以及今天、7 天和 30 天</string>
+    <string name="widget_chart_label">ylih · 30 天</string>
+    <string name="widget_chart_description">最近 30 天的每日聆聽時數</string>
 
     <!-- 共用操作 -->
     <string name="action_save">儲存</string>

@@ -130,6 +130,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — hores amb auriculars, guardades localment i per sempre.</string>
     <string name="settings_import_confirm_title">reemplaçar totes les dades?</string>
     <string name="settings_import_confirm_body">importar aquesta còpia de seguretat elimina cada dispositiu, parell i sessió guardada actualment.</string>
+    <string name="widget_lifetime_label">ylih · vida</string>
+    <string name="widget_lifetime_description">hores per parell, amb un cronòmetre en directe del que està connectat</string>
+    <string name="widget_activity_label">ylih · activitat</string>
+    <string name="widget_activity_description">les hores de tots els parells juntes, més avui, 7 dies i 30 dies</string>
+    <string name="widget_chart_label">ylih · 30 dies</string>
+    <string name="widget_chart_description">hores d\'escolta diàries dels últims 30 dies</string>
 
     <!-- Accions compartides -->
     <string name="action_save">guardar</string>

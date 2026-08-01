@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — ᎠᏎᎩ ᏒᏂ ᎨᎮᎵᏍᎬ, ᎠᏍᏌ ᎠᎶᏅᏆ ᎠᎴ ᏆᏯ ᎦᏌᏅᎩ.</string>
     <string name="settings_import_confirm_title">ᏕᎦᏚ ᏕᎭᎸᏛ ᎠᏚᏗᏎᏗ ᎢᎦᎳ?</string>
     <string name="settings_import_confirm_body">ᎠᏚᏗᏎᏗ ᎨᏒ ᏕᎦᏚ ᏙᏦᎵ, ᏂᏗᏪᏦ ᎠᎴ ᎠᏟᏎᎵᏗ ᏰᎩᎦᎵ ᎠᏅᏎᏗ ᏆᏯ.</string>
+    <string name="widget_lifetime_label">ylih · ᏂᏂ</string>
+    <string name="widget_lifetime_description">ᏒᏂ ᎨᎮᎵᏍᎬ ᏂᏗᏪᏦ, ᎠᎴ ᏙᏦᎵ ᎤᏂᎩᏓ</string>
+    <string name="widget_activity_label">ylih · ᎠᏛᏁᎵᏙᎯ</string>
+    <string name="widget_activity_description">ᏂᎦᏓ ᏂᏗᏪᏦ ᏒᏂ, ᎠᎴ ᎪᎯ ᎢᎦ, 7 ᎾᎬᎾᎴ ᎠᎴ 30 ᎾᎬᎾᎴ</string>
+    <string name="widget_chart_label">ylih · 30 ᎾᎬᎾᎴ</string>
+    <string name="widget_chart_description">ᎠᎵᏁᏟᏒ ᏒᏂ ᎠᏛᎩᏍᎬ ᏗᏓᏅᎯ 30 ᎾᎬᎾᎴ</string>
 
     <!-- ᏗᎭᏚ ᏙᏚᏛ -->
     <string name="action_save">ᎤᏂᏈᎸᎩ</string>

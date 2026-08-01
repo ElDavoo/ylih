@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Glance's GlanceModifier.cornerRadius() only exists from API 31, so anything below that has to
+  get its rounding from a background drawable. From 31 the launcher clips the view marked with
+  appWidgetBackground() to its own radius anyway, which simply rounds this a little further.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="16dp" />
+    <solid android:color="@color/widget_background" />
+</shape>

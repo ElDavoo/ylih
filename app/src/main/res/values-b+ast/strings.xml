@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — hores en auriculares, guaardaes localmente pa siempre.</string>
     <string name="settings_import_confirm_title">¿reemplazar tolos datos?</string>
     <string name="settings_import_confirm_body">importar esta copia de seguridá desanicia cada dispositivu, par y sesión guardáu agora.</string>
+    <string name="widget_lifetime_label">ylih · tiempu</string>
+    <string name="widget_lifetime_description">hores por cada par, con un cronómetru en direutu de lo que ta conectáu</string>
+    <string name="widget_activity_label">ylih · actividá</string>
+    <string name="widget_activity_description">les hores de tolos pares xuntes, amás de güei, 7 díes y 30 díes</string>
+    <string name="widget_chart_label">ylih · 30 díes</string>
+    <string name="widget_chart_description">hores d\'escucha diaries nos últimos 30 díes</string>
 
     <!-- Acciones compartíes -->
     <string name="action_save">guardar</string>

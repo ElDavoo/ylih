@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — сати у слушалицама, чувани локално и заувек.</string>
     <string name="settings_import_confirm_title">заменити све податке?</string>
     <string name="settings_import_confirm_body">увозом ове резервне копије бришу се сви уређаји, парови и сесије које су сада сачуване.</string>
+    <string name="widget_lifetime_label">ylih · век</string>
+    <string name="widget_lifetime_description">сати по пару, уз живи тајмер за оно што је повезано</string>
+    <string name="widget_activity_label">ylih · активност</string>
+    <string name="widget_activity_description">сати свих парова заједно, плус данас, 7 дана и 30 дана</string>
+    <string name="widget_chart_label">ylih · 30 дана</string>
+    <string name="widget_chart_description">дневни сати слушања у последњих 30 дана</string>
 
     <!-- Заједничке радње -->
     <string name="action_save">спреми</string>

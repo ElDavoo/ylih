@@ -132,6 +132,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — kuulokeaikaa, säilytettynä paikallisesti ja ikuisesti.</string>
     <string name="settings_import_confirm_title">korvataanko kaikki tiedot?</string>
     <string name="settings_import_confirm_body">tämän varmuuskopion tuominen poistaa kaikki nyt tallennetut laitteet, parit ja sessiot.</string>
+    <string name="widget_lifetime_label">ylih · elinikä</string>
+    <string name="widget_lifetime_description">tunnit paria kohden ja käynnissä oleva ajastin yhdistetylle</string>
+    <string name="widget_activity_label">ylih · aktiivisuus</string>
+    <string name="widget_activity_description">kaikkien parien tunnit yhdessä sekä tänään, 7 päivää ja 30 päivää</string>
+    <string name="widget_chart_label">ylih · 30 päivää</string>
+    <string name="widget_chart_description">päivittäiset kuuntelutunnit viimeisten 30 päivän ajalta</string>
 
     <!-- Yhteiset toiminnot -->
     <string name="action_save">tallenna</string>

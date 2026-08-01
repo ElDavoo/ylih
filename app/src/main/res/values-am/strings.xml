@@ -130,6 +130,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — ሰዓታት በዋቅ, ተከላ በራሳቸው ቦታ ምንባር ተከላ።</string>
     <string name="settings_import_confirm_title">ሁሉም ውሂብ ተተክሎ ይሁን?</string>
     <string name="settings_import_confirm_body">ይህ መቀመጥ ወደ ውስጥ አምጡ ሁሉም መሳሪያ ጥንድ ስብሰባ ታሁንኋል ይሰረዛሉ።</string>
+    <string name="widget_lifetime_label">ylih · ዕድሜ</string>
+    <string name="widget_lifetime_description">በእያንዳንዱ ጥንድ ላይ ሰዓታት፣ ከተገናኘው ጋር ቀጥታ ሰዓት ቆጣሪ</string>
+    <string name="widget_activity_label">ylih · እንቅስቃሴ</string>
+    <string name="widget_activity_description">የሁሉም ጥንዶች ሰዓታት አንድ ላይ፣ እንዲሁም ዛሬ፣ 7 ቀናት እና 30 ቀናት</string>
+    <string name="widget_chart_label">ylih · 30 ቀናት</string>
+    <string name="widget_chart_description">ባለፉት 30 ቀናት ውስጥ ዕለታዊ የማዳመጥ ሰዓታት</string>
 
     <!-- የጋራ ድርጊት -->
     <string name="action_save">አስቀምጥ</string>

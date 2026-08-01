@@ -132,6 +132,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) —— 耳机时长,永久保存在本地。</string>
     <string name="settings_import_confirm_title">替换所有数据?</string>
     <string name="settings_import_confirm_body">导入此备份会删除当前存储的所有设备、耳机和连接记录。</string>
+    <string name="widget_lifetime_label">ylih · 总时长</string>
+    <string name="widget_lifetime_description">每副耳机的时长，已连接的那副还带实时计时</string>
+    <string name="widget_activity_label">ylih · 活动</string>
+    <string name="widget_activity_description">所有耳机的总时长，以及今天、7天和30天</string>
+    <string name="widget_chart_label">ylih · 30天</string>
+    <string name="widget_chart_description">最近30天的每日收听时长</string>
 
     <!-- 通用操作 -->
     <string name="action_save">保存</string>

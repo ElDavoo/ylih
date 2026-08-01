@@ -133,6 +133,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — שעות אוזניות, נשמרות מקומית ולתמיד.</string>
     <string name="settings_import_confirm_title">להחליף את כל הנתונים?</string>
     <string name="settings_import_confirm_body">ייבוא הגיבוי הזה מוחק כל התקן, זוג ומפגש ששמורים עכשיו.</string>
+    <string name="widget_lifetime_label">ylih · אורך חיים</string>
+    <string name="widget_lifetime_description">שעות לכל זוג, עם טיימר חי על מה שמחובר</string>
+    <string name="widget_activity_label">ylih · פעילות</string>
+    <string name="widget_activity_description">השעות של כל הזוגות יחד, וגם היום, 7 ימים ו-30 ימים</string>
+    <string name="widget_chart_label">ylih · 30 ימים</string>
+    <string name="widget_chart_description">שעות האזנה יומיות ב-30 הימים האחרונים</string>
 
     <!-- פעולות משותפות -->
     <string name="action_save">שמירה</string>

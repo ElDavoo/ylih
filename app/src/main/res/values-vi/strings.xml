@@ -132,6 +132,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — số giờ tai nghe, được lưu tại chỗ và mãi mãi.</string>
     <string name="settings_import_confirm_title">thay thế toàn bộ dữ liệu?</string>
     <string name="settings_import_confirm_body">nhập bản sao lưu này sẽ xóa mọi thiết bị, đôi tai nghe và phiên đang được lưu hiện tại.</string>
+    <string name="widget_lifetime_label">ylih · tổng thời gian</string>
+    <string name="widget_lifetime_description">số giờ của từng đôi, kèm bộ đếm chạy trực tiếp cho đôi đang kết nối</string>
+    <string name="widget_activity_label">ylih · hoạt động</string>
+    <string name="widget_activity_description">số giờ của tất cả các đôi cộng lại, cùng hôm nay, 7 ngày và 30 ngày</string>
+    <string name="widget_chart_label">ylih · 30 ngày</string>
+    <string name="widget_chart_description">số giờ nghe mỗi ngày trong 30 ngày qua</string>
 
     <!-- Hành động dùng chung -->
     <string name="action_save">lưu</string>

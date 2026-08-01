@@ -132,6 +132,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — høretelefontimer, gemt lokalt og for altid.</string>
     <string name="settings_import_confirm_title">erstat alle data?</string>
     <string name="settings_import_confirm_body">import af denne sikkerhedskopi sletter hver enhed, hvert par og hver session, der er gemt nu.</string>
+    <string name="widget_lifetime_label">ylih · levetid</string>
+    <string name="widget_lifetime_description">timer pr. par med et levende stopur på det, der er forbundet</string>
+    <string name="widget_activity_label">ylih · aktivitet</string>
+    <string name="widget_activity_description">alle pars timer tilsammen plus i dag, 7 dage og 30 dage</string>
+    <string name="widget_chart_label">ylih · 30 dage</string>
+    <string name="widget_chart_description">daglige lyttetimer de sidste 30 dage</string>
 
     <!-- Fælles handlinger -->
     <string name="action_save">gem</string>

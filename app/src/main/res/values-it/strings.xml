@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — le ore delle tue cuffie, in locale e per sempre.</string>
     <string name="settings_import_confirm_title">sostituire tutti i dati?</string>
     <string name="settings_import_confirm_body">importare questo backup elimina ogni dispositivo, paio e sessione registrati finora.</string>
+    <string name="widget_lifetime_label">ylih · totale</string>
+    <string name="widget_lifetime_description">ore per paio, con un cronometro dal vivo su quello connesso</string>
+    <string name="widget_activity_label">ylih · attività</string>
+    <string name="widget_activity_description">le ore di tutte le paia insieme, più oggi, 7 giorni e 30 giorni</string>
+    <string name="widget_chart_label">ylih · 30 giorni</string>
+    <string name="widget_chart_description">ore di ascolto giornaliere negli ultimi 30 giorni</string>
 
     <!-- Azioni comuni -->
     <string name="action_save">salva</string>

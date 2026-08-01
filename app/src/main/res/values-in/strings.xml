@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — jam headphone, disimpan secara lokal dan selamanya.</string>
     <string name="settings_import_confirm_title">ganti semua data?</string>
     <string name="settings_import_confirm_body">mengimpor cadangan ini menghapus setiap perangkat, pasangan, dan sesi yang tersimpan sekarang.</string>
+    <string name="widget_lifetime_label">ylih · masa pakai</string>
+    <string name="widget_lifetime_description">jam per pasangan, dengan penghitung waktu langsung untuk yang terhubung</string>
+    <string name="widget_activity_label">ylih · aktivitas</string>
+    <string name="widget_activity_description">jam semua pasangan digabung, plus hari ini, 7 hari, dan 30 hari</string>
+    <string name="widget_chart_label">ylih · 30 hari</string>
+    <string name="widget_chart_description">jam mendengarkan harian selama 30 hari terakhir</string>
 
     <!-- Aksi bersama -->
     <string name="action_save">simpan</string>

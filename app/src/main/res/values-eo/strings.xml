@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — horoj de altkuraj aŭdiloj, konservita loke kaj ĉiam.</string>
     <string name="settings_import_confirm_title">anstataŭigu ĉiujn datumojn?</string>
     <string name="settings_import_confirm_body">enporto de ĉi tiu sekurejo forviŝas ĉiun aparaton, paron kaj seanco konservita nun.</string>
+    <string name="widget_lifetime_label">ylih · viv-daŭro</string>
+    <string name="widget_lifetime_description">horoj po paro, kun viva horloĝo por tio kio estas konektita</string>
+    <string name="widget_activity_label">ylih · aktiveco</string>
+    <string name="widget_activity_description">la horoj de ĉiuj paroj kune, plus hodiaŭ, 7 tagoj kaj 30 tagoj</string>
+    <string name="widget_chart_label">ylih · 30 tagoj</string>
+    <string name="widget_chart_description">ĉiutagaj aŭskultaj horoj dum la lastaj 30 tagoj</string>
 
     <!-- Komunaj agoj -->
     <string name="action_save">konservu</string>

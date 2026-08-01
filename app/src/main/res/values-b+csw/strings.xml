@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — mahkohkana otisinahk, ki-atayakahwew kisisohk mina mahcihowin.</string>
     <string name="settings_import_confirm_title">macinakik kisisohk akayasimohkana?</string>
     <string name="settings_import_confirm_body">mayik eso atayakahwin ki-macinakik kisisohk wacistahkamikohk, otisinahk mina atihcamohkana eko ki-akayasimohk.</string>
+    <string name="widget_lifetime_label">ylih · pimātisiwin</string>
+    <string name="widget_lifetime_description">mahkohkana pēyak pēyak, ēkwa ki mawocik</string>
+    <string name="widget_activity_label">ylih · atoskēwin</string>
+    <string name="widget_activity_description">mahkohkana kahkiyaw māmawi, ēkwa anohc kīsikāw, 7 osap ēkwa 30 osap</string>
+    <string name="widget_chart_label">ylih · 30 osap</string>
+    <string name="widget_chart_description">mahkohkana ayisiyiniw ay-isko mihtik osap</string>
 
     <!-- Shared actions -->
     <string name="action_save">atayakahw</string>

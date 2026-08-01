@@ -134,6 +134,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — Kopfhörerstunden, lokal gespeichert und für immer.</string>
     <string name="settings_import_confirm_title">alle Daten ersetzen?</string>
     <string name="settings_import_confirm_body">das Importieren dieses Backups löscht jedes Gerät, Paar und jede Sitzung, die derzeit gespeichert sind.</string>
+    <string name="widget_lifetime_label">ylih · Gesamtzeit</string>
+    <string name="widget_lifetime_description">Stunden pro Paar, mit laufender Uhr für das verbundene</string>
+    <string name="widget_activity_label">ylih · Aktivität</string>
+    <string name="widget_activity_description">die Stunden aller Paare zusammen, dazu heute, 7 Tage und 30 Tage</string>
+    <string name="widget_chart_label">ylih · 30 Tage</string>
+    <string name="widget_chart_description">tägliche Hörstunden der letzten 30 Tage</string>
 
     <!-- Gemeinsame Aktionen -->
     <string name="action_save">speichern</string>

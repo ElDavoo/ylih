@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — наухьана соьатаяр, локал йо а имме.</string>
     <string name="settings_import_confirm_title">массала ан сеъна йацира?</string>
     <string name="settings_import_confirm_body">мындара резервнах копи импорт энца йоьшу устройствар, паран а сессияр массала устӏаяьллча гулар.</string>
+    <string name="widget_lifetime_label">ylih · доза</string>
+    <string name="widget_lifetime_description">хӀора пара тӀехь сахьташ, жимехь долчунна дийна таймер</string>
+    <string name="widget_activity_label">ylih · гӀуллакх</string>
+    <string name="widget_activity_description">массо пара сахьташ цхьаьна, тахана, 7 ДӀа а 30 ДӀа а</string>
+    <string name="widget_chart_label">ylih · 30 ДӀа</string>
+    <string name="widget_chart_description">тӀаьххьара 30 ДӀа чохь деношхьара ладогӀаран сахьташ</string>
 
     <!-- Общих действий -->
     <string name="action_save">сохранить</string>

@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — horas de fones de ouvido, guardadas localmente e para sempre.</string>
     <string name="settings_import_confirm_title">substituir todos os dados?</string>
     <string name="settings_import_confirm_body">importar este backup exclui todos os dispositivos, pares e sessões armazenados agora.</string>
+    <string name="widget_lifetime_label">ylih · tempo total</string>
+    <string name="widget_lifetime_description">horas por par, com um cronômetro ao vivo no que está conectado</string>
+    <string name="widget_activity_label">ylih · atividade</string>
+    <string name="widget_activity_description">as horas de todos os pares juntas, mais hoje, 7 dias e 30 dias</string>
+    <string name="widget_chart_label">ylih · 30 dias</string>
+    <string name="widget_chart_description">horas de escuta diárias nos últimos 30 dias</string>
 
     <!-- Ações comuns -->
     <string name="action_save">salvar</string>

@@ -132,6 +132,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — a fejhallgatóid órái, helyben tárolva, örökre.</string>
     <string name="settings_import_confirm_title">lecseréled az összes adatot?</string>
     <string name="settings_import_confirm_body">ennek a mentésnek az importálása törli az összes jelenleg tárolt eszközt, párt és munkamenetet.</string>
+    <string name="widget_lifetime_label">ylih · összidő</string>
+    <string name="widget_lifetime_description">óra páronként, élő stopperrel azon, ami csatlakoztatva van</string>
+    <string name="widget_activity_label">ylih · aktivitás</string>
+    <string name="widget_activity_description">az összes pár órái együtt, plusz ma, 7 nap és 30 nap</string>
+    <string name="widget_chart_label">ylih · 30 nap</string>
+    <string name="widget_chart_description">napi hallgatási órák az utolsó 30 napban</string>
 
     <!-- Közös műveletek -->
     <string name="action_save">mentés</string>

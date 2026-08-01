@@ -132,6 +132,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — orele căștilor tale, păstrate local și pentru totdeauna.</string>
     <string name="settings_import_confirm_title">înlocuiești toate datele?</string>
     <string name="settings_import_confirm_body">importul acestei copii de rezervă șterge fiecare dispozitiv, pereche și sesiune stocate acum.</string>
+    <string name="widget_lifetime_label">ylih · durată de viață</string>
+    <string name="widget_lifetime_description">ore pentru fiecare pereche, cu un cronometru live pe cea conectată</string>
+    <string name="widget_activity_label">ylih · activitate</string>
+    <string name="widget_activity_description">orele tuturor perechilor la un loc, plus azi, 7 zile și 30 de zile</string>
+    <string name="widget_chart_label">ylih · 30 de zile</string>
+    <string name="widget_chart_description">ore de ascultare zilnice din ultimele 30 de zile</string>
 
     <!-- Acțiuni comune -->
     <string name="action_save">salvează</string>

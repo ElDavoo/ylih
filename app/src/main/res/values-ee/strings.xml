@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — gaƒoƒo heaphones me, le nyɔ sia me ko kple bubu dzi.</string>
     <string name="settings_import_confirm_title">wɔ nu siwo le ŋu ko?</string>
     <string name="settings_import_confirm_body">lo ɖe me sia la, wɔ nyawo, ɖokuɖo kple nusẽ siwo le ŋu le azɔ.</string>
+    <string name="widget_lifetime_label">ylih · agbe</string>
+    <string name="widget_lifetime_description">gaƒoƒowo ɖe ɖeka ɖe sia ɖe ŋu, kple gaƒoƒodzikpɔla si le tutum</string>
+    <string name="widget_activity_label">ylih · dɔwɔwɔ</string>
+    <string name="widget_activity_description">gaƒoƒowo katã ƒo ƒu, kple egbe, ŋkeke 7 kple ŋkeke 30</string>
+    <string name="widget_chart_label">ylih · ŋkeke 30</string>
+    <string name="widget_chart_description">gbe sia gbe seselewo ƒe gaƒoƒowo le ŋkeke 30 si va yi me</string>
 
     <!-- Shared actions -->
     <string name="action_save">ŋ ŋu</string>

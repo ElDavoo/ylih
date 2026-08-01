@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — waktuuji hiirde, notere ko-soɗɗinde.</string>
     <string name="settings_import_confirm_title">miiɗ joɓinol foofe?</string>
     <string name="settings_import_confirm_body">seede backup ngii ko miiɗ kuuseeje, peere, sekkuuji notere haŋ-tii.</string>
+    <string name="widget_lifetime_label">ylih · ndiyam</string>
+    <string name="widget_lifetime_description">waktuuji e kala peere, e waktu wuurɗo e ko seedd\'i</string>
+    <string name="widget_activity_label">ylih · golle</string>
+    <string name="widget_activity_description">waktuuji peere fof denndaangal, e hannde, joomuuji 7 e joomuuji 30</string>
+    <string name="widget_chart_label">ylih · joomuuji 30</string>
+    <string name="widget_chart_description">waktuuji heɗagol baŋko e nder joomuuji 30 sannde</string>
 
     <!-- Jinna sifa foofe -->
     <string name="action_save">seede</string>

@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — manim headphones, na wɔkora wɔ simu yi so daakye.</string>
     <string name="settings_import_confirm_title">sesa din nyinaa?</string>
     <string name="settings_import_confirm_body">sɛ ɔfa foforo yi ba a, ɛbɛsoa asua nyinaa, sua nyinaa ne bere nyinaa a ɛdan hɔ.</string>
+    <string name="widget_lifetime_label">ylih · bra</string>
+    <string name="widget_lifetime_description">nnɔnhwerew wɔ sua biara so, ne bere a ɛrekɔ so wɔ deɛ ɛdum</string>
+    <string name="widget_activity_label">ylih · dwumadie</string>
+    <string name="widget_activity_description">sua nyinaa nnɔnhwerew bom, ne ndɛ, nnɔnnum 7 ne nnɔnnum 30</string>
+    <string name="widget_chart_label">ylih · nnɔnnum 30</string>
+    <string name="widget_chart_description">da biara nnɔnhwerew wɔ nnɔnnum 30 a atwam mu</string>
 
     <!-- Shared actions -->
     <string name="action_save">kyerɛ</string>

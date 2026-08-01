@@ -132,6 +132,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — ชั่วโมงการใช้หูฟัง เก็บไว้ในเครื่องตลอดไป</string>
     <string name="settings_import_confirm_title">แทนที่ข้อมูลทั้งหมดหรือไม่</string>
     <string name="settings_import_confirm_body">การนำเข้าไฟล์สำรองนี้จะลบทุกอุปกรณ์ คู่หูฟัง และช่วงการใช้งานที่บันทึกไว้ในขณะนี้</string>
+    <string name="widget_lifetime_label">ylih · อายุการใช้งาน</string>
+    <string name="widget_lifetime_description">ชั่วโมงต่อคู่ พร้อมตัวจับเวลาสดของคู่ที่เชื่อมต่ออยู่</string>
+    <string name="widget_activity_label">ylih · กิจกรรม</string>
+    <string name="widget_activity_description">ชั่วโมงของทุกคู่รวมกัน พร้อมวันนี้ 7 วัน และ 30 วัน</string>
+    <string name="widget_chart_label">ylih · 30 วัน</string>
+    <string name="widget_chart_description">ชั่วโมงการฟังต่อวันใน 30 วันล่าสุด</string>
 
     <!-- การกระทำที่ใช้ร่วมกัน -->
     <string name="action_save">บันทึก</string>

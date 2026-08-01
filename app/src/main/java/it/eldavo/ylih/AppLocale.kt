@@ -77,6 +77,17 @@ object AppLocale {
         return apply(base, runBlocking { SettingsStore(base).languageNow() })
     }
 
+    /**
+     * [wrap] for a caller that can suspend.
+     *
+     * A home-screen widget is composed inside a coroutine and has no `attachBaseContext` to sit
+     * in, so it has neither the reason nor the excuse to block on DataStore.
+     */
+    suspend fun wrapSuspending(base: Context): Context {
+        if (!NEEDS_IN_APP_PICKER) return base
+        return apply(base, SettingsStore(base).languageNow())
+    }
+
     /** Visible for the tests and for [wrap]; [tag] is a BCP 47 tag or [SYSTEM]. */
     fun apply(base: Context, tag: String): Context {
         val locale = if (tag == SYSTEM) systemLocale() else Locale.forLanguageTag(tag)

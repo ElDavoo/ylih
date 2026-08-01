@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — kwé ŋgɛ, ba dib sa nòŋ mɛ forever.</string>
     <string name="settings_import_confirm_title">tóp kuɓ ba?</string>
     <string name="settings_import_confirm_body">sɔŋ ku backup ba bá kuɓ, kuɓ mɛ sɔŋ ba.</string>
+    <string name="widget_lifetime_label">ylih · kwé</string>
+    <string name="widget_lifetime_description">kwé i kuɓ i kuɓ, ni sɔŋ i bun</string>
+    <string name="widget_activity_label">ylih · bisu</string>
+    <string name="widget_activity_description">kwé bi kuɓ bi ɓɛsɛ, ni lɛ̌n, ñen 7 ni ñen 30</string>
+    <string name="widget_chart_label">ylih · ñen 30</string>
+    <string name="widget_chart_description">kwé/ñen i ñen 30 ba tóʔ</string>
 
     <!-- Shared actions -->
     <string name="action_save">tém</string>

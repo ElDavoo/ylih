@@ -86,6 +86,9 @@ class SessionRepository(
 
     suspend fun openSessionsSnapshot(): List<SessionEntity> = sessions.allOpen()
 
+    /** Sessions a window opening at [from] can still reach. A read, so no mutex. */
+    suspend fun sessionsSince(from: Long): List<SessionEntity> = sessions.since(from)
+
     /**
      * Brings the database back in line with reality after process death, a reboot, or a
      * tracking-mode change.

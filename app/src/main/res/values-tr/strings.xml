@@ -132,6 +132,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — kulaklık saatlerin, yerel olarak ve sonsuza dek saklanır.</string>
     <string name="settings_import_confirm_title">tüm veriler değiştirilsin mi?</string>
     <string name="settings_import_confirm_body">bu yedeği içe aktarmak, şu anda kayıtlı olan her cihazı, çifti ve oturumu siler.</string>
+    <string name="widget_lifetime_label">ylih · ömür</string>
+    <string name="widget_lifetime_description">her çift için saatler, bağlı olanda canlı bir sayaç</string>
+    <string name="widget_activity_label">ylih · etkinlik</string>
+    <string name="widget_activity_description">tüm çiftlerin saatleri birlikte, ayrıca bugün, 7 gün ve 30 gün</string>
+    <string name="widget_chart_label">ylih · 30 gün</string>
+    <string name="widget_chart_description">son 30 gündeki günlük dinleme saatleri</string>
 
     <!-- Ortak eylemler -->
     <string name="action_save">kaydet</string>

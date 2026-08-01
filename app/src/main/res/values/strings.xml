@@ -142,6 +142,16 @@
     <string name="settings_import_confirm_title">replace all data?</string>
     <string name="settings_import_confirm_body">importing this backup deletes every device, pair and session stored now.</string>
 
+    <!-- Home-screen widgets. The label is the entry in the widget picker; the description is the
+         line under it, which only Android 12 and above shows. Everything the widgets actually
+         display reuses the vocabulary above. -->
+    <string name="widget_lifetime_label">ylih · lifetime</string>
+    <string name="widget_lifetime_description">hours per pair, with a live timer on whatever is connected</string>
+    <string name="widget_activity_label">ylih · activity</string>
+    <string name="widget_activity_description">every pair\'s hours together, plus today, 7 days and 30 days</string>
+    <string name="widget_chart_label">ylih · 30 days</string>
+    <string name="widget_chart_description">daily listening hours over the last 30 days</string>
+
     <!-- Shared actions -->
     <string name="action_save">save</string>
     <!-- Lowercase is the house style, not a missed capital; @android:string/cancel would drag in

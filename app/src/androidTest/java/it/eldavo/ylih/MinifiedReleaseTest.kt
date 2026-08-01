@@ -3,11 +3,16 @@ package it.eldavo.ylih
 import android.content.Context
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
+import androidx.core.content.ContextCompat
+import androidx.glance.appwidget.GlanceAppWidgetReceiver
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.GrantPermissionRule
 import androidx.work.ListenableWorker
 import androidx.work.WorkerParameters
 import it.eldavo.ylih.data.DeviceIdentity
+import it.eldavo.ylih.widget.ActivityWidget
+import it.eldavo.ylih.widget.ChartWidget
+import it.eldavo.ylih.widget.LifetimeWidget
 import it.eldavo.ylih.data.DeviceKind
 import it.eldavo.ylih.data.SessionRepository
 import it.eldavo.ylih.data.YlihDatabase
@@ -132,6 +137,46 @@ class MinifiedReleaseTest {
         // exported is therefore an identity, which is what makes this safe to run on a device.
         JsonBackup.import(db, exported)
         assertEquals(before, db.sessionDao().getAll().size)
+    }
+
+    /**
+     * A home-screen widget is reached entirely by name: the launcher instantiates the receiver
+     * from the string in the merged manifest, and Glance finds a widget's receiver by
+     * instantiating every receiver the manifest names and asking each which `GlanceAppWidget` it
+     * hosts. Neither route is a symbol the compiler can check.
+     *
+     * The resources are the other half, and the half a keep rule would not cover: `previewImage`
+     * and `description` are referenced only from `res/xml/widget_*_info.xml`, which is exactly the
+     * shape of reference the *resource* shrinker is free to decide nothing uses. A stripped
+     * preview is not a crash — it is a blank tile in the widget picker.
+     */
+    @Test
+    fun theWidgetsAreStillReachableByNameAndKeptTheirResources() {
+        val hosted = mapOf(
+            "it.eldavo.ylih.widget.LifetimeWidgetReceiver" to LifetimeWidget::class.java,
+            "it.eldavo.ylih.widget.ActivityWidgetReceiver" to ActivityWidget::class.java,
+            "it.eldavo.ylih.widget.ChartWidgetReceiver" to ChartWidget::class.java,
+        )
+        for ((name, widget) in hosted) {
+            val receiver = Class.forName(name).getDeclaredConstructor().newInstance()
+            assertTrue(
+                "$name is no longer a GlanceAppWidgetReceiver, so the launcher could not run it",
+                receiver is GlanceAppWidgetReceiver,
+            )
+            assertEquals(widget, (receiver as GlanceAppWidgetReceiver).glanceAppWidget.javaClass)
+        }
+
+        for (preview in listOf(
+            R.drawable.widget_preview_lifetime,
+            R.drawable.widget_preview_activity,
+            R.drawable.widget_preview_chart,
+        )) {
+            assertNotNull("the widget picker preview was shrunk away", ContextCompat.getDrawable(context, preview))
+        }
+        // Throws Resources.NotFoundException if the shrinker decided nothing pointed at it.
+        for (info in listOf(R.xml.widget_lifetime_info, R.xml.widget_activity_info, R.xml.widget_chart_info)) {
+            context.resources.getXml(info).close()
+        }
     }
 
     /**

@@ -29,6 +29,15 @@ class TrackingController(
     private val context: Context,
     private val repository: SessionRepository,
     private val settings: SettingsStore,
+    /**
+     * Poked once every write has landed, so the home-screen widgets can redraw.
+     *
+     * Injected rather than calling Glance from here for the same reason [clock] is injected: it
+     * keeps the policy layer testable without a launcher. It sits *before* [clock] deliberately —
+     * that leaves the trailing-lambda call the tests use binding to the clock, where a default on
+     * the clock instead would silently hand them the wall clock.
+     */
+    private val onDataChanged: suspend () -> Unit = {},
     private val clock: Clock,
 ) {
     private val audioManager: AudioManager = context.getSystemService(AudioManager::class.java)
@@ -90,6 +99,7 @@ class TrackingController(
         )
         if (detailed) startService() else stopService()
         updateHeartbeatWork()
+        onDataChanged()
     }
 
     /** @return false if this build cannot run the service right now; nothing was changed. */
@@ -108,11 +118,13 @@ class TrackingController(
     suspend fun onSessionOpened(detailedTracking: Boolean) {
         if (detailedTracking) startService()
         updateHeartbeatWork()
+        onDataChanged()
     }
 
     /** Called after a disconnect event; drops the heartbeat when there is nothing to watch. */
     suspend fun onSessionClosed() {
         updateHeartbeatWork()
+        onDataChanged()
     }
 
     fun startService() {

@@ -134,6 +134,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — hodetelefontimer, lagret lokalt og for alltid.</string>
     <string name="settings_import_confirm_title">erstatte alle data?</string>
     <string name="settings_import_confirm_body">import av denne sikkerhetskopien sletter hver enhet, hvert par og hver økt som er lagret nå.</string>
+    <string name="widget_lifetime_label">ylih · levetid</string>
+    <string name="widget_lifetime_description">timer per par, med en levende teller på det som er tilkoblet</string>
+    <string name="widget_activity_label">ylih · aktivitet</string>
+    <string name="widget_activity_description">timene til alle par samlet, pluss i dag, 7 dager og 30 dager</string>
+    <string name="widget_chart_label">ylih · 30 dager</string>
+    <string name="widget_chart_description">daglige lyttetimer de siste 30 dagene</string>
 
     <!-- Delte handlinger -->
     <string name="action_save">lagre</string>

@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — heyrnirtóla tímar, haldir lokal og til eilivíl.</string>
     <string name="settings_import_confirm_title">ynskra allar dátir?</string>
     <string name="settings_import_confirm_body">innflyt av hesi búðarskrá strikar hvørt tækji, pair og setu, sum nú er goymt.</string>
+    <string name="widget_lifetime_label">ylih · lívskaar</string>
+    <string name="widget_lifetime_description">tímar á hvørt par, við livandi tíðartakara á tí sum er tengt</string>
+    <string name="widget_activity_label">ylih · virksemi</string>
+    <string name="widget_activity_description">tímarnir hjá øllum pørum saman, umframt í dag, 7 dagar og 30 dagar</string>
+    <string name="widget_chart_label">ylih · 30 dagar</string>
+    <string name="widget_chart_description">dagligir lyddartímar seinastu 30 dagarnar</string>
 
     <!-- Sameiginlig virki -->
     <string name="action_save">goyma</string>

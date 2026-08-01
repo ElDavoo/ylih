@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — часы в наушниках, хранятся локально и навсегда.</string>
     <string name="settings_import_confirm_title">заменить все данные?</string>
     <string name="settings_import_confirm_body">импорт этой резервной копии удалит каждое устройство, пару и сессию, сохранённые сейчас.</string>
+    <string name="widget_lifetime_label">ylih · время</string>
+    <string name="widget_lifetime_description">часы по каждой паре и живой таймер на подключённой</string>
+    <string name="widget_activity_label">ylih · активность</string>
+    <string name="widget_activity_description">часы всех пар вместе, а также сегодня, 7 дней и 30 дней</string>
+    <string name="widget_chart_label">ylih · 30 дней</string>
+    <string name="widget_chart_description">ежедневные часы прослушивания за последние 30 дней</string>
 
     <!-- Общие действия -->
     <string name="action_save">сохранить</string>

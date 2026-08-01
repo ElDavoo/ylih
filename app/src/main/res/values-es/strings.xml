@@ -132,6 +132,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — horas de tus auriculares, guardadas en local y para siempre.</string>
     <string name="settings_import_confirm_title">¿reemplazar todos los datos?</string>
     <string name="settings_import_confirm_body">importar esta copia elimina cada dispositivo, par y sesión almacenados ahora.</string>
+    <string name="widget_lifetime_label">ylih · vida</string>
+    <string name="widget_lifetime_description">horas por par, con un cronómetro en directo de lo que está conectado</string>
+    <string name="widget_activity_label">ylih · actividad</string>
+    <string name="widget_activity_description">las horas de todos los pares juntas, más hoy, 7 días y 30 días</string>
+    <string name="widget_chart_label">ylih · 30 días</string>
+    <string name="widget_chart_description">horas de escucha diarias de los últimos 30 días</string>
 
     <!-- Acciones comunes -->
     <string name="action_save">guardar</string>

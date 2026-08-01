@@ -28,7 +28,7 @@ import java.util.Locale
 /**
  * Generates the phone screenshots for the Play Console listing. Run with:
  *
- *     ./gradlew :app:recordRoborazziPlayDebug
+ *     ./gradlew :app:recordRoborazziPlayReleaseTest
  *
  * Outside a record task Roborazzi's capture calls do nothing, so this costs one composition in the
  * ordinary unit-test run and produces no files.

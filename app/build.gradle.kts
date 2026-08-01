@@ -281,6 +281,8 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.androidx.glance.appwidget)
+    implementation(libs.androidx.glance.material3)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.serialization.json)
 
@@ -307,6 +309,9 @@ dependencies {
     // needs a WorkManager that initialises without its androidx.startup provider and runs its
     // workers on the test thread.
     testImplementation(libs.androidx.work.testing)
+    // Composes a GlanceAppWidget to a node tree off-device, which is the only way anything here
+    // exercises the widgets: RemoteViews are built in our process but rendered in the launcher's.
+    testImplementation(libs.androidx.glance.appwidget.testing)
 
     // Store-listing asset generation (StoreScreenshots). Roborazzi's capture calls are inert
     // unless a record/verify task turns them on, so these ride along in the normal unit-test run

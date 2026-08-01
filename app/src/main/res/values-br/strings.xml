@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — eurvezhioù en tonelloù, gwarchañ e-lec\'h hag bepred.</string>
     <string name="settings_import_confirm_title">c\'hellac\'h holl roadennoù?</string>
     <string name="settings_import_confirm_body">enderzhañ ar savegezh-mañ a c\'hellac\'h bep tachenn, parol hag daolenn gwarchañ bremañ.</string>
+    <string name="widget_lifetime_label">ylih · buhez</string>
+    <string name="widget_lifetime_description">eurvezhioù dre re, gant un amzerier bev war ar re staget</string>
+    <string name="widget_activity_label">ylih · oberiantiz</string>
+    <string name="widget_activity_description">eurvezhioù an holl re asambles, ha hiziv, 7 devezhioù ha 30 devezhioù</string>
+    <string name="widget_chart_label">ylih · 30 devezhioù</string>
+    <string name="widget_chart_description">eurvezhioù selaou pemdeziek er 30 devezhioù diwezhañ</string>
 
     <!-- Oberoù a-zivout -->
     <string name="action_save">gwarzhiañ</string>

@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — kuε eme bikule, tamɛ a vul eme telephone na mfolo.</string>
     <string name="settings_import_confirm_title">vul tiyo abam?</string>
     <string name="settings_import_confirm_body">kula ye bekam ane a bula zindong, bikule na dibulu abam ye a tamɛ ne.</string>
+    <string name="widget_lifetime_label">ylih · amin</string>
+    <string name="widget_lifetime_description">kuε ye bikule bot ane, a diamba</string>
+    <string name="widget_activity_label">ylih · esaé</string>
+    <string name="widget_activity_description">kuε ye bikule bese, a dén, zitom ye 7 a zitom ye 30</string>
+    <string name="widget_chart_label">ylih · zitom ye 30</string>
+    <string name="widget_chart_description">kuε ye zepot ye zitom ye 30 ye zepot</string>
 
     <!-- Ndimo ye a koule -->
     <string name="action_save">tamɛ</string>

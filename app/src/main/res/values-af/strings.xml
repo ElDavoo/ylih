@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — koptelefoonure, lokaal en vir ewig gehou.</string>
     <string name="settings_import_confirm_title">vervang alle data?</string>
     <string name="settings_import_confirm_body">invoer van hierdie rugsteun wis elke toestel, paar en sessie wat nou gestoor is, uit.</string>
+    <string name="widget_lifetime_label">ylih · leeftyd</string>
+    <string name="widget_lifetime_description">ure per paar, met \'n lewendige tydteller op dié wat gekoppel is</string>
+    <string name="widget_activity_label">ylih · aktiwiteit</string>
+    <string name="widget_activity_description">elke paar se ure saam, plus vandag, 7 dae en 30 dae</string>
+    <string name="widget_chart_label">ylih · 30 dae</string>
+    <string name="widget_chart_description">daaglikse luisterure oor die laaste 30 dae</string>
 
     <!-- Gedeelde aksies -->
     <string name="action_save">stoor</string>

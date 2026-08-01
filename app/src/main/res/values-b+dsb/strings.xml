@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — hodinow w naušnikach, na smartfonu w wjecy.</string>
     <string name="settings_import_confirm_title">wšykne data wěnšujaš?</string>
     <string name="settings_import_confirm_body">import teje kopy wšykne napšada, pary a sejady uštranis.</string>
+    <string name="widget_lifetime_label">ylih · žiwjenje</string>
+    <string name="widget_lifetime_description">hodziny na pórik, z běžecym casnikom za zwězany</string>
+    <string name="widget_activity_label">ylih · aktiwita</string>
+    <string name="widget_activity_description">hodziny wšych pórikow gromaźe, k tomu źinsa, 7 dnjow a 30 dnjow</string>
+    <string name="widget_chart_label">ylih · 30 dnjow</string>
+    <string name="widget_chart_description">dnjowne hodziny słuchanja za póslednich 30 dnjow</string>
 
     <!-- Změ akcije -->
     <string name="action_save">zachowaś</string>

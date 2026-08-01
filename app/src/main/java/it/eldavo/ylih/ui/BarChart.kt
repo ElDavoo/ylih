@@ -14,6 +14,7 @@ import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import it.eldavo.ylih.R
@@ -30,35 +31,14 @@ fun DailyBarChart(
     barColor: Color = MaterialTheme.colorScheme.primary,
     trackColor: Color = MaterialTheme.colorScheme.surfaceVariant,
 ) {
-    val maxMs = series.maxOfOrNull { it.second }?.coerceAtLeast(1L) ?: 1L
+    val maxMs = chartMaxMs(series)
     Column(modifier) {
         Canvas(
             Modifier
                 .fillMaxWidth()
                 .height(120.dp),
         ) {
-            if (series.isEmpty()) return@Canvas
-            val slot = size.width / series.size
-            val barWidth = (slot * 0.62f).coerceAtLeast(1.5f)
-            val radius = CornerRadius(barWidth / 2, barWidth / 2)
-            series.forEachIndexed { index, (_, ms) ->
-                val left = index * slot + (slot - barWidth) / 2
-                drawRoundRect(
-                    color = trackColor,
-                    topLeft = Offset(left, 0f),
-                    size = Size(barWidth, size.height),
-                    cornerRadius = radius,
-                )
-                val barHeight = (size.height * (ms.toFloat() / maxMs)).coerceAtLeast(if (ms > 0) 2f else 0f)
-                if (barHeight > 0f) {
-                    drawRoundRect(
-                        color = barColor,
-                        topLeft = Offset(left, size.height - barHeight),
-                        size = Size(barWidth, barHeight),
-                        cornerRadius = radius,
-                    )
-                }
-            }
+            drawDailyBars(series, maxMs, barColor, trackColor)
         }
         Spacer(Modifier.height(4.dp))
         Row(Modifier.fillMaxWidth()) {
@@ -80,6 +60,47 @@ fun DailyBarChart(
                 text = last?.let { formatDayLabel(it) }.orEmpty(),
                 style = MaterialTheme.typography.labelSmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
+    }
+}
+
+/** The scale the tallest bar means. Clamped so a window with no listening still divides. */
+internal fun chartMaxMs(series: List<Pair<LocalDate, Long>>): Long =
+    series.maxOfOrNull { it.second }?.coerceAtLeast(1L) ?: 1L
+
+/**
+ * The bars themselves, in whatever [DrawScope] is handed to them.
+ *
+ * Pulled out of the Canvas above so the home-screen chart widget can draw the same geometry into
+ * a bitmap: Glance has no Canvas of its own, and its layout gives equal weights only, so
+ * proportional bar heights cannot be expressed there at all.
+ */
+internal fun DrawScope.drawDailyBars(
+    series: List<Pair<LocalDate, Long>>,
+    maxMs: Long,
+    barColor: Color,
+    trackColor: Color,
+) {
+    if (series.isEmpty()) return
+    val slot = size.width / series.size
+    val barWidth = (slot * 0.62f).coerceAtLeast(1.5f)
+    val radius = CornerRadius(barWidth / 2, barWidth / 2)
+    series.forEachIndexed { index, (_, ms) ->
+        val left = index * slot + (slot - barWidth) / 2
+        drawRoundRect(
+            color = trackColor,
+            topLeft = Offset(left, 0f),
+            size = Size(barWidth, size.height),
+            cornerRadius = radius,
+        )
+        val barHeight = (size.height * (ms.toFloat() / maxMs)).coerceAtLeast(if (ms > 0) 2f else 0f)
+        if (barHeight > 0f) {
+            drawRoundRect(
+                color = barColor,
+                topLeft = Offset(left, size.height - barHeight),
+                size = Size(barWidth, barHeight),
+                cornerRadius = radius,
             )
         }
     }

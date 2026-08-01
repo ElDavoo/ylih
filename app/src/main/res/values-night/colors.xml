@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- DarkColors.surfaceContainer -->
+    <color name="widget_background">#1D2022</color>
+    <!-- Primary80, i.e. DarkColors.primary -->
+    <color name="widget_accent">#84CFFF</color>
+    <!-- DarkColors.surfaceVariant -->
+    <color name="widget_track">#41484D</color>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  From Android 12 the widget follows the wallpaper, like the app does. These are the exact tokens
+  androidx.glance's own DynamicThemeColorProviders maps widgetBackground, primary and
+  surfaceVariant to, so the parts Glance colours and the parts it cannot reach agree.
+-->
+<resources>
+    <color name="widget_background">@android:color/system_accent2_50</color>
+    <color name="widget_accent">@android:color/system_accent1_600</color>
+    <color name="widget_track">@android:color/system_neutral2_100</color>
+</resources>

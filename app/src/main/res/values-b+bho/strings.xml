@@ -131,6 +131,12 @@
     <string name="settings_about_body">ylih %1$s (%2$s) — ईयरफोन घंटा, स्थानीय अउर हमेसा के लिये रखल गइल।</string>
     <string name="settings_import_confirm_title">सब डेटा बदल दे?</string>
     <string name="settings_import_confirm_body">एही बैकअप के आयात करब तो हर उपकरण, जोड़ी अउर सत्र जे अभे बचल होय, मिट जाब।</string>
+    <string name="widget_lifetime_label">ylih · जीवनकाल</string>
+    <string name="widget_lifetime_description">हर जोड़ी के घंटा, जुड़ल जोड़ी पर चलत टाइमर</string>
+    <string name="widget_activity_label">ylih · गतिविधि</string>
+    <string name="widget_activity_description">सब जोड़ी के घंटा एक संगे, आ आज, 7 दिन आ 30 दिन</string>
+    <string name="widget_chart_label">ylih · 30 दिन</string>
+    <string name="widget_chart_description">पिछला 30 दिन के रोज सुनला के घंटा</string>
 
     <!-- साझा कार्य -->
     <string name="action_save">बचा</string>

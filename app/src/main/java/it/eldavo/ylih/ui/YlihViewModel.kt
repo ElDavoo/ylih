@@ -13,6 +13,7 @@ import it.eldavo.ylih.data.SessionEntity
 import it.eldavo.ylih.export.JsonBackup
 import it.eldavo.ylih.stats.Counting
 import it.eldavo.ylih.stats.Span
+import it.eldavo.ylih.widget.refreshWidgets
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
@@ -91,7 +92,20 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
-    fun setPlaybackOnly(enabled: Boolean) = viewModelScope.launch {
+    /**
+     * Runs a foreground edit and tells the home screen about it afterwards.
+     *
+     * The background sources are covered by `TrackingController.onDataChanged`; these are the
+     * writes that never reach it. [setPlaybackOnly] is in here as well even though it touches no
+     * session — it changes what every widget *counts*, and it is a settings write, so nothing
+     * watching the database would ever notice.
+     */
+    private fun mutate(block: suspend () -> Unit) = viewModelScope.launch {
+        block()
+        refreshWidgets(getApplication<Application>())
+    }
+
+    fun setPlaybackOnly(enabled: Boolean) = mutate {
         container.settings.setPlaybackOnly(enabled)
     }
 
@@ -113,27 +127,28 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
         container.trackingController.syncWithSystem()
     }
 
-    fun retirePair(pairId: Long, reason: String?) = viewModelScope.launch {
+    fun retirePair(pairId: Long, reason: String?) = mutate {
         container.repository.retirePair(pairId, reason)
     }
 
-    fun renamePair(pairId: Long, label: String) = viewModelScope.launch {
+    fun renamePair(pairId: Long, label: String) = mutate {
         container.repository.renamePair(pairId, label)
     }
 
     fun setPurchaseInfo(pairId: Long, purchaseDate: Long?, priceCents: Long?) = viewModelScope.launch {
+        // Not a mutate: a price changes no figure any widget shows.
         container.repository.setPurchaseInfo(pairId, purchaseDate, priceCents)
     }
 
-    fun deletePair(pairId: Long) = viewModelScope.launch {
+    fun deletePair(pairId: Long) = mutate {
         container.repository.deletePair(pairId)
     }
 
-    fun deleteSession(sessionId: Long) = viewModelScope.launch {
+    fun deleteSession(sessionId: Long) = mutate {
         container.repository.deleteSession(sessionId)
     }
 
-    fun setDeviceIgnored(deviceId: Long, ignored: Boolean) = viewModelScope.launch {
+    fun setDeviceIgnored(deviceId: Long, ignored: Boolean) = mutate {
         container.repository.setDeviceIgnored(deviceId, ignored)
     }
 
@@ -147,7 +162,7 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
             .onFailure { messageChannel.send(it.message ?: string(RES_EXPORT_FAILED)) }
     }
 
-    fun importFrom(uri: Uri) = viewModelScope.launch {
+    fun importFrom(uri: Uri) = mutate {
         runCatching {
             val content = getApplication<Application>().contentResolver.openInputStream(uri)
                 ?.use { it.readBytes().decodeToString() }
