@@ -324,6 +324,32 @@ class TrackingControllerTest {
 
         controller.onSessionClosed()
         assertEquals(3, dataChanges)
+
+        // What the service calls for the sessions it writes itself — a wired plug reaches nothing
+        // else — and for the playback its minute tick has just credited.
+        controller.onSessionsChanged()
+        assertEquals(4, dataChanges)
+
+        controller.onFiguresChanged()
+        assertEquals(5, dataChanges)
+    }
+
+    @Test
+    fun `a redraw leaves the background machinery alone`() = runTest {
+        // onFiguresChanged runs once a minute for as long as a pair is connected, so it must be
+        // the cheap one: no WorkManager write, only the redraw. Closing the session behind the
+        // controller's back is what makes the difference visible — onSessionsChanged would notice
+        // and cancel the heartbeat, and this must not.
+        connect(buds())
+        controller.syncWithSystem()
+        assertTrue(heartbeatScheduled())
+        repository.closeSessionsForKinds(setOf(DeviceKind.BLUETOOTH))
+
+        controller.onFiguresChanged()
+        assertTrue("a redraw rescheduled the heartbeat", heartbeatScheduled())
+
+        controller.onSessionsChanged()
+        assertFalse(heartbeatScheduled())
     }
 
     /** Stands in for whatever the controller schedules, so only the scheduling is under test. */

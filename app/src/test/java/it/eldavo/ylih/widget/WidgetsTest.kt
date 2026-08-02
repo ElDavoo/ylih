@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.compose.ui.unit.DpSize
+import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import androidx.glance.appwidget.testing.unit.hasStartActivityClickAction
 import androidx.glance.appwidget.testing.unit.runGlanceAppWidgetUnitTest
@@ -116,6 +117,19 @@ class WidgetsTest {
     }
 
     @Test
+    fun `a lifetime widget between two cell heights lists what fits, not what a bucket says`() =
+        runGlanceAppWidgetUnitTest {
+            setContext(context)
+            // Half a cell above the two-row size. Under the old fixed set of layouts this drew the
+            // shorter of the two and left the rest of the widget empty.
+            setAppWidgetSize(DpSize(cells(4), 145.dp))
+            provideComposable { LifetimeContent(context, data()) }
+
+            onNode(hasText("Sennheiser HD 25")).assertExists()
+            onNode(hasText("AirPods Pro")).assertExists()
+        }
+
+    @Test
     fun `the wide activity widget shows all four windows`() = runGlanceAppWidgetUnitTest {
         setContext(context)
         setAppWidgetSize(DpSize(cells(4), cells(1)))
@@ -139,6 +153,32 @@ class WidgetsTest {
         // Squeezing four figures into half a row would leave captions nobody can read.
         onNode(hasText(context.getString(R.string.stats_last_7))).assertDoesNotExist()
         onNode(hasText(context.getString(R.string.stats_last_30))).assertDoesNotExist()
+    }
+
+    @Test
+    fun `a tall activity widget keeps all four windows by using a second line`() =
+        runGlanceAppWidgetUnitTest {
+            setContext(context)
+            // Two cells across is half of what the one-line layout needs for four figures; the
+            // second line is what lets this shape carry them at all, and until the provider
+            // allowed a vertical drag it was a shape nobody could ask for.
+            setAppWidgetSize(DpSize(cells(2), cells(2)))
+            provideComposable { ActivityContent(context, data()) }
+
+            onNode(hasText(context.getString(R.string.stats_title))).assertExists()
+            onNode(hasText(context.getString(R.string.stats_today))).assertExists()
+            onNode(hasText(context.getString(R.string.stats_last_7))).assertExists()
+            onNode(hasText(context.getString(R.string.stats_last_30))).assertExists()
+        }
+
+    @Test
+    fun `the narrowest activity widget is the lifetime total alone`() = runGlanceAppWidgetUnitTest {
+        setContext(context)
+        setAppWidgetSize(DpSize(cells(1), cells(1)))
+        provideComposable { ActivityContent(context, data()) }
+
+        onNode(hasText(context.getString(R.string.stats_title))).assertExists()
+        onNode(hasText(context.getString(R.string.stats_today))).assertDoesNotExist()
     }
 
     @Test
@@ -171,6 +211,20 @@ class WidgetsTest {
             onNode(hasText(context.getString(R.string.chart_max, formatHours(3 * hour)))).assertDoesNotExist()
         }
     }
+
+    @Test
+    fun `a narrow chart keeps the dates and drops the tallest-day figure`() =
+        runGlanceAppWidgetUnitTest {
+            setContext(context)
+            setAppWidgetSize(DpSize(cells(2), cells(2)))
+            provideComposable { ChartContent(context, data()) }
+
+            // Three captions on one line need about four cells. The two dates are the pair that
+            // says what the bars span, so they are the pair that stays.
+            onNode(hasText(context.getString(R.string.chart_max, formatHours(3 * hour))))
+                .assertDoesNotExist()
+            onNode(hasText(context.getString(R.string.stats_daily_hours_30))).assertExists()
+        }
 
     @Test
     fun `a chart with no history still draws`() = runGlanceAppWidgetUnitTest {

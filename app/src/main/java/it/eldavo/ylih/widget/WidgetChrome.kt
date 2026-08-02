@@ -31,6 +31,25 @@ import it.eldavo.ylih.R
  */
 internal fun cells(count: Int): Dp = (70 * count - 30).dp
 
+/** What [WidgetRoot]'s padding takes off the height before any content is laid out. */
+internal const val VERTICAL_PADDING_DP = 16f
+
+/** The header line plus the gap under it, in dp. */
+internal const val HEADER_DP = 19f
+
+/**
+ * How many [each]-dp items fit in [available] dp, clamped to a sane range.
+ *
+ * The three widgets size themselves off the launcher's real measurements rather than off a handful
+ * of `SizeMode.Responsive` buckets, so this is the arithmetic all of them do: every widget is
+ * `SizeMode.Exact` and lays itself out for whatever it was actually given. Buckets were the reason
+ * a widget dragged to a size between two of them drew the smaller layout and left a band of empty
+ * background — and the reason the providers could not offer more than a couple of sizes without
+ * some size having no layout at all.
+ */
+internal fun fits(available: Float, each: Float, max: Int): Int =
+    (available / each).toInt().coerceIn(1, max)
+
 /**
  * The frame all three widgets share: rounded background, padding, and a tap that opens the app.
  *

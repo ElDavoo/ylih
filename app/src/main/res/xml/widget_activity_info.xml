@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- See widget_lifetime_info.xml for why tools:targetApi and updatePeriodMillis="0" are here. -->
+<!--
+  See widget_lifetime_info.xml for why tools:targetApi, updatePeriodMillis="0" and a resize range
+  this wide are here. This one grows vertically too: a second line of figures appears as soon as
+  there is height for it, so the horizontal-only resizeMode it used to carry was refusing a size it
+  now has a layout for.
+-->
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:description="@string/widget_activity_description"
     android:initialLayout="@layout/glance_default_loading_layout"
-    android:maxResizeHeight="110dp"
-    android:maxResizeWidth="320dp"
+    android:maxResizeHeight="640dp"
+    android:maxResizeWidth="640dp"
     android:minHeight="40dp"
     android:minResizeHeight="40dp"
-    android:minResizeWidth="110dp"
+    android:minResizeWidth="40dp"
     android:minWidth="250dp"
     android:previewImage="@drawable/widget_preview_activity"
-    android:resizeMode="horizontal"
+    android:resizeMode="horizontal|vertical"
     android:targetCellHeight="1"
     android:targetCellWidth="4"
     android:updatePeriodMillis="0"

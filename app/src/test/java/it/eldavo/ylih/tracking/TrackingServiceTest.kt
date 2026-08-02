@@ -6,6 +6,8 @@ import android.media.AudioManager
 import android.os.Build
 import android.os.Looper
 import androidx.test.core.app.ApplicationProvider
+import androidx.work.WorkInfo
+import androidx.work.WorkManager
 import androidx.work.testing.WorkManagerTestInitHelper
 import it.eldavo.ylih.R
 import it.eldavo.ylih.YlihApp
@@ -15,6 +17,7 @@ import it.eldavo.ylih.data.SessionEntity
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
@@ -116,6 +119,12 @@ class TrackingServiceTest {
     }
 
     private fun sessions(): List<SessionEntity> = runBlocking { db.sessionDao().getAll() }
+
+    private fun heartbeatScheduled(): Boolean =
+        WorkManager.getInstance(app)
+            .getWorkInfosForUniqueWork(HeartbeatWorker.NAME)
+            .get()
+            .any { it.state != WorkInfo.State.CANCELLED }
 
     private fun notificationText(): String? = shadowOf(service).lastForegroundNotification
         ?.extras?.getCharSequence("android.text")?.toString()
@@ -342,6 +351,28 @@ class TrackingServiceTest {
         playFor(50)
         playFor(50)
         assertEquals(credited, sessions().single().playingMs)
+    }
+
+    /**
+     * A wired plug event reaches nothing but this service — no manifest receiver, no worker — so
+     * the sessions it writes itself are the ones that used to land unannounced: the app and the
+     * notification changed and the home-screen widgets kept the previous figures until something
+     * unrelated happened to redraw them.
+     *
+     * The redraw itself is a Glance call into the launcher's process and nothing here hosts a
+     * widget, so what this asserts on is the other half of the same announcement — the heartbeat
+     * that only exists while a session is open, and that a plug event was equally not scheduling.
+     */
+    @Test
+    fun `a session the service opened itself is announced like any other`() {
+        start()
+        assertFalse("nothing is connected yet", heartbeatScheduled())
+
+        connect(wired())
+        settle("the wired session to be announced") { heartbeatScheduled() }
+
+        disconnect(wired())
+        settle("the heartbeat to be dropped again") { !heartbeatScheduled() }
     }
 
     @Test

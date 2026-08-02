@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- See widget_lifetime_info.xml for why tools:targetApi and updatePeriodMillis="0" are here. -->
+<!--
+  See widget_lifetime_info.xml for why tools:targetApi, updatePeriodMillis="0" and a resize range
+  this wide are here. The bars are a bitmap redrawn at whatever size the launcher reports, so this
+  one has no shape it cannot fill; the title and the day labels drop out on their own when there is
+  no room for them.
+-->
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:description="@string/widget_chart_description"
     android:initialLayout="@layout/glance_default_loading_layout"
-    android:maxResizeHeight="250dp"
-    android:maxResizeWidth="320dp"
-    android:minHeight="40dp"
+    android:maxResizeHeight="640dp"
+    android:maxResizeWidth="640dp"
+    android:minHeight="110dp"
     android:minResizeHeight="40dp"
-    android:minResizeWidth="250dp"
+    android:minResizeWidth="110dp"
     android:minWidth="250dp"
     android:previewImage="@drawable/widget_preview_chart"
     android:resizeMode="horizontal|vertical"

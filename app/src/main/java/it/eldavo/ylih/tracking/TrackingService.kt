@@ -154,6 +154,9 @@ class TrackingService : LifecycleService() {
                 }
             }
             refreshNotification()
+            // Wired plug events reach nothing but this service, so this is the only place that can
+            // tell the home screen a session just opened or closed.
+            container.trackingController.onSessionsChanged()
         }
     }
 
@@ -162,6 +165,11 @@ class TrackingService : LifecycleService() {
         val open = container.repository.heartbeat(now)
         playbackWatcher?.refresh(now)
         refreshNotification(open)
+        // A minute's worth of playback is a figure the widgets have no other way to learn: the
+        // Chronometer counts connected time, and in playback-only mode that is not what the totals
+        // show. This runs only while a session is open, which is the only time it would change
+        // anything.
+        container.trackingController.onFiguresChanged()
     }
 
     private fun creditPlayback(deltaMs: Long) {

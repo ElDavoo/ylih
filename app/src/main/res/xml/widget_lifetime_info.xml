@@ -5,24 +5,30 @@
   is why both sets are here — but lint's UnusedAttribute is a warning, and a warning fails this
   build, so the element carries tools:targetApi the way the manifest's TrackingService does.
 
-  updatePeriodMillis is 0 on purpose: nothing polls. While a session is open the existing
-  15-minute heartbeat calls syncWithSystem(), which pokes the widgets, and the Chronometer covers
-  every second in between. While nothing is connected nothing changes.
+  updatePeriodMillis is 0 on purpose: nothing polls. Every write path pokes the widgets the moment
+  it lands, the 15-minute heartbeat calls syncWithSystem() while a session is open, and the
+  Chronometer covers every second in between. While nothing is connected nothing changes.
+
+  The resize range is deliberately as wide as the platform will honour. All three widgets are
+  SizeMode.Exact, so there is no set of fixed layouts a drag can land between — each lays itself
+  out for the size it was actually handed — and the numbers below only have to bound what stays
+  legible. maxResize is past any phone grid on purpose; the launcher clamps it to the real grid,
+  and a tablet's is much wider than a phone's.
 
   minResizeHeight is above the 40dp floor the others use because this is the one widget whose
   shortest layout is two lines: a pair's name with the live timer under it. Letting it be dragged
-  down to 40dp only buys a clipped timer. minResizeWidth matches the narrowest SizeMode.Responsive
-  bucket for the same reason, and WidgetProvidersTest is what keeps the two files agreeing.
+  down to 40dp only buys a clipped timer. WidgetProvidersTest is what keeps this file and the
+  layout code agreeing.
 -->
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:description="@string/widget_lifetime_description"
     android:initialLayout="@layout/glance_default_loading_layout"
-    android:maxResizeHeight="450dp"
-    android:maxResizeWidth="320dp"
-    android:minHeight="40dp"
+    android:maxResizeHeight="640dp"
+    android:maxResizeWidth="640dp"
+    android:minHeight="110dp"
     android:minResizeHeight="60dp"
-    android:minResizeWidth="250dp"
+    android:minResizeWidth="110dp"
     android:minWidth="250dp"
     android:previewImage="@drawable/widget_preview_lifetime"
     android:resizeMode="horizontal|vertical"

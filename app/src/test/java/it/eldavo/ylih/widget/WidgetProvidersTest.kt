@@ -1,12 +1,12 @@
 package it.eldavo.ylih.widget
 
+import android.appwidget.AppWidgetProviderInfo
 import android.content.Context
 import android.os.Build
-import androidx.compose.ui.unit.DpSize
-import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.SizeMode
 import androidx.test.core.app.ApplicationProvider
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -19,11 +19,13 @@ import it.eldavo.ylih.R
  * That the two halves of a widget's declaration agree.
  *
  * A Glance widget says how big it can be twice: in `res/xml/widget_*_info.xml`, which is what the
- * launcher enforces when someone drags the handles, and in `SizeMode.Responsive`, which is the set
- * of layouts it actually has. Nothing makes them agree. Let the smallest bucket be wider than
- * `minResizeWidth` and a user can shrink the widget to a size no layout was written for — Glance
- * falls back to the smallest one it has and the launcher clips the difference, which reads as a
- * broken widget rather than a small one. This caught exactly that on two of the three.
+ * launcher enforces when someone drags the handles, and in `sizeMode`, which is what the layout
+ * code is prepared for. Nothing makes them agree. These used to be `SizeMode.Responsive` sets, and
+ * a widget dragged to a size between two buckets drew the smaller layout with a band of empty
+ * background under it — so the providers could not offer a wide resize range without offering
+ * sizes no layout had been written for. Every widget is now `SizeMode.Exact` and sizes itself off
+ * the launcher's real measurements, which is what lets the range below be as wide as the platform
+ * will honour; the sweep is what keeps the arithmetic honest across all of it.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
@@ -42,39 +44,111 @@ class WidgetProvidersTest {
     }
 
     @Test
+    fun `every widget is composed for the size it was actually given`() {
+        // The alternative is a fixed set of layouts, and then every size between two of them is a
+        // size nobody drew.
+        assertEquals(SizeMode.Exact, LifetimeWidget().sizeMode)
+        assertEquals(SizeMode.Exact, ActivityWidget().sizeMode)
+        assertEquals(SizeMode.Exact, ChartWidget().sizeMode)
+    }
+
+    @Test
+    fun `every widget can be dragged both ways and across the whole grid`() {
+        assertResizable(R.xml.widget_lifetime_info)
+        assertResizable(R.xml.widget_activity_info)
+        assertResizable(R.xml.widget_chart_info)
+    }
+
+    @Test
     fun `every size the provider allows has a layout to fill it`() {
-        assertBucketsFit(LifetimeWidget(), R.xml.widget_lifetime_info)
-        assertBucketsFit(ActivityWidget(), R.xml.widget_activity_info)
-        assertBucketsFit(ChartWidget(), R.xml.widget_chart_info)
+        sweep(R.xml.widget_lifetime_info) { _, height ->
+            val rows = lifetimeRows(height, header = height >= cells(2).value)
+            assertTrue("${height}dp tall asks for $rows rows", rows in 1..12)
+        }
+        sweep(R.xml.widget_activity_info) { width, height ->
+            val grid = activityGrid(width, height)
+            val at = "${width}x${height}dp"
+            assertTrue("$at draws no figures", grid.isNotEmpty() && grid.all { it >= 1 })
+            assertTrue("$at draws ${grid.sum()} of four figures", grid.sum() in 1..4)
+        }
     }
 
-    private fun assertBucketsFit(widget: GlanceAppWidget, providerInfo: Int) {
-        val sizes = (widget.sizeMode as SizeMode.Responsive).sizes
-        val declared = providerDimens(providerInfo)
-        val name = widget::class.simpleName
+    @Test
+    fun `a taller widget lists more pairs, up to a payload a launcher can carry`() {
+        // Every row is a PendingIntent and possibly a Chronometer inside a RemoteViews, which is
+        // an IPC payload; a widget dragged the height of the screen must not build one out of
+        // forty of them.
+        assertEquals(1, lifetimeRows(cells(1).value, header = false))
+        assertEquals(3, lifetimeRows(cells(2).value, header = true))
+        assertEquals(8, lifetimeRows(cells(4).value, header = true))
+        assertEquals(12, lifetimeRows(640f, header = true))
+    }
 
-        val smallest = DpSize(sizes.minOf { it.width }, sizes.minOf { it.height })
-        assertTrue(
-            "$name can be resized to ${declared("minResizeWidth")}dp wide but its narrowest " +
-                "layout assumes ${smallest.width}",
-            smallest.width.value <= declared("minResizeWidth"),
-        )
-        assertTrue(
-            "$name can be resized to ${declared("minResizeHeight")}dp tall but its shortest " +
-                "layout assumes ${smallest.height}",
-            smallest.height.value <= declared("minResizeHeight"),
-        )
+    @Test
+    fun `a short list stops sharing out height once the gaps outgrow the rows`() {
+        // Three pairs in a widget two cells tall share the height between them; the same three
+        // spread down a widget five cells tall would sit a row's own height apart, which reads as
+        // a list with holes in it rather than a short list.
+        assertTrue(lifetimeStretches(cells(2).value, header = true, pairs = 3))
+        assertFalse(lifetimeStretches(cells(5).value, header = true, pairs = 3))
+        // A widget full to the brim always shares: rows crammed at the top with a band of empty
+        // background under them look broken rather than roomy.
+        val tall = cells(5).value
+        assertTrue(lifetimeStretches(tall, header = true, pairs = lifetimeRows(tall, header = true)))
+    }
 
-        val largest = DpSize(sizes.maxOf { it.width }, sizes.maxOf { it.height })
-        assertTrue(
-            "$name has a ${largest.width} layout it can never be dragged wide enough to use",
-            largest.width.value <= declared("maxResizeWidth"),
+    @Test
+    fun `a widget with height to spare stacks its figures rather than stretching them`() {
+        // One cell tall is the shape this widget was born in: everything on one line.
+        assertEquals(listOf(4), activityGrid(cells(4).value, cells(1).value))
+        assertEquals(listOf(2), activityGrid(cells(2).value, cells(1).value))
+        assertEquals(listOf(1), activityGrid(cells(1).value, cells(1).value))
+        // Given a second row it uses one, even where all four would fit across: a widget as tall
+        // as it is wide reads better as a block than as one long line.
+        assertEquals(listOf(2, 2), activityGrid(cells(4).value, cells(2).value))
+        assertEquals(listOf(1, 1), activityGrid(cells(1).value, cells(2).value))
+        // And it never grows past the four windows it has.
+        assertEquals(listOf(2, 2), activityGrid(640f, 640f))
+    }
+
+    /** That the provider offers a range at all, in both directions, and does not contradict itself. */
+    private fun assertResizable(providerInfo: Int) {
+        val dimen = providerDimens(providerInfo)
+        val name = context.resources.getResourceEntryName(providerInfo)
+
+        assertEquals(
+            "$name cannot be dragged in both directions",
+            AppWidgetProviderInfo.RESIZE_HORIZONTAL or AppWidgetProviderInfo.RESIZE_VERTICAL,
+            resizeMode(providerInfo),
         )
         assertTrue(
-            "$name has a ${largest.height} layout it can never be dragged tall enough to use",
-            largest.height.value <= declared("maxResizeHeight"),
+            "$name declares a minResizeWidth above the size it is placed at",
+            dimen("minResizeWidth") <= dimen("minWidth"),
+        )
+        assertTrue(
+            "$name declares a minResizeHeight above the size it is placed at",
+            dimen("minResizeHeight") <= dimen("minHeight"),
+        )
+        // Five cells is a phone's home screen filled edge to edge; a tablet's grid is wider still,
+        // and the launcher clamps whatever is declared here down to the real one. Anything less is
+        // a widget that cannot be made as big as the screen it is on.
+        assertTrue(
+            "$name cannot be dragged to ${FULL_GRID_DP}dp, which is a phone screen across",
+            dimen("maxResizeWidth") >= FULL_GRID_DP && dimen("maxResizeHeight") >= FULL_GRID_DP,
         )
     }
+
+    /** Runs [check] over the corners and the middle of the range the provider hands the launcher. */
+    private fun sweep(providerInfo: Int, check: (width: Float, height: Float) -> Unit) {
+        val dimen = providerDimens(providerInfo)
+        val widths = spread(dimen("minResizeWidth"), dimen("maxResizeWidth"))
+        val heights = spread(dimen("minResizeHeight"), dimen("maxResizeHeight"))
+        widths.forEach { width -> heights.forEach { height -> check(width, height) } }
+    }
+
+    /** Both ends of the range and every 10dp in between — a drag handle moves in pixels. */
+    private fun spread(from: Float, to: Float): List<Float> =
+        generateSequence(from) { it + 10f }.takeWhile { it < to }.toList() + to
 
     /**
      * The `<appwidget-provider>` attributes, in dp. Read from the compiled resource rather than
@@ -95,7 +169,19 @@ class WidgetProvidersTest {
         }
     }
 
+    /** `resizeMode` is a flag rather than a dimension, so it comes out of the parser differently. */
+    private fun resizeMode(providerInfo: Int): Int {
+        val parser = context.resources.getXml(providerInfo)
+        @Suppress("ControlFlowWithEmptyBody")
+        while (parser.next() != XmlPullParser.START_TAG);
+        return parser.getAttributeIntValue(ANDROID_NS, "resizeMode", 0)
+    }
+
     private companion object {
         val DIMENSION = Regex("""^-?\d+(\.\d+)?""")
+        const val ANDROID_NS = "http://schemas.android.com/apk/res/android"
+
+        /** Five launcher cells: a phone's home screen, corner to corner. */
+        const val FULL_GRID_DP = 320f
     }
 }

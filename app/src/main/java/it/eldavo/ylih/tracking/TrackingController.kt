@@ -117,13 +117,36 @@ class TrackingController(
     /** Called after a connect event so the right helper is running. */
     suspend fun onSessionOpened(detailedTracking: Boolean) {
         if (detailedTracking) startService()
-        updateHeartbeatWork()
-        onDataChanged()
+        onSessionsChanged()
     }
 
     /** Called after a disconnect event; drops the heartbeat when there is nothing to watch. */
     suspend fun onSessionClosed() {
+        onSessionsChanged()
+    }
+
+    /**
+     * The bookkeeping that follows any session write: the heartbeat exists only while something is
+     * open, and the home screen has no other way to find out.
+     *
+     * Separate from [onSessionOpened] for the caller that is already the service — [TrackingService]
+     * writes wired connects and disconnects itself, and routing those through `onSessionOpened`
+     * would have it ask the platform to start the service it is running in. Before this existed
+     * they went unannounced, so plugging headphones in with detailed tracking on changed the app
+     * and the notification while the widgets kept yesterday's figures until something else
+     * happened to refresh them.
+     */
+    suspend fun onSessionsChanged() {
         updateHeartbeatWork()
+        onDataChanged()
+    }
+
+    /**
+     * A figure changed but the set of open sessions did not — the service's own minute tick, where
+     * playback has accrued. Deliberately does not touch the heartbeat: re-enqueuing the periodic
+     * work every minute would write to WorkManager's database for nothing.
+     */
+    suspend fun onFiguresChanged() {
         onDataChanged()
     }
 

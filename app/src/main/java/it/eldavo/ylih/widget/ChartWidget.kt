@@ -11,7 +11,6 @@ import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asAndroidBitmap
 import androidx.compose.ui.graphics.drawscope.CanvasDrawScope
 import androidx.compose.ui.unit.Density
-import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -42,16 +41,11 @@ import java.time.LocalDate
 /** The stats screen's 30-day bar chart, on the home screen. */
 class ChartWidget : GlanceAppWidget() {
 
-    override val sizeMode = SizeMode.Responsive(setOf(BARS_ONLY, LABELLED))
+    override val sizeMode = SizeMode.Exact
 
     override suspend fun provideGlance(context: Context, id: GlanceId) {
         val (localized, data) = widgetContent(context)
         provideContent { ChartContent(localized, data) }
-    }
-
-    private companion object {
-        val BARS_ONLY = DpSize(cells(4), cells(1))
-        val LABELLED = DpSize(cells(4), cells(2))
     }
 }
 
@@ -60,6 +54,9 @@ class ChartWidget : GlanceAppWidget() {
 internal fun ChartContent(context: Context, data: WidgetData) {
     val size = LocalSize.current
     val labelled = size.height >= cells(2)
+    // Three captions on one line need the width of about four cells; below that the two dates are
+    // the pair that says what the bars span, so the tallest-day figure is the one to drop.
+    val wide = size.width >= cells(4)
     val maxMs = chartMaxMs(data.series)
     val bars = remember(data.series, size, labelled) {
         renderBars(
@@ -93,8 +90,10 @@ internal fun ChartContent(context: Context, data: WidgetData) {
             Row(GlanceModifier.fillMaxWidth()) {
                 ChartLabel(data.series.firstOrNull()?.first?.let(::formatDayLabel).orEmpty())
                 Spacer(GlanceModifier.defaultWeight())
-                ChartLabel(context.getString(R.string.chart_max, formatHours(maxMs)))
-                Spacer(GlanceModifier.defaultWeight())
+                if (wide) {
+                    ChartLabel(context.getString(R.string.chart_max, formatHours(maxMs)))
+                    Spacer(GlanceModifier.defaultWeight())
+                }
                 ChartLabel(data.series.lastOrNull()?.first?.let(::formatDayLabel).orEmpty())
             }
         }
@@ -132,9 +131,13 @@ private fun renderBars(
 ): Bitmap {
     // Two pixels per dp rather than the device's density: the bars are flat rectangles, nobody
     // can see the difference, and a RemoteViews carrying a full-density bitmap is a megabyte the
-    // launcher has to be handed on every update.
-    val width = (widthDp * PX_PER_DP).toInt().coerceIn(1, MAX_PX)
-    val height = (heightDp * PX_PER_DP).toInt().coerceIn(1, MAX_PX)
+    // launcher has to be handed on every update. Now that the widget can be dragged to the width
+    // of a tablet, the ceiling is reached by scaling both sides by the same factor rather than by
+    // clamping each: the bitmap is stretched to the real size on the way in, so an aspect ratio
+    // clamped on one axis only would draw bars of the wrong width.
+    val scale = minOf(PX_PER_DP, MAX_PX / maxOf(widthDp, heightDp, 1f))
+    val width = (widthDp * scale).toInt().coerceAtLeast(1)
+    val height = (heightDp * scale).toInt().coerceAtLeast(1)
     val bitmap = ImageBitmap(width, height)
     CanvasDrawScope().draw(
         density = Density(1f),
@@ -151,4 +154,4 @@ private fun renderBars(
 private const val CHROME_DP = 34f
 
 private const val PX_PER_DP = 2f
-private const val MAX_PX = 720
+private const val MAX_PX = 720f
