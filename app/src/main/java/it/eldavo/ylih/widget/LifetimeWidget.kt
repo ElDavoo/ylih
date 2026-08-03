@@ -82,7 +82,10 @@ internal fun LifetimeContent(context: Context, data: WidgetData) {
             val shown = data.rows.take(rows)
             val stretch = lifetimeStretches(size.height.value, header, shown.size)
             shown.forEach { PairRow(context, it, data.now, timers, stretch) }
-            if (!stretch) Spacer(GlanceModifier.defaultWeight())
+            // Always emitted, so the number of children does not depend on the number of pairs —
+            // see [ConnectedFor] for what a shape that moves costs. Weightless when the rows are
+            // stretching, where it has no height to take and nothing to do but hold the place.
+            Spacer(if (stretch) GlanceModifier.height(0.dp) else GlanceModifier.defaultWeight())
         }
     }
 }

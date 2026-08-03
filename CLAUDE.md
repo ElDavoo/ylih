@@ -233,8 +233,14 @@ Four things about this code are load-bearing and not obvious:
   and reapplying the next onto the same view, which is the only way to see this from a test —
   either composition on its own looks perfectly correct.
 
-  One shape change is still unguarded: a row count that *shrinks* (retiring or deleting a pair)
-  throws the same way and leaves the widget stale until something re-inflates it. Growing is fine.
+  The row count is the other shape that moves, and retiring or deleting a pair used to throw the
+  same way — but only while the rows were *stretching*, because a stretched list carries no
+  trailing spacer and so had exactly one child per row and nothing to take a lost row's place.
+  Where losing a row happened to turn stretching off, the spacer appeared as the row vanished, the
+  child count did not change and the update survived by accident. The trailing spacer is now always
+  emitted, weightless when the rows stretch, so the child count no longer depends on the number of
+  pairs at all. `WidgetReapplyTest` sweeps that across the provider's whole declared height range,
+  in both directions.
 - **The chart is a bitmap.** Glance has no Canvas and hands out equal weights only, so
   proportional bars cannot be expressed in it at all; `ChartWidget` rasterises `drawDailyBars`,
   the same geometry `ui/BarChart.kt` draws on the stats screen. The cost is that a bitmap bakes
