@@ -15,7 +15,7 @@ composeBom = "2026.06.01"
 # ButtonGroup, MaterialShapes, LoadingIndicator) land in 1.5.0-alpha, while the BOM still pins
 # the 1.4.0 stable that carries only the Expressive theme. This drags compose runtime/foundation/
 # ui to 1.12.0-beta01 for the whole app — the one pre-release risk in the build, taken knowingly.
-material3 = "1.5.0-alpha24"
+material3 = "1.5.0-alpha25"
 navigationCompose = "2.9.8"
 room = "2.8.4"
 datastore = "1.2.1"
