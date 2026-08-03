@@ -1,0 +1,26 @@
+# Keep rules for the shipped APK. AGP 9 supplies the platform rules and every library brings its
+# own, so this file exists for the one thing neither can know about: a class this app reaches by
+# name rather than by symbol.
+#
+# Glance identifies a widget by its GlanceAppWidget subclass's *canonical name*. `updateAll` asks
+# GlanceAppWidgetManager for the widget ids belonging to `javaClass`, and that manager keeps a
+# DataStore mapping each manifest receiver to the name of the widget class it hosts — written when
+# a receiver's onUpdate runs, read on every refresh, and persisted across app updates.
+#
+# These three classes are otherwise identical in shape: same supertype, same `sizeMode`, same
+# two-line `provideGlance` differing only in which composable it names. R8 duly merged all three
+# into one class, so all three receivers recorded the same provider name, every `updateAll`
+# resolved to all three widget ids, and each of the three widgets on a home screen drew whichever
+# one had been refreshed last. Nothing crashed and no test could see it: unit tests run on the JVM
+# against unshrunk classes, and a merged class is still perfectly functional — it just answers to
+# one name where the app needs three.
+#
+# Keeping the original names rather than merely distinct ones is deliberate, for the same reason
+# HeartbeatWorker keeps its: the mapping outlives the install that wrote it, so a name that moves
+# between versions leaves the stored one pointing at nothing, and `getGlanceIds` then returns an
+# empty list and quietly stops updating that widget.
+#
+# .github/scripts/r8-keep-check.py asserts all three survive under these names on every push.
+-keep class it.eldavo.ylih.widget.LifetimeWidget
+-keep class it.eldavo.ylih.widget.ActivityWidget
+-keep class it.eldavo.ylih.widget.ChartWidget

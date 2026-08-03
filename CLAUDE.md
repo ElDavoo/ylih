@@ -220,6 +220,21 @@ Four things about this code are load-bearing and not obvious:
   inside, so `chronometerBase()` exists to make the one piece of arithmetic testable.
   `devices_connected_for` is used as the Chronometer's *own* format string, which is what keeps
   the phrase grammatical in languages that put the duration first.
+- **A widget's composed tree must not change shape when its data changes.** A launcher does not
+  re-inflate a widget it already has: `AppWidgetHostView` recycles the view and *reapplies* the new
+  `RemoteViews` onto it, and Glance gives `LifetimeContent` the same root layout id whatever the
+  row count, so a reapply is always what happens. Reapplying a tree of a different shape lands one
+  view's action on another — the observed failure is `FrameLayout doesn't have method:
+  setMaxLines` — which throws part-way and leaves the launcher showing the half-updated view it
+  already had. A stale `Chronometer` is the worst version of that, because the system goes on
+  ticking it: the widget shows a session that ended, counting up, and no later push can dislodge
+  it. That is why `ConnectedFor` is composed for *every* row and hides itself when the pair is not
+  connected rather than being left out. `WidgetChronometerTest` pins it by applying one composition
+  and reapplying the next onto the same view, which is the only way to see this from a test —
+  either composition on its own looks perfectly correct.
+
+  One shape change is still unguarded: a row count that *shrinks* (retiring or deleting a pair)
+  throws the same way and leaves the widget stale until something re-inflates it. Growing is fine.
 - **The chart is a bitmap.** Glance has no Canvas and hands out equal weights only, so
   proportional bars cannot be expressed in it at all; `ChartWidget` rasterises `drawDailyBars`,
   the same geometry `ui/BarChart.kt` draws on the stats screen. The cost is that a bitmap bakes
@@ -348,9 +363,14 @@ These are easy to break and the failures are confusing:
   `buildToolsVersion` ask for — see `docs/fdroid.md` §2.
 - **R8 runs on release builds** via AGP 9.3's `optimization { enable = true }`, which turns on
   code *and* resource shrinking and supplies the platform keep rules — so there is no
-  `proguardFiles` call and no `proguard-rules.pro`. Keep rules, if any are ever needed, go in
-  `app/src/main/keepRules/*.keep`; today the app authors none and every rule in the build comes
-  from AGP's defaults or a library's consumer rules. Unit tests run on the JVM against unshrunk
+  `proguardFiles` call and no `proguard-rules.pro`. Keep rules go in
+  `app/src/main/keepRules/*.keep`, and the app authors exactly one file there:
+  `glance-widgets.keep`, which holds the three `GlanceAppWidget` subclasses to their own names.
+  Glance identifies a widget by its class's canonical name and persists that name per receiver, so
+  when R8 merged the three — they are identical in shape, differing only in which composable they
+  name — all three receivers recorded one provider and every widget on the home screen drew
+  whichever one had refreshed last. Every other rule in the build comes from AGP's defaults or a
+  library's consumer rules. Unit tests run on the JVM against unshrunk
   classes, so they never execute what R8 produced; two things cover that gap instead, and both
   are described under Testing.
 

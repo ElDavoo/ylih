@@ -6,13 +6,15 @@ import android.app.Application
 import android.os.Build
 import android.view.View
 import android.widget.FrameLayout
+import android.widget.RemoteViews
 import androidx.compose.ui.unit.DpSize
 import androidx.glance.appwidget.GlanceRemoteViews
 import androidx.test.core.app.ApplicationProvider
 import it.eldavo.ylih.R
 import kotlinx.coroutines.runBlocking
-import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
@@ -38,7 +40,7 @@ class WidgetChronometerTest {
 
     @Test
     fun `a widget with room for the phrase gets a live timer on the connected pair`() {
-        assertNotNull(chronometer(DpSize(cells(4), cells(2))))
+        assertTrue(ticking(DpSize(cells(4), cells(2))))
     }
 
     @Test
@@ -51,10 +53,36 @@ class WidgetChronometerTest {
 
     @Test
     fun `nothing connected means nothing ticking`() {
-        assertNull(chronometer(DpSize(cells(4), cells(2)), openSince = null))
+        // Hidden rather than left out — see ConnectedFor. What a reader can see is the assertion
+        // worth making either way.
+        assertFalse(ticking(DpSize(cells(4), cells(2)), openSince = null))
     }
 
-    private fun chronometer(size: DpSize, openSince: Long? = now - hour): View? {
+    @Test
+    fun `a pair that disconnects loses its timer on a view the launcher reuses`() {
+        // A launcher does not re-inflate a widget it already has: AppWidgetHostView recycles the
+        // view and reapplies the new RemoteViews onto it. A tree that changed shape lands one
+        // view's action on another, throws, and leaves the launcher showing what it had — with a
+        // Chronometer the system goes on ticking, counting a session that ended. This is the
+        // regression: it fails with "FrameLayout doesn't have method: setMaxLines" if the
+        // connected and disconnected rows stop composing to the same shape.
+        val view = compose(openSince = now - hour).apply(app, FrameLayout(app))
+        assertTrue(shown(view))
+
+        compose(openSince = null).reapply(app, view)
+        assertFalse(shown(view))
+    }
+
+    private fun ticking(size: DpSize, openSince: Long? = now - hour): Boolean =
+        chronometer(size, openSince)?.visibility == View.VISIBLE
+
+    private fun shown(view: View): Boolean =
+        view.findViewById<View>(R.id.widget_chronometer)?.visibility == View.VISIBLE
+
+    private fun chronometer(size: DpSize, openSince: Long? = now - hour): View? =
+        compose(openSince, size).apply(app, FrameLayout(app)).findViewById(R.id.widget_chronometer)
+
+    private fun compose(openSince: Long?, size: DpSize = DpSize(cells(4), cells(2))): RemoteViews {
         val data = WidgetData(
             rows = listOf(WidgetRow(pairId = 7L, label = "Galaxy Buds3 Pro", lifetimeMs = 40 * hour, openSince = openSince)),
             totalMs = 40 * hour,
@@ -65,10 +93,9 @@ class WidgetChronometerTest {
             counting = it.eldavo.ylih.stats.Counting.CONNECTED,
             now = now,
         )
-        val remoteViews = runBlocking {
+        return runBlocking {
             GlanceRemoteViews().compose(context = app, size = size) { LifetimeContent(app, data) }
                 .remoteViews
         }
-        return remoteViews.apply(app, FrameLayout(app)).findViewById(R.id.widget_chronometer)
     }
 }

@@ -27,6 +27,14 @@ and this check is what would notice.
 Room's YlihDatabase_Impl is the same shape of dependency on a consumer rule — Room derives the
 impl's name from the @Database class and loads it reflectively, so both names have to hold.
 
+The three GlanceAppWidget subclasses are the case that proved the point. Glance identifies a
+widget by its class's canonical name and persists that name per receiver, so when R8 merged the
+three — they are identical in shape, differing only in which composable they name — all three
+receivers recorded one provider, and every widget on a home screen drew whichever had refreshed
+last. Nothing crashed, and nothing but this file can see it: a merged class works perfectly, it
+just answers to one name where the app needs three. They are kept by our own rule, not a
+library's, in app/src/main/keepRules/glance-widgets.keep.
+
 The manifest components are cheaper insurance. AAPT2 generates keep rules for anything named in
 the merged manifest, so they should never move; they are listed because "should never" is worth
 asserting when the cost is one line.
@@ -77,6 +85,13 @@ KEEP_BY_NAME = {
         "named in the merged manifest, same route as LifetimeWidgetReceiver",
     "it.eldavo.ylih.widget.ChartWidgetReceiver":
         "named in the merged manifest, same route as LifetimeWidgetReceiver",
+    "it.eldavo.ylih.widget.LifetimeWidget":
+        "Glance stores this class's canonical name as the identity of the widget its receiver "
+        "hosts, so the three widget classes sharing a name sends every refresh to all three",
+    "it.eldavo.ylih.widget.ActivityWidget":
+        "same route as LifetimeWidget",
+    "it.eldavo.ylih.widget.ChartWidget":
+        "same route as LifetimeWidget",
 }
 
 # Resource -> why nothing in code points at it, so the shrinker's verdict is the only evidence.

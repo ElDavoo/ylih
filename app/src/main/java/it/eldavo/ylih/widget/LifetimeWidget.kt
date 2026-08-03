@@ -2,6 +2,7 @@ package it.eldavo.ylih.widget
 
 import android.content.Context
 import android.os.SystemClock
+import android.view.View
 import android.widget.RemoteViews
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
@@ -145,7 +146,8 @@ private fun ColumnScope.PairRow(
                     fontWeight = if (connected) FontWeight.Medium else FontWeight.Normal,
                 ),
             )
-            if (timers && row.openSince != null) ConnectedFor(context, row.openSince, now)
+            // Emitted for every row, connected or not — see [ConnectedFor].
+            if (timers) ConnectedFor(context, row.openSince, now)
         }
         Text(
             text = formatHours(row.lifetimeMs),
@@ -166,16 +168,24 @@ private fun ColumnScope.PairRow(
  * rather than putting a separate "connected" label beside the timer is what keeps it grammatical
  * in the languages that put the duration first, and it is already a format string everywhere else
  * in the app, so lint holds all 77 translations to the same placeholder.
+ *
+ * A disconnected row hides the timer rather than leaving it out, because a launcher does not
+ * re-inflate a widget it already has: `AppWidgetHostView` recycles the view and *reapplies* the new
+ * `RemoteViews` onto it. Reapplying a tree of a different shape lands a `TextView`'s action on
+ * whatever now sits at that position, which throws and leaves the launcher showing the half-updated
+ * view it already had — with a `Chronometer` the system goes on ticking, counting a session that
+ * ended minutes ago. Composing the same shape either way is what makes an update land at all.
  */
 @Composable
-private fun ConnectedFor(context: Context, openSince: Long, now: Long) {
+private fun ConnectedFor(context: Context, openSince: Long?, now: Long) {
     AndroidRemoteViews(
         remoteViews = RemoteViews(context.packageName, R.layout.widget_chronometer).apply {
+            setViewVisibility(R.id.widget_chronometer, if (openSince == null) View.GONE else View.VISIBLE)
             setChronometer(
                 R.id.widget_chronometer,
-                chronometerBase(openSince, now, SystemClock.elapsedRealtime()),
+                chronometerBase(openSince ?: now, now, SystemClock.elapsedRealtime()),
                 context.getString(R.string.devices_connected_for),
-                true,
+                openSince != null,
             )
         },
     )
