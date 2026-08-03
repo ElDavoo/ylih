@@ -61,3 +61,19 @@
 #    descriptors, and Compose still has to start.
 -keep,allowobfuscation class it.eldavo.ylih.data.** { *; }
 -keep,allowobfuscation class it.eldavo.ylih.export.** { *; }
+
+# 4. androidx.glance.appwidget.GlanceAppWidget — the return type of the one call the widget test
+#    makes, `(receiver as GlanceAppWidgetReceiver).glanceAppWidget`. This is the removal case
+#    above rather than the reshaping one, and it arrived without a line of it.eldavo.ylih.widget
+#    changing name: giving the three widgets a common base class left GlanceAppWidget with
+#    exactly one direct subclass, which is all R8 needs to merge a class vertically into it. The
+#    shipped APK is perfectly consistent afterwards — nothing reaches the base class by name, and
+#    the widgets Glance does look up by name are held to theirs by main's glance-widgets.keep.
+#    But a class R8 merged away has no mapping entry, and a dex method reference carries its
+#    return type, so the test APK's call site and the app's method stop being the same method:
+#      test APK: invoke-virtual Ldh0;.a:()Landroidx/glance/appwidget/GlanceAppWidget;
+#      app APK:  dh0.a -> ()Lhw2;    where hw2 is it.eldavo.ylih.widget.YlihWidget
+#    NoSuchMethodError on the device, and invisible to every unit test and to the mapping check,
+#    which reads the names that survived rather than the ones that no longer resolve. Keeping the
+#    class blocks the merge for this build type alone; release still merges it away.
+-keep,allowobfuscation class androidx.glance.appwidget.GlanceAppWidget
