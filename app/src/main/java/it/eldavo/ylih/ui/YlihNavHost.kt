@@ -12,12 +12,14 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.TextAutoSize
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
+import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.MediumFlexibleTopAppBar
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.ShortNavigationBar
@@ -41,6 +43,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import it.eldavo.ylih.R
@@ -135,8 +138,8 @@ fun YlihNavHost(
         }
     }
 
-    // The full name needs two lines, which is a lot of screen to give up permanently. Collapsing
-    // it on scroll is what the flexible bar is for: branded at rest, out of the way in use.
+    // The full name is a lot of screen to give up permanently even on one line. Collapsing it on
+    // scroll is what the flexible bar is for: branded at rest, out of the way in use.
     val allowCollapse = remember { mutableStateOf(true) }
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior(
         canScroll = { allowCollapse.value },
@@ -179,8 +182,7 @@ fun YlihNavHost(
         snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             // Pair detail brings its own app bar with a back arrow, so the app-level one is only
-            // for the three tabs. The flexible medium bar is what lets the full name wrap onto a
-            // second line instead of being ellipsised down to "ylih - your life in…".
+            // for the three tabs.
             //
             // Fading rather than swapping it: the route flips the moment navigate() is called, so
             // dropping the bar on `currentRoute` alone made it vanish a beat before the screen it
@@ -198,7 +200,24 @@ fun YlihNavHost(
                     title = {
                         Text(
                             text = stringResource(R.string.app_title),
-                            maxLines = 2,
+                            maxLines = 1,
+                            // The name fits one line at the size the bar would give it in no
+                            // language — 30 characters in English, 40 in Cebuano — so it is
+                            // shrunk until it does, rather than wrapped onto a second line or
+                            // ellipsised to "ylih - your life in…".
+                            //
+                            // The ceiling is whatever style the bar provided rather than a
+                            // number of our own: the flexible bar interpolates that as it
+                            // collapses, so binding to it keeps the collapse animation driving
+                            // the size and leaves this only ever taking away. 14sp is a floor
+                            // and not a size anything is expected to reach — English and
+                            // Polish, the longest of the languages the store screenshots cover,
+                            // both settle near the ceiling — so that a language nobody here
+                            // reads gets a smaller title instead of a clipped one.
+                            autoSize = TextAutoSize.StepBased(
+                                minFontSize = 14.sp,
+                                maxFontSize = LocalTextStyle.current.fontSize,
+                            ),
                         )
                     },
                     scrollBehavior = scrollBehavior,
