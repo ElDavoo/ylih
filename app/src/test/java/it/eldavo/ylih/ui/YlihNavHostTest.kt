@@ -2,11 +2,20 @@ package it.eldavo.ylih.ui
 
 import android.Manifest
 import android.os.Build
+import androidx.activity.OnBackPressedDispatcher
+import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
+import androidx.annotation.StringRes
+import androidx.compose.ui.semantics.SemanticsProperties
+import androidx.compose.ui.test.SemanticsMatcher
+import androidx.compose.ui.test.TouchInjectionScope
 import androidx.compose.ui.test.junit4.v2.createComposeRule
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performTouchInput
+import androidx.compose.ui.test.swipeLeft
+import androidx.compose.ui.test.swipeRight
 import androidx.core.net.toUri
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
@@ -47,6 +56,7 @@ class YlihNavHostTest {
     private val db get() = app.container.database
 
     private lateinit var nav: NavHostController
+    private lateinit var back: OnBackPressedDispatcher
     private lateinit var viewModel: YlihViewModel
 
     @Before
@@ -66,9 +76,12 @@ class YlihNavHostTest {
         viewModel = YlihViewModel(app)
         compose.setContent {
             nav = rememberNavController()
+            // The system back button reaches the app through this, and the tabs put a handler of
+            // their own on it. Held so a test can press back without an activity to press it on.
+            back = checkNotNull(LocalOnBackPressedDispatcherOwner.current).onBackPressedDispatcher
             YlihTheme { YlihNavHost(viewModel = viewModel, navController = nav) }
         }
-        compose.waitUntil(timeoutMillis = 10_000) { route() == "devices" }
+        compose.waitUntil(timeoutMillis = 10_000) { route() == TABS_ROUTE }
     }
 
     private fun route(): String? = nav.currentBackStackEntry?.destination?.route
@@ -80,6 +93,25 @@ class YlihNavHostTest {
 
     private fun tap(label: Int) {
         compose.onNodeWithText(text(label)).performClick()
+    }
+
+    /**
+     * Waits for a string only one of the three tabs draws. Which tab is showing is not a route any
+     * more — the tabs are pages of a pager — so what the user can see is the only honest answer,
+     * and a page the pager has scrolled away from is not composed at all.
+     */
+    private fun awaitTab(@StringRes title: Int) {
+        compose.waitUntil(timeoutMillis = 10_000) { nodeCount(text(title)) > 0 }
+    }
+
+    /**
+     * Drags the pager. It is found by the one thing on screen that scrolls sideways — the lists
+     * inside the tabs all scroll vertically — rather than by the root, which a swipe would hand to
+     * whichever composition happened to be on top.
+     */
+    private fun swipe(direction: TouchInjectionScope.() -> Unit) {
+        compose.onNode(SemanticsMatcher.keyIsDefined(SemanticsProperties.HorizontalScrollAxisRange))
+            .performTouchInput(direction)
     }
 
     private fun seedPair(label: String): Long = runBlocking {
@@ -115,14 +147,46 @@ class YlihNavHostTest {
         show()
 
         tap(R.string.nav_stats)
-        compose.waitUntil(timeoutMillis = 10_000) { route() == "stats" }
+        awaitTab(R.string.stats_title)
         tap(R.string.nav_settings)
-        compose.waitUntil(timeoutMillis = 10_000) { route() == "settings" }
+        awaitTab(R.string.settings_detailed_title)
         tap(R.string.nav_headphones)
-        compose.waitUntil(timeoutMillis = 10_000) { route() == "devices" }
+        awaitTab(R.string.devices_empty_title)
 
         // The three tabs share one app bar; only the pair page brings its own.
         compose.onNodeWithText(text(R.string.app_title)).assertExists()
+        // And the tabs are all one destination, so none of that touched the back stack.
+        assertEquals(TABS_ROUTE, route())
+    }
+
+    @Test
+    fun `the tabs are a swipe apart in both directions`() {
+        // The reason they are a pager at all. A tap could be served by anything; only pages laid
+        // out side by side can be dragged between, which is what the nav bar cannot offer.
+        show()
+
+        swipe { swipeLeft() }
+        awaitTab(R.string.stats_title)
+        swipe { swipeLeft() }
+        awaitTab(R.string.settings_detailed_title)
+
+        swipe { swipeRight() }
+        awaitTab(R.string.stats_title)
+
+        assertEquals("and none of it is a navigation", TABS_ROUTE, route())
+    }
+
+    @Test
+    fun `back off a tab returns to the first one rather than leaving the app`() {
+        // What the back stack used to do for free: every tab was navigated to with popUpTo(start),
+        // which left the headphones tab underneath. A pager has no stack, so this is by hand.
+        show()
+
+        tap(R.string.nav_settings)
+        awaitTab(R.string.settings_detailed_title)
+
+        compose.runOnUiThread { back.onBackPressed() }
+        awaitTab(R.string.devices_empty_title)
     }
 
     @Test
@@ -136,7 +200,24 @@ class YlihNavHostTest {
         compose.waitUntil(timeoutMillis = 10_000) { route() == PAIR_ROUTE }
 
         compose.onNodeWithContentDescription(text(R.string.pair_back)).performClick()
-        compose.waitUntil(timeoutMillis = 10_000) { route() == "devices" }
+        compose.waitUntil(timeoutMillis = 10_000) { route() == TABS_ROUTE }
+    }
+
+    @Test
+    fun `a tab tapped from the pair page comes back to the tabs and shows that one`() {
+        // The nav bar is drawn on the pair page too, where a tab means both things at once: leave
+        // the page, and land on that tab rather than on whichever one it was opened from.
+        val label = "ACCENTUM Plus"
+        seedPair(label)
+        show()
+
+        compose.waitUntil(timeoutMillis = 10_000) { nodeCount(label) > 0 }
+        compose.onNodeWithText(label).performClick()
+        compose.waitUntil(timeoutMillis = 10_000) { route() == PAIR_ROUTE }
+
+        tap(R.string.nav_stats)
+        compose.waitUntil(timeoutMillis = 10_000) { route() == TABS_ROUTE }
+        awaitTab(R.string.stats_title)
     }
 
     @Test
@@ -146,7 +227,7 @@ class YlihNavHostTest {
         show()
 
         compose.runOnUiThread { nav.navigate("pair/deleted-while-in-the-back-stack") }
-        compose.waitUntil(timeoutMillis = 10_000) { route() == "devices" }
+        compose.waitUntil(timeoutMillis = 10_000) { route() == TABS_ROUTE }
 
         assertEquals("and no half-drawn pair page is left behind", 0, nodeCount(text(R.string.pair_fallback_title)))
         compose.onNodeWithText(text(R.string.app_title)).assertExists()
@@ -168,13 +249,14 @@ class YlihNavHostTest {
         show()
 
         tap(R.string.nav_stats)
-        compose.waitUntil(timeoutMillis = 10_000) { route() == "stats" }
+        awaitTab(R.string.stats_title)
         compose.runOnUiThread { viewModel.exportTo(uri) }
 
         compose.waitUntil(timeoutMillis = 10_000) { nodeCount(failure) > 0 }
     }
 
     private companion object {
+        const val TABS_ROUTE = "tabs"
         const val PAIR_ROUTE = "pair/{pairId}"
     }
 }

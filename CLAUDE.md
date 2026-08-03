@@ -183,6 +183,25 @@ deliberately decoupled from Room so the maths runs as a plain JVM test. Day buck
 The UI is Compose with a single `YlihViewModel` (`ui/YlihViewModel.kt`) exposing `StateFlow`s and
 a `Channel` of snackbar messages, and a three-tab `YlihNavHost`.
 
+**The three tabs are one destination, not three.** They are pages of a `HorizontalPager` under the
+single `tabs` route, so they can be swiped between: pages are laid out side by side and the screen
+follows the finger, which is a thing a NavHost swapping its content on a click cannot do at all —
+the most it could offer was a slide animation. What is left in the back stack is the pair page,
+which is a genuine push over whichever tab was showing and still crossfades, in step with the app
+bar `AnimatedVisibility` that reads the same `NAV_FADE`. Three consequences worth knowing:
+
+- The pager state is hoisted above the `NavHost`, because the tabs leave the composition while
+  the pair page is open and a state remembered down there would hand back the first tab on the
+  way out.
+- Back off a tab has to be written by hand (`BackHandler` → page 0). The back stack used to do it
+  for free, since every tab was navigated to with `popUpTo(start)` and so sat over the headphones
+  tab. It is disabled on the pair page: the `NavHost` registers its handler after this one and so
+  wins, but only while it has something to pop.
+- Nothing needs doing for RTL — a horizontal pager reverses itself, as the nav bar does.
+
+`YlihNavHostTest` drives the swipe by finding the one node on screen with a horizontal scroll
+range, the tabs' own lists all being vertical.
+
 **Every user-visible string is a resource.** `res/values/strings.xml` is the whole vocabulary and
 there are 77 `res/values-<lang>/strings.xml` translations beside it; lint runs with
 `abortOnError = true` and `MissingTranslation` is an error, so adding an English string without

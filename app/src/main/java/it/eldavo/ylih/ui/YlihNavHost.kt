@@ -1,12 +1,16 @@
 package it.eldavo.ylih.ui
 
+import androidx.activity.compose.BackHandler
 import androidx.annotation.StringRes
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.gestures.ScrollableState
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
@@ -30,6 +34,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.input.nestedscroll.nestedScroll
@@ -40,7 +46,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import it.eldavo.ylih.R
 import it.eldavo.ylih.tracking.Hibernation
 import it.eldavo.ylih.tracking.Restrictions
-import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -48,26 +53,37 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.emptyFlow
+import kotlinx.coroutines.launch
 
 private data class Destination(
-    val route: String,
     @param:StringRes val label: Int,
     val icon: ImageVector,
 )
 
+// Position in this list is the pager page, which is the only identity a tab has now.
 private val destinations = listOf(
-    Destination("devices", R.string.nav_headphones, Icons.Default.Home),
-    Destination("stats", R.string.nav_stats, Icons.Default.DateRange),
-    Destination("settings", R.string.nav_settings, Icons.Default.Settings),
+    Destination(R.string.nav_headphones, Icons.Default.Home),
+    Destination(R.string.nav_stats, Icons.Default.DateRange),
+    Destination(R.string.nav_settings, Icons.Default.Settings),
 )
 
+private const val TAB_DEVICES = 0
+private const val TAB_STATS = 1
+
+// The three tabs are one destination between them, not three. They used to be a destination each,
+// which is what made moving between them a navigation and left them with no gesture: a NavHost
+// swaps its content on a click and a back stack, and there is nothing to drag. As pages of a pager
+// they are laid out side by side, so the swipe is the layout rather than an animation bolted onto
+// it — the screen follows the finger and can be caught halfway or thrown back.
+private const val TABS_ROUTE = "tabs"
 private const val PAIR_ROUTE = "pair/{pairId}"
 
-// Destinations crossfade. The app bar is not one of them — it sits in the Scaffold, outside the
-// NavHost — so it has to be faded by hand to stay in step, and the two only stay in step if they
-// read the same spec. Hence the NavHost gets its transitions passed explicitly below rather than
-// inheriting navigation-compose's default (identical today: fadeIn/fadeOut of tween(700)); an
-// inherited default is a number that can change under us in a dependency bump.
+// What is left in the back stack is the pair page, and it crossfades. The app bar is not a
+// destination — it sits in the Scaffold, outside the NavHost — so it has to be faded by hand to
+// stay in step, and the two only stay in step if they read the same spec. Hence the NavHost gets
+// its transitions passed explicitly below rather than inheriting navigation-compose's default
+// (identical today: fadeIn/fadeOut of tween(700)); an inherited default is a number that can
+// change under us in a dependency bump.
 private val NAV_FADE = tween<Float>(durationMillis = 700)
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
@@ -98,11 +114,20 @@ fun YlihNavHost(
     val devicesListState = rememberLazyListState()
     val statsListState = rememberLazyListState()
     val settingsScrollState = rememberScrollState()
-    val activeScrollState: ScrollableState? = when (currentRoute) {
-        "devices" -> devicesListState
-        "stats" -> statsListState
-        "settings" -> settingsScrollState
-        else -> null
+
+    // Hoisted above the NavHost rather than remembered inside the tabs destination: the pair page
+    // is a push, so the tabs leave the composition while it is open, and a pager state remembered
+    // down there would hand the user back the first tab on the way out.
+    val pagerState = rememberPagerState(pageCount = { destinations.size })
+    val scope = rememberCoroutineScope()
+
+    // `currentPage` rather than `settledPage`: it flips at the halfway point of a drag, which is
+    // the moment the screen the question is about becomes the one in front of the user.
+    val activeScrollState: ScrollableState? = when {
+        currentRoute != TABS_ROUTE -> null
+        pagerState.currentPage == TAB_DEVICES -> devicesListState
+        pagerState.currentPage == TAB_STATS -> statsListState
+        else -> settingsScrollState
     }
     val canScroll by remember(activeScrollState) {
         derivedStateOf {
@@ -124,6 +149,15 @@ fun YlihNavHost(
     val expanded by remember { derivedStateOf { scrollBehavior.state.heightOffset == 0f } }
     SideEffect {
         if (expanded) allowCollapse.value = canScroll
+    }
+
+    // Back off a tab returns to the first one, which is what the back stack used to do for free:
+    // every tab was navigated to with popUpTo(start), so the headphones tab sat underneath the
+    // other two. Left enabled on the pair page this would swallow the pop that closes it — the
+    // NavHost registers its own handler after this one and so wins, but only while it has
+    // something to pop, which on the tabs alone it does not.
+    BackHandler(enabled = currentRoute == TABS_ROUTE && pagerState.currentPage != TAB_DEVICES) {
+        scope.launch { pagerState.animateScrollToPage(TAB_DEVICES) }
     }
 
     LaunchedEffect(Unit) {
@@ -175,17 +209,17 @@ fun YlihNavHost(
             // Expressive's shorter bar: the active item gets a filled pill that springs into
             // place rather than the old static indicator.
             ShortNavigationBar {
-                destinations.forEach { destination ->
+                destinations.forEachIndexed { page, destination ->
                     ShortNavigationBarItem(
-                        selected = currentRoute == destination.route,
+                        // Nothing is selected while the pair page is up, as when each tab was a
+                        // route of its own and none of them was the current one.
+                        selected = currentRoute == TABS_ROUTE && pagerState.currentPage == page,
                         onClick = {
-                            navController.navigate(destination.route) {
-                                popUpTo(navController.graph.findStartDestination().id) {
-                                    saveState = true
-                                }
-                                launchSingleTop = true
-                                restoreState = true
-                            }
+                            // The bar is still there on the pair page, where a tap means "come
+                            // back to the tabs and show me this one". A no-op on the tabs
+                            // themselves, which is where the tap usually comes from.
+                            navController.popBackStack(TABS_ROUTE, inclusive = false)
+                            scope.launch { pagerState.animateScrollToPage(page) }
                         },
                         icon = { Icon(destination.icon, contentDescription = null) },
                         label = { Text(stringResource(destination.label)) },
@@ -196,33 +230,40 @@ fun YlihNavHost(
     ) { padding ->
         NavHost(
             navController = navController,
-            startDestination = "devices",
+            startDestination = TABS_ROUTE,
             enterTransition = { fadeIn(NAV_FADE) },
             exitTransition = { fadeOut(NAV_FADE) },
             popEnterTransition = { fadeIn(NAV_FADE) },
             popExitTransition = { fadeOut(NAV_FADE) },
         ) {
-            composable("devices") {
-                DevicesScreen(
-                    viewModel = viewModel,
-                    contentPadding = padding,
-                    onOpenPair = { navController.navigate("pair/$it") },
-                    listState = devicesListState,
-                )
-            }
-            composable("stats") {
-                StatsScreen(
-                    viewModel = viewModel,
-                    contentPadding = padding,
-                    listState = statsListState,
-                )
-            }
-            composable("settings") {
-                SettingsScreen(
-                    viewModel = viewModel,
-                    contentPadding = padding,
-                    scrollState = settingsScrollState,
-                )
+            composable(TABS_ROUTE) {
+                HorizontalPager(
+                    state = pagerState,
+                    modifier = Modifier.fillMaxSize(),
+                    // A page is a whole screen and lays itself out from the top; the default
+                    // centres one that does not fill the height, which the settings column does
+                    // not until it has enough rows in it.
+                    verticalAlignment = Alignment.Top,
+                ) { page ->
+                    when (page) {
+                        TAB_DEVICES -> DevicesScreen(
+                            viewModel = viewModel,
+                            contentPadding = padding,
+                            onOpenPair = { navController.navigate("pair/$it") },
+                            listState = devicesListState,
+                        )
+                        TAB_STATS -> StatsScreen(
+                            viewModel = viewModel,
+                            contentPadding = padding,
+                            listState = statsListState,
+                        )
+                        else -> SettingsScreen(
+                            viewModel = viewModel,
+                            contentPadding = padding,
+                            scrollState = settingsScrollState,
+                        )
+                    }
+                }
             }
             composable(PAIR_ROUTE) { entry ->
                 val pairId = entry.arguments?.getString("pairId")?.toLongOrNull()
