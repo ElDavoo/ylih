@@ -1,0 +1,4 @@
+• Três widgets para a tela inicial: as horas totais por par com um cronômetro ao vivo no par conectado, o total geral ao lado de hoje / 7 dias / 30 dias, e o gráfico de 30 dias. Cada um se redimensiona à vontade.
+• Agora dá para deslizar entre as três abas.
+• Os backups registram sua versão de formato, então um arquivo de uma versão futura é recusado em vez de lido errado.
+• O download tem um quarto do tamanho.

@@ -1,0 +1,4 @@
+• Trois widgets pour l'écran d'accueil : les heures totales par paire avec un chronomètre en direct sur la paire connectée, le total général à côté d'aujourd'hui / 7 jours / 30 jours, et le graphique sur 30 jours. Chacun se redimensionne librement.
+• On peut maintenant balayer entre les trois onglets.
+• Les sauvegardes indiquent leur version de format : un fichier issu d'une version future est refusé plutôt que mal lu.
+• Le téléchargement est quatre fois plus léger.

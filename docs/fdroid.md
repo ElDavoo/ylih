@@ -258,9 +258,9 @@ Three things do vary and are worth knowing before a verification failure sends y
   picks the one answer every machine can give — the unstripped file — for ~10 KB. **The fix is
   not in v1.0.0.** F-Droid builds the tag the recipe names, that tag predates this, and the
   published v1.0.0 asset is the stripped variant, so the v1.0.0 build entry is expected to fail
-  verification on exactly these eight files. The first version F-Droid can verify is the first
-  one tagged after the fix; until then, `Binaries:` describes an APK that reproduces only on a
-  machine whose NDK situation matches the release runner's.
+  verification on exactly these eight files. **v1.1.0 is the first tag that carries it**, and so
+  the first version F-Droid can verify on a machine whose NDK situation does not happen to match
+  the release runner's.
 
 - AGP embeds `META-INF/version-control-info.textproto`, holding the git revision. Its
   `local_root_path` is normalised to `$PROJECT_DIR`, so it is not machine-specific, but it does

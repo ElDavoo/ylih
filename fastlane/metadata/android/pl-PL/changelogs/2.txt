@@ -1,0 +1,4 @@
+• Trzy widżety na ekran główny: łączne godziny każdej pary z działającym licznikiem przy podłączonej parze, suma ogólna obok dzisiaj / 7 dni / 30 dni oraz wykres z 30 dni. Rozmiar każdego można zmieniać dowolnie.
+• Między trzema kartami można teraz przesuwać palcem.
+• Kopie zapasowe zapisują wersję swojego formatu, więc plik z nowszego wydania zostaje odrzucony, a nie źle odczytany.
+• Pobieranie waży cztery razy mniej.

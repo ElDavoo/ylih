@@ -1,0 +1,4 @@
+• Drie widgets voor het startscherm: de totale uren per koptelefoon met een lopende timer op de verbonden koptelefoon, het totaal naast vandaag / 7 dagen / 30 dagen, en de grafiek over 30 dagen. Elk is vrij te schalen.
+• Er kan nu tussen de drie tabbladen geveegd worden.
+• Back-ups leggen hun formaatversie vast, zodat een bestand van een nieuwere versie wordt geweigerd in plaats van verkeerd gelezen.
+• De download is een kwart zo groot.

@@ -1,0 +1,4 @@
+• Tiga widget layar utama: jam total per pasang dengan penghitung berjalan pada pasangan yang terhubung, total keseluruhan di samping hari ini / 7 hari / 30 hari, dan grafik 30 hari. Ukuran masing-masing bebas diubah.
+• Kini bisa menggeser di antara ketiga tab.
+• Cadangan mencatat versi formatnya, sehingga berkas dari rilis yang lebih baru ditolak alih-alih salah dibaca.
+• Unduhan seperempat ukurannya.

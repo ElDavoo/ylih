@@ -1,0 +1,4 @@
+• Tre widget per la schermata home: le ore totali per paio con un cronometro dal vivo sul paio collegato, il totale generale accanto a oggi / 7 giorni / 30 giorni, e il grafico dei 30 giorni. Ognuno si ridimensiona liberamente.
+• Ora si può scorrere tra le tre schede.
+• I backup registrano la versione del loro formato, così un file di una versione futura viene rifiutato invece che letto male.
+• Il download pesa un quarto.

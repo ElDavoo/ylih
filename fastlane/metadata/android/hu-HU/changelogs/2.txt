@@ -1,0 +1,4 @@
+• Három kezdőképernyős widget: páronkénti összes óra, futó stopperrel a csatlakoztatott páron; a végösszeg a mai nap / 7 nap / 30 nap mellett; és a 30 napos diagram. Mindegyik szabadon átméretezhető.
+• A három lap között most már lapozni lehet.
+• A biztonsági mentések rögzítik a formátumverziójukat, így egy újabb kiadásból származó fájlt elutasít, nem félreolvas.
+• A letöltés negyed akkora.

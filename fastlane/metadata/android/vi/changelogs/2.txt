@@ -1,0 +1,4 @@
+• Ba tiện ích cho màn hình chính: số giờ trọn đời theo từng đôi kèm đồng hồ chạy trên đôi đang kết nối, tổng chung bên cạnh hôm nay / 7 ngày / 30 ngày, và biểu đồ 30 ngày. Mỗi cái đổi kích thước tùy ý.
+• Giờ có thể vuốt qua lại giữa ba thẻ.
+• Bản sao lưu ghi lại phiên bản định dạng, nên tệp từ bản phát hành mới hơn sẽ bị từ chối thay vì đọc sai.
+• Bản tải về nhỏ bằng một phần tư.

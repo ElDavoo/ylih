@@ -1,0 +1,4 @@
+• Tre widgets til startskærmen: levetidstimer pr. par med et løbende ur på det tilsluttede par, totalen ved siden af i dag / 7 dage / 30 dage, og 30-dages-diagrammet. Hver kan skaleres frit.
+• Der kan nu swipes mellem de tre faner.
+• Sikkerhedskopier noterer deres formatversion, så en fil fra en nyere udgave afvises i stedet for at blive læst forkert.
+• Downloadet fylder en fjerdedel.

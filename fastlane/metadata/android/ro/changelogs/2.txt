@@ -1,0 +1,4 @@
+• Trei widgeturi pentru ecranul principal: orele totale pe pereche, cu un cronometru viu pe perechea conectată, totalul general lângă azi / 7 zile / 30 de zile și graficul pe 30 de zile. Fiecare se redimensionează liber.
+• Se poate glisa acum între cele trei file.
+• Copiile de rezervă își notează versiunea de format, așa că un fișier dintr-o versiune viitoare este refuzat, nu citit greșit.
+• Descărcarea are un sfert din dimensiune.

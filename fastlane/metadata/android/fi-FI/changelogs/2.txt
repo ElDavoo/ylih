@@ -1,0 +1,4 @@
+• Kolme aloitusnäytön widgetiä: parikohtaiset elinaikaiset tunnit ja käynnissä oleva ajastin yhdistetylle parille, kokonaissumma tänään / 7 päivää / 30 päivää -lukujen vieressä sekä 30 päivän kaavio. Jokaisen kokoa voi muuttaa vapaasti.
+• Kolmen välilehden välillä voi nyt pyyhkäistä.
+• Varmuuskopiot kirjaavat muotoversionsa, joten uudemman julkaisun tiedosto hylätään eikä lueta väärin.
+• Lataus on neljäsosan kokoinen.
