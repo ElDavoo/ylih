@@ -71,7 +71,7 @@ jobs:
         run: sdkmanager "platform-tools" "platforms;android-37.0" "build-tools;37.0.0"
 
       - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v6
+        uses: gradle/actions/setup-gradle@v6.2.0
         with:
           # Dependencies and the Gradle build cache are restored on every run; only builds of
           # the default branch write them back, so PRs cannot poison the shared cache.
@@ -206,7 +206,7 @@ jobs:
         run: sdkmanager "platform-tools" "platforms;android-37.0" "build-tools;37.0.0"
 
       - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v6
+        uses: gradle/actions/setup-gradle@v6.2.0
         with:
           cache-read-only: ${{ github.ref_name != github.event.repository.default_branch }}
 
