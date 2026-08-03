@@ -4,10 +4,14 @@ import android.content.Context
 import it.eldavo.ylih.AppLocale
 import it.eldavo.ylih.YlihApp
 import it.eldavo.ylih.data.AppContainer
+import it.eldavo.ylih.data.PairSummary
 import it.eldavo.ylih.stats.Counting
 import it.eldavo.ylih.stats.Stats
 import it.eldavo.ylih.ui.countedMs
 import it.eldavo.ylih.ui.toSpan
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
 import java.time.Instant
 import java.time.LocalDate
@@ -40,7 +44,7 @@ data class WidgetData(
 )
 
 /**
- * Reads the whole widget picture off the database.
+ * Reads the whole widget picture off the database, once.
  *
  * Deliberately free of Glance, so it is testable the way `Stats.kt` is — a widget's rendered
  * output only exists inside the launcher, and none of the arithmetic here should need one.
@@ -48,12 +52,42 @@ data class WidgetData(
 suspend fun loadWidgetData(
     container: AppContainer,
     zone: ZoneId = ZoneId.systemDefault(),
-): WidgetData {
-    val now = container.clock.now()
+): WidgetData = widgetDataFlow(container, zone).first()
+
+/**
+ * The same picture, re-read whenever anything it is drawn from changes.
+ *
+ * A widget collects this *inside its composition* rather than reading it once on the way in, and
+ * that is not a refinement — it is what makes a pushed refresh able to show anything new at all.
+ * [YlihWidget] is where that is spelled out.
+ *
+ * [zone] has no default, unlike the two entry points that wrap it: both of those already resolve
+ * one, so a default here would only be a second place for the phone's real zone to come from.
+ */
+fun widgetDataFlow(
+    container: AppContainer,
+    zone: ZoneId,
+): Flow<WidgetData> = combine(
+    container.repository.observeSummaries(),
     // The widgets honour playback-only mode exactly as the app and the notification do; a home
     // screen showing a different number from the app it came from would be the worst of both.
-    val counting = if (container.settings.playbackOnlyNow()) Counting.PLAYBACK else Counting.CONNECTED
-    val summaries = container.repository.observeSummaries().first()
+    container.settings.playbackOnly,
+) { summaries, playbackOnly ->
+    widgetData(
+        container = container,
+        zone = zone,
+        summaries = summaries,
+        counting = if (playbackOnly) Counting.PLAYBACK else Counting.CONNECTED,
+    )
+}
+
+private suspend fun widgetData(
+    container: AppContainer,
+    zone: ZoneId,
+    summaries: List<PairSummary>,
+    counting: Counting,
+): WidgetData {
+    val now = container.clock.now()
     val spans = container.repository.sessionsSince(windowStart(now, zone)).map { it.toSpan() }
 
     val series = Stats.dailySeries(spans, zone, now, WIDGET_DAYS, counting)
@@ -80,17 +114,30 @@ suspend fun loadWidgetData(
 }
 
 /**
- * Everything a `provideGlance` needs before it can compose: the figures, and the context that
- * resolves them into words.
+ * Everything a widget draws: the figures, and the context that resolves them into words.
  *
- * All three widgets open the same way and the localised context is the part that is easy to drop —
- * below Android 13 the app's language is its own setting, so the context Glance hands in is not
- * the one that resolves the app's strings, or the `Locale` `ui/Format.kt` reads for a decimal
- * separator. A widget that forgot this would quietly be in the system language.
+ * A flow of *both* rather than a reading of both, because a Glance composition outlives the call
+ * that started it — [YlihWidget] is where that is spelled out. The language belongs in here for the
+ * same reason the figures do: it can change under a live composition too, and a value that only the
+ * next session would pick up is exactly the trap this shape exists to close.
+ *
+ * The localised context is the part that is easy to drop — below Android 13 the app's language is
+ * its own setting, so the context Glance hands in is not the one that resolves the app's strings,
+ * or the `Locale` `ui/Format.kt` reads for a decimal separator. A widget that forgot this would
+ * quietly be in the system language.
  */
-suspend fun widgetContent(context: Context): Pair<Context, WidgetData> {
+fun widgetContentFlow(
+    context: Context,
+    zone: ZoneId = ZoneId.systemDefault(),
+): Flow<Pair<Context, WidgetData>> {
     val container = (context.applicationContext as YlihApp).container
-    return AppLocale.wrapSuspending(context) to loadWidgetData(container)
+    // distinctUntilChanged because every SettingsStore flow is a map over the whole DataStore, so
+    // the language re-emits when any other setting is written — and each emission here costs a
+    // 30-day re-read of the session table.
+    val language = container.settings.language.distinctUntilChanged()
+    return widgetDataFlow(container, zone).combine(language) { data, _ ->
+        AppLocale.wrapSuspending(context) to data
+    }
 }
 
 /** Local midnight [WIDGET_DAYS] - 1 days back — the oldest instant any window here reaches. */

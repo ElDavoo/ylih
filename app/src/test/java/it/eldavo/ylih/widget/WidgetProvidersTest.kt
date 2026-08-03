@@ -2,7 +2,9 @@ package it.eldavo.ylih.widget
 
 import android.appwidget.AppWidgetProviderInfo
 import android.content.Context
+import android.content.pm.PackageManager
 import android.os.Build
+import androidx.glance.appwidget.GlanceAppWidgetReceiver
 import androidx.glance.appwidget.SizeMode
 import androidx.test.core.app.ApplicationProvider
 import org.junit.Assert.assertEquals
@@ -50,6 +52,30 @@ class WidgetProvidersTest {
         assertEquals(SizeMode.Exact, LifetimeWidget().sizeMode)
         assertEquals(SizeMode.Exact, ActivityWidget().sizeMode)
         assertEquals(SizeMode.Exact, ChartWidget().sizeMode)
+    }
+
+    @Test
+    fun `every widget the manifest names loads its figures through YlihWidget`() {
+        // The one thing a widget must not do is read its figures once: Glance runs provideGlance
+        // only to *start a session*, and the composition then lives for about 45 seconds, so a
+        // widget holding what it loaded redraws those same numbers at every refresh arriving in
+        // that window — which is how a connect used to reach the home screen a minute late.
+        // YlihWidget closes that by making provideGlance final, and this reads the merged manifest
+        // rather than the three receivers by name so that a fourth widget cannot be added by
+        // another door and quietly reintroduce it.
+        val receivers = context.packageManager
+            .getPackageInfo(context.packageName, PackageManager.GET_RECEIVERS)
+            .receivers
+            .orEmpty()
+            .map { Class.forName(it.name) }
+            .filter { GlanceAppWidgetReceiver::class.java.isAssignableFrom(it) }
+
+        assertEquals("every widget receiver in the manifest", 3, receivers.size)
+        receivers.forEach {
+            val widget = (it.getDeclaredConstructor().newInstance() as GlanceAppWidgetReceiver)
+                .glanceAppWidget
+            assertTrue("${it.simpleName} hosts a ${widget.javaClass.simpleName}", widget is YlihWidget)
+        }
     }
 
     @Test

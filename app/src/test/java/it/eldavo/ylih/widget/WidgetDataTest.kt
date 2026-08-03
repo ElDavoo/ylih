@@ -10,7 +10,13 @@ import it.eldavo.ylih.data.DeviceKind
 import it.eldavo.ylih.data.PairEntity
 import it.eldavo.ylih.data.SessionEntity
 import it.eldavo.ylih.stats.Counting
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runTest
+import kotlinx.coroutines.withTimeout
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
@@ -176,10 +182,37 @@ class WidgetDataTest {
         // What provideGlance calls, and the only part of it a test can reach. A broadcast-woken
         // process has nothing but the Application to find the database through, so reaching it
         // through YlihApp rather than through anything Glance hands in is the whole point.
-        val (_, data) = widgetContent(app)
+        val (_, data) = widgetContentFlow(app).first()
 
         assertEquals(WIDGET_DAYS, data.series.size)
         assertEquals(app.container.clock.now() / 1000, data.now / 1000)
+    }
+
+    @Test
+    fun `a widget's figures keep arriving after it has been composed`() = runBlocking {
+        // The one thing a widget cannot do is read its figures once. Glance runs provideGlance to
+        // *start a session* and then keeps that composition alive for about 45 seconds; an
+        // updateAll arriving inside that window recomposes what is already there rather than
+        // loading it again. Figures passed in as a parameter therefore cannot change while a
+        // session lives, so every push that landed in one faithfully redrew the numbers it already
+        // had — which is how connecting headphones reached the home screen a minute late, on the
+        // service tick that was finally late enough to find no session running and have to start
+        // another. Real threads and real time, because Room's invalidation is what delivers the
+        // second reading and it is not on this test's dispatcher.
+        val pair = seedPair("Galaxy Buds3 Pro")
+        val seen = Channel<WidgetData>(Channel.UNLIMITED)
+        val collecting = launch(Dispatchers.IO) { widgetDataFlow(container, zone).collect(seen::send) }
+        try {
+            assertNull("nothing was connected when it was composed", next(seen).rows.single().openSince)
+            seedSession(pair, from = clockNow, to = null)
+            assertEquals(
+                "and the connect reaches it without a second provideGlance",
+                clockNow,
+                next(seen).rows.single().openSince,
+            )
+        } finally {
+            collecting.cancel()
+        }
     }
 
     @Test
@@ -203,6 +236,10 @@ class WidgetDataTest {
     }
 
     private suspend fun load() = loadWidgetData(container, zone)
+
+    /** Generous, because it is waiting on Room's own executor rather than on anything here. */
+    private suspend fun next(channel: Channel<WidgetData>): WidgetData =
+        withTimeout(10_000) { channel.receive() }
 
     /** Local wall time on [today], as epoch millis. */
     private fun at(hourOfDay: Int, minute: Int): Long =

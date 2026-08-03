@@ -10,6 +10,7 @@ import it.eldavo.ylih.AppLocale
 import it.eldavo.ylih.R
 import it.eldavo.ylih.YlihApp
 import it.eldavo.ylih.stats.Counting
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Test
@@ -65,7 +66,7 @@ class WidgetsLegacyTest {
         val app: YlihApp = ApplicationProvider.getApplicationContext()
         app.container.settings.setLanguage("it")
         try {
-            val (localized, _) = widgetContent(app)
+            val (localized, _) = widgetContentFlow(app).first()
             // Asserted as a resolved string rather than as a Locale, because a widget's whole
             // contact with the language is what it can look up through this context.
             assertEquals("cuffie", localized.getString(R.string.nav_headphones))

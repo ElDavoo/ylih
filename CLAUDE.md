@@ -214,7 +214,9 @@ Four things about this code are load-bearing and not obvious:
 - **`widget/WidgetData.kt` holds everything but the drawing.** A rendered widget only exists
   inside a launcher, so the figures are assembled Glance-free and tested like `Stats.kt`
   (`WidgetDataTest`). `SessionDao.since()` is the one query they add — windowed, because a widget
-  refresh must not read a table that grows forever.
+  refresh must not read a table that grows forever. `widgetDataFlow` is the entry point and
+  `loadWidgetData` is its first emission: the figures have to be observable, not a reading, for the
+  reason spelled out under *Refreshes are pushed, never polled*.
 - **The live timer is a `Chronometer`, not repainted text.** A widget cannot animate; the system
   ticks a `Chronometer` for free. It arrives through `AndroidRemoteViews`, which nothing can see
   inside, so `chronometerBase()` exists to make the one piece of arithmetic testable.
@@ -262,7 +264,40 @@ Four things about this code are load-bearing and not obvious:
   `onFiguresChanged` is the redraw alone, for the service's minute tick: it must not re-enqueue
   the heartbeat sixty times an hour, and accrued playback is a figure nothing else would announce.
 
-- **Every widget is `SizeMode.Exact`**, and the layout arithmetic — `lifetimeRows`,
+  **A push is only half of it, and on its own it does nothing.** `updateAll` does not re-run
+  `provideGlance`. Glance runs that once to *start a session* — a `SessionWorker` under WorkManager
+  — and the session then keeps the composition alive for about 45 seconds; an `updateAll` arriving
+  inside that window only recomposes what is already there, since the `UpdateGlanceState` event it
+  sends re-reads the widget's own Glance state and nothing else. Figures loaded in `provideGlance`
+  and handed to the composable as a parameter therefore cannot change while a session lives, so
+  every push landing in that window faithfully redrew the numbers it already had. On the phone that
+  read as updates going missing rather than as anything being stale: a connect changed the database,
+  the app and the notification, pushed a refresh the launcher accepted, and left the home screen
+  exactly as it was. With detailed tracking on it looked like a timer — the service's minute tick is
+  longer than 45 seconds, so the tick was always the push that found no session running, had to
+  start one, and therefore read the database again, and the connect showed up a minute late.
+
+  **`widget/WidgetRefresh.kt`'s `YlihWidget` is what stops that returning**, and it is a base class
+  rather than three corrected `provideGlance` bodies on purpose. `provideGlance` is `final` there
+  and a subclass is given no way to load anything: all it writes is `Content`, and everything
+  `Content` is handed — the figures *and* the localised context, since the language can go stale the
+  same way — arrives from the `widgetContentFlow` the composition is collecting. So while a session
+  is alive its own observation delivers the change, and when none is running `refreshWidgets` starts
+  one; both are needed and neither is enough. A new widget cannot capture a snapshot because it
+  never loads one, and `WidgetProvidersTest` reads the merged manifest rather than naming the three
+  receivers, so a fourth widget cannot arrive by another door. `sizeMode` is `final` on the same
+  class for the same reason.
+
+  What no test can reach is the session boundary itself: nothing outside Glance can start a session
+  (`ContentReceiver`, which `provideContent` needs, is library-internal), and
+  `runGlanceAppWidgetUnitTest` cannot see a state change after the first composition at all — it
+  re-snapshots the tree only on a `Recomposer` `Idle` *transition*, and the conflated `StateFlow`
+  never reports Idle→Idle, so even a plain `mutableStateOf` looks frozen there. That leaves
+  `YlihWidget.provideGlance` as the one uncovered block in `widget/`. `WidgetDataTest` pins the half
+  that is reachable: that the figures are a flow which keeps emitting, not a reading.
+
+- **Every widget is `SizeMode.Exact`** (`final` on `YlihWidget`, so it cannot be otherwise), and
+  the layout arithmetic — `lifetimeRows`,
   `activityGrid`, `fits` — is Glance-free and unit-tested the way `WidgetData` is. Fixed
   `SizeMode.Responsive` buckets were what forced the providers' resize range to stay narrow: a
   size between two buckets draws the smaller layout and leaves a band of empty background, so

@@ -7,15 +7,11 @@ import android.widget.RemoteViews
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.glance.GlanceId
 import androidx.glance.GlanceModifier
 import androidx.glance.GlanceTheme
 import androidx.glance.LocalSize
 import androidx.glance.action.clickable
 import androidx.glance.appwidget.AndroidRemoteViews
-import androidx.glance.appwidget.GlanceAppWidget
-import androidx.glance.appwidget.SizeMode
-import androidx.glance.appwidget.provideContent
 import androidx.glance.layout.Alignment
 import androidx.glance.layout.Column
 import androidx.glance.layout.ColumnScope
@@ -39,14 +35,10 @@ import it.eldavo.ylih.ui.formatHours
  * Bluetooth-only mode nothing of the app is resident and there is no notification, so it is the
  * only ambient sign that background tracking is alive at all.
  */
-class LifetimeWidget : GlanceAppWidget() {
+class LifetimeWidget : YlihWidget() {
 
-    override val sizeMode = SizeMode.Exact
-
-    override suspend fun provideGlance(context: Context, id: GlanceId) {
-        val (localized, data) = widgetContent(context)
-        provideContent { LifetimeContent(localized, data) }
-    }
+    @Composable
+    override fun Content(context: Context, data: WidgetData) = LifetimeContent(context, data)
 }
 
 // Internal rather than private purely so provideGlance's lambda can reach it without the compiler

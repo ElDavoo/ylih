@@ -14,15 +14,11 @@ import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.glance.GlanceId
 import androidx.glance.GlanceModifier
 import androidx.glance.GlanceTheme
 import androidx.glance.Image
 import androidx.glance.ImageProvider
 import androidx.glance.LocalSize
-import androidx.glance.appwidget.GlanceAppWidget
-import androidx.glance.appwidget.SizeMode
-import androidx.glance.appwidget.provideContent
 import androidx.glance.layout.ContentScale
 import androidx.glance.layout.Row
 import androidx.glance.layout.Spacer
@@ -39,14 +35,10 @@ import it.eldavo.ylih.ui.formatHours
 import java.time.LocalDate
 
 /** The stats screen's 30-day bar chart, on the home screen. */
-class ChartWidget : GlanceAppWidget() {
+class ChartWidget : YlihWidget() {
 
-    override val sizeMode = SizeMode.Exact
-
-    override suspend fun provideGlance(context: Context, id: GlanceId) {
-        val (localized, data) = widgetContent(context)
-        provideContent { ChartContent(localized, data) }
-    }
+    @Composable
+    override fun Content(context: Context, data: WidgetData) = ChartContent(context, data)
 }
 
 /** Internal for the synthetic-accessor reason spelled out in [LifetimeContent]. */

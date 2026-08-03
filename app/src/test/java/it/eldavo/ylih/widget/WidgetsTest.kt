@@ -3,6 +3,7 @@ package it.eldavo.ylih.widget
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
@@ -236,6 +237,28 @@ class WidgetsTest {
 
         onNode(hasText(context.getString(R.string.stats_daily_hours_30))).assertExists()
     }
+
+    @Test
+    fun `each widget class draws its own content`() {
+        // Content is all a YlihWidget subclass writes — everything else about getting figures on
+        // screen is final on the base class — so this is the whole of what one can get wrong, and
+        // three classes this similar are exactly where a copy-paste survives review. Composed
+        // through the widget rather than through the composable it names, which is the only way
+        // round that tells the two apart.
+        assertDraws(R.string.nav_headphones) { LifetimeWidget().Content(context, data()) }
+        assertDraws(R.string.stats_today) { ActivityWidget().Content(context, data()) }
+        assertDraws(R.string.stats_daily_hours_30) { ChartWidget().Content(context, data()) }
+    }
+
+    /** Composes [content] at a size every widget has something to say at, and looks for [label]. */
+    private fun assertDraws(label: Int, content: @Composable () -> Unit) =
+        runGlanceAppWidgetUnitTest {
+            setContext(context)
+            setAppWidgetSize(DpSize(cells(4), cells(2)))
+            provideComposable(content)
+
+            onNode(hasText(context.getString(label))).assertExists()
+        }
 
     /** The clickable row wrapping a pair's label, rather than the label itself. */
     private fun rowFor(label: String) = hasAnyDescendant(hasText(label))

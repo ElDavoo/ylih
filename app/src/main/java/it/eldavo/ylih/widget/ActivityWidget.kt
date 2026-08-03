@@ -3,12 +3,8 @@ package it.eldavo.ylih.widget
 import android.content.Context
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
-import androidx.glance.GlanceId
 import androidx.glance.GlanceModifier
 import androidx.glance.LocalSize
-import androidx.glance.appwidget.GlanceAppWidget
-import androidx.glance.appwidget.SizeMode
-import androidx.glance.appwidget.provideContent
 import androidx.glance.layout.Alignment
 import androidx.glance.layout.Row
 import androidx.glance.layout.Spacer
@@ -23,14 +19,10 @@ import it.eldavo.ylih.ui.formatHours
  * screen leads with. As many of the four as fit, laid out for the size the launcher actually gave
  * us rather than for the nearest of a couple of fixed shapes.
  */
-class ActivityWidget : GlanceAppWidget() {
+class ActivityWidget : YlihWidget() {
 
-    override val sizeMode = SizeMode.Exact
-
-    override suspend fun provideGlance(context: Context, id: GlanceId) {
-        val (localized, data) = widgetContent(context)
-        provideContent { ActivityContent(localized, data) }
-    }
+    @Composable
+    override fun Content(context: Context, data: WidgetData) = ActivityContent(context, data)
 }
 
 /** Internal for the synthetic-accessor reason spelled out in [LifetimeContent]. */
