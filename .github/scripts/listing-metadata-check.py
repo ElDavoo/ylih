@@ -27,6 +27,20 @@ LIMITS = {
 }
 CHANGELOG_LIMIT = 500
 
+# The summary is the one field where the two stores disagree, so it gets its own rules.
+#
+# F-Droid's inclusion guide asks for "less than 80 characters, no trailing dot"; Play's 80 is
+# inclusive and it has no opinion about punctuation. Nothing else here would ever catch the
+# difference: fdroidserver lints both of those against the recipe's YAML `Summary:` field, and
+# this app deliberately does not set one -- F-Droid reads the summary out of this directory
+# instead -- so its own check has nothing to look at and stays silent.
+SUMMARY = "short_description.txt"
+SUMMARY_LIMIT = 79
+
+# `.` is what the guide says; the other two are the same sentence terminator in Devanagari and
+# in the CJK scripts, and a reviewer reading a translation would call them the same thing.
+TERMINAL_PUNCTUATION = ".。।"
+
 # F-Droid falls back to en-US for any locale that is missing text, so that one has to be whole.
 FALLBACK_LOCALE = "en-US"
 
@@ -55,9 +69,16 @@ def check(root: Path, version_code: int | None) -> list[str]:
                 if locale.name == FALLBACK_LOCALE:
                     problems.append(f"{rel}/{name}: missing from the fallback locale")
                 continue
-            length = len(path.read_text(encoding="utf-8").strip())
-            if length > limit:
-                problems.append(f"{rel}/{name}: {length} chars, limit {limit}")
+            text = path.read_text(encoding="utf-8").strip()
+            if name == SUMMARY:
+                if len(text) > SUMMARY_LIMIT:
+                    problems.append(
+                        f"{rel}/{name}: {len(text)} chars, F-Droid wants fewer than {limit}"
+                    )
+                if text.endswith(tuple(TERMINAL_PUNCTUATION)):
+                    problems.append(f"{rel}/{name}: ends with {text[-1]!r}, no trailing dot")
+            elif len(text) > limit:
+                problems.append(f"{rel}/{name}: {len(text)} chars, limit {limit}")
 
         for path in sorted(locale.glob("changelogs/*.txt")):
             if not re.fullmatch(r"[0-9]+", path.stem):

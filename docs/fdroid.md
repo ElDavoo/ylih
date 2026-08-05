@@ -216,10 +216,25 @@ glab mr create --repo fdroid/fdroiddata --target-branch master --title 'New app:
 
 Expect 24–48 hours from merge to the app appearing in the repository.
 
-One `fdroid lint` quirk to know about: it checks the `Summary:` field for trailing punctuation
-("Punctuation should be avoided"). The recipe deliberately sets no `Summary:` or `Description:` —
-they come from the fastlane files — so the check never fires. Do not "fix" that by copying the
-text into the YAML; it would fork the English listing away from the other 25 languages.
+One `fdroid lint` quirk to know about: it checks the `Summary:` field with
+`.*[a-z0-9][.!?]( |$)` ("Punctuation should be avoided") and against an 80-character limit. The
+recipe deliberately sets no `Summary:` or `Description:` — they come from the fastlane files — so
+neither check ever fires. Do not "fix" that by copying the text into the YAML; it would fork the
+English listing away from the other 25 languages.
+
+**That silence is a blind spot, not a convenience**, and it hid two things until a reviewer would
+have found them: 24 of the 26 `short_description.txt` files ended in a full stop, and two were
+exactly 80 characters, which Play allows and the inclusion guide ("less than 80 characters, no
+trailing dot") does not. `.github/scripts/listing-metadata-check.py` now enforces both against
+the fastlane files themselves, which is the only place that can see them.
+
+It enforces the guide's wording rather than lint's regex, and the gap between the two is worth
+knowing: `[a-z0-9][.!?]( |$)` also matches *mid-string* punctuation, so the second sentence in
+`Track how many hours each pair of headphones lasts. Offline, forever, private` would trip it
+too. Nothing enforces that today — the regex needs a `Summary:` to read, and it only matches
+Latin letters and digits, so most of these translations could never trip it anyway. Rewriting 26
+translations to drop an internal full stop is a content decision, not a lint fix, so it is left
+alone deliberately.
 
 ## 6. Reproducible builds
 
