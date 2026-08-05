@@ -1,0 +1,1 @@
+• Settings now live in the app's own database rather than in a separate library, which makes the download smaller and the build easier to reproduce. Nothing changes on screen.

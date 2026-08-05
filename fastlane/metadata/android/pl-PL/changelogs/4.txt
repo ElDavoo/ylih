@@ -1,0 +1,1 @@
+• Ustawienia są teraz przechowywane we własnej bazie danych aplikacji, a nie w osobnej bibliotece, dzięki czemu pobieranie jest mniejsze, a kompilację łatwiej odtworzyć. Na ekranie nic się nie zmienia.

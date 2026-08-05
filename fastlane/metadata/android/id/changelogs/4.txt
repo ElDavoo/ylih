@@ -1,0 +1,1 @@
+• Pengaturan kini disimpan di basis data aplikasi sendiri, bukan di pustaka terpisah, sehingga unduhan lebih kecil dan build lebih mudah direproduksi. Tidak ada yang berubah di layar.

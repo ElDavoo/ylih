@@ -1,0 +1,1 @@
+• Cài đặt giờ được lưu trong cơ sở dữ liệu của chính ứng dụng thay vì một thư viện riêng, giúp bản tải về nhỏ hơn và bản dựng dễ tái tạo hơn. Không có gì thay đổi trên màn hình.

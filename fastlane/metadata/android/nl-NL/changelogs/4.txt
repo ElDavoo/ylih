@@ -1,0 +1,1 @@
+• Instellingen staan nu in de eigen database van de app in plaats van in een aparte bibliotheek, waardoor de download kleiner is en de build makkelijker te reproduceren. Op het scherm verandert er niets.

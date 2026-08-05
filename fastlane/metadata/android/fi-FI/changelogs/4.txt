@@ -1,0 +1,1 @@
+• Asetukset tallennetaan nyt sovelluksen omaan tietokantaan erillisen kirjaston sijaan, mikä pienentää latausta ja helpottaa koontiversion toisintamista. Näkymässä ei muutu mitään.

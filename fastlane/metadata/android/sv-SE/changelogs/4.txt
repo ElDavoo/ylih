@@ -1,0 +1,1 @@
+• Inställningarna ligger nu i appens egen databas i stället för i ett separat bibliotek, vilket gör nedladdningen mindre och bygget lättare att reproducera. Inget ändras på skärmen.

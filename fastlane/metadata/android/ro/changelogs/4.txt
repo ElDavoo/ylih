@@ -1,0 +1,1 @@
+• Setările sunt acum în baza de date proprie a aplicației, nu într-o bibliotecă separată, ceea ce face descărcarea mai mică și compilarea mai ușor de reprodus. Nimic nu se schimbă pe ecran.

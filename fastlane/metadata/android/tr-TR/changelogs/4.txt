@@ -1,0 +1,1 @@
+• Ayarlar artık ayrı bir kitaplık yerine uygulamanın kendi veritabanında tutuluyor; bu da indirmeyi küçültüyor ve derlemenin yeniden üretilmesini kolaylaştırıyor. Ekranda hiçbir şey değişmiyor.

@@ -1,0 +1,1 @@
+• Innstillingene ligger nå i appens egen database i stedet for i et eget bibliotek, noe som gjør nedlastingen mindre og bygget lettere å reprodusere. Ingenting endrer seg på skjermen.

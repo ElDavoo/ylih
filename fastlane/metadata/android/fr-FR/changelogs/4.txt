@@ -1,0 +1,1 @@
+• Les réglages sont désormais stockés dans la base de données de l'application plutôt que dans une bibliothèque séparée, ce qui réduit la taille du téléchargement et facilite la reproduction de la compilation. Rien ne change à l'écran.

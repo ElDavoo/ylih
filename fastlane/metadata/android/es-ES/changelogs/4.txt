@@ -1,0 +1,1 @@
+• Los ajustes se guardan ahora en la propia base de datos de la aplicación en lugar de en una biblioteca aparte, lo que reduce el tamaño de la descarga y facilita reproducir la compilación. Nada cambia en pantalla.

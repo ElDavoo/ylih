@@ -1,0 +1,1 @@
+• As configurações agora ficam no próprio banco de dados do app, em vez de uma biblioteca separada, o que deixa o download menor e a compilação mais fácil de reproduzir. Nada muda na tela.

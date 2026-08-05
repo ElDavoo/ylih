@@ -42,10 +42,17 @@ Binaries: https://github.com/ElDavoo/ylih/releases/download/v%v/ylih-v%v-classic
 # by dropping the specialUse foreground-service type and the battery-optimisation shortcut, so
 # F-Droid ships the one with fewer restrictions.
 #
-# The list starts at 1.1.1 rather than at the first release. F-Droid never published 1.0.0, so
-# there is nobody to keep it for, and it is the one tag that could not verify anywhere: the
-# keepDebugSymbols pin that makes a build agree across machines with and without an NDK landed
-# after it. Starting here means every version F-Droid ever serves is one that reproduces.
+# The list starts at 1.1.2 rather than at the first release, and there is nobody to keep the
+# earlier ones for: F-Droid has published none of them. 1.0.0 could not have verified anywhere,
+# because the pin that made a build agree across machines with and without an NDK landed after
+# it. 1.1.2 removes the need for that pin entirely — the one file it protected was DataStore's
+# prebuilt .so, and the settings now live in the app's own database — so this is the first
+# version whose reproducibility rests on nothing but the source.
+#
+# It is also the first version whose listing text passes the inclusion guide: F-Droid reads the
+# summary and description out of the source checkout at the commit it builds, so the trailing
+# dots and the two 80-character summaries corrected in 28c8935 only reach it through a tag.
+#
 # No `sudo: sdkmanager ...` line to install platform 37 / build-tools 37.0.0, even though
 # the buildserver image preinstalls nothing past 33: its provisioning pre-accepts the SDK
 # licences and makes $ANDROID_HOME/{platforms,build-tools} group-writable *specifically* so
@@ -55,9 +62,9 @@ Binaries: https://github.com/ElDavoo/ylih/releases/download/v%v/ylih-v%v-classic
 # No `output:` either: fdroidserver already appends the flavor's own
 # build/outputs/apk/classic/release/ to the globs it searches. See docs/fdroid.md §2.
 Builds:
-  - versionName: 1.1.1
-    versionCode: 3
-    commit: v1.1.1
+  - versionName: 1.1.2
+    versionCode: 4
+    commit: v1.1.2
     subdir: app
     gradle:
       - classic
@@ -70,5 +77,5 @@ AllowedAPKSigningKeys: ba4f1511f0d1e49d468387ab6fac6b2df748b887e7018f8ebe4fccd20
 
 AutoUpdateMode: Version
 UpdateCheckMode: Tags ^v[0-9.]+$
-CurrentVersion: 1.1.1
-CurrentVersionCode: 3
+CurrentVersion: 1.1.2
+CurrentVersionCode: 4

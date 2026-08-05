@@ -1,0 +1,1 @@
+• Le impostazioni sono ora nel database dell'app anziché in una libreria separata: il download è più piccolo e la build più facile da riprodurre. Sullo schermo non cambia nulla.

@@ -1,0 +1,1 @@
+• A beállítások mostantól az alkalmazás saját adatbázisában vannak, nem egy külön könyvtárban. Ettől kisebb a letöltés és könnyebben reprodukálható a build. A képernyőn semmi sem változik.
