@@ -17,11 +17,27 @@ object Notifications {
     const val ID_TRACKING = 1
 
     /**
-     * Only ever called from [TrackingService], which [TrackingController.detailedTrackingSupported]
-     * keeps off below Android 8 (API 26) — that's where notification channels start existing.
+     * Creates the tracking channel at process start, where the platform has channels at all.
+     *
+     * This belongs to `YlihApp.onCreate` and nowhere else, which is a change from where it used
+     * to live — [TrackingService.onCreate], on the line above the `startForeground` that needs
+     * it. With the notification permission denied, creating the channel there was observed to
+     * silently do nothing, and the `startForeground` a moment later then threw. The service
+     * catches that and stops itself, so detailed tracking died the instant it was switched on and
+     * stayed dead: every retry ran the same two calls in the same order and got the same result.
+     *
+     * Creating it at process start is what was observed to fix it — the service then starts, runs
+     * and shows up in the foreground-service manager whether or not the notification is allowed
+     * to be drawn. It is also the reason the permission is asked for by the switch that turns
+     * detailed tracking on rather than during the first run: that ask is now about whether the
+     * notification is *visible*, not about whether tracking works.
      */
+    fun ensureChannelAtStartup(context: Context) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) ensureChannel(context)
+    }
+
     @RequiresApi(Build.VERSION_CODES.O)
-    fun ensureChannel(context: Context) {
+    private fun ensureChannel(context: Context) {
         val manager = context.getSystemService(NotificationManager::class.java)
         if (manager.getNotificationChannel(CHANNEL_TRACKING) != null) return
         val channel = NotificationChannel(

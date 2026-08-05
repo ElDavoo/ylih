@@ -84,7 +84,9 @@ class TrackingService : LifecycleService() {
         super.onCreate()
         container = (application as YlihApp).container
 
-        Notifications.ensureChannel(this)
+        // No ensureChannel here: YlihApp.onCreate has already run in this process and made it.
+        // Creating it on the line above this call is exactly the ordering that broke detailed
+        // tracking for anyone who had denied the notification permission.
         startForegroundCompat(getString(R.string.notification_starting))
 
         playbackWatcher = PlaybackWatcher(audioManager) { deltaMs -> creditPlayback(deltaMs) }

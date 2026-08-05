@@ -153,8 +153,15 @@ call as often as you like. It is invoked from `BootReceiver`, `MainActivity.onSt
   and heartbeats every minute.
 
 `data/AppContainer.kt` is a hand-rolled container reached via `(context.applicationContext as
-YlihApp).container`. `YlihApp.onCreate` deliberately does no work — it runs on every broadcast-
-woken process start. `Clock` is a `fun interface` injected through the container so time-sensitive
+YlihApp).container`. `YlihApp.onCreate` deliberately does almost no work — it runs on every broadcast-
+woken process start. Its one exception is `Notifications.ensureChannelAtStartup`, and that is
+load-bearing: created where it used to be, on the line above `TrackingService`'s `startForeground`,
+the channel silently fails to appear when the notification permission is denied, and the
+`startForeground` then throws. The service catches that and stops itself, so detailed tracking dies
+the moment it is switched on and every retry repeats the same two calls in the same order. Creating
+it at process start is what fixes it, and `startForegroundCompat` must stay free of an
+`areNotificationsEnabled()` check — the service is meant to run and appear in the foreground-service
+manager whether or not its notification may be drawn. `Clock` is a `fun interface` injected through the container so time-sensitive
 logic is testable.
 
 ### Data model
