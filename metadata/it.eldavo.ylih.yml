@@ -22,6 +22,12 @@ SourceCode: https://github.com/ElDavoo/ylih
 IssueTracker: https://github.com/ElDavoo/ylih/issues
 Changelog: https://github.com/ElDavoo/ylih/releases
 
+# What `fdroid checkupdates` derives from android:label in the merged manifest, and fdroiddata's
+# own `checkupdates` job asserts the recipe already says it — it runs checkupdates and fails on
+# any diff. Absent, that job fails with this exact line as the diff. It is not the display name:
+# F-Droid shows the fastlane title.txt, which is translated 26 ways.
+AutoName: ylih
+
 RepoType: git
 Repo: https://github.com/ElDavoo/ylih.git
 
