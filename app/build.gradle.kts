@@ -22,10 +22,23 @@ android {
         applicationId = "it.eldavo.ylih"
         minSdk = 23
         targetSdk = 37
-        versionCode = 2
-        versionName = "1.1.0"
+        versionCode = 3
+        versionName = "1.1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    // AGP writes the dependency list into the APK's signing block, compressed and encrypted with
+    // a Google Play signing key. F-Droid's scanner rejects that outright — `check apk` fails with
+    // "found extra signing block 'Dependency metadata'" — and it is hard to argue with: an opaque
+    // blob only Google can read is exactly what a build nobody can audit looks like. It was 7246
+    // bytes of the v1.1.0 APK.
+    //
+    // The bundle keeps it, because that is where it does the job it exists for: Play reads it to
+    // warn about vulnerable dependencies, and the AAB is not something anyone reproduces.
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = true
     }
 
     // Same app, two distributions. The application id is deliberately identical so a sideloaded

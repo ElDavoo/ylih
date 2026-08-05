@@ -1,0 +1,1 @@
+• Removes an encrypted google dependency-metadata blob from the apk. Nothing else changes.

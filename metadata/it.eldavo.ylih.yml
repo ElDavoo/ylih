@@ -42,7 +42,7 @@ Binaries: https://github.com/ElDavoo/ylih/releases/download/v%v/ylih-v%v-classic
 # by dropping the specialUse foreground-service type and the battery-optimisation shortcut, so
 # F-Droid ships the one with fewer restrictions.
 #
-# The list starts at 1.1.0 rather than at the first release. F-Droid never published 1.0.0, so
+# The list starts at 1.1.1 rather than at the first release. F-Droid never published 1.0.0, so
 # there is nobody to keep it for, and it is the one tag that could not verify anywhere: the
 # keepDebugSymbols pin that makes a build agree across machines with and without an NDK landed
 # after it. Starting here means every version F-Droid ever serves is one that reproduces.
@@ -55,9 +55,9 @@ Binaries: https://github.com/ElDavoo/ylih/releases/download/v%v/ylih-v%v-classic
 # No `output:` either: fdroidserver already appends the flavor's own
 # build/outputs/apk/classic/release/ to the globs it searches. See docs/fdroid.md §2.
 Builds:
-  - versionName: 1.1.0
-    versionCode: 2
-    commit: v1.1.0
+  - versionName: 1.1.1
+    versionCode: 3
+    commit: v1.1.1
     subdir: app
     gradle:
       - classic
@@ -70,5 +70,5 @@ AllowedAPKSigningKeys: ba4f1511f0d1e49d468387ab6fac6b2df748b887e7018f8ebe4fccd20
 
 AutoUpdateMode: Version
 UpdateCheckMode: Tags ^v[0-9.]+$
-CurrentVersion: 1.1.0
-CurrentVersionCode: 2
+CurrentVersion: 1.1.1
+CurrentVersionCode: 3
