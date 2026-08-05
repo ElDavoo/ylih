@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">ufuataji wa kina, katika mipangilio, inaongeza masikilizaji wenye waya na kupima ni kiasi gani cha muda ulichokuwa kucheza muziki.</string>
     <string name="welcome_privacy">kila kitu kinabaki katika simu hii. hakuna akaunti, na programu haina ruhusa ya intaneti.</string>
     <string name="welcome_start">anza</string>
+    <string name="welcome_next">mbee</string>
+    <string name="welcome_allow">ruhusu</string>
+    <string name="welcome_step">ndughu %1$d kwa %2$d</string>
+    <string name="welcome_bluetooth_title">ruhusa ya bluetooth</string>
+    <string name="welcome_bluetooth_why">android imwambia programu ni kifaa kiche cha bluetooth chiungirwe, na chikutambulika ni, kama tu programu ina ruhusa ya bluetooth. ndo vila ylih itofautisha vifaa vya kusikira na redio ya gari, na jozi imwenga na inge.</string>
+    <string name="welcome_bluetooth_with">na ruhusa: kila jozi iandikwa kuchia wakati iungirwe, bila kilekwa kintu kikifanya kazi na bila kukumbukira kubonyeza kintu.</string>
+    <string name="welcome_bluetooth_without">bila ruhusa: kunavo vifaa vya kusikira vya bluetooth viandikwavo. sehemu inge ya programu ikafanya kazi, na undaweza kutoa ruhusa baadaye kwenye mipangilio ya programu ya android.</string>
+    <string name="welcome_notifications_title">arifa</string>
+    <string name="welcome_notifications_why">ufuatiliaji wa kina ifanya huduma ndodo ya nyuma, na android ilonda kila programu ifanyayo vivyo kuvika arifa ikionekana.</string>
+    <string name="welcome_notifications_with">na ruhusa: arifa ilaghusa kicho chiandikwacho sasa, ndo dalili imwenga tu kukwamba ufuatiliaji wa kina u hai.</string>
+    <string name="welcome_notifications_without">bila ruhusa: ufuatiliaji wa kina ukafanya kazi na ukaandika. android tu haitalaghusa arifa yake.</string>
     <string name="hibernation_title">yaendelea kuhesabu hata ukisahau</string>
     <string name="hibernation_body">android inasitisha programu zisizofunguliwa kwa miezi, na inaondoa ruhusa zake. hapo ylih haitaandika chochote mpaka uifungue tena. kusahaulika ndiyo kazi ya programu hii, hivyo tatakamatia jambo hili sasa.</string>
     <string name="action_not_now">sio sasa</string>

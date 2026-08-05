@@ -1,4 +1,4 @@
-• Tre widgetar för startskärmen: livstidstimmar per par med en löpande timer på det anslutna paret, totalsumman bredvid i dag / 7 dagar / 30 dagar, och 30-dagarsdiagrammet. Var och en kan storleksändras fritt.
-• Det går nu att svepa mellan de tre flikarna.
-• Säkerhetskopior anger sin formatversion, så en fil från en nyare utgåva avvisas i stället för att läsas fel.
-• Nedladdningen är en fjärdedel så stor.
+• Tre widgetar för startskärmen: timmar per par med löpande timer, i dag / 7 dagar / 30 dagar, och 30-dagarsdiagrammet. Var och en kan storleksändras fritt.
+• Första starten förklarar nu vad bluetooth-åtkomsten ska användas till innan den efterfrågas.
+• Aviseringar efterfrågas när detaljerad spårning slås på, inte tidigare — och den startar nu även om de nekades.
+• Flikarna går att svepa, och nedladdningen är en fjärdedel så stor.

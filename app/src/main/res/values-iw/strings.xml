@@ -33,6 +33,17 @@
     <string name="welcome_point_detailed_body">מעקב מפורט, בהגדרות, מוסיף אוזניות חוטיות ומודד כמה מהזמן באמת התנגנה מוזיקה.</string>
     <string name="welcome_privacy">הכול נשאר בטלפון הזה. אין חשבון, ולאפליקציה אין הרשאת אינטרנט.</string>
     <string name="welcome_start">אפשר להתחיל</string>
+    <string name="welcome_next">הבא</string>
+    <string name="welcome_allow">אישור</string>
+    <string name="welcome_step">שלב %1$d מתוך %2$d</string>
+    <string name="welcome_bluetooth_title">גישה לבלוטות\'</string>
+    <string name="welcome_bluetooth_why">אנדרואיד מגלה לאפליקציה איזה מכשיר בלוטות\' התחבר, ואיך הוא נקרא, רק אם לאפליקציה יש גישה לבלוטות\'. כך ylih מבדיל בין אוזניות למערכת שמע ברכב, ובין זוג אחד לאחר.</string>
+    <string name="welcome_bluetooth_with">עם הגישה: כל זוג נרשם מרגע ההתחברות, בלי להשאיר משהו פועל ובלי לזכור ללחוץ על כלום.</string>
+    <string name="welcome_bluetooth_without">בלי הגישה: שום אוזניות בלוטות\' לא נרשמות. שאר האפליקציה עדיין עובדת, ואפשר לאשר מאוחר יותר בהגדרות האפליקציות של אנדרואיד.</string>
+    <string name="welcome_notifications_title">התראות</string>
+    <string name="welcome_notifications_why">מעקב מפורט מריץ שירות רקע קטן, ואנדרואיד דורש מכל אפליקציה שעושה זאת להשאיר התראה גלויה כל אותו זמן.</string>
+    <string name="welcome_notifications_with">עם ההרשאה: ההתראה מראה מה נרשם כרגע, וזה הסימן היחיד לכך שמעקב מפורט חי.</string>
+    <string name="welcome_notifications_without">בלי ההרשאה: מעקב מפורט עדיין רץ ועדיין רושם. אנדרואיד פשוט לא יציג את ההתראה שלו.</string>
     <string name="hibernation_title">תמשיך לספור גם כשתשכח ממנו</string>
     <string name="hibernation_body">android עוצר אפליקציות שלא נפתחו כמה חודשים ולוקח בחזרה את ההרשאות שלהן, מה שיגרום ל-ylih לא לתעד שום דבר עד שתפתח אותו שוב. להישכח זו בדיוק המטרה של האפליקציה הזו, אז כדאי לכבות את זה כבר עכשיו.</string>
     <string name="action_not_now">לא עכשיו</string>

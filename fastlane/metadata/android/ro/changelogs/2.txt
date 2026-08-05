@@ -1,4 +1,4 @@
-• Trei widgeturi pentru ecranul principal: orele totale pe pereche, cu un cronometru viu pe perechea conectată, totalul general lângă azi / 7 zile / 30 de zile și graficul pe 30 de zile. Fiecare se redimensionează liber.
-• Se poate glisa acum între cele trei file.
-• Copiile de rezervă își notează versiunea de format, așa că un fișier dintr-o versiune viitoare este refuzat, nu citit greșit.
-• Descărcarea are un sfert din dimensiune.
+• Trei widgeturi pentru ecranul principal: ore pe pereche cu cronometru viu, azi / 7 zile / 30 de zile și graficul pe 30 de zile. Fiecare se redimensionează liber.
+• Prima pornire explică acum la ce e nevoie de accesul la bluetooth, înainte de a-l cere.
+• Notificările sunt cerute când activezi urmărirea detaliată, nu mai devreme — iar aceasta nu mai refuză să pornească dacă au fost respinse.
+• Filele pot fi glisate, iar descărcarea are un sfert din dimensiune.

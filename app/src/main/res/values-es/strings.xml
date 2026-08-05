@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">el seguimiento detallado, en ajustes, añade los auriculares con cable y mide cuánto de ese tiempo se estuvo reproduciendo audio de verdad.</string>
     <string name="welcome_privacy">todo permanece en este teléfono. no hay cuenta y la app no tiene permiso de internet.</string>
     <string name="welcome_start">empezar</string>
+    <string name="welcome_next">siguiente</string>
+    <string name="welcome_allow">permitir</string>
+    <string name="welcome_step">paso %1$d de %2$d</string>
+    <string name="welcome_bluetooth_title">acceso al bluetooth</string>
+    <string name="welcome_bluetooth_why">android solo le dice a una app qué dispositivo bluetooth se ha conectado, y cómo se llama, si la app tiene acceso al bluetooth. así es como ylih distingue unos auriculares de la radio del coche, y un par de otro.</string>
+    <string name="welcome_bluetooth_with">con el acceso: cada par se registra desde el momento en que se conecta, sin dejar nada en marcha y sin tener que acordarse de pulsar nada.</string>
+    <string name="welcome_bluetooth_without">sin el acceso: no se registra ningún auricular bluetooth. el resto de la app sigue funcionando, y puedes concederlo más tarde en los ajustes de aplicaciones de android.</string>
+    <string name="welcome_notifications_title">notificaciones</string>
+    <string name="welcome_notifications_why">el seguimiento detallado usa un pequeño servicio en segundo plano, y android obliga a cualquier app que lo haga a mantener visible una notificación.</string>
+    <string name="welcome_notifications_with">con el permiso: la notificación muestra qué se está registrando ahora mismo, la única señal de que el seguimiento detallado está vivo.</string>
+    <string name="welcome_notifications_without">sin el permiso: el seguimiento detallado sigue funcionando y registrando. android simplemente no mostrará su notificación.</string>
     <string name="hibernation_title">sigue contando mientras te olvidas de ella</string>
     <string name="hibernation_body">android pausa las aplicaciones que pasan unos meses sin abrirse y les retira los permisos, con lo que ylih no registraría nada hasta que la abrieras de nuevo. que se olviden de ella es exactamente para lo que sirve esta aplicación, así que vale la pena desactivarlo ahora.</string>
     <string name="action_not_now">ahora no</string>

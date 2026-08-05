@@ -304,7 +304,10 @@ fun YlihNavHost(
     // whole app, tabs included.
     val onboardingDone by viewModel.onboardingDone.collectAsStateWithLifecycle()
     if (onboardingDone == false) {
-        WelcomeDialog(onDismiss = viewModel::completeOnboarding)
+        WelcomeDialog(
+            onDismiss = viewModel::completeOnboarding,
+            onPermissionResult = viewModel::syncWithSystem,
+        )
     }
 
     // Strictly after the welcome, and never beside it: the first run already spends one dialog

@@ -1,4 +1,4 @@
-• Tre widget per la schermata home: le ore totali per paio con un cronometro dal vivo sul paio collegato, il totale generale accanto a oggi / 7 giorni / 30 giorni, e il grafico dei 30 giorni. Ognuno si ridimensiona liberamente.
-• Ora si può scorrere tra le tre schede.
-• I backup registrano la versione del loro formato, così un file di una versione futura viene rifiutato invece che letto male.
-• Il download pesa un quarto.
+• Tre widget per la schermata home: ore per paio con un cronometro dal vivo, oggi / 7 giorni / 30 giorni, e il grafico dei 30 giorni. Ognuno si ridimensiona liberamente.
+• Il primo avvio ora spiega perché serve l'accesso al bluetooth prima di chiederlo.
+• Le notifiche vengono chieste quando si attiva il tracciamento dettagliato, non prima — e il tracciamento dettagliato non fallisce più all'avvio se erano state rifiutate.
+• Le schede si possono scorrere e il download pesa un quarto.

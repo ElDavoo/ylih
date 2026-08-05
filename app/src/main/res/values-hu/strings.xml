@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">a beállításokban bekapcsolható részletes követés hozzáadja a vezetékes fejhallgatókat, és méri, hogy az idő mekkora részében szólt ténylegesen zene.</string>
     <string name="welcome_privacy">minden ezen a telefonon marad. nincs fiók, és az alkalmazásnak nincs internet-hozzáférési engedélye.</string>
     <string name="welcome_start">kezdjük</string>
+    <string name="welcome_next">tovább</string>
+    <string name="welcome_allow">engedélyezés</string>
+    <string name="welcome_step">%1$d. lépés a %2$d-ből</string>
+    <string name="welcome_bluetooth_title">bluetooth-hozzáférés</string>
+    <string name="welcome_bluetooth_why">az android csak akkor árulja el egy alkalmazásnak, melyik bluetooth-eszköz csatlakozott és mi a neve, ha az alkalmazásnak van bluetooth-hozzáférése. így különbözteti meg a ylih a fejhallgatót az autórádiótól, és az egyik párt a másiktól.</string>
+    <string name="welcome_bluetooth_with">hozzáféréssel: minden pár a csatlakozás pillanatától rögzül, anélkül hogy bárminek futnia kellene, vagy bármit meg kellene nyomni.</string>
+    <string name="welcome_bluetooth_without">hozzáférés nélkül: egyetlen bluetooth-fejhallgató sem kerül rögzítésre. az alkalmazás többi része továbbra is működik, és később megadhatod az android alkalmazásbeállításaiban.</string>
+    <string name="welcome_notifications_title">értesítések</string>
+    <string name="welcome_notifications_why">a részletes követés egy kis háttérszolgáltatást futtat, és az android minden ilyen alkalmazástól megköveteli, hogy közben látható értesítést tartson fenn.</string>
+    <string name="welcome_notifications_with">engedéllyel: az értesítés mutatja, mi rögzül éppen, és ez az egyetlen jele annak, hogy a részletes követés él.</string>
+    <string name="welcome_notifications_without">engedély nélkül: a részletes követés továbbra is fut és rögzít. az android csak nem jeleníti meg az értesítését.</string>
     <string name="hibernation_title">számol tovább, miközben elfelejted</string>
     <string name="hibernation_body">az android szünetelteti a néhány hónapja meg nem nyitott alkalmazásokat, és visszaveszi az engedélyeiket, így a ylih semmit sem rögzítene a következő megnyitásig. éppen az a lényege ennek az alkalmazásnak, hogy elfelejtsd, ezért érdemes ezt most kikapcsolni.</string>
     <string name="action_not_now">most nem</string>

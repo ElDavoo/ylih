@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">ŋkɔŋkɔ geɖea, nusɔsɔwo me, wɔ nufia kple ŋu sua ŋkɔ dɔ ŋu gbe geɖe ƒe nusiɖuɖu.</string>
     <string name="welcome_privacy">ele nyiɖɔ sia me ko. mayɔ ame o, abe nu siwo ŋu inte o hã.</string>
     <string name="welcome_start">do go azɔ</string>
+    <string name="welcome_next">yi edzi</string>
+    <string name="welcome_allow">ɖe mɔ</string>
+    <string name="welcome_step">afɔɖoƒe %1$d le %2$d me</string>
+    <string name="welcome_bluetooth_title">bluetooth mɔɖeɖe</string>
+    <string name="welcome_bluetooth_why">android gblɔna na dɔwɔɖui aɖe be bluetooth mɔ̃ ka ye do ka, kple eƒe ŋkɔ, ne dɔwɔɖui la si bluetooth mɔɖeɖe le ko. aleae ylih dea vovototo tonuɖoƒe kple ʋu me radio dome, kple tonuɖoƒe ɖeka kple bubu dome.</string>
+    <string name="welcome_bluetooth_with">kple mɔɖeɖe la: woŋlɔa tonuɖoƒe ɖe sia ɖe tso ɣeyiɣi si me wòdo ka, evɔ naneke megale dɔ wɔm o eye mèɖo ŋku edzi be nàte naneke o.</string>
+    <string name="welcome_bluetooth_without">mɔɖeɖe la manɔmee: womeŋlɔa bluetooth tonuɖoƒe aɖeke o. dɔwɔɖui la ƒe akpa bubuwo gale dɔ wɔm, eye àte ŋu aɖe mɔ emegbe le android ƒe dɔwɔɖuiwo ƒe ɖoɖowɔwɔ me.</string>
+    <string name="welcome_notifications_title">nyadzɔdzɔwo</string>
+    <string name="welcome_notifications_why">nudzɔdzɔ tsitotsito wɔa subɔsubɔdɔ sue aɖe le megbe, eye android bia be dɔwɔɖui ɖe sia ɖe si wɔa esia nakpɔ egbɔ be nyadzɔdzɔ aɖe le dzedzem.</string>
+    <string name="welcome_notifications_with">kple mɔɖeɖe la: nyadzɔdzɔ la fiaa nu si woŋlɔm le fifia, eye eya koe nye dzesi si fia be nudzɔdzɔ tsitotsito le agbe.</string>
+    <string name="welcome_notifications_without">mɔɖeɖe la manɔmee: nudzɔdzɔ tsitotsito gale dɔ wɔm eye wògaŋlɔa nu. android ko mafia eƒe nyadzɔdzɔ o.</string>
     <string name="hibernation_title">eyɔa akɔntabubu dzi ɖe, ne ŋlɔbe hã</string>
     <string name="hibernation_body">android tɔ programa siwo womeʋu o ɣleti geɖe, hexɔ woƒe permission le wo si. ekema ylih maŋlɔ naneke o va se ɖe esime nàʋui akpɔ. ŋlɔbe koe nye programa sia ƒe tameɖoɖo, eyata tɔ nu sia fifia.</string>
     <string name="action_not_now">menye fifia o</string>

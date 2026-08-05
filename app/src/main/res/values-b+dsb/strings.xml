@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">detalny slepo w nastajenjach naršywaš drótne naušniki a měriš, kelko časa su realnje wótwóźenje słowo.</string>
     <string name="welcome_privacy">wšykno na toś tom smartfonu wóstawa. žaden konto njejo a nožeńska nima žadnu internecowu towědnosć.</string>
     <string name="welcome_start">zachop</string>
+    <string name="welcome_next">dalej</string>
+    <string name="welcome_allow">dowóliś</string>
+    <string name="welcome_step">kšac %1$d z %2$d</string>
+    <string name="welcome_bluetooth_title">pśistup k bluetooth</string>
+    <string name="welcome_bluetooth_why">android nałoženju jano pówěda, kótare bluetooth-rědy su se zwězali a kak se mjenuju, jolic nałoženje ma pśistup k bluetooth. tak ylih rozeznawa sluchatka wót awtoradija, a jaden por wót drugego.</string>
+    <string name="welcome_bluetooth_with">z pśistupom: kuždy por se registrěrujo wót togo wokognuśa, gaž se zwěžo, bźez togo, až musy něco běžaś, a bźez togo, až musyš na něco myslić.</string>
+    <string name="welcome_bluetooth_without">bźez pśistupa: žedne bluetooth-sluchatka se njeregistrěruju. zbytk nałoženja dalej funkcioněrujo, a móžoš pśistup pózdźej w nastajenjach nałoženjow android dowóliś.</string>
+    <string name="welcome_notifications_title">powěsći</string>
+    <string name="welcome_notifications_why">nadrobne slědowanje wuwjedujo mału słužbu w slězynje, a android pomina se wót kuždego nałoženja, kótarež to cyni, aby powěsć wóstała widobna.</string>
+    <string name="welcome_notifications_with">z dowólnosću: powěsć pokazujo, což se rowno registrěrujo, a to jo jadnučki znamje, až nadrobne slědowanje žywe jo.</string>
+    <string name="welcome_notifications_without">bźez dowólnosći: nadrobne slědowanje dalej běžy a dalej registrěrujo. android jano njepokazujo jogo powěsć.</string>
     <string name="hibernation_title">licy dalej, mjaztym až na nju zabydnjoš</string>
     <string name="hibernation_body">android zastanjo nałoženja, kótarež se pśez někotare mjasece njewócynjaju, a wzejo jim dowólnosći, tak až ylih by nic wěcej njenagrawał, až doniž jo znowego njewócyniš. byś zabyty jo rowno to, za což toś to nałoženje jo, togodla se wupłaśijo to něnto wupinaś.</string>
     <string name="action_not_now">nic něnto</string>

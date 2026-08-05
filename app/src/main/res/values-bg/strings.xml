@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">детайлно проследяване, в настройки, добавя жични слушалки и измерва колко от времето беше действително възпроизвеждане.</string>
     <string name="welcome_privacy">всичко остава на този телефон. няма профил и приложението няма разрешение за интернет.</string>
     <string name="welcome_start">начнете</string>
+    <string name="welcome_next">напред</string>
+    <string name="welcome_allow">разреши</string>
+    <string name="welcome_step">стъпка %1$d от %2$d</string>
+    <string name="welcome_bluetooth_title">достъп до bluetooth</string>
+    <string name="welcome_bluetooth_why">android казва на едно приложение кое bluetooth устройство се е свързало и как се казва само ако приложението има достъп до bluetooth. така ylih различава слушалки от автомобилна уредба, и една двойка от друга.</string>
+    <string name="welcome_bluetooth_with">с достъп: всяка двойка се записва от момента, в който се свърже, без нищо да остава пуснато и без да помните да натискате нещо.</string>
+    <string name="welcome_bluetooth_without">без достъп: не се записват никакви bluetooth слушалки. останалата част от приложението продължава да работи, а достъпа можете да дадете по-късно в настройките за приложения на android.</string>
+    <string name="welcome_notifications_title">известия</string>
+    <string name="welcome_notifications_why">подробното проследяване използва малка фонова услуга, а android изисква всяко приложение, което прави това, да поддържа видимо известие.</string>
+    <string name="welcome_notifications_with">с разрешение: известието показва какво се записва в момента, което е единственият знак, че подробното проследяване е живо.</string>
+    <string name="welcome_notifications_without">без разрешение: подробното проследяване продължава да работи и да записва. android просто няма да покаже известието му.</string>
     <string name="hibernation_title">продължи да броиш, докато я забравяш</string>
     <string name="hibernation_body">android спира приложенията, които не са отваряни от няколко месеца, и отнема разрешенията им, което би оставило ylih без нищо записано, докато не го отвориш отново. да бъдеш забравено е точно предназначението на това приложение, затова си струва да изключиш това още сега.</string>
     <string name="action_not_now">не сега</string>

@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">омара дӏаяьллер, сеттингареш, проводан наухьанар вогӏуьччу а кӏам доза ахира воспроизведение иза. </string>
     <string name="welcome_privacy">массала мобилера йалар йа. аккаунт яц, а аппа интернет боьлу-норма яц.</string>
     <string name="welcome_start">эхьа диян</string>
+    <string name="welcome_next">тӀаьхьа</string>
+    <string name="welcome_allow">бакъо ло</string>
+    <string name="welcome_step">гӀулч %1$d %2$d-нах</string>
+    <string name="welcome_bluetooth_title">bluetooth-х пайдаэцар</string>
+    <string name="welcome_bluetooth_why">android приложенина дуьйцу муьлха bluetooth гӀирс хӀоьттина а, цуьнан цӀе хӀун ю а, приложенин bluetooth-х пайдаэцаран бакъо елахь бен ца. иштта къастабо ylih-с наушникаш машенан радиочух, цхьа жош кхечух а.</string>
+    <string name="welcome_bluetooth_with">бакъонца: хӀора жош хӀоьттинчу минотехь дуьйна яздо, хӀумма а болх беш дита а ца оьшу, хӀумма а таӀо дага ца оьшу.</string>
+    <string name="welcome_bluetooth_without">бакъо йоцуш: цхьа а bluetooth наушник яздан яц. приложенин кхин дерг болх до, бакъо тӀаьхьа ян йиш ю android-н приложенийн гӀирсашкахь.</string>
+    <string name="welcome_notifications_title">хаамаш</string>
+    <string name="welcome_notifications_why">къастаме тергам жима букъбехьара гӀуллакх доладо, android-с деха иштта дечу хӀора приложенидан хаам гуш латто.</string>
+    <string name="welcome_notifications_with">бакъонца: хаамо гойту хӀинца хӀун яздеш ду, иза бен ца хилла къастаме тергам дийна хиларан билгало.</string>
+    <string name="welcome_notifications_without">бакъо йоцуш: къастаме тергам болх беш а, яздеш а ду. android-с цуьнан хаам ца гойту, иза бен дац.</string>
     <string name="hibernation_title">дицдалча а лорура тӀаьхьа</string>
     <string name="hibernation_body">android шараш дӀаяьллачу апех ялийна совцу, важа хӀаьчаьхна бохург дуьйцу, ylih хьуна тӀаьхьа схьа даьллачу хенахь цхьаккха хила йиш йолуш яц. дицдалар и приложени долчу хӀуманна лерина ду, важа хӀинца дӀаяккха бакъдоьзна ду.</string>
     <string name="action_not_now">хӀинца дац</string>

@@ -6,6 +6,7 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.work.testing.WorkManagerTestInitHelper
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
@@ -71,7 +72,7 @@ class MainActivityTest {
     }
 
     @Test
-    fun `the permission prompt waits for the welcome to be dismissed`() {
+    fun `a first run leaves the asking to the welcome`() {
         runBlocking { app.container.settings.setOnboardingDone(false) }
 
         Robolectric.buildActivity(MainActivity::class.java).setup().use { controller ->
@@ -81,13 +82,35 @@ class MainActivityTest {
                 shadowOf(controller.get()).lastRequestedPermission,
             )
 
+            // And it stays that way when the welcome finishes. The welcome's own Bluetooth page
+            // raised that prompt, with a reason attached; a second one from here would land
+            // behind the answer the user had just given to the first.
             runBlocking { app.container.settings.setOnboardingDone(true) }
+            shadowOf(Looper.getMainLooper()).idle()
+            assertNull(
+                "the welcome asks for Bluetooth itself, so this would be the second prompt",
+                shadowOf(controller.get()).lastRequestedPermission,
+            )
+        }
+    }
+
+    @Test
+    fun `a later launch asks again for what is still missing`() {
+        // The case this covers is an install upgraded from a version whose welcome never had a
+        // Bluetooth page, plus anyone who declined once and might not now.
+        runBlocking { app.container.settings.setOnboardingDone(true) }
+
+        Robolectric.buildActivity(MainActivity::class.java).setup().use { controller ->
             settle("the permission request") {
                 shadowOf(controller.get()).lastRequestedPermission != null
             }
-            assertTrue(
-                shadowOf(controller.get()).lastRequestedPermission.requestedPermissions
-                    .contains(android.Manifest.permission.BLUETOOTH_CONNECT),
+            val requested = shadowOf(controller.get()).lastRequestedPermission.requestedPermissions
+            assertTrue(requested.contains(android.Manifest.permission.BLUETOOTH_CONNECT))
+            // Notifications belong to the detailed-tracking switch now. Asking here would hit
+            // every install, including the ones that never turn detailed tracking on.
+            assertFalse(
+                "notifications are asked for where they start to matter, not on launch",
+                requested.contains(android.Manifest.permission.POST_NOTIFICATIONS),
             )
         }
     }

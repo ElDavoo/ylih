@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">il tracciamento dettagliato, nelle impostazioni, aggiunge le cuffie via cavo e misura quanta parte del tempo stavi davvero ascoltando.</string>
     <string name="welcome_privacy">tutto resta su questo telefono. non c\'è nessun account e l\'app non ha il permesso di accedere a internet.</string>
     <string name="welcome_start">iniziamo</string>
+    <string name="welcome_next">avanti</string>
+    <string name="welcome_allow">consenti</string>
+    <string name="welcome_step">passo %1$d di %2$d</string>
+    <string name="welcome_bluetooth_title">accesso al bluetooth</string>
+    <string name="welcome_bluetooth_why">android dice a un\'app quale dispositivo bluetooth si è collegato, e come si chiama, solo se l\'app ha l\'accesso al bluetooth. è così che ylih distingue un paio di cuffie da un\'autoradio, e un paio dall\'altro.</string>
+    <string name="welcome_bluetooth_with">con l\'accesso: ogni paio viene registrato dal momento in cui si collega, senza lasciare nulla in esecuzione e senza ricordarsi di premere niente.</string>
+    <string name="welcome_bluetooth_without">senza l\'accesso: nessun paio di cuffie bluetooth viene registrato. il resto dell\'app funziona lo stesso, e puoi concederlo più tardi nelle impostazioni delle app di android.</string>
+    <string name="welcome_notifications_title">notifiche</string>
+    <string name="welcome_notifications_why">il tracciamento dettagliato usa un piccolo servizio in background, e android obbliga qualsiasi app che lo faccia a tenere visibile una notifica mentre è attivo.</string>
+    <string name="welcome_notifications_with">con il permesso: la notifica mostra cosa si sta registrando in questo momento, ed è l\'unico segno che il tracciamento dettagliato è vivo.</string>
+    <string name="welcome_notifications_without">senza il permesso: il tracciamento dettagliato funziona e registra lo stesso. android semplicemente non mostrerà la sua notifica.</string>
     <string name="hibernation_title">continua a contare mentre te ne dimentichi</string>
     <string name="hibernation_body">android mette in pausa le app che restano qualche mese senza essere aperte e ne revoca i permessi, il che lascerebbe ylih a non registrare nulla fino alla volta successiva in cui la apri. essere dimenticata è esattamente lo scopo di questa app, quindi conviene disattivarlo subito.</string>
     <string name="action_not_now">non ora</string>

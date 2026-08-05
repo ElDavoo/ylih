@@ -1,4 +1,4 @@
-• Three home-screen widgets: lifetime hours per pair with a live timer on the connected one, the grand total beside today / 7 days / 30 days, and the 30-day chart. Each resizes to any shape.
-• The three tabs can now be swiped between.
-• Backups record their format version, so a file from a future release is refused rather than misread.
-• The download is a quarter of the size.
+• Three home-screen widgets: hours per pair with a live timer, today / 7 days / 30 days, and the 30-day chart. Each resizes freely.
+• The first run now explains why bluetooth access is needed before asking for it.
+• Notifications are asked for when detailed tracking is turned on, not before — and detailed tracking no longer fails to start if they were declined.
+• The tabs can be swiped, and the download is a quarter of the size.

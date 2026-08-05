@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">tàten yí ndap ìkobò à à zán, íkí sèp, yí ñúm ìkobò à ndáp àdí yí à bùl àyùm à nû.</string>
     <string name="welcome_privacy">bìkí bí aká yè àsú yí fon ìyà. bìkí bí ŋ kón, à app yì ŋ fù ínténèt.</string>
     <string name="welcome_start">dém</string>
+    <string name="welcome_next">ndzɨ</string>
+    <string name="welcome_allow">yuu</string>
+    <string name="welcome_step">kɨdzɨ %1$d ne %2$d</string>
+    <string name="welcome_bluetooth_title">nu\'ni bluetooth</string>
+    <string name="welcome_bluetooth_why">android dzə tsuʼ ghɛɛ a mbɨŋ bluetooth wu bɨ kɨ ghɛɛ, ne enə̀ ye, ndzəŋ ghɛɛ wu kɨ nu\'ni bluetooth. a ndzə ylih tsə ghɛɛ mbɨŋ ntsu ne mbɨŋ motoka, ne mbɨŋ ntsu wu ne wu.</string>
+    <string name="welcome_bluetooth_with">ne nu\'ni: mbɨŋ ntsu tsɨm bɨ kɨ ŋwaʼa a nɨ dzə wu bɨ kɨ ghɛɛ, ne kɨ mɔʼ tsə ghɛɛ, ne kɨ mɔʼ tsə ghɔŋ.</string>
+    <string name="welcome_bluetooth_without">kɨ nu\'ni: mbɨŋ ntsu bluetooth tsɨm bɨ dzə ŋwaʼa. ghɛɛ tsɨm bɨ ghɛɛ, ne wo dzə yuu a nɨ dzə mɔʼ nɨ ntsuʼ ghɛɛ android.</string>
+    <string name="welcome_notifications_title">ntsuʼni</string>
+    <string name="welcome_notifications_why">ŋwaʼa nɨ tsɨm dzə ghɛɛ ntsu nɨ mfɛ, ne android dzə bɔŋ ghɛɛ tsɨm wu dzə a ndzə ntsuʼni dzə nɨ ntsə.</string>
+    <string name="welcome_notifications_with">ne yuu: ntsuʼni dzə tsuʼ a bɨ ŋwaʼa a nɨ dzə wa, a ndzə mɔʼ tsə ŋwaʼa nɨ tsɨm dzə ghɛɛ.</string>
+    <string name="welcome_notifications_without">kɨ yuu: ŋwaʼa nɨ tsɨm dzə ghɛɛ ne dzə ŋwaʼa. android dzə kɨ tsuʼ ntsuʼni yɨ.</string>
     <string name="hibernation_title">ŋ gó tàten gó, ŋ zú à yì sú</string>
     <string name="hibernation_body">android ŋ dúm app à yì kó gó mwa fu, à gó fù à dúm zú. ylih zú ŋ tàten kayʉ gó tàten sèp nù. app ìyà kwɔ à zú ŋ dúm gó, zú sú íkí ìyà zú tàten.</string>
     <string name="action_not_now">sú ndu</string>

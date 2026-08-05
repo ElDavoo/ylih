@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">okuwandika okukweru, mu amateekate, akongeeza mahembe agacwire n\'akamanya amasigara magakoresebwa mu kwesigira.</string>
     <string name="welcome_privacy">byona byakuuma mu mugambi ugu. ntekina akawonto, n\'applicesheni nayo ntakina ichaato ca ntiniti.</string>
     <string name="welcome_start">terekezaaga</string>
+    <string name="welcome_next">ekiraaho</string>
+    <string name="welcome_allow">ikiriza</string>
+    <string name="welcome_step">omuringo %1$d ahari %2$d</string>
+    <string name="welcome_bluetooth_title">okutunga bluetooth</string>
+    <string name="welcome_bluetooth_why">android nigambira apu ekyuma kya bluetooth eki kihonzirwe, n\'eiziina ryakyo, kwonka apu yaba eine okutunga bluetooth. nikwo ylih arikwanukura ebyokuhurira n\'eredio y\'emotoka, n\'ekipiira kimwe aha kindi.</string>
+    <string name="welcome_bluetooth_with">n\'okutunga: buri kipiira nikihandiikwa kuruga obu kihonzirwe, hatariho ekintu ekirikwetengyesa kukora kandi otari kwijuka kuhwera ekintu.</string>
+    <string name="welcome_bluetooth_without">otariine okutunga: tihariho byokuhurira bya bluetooth ebirikuhandiikwa. ebindi bya apu nibikora, kandi noobaasa kwikiriza bwanyima omu ntebeekanisa z\'apu za android.</string>
+    <string name="welcome_notifications_title">obutumwa</string>
+    <string name="welcome_notifications_why">okukuratira okurikwesigika nikukora omurimo mukye ogw\'enyima, kandi android neyetenga buri apu erikukora ekyo kureeba obutumwa nibubonekana.</string>
+    <string name="welcome_notifications_with">n\'okwikiriza: obutumwa nibworeka ekirikuhandiikwa hati, kandi niyo nkyekyo yonka erikworeka ngu okukuratira okurikwesigika nikukora.</string>
+    <string name="welcome_notifications_without">otariine okwikiriza: okukuratira okurikwesigika nikukora kandi nikihandiika. android yonka teerikworeka obutumwa bwakyo.</string>
     <string name="hibernation_title">nikaguma nyekubara, n\'obu otaijukira</string>
     <string name="hibernation_body">android neegabana applicesheni ezitakuguzirwe emyezi mingi, kandi neegyihakwo ichaato zaayo. baitu ylih terigire kubara kintu kihi kutungatunga oshoboole kwiguza. okwijukirwa nikyo ekikwo applicesheni egi neegira, n\'ahabw\'ekyo gabana kinu hati.</string>
     <string name="action_not_now">tikwo hati</string>

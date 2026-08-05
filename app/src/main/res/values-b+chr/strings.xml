@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">ᏰᎩᏂᏃᎩ ᏆᎬᏒ ᏙᏦᎵ, ᎠᏤᏣᏓᏅᏖ ᎤᏙᎦᎵᎩ, ᎠᏕᎥ ᏗᎲᎵᎭ ᎠᏎᎩ ᎠᎴ ᎾᎪᎾᏓ ᎦᏴ ᏭᏗ ᎯᎾᏕᎾ ᎦᏵᏕ.</string>
     <string name="welcome_privacy">ᏚᏁᏇ ᏂᏂ ᎠᏍᏌ ᎠᏍᏗ. ᎾᎿ ᎠᎾᏘᏘ ᎦᏌᏅᎩ ᏆᎬᏒ, ᎠᎴ ᎠᏆᎾᏗ ᎠᏃᏗ ᎤᏂᏈᎸᏴᏒ ᏃᎩᏲᏍ ᏗᎾ.</string>
     <string name="welcome_start">ᏫᎩᏅᏒ</string>
+    <string name="welcome_next">ᏔᎵᏁ</string>
+    <string name="welcome_allow">ᎤᎵᏍᏆᏂᎪᏗ</string>
+    <string name="welcome_step">ᎠᎪᎳ %1$d ᎾᎿ %2$d</string>
+    <string name="welcome_bluetooth_title">ᏊᏚᏗ ᎠᏴᏓᏆᎶᏍᎩ</string>
+    <string name="welcome_bluetooth_why">ᎠᏂᏘᎶᏱᏗ ᎧᏃᎮᎭ ᎠᏗᏒᏍᏗ ᎦᏙ ᏊᏚᏗ ᎠᏫᏒᏗ ᎤᏓᏂᎳᏫᏒ, ᎠᎴ ᎦᏙ ᏚᏙᎥ, ᎢᏳᏃ ᎠᏗᏒᏍᏗ ᎤᎧᏛ ᏊᏚᏗ ᎠᏴᏓᏆᎶᏍᎩ. ᎾᏍᎩ ylih ᏓᎬᏂᏳᏓ ᎠᏓᏛᏗ ᎠᎴ ᏓᏆᎴᎷ ᎠᏂᏃᎮᏍᎩ, ᎠᎴ ᏌᏊ ᎠᏓᏛᏗ ᏅᏩᏓᎴ.</string>
+    <string name="welcome_bluetooth_with">ᎠᏴᏓᏆᎶᏍᎩ ᎬᏗ: ᏂᎦᏛ ᎠᏓᏛᏗ ᏗᎪᏪᎳᏅ ᎯᎠ ᎤᏓᏂᎳᏫᏒ ᎾᎯᏳ, ᎥᏝ ᎪᎱᏍᏗ ᏗᎦᎸᏫᏍᏓᏁᏗ ᎠᎴ ᎥᏝ ᎪᎱᏍᏗ ᎠᏍᏆᏂᎪᏙᏗ.</string>
+    <string name="welcome_bluetooth_without">ᎠᏴᏓᏆᎶᏍᎩ ᏂᎨᏒᎾ: ᎥᏝ ᏊᏚᏗ ᎠᏓᏛᏗ ᏗᎪᏪᎳᏅ. ᏅᏩᏓᎴ ᎠᏗᏒᏍᏗ ᏚᎸᏫᏍᏓᏁᎭ, ᎠᎴ ᎣᏂ ᏰᎵ ᎤᎵᏍᏆᏂᎪᏗ ᎠᏂᏘᎶᏱᏗ ᎠᏗᏒᏍᏗ ᏗᏄᏍᏛᎢ.</string>
+    <string name="welcome_notifications_title">ᎠᏓᏃᏁᏗ</string>
+    <string name="welcome_notifications_why">ᎤᏙᎯᏳᏒ ᎠᏎᏍᏗ ᏚᎸᏫᏍᏓᏁᎭ ᎤᏍᏗ ᎣᏂ ᎠᏓᏁᏗ, ᎠᎴ ᎠᏂᏘᎶᏱᏗ ᎤᏚᎵᎭ ᏂᎦᏛ ᎠᏗᏒᏍᏗ ᎾᏍᎩ ᎢᏳᏛᏁᎯ ᎠᏓᏃᏁᏗ ᎬᏂᎨᏒ ᎢᏳᏩᏁᏗ.</string>
+    <string name="welcome_notifications_with">ᎤᎵᏍᏆᏂᎪᏗ ᎬᏗ: ᎠᏓᏃᏁᏗ ᎬᏂᎨᏒ ᎢᎬᏁᎭ ᎦᏙ ᏗᎪᏪᎵᎭ ᎪᎯ, ᎾᏍᎩ ᏌᏊ ᎤᏰᎸᏛ ᎤᏙᎯᏳᏒ ᎠᏎᏍᏗ ᎬᏃᏛ.</string>
+    <string name="welcome_notifications_without">ᎤᎵᏍᏆᏂᎪᏗ ᏂᎨᏒᎾ: ᎤᏙᎯᏳᏒ ᎠᏎᏍᏗ ᏚᎸᏫᏍᏓᏁᎭ ᎠᎴ ᏗᎪᏪᎵᎭ. ᎠᏂᏘᎶᏱᏗ ᎥᏝ ᎠᏓᏃᏁᏗ ᎬᏂᎨᏒ ᏱᏂᎬᏁᎭ.</string>
     <string name="hibernation_title">ᎬᏂᎨᏒ ᎢᏳᏍᏗ ᎢᏣᏅᏓᏗᏍᏙᏗ ᎨᏒ ᎢᏳᏃ ᎢᏣᏅᏛᎩ</string>
     <string name="hibernation_body">android ᏗᎪᏢᏔᏅ ᎾᏍᎩ ᎦᏳᎳᏗᏒ ᎾᏛᎪᏔᏅᎾ ᎨᏒ ᏚᏂᏲᎯᎯᏒᎩ, ᎠᎴ ᏓᏂᏲᎯᏎᎲ ᎡᎳᏗᏗᏍᎪᎢ. ᎾᏍᎩ ylih ᎪᎱᏍᏗ ᎥᏝ ᏱᎦᏫᏍᎪ ᏂᎯ ᎢᏣᏂᏱᏍᎬ ᎢᏳᎢᏗᏒ. ᎠᏅᏓᏗᏍᏙᏗ ᎾᏍᎩ ᎠᏓᏅᏙ ᎠᏂ ᎠᏰᎸᏓ ᏥᎩ, ᎾᏍᎩᏃ ᎠᎳᏱᏂᏙᎲ ᎠᏥᎩᏗᏍᏙᏗ ᏂᎦᏓ.</string>
     <string name="action_not_now">ᎥᏝ ᎪᎯ</string>

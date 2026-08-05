@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">urmărirea detaliată, din setări, adaugă căștile prin cablu și măsoară cât din acel timp s-a redat efectiv sunet.</string>
     <string name="welcome_privacy">totul rămâne pe acest telefon. nu există niciun cont, iar aplicația nu are permisiune de internet.</string>
     <string name="welcome_start">să începem</string>
+    <string name="welcome_next">înainte</string>
+    <string name="welcome_allow">permite</string>
+    <string name="welcome_step">pasul %1$d din %2$d</string>
+    <string name="welcome_bluetooth_title">acces la bluetooth</string>
+    <string name="welcome_bluetooth_why">android îi spune unei aplicații ce dispozitiv bluetooth s-a conectat și cum se numește doar dacă aplicația are acces la bluetooth. așa deosebește ylih o pereche de căști de un radio auto, și o pereche de alta.</string>
+    <string name="welcome_bluetooth_with">cu acces: fiecare pereche este înregistrată din clipa în care se conectează, fără să rămână nimic pornit și fără să ții minte să apeși ceva.</string>
+    <string name="welcome_bluetooth_without">fără acces: nicio pereche de căști bluetooth nu este înregistrată. restul aplicației funcționează în continuare, iar accesul îl poți acorda mai târziu din setările de aplicații ale androidului.</string>
+    <string name="welcome_notifications_title">notificări</string>
+    <string name="welcome_notifications_why">urmărirea detaliată folosește un mic serviciu în fundal, iar android cere oricărei aplicații care face asta să țină o notificare vizibilă.</string>
+    <string name="welcome_notifications_with">cu permisiunea: notificarea arată ce se înregistrează chiar acum, singurul semn că urmărirea detaliată este vie.</string>
+    <string name="welcome_notifications_without">fără permisiune: urmărirea detaliată tot funcționează și tot înregistrează. android pur și simplu nu îi va arăta notificarea.</string>
     <string name="hibernation_title">continuă să numere cât timp o uiți</string>
     <string name="hibernation_body">android pune pe pauză aplicațiile care nu sunt deschise câteva luni și le retrage permisiunile, ceea ce ar lăsa ylih să nu înregistreze nimic până la următoarea deschidere. tocmai pentru a fi uitată există această aplicație, așa că merită dezactivat acum.</string>
     <string name="action_not_now">nu acum</string>

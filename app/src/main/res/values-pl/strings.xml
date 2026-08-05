@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">szczegółowe śledzenie, w ustawieniach, dodaje słuchawki przewodowe i mierzy, ile z tego czasu faktycznie trwało odtwarzanie.</string>
     <string name="welcome_privacy">wszystko zostaje na tym telefonie. nie ma żadnego konta, a aplikacja nie ma uprawnienia dostępu do internetu.</string>
     <string name="welcome_start">zaczynajmy</string>
+    <string name="welcome_next">dalej</string>
+    <string name="welcome_allow">zezwól</string>
+    <string name="welcome_step">krok %1$d z %2$d</string>
+    <string name="welcome_bluetooth_title">dostęp do bluetooth</string>
+    <string name="welcome_bluetooth_why">android mówi aplikacji, które urządzenie bluetooth się połączyło i jak się nazywa, tylko wtedy, gdy aplikacja ma dostęp do bluetooth. tak właśnie ylih odróżnia słuchawki od radia samochodowego, a jedną parę od drugiej.</string>
+    <string name="welcome_bluetooth_with">z dostępem: każda para jest zapisywana od chwili połączenia, bez niczego działającego w tle i bez pamiętania o naciśnięciu czegokolwiek.</string>
+    <string name="welcome_bluetooth_without">bez dostępu: żadne słuchawki bluetooth nie są zapisywane. reszta aplikacji nadal działa, a dostęp możesz przyznać później w ustawieniach aplikacji androida.</string>
+    <string name="welcome_notifications_title">powiadomienia</string>
+    <string name="welcome_notifications_why">szczegółowe śledzenie uruchamia małą usługę w tle, a android wymaga od każdej aplikacji, która to robi, utrzymywania widocznego powiadomienia.</string>
+    <string name="welcome_notifications_with">z uprawnieniem: powiadomienie pokazuje, co jest właśnie zapisywane, i jest to jedyny znak, że szczegółowe śledzenie działa.</string>
+    <string name="welcome_notifications_without">bez uprawnienia: szczegółowe śledzenie nadal działa i nadal zapisuje. android po prostu nie pokaże jego powiadomienia.</string>
     <string name="hibernation_title">liczy dalej, kiedy o niej zapomnisz</string>
     <string name="hibernation_body">android wstrzymuje aplikacje, których nie otwierano przez kilka miesięcy, i odbiera im uprawnienia, przez co ylih nie zapisywałaby niczego aż do następnego otwarcia. bycie zapomnianą to dokładnie to, do czego ta aplikacja służy, więc warto to teraz wyłączyć.</string>
     <string name="action_not_now">nie teraz</string>

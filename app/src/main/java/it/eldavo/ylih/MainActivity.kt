@@ -15,7 +15,6 @@ import androidx.lifecycle.lifecycleScope
 import it.eldavo.ylih.ui.YlihNavHost
 import it.eldavo.ylih.ui.theme.YlihTheme
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
@@ -56,13 +55,14 @@ class MainActivity : ComponentActivity() {
                 YlihNavHost(openPair = openPair.receiveAsFlow())
             }
         }
-        // The system's bluetooth prompt on top of the welcome dialog would be the first thing a
-        // new install ever says, and it would be asking rather than explaining. Wait for the
-        // welcome to be dismissed; on every later launch the flag is already set and this returns
-        // immediately.
+        // The first run asks for Bluetooth itself, on a page that says what it is for, so doing it
+        // here as well would put a second prompt behind the one the user just answered. What is
+        // left for this to cover is every launch after that: an install upgraded from a version
+        // that asked in one unexplained batch, and a permission denied once that the user may
+        // since have changed their mind about. Android stops showing the prompt after two
+        // refusals, so this cannot nag.
         lifecycleScope.launch {
-            container().settings.onboardingDone.first { it }
-            requestMissingPermissions()
+            if (container().settings.onboardingDoneNow()) requestMissingPermissions()
         }
     }
 
@@ -85,10 +85,14 @@ class MainActivity : ComponentActivity() {
 
     private fun container() = (application as YlihApp).container
 
+    /**
+     * Bluetooth only. Notifications are asked for by the detailed-tracking switch, which is the
+     * one thing in the app that posts one — asking here would be asking every install for a
+     * permission most of them never give anything to use.
+     */
     private fun requestMissingPermissions() {
         val wanted = buildList {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) add(Manifest.permission.BLUETOOTH_CONNECT)
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) add(Manifest.permission.POST_NOTIFICATIONS)
         }.filter {
             ContextCompat.checkSelfPermission(this, it) != PackageManager.PERMISSION_GRANTED
         }

@@ -172,6 +172,66 @@ class SettingsScreenTest {
     }
 
     @Test
+    fun `turning detailed tracking on explains the notification it is about to need`() {
+        shadowOf(app).denyPermissions(Manifest.permission.POST_NOTIFICATIONS)
+        show()
+
+        val switch = toggleBesides(text(R.string.settings_detailed_title))
+        switch.performClick()
+        awaitDetailedTracking(on = true)
+
+        // The setting does not wait on the answer: the service runs and records either way, and
+        // the permission only decides whether its notification is drawn. So the switch is already
+        // on behind the dialog.
+        switch.assertIsOn()
+        settle("the notification explainer") { nodeCount(text(R.string.welcome_notifications_title)) > 0 }
+        compose.onNodeWithText(text(R.string.welcome_notifications_without)).assertExists()
+
+        compose.onNodeWithText(text(R.string.action_not_now)).performClick()
+        settle("the explainer to go") { nodeCount(text(R.string.welcome_notifications_title)) == 0 }
+        awaitDetailedTracking(on = true)
+    }
+
+    @Test
+    fun `allowing the notification raises the prompt and repairs the running service`() {
+        shadowOf(app).denyPermissions(Manifest.permission.POST_NOTIFICATIONS)
+        show()
+
+        toggleBesides(text(R.string.settings_detailed_title)).performClick()
+        awaitDetailedTracking(on = true)
+        settle("the notification explainer") { nodeCount(text(R.string.welcome_notifications_title)) > 0 }
+
+        compose.onNodeWithText(text(R.string.welcome_allow)).performClick()
+        val request = shadowOf(compose.activity).lastRequestedPermission
+        assertTrue(
+            request.requestedPermissions.contains(Manifest.permission.POST_NOTIFICATIONS),
+        )
+
+        // The service is already up and posted its notification with nowhere to put it, so the
+        // grant has to reach syncWithSystem or nothing would appear until something else
+        // restarted it.
+        compose.activity.activityResultRegistry.dispatchResult(request.requestCode, true)
+        settle("the explainer to go") { nodeCount(text(R.string.welcome_notifications_title)) == 0 }
+        awaitDetailedTracking(on = true)
+    }
+
+    @Test
+    fun `an install that already has the permission is not asked again`() {
+        shadowOf(app).grantPermissions(Manifest.permission.POST_NOTIFICATIONS)
+        show()
+
+        toggleBesides(text(R.string.settings_detailed_title)).performClick()
+        awaitDetailedTracking(on = true)
+
+        shadowOf(Looper.getMainLooper()).idle()
+        assertEquals(
+            "nothing to ask for, so nothing to interrupt with",
+            0,
+            nodeCount(text(R.string.welcome_notifications_title)),
+        )
+    }
+
+    @Test
     fun `the row around the switch is the same switch`() {
         show()
 

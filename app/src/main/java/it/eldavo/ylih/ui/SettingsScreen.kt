@@ -71,6 +71,20 @@ fun SettingsScreen(
     var confirmImport by remember { mutableStateOf<android.net.Uri?>(null) }
     var pickingLanguage by remember { mutableStateOf(false) }
     var pendingLanguage by remember { mutableStateOf<String?>(null) }
+    // Non-null while the notification explainer is up, holding the permission it is about.
+    var askNotifications by remember { mutableStateOf<String?>(null) }
+
+    // Turning detailed tracking on is the moment the notification permission starts to mean
+    // anything: it is what creates the foreground service, and that service's notification is the
+    // only thing in the app that permission governs. Asked here rather than on the first run, so
+    // the reason is in front of the user instead of months behind them.
+    //
+    // The setting is written either way and does not wait for an answer — the service runs and
+    // records without the permission, Android simply does not draw its notification.
+    fun setDetailed(enabled: Boolean) {
+        viewModel.setDetailedTracking(enabled)
+        if (enabled) askNotifications = notificationPermissionToAsk(context)
+    }
 
     // The write goes through DataStore and the new configuration is only readable once it has
     // landed: restarting any earlier reattaches the activity with the language it already had.
@@ -103,7 +117,7 @@ fun SettingsScreen(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .clickable { viewModel.setDetailedTracking(!detailed) }
+                .clickable { setDetailed(!detailed) }
                 .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
@@ -129,7 +143,7 @@ fun SettingsScreen(
             Switch(
                 checked = detailed,
                 enabled = detailedSupported || detailed,
-                onCheckedChange = { viewModel.setDetailedTracking(it) },
+                onCheckedChange = { setDetailed(it) },
             )
         }
         // Playback is only ever measured by the foreground service, so on a build that cannot run
@@ -364,6 +378,16 @@ fun SettingsScreen(
                 }
             },
             onDismiss = { pickingLanguage = false },
+        )
+    }
+
+    askNotifications?.let { permission ->
+        NotificationPermissionDialog(
+            permission = permission,
+            onDone = { askNotifications = null },
+            // The service is already up and posted its notification while it had nowhere to put
+            // it, so a grant shows nothing until something restarts it.
+            onPermissionResult = viewModel::syncWithSystem,
         )
     }
 }

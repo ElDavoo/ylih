@@ -30,6 +30,17 @@
     <string name="welcome_point_detailed_body">ዝርዝር ምልከታ፣ ቅንብራትን ውስጥ፣ በሽመል ዋቅ ይጨምራል እና ምን ያህል ወቅት ቁም በሚወጣ ጊዜ ይለካል።</string>
     <string name="welcome_privacy">ሁሉም ነገር በዚህ ስልክ ላይ ይቀራል። ምንም ሂሳብ የለም እና ትግበራው ለኢንተርኔት ምንም ግቤት የለም።</string>
     <string name="welcome_start">ጀምር</string>
+    <string name="welcome_next">ቀጣይ</string>
+    <string name="welcome_allow">ፍቀድ</string>
+    <string name="welcome_step">ደረጃ %1$d ከ%2$d</string>
+    <string name="welcome_bluetooth_title">የብሉቱዝ መዳረሻ</string>
+    <string name="welcome_bluetooth_why">አንድሮይድ የትኛው የብሉቱዝ መሣሪያ እንደተገናኘና ስሙ ማን እንደሆነ ለመተግበሪያ የሚነግረው መተግበሪያው የብሉቱዝ መዳረሻ ሲኖረው ብቻ ነው። ylih ጆሮ ማዳመጫን ከመኪና ሬዲዮ፣ አንዱን ጥንድ ከሌላው የሚለየው በዚህ ነው።</string>
+    <string name="welcome_bluetooth_with">በመዳረሻው፦ እያንዳንዱ ጥንድ ከተገናኘበት ቅጽበት ጀምሮ ይመዘገባል፤ ምንም ነገር እንዲሠራ መተው አያስፈልግም፣ ምንም መጫንም ማስታወስ አያስፈልግም።</string>
+    <string name="welcome_bluetooth_without">ያለ መዳረሻው፦ ምንም የብሉቱዝ ጆሮ ማዳመጫ አይመዘገብም። የተቀረው መተግበሪያ ይሠራል፣ ፈቃዱን በኋላ ከአንድሮይድ የመተግበሪያ ቅንብሮች መስጠት ትችላለህ።</string>
+    <string name="welcome_notifications_title">ማሳወቂያዎች</string>
+    <string name="welcome_notifications_why">ዝርዝር ክትትል ትንሽ የበስተጀርባ አገልግሎት ያሄዳል፣ አንድሮይድም ይህን የሚያደርግ ማንኛውም መተግበሪያ ማሳወቂያ እንዲታይ እንዲያደርግ ይጠይቃል።</string>
+    <string name="welcome_notifications_with">በፈቃዱ፦ ማሳወቂያው አሁን ምን እየተመዘገበ እንዳለ ያሳያል፤ ዝርዝር ክትትል በሕይወት መኖሩን የሚያሳይ ብቸኛው ምልክት ነው።</string>
+    <string name="welcome_notifications_without">ያለ ፈቃዱ፦ ዝርዝር ክትትል መሥራቱንና መመዝገቡን ይቀጥላል። አንድሮይድ ማሳወቂያውን ብቻ አያሳይም።</string>
     <string name="hibernation_title">ስትረሱት እንኳ መቁጠር ይቀጥላል</string>
     <string name="hibernation_body">android ለወራት ያልተከፈቱ መተግበሪያዎችን ያቆማል እና ፍቃዶቻቸውን ይመልሳል፣ ይህም ylih እንደገና እስከሚከፍቱት ድረስ ምንም ነገር እንዳይመዘግብ ያደርገዋል። መረሳት ይህ መተግበሪያ የተሰራለት ትክክለኛ ምክንያት ስለሆነ፣ አሁኑኑ ይህን ማጥፋት ተገቢ ነው።</string>
     <string name="action_not_now">አሁን አይደለም</string>

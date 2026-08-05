@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">падрабязнае адсочванне ў наладах дадае праводныя наушніки і вымяраць, колькі гэтага часу рэальна бацца адтворэнне.</string>
     <string name="welcome_privacy">усё застаецца на гэтым тэлефоне. няма ні рахунку, ні дазволу на доступ ў інтэрнэт.</string>
     <string name="welcome_start">пачаць</string>
+    <string name="welcome_next">далей</string>
+    <string name="welcome_allow">дазволіць</string>
+    <string name="welcome_step">крок %1$d з %2$d</string>
+    <string name="welcome_bluetooth_title">доступ да bluetooth</string>
+    <string name="welcome_bluetooth_why">android паведамляе праграме, якая прылада bluetooth падключылася і як яна называецца, толькі калі праграма мае доступ да bluetooth. так ylih адрознівае навушнікі ад аўтамагнітолы, а адну пару ад іншай.</string>
+    <string name="welcome_bluetooth_with">з доступам: кожная пара запісваецца з моманту падключэння, без нічога запушчанага і без патрэбы нешта націскаць.</string>
+    <string name="welcome_bluetooth_without">без доступу: ніякія навушнікі bluetooth не запісваюцца. астатняя частка праграмы працуе, а доступ можна выдаць пазней у наладах праграм android.</string>
+    <string name="welcome_notifications_title">апавяшчэнні</string>
+    <string name="welcome_notifications_why">падрабязнае адсочванне запускае невялікую фонавую службу, і android патрабуе ад любой праграмы, якая так робіць, трымаць апавяшчэнне бачным.</string>
+    <string name="welcome_notifications_with">з дазволам: апавяшчэнне паказвае, што запісваецца зараз, і гэта адзіная прыкмета таго, што падрабязнае адсочванне жывое.</string>
+    <string name="welcome_notifications_without">без дазволу: падрабязнае адсочванне ўсё роўна працуе і ўсё роўна запісвае. android проста не пакажа яго апавяшчэнне.</string>
     <string name="hibernation_title">лічы далей, нават калі забудзешся пра яе</string>
     <string name="hibernation_body">android прыпыняе праграмы, якія не адкрываліся некалькі месяцаў, і забірае іх дазволы, з-за чаго ylih перастане нешта запісваць, пакуль ты зноў яе не адкрыеш. быць забытым — гэта якраз тое, для чаго створана гэта праграма, таму варта адключыць гэта прама цяпер.</string>
     <string name="action_not_now">не цяпер</string>

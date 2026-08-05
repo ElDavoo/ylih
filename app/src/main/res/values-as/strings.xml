@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">বিস্তৃত ট্ৰেকিং, সেটিংসত, তাৰযুক্ত শিৰোফোন যোগ কৰে আৰু কিমান সময় বাস্তৱত প্লেবেক হৈছিল তা পৰিমাপ কৰে।</string>
     <string name="welcome_privacy">সবকিছু এই ফোনত থাকে। কোনো অ্যাকাউন্ট নাই, আৰু এপটোৰ ইন্টাৰনেট অনুমতি নাই।</string>
     <string name="welcome_start">আৰম্ভ কৰক</string>
+    <string name="welcome_next">পৰৱৰ্তী</string>
+    <string name="welcome_allow">অনুমতি দিয়ক</string>
+    <string name="welcome_step">স্তৰ %1$d / %2$d</string>
+    <string name="welcome_bluetooth_title">ব্লুটুথ অভিগম</string>
+    <string name="welcome_bluetooth_why">কোনটো ব্লুটুথ ডিভাইচ সংযোগ হ\'ল আৰু তাৰ নাম কি, android-এ সেয়া কোনো এপক তেতিয়াহে কয় যেতিয়া এপটোৰ ব্লুটুথ অভিগম থাকে। ইয়াৰ দ্বাৰাই ylih হেডফোনক গাড়ীৰ ষ্টেৰিঅ\'ৰ পৰা, আৰু এযোৰক আনটোৰ পৰা চিনি পায়।</string>
+    <string name="welcome_bluetooth_with">অভিগমৰ সৈতে: প্ৰতিযোৰ সংযোগ হোৱাৰ মুহূৰ্তৰ পৰাই লিপিবদ্ধ হয়, একো চলি থকাৰ প্ৰয়োজন নাই আৰু একো টিপিবলৈ মনত ৰখাৰো প্ৰয়োজন নাই।</string>
+    <string name="welcome_bluetooth_without">অভিগম নোহোৱাকৈ: কোনো ব্লুটুথ হেডফোনেই লিপিবদ্ধ নহয়। এপটোৰ বাকী অংশ চলি থাকে, আৰু আপুনি পিছত android-ৰ এপ ছেটিংছত অনুমতি দিব পাৰে।</string>
+    <string name="welcome_notifications_title">জাননী</string>
+    <string name="welcome_notifications_why">বিশদ ট্ৰেকিঙে এটা সৰু পটভূমি সেৱা চলায়, আৰু android-এ এনে কৰা প্ৰতিটো এপক সেই সময়ছোৱাত এটা জাননী দৃশ্যমান ৰাখিবলৈ কয়।</string>
+    <string name="welcome_notifications_with">অনুমতিৰ সৈতে: জাননীয়ে দেখুৱায় এই মুহূৰ্তত কি লিপিবদ্ধ হৈ আছে, বিশদ ট্ৰেকিং জীৱিত থকাৰ একমাত্ৰ চিন সেয়াই।</string>
+    <string name="welcome_notifications_without">অনুমতি নোহোৱাকৈ: বিশদ ট্ৰেকিং চলি থাকে আৰু লিপিবদ্ধও কৰে। android-এ কেৱল ইয়াৰ জাননীটো নেদেখুৱায়।</string>
     <string name="hibernation_title">পাহৰি থাকিলেও গণনা অব্যাহত ৰাখক</string>
     <string name="hibernation_body">android এ কেইমাহমান নোখোলা এপবোৰ বিৰতি দিয়ে আৰু সিহঁতৰ অনুমতিবোৰ ঘূৰাই লয়, যাৰ ফলত আপুনি পুনৰ নোখোলালৈকে ylih এ একো লিপিবদ্ধ নকৰিব। পাহৰি যোৱাই এই এপটোৰ প্ৰকৃত উদ্দেশ্য, সেয়েহে এতিয়াই সেইটো বন্ধ কৰি থোৱা ভাল।</string>
     <string name="action_not_now">এতিয়া নহয়</string>

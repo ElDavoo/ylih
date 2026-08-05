@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">detaljeret sporing, i indstillinger, tilføjer høretelefoner med kabel og måler, hvor meget af tiden der rent faktisk blev afspillet.</string>
     <string name="welcome_privacy">alt bliver på denne telefon. der er ingen konto, og appen har ingen internetadgang.</string>
     <string name="welcome_start">kom i gang</string>
+    <string name="welcome_next">næste</string>
+    <string name="welcome_allow">tillad</string>
+    <string name="welcome_step">trin %1$d af %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth-adgang</string>
+    <string name="welcome_bluetooth_why">android fortæller kun en app, hvilken bluetooth-enhed der tilsluttede, og hvad den hedder, hvis appen har bluetooth-adgang. det er sådan ylih kender et par høretelefoner fra et bilanlæg, og et par fra et andet.</string>
+    <string name="welcome_bluetooth_with">med adgang: hvert par registreres fra det øjeblik, det tilslutter, uden at noget skal køre og uden at du skal huske at trykke på noget.</string>
+    <string name="welcome_bluetooth_without">uden adgang: ingen bluetooth-høretelefoner registreres overhovedet. resten af appen virker stadig, og du kan give adgangen senere i androids appindstillinger.</string>
+    <string name="welcome_notifications_title">notifikationer</string>
+    <string name="welcome_notifications_why">detaljeret sporing kører en lille baggrundstjeneste, og android kræver, at enhver app, der gør det, holder en notifikation synlig.</string>
+    <string name="welcome_notifications_with">med tilladelse: notifikationen viser, hvad der bliver registreret lige nu, hvilket er det eneste tegn på, at detaljeret sporing lever.</string>
+    <string name="welcome_notifications_without">uden tilladelse: detaljeret sporing kører og registrerer stadig. android viser bare ikke dens notifikation.</string>
     <string name="hibernation_title">bliv ved med at tælle, mens du glemmer den</string>
     <string name="hibernation_body">android sætter apps, der ikke åbnes i et par måneder, på pause og tager deres tilladelser tilbage, hvilket ville få ylih til ikke at optage noget, før du åbnede den igen. at blive glemt er præcis det, denne app er til, så det er værd at slå fra nu.</string>
     <string name="action_not_now">ikke nu</string>

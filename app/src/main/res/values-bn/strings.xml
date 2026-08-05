@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">সেটিংসে বিস্তারিত ট্র্যাকিং তারযুক্ত হেডফোন যোগ করে এবং কতটা সময় প্রকৃতপক্ষে চলছিল তা পরিমাপ করে।</string>
     <string name="welcome_privacy">সবকিছু এই ফোনে থাকে। কোন অ্যাকাউন্ট নেই, এবং অ্যাপের কোন ইন্টারনেট অনুমতি নেই।</string>
     <string name="welcome_start">শুরু করুন</string>
+    <string name="welcome_next">পরবর্তী</string>
+    <string name="welcome_allow">অনুমতি দিন</string>
+    <string name="welcome_step">ধাপ %1$d / %2$d</string>
+    <string name="welcome_bluetooth_title">ব্লুটুথ অ্যাক্সেস</string>
+    <string name="welcome_bluetooth_why">কোন ব্লুটুথ ডিভাইস যুক্ত হলো এবং তার নাম কী, android তা কোনো অ্যাপকে তখনই জানায় যখন অ্যাপটির ব্লুটুথ অ্যাক্সেস থাকে। এভাবেই ylih হেডফোনকে গাড়ির স্টেরিও থেকে, আর এক জোড়াকে অন্য জোড়া থেকে আলাদা চেনে।</string>
+    <string name="welcome_bluetooth_with">অনুমতি থাকলে: প্রতিটি জোড়া যুক্ত হওয়ার মুহূর্ত থেকেই রেকর্ড হয়, কিছু চালু রেখে দিতে হয় না আর কিছু চাপার কথা মনে রাখতে হয় না।</string>
+    <string name="welcome_bluetooth_without">অনুমতি ছাড়া: কোনো ব্লুটুথ হেডফোনই রেকর্ড হয় না। অ্যাপের বাকি অংশ কাজ করে, আর আপনি পরে android-এর অ্যাপ সেটিংসে অনুমতি দিতে পারেন।</string>
+    <string name="welcome_notifications_title">বিজ্ঞপ্তি</string>
+    <string name="welcome_notifications_why">বিস্তারিত ট্র্যাকিং একটি ছোট ব্যাকগ্রাউন্ড সার্ভিস চালায়, আর android এমন প্রতিটি অ্যাপকে সেই সময়টুকু একটি বিজ্ঞপ্তি দৃশ্যমান রাখতে বাধ্য করে।</string>
+    <string name="welcome_notifications_with">অনুমতি থাকলে: বিজ্ঞপ্তিতে দেখা যায় এই মুহূর্তে কী রেকর্ড হচ্ছে, এটিই বিস্তারিত ট্র্যাকিং সচল থাকার একমাত্র চিহ্ন।</string>
+    <string name="welcome_notifications_without">অনুমতি ছাড়া: বিস্তারিত ট্র্যাকিং চলতেই থাকে আর রেকর্ডও করে। android কেবল তার বিজ্ঞপ্তিটি দেখাবে না।</string>
     <string name="hibernation_title">ভুলে গেলেও গণনা চলতে থাকুক</string>
     <string name="hibernation_body">android কয়েক মাস না খোলা অ্যাপগুলিকে থামিয়ে দেয় এবং তাদের অনুমতি ফিরিয়ে নেয়, যার ফলে আপনি আবার না খোলা পর্যন্ত ylih কিছুই রেকর্ড করবে না। ভুলে যাওয়াটাই এই অ্যাপের আসল উদ্দেশ্য, তাই এখনই সেটা বন্ধ করে রাখা ভালো।</string>
     <string name="action_not_now">এখন নয়</string>

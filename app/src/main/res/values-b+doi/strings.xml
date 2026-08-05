@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">विस्तृत ट्रैकिंग, सेटिंग्स में, तार वाले हेडफोन जोड़ता है और मापता है कि कितना समय वास्तव में प्लेबैक था।</string>
     <string name="welcome_privacy">सब कुछ इस फोन पर रहता है। कोई खाता नहीं है, और ऐप्लिकेशन के पास कोई इंटरनेट अनुमति नहीं है।</string>
     <string name="welcome_start">शुरू करो</string>
+    <string name="welcome_next">अगला</string>
+    <string name="welcome_allow">इजाज़त देओ</string>
+    <string name="welcome_step">कदम %1$d / %2$d</string>
+    <string name="welcome_bluetooth_title">ब्लूटुथ पौंच</string>
+    <string name="welcome_bluetooth_why">android कुसै ऐप गी तालू गै दस्सदा ऐ जे कुस ब्लूटुथ यंत्र जुड़ेआ ते ओह्दा नां केह् ऐ, जदूं ऐप कोल ब्लूटुथ पौंच होए। इयै करी ylih हेडफोन गी गड्डी दे स्टीरियो कोला, ते इक जोड़ी गी दूई कोला पन्छानदा ऐ।</string>
+    <string name="welcome_bluetooth_with">पौंच कन्नै: हर जोड़ी जुड़दे गै दर्ज होने लगदी ऐ, कुसै चीज़ गी चलदा छोड़ने दी लोड़ नेईं ते कुसै गल्ल गी दबाने दा चेता रक्खने दी बी नेईं।</string>
+    <string name="welcome_bluetooth_without">पौंच बगैर: कोई बी ब्लूटुथ हेडफोन दर्ज नेईं होंदा। ऐप दा बाकी हिस्सा चलदा रौंह्दा ऐ, ते तुस बाद च android दी ऐप सेटिंग च इजाज़त देई सकदे ओ।</string>
+    <string name="welcome_notifications_title">सूचनां</string>
+    <string name="welcome_notifications_why">मता ट्रैकिंग इक निक्की बैकग्राउंड सेवा चलांदा ऐ, ते android ऐसा करने आले हर ऐप कोला मंगदा ऐ जे तालू तकर इक सूचना दिक्खदी रौह्वे।</string>
+    <string name="welcome_notifications_with">इजाज़त कन्नै: सूचना दस्सदी ऐ जे हुन केह् दर्ज होआ करदा ऐ, ते इयै इक निशानी ऐ जे मता ट्रैकिंग जिंदा ऐ।</string>
+    <string name="welcome_notifications_without">इजाज़त बगैर: मता ट्रैकिंग चलदा रौंह्दा ऐ ते दर्ज बी करदा ऐ। android बस ओह्दी सूचना नेईं दस्सग।</string>
     <string name="hibernation_title">भुल्लने पर बी गिनतरी जारी रक्खो</string>
     <string name="hibernation_body">android कुछ म्हीनें तगर न खुल्ली गेई ऐप्स गी रोक दिंदा ऐ ते उंदी अनुमतियां बापस लै लेंदा ऐ, जिस कन्नै जदूं तगर तुस इसगी फेर नेईं खोलदे तदूं तगर ylih कुछ बी रिकॉर्ड नेईं करग। भुल्ली जाना ई इस ऐप दा मकसद ऐ, इस करी हुण इसगी बंद करी देना ठीक ऐ।</string>
     <string name="action_not_now">हुण नेईं</string>

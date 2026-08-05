@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">yaañ ba bu coñon, be bayati ba bu tindi koosan ji bambung be be, be a tayoy ni waray ba caani. bluetooth yi tayoy be yonnal du.</string>
     <string name="welcome_privacy">yidi ba du phone yi la. anaa konto ba gani du, be app yi anaa internet ba gani du.</string>
     <string name="welcome_start">bayina</string>
+    <string name="welcome_next">kanaŋ</string>
+    <string name="welcome_allow">eemit</string>
+    <string name="welcome_step">buhin %1$d di %2$d</string>
+    <string name="welcome_bluetooth_title">kaañaan bluetooth</string>
+    <string name="welcome_bluetooth_why">android naanaañaa ao pijaat ban bluetooth bu jaañ, di karim kau, bare ni pijaat pi kaañaan bluetooth. bakan ylih ajukku kañaanaŋ di radio yi oto, di eñaan ban di eban.</string>
+    <string name="welcome_bluetooth_with">di kaañaan: eñaan bare bujuuk ni jamano ban jaañ, uleŋ kanaa kaanoo di uleŋ kabajuum kaanoo.</string>
+    <string name="welcome_bluetooth_without">uleŋ kaañaan: kañaanaŋ bluetooth bare bujuuk uleŋ. kanaa ke pijaat pi kaanoo, di au bajuk eemit ni kanaŋ di kajukum pijaat ku android.</string>
+    <string name="welcome_notifications_title">kabaruum</string>
+    <string name="welcome_notifications_why">kajukum ku jaat kaanoo esaam esimaŋ di kanaŋ, di android naanaañ pijaat bare pu kaanoo bakan pi kajuk kabaru bu jukoor.</string>
+    <string name="welcome_notifications_with">di eemit: kabaru najuk kanaa bujuuk kunak, bakan bujom bu ajukk ni kajukum ku jaat kuyi kaanoo.</string>
+    <string name="welcome_notifications_without">uleŋ eemit: kajukum ku jaat kaanoo di kujuuk. android uleŋ najuk kabaru kau.</string>
     <string name="hibernation_title">anaa bayina kanu, safaan tayoy</string>
     <string name="hibernation_body">android anaa cik app yi ba jabe be tayoy koosan, be anaa ban bukandu ba. anaa ylih ba gani ke kanu batene ba fi anaa bayina bumu ceen. safaan tayoy anaa bukandu ba app yi, jaboot anaa cik kani.</string>
     <string name="action_not_now">manti gani</string>

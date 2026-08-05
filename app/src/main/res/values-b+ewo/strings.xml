@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">tiyo ye a vul me mbege ateng efan na minkolo eme tim. android atɔmba mɔnɔ ye efan menguma kumene a ndung ya mam, menguma zε a vul zε ti ndung bɔtɔ eve. bluetooth ateng a keme mɔli mɔ zə zɔ mɔ.</string>
     <string name="welcome_privacy">abam abam akuma a telephone ane. a kɔ account, na app ye a kɔ permission ye internet.</string>
     <string name="welcome_start">tek ka</string>
+    <string name="welcome_next">ntsɛ</string>
+    <string name="welcome_allow">ve nkokoe</string>
+    <string name="welcome_step">abum %1$d ya %2$d</string>
+    <string name="welcome_bluetooth_title">nkokoe bluetooth</string>
+    <string name="welcome_bluetooth_why">android a kobɔ apu jɔm bluetooth ja a nga tob, a dzoé jé, nge apu a bele nkokoe bluetooth. nala ylih a yem atóŋ ai radio ya mtoa, ai atóŋ da ai afe.</string>
+    <string name="welcome_bluetooth_with">ai nkokoe: atóŋ ese a tili atarii éyoŋ a tob, ai jam ese te nga sale, ai wa te simesan na ó nyoŋ jam.</string>
+    <string name="welcome_bluetooth_without">te nkokoe: atóŋ bluetooth ese a tili ki. mam mefe ya apu ma sale, ai wa ne ve nkokoe mvus e bikwedi bi apu android.</string>
+    <string name="welcome_notifications_title">mekalate</string>
+    <string name="welcome_notifications_why">atéban ényiŋ a sale ésaé étutulu mvus, ai android a yiane apu ese a bo nala na a taban ekalate a yem.</string>
+    <string name="welcome_notifications_with">ai nkokoe: ekalate a liɣi jé a tili den, é ne fɔ ndzoé na atéban ényiŋ a ne nyiŋ.</string>
+    <string name="welcome_notifications_without">te nkokoe: atéban ényiŋ a sale ai a tili. android a liɣi ki ekalate jé.</string>
     <string name="hibernation_title">a ka téte akuma, akéé a wu wuke</string>
     <string name="hibernation_body">android a kɔ tele app ye a ne kɔ mɔ ndung mwa ye ai, e nyoo permission ye. na nyoo ylih a ka tiye eyoŋ te akéé a bulu tele. wu wuke a ne mfombo ye app ye, jon tele ka mbe te.</string>
     <string name="action_not_now">te mbe te</string>

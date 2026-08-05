@@ -32,6 +32,17 @@
     <string name="welcome_point_detailed_body">設定中的詳細追蹤功能可加入有線耳機，並測量其中實際在播放的時間比例。</string>
     <string name="welcome_privacy">所有資料只留在這支手機上。沒有帳號，應用程式也沒有網路權限。</string>
     <string name="welcome_start">開始使用</string>
+    <string name="welcome_next">下一步</string>
+    <string name="welcome_allow">允許</string>
+    <string name="welcome_step">第 %1$d 步，共 %2$d 步</string>
+    <string name="welcome_bluetooth_title">藍牙存取權</string>
+    <string name="welcome_bluetooth_why">只有在應用程式擁有藍牙存取權時，android 才會告訴它哪台藍牙裝置已連線、叫什麼名字。ylih 就是靠這個分辨耳機與車用音響，以及分辨這副耳機和另一副。</string>
+    <string name="welcome_bluetooth_with">授予後：每副耳機從連線的那一刻起就被記錄，不需要讓任何東西持續執行，也不必記得按什麼。</string>
+    <string name="welcome_bluetooth_without">不授予：任何藍牙耳機都不會被記錄。應用程式的其餘部分照常運作，你也可以稍後在 android 的應用程式設定中授予。</string>
+    <string name="welcome_notifications_title">通知</string>
+    <string name="welcome_notifications_why">詳細追蹤會執行一個小型背景服務，而 android 要求任何這麼做的應用程式在期間保持一則通知可見。</string>
+    <string name="welcome_notifications_with">授予後：通知會顯示目前正在記錄的內容，這是詳細追蹤仍在運作的唯一跡象。</string>
+    <string name="welcome_notifications_without">不授予：詳細追蹤照樣執行、照樣記錄，只是 android 不會顯示它的通知。</string>
     <string name="hibernation_title">就算你忘了它,計時也會繼續</string>
     <string name="hibernation_body">android 會停止數個月未開啟的應用程式並收回其權限,這會導致 ylih 在你下次開啟它之前都不再記錄任何內容。被遺忘正是這款應用程式存在的意義,所以現在就關閉這項限制很值得。</string>
     <string name="action_not_now">暫不</string>

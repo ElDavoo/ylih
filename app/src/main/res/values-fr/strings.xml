@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">le suivi détaillé, dans les réglages, ajoute les casques filaires et mesure la part du temps réellement passée en lecture.</string>
     <string name="welcome_privacy">tout reste sur ce téléphone. il n\'y a pas de compte, et l\'app n\'a pas la permission internet.</string>
     <string name="welcome_start">commencer</string>
+    <string name="welcome_next">suivant</string>
+    <string name="welcome_allow">autoriser</string>
+    <string name="welcome_step">étape %1$d sur %2$d</string>
+    <string name="welcome_bluetooth_title">accès au bluetooth</string>
+    <string name="welcome_bluetooth_why">android n\'indique à une application quel appareil bluetooth s\'est connecté, et comment il s\'appelle, que si elle dispose de l\'accès au bluetooth. c\'est ainsi que ylih distingue un casque d\'un autoradio, et une paire d\'une autre.</string>
+    <string name="welcome_bluetooth_with">avec l\'accès : chaque paire est enregistrée dès qu\'elle se connecte, sans rien laisser tourner et sans rien à penser à appuyer.</string>
+    <string name="welcome_bluetooth_without">sans l\'accès : aucun casque bluetooth n\'est enregistré. le reste de l\'application fonctionne toujours, et vous pouvez l\'autoriser plus tard dans les paramètres d\'applications d\'android.</string>
+    <string name="welcome_notifications_title">notifications</string>
+    <string name="welcome_notifications_why">le suivi détaillé utilise un petit service en arrière-plan, et android impose à toute application qui en utilise un de garder une notification visible.</string>
+    <string name="welcome_notifications_with">avec l\'autorisation : la notification montre ce qui est enregistré en ce moment, seul signe que le suivi détaillé est actif.</string>
+    <string name="welcome_notifications_without">sans l\'autorisation : le suivi détaillé fonctionne et enregistre quand même. android n\'affichera simplement pas sa notification.</string>
     <string name="hibernation_title">continue à compter pendant que vous l\'oubliez</string>
     <string name="hibernation_body">android met en pause les applis qui restent quelques mois sans être ouvertes et leur retire leurs autorisations, ce qui laisserait ylih n\'enregistrer plus rien jusqu\'à la prochaine ouverture. être oubliée est précisément ce à quoi cette appli sert, alors il vaut mieux désactiver cela tout de suite.</string>
     <string name="action_not_now">pas maintenant</string>

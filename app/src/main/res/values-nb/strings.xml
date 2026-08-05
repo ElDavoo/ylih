@@ -33,6 +33,17 @@
          which is the same reason action_cancel carries a ButtonCase suppression. -->
     <string name="welcome_privacy" tools:ignore="Typos">alt blir på denne telefonen. det finnes ingen konto, og appen har ikke internett-tilgang.</string>
     <string name="welcome_start">kom i gang</string>
+    <string name="welcome_next">neste</string>
+    <string name="welcome_allow">tillat</string>
+    <string name="welcome_step">trinn %1$d av %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth-tilgang</string>
+    <string name="welcome_bluetooth_why">android forteller bare en app hvilken bluetooth-enhet som koblet til, og hva den heter, hvis appen har bluetooth-tilgang. det er slik ylih skiller et par hodetelefoner fra et bilanlegg, og ett par fra et annet.</string>
+    <string name="welcome_bluetooth_with">med tilgang: hvert par registreres fra øyeblikket det kobler til, uten at noe må kjøre og uten at du må huske å trykke på noe.</string>
+    <string name="welcome_bluetooth_without">uten tilgang: ingen bluetooth-hodetelefoner registreres i det hele tatt. resten av appen virker fortsatt, og du kan gi tilgangen senere i androids appinnstillinger.</string>
+    <string name="welcome_notifications_title">varsler</string>
+    <string name="welcome_notifications_why">detaljert sporing kjører en liten bakgrunnstjeneste, og android krever at enhver app som gjør det holder et varsel synlig.</string>
+    <string name="welcome_notifications_with">med tillatelse: varselet viser hva som registreres akkurat nå, som er det eneste tegnet på at detaljert sporing lever.</string>
+    <string name="welcome_notifications_without">uten tillatelse: detaljert sporing kjører og registrerer likevel. android viser bare ikke varselet.</string>
     <string name="hibernation_title">fortsetter å telle mens du glemmer den</string>
     <string name="hibernation_body">android setter apper som ikke blir åpnet på et par måneder på pause og tar tillatelsene deres tilbake, noe som ville latt ylih registrere ingenting før du åpnet den igjen. å bli glemt er nettopp det denne appen er til for, så det er verdt å slå det av nå.</string>
     <string name="action_not_now">ikke nå</string>

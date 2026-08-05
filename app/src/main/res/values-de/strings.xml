@@ -33,6 +33,17 @@
     <string name="welcome_point_detailed_body">das detaillierte Tracking, in den Einstellungen, erfasst zusätzlich kabelgebundene Kopfhörer und misst, wie viel der Zeit tatsächlich Wiedergabe war.</string>
     <string name="welcome_privacy">alles bleibt auf diesem Gerät. es gibt kein Konto, und die App hat keine Internetberechtigung.</string>
     <string name="welcome_start">loslegen</string>
+    <string name="welcome_next">weiter</string>
+    <string name="welcome_allow">zulassen</string>
+    <string name="welcome_step">schritt %1$d von %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth-zugriff</string>
+    <string name="welcome_bluetooth_why">android verrät einer app nur dann, welches bluetooth-gerät sich verbunden hat und wie es heißt, wenn die app bluetooth-zugriff hat. so unterscheidet ylih einen kopfhörer von einem autoradio, und ein paar vom anderen.</string>
+    <string name="welcome_bluetooth_with">mit zugriff: jedes paar wird ab dem moment der verbindung aufgezeichnet, ohne dass etwas laufen muss und ohne dass man an etwas denken muss.</string>
+    <string name="welcome_bluetooth_without">ohne zugriff: es wird kein bluetooth-kopfhörer aufgezeichnet. der rest der app funktioniert weiterhin, und du kannst den zugriff später in den app-einstellungen von android erteilen.</string>
+    <string name="welcome_notifications_title">benachrichtigungen</string>
+    <string name="welcome_notifications_why">detailliertes tracking betreibt einen kleinen hintergrunddienst, und android verlangt von jeder app, die das tut, eine sichtbare benachrichtigung.</string>
+    <string name="welcome_notifications_with">mit erlaubnis: die benachrichtigung zeigt, was gerade aufgezeichnet wird — das einzige zeichen dafür, dass detailliertes tracking läuft.</string>
+    <string name="welcome_notifications_without">ohne erlaubnis: detailliertes tracking läuft und zeichnet trotzdem auf. android zeigt seine benachrichtigung nur nicht an.</string>
     <string name="hibernation_title">zählt weiter, während du sie vergisst</string>
     <string name="hibernation_body">android pausiert apps, die ein paar monate nicht geöffnet werden, und nimmt ihnen die berechtigungen wieder weg — ylih würde dann nichts mehr aufzeichnen, bis du sie das nächste mal öffnest. vergessen zu werden ist genau der zweck dieser app, deshalb lohnt es sich, das jetzt abzuschalten.</string>
     <string name="action_not_now">jetzt nicht</string>

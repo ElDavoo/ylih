@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">설정의 상세 추적 기능은 유선 헤드폰을 추가하고, 실제로 재생 중이었던 시간을 측정합니다.</string>
     <string name="welcome_privacy">모든 데이터는 이 휴대폰에만 남습니다. 계정도 없고, 앱에는 인터넷 권한도 없습니다.</string>
     <string name="welcome_start">시작하기</string>
+    <string name="welcome_next">다음</string>
+    <string name="welcome_allow">허용</string>
+    <string name="welcome_step">%2$d단계 중 %1$d단계</string>
+    <string name="welcome_bluetooth_title">bluetooth 접근</string>
+    <string name="welcome_bluetooth_why">android는 어떤 bluetooth 기기가 연결되었고 이름이 무엇인지를, bluetooth 접근 권한이 있는 앱에게만 알려줍니다. ylih가 헤드폰과 차량 오디오를, 그리고 한 쌍과 다른 쌍을 구별하는 방법입니다.</string>
+    <string name="welcome_bluetooth_with">허용하면: 모든 쌍이 연결되는 순간부터 기록됩니다. 무언가를 켜둘 필요도, 누르는 것을 기억할 필요도 없습니다.</string>
+    <string name="welcome_bluetooth_without">허용하지 않으면: bluetooth 헤드폰은 전혀 기록되지 않습니다. 앱의 나머지 기능은 그대로 작동하며, 나중에 android 앱 설정에서 허용할 수 있습니다.</string>
+    <string name="welcome_notifications_title">알림</string>
+    <string name="welcome_notifications_why">상세 추적은 작은 백그라운드 서비스를 실행하며, android는 그런 앱에게 실행 중 알림을 계속 보이도록 요구합니다.</string>
+    <string name="welcome_notifications_with">허용하면: 알림이 지금 무엇을 기록하고 있는지 보여줍니다. 상세 추적이 살아 있다는 유일한 표시입니다.</string>
+    <string name="welcome_notifications_without">허용하지 않으면: 상세 추적은 그대로 실행되고 기록도 계속됩니다. android가 알림을 표시하지 않을 뿐입니다.</string>
     <string name="hibernation_title">잊고 있어도 계속 기록됩니다</string>
     <string name="hibernation_body">android는 몇 달간 열리지 않은 앱을 중지시키고 권한을 회수하는데, 이렇게 되면 다시 열기 전까지 ylih는 아무것도 기록하지 않게 됩니다. 잊혀지는 것이야말로 이 앱이 존재하는 이유이므로, 지금 이 기능을 꺼두는 것이 좋습니다.</string>
     <string name="action_not_now">나중에</string>

@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">detaljerad spårning, i inställningar, lägger till kabelanslutna hörlurar och mäter hur stor del av tiden som faktiskt spelades upp.</string>
     <string name="welcome_privacy">allt stannar på den här telefonen. det finns inget konto, och appen har ingen internetbehörighet.</string>
     <string name="welcome_start">kom igång</string>
+    <string name="welcome_next">nästa</string>
+    <string name="welcome_allow">tillåt</string>
+    <string name="welcome_step">steg %1$d av %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth-åtkomst</string>
+    <string name="welcome_bluetooth_why">android berättar bara för en app vilken bluetooth-enhet som anslöt, och vad den heter, om appen har bluetooth-åtkomst. det är så ylih skiljer ett par hörlurar från en bilstereo, och ett par från ett annat.</string>
+    <string name="welcome_bluetooth_with">med åtkomst: varje par registreras från det ögonblick det ansluter, utan att något behöver vara igång och utan att du behöver komma ihåg att trycka på något.</string>
+    <string name="welcome_bluetooth_without">utan åtkomst: inga bluetooth-hörlurar registreras alls. resten av appen fungerar ändå, och du kan ge åtkomsten senare i androids appinställningar.</string>
+    <string name="welcome_notifications_title">aviseringar</string>
+    <string name="welcome_notifications_why">detaljerad spårning kör en liten bakgrundstjänst, och android kräver att varje app som gör det håller en avisering synlig.</string>
+    <string name="welcome_notifications_with">med tillstånd: aviseringen visar vad som spelas in just nu, vilket är det enda tecknet på att detaljerad spårning lever.</string>
+    <string name="welcome_notifications_without">utan tillstånd: detaljerad spårning körs och registrerar ändå. android visar bara inte dess avisering.</string>
     <string name="hibernation_title">fortsätter räkna medan du glömmer bort den</string>
     <string name="hibernation_body">android pausar appar som inte öppnas på ett par månader och tar tillbaka deras behörigheter, vilket skulle få ylih att inte spela in något förrän du öppnade den igen. att bli bortglömd är precis vad den här appen är till för, så det är värt att stänga av det nu.</string>
     <string name="action_not_now">inte nu</string>

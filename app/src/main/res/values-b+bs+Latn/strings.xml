@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">detaljno praćenje, u postavkama, dodaje žičane slušalice i meri koliko vremena je bilo stvarno puštanja muzike.</string>
     <string name="welcome_privacy">sve ostaje na ovom telefonu. nema naloga, niti aplikacija ima dozvolu za internet.</string>
     <string name="welcome_start">počni</string>
+    <string name="welcome_next">dalje</string>
+    <string name="welcome_allow">dozvoli</string>
+    <string name="welcome_step">korak %1$d od %2$d</string>
+    <string name="welcome_bluetooth_title">pristup bluetoothu</string>
+    <string name="welcome_bluetooth_why">android aplikaciji kaže koji se bluetooth uređaj povezao, i kako se zove, samo ako aplikacija ima pristup bluetoothu. tako ylih razlikuje slušalice od auto-radija, i jedne od drugih.</string>
+    <string name="welcome_bluetooth_with">s pristupom: svaki par se bilježi od trenutka kad se poveže, bez ičega što mora raditi i bez pamćenja da nešto pritisnete.</string>
+    <string name="welcome_bluetooth_without">bez pristupa: nikakve bluetooth slušalice se ne bilježe. ostatak aplikacije i dalje radi, a pristup možete dati kasnije u android postavkama aplikacija.</string>
+    <string name="welcome_notifications_title">obavještenja</string>
+    <string name="welcome_notifications_why">detaljno praćenje pokreće malu pozadinsku uslugu, a android traži od svake aplikacije koja to radi da drži obavještenje vidljivim.</string>
+    <string name="welcome_notifications_with">s dozvolom: obavještenje pokazuje šta se upravo bilježi, što je jedini znak da je detaljno praćenje živo.</string>
+    <string name="welcome_notifications_without">bez dozvole: detaljno praćenje i dalje radi i i dalje bilježi. android samo neće prikazati njegovo obavještenje.</string>
     <string name="hibernation_title">nastavi brojati i dok je zaboravljaš</string>
     <string name="hibernation_body">android zaustavlja aplikacije koje nisu otvarane nekoliko mjeseci i oduzima im dozvole, zbog čega ylih ne bi ništa bilježio dok je ponovo ne otvoriš. upravo to da bude zaboravljena je svrha ove aplikacije, zato vrijedi to isključiti odmah.</string>
     <string name="action_not_now">ne sada</string>

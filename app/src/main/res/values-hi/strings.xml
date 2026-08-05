@@ -33,6 +33,17 @@
     <string name="welcome_point_detailed_body">सेटिंग्स में मौजूद विस्तृत ट्रैकिंग, तार वाले हेडफ़ोन जोड़ती है और यह मापती है कि कितना समय असल में प्लेबैक हो रहा था।</string>
     <string name="welcome_privacy">सब कुछ इसी फ़ोन पर रहता है। कोई अकाउंट नहीं है, और ऐप के पास इंटरनेट की अनुमति नहीं है।</string>
     <string name="welcome_start">शुरू करें</string>
+    <string name="welcome_next">आगे</string>
+    <string name="welcome_allow">अनुमति दें</string>
+    <string name="welcome_step">चरण %1$d / %2$d</string>
+    <string name="welcome_bluetooth_title">ब्लूटूथ पहुँच</string>
+    <string name="welcome_bluetooth_why">android किसी ऐप को यह तभी बताता है कि कौन-सा ब्लूटूथ डिवाइस जुड़ा और उसका नाम क्या है, जब उस ऐप के पास ब्लूटूथ पहुँच हो। इसी से ylih हेडफ़ोन को कार स्टीरियो से, और एक जोड़ी को दूसरी से अलग पहचानता है।</string>
+    <string name="welcome_bluetooth_with">अनुमति के साथ: हर जोड़ी जुड़ते ही दर्ज होने लगती है, कुछ भी चलता छोड़ने की ज़रूरत नहीं और कुछ दबाना याद रखने की भी नहीं।</string>
+    <string name="welcome_bluetooth_without">अनुमति के बिना: कोई भी ब्लूटूथ हेडफ़ोन दर्ज नहीं होता। ऐप का बाकी हिस्सा फिर भी काम करता है, और आप बाद में android की ऐप सेटिंग्स में अनुमति दे सकते हैं।</string>
+    <string name="welcome_notifications_title">सूचनाएँ</string>
+    <string name="welcome_notifications_why">विस्तृत ट्रैकिंग एक छोटी बैकग्राउंड सेवा चलाती है, और android ऐसा करने वाले हर ऐप से माँगता है कि तब तक एक सूचना दिखती रहे।</string>
+    <string name="welcome_notifications_with">अनुमति के साथ: सूचना दिखाती है कि इस समय क्या दर्ज हो रहा है, और यही एकमात्र संकेत है कि विस्तृत ट्रैकिंग जीवित है।</string>
+    <string name="welcome_notifications_without">अनुमति के बिना: विस्तृत ट्रैकिंग फिर भी चलती और दर्ज करती रहती है। android बस उसकी सूचना नहीं दिखाएगा।</string>
     <string name="hibernation_title">भूलने पर भी गिनती जारी रखो</string>
     <string name="hibernation_body">android कुछ महीनों तक न खोले गए ऐप को रोक देता है और उनकी अनुमतियां वापस ले लेता है, जिससे जब तक आप इसे दोबारा नहीं खोलते तब तक ylih कुछ भी रिकॉर्ड नहीं करेगा। भुला दिया जाना ही इस ऐप का मकसद है, इसलिए अभी इसे बंद कर देना उचित है।</string>
     <string name="action_not_now">अभी नहीं</string>

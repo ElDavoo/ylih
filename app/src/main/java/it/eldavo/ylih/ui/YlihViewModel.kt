@@ -113,7 +113,6 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
         container.settings.setLanguage(tag)
     }
 
-    /** Also what releases MainActivity's permission request — see the comment there. */
     fun completeOnboarding() = viewModelScope.launch {
         container.settings.setOnboardingDone(true)
     }

@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">akayasim mina atayakahwin, atayakahwina, ki-mamachotamokew sohkawin otisinahk mina ka-wayacak mahkonak atihcamok.</string>
     <string name="welcome_privacy">kisisohk ki mihkohk. nika apit mina nika mahciwin musik.</string>
     <string name="welcome_start">takosiwin</string>
+    <string name="welcome_next">kotak</string>
+    <string name="welcome_allow">pakitinamaw</string>
+    <string name="welcome_step">tahkohtew %1$d ita %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth otinikewin</string>
+    <string name="welcome_bluetooth_why">android piko wihtamawew apisisi atoskewin tanima bluetooth apacihcikan kah-wicihtasot, ekwa tanisi isiyihkasot, kispin ana atoskewin ayaw bluetooth otinikewin. ekosi ylih kiskeyihtam pehtakosiwin ekwa otapanask pikiskwewin, ekwa peyak nisokwan ekwa kotak.</string>
+    <string name="welcome_bluetooth_with">otinikewin ohci: tahto nisokwan masinahikatew ispi ka-wicihtasot, namoya kekway ka-atoskemakahk ekwa namoya ka-kiskisiyan ka-sakaskinahaman.</string>
+    <string name="welcome_bluetooth_without">namoya otinikewin: namoya bluetooth pehtakosiwin masinahikatew. kotaka atoskewin atoskemakan, ekwa ka-ki-pakitinen mwestas android atoskewin isihcikewina.</string>
+    <string name="welcome_notifications_title">wihtamakewina</string>
+    <string name="welcome_notifications_why">mistahi kanaweyihcikewin atoskemakan apisisi otahk atoskewin, ekwa android nitaweyihtam tahto atoskewin ekosi ka-itotahk ka-wapahtihiwet wihtamakewin.</string>
+    <string name="welcome_notifications_with">pakitinamakewin ohci: wihtamakewin wapahtihiwew kekway anohc ka-masinahikatek, ekoni piko kiskinowacihcikan mistahi kanaweyihcikewin pimatisiw.</string>
+    <string name="welcome_notifications_without">namoya pakitinamakewin: mistahi kanaweyihcikewin atoskemakan ekwa masinahikew. android piko namoya wapahtihiwew otinikewin.</string>
     <string name="hibernation_title">ka-ki-kiskisitotawiht namoya ka-atayak</string>
     <string name="hibernation_body">android ki-nakatamawew otisinahikana eso pisim ka-mawaci namoya ki-yohtenamihk, kiiwe otayamna akayasimowina; eyako ylih namoya ka-nayahtahk kikway ata ki-yohtenaman miina. ka-kiskisitotawiht eyako tapiskoc ta-ohcitaw eyako app, mena kwayask ta-kipihtinamihk anohc.</string>
     <string name="action_not_now">namoya anohc</string>

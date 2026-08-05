@@ -33,6 +33,17 @@
     <string name="welcome_point_detailed_body">設定の詳細トラッキングを使うと、有線のヘッドホンも記録でき、実際に再生していた時間も測れる。</string>
     <string name="welcome_privacy">すべてこの端末の中だけで完結する。アカウントは不要で、このアプリにはインターネットへのアクセス権限もない。</string>
     <string name="welcome_start">はじめる</string>
+    <string name="welcome_next">次へ</string>
+    <string name="welcome_allow">許可</string>
+    <string name="welcome_step">ステップ %1$d / %2$d</string>
+    <string name="welcome_bluetooth_title">bluetoothへのアクセス</string>
+    <string name="welcome_bluetooth_why">androidは、どのbluetooth機器が接続したか、その名前は何かを、bluetoothへのアクセス権を持つアプリにしか教えない。ylihがヘッドホンとカーステレオを、そして一つのペアと別のペアを見分けられるのはこのため。</string>
+    <string name="welcome_bluetooth_with">許可した場合：どのペアも接続した瞬間から記録される。何かを起動しておく必要も、押し忘れを気にする必要もない。</string>
+    <string name="welcome_bluetooth_without">許可しない場合：bluetoothヘッドホンは一切記録されない。アプリの他の部分は動作し、後からandroidのアプリ設定で許可できる。</string>
+    <string name="welcome_notifications_title">通知</string>
+    <string name="welcome_notifications_why">詳細トラッキングは小さなバックグラウンドサービスを動かす。androidはそうするアプリに対し、その間ずっと通知を表示し続けることを求める。</string>
+    <string name="welcome_notifications_with">許可した場合：通知が今記録されている内容を示す。詳細トラッキングが生きている唯一のしるし。</string>
+    <string name="welcome_notifications_without">許可しない場合：詳細トラッキングは動作し記録も続く。androidが通知を表示しないだけ。</string>
     <string name="hibernation_title">忘れていても、カウントは続く</string>
     <string name="hibernation_body">androidは数か月開かれなかったアプリを停止し、権限を取り消す。そうなるとylihは次に開くまで何も記録しなくなる。忘れられることこそこのアプリの本来の目的なので、今のうちにこれをオフにしておく価値がある。</string>
     <string name="action_not_now">今はしない</string>

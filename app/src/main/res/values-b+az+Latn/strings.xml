@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">tənzimləmələrdə ətraflı izləmə simlə qulaqlıqlar əlavə edir və vaxtın nə qədərinin həqiqətən oynatıldığını ölçür.</string>
     <string name="welcome_privacy">hər şey bu telefonda qalır. heç bir hesab yoxdur və tətbiqin internet icazəsi yoxdur.</string>
     <string name="welcome_start">başlayın</string>
+    <string name="welcome_next">növbəti</string>
+    <string name="welcome_allow">icazə ver</string>
+    <string name="welcome_step">addım %1$d / %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth girişi</string>
+    <string name="welcome_bluetooth_why">android tətbiqə hansı bluetooth cihazının qoşulduğunu və adının nə olduğunu yalnız tətbiqin bluetooth girişi varsa bildirir. ylih qulaqlığı avtomobil maqnitofonundan, bir cütü digərindən belə ayırır.</string>
+    <string name="welcome_bluetooth_with">giriş varsa: hər cüt qoşulduğu andan qeyd olunur, heç nəyi işlək saxlamağa və nəyisə basmağı yadda saxlamağa ehtiyac yoxdur.</string>
+    <string name="welcome_bluetooth_without">giriş yoxdursa: heç bir bluetooth qulaqlığı qeyd olunmur. tətbiqin qalan hissəsi işləyir və icazəni sonra android-in tətbiq ayarlarından verə bilərsiniz.</string>
+    <string name="welcome_notifications_title">bildirişlər</string>
+    <string name="welcome_notifications_why">ətraflı izləmə kiçik bir arxa fon xidməti işlədir və android bunu edən hər tətbiqdən bildirişi görünən saxlamağı tələb edir.</string>
+    <string name="welcome_notifications_with">icazə varsa: bildiriş indi nəyin qeyd olunduğunu göstərir, ətraflı izləmənin işlədiyinin yeganə əlaməti budur.</string>
+    <string name="welcome_notifications_without">icazə yoxdursa: ətraflı izləmə yenə işləyir və yenə qeyd edir. sadəcə android onun bildirişini göstərməyəcək.</string>
     <string name="hibernation_title">unutsan da saymağa davam et</string>
     <string name="hibernation_body">android bir neçə ay açılmayan tətbiqləri dayandırır və icazələrini geri alır ki, bu da ylih-i sən onu yenidən açana qədər heç nə qeyd etməyən vəziyyətə salar. unudulmaq bu tətbiqin var olmaq səbəbidir, ona görə də indi bunu deaktiv etməyə dəyər.</string>
     <string name="action_not_now">indi yox</string>

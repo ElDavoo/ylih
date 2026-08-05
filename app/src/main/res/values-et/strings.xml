@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">detailne jälgimine, seadistustes, lisab juhtmega kõrvaklapid ja mõõdab, kui palju ajast oli tegelikult taasesitus.</string>
     <string name="welcome_privacy">kõik jääb sellesse telefoni. kasutajakontot ei ole ja rakendusel pole interneti lubadust.</string>
     <string name="welcome_start">alusta</string>
+    <string name="welcome_next">edasi</string>
+    <string name="welcome_allow">luba</string>
+    <string name="welcome_step">samm %1$d / %2$d</string>
+    <string name="welcome_bluetooth_title">bluetoothi juurdepääs</string>
+    <string name="welcome_bluetooth_why">android ütleb rakendusele, milline bluetooth-seade ühendus ja mis on selle nimi, ainult siis, kui rakendusel on bluetoothi juurdepääs. nii eristab ylih kõrvaklappe autoraadiost ja ühte paari teisest.</string>
+    <string name="welcome_bluetooth_with">juurdepääsuga: iga paar salvestatakse alates hetkest, mil see ühendub, ilma et midagi peaks taustal töötama või midagi meelde jääma vajutada.</string>
+    <string name="welcome_bluetooth_without">juurdepääsuta: ühtegi bluetooth-kõrvaklappi ei salvestata. ülejäänud rakendus töötab endiselt ja loa saad anda hiljem androidi rakenduste seadetes.</string>
+    <string name="welcome_notifications_title">teated</string>
+    <string name="welcome_notifications_why">üksikasjalik jälgimine käitab väikest taustateenust ja android nõuab igalt seda tegevalt rakenduselt nähtava teate hoidmist.</string>
+    <string name="welcome_notifications_with">loaga: teade näitab, mida praegu salvestatakse, ja see on ainus märk, et üksikasjalik jälgimine on elus.</string>
+    <string name="welcome_notifications_without">loata: üksikasjalik jälgimine töötab ja salvestab endiselt. android lihtsalt ei näita selle teadet.</string>
     <string name="hibernation_title">loeb edasi, kuni sa selle unustad</string>
     <string name="hibernation_body">android peatab rakendused, mida paar kuud ei avata, ja võtab neilt load tagasi, mis jätaks ylihi mitte midagi salvestama kuni järgmise avamiseni. unustatud saada on täpselt see, milleks see rakendus on, nii et tasub see kohe välja lülitada.</string>
     <string name="action_not_now">mitte praegu</string>

@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">irekodi ileile, mu mawania, inaongeza sambamano iburani na kusuubu saa ngapi ileile ilikuwa inaiga.</string>
     <string name="welcome_privacy">vitu vyote vinabakia mu simu ino. hakuna akaunti, na app haina ruhusa ya intaneti.</string>
     <string name="welcome_start">anza</string>
+    <string name="welcome_next">endelea</string>
+    <string name="welcome_allow">ruhusu</string>
+    <string name="welcome_step">hatua %1$d kati ya %2$d</string>
+    <string name="welcome_bluetooth_title">ruhusa ya bluetooth</string>
+    <string name="welcome_bluetooth_why">android humwambia programu ni kifaa kipi cha bluetooth kimeunganishwa, na kinaitwa nani, ikiwa tu programu ina ruhusa ya bluetooth. ndivyo ylih hutofautisha vipokea sauti na redio ya gari, na jozi moja na nyingine.</string>
+    <string name="welcome_bluetooth_with">kwa ruhusa: kila jozi hurekodiwa tangu wakati inapounganishwa, bila kitu chochote kubaki kikifanya kazi na bila kukumbuka kubonyeza kitu.</string>
+    <string name="welcome_bluetooth_without">bila ruhusa: hakuna vipokea sauti vya bluetooth vinavyorekodiwa. sehemu nyingine ya programu bado inafanya kazi, na unaweza kutoa ruhusa baadaye katika mipangilio ya programu ya android.</string>
+    <string name="welcome_notifications_title">arifa</string>
+    <string name="welcome_notifications_why">ufuatiliaji wa kina huendesha huduma ndogo ya nyuma, na android inahitaji kila programu inayofanya hivyo kuweka arifa ikionekana.</string>
+    <string name="welcome_notifications_with">kwa ruhusa: arifa inaonyesha kinachorekodiwa sasa hivi, ndiyo ishara pekee kwamba ufuatiliaji wa kina uko hai.</string>
+    <string name="welcome_notifications_without">bila ruhusa: ufuatiliaji wa kina bado unaendesha na bado unarekodi. android tu haitaonyesha arifa yake.</string>
     <string name="hibernation_title">haiachi kuhesabu, hata ukiisahau</string>
     <string name="hibernation_body">android inasimamisha app zisizofunguliwa kwa miezi, na inaondoa ruhusa zake. hapo ylih haitarekodi kitu chochote mpaka uifungue tena. kusahaulika ndilo lengo la app hii, hivyo zima jambo hili sasa.</string>
     <string name="action_not_now">sio sasa</string>

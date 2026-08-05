@@ -32,6 +32,17 @@
     <string name="welcome_point_detailed_body">chế độ theo dõi chi tiết, trong cài đặt, thêm tai nghe có dây và đo xem bao nhiêu thời gian thực sự đang phát nhạc.</string>
     <string name="welcome_privacy">mọi thứ đều ở lại trên điện thoại này. không có tài khoản, và ứng dụng không có quyền truy cập internet.</string>
     <string name="welcome_start">bắt đầu</string>
+    <string name="welcome_next">tiếp theo</string>
+    <string name="welcome_allow">cho phép</string>
+    <string name="welcome_step">bước %1$d trên %2$d</string>
+    <string name="welcome_bluetooth_title">quyền truy cập bluetooth</string>
+    <string name="welcome_bluetooth_why">android chỉ cho ứng dụng biết thiết bị bluetooth nào vừa kết nối và nó tên gì nếu ứng dụng có quyền truy cập bluetooth. đó là cách ylih phân biệt một đôi tai nghe với dàn âm thanh trên xe, và đôi này với đôi khác.</string>
+    <string name="welcome_bluetooth_with">khi cho phép: mọi đôi đều được ghi lại từ khoảnh khắc kết nối, không phải để thứ gì chạy và không phải nhớ bấm gì.</string>
+    <string name="welcome_bluetooth_without">khi không cho phép: không đôi tai nghe bluetooth nào được ghi lại. phần còn lại của ứng dụng vẫn hoạt động, và bạn có thể cấp quyền sau trong cài đặt ứng dụng của android.</string>
+    <string name="welcome_notifications_title">thông báo</string>
+    <string name="welcome_notifications_why">theo dõi chi tiết chạy một dịch vụ nền nhỏ, và android yêu cầu mọi ứng dụng làm vậy phải giữ một thông báo hiển thị trong suốt thời gian đó.</string>
+    <string name="welcome_notifications_with">khi cho phép: thông báo cho thấy đang ghi lại những gì ngay lúc này, dấu hiệu duy nhất cho biết theo dõi chi tiết còn sống.</string>
+    <string name="welcome_notifications_without">khi không cho phép: theo dõi chi tiết vẫn chạy và vẫn ghi. android chỉ là không hiển thị thông báo của nó.</string>
     <string name="hibernation_title">vẫn tiếp tục đếm dù bạn có quên nó</string>
     <string name="hibernation_body">android tạm dừng các ứng dụng không được mở trong vài tháng và thu hồi quyền của chúng, khiến ylih không ghi lại gì cho đến khi bạn mở lại. bị lãng quên chính là mục đích của ứng dụng này, vì vậy nên tắt tính năng đó ngay từ bây giờ.</string>
     <string name="action_not_now">để sau</string>

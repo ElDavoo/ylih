@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">детаљно праћење, у поставкама, додаје жичне слушалице и мери колико од времена је било стварна репродукција.</string>
     <string name="welcome_privacy">све остаје на овом телефону. нема налога и апликација нема дозволе за интернет.</string>
     <string name="welcome_start">почни</string>
+    <string name="welcome_next">даље</string>
+    <string name="welcome_allow">дозволи</string>
+    <string name="welcome_step">корак %1$d од %2$d</string>
+    <string name="welcome_bluetooth_title">приступ блутуту</string>
+    <string name="welcome_bluetooth_why">андроид апликацији каже који се блутут уређај повезао, и како се зове, само ако апликација има приступ блутуту. тако ylih разликује слушалице од ауто-радија, и једне од других.</string>
+    <string name="welcome_bluetooth_with">с приступом: сваки пар се биљежи од тренутка кад се повеже, без ичега што мора радити и без памћења да нешто притиснете.</string>
+    <string name="welcome_bluetooth_without">без приступа: никакве блутут слушалице се не биљеже. остатак апликације и даље ради, а приступ можете дати касније у андроид поставкама апликација.</string>
+    <string name="welcome_notifications_title">обавјештења</string>
+    <string name="welcome_notifications_why">детаљно праћење покреће малу позадинску услугу, а андроид тражи од сваке апликације која то ради да држи обавјештење видљивим.</string>
+    <string name="welcome_notifications_with">с дозволом: обавјештење показује шта се управо биљежи, што је једини знак да је детаљно праћење живо.</string>
+    <string name="welcome_notifications_without">без дозволе: детаљно праћење и даље ради и даље биљежи. андроид само неће приказати његово обавјештење.</string>
     <string name="hibernation_title">настави да бројиш и док је заборављаш</string>
     <string name="hibernation_body">android зауставља апликације које нису отваране неколико месеци и одузима им дозволе, због чега ylih не би ништа бележио док га поново не отвориш. управо то да буде заборављена је сврха ове апликације, зато вреди то искључити одмах.</string>
     <string name="action_not_now">не сада</string>

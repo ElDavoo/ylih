@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">толық іс-әрекет, әйланмәләрде, сызыңлы наўсыбырлысын қосады және оның қанше уақыты хақылап ойналғанын өлшейді.</string>
     <string name="welcome_privacy">барлығы осы телефонда қалды. ешқандай есептік емес, және қосынша интернет рұқсаты жоқ.</string>
     <string name="welcome_start">бастау</string>
+    <string name="welcome_next">нөвбәти</string>
+    <string name="welcome_allow">иҹазә вер</string>
+    <string name="welcome_step">аддым %1$d / %2$d</string>
+    <string name="welcome_bluetooth_title">блуетоотһ ҝиришi</string>
+    <string name="welcome_bluetooth_why">android тәтбигә һансы блуетоотһ ҹиһазынын гошулдуғуну вә адынын нә олдуғуну јалныз тәтбигин блуетоотһ ҝириши варса билдирир. ylih гулаглығы автомобил магнитофонундан, бир ҹүтү диҝәриндән белә ајырыр.</string>
+    <string name="welcome_bluetooth_with">ҝириш варса: һәр ҹүт гошулдуғу андан гејд олунур, һеч нәји ишләк сахламаға вә нәјисә басмағы јадда сахламаға еһтијаҹ јохдур.</string>
+    <string name="welcome_bluetooth_without">ҝириш јохдурса: һеч бир блуетоотһ гулаглығы гејд олунмур. тәтбигин галан һиссәси ишләјир вә иҹазәни сонра android-ин тәтбиг ајарларындан верә биләрсиниз.</string>
+    <string name="welcome_notifications_title">билдиришләр</string>
+    <string name="welcome_notifications_why">әтрафлы изләмә кичик бир арха фон хидмәти ишләдир вә android буну едән һәр тәтбигдән билдириши ҝөрүнән сахламағы тәләб едир.</string>
+    <string name="welcome_notifications_with">иҹазә варса: билдириш инди нәјин гејд олундуғуну ҝөстәрир, әтрафлы изләмәнин ишләдијинин јеҝанә әламәти будур.</string>
+    <string name="welcome_notifications_without">иҹазә јохдурса: әтрафлы изләмә јенә ишләјир вә јенә гејд едир. садәҹә android онун билдиришини ҝөстәрмәјәҹәк.</string>
     <string name="hibernation_title">унутсан да саймаға давам ет</string>
     <string name="hibernation_body">android бир нечә ай ачылмайан тәтбигләри дайандырыр вә иҹазәләрини ҝери алыр ки, бу да ylih-и сән ону йенидән ачана гәдәр һеч нә гейд етмәйән вәзиййәтә салар. унудулмаг бу тәтбигин вар олмаг сәбәбидир, она ҝөрә дә инди буну деактив етмәйә дәйәр.</string>
     <string name="action_not_now">инди йох</string>

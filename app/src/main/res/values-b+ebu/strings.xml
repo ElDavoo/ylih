@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">ĩmenyithia ĩrĩa yoona, kũrĩ ĩmenyithia, yoongera mahoya ma rũruta na ĩmenyaga kana riakĩ rĩa ruo ũmwe rĩarĩ na kĩruta.</string>
     <string name="welcome_privacy">gĩothe kĩgĩkooyaga kũrĩ ĩrĩngĩ rĩĩ. gũtũũ gũtaarĩ akaunti, na ylih ĩtaarĩ na mahoya ma ĩntarineti.</string>
     <string name="welcome_start">thima</string>
+    <string name="welcome_next">mbele</string>
+    <string name="welcome_allow">ruhusu</string>
+    <string name="welcome_step">ikinya %1$d kwa %2$d</string>
+    <string name="welcome_bluetooth_title">ruhusa ya bluetooth</string>
+    <string name="welcome_bluetooth_why">android ĩmwĩraga programu nĩ kĩndũ kĩrĩkũ kĩa bluetooth kĩunganĩtwe, na kĩĩtagwa atĩa, kũngĩ programu ĩrĩ na ruhusa ya bluetooth. nĩ ũguo ylih ũthemaga nyanya cia gũthikĩrĩria na redio ya ngari, na kĩgwa kĩmwe na kĩngĩ.</string>
+    <string name="welcome_bluetooth_with">na ruhusa: kĩgwa o gĩothe kĩandĩkagwo kuuma hĩndĩ ĩrĩa kĩunganĩtwe, gũtarĩ kĩndũ kĩrĩ gũthiĩ na gũtarĩ kũririkana kũhũrĩra kĩndũ.</string>
+    <string name="welcome_bluetooth_without">gũtarĩ ruhusa: gũtirĩ nyanya cia bluetooth iandĩkagwo. gĩcunjĩ kĩngĩ kĩa programu nĩ gĩthiaga, na no ũhote kũheana ruhusa thutha kũrĩa mĩpangĩre ya programu ya android.</string>
+    <string name="welcome_notifications_title">ũmenyithia</string>
+    <string name="welcome_notifications_why">ũrũmĩrĩri wa kĩrĩa gĩothe ũthiaga wĩra mũnini wa thutha, na android ĩrenda o programu ĩrĩa ĩkũhũthĩra ũguo ĩige ũmenyithia wonekage.</string>
+    <string name="welcome_notifications_with">na ruhusa: ũmenyithia wonanagia kĩrĩa kĩandĩkagwo rĩu, na nĩkĩo kĩmenyithia kĩmwe atĩ ũrũmĩrĩri wa kĩrĩa gĩothe nĩ mũgima.</string>
+    <string name="welcome_notifications_without">gũtarĩ ruhusa: ũrũmĩrĩri wa kĩrĩa gĩothe nĩ ũthiaga na nĩ wandĩkaga. android tu ndĩkonanagia ũmenyithia waguo.</string>
     <string name="hibernation_title">ĩgeriragia gũkarania o na ĩrĩa wariganirwo</string>
     <string name="hibernation_body">android nĩĩtigithagia kĩruta kĩrĩa gĩtekũhingũrwo ĩmĩeri mĩingĩ, na ĩgatunya mahoya makĩo. nĩguo ylih ĩtakoreka ũndũ kuuma ĩyo nginya wanahingũra ringĩ. kũriganĩrwo nĩkĩo mũrimo wa kĩruta gĩkĩ, nĩ ũndũ ũcio kana ũndũ ũyũ rĩu.</string>
     <string name="action_not_now">tĩrĩ rĩu</string>

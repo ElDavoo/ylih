@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">inshumu ifingilila, mu imilikilo, isamitikilila imipala apo kukalakala ni inshuba iyofi ya pa kusekesa.</string>
     <string name="welcome_privacy">ifyonse fifumilila pano mu foni yinu. palefwe umuntu, apo na foni yinu palefwe lumino lwa intaneti.</string>
     <string name="welcome_start">kolankela</string>
+    <string name="welcome_next">konkapo</string>
+    <string name="welcome_allow">suminisha</string>
+    <string name="welcome_step">intampulo %1$d pa %2$d</string>
+    <string name="welcome_bluetooth_title">ukwingila kwa bluetooth</string>
+    <string name="welcome_bluetooth_why">android aleeba app icipesha ca bluetooth icaikatana, ne shina lyaciko, nga app yalikwata ukwingila kwa bluetooth. e fyo ylih apusanya amatwi ku redio ya motoka, ne bumo ku bumbi.</string>
+    <string name="welcome_bluetooth_with">no kwingila: bonse balembwa ukutula panshita balikatana, ukwabula ukushiya icintu icilebomba nangu ukwibukisha ukukanda icintu.</string>
+    <string name="welcome_bluetooth_without">ukwabula ukwingila: takuli amatwi ya bluetooth ayalembwa. ifingi fya app fikabomba, kabili kuti wasuminisha panuma mu fyalengwa fya ma app ya android.</string>
+    <string name="welcome_notifications_title">ifyebo</string>
+    <string name="welcome_notifications_why">ukukonkolosha kwa mushilika kubomfya umulimo unono uwa kunuma, kabili android alafwaya app iileecita ifyo ukusunga icebo icimoneka.</string>
+    <string name="welcome_notifications_with">no kusuminisha: icebo cilanga ifilelembwa nomba line, e cishibilo fye ico ukukonkolosha kwa mushilika kuli no mweo.</string>
+    <string name="welcome_notifications_without">ukwabula ukusuminisha: ukukonkolosha kwa mushilika kucili kulebomba no kulemba. android fye tacilanga icebo ciko.</string>
     <string name="hibernation_title">ilekelesha ukubelenganya, nangu bafwaya ukwilaba</string>
     <string name="hibernation_body">android ilekesha fifile ifishaisale imyeshi iingi, no kufumya insambu shabo. e ico ylih tekakwete ukulembe kanya mpaka mwaisungule kabili. ukwilaba emulimo wa fifile ifi, e ico kwaleni ici nomba.</string>
     <string name="action_not_now">te nomba iyi</string>

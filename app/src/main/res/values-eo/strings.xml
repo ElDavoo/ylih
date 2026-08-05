@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">detala spurado, en agordoj, aldonas kablitajn altkurajn aŭdilojn kaj mezuras kiom da la tempo estis vere ludanta.</string>
     <string name="welcome_privacy">ĉio restas en ĉi tiu telefono. nenia konto, kaj la aplikaĵo ne havas interretan permeson.</string>
     <string name="welcome_start">komenci</string>
+    <string name="welcome_next">sekva</string>
+    <string name="welcome_allow">permesi</string>
+    <string name="welcome_step">paŝo %1$d el %2$d</string>
+    <string name="welcome_bluetooth_title">bludenta aliro</string>
+    <string name="welcome_bluetooth_why">android diras al aplikaĵo kiu bludenta aparato konektiĝis, kaj kiel ĝi nomiĝas, nur se la aplikaĵo havas bludentan aliron. tiel ylih distingas kapaŭdilojn de aŭtoradio, kaj unu paron de alia.</string>
+    <string name="welcome_bluetooth_with">kun la aliro: ĉiu paro estas registrata ekde la momento kiam ĝi konektiĝas, sen io ajn kurantan kaj sen memori premi ion.</string>
+    <string name="welcome_bluetooth_without">sen la aliro: neniuj bludentaj kapaŭdiloj estas registrataj. la cetero de la aplikaĵo plu funkcias, kaj vi povas doni ĝin poste en la aplikaĵaj agordoj de android.</string>
+    <string name="welcome_notifications_title">sciigoj</string>
+    <string name="welcome_notifications_why">detala spurado rulas malgrandan fonan servon, kaj android postulas ke ĉiu aplikaĵo faranta tion tenu sciigon videbla.</string>
+    <string name="welcome_notifications_with">kun la permeso: la sciigo montras kio estas registrata ĝuste nun, kio estas la sola signo ke detala spurado vivas.</string>
+    <string name="welcome_notifications_without">sen la permeso: detala spurado plu rulas kaj plu registras. android simple ne montros ĝian sciigon.</string>
     <string name="hibernation_title">daŭre kalkulas dum vi forgesas ĝin</string>
     <string name="hibernation_body">android paŭzas aplikaĵojn kiuj restas nemalfermitaj dum kelkaj monatoj kaj reprenas iliajn permesojn, kio lasus ylih registranta nenion ĝis vi denove malfermus ĝin. esti forgesita estas ĝuste tio por kio ĉi tiu aplikaĵo ekzistas, do indas malŝalti tion nun.</string>
     <string name="action_not_now">ne nun</string>

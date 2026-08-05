@@ -1,4 +1,4 @@
-• Drei Widgets für den Startbildschirm: Gesamtstunden pro Paar mit laufendem Timer für das verbundene Paar, die Gesamtsumme neben heute / 7 Tagen / 30 Tagen, und das 30-Tage-Diagramm. Jedes lässt sich beliebig skalieren.
-• Zwischen den drei Tabs kann jetzt gewischt werden.
-• Sicherungen enthalten ihre Formatversion, sodass eine Datei aus einer neueren Version abgelehnt statt falsch gelesen wird.
-• Der Download ist ein Viertel so groß.
+• Drei Startbildschirm-Widgets: Stunden pro Paar mit laufendem Timer, heute / 7 Tage / 30 Tage, und das 30-Tage-Diagramm. Jedes lässt sich frei skalieren.
+• Der erste Start erklärt jetzt, wofür der Bluetooth-Zugriff nötig ist, bevor er angefragt wird.
+• Benachrichtigungen werden erst beim Einschalten des detaillierten Trackings angefragt — und dieses startet nun auch, wenn sie abgelehnt wurden.
+• Die Tabs lassen sich wischen, und der Download ist ein Viertel so groß.

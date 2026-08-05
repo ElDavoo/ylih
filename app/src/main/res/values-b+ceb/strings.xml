@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">ang detalyadong subaybay, sa mga setting, ay nagdadagdag ng mga headphones na may kable at sinusukat kung gaano karaming oras ang aktwal na pagtugtog.</string>
     <string name="welcome_privacy">lahat ay nananatili sa telepono na ito. walang account, at ang app ay walang pahintulot sa internet.</string>
     <string name="welcome_start">magsimula</string>
+    <string name="welcome_next">sunod</string>
+    <string name="welcome_allow">tugoti</string>
+    <string name="welcome_step">lakang %1$d sa %2$d</string>
+    <string name="welcome_bluetooth_title">pag-access sa bluetooth</string>
+    <string name="welcome_bluetooth_why">gisultihan lang sa android ang usa ka app kung unsang bluetooth device ang nakonektar, ug unsa ang ngalan niini, kung ang app adunay access sa bluetooth. mao kini ang paagi nga mailhan sa ylih ang headphone gikan sa stereo sa awto, ug ang usa ka pares gikan sa lain.</string>
+    <string name="welcome_bluetooth_with">uban sa access: ang matag pares marekord gikan sa gutlo nga kini mokonektar, walay bisan unsa nga kinahanglang magpadayon sa pagdagan ug walay kinahanglang hinumdoman nga ipislit.</string>
+    <string name="welcome_bluetooth_without">kung walay access: walay bluetooth headphone nga marekord. ang uban nga bahin sa app molihok gihapon, ug mahatag nimo kini unya sa app settings sa android.</string>
+    <string name="welcome_notifications_title">mga pahibalo</string>
+    <string name="welcome_notifications_why">ang detalyadong pagsubay nagpadagan ug gamay nga serbisyo sa background, ug gikinahanglan sa android nga ang matag app nga nagbuhat niini magbutang ug makita nga pahibalo.</string>
+    <string name="welcome_notifications_with">uban sa pagtugot: ang pahibalo nagpakita kung unsa ang girekord karon, ug mao ra kini ang timaan nga buhi ang detalyadong pagsubay.</string>
+    <string name="welcome_notifications_without">kung walay pagtugot: ang detalyadong pagsubay modagan gihapon ug morekord gihapon. dili lang ipakita sa android ang pahibalo niini.</string>
     <string name="hibernation_title">padayon sa pag-ihap bisan makalimtan nimo kini</string>
     <string name="hibernation_body">gipahunong sa android ang mga app nga wala giablihi sa pipila ka bulan ug gikuha ang ilang mga pagtugot, nga mahimong mobiya sa ylih nga wala nagrekord bisan unsa hangtod nga imong ablihan pag-usab. ang pagkalimtan mao gyud ang katuyoan niini nga app, mao nga angay nang i-off kini karon.</string>
     <string name="action_not_now">dili karon</string>

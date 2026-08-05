@@ -32,6 +32,17 @@
     <string name="welcome_point_detailed_body">在设置中开启详细追踪,可记录有线耳机,并统计其中实际播放的时长。</string>
     <string name="welcome_privacy">所有数据都只保存在这部手机上。没有账户,应用也没有联网权限。</string>
     <string name="welcome_start">开始使用</string>
+    <string name="welcome_next">下一步</string>
+    <string name="welcome_allow">允许</string>
+    <string name="welcome_step">第 %1$d 步，共 %2$d 步</string>
+    <string name="welcome_bluetooth_title">蓝牙访问权限</string>
+    <string name="welcome_bluetooth_why">只有当应用拥有蓝牙访问权限时，android 才会告诉它哪台蓝牙设备已连接、叫什么名字。ylih 正是靠这个来区分耳机和车载音响，以及区分这副耳机和那副耳机。</string>
+    <string name="welcome_bluetooth_with">授予后：每副耳机从连接的那一刻起就被记录，无需保持任何东西运行，也不用记得去按什么。</string>
+    <string name="welcome_bluetooth_without">不授予：任何蓝牙耳机都不会被记录。应用的其余部分照常可用，你也可以稍后在 android 的应用设置中授予。</string>
+    <string name="welcome_notifications_title">通知</string>
+    <string name="welcome_notifications_why">详细追踪会运行一个小型后台服务，而 android 要求任何这样做的应用在此期间保持一条通知可见。</string>
+    <string name="welcome_notifications_with">授予后：通知会显示当前正在记录的内容，这是详细追踪仍在运行的唯一迹象。</string>
+    <string name="welcome_notifications_without">不授予：详细追踪照样运行、照样记录，只是 android 不会显示它的通知。</string>
     <string name="hibernation_title">即使你忘了它,计时也会继续</string>
     <string name="hibernation_body">android 会停止几个月未打开的应用并收回其权限,这会导致 ylih 在你下次打开它之前不再记录任何内容。被遗忘正是这款应用存在的意义,所以现在就关闭这项限制很值得。</string>
     <string name="action_not_now">暂不</string>

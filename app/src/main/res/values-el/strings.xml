@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">η λεπτομερής καταγραφή, στις ρυθμίσεις, προσθέτει τα ενσύρματα ακουστικά και μετρά πόσο από αυτόν τον χρόνο ήταν πραγματικά αναπαραγωγή.</string>
     <string name="welcome_privacy">όλα μένουν σε αυτό το τηλέφωνο. δεν υπάρχει λογαριασμός και η εφαρμογή δεν έχει άδεια πρόσβασης στο internet.</string>
     <string name="welcome_start">ξεκίνα</string>
+    <string name="welcome_next">επόμενο</string>
+    <string name="welcome_allow">να επιτραπεί</string>
+    <string name="welcome_step">βήμα %1$d από %2$d</string>
+    <string name="welcome_bluetooth_title">πρόσβαση στο bluetooth</string>
+    <string name="welcome_bluetooth_why">το android λέει σε μια εφαρμογή ποια συσκευή bluetooth συνδέθηκε, και πώς ονομάζεται, μόνο αν η εφαρμογή έχει πρόσβαση στο bluetooth. έτσι ξεχωρίζει το ylih ένα ζευγάρι ακουστικά από ένα ηχοσύστημα αυτοκινήτου, και το ένα ζευγάρι από το άλλο.</string>
+    <string name="welcome_bluetooth_with">με την πρόσβαση: κάθε ζευγάρι καταγράφεται από τη στιγμή που συνδέεται, χωρίς να μένει τίποτα σε λειτουργία και χωρίς να θυμάστε να πατήσετε κάτι.</string>
+    <string name="welcome_bluetooth_without">χωρίς την πρόσβαση: δεν καταγράφονται καθόλου ακουστικά bluetooth. η υπόλοιπη εφαρμογή εξακολουθεί να λειτουργεί, και μπορείτε να τη δώσετε αργότερα στις ρυθμίσεις εφαρμογών του android.</string>
+    <string name="welcome_notifications_title">ειδοποιήσεις</string>
+    <string name="welcome_notifications_why">η λεπτομερής παρακολούθηση τρέχει μια μικρή υπηρεσία στο παρασκήνιο, και το android απαιτεί από κάθε εφαρμογή που το κάνει να διατηρεί μια ορατή ειδοποίηση.</string>
+    <string name="welcome_notifications_with">με την άδεια: η ειδοποίηση δείχνει τι καταγράφεται αυτή τη στιγμή, που είναι το μόνο σημάδι ότι η λεπτομερής παρακολούθηση ζει.</string>
+    <string name="welcome_notifications_without">χωρίς την άδεια: η λεπτομερής παρακολούθηση εξακολουθεί να τρέχει και να καταγράφει. απλώς το android δεν θα δείξει την ειδοποίησή της.</string>
     <string name="hibernation_title">συνεχίζει να μετράει όσο την ξεχνάς</string>
     <string name="hibernation_body">το android βάζει σε παύση τις εφαρμογές που δεν ανοίγουν για μερικούς μήνες και τους αφαιρεί τις άδειες, οπότε το ylih δεν θα κατέγραφε τίποτα μέχρι να το ξανανοίξεις. το να ξεχαστεί είναι ακριβώς ο λόγος ύπαρξης αυτής της εφαρμογής, γι\' αυτό αξίζει να το απενεργοποιήσεις τώρα.</string>
     <string name="action_not_now">όχι τώρα</string>

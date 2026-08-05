@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">ang detalyadong pagsubaybay, sa mga setting, ay nagdadagdag ng naka-wire na headphones at sinusukat kung gaano kalaki ang bahagi ng oras na tunay na tumutugtog.</string>
     <string name="welcome_privacy">lahat ay nanatili sa telepono. walang account, at walang internet permission ang app.</string>
     <string name="welcome_start">magsimula</string>
+    <string name="welcome_next">susunod</string>
+    <string name="welcome_allow">payagan</string>
+    <string name="welcome_step">hakbang %1$d ng %2$d</string>
+    <string name="welcome_bluetooth_title">access sa bluetooth</string>
+    <string name="welcome_bluetooth_why">sinasabi lang ng android sa isang app kung aling bluetooth device ang kumonekta, at ano ang pangalan nito, kung may access sa bluetooth ang app. ganito nakikilala ng ylih ang headphone mula sa stereo ng kotse, at ang isang pares mula sa iba.</string>
+    <string name="welcome_bluetooth_with">kapag pinayagan: naitatala ang bawat pares mula sa sandaling kumonekta ito, walang kailangang iwang tumatakbo at walang kailangang tandaan na pindutin.</string>
+    <string name="welcome_bluetooth_without">kapag hindi pinayagan: walang bluetooth headphone na maitatala. gumagana pa rin ang iba pang bahagi ng app, at maaari mo itong ipagkaloob mamaya sa app settings ng android.</string>
+    <string name="welcome_notifications_title">mga notipikasyon</string>
+    <string name="welcome_notifications_why">nagpapatakbo ang detalyadong pagsubaybay ng maliit na serbisyo sa background, at hinihingi ng android sa bawat app na gumagawa nito na panatilihing nakikita ang isang notipikasyon.</string>
+    <string name="welcome_notifications_with">kapag pinayagan: ipinapakita ng notipikasyon kung ano ang itinatala ngayon, at ito lang ang senyales na buhay ang detalyadong pagsubaybay.</string>
+    <string name="welcome_notifications_without">kapag hindi pinayagan: patuloy pa ring tumatakbo at nagtatala ang detalyadong pagsubaybay. hindi lang ipapakita ng android ang notipikasyon nito.</string>
     <string name="hibernation_title">magpatuloy sa pagbibilang kahit malimutan mo ito</string>
     <string name="hibernation_body">pinapahinto ng android ang mga app na hindi nabuksan sa loob ng ilang buwan at binabawi ang kanilang mga pahintulot, na magiging dahilan para huminto sa pagre-record ang ylih hanggang sa buksan mo itong muli. ang malimutan ay eksaktong dahilan kung bakit ginawa ang app na ito, kaya sulit na patayin na ito ngayon.</string>
     <string name="action_not_now">huwag muna</string>

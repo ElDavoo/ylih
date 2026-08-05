@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">heuliadur kuzh, en arventennoù, a ouzhpennañ tonelloù gwiriek hag a mejur pezh eus an amzer a oa war-lerc\'h.</string>
     <string name="welcome_privacy">a-bezh a chom war ar bellgomz-mañ. nemet kont ebet, hag an arload neus nemet gwele-kennaskañ.</string>
     <string name="welcome_start">da-geñver</string>
+    <string name="welcome_next">war-lerc\'h</string>
+    <string name="welcome_allow">aotren</string>
+    <string name="welcome_step">paz %1$d eus %2$d</string>
+    <string name="welcome_bluetooth_title">haeziñ ar bluetooth</string>
+    <string name="welcome_bluetooth_why">ne lavar android d\'un arload pehini trevnad bluetooth zo bet kevreet, nag e anv, nemet m\'en deus an arload haeziñ ar bluetooth. evel-se e ra ylih an diforc\'h etre selaouelloù ha radio ur c\'harr, hag etre ur re hag unan all.</string>
+    <string name="welcome_bluetooth_with">gant an haeziñ: pep re a vez enrollet adalek ar mare ma kevre, hep lezel netra o vont en-dro ha hep ret bezañ soñj da bouezañ war netra.</string>
+    <string name="welcome_bluetooth_without">hep an haeziñ: n\'eus selaouell bluetooth ebet enrollet. peurrest an arload a ya en-dro atav, ha gallout a rit e aotren diwezhatoc\'h e arventennoù arloadoù android.</string>
+    <string name="welcome_notifications_title">kemennoù</string>
+    <string name="welcome_notifications_why">an heuliañ munudek a lak ur servij bihan da vont en-dro en drekleur, hag android a c\'houlenn digant pep arload a ra se derc\'hel ur c\'hemenn gwelus.</string>
+    <string name="welcome_notifications_with">gant an aotre: ar c\'hemenn a ziskouez petra zo o vezañ enrollet bremañ, an nemetañ arouez ez eo bev an heuliañ munudek.</string>
+    <string name="welcome_notifications_without">hep an aotre: an heuliañ munudek a ya en-dro hag a enroll atav. n\'eo ket android a ziskouezo e gemenn, setu tout.</string>
     <string name="hibernation_title">kenderc\'hel a ra da gontañ tra ma vez ankouaet ganeoc\'h</string>
     <string name="hibernation_body">android a laka an arloadoù n\'int ket digoret e-pad un nebeud mizioù en ehan hag a zistro o aotreoù, ar pezh a lezfe ylih hep enrollañ netra betek ma vefe digoret adarre. bezañ ankouaet eo just abeg an arload-mañ, neuze e talvez ar boan lazhañ an dra-se bremañ.</string>
     <string name="action_not_now">ket bremañ</string>

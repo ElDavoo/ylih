@@ -1,4 +1,4 @@
-• Kolme aloitusnäytön widgetiä: parikohtaiset elinaikaiset tunnit ja käynnissä oleva ajastin yhdistetylle parille, kokonaissumma tänään / 7 päivää / 30 päivää -lukujen vieressä sekä 30 päivän kaavio. Jokaisen kokoa voi muuttaa vapaasti.
-• Kolmen välilehden välillä voi nyt pyyhkäistä.
-• Varmuuskopiot kirjaavat muotoversionsa, joten uudemman julkaisun tiedosto hylätään eikä lueta väärin.
-• Lataus on neljäsosan kokoinen.
+• Kolme aloitusnäytön widgetiä: tunnit paria kohti käynnissä olevalla ajastimella, tänään / 7 päivää / 30 päivää, sekä 30 päivän kaavio. Jokaisen kokoa voi muuttaa vapaasti.
+• Ensimmäinen käynnistys kertoo nyt, mihin bluetooth-oikeutta tarvitaan, ennen kuin sitä pyydetään.
+• Ilmoituksia pyydetään vasta kun tarkka seuranta otetaan käyttöön — ja se käynnistyy nyt myös, jos ne oli evätty.
+• Välilehtiä voi pyyhkäistä, ja lataus on neljäsosan kokoinen.

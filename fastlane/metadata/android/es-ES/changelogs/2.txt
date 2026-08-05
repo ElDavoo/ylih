@@ -1,4 +1,4 @@
-• Tres widgets para la pantalla de inicio: las horas totales por par con un cronómetro en vivo en el par conectado, el total general junto a hoy / 7 días / 30 días, y el gráfico de 30 días. Cada uno se redimensiona libremente.
-• Ahora se puede deslizar entre las tres pestañas.
-• Las copias de seguridad guardan su versión de formato, así un archivo de una versión futura se rechaza en lugar de leerse mal.
-• La descarga ocupa la cuarta parte.
+• Tres widgets para la pantalla de inicio: horas por par con cronómetro en vivo, hoy / 7 días / 30 días, y el gráfico de 30 días. Cada uno se redimensiona libremente.
+• El primer inicio ahora explica para qué hace falta el acceso al bluetooth antes de pedirlo.
+• Las notificaciones se piden al activar el seguimiento detallado, no antes — y este ya no falla al iniciarse si se habían rechazado.
+• Las pestañas se pueden deslizar, y la descarga ocupa la cuarta parte.

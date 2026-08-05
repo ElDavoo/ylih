@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">útbroytað fylgja, í stillingum, leggur til táðað heyrnirtól og mætir, hvor nógvur av tídini var spield.</string>
     <string name="welcome_privacy">alt helst á hesum símlanum. tað er eingin reikningur, og appin hevur ongan internetarlov.</string>
     <string name="welcome_start">byrja nú</string>
+    <string name="welcome_next">næsta</string>
+    <string name="welcome_allow">loyv</string>
+    <string name="welcome_step">stig %1$d av %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth atgongd</string>
+    <string name="welcome_bluetooth_why">android sigur bert einari app, hvørja bluetooth eind ið tengdist, og hvat hon eitur, um appin hevur bluetooth atgongd. tað er soleiðis ylih skilir hoyritól frá bilradio, og eitt par frá øðrum.</string>
+    <string name="welcome_bluetooth_with">við atgongd: hvørt par verður skrásett frá tí løtu tað tengist, uttan at nakað skal ganga og uttan at minnast til at trýsta á nakað.</string>
+    <string name="welcome_bluetooth_without">uttan atgongd: eingin bluetooth hoyritól verða skrásett. restin av appini virkar framvegis, og tú kanst geva atgongd seinni í app-stillingunum hjá android.</string>
+    <string name="welcome_notifications_title">fráboðanir</string>
+    <string name="welcome_notifications_why">neyv fylging koyrir eina lítla bakgrundstænastu, og android krevur at hvør app, ið ger tað, heldur eini fráboðan sjónligari.</string>
+    <string name="welcome_notifications_with">við loyvi: fráboðanin vísir hvat verður skrásett beint nú, sum er einasta tekinið um at neyv fylging livir.</string>
+    <string name="welcome_notifications_without">uttan loyvi: neyv fylging koyrir og skrásetur framvegis. android vísir bara ikki fráboðan hennara.</string>
     <string name="hibernation_title">hann heldur fram at telja, meðan tú gloymir hann</string>
     <string name="hibernation_body">android steðgar app, sum ikki verða opnað í nakrar mánaðir, og tekur loyvini aftur, so ylih hevði einki upptikið, til tú opnaði hann næstu ferð. at verða gloymdur er beint tað, sum hesin appurin er til, so tað er tess vert at sláa tað frá nú.</string>
     <string name="action_not_now">ikki nú</string>

@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">پیگیری دقیق، در تنظیمات، هدفون‌های سیمی را اضافه می‌کند و اندازه‌گیری می‌کند که چه مقدار از این زمان واقعاً پخش شده است.</string>
     <string name="welcome_privacy">همه چیز روی این تلفن می‌ماند. حساب کاربری وجود ندارد و برنامه دسترسی اینترنت ندارد.</string>
     <string name="welcome_start">شروع کنید</string>
+    <string name="welcome_next">بعدی</string>
+    <string name="welcome_allow">اجازه دادن</string>
+    <string name="welcome_step">گام %1$d از %2$d</string>
+    <string name="welcome_bluetooth_title">دسترسی به بلوتوث</string>
+    <string name="welcome_bluetooth_why">اندروید تنها زمانی به یک برنامه می‌گوید کدام دستگاه بلوتوث وصل شده و نامش چیست که آن برنامه دسترسی بلوتوث داشته باشد. ylih از همین راه هدفون را از ضبط خودرو، و یک جفت را از جفت دیگر تشخیص می‌دهد.</string>
+    <string name="welcome_bluetooth_with">با دسترسی: هر جفت از لحظه‌ای که وصل می‌شود ثبت می‌شود، بدون آنکه چیزی در حال اجرا بماند یا لازم باشد چیزی را به یاد بسپارید.</string>
+    <string name="welcome_bluetooth_without">بدون دسترسی: هیچ هدفون بلوتوثی ثبت نمی‌شود. بقیهٔ برنامه همچنان کار می‌کند و می‌توانید بعداً از تنظیمات برنامه‌های اندروید اجازه بدهید.</string>
+    <string name="welcome_notifications_title">اعلان‌ها</string>
+    <string name="welcome_notifications_why">ردیابی دقیق یک سرویس پس‌زمینهٔ کوچک اجرا می‌کند، و اندروید از هر برنامه‌ای که چنین کند می‌خواهد در آن مدت یک اعلان را نمایان نگه دارد.</string>
+    <string name="welcome_notifications_with">با اجازه: اعلان نشان می‌دهد همین حالا چه چیزی ثبت می‌شود، و این تنها نشانهٔ زنده بودن ردیابی دقیق است.</string>
+    <string name="welcome_notifications_without">بدون اجازه: ردیابی دقیق همچنان اجرا می‌شود و ثبت می‌کند. فقط اندروید اعلانش را نشان نمی‌دهد.</string>
     <string name="hibernation_title">حتی وقتی فراموشش می‌کنی، شمارش را ادامه بده</string>
     <string name="hibernation_body">android برنامه‌هایی را که چند ماه باز نشده‌اند متوقف می‌کند و دسترسی‌هایشان را پس می‌گیرد، که این باعث می‌شود ylih تا زمانی که دوباره بازش نکنی چیزی ثبت نکند. فراموش‌شدن دقیقاً همان چیزی است که این برنامه برایش ساخته شده، پس ارزشش را دارد که همین حالا این را خاموش کنی.</string>
     <string name="action_not_now">الان نه</string>

@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">el rastrexu detallau, nos axustes, añade auriculares cableáu y mide cuántu d\'esi tiempu yera reproducción de verdá.</string>
     <string name="welcome_privacy">tou permanez nesti teléfonu. nun hai cuentes, ni l\'app tien permisu d\'internet.</string>
     <string name="welcome_start">comienza</string>
+    <string name="welcome_next">siguiente</string>
+    <string name="welcome_allow">permitir</string>
+    <string name="welcome_step">pasu %1$d de %2$d</string>
+    <string name="welcome_bluetooth_title">accesu al bluetooth</string>
+    <string name="welcome_bluetooth_why">android namás-y diz a una aplicación qué preséu bluetooth se coneutó, y cómo se llama, si la aplicación tien accesu al bluetooth. asina estrema ylih unos auriculares de la radio del coche, y un par d\'otru.</string>
+    <string name="welcome_bluetooth_with">col accesu: cada par rexístrase dende\'l momentu en que se coneuta, ensin dexar nada furrulando y ensin tener qu\'alcordase de calcar nada.</string>
+    <string name="welcome_bluetooth_without">ensin l\'accesu: nun se rexistra dengún auricular bluetooth. el restu de l\'aplicación sigue furrulando, y pues concedelu más sero nos axustes d\'aplicaciones d\'android.</string>
+    <string name="welcome_notifications_title">avisos</string>
+    <string name="welcome_notifications_why">el siguimientu detalláu executa un serviciu pequeñu en segundu planu, y android obliga a cualquier aplicación que lo faiga a caltener un avisu visible.</string>
+    <string name="welcome_notifications_with">col permisu: l\'avisu amuesa lo que se ta rexistrando agora mesmo, la única seña de que\'l siguimientu detalláu ta vivu.</string>
+    <string name="welcome_notifications_without">ensin el permisu: el siguimientu detalláu sigue funcionando y sigue rexistrando. android namás nun va amosar el so avisu.</string>
     <string name="hibernation_title">sigui contando mentanto te escaeces d\'ella</string>
     <string name="hibernation_body">android detién les aplicaciones que llevan ensin abrise dellos meses y retira-yos los permisos, lo que dexaría a ylih ensin rexistrar nada hasta que la vuelvas abrir. que te escaezas d\'ella ye exactamente pa lo que ta pensada esta app, asina que val la pena desactivar eso agora.</string>
     <string name="action_not_now">agora non</string>

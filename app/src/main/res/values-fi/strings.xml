@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">asetuksista löytyvä tarkka seuranta lisää langalliset kuulokkeet ja mittaa, kuinka suuri osa ajasta meni oikeasti toistoon.</string>
     <string name="welcome_privacy">kaikki pysyy tässä puhelimessa. tiliä ei ole, eikä sovelluksella ole internet-oikeutta.</string>
     <string name="welcome_start">aloita</string>
+    <string name="welcome_next">seuraava</string>
+    <string name="welcome_allow">salli</string>
+    <string name="welcome_step">vaihe %1$d / %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth-käyttöoikeus</string>
+    <string name="welcome_bluetooth_why">android kertoo sovellukselle, mikä bluetooth-laite yhdistyi ja mikä sen nimi on, vain jos sovelluksella on bluetooth-käyttöoikeus. näin ylih erottaa kuulokkeet autostereoista, ja yhden parin toisesta.</string>
+    <string name="welcome_bluetooth_with">käyttöoikeuden kanssa: jokainen pari tallentuu siitä hetkestä, kun se yhdistyy, ilman että mitään tarvitsee jättää käyntiin tai muistaa painaa.</string>
+    <string name="welcome_bluetooth_without">ilman käyttöoikeutta: yhtäkään bluetooth-kuuloketta ei tallenneta. sovelluksen muut osat toimivat silti, ja voit myöntää oikeuden myöhemmin androidin sovellusasetuksista.</string>
+    <string name="welcome_notifications_title">ilmoitukset</string>
+    <string name="welcome_notifications_why">tarkka seuranta käyttää pientä taustapalvelua, ja android vaatii jokaista sitä käyttävää sovellusta pitämään ilmoituksen näkyvissä.</string>
+    <string name="welcome_notifications_with">luvan kanssa: ilmoitus näyttää, mitä juuri nyt tallennetaan, ja se on ainoa merkki siitä, että tarkka seuranta on käynnissä.</string>
+    <string name="welcome_notifications_without">ilman lupaa: tarkka seuranta toimii ja tallentaa silti. android ei vain näytä sen ilmoitusta.</string>
     <string name="hibernation_title">laskee edelleen, vaikka unohdat sen</string>
     <string name="hibernation_body">android pysäyttää sovellukset, joita ei avata pariin kuukauteen, ja ottaa niiden luvat pois, jolloin ylih ei tallentaisi mitään ennen kuin avaisit sen seuraavan kerran. unohtuminen on juuri se, mitä varten tämä sovellus on, joten se kannattaa kytkeä pois nyt.</string>
     <string name="action_not_now">ei nyt</string>

@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">haasiraa jamano, e teggite, dan kaable hiirde e mesur waktu sekii. android-a ngol ɗee gaŋki kaable hadde ko njawla ko ko-sey, haŋka dina tule yiitere koom. bluetooth haasiraa ko-waawi haa ko-haa.</string>
     <string name="welcome_privacy">haɓunde foofe ngon telefoonaagu. alaa koonjo, alaa permisyon intarnet.</string>
     <string name="welcome_start">fuɗɓal</string>
+    <string name="welcome_next">yeeso</string>
+    <string name="welcome_allow">yamir</string>
+    <string name="welcome_step">tolno %1$d e %2$d</string>
+    <string name="welcome_bluetooth_title">jettugol bluetooth</string>
+    <string name="welcome_bluetooth_why">android wiyat jaaɓnirgal ko honnde kaɓirgal bluetooth seŋii, e ko innetee, so tan jaaɓnirgal ngal jogii jettugol bluetooth. ko nii ylih senndata nanirɗe e radiyo oto, e joowre wootere e woɗnde.</string>
+    <string name="welcome_bluetooth_with">e jettugol: kala joowre winndetee gila e saanga mo nde seŋii, hay huunde waasa heddaade e golle e a waasa siftorde ñaawde huunde.</string>
+    <string name="welcome_bluetooth_without">ko aldaa e jettugol: nanirɗe bluetooth woodaa winndeteeɗe. keddiiɗi jaaɓnirgal ngal ina golloo, kadi a waawi yamirde ɗum ɓaawo e teelte jaaɓnirɗe android.</string>
+    <string name="welcome_notifications_title">tintine</string>
+    <string name="welcome_notifications_why">ndaarɗe cukkuɗe ina dogna golle pamare caggal, kadi android ina naamnoo kala jaaɓnirgal waɗoowal ɗum yo waɗ tintinal ngal yiyoytee.</string>
+    <string name="welcome_notifications_with">e yamirooje: tintinal ngal hollat ko winndetee jooni, ko ɗum tan woni maande wonde ndaarɗe cukkuɗe ina wuuri.</string>
+    <string name="welcome_notifications_without">ko aldaa e yamirooje: ndaarɗe cukkuɗe ina dogga kadi ina winnda. android tan hollataa tintinal maggal.</string>
     <string name="hibernation_title">jokk limtugol e ko a yejjitii</string>
     <string name="hibernation_body">android taƴa gollal ngal seedaaki yoga lebbi, ittira jamirooje makko; ɗum firti ylih alaa ko winnda haa aɗa udditu ngal kadi. yejjitegol ko ɗum woni faandaare gollal ngal, ɗum waɗi haaɗtingol ɗum jooni ina moƴƴi.</string>
     <string name="action_not_now">wonah jooni</string>

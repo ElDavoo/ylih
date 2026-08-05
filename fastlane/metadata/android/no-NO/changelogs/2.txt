@@ -1,4 +1,4 @@
-• Tre widgets til startskjermen: levetidstimer per par med en løpende teller på det tilkoblede paret, totalen ved siden av i dag / 7 dager / 30 dager, og 30-dagersdiagrammet. Hver kan skaleres fritt.
-• Det kan nå sveipes mellom de tre fanene.
-• Sikkerhetskopier noterer formatversjonen sin, så en fil fra en nyere utgave avvises i stedet for å bli lest feil.
-• Nedlastingen er en fjerdedel så stor.
+• Tre widgets til startskjermen: timer per par med løpende teller, i dag / 7 dager / 30 dager, og 30-dagersdiagrammet. Hver kan skaleres fritt.
+• Første oppstart forklarer nå hva bluetooth-tilgang skal brukes til, før den blir bedt om.
+• Varsler blir først bedt om når detaljert sporing slås på — og den starter nå også om de ble avvist.
+• Fanene kan sveipes, og nedlastingen er en fjerdedel så stor.

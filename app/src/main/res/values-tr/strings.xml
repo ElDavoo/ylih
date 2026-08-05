@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">ayarlardaki ayrıntılı takip, kablolu kulaklıkları ekler ve sürenin ne kadarında gerçekten ses çaldığını ölçer.</string>
     <string name="welcome_privacy">her şey bu telefonda kalır. hesap yoktur ve uygulamanın internet izni yoktur.</string>
     <string name="welcome_start">başla</string>
+    <string name="welcome_next">ileri</string>
+    <string name="welcome_allow">izin ver</string>
+    <string name="welcome_step">adım %1$d / %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth erişimi</string>
+    <string name="welcome_bluetooth_why">android bir uygulamaya hangi bluetooth cihazının bağlandığını ve adının ne olduğunu yalnızca uygulamanın bluetooth erişimi varsa söyler. ylih bir kulaklığı araç teybinden, bir çifti diğerinden böyle ayırır.</string>
+    <string name="welcome_bluetooth_with">erişimle: her çift bağlandığı andan itibaren kaydedilir, arkada çalışan bir şey kalmadan ve basmayı hatırlamanız gereken bir şey olmadan.</string>
+    <string name="welcome_bluetooth_without">erişim olmadan: hiçbir bluetooth kulaklık kaydedilmez. uygulamanın geri kalanı yine çalışır ve izni daha sonra android\'in uygulama ayarlarından verebilirsiniz.</string>
+    <string name="welcome_notifications_title">bildirimler</string>
+    <string name="welcome_notifications_why">ayrıntılı takip küçük bir arka plan hizmeti çalıştırır ve android bunu yapan her uygulamadan görünür bir bildirim tutmasını ister.</string>
+    <string name="welcome_notifications_with">izinle: bildirim şu anda neyin kaydedildiğini gösterir; ayrıntılı takibin çalıştığının tek işareti budur.</string>
+    <string name="welcome_notifications_without">izin olmadan: ayrıntılı takip yine çalışır ve yine kaydeder. android sadece bildirimini göstermez.</string>
     <string name="hibernation_title">onu unutsan bile saymaya devam et</string>
     <string name="hibernation_body">android birkaç aydır açılmayan uygulamaları durdurur ve izinlerini geri alır; bu da ylih\'in sen onu yeniden açana kadar hiçbir şey kaydetmemesine yol açar. unutulmak zaten bu uygulamanın var oluş amacı, o yüzden bunu şimdi kapatmakta fayda var.</string>
     <string name="action_not_now">şimdi değil</string>

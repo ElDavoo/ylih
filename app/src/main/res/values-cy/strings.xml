@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">mae tracio manwl, mewn gosodiadau, yn ychwanegu clustffonau wedi\'u gweirio ac yn mesur faint o\'r amser yr oedd yn chwarae go iawn.</string>
     <string name="welcome_privacy">mae popeth yn aros ar y ffôn hwn. nid oes cyfrif, ac nid oes caniatad rhyngrwyd.</string>
     <string name="welcome_start">cael dechrau</string>
+    <string name="welcome_next">nesaf</string>
+    <string name="welcome_allow">caniatáu</string>
+    <string name="welcome_step">cam %1$d o %2$d</string>
+    <string name="welcome_bluetooth_title">mynediad bluetooth</string>
+    <string name="welcome_bluetooth_why">dim ond os oes gan ap fynediad bluetooth y bydd android yn dweud wrtho pa ddyfais bluetooth a gysylltodd, a beth yw ei henw. dyna sut mae ylih yn gwahaniaethu rhwng clustffonau a system sain car, ac un pâr oddi wrth y llall.</string>
+    <string name="welcome_bluetooth_with">gyda\'r mynediad: caiff pob pâr ei gofnodi o\'r eiliad y mae\'n cysylltu, heb adael dim yn rhedeg a heb orfod cofio pwyso dim.</string>
+    <string name="welcome_bluetooth_without">heb y mynediad: ni chofnodir yr un pâr o glustffonau bluetooth. mae gweddill yr ap yn dal i weithio, a gallwch ei ganiatáu\'n ddiweddarach yng ngosodiadau apiau android.</string>
+    <string name="welcome_notifications_title">hysbysiadau</string>
+    <string name="welcome_notifications_why">mae olrhain manwl yn rhedeg gwasanaeth cefndir bach, ac mae android yn mynnu bod unrhyw ap sy\'n gwneud hynny yn cadw hysbysiad yn weladwy.</string>
+    <string name="welcome_notifications_with">gyda\'r caniatâd: mae\'r hysbysiad yn dangos beth sy\'n cael ei gofnodi ar hyn o bryd, sef yr unig arwydd bod olrhain manwl yn fyw.</string>
+    <string name="welcome_notifications_without">heb y caniatâd: mae olrhain manwl yn dal i redeg ac yn dal i gofnodi. dim ond nad yw android yn dangos ei hysbysiad.</string>
     <string name="hibernation_title">dal i gyfrif tra byddwch chi\'n anghofio amdani</string>
     <string name="hibernation_body">mae android yn oedi apiau nad ydynt yn cael eu hagor am ychydig fisoedd ac yn cymryd eu caniatâd yn ôl, a fyddai\'n gadael ylih heb gofnodi dim nes i chi ei hagor nesaf. cael eich anghofio yw union bwrpas yr ap hwn, felly mae\'n werth diffodd hynny nawr.</string>
     <string name="action_not_now">nid nawr</string>

@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">विस्तृत ट्रैकिंग, सेटिंग्स मा, तार वाल ईयरफोन जोड़ेला अउर मपेला कि कतना समे सच मा बजावल होल।</string>
     <string name="welcome_privacy">सब कुछु एही फोन पर रहेला। कोई अकाउंट नइखे, अउर ऐप के इंटरनेट अनुमति नइखे।</string>
     <string name="welcome_start">शुरु कर</string>
+    <string name="welcome_next">अगिला</string>
+    <string name="welcome_allow">अनुमति दीं</string>
+    <string name="welcome_step">चरण %1$d / %2$d</string>
+    <string name="welcome_bluetooth_title">ब्लूटूथ के पहुँच</string>
+    <string name="welcome_bluetooth_why">android कवनो ऐप के तबे बतावेला कि कवन ब्लूटूथ यंत्र जुड़ल आ ओकर नाम का ह, जब ऐप लगे ब्लूटूथ के पहुँच होखे। एहिसे ylih हेडफोन के कार के स्टीरियो से, आ एगो जोड़ी के दूसरा से पहचानेला।</string>
+    <string name="welcome_bluetooth_with">पहुँच के साथ: हर जोड़ी जुड़ते ही दर्ज होखे लागेला, कुछो चालू छोड़े के जरूरत नइखे आ कुछो दबावे के याद राखे के भी नइखे।</string>
+    <string name="welcome_bluetooth_without">पहुँच के बिना: कवनो ब्लूटूथ हेडफोन दर्ज ना होखे। ऐप के बाकी हिस्सा चलत रहेला, आ रउआ बाद में android के ऐप सेटिंग में अनुमति दे सकीलें।</string>
+    <string name="welcome_notifications_title">सूचना</string>
+    <string name="welcome_notifications_why">विस्तृत ट्रैकिंग एगो छोट बैकग्राउंड सेवा चलावेला, आ android अइसन करे वाला हर ऐप से माँगेला कि तब ले एगो सूचना लउकत रहे।</string>
+    <string name="welcome_notifications_with">अनुमति के साथ: सूचना देखावेले कि अबहीं का दर्ज होखत बा, आ इहे एकमात्र निशानी ह कि विस्तृत ट्रैकिंग जिंदा बा।</string>
+    <string name="welcome_notifications_without">अनुमति के बिना: विस्तृत ट्रैकिंग चलत रहेला आ दर्ज भी करेला। android बस ओकर सूचना ना देखावे।</string>
     <string name="hibernation_title">बिसरला पर भी गिनती चलत रही</string>
     <string name="hibernation_body">android ओह ऐप सभ के रोक देला जे कई महीना ले ना खोलल गइल होखे, आ ओकर अनुमति वापस ले लेला, एहसे ylih तब ले कुछो रिकॉर्ड ना करी जब ले रउआ एकरा फेर से ना खोलब। बिसरा जाईं – ई एह्हे ऐप के मकसद बा, एहसे अबहीं एकरा बंद कर देब बढ़िया बा।</string>
     <string name="action_not_now">अबहीं ना</string>

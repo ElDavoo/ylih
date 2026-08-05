@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">podrobné sledování, v nastavení, přidává kabelová sluchátka a měří, kolik z toho času se opravdu přehrávalo.</string>
     <string name="welcome_privacy">všechno zůstává v tomto telefonu. neexistuje žádný účet a aplikace nemá oprávnění k internetu.</string>
     <string name="welcome_start">začít</string>
+    <string name="welcome_next">další</string>
+    <string name="welcome_allow">povolit</string>
+    <string name="welcome_step">krok %1$d z %2$d</string>
+    <string name="welcome_bluetooth_title">přístup k bluetooth</string>
+    <string name="welcome_bluetooth_why">android řekne aplikaci, které zařízení bluetooth se připojilo a jak se jmenuje, jen když má aplikace přístup k bluetooth. tak ylih pozná sluchátka od autorádia a jedny sluchátka od druhých.</string>
+    <string name="welcome_bluetooth_with">s přístupem: každý pár se zaznamenává od chvíle, kdy se připojí, aniž by muselo něco běžet a aniž byste si museli pamatovat, že máte něco stisknout.</string>
+    <string name="welcome_bluetooth_without">bez přístupu: nezaznamenají se žádná sluchátka bluetooth. zbytek aplikace funguje dál a přístup můžete udělit později v nastavení aplikací androidu.</string>
+    <string name="welcome_notifications_title">oznámení</string>
+    <string name="welcome_notifications_why">podrobné sledování používá malou službu na pozadí a android vyžaduje, aby každá aplikace, která to dělá, měla viditelné oznámení.</string>
+    <string name="welcome_notifications_with">s oprávněním: oznámení ukazuje, co se právě zaznamenává, což je jediná známka toho, že podrobné sledování žije.</string>
+    <string name="welcome_notifications_without">bez oprávnění: podrobné sledování dál běží a dál zaznamenává. android jen nezobrazí jeho oznámení.</string>
     <string name="hibernation_title">počítá dál, i když na ni zapomeneš</string>
     <string name="hibernation_body">android pozastaví aplikace, které se pár měsíců neotevřou, a odebere jim oprávnění, takže by ylih nezaznamenávala nic až do dalšího otevření. být zapomenuta je přesně to, k čemu tahle aplikace je, takže se to vyplatí hned vypnout.</string>
     <string name="action_not_now">teď ne</string>

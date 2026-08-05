@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">विस्तृत ट्रैकिंग, सेटिंग्स में, तार वाले हेडफोन्स जोड़ता है और मापता है कि कितना समय वास्तव में चल रहा था।</string>
     <string name="welcome_privacy">सब कुछ इस फोन पर रहता है। कोई खाता नहीं है, और ऐप को इंटरनेट की अनुमति नहीं है।</string>
     <string name="welcome_start">शुरू करें</string>
+    <string name="welcome_next">अगला</string>
+    <string name="welcome_allow">इजाजत द्यो</string>
+    <string name="welcome_step">कदम %1$d / %2$d</string>
+    <string name="welcome_bluetooth_title">ब्लूटूथ की पहुँच</string>
+    <string name="welcome_bluetooth_why">android किसे ऐप नै तभी बतावै सै के कौनसा ब्लूटूथ यंत्र जुड़्या अर उसका नाम के सै, जद ऐप कै धोरै ब्लूटूथ की पहुँच हो। इसे तै ylih हैडफोन नै कार कै स्टीरियो तै, अर एक जोड़ी नै दूसरी तै न्यारा पिछाणै सै।</string>
+    <string name="welcome_bluetooth_with">पहुँच कै गेल्या: हर जोड़ी जुड़ते ए दर्ज होण लाग जा सै, कुछ चालू छोड़ण की जरूरत नीं अर कुछ दबाणा याद राखण की भी नीं।</string>
+    <string name="welcome_bluetooth_without">पहुँच कै बिना: कोए ब्लूटूथ हैडफोन दर्ज कोनी होंदा। ऐप का बाकी हिस्सा चालू रह्या करै, अर पाच्छै android की ऐप सेटिंग मैं इजाजत दे सको सो।</string>
+    <string name="welcome_notifications_title">सूचना</string>
+    <string name="welcome_notifications_why">बारीक ट्रैकिंग एक छोटी बैकग्राउंड सेवा चलावै सै, अर android इसा करण आळे हर ऐप तै माँगै सै के तब तक एक सूचना दिखती रहै।</string>
+    <string name="welcome_notifications_with">इजाजत कै गेल्या: सूचना दिखावै सै के इब के दर्ज हो रह्या सै, अर योई एक निशाणी सै के बारीक ट्रैकिंग जिंदा सै।</string>
+    <string name="welcome_notifications_without">इजाजत कै बिना: बारीक ट्रैकिंग चालू रहवै सै अर दर्ज भी करै सै। android बस उसकी सूचना कोनी दिखावै।</string>
     <string name="hibernation_title">भूल भी जाओ तो भी गिनती चालू रहवैगी</string>
     <string name="hibernation_body">android उन ऐप नै रोक देवै सै जो कई महीनां तक ना खोल्ल्या जावै, अर उनके अनुमति भी वापस ले लेवै सै, जिसते ylih तब तक कुछ रिकॉर्ड नहीं करैगा जब तक थम इसनै दुबारा ना खोलो। भुला दिया जाणा ए तो इस ऐप का मकसद सै, इस खात्तर अभी इसनै बंद कर देणा ही ठीक सै।</string>
     <string name="action_not_now">अभी नहीं</string>

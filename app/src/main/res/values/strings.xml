@@ -37,6 +37,17 @@
     <string name="welcome_point_detailed_body">detailed tracking, in settings, adds wired headphones and measures how much of the time was actually playing.</string>
     <string name="welcome_privacy">everything stays on this phone. there is no account, and the app has no internet permission.</string>
     <string name="welcome_start">get started</string>
+    <string name="welcome_next">next</string>
+    <string name="welcome_allow">allow</string>
+    <string name="welcome_step">step %1$d of %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth access</string>
+    <string name="welcome_bluetooth_why">android only tells an app which bluetooth device connected, and what it is called, if the app holds bluetooth access. it is how ylih tells a pair of headphones from a car stereo, and how it knows one pair from another.</string>
+    <string name="welcome_bluetooth_with">with it: every pair is recorded from the moment it connects, with nothing left running and nothing to remember to press.</string>
+    <string name="welcome_bluetooth_without">without it: no bluetooth headphones are recorded at all. the rest of the app still works, and you can grant it later in android\'s app settings.</string>
+    <string name="welcome_notifications_title">notifications</string>
+    <string name="welcome_notifications_why">detailed tracking runs a small background service, and android requires any app doing that to keep a notification visible while it does.</string>
+    <string name="welcome_notifications_with">with it: the notification shows what is being recorded right now, which is the only sign detailed tracking is alive.</string>
+    <string name="welcome_notifications_without">without it: detailed tracking still runs and still records. android just will not show its notification.</string>
     <string name="hibernation_title">keep counting while you forget about it</string>
     <string name="hibernation_body">android pauses apps that go unopened for a few months and takes their permissions back, which would leave ylih recording nothing until you next opened it. being forgotten about is exactly what this app is for, so it is worth turning that off now.</string>
     <string name="action_not_now">not now</string>

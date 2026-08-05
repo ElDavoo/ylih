@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">детальне відстеження, у налаштуваннях, додає дротові навушники та вимірює, скільки з цього часу справді відтворювався звук.</string>
     <string name="welcome_privacy">усе залишається на цьому телефоні. немає жодного облікового запису, і застосунок не має дозволу на інтернет.</string>
     <string name="welcome_start">почати</string>
+    <string name="welcome_next">далі</string>
+    <string name="welcome_allow">дозволити</string>
+    <string name="welcome_step">крок %1$d з %2$d</string>
+    <string name="welcome_bluetooth_title">доступ до bluetooth</string>
+    <string name="welcome_bluetooth_why">android повідомляє застосунку, який пристрій bluetooth підключився і як він називається, лише якщо застосунок має доступ до bluetooth. саме так ylih відрізняє навушники від автомагнітоли, а одну пару від іншої.</string>
+    <string name="welcome_bluetooth_with">з доступом: кожна пара записується з миті підключення, без нічого запущеного і без потреби щось натискати.</string>
+    <string name="welcome_bluetooth_without">без доступу: жодні навушники bluetooth не записуються. решта застосунку працює, а доступ можна надати пізніше в налаштуваннях застосунків android.</string>
+    <string name="welcome_notifications_title">сповіщення</string>
+    <string name="welcome_notifications_why">детальне відстеження запускає невелику фонову службу, і android вимагає від будь-якого застосунку, що так робить, тримати сповіщення видимим.</string>
+    <string name="welcome_notifications_with">з дозволом: сповіщення показує, що записується просто зараз, і це єдина ознака того, що детальне відстеження живе.</string>
+    <string name="welcome_notifications_without">без дозволу: детальне відстеження все одно працює і все одно записує. android просто не показуватиме його сповіщення.</string>
     <string name="hibernation_title">рахуй далі, навіть коли забудеш про нього</string>
     <string name="hibernation_body">android зупиняє застосунки, які не відкривали кілька місяців, і забирає їхні дозволи, через що ylih нічого не записуватиме, поки ти не відкриєш його знову. бути забутим — це саме те, для чого існує цей застосунок, тож варто вимкнути це просто зараз.</string>
     <string name="action_not_now">не зараз</string>

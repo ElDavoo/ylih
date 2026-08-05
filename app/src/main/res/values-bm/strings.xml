@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">duuma surun kɛ, soriyasoo ma, silamun kopila ni taara duumi ma sigida kɔrɔ.</string>
     <string name="welcome_privacy">bɛn bɛ telefɔne yen ma gara. akawu tɛ, ani aparatigi bi intɛrɛ sigida tɛ.</string>
     <string name="welcome_start">ka jɔ</string>
+    <string name="welcome_next">nata</string>
+    <string name="welcome_allow">sɔn a ma</string>
+    <string name="welcome_step">sen %1$d / %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth sɔrɔli</string>
+    <string name="welcome_bluetooth_why">android bɛ a fɔ porogaramu ye ko bluetooth minɛn jumɛn ye a yɛrɛ jɛ, ani a tɔgɔ ye min ye, ni porogaramu bɛ ni bluetooth sɔrɔli ye dɔrɔn. o cogo la ylih bɛ tulomafilanw ni mobili radiyo danfara dɔn, ani filan kelen ni tɔ dɔ.</string>
+    <string name="welcome_bluetooth_with">ni sɔrɔli ye: filan bɛɛ bɛ sɛbɛn kabini a jɛra waati min na, foyi tɛ to baara la ani i hakili tɛ ka foyi digi.</string>
+    <string name="welcome_bluetooth_without">ni sɔrɔli tɛ: bluetooth tulomafilan si tɛ sɛbɛn. porogaramu tɔ bɛ baara kɛ halibi, ani i bɛ se ka sɔn a ma kɔfɛ android ka porogaramu labɛnw na.</string>
+    <string name="welcome_notifications_title">kunnafoniw</string>
+    <string name="welcome_notifications_why">kɔlɔsili dafalen bɛ baara fitini dɔ boli kɔfɛ, ani android bɛ porogaramu bɛɛ ɲini min bɛ o kɛ ko a ka kunnafoni dɔ to yeli la.</string>
+    <string name="welcome_notifications_with">ni sɔnni ye: kunnafoni bɛ min bɛ sɛbɛn sisan jira, o dɔrɔn de bɛ a jira ko kɔlɔsili dafalen bɛ ɲɛnamaya la.</string>
+    <string name="welcome_notifications_without">ni sɔnni tɛ: kɔlɔsili dafalen bɛ baara kɛ halibi ani a bɛ sɛbɛn. android dɔrɔn tɛna a ka kunnafoni jira.</string>
     <string name="hibernation_title">a bɛ jate kɛnɛ, hali n\'i ɲinɛna</string>
     <string name="hibernation_body">android bɛ aparatigi minnu ma dabɔ kalo caaman kɔnɔ tɔgɔ, dɔn u ka sigida. o kɔ, ylih tɛna foyi sɛbɛn fɔ i k\'a dabɔ tugun. ɲinɛli ye aparatigi nin ka baara ye, o la a dɔn sisan.</string>
     <string name="action_not_now">sisan tɛ</string>

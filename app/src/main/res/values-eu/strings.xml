@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">zenbaketa zehatza, ezarpenetan, entzule kableak gehitzen ditu eta zenbat denbora erreprodukzio egon den neurtzen du.</string>
     <string name="welcome_privacy">denak telefono honetan geratzen dira. ez da kontua, eta aplikazioak ez du interneterako baimenik.</string>
     <string name="welcome_start">hasi</string>
+    <string name="welcome_next">hurrengoa</string>
+    <string name="welcome_allow">baimendu</string>
+    <string name="welcome_step">%2$d urratsetik %1$d.a</string>
+    <string name="welcome_bluetooth_title">bluetooth sarbidea</string>
+    <string name="welcome_bluetooth_why">androidek aplikazio bati zein bluetooth gailu konektatu den, eta nola deitzen den, aplikazioak bluetooth sarbidea badu bakarrik esaten dio. horrela bereizten ditu ylih-ek entzungailuak autoko irratitik, eta pare bat bestetik.</string>
+    <string name="welcome_bluetooth_with">sarbidearekin: pare bakoitza konektatzen den unetik erregistratzen da, ezer martxan utzi gabe eta ezer sakatzea gogoratu beharrik gabe.</string>
+    <string name="welcome_bluetooth_without">sarbiderik gabe: ez da bluetooth entzungailurik erregistratzen. aplikazioaren gainerakoak funtzionatzen jarraitzen du, eta geroago eman dezakezu baimena androiden aplikazioen ezarpenetan.</string>
+    <string name="welcome_notifications_title">jakinarazpenak</string>
+    <string name="welcome_notifications_why">jarraipen zehatzak atzeko planoko zerbitzu txiki bat exekutatzen du, eta androidek hori egiten duen edozein aplikaziori jakinarazpen bat ikusgai edukitzea eskatzen dio.</string>
+    <string name="welcome_notifications_with">baimenarekin: jakinarazpenak orain zer erregistratzen ari den erakusten du, eta hori da jarraipen zehatza bizirik dagoen seinale bakarra.</string>
+    <string name="welcome_notifications_without">baimenik gabe: jarraipen zehatzak funtzionatzen eta erregistratzen jarraitzen du. androidek ez du bere jakinarazpena erakutsiko, besterik ez.</string>
     <string name="hibernation_title">kontatzen jarraitzen du zuk ahaztu bitartean</string>
     <string name="hibernation_body">androidek hilabete batzuetan irekitzen ez diren aplikazioak pausatu eta baimenak kentzen dizkie, eta horrek ylih ezer grabatu gabe utziko luke hurrengoz ireki arte. ahaztua izatea da hain zuzen ere aplikazio honen zeregina, beraz merezi du hori orain desaktibatzea.</string>
     <string name="action_not_now">orain ez</string>

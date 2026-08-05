@@ -1,4 +1,4 @@
-• Ana ekran için üç widget: çift başına ömür boyu saat ve bağlı çiftte çalışan bir kronometre, genel toplamın yanında bugün / 7 gün / 30 gün, ve 30 günlük grafik. Her biri serbestçe yeniden boyutlandırılır.
-• Üç sekme arasında artık kaydırılabiliyor.
-• Yedekler format sürümlerini kaydeder, böylece daha yeni bir sürümden gelen dosya yanlış okunmak yerine reddedilir.
-• İndirme boyutu dörtte bir.
+• Ana ekran için üç widget: çift başına saat ve çalışan kronometre, bugün / 7 gün / 30 gün, ve 30 günlük grafik. Her biri serbestçe boyutlandırılır.
+• İlk açılış artık bluetooth erişiminin ne işe yaradığını istemeden önce anlatıyor.
+• Bildirimler ayrıntılı takip açılırken isteniyor, öncesinde değil — ve reddedilmişlerse bile ayrıntılı takip artık başlıyor.
+• Sekmeler kaydırılabiliyor, indirme boyutu ise dörtte bir.

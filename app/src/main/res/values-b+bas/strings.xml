@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">tóó bu mbol, ba dím wìm mɛ dɔ́ bi ndé dɔ́ yaa. bluetooth ba sɔŋ bi nàŋ.</string>
     <string name="welcome_privacy">kuɓ kó ba dib ko si ñen. ku ca nà, mɛ app ku ca internet.</string>
     <string name="welcome_start">bísá</string>
+    <string name="welcome_next">ipes</string>
+    <string name="welcome_allow">neɓ</string>
+    <string name="welcome_step">ndap %1$d ni %2$d</string>
+    <string name="welcome_bluetooth_title">nyoñ bluetooth</string>
+    <string name="welcome_bluetooth_why">android a nkal apk njee bluetooth i nkena, ni jôl li, ibale apk i gwé nyoñ bluetooth. hala nyen ylih a ntehe matoi ma nkoñ ni radio i motoa, ni ngim matoi ni ipe.</string>
+    <string name="welcome_bluetooth_with">ni nyoñ: hi ngim matoi i ntilna ibôdôl ngéda i nkena, ni to jam li nsal bé, ni to jam li u nhoñol i tuñ.</string>
+    <string name="welcome_bluetooth_without">kii nyoñ: to matoi ma bluetooth ma ntilna bé. mam mape ma apk ma nsal, ni u nla neɓ i mbus i bikwés bi apk bi android.</string>
+    <string name="welcome_notifications_title">makal</string>
+    <string name="welcome_notifications_why">nyoñ i loñge i nsal ndék nson i mbus, ni android a nyéñ le hi apk i mboñ hala i tééna likal li ntehna.</string>
+    <string name="welcome_notifications_with">ni neɓ: likal li ntehe kii i ntilna i len i, hala nyen jam jada li ntehe le nyoñ i loñge i nyoñ.</string>
+    <string name="welcome_notifications_without">kii neɓ: nyoñ i loñge i nsal ni i ntil. android a ntehe bé likal li.</string>
     <string name="hibernation_title">a ntɔ́ŋ ku bí, tap wɛ́ɛ u nlémél nyɛ</string>
     <string name="hibernation_body">android a tɔ́p app i ka bé wóŋ mwa ma bíbaa, a nlɔ́ permission wap. hala ylih a ka bé kɛnsɛ pɛɛ so u noo wóŋ le. u nlémél nyɛ i mbɛn nu app inyu, jon tɔ́p nu inyu we.</string>
     <string name="action_not_now">hala nau</string>

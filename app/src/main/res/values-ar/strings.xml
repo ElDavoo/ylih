@@ -33,6 +33,17 @@
     <string name="welcome_point_detailed_body">التتبع التفصيلي، في الإعدادات، يضيف السماعات السلكية ويقيس كم من ذلك الوقت كان تشغيلًا فعليًا للصوت.</string>
     <string name="welcome_privacy">يبقى كل شيء على هذا الهاتف. لا يوجد حساب، ولا يملك التطبيق إذن الوصول إلى الإنترنت.</string>
     <string name="welcome_start">ابدأ</string>
+    <string name="welcome_next">التالي</string>
+    <string name="welcome_allow">السماح</string>
+    <string name="welcome_step">الخطوة %1$d من %2$d</string>
+    <string name="welcome_bluetooth_title">الوصول إلى البلوتوث</string>
+    <string name="welcome_bluetooth_why">لا يخبر أندرويد تطبيقًا بأي جهاز بلوتوث اتصل، ولا باسمه، إلا إذا كان لدى التطبيق وصول إلى البلوتوث. هكذا يميّز ylih سماعة الرأس عن مسجّل السيارة، ويميّز زوجًا عن آخر.</string>
+    <string name="welcome_bluetooth_with">مع الوصول: يُسجَّل كل زوج من لحظة اتصاله، دون ترك أي شيء يعمل ودون تذكّر الضغط على شيء.</string>
+    <string name="welcome_bluetooth_without">دون الوصول: لا تُسجَّل أي سماعات بلوتوث إطلاقًا. بقية التطبيق تعمل كالمعتاد، ويمكنك منح الإذن لاحقًا من إعدادات تطبيقات أندرويد.</string>
+    <string name="welcome_notifications_title">الإشعارات</string>
+    <string name="welcome_notifications_why">يشغّل التتبع التفصيلي خدمة صغيرة في الخلفية، وأندرويد يطالب أي تطبيق يفعل ذلك بإبقاء إشعار ظاهرًا طوال المدة.</string>
+    <string name="welcome_notifications_with">مع الإذن: يعرض الإشعار ما يُسجَّل الآن، وهو العلامة الوحيدة على أن التتبع التفصيلي يعمل.</string>
+    <string name="welcome_notifications_without">دون الإذن: يظل التتبع التفصيلي يعمل ويسجّل. أندرويد فقط لن يعرض إشعاره.</string>
     <string name="hibernation_title">استمر في العد وأنت تنساه</string>
     <string name="hibernation_body">يوقف android التطبيقات التي لم تُفتح لعدة أشهر ويسحب أذوناتها، ما قد يترك ylih لا يسجل شيئًا حتى تفتحه مجددًا. أن يُنسى هذا التطبيق هو بالضبط ما صُمم من أجله، لذا يستحق إيقاف ذلك الآن.</string>
     <string name="action_not_now">ليس الآن</string>

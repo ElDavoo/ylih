@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">hangarey gara ganda, karkari ga, labali hima ga kaaji kul-kul agandu mey.</string>
     <string name="welcome_privacy">kul kaaga dooro borey. wadata baaba, kul-kul interneti ka haya baaba.</string>
     <string name="welcome_start">bi kaani</string>
+    <string name="welcome_next">jine</string>
+    <string name="welcome_allow">yadda</string>
+    <string name="welcome_step">ce %1$d %2$d ra</string>
+    <string name="welcome_bluetooth_title">bluetooth duura</string>
+    <string name="welcome_bluetooth_why">android ga ci porogram se bluetooth jinay kaŋ na nga margu, nda a maa, da porogram gonda bluetooth duura hinne. yaadin no ylih ga hangan jinay nda mooto radiyo fayanka, nda hangan fo nda afo.</string>
+    <string name="welcome_bluetooth_with">duura banda: hangan kul ga hantum za waati kaŋ a ga margu, hay kulu si cindi goy ra nda ni si fongu ka hay fo naan.</string>
+    <string name="welcome_bluetooth_without">duura si: bluetooth hangan kulu si hantum. porogram cindo ga goy jina, nda ni ga hin ka yadda kokor android porogram taalamyaŋ ra.</string>
+    <string name="welcome_notifications_title">baaruyaŋ</string>
+    <string name="welcome_notifications_why">gunayan kaŋ ga tondi ga goy kayna fo margu banda ra, nda android ga porogram kulu kaŋ ga woodin te wa a ma baaru fo naŋ a ma bangay.</string>
+    <string name="welcome_notifications_with">yadda banda: baaru ga cabe haŋ kaŋ ga hantum sohõ, nga hinne no ga cabe kaŋ gunayan kaŋ ga tondi go fundi ra.</string>
+    <string name="welcome_notifications_without">yadda si: gunayan kaŋ ga tondi ga goy jina nda a ga hantum. android hinne si a baaro cabe.</string>
     <string name="hibernation_title">a ga to kabari, baa ni dinya</string>
     <string name="hibernation_body">android ga sanda kaŋ i mana feeri handu boobo ra dabu, ka ngey haya ta i gaa. woodin banda, ylih si hay kul hantum kala ni g\'a feeri koyne. dinya, woodin no sanda wo goo se, kal ka woodin dabu sohõ.</string>
     <string name="action_not_now">manti sohõ</string>

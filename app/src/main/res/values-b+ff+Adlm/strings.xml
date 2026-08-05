@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">jannginol carminore, e teelirminol, baynu kaalangal jeeɗgal e jannginaa jinde huulnde maa.</string>
     <string name="welcome_privacy">juulem foti e telefon maa. alal baakɗo, kala aylih heewu internet.</string>
     <string name="welcome_start">fuɗɗo</string>
+    <string name="welcome_next">𞤴𞤫𞥅𞤧𞤮</string>
+    <string name="welcome_allow">𞤴𞤢𞤥𞤭𞤪</string>
+    <string name="welcome_step">𞤼𞤮𞤤𞤲𞤮 %1$d 𞤫 %2$d</string>
+    <string name="welcome_bluetooth_title">𞤶𞤫𞤼𞤼𞤵𞤺𞤮𞤤 𞤄𞤤𞤵𞤼𞤵𞥅𞤧</string>
+    <string name="welcome_bluetooth_why">𞤀𞤲𞤣𞤪𞤮𞥅𞤣 𞤱𞤭𞤴𞤢𞤼 𞤶𞤢𞥄𞤩𞤲𞤭𞤪𞤺𞤢𞤤 𞤳𞤮 𞤸𞤮𞤲𞥆𞤣𞤫 𞤳𞤢𞥄𞤩𞤭𞤪𞤺𞤢𞤤 𞤄𞤤𞤵𞤼𞤵𞥅𞤧 𞤧𞤫𞤺𞤭𞥅, 𞤫 𞤳𞤮 𞤦𞤫 𞤭𞤲𞤲𞤫𞤼𞤫𞥅, 𞤧𞤮 𞤼𞤢𞤲 𞤶𞤢𞥄𞤩𞤲𞤭𞤪𞤺𞤢𞤤 𞤲𞤺𞤢𞤤 𞤶𞤮𞤺𞤭𞥅 𞤶𞤫𞤼𞤼𞤵𞤺𞤮𞤤 𞤄𞤤𞤵𞤼𞤵𞥅𞤧.</string>
+    <string name="welcome_bluetooth_with">𞤫 𞤶𞤫𞤼𞤼𞤵𞤺𞤮𞤤: 𞤳𞤢𞤤𞤢 𞤶𞤮𞤱𞤪𞤫 𞤱𞤭𞤲𞥆𞤣𞤫𞤼𞤫𞥅 𞤺𞤭𞤤𞤢 𞤫 𞤧𞤢𞥄𞤲𞤺𞤢 𞤥𞤮 𞤲𞤣𞤫 𞤧𞤫𞤺𞤭𞥅, 𞤸𞤢𞤴 𞤸𞤵𞥅𞤲𞤣𞤫 𞤱𞤢𞥄𞤧𞤢 𞤸𞤫𞤯𞥆𞤢𞥄𞤣𞤫 𞤫 𞤺𞤮𞤤𞥆𞤫.</string>
+    <string name="welcome_bluetooth_without">𞤳𞤮 𞤢𞤤𞤣𞤢𞥄 𞤫 𞤶𞤫𞤼𞤼𞤵𞤺𞤮𞤤: 𞤲𞤢𞤲𞤭𞤪𞤯𞤫 𞤄𞤤𞤵𞤼𞤵𞥅𞤧 𞤱𞤮𞥅𞤣𞤢𞥄 𞤱𞤭𞤲𞥆𞤣𞤫𞤼𞤫𞥅𞤯𞤫. 𞤳𞤫𞤣𞥆𞤭𞥅𞤯𞤭 𞤶𞤢𞥄𞤩𞤲𞤭𞤪𞤺𞤢𞤤 𞤲𞤺𞤢𞤤 𞤭𞤲𞤢 𞤺𞤮𞤤𞥆𞤮𞥅, 𞤳𞤢𞤣𞤭 𞤢 𞤱𞤢𞤱𞤭 𞤴𞤢𞤥𞤭𞤪𞤣𞤫 𞤯𞤵𞤥 𞤩𞤢𞥄𞤱𞤮 𞤫 𞤼𞤫𞥅𞤤𞤼𞤫 𞤶𞤢𞥄𞤩𞤲𞤭𞤪𞤯𞤫 𞤀𞤲𞤣𞤪𞤮𞥅𞤣.</string>
+    <string name="welcome_notifications_title">𞤼𞤭𞤲𞤼𞤭𞤲𞤫</string>
+    <string name="welcome_notifications_why">𞤲𞤣𞤢𞥄𞤪𞤯𞤫 𞤩𞤵𞤳𞥆𞤵𞤯𞤫 𞤭𞤲𞤢 𞤣𞤮𞤺𞤲𞤢 𞤺𞤮𞤤𞤤𞤫 𞤨𞤢𞤥𞤢𞤪𞤫 𞤪𞤫𞤩𞤢, 𞤳𞤢𞤣𞤭 𞤀𞤲𞤣𞤪𞤮𞥅𞤣 𞤭𞤲𞤢 𞤲𞤢𞥄𞤥𞤲𞤮𞥅 𞤳𞤢𞤤𞤢 𞤶𞤢𞥄𞤩𞤲𞤭𞤪𞤺𞤢𞤤 𞤱𞤢𞤯𞤢𞤴𞤲𞤺𞤢𞤤 𞤯𞤵𞤥 𞤴𞤮 𞤱𞤢𞤯 𞤼𞤭𞤲𞤼𞤭𞤲𞤢𞤤 𞤴𞤭𞤴𞤮𞤴𞤼𞤫𞥅.</string>
+    <string name="welcome_notifications_with">𞤫 𞤴𞤢𞤥𞤭𞤪𞤮𞥅𞤶𞤫: 𞤼𞤭𞤲𞤼𞤭𞤲𞤢𞤤 𞤲𞤺𞤢𞤤 𞤸𞤮𞤤𞥆𞤢𞤼 𞤳𞤮 𞤱𞤭𞤲𞥆𞤣𞤫𞤼𞤫𞥅 𞤶𞤮𞥅𞤲𞤭, 𞤳𞤮 𞤯𞤵𞤥 𞤼𞤢𞤲 𞤱𞤮𞤲𞤭 𞤥𞤢𞥄𞤲𞤣𞤫 𞤱𞤮𞤲𞤣𞤫 𞤲𞤣𞤢𞥄𞤪𞤯𞤫 𞤩𞤵𞤳𞥆𞤵𞤯𞤫 𞤭𞤲𞤢 𞤱𞤵𞥅𞤪𞤭.</string>
+    <string name="welcome_notifications_without">𞤳𞤮 𞤢𞤤𞤣𞤢𞥄 𞤫 𞤴𞤢𞤥𞤭𞤪𞤮𞥅𞤶𞤫: 𞤲𞤣𞤢𞥄𞤪𞤯𞤫 𞤩𞤵𞤳𞥆𞤵𞤯𞤫 𞤭𞤲𞤢 𞤣𞤮𞤺𞥆𞤢 𞤳𞤢𞤣𞤭 𞤭𞤲𞤢 𞤱𞤭𞤲𞤣𞤢. 𞤀𞤲𞤣𞤪𞤮𞥅𞤣 𞤼𞤢𞤲 𞤸𞤮𞤤𞥆𞤢𞤼𞤢𞥄 𞤼𞤭𞤲𞤼𞤭𞤲𞤢𞤤 𞤥𞤢𞤺𞥆𞤢𞤤.</string>
     <string name="hibernation_title">jokku limougol hay so yejjitaa</string>
     <string name="hibernation_body">android hippay application ɗe seeɗtaaki yoga lewbi, nanngira jamirooje mum en, ɗum waawi wontude ylih hisataa hay huunde haa aan udditu ɗum kadi. yejjitegol ko ɗum tigi woni faandaare application ɗii, ɗum waɗi jogagol hippude ɗum jooni ina himmi.</string>
     <string name="action_not_now">wonaa jooni</string>

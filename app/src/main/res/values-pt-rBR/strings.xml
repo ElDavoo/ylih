@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">o rastreamento detalhado, nos ajustes, adiciona fones com fio e mede quanto desse tempo foi realmente reprodução.</string>
     <string name="welcome_privacy">tudo fica neste telefone. não há conta, e o app não tem permissão de internet.</string>
     <string name="welcome_start">começar</string>
+    <string name="welcome_next">avançar</string>
+    <string name="welcome_allow">permitir</string>
+    <string name="welcome_step">etapa %1$d de %2$d</string>
+    <string name="welcome_bluetooth_title">acesso ao bluetooth</string>
+    <string name="welcome_bluetooth_why">o android só informa a um app qual dispositivo bluetooth se conectou, e como ele se chama, se o app tiver acesso ao bluetooth. é assim que o ylih distingue um fone do rádio do carro, e um par do outro.</string>
+    <string name="welcome_bluetooth_with">com o acesso: cada par é registrado desde o momento em que se conecta, sem deixar nada rodando e sem precisar lembrar de apertar nada.</string>
+    <string name="welcome_bluetooth_without">sem o acesso: nenhum fone bluetooth é registrado. o resto do app continua funcionando, e você pode conceder depois nas configurações de apps do android.</string>
+    <string name="welcome_notifications_title">notificações</string>
+    <string name="welcome_notifications_why">o rastreamento detalhado usa um pequeno serviço em segundo plano, e o android exige que qualquer app que faça isso mantenha uma notificação visível.</string>
+    <string name="welcome_notifications_with">com a permissão: a notificação mostra o que está sendo registrado agora, o único sinal de que o rastreamento detalhado está vivo.</string>
+    <string name="welcome_notifications_without">sem a permissão: o rastreamento detalhado continua funcionando e registrando. o android apenas não mostrará a notificação dele.</string>
     <string name="hibernation_title">continua contando enquanto você esquece dele</string>
     <string name="hibernation_body">o android pausa apps que ficam alguns meses sem ser abertos e retoma suas permissões, o que deixaria o ylih sem registrar nada até você abri-lo de novo. ser esquecido é exatamente para o que este app serve, então vale a pena desativar isso agora.</string>
     <string name="action_not_now">agora não</string>

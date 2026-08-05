@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">подробное отслеживание, в настройках, добавляет проводные наушники и измеряет, сколько из этого времени реально шло воспроизведение.</string>
     <string name="welcome_privacy">всё остаётся на этом телефоне. нет ни аккаунта, ни разрешения на доступ в интернет.</string>
     <string name="welcome_start">начать</string>
+    <string name="welcome_next">далее</string>
+    <string name="welcome_allow">разрешить</string>
+    <string name="welcome_step">шаг %1$d из %2$d</string>
+    <string name="welcome_bluetooth_title">доступ к bluetooth</string>
+    <string name="welcome_bluetooth_why">android сообщает приложению, какое устройство bluetooth подключилось и как оно называется, только если у приложения есть доступ к bluetooth. так ylih отличает наушники от автомагнитолы, а одну пару от другой.</string>
+    <string name="welcome_bluetooth_with">с доступом: каждая пара записывается с момента подключения, без ничего запущенного и без необходимости что-то нажимать.</string>
+    <string name="welcome_bluetooth_without">без доступа: ни одни наушники bluetooth не записываются. остальная часть приложения работает, а доступ можно выдать позже в настройках приложений android.</string>
+    <string name="welcome_notifications_title">уведомления</string>
+    <string name="welcome_notifications_why">подробное отслеживание запускает небольшую фоновую службу, и android требует от любого приложения, которое так делает, держать уведомление видимым.</string>
+    <string name="welcome_notifications_with">с разрешением: уведомление показывает, что записывается прямо сейчас, и это единственный признак того, что подробное отслеживание живо.</string>
+    <string name="welcome_notifications_without">без разрешения: подробное отслеживание всё равно работает и записывает. android просто не покажет его уведомление.</string>
     <string name="hibernation_title">продолжай считать, даже забыв о нём</string>
     <string name="hibernation_body">android останавливает приложения, которые не открывались несколько месяцев, и забирает их разрешения, из-за чего ylih перестанет что-либо записывать, пока ты не откроешь его снова. быть забытым — это именно то, для чего создано это приложение, поэтому стоит отключить это прямо сейчас.</string>
     <string name="action_not_now">не сейчас</string>

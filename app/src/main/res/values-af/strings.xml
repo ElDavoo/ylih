@@ -31,6 +31,17 @@
     <string name="welcome_point_detailed_body">gedetailleerde opvolging, in instellings, voeg bedraad koptelefone by en meet hoeveel van die tyd werklik afspeel was.</string>
     <string name="welcome_privacy">alles bly op hierdie foon. daar is geen rekening nie, en die program het geen internettoestemming nie.</string>
     <string name="welcome_start">begin</string>
+    <string name="welcome_next">volgende</string>
+    <string name="welcome_allow">laat toe</string>
+    <string name="welcome_step">stap %1$d van %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth-toegang</string>
+    <string name="welcome_bluetooth_why">android vertel \'n program net watter bluetooth-toestel gekoppel het, en wat dit heet, as die program bluetooth-toegang het. so onderskei ylih \'n kopstuk van \'n motorradio, en die een paar van die ander.</string>
+    <string name="welcome_bluetooth_with">met toegang: elke paar word opgeteken van die oomblik af wat dit koppel, sonder dat iets moet aanhou loop en sonder om te onthou om iets te druk.</string>
+    <string name="welcome_bluetooth_without">sonder toegang: geen bluetooth-kopstukke word opgeteken nie. die res van die program werk steeds, en jy kan dit later in android se programinstellings toestaan.</string>
+    <string name="welcome_notifications_title">kennisgewings</string>
+    <string name="welcome_notifications_why">gedetailleerde dophou laat \'n klein agtergronddiens loop, en android vereis van enige program wat dit doen om \'n kennisgewing sigbaar te hou.</string>
+    <string name="welcome_notifications_with">met toestemming: die kennisgewing wys wat op die oomblik opgeteken word, die enigste teken dat gedetailleerde dophou lewe.</string>
+    <string name="welcome_notifications_without">sonder toestemming: gedetailleerde dophou loop en teken steeds op. android wys net nie sy kennisgewing nie.</string>
     <string name="hibernation_title">hou tel terwyl jy dit vergeet</string>
     <string name="hibernation_body">android laat programme wat \'n paar maande lank nie oopgemaak word nie pouseer en neem hul toestemmings terug, wat ylih niks sou laat opneem tot jy dit weer oopmaak nie. om vergeet te word is presies waarvoor hierdie program is, so dit is die moeite werd om dit nou af te skakel.</string>
     <string name="action_not_now">nie nou nie</string>
