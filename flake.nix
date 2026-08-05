@@ -73,6 +73,9 @@
             pkgs.git
             # gplay's own setup would curl gcloud into $HOME; take it from nixpkgs.
             pkgs.google-cloud-sdk
+            # The F-Droid recipe is submitted as a merge request against fdroiddata, which is
+            # on GitLab — so `gh` cannot open it and this can. See docs/fdroid.md §5.
+            pkgs.glab
           ] ++ gplay;
 
           shellHook = ''

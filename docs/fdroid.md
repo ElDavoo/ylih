@@ -194,16 +194,27 @@ has to change.
 
 ## 5. The fdroiddata merge request
 
+fdroiddata is on GitLab, so `gh` is no help here and the dev shell carries `glab` instead. It
+needs authenticating once, interactively — a browser flow, or a token from
+[personal access tokens](https://gitlab.com/-/user_settings/personal_access_tokens) with the
+`api` and `write_repository` scopes, the first to open the merge request and the second to push
+the branch over https:
+
 ```sh
-git clone https://gitlab.com/<you>/fdroiddata.git && cd fdroiddata
+glab auth login --hostname gitlab.com
+```
+
+```sh
+glab repo fork fdroid/fdroiddata --clone --remote && cd fdroiddata
 cp <ylih>/metadata/it.eldavo.ylih.yml metadata/
 fdroid readmeta && fdroid lint it.eldavo.ylih
 fdroid rewritemeta it.eldavo.ylih          # canonical field order and formatting
 fdroid build it.eldavo.ylih                # optional, and slow; --server for the real VM
-git checkout -b it.eldavo.ylih && git commit -am 'New app: ylih' && git push
+git checkout -b it.eldavo.ylih && git commit -am 'New app: ylih' && git push -u origin HEAD
+glab mr create --repo fdroid/fdroiddata --target-branch master --title 'New app: ylih'
 ```
 
-Then open the merge request. Expect 24–48 hours from merge to the app appearing in the repository.
+Expect 24–48 hours from merge to the app appearing in the repository.
 
 One `fdroid lint` quirk to know about: it checks the `Summary:` field for trailing punctuation
 ("Punctuation should be avoided"). The recipe deliberately sets no `Summary:` or `Description:` —
