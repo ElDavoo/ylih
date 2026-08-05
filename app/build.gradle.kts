@@ -202,17 +202,12 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
 
-        jniLibs {
-            // This app writes no native code, but DataStore brings a .so per ABI. AGP's
-            // stripDebugSymbols runs the NDK's `strip` over it *if the build machine has an NDK*
-            // and silently copies it through unstripped if not, so the APK depends on something
-            // no source tree records: the release runner has an NDK, F-Droid's buildserver and
-            // this dev shell do not, and the file differs by ~2.5 KB per ABI between them.
-            // Reproducibility is the point (docs/fdroid.md §6), so pick the answer every machine
-            // can give — keep the symbols — at a cost of ~10 KB. The other library the app ships,
-            // libandroidx.graphics.path.so, arrives already stripped and is unaffected either way.
-            keepDebugSymbols += "**/libdatastore_shared_counter.so"
-        }
+        // No jniLibs block. It used to keep libdatastore_shared_counter.so's symbols, because
+        // AGP's stripDebugSymbols strips a .so only if the build machine has an NDK and copies it
+        // through untouched otherwise — so the APK's bytes depended on something no source tree
+        // records. Dropping DataStore for a Room table removed the file and the problem with it.
+        // The one .so still shipped, libandroidx.graphics.path.so, arrives already stripped and
+        // is byte-identical either way.
     }
 
     bundle {
@@ -318,7 +313,6 @@ dependencies {
     implementation(libs.androidx.lifecycle.service)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.androidx.glance.appwidget)
     implementation(libs.androidx.glance.material3)

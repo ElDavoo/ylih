@@ -69,8 +69,8 @@ object AppLocale {
      * Applies the stored language to a base context on its way into [Context.attachBaseContext].
      *
      * The configuration has to be settled before a single resource is resolved, so there is no
-     * suspension point to wait at and the read blocks. DataStore holds the value in memory once
-     * it has been read, so that is one small file read per process.
+     * suspension point to wait at and the read blocks. It is one query against a five-row table
+     * on a connection the process is holding open anyway.
      */
     fun wrap(base: Context): Context {
         if (!NEEDS_IN_APP_PICKER) return base
@@ -81,7 +81,7 @@ object AppLocale {
      * [wrap] for a caller that can suspend.
      *
      * A home-screen widget is composed inside a coroutine and has no `attachBaseContext` to sit
-     * in, so it has neither the reason nor the excuse to block on DataStore.
+     * in, so it has neither the reason nor the excuse to block on the database.
      */
     suspend fun wrapSuspending(base: Context): Context {
         if (!NEEDS_IN_APP_PICKER) return base

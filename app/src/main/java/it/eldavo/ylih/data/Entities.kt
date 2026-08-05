@@ -116,6 +116,19 @@ data class SessionEntity(
     @ColumnInfo(name = "endReason") val endReason: EndReason? = null,
 )
 
+/**
+ * One user setting, stored as text and parsed by [SettingsStore].
+ *
+ * A key/value table rather than a one-row table with a column per setting: adding a setting is
+ * then a line of Kotlin instead of a schema version, and settings are the one part of this
+ * database with no history to keep and no queries to answer beyond "what is it now".
+ */
+@Entity(tableName = "settings")
+data class SettingEntity(
+    @PrimaryKey val key: String,
+    val value: String,
+)
+
 class Converters {
     @TypeConverter
     fun deviceKindToString(value: DeviceKind): String = value.name

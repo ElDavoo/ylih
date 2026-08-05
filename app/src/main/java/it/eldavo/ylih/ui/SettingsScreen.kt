@@ -86,8 +86,8 @@ fun SettingsScreen(
         if (enabled) askNotifications = notificationPermissionToAsk(context)
     }
 
-    // The write goes through DataStore and the new configuration is only readable once it has
-    // landed: restarting any earlier reattaches the activity with the language it already had.
+    // The write goes through the settings table and the new configuration is only readable once
+    // it has landed: restarting any earlier reattaches the activity with the language it already had.
     LaunchedEffect(pendingLanguage, language) {
         if (pendingLanguage != null && pendingLanguage == language) {
             pendingLanguage = null

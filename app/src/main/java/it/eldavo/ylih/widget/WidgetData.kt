@@ -131,9 +131,10 @@ fun widgetContentFlow(
     zone: ZoneId = ZoneId.systemDefault(),
 ): Flow<Pair<Context, WidgetData>> {
     val container = (context.applicationContext as YlihApp).container
-    // distinctUntilChanged because every SettingsStore flow is a map over the whole DataStore, so
-    // the language re-emits when any other setting is written — and each emission here costs a
-    // 30-day re-read of the session table.
+    // distinctUntilChanged because every SettingsStore flow is a map over the whole settings
+    // table, so a write to any other setting reaches this one — and each emission here costs a
+    // 30-day re-read of the session table. The store dedupes for the same reason; this is the
+    // point where getting it wrong would be expensive rather than merely noisy.
     val language = container.settings.language.distinctUntilChanged()
     return widgetDataFlow(container, zone).combine(language) { data, _ ->
         AppLocale.wrapSuspending(context) to data

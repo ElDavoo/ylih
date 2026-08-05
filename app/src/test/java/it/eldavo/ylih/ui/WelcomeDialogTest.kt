@@ -8,12 +8,14 @@ import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.test.core.app.ApplicationProvider
+import androidx.work.testing.WorkManagerTestInitHelper
 import it.eldavo.ylih.R
 import it.eldavo.ylih.YlihApp
 import it.eldavo.ylih.ui.theme.YlihTheme
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -36,6 +38,13 @@ class WelcomeDialogTest {
     val compose = createAndroidComposeRule<ComponentActivity>()
 
     private val app: YlihApp = ApplicationProvider.getApplicationContext()
+
+    @Before
+    fun setUp() {
+        // Finishing the run syncs, which reaches WorkManager; its androidx.startup initializer
+        // never runs here.
+        WorkManagerTestInitHelper.initializeTestWorkManager(app)
+    }
 
     @Test
     fun `first run explains the app, then asks, then stays gone`() {

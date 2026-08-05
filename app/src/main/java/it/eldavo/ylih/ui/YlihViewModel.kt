@@ -4,7 +4,11 @@ import android.app.Application
 import android.net.Uri
 import androidx.annotation.StringRes
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.initializer
+import androidx.lifecycle.viewmodel.viewModelFactory
 import it.eldavo.ylih.R
 import it.eldavo.ylih.YlihApp
 import it.eldavo.ylih.data.DeviceEntity
@@ -50,16 +54,16 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
         .map { if (it) Counting.PLAYBACK else Counting.CONNECTED }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), Counting.CONNECTED)
 
-    /** Null until DataStore has answered, so the welcome does not flash on every later launch. */
+    /** Null until the stored answer arrives, so the welcome does not flash on every later launch. */
     val onboardingDone: StateFlow<Boolean?> = container.settings.onboardingDone
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
-    /** Null until DataStore has answered, for the same reason as [onboardingDone]. */
+    /** Null until the stored answer arrives, for the same reason as [onboardingDone]. */
     val hibernationAsked: StateFlow<Boolean?> = container.settings.hibernationAsked
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
     /**
-     * Null until DataStore has answered. The settings screen restarts the activity when this
+     * Null until the stored tag arrives. The settings screen restarts the activity when this
      * changes, so it must not see the default before the stored tag arrives.
      */
     val language: StateFlow<String?> = container.settings.language
@@ -178,13 +182,29 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
     private fun string(@StringRes id: Int, vararg args: Any): String =
         getApplication<Application>().getString(id, *args)
 
-    private companion object {
-        val RES_EXPORT_OK = R.string.export_done
-        val RES_EXPORT_FAILED = R.string.export_failed
-        val RES_IMPORT_OK = R.plurals.import_done
-        val RES_IMPORT_FAILED = R.string.import_failed
-        val RES_COULD_NOT_OPEN = R.string.error_could_not_open
-        val RES_DETAILED_NEEDS_BLUETOOTH = R.string.detailed_needs_bluetooth
+    companion object {
+        /**
+         * Builds the view model from the *owner's* application rather than from the one
+         * `AndroidViewModelFactory` happens to hold.
+         *
+         * That factory is a process-wide singleton pinned to the first `Application` it ever saw,
+         * which is invisible in an app — there is only ever one — and wrong under Robolectric,
+         * where every test builds a fresh one. The view model then reads a container, and so a
+         * database, belonging to a previous test: the welcome and hibernation prompts read the
+         * answers given to an earlier test's dialog and never appeared. Nothing caught it until
+         * the settings moved out of DataStore, whose own store is a per-property singleton and
+         * so handed the stale application the same data anyway.
+         */
+        val Factory: ViewModelProvider.Factory = viewModelFactory {
+            initializer { YlihViewModel(checkNotNull(this[APPLICATION_KEY])) }
+        }
+
+        private val RES_EXPORT_OK = R.string.export_done
+        private val RES_EXPORT_FAILED = R.string.export_failed
+        private val RES_IMPORT_OK = R.plurals.import_done
+        private val RES_IMPORT_FAILED = R.string.import_failed
+        private val RES_COULD_NOT_OPEN = R.string.error_could_not_open
+        private val RES_DETAILED_NEEDS_BLUETOOTH = R.string.detailed_needs_bluetooth
     }
 }
 

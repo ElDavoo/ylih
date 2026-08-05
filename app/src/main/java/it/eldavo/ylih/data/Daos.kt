@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
+import androidx.room.Upsert
 import kotlinx.coroutines.flow.Flow
 
 /** Aggregated row backing the device list and the pair detail screen. */
@@ -195,4 +196,30 @@ interface SessionDao {
 
     @Query("DELETE FROM sessions WHERE id = :sessionId")
     suspend fun delete(sessionId: Long)
+}
+
+@Dao
+interface SettingsDao {
+    /**
+     * The whole table at once, never one setting at a time, and that is a correctness requirement
+     * rather than an optimisation for a table of five rows.
+     *
+     * Room's generated code prepares a statement per execution, but `androidx.sqlite` hands back a
+     * statement **cached on the connection and keyed by the SQL text**, so every flow over
+     * `WHERE key = ?` shares one statement. Collect several of them at once — which the view model
+     * does, one `stateIn` per setting — and they bind their keys over each other: the observed
+     * failure was `hibernation_asked` reading `onboarding_done`'s value, which suppressed the
+     * hibernation prompt entirely. A query with no arguments has nothing to rebind.
+     *
+     * A missing row rather than a `null` value is what lets [SettingsStore] keep every default in
+     * Kotlin instead of seeding rows at first run.
+     */
+    @Query("SELECT * FROM settings")
+    fun observeAll(): Flow<List<SettingEntity>>
+
+    @Query("SELECT * FROM settings")
+    suspend fun getAll(): List<SettingEntity>
+
+    @Upsert
+    suspend fun put(setting: SettingEntity)
 }

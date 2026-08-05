@@ -92,7 +92,7 @@ private val NAV_FADE = tween<Float>(durationMillis = 700)
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun YlihNavHost(
-    viewModel: YlihViewModel = viewModel(),
+    viewModel: YlihViewModel = viewModel(factory = YlihViewModel.Factory),
     /**
      * Hoisted only so a test can reach a destination the UI has no way of asking for. A route
      * argument is a string, so the pair route has to cope with one that is not a number, and
