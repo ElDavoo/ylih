@@ -141,8 +141,10 @@ by using the app.
 
 Two details specific to F-Droid:
 
-- A changelog only appears if F-Droid has built that versionCode. `changelogs/1.txt` shows up
-  once the `Builds:` entry for versionCode 1 lands, and not before.
+- A changelog only appears if F-Droid has built that versionCode. `changelogs/1.txt` therefore
+  never shows up at all — the recipe's `Builds:` list starts at versionCode 2, for the reason in
+  section 6 — while still being what Play serves as versionCode 1's release notes. The file stays
+  because the two stores read the same directory, not because F-Droid will ever use it.
 - `en-US` is the fallback for every locale that is missing a file, so it is the one that has to
   be complete.
 
@@ -256,11 +258,11 @@ Three things do vary and are worth knowing before a verification failure sends y
   `app/build.gradle.kts` therefore keeps that library's symbols
   (`packaging { jniLibs { keepDebugSymbols += "**/libdatastore_shared_counter.so" } }`), which
   picks the one answer every machine can give — the unstripped file — for ~10 KB. **The fix is
-  not in v1.0.0.** F-Droid builds the tag the recipe names, that tag predates this, and the
-  published v1.0.0 asset is the stripped variant, so the v1.0.0 build entry is expected to fail
-  verification on exactly these eight files. **v1.1.0 is the first tag that carries it**, and so
-  the first version F-Droid can verify on a machine whose NDK situation does not happen to match
-  the release runner's.
+  not in v1.0.0**, whose published asset is the stripped variant, so that tag could only verify
+  on a machine whose NDK situation happened to match the release runner's. **v1.1.0 is the first
+  tag that carries it**, and that is why the recipe's `Builds:` list starts there rather than at
+  the first release: F-Droid never published v1.0.0, so there is nobody to keep it for, and
+  leaving it out means every version F-Droid ever serves is one that reproduces anywhere.
 
 - AGP embeds `META-INF/version-control-info.textproto`, holding the git revision. Its
   `local_root_path` is normalised to `$PROJECT_DIR`, so it is not machine-specific, but it does
