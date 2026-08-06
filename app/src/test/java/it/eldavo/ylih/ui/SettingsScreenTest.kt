@@ -8,10 +8,11 @@ import android.os.Looper
 import android.provider.Settings
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.ui.test.assertIsOff
-import androidx.compose.ui.test.assertIsOn
 import androidx.compose.ui.test.hasAnyAncestor
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.isDialog
+import androidx.compose.ui.test.isOff
+import androidx.compose.ui.test.isOn
 import androidx.compose.ui.test.isToggleable
 import androidx.compose.ui.test.junit4.v2.createAndroidComposeRule
 import androidx.compose.ui.test.onAllNodesWithText
@@ -103,9 +104,9 @@ class SettingsScreenTest {
     }
 
     /**
-     * Every write on this screen goes through the view model and finishes on Room's or
-     * DataStore's own threads, so a condition has to be re-checked as real time passes rather
-     * than only as the compose clock is advanced.
+     * Every write on this screen goes through the view model and finishes on Room's own threads,
+     * so a condition has to be re-checked as real time passes rather than only as the compose
+     * clock is advanced.
      */
     private fun settle(what: String, until: () -> Boolean) {
         repeat(500) {
@@ -124,8 +125,11 @@ class SettingsScreenTest {
 
     /**
      * The setting has to be left as it was found *from inside the test body*: the write runs on
-     * the main thread the Compose rule owns, and a blocking write from `@After` waits on a
-     * DataStore that only the main thread can free.
+     * the main thread the Compose rule owns, and a blocking write from `@After` would wait on a
+     * thread only the test body can still free.
+     *
+     * This waits for the stored value alone. Where the switch is asserted too, that needs
+     * [awaitToggleBesides] — reaching the store no longer means reaching the screen.
      */
     private fun awaitDetailedTracking(on: Boolean) {
         settle("detailed tracking to be $on") {
@@ -153,22 +157,42 @@ class SettingsScreenTest {
      * checkbox per known device. Each row merges its own labels, so the label beside a control is
      * what tells them apart, and it keeps working when another row is added above.
      */
-    private fun toggleBesides(label: String) =
-        compose.onNode(isToggleable() and hasAnyAncestor(hasText(label)))
+    private fun toggleMatcher(label: String) = isToggleable() and hasAnyAncestor(hasText(label))
+
+    private fun toggleBesides(label: String) = compose.onNode(toggleMatcher(label))
+
+    /**
+     * Waits for the *switch*, which the setting having reached its new value no longer implies.
+     *
+     * A write finishes in SQLite and Room notifies the flow the screen is collecting only after
+     * it, so `detailedTrackingNow()` can already read the new value while the switch still draws
+     * the old one. Under DataStore the write and the emission were one in-memory update and there
+     * was no gap to lose: asserting the switch straight after [awaitDetailedTracking] was sound
+     * and stopped being sound when the settings moved into the database. It raced on a loaded CI
+     * runner, on one of the four variants, having passed locally on all four.
+     */
+    private fun awaitToggleBesides(label: String, on: Boolean) {
+        settle("the switch beside $label to read ${if (on) "on" else "off"}") {
+            compose.onAllNodes(toggleMatcher(label) and (if (on) isOn() else isOff()))
+                .fetchSemanticsNodes()
+                .isNotEmpty()
+        }
+    }
 
     @Test
     fun `the tracking switch writes the setting through, both ways`() {
         show()
 
-        val switch = toggleBesides(text(R.string.settings_detailed_title))
+        val label = text(R.string.settings_detailed_title)
+        val switch = toggleBesides(label)
         switch.assertIsOff()
         switch.performClick()
         awaitDetailedTracking(on = true)
-        switch.assertIsOn()
+        awaitToggleBesides(label, on = true)
 
         switch.performClick()
         awaitDetailedTracking(on = false)
-        switch.assertIsOff()
+        awaitToggleBesides(label, on = false)
     }
 
     @Test
@@ -176,14 +200,14 @@ class SettingsScreenTest {
         shadowOf(app).denyPermissions(Manifest.permission.POST_NOTIFICATIONS)
         show()
 
-        val switch = toggleBesides(text(R.string.settings_detailed_title))
-        switch.performClick()
+        val label = text(R.string.settings_detailed_title)
+        toggleBesides(label).performClick()
         awaitDetailedTracking(on = true)
 
         // The setting does not wait on the answer: the service runs and records either way, and
         // the permission only decides whether its notification is drawn. So the switch is already
         // on behind the dialog.
-        switch.assertIsOn()
+        awaitToggleBesides(label, on = true)
         settle("the notification explainer") { nodeCount(text(R.string.welcome_notifications_title)) > 0 }
         compose.onNodeWithText(text(R.string.welcome_notifications_without)).assertExists()
 
@@ -260,15 +284,16 @@ class SettingsScreenTest {
     fun `the playback switch writes the setting through, both ways`() {
         show()
 
-        val switch = toggleBesides(text(R.string.settings_playback_only_title))
+        val label = text(R.string.settings_playback_only_title)
+        val switch = toggleBesides(label)
         switch.assertIsOff()
         switch.performClick()
         awaitPlaybackOnly(on = true)
-        switch.assertIsOn()
+        awaitToggleBesides(label, on = true)
 
         switch.performClick()
         awaitPlaybackOnly(on = false)
-        switch.assertIsOff()
+        awaitToggleBesides(label, on = false)
     }
 
     @Test
