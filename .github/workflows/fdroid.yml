@@ -20,7 +20,8 @@ on:
   # recipe nor the toolchain, they would spend twenty minutes recomputing a constant. The paths
   # are the ones that can change the answer -- the recipe and its checks, the version and flavors
   # F-Droid reads out of build.gradle.kts, the listing files it serves, the repositories the
-  # scanner allowlists, and the Gradle version, which gradlew-fdroid has to know a checksum for.
+  # scanner allowlists, the Gradle version, which gradlew-fdroid has to know a checksum for, and
+# the dependency verification metadata, which fails the build F-Droid runs if it is incomplete.
   #
   # The two lists are duplicated rather than shared through a YAML anchor: GitHub's workflow
   # parser does not support anchors, however happily every other YAML tool reads them.
@@ -34,6 +35,7 @@ on:
       - "app/build.gradle.kts"
       - "settings.gradle.kts"
       - "gradle/wrapper/gradle-wrapper.properties"
+      - "gradle/verification-metadata.xml"
       - "fastlane/**"
   pull_request:
     paths:
@@ -43,6 +45,7 @@ on:
       - "app/build.gradle.kts"
       - "settings.gradle.kts"
       - "gradle/wrapper/gradle-wrapper.properties"
+      - "gradle/verification-metadata.xml"
       - "fastlane/**"
   # Nothing here has to change for the answer to change: fdroidserver moves, gradlew-fdroid's
   # checksum log moves, and the released APK either still reproduces or quietly stops doing so.

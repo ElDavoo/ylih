@@ -434,12 +434,15 @@ These are easy to break and the failures are confusing:
   Without them the build runs whatever the network serves, which is the one unverified input a
   reproducible build cannot afford. F-Droid's review bot flags the first as `insecure-gradlew`.
 
-  **Dependabot updates neither**, and that is the cost of the second one. It bumps versions in
-  `libs.versions.toml` and leaves the metadata alone, so every weekly gradle PR fails with
-  "Dependency verification failed … checksums are missing" until the metadata is regenerated —
+  **Dependabot updates neither.** It bumps versions in `libs.versions.toml` and leaves the
+  metadata alone, so every weekly gradle PR fails with "Dependency verification failed …
+  checksums are missing" until the metadata is regenerated —
   [dependabot-core#1996](https://github.com/dependabot/feedback/issues/908) is the open request
-  for this. That is a real chore, accepted knowingly: the alternative is regenerating
-  automatically in CI, which would trust whatever was downloaded and so verify nothing.
+  for this. Regenerating it by hand is the current answer; regenerating it in CI is a fine
+  alternative and the maintainer is happy with either. The tradeoff to know before automating it
+  is only that a CI regeneration records whatever was downloaded at that moment, so it moves the
+  trust from the checksum to whoever reviews the resulting diff — which for a Dependabot bump is
+  the same person either way.
 
   Regenerate over the whole CI task set, not a subset — a configuration that was not resolved
   contributes no checksums, and `--refresh-dependencies` is not optional, because an artifact
