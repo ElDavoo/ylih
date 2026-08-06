@@ -27,7 +27,7 @@ Total jangka panjang tidak ada artinya jika crash atau reboot diam-diam menambah
 
 PRIVAT SECARA KONSTRUKSI
 
-ylih tidak memiliki izin internet. Bukan "kami janji tidak akan mengirim apa pun" — aplikasi ini secara teknis tidak mampu melakukannya. Tidak ada akun, tidak ada analitik, tidak ada iklan, dan tidak ada pelacakan. Semuanya tersimpan dalam basis data di ponselmu.
+ylih tidak memiliki izin internet. Tidak ada akun, tidak ada analitik, tidak ada iklan, dan tidak ada pelacakan. Semuanya tersimpan dalam basis data di ponselmu — satu-satunya yang bisa menyalinnya keluar dari perangkat adalah cadangan bawaan Android, jika kamu mengaktifkannya.
 
 Pengaturan → Ekspor menulis seluruh riwayatmu sebagai json yang bisa dibaca, dan Impor memulihkannya, sehingga pindah ke ponsel baru tidak pernah membuatmu kehilangan angka-angkamu.
 

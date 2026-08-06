@@ -27,7 +27,7 @@ Długoterminowe sumy są bezwartościowe, jeśli awaria lub restart po cichu dod
 
 PRYWATNA Z ZAŁOŻENIA
 
-ylih nie ma uprawnienia dostępu do internetu. To nie jest obietnica, że nic nie wyślemy — aplikacja jest technicznie niezdolna do tego. Nie ma kont, analityki, reklam ani śledzenia użytkownika. Wszystko żyje w bazie danych na twoim telefonie.
+ylih nie ma uprawnienia dostępu do internetu. Nie ma kont, analityki, reklam ani śledzenia użytkownika. Wszystko żyje w bazie danych na twoim telefonie — skopiować ją poza urządzenie może tylko własna kopia zapasowa Androida, jeśli masz ją włączoną.
 
 Ustawienia → Eksportuj zapisuje całą twoją historię jako czytelny JSON, a Importuj ją przywraca, więc przejście na nowy telefon nigdy nie kosztuje cię twoich liczb.
 

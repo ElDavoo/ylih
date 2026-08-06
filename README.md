@@ -92,7 +92,11 @@ codebase has to know which build it is.
 | `RECEIVE_BOOT_COMPLETED` | Close sessions the shutdown never reported, and restart the service. |
 | `FOREGROUND_SERVICE_CONNECTED_DEVICE` / `_SPECIAL_USE` | Detailed tracking. `specialUse` is the fallback for a wired-only user who denied Bluetooth, since `connectedDevice` requires a Bluetooth permission on Android 14+. |
 
-There is no internet permission.
+There is no internet permission. That is not the same as the data being unable to leave the
+phone: `allowBackup` is on and the backup rules include the database, so Android's own backup
+will copy it to the user's cloud backup where that is enabled — the system holds the network
+access, not the app. It is deliberate, because years of history are worth keeping across a new
+phone, and the store listing says so rather than claiming the app is incapable of it.
 
 ## Building
 

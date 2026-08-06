@@ -5,4 +5,4 @@ Primeiro lançamento.
 • Rastreamento detalhado opcional para fones com fio e USB, e para reprodução versus tempo conectado.
 • Custo por hora de uso.
 • Exportação e importação em JSON.
-• Sem permissão de internet: nada nunca sai do telefone.
+• Sem permissão de internet: sem contas, sem análises, sem rastreamento.

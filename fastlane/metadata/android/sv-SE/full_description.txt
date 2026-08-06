@@ -27,7 +27,7 @@ Långsiktiga totalsummor är värdelösa om en krasch eller omstart tyst lägger
 
 PRIVAT PER KONSTRUKTION
 
-ylih har ingen internetbehörighet. Inte "vi lovar att inte skicka något" — appen är tekniskt oförmögen att göra det. Det finns inga konton, ingen analys, ingen reklam och ingen spårning. Allt lever i en databas på din telefon.
+ylih har ingen internetbehörighet. Det finns inga konton, ingen analys, ingen reklam och ingen spårning. Allt lever i en databas på din telefon — det enda som kan kopiera den från enheten är Androids egen säkerhetskopiering, om du har den påslagen.
 
 Inställningar → Exportera sparar hela din historik som läsbar json, och Importera återställer den, så att byta telefon aldrig kostar dig dina siffror.
 

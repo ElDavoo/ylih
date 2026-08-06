@@ -5,4 +5,4 @@ Eerste release.
 • Optioneel gedetailleerd bijhouden voor bekabelde en usb-koptelefoons, en voor afspelen versus verbonden tijd.
 • Kosten per luisteruur.
 • Json export en import.
-• Geen internettoegang: er verlaat nooit iets de telefoon.
+• Geen internettoegang: geen accounts, geen analyse, geen tracking.

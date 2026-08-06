@@ -27,7 +27,7 @@ Egy hosszú távú összeg semmit sem ér, ha egy összeomlás vagy egy újraind
 
 TERVEZÉS SZERINT MAGÁNJELLEGŰ
 
-A ylih-nek nincs internet-hozzáférési engedélye. Nem csak azt ígérjük, hogy nem küldünk semmit — az alkalmazás technikailag képtelen rá. Nincsenek fiókok, nincs analitika, nincsenek hirdetések, és nincs nyomkövetés. Minden egy adatbázisban él a telefonodon.
+A ylih-nek nincs internet-hozzáférési engedélye. Nincsenek fiókok, nincs analitika, nincsenek hirdetések, és nincs nyomkövetés. Minden egy adatbázisban él a telefonodon — a készülékről egyedül az Android saját biztonsági mentése másolhatja ki, ha be van kapcsolva.
 
 A Beállítások → Exportálás olvasható JSON-ként írja ki a teljes előzményedet, az Importálás pedig visszaállítja, így egy új telefonra váltás soha nem kerül a számaidba.
 

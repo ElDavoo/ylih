@@ -5,4 +5,4 @@ Ensimmäinen julkaisu.
 • Valinnainen tarkka seuranta langallisille ja USB-kuulokkeille sekä toistoajalle suhteessa yhteysaikaan.
 • Kuunteluhinta tunnilta.
 • JSON-vienti ja -tuonti.
-• Ei internet-oikeutta: mikään ei koskaan poistu puhelimesta.
+• Ei internet-oikeutta: ei tilejä, ei analytiikkaa, ei seurantaa.

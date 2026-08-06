@@ -27,7 +27,7 @@ Tổng số liệu dài hạn sẽ vô nghĩa nếu một lần treo máy hay kh
 
 RIÊNG TƯ NGAY TỪ THIẾT KẾ
 
-ylih không có quyền truy cập internet. Đây không phải là lời hứa "chúng tôi sẽ không gửi gì đi" — ứng dụng về mặt kỹ thuật không thể làm điều đó. Không có tài khoản, không phân tích dữ liệu, không quảng cáo và không theo dõi người dùng. Mọi thứ nằm trong một cơ sở dữ liệu trên điện thoại của bạn.
+ylih không có quyền truy cập internet. Không có tài khoản, không phân tích dữ liệu, không quảng cáo và không theo dõi người dùng. Mọi thứ nằm trong một cơ sở dữ liệu trên điện thoại của bạn — thứ duy nhất có thể sao chép nó ra khỏi thiết bị là bản sao lưu của chính Android, nếu bạn bật tính năng đó.
 
 Cài đặt → Xuất json ghi lại toàn bộ lịch sử của bạn dưới dạng JSON có thể đọc được, và Nhập sẽ khôi phục lại, nên việc chuyển sang điện thoại mới không bao giờ khiến bạn mất đi số liệu của mình.
 

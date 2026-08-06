@@ -27,7 +27,7 @@ Cijfers op lange termijn zijn waardeloos als een crash of een herstart er stille
 
 PRIVÉ VAN NATURE
 
-ylih heeft geen internettoegang. Niet "we beloven niets te versturen" — de app kan het technisch niet. Geen accounts, geen analyse, geen advertenties en geen tracking. Alles staat in een database op je telefoon.
+ylih heeft geen internettoegang. Geen accounts, geen analyse, geen advertenties en geen tracking. Alles staat in een database op je telefoon — alleen Androids eigen back-up kan die van het toestel af kopiëren, als je die aan hebt staan.
 
 Instellingen → Exporteren schrijft je hele geschiedenis als leesbare json, en Importeren zet die terug, zodat overstappen naar een nieuwe telefoon je nooit je cijfers kost.
 

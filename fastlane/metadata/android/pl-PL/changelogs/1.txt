@@ -5,4 +5,4 @@ Pierwsze wydanie.
 • Opcjonalne szczegółowe śledzenie słuchawek przewodowych i USB oraz czasu odtwarzania wobec czasu połączenia.
 • Koszt za godzinę słuchania.
 • Eksport i import JSON.
-• Brak uprawnienia dostępu do internetu: nic nigdy nie opuszcza telefonu.
+• Brak uprawnienia dostępu do internetu: brak kont, analityki i śledzenia.

@@ -5,4 +5,4 @@ Első kiadás.
 • Opcionális részletes követés vezetékes és USB-s fejhallgatókhoz, valamint a lejátszás és a csatlakoztatott idő arányához.
 • Óránkénti hallgatási költség.
 • JSON exportálás és importálás.
-• Nincs internet-hozzáférési engedély: semmi sem hagyja el a telefont.
+• Nincs internetengedély: nincsenek fiókok, analitika és nyomkövetés.

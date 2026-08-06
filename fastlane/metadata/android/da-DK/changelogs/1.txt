@@ -5,4 +5,4 @@ Første udgivelse.
 • Valgfri detaljeret sporing for høretelefoner med kabel og usb, og for afspilning i forhold til forbundet tid.
 • Pris pr. lyttetime.
 • Json-eksport og -import.
-• Ingen internettilladelse: intet forlader nogensinde telefonen.
+• Ingen internettilladelse: ingen konti, ingen analyse, ingen sporing.

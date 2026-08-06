@@ -5,4 +5,4 @@ Primera versión.
 • Seguimiento detallado opcional para auriculares con cable y USB, y para reproducción frente a tiempo conectado.
 • Coste por hora de escucha.
 • Exportación e importación en JSON.
-• Sin permiso de internet: nada sale nunca del teléfono.
+• Sin permiso de internet: sin cuentas, sin analítica, sin rastreo.

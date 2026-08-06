@@ -27,7 +27,7 @@ Totais de longo prazo não valem nada se uma falha ou uma reinicialização adic
 
 PRIVADO POR CONSTRUÇÃO
 
-O ylih não tem permissão de internet. Não é "prometemos não enviar nada" — o app é tecnicamente incapaz disso. Não há contas, não há análises, não há anúncios e não há rastreamento de uso. Tudo vive em um banco de dados no seu telefone.
+O ylih não tem permissão de internet. Não há contas, não há análises, não há anúncios e não há rastreamento de uso. Tudo vive em um banco de dados no seu telefone — a única coisa que pode copiá-lo para fora do aparelho é o backup do próprio Android, se você o mantiver ligado.
 
 Ajustes → Exportar grava todo o seu histórico como JSON legível, e Importar o restaura, então trocar de telefone nunca custa seus números.
 

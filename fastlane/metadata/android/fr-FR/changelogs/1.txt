@@ -5,4 +5,4 @@ Première version.
 • Suivi détaillé optionnel pour les casques filaires et USB, et pour la lecture face au temps de connexion.
 • Coût par heure d'écoute.
 • Export et import JSON.
-• Aucune permission internet : rien ne quitte jamais le téléphone.
+• Aucune permission internet : ni compte, ni analyse, ni suivi.

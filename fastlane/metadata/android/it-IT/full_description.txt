@@ -27,7 +27,7 @@ Un totale a lungo termine non vale niente se un riavvio ci aggiunge dodici ore p
 
 PRIVATA PER COSTRUZIONE
 
-ylih non ha il permesso internet. Non è una promessa: l'app è tecnicamente incapace di mandare qualcosa da qualche parte. Nessun account, nessuna analitica, nessuna pubblicità, nessun tracciamento. Tutto vive in un database sul tuo telefono.
+ylih non ha il permesso internet. Nessun account, nessuna analitica, nessuna pubblicità, nessun tracciamento. Tutto vive in un database sul tuo telefono: l'unica cosa che può copiarlo fuori dal dispositivo è il backup di Android, se lo hai attivo.
 
 Impostazioni → Esporta salva l'intera cronologia in JSON leggibile, e Importa la ripristina: cambiare telefono non ti costa i tuoi numeri.
 

@@ -5,4 +5,4 @@ Erste Version.
 • Optionales, detailliertes Tracking für kabelgebundene und USB-Kopfhörer sowie für Wiedergabezeit im Verhältnis zur Verbindungszeit.
 • Kosten pro Hörstunde.
 • JSON-Export und -Import.
-• Keine Internetberechtigung: Nichts verlässt jemals das Telefon.
+• Keine Internetberechtigung: keine Konten, Analysen oder Tracking.

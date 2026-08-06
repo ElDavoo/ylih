@@ -428,6 +428,41 @@ These are easy to break and the failures are confusing:
   The F-Droid recipe (`metadata/it.eldavo.ylih.yml`) deliberately names no SDK version: its
   buildserver preinstalls nothing past 33 and relies on AGP downloading what `compileSdk` and
   `buildToolsVersion` ask for — see `docs/fdroid.md` §2.
+- **Every download the build makes is pinned, and both pins are hand-maintained.**
+  `gradle/wrapper/gradle-wrapper.properties` carries `distributionSha256Sum` for Gradle itself,
+  and `gradle/verification-metadata.xml` carries a SHA-256 for all ~685 dependency artifacts.
+  Without them the build runs whatever the network serves, which is the one unverified input a
+  reproducible build cannot afford. F-Droid's review bot flags the first as `insecure-gradlew`.
+
+  **Dependabot updates neither**, and that is the cost of the second one. It bumps versions in
+  `libs.versions.toml` and leaves the metadata alone, so every weekly gradle PR fails with
+  "Dependency verification failed … checksums are missing" until the metadata is regenerated —
+  [dependabot-core#1996](https://github.com/dependabot/feedback/issues/908) is the open request
+  for this. That is a real chore, accepted knowingly: the alternative is regenerating
+  automatically in CI, which would trust whatever was downloaded and so verify nothing.
+
+  Regenerate over the whole CI task set, not a subset — a configuration that was not resolved
+  contributes no checksums, and `--refresh-dependencies` is not optional, because an artifact
+  already in the local cache is not re-resolved and its checksum is silently left out. Both
+  mistakes were made and caught here: the first pass missed the androidTest configurations, and
+  the second still missed five BOM and parent POMs that were cache-resident:
+
+  ```sh
+  ./gradlew --write-verification-metadata sha256 --refresh-dependencies \
+      lintClassicReleaseTest createClassicReleaseTestUnitTestCoverageReport \
+      testClassicDebugUnitTest assembleClassicDebug assembleClassicRelease \
+      assembleClassicReleaseTestAndroidTest \
+      lintPlayReleaseTest createPlayReleaseTestUnitTestCoverageReport \
+      testPlayDebugUnitTest assemblePlayDebug assemblePlayRelease \
+      assemblePlayReleaseTestAndroidTest
+  # then prove it, since generation and verification are different code paths:
+  ./gradlew --refresh-dependencies assembleClassicRelease
+  ```
+
+  A Gradle upgrade is the other half and is not Dependabot's either: nothing bumps
+  `distributionUrl`, so the sum only goes stale by hand, and Gradle refuses to run rather than
+  continuing quietly when it does.
+
 - **R8 runs on release builds** via AGP 9.3's `optimization { enable = true }`, which turns on
   code *and* resource shrinking and supplies the platform keep rules — so there is no
   `proguardFiles` call and no `proguard-rules.pro`. Keep rules go in

@@ -27,7 +27,7 @@ Langsigtede totaler er værdiløse, hvis et nedbrud eller en genstart stille og 
 
 PRIVAT VED KONSTRUKTION
 
-ylih har ingen internettilladelse. Ikke "vi lover ikke at sende noget" — appen er teknisk ude af stand til det. Der er ingen konti, ingen analyse, ingen reklamer og ingen sporing. Alt ligger i en database på din telefon.
+ylih har ingen internettilladelse. Der er ingen konti, ingen analyse, ingen reklamer og ingen sporing. Alt ligger i en database på din telefon — det eneste, der kan kopiere den væk fra enheden, er Androids egen sikkerhedskopiering, hvis du har den slået til.
 
 Indstillinger → Eksportér skriver hele din historik som læsbar json, og Importér genskaber den, så det aldrig koster dig dine tal at skifte til en ny telefon.
 

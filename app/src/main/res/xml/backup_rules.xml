@@ -2,6 +2,5 @@
 <!-- Years of listening history is only worth collecting if it survives a new phone. -->
 <full-backup-content>
     <include domain="database" path="." />
-    <include domain="file" path="datastore" />
     <include domain="sharedpref" path="." />
 </full-backup-content>

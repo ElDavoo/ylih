@@ -27,7 +27,7 @@ Un total a largo plazo no vale nada si un fallo o un reinicio le suman doce hora
 
 PRIVADA POR CONSTRUCCIÓN
 
-ylih no tiene permiso de internet. No es «prometemos no enviar nada»: la app es técnicamente incapaz de hacerlo. No hay cuentas, ni analítica, ni anuncios, ni rastreo. Todo vive en una base de datos de tu teléfono.
+ylih no tiene permiso de internet. No hay cuentas, ni analítica, ni anuncios, ni rastreo. Todo vive en una base de datos de tu teléfono; lo único que puede copiarla fuera del dispositivo es la copia de seguridad de Android, si la tienes activada.
 
 Ajustes → Exportar guarda todo tu historial como JSON legible, e Importar lo restaura, así que cambiar de teléfono nunca te cuesta tus cifras.
 

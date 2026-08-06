@@ -5,4 +5,4 @@ Phiên bản đầu tiên.
 • Theo dõi chi tiết tùy chọn cho tai nghe có dây và USB, cùng thời gian phát nhạc so với thời gian kết nối.
 • Chi phí cho mỗi giờ nghe.
 • Xuất và nhập JSON.
-• Không có quyền truy cập internet: không có gì rời khỏi điện thoại.
+• Không có quyền truy cập internet: không tài khoản, không phân tích, không theo dõi.

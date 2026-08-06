@@ -27,7 +27,7 @@ Pitkän aikavälin kokonaismäärät ovat hyödyttömiä, jos kaatuminen tai uud
 
 YKSITYINEN RAKENTEELTAAN
 
-ylih:llä ei ole internet-oikeutta. Kyse ei ole lupauksesta olla lähettämättä mitään — sovellus on teknisesti kykenemätön siihen. Tilejä, analytiikkaa, mainoksia tai seurantaa ei ole. Kaikki asuu tietokannassa puhelimessasi.
+ylih:llä ei ole internet-oikeutta. Tilejä, analytiikkaa, mainoksia tai seurantaa ei ole. Kaikki asuu tietokannassa puhelimessasi — ainoa, joka voi kopioida sen laitteelta pois, on Androidin oma varmuuskopiointi, jos se on käytössä.
 
 Asetukset → Vie tallentaa koko historiasi luettavana JSON-tiedostona, ja Tuo palauttaa sen, joten uuteen puhelimeen siirtyminen ei koskaan maksa lukujasi.
 

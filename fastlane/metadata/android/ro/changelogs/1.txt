@@ -5,4 +5,4 @@ Prima versiune.
 • Urmărire detaliată opțională pentru căștile prin cablu și USB, și pentru redare față de timp conectat.
 • Cost pe oră de ascultare.
 • Export și import JSON.
-• Fără permisiune de internet: nimic nu părăsește telefonul.
+• Fără permisiune de internet: fără conturi, fără analitice, fără urmărire.

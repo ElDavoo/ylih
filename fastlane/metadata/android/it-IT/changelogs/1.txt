@@ -5,4 +5,4 @@ Prima versione.
 • Tracciamento dettagliato opzionale per cuffie via cavo e USB e per il tempo di riproduzione.
 • Costo per ora di ascolto.
 • Esportazione e importazione in JSON.
-• Nessun permesso internet: niente lascia mai il telefono.
+• Nessun permesso internet: nessun account, nessuna analitica, nessun tracciamento.

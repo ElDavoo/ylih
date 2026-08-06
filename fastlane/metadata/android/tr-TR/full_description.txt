@@ -27,7 +27,7 @@ Bir çökme ya da yeniden başlatma sessizce on iki saat eklerse uzun vadeli top
 
 YAPISI GEREĞİ GİZLİ
 
-ylih'in internet izni yoktur. Bu bir söz değil — uygulama teknik olarak bir şey göndermeye muktedir değildir. Hesap yok, analitik yok, reklam yok, takip yok. Her şey telefonundaki bir veritabanında yaşar.
+ylih'in internet izni yoktur. Hesap yok, analitik yok, reklam yok, takip yok. Her şey telefonundaki bir veritabanında yaşar; onu cihazın dışına kopyalayabilecek tek şey, açıksa Android'in kendi yedeklemesidir.
 
 Ayarlar → Dışa Aktar, tüm geçmişini okunabilir JSON olarak yazar; İçe Aktar da onu geri yükler — yeni bir telefona geçmek sayılarını asla kaybettirmez.
 

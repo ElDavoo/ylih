@@ -27,7 +27,7 @@ Des totaux à long terme ne valent rien si un plantage ou un redémarrage ajoute
 
 PRIVÉ PAR CONSTRUCTION
 
-ylih n'a pas la permission internet. Ce n'est pas « nous promettons de ne rien envoyer » — l'app en est techniquement incapable. Aucun compte, aucune analyse, aucune publicité, aucun tracage. Tout vit dans une base de données sur votre téléphone.
+ylih n'a pas la permission internet. Aucun compte, aucune analyse, aucune publicité, aucun tracage. Tout vit dans une base de données sur votre téléphone ; seule la sauvegarde d'Android peut la copier hors de l'appareil, si vous l'avez activée.
 
 Réglages → Exporter écrit tout votre historique en JSON lisible, et Importer le restaure, si bien que changer de téléphone ne vous coûte jamais vos chiffres.
 

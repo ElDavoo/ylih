@@ -5,4 +5,4 @@ Första utgåvan.
 • Valfri detaljerad spårning för kabelanslutna och usb-hörlurar, samt för uppspelning kontra anslutningstid.
 • Kostnad per lyssningstimme.
 • Export och import i json.
-• Ingen internetbehörighet: inget lämnar någonsin telefonen.
+• Ingen internetbehörighet: inga konton, ingen analys, ingen spårning.

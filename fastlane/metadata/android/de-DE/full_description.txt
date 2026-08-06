@@ -27,7 +27,7 @@ Langfristige Summen sind wertlos, wenn ein Absturz oder ein Neustart still zwöl
 
 VON NATUR AUS PRIVAT
 
-ylih hat keine Internetberechtigung. Nicht als Versprechen, nichts zu senden – die App ist technisch dazu nicht in der Lage. Es gibt keine Konten, keine Analysen, keine Werbung und kein Tracking. Alles liegt in einer Datenbank auf deinem Telefon.
+ylih hat keine Internetberechtigung. Es gibt keine Konten, keine Analysen, keine Werbung und kein Tracking. Alles liegt in einer Datenbank auf deinem Telefon – vom Gerät kopieren kann sie nur Androids eigene Datensicherung, sofern du sie aktiviert hast.
 
 Einstellungen → JSON exportieren schreibt deine gesamte Historie als lesbares JSON, und Importieren stellt sie wieder her – ein Wechsel auf ein neues Telefon kostet dich nie deine Zahlen.
 

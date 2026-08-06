@@ -27,7 +27,7 @@ Long-term totals are worthless if a crash or a reboot quietly adds twelve hours.
 
 PRIVATE BY CONSTRUCTION
 
-ylih has no internet permission. Not "we promise not to send anything" — the app is technically incapable of it. There are no accounts, no analytics, no ads, and no tracking. Everything lives in a database on your phone.
+ylih has no internet permission. There are no accounts, no analytics, no ads, and no tracking. Everything lives in a database on your phone — the only thing that can copy it off the device is Android's own backup, if you have that switched on.
 
 Settings → Export writes your whole history as readable JSON, and Import restores it, so moving to a new phone never costs you your numbers.
 

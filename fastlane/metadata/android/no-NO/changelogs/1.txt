@@ -5,4 +5,4 @@ Første utgivelse.
 • Valgfri detaljert sporing for kablede og usb-hodetelefoner, og for avspilling mot tilkoblet tid.
 • Kostnad per lyttetime.
 • Json-eksport og -import.
-• Ingen internett-tilgang: ingenting forlater noensinne telefonen.
+• Ingen internett-tilgang: ingen kontoer, ingen analyse, ingen sporing.

@@ -27,7 +27,7 @@ Totalurile pe termen lung nu valorează nimic dacă o defecțiune sau o repornir
 
 PRIVATĂ PRIN CONSTRUCȚIE
 
-ylih nu are permisiune de internet. Nu „promitem că nu trimitem nimic” — aplicația este tehnic incapabilă de asta. Nu există conturi, analitice, reclame sau urmărire în scopuri de marketing. Totul trăiește într-o bază de date de pe telefonul tău.
+ylih nu are permisiune de internet. Nu există conturi, analitice, reclame sau urmărire în scopuri de marketing. Totul trăiește într-o bază de date de pe telefonul tău — singurul lucru care o poate copia în afara dispozitivului este copia de rezervă a Android, dacă o ai activată.
 
 Setări → Exportă scrie întreg istoricul tău ca JSON lizibil, iar Importă îl restaurează, așa că trecerea la un telefon nou nu te costă niciodată numerele tale.
 

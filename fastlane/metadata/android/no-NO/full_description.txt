@@ -27,7 +27,7 @@ Langsiktige totaler er verdiløse hvis en krasj eller en omstart stille legger t
 
 PRIVAT VED KONSTRUKSJON
 
-ylih har ikke internett-tilgang. Ikke «vi lover å ikke sende noe» — appen er teknisk sett ute av stand til det. Det finnes ingen kontoer, ingen analyse, ingen reklame og ingen sporing av deg. Alt lever i en database på telefonen din.
+ylih har ikke internett-tilgang. Det finnes ingen kontoer, ingen analyse, ingen reklame og ingen sporing av deg. Alt lever i en database på telefonen din — det eneste som kan kopiere den vekk fra enheten, er Androids egen sikkerhetskopiering, hvis du har den på.
 
 Innstillinger → Eksportér skriver hele historikken din som lesbar json, og Importér gjenoppretter den, slik at det aldri koster deg tallene dine å bytte til en ny telefon.
 

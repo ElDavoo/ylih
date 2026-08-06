@@ -5,4 +5,4 @@ First release.
 • Optional detailed tracking for wired and USB headphones, and for playback versus connected time.
 • Cost per listening hour.
 • JSON export and import.
-• No internet permission: nothing ever leaves the phone.
+• No internet permission: no accounts, no analytics, no tracking.
