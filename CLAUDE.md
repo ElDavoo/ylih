@@ -448,10 +448,19 @@ These are easy to break and the failures are confusing:
   contributes no checksums, and `--refresh-dependencies` is not optional, because an artifact
   already in the local cache is not re-resolved and its checksum is silently left out. Both
   mistakes were made and caught here: the first pass missed the androidTest configurations, and
-  the second still missed five BOM and parent POMs that were cache-resident:
+  the second still missed five BOM and parent POMs that were cache-resident.
+
+  **And clear `GRADLE_OPTS` first**, which is the trap this dev shell sets. `flake.nix` points
+  `android.aapt2FromMavenOverride` at the SDK's own patched `aapt2`, because the one AGP fetches
+  from Maven is dynamically linked and will not run on NixOS. A build under that override never
+  resolves `com.android.tools.build:aapt2`, so it never contributes a checksum, so the metadata
+  written here is complete for this machine and short two artifacts everywhere else. The F-Droid
+  buildserver found it, one task into the build: `2 artifacts failed verification`, the `linux`
+  jar and its POM. Nothing local can catch that, since every local build is under the override —
+  the only proof is a run without it, which is what the command below is:
 
   ```sh
-  ./gradlew --write-verification-metadata sha256 --refresh-dependencies \
+  GRADLE_OPTS= ./gradlew --write-verification-metadata sha256 --refresh-dependencies \
       lintClassicReleaseTest createClassicReleaseTestUnitTestCoverageReport \
       testClassicDebugUnitTest assembleClassicDebug assembleClassicRelease \
       assembleClassicReleaseTestAndroidTest \
@@ -459,7 +468,7 @@ These are easy to break and the failures are confusing:
       testPlayDebugUnitTest assemblePlayDebug assemblePlayRelease \
       assemblePlayReleaseTestAndroidTest
   # then prove it, since generation and verification are different code paths:
-  ./gradlew --refresh-dependencies assembleClassicRelease
+  GRADLE_OPTS= ./gradlew --refresh-dependencies assembleClassicRelease
   ```
 
   A Gradle upgrade is the other half and is not Dependabot's either: nothing bumps

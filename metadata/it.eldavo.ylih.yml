@@ -1,19 +1,6 @@
-# The F-Droid build recipe for ylih, kept here so it is reviewed alongside the code it builds.
-#
-# This file is *not* read by anything in this repository. It is the file that has to be copied
-# to `metadata/it.eldavo.ylih.yml` in a fork of https://gitlab.com/fdroid/fdroiddata and opened
-# as a merge request there. Keeping a copy next to the source is what makes a version bump one
-# change rather than two disconnected ones — see docs/fdroid.md for the procedure.
-#
-# Summary, Description, screenshots and changelogs are deliberately absent: F-Droid reads them
-# from fastlane/metadata/android/<locale>/ in this repository, which is also what the Play
-# listing uses, so there is exactly one copy of the listing text and it is translated.
-
-# Both are in fdroiddata's config/categories.yml, which is the whole of the valid list.
 Categories:
   - Multimedia
   - Time Tracker
-
 License: MIT
 AuthorName: Davide Palma
 AuthorEmail: dpfuturehacker@gmail.com
@@ -22,45 +9,12 @@ SourceCode: https://github.com/ElDavoo/ylih
 IssueTracker: https://github.com/ElDavoo/ylih/issues
 Changelog: https://github.com/ElDavoo/ylih/releases
 
-# What `fdroid checkupdates` derives from android:label in the merged manifest, and fdroiddata's
-# own `checkupdates` job asserts the recipe already says it — it runs checkupdates and fails on
-# any diff. Absent, that job fails with this exact line as the diff. It is not the display name:
-# F-Droid shows the fastlane title.txt, which is translated 26 ways.
 AutoName: ylih
 
 RepoType: git
 Repo: https://github.com/ElDavoo/ylih.git
-
-# Reproducible builds. F-Droid builds from source, downloads the asset below, copies its signature
-# across with apksigcopier and publishes *our* APK if the two match — which is what lets someone
-# move between a GitHub release and F-Droid without uninstalling. %v is the versionName, and the
-# release workflow names the asset after the tag, which is `v` + versionName. See docs/fdroid.md §6.
 Binaries: https://github.com/ElDavoo/ylih/releases/download/v%v/ylih-v%v-classic.apk
 
-# Every entry below is the same recipe against a different tag, and these notes apply to all of
-# them. `classic` is the sideloaded distribution; `play` is the Google Play build and differs only
-# by dropping the specialUse foreground-service type and the battery-optimisation shortcut, so
-# F-Droid ships the one with fewer restrictions.
-#
-# The list starts at 1.1.2 rather than at the first release, and there is nobody to keep the
-# earlier ones for: F-Droid has published none of them. 1.0.0 could not have verified anywhere,
-# because the pin that made a build agree across machines with and without an NDK landed after
-# it. 1.1.2 removes the need for that pin entirely — the one file it protected was DataStore's
-# prebuilt .so, and the settings now live in the app's own database — so this is the first
-# version whose reproducibility rests on nothing but the source.
-#
-# It is also the first version whose listing text passes the inclusion guide: F-Droid reads the
-# summary and description out of the source checkout at the commit it builds, so the trailing
-# dots and the two 80-character summaries corrected in 28c8935 only reach it through a tag.
-#
-# No `sudo: sdkmanager ...` line to install platform 37 / build-tools 37.0.0, even though
-# the buildserver image preinstalls nothing past 33: its provisioning pre-accepts the SDK
-# licences and makes $ANDROID_HOME/{platforms,build-tools} group-writable *specifically* so
-# AGP downloads what compileSdk asks for. A sudo line would also break — fdroidserver runs
-# it through `sudo bash -e -u`, which neither sources /etc/profile.d/bsenv.sh nor passes
-# ANDROID_HOME through, so sdkmanager would fall back to /opt/android-sdk and abort.
-# No `output:` either: fdroidserver already appends the flavor's own
-# build/outputs/apk/classic/release/ to the globs it searches. See docs/fdroid.md §2.
 Builds:
   - versionName: 1.1.2
     versionCode: 4
@@ -69,10 +23,6 @@ Builds:
     gradle:
       - classic
 
-# The SHA-256 of the signing certificate, lowercase hex with no colons, read out of the
-# `Signing certificate fingerprint` step of the v1.0.0 release run rather than off the machine
-# holding the keystore. Changing the signing key means changing this line, and an APK signed with
-# anything else is refused rather than published — which is the point of the field.
 AllowedAPKSigningKeys: ba4f1511f0d1e49d468387ab6fac6b2df748b887e7018f8ebe4fccd207cf417a
 
 AutoUpdateMode: Version

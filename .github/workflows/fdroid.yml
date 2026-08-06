@@ -112,28 +112,24 @@ jobs:
           fi
           echo "fdroid lint is clean"
 
-      # `fdroid rewritemeta` is run in the fdroiddata fork before the merge request, and it
-      # rewrites the file into canonical form. It also deletes every comment, so this cannot
-      # demand the file come back unchanged — the comments are the point of keeping a copy here.
-      # What it can demand is that the *data* and the field order survive the rewrite, which is
-      # what catches a field written in the wrong place.
-      - name: fdroid rewritemeta changes nothing but comments
+      # fdroiddata's own pipeline runs `fdroid rewritemeta` over every recipe a merge request
+      # touches and fails on any diff, so the file has to already *be* the canonical form — byte
+      # for byte, not merely the same data. This step used to compare the parsed YAML instead,
+      # which let the recipe carry a header of comments explaining itself: rewritemeta deletes
+      # every comment, and comparing dictionaries never saw it. The merge request pipeline did,
+      # and the reasoning lives in docs/fdroid.md now, where nothing rewrites it.
+      - name: fdroid rewritemeta is a no-op
         working-directory: ${{ runner.temp }}/fdroiddata
         run: |
           set -euo pipefail
           cp metadata/it.eldavo.ylih.yml before.yml
           fdroid rewritemeta it.eldavo.ylih
-          python3 - <<'PY'
-          import sys, yaml
-          before = yaml.safe_load(open('before.yml', encoding='utf-8'))
-          after = yaml.safe_load(open('metadata/it.eldavo.ylih.yml', encoding='utf-8'))
-          if before != after:
-              sys.exit(f'::error::rewritemeta changed the recipe data:\n{before}\n{after}')
-          if list(before) != list(after):
-              sys.exit('::error file=metadata/it.eldavo.ylih.yml::rewritemeta reorders the '
-                       f'fields: {list(before)} -> {list(after)}')
-          print('rewritemeta is a no-op apart from comments')
-          PY
+          if ! diff -u before.yml metadata/it.eldavo.ylih.yml; then
+            echo "::error file=metadata/it.eldavo.ylih.yml::fdroid rewritemeta rewrote the recipe;"\
+                 "commit the form shown above as the diff"
+            exit 1
+          fi
+          echo "rewritemeta is a no-op"
 
       # Everything fdroid lint cannot know: whether the recipe still matches the source tree.
       - name: Recipe describes this repository
@@ -216,9 +212,20 @@ jobs:
       # With Binaries: set, `fdroid build` downloads the published APK and compares it against
       # what it just built as part of the build, so a build that succeeds and an APK that
       # reproduces are not two separate results here — this step fails for either.
+      # `fdroid build` exits 0 whether or not it built anything: a failure is a log line reading
+      # "1 build failed" and nothing else. This step read green through a build that failed on
+      # dependency verification, and the fdroiddata merge request pipeline — which asserts the
+      # outcome — is what noticed. So assert it here: no failure line, and an APK on disk.
       - name: fdroid build
         working-directory: ${{ runner.temp }}/fdroiddata
-        run: fdroid build --verbose it.eldavo.ylih
+        run: |
+          set -euo pipefail
+          fdroid build --verbose it.eldavo.ylih 2>&1 | tee build.out
+          if grep -qE 'Could not build app|[0-9]+ builds? failed' build.out; then
+            echo "::error file=metadata/it.eldavo.ylih.yml::fdroid build failed — see the log above"
+            exit 1
+          fi
+          ls -l unsigned/*.apk
 
       # apksigner lives in build-tools, which nothing installed — so if this finds it, AGP really
       # did download build-tools 37.0.0 during the build, which is the assumption above holding.

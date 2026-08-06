@@ -216,6 +216,39 @@ glab mr create --repo fdroid/fdroiddata --target-branch master --title 'New app:
 
 Expect 24–48 hours from merge to the app appearing in the repository.
 
+### The recipe carries no comments
+
+`fdroid rewritemeta` deletes every comment in a recipe, and fdroiddata's pipeline runs it over
+each metadata file a merge request touches and fails on any diff. So a comment is not a thing the
+file can hold: it is a red pipeline. The copy here used to carry a header explaining itself, and
+the CI check that was meant to catch this compared the *parsed* YAML, where a comment does not
+exist — it passed for as long as the comments were there and the merge request pipeline was what
+found them. It now demands the file come back byte-identical.
+
+What those comments said, since a recipe of nine fields is otherwise opaque:
+
+- **No `Summary:` or `Description:`** — F-Droid reads both from `fastlane/metadata/android/`, so
+  there is one copy of the listing text and it is translated. See the quirk above.
+- **`Categories:`** — `Multimedia` and `Time Tracker`, both from fdroiddata's own
+  `config/categories.yml`, which is the whole of the valid list.
+- **`AutoName: ylih`** — what `fdroid checkupdates` derives from `android:label` in the merged
+  manifest. fdroiddata's `checkupdates` job runs it and fails on any diff, so the recipe has to
+  already say it; absent, that job fails with this exact line as the diff. It is not the display
+  name — F-Droid shows the fastlane `title.txt`, translated 26 ways.
+- **`Binaries:`** — the reproducible-build URL, §6. `%v` is the versionName, and the release
+  workflow names the asset after the tag, which is `v` + versionName.
+- **`AllowedAPKSigningKeys:`** — the signing certificate's SHA-256, §6 again. An APK signed with
+  anything else is refused rather than published, which is the point of the field.
+- **`Builds:` starts at 1.1.2**, not at the first release, and there is nobody to keep the earlier
+  ones for: F-Droid published none of them. 1.0.0 could not have verified anywhere, because the
+  pin that made a build agree across machines with and without an NDK landed after it. 1.1.2
+  removes the need for that pin entirely — the one file it protected was DataStore's prebuilt
+  `.so`, and the settings now live in the app's own database — so it is the first version whose
+  reproducibility rests on nothing but the source. It is also the first whose listing text passes
+  the inclusion guide, since F-Droid reads the summary and description out of the source checkout
+  at the commit it builds.
+- **No `sudo:` and no `output:`** — both in §2.
+
 One `fdroid lint` quirk to know about: it checks the `Summary:` field with
 `.*[a-z0-9][.!?]( |$)` ("Punctuation should be avoided") and against an 80-character limit. The
 recipe deliberately sets no `Summary:` or `Description:` — they come from the fastlane files — so
@@ -329,7 +362,7 @@ merge request review. `.github/workflows/fdroid.yml` closes that loop by running
 own tools rather than an approximation of them. Three jobs:
 
 - **recipe** — `fdroid readmeta`, `fdroid lint`, and a check that `fdroid rewritemeta` changes
-  nothing but comments, plus `.github/scripts/fdroid-recipe-check.py` for the part lint cannot
+  nothing at all, plus `.github/scripts/fdroid-recipe-check.py` for the part lint cannot
   know: whether the recipe still describes this repository (tags that exist, changelogs that
   exist, flavors that exist, a `CurrentVersion` matching the newest build entry).
 - **scanner** — `fdroid scanner`, the source scan F-Droid runs before it will build anything:
@@ -343,6 +376,12 @@ own tools rather than an approximation of them. Three jobs:
   fdroidserver reports that 404 as "NOT verified" — which reads as "the release stopped
   reproducing" and is not that. The step tells the two apart and treats only the 404 as a skip, so
   the reproducibility check that runs today is the `Binaries:` one inside `fdroid build`.
+
+  **`fdroid build` exits 0 whether or not it built anything.** A failed build is a log line
+  reading `1 build failed`, and the process still returns success — so the step has to assert the
+  outcome itself, which it does by grepping the log and requiring an APK in `unsigned/`. It did
+  not, and read green through a build that had failed on dependency verification while the
+  merge request pipeline was failing on the same commit.
 
 Both `scanner` and `build` clone the tag the recipe names, so on a pull request they say nothing
 about the change under review. That is why the triggers are path-filtered and why there is a
