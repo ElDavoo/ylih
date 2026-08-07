@@ -6,6 +6,11 @@ on:
       - main
       - master
   pull_request:
+  # A run that was never created cannot be re-run, and Actions does not backfill. The outage on
+  # 2026-08-06 swallowed run creation for a push to main outright — no queued run, no failed run,
+  # nothing — which left no way to ask for the checks again short of pushing a commit that changed
+  # nothing. `android-release.yml` had this trigger and was recoverable; this one did not.
+  workflow_dispatch:
 
 permissions:
   contents: read
