@@ -398,7 +398,7 @@ Two setup details are load-bearing, both handled by `.github/scripts/fdroid-work
   `distributionUrl` against a transparency log of known checksums. It was split out of
   fdroidserver, and the copy still bundled in the 2.4.5 release is the old bash one, whose
   hardcoded table stops at Gradle 8.14.2 — it refuses to build this app with `No hash for gradle
-  version 9.6.1! Exiting...`. The standalone version knows 9.6.1, and cloning it is what the
+  version 9.7.0! Exiting...`. The standalone version knows 9.7.0, and cloning it is what the
   buildserver itself does (`buildserver/provision-gradle`). A Gradle wrapper bump that lands
   before the transparency log has the new version would fail F-Droid the same way, which is why
   `gradle-wrapper.properties` is one of the paths that triggers this workflow.
