@@ -14,6 +14,16 @@
     <issue id="NewerVersionAvailable" severity="ignore" />
     <issue id="GradleDependency" severity="ignore" />
 
+    <!-- The same check for the wrapper rather than the dependencies, and off for the same reason
+         twice over. It failed the build the day Gradle 9.7.0 was published, having passed on the
+         identical commit the day before — a green tree turning red on someone else's release is
+         precisely what these checks cannot be allowed to do here. And the wrapper is the most
+         deliberately pinned line in the repository: gradle-wrapper.properties carries a
+         hand-maintained distributionSha256Sum, and F-Droid builds through gradlew-fdroid, which
+         will only fetch a version its gradle-transparency-log has recorded. Upgrading is a
+         change with two other edits attached, never something to be prompted into mid-release. -->
+    <issue id="AndroidGradlePluginVersion" severity="ignore" />
+
     <!-- 77 translations of a ~150-string vocabulary. Two distinct keys landing on the same word in
          some language ("headphones" as both a tab label and a fallback title) is ordinary, and the
          keys still have to stay separate because other languages do distinguish them. -->
