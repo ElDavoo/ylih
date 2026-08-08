@@ -1,0 +1,1 @@
+• Tylko zmiany w kompilacji i pakowaniu. Na ekranie nic się nie zmienia.
