@@ -305,6 +305,21 @@ tasks.withType<L8DexDesugarLibTask>().configureEach {
     }
 }
 
+// F-Droid's review bot reads `gradle/verification-metadata.xml` and flagged
+// `io.opencensus:opencensus-api` and `opencensus-proto` as trackers. They are not the app's:
+// `com.google.testing.platform:core` declares them, which is AGP's Unified Test Platform — the
+// host-side harness for connectedAndroidTest — and the metadata file is a checksum for every
+// artifact the build resolves, tooling included, not a list of what ships. Neither reaches
+// `classicReleaseRuntimeClasspath` and the published APK contains no reference to either.
+//
+// So the flag was cosmetic, but the cheapest answer to a cosmetic flag is to stop resolving the
+// thing. UTP does not load these at runtime — the emulator legs of CI run the instrumented suite
+// on both a minified and an unminified APK, which is what proves it — so excluding them keeps
+// them out of the resolved graph and therefore out of the checksum file entirely.
+configurations.configureEach {
+    exclude(group = "io.opencensus")
+}
+
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
