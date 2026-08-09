@@ -16,7 +16,7 @@ import androidx.sqlite.execSQL
         SessionEntity::class,
         SettingEntity::class,
     ],
-    version = 2,
+    version = 3,
     exportSchema = true,
 )
 @TypeConverters(Converters::class)
@@ -46,6 +46,21 @@ abstract class YlihDatabase : RoomDatabase() {
         }
 
         /**
+         * Adds the `(pairId, disconnectedAt)` index — see [SessionEntity]. Index-only, so there is
+         * no data to move and nothing that can be lost; the name is Room's own, because a
+         * migration that builds an index Room would not have built leaves the schema validator
+         * failing on every open afterwards.
+         */
+        internal val MIGRATION_2_3 = object : Migration(2, 3) {
+            override fun migrate(connection: SQLiteConnection) {
+                connection.execSQL(
+                    "CREATE INDEX IF NOT EXISTS `index_sessions_pairId_disconnectedAt` " +
+                        "ON `sessions` (`pairId`, `disconnectedAt`)",
+                )
+            }
+        }
+
+        /**
          * The [name] is a parameter only so `YlihDatabaseMigrationTest` can replay an old schema
          * through this exact function rather than through a builder of its own — a migration
          * registered somewhere else is a migration the app does not have. Nothing in the app ever
@@ -56,7 +71,7 @@ abstract class YlihDatabase : RoomDatabase() {
                 context.applicationContext,
                 YlihDatabase::class.java,
                 name,
-            ).addMigrations(MIGRATION_1_2).build()
+            ).addMigrations(MIGRATION_1_2, MIGRATION_2_3).build()
     }
 }
 

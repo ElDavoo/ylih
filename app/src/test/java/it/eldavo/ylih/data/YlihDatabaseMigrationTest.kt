@@ -83,6 +83,48 @@ class YlihDatabaseMigrationTest {
     }
 
     /**
+     * 2 to 3 adds an index and nothing else, so "the history survived" does not show it landed.
+     *
+     * Room validates the schema on open, so a *missing* or misnamed index already fails every test
+     * in this class. What it cannot catch is an index that exists and is never chosen, so this
+     * asks SQLite directly. `openFor` is the query the repository asks most — every connect,
+     * every disconnect, every playback credit — and without this index it walks every session the
+     * pair has ever had.
+     */
+    @Test
+    fun `after migrating, the open-session lookup is an index search rather than a walk`() {
+        writeVersion1Database {
+            execSQL(
+                "INSERT INTO devices (id, deviceKey, kind, defaultName, firstSeenAt, ignored) " +
+                    "VALUES (1, '5E:C2', 'BLUETOOTH', 'WH-1000XM4', 1000, 0)",
+            )
+            execSQL(
+                "INSERT INTO pairs (id, deviceId, label, generation, startedAt) " +
+                    "VALUES (1, 1, 'the good ones', 1, 1000)",
+            )
+        }
+
+        val db = openMigrated()
+        try {
+            val plan = db.openHelper.readableDatabase.query(
+                "EXPLAIN QUERY PLAN SELECT * FROM sessions " +
+                    "WHERE pairId = 1 AND disconnectedAt IS NULL LIMIT 1",
+            ).use { cursor ->
+                buildString {
+                    while (cursor.moveToNext()) append(cursor.getString(cursor.columnCount - 1))
+                }
+            }
+
+            assertTrue(
+                "openFor is not using the index the migration added: $plan",
+                plan.contains("index_sessions_pairId_disconnectedAt"),
+            )
+        } finally {
+            db.close()
+        }
+    }
+
+    /**
      * The settings table has to arrive empty rather than seeded: every default lives in Kotlin, so
      * a row that exists means the user chose it — see [SettingsStore].
      */

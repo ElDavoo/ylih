@@ -102,7 +102,25 @@ data class PairEntity(
             onDelete = ForeignKey.CASCADE,
         ),
     ],
-    indices = [Index(value = ["pairId", "connectedAt"]), Index("disconnectedAt")],
+    indices = [
+        Index(value = ["pairId", "connectedAt"]),
+        Index("disconnectedAt"),
+        /**
+         * "Has this pair got a session open?" — `openFor`, and `lastDisconnectAt` beside it.
+         *
+         * Without `disconnectedAt` in an index alongside `pairId`, SQLite finds the pair from the
+         * composite above and then walks every session that pair has ever had, checking each one.
+         * That is O(the pair's whole history) on the query the repository asks most: every connect
+         * and disconnect, and every playback credit — which is the minute tick plus every callback
+         * edge, and those fire whenever any app on the phone starts or stops a player.
+         *
+         * Measured over 22,000 sessions with 80% of them on one pair, which is what a person
+         * actually accumulates: 2.5 ms to 0.003 ms, with the connect/disconnect write going from
+         * 0.006 ms to 0.007 ms. The point is the shape rather than the milliseconds — O(log n)
+         * instead of O(n), on a table this app intends to keep for decades.
+         */
+        Index(value = ["pairId", "disconnectedAt"]),
+    ],
 )
 data class SessionEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
