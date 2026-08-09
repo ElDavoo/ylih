@@ -43,7 +43,9 @@ No account is required, and there is nothing to sign in to.
 - **Export.** Settings → Export writes your entire history as readable JSON to a file you choose.
 - **Import.** Settings → Import replaces the stored data with a backup.
 - **Deletion.** Deleting a pair inside the app deletes its sessions. Uninstalling the app deletes
-  everything. Because nothing is ever uploaded, there is no copy anywhere else for us to delete.
+  everything, unless you tick "keep app data" in Android's uninstall dialog — then it stays on the
+  phone for a reinstall, and clearing the app's storage in Settings removes it. Because nothing is
+  ever uploaded, there is no copy anywhere else for us to delete.
 - **Backup.** Android's own backup system is enabled, so your history can be restored to a new
   phone. That transfer is handled by Android and your Google account settings, not by ylih.
 

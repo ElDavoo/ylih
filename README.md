@@ -208,7 +208,8 @@ The privacy policy is [`PRIVACY.md`](PRIVACY.md).
 Room database, three tables: `devices` (an identity as Android reports it), `pairs` (a physical
 pair — the lifetime unit, with generations) and `sessions`. Settings → Export writes the whole
 thing as readable JSON; Import replaces it. Android backup is enabled too, so the history
-survives a new phone.
+survives a new phone, and `hasFragileUserData` offers "keep app data" in the uninstall dialog so
+it survives a reinstall on the same one.
 
 ## License
 

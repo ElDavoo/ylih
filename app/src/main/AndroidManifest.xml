@@ -20,16 +20,25 @@
         android:name="android.hardware.bluetooth"
         android:required="false" />
 
+    <!--
+      hasFragileUserData puts a "keep app data" checkbox in the system's uninstall dialog (API 29+,
+      hence the targetApi — minSdk is 23 and lint would otherwise call the attribute unused). It is
+      the one way history survives a deliberate uninstall and reinstall on the same phone: cloud
+      backup covers a new phone and only where the user has it enabled, and the JSON export is a
+      thing someone has to remember to do first.
+    -->
     <application
         android:name=".YlihApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
+        android:hasFragileUserData="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Ylih">
+        android:theme="@style/Theme.Ylih"
+        tools:targetApi="29">
 
         <!--
           singleTop so a second tap on a widget row re-navigates the activity that is already up
