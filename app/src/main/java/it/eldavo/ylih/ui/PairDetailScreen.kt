@@ -41,6 +41,9 @@ import it.eldavo.ylih.stats.Counting
 import it.eldavo.ylih.stats.Stats
 import java.time.ZoneId
 
+/** Two weeks reads better on a single pair than a month of mostly-empty bars. */
+private const val PAIR_CHART_DAYS = 14
+
 @Composable
 fun PairDetailScreen(
     viewModel: YlihViewModel,
@@ -50,9 +53,13 @@ fun PairDetailScreen(
 ) {
     val summary by viewModel.summary(pairId).collectAsStateWithLifecycle(initialValue = null)
     val sessions by viewModel.sessions(pairId).collectAsStateWithLifecycle(initialValue = emptyList())
-    val now by viewModel.now.collectAsStateWithLifecycle()
+    // Two clocks: [liveNow] drives the "connected for …" line and the open session's row, which
+    // are the only things here meant to move every second. Everything else is derived from this
+    // pair's whole history and reads the minute clock — see YlihViewModel.nowMinute.
+    val liveNow by viewModel.now.collectAsStateWithLifecycle()
+    val now by viewModel.nowMinute.collectAsStateWithLifecycle()
     val counting by viewModel.counting.collectAsStateWithLifecycle()
-    val zone = ZoneId.systemDefault()
+    val zone = remember { ZoneId.systemDefault() }
 
     var menuOpen by remember { mutableStateOf(false) }
     var renaming by remember { mutableStateOf(false) }
@@ -61,8 +68,11 @@ fun PairDetailScreen(
     var deleting by remember { mutableStateOf(false) }
 
     val current = summary
-    val spans = sessions.map { it.toSpan() }
-    val stats = Stats.summarize(spans, now, counting)
+    val spans = remember(sessions) { sessions.map { it.toSpan() } }
+    val stats = remember(spans, now, counting) { Stats.summarize(spans, now, counting) }
+    val series = remember(spans, now, counting, zone) {
+        Stats.dailySeries(spans, zone, now, days = WINDOW_DAYS, counting = counting)
+    }
 
     Scaffold(
         modifier = Modifier.padding(bottom = contentPadding.calculateBottomPadding()),
@@ -157,7 +167,7 @@ fun PairDetailScreen(
                         Text(
                             stringResource(
                                 R.string.pair_connected_now,
-                                formatDurationShort(now - it),
+                                formatDurationShort(liveNow - it),
                             ),
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.primary,
@@ -177,16 +187,7 @@ fun PairDetailScreen(
                         ),
                     )
                     Spacer(Modifier.height(8.dp))
-                    StatRow(
-                        listOf(
-                            stringResource(R.string.stats_today) to
-                                formatHours(Stats.recentMs(spans, zone, now, 1, counting)),
-                            stringResource(R.string.stats_last_7) to
-                                formatHours(Stats.recentMs(spans, zone, now, 7, counting)),
-                            stringResource(R.string.stats_last_30) to
-                                formatHours(Stats.recentMs(spans, zone, now, 30, counting)),
-                        ),
-                    )
+                    WindowStatRow(series)
                     if (stats.hasPlaybackData) {
                         Spacer(Modifier.height(8.dp))
                         StatRow(
@@ -224,13 +225,20 @@ fun PairDetailScreen(
                     )
                     Spacer(Modifier.height(8.dp))
                     DailyBarChart(
-                        series = Stats.dailySeries(spans, zone, now, days = 14, counting = counting),
+                        // The tail of the series already built above, rather than a second walk
+                        // over the same history for a shorter window.
+                        series = series.takeLast(PAIR_CHART_DAYS),
                     )
                 }
             }
             item { SectionHeader(stringResource(R.string.pair_sessions)) }
             items(sessions, key = { it.id }) { session ->
-                SessionRow(session = session, now = now)
+                // The live clock only for the one session that is still running; a closed row's
+                // duration does not depend on the time and would recompose every second for nothing.
+                SessionRow(
+                    session = session,
+                    now = if (session.disconnectedAt == null) liveNow else now,
+                )
                 HorizontalDivider()
             }
         }

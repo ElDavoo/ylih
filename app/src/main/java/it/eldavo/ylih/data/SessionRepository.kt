@@ -2,6 +2,7 @@ package it.eldavo.ylih.data
 
 import androidx.room.withTransaction
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 
@@ -30,7 +31,8 @@ class SessionRepository(
 
     fun observeSummaries(): Flow<List<PairSummary>> = pairs.observeSummaries()
 
-    fun observeSummary(pairId: Long): Flow<PairSummary?> = pairs.observeSummary(pairId)
+    fun observeSummary(pairId: Long): Flow<PairSummary?> =
+        pairs.observeSummaries(pairId).map { it.firstOrNull() }
 
     fun observeSessionsFor(pairId: Long): Flow<List<SessionEntity>> = sessions.observeForPair(pairId)
 

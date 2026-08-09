@@ -76,6 +76,9 @@ object Stats {
             longestMs = durations.max(),
             averageMs = total / relevant.size,
             playingMs = relevant.sumOf { it.playingMs ?: 0L },
+            // The filter is redundant when counting playback — `counted` has already dropped every
+            // span without a figure — and load-bearing when counting connected time, where
+            // `relevant` is everything and this must be only what was actually measured.
             measuredMs = relevant.filter { it.playingMs != null }.sumOf { durationMs(it, now) },
             firstAt = relevant.minOf { it.startAt },
             lastAt = relevant.maxOf { it.endAt ?: now },
@@ -87,20 +90,30 @@ object Stats {
      * Splits spans across local midnights so a session that runs overnight is credited to both
      * days. Uses [ZoneId] arithmetic rather than fixed 24 h blocks, so DST days (23 h / 25 h)
      * bucket correctly.
+     *
+     * [from] drops whatever a caller cannot display. Every caller here wants a window — thirty
+     * days, fourteen, one — and without a floor this walked the entire history a day at a time
+     * per span and then threw all but the tail away, so the cost of drawing one month grew with
+     * every month ever recorded. A span is skipped whole when it ended before the window, and one
+     * that straddles the edge starts its walk at [from] rather than at its own beginning.
      */
     fun dailyMs(
         spans: List<Span>,
         zone: ZoneId,
         now: Long,
         counting: Counting = Counting.CONNECTED,
+        from: Long = Long.MIN_VALUE,
     ): Map<LocalDate, Long> {
         val out = mutableMapOf<LocalDate, Long>()
         for (span in counted(spans, counting)) {
             val connected = durationMs(span, now)
             val credit = durationMs(span, now, counting)
             if (connected <= 0 || credit <= 0) continue
-            var cursor = span.startAt
             val end = (span.endAt ?: now).coerceAtLeast(span.startAt)
+            if (end < from) continue
+            // Clamped, not skipped: a session that started before the window and ended inside it
+            // still owns the part that falls in, and the rate below is a per-millisecond one.
+            var cursor = maxOf(span.startAt, from)
             var day = Instant.ofEpochMilli(cursor).atZone(zone).toLocalDate()
             while (cursor < end) {
                 val nextMidnight = day.plusDays(1).atStartOfDay(zone).toInstant().toEpochMilli()
@@ -125,16 +138,28 @@ object Stats {
         days: Int,
         counting: Counting = Counting.CONNECTED,
     ): List<Pair<LocalDate, Long>> {
-        val buckets = dailyMs(spans, zone, now, counting)
         val today = Instant.ofEpochMilli(now).atZone(zone).toLocalDate()
         val first = today.minusDays((days - 1).toLong())
+        val buckets = dailyMs(
+            spans,
+            zone,
+            now,
+            counting,
+            from = first.atStartOfDay(zone).toInstant().toEpochMilli(),
+        )
         return generateSequence(first) { it.plusDays(1) }
             .takeWhile { !it.isAfter(today) }
             .map { it to (buckets[it] ?: 0L) }
             .toList()
     }
 
-    /** Total over the last [days] local days, today included. */
+    /**
+     * Total over the last [days] local days, today included.
+     *
+     * For a caller that wants one window. A screen showing several of them should build the
+     * longest series once and sum its tails — `ui/Components.kt`'s `WindowStatRow` — because
+     * every call here walks the history again to answer the same question.
+     */
     fun recentMs(
         spans: List<Span>,
         zone: ZoneId,
@@ -146,8 +171,6 @@ object Stats {
     /** Cost per listening hour, in the same minor units as [priceCents]. */
     fun costPerHour(priceCents: Long?, totalMs: Long): Double? {
         if (priceCents == null || totalMs <= 0) return null
-        val hours = totalMs / 3_600_000.0
-        if (hours <= 0) return null
-        return priceCents / 100.0 / hours
+        return priceCents / 100.0 / (totalMs / 3_600_000.0)
     }
 }

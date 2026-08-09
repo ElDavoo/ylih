@@ -23,6 +23,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.pluralStringResource
@@ -45,12 +46,20 @@ fun DevicesScreen(
 ) {
     val summaries by viewModel.summaries.collectAsStateWithLifecycle()
     val spansByPair by viewModel.spansByPair.collectAsStateWithLifecycle()
-    val now by viewModel.now.collectAsStateWithLifecycle()
+    // The minute clock: a card shows hours, and each one re-walks its pair's history to find its
+    // last seven days. On the second clock that was every card, every second, forever.
+    val now by viewModel.nowMinute.collectAsStateWithLifecycle()
     val counting by viewModel.counting.collectAsStateWithLifecycle()
-    val zone = ZoneId.systemDefault()
+    val zone = remember { ZoneId.systemDefault() }
 
-    val active = summaries.filter { it.retiredAt == null }
-    val retired = summaries.filter { it.retiredAt != null }
+    // One pass, remembered: both halves were re-derived on every recomposition, and the two
+    // sections below were the same nine lines twice over.
+    val sections = remember(summaries) {
+        summaries.partition { it.retiredAt == null }
+            .let { (active, retired) ->
+                listOf(R.string.devices_in_use to active, R.string.devices_retired to retired)
+            }
+    }
 
     LazyColumn(
         state = listState,
@@ -63,22 +72,10 @@ fun DevicesScreen(
         if (summaries.isEmpty()) {
             item { EmptyState() }
         }
-        if (active.isNotEmpty()) {
-            item { SectionHeader(stringResource(R.string.devices_in_use)) }
-            items(active, key = { it.pairId }) { summary ->
-                PairCard(
-                    summary = summary,
-                    spans = spansByPair[summary.pairId].orEmpty(),
-                    now = now,
-                    zone = zone,
-                    counting = counting,
-                    onClick = { onOpenPair(summary.pairId) },
-                )
-            }
-        }
-        if (retired.isNotEmpty()) {
-            item { SectionHeader(stringResource(R.string.devices_retired)) }
-            items(retired, key = { it.pairId }) { summary ->
+        sections.forEach { (header, pairs) ->
+            if (pairs.isEmpty()) return@forEach
+            item { SectionHeader(stringResource(header)) }
+            items(pairs, key = { it.pairId }) { summary ->
                 PairCard(
                     summary = summary,
                     spans = spansByPair[summary.pairId].orEmpty(),
@@ -123,7 +120,9 @@ private fun PairCard(
     onClick: () -> Unit,
 ) {
     val lifetimeMs = summary.countedMs(now, counting)
-    val last7 = Stats.recentMs(spans, zone, now, days = 7, counting = counting)
+    val last7 = remember(spans, now, counting, zone) {
+        Stats.recentMs(spans, zone, now, days = 7, counting = counting)
+    }
 
     Card(
         onClick = onClick,

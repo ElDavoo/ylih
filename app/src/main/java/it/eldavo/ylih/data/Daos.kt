@@ -86,6 +86,14 @@ interface PairDao {
     @Query("SELECT * FROM pairs")
     suspend fun getAll(): List<PairEntity>
 
+    /**
+     * Every pair with its totals, or just one when [pairId] is given.
+     *
+     * One query with an optional filter rather than two near-identical ones. They were the same
+     * twenty-two lines twice over, differing only by the `WHERE`, so any change to the arithmetic
+     * had to be made in both by hand — and a projection this size is exactly where that goes
+     * unnoticed. The `ORDER BY` is wasted work on a single row and cheaper than a third copy.
+     */
     @Query(
         """
         SELECT p.id AS pairId, p.deviceId AS deviceId, p.label AS label, p.generation AS generation,
@@ -106,37 +114,12 @@ interface PairDao {
         FROM pairs p
         JOIN devices d ON d.id = p.deviceId
         LEFT JOIN sessions s ON s.pairId = p.id
+        WHERE (:pairId IS NULL OR p.id = :pairId)
         GROUP BY p.id
         ORDER BY (openSince IS NULL), retiredAt IS NOT NULL, lastSeenAt DESC
         """,
     )
-    fun observeSummaries(): Flow<List<PairSummary>>
-
-    @Query(
-        """
-        SELECT p.id AS pairId, p.deviceId AS deviceId, p.label AS label, p.generation AS generation,
-               p.startedAt AS startedAt, p.retiredAt AS retiredAt, p.retireReason AS retireReason,
-               p.purchaseDate AS purchaseDate, p.priceCents AS priceCents,
-               d.deviceKey AS deviceKey, d.kind AS deviceKind, d.defaultName AS deviceName,
-               d.ignored AS deviceIgnored,
-               IFNULL(SUM(CASE WHEN s.disconnectedAt IS NOT NULL
-                               THEN s.disconnectedAt - s.connectedAt ELSE 0 END), 0) AS closedMs,
-               IFNULL(SUM(s.playingMs), 0) AS playingMs,
-               IFNULL(SUM(CASE WHEN s.playingMs IS NOT NULL AND s.disconnectedAt IS NOT NULL
-                               THEN s.disconnectedAt - s.connectedAt ELSE 0 END), 0) AS measuredPlaybackMs,
-               COUNT(s.id) AS sessionCount,
-               MIN(CASE WHEN s.disconnectedAt IS NULL THEN s.connectedAt END) AS openSince,
-               MAX(IFNULL(s.disconnectedAt, s.connectedAt)) AS lastSeenAt,
-               IFNULL(MAX(CASE WHEN s.disconnectedAt IS NOT NULL
-                               THEN s.disconnectedAt - s.connectedAt ELSE 0 END), 0) AS longestMs
-        FROM pairs p
-        JOIN devices d ON d.id = p.deviceId
-        LEFT JOIN sessions s ON s.pairId = p.id
-        WHERE p.id = :pairId
-        GROUP BY p.id
-        """,
-    )
-    fun observeSummary(pairId: Long): Flow<PairSummary?>
+    fun observeSummaries(pairId: Long? = null): Flow<List<PairSummary>>
 }
 
 @Dao

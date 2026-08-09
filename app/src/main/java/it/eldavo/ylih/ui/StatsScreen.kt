@@ -16,6 +16,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
@@ -34,13 +35,19 @@ fun StatsScreen(
 ) {
     val spans by viewModel.allSpans.collectAsStateWithLifecycle()
     val summaries by viewModel.summaries.collectAsStateWithLifecycle()
-    val now by viewModel.now.collectAsStateWithLifecycle()
+    // The minute clock, not the second one: every figure below is derived from the whole history
+    // and none of them can display a change faster than that. See YlihViewModel.nowMinute.
+    val now by viewModel.nowMinute.collectAsStateWithLifecycle()
     val counting by viewModel.counting.collectAsStateWithLifecycle()
-    val zone = ZoneId.systemDefault()
+    val zone = remember { ZoneId.systemDefault() }
 
-    val summary = Stats.summarize(spans, now, counting)
-    val series = Stats.dailySeries(spans, zone, now, days = 30, counting = counting)
-    val ranking = summaries.sortedByDescending { it.countedMs(now, counting) }
+    val summary = remember(spans, now, counting) { Stats.summarize(spans, now, counting) }
+    val series = remember(spans, now, counting, zone) {
+        Stats.dailySeries(spans, zone, now, days = WINDOW_DAYS, counting = counting)
+    }
+    val ranking = remember(summaries, now, counting) {
+        summaries.sortedByDescending { it.countedMs(now, counting) }
+    }
 
     LazyColumn(
         state = listState,
@@ -83,16 +90,7 @@ fun StatsScreen(
                     )
                 }
                 Spacer(Modifier.height(16.dp))
-                StatRow(
-                    listOf(
-                        stringResource(R.string.stats_today) to
-                            formatHours(Stats.recentMs(spans, zone, now, 1, counting)),
-                        stringResource(R.string.stats_last_7) to
-                            formatHours(Stats.recentMs(spans, zone, now, 7, counting)),
-                        stringResource(R.string.stats_last_30) to
-                            formatHours(Stats.recentMs(spans, zone, now, 30, counting)),
-                    ),
-                )
+                WindowStatRow(series)
                 Spacer(Modifier.height(8.dp))
                 StatRow(
                     listOf(

@@ -22,11 +22,13 @@ import it.eldavo.ylih.widget.refreshWidgets
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.receiveAsFlow
+import kotlinx.coroutines.flow.shareIn
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
@@ -40,6 +42,24 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
             delay(1_000)
         }
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(2_000), container.clock.now())
+
+    /**
+     * [now] rounded down to the minute, for every figure derived from the whole history.
+     *
+     * Nothing that reads this can show a per-second change: `formatHours` rounds to a tenth of an
+     * hour, which is six minutes, and the day buckets move by the hour. But keying them on [now]
+     * meant re-summarising and re-bucketing every session ever recorded sixty times a minute, on
+     * the main thread, on three screens — a cost that grows for as long as the app is used. The
+     * live "connected for …" lines still read [now]; they are the only thing on screen that is
+     * meant to move every second.
+     */
+    val nowMinute: StateFlow<Long> = now
+        .map { it - it.mod(MINUTE_MS) }
+        .stateIn(
+            viewModelScope,
+            SharingStarted.WhileSubscribed(2_000),
+            container.clock.now().let { it - it.mod(MINUTE_MS) },
+        )
 
     val summaries: StateFlow<List<PairSummary>> = container.repository.observeSummaries()
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
@@ -70,12 +90,24 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
     val language: StateFlow<String?> = container.settings.language
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
-    val allSpans: StateFlow<List<Span>> = container.repository.observeAllSessions()
+    /**
+     * The whole session history, read once for both of the shapes the screens want it in.
+     *
+     * These used to open an `observeAllSessions()` each. Room's invalidation is table-granular and
+     * the service heartbeats every open session once a minute, so every one of those minutes ran
+     * `SELECT * FROM sessions` twice over a table that grows forever, and mapped the result twice,
+     * to hand two screens the same rows.
+     */
+    private val allSessions: SharedFlow<List<SessionEntity>> =
+        container.repository.observeAllSessions()
+            .shareIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), replay = 1)
+
+    val allSpans: StateFlow<List<Span>> = allSessions
         .map { sessions -> sessions.map { it.toSpan() } }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
 
     /** Sessions grouped per pair, so time-window stats can be computed without extra queries. */
-    val spansByPair: StateFlow<Map<Long, List<Span>>> = container.repository.observeAllSessions()
+    val spansByPair: StateFlow<Map<Long, List<Span>>> = allSessions
         .map { sessions -> sessions.groupBy({ it.pairId }, { it.toSpan() }) }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyMap())
 
@@ -232,6 +264,8 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
         private val RES_EDIT_FAILED = R.string.edit_failed
         private val RES_COULD_NOT_OPEN = R.string.error_could_not_open
         private val RES_DETAILED_NEEDS_BLUETOOTH = R.string.detailed_needs_bluetooth
+
+        private const val MINUTE_MS = 60_000L
     }
 }
 

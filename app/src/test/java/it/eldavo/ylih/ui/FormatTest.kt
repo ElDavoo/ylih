@@ -55,7 +55,25 @@ class FormatTest {
             .toInstant().toEpochMilli()
         assertEquals("20 May 2026", formatDate(at, rome))
         assertEquals("20 May 2026, 14:30", formatDateTime(at, rome))
-        assertEquals("20/5", formatDayLabel(LocalDate.of(2026, 5, 20)))
+        assertEquals("20/05", formatDayLabel(LocalDate.of(2026, 5, 20)))
+    }
+
+    /**
+     * The chart axis used to be a hardcoded `d/M`, which is the wrong order in a good number of
+     * the languages this app ships. Two locales that disagree about it is the whole assertion.
+     */
+    @Test
+    fun `the chart axis follows the locale rather than one fixed order`() {
+        val day = LocalDate.of(2026, 5, 20)
+
+        Locale.setDefault(Locale.US)
+        assertEquals("month first in en-US", "5/20", formatDayLabel(day))
+
+        Locale.setDefault(Locale.UK)
+        assertEquals("day first in en-GB", "20/05", formatDayLabel(day))
+
+        Locale.setDefault(Locale.JAPAN)
+        assertEquals("and no year in any of them", "05/20", formatDayLabel(day))
     }
 
     @Test
