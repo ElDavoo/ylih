@@ -434,7 +434,13 @@ class TrackingServiceTest {
         shadowOf(audioManager).setIsMusicActive(true)
         start()
         connect(buds())
-        settle("the session to open") { sessions().isNotEmpty() }
+        // The *notification*, not the row. `playbackTargetKey` is assigned after `onConnected`
+        // returns, and the row exists before that — so a callback landing in between would find
+        // no target and drop its slice, which on a loaded machine is most of the window. The
+        // notification is refreshed after the whole loop, so it is proof the assignment happened.
+        settle("the connect to be finished with") {
+            notificationText() != app.getString(R.string.notification_idle) && sessions().isNotEmpty()
+        }
 
         playUntickedFor(50)
         // Nothing playing anywhere: the callback ends the span and hands back the whole slice,

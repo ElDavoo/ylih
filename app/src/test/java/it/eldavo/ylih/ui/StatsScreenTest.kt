@@ -99,7 +99,15 @@ class StatsScreenTest {
     }
 
     /** No `listState`: the default is what every caller but [YlihNavHost] uses. */
-    private fun show(totalHeadline: String) {
+    /**
+     * @param settled something the screen only shows once every flow it reads has arrived.
+     *
+     * The headline alone is not that. It is a figure, and the same figure appears in the window
+     * tiles beside it, so `nodeCount` can be satisfied by a tile drawn from a *different* setting
+     * than the one under test — the spans, the counting mode and the summaries each land on their
+     * own frame. A test whose subject is the counting mode has to wait for the counting mode.
+     */
+    private fun show(totalHeadline: String, settled: String? = null) {
         val viewModel = YlihViewModel(app)
         compose.setContent {
             YlihTheme {
@@ -109,6 +117,7 @@ class StatsScreenTest {
         // The spans arrive from Room a frame or two after the first composition, and the headline
         // reads 0.0 h until they do.
         compose.waitUntil(timeoutMillis = 10_000) { nodeCount(totalHeadline) > 0 }
+        settled?.let { compose.waitUntil(timeoutMillis = 10_000) { nodeCount(it) > 0 } }
     }
 
     private fun text(id: Int, vararg args: Any): String = app.getString(id, *args)
@@ -150,7 +159,10 @@ class StatsScreenTest {
     fun `counting playback says so, and stops repeating the headline beside it`() {
         runBlocking { settings.setPlaybackOnly(true) }
 
-        show(totalHeadline = formatHours(3 * hour))
+        show(
+            totalHeadline = formatHours(3 * hour),
+            settled = text(R.string.stats_playback_only_note),
+        )
 
         compose.onNodeWithText(text(R.string.stats_playback_only_note)).assertExists()
         // The headline above already *is* the playing figure; saying it twice invites the reader

@@ -185,7 +185,13 @@ class WidgetDataTest {
         val (_, data) = widgetContentFlow(app).first()
 
         assertEquals(WIDGET_DAYS, data.series.size)
-        assertEquals(app.container.clock.now() / 1000, data.now / 1000)
+        // Two wall-clock readings either side of a database read, so a second boundary can fall
+        // between them; what matters is that the figure is the app's own clock rather than
+        // something the widget invented.
+        assertTrue(
+            "${data.now} is not a reading of the app's clock",
+            app.container.clock.now() - data.now in 0..5_000,
+        )
     }
 
     @Test
