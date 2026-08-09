@@ -20,7 +20,9 @@ import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -115,9 +117,17 @@ fun SettingsScreen(
         val detailedSupported by viewModel.detailedTrackingSupported.collectAsStateWithLifecycle()
         SectionHeader(stringResource(R.string.settings_tracking))
         Row(
+            // toggleable rather than clickable, with the switch along for the ride — the same
+            // shape LanguageRow below already uses, and for the same reason: one click target and
+            // one thing for a screen reader to announce, with its state, rather than two.
             modifier = Modifier
                 .fillMaxWidth()
-                .clickable { setDetailed(!detailed) }
+                .toggleable(
+                    value = detailed,
+                    enabled = detailedSupported || detailed,
+                    role = Role.Switch,
+                    onValueChange = ::setDetailed,
+                )
                 .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
@@ -143,7 +153,7 @@ fun SettingsScreen(
             Switch(
                 checked = detailed,
                 enabled = detailedSupported || detailed,
-                onCheckedChange = { setDetailed(it) },
+                onCheckedChange = null,
             )
         }
         // Playback is only ever measured by the foreground service, so on a build that cannot run
@@ -154,7 +164,11 @@ fun SettingsScreen(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clickable { viewModel.setPlaybackOnly(counting != Counting.PLAYBACK) }
+                    .toggleable(
+                        value = counting == Counting.PLAYBACK,
+                        role = Role.Switch,
+                        onValueChange = viewModel::setPlaybackOnly,
+                    )
                     .padding(16.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
@@ -172,7 +186,7 @@ fun SettingsScreen(
                 Spacer(Modifier.width(12.dp))
                 Switch(
                     checked = counting == Counting.PLAYBACK,
-                    onCheckedChange = { viewModel.setPlaybackOnly(it) },
+                    onCheckedChange = null,
                 )
             }
         }
@@ -208,14 +222,15 @@ fun SettingsScreen(
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clickable { viewModel.setDeviceIgnored(device.id, !device.ignored) }
+                        .toggleable(
+                            value = !device.ignored,
+                            role = Role.Checkbox,
+                            onValueChange = { viewModel.setDeviceIgnored(device.id, !it) },
+                        )
                         .padding(horizontal = 16.dp, vertical = 10.dp),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
-                    Checkbox(
-                        checked = !device.ignored,
-                        onCheckedChange = { viewModel.setDeviceIgnored(device.id, !it) },
-                    )
+                    Checkbox(checked = !device.ignored, onCheckedChange = null)
                     Spacer(Modifier.width(8.dp))
                     Column(Modifier.weight(1f)) {
                         Text(device.defaultName, style = MaterialTheme.typography.bodyLarge)
@@ -453,6 +468,9 @@ private fun LanguageRow(label: String, selected: Boolean, onClick: () -> Unit) {
             // selectable rather than clickable, with the radio button along for the ride: one
             // click target and one thing for a screen reader to announce, not two.
             .selectable(selected = selected, role = Role.RadioButton, onClick = onClick)
+            // A RadioButton with a null onClick brings no minimum touch target of its own, which
+            // left these rows about 32dp tall — in a dialog listing seventy-seven of them.
+            .heightIn(min = 48.dp)
             .padding(vertical = 6.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {

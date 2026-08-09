@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
@@ -16,6 +17,9 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.clearAndSetSemantics
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import it.eldavo.ylih.R
 import java.time.LocalDate
@@ -28,22 +32,43 @@ import java.time.LocalDate
 fun DailyBarChart(
     series: List<Pair<LocalDate, Long>>,
     modifier: Modifier = Modifier,
+    /**
+     * What the chart is of, for a screen reader. A `Canvas` has nothing inside it to describe
+     * itself, so without this the app's whole visualisation reads as an empty leaf and TalkBack
+     * gets three tiny axis labels and nothing else.
+     */
+    label: String? = null,
     barColor: Color = MaterialTheme.colorScheme.primary,
     trackColor: Color = MaterialTheme.colorScheme.surfaceVariant,
 ) {
     val maxMs = chartMaxMs(series)
+    val first = series.firstOrNull()?.first
+    val last = series.lastOrNull()?.first
+    val peak = stringResource(R.string.chart_max, formatHours(maxMs))
+    val total = formatHours(series.sumOf { it.second })
+    // Assembled from strings that already exist in all 77 languages rather than adding one more
+    // for a line only a screen reader hears; the separator follows the app bar's own house style.
+    val description = remember(label, first, last, peak, total) {
+        listOfNotNull(
+            label,
+            first?.let { start -> last?.let { "${formatDayLabel(start)} – ${formatDayLabel(it)}" } },
+            peak,
+            total,
+        ).joinToString(" · ")
+    }
     Column(modifier) {
         Canvas(
             Modifier
                 .fillMaxWidth()
-                .height(120.dp),
+                .height(120.dp)
+                .semantics { contentDescription = description },
         ) {
             drawDailyBars(series, maxMs, barColor, trackColor)
         }
         Spacer(Modifier.height(4.dp))
-        Row(Modifier.fillMaxWidth()) {
-            val first = series.firstOrNull()?.first
-            val last = series.lastOrNull()?.first
+        // Merged away from the screen reader: the description above already carries the range and
+        // the peak, and three loose fragments after it would only repeat them out of order.
+        Row(Modifier.fillMaxWidth().clearAndSetSemantics { }) {
             Text(
                 text = first?.let { formatDayLabel(it) }.orEmpty(),
                 style = MaterialTheme.typography.labelSmall,
@@ -51,7 +76,7 @@ fun DailyBarChart(
             )
             Spacer(Modifier.weight(1f))
             Text(
-                text = stringResource(R.string.chart_max, formatHours(maxMs)),
+                text = peak,
                 style = MaterialTheme.typography.labelSmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )

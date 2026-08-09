@@ -4,6 +4,7 @@ import android.os.Build
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.ui.test.junit4.v2.createComposeRule
 import androidx.compose.ui.test.onAllNodesWithText
+import androidx.compose.ui.test.onAllNodesWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.test.core.app.ApplicationProvider
@@ -111,6 +112,15 @@ class DevicesScreenTest {
     private fun nodeCount(value: String, substring: Boolean = false): Int =
         compose.onAllNodesWithText(value, substring = substring).fetchSemanticsNodes().size
 
+    /**
+     * The chips are informational and carry the card's own action, so four buttons per pair all
+     * doing the same thing is what a screen reader used to hear. Their semantics are cleared and
+     * what they say is gathered into the card's description, which is where this looks.
+     */
+    private fun describedCount(value: String): Int = compose
+        .onAllNodesWithContentDescription(value, substring = true)
+        .fetchSemanticsNodes().size
+
     @Test
     fun `no headphones yet is a sentence, not a blank page`() {
         show { nodeCount(text(R.string.devices_empty_title)) > 0 }
@@ -136,10 +146,9 @@ class DevicesScreenTest {
         assertEquals(0, nodeCount(text(R.string.devices_generation, 1), substring = true))
         // Four closed hours plus a live one, and the chip counting them up as they pass.
         compose.onNodeWithText(formatHours(5 * hour)).assertExists()
-        compose.onNodeWithText(text(R.string.devices_connected_for, ""), substring = true)
-            .assertExists()
+        assertEquals(1, describedCount(text(R.string.devices_connected_for, "")))
         // The retired pair last listened to two days ago, so it has no seven-day chip to show.
-        assertEquals(1, nodeCount(text(R.string.devices_recent, ""), substring = true))
+        assertEquals(1, describedCount(text(R.string.devices_recent, "")))
     }
 
     @Test

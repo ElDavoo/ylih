@@ -28,6 +28,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.clearAndSetSemantics
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import it.eldavo.ylih.R
@@ -124,11 +127,41 @@ private fun PairCard(
         Stats.recentMs(spans, zone, now, days = 7, counting = counting)
     }
 
+    val kind = summary.deviceKind.displayName()
+    val generation = stringResource(R.string.devices_generation, summary.generation)
+    val retired = summary.retiredAt
+        ?.let { stringResource(R.string.devices_retired_on, formatDate(it)) }
+    val connectedFor = summary.openSince?.let {
+        stringResource(R.string.devices_connected_for, formatDurationShort(now - it))
+    }
+    val sessionCount = pluralStringResource(
+        R.plurals.session_count,
+        summary.sessionCount,
+        summary.sessionCount,
+    )
+    val recent = stringResource(R.string.devices_recent, formatHours(last7)).takeIf { last7 > 0 }
+
+    // The card is one thing to a screen reader, not five. It is clickable and so are the three
+    // chips inside it — all four with the *same* action — which announced four buttons per pair
+    // that all did the same thing. The chips are informational, so their semantics are cleared
+    // below and everything they say is gathered here instead.
+    val description = listOfNotNull(
+        summary.label,
+        kind,
+        generation.takeIf { summary.generation > 1 },
+        retired,
+        formatHours(lifetimeMs),
+        connectedFor,
+        sessionCount,
+        recent,
+    ).joinToString(" · ")
+
     Card(
         onClick = onClick,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 6.dp),
+            .padding(horizontal = 16.dp, vertical = 6.dp)
+            .semantics(mergeDescendants = true) { contentDescription = description },
         // Expressive leans on generous, obviously-rounded containers.
         shape = RoundedCornerShape(28.dp),
         colors = CardDefaults.cardColors(
@@ -142,10 +175,6 @@ private fun PairCard(
                         text = summary.label,
                         style = MaterialTheme.typography.titleMedium,
                     )
-                    val kind = summary.deviceKind.displayName()
-                    val generation = stringResource(R.string.devices_generation, summary.generation)
-                    val retired = summary.retiredAt
-                        ?.let { stringResource(R.string.devices_retired_on, formatDate(it)) }
                     Text(
                         text = listOfNotNull(
                             kind,
@@ -168,46 +197,24 @@ private fun PairCard(
             // 360dp screen. A Row does not wrap: the last chip was squeezed to zero width and its
             // label then wrapped one character per line, stretching the card to a blank column.
             FlowRow(
+                // Cleared: see the card's description above. They stay clickable so a tap anywhere
+                // on the card still opens the pair, and stop being four announcements of it.
+                modifier = Modifier.clearAndSetSemantics { },
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp),
             ) {
-                summary.openSince?.let { since ->
+                connectedFor?.let {
                     AssistChip(
                         onClick = onClick,
-                        label = {
-                            Text(
-                                stringResource(
-                                    R.string.devices_connected_for,
-                                    formatDurationShort(now - since),
-                                ),
-                            )
-                        },
+                        label = { Text(it) },
                         colors = AssistChipDefaults.assistChipColors(
                             containerColor = MaterialTheme.colorScheme.primaryContainer,
                             labelColor = MaterialTheme.colorScheme.onPrimaryContainer,
                         ),
                     )
                 }
-                AssistChip(
-                    onClick = onClick,
-                    label = {
-                        Text(
-                            pluralStringResource(
-                                R.plurals.session_count,
-                                summary.sessionCount,
-                                summary.sessionCount,
-                            ),
-                        )
-                    },
-                )
-                if (last7 > 0) {
-                    AssistChip(
-                        onClick = onClick,
-                        label = {
-                            Text(stringResource(R.string.devices_recent, formatHours(last7)))
-                        },
-                    )
-                }
+                AssistChip(onClick = onClick, label = { Text(sessionCount) })
+                recent?.let { AssistChip(onClick = onClick, label = { Text(it) }) }
             }
         }
     }

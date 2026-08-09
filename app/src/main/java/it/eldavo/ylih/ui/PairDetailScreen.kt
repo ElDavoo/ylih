@@ -219,15 +219,14 @@ fun PairDetailScreen(
                     }
 
                     Spacer(Modifier.height(24.dp))
-                    Text(
-                        stringResource(R.string.pair_daily_hours_14),
-                        style = MaterialTheme.typography.titleSmallEmphasized,
-                    )
+                    val chartLabel = stringResource(R.string.pair_daily_hours_14)
+                    Text(chartLabel, style = MaterialTheme.typography.titleSmallEmphasized)
                     Spacer(Modifier.height(8.dp))
                     DailyBarChart(
                         // The tail of the series already built above, rather than a second walk
                         // over the same history for a shorter window.
                         series = series.takeLast(PAIR_CHART_DAYS),
+                        label = chartLabel,
                     )
                 }
             }

@@ -154,10 +154,14 @@ class SettingsScreenTest {
 
     /**
      * `isToggleable()` alone is ambiguous — there are two switches in the tracking section and a
-     * checkbox per known device. Each row merges its own labels, so the label beside a control is
-     * what tells them apart, and it keeps working when another row is added above.
+     * checkbox per known device, so the label is what tells them apart.
+     *
+     * The label is *on* the toggle rather than beside it. The whole row is the control now — one
+     * click target and one thing for a screen reader to announce, with its state, which is the
+     * shape the language dialog already used — so the row merges its labels and the toggleable
+     * node is the one carrying them.
      */
-    private fun toggleMatcher(label: String) = isToggleable() and hasAnyAncestor(hasText(label))
+    private fun toggleMatcher(label: String) = isToggleable() and hasText(label)
 
     private fun toggleBesides(label: String) = compose.onNode(toggleMatcher(label))
 

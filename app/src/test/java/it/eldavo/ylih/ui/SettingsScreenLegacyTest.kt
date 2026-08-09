@@ -7,7 +7,6 @@ import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.ui.test.assertIsNotEnabled
 import androidx.compose.ui.test.assertIsOff
-import androidx.compose.ui.test.hasAnyAncestor
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.isToggleable
 import androidx.compose.ui.test.junit4.v2.createAndroidComposeRule
@@ -98,7 +97,7 @@ class SettingsScreenLegacyTest {
         // Play build can get here; on this floor the reason is the platform version instead.
         assertEquals(1, nodeCount(text(R.string.settings_detailed_unavailable)))
         compose.onNode(
-            isToggleable() and hasAnyAncestor(hasText(text(R.string.settings_detailed_title))),
+            isToggleable() and hasText(text(R.string.settings_detailed_title)),
         ).assertIsOff().assertIsNotEnabled()
     }
 

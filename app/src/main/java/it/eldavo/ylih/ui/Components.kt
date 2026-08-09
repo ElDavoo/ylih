@@ -13,6 +13,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import it.eldavo.ylih.R
 import it.eldavo.ylih.data.DeviceKind
@@ -25,7 +28,11 @@ fun SectionHeader(text: String, modifier: Modifier = Modifier) {
         text = text,
         style = MaterialTheme.typography.titleSmallEmphasized,
         color = MaterialTheme.colorScheme.primary,
-        modifier = modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+        // `heading()` is what gives a screen reader something to jump between; without it the app
+        // is one flat run of text from the top of a list to the bottom.
+        modifier = modifier
+            .semantics { heading() }
+            .padding(horizontal = 16.dp, vertical = 8.dp),
     )
 }
 
@@ -40,7 +47,14 @@ fun StatTile(label: String, value: String, modifier: Modifier = Modifier) {
             containerColor = MaterialTheme.colorScheme.surfaceContainerHigh,
         ),
     ) {
-        Column(Modifier.padding(14.dp).fillMaxWidth()) {
+        // Merged, and read label-first: the two texts are one figure, and unmerged they arrive as
+        // "1,240.5 h" then "lifetime", which is the wrong way round to hear.
+        Column(
+            Modifier
+                .padding(14.dp)
+                .fillMaxWidth()
+                .semantics(mergeDescendants = true) { contentDescription = "$label: $value" },
+        ) {
             Text(
                 text = value,
                 style = MaterialTheme.typography.titleMediumEmphasized,

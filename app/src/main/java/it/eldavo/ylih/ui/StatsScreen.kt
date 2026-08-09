@@ -116,12 +116,10 @@ fun StatsScreen(
                     )
                 }
                 Spacer(Modifier.height(24.dp))
-                Text(
-                    stringResource(R.string.stats_daily_hours_30),
-                    style = MaterialTheme.typography.titleSmallEmphasized,
-                )
+                val chartLabel = stringResource(R.string.stats_daily_hours_30)
+                Text(chartLabel, style = MaterialTheme.typography.titleSmallEmphasized)
                 Spacer(Modifier.height(8.dp))
-                DailyBarChart(series = series)
+                DailyBarChart(series = series, label = chartLabel)
                 Spacer(Modifier.height(16.dp))
             }
         }
