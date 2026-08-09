@@ -15,7 +15,7 @@
 name: F-Droid
 
 on:
-  # Path-filtered, unlike android-ci.yml, because two of the three jobs below clone the tag the
+  # Path-filtered, unlike android-ci.yml, because two of the three jobs below clone the commit the
   # recipe names rather than the commit under test: on a pull request that touches neither the
   # recipe nor the toolchain, they would spend twenty minutes recomputing a constant. The paths
   # are the ones that can change the answer -- the recipe and its checks, the version and flavors
@@ -73,8 +73,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Tags and all, because the recipe check resolves each build entry's `commit:` against the
+      # tag it should be — a shallow clone has neither the tag nor the object. 101 commits and
+      # 6 MB, so the whole history costs less than the fetch that would replace it.
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v7
@@ -155,7 +160,7 @@ jobs:
       - name: Assemble an fdroiddata-shaped directory
         run: .github/scripts/fdroid-workdir.sh "$RUNNER_TEMP/fdroiddata"
 
-      # The scanner clones the tag from GitHub itself, so this scans what F-Droid would scan
+      # The scanner clones the commit from GitHub itself, so this scans what F-Droid would scan
       # rather than the working tree. It exits non-zero on a finding.
       - name: fdroid scanner
         working-directory: ${{ runner.temp }}/fdroiddata

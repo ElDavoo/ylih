@@ -4,7 +4,7 @@
 `fdroid lint` validates the recipe as a document — field names, category names, YAML style. It
 has no idea whether the recipe still describes *this* repository, and that is the drift that
 actually happens: a versionCode bumped in build.gradle.kts with no matching build entry, a
-`commit:` naming a tag nobody pushed, a changelog file that F-Droid will look for and not find.
+`commit:` naming a hash no tag points at, a changelog file that F-Droid will look for and not find.
 Those all fail in fdroiddata, days later, where the feedback loop is a merge request rather than
 a job log.
 
@@ -16,6 +16,7 @@ whatever build.gradle.kts currently says.
 """
 
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -24,6 +25,19 @@ import yaml
 
 def fail(problems, msg):
     problems.append(msg)
+
+
+def peel_tag(root, tag):
+    """The commit `tag` points at, or None if this checkout has no such tag.
+
+    `^{}` peels an annotated tag down to its commit, which is what a recipe's `commit:` has to
+    hold -- the tag object's own hash would name something F-Droid cannot check out as a tree.
+    """
+    result = subprocess.run(
+        ["git", "-C", str(root), "rev-parse", "-q", "--verify", f"refs/tags/{tag}^{{}}"],
+        capture_output=True, text=True,
+    )
+    return result.stdout.strip() if result.returncode == 0 else None
 
 
 def main():
@@ -62,10 +76,25 @@ def main():
         vname, vcode = build.get("versionName"), build.get("versionCode")
         where = f"build {vname} ({vcode})"
 
-        # UpdateCheckMode is `Tags ^v[0-9.]+$`, and the release workflow names both the tag and
-        # the release asset after versionName, so the three cannot be allowed to disagree.
-        if build.get("commit") != f"v{vname}":
-            fail(problems, f"{where}: commit is {build.get('commit')!r}, expected 'v{vname}'")
+        # `commit:` holds the tag's full hash rather than the tag name -- an F-Droid reviewer
+        # asked for that, because a tag can be moved afterwards and a hash cannot. So the naming
+        # convention this used to check by string comparison has to be *resolved* instead: the
+        # hash must be the one v<versionName> currently points at. UpdateCheckMode is
+        # `Tags ^v[0-9.]+$` and the release asset is named after the tag too, so all three still
+        # hang off that one name even though the recipe no longer spells it.
+        commit = str(build.get("commit") or "")
+        if not re.fullmatch(r"[0-9a-f]{40}", commit):
+            fail(problems, f"{where}: commit is {build.get('commit')!r}, expected the full "
+                           f"40-character hash of tag v{vname} -- fdroiddata rejects a tag or "
+                           f"branch name here (`git rev-parse v{vname}^{{}}`)")
+        else:
+            tagged = peel_tag(root, f"v{vname}")
+            if tagged is None:
+                fail(problems, f"{where}: no tag v{vname} in this checkout, so the commit cannot "
+                               f"be confirmed to be the one F-Droid will find -- push the tag, or "
+                               f"fetch it if this clone is shallow")
+            elif tagged != commit:
+                fail(problems, f"{where}: commit is {commit}, but v{vname} points at {tagged}")
 
         if build.get("subdir") != "app":
             fail(problems, f"{where}: subdir is {build.get('subdir')!r}, expected 'app'")

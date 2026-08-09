@@ -2,7 +2,7 @@
 
 F-Droid does not accept an upload. It builds the app itself, from a tagged commit of this
 repository, on a machine that has none of our keys, and then signs the result with its own.
-Everything below follows from that: the recipe has to name a tag that exists, the build has to
+Everything below follows from that: the recipe has to name a commit that exists, the build has to
 produce an unsigned APK, and the listing text and images have to be *in the repository*, because
 that is the only place F-Droid looks.
 
@@ -186,11 +186,14 @@ falls back to `en-US` images the same way it falls back to `en-US` text. Add ano
 5. `.github/workflows/android-release.yml` builds the APK and the AAB and publishes the GitHub
    release.
 6. Update `Builds:`, `CurrentVersion:` and `CurrentVersionCode:` in
-   `metadata/it.eldavo.ylih.yml`, and open the fdroiddata merge request (section 5).
+   `metadata/it.eldavo.ylih.yml`, and open the fdroiddata merge request (section 5). The build
+   entry's `commit:` is the tag's **full 40-character hash**, not the tag name —
+   `git rev-parse v<versionName>^{}` prints it.
 
 `AutoUpdateMode: Version` means F-Droid picks up subsequent tags on its own and files the new
 build entry itself, so step 6 is only manual for the first release and whenever the recipe itself
-has to change.
+has to change. `fdroid checkupdates` resolves the tag it matched to that same full hash, so the
+generated entry has the shape a reviewer asks for without anyone maintaining it.
 
 ## 5. The fdroiddata merge request
 
@@ -239,14 +242,24 @@ What those comments said, since a recipe of nine fields is otherwise opaque:
   workflow names the asset after the tag, which is `v` + versionName.
 - **`AllowedAPKSigningKeys:`** — the signing certificate's SHA-256, §6 again. An APK signed with
   anything else is refused rather than published, which is the point of the field.
-- **`Builds:` starts at 1.1.2**, not at the first release, and there is nobody to keep the earlier
+- **No `WebSite:`**, which the recipe carried until a reviewer asked for it to go. It pointed at
+  the same GitHub project as `SourceCode:`, and F-Droid renders both, so the app page would have
+  offered the identical link twice under two labels. The app has no site of its own; the field
+  comes back the day it has one and not before.
+- **`commit:` is the tag's full 40-character hash, not the tag name.** The same review asked for
+  that, and the reason is that a tag is mutable — `git tag -f` moves it, and this repository has
+  moved one, when the fdroiddata pipeline found two problems in v1.1.2 after it was pushed. What
+  F-Droid built and what a reviewer read would then be different trees under one name, with
+  nothing in the recipe recording that it had happened. A hash cannot move. The tag still matters
+  either side of this field: `UpdateCheckMode` matches on it and `Binaries:` is addressed by it.
+- **`Builds:` starts at 1.1.3**, not at the first release, and there is nobody to keep the earlier
   ones for: F-Droid published none of them. 1.0.0 could not have verified anywhere, because the
   pin that made a build agree across machines with and without an NDK landed after it. 1.1.2
-  removes the need for that pin entirely — the one file it protected was DataStore's prebuilt
-  `.so`, and the settings now live in the app's own database — so it is the first version whose
-  reproducibility rests on nothing but the source. It is also the first whose listing text passes
-  the inclusion guide, since F-Droid reads the summary and description out of the source checkout
-  at the commit it builds.
+  removed the need for that pin entirely — the one file it protected was DataStore's prebuilt
+  `.so`, and the settings now live in the app's own database — so from there on reproducibility
+  rests on nothing but the source. 1.1.3 is where the list begins simply because it landed while
+  the merge request was still open, and a list of one is a smaller thing for a reviewer to check
+  than a list of two that says the same thing twice.
 - **No `sudo:` and no `output:`** — both in §2.
 
 One `fdroid lint` quirk to know about: it checks the `Summary:` field with
@@ -326,7 +339,7 @@ Three things do vary and are worth knowing before a verification failure sends y
 - AGP embeds `META-INF/version-control-info.textproto`, holding the git revision. Its
   `local_root_path` is normalised to `$PROJECT_DIR`, so it is not machine-specific, but it does
   mean **two builds of different commits never match** even when the sources are identical. F-Droid
-  builds the tag the recipe names and so gets the same value the release workflow did.
+  builds the commit the recipe names and so gets the same value the release workflow did.
 - The JDK. F-Droid's buildserver compiles with Debian's `default-jdk-headless`; the release
   workflow uses Temurin 21 and the nix shell OpenJDK 21. Almost everything here is Kotlin, whose
   compiler is pinned by the wrapper, so the exposure is small — but this is the axis that cannot be
@@ -383,7 +396,7 @@ own tools rather than an approximation of them. Three jobs:
   not, and read green through a build that had failed on dependency verification while the
   merge request pipeline was failing on the same commit.
 
-Both `scanner` and `build` clone the tag the recipe names, so on a pull request they say nothing
+Both `scanner` and `build` clone the commit the recipe names, so on a pull request they say nothing
 about the change under review. That is why the triggers are path-filtered and why there is a
 weekly run: the interesting failures here come from things outside this repository moving.
 
@@ -417,7 +430,8 @@ appear.
 - [ ] `./gradlew lintClassicReleaseTest testClassicReleaseTestUnitTest assembleClassicRelease` passes
 - [ ] The release APK really is `app-classic-release-unsigned.apk` when no keystore is configured
 - [ ] Tag pushed, matching `^v[0-9.]+$` and equal to `versionName`
-- [ ] `metadata/it.eldavo.ylih.yml` updated with the new build entry and the tag as `commit:`
+- [ ] `metadata/it.eldavo.ylih.yml` updated with the new build entry, `commit:` carrying the
+      tag's full hash from `git rev-parse v<versionName>^{}` rather than the tag name
 - [ ] The `F-Droid` workflow green on the release commit — it runs readmeta, lint, rewritemeta,
       scanner, `fdroid build` and `fdroid verify`, so a green run is the fork's `fdroid lint`
       and build already answered (section 7)
