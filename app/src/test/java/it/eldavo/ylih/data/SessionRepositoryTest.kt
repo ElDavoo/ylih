@@ -304,13 +304,29 @@ class SessionRepositoryTest {
 
     @Test
     fun `playback time accumulates on the open session`() = runTest {
-        val sessionId = repository.onConnected(wired, at = clockNow, measurePlayback = true)!!
+        repository.onConnected(wired, at = clockNow, measurePlayback = true)
 
-        repository.addPlayback(sessionId, 20 * 60_000)
-        repository.addPlayback(sessionId, 10 * 60_000)
-        repository.addPlayback(sessionId, -5) // ignored
+        repository.creditPlayback(wired.key, 20 * 60_000)
+        repository.creditPlayback(wired.key, 10 * 60_000)
+        repository.creditPlayback(wired.key, -5) // ignored
 
         assertEquals(30 * 60_000L, sessions().single().playingMs)
+    }
+
+    /**
+     * The watcher banks a slice from a coroutine launched behind the one that closed the session,
+     * so this is the ordering the service is written to avoid and the database has to refuse
+     * anyway: credited here, the stored playback would exceed the span it was measured inside.
+     */
+    @Test
+    fun `playback credited after the disconnect is refused rather than backdated`() = runTest {
+        repository.onConnected(wired, at = clockNow, measurePlayback = true)
+        repository.creditPlayback(wired.key, 10 * 60_000)
+        repository.onDisconnected(wired.key, at = clockNow + hour)
+
+        repository.creditPlayback(wired.key, 20 * 60_000)
+
+        assertEquals(10 * 60_000L, sessions().single().playingMs)
     }
 
     @Test

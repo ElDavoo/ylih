@@ -165,8 +165,16 @@ interface SessionDao {
     @Query("UPDATE sessions SET heartbeatAt = :at WHERE id = :sessionId AND disconnectedAt IS NULL")
     suspend fun heartbeat(sessionId: Long, at: Long)
 
+    /**
+     * `disconnectedAt IS NULL` for the same reason [close] and [heartbeat] carry it: playback is
+     * credited from a coroutine launched behind the watcher's own edge, so a disconnect can land
+     * first. Without the guard that slice is banked onto a session that had already ended, and the
+     * stored `playingMs` then exceeds the span it was measured inside — invisible, because
+     * `Stats.durationMs` clamps it at read time, and wrong on disk forever.
+     */
     @Query(
-        "UPDATE sessions SET playingMs = IFNULL(playingMs, 0) + :deltaMs WHERE id = :sessionId",
+        "UPDATE sessions SET playingMs = IFNULL(playingMs, 0) + :deltaMs " +
+            "WHERE id = :sessionId AND disconnectedAt IS NULL",
     )
     suspend fun addPlayback(sessionId: Long, deltaMs: Long)
 

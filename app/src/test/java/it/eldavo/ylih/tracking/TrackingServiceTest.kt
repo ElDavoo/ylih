@@ -165,11 +165,10 @@ class TrackingServiceTest {
      * Reads [value] once the service has stopped changing it.
      *
      * A [settle] returns on the first moment its condition holds, which for anything the service
-     * does in more than one step is the middle of the story: unplugging credits the last slice of
-     * playback from a coroutine launched behind the one that closed the session, so the session
-     * reads as closed a moment before the number this file asserts on is final. Nothing here moves
-     * the clock and the watcher only credits on a tick or a callback edge, so a value that has
-     * held across several drained rounds is not going to move again.
+     * does in more than one step is the middle of the story — the notification, the heartbeat and
+     * the widgets all land behind the write that prompted them. Nothing here moves the clock and
+     * the watcher only banks on a tick or an edge, so a value that has held across several drained
+     * rounds is not going to move again.
      */
     private fun <T> settled(what: String, value: () -> T): T {
         var last = value()
@@ -385,23 +384,80 @@ class TrackingServiceTest {
         )
     }
 
+    /**
+     * Plays for a slice that only the *next* edge can bank.
+     *
+     * The watcher measures wall-clock milliseconds, so real time has to pass; idling the looper
+     * without moving it forward is what keeps a tick from banking the slice first, which is the
+     * whole point — each of the three tests below is about an edge that used to drop it.
+     */
+    private fun playUntickedFor(realMillis: Long) {
+        Thread.sleep(realMillis)
+    }
+
+    /** What the pair holds once the last tick's credit has landed and nothing else is coming. */
+    private fun creditedAtLastTick(): Long {
+        Thread.sleep(50)
+        settleAcrossTicks("playback to be credited") { sessions().first().playingMs!! > 0 }
+        return settled("the credited playback") { sessions().first().playingMs!! }
+    }
+
     @Test
     fun `stopping the service banks the playback it had measured`() {
         shadowOf(audioManager).setIsMusicActive(true)
         start()
         connect(buds())
         settle("the session to open") { sessions().isNotEmpty() }
-        Thread.sleep(50)
-        settleAcrossTicks("playback to be credited") { sessions().single().playingMs!! > 0 }
+        val atLastTick = creditedAtLastTick()
 
+        // onDestroy is the only thing that can bank this slice, and the write it launches has to
+        // outlive the lifecycle scope the same method cancels — launched on that scope it started,
+        // suspended on the database and was cancelled, so every service stop lost the part-minute.
+        playUntickedFor(50)
         stop()
-        shadowOf(Looper.getMainLooper()).idle()
 
-        assertNotNull(sessions().single().playingMs)
+        settle("the last slice to land") { sessions().single().playingMs!! > atLastTick }
         // A destroyed service must not keep listening to the audio stack.
         connect(wired())
         shadowOf(Looper.getMainLooper()).idle()
         assertEquals(1, sessions().size)
+    }
+
+    @Test
+    fun `unplugging banks the part-minute played since the last tick`() {
+        shadowOf(audioManager).setIsMusicActive(true)
+        start()
+        connect(buds())
+        settle("the session to open") { sessions().isNotEmpty() }
+        val atLastTick = creditedAtLastTick()
+
+        // Playback is credited to whatever session the pair has *open*, so banking this slice
+        // after the disconnect found nothing to write it to and dropped it on the floor.
+        playUntickedFor(50)
+        disconnect(buds())
+        settle("the session to close") { sessions().single().disconnectedAt != null }
+
+        val total = settled("the final playback total") { sessions().single().playingMs!! }
+        assertTrue("$total is no more than the $atLastTick banked at the last tick", total > atLastTick)
+    }
+
+    @Test
+    fun `swapping headphones credits what was playing to the pair coming off`() {
+        shadowOf(audioManager).setIsMusicActive(true)
+        start()
+        connect(buds())
+        settle("the first session to open") { sessions().isNotEmpty() }
+        val atLastTick = creditedAtLastTick()
+
+        // A second pair plugged in without unplugging the first. The slice since the last tick was
+        // played on the buds; moving the target used to discard it rather than credit it.
+        playUntickedFor(50)
+        connect(wired())
+        settle("the second session to open") { sessions().size == 2 }
+
+        val onBuds = settled("what the pair coming off holds") { sessions().first().playingMs!! }
+        assertTrue("$onBuds is no more than the $atLastTick it held at the last tick", onBuds > atLastTick)
+        assertEquals("and none of it landed on the pair coming on", 0L, sessions().last().playingMs)
     }
 
     @Test

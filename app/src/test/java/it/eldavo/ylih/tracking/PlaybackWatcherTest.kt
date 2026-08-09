@@ -40,10 +40,23 @@ class PlaybackWatcherTest {
         shadowOf(Looper.getMainLooper()).idle()
     }
 
+    /**
+     * [PlaybackWatcher.refresh] and [PlaybackWatcher.stop] hand their slice back rather than
+     * pushing it, so that the service can credit it *before* closing the session it belongs to.
+     * These stand in for that caller; [credited] is what the phone's database would hold.
+     */
+    private fun refresh(now: Long, minSliceMs: Long = 0L) {
+        credited += watcher.refresh(now, minSliceMs)
+    }
+
+    private fun stop(now: Long) {
+        credited += watcher.stop(now)
+    }
+
     @Test
     fun `silence credits nothing however often it is looked at`() {
-        watcher.refresh(now = 1_000)
-        watcher.refresh(now = 60_000)
+        refresh(now = 1_000)
+        refresh(now = 60_000)
 
         assertFalse(watcher.isPlaying)
         assertEquals(0L, credited)
@@ -54,11 +67,11 @@ class PlaybackWatcherTest {
         // The safety net: some apps never show up in the active-configuration list at all.
         shadowAudio.setIsMusicActive(true)
 
-        watcher.refresh(now = 1_000)
+        refresh(now = 1_000)
         assertTrue(watcher.isPlaying)
         assertEquals("nothing has elapsed yet", 0L, credited)
 
-        watcher.refresh(now = 4_000)
+        refresh(now = 4_000)
         assertEquals(3_000L, credited)
     }
 
@@ -66,10 +79,10 @@ class PlaybackWatcherTest {
     fun `time is banked as it goes rather than only at the end`() {
         // A twelve-hour flight has to be credited even if the process dies before the disconnect.
         shadowAudio.setIsMusicActive(true)
-        watcher.refresh(now = 0)
+        refresh(now = 0)
 
-        watcher.refresh(now = 3_600_000)
-        watcher.refresh(now = 7_200_000)
+        refresh(now = 3_600_000)
+        refresh(now = 7_200_000)
 
         assertEquals(7_200_000L, credited)
     }
@@ -79,23 +92,23 @@ class PlaybackWatcherTest {
         // What the floor is for: the callback fires on any app's player changing state, and
         // without it a chatty phone writes to the database on every one of them.
         shadowAudio.setIsMusicActive(true)
-        watcher.refresh(now = 0)
+        refresh(now = 0)
 
-        watcher.refresh(now = 5_000, minSliceMs = 30_000)
+        refresh(now = 5_000, minSliceMs = 30_000)
         assertEquals("too small a slice to bank", 0L, credited)
 
-        watcher.refresh(now = 40_000, minSliceMs = 30_000)
+        refresh(now = 40_000, minSliceMs = 30_000)
         assertEquals("and none of it was dropped", 40_000L, credited)
     }
 
     @Test
     fun `the floor never costs a span that has actually ended`() {
         shadowAudio.setIsMusicActive(true)
-        watcher.refresh(now = 0)
-        watcher.refresh(now = 1_000, minSliceMs = 30_000)
+        refresh(now = 0)
+        refresh(now = 1_000, minSliceMs = 30_000)
 
         shadowAudio.setIsMusicActive(false)
-        watcher.refresh(now = 2_000, minSliceMs = 30_000)
+        refresh(now = 2_000, minSliceMs = 30_000)
 
         assertEquals("stopping credits in full, floor or no floor", 2_000L, credited)
     }
@@ -103,14 +116,14 @@ class PlaybackWatcherTest {
     @Test
     fun `pausing credits the slice played and then stops the clock`() {
         shadowAudio.setIsMusicActive(true)
-        watcher.refresh(now = 1_000)
+        refresh(now = 1_000)
 
         shadowAudio.setIsMusicActive(false)
-        watcher.refresh(now = 3_000)
+        refresh(now = 3_000)
         assertFalse(watcher.isPlaying)
         assertEquals(2_000L, credited)
 
-        watcher.refresh(now = 900_000)
+        refresh(now = 900_000)
         assertEquals("a pause is not listening", 2_000L, credited)
     }
 
@@ -118,31 +131,39 @@ class PlaybackWatcherTest {
     fun `stopping the watcher banks the last slice`() {
         shadowAudio.setIsMusicActive(true)
         watcher.start(Handler(Looper.getMainLooper()))
-        watcher.refresh(now = 1_000)
+        refresh(now = 1_000)
 
-        watcher.stop(now = 5_000)
+        stop(now = 5_000)
 
         assertFalse(watcher.isPlaying)
         assertEquals(4_000L, credited)
     }
 
+    /**
+     * What swapping headphones mid-song looks like from here.
+     *
+     * The service banks at the moment the new pair connects and credits the slice to the old one,
+     * then keeps the clock running for the new one. This used to `rebase` instead — the same reset
+     * of the clock, but throwing the slice away rather than handing it back — so the pair just
+     * taken off silently lost everything it had played since the last tick.
+     */
     @Test
-    fun `rebasing throws away time rather than crediting it to the wrong session`() {
-        // Happens when the headphones being watched change mid-playback: the time since the
-        // last tick belongs to nobody, and must not land on the pair that just connected.
+    fun `banking at a swap credits the pair that was playing and keeps the clock running`() {
         shadowAudio.setIsMusicActive(true)
-        watcher.refresh(now = 1_000)
+        refresh(now = 1_000)
 
-        watcher.rebase(now = 5_000)
-        watcher.refresh(now = 6_000)
+        refresh(now = 5_000)
+        assertEquals("the outgoing pair is credited in full", 4_000L, credited)
+        assertTrue("and the new one starts measuring straight away", watcher.isPlaying)
 
-        assertEquals(1_000L, credited)
+        refresh(now = 6_000)
+        assertEquals("with no part of the swap counted twice", 5_000L, credited)
     }
 
     @Test
-    fun `rebasing while nothing plays leaves the watcher idle`() {
-        watcher.rebase(now = 5_000)
-        watcher.refresh(now = 6_000)
+    fun `banking while nothing plays leaves the watcher idle`() {
+        refresh(now = 5_000)
+        refresh(now = 6_000)
 
         assertFalse(watcher.isPlaying)
         assertEquals(0L, credited)

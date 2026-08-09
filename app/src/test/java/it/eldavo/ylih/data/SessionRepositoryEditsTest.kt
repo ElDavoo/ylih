@@ -211,7 +211,7 @@ class SessionRepositoryEditsTest {
     @Test
     fun `the summary adds up closed time, playback and the longest session`() = runTest {
         repository.onConnected(buds, at = clockNow - 5 * hour, measurePlayback = true)
-        repository.addPlayback(repository.openSessionIdFor(buds.key)!!, 30 * 60_000)
+        repository.creditPlayback(buds.key, 30 * 60_000)
         repository.onDisconnected(buds.key, at = clockNow - 2 * hour)
         repository.onConnected(buds, at = clockNow - hour)
 

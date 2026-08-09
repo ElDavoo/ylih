@@ -89,7 +89,7 @@ class TrackingService : LifecycleService() {
         // tracking for anyone who had denied the notification permission.
         startForegroundCompat(getString(R.string.notification_starting))
 
-        playbackWatcher = PlaybackWatcher(audioManager) { deltaMs -> creditPlayback(deltaMs) }
+        playbackWatcher = PlaybackWatcher(audioManager) { deltaMs -> creditFromCallback(deltaMs) }
             .also { it.start(handler) }
         audioManager.registerAudioDeviceCallback(deviceCallback, handler)
 
@@ -126,7 +126,16 @@ class TrackingService : LifecycleService() {
     override fun onDestroy() {
         val now = container.clock.now()
         audioManager.unregisterAudioDeviceCallback(deviceCallback)
-        playbackWatcher?.stop(now)
+        // On `container.scope`, not `lifecycleScope`: `super.onDestroy()` below dispatches
+        // ON_DESTROY and so cancels the latter, and this write's first suspension point is the
+        // database — a coroutine launched here on the lifecycle scope started, suspended, and was
+        // cancelled before it ever reached the table, so every service stop silently dropped the
+        // slice that had accrued since the last tick.
+        val key = playbackTargetKey
+        val remaining = playbackWatcher?.stop(now) ?: 0L
+        if (key != null) {
+            container.scope.launch { container.repository.creditPlayback(key, remaining) }
+        }
         playbackWatcher = null
         super.onDestroy()
     }
@@ -140,19 +149,23 @@ class TrackingService : LifecycleService() {
             val now = container.clock.now()
             for (identity in identities.filter { it.kind in kinds }) {
                 if (connected) {
+                    // Banked before the target moves, while [playbackTargetKey] still names the
+                    // pair the audio was actually played on. Swapping headphones mid-song used to
+                    // `rebase` here, which dropped that time rather than crediting it. The same
+                    // call starts the clock where audio is already running — a service start, or
+                    // that same swap — rather than leaving it to the first tick.
+                    creditAccrued(playbackWatcher?.refresh(now) ?: 0L)
                     container.repository.onConnected(identity, now, measurePlayback = true)
-                    // Any accrued playback belongs to the previous target, not this one.
-                    playbackWatcher?.rebase(now)
                     playbackTargetKey = identity.key
-                    // Audio is often already playing when we attach (service start, or swapping
-                    // headphones mid-song). Start the clock now instead of at the first tick.
-                    playbackWatcher?.refresh(now)
                 } else {
-                    container.repository.onDisconnected(identity.key, now)
                     if (playbackTargetKey == identity.key) {
-                        playbackWatcher?.refresh(now)
+                        // Before the close, and waited for: playback is credited to whatever
+                        // session the pair has *open*, so a slice banked after the disconnect finds
+                        // nothing to write to. That silently cost every session its last part-minute.
+                        creditAccrued(playbackWatcher?.refresh(now) ?: 0L)
                         playbackTargetKey = null
                     }
+                    container.repository.onDisconnected(identity.key, now)
                 }
             }
             refreshNotification()
@@ -165,7 +178,7 @@ class TrackingService : LifecycleService() {
     private suspend fun tick() {
         val now = container.clock.now()
         val open = container.repository.heartbeat(now)
-        playbackWatcher?.refresh(now)
+        creditAccrued(playbackWatcher?.refresh(now) ?: 0L)
         refreshNotification(open)
         // A minute's worth of playback is a figure the widgets have no other way to learn: the
         // Chronometer counts connected time, and in playback-only mode that is not what the totals
@@ -174,13 +187,22 @@ class TrackingService : LifecycleService() {
         container.trackingController.onFiguresChanged()
     }
 
-    private fun creditPlayback(deltaMs: Long) {
+    /** Credits a slice this service asked for, and waits for the write. */
+    private suspend fun creditAccrued(deltaMs: Long) {
         val key = playbackTargetKey ?: return
-        lifecycleScope.launch {
-            container.repository.openSessionIdFor(key)?.let { sessionId ->
-                container.repository.addPlayback(sessionId, deltaMs)
-            }
-        }
+        container.repository.creditPlayback(key, deltaMs)
+    }
+
+    /**
+     * Credits a slice the watcher's own callback banked, which nothing can wait for.
+     *
+     * On `container.scope` rather than `lifecycleScope` for the same reason [onDestroy] is: the
+     * lifecycle scope dies with the service, and the write's first suspension point is the
+     * database. Nothing here closes a session, so there is no ordering to keep either.
+     */
+    private fun creditFromCallback(deltaMs: Long) {
+        val key = playbackTargetKey ?: return
+        container.scope.launch { container.repository.creditPlayback(key, deltaMs) }
     }
 
     /** @param known the open sessions if the caller has just read them, saving a second query. */

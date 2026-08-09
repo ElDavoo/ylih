@@ -31,7 +31,8 @@ class PlaybackWatcher(
     private val callback = object : AudioManager.AudioPlaybackCallback() {
         override fun onPlaybackConfigChanged(configs: MutableList<AudioPlaybackConfiguration>) {
             configsActive = configs.any { it.audioAttributes.isMediaLike() }
-            refresh(System.currentTimeMillis(), minSliceMs = MIN_BANKED_SLICE_MS)
+            // The one edge that cannot be waited for, so the one that still has to push.
+            onDelta(refresh(System.currentTimeMillis(), minSliceMs = MIN_BANKED_SLICE_MS))
         }
     }
 
@@ -39,46 +40,53 @@ class PlaybackWatcher(
         audioManager.registerAudioPlaybackCallback(callback, handler)
     }
 
-    fun stop(now: Long) {
+    /** @return the last slice, for the caller to credit — see [refresh]. */
+    fun stop(now: Long): Long {
         audioManager.unregisterAudioPlaybackCallback(callback)
-        update(active = false, now = now)
+        return update(active = false, now = now)
     }
 
     /**
-     * Re-evaluates playback state and credits time accumulated so far.
+     * Re-evaluates playback state and banks the time accumulated so far.
      *
      * [minSliceMs] leaves a slice shorter than that accruing instead of banking it. The callback
      * fires whenever *any* app on the phone changes a player — a chime, an ad, a video starting
      * in something else entirely — so without a floor a talkative phone turns each of those into
      * a database write while music plays. Nothing is lost by waiting: the slice keeps accruing,
      * and the edges that actually end a span ([update], [stop]) always credit it in full.
+     *
+     * @return the milliseconds banked by this call, zero if none. Handed back rather than pushed
+     *   through [onDelta] because the caller that matters is about to close the session this
+     *   belongs to: playback is credited by *open* session, so the write has to happen — and be
+     *   waited for — before the disconnect, which only a value the caller can suspend on allows.
      */
-    fun refresh(now: Long, minSliceMs: Long = 0L) {
+    fun refresh(now: Long, minSliceMs: Long = 0L): Long {
         val active = configsActive || audioManager.isMusicActive
-        if (active && playingSince != null) {
-            // Still playing: bank the elapsed slice so long sessions are credited as they go.
-            val slice = now - playingSince!!
-            if (slice < minSliceMs) return
-            onDelta(slice)
-            playingSince = now
-            return
-        }
-        update(active, now)
-    }
-
-    /** Drops time accrued so far without crediting it (used when the target session changes). */
-    fun rebase(now: Long) {
-        if (playingSince != null) playingSince = now
-    }
-
-    private fun update(active: Boolean, now: Long) {
         val since = playingSince
-        when {
-            active && since == null -> playingSince = now
-            !active && since != null -> {
-                onDelta(now - since)
-                playingSince = null
+        if (active && since != null) {
+            // Still playing: bank the elapsed slice so long sessions are credited as they go.
+            val slice = now - since
+            if (slice < minSliceMs) return 0L
+            playingSince = now
+            return slice
+        }
+        return update(active, now)
+    }
+
+    private fun update(active: Boolean, now: Long): Long {
+        val since = playingSince
+        return when {
+            active && since == null -> {
+                playingSince = now
+                0L
             }
+
+            !active && since != null -> {
+                playingSince = null
+                now - since
+            }
+
+            else -> 0L
         }
     }
 

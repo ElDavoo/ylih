@@ -71,9 +71,24 @@ class SessionRepository(
         }
     }
 
-    suspend fun addPlayback(sessionId: Long, deltaMs: Long) {
+    /**
+     * Banks [deltaMs] of playback against whatever session [key] has open.
+     *
+     * Finding the session and writing to it are one locked step on purpose. Done as two calls —
+     * `openSessionIdFor` then a write — a disconnect landing between them credits a session that
+     * has just closed, which is the race [SessionDao.addPlayback]'s own guard exists to catch.
+     * Both are needed: the guard stops the write, this stops the lookup from going stale.
+     */
+    suspend fun creditPlayback(key: String, deltaMs: Long) {
         if (deltaMs <= 0) return
-        mutex.withLock { sessions.addPlayback(sessionId, deltaMs) }
+        mutex.withLock {
+            db.withTransaction {
+                val device = devices.findByKey(key) ?: return@withTransaction
+                val pair = pairs.activeFor(device.id) ?: return@withTransaction
+                val open = sessions.openFor(pair.id) ?: return@withTransaction
+                sessions.addPlayback(open.id, deltaMs)
+            }
+        }
     }
 
     suspend fun openSessionIdFor(key: String): Long? = mutex.withLock {
