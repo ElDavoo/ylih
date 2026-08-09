@@ -19,6 +19,8 @@ import it.eldavo.ylih.data.EndReason
 import it.eldavo.ylih.data.SessionRepository
 import it.eldavo.ylih.data.SettingsStore
 import it.eldavo.ylih.data.trackedKinds
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import java.util.concurrent.TimeUnit
 
 /**
@@ -82,8 +84,13 @@ class TrackingController(
     /**
      * Re-reads what is actually connected and repairs the database, then makes sure the right
      * background machinery is running. Safe to call as often as we like.
+     *
+     * On IO because two of its six callers are not. `AudioManager.getDevices`,
+     * `checkSelfPermission` and `WorkManager.getInstance` are all binder round-trips, and
+     * `TrackingService.onCreate` and the view model both call this from `Dispatchers.Main`. Room
+     * dispatches its own work, so the database was never the problem; the IPC was.
      */
-    suspend fun syncWithSystem() {
+    suspend fun syncWithSystem(): Unit = withContext(Dispatchers.IO) {
         val requested = settings.detailedTrackingNow()
         val detailed = requested && detailedTrackingSupported()
         if (requested && !detailed) {

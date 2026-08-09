@@ -2,6 +2,7 @@ package it.eldavo.ylih
 
 import android.content.Context
 import android.os.Build
+import androidx.core.content.edit
 import androidx.core.os.ConfigurationCompat
 import androidx.test.core.app.ApplicationProvider
 import it.eldavo.ylih.data.SettingsStore
@@ -10,6 +11,7 @@ import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotEquals
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertSame
 import org.junit.Assert.assertTrue
 import org.junit.Before
@@ -82,6 +84,35 @@ class AppLocaleTest {
             app.getString(R.string.settings_language),
             wrapped.getString(R.string.settings_language),
         )
+    }
+
+    /**
+     * `wrap` runs in `attachBaseContext`, which has no suspension point and comes before the
+     * process may touch the database — so on a cold start reading the row there would open Room,
+     * and run any pending migration, on the main thread before the first frame. It reads a
+     * `SharedPreferences` mirror instead, and the pair only stays honest if the write keeps them
+     * in step. Both halves are asserted here: that the mirror follows the row, and that an install
+     * which predates the mirror still gets its language.
+     */
+    @Test
+    fun `the language is mirrored beside the row that wrap cannot afford to read`() {
+        runBlocking { settings.setLanguage("ja") }
+
+        assertEquals("ja", SettingsStore.cachedLanguage(app))
+        assertEquals("ja", ConfigurationCompat.getLocales(AppLocale.wrap(app).resources.configuration)[0]?.language)
+    }
+
+    @Test
+    fun `an install with no mirror yet reads the row once and seeds it`() {
+        // What an upgrade looks like: the row is set, nothing has ever written the mirror.
+        runBlocking { settings.setLanguage("it") }
+        app.getSharedPreferences("ylih-settings-cache", Context.MODE_PRIVATE).edit { clear() }
+        assertNull("the mirror starts empty", SettingsStore.cachedLanguage(app))
+
+        val wrapped = AppLocale.wrap(app)
+
+        assertEquals("it", ConfigurationCompat.getLocales(wrapped.resources.configuration)[0]?.language)
+        assertEquals("and no later launch has to pay for it", "it", SettingsStore.cachedLanguage(app))
     }
 
     @Test

@@ -92,7 +92,7 @@ class YlihDatabaseMigrationTest {
 
         val db = openMigrated()
         try {
-            val settings = SettingsStore(db.settingsDao())
+            val settings = SettingsStore(db.settingsDao(), ApplicationProvider.getApplicationContext())
             runBlocking {
                 assertEquals(emptyList<SettingEntity>(), db.settingsDao().getAll())
                 assertEquals(false, settings.onboardingDoneNow())
@@ -111,7 +111,7 @@ class YlihDatabaseMigrationTest {
 
         val db = openMigrated()
         try {
-            val settings = SettingsStore(db.settingsDao())
+            val settings = SettingsStore(db.settingsDao(), ApplicationProvider.getApplicationContext())
             runBlocking {
                 settings.setLanguage("pt-BR")
                 settings.setDetailedTracking(true)

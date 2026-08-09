@@ -1,6 +1,7 @@
 package it.eldavo.ylih.data
 
 import android.content.Context
+import androidx.core.content.edit
 import it.eldavo.ylih.YlihApp
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged
@@ -16,7 +17,11 @@ import kotlinx.coroutines.flow.map
  * whose bytes depend on whether the machine that built it had an NDK to strip with; it is why
  * `app/build.gradle.kts` had to pin `keepDebugSymbols`. Room was already here.
  */
-class SettingsStore(private val dao: SettingsDao) {
+class SettingsStore(
+    private val dao: SettingsDao,
+    /** Only for the language mirror — see [setLanguage] and [cachedLanguage]. */
+    private val appContext: Context,
+) {
 
     /**
      * For a caller holding only a context — `AppLocale.wrap`, and the tests.
@@ -28,6 +33,7 @@ class SettingsStore(private val dao: SettingsDao) {
      */
     constructor(context: Context) : this(
         (context.applicationContext as YlihApp).container.database.settingsDao(),
+        context.applicationContext,
     )
 
     /**
@@ -78,7 +84,19 @@ class SettingsStore(private val dao: SettingsDao) {
 
     suspend fun setHibernationAsked(asked: Boolean) = put(HIBERNATION_ASKED, asked.toString())
 
-    suspend fun setLanguage(tag: String) = put(LANGUAGE, tag)
+    /**
+     * Writes the row, and the copy of it that `AppLocale.wrap` reads.
+     *
+     * The mirror lives here rather than at the call site so that it cannot be forgotten: the row
+     * is the source of truth, but `attachBaseContext` has to settle the configuration before the
+     * process may touch the database, and on a cold start reading it there would open Room — and
+     * run any pending migration — on the main thread before the first frame.
+     */
+    suspend fun setLanguage(tag: String) {
+        put(LANGUAGE, tag)
+        appContext.getSharedPreferences(CACHE, Context.MODE_PRIVATE)
+            .edit { putString(LANGUAGE, tag) }
+    }
 
     /**
      * Deduplicated because [all] re-emits on every write to the table: without it, changing the
@@ -96,7 +114,20 @@ class SettingsStore(private val dao: SettingsDao) {
 
     private suspend fun put(key: String, value: String) = dao.put(SettingEntity(key, value))
 
-    private companion object {
+    companion object {
+        /** The mirror of [setLanguage], or null where this process has never seen one written. */
+        fun cachedLanguage(context: Context): String? = context.applicationContext
+            .getSharedPreferences(CACHE, Context.MODE_PRIVATE)
+            .getString(LANGUAGE, null)
+
+        /** Seeds the mirror from the row, for an install upgraded into having one. */
+        fun cacheLanguage(context: Context, tag: String) {
+            context.applicationContext.getSharedPreferences(CACHE, Context.MODE_PRIVATE)
+                .edit { putString(LANGUAGE, tag) }
+        }
+
+        private const val CACHE = "ylih-settings-cache"
+
         // The DataStore keys, kept to the letter so a debug install carried across the switch
         // reads as "never set" rather than as something else's value.
         const val DETAILED_TRACKING = "detailed_tracking"

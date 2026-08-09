@@ -69,12 +69,21 @@ object AppLocale {
      * Applies the stored language to a base context on its way into [Context.attachBaseContext].
      *
      * The configuration has to be settled before a single resource is resolved, so there is no
-     * suspension point to wait at and the read blocks. It is one query against a five-row table
-     * on a connection the process is holding open anyway.
+     * suspension point to wait at and the read has to block. It reads a `SharedPreferences` mirror
+     * of the row rather than the row, because on a cold start this is the *first* database access
+     * in the process: it would open Room, and on an upgrade run the migration, on the main thread
+     * before the first frame. The database stays the source of truth — [remember] writes this copy
+     * beside every language change, and a process that has never seen one falls back to the query
+     * once and then caches it, so an install upgraded into this loses nothing.
      */
     fun wrap(base: Context): Context {
         if (!NEEDS_IN_APP_PICKER) return base
-        return apply(base, runBlocking { SettingsStore(base).languageNow() })
+        SettingsStore.cachedLanguage(base)?.let { return apply(base, it) }
+        // No mirror yet: an install upgraded into having one. Pay the blocking read once, then
+        // seed it so no later launch has to.
+        val stored = runBlocking { SettingsStore(base).languageNow() }
+        SettingsStore.cacheLanguage(base, stored)
+        return apply(base, stored)
     }
 
     /**

@@ -16,7 +16,7 @@ class AppContainer(context: Context, val clock: Clock = Clock.Wall) {
 
     val database: YlihDatabase by lazy { YlihDatabase.open(appContext) }
     val repository: SessionRepository by lazy { SessionRepository(database, clock) }
-    val settings: SettingsStore by lazy { SettingsStore(database.settingsDao()) }
+    val settings: SettingsStore by lazy { SettingsStore(database.settingsDao(), appContext) }
     val trackingController: TrackingController by lazy {
         TrackingController(
             appContext,

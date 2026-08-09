@@ -133,6 +133,10 @@ interface SessionDao {
     @Query("SELECT * FROM sessions WHERE disconnectedAt IS NULL")
     suspend fun allOpen(): List<SessionEntity>
 
+    /** Whether anything is open, without materialising the rows to ask. */
+    @Query("SELECT EXISTS(SELECT 1 FROM sessions WHERE disconnectedAt IS NULL)")
+    suspend fun anyOpen(): Boolean
+
     @Query("SELECT * FROM sessions WHERE disconnectedAt IS NULL")
     fun observeOpen(): Flow<List<SessionEntity>>
 
@@ -176,8 +180,13 @@ interface SessionDao {
     /**
      * Everything that can contribute to a window opening at [from]: still running, or finished
      * inside it. A session that both started and ended before the window contributes nothing and
-     * is dropped — which is the point, since the home-screen widgets ask this on every refresh and
-     * the table grows forever.
+     * is dropped, so what a widget refresh carries into memory and bucketing stays bounded however
+     * long the table gets.
+     *
+     * Note that it bounds the rows *returned*, not the rows examined: the `OR` and an `ORDER BY`
+     * on a different column than either index leave SQLite scanning the table and sorting the
+     * result. Making that part bounded too would take a composite index and so a migration, which
+     * is not worth it for a query that runs when the data changes rather than in a loop.
      */
     @Query(
         "SELECT * FROM sessions WHERE disconnectedAt IS NULL OR disconnectedAt >= :from " +

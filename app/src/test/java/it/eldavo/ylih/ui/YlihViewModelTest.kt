@@ -304,7 +304,7 @@ class YlihViewModelTest {
             }
             assertEquals(
                 Distribution.HAS_SPECIAL_USE_FGS,
-                viewModel.detailedTrackingSupported(),
+                viewModel.detailedTrackingSupported.value,
             )
             app.container.settings.setDetailedTracking(false)
         }

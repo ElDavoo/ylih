@@ -112,7 +112,7 @@ fun SettingsScreen(
                 bottom = contentPadding.calculateBottomPadding() + 24.dp,
             ),
     ) {
-        val detailedSupported = viewModel.detailedTrackingSupported()
+        val detailedSupported by viewModel.detailedTrackingSupported.collectAsStateWithLifecycle()
         SectionHeader(stringResource(R.string.settings_tracking))
         Row(
             modifier = Modifier
@@ -322,7 +322,9 @@ fun SettingsScreen(
             )
             // Still offered once exempt: the exemption is the user's to withdraw, and a button
             // that vanishes on success leaves no way back to the screen that set it.
-            Restrictions.settingsIntent(context)?.let { intent ->
+            // Remembered: this resolves an activity through PackageManager, and YlihNavHost's
+            // copy of the same call already knew to.
+            remember(context) { Restrictions.settingsIntent(context) }?.let { intent ->
                 Spacer(Modifier.height(8.dp))
                 Button(
                     onClick = { context.startActivity(intent) },

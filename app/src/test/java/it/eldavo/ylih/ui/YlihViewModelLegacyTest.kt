@@ -63,7 +63,7 @@ class YlihViewModelLegacyTest {
 
         viewModel.setDetailedTracking(true).join()
 
-        assertFalse(viewModel.detailedTrackingSupported())
+        assertFalse(viewModel.detailedTrackingSupported.value)
         assertEquals(
             app.getString(R.string.detailed_needs_bluetooth),
             viewModel.messages.first(),

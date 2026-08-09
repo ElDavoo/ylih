@@ -22,9 +22,11 @@ import it.eldavo.ylih.widget.refreshWidgets
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.receiveAsFlow
@@ -132,14 +134,30 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
     fun sessions(pairId: Long): Flow<List<SessionEntity>> =
         container.repository.observeSessionsFor(pairId)
 
-    /** False on the Play build until Bluetooth access is granted — see `Distribution`. */
-    fun detailedTrackingSupported(): Boolean =
-        container.trackingController.detailedTrackingSupported()
+    /**
+     * False on the Play build until Bluetooth access is granted — see `Distribution`.
+     *
+     * State rather than a function call, for two reasons. It reaches `checkSelfPermission`, a
+     * binder round-trip, and the settings screen was making it on every recomposition. And the
+     * answer *changes*: granting Bluetooth from the prompt that screen raises flips it, and a
+     * function read during composition gives nothing to recompose on, so the row stayed disabled
+     * until something unrelated redrew it. [refreshCapabilities] is what re-asks.
+     */
+    private val _detailedTrackingSupported =
+        MutableStateFlow(container.trackingController.detailedTrackingSupported())
+    val detailedTrackingSupported: StateFlow<Boolean> = _detailedTrackingSupported.asStateFlow()
+
+    /** Re-reads what the platform will currently allow; called after a permission result. */
+    fun refreshCapabilities() {
+        _detailedTrackingSupported.value =
+            container.trackingController.detailedTrackingSupported()
+    }
 
     fun setDetailedTracking(enabled: Boolean) = viewModelScope.launch {
         if (!container.trackingController.setDetailedTracking(enabled)) {
             messageChannel.send(string(RES_DETAILED_NEEDS_BLUETOOTH))
         }
+        refreshCapabilities()
     }
 
     /**
@@ -180,6 +198,8 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
 
     fun syncWithSystem() = viewModelScope.launch {
         container.trackingController.syncWithSystem()
+        // A sync is exactly when a permission granted since the last one takes effect.
+        refreshCapabilities()
     }
 
     fun retirePair(pairId: Long, reason: String?) = mutate {

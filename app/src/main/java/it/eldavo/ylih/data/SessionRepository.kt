@@ -105,7 +105,7 @@ class SessionRepository(
         sessions.openFor(pair.id)?.id
     }
 
-    suspend fun hasOpenSessions(): Boolean = sessions.allOpen().isNotEmpty()
+    suspend fun hasOpenSessions(): Boolean = sessions.anyOpen()
 
     suspend fun openSessionsSnapshot(): List<SessionEntity> = sessions.allOpen()
 
