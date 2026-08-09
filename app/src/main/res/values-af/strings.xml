@@ -175,6 +175,7 @@
     <string name="export_done">rugsteun uitgevoer</string>
     <string name="export_failed">uitvoer het misluk</string>
     <string name="import_failed">invoer het misluk</string>
+    <string name="edit_failed">kon nie die verandering stoor nie</string>
     <string name="error_could_not_open">kon nie %1$s oopmaak nie</string>
     <plurals name="import_done">
         <item quantity="one">%d sessie geïmporteer</item>

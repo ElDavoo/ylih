@@ -183,6 +183,7 @@
     <string name="export_done">cefnwp wedi\'i allforio</string>
     <string name="export_failed">methodd allforio</string>
     <string name="import_failed">methodd mewnforio</string>
+    <string name="edit_failed">methwyd cadw\'r newid</string>
     <string name="error_could_not_open">ni allwn agor %1$s</string>
     <plurals name="import_done">
         <item quantity="zero">mewnforiwyd %d sesiwn</item>

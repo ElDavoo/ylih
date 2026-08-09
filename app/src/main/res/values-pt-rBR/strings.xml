@@ -177,6 +177,7 @@
     <string name="export_done">backup exportado</string>
     <string name="export_failed">falha na exportação</string>
     <string name="import_failed">falha na importação</string>
+    <string name="edit_failed">não foi possível salvar a alteração</string>
     <string name="error_could_not_open">não foi possível abrir %1$s</string>
     <plurals name="import_done">
         <item quantity="one">importada %d sessão</item>

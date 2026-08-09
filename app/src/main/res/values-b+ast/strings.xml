@@ -175,6 +175,7 @@
     <string name="export_done">copia de seguridá esportáa</string>
     <string name="export_failed">falló l\'esportación</string>
     <string name="import_failed">falló l\'importación</string>
+    <string name="edit_failed">nun se pudo guardar el cambiu</string>
     <string name="error_could_not_open">nun se pudo abrir %1$s</string>
     <plurals name="import_done">
         <item quantity="one">importáa %d sesión</item>

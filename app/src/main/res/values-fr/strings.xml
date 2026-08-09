@@ -178,6 +178,7 @@
     <string name="export_done">sauvegarde exportée</string>
     <string name="export_failed">échec de l\'exportation</string>
     <string name="import_failed">échec de l\'importation</string>
+    <string name="edit_failed">échec de l\'enregistrement de la modification</string>
     <string name="error_could_not_open">impossible d\'ouvrir %1$s</string>
     <plurals name="import_done">
         <item quantity="one">%d session importée</item>

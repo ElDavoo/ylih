@@ -175,6 +175,7 @@
     <string name="export_done">архив експортиран</string>
     <string name="export_failed">експортирането не успя</string>
     <string name="import_failed">импортирането не успя</string>
+    <string name="edit_failed">промяната не беше запазена</string>
     <string name="error_could_not_open">не може да отвори %1$s</string>
     <plurals name="import_done">
         <item quantity="one">импортирана %d сесия</item>

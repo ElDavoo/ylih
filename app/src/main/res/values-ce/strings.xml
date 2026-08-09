@@ -175,6 +175,7 @@
     <string name="export_done">резервнах копи экспорт йоьшу</string>
     <string name="export_failed">экспорт йоьшу яц</string>
     <string name="import_failed">импорт йоьшу яц</string>
+    <string name="edit_failed">хийцам ӏалашбина бац</string>
     <string name="error_could_not_open">%1$s оьцуьйти йоьшу яц</string>
     <plurals name="import_done">
         <item quantity="one">импортлоьччу %d сессия</item>

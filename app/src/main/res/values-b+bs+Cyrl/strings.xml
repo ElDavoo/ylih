@@ -177,6 +177,7 @@
     <string name="export_done">резервна копија извезена</string>
     <string name="export_failed">извоз неуспешан</string>
     <string name="import_failed">увоз неуспешан</string>
+    <string name="edit_failed">промјена није сачувана</string>
     <string name="error_could_not_open">није могуће отворити %1$s</string>
     <plurals name="import_done">
         <item quantity="one">увезена %d сесија</item>

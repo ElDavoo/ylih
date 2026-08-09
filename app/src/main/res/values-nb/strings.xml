@@ -178,6 +178,7 @@
     <string name="export_done">sikkerhetskopi eksportert</string>
     <string name="export_failed">eksport mislyktes</string>
     <string name="import_failed">import mislyktes</string>
+    <string name="edit_failed">endringen ble ikke lagret</string>
     <string name="error_could_not_open">kunne ikke åpne %1$s</string>
     <plurals name="import_done">
         <item quantity="one">importerte %d økt</item>

@@ -176,6 +176,7 @@
     <string name="export_done">το αντίγραφο ασφαλείας εξήχθη</string>
     <string name="export_failed">η εξαγωγή απέτυχε</string>
     <string name="import_failed">η εισαγωγή απέτυχε</string>
+    <string name="edit_failed">η αλλαγή δεν αποθηκεύτηκε</string>
     <string name="error_could_not_open">δεν ήταν δυνατό το άνοιγμα του %1$s</string>
     <plurals name="import_done">
         <item quantity="one">εισήχθη %d συνεδρία</item>

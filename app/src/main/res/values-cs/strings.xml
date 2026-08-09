@@ -179,6 +179,7 @@
     <string name="export_done">záloha exportována</string>
     <string name="export_failed">export se nezdařil</string>
     <string name="import_failed">import se nezdařil</string>
+    <string name="edit_failed">změnu se nepodařilo uložit</string>
     <string name="error_could_not_open">nepodařilo se otevřít %1$s</string>
     <plurals name="import_done">
         <item quantity="one">importována %d relace</item>

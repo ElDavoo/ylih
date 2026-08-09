@@ -179,6 +179,7 @@
     <string name="export_done">рэзервная копія экспартирана</string>
     <string name="export_failed">не ўдалося экспартаваць</string>
     <string name="import_failed">не ўдалося імпартаваць</string>
+    <string name="edit_failed">не ўдалося захаваць змену</string>
     <string name="error_could_not_open">не ўдалося адкрыць %1$s</string>
     <plurals name="import_done">
         <item quantity="one">імпартавана %d сесія</item>

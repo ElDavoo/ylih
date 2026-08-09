@@ -175,6 +175,7 @@
     <string name="export_done">ব্যাকআপ ৰপ্তানি কৰা</string>
     <string name="export_failed">ৰপ্তানি বিফল</string>
     <string name="import_failed">আমদানি বিফল</string>
+    <string name="edit_failed">সালসলনি সংৰক্ষণ কৰিব পৰা নগ\'ল</string>
     <string name="error_could_not_open">%1$s খুলিব পৰা নগল</string>
     <plurals name="import_done">
         <item quantity="one">%d সেশন আমদানি কৰা</item>

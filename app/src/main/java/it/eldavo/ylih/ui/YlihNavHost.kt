@@ -30,13 +30,13 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -44,7 +44,10 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import it.eldavo.ylih.R
 import it.eldavo.ylih.tracking.Hibernation
@@ -149,9 +152,15 @@ fun YlihNavHost(
     // gesture. Collapsing the bar hands its height back to the content, so a screen that only
     // just overflows stops overflowing halfway through the collapse; sampling canScroll live
     // makes the bar fight itself and snap back — settings did exactly that.
-    val expanded by remember { derivedStateOf { scrollBehavior.state.heightOffset == 0f } }
-    SideEffect {
-        if (expanded) allowCollapse.value = canScroll
+    //
+    // Through snapshotFlow rather than a SideEffect. A SideEffect body is not a snapshot observer,
+    // so reading the two values there registered no dependency that could schedule a recomposition:
+    // the latch only ever re-ran when this function recomposed for some unrelated reason, a route
+    // change or a page flip. A list that grew past the fold while the user sat on it — a pair
+    // connects, a chip appears — left the bar refusing to collapse until something else happened.
+    LaunchedEffect(scrollBehavior) {
+        snapshotFlow { (scrollBehavior.state.heightOffset == 0f) to canScroll }
+            .collect { (expanded, scrollable) -> if (expanded) allowCollapse.value = scrollable }
     }
 
     // Back off a tab returns to the first one, which is what the back stack used to do for free:
@@ -163,8 +172,13 @@ fun YlihNavHost(
         scope.launch { pagerState.animateScrollToPage(TAB_DEVICES) }
     }
 
-    LaunchedEffect(Unit) {
-        viewModel.messages.collect { snackbarHostState.showSnackbar(it) }
+    // Under repeatOnLifecycle, like every other flow the UI reads — a message emitted while the
+    // activity is stopped was otherwise consumed by a host nobody could see and then discarded.
+    val lifecycleOwner = LocalLifecycleOwner.current
+    LaunchedEffect(lifecycleOwner) {
+        lifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+            viewModel.messages.collect { snackbarHostState.showSnackbar(it) }
+        }
     }
 
     LaunchedEffect(openPair) {
@@ -287,7 +301,9 @@ fun YlihNavHost(
             composable(PAIR_ROUTE) { entry ->
                 val pairId = entry.arguments?.getString("pairId")?.toLongOrNull()
                 if (pairId == null) {
-                    navController.popBackStack()
+                    // In an effect, not in the composition body: popping the back stack while it
+                    // is being composed is a side effect on the thing doing the composing.
+                    LaunchedEffect(entry) { navController.popBackStack() }
                 } else {
                     PairDetailScreen(
                         viewModel = viewModel,

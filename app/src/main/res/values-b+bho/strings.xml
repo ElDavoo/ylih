@@ -175,6 +175,7 @@
     <string name="export_done">बैकअप निर्यात हो गइल</string>
     <string name="export_failed">निर्यात असफल</string>
     <string name="import_failed">आयात असफल</string>
+    <string name="edit_failed">बदलाव सेव ना हो सकल</string>
     <string name="error_could_not_open">%1$s खोल न सकल</string>
     <plurals name="import_done">
         <item quantity="one">%d सत्र आयातित कइल</item>

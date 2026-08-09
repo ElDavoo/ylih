@@ -175,6 +175,7 @@
     <string name="export_done">ส่งออกไฟล์สำรองแล้ว</string>
     <string name="export_failed">ส่งออกไม่สำเร็จ</string>
     <string name="import_failed">นำเข้าไม่สำเร็จ</string>
+    <string name="edit_failed">บันทึกการเปลี่ยนแปลงไม่สำเร็จ</string>
     <string name="error_could_not_open">ไม่สามารถเปิด %1$s ได้</string>
     <plurals name="import_done">
         <item quantity="other">นำเข้าแล้ว %d ช่วงการใช้งาน</item>

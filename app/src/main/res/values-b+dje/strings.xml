@@ -177,6 +177,7 @@
     <string name="export_done">kunaa kanji</string>
     <string name="export_failed">kunaa kanji ganda ne</string>
     <string name="import_failed">ga kanji ganda ne</string>
+    <string name="edit_failed">barmayyan mana gani</string>
     <string name="error_could_not_open">ga hin da fukka %1$s</string>
     <plurals name="import_done">
         <item quantity="one">gasaandi kanji %d</item>

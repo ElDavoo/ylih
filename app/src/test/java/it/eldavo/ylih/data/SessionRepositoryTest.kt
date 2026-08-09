@@ -343,6 +343,24 @@ class SessionRepositoryTest {
     }
 
     /**
+     * The three ways there is nowhere to put a slice. The watcher credits whatever
+     * `playbackTargetKey` last named, and the service can outlive every one of them — the pair can
+     * be retired, the device forgotten by an import, the session closed by anything else.
+     */
+    @Test
+    fun `playback with no open session to credit is dropped rather than resurrecting one`() = runTest {
+        repository.creditPlayback("bt:never:seen", 10 * 60_000)
+        assertTrue("an unknown device records nothing at all", sessions().isEmpty())
+
+        repository.onConnected(buds, at = clockNow, measurePlayback = true)
+        repository.retirePair(db.pairDao().getAll().single().id, reason = null, at = clockNow)
+
+        repository.creditPlayback(buds.key, 10 * 60_000)
+
+        assertEquals("a retired pair is not an open one", 0L, sessions().single().playingMs)
+    }
+
+    /**
      * The watcher banks a slice from a coroutine launched behind the one that closed the session,
      * so this is the ordering the service is written to avoid and the database has to refuse
      * anyway: credited here, the stored playback would exceed the span it was measured inside.

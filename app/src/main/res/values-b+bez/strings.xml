@@ -175,6 +175,7 @@
     <string name="export_done">nyuma iliyokamatia</string>
     <string name="export_failed">toleo lilishindwa</string>
     <string name="import_failed">kuingiza lilishindwa</string>
+    <string name="edit_failed">kuhifadhi mabadiliko kwishindwa</string>
     <string name="error_could_not_open">haiwezi kufungua %1$s</string>
     <plurals name="import_done">
         <item quantity="one">kuingiza %d kikao</item>

@@ -175,6 +175,7 @@
     <string name="export_done">پشتیبان صادرات شد</string>
     <string name="export_failed">صادرات ناموفق</string>
     <string name="import_failed">وارد کردن ناموفق</string>
+    <string name="edit_failed">تغییر ذخیره نشد</string>
     <string name="error_could_not_open">نتوانست %1$s را باز کند</string>
     <plurals name="import_done">
         <item quantity="one">%d جلسه وارد شد</item>

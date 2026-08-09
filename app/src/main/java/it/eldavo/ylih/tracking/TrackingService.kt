@@ -241,7 +241,14 @@ class TrackingService : LifecycleService() {
         )
         postedText = text
         true
-    } catch (e: Exception) {
+    } catch (e: RuntimeException) {
+        // Narrow on purpose. The refusals this is written for are all RuntimeExceptions —
+        // SecurityException where the service type's permission is missing,
+        // ForegroundServiceStartNotAllowedException outside an allowed window,
+        // InvalidForegroundServiceTypeException, IllegalStateException — and every one of them
+        // means the same thing: detailed tracking cannot run right now. Catching Throwable would
+        // fold an error from `trackingNotification` into the same silent `stopSelf`, which is the
+        // shape of failure the Notifications KDoc records as having been painful to find once.
         Log.e(TAG, "Foreground start refused; detailed tracking cannot run", e)
         stopSelf()
         false

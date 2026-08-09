@@ -191,6 +191,7 @@
     <string name="export_done">backup exported</string>
     <string name="export_failed">export failed</string>
     <string name="import_failed">import failed</string>
+    <string name="edit_failed">could not save that change</string>
     <string name="error_could_not_open">could not open %1$s</string>
     <plurals name="import_done">
         <item quantity="one">imported %d session</item>

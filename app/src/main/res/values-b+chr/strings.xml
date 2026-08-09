@@ -175,6 +175,7 @@
     <string name="export_done">ᎾᏙᎫ ᎠᏚᏗᏎᏗ ᎤᏗᎩᎭ</string>
     <string name="export_failed">ᎠᏚᏗᏎᏗ ᏗᎴᏒ</string>
     <string name="import_failed">ᎠᏚᏗᏎᏗ ᏗᎴᏒ</string>
+    <string name="edit_failed">ᎠᏓᏁᏟᏴᏍᏗ ᎥᏝ ᏫᎦᏅᏓᏗᏍᏙᏗ</string>
     <string name="error_could_not_open">ᎠᏚᎩᏍᎬ ᎾᎿ ᏙᏦᎵ %1$s</string>
     <plurals name="import_done">
         <item quantity="one">ᎠᏚᏗᏎᏗ ᎤᏗᎩᎭ %d ᎠᏟᏎᎵᏗ</item>

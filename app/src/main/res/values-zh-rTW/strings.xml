@@ -175,6 +175,7 @@
     <string name="export_done">備份已匯出</string>
     <string name="export_failed">匯出失敗</string>
     <string name="import_failed">匯入失敗</string>
+    <string name="edit_failed">變更未能儲存</string>
     <string name="error_could_not_open">無法開啟 %1$s</string>
     <plurals name="import_done">
         <item quantity="other">已匯入 %d 筆連線紀錄</item>

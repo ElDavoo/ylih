@@ -15,6 +15,7 @@ import it.eldavo.ylih.data.DeviceEntity
 import it.eldavo.ylih.data.PairSummary
 import it.eldavo.ylih.data.SessionEntity
 import it.eldavo.ylih.export.JsonBackup
+import it.eldavo.ylih.runCatchingCancellable
 import it.eldavo.ylih.stats.Counting
 import it.eldavo.ylih.stats.Span
 import it.eldavo.ylih.widget.refreshWidgets
@@ -78,6 +79,19 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
         .map { sessions -> sessions.groupBy({ it.pairId }, { it.toSpan() }) }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyMap())
 
+    /**
+     * Snackbar text, over a buffered channel rather than a `SharedFlow`.
+     *
+     * The UI collects this under `repeatOnLifecycle`, so there are stretches with no collector at
+     * all — and a `MutableSharedFlow` with `replay = 0` drops what it emits when nobody is
+     * listening, which is precisely those stretches. A channel buffers instead, so a message
+     * raised while the activity is stopped is waiting when it comes back. Raising the replay to 1
+     * would be the other way to survive that, and it would re-show the last message on every
+     * return to STARTED, rotation included.
+     *
+     * Consume-once, and nothing enforces a single collector: a second one would take messages from
+     * the first. There is one, in `YlihNavHost`.
+     */
     private val messageChannel = Channel<String>(Channel.BUFFERED)
     val messages: Flow<String> = messageChannel.receiveAsFlow()
 
@@ -103,9 +117,15 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
      * writes that never reach it. [setPlaybackOnly] is in here as well even though it touches no
      * session — it changes what every widget *counts*, and it is a settings write, so nothing
      * watching the database would ever notice.
+     *
+     * Every caller is a database write, and an exception escaping `viewModelScope.launch` reaches
+     * the default handler and takes the process with it — so a failed delete crashed the app
+     * rather than saying so. It reports through the same channel `exportTo` and `importFrom`
+     * already use; the redraw still runs, because whatever did land needs showing.
      */
     private fun mutate(block: suspend () -> Unit) = viewModelScope.launch {
-        block()
+        runCatchingCancellable { block() }
+            .onFailure { messageChannel.send(it.message ?: string(RES_EDIT_FAILED)) }
         refreshWidgets(getApplication<Application>())
     }
 
@@ -160,7 +180,7 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     fun exportTo(uri: Uri) = viewModelScope.launch {
-        runCatching {
+        runCatchingCancellable {
             val payload = container.repository.withWriteLock {
                 JsonBackup.export(container.database, container.clock.now())
             }
@@ -172,7 +192,7 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     fun importFrom(uri: Uri) = mutate {
-        runCatching {
+        runCatchingCancellable {
             val content = getApplication<Application>().contentResolver.openInputStream(uri)
                 ?.use { it.readBytes().decodeToString() }
                 ?: error(string(RES_COULD_NOT_OPEN, uri))
@@ -209,6 +229,7 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
         private val RES_EXPORT_FAILED = R.string.export_failed
         private val RES_IMPORT_OK = R.plurals.import_done
         private val RES_IMPORT_FAILED = R.string.import_failed
+        private val RES_EDIT_FAILED = R.string.edit_failed
         private val RES_COULD_NOT_OPEN = R.string.error_could_not_open
         private val RES_DETAILED_NEEDS_BLUETOOTH = R.string.detailed_needs_bluetooth
     }

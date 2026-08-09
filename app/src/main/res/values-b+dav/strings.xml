@@ -177,6 +177,7 @@
     <string name="export_done">kichanuo kilichohamishwa</string>
     <string name="export_failed">hamisha kuishindwa</string>
     <string name="import_failed">kuingiza kuishindwa</string>
+    <string name="edit_failed">kuhifadhi mabadiliko kuishindwa</string>
     <string name="error_could_not_open">haiwezi kufungua %1$s</string>
     <plurals name="import_done">
         <item quantity="one">ingizwa %d mkutano</item>

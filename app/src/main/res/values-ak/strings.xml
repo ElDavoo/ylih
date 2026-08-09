@@ -175,6 +175,7 @@
     <string name="export_done">foforo dan ɛwɔ.</string>
     <string name="export_failed">foforo a wɔsan no anempɛn.</string>
     <string name="import_failed">akosa a wɔsan no anempɛn.</string>
+    <string name="edit_failed">yɛantumi ansie nsakraeɛ no</string>
     <string name="error_could_not_open">nti yoo ntumi bukuu %1$s.</string>
     <plurals name="import_done">
         <item quantity="one">akosa bere %d</item>

@@ -173,6 +173,7 @@
     <string name="export_done">kuma sira jɛ</string>
     <string name="export_failed">kuma sira gara kɛ tɛ</string>
     <string name="import_failed">kuma kɛ jigɛn gara kɛ tɛ</string>
+    <string name="edit_failed">yɛlɛma marali ma se</string>
     <string name="error_could_not_open">%1$s jigɛn ma se se tɛ</string>
     <plurals name="import_done">
         <item quantity="other">jiginna sutu %d kɛ jigɛn jɛ</item>

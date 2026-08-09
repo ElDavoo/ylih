@@ -175,6 +175,7 @@
     <string name="export_done">gakuba akukyata</string>
     <string name="export_failed">gakuba atafufirize okukota</string>
     <string name="import_failed">gakuba atafufirize okushyira</string>
+    <string name="edit_failed">okuhindura tikurikubikwa</string>
     <string name="error_could_not_open">atakyali okwacumbura %1$s</string>
     <plurals name="import_done">
         <item quantity="one">shyiirikwire okussozo %d</item>

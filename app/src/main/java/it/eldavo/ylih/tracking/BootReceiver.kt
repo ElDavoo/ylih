@@ -5,6 +5,8 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import it.eldavo.ylih.YlihApp
+import kotlinx.coroutines.currentCoroutineContext
+import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.launch
 
 /**
@@ -29,6 +31,9 @@ class BootReceiver : BroadcastReceiver() {
             try {
                 container.trackingController.syncWithSystem()
             } catch (e: Exception) {
+                // See BtConnectionReceiver: a cancellation with this job still active is Room
+                // reporting a transaction it could not start, not the scope shutting down.
+                currentCoroutineContext().ensureActive()
                 Log.e(TAG, "Boot reconcile failed", e)
             } finally {
                 pending.finish()

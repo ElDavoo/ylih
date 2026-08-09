@@ -175,6 +175,7 @@
     <string name="export_done">nag-export ng backup</string>
     <string name="export_failed">hindi nag-export</string>
     <string name="import_failed">hindi nag-import</string>
+    <string name="edit_failed">hindi na-save ang pagbabago</string>
     <string name="error_could_not_open">hindi makabuksan %1$s</string>
     <plurals name="import_done">
         <item quantity="one">nag-import ng %d session</item>

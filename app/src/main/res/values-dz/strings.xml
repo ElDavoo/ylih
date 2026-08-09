@@ -176,6 +176,7 @@
     <string name="export_done">གཏུབ་ལ་གཞི་འབྱོར་ཞིང་།</string>
     <string name="export_failed">བསྐྱོད་པ་མི་ཐུབ་པ།</string>
     <string name="import_failed">ཞུགས་འདྲེན་མི་ཐུབ་པ།</string>
+    <string name="edit_failed">བསྒྱུར་བཅོས་བསྲུང་མ་ཚུགས།</string>
     <string name="error_could_not_open">%1$s ལ་ཁ་ཕྱེ་ཐུབ་མེད།</string>
     <plurals name="import_done">
         <item quantity="other">གླེང་སྟེགས་ %d ཞུགས་འདྲེན་བྱུང་།</item>

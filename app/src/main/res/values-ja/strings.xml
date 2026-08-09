@@ -177,6 +177,7 @@
     <string name="export_done">バックアップをエクスポートした</string>
     <string name="export_failed">エクスポートに失敗した</string>
     <string name="import_failed">インポートに失敗した</string>
+    <string name="edit_failed">変更を保存できなかった</string>
     <string name="error_could_not_open">%1$s を開けなかった</string>
     <plurals name="import_done">
         <item quantity="other">%d件のセッションをインポートした</item>

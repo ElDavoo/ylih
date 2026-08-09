@@ -176,6 +176,7 @@
     <string name="export_done">varmuuskopio viety</string>
     <string name="export_failed">vienti epäonnistui</string>
     <string name="import_failed">tuonti epäonnistui</string>
+    <string name="edit_failed">muutoksen tallennus epäonnistui</string>
     <string name="error_could_not_open">kohdetta %1$s ei voitu avata</string>
     <plurals name="import_done">
         <item quantity="one">tuotiin %d sessio</item>

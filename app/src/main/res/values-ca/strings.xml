@@ -176,6 +176,7 @@
     <string name="export_done">còpia de seguretat exportada</string>
     <string name="export_failed">l\'exportació ha fallat</string>
     <string name="import_failed">l\'importació ha fallat</string>
+    <string name="edit_failed">no s\'ha pogut desar el canvi</string>
     <string name="error_could_not_open">no s\'ha pogut obrir %1$s</string>
     <plurals name="import_done">
         <item quantity="one">s\'ha importat %d sessió</item>

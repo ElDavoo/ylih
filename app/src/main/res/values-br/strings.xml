@@ -181,6 +181,7 @@
     <string name="export_done">ezporzhañ graet</string>
     <string name="export_failed">ezporzhañ c\'hwall</string>
     <string name="import_failed">enderzhañ c\'hwall</string>
+    <string name="edit_failed">n\'eus ket bet gallet enrollañ ar c\'hemm</string>
     <string name="error_could_not_open">ne c\'hallan ket digeriñ %1$s</string>
     <plurals name="import_done">
         <item quantity="one">enderzhañ %d daolenn</item>

@@ -177,6 +177,7 @@
     <string name="export_done">backup export</string>
     <string name="export_failed">export anaa bayandi</string>
     <string name="import_failed">import anaa bayandi</string>
+    <string name="edit_failed">kabaŋ bare</string>
     <string name="error_could_not_open">anaa bayandi bukandi %1$s</string>
     <plurals name="import_done">
         <item quantity="one">import %d diñun</item>

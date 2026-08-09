@@ -175,6 +175,7 @@
     <string name="export_done">varukoopia eksporditud</string>
     <string name="export_failed">eksportimine ebaõnnestus</string>
     <string name="import_failed">importimine ebaõnnestus</string>
+    <string name="edit_failed">muudatust ei õnnestunud salvestada</string>
     <string name="error_could_not_open">ei saanud avada %1$s</string>
     <plurals name="import_done">
         <item quantity="one">imporditud %d seanss</item>

@@ -175,6 +175,7 @@
     <string name="export_done">backup soxri</string>
     <string name="export_failed">soxra kuɓo</string>
     <string name="import_failed">seede kuɓo</string>
+    <string name="edit_failed">bartol maa mara</string>
     <string name="error_could_not_open">buutu ko buɗoo %1$s</string>
     <plurals name="import_done">
         <item quantity="one">seede %d sekkuu</item>

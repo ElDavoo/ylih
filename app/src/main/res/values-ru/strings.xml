@@ -182,6 +182,7 @@
     <string name="export_done">резервная копия экспортирована</string>
     <string name="export_failed">не удалось экспортировать</string>
     <string name="import_failed">не удалось импортировать</string>
+    <string name="edit_failed">не удалось сохранить изменение</string>
     <string name="error_could_not_open">не удалось открыть %1$s</string>
     <plurals name="import_done">
         <item quantity="one">импортирована %d сессия</item>

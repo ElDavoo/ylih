@@ -181,6 +181,7 @@
     <string name="export_done">kopia zapasowa wyeksportowana</string>
     <string name="export_failed">eksport nie powiódł się</string>
     <string name="import_failed">import nie powiódł się</string>
+    <string name="edit_failed">nie udało się zapisać zmiany</string>
     <string name="error_could_not_open">nie można otworzyć %1$s</string>
     <plurals name="import_done">
         <item quantity="one">zaimportowano %d sesję</item>

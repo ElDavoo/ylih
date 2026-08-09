@@ -175,6 +175,7 @@
     <string name="export_done">дайындық экспорттала</string>
     <string name="export_failed">экспорт сәтсіз болды</string>
     <string name="import_failed">импорт сәтсіз болды</string>
+    <string name="edit_failed">дәјишиклик сахланылмады</string>
     <string name="error_could_not_open">ашу мүмкін емес %1$s</string>
     <plurals name="import_done">
         <item quantity="one">импорттала %d сеанс</item>

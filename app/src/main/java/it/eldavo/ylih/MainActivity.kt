@@ -29,6 +29,16 @@ class MainActivity : ComponentActivity() {
      */
     private val openPair = Channel<Long>(Channel.CONFLATED)
 
+    /**
+     * Hoisted to a field rather than built in [setContent].
+     *
+     * `receiveAsFlow()` allocates a new object every call, and the content lambda runs on every
+     * recomposition — so the `LaunchedEffect` keyed on it downstream restarted each time,
+     * cancelling and re-collecting the channel. A `trySend` landing in that window is dropped, and
+     * a conflated channel keeps nothing to redeliver: a widget tap that opened nothing.
+     */
+    private val openPairFlow = openPair.receiveAsFlow()
+
     private val permissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
             // Denied Bluetooth just means no Bluetooth tracking; the UI explains the state.
@@ -52,7 +62,7 @@ class MainActivity : ComponentActivity() {
         if (savedInstanceState == null) intent?.let(::offerPair)
         setContent {
             YlihTheme {
-                YlihNavHost(openPair = openPair.receiveAsFlow())
+                YlihNavHost(openPair = openPairFlow)
             }
         }
         // The first run asks for Bluetooth itself, on a page that says what it is for, so doing it

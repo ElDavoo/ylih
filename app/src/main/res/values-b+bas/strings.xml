@@ -177,6 +177,7 @@
     <string name="export_done">backup gí</string>
     <string name="export_failed">gí ba gɛ̀</string>
     <string name="import_failed">sɔŋ ku ba gɛ̀</string>
+    <string name="edit_failed">ba nla bɛ soŋ mahoñol</string>
     <string name="error_could_not_open">ku tuum tó %1$s</string>
     <plurals name="import_done">
         <item quantity="one">sɔŋ ku %d sɔŋ</item>

@@ -178,6 +178,7 @@
     <string name="export_done">backup exportatua</string>
     <string name="export_failed">exportazioa huts egin du</string>
     <string name="import_failed">inportazioa huts egin du</string>
+    <string name="edit_failed">ezin izan da aldaketa gorde</string>
     <string name="error_could_not_open">%1$s ireki ezin zen</string>
     <plurals name="import_done">
         <item quantity="one">%d saio inportatua</item>

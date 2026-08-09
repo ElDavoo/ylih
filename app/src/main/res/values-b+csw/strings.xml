@@ -175,6 +175,7 @@
     <string name="export_done">atayakahwin ki-macinahewik</string>
     <string name="export_failed">macinahew ki-pakamiow</string>
     <string name="import_failed">mayik ki-pakamiow</string>
+    <string name="edit_failed">namōya ki-asiwatāw</string>
     <string name="error_could_not_open">ki-pakamiow mayik %1$s</string>
     <plurals name="import_done">
         <item quantity="one">mayik %d atihcamowin</item>

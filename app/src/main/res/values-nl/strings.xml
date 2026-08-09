@@ -176,6 +176,7 @@
     <string name="export_done">back-up geëxporteerd</string>
     <string name="export_failed">exporteren mislukt</string>
     <string name="import_failed">importeren mislukt</string>
+    <string name="edit_failed">wijziging niet opgeslagen</string>
     <string name="error_could_not_open">kon %1$s niet openen</string>
     <plurals name="import_done">
         <item quantity="one">%d sessie geïmporteerd</item>

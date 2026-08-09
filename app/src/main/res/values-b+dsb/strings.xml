@@ -179,6 +179,7 @@
     <string name="export_done">kopa eksportirowana</string>
     <string name="export_failed">eksport njewudan</string>
     <string name="import_failed">import njewudan</string>
+    <string name="edit_failed">změna njejo se składła</string>
     <string name="error_could_not_open">njemóžym %1$s wócyniś</string>
     <plurals name="import_done">
         <item quantity="one">%d sejada importirowana</item>

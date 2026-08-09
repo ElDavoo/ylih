@@ -178,6 +178,7 @@
     <string name="export_done">copie de rezervă exportată</string>
     <string name="export_failed">exportul a eșuat</string>
     <string name="import_failed">importul a eșuat</string>
+    <string name="edit_failed">modificarea nu a fost salvată</string>
     <string name="error_could_not_open">nu s-a putut deschide %1$s</string>
     <plurals name="import_done">
         <item quantity="one">a fost importată %d sesiune</item>

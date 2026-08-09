@@ -175,6 +175,7 @@
     <string name="export_done">ব্যাকআপ এক্সপোর্ট করা হয়েছে</string>
     <string name="export_failed">এক্সপোর্ট ব্যর্থ হয়েছে</string>
     <string name="import_failed">আমদানি ব্যর্থ হয়েছে</string>
+    <string name="edit_failed">পরিবর্তন সংরক্ষণ করা যায়নি</string>
     <string name="error_could_not_open">%1$s খোলা যায়নি</string>
     <plurals name="import_done">
         <item quantity="one">%d সেশন আমদানি করা হয়েছে</item>

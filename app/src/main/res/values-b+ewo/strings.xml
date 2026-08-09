@@ -177,6 +177,7 @@
     <string name="export_done">bekam ye ekpɔ</string>
     <string name="export_failed">ekpɔ a tutɔ</string>
     <string name="import_failed">kula a tutɔ</string>
+    <string name="edit_failed">mbɔmbɔ a tutɔ</string>
     <string name="error_could_not_open">a lo vul %1$s te</string>
     <plurals name="import_done">
         <item quantity="one">kula dibulu %d</item>

@@ -7,6 +7,8 @@ import android.content.Intent
 import android.util.Log
 import androidx.core.content.IntentCompat
 import it.eldavo.ylih.YlihApp
+import kotlinx.coroutines.currentCoroutineContext
+import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.launch
 
 /**
@@ -43,6 +45,11 @@ class BtConnectionReceiver : BroadcastReceiver() {
                     container.trackingController.onSessionClosed()
                 }
             } catch (e: Exception) {
+                // Rethrows only if *this* coroutine was cancelled, which means the scope is going
+                // away. Room cancels the continuation to report a transaction it could not start
+                // — a closed database — so a cancellation with the job still active is a genuine
+                // failure wearing the wrong clothes, and belongs in the log like any other.
+                currentCoroutineContext().ensureActive()
                 Log.e(TAG, "Failed to record ${identity.key}", e)
             } finally {
                 pending.finish()

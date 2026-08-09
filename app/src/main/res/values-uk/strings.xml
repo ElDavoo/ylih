@@ -180,6 +180,7 @@
     <string name="export_done">резервну копію експортовано</string>
     <string name="export_failed">не вдалося виконати експорт</string>
     <string name="import_failed">не вдалося виконати імпорт</string>
+    <string name="edit_failed">не вдалося зберегти зміну</string>
     <string name="error_could_not_open">не вдалося відкрити %1$s</string>
     <plurals name="import_done">
         <item quantity="one">імпортовано %d сесію</item>

@@ -178,6 +178,7 @@
     <string name="export_done">Backup exportiert</string>
     <string name="export_failed">Export fehlgeschlagen</string>
     <string name="import_failed">Import fehlgeschlagen</string>
+    <string name="edit_failed">Änderung nicht gespeichert</string>
     <string name="error_could_not_open">%1$s konnte nicht geöffnet werden</string>
     <plurals name="import_done">
         <item quantity="one">%d Sitzung importiert</item>

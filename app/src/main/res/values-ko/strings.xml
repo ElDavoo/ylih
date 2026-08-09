@@ -174,6 +174,7 @@
     <string name="export_done">백업을 내보냈습니다</string>
     <string name="export_failed">내보내기 실패</string>
     <string name="import_failed">가져오기 실패</string>
+    <string name="edit_failed">변경사항 저장 실패</string>
     <string name="error_could_not_open">%1$s을(를) 열 수 없습니다</string>
     <plurals name="import_done">
         <item quantity="other">%d개 세션을 가져왔습니다</item>

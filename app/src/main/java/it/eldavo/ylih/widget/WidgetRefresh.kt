@@ -10,6 +10,7 @@ import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.SizeMode
 import androidx.glance.appwidget.provideContent
 import androidx.glance.appwidget.updateAll
+import it.eldavo.ylih.runCatchingCancellable
 import kotlinx.coroutines.flow.first
 
 /**
@@ -23,9 +24,13 @@ import kotlinx.coroutines.flow.first
  * does not control and cannot require to exist, and the callers are the app's own session writes
  * and its repair pass. A home screen that redraws a minute late is a cosmetic problem; a
  * `syncWithSystem()` that threw on the way out is a lost session.
+ *
+ * Cancellation is not one of those failures — see [runCatchingCancellable]. This is the last thing
+ * `syncWithSystem` does, so swallowing it changed nothing here, but it is the wrong shape to leave
+ * in a file whose whole job is to fail quietly.
  */
 suspend fun refreshWidgets(context: Context) {
-    runCatching {
+    runCatchingCancellable {
         LifetimeWidget().updateAll(context)
         ActivityWidget().updateAll(context)
         ChartWidget().updateAll(context)

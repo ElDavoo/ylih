@@ -423,6 +423,31 @@ class TrackingServiceTest {
         assertEquals(1, sessions().size)
     }
 
+    /**
+     * The watcher's own callback edge, and the only credit here that nothing can wait for: it
+     * fires whenever any app on the phone changes a player, from a handler rather than from a
+     * coroutine, so it banks on the app-lifetime scope instead of the service's. Music simply
+     * stopping is enough — no tick, no plug event, nothing else running.
+     */
+    @Test
+    fun `music stopping banks what was played without waiting for a tick`() {
+        shadowOf(audioManager).setIsMusicActive(true)
+        start()
+        connect(buds())
+        settle("the session to open") { sessions().isNotEmpty() }
+
+        playUntickedFor(50)
+        // Nothing playing anywhere: the callback ends the span and hands back the whole slice,
+        // floor or no floor, which is the branch `MIN_BANKED_SLICE_MS` must never swallow.
+        shadowOf(audioManager).setIsMusicActive(false)
+        shadowOf(audioManager).setActivePlaybackConfigurationsFor(emptyList(), true)
+
+        settle("the callback's slice to reach the database") {
+            sessions().single().playingMs!! > 0
+        }
+        assertNull("and it is still a live session", sessions().single().disconnectedAt)
+    }
+
     @Test
     fun `unplugging banks the part-minute played since the last tick`() {
         shadowOf(audioManager).setIsMusicActive(true)

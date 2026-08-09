@@ -175,6 +175,7 @@
     <string name="export_done">sekurejo elportita</string>
     <string name="export_failed">elporto malsukcesis</string>
     <string name="import_failed">enporto malsukcesis</string>
+    <string name="edit_failed">la ŝanĝo ne konserviĝis</string>
     <string name="error_could_not_open">ne povis malfermi %1$s</string>
     <plurals name="import_done">
         <item quantity="one">enportita %d seanco</item>

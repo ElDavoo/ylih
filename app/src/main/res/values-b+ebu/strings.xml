@@ -177,6 +177,7 @@
     <string name="export_done">thaara nja ĩthaama</string>
     <string name="export_failed">thaara nja ĩtagĩthaama</string>
     <string name="import_failed">ruta mwarũngu ĩtagĩthaama</string>
+    <string name="edit_failed">kũiga mũgarũrũku gũtathĩkire</string>
     <string name="error_could_not_open">ĩtagĩcooka kũruta %1$s</string>
     <plurals name="import_done">
         <item quantity="one">ruta mwarũngu mahinda %d</item>

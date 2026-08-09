@@ -176,6 +176,7 @@
     <string name="export_done">mentés exportálva</string>
     <string name="export_failed">exportálás sikertelen</string>
     <string name="import_failed">importálás sikertelen</string>
+    <string name="edit_failed">a módosítás mentése sikertelen</string>
     <string name="error_could_not_open">%1$s nem nyitható meg</string>
     <plurals name="import_done">
         <item quantity="one">%d munkamenet importálva</item>

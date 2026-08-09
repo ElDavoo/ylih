@@ -175,6 +175,7 @@
     <string name="export_done">isameki inatumbulukilwe</string>
     <string name="export_failed">kututumbulula ifwalikilwe</string>
     <string name="import_failed">kufitika ifwalikilwe</string>
+    <string name="edit_failed">ukusunga ukwaluka kwafilwa</string>
     <string name="error_could_not_open">ifupili kufukula %1$s</string>
     <plurals name="import_done">
         <item quantity="one">ifitike %d fikapililo</item>

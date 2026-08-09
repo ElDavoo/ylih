@@ -177,6 +177,7 @@
     <string name="export_done">likolo kaba osambé</string>
     <string name="export_failed">kaba ilinga</string>
     <string name="import_failed">masolo ilinga</string>
+    <string name="edit_failed">mabongwan ma si bwesabe</string>
     <string name="error_could_not_open">ilinga musuala %1$s</string>
     <plurals name="import_done">
         <item quantity="one">masolo %d isela</item>

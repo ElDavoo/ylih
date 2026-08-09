@@ -175,6 +175,7 @@
     <string name="export_done">ehtiyat nüsxə ixrac edildi</string>
     <string name="export_failed">ixrac uğursuz oldu</string>
     <string name="import_failed">idxal uğursuz oldu</string>
+    <string name="edit_failed">dəyişiklik saxlanılmadı</string>
     <string name="error_could_not_open">%1$s açıla bilmədi</string>
     <plurals name="import_done">
         <item quantity="one">%d seans idxal edildi</item>

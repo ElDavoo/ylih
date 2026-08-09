@@ -175,6 +175,7 @@
     <string name="export_done">बैकअप निर्यात किया गया</string>
     <string name="export_failed">निर्यात विफल</string>
     <string name="import_failed">आयात विफल</string>
+    <string name="edit_failed">सोलायनाय दोनथुमनो हायाखै</string>
     <string name="error_could_not_open">%1$s को खोल नहीं सकते</string>
     <plurals name="import_done">
         <item quantity="one">%d सत्र आयात किया</item>

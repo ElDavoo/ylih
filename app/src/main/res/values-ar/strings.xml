@@ -187,6 +187,7 @@
     <string name="export_done">تم تصدير النسخة الاحتياطية</string>
     <string name="export_failed">فشل التصدير</string>
     <string name="import_failed">فشل الاستيراد</string>
+    <string name="edit_failed">تعذّر حفظ التغيير</string>
     <string name="error_could_not_open">تعذّر فتح %1$s</string>
     <plurals name="import_done">
         <item quantity="zero">تم استيراد %d جلسات</item>

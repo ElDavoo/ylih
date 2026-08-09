@@ -175,6 +175,7 @@
     <string name="export_done">data lo va dze</string>
     <string name="export_failed">data lo mewa o</string>
     <string name="import_failed">lo mewa o</string>
+    <string name="edit_failed">womete ŋu dzra tɔtrɔa ɖo o</string>
     <string name="error_could_not_open">woate ŋu sua %1$s o</string>
     <plurals name="import_done">
         <item quantity="one">nusẽ %d lo dze</item>

@@ -175,6 +175,7 @@
     <string name="export_done">hofu ilitekeled</string>
     <string name="export_failed">kutekeleza kwishindikana</string>
     <string name="import_failed">kuweka kwishindikana</string>
+    <string name="edit_failed">kuhifadhi mabadiliko kwishindikana</string>
     <string name="error_could_not_open">haikuweza kufungua %1$s</string>
     <plurals name="import_done">
         <item quantity="one">kuweka mgogoro %d</item>

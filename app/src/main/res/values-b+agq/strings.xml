@@ -177,6 +177,7 @@
     <string name="export_done">ìkí gó kó</string>
     <string name="export_failed">gó sú</string>
     <string name="import_failed">gó ì sú</string>
+    <string name="edit_failed">à kə̀ nùm bó</string>
     <string name="error_could_not_open">ŋ tóŋ gó %1$s</string>
     <plurals name="import_done">
         <item quantity="one">gó ì búŋ %d</item>

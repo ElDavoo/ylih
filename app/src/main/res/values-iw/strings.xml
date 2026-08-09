@@ -179,6 +179,7 @@
     <string name="export_done">הגיבוי יוצא</string>
     <string name="export_failed">הייצוא נכשל</string>
     <string name="import_failed">הייבוא נכשל</string>
+    <string name="edit_failed">השינוי לא נשמר</string>
     <string name="error_could_not_open">לא ניתן לפתוח את %1$s</string>
     <plurals name="import_done">
         <item quantity="one">יובא מפגש %d</item>

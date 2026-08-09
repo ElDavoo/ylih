@@ -176,6 +176,7 @@
     <string name="export_done">yedek dışa aktarıldı</string>
     <string name="export_failed">dışa aktarma başarısız oldu</string>
     <string name="import_failed">içe aktarma başarısız oldu</string>
+    <string name="edit_failed">değişiklik kaydedilemedi</string>
     <string name="error_could_not_open">%1$s açılamadı</string>
     <plurals name="import_done">
         <item quantity="one">%d oturum içe aktarıldı</item>

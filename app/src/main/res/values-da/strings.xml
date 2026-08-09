@@ -176,6 +176,7 @@
     <string name="export_done">sikkerhedskopi eksporteret</string>
     <string name="export_failed">eksport mislykkedes</string>
     <string name="import_failed">import mislykkedes</string>
+    <string name="edit_failed">ændringen kunne ikke gemmes</string>
     <string name="error_could_not_open">kunne ikke åbne %1$s</string>
     <plurals name="import_done">
         <item quantity="one">importerede %d session</item>
