@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Scottish Gaelic. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - do bheatha ann an fhuaimeanan</string>
+
+    <string name="nav_headphones">fhuaimeanan</string>
+    <string name="nav_stats">staitisteg</string>
+    <string name="nav_settings">roghainn</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">fuaim le</string>
+    <string name="kind_wired">ceangailte</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">gun fhios</string>
+
+    <string name="welcome_title">fàilte gu ylih</string>
+    <string name="welcome_intro">bidh ylih a\' clàradh dè cho fada \'s a bhios gach paidhir fhuaimeanan ceangailte, agus tha mi a\' faighinn bàs an aon cheist a tha feumail: dè an uiread uairean a chuir iad seachad?</string>
+    <string name="welcome_point_auto_title">ceangail agus diochuimhnich</string>
+    <string name="welcome_point_auto_body">tha fhuaimeanan bluetooth air an clàradh fhèin, ò thòisich an ceangal. chan fheum a bhith dùinte leantainneach air.</string>
+    <string name="welcome_point_lifetime_title">aon paidhir, aon bheatha</string>
+    <string name="welcome_point_lifetime_body">nuair a bhàsaicheas paidhir, cuir air falbh i: bidh an làn fhreagradh agus bidh an ath-paidhir den aon fhuaimeanan a\' tòiseachadh a-rithist o neoni.</string>
+    <string name="welcome_point_detailed_title">ceangailte agus cluich</string>
+    <string name="welcome_point_detailed_body">clàradh mion-fiosrachaidh, ann an roghainn, cuir fhuaimeanan ceangailte agus tomhas dè an uiread ùine a bha a\' cluich gu fìrinneach.</string>
+    <string name="welcome_privacy">fuirichidh gach rud air an fhòn seo. chan eil cuntas ann, agus chan eil cead-lìn aig an aplacaid.</string>
+    <string name="welcome_start">tòisich air ais</string>
+    <string name="welcome_next">air adhart</string>
+    <string name="welcome_allow">leig leam</string>
+    <string name="welcome_step">ceum %1$d à %2$d</string>
+    <string name="welcome_bluetooth_title">inntrigeadh bluetooth</string>
+    <string name="welcome_bluetooth_why">chan innis android aplacaid dè an inneal bluetooth a chaidh a cheangal, agus dè a\' chall air, ma bhitheas inntrigeadh bluetooth aig an aplacaid. seo an dòigh air a bheil ylih a\' faighinn air fhuaimeanan bho stereo carbad, agus mar a bhios fios aige air aon paidhir gu aon te eile.</string>
+    <string name="welcome_bluetooth_with">leis: bidh gach paidhir air an clàradh ò thòisich an ceangal, gun fhacal air fhagail agus gun smaointinn gu leum.</string>
+    <string name="welcome_bluetooth_without">gun a bhith: chan eil fhuaimeanan bluetooth air an clàradh idir. bidh an còrr den aplacaid ag obair fhathast, agus is urrainn dhut a bhronnadh nas fhaide anns na roghainn aplacaid android.</string>
+    <string name="welcome_notifications_title">brathan</string>
+    <string name="welcome_notifications_why">bidh clàradh mion-fiosrachaidh a\' ruith seirbhis bheag air a\' chùl, agus tha android ag iarraidh aplacaid sam bith a bhith a\' dèanamh sin brathan a chumail ri fhaicinn fhad \'s a bhios i ag obair.</string>
+    <string name="welcome_notifications_with">leis: an notaichear air an bhrathan dè th\' air a bhith ga chòmhnaidh an-dràsta, agus is e seo an aon chomharra gu bheil clàradh mion-fiosrachaidh beò.</string>
+    <string name="welcome_notifications_without">gun a bhith: bidh clàradh mion-fiosrachaidh fhathast a\' ruith agus fhathast a\' clàradh. cha nochd android an brathan aig an aplacaid.</string>
+    <string name="hibernation_title">cuir air adhart a\' cunntadh agus gu bheil thu air dhìochuimhneachadh</string>
+    <string name="hibernation_body">bann android aplacaidean nach eil air an fhosgladh airson grunn mìosan agus bheir iad air ais an inntrigeadh, a dhèanadh ylih chan eil a\' clàradh ach an uair sin a\' fosgladh e a-rithist. a bhith air fhàgail o dhèantar dìochuimhneach gu beacht na tha an aplacaid seo ann, agus tha e fhiach a chur dheth a-nis.</string>
+    <string name="action_not_now">chan eil an-dràsta</string>
+
+    <string name="devices_in_use">an cleachdadh</string>
+    <string name="devices_retired">air falbh</string>
+    <string name="devices_empty_title">gun fhuaimeanan fhathast</string>
+    <string name="devices_empty_body">ceangail paidhir fhuaimeanan bluetooth agus nochd iad an seo. feumaidh fhuaimeanan ceangailte clàradh mion-fiosrachaidh, ann an roghainn.</string>
+    <string name="devices_generation">paidhir #%1$d</string>
+    <string name="devices_retired_on">air falbh %1$s</string>
+    <string name="devices_connected_for">ceangailte %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">gach fhuaimeanan</string>
+    <string name="stats_sessions_since">%1$s o chionn %2$s</string>
+    <string name="stats_today">an-diugh</string>
+    <string name="stats_last_7">an 7 latha mu dheireadh</string>
+    <string name="stats_last_30">an 30 latha mu dheireadh</string>
+    <string name="stats_average_session">seisean cuibheasach</string>
+    <string name="stats_longest_session">an seisean as fhaide</string>
+    <string name="stats_playing">fuaim a\' cluich</string>
+    <string name="stats_measured_span">air a thomhas airson cluich</string>
+    <string name="stats_share">roinn cluich</string>
+    <string name="stats_playback_only_note">a\' cunntadh ùine cluich a-mhàin</string>
+    <string name="stats_daily_hours_30">uairean laitheil (30 latha)</string>
+    <string name="stats_by_pair">a rèir paidhir</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · air falbh</string>
+    <string name="chart_max">%1$s as motha</string>
+
+    <string name="pair_fallback_title">paidhir</string>
+    <string name="pair_back">air ais</string>
+    <string name="pair_more">barrachd</string>
+    <string name="pair_menu_rename">ath-ainm</string>
+    <string name="pair_menu_purchase">fiosrachadh ceannachaidh</string>
+    <string name="pair_menu_retire">air falbh / ath-bhuanachadh</string>
+    <string name="pair_menu_delete">sguab às</string>
+    <string name="pair_lifetime">beatha air a\' phaidhir seo</string>
+    <string name="pair_retired_on">air falbh %1$s</string>
+    <string name="pair_retired_with_reason">air falbh %1$s · %2$s</string>
+    <string name="pair_connected_now">ceangailte a-nis · %1$s</string>
+    <string name="pair_sessions">seiseanan</string>
+    <string name="pair_average">cuibheasach</string>
+    <string name="pair_longest">an fhear as fhaide</string>
+    <string name="pair_since">o chionn %1$s</string>
+    <string name="pair_of_measured">roinn cluich</string>
+    <string name="pair_measured">air a thomhas airson cluich</string>
+    <string name="pair_paid">phaighte</string>
+    <string name="pair_per_hour">gach uair a thìde</string>
+    <string name="pair_bought">a cheannaich</string>
+    <string name="pair_daily_hours_14">uairean laitheil (14 latha)</string>
+    <string name="pair_rename_title">ath-ainm paidhir</string>
+    <string name="pair_rename_label">ainm</string>
+    <string name="pair_retire_title">air falbh an paidhir seo</string>
+    <string name="pair_retire_label">adhbhar (dhàmhair, reic, caill…)</string>
+    <string name="pair_retire_confirm">air falbh</string>
+    <string name="pair_retire_supporting">fladh an làn-naidheachdanan. ceangal an aon innealan a\' tòiseachadh paidhir ùr o neoni.</string>
+    <string name="pair_price_title">prìs phaighte</string>
+    <string name="pair_price_label">sùim (aonadh iomlan)</string>
+    <string name="pair_price_supporting">air a chleachdadh airson am figear cosg-gach-uair.</string>
+    <string name="pair_delete_title">sguab às an paidhir seo?</string>
+    <string name="pair_delete_body">gach seisean clàraichte dha tha air a sguabadh às cuideachd. chan urrainn a dhèanamh gun aon taing.</string>
+
+    <string name="session_ongoing">a\' dol air adhart</string>
+    <string name="session_until">gu %1$s</string>
+    <string name="session_playing">%1$s a\' cluich</string>
+    <string name="session_recovered">ath-bhunaicheadh</string>
+
+    <string name="settings_tracking">clàradh</string>
+    <string name="settings_detailed_title">clàradh mion-fiosrachaidh</string>
+    <string name="settings_detailed_body">cuir fhuaimeanan ceangailte agus ùine cluich. cha nochd android ach air tachartasan ceangal fhuaimeanan ceangailte gu aplacaid a tha a\' ruith, agus cuiridh seo brathan samhach anns a\' sgàil. bidh bluetooth air a thomhas dè an dòigh air an naidheachd.</string>
+    <string name="settings_detailed_unavailable">chan eil ri fhaighinn gus an thig inntrigeadh bluetooth a bhronnadh: cha nochd an togail seo ach an seòrsa seirbhis connectedDevice, a bhios ceangailte aig android 14+ ri cead bluetooth.</string>
+    <string name="settings_playback_only_title">cunnt cluich a-mhàin</string>
+    <string name="settings_playback_only_body">staitisteg cunnt an ùine a bha fuaim a\' cluich gu fìrinneach an àite an ùine ceangail. seiseanan a-mhàin clàraichte leis a\' chiad-fhiosrachadh mion-fhiosrachaidh air a thomhas cluich; an còrr air fhàgail.</string>
+    <string name="settings_language">cànan</string>
+    <string name="settings_language_system">cànan an t-siostaim</string>
+    <string name="settings_devices">innealan</string>
+    <string name="settings_devices_body">nach-sgrùdadh a h-uile a-nis nach eil innealan — stereo carbad no gleus-fuaim — a stad clàradh.</string>
+    <string name="settings_device_subtitle">%1$s · an toiseach fhacinn %2$s</string>
+    <string name="settings_data">dàta</string>
+    <string name="settings_export">às-phortadh json</string>
+    <string name="settings_import">ion-phortadh</string>
+    <string name="settings_import_warning">ion-phortadh air a chuir an àite gach rud a chuireadh an-dràsta.</string>
+    <string name="settings_troubleshooting">fuasgladh dhuilgheadasan</string>
+    <string name="settings_battery_body">ma stad seiseanan a bhith a\' clàradh, thoir sùil gu bheil ylih air fhallain bho iongantas bataraidh — aplacaid a chaidh a chuir srian riamh nach faigh craoladh ceangal a-rithist gus an teid a fhosgladh.</string>
+    <string name="settings_battery_button">roghainn bataraidh</string>
+    <string name="settings_battery_path">roghainn → aplacaidean → ylih → bataraidh → gun cumhachadh.</string>
+    <string name="settings_hibernation_body">ma bhios ylih gun fhosgladh airson grunn mìosan, bheir android air falbh agus bheir iad air ais an inntrigeadh, agus cha nochd a-nis gus an teid a fhosgladh. a bhith a\' cur dheth sin a\' leigeil do paidhir fhàgail a\' cunntadh tro ràithe nach smaoinich thu an aplacaid.</string>
+    <string name="settings_hibernation_on">faodaidh android stad a chur air ylih.</string>
+    <string name="settings_hibernation_off">tha ylih air fhallain agus a\' cunntadh clàradh.</string>
+    <string name="settings_hibernation_button">roghainn aplacaid gun chleachdadh</string>
+    <string name="settings_about">mu dheidhinn</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — uairean fhuaimeanan, air a chumail gu domhainn agus gu bràth.</string>
+    <string name="settings_import_confirm_title">cuir an àite gach dàta?</string>
+    <string name="settings_import_confirm_body">ion-phortadh an cùl-up seo a\' sguabadh às a h-uile innealan, paidhir agus seisean air a chur an-dràsta.</string>
+
+    <string name="widget_lifetime_label">ylih · beatha</string>
+    <string name="widget_lifetime_description">uairean gach paidhir, le cronaiméadar beo air rud sam bith ceangailte</string>
+    <string name="widget_activity_label">ylih · gnìomhachd</string>
+    <string name="widget_activity_description">uairean gach paidhir air foluain, agus an-diugh, 7 latha agus 30 latha</string>
+    <string name="widget_chart_label">ylih · 30 latha</string>
+    <string name="widget_chart_description">uairean èisteachd laitheil thairis air an 30 latha mu dheireadh</string>
+
+    <string name="action_save">sàbhail</string>
+    <string name="action_cancel">sguir dheth</string>
+    <string name="action_delete">sguab às</string>
+    <string name="action_import">ion-phortadh</string>
+
+    <string name="channel_tracking">clàradh fhuaimeanan</string>
+    <string name="channel_tracking_description">air a shealltainn agus ylih a\' faicinn fhuaimeanan ceangailte agus cluich. cha sholathar android ach ceangal fhuaimeanan ceangailte gu aplacaidean nach eil ga ruith.</string>
+    <string name="notification_title">clàradh ùine fhuaimeanan</string>
+    <string name="notification_starting">a\' tòiseachadh…</string>
+    <string name="notification_idle">a\' feitheamh air fhuaimeanan</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d ceangailte · %2$s</item>
+        <item quantity="two">%1$d ceangailte · %2$s</item>
+        <item quantity="few">%1$d ceangailte · %2$s</item>
+        <item quantity="other">%1$d ceangailte · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d ceangailte · %2$s · a\' cluich</item>
+        <item quantity="two">%1$d ceangailte · %2$s · a\' cluich</item>
+        <item quantity="few">%1$d ceangailte · %2$s · a\' cluich</item>
+        <item quantity="other">%1$d ceangailte · %2$s · a\' cluich</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">feumaidh an togail seo inntrigeadh bluetooth mus urrainn dha fhuaimeanan ceangailte a chlàradh</string>
+    <string name="export_done">cùl-up às-phortaichte</string>
+    <string name="export_failed">theip air às-phortadh</string>
+    <string name="import_failed">theip air ion-phortadh</string>
+    <string name="error_could_not_open">cha b\' urrainn %1$s a fhosgladh</string>
+    <plurals name="import_done">
+        <item quantity="one">ion-phortaichte %d seisean</item>
+        <item quantity="two">ion-phortaichte %d sheisean</item>
+        <item quantity="few">ion-phortaichte %d sheisean</item>
+        <item quantity="other">ion-phortaichte %d seisean</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d seisean</item>
+        <item quantity="two">%d sheisean</item>
+        <item quantity="few">%d sheisean</item>
+        <item quantity="other">%d seisean</item>
+    </plurals>
+    <string name="edit_failed">cha b\' urrainn an t-atharrachadh a shàbhaladh</string>
+</resources>

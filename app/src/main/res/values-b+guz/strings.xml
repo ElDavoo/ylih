@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Gusii. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - obwanya bwawe nabisuma</string>
+
+    <string name="nav_headphones">bisuma</string>
+    <string name="nav_stats">istati</string>
+    <string name="nav_settings">osarua</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">obwanya nabosigo</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">tarogete</string>
+
+    <string name="welcome_title">wikare ko ylih</string>
+    <string name="welcome_intro">ylih e-igara ombe omurango oyo momarua oragomire guikonyire, mara mbirango ino mweri ni omwerire kuhumula ebibuze bimo byo: rooba nigi omurango o-o?</string>
+    <string name="welcome_point_auto_title">igomeka agire</string>
+    <string name="welcome_point_auto_body">bisuma bya bluetooth bi-igara kemererire, kumbi igomeka. taine isomeka ritoigwire.</string>
+    <string name="welcome_point_lifetime_title">omurango omu, omworo omu</string>
+    <string name="welcome_point_lifetime_body">mwari omurango oreru, mitigira: echungechunge chace chikanyanyere korinike echunge echi omurango ogeo chikanyanya kuuma gatabere.</string>
+    <string name="welcome_point_detailed_title">obwanya nabosigo na magaketi</string>
+    <string name="welcome_point_detailed_body">iguratire rikararibiryire mumbo, ichungechunge chichare bisuma bya bosigo akarubare ombe chungechunge chikochongire komu.</string>
+    <string name="welcome_privacy">isomeka yose ikire mumagasi meya. aitaiji ari, akatindire atagire ruhanga rwa intaneti.</string>
+    <string name="welcome_start">igaka</string>
+    <string name="welcome_next">echi resi</string>
+    <string name="welcome_allow">yoreka</string>
+    <string name="welcome_step">icheche %1$d gia %2$d</string>
+    <string name="welcome_bluetooth_title">rutegezo rwa bluetooth</string>
+    <string name="welcome_bluetooth_why">android aroreka rogata ribire chindi cha bluetooth chikonyire, na chakiyitwe, singa rogata ire na rutegezo rwa bluetooth. ni ge ylih arogombeire omurango ogeo wa bisuma gutangania radio ya kare, na ni ge arogombire omurango omu gutagana omu.</string>
+    <string name="welcome_bluetooth_with">nacho: omurango oyo oyo o-igara kumbi ikombeka, kera taine isomeka ritoigwire na taine isomeka rikochokire.</string>
+    <string name="welcome_bluetooth_without">kera: bisuma bya bluetooth bitari bi-igara gatagato. isomeka rikabiryire yose itoigwire, na urogira kusubu mumbo ga rogata.</string>
+    <string name="welcome_notifications_title">ibiki byogombire</string>
+    <string name="welcome_notifications_why">iguratire rikararibiryire e-igara rogata rikotwe, na android e-igara rogata rikoigara ibiki riremerere ngubu.</string>
+    <string name="welcome_notifications_with">nacho: ibiki rikarugombeire se nire igara chikochongire komu, ni ge gatagato ga iguratire rikararibiryire ire.</string>
+    <string name="welcome_notifications_without">kera: iguratire rikararibiryire itoigwire na itoigara. android marake itarugombire ibiki.</string>
+    <string name="hibernation_title">totoigara mwari toganagana</string>
+    <string name="hibernation_body">android e-igara rogata ria toigwire omon ochuma agato agato, agarigira rutegezo rwacho, ni ge ylih itagigara gatagato kumbi togwire. kuganagana ni ge rogata rogogobanega ko se, ni ge togoiba ni ngoto kumbi kumama icho komu.</string>
+    <string name="action_not_now">marake komu</string>
+
+    <string name="devices_in_use">ikochongia</string>
+    <string name="devices_retired">igoiguare</string>
+    <string name="devices_empty_title">marake bisuma</string>
+    <string name="devices_empty_body">igomeka omurango wa bisuma wa bluetooth akagarigire komu. bisuma bya bosigo bikara iguratire rikararibiryire mumbo.</string>
+    <string name="devices_generation">omurango #%1$d</string>
+    <string name="devices_retired_on">igoiguare %1$s</string>
+    <string name="devices_connected_for">igomeke %1$s</string>
+    <string name="devices_recent">%1$s / 7a</string>
+
+    <string name="stats_title">bisuma bya omwori</string>
+    <string name="stats_sessions_since">%1$s kumbi %2$s</string>
+    <string name="stats_today">komu</string>
+    <string name="stats_last_7">amin ayo maabiri 7</string>
+    <string name="stats_last_30">amin ayo maabiri 30</string>
+    <string name="stats_average_session">orichambire rikaabiri</string>
+    <string name="stats_longest_session">orichambire rikarubu</string>
+    <string name="stats_playing">rinde iri kochongira</string>
+    <string name="stats_measured_span">ikaranga ko magaketi</string>
+    <string name="stats_share">echunge cha magaketi</string>
+    <string name="stats_playback_only_note">igara echunge cha magaketi gatagato</string>
+    <string name="stats_daily_hours_30">amasaa go omwori (amin ayo 30)</string>
+    <string name="stats_by_pair">gutanania omurango</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · igoiguare</string>
+    <string name="chart_max">%1$s enyinyi</string>
+
+    <string name="pair_fallback_title">omurango</string>
+    <string name="pair_back">korira</string>
+    <string name="pair_more">resi</string>
+    <string name="pair_menu_rename">tigira yite</string>
+    <string name="pair_menu_purchase">ebigambi byomire</string>
+    <string name="pair_menu_retire">igoiguare / igosubirire</string>
+    <string name="pair_menu_delete">gusiga</string>
+    <string name="pair_lifetime">omworo wa omurango oyu</string>
+    <string name="pair_retired_on">igoiguare %1$s</string>
+    <string name="pair_retired_with_reason">igoiguare %1$s · %2$s</string>
+    <string name="pair_connected_now">igomeke komu · %1$s</string>
+    <string name="pair_sessions">ichambire</string>
+    <string name="pair_average">orichambire</string>
+    <string name="pair_longest">rikarubu</string>
+    <string name="pair_since">kumbi %1$s</string>
+    <string name="pair_of_measured">echunge cha magaketi</string>
+    <string name="pair_measured">ikaranga ko magaketi</string>
+    <string name="pair_paid">igarigire</string>
+    <string name="pair_per_hour">koum cha masaa</string>
+    <string name="pair_bought">igomire</string>
+    <string name="pair_daily_hours_14">amasaa go omwori (amin ayo 14)</string>
+    <string name="pair_rename_title">tigira yite omurango</string>
+    <string name="pair_rename_label">yite</string>
+    <string name="pair_retire_title">igoiguare omurango oyu</string>
+    <string name="pair_retire_label">igambi (rorire, igosigire, gurira…)</string>
+    <string name="pair_retire_confirm">igoiguare</string>
+    <string name="pair_retire_supporting">echunge ichangarare korinike. igomeka ichire echi igara kumbi echi chikanyanya kuuma gatabere.</string>
+    <string name="pair_price_title">cheche chigagiwe</string>
+    <string name="pair_price_label">amount (ichambire ritagaabire)</string>
+    <string name="pair_price_supporting">ikochongia koba richa koum cha masaa.</string>
+    <string name="pair_delete_title">gusiga omurango oyu?</string>
+    <string name="pair_delete_body">ichambire ritagarire kogi igarigire igosubirire. marake rigobwata.</string>
+
+    <string name="session_ongoing">rigomerere</string>
+    <string name="session_until">kumbi %1$s</string>
+    <string name="session_playing">%1$s ichongira</string>
+    <string name="session_recovered">igokoragurira</string>
+
+    <string name="settings_tracking">gutambira</string>
+    <string name="settings_detailed_title">iguratire rikararibiryire</string>
+    <string name="settings_detailed_body">ichage bisuma bya bosigo na echunge cha magaketi. android aroreka rugata rutambira rwe na mugintagati, ni ge kogintagati rwe igara ibiki riremerere. bluetooth e-igara rutambira kwa karata.</string>
+    <string name="settings_detailed_unavailable">marake komu kumbi rutegezo rwa bluetooth rigarigire: rigata rogogobanega kaka connectedDevice ire yowokoragurira, ni ge android 14+ igarigira rutegezo rwa bluetooth.</string>
+    <string name="settings_playback_only_title">igara magaketi gatagato</string>
+    <string name="settings_playback_only_body">istati igara echunge chikochongire komu marake echunge chigomeke. ichambire kiga iguratire rikararibiryire ichongia magaketi; ekembe igoriyeke.</string>
+    <string name="settings_language">runda</string>
+    <string name="settings_language_system">runda rwa sisitemu</string>
+    <string name="settings_devices">ichire</string>
+    <string name="settings_devices_body">gusubirira echire che marake bisuma — radio ya kare oba omwanyu — kusiga gutambira chace.</string>
+    <string name="settings_device_subtitle">%1$s · ingiremire rikaigara %2$s</string>
+    <string name="settings_data">risigi</string>
+    <string name="settings_export">garura json</string>
+    <string name="settings_import">kugera</string>
+    <string name="settings_import_warning">kugera kuriya gusiga risigi yose iyigara komu.</string>
+    <string name="settings_troubleshooting">gutakira riobocho</string>
+    <string name="settings_battery_body">mwari ichambire itagigara, rora se ylih marake betire yokorogera — rogata rogusigire rigumire marake ikarigira rutigari kumbi toigwire.</string>
+    <string name="settings_battery_button">osarua bya betire</string>
+    <string name="settings_battery_path">osarua → rogata → ylih → betire → marake igwire.</string>
+    <string name="settings_hibernation_body">mwari ylih marake toigwire omon ochuma agato agato, android e-igara igogumare agarigira rutegezo rwacho, na taine risomeka rigarigire kumbi togwire. kugurama niko ni ge togarire kogarigira gutambira kumbi icheri toganagana icho.</string>
+    <string name="settings_hibernation_on">android ingira gugumare ylih.</string>
+    <string name="settings_hibernation_off">ylih marake igwire na itogarigira gutambira.</string>
+    <string name="settings_hibernation_button">osarua bya rogata marake tokorogera</string>
+    <string name="settings_about">kubera</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — amasaa bya bisuma, igabire kabi akaabire.</string>
+    <string name="settings_import_confirm_title">subirira risigi yose?</string>
+    <string name="settings_import_confirm_body">kugera kwa bekupi oyu gusiga ichire yose, omurango agatarara na ichambire risomeka komu.</string>
+
+    <string name="widget_lifetime_label">ylih · omworo</string>
+    <string name="widget_lifetime_description">amasaa omurango, na chronometer icholoku kumbi ichire igomeke</string>
+    <string name="widget_activity_label">ylih · abikaro</string>
+    <string name="widget_activity_description">amasaa omurango oyo oyo gatabere, resi komu, amin ayo 7 ne amin ayo 30</string>
+    <string name="widget_chart_label">ylih · amin ayo 30</string>
+    <string name="widget_chart_description">amasaa go gutuka omwori amin ayo maabiri 30</string>
+
+    <string name="action_save">igabire</string>
+    <string name="action_cancel">gorogota</string>
+    <string name="action_delete">gusiga</string>
+    <string name="action_import">kugera</string>
+
+    <string name="channel_tracking">gutambira bisuma</string>
+    <string name="channel_tracking_description">ikorekereka mwari ylih irotambira bisuma bya bosigo na magaketi. android marake rutoiga rugata rukobocho rwe rogata marake toigwire.</string>
+    <string name="notification_title">gutambira echunge cha bisuma</string>
+    <string name="notification_starting">igaka…</string>
+    <string name="notification_idle">gutindikira bisuma</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d igomeke · %2$s</item>
+        <item quantity="many">%1$d igomeke · %2$s</item>
+        <item quantity="other">%1$d igomeke · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d igomeke · %2$s · ichongira</item>
+        <item quantity="many">%1$d igomeke · %2$s · ichongira</item>
+        <item quantity="other">%1$d igomeke · %2$s · ichongira</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">rigata rogogobanega rutegezo rwa bluetooth kumbi igara gutambira bisuma bya bosigo</string>
+    <string name="export_done">bekupi igaruire</string>
+    <string name="export_failed">garuiro riosige</string>
+    <string name="import_failed">kugera kiosige</string>
+    <string name="error_could_not_open">marake igabire %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">ichambire %d igera</item>
+        <item quantity="many">ichambire %d iga</item>
+        <item quantity="other">ichambire %d iga</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">ichambire %d</item>
+        <item quantity="many">ichambire %d</item>
+        <item quantity="other">ichambire %d</item>
+    </plurals>
+    <string name="edit_failed">okoika omogendererwo gotachete</string>
+</resources>

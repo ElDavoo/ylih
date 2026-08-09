@@ -46,8 +46,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
+import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.repeatOnLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import it.eldavo.ylih.R
 import it.eldavo.ylih.tracking.Hibernation
@@ -176,9 +176,9 @@ fun YlihNavHost(
     // activity is stopped was otherwise consumed by a host nobody could see and then discarded.
     val lifecycleOwner = LocalLifecycleOwner.current
     LaunchedEffect(lifecycleOwner) {
-        lifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-            viewModel.messages.collect { snackbarHostState.showSnackbar(it) }
-        }
+        viewModel.messages
+            .flowWithLifecycle(lifecycleOwner.lifecycle, Lifecycle.State.STARTED)
+            .collect { snackbarHostState.showSnackbar(it) }
     }
 
     LaunchedEffect(openPair) {

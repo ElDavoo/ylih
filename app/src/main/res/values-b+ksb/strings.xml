@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Shambala. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - maisha yako katika makinanzi</string>
+
+    <string name="nav_headphones">makinanzi</string>
+    <string name="nav_stats">takwimu</string>
+    <string name="nav_settings">mipango</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">udio le</string>
+    <string name="kind_wired">ya waya</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">haijulikani</string>
+
+    <string name="welcome_title">karibu ylih-ni</string>
+    <string name="welcome_intro">ylih inataka kumbuka saa ngapi kila jozi ya makinanzi ina kuchunga bila kutenganisha, ili baada ya miaka mingi unaweza kujibu swali moja muhimu: saa ngapi zilisimama?</string>
+    <string name="welcome_point_auto_title">unganisha na sahau</string>
+    <string name="welcome_point_auto_body">makinanzi ya bluetooth yanarekodiwa yenyewe, tangu wakati ya kuunganisha. hakuna kitu kinachohitaji kuendelea kufanya kazi.</string>
+    <string name="welcome_point_lifetime_title">jozi moja, maisha moja</string>
+    <string name="welcome_point_lifetime_body">wakati jozi inapokufa, fusha: jumla yake inasimama hapo na jozi inayofuata ya makinanzi sawa inaanza tena kutoka sifuri.</string>
+    <string name="welcome_point_detailed_title">waya na kumsikiliza</string>
+    <string name="welcome_point_detailed_body">ufuataji wa kina, katika mipango, unaongeza makinanzi ya waya na kupima sehemu gani ya wakati ulikuwa unakimbia.</string>
+    <string name="welcome_privacy">kila kitu kinasalia simu hii. hakuna akaunti, na programu haina ruhusa ya mitandao.</string>
+    <string name="welcome_start">kuanza</string>
+    <string name="welcome_next">inayofuata</string>
+    <string name="welcome_allow">ruhusu</string>
+    <string name="welcome_step">hatua %1$d ya %2$d</string>
+    <string name="welcome_bluetooth_title">ruhusa ya bluetooth</string>
+    <string name="welcome_bluetooth_why">android inajumbuza programu tu ipi simu ya bluetooth imeunganisha, na jina lake, ikiwa programu ina bluetooth. ndio inayosaidia ylih kutofautiana na waya wa simu, na kumjua jozi moja kutoka nyingine.</string>
+    <string name="welcome_bluetooth_with">kwa hiyo: kila jozi inarekodiwa tangu wakati ya kuunganisha, bila kitu kinachoendelea na bila kitu kumbuka kubofya.</string>
+    <string name="welcome_bluetooth_without">bila hiyo: hakuna makinanzi ya bluetooth yanarekodiwa. sehemu nyingine ya programu bado inafanya kazi, na unaweza kuiruhusa baadaye katika mipango ya simu ya android.</string>
+    <string name="welcome_notifications_title">onyo</string>
+    <string name="welcome_notifications_why">ufuataji wa kina unaendesha huduma ndogo ya nyuma, na android inahitaji programu yoyote inayofanya hiyo kuhifadhi onyo linaloona wakati inafanya.</string>
+    <string name="welcome_notifications_with">kwa hiyo: onyo linaonyesha nini kinarekodiwa sasa sasa, ni ishara tu ya ufuataji wa kina unaofanya kazi.</string>
+    <string name="welcome_notifications_without">bila hiyo: ufuataji wa kina bado unaendesha na bado inaandika. android tu haitaonyesha onyo lake.</string>
+    <string name="hibernation_title">endelea kuhesabu ilipojaliwa</string>
+    <string name="hibernation_body">android inasimamisha programu ambazo zimefunguliwa kwa miezi michache na kunyima ruhusa zake, ambayo ingeacha ylih haijarekodia chochote hadi ujifungulie upya. kusahauliwa ndicho programu hii inafanya, kwa hiyo inastahili kuwa off sasa.</string>
+    <string name="action_not_now">si sasa</string>
+
+    <string name="devices_in_use">inatumika</string>
+    <string name="devices_retired">fushwa</string>
+    <string name="devices_empty_title">hakuna makinanzi bado</string>
+    <string name="devices_empty_body">unganisha jozi ya makinanzi ya bluetooth na yataonyeshwa hapa. makinanzi ya waya yanahitaji ufuataji wa kina, katika mipango.</string>
+    <string name="devices_generation">jozi #%1$d</string>
+    <string name="devices_retired_on">fushwa %1$s</string>
+    <string name="devices_connected_for">imeunganisha %1$s</string>
+    <string name="devices_recent">%1$s / siku 7</string>
+
+    <string name="stats_title">makinanzi yote</string>
+    <string name="stats_sessions_since">%1$s tangu %2$s</string>
+    <string name="stats_today">leo</string>
+    <string name="stats_last_7">siku 7 zilizopita</string>
+    <string name="stats_last_30">siku 30 zilizopita</string>
+    <string name="stats_average_session">wastani wa kila mara</string>
+    <string name="stats_longest_session">kila mara ndefu zaidi</string>
+    <string name="stats_playing">udio linakimbia</string>
+    <string name="stats_measured_span">ilipimwa kwa kumsikiliza</string>
+    <string name="stats_share">sehemu inayokimbia</string>
+    <string name="stats_playback_only_note">kuhesabu wakati wa kumsikiliza tu</string>
+    <string name="stats_daily_hours_30">saa kila siku (siku 30)</string>
+    <string name="stats_by_pair">kwa jozi</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · fushwa</string>
+    <string name="chart_max">%1$s kiwango</string>
+
+    <string name="pair_fallback_title">jozi</string>
+    <string name="pair_back">rudi</string>
+    <string name="pair_more">zaidi</string>
+    <string name="pair_menu_rename">badilisha jina</string>
+    <string name="pair_menu_purchase">taarifa ya ununuzi</string>
+    <string name="pair_menu_retire">fusha / iliyobadilishwa</string>
+    <string name="pair_menu_delete">futa</string>
+    <string name="pair_lifetime">maisha katika jozi hii</string>
+    <string name="pair_retired_on">fushwa %1$s</string>
+    <string name="pair_retired_with_reason">fushwa %1$s · %2$s</string>
+    <string name="pair_connected_now">imeunganisha sasa · %1$s</string>
+    <string name="pair_sessions">kila mara</string>
+    <string name="pair_average">wastani</string>
+    <string name="pair_longest">ndefu zaidi</string>
+    <string name="pair_since">tangu %1$s</string>
+    <string name="pair_of_measured">sehemu inayokimbia</string>
+    <string name="pair_measured">ilipimwa kwa kumsikiliza</string>
+    <string name="pair_paid">kulipwa</string>
+    <string name="pair_per_hour">kwa saa</string>
+    <string name="pair_bought">kununuliwa</string>
+    <string name="pair_daily_hours_14">saa kila siku (siku 14)</string>
+    <string name="pair_rename_title">badilisha jina la jozi</string>
+    <string name="pair_rename_label">jina</string>
+    <string name="pair_retire_title">fusha jozi hii</string>
+    <string name="pair_retire_label">sababu (ilifariki, kuuzwa, ilipotea...)</string>
+    <string name="pair_retire_confirm">fusha</string>
+    <string name="pair_retire_supporting">jumla inasimama hapo. kuunganisha kwa muda simu sawa inaanza jozi mpya wenye sifuri.</string>
+    <string name="pair_price_title">bei iliyolipwa</string>
+    <string name="pair_price_label">kiasi (vitengo nzima)</string>
+    <string name="pair_price_supporting">inatumika kwa kielelezo cha bei kwa saa.</string>
+    <string name="pair_delete_title">futa jozi hii?</string>
+    <string name="pair_delete_body">kila mara iliyorekodiwa kwayo pia ifutwe. hii haiwezi kurekebishwa.</string>
+
+    <string name="session_ongoing">inaendelea</string>
+    <string name="session_until">hadi %1$s</string>
+    <string name="session_playing">%1$s kinakimbia</string>
+    <string name="session_recovered">kutengenezwa</string>
+
+    <string name="settings_tracking">ufuataji</string>
+    <string name="settings_detailed_title">ufuataji wa kina</string>
+    <string name="settings_detailed_body">unaongeza makinanzi ya waya na wakati wa kumsikiliza. android tu inakamatia matukio ya waya kwa programu inayofanya kazi, kwa hiyo hii inahifadhi onyo silie katika mng\'ole. bluetooth inafuatiliwa kila jinsi.</string>
+    <string name="settings_detailed_unavailable">haipatikani hadi ruhusa ya bluetooth itakapokubali: hii huzalisha tu aina ya huduma ya connectedDevice, ambayo android 14+ inakamatia kwa ruhusa ya bluetooth.</string>
+    <string name="settings_playback_only_title">hesabu tu kumsikiliza</string>
+    <string name="settings_playback_only_body">takwimu huhesabu wakati udio ulikuwa kinakimbia halisi badala ya wakati uliokamatia. kila mara iliyorekodiwa na ufuataji wa kina juu ilipimwa kumsikiliza; nyingine zimekosa.</string>
+    <string name="settings_language">lugha</string>
+    <string name="settings_language_system">lugha ya mfumo</string>
+    <string name="settings_devices">simu</string>
+    <string name="settings_devices_body">tofautiana chochote kisicho makinanzi — simu ya gari au chezeana — kusimamisha kurekodi.</string>
+    <string name="settings_device_subtitle">%1$s · kwanza kuona %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">uchapaji json</string>
+    <string name="settings_import">kuingiza</string>
+    <string name="settings_import_warning">kuingiza kunabadilisha kila kitu ambacho kumesimu kwa sasa.</string>
+    <string name="settings_troubleshooting">kutatua matatizo</string>
+    <string name="settings_battery_body">ikiwa kila mara huacha kurekodi, angalia kwamba ylih hako ndani ya kuokoa betri — programu ambayo imesimamishwa kwa nguvu haipati ujumbe wa kuunganisha tena hadi itafunguliwa.</string>
+    <string name="settings_battery_button">mipango ya betri</string>
+    <string name="settings_battery_path">mipango → programu → ylih → betri → haizuiliwe.</string>
+    <string name="settings_hibernation_body">ikiwa ylih haifungui kwa miezi michache, android inaisimamisha na kunyima ruhusa zake, na chochote haikirekodi tena hadi ujifungulie. kuizima ndio inasaidia jozi kuhesabu kwa msimu usiwezi kufikiri programu.</string>
+    <string name="settings_hibernation_on">android inaweza kusimamisha ylih.</string>
+    <string name="settings_hibernation_off">ylih hako ndani na inaendelea kurekodi.</string>
+    <string name="settings_hibernation_button">mipango ya programu isiyotumika</string>
+    <string name="settings_about">kuhusu</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — saa za makinanzi, zinasimiwa hapo na milele.</string>
+    <string name="settings_import_confirm_title">badilisha data yote?</string>
+    <string name="settings_import_confirm_body">kuingiza hii nyumba ifuta kila simu, jozi na kila mara inataka sasa.</string>
+
+    <string name="widget_lifetime_label">ylih · maisha</string>
+    <string name="widget_lifetime_description">saa kwa jozi, na saa sawa kwa kile kinachounganisha</string>
+    <string name="widget_activity_label">ylih · shughuli</string>
+    <string name="widget_activity_description">saa kwa jozi yote, pamoja na leo, siku 7 na siku 30</string>
+    <string name="widget_chart_label">ylih · siku 30</string>
+    <string name="widget_chart_description">saa za kumsikiliza kila siku katika siku 30 zilizopita</string>
+
+    <string name="action_save">okoa</string>
+    <string name="action_cancel">kataa</string>
+    <string name="action_delete">futa</string>
+    <string name="action_import">kuingiza</string>
+
+    <string name="channel_tracking">ufuataji wa makinanzi</string>
+    <string name="channel_tracking_description">linaonyeshwa wakati ylih inatumia makinanzi ya waya na kumsikiliza. android haiwezi kumkamatia matukio ya waya kwa programu ambazo hazitafanya kazi.</string>
+    <string name="notification_title">kurekodi wakati wa makinanzi</string>
+    <string name="notification_starting">kuanza...</string>
+    <string name="notification_idle">kusubiri makinanzi</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d imeunganisha · %2$s</item>
+        <item quantity="other">%1$d zimeunganisha · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d imeunganisha · %2$s · kinakimbia</item>
+        <item quantity="other">%1$d zimeunganisha · %2$s · zinakimbia</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">hii huzalisha inahitaji ruhusa ya bluetooth kabla haiwezi ufuataji wa makinanzi ya waya</string>
+    <string name="export_done">nyumba iliyobuniwa</string>
+    <string name="export_failed">kubunia kulichosikitika</string>
+    <string name="import_failed">kuingiza kulichosikitika</string>
+    <string name="error_could_not_open">hawezi kufungua %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">kuingiza %d kila mara</item>
+        <item quantity="other">kuingiza %d kila mara</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d kila mara</item>
+        <item quantity="other">%d kila mara</item>
+    </plurals>
+    <string name="edit_failed">kuhifadhi mabadiliko kushindikana</string>
+</resources>

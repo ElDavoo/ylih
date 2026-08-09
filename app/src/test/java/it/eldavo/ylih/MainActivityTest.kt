@@ -1,5 +1,6 @@
 package it.eldavo.ylih
 
+import android.content.Intent
 import android.os.Build
 import android.os.Looper
 import androidx.test.core.app.ApplicationProvider
@@ -69,6 +70,40 @@ class MainActivityTest {
             runBlocking { app.container.settings.setLanguage(AppLocale.SYSTEM) }
             Locale.setDefault(Locale.US)
         }
+    }
+
+    /**
+     * A widget row's tap arriving at an activity that is already up.
+     *
+     * `singleTop` means the launcher hands it to [MainActivity.onNewIntent] rather than stacking a
+     * second copy, and the pair id reaches the NavHost through a conflated channel. The flow over
+     * that channel is a field rather than something `setContent` builds, because `receiveAsFlow()`
+     * allocates a new object per call and the `LaunchedEffect` keyed on it would restart — losing
+     * whatever a `trySend` had just conflated into it.
+     */
+    @Test
+    fun `a widget tap arriving at an open activity is carried through`() {
+        runBlocking { app.container.settings.setOnboardingDone(true) }
+
+        Robolectric.buildActivity(MainActivity::class.java).setup().use { controller ->
+            val activity = controller.get()
+
+            controller.newIntent(
+                Intent(activity, MainActivity::class.java)
+                    .putExtra(MainActivity.EXTRA_PAIR_ID, 42L),
+            )
+            shadowOf(Looper.getMainLooper()).idle()
+
+            // `setIntent` is the load-bearing half: `onCreate` acts on the attached intent only
+            // when there is no saved state, so an intent left unreplaced would be re-read as the
+            // launch intent after a rotation and drag the user back out of wherever they had gone.
+            assertEquals(
+                42L,
+                activity.intent.getLongExtra(MainActivity.EXTRA_PAIR_ID, -1L),
+            )
+            assertFalse("the tap must reuse the activity, not finish it", activity.isFinishing)
+        }
+        // What the id then does is YlihNavHostTest's: it drives the same flow into the NavHost.
     }
 
     @Test

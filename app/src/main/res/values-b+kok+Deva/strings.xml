@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Konkani (Devanagari). Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - तुमचे हेडफोन जीवन</string>
+
+    <string name="nav_headphones">हेडफोन</string>
+    <string name="nav_stats">आंकडे</string>
+    <string name="nav_settings">सेटिंग्स</string>
+
+    <string name="kind_bluetooth">ब्लूटूथ</string>
+    <string name="kind_ble">ले ऑडियो</string>
+    <string name="kind_wired">तार वाले</string>
+    <string name="kind_usb">यूएसबी</string>
+    <string name="kind_unknown">अज्ञात</string>
+
+    <string name="welcome_title">ylih मध्ये आपले स्वागत</string>
+    <string name="welcome_intro">ylih रेकॉर्ड करतो की प्रत्येक हेडफोन जोडी कितने काळ जुळलेली राहते, त्यामुळे वर्षांनंतर तुम्ही अजून एक प्रश्नाचे उत्तर देऊ शकता जी जोडीबद्दल महत्वाची आहे: ते किती तास टिकले?</string>
+    <string name="welcome_point_auto_title">जोडा आणि विसरा</string>
+    <string name="welcome_point_auto_body">ब्लूटूथ हेडफोन स्वतः रेकॉर्ड केले जातात, ते जुळताच. काहीही चालू ठेवण्याची गरज नाही.</string>
+    <string name="welcome_point_lifetime_title">एक जोडी, एक आजीवन</string>
+    <string name="welcome_point_lifetime_body">जेव्हा एक जोडी मरते, तेव्हा ती निवृत्त करा: तिची एकूण तेथे गोठणी करा आणि समान हेडफोनची पुढील जोडी शून्य पासून पुन्हा सुरू होते.</string>
+    <string name="welcome_point_detailed_title">तार वाले आणि प्लेबॅक</string>
+    <string name="welcome_point_detailed_body">सेटिंग्समधील तपशीलवार ट्रॅकिंग तार वाले हेडफोन जोडते आणि ऑडियो किती वेळ खरोखर वाजत होता हे मोजते.</string>
+    <string name="welcome_privacy">सर्वकाही या फोनवर राहते. कोणतेही खाते नाही, आणि अ‍ॅपला इंटरनेट परवानगी नाही.</string>
+    <string name="welcome_start">सुरुवात करा</string>
+    <string name="welcome_next">पुढे</string>
+    <string name="welcome_allow">परवानगी द्या</string>
+    <string name="welcome_step">चरण %1$d चा %2$d</string>
+    <string name="welcome_bluetooth_title">ब्लूटूथ प्रवेश</string>
+    <string name="welcome_bluetooth_why">android फक्त अ‍ॅपला सांगते की कोणते ब्लूटूथ डिव्हाइस जुळले आणि त्याला काय म्हणतात, जर अ‍ॅपला ब्लूटूथ प्रवेश असेल तर. यही कारण आहे की ylih हेडफोनची जोडी कार स्टीरिओ पासून वेगळे करते, आणि हे कसे जानते की एक जोडी दुसर्‍यापासून वेगळी आहे.</string>
+    <string name="welcome_bluetooth_with">त्याच्या सह: प्रत्येक जोडी त्याच्या जुळताच रेकॉर्ड केली जाते, काहीही चालू न ठेवता आणि दाबण्याची काहीही गरज नाही.</string>
+    <string name="welcome_bluetooth_without">त्याचे विना: कोणतेही ब्लूटूथ हेडफोन अजिबात रेकॉर्ड केले जात नाहीत. अ‍ॅपचा उर्वरित भाग अजून कार्य करते, आणि तुम्ही नंतर अ‍ॅण्ड्रॉइडच्या अ‍ॅप सेटिंग्समध्ये परवानगी दिल्यास ते दिले जाऊ शकते.</string>
+    <string name="welcome_notifications_title">सूचना</string>
+    <string name="welcome_notifications_why">तपशीलवार ट्रॅकिंग एक लहान पार्श्वभूमी सेवा चलवते, आणि अ‍ॅण्ड्रॉइड कोणत्याही अ‍ॅपला हे करत असताना सूचना दृश्यमान ठेवण्याची आवश्यकता असते.</string>
+    <string name="welcome_notifications_with">त्याच्या सह: सूचना दर्शवते की काय रेकॉर्ड केले जात आहे अभिप्राय, जे तपशीलवार ट्रॅकिंग सजीव आहे हे एकमेव संकेत आहे.</string>
+    <string name="welcome_notifications_without">त्याचे विना: तपशीलवार ट्रॅकिंग अजून चालते आणि अजून रेकॉर्ड करते. अ‍ॅण्ड्रॉइड फक्त तिची सूचना दाखवणार नाही.</string>
+    <string name="hibernation_title">तुम्ही विसरल्यास मोजणी चालू ठेवा</string>
+    <string name="hibernation_body">अ‍ॅण्ड्रॉइड अ‍ॅप्स ज्यांचा काही महिने उपयोग केला जात नाही ते थांबवते आणि त्यांची परवानगी परत घेते, जे ylih ला काहीही रेकॉर्ड न करता सोडेल जोपर्यंत तुम्ही ते पुन्हा उघडत नाही. विसरून जाणे हीच या अ‍ॅपचे उद्दिष्ट आहे, त्यामुळे ते बंद करणे आता लायक आहे.</string>
+    <string name="action_not_now">आता नाही</string>
+
+    <string name="devices_in_use">वापरात</string>
+    <string name="devices_retired">निवृत्त</string>
+    <string name="devices_empty_title">अजूनचे कोणतेही हेडफोन नाही</string>
+    <string name="devices_empty_body">ब्लूटूथ हेडफोनची जोडी जोडा आणि ते येथे दिसतील. तार वाले हेडफोनला सेटिंग्समधील तपशीलवार ट्रॅकिंग आवश्यक आहे.</string>
+    <string name="devices_generation">जोडी #%1$d</string>
+    <string name="devices_retired_on">निवृत्त %1$s</string>
+    <string name="devices_connected_for">जुळले %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">सर्व हेडफोन</string>
+    <string name="stats_sessions_since">%1$s %2$s पासून</string>
+    <string name="stats_today">आज</string>
+    <string name="stats_last_7">गेल्या 7 दिवस</string>
+    <string name="stats_last_30">गेल्या 30 दिवस</string>
+    <string name="stats_average_session">सरासरी सेशन</string>
+    <string name="stats_longest_session">सर्वांत लांब सेशन</string>
+    <string name="stats_playing">ऑडियो वाजत आहे</string>
+    <string name="stats_measured_span">प्लेबॅकसाठी मोजले</string>
+    <string name="stats_share">वाजत असलेला हिस्सा</string>
+    <string name="stats_playback_only_note">फक्त प्लेबॅक वेळ मोजणे</string>
+    <string name="stats_daily_hours_30">दैनिक तास (30 दिवस)</string>
+    <string name="stats_by_pair">जोडीच्या आधारे</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · निवृत्त</string>
+    <string name="chart_max">%1$s कमाल</string>
+
+    <string name="pair_fallback_title">जोडी</string>
+    <string name="pair_back">परत</string>
+    <string name="pair_more">अधिक</string>
+    <string name="pair_menu_rename">पुनः नाव द्या</string>
+    <string name="pair_menu_purchase">खरेदी माहिती</string>
+    <string name="pair_menu_retire">निवृत्त / बदलले</string>
+    <string name="pair_menu_delete">हटवा</string>
+    <string name="pair_lifetime">या जोडीवर आजीवन</string>
+    <string name="pair_retired_on">निवृत्त %1$s</string>
+    <string name="pair_retired_with_reason">निवृत्त %1$s · %2$s</string>
+    <string name="pair_connected_now">आता जुळले · %1$s</string>
+    <string name="pair_sessions">सेशन</string>
+    <string name="pair_average">सरासरी</string>
+    <string name="pair_longest">सर्वांत लांब</string>
+    <string name="pair_since">%1$s पासून</string>
+    <string name="pair_of_measured">वाजत असलेला हिस्सा</string>
+    <string name="pair_measured">प्लेबॅकसाठी मोजले</string>
+    <string name="pair_paid">दिले</string>
+    <string name="pair_per_hour">प्रति तास</string>
+    <string name="pair_bought">खरेदी केले</string>
+    <string name="pair_daily_hours_14">दैनिक तास (14 दिवस)</string>
+    <string name="pair_rename_title">जोडीला पुनः नाव द्या</string>
+    <string name="pair_rename_label">नाव</string>
+    <string name="pair_retire_title">या जोडीला निवृत्त करा</string>
+    <string name="pair_retire_label">कारण (मरणे, विक्री, हरणे...)</string>
+    <string name="pair_retire_confirm">निवृत्त करा</string>
+    <string name="pair_retire_supporting">एकूण येथे गोठणी करा. समान डिव्हाइस पुन्हा जुळल्याने शून्य पासून ताजी जोडी सुरू होते.</string>
+    <string name="pair_price_title">दिलेली किंमत</string>
+    <string name="pair_price_label">रक्कम (संपूर्ण युनिट्स)</string>
+    <string name="pair_price_supporting">खर्च-प्रति-तास आकृतीसाठी वापरले.</string>
+    <string name="pair_delete_title">या जोडीला हटवायचे?</string>
+    <string name="pair_delete_body">त्यासाठी रेकॉर्ड केलेले प्रत्येक सेशन हटवले जाते. हे पूर्ववत केले जाऊ शकत नाही.</string>
+
+    <string name="session_ongoing">सुरू आहे</string>
+    <string name="session_until">जोपर्यंत %1$s</string>
+    <string name="session_playing">%1$s वाजत आहे</string>
+    <string name="session_recovered">पुनर्प्राप्त</string>
+
+    <string name="settings_tracking">ट्रॅकिंग</string>
+    <string name="settings_detailed_title">तपशीलवार ट्रॅकिंग</string>
+    <string name="settings_detailed_body">तार वाले हेडफोन आणि प्लेबॅक वेळ जोडते. अ‍ॅण्ड्रॉइड फक्त चालू अ‍ॅपला तार वाले प्लग इव्हेंट्स रिपोर्ट करते, त्यामुळे हे शेडमध्ये एक मूक सूचना ठेवते. ब्लूटूथ कोणत्याही प्रकारे ट्रॅक केले जाते.</string>
+    <string name="settings_detailed_unavailable">ब्लूटूथ प्रवेश दिल्यापर्यंत उपलब्ध नाही: हे बिल्ड फक्त connectedDevice सेवा प्रकार घोषित करते, जे अ‍ॅण्ड्रॉइड 14+ ब्लूटूथ परवानगीशी जोडते.</string>
+    <string name="settings_playback_only_title">फक्त प्लेबॅक मोजा</string>
+    <string name="settings_playback_only_body">आंकडे जुळलेल्या वेळ ऐवजी ऑडियो खरोखर वाजत असलेल्या वेळ मोजते. फक्त तपशीलवार ट्रॅकिंगसह रेकॉर्ड केलेले सेशन मोजले प्लेबॅक; बाकीची वगळली जातात.</string>
+    <string name="settings_language">भाषा</string>
+    <string name="settings_language_system">सिस्टम भाषा</string>
+    <string name="settings_devices">डिव्हाइस</string>
+    <string name="settings_devices_body">हेडफोन नसलेले काहीही अनचेक करा — कार स्टीरिओ किंवा स्पीकर — हे रेकॉर्ड करणे थांबवा.</string>
+    <string name="settings_device_subtitle">%1$s · प्रथम पहिले %2$s</string>
+    <string name="settings_data">डेटा</string>
+    <string name="settings_export">json निर्यात करा</string>
+    <string name="settings_import">आयात करा</string>
+    <string name="settings_import_warning">आयात करणे वर्तमानी संग्रहित सर्वकाही बदलते.</string>
+    <string name="settings_troubleshooting">समस्या निवारण</string>
+    <string name="settings_battery_body">जर सेशन रेकॉर्ड होणे बंद हो तर तपासा की ylih बॅटरी ऑप्टिमायজेशनपासून मुक्त आहे — जे अ‍ॅप जबरदस्तीने थांबवले गेले आहे त्याला जोपर्यंत ते उघडत नाही तोपर्यंत पुन्हा कधीही जुळण्याची सूचना मिळत नाही.</string>
+    <string name="settings_battery_button">बॅटरी सेटिंग्स</string>
+    <string name="settings_battery_path">सेटिंग्स → अ‍ॅप्स → ylih → बॅटरी → प्रतिबंधित.</string>
+    <string name="settings_hibernation_body">जर ylih काही महिने उघडत नाही तर अ‍ॅण्ड्रॉइड ते थांबवते आणि त्याची परवानगी परत घेते, आणि जोपर्यंत तुम्ही ते उघडत नाही तोपर्यंत काहीही पुन्हा रेकॉर्ड केले जात नाही. हे बंद करणे हे आहे जे जोडीला अ‍ॅपबद्दल कधीही विचार न करता एक ऋतु मोजणी जारी ठेवते.</string>
+    <string name="settings_hibernation_on">अ‍ॅण्ड्रॉइड ylih ला थांबवू शकते.</string>
+    <string name="settings_hibernation_off">ylih मुक्त आहे आणि रेकॉर्ड करत ठेवते.</string>
+    <string name="settings_hibernation_button">अप्रयुक्त अ‍ॅप सेटिंग्स</string>
+    <string name="settings_about">याबद्दल</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — हेडफोन तास, स्थानिकपणे आणि कायमस्वरूपी संग्रहित.</string>
+    <string name="settings_import_confirm_title">सर्व डेटा बदलायचा?</string>
+    <string name="settings_import_confirm_body">हा बॅकअप आयात केल्यास आता संग्रहित प्रत्येक डिव्हाइस, जोडी आणि सेशन हटवले जाते.</string>
+
+    <string name="widget_lifetime_label">ylih · आजीवन</string>
+    <string name="widget_lifetime_description">जोडी प्रति तास, जुळलेल्या वर लाइव्ह टाइमर सह</string>
+    <string name="widget_activity_label">ylih · क्रियाकलाप</string>
+    <string name="widget_activity_description">प्रत्येक जोडीचे तास, आज, 7 दिवस आणि 30 दिवस अतिरिक्त</string>
+    <string name="widget_chart_label">ylih · 30 दिवस</string>
+    <string name="widget_chart_description">गेल्या 30 दिवसांत दैनिक ऐकणे तास</string>
+
+    <string name="action_save">जतन करा</string>
+    <string name="action_cancel">रद्द करा</string>
+    <string name="action_delete">हटवा</string>
+    <string name="action_import">आयात करा</string>
+
+    <string name="channel_tracking">हेडफोन ट्रॅकिंग</string>
+    <string name="channel_tracking_description">तार वाले हेडफोन आणि प्लेबॅकसाठी ylih पाहत असताना दर्शविले. अ‍ॅण्ड्रॉइड अ्‍चलित न असलेल्या अ‍ॅप्सला तार वाले प्लग इव्हेंट्स वितरित करत नाही.</string>
+    <string name="notification_title">हेडफोन वेळ ट्रॅकिंग</string>
+    <string name="notification_starting">सुरू करत आहे...</string>
+    <string name="notification_idle">हेडफोनची प्रतीक्षा करत आहे</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d जुळले · %2$s</item>
+        <item quantity="other">%1$d जुळले · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d जुळले · %2$s · वाजत आहे</item>
+        <item quantity="other">%1$d जुळले · %2$s · वाजत आहे</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">हे बिल्ड तार वाले हेडफोन ट्रॅक करण्यासाठी ब्लूटूथ प्रवेश आवश्यक आहे</string>
+    <string name="export_done">बॅकअप निर्यात केले</string>
+    <string name="export_failed">निर्यात अयशस्वी</string>
+    <string name="import_failed">आयात अयशस्वी</string>
+    <string name="error_could_not_open">%1$s उघडू शकले नाही</string>
+    <plurals name="import_done">
+        <item quantity="one">आयात केले %d सेशन</item>
+        <item quantity="other">आयात केले %d सेशन</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d सेशन</item>
+        <item quantity="other">%d सेशन</item>
+    </plurals>
+    <string name="edit_failed">बदल जतन करूंक जालो ना</string>
+</resources>

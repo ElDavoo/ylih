@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Kazakh. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - сіздің құлақ аспаларындағы өмір</string>
+
+    <string name="nav_headphones">құлақ аспалары</string>
+    <string name="nav_stats">статистика</string>
+    <string name="nav_settings">параметрлер</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">сымды</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">белгісіз</string>
+
+    <string name="welcome_title">ylih-ге қош келдіңіз</string>
+    <string name="welcome_intro">ylih құлақ аспаларының қосылу ұзақтығын сақтайды, сонда бір нәрсе шын: құлақ аспалары қанша сағат ұзрады?</string>
+    <string name="welcome_point_auto_title">қосылыңыз және ұмытыңыз</string>
+    <string name="welcome_point_auto_body">bluetooth құлақ аспалары өздігінен жазылады, оларды қосылған сәттен бастап. ештеңе жалғап қалуы қажет емес.</string>
+    <string name="welcome_point_lifetime_title">бір жұп, бір өмір</string>
+    <string name="welcome_point_lifetime_body">құлақ аспалары қайтаң болса, оны бозу керек: оның жиынтығы сол жерде сақталатын болады және сол құлақ аспаларының келесі жұбы нөлден басталады.</string>
+    <string name="welcome_point_detailed_title">сымды және ойнау</string>
+    <string name="welcome_point_detailed_body">параметрлердегі егжей-тегжейлі бақылау сымды құлақ аспаларын және ойнау уақытын қосады.</string>
+    <string name="welcome_privacy">барлығы бұл телефонда қалады. ешқандай есептік жоқ және қолданба интернетке рұқсаты жоқ.</string>
+    <string name="welcome_start">бастау</string>
+    <string name="welcome_next">келесі</string>
+    <string name="welcome_allow">рұқсат беру</string>
+    <string name="welcome_step">%2$d-тің %1$d қадамы</string>
+    <string name="welcome_bluetooth_title">bluetooth рұқсаты</string>
+    <string name="welcome_bluetooth_why">android қосымшаға bluetooth құрылғысы қосылғандығын және оның аты не екенін айтады, егер қосымша bluetooth рұқсатына ие болса. бұл ylih құлақ аспаларын автомобиль стереодан ажыратуы және бір жұптан екінші жұпты білуі.</string>
+    <string name="welcome_bluetooth_with">оның арқасында: әрбір жұп қосылған сәттен бастап жазылады, ештеңе жалғап қалуы қажет емес және ештеңе ұмытпай аудармай да болады.</string>
+    <string name="welcome_bluetooth_without">оның арқасында емес: bluetooth құлақ аспалары мүлдем жазылмайды. қолданбаның қалған бөлігі жұмыс істейді және сіз оңды әрі қарай android параметрлерінде беру аласыз.</string>
+    <string name="welcome_notifications_title">хабарламалар</string>
+    <string name="welcome_notifications_why">егжей-тегжейлі бақылау кіші фондық қызметті орындайды және android қосымшаны хабарлама ұстап тұруын талап етеді.</string>
+    <string name="welcome_notifications_with">оның арқасында: хабарлама қазір не жазылып тұрғандығын көрсетеді, бұл егжей-тегжейлі бақылау ісінің жалғастығын көрсетедіңіз.</string>
+    <string name="welcome_notifications_without">оның арқасында емес: егжей-тегжейлі бақылау әлі де жұмыс істейді және жазылады. android қана хабарламасын көрсетпейді.</string>
+    <string name="hibernation_title">сіз оны ұмытқан кезде санап беріңіз</string>
+    <string name="hibernation_body">android айлар бойы ашылмаған қосымшаларды паузалайды және олардың рұқсаттарын қайтарады, бұл ylih-ті сіз оңды ашқанға дейін ештеңе жаз болмауына әкелер еді. бұл қосымшаның бүкін болмысы үшін ел ұмытылу, сондықтан оны қазір өшіру арзы.</string>
+    <string name="action_not_now">қазір емес</string>
+
+    <string name="devices_in_use">пайдаланудағы</string>
+    <string name="devices_retired">пенсиялық</string>
+    <string name="devices_empty_title">құлақ аспалары әлі жоқ</string>
+    <string name="devices_empty_body">bluetooth құлақ аспаларын қосыңыз және олар мұнда пайда болады. сымды құлақ аспалары параметрлердегі егжей-тегжейлі бақылауды қажет етеді.</string>
+    <string name="devices_generation">жұп #%1$d</string>
+    <string name="devices_retired_on">пенсиялық %1$s</string>
+    <string name="devices_connected_for">қосылған %1$s</string>
+    <string name="devices_recent">%1$s / 7к</string>
+
+    <string name="stats_title">барлық құлақ аспалары</string>
+    <string name="stats_sessions_since">%1$s %2$s-ден бастап</string>
+    <string name="stats_today">бүгін</string>
+    <string name="stats_last_7">соңғы 7 күн</string>
+    <string name="stats_last_30">соңғы 30 күн</string>
+    <string name="stats_average_session">орташа сеанс</string>
+    <string name="stats_longest_session">ең ұзақ сеанс</string>
+    <string name="stats_playing">аудио ойнау</string>
+    <string name="stats_measured_span">ойнау үшін өлшенген</string>
+    <string name="stats_share">ойнау үлесі</string>
+    <string name="stats_playback_only_note">тек ойнау уақытын санап отыр</string>
+    <string name="stats_daily_hours_30">күндік сағаттар (30 күн)</string>
+    <string name="stats_by_pair">жұп бойынша</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · пенсиялық</string>
+    <string name="chart_max">%1$s максимум</string>
+
+    <string name="pair_fallback_title">жұп</string>
+    <string name="pair_back">артқа</string>
+    <string name="pair_more">тағы</string>
+    <string name="pair_menu_rename">қайта атау</string>
+    <string name="pair_menu_purchase">сатып алу ақпараты</string>
+    <string name="pair_menu_retire">пенсиялық / ауыстырылған</string>
+    <string name="pair_menu_delete">жою</string>
+    <string name="pair_lifetime">бұл жұптағы өмір</string>
+    <string name="pair_retired_on">пенсиялық %1$s</string>
+    <string name="pair_retired_with_reason">пенсиялық %1$s · %2$s</string>
+    <string name="pair_connected_now">қазір қосылған · %1$s</string>
+    <string name="pair_sessions">сеанстар</string>
+    <string name="pair_average">орташа</string>
+    <string name="pair_longest">ең ұзақ</string>
+    <string name="pair_since">%1$s-ден бастап</string>
+    <string name="pair_of_measured">ойнау үлесі</string>
+    <string name="pair_measured">ойнау үшін өлшенген</string>
+    <string name="pair_paid">төленген</string>
+    <string name="pair_per_hour">сағатына</string>
+    <string name="pair_bought">сатып алынған</string>
+    <string name="pair_daily_hours_14">күндік сағаттар (14 күн)</string>
+    <string name="pair_rename_title">жұпты қайта атау</string>
+    <string name="pair_rename_label">аты</string>
+    <string name="pair_retire_title">бұл жұпты пенсиялық</string>
+    <string name="pair_retire_label">себебі (өліп кетті, сатылды, жоғалды…)</string>
+    <string name="pair_retire_confirm">пенсиялық</string>
+    <string name="pair_retire_supporting">жиынтықтар мұнда сақталады. сол құрылғыны қайта қосса, жаңа жұп нөлден басталады.</string>
+    <string name="pair_price_title">төленген баға</string>
+    <string name="pair_price_label">сума (бүтін бірліктер)</string>
+    <string name="pair_price_supporting">сағатына құны есептелінді.</string>
+    <string name="pair_delete_title">бұл жұпты жою керек пе?</string>
+    <string name="pair_delete_body">оның барлық сеансы да жойылады. мұны болдырмау мүмкін емес.</string>
+
+    <string name="session_ongoing">ағындағы</string>
+    <string name="session_until">%1$s дейін</string>
+    <string name="session_playing">%1$s ойнау</string>
+    <string name="session_recovered">қалпына келтірілген</string>
+
+    <string name="settings_tracking">бақылау</string>
+    <string name="settings_detailed_title">егжей-тегжейлі бақылау</string>
+    <string name="settings_detailed_body">сымды құлақ аспалары мен ойнау уақытын қосады. android сымды штепселді бағыттарын жұмыс істеп тұрған қосымшаларға ғана білдіреді, сондықтан бұл сайындағы хабарламасын ұстап тұрады. bluetooth қалай да бақыланады.</string>
+    <string name="settings_detailed_unavailable">bluetooth рұқсаты берілгенге дейін қолжетімсіз: бұл құрылым connectedDevice қызмет түрін ғана орнатады, android 14+ bluetooth рұқсатына байланыстырады.</string>
+    <string name="settings_playback_only_title">тек ойнау санап отыр</string>
+    <string name="settings_playback_only_body">статистика қосылған уақыт орнына аудио ойнаған уақытын санап отыр. тек егжей-тегжейлі бақылауда жазылған сеанстар өлшенген ойнау; қалғандары сыртталады.</string>
+    <string name="settings_language">тіл</string>
+    <string name="settings_language_system">жүйелік тіл</string>
+    <string name="settings_devices">құрылғылар</string>
+    <string name="settings_devices_body">құлақ аспалары емес ештеңе белгісін өшіріңіз — автомобиль стереосы немесе спикер — оны жазбай тәтеуді тоқтатсын.</string>
+    <string name="settings_device_subtitle">%1$s · бірінші көрінді %2$s</string>
+    <string name="settings_data">деректер</string>
+    <string name="settings_export">json экспорты</string>
+    <string name="settings_import">импорт</string>
+    <string name="settings_import_warning">импорт қазір сақталған ештеңеге ауыстырады.</string>
+    <string name="settings_troubleshooting">мәселені шешу</string>
+    <string name="settings_battery_body">сеанстар жазылуы тоқтаса, ylih батарея оңтайландыруынан босатылғанын тексеріңіз — қол қойылған қосымша қайтадан рұқсаты болғанша трансляциялық сигналдарын қайтадан ұға алмайды.</string>
+    <string name="settings_battery_button">батарея параметрлері</string>
+    <string name="settings_battery_path">параметрлер → қосымшалар → ylih → батарея → шексіз.</string>
+    <string name="settings_hibernation_body">ylih бірнеше ай ашылмаса, android оны паузалайды және рұқсаттарын қайтарады, және сіз оңды ашқанға дейін ештеңе жаз болмайды. оны өшіру қосымшасын сіз ойлап барма сезонында санап беруге мүмкін істейді.</string>
+    <string name="settings_hibernation_on">android ylih-ті паузалай алады.</string>
+    <string name="settings_hibernation_off">ylih босатылған және жазылудан жалғастыруда.</string>
+    <string name="settings_hibernation_button">пайдаланылмаған қосымба параметрлері</string>
+    <string name="settings_about">туралы</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — құлақ аспаларының сағаттары, жергілікті және мәңгі ұстап тұрылады.</string>
+    <string name="settings_import_confirm_title">барлық деректерге ауыстыру керек пе?</string>
+    <string name="settings_import_confirm_body">осы сақтығын импорт ету қазір сақталған әрбір құрылғыны, жұпты және сеансты жойады.</string>
+
+    <string name="widget_lifetime_label">ylih · өмір</string>
+    <string name="widget_lifetime_description">жұп бойына сағаттар, қосылған нәрсеге сәйкес өшіндетілген таймер</string>
+    <string name="widget_activity_label">ylih · белсенділік</string>
+    <string name="widget_activity_description">әрбір жұптың сағаттары, плюс бүгін, 7 күн және 30 күн</string>
+    <string name="widget_chart_label">ylih · 30 күн</string>
+    <string name="widget_chart_description">соңғы 30 күндің күндік тыңдау сағаттары</string>
+
+    <string name="action_save">сақтау</string>
+    <string name="action_cancel">бас тарту</string>
+    <string name="action_delete">жою</string>
+    <string name="action_import">импорт</string>
+
+    <string name="channel_tracking">құлақ аспаларын бақылау</string>
+    <string name="channel_tracking_description">ylih сымды құлақ аспалары мен ойнау үшін іздеп жүрсе, көрсетіледі. android сымды штепселді сигналдарын жұмыс істепі жатқан қосымшаларға ғана білдіреді.</string>
+    <string name="notification_title">құлақ аспаларының уақытын бақылау</string>
+    <string name="notification_starting">бастау...</string>
+    <string name="notification_idle">құлақ аспалары күтіп отыр</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d қосылған · %2$s</item>
+        <item quantity="other">%1$d қосылған · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d қосылған · %2$s · ойнау</item>
+        <item quantity="other">%1$d қосылған · %2$s · ойнау</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">бұл құрылым сымды құлақ аспаларын бақылау алдында bluetooth рұқсатын қажет етеді</string>
+    <string name="export_done">сақтық экспорты</string>
+    <string name="export_failed">экспорт сәтсіз</string>
+    <string name="import_failed">импорт сәтсіз</string>
+    <string name="error_could_not_open">%1$s ашу мүмкін емес</string>
+    <plurals name="import_done">
+        <item quantity="one">%d сеанс импорты</item>
+        <item quantity="other">%d сеанс импорты</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d сеанс</item>
+        <item quantity="other">%d сеанс</item>
+    </plurals>
+    <string name="edit_failed">өзгеріс сақталмады</string>
+</resources>

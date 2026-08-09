@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Armenian. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ձեր կյանքը ականջակցերում</string>
+
+    <string name="nav_headphones">ականջակցեր</string>
+    <string name="nav_stats">վիճակագրություն</string>
+    <string name="nav_settings">կարգավորումներ</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">մետաղալար</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">անհայտ</string>
+
+    <string name="welcome_title">բարի գալուստ ylih</string>
+    <string name="welcome_intro">ylih գրանցում է, թե որքան ժամանակ է յուրաքանչյուր ականջակցերի զույգ միացված մնում, որպեսզի տարիներից հետո կարողանաք պատասխանել միակ կարևոր հարցին. քանի՞ ժամ տևեցան այդ ականջակցերը</string>
+    <string name="welcome_point_auto_title">միացրեք և մոռացեք</string>
+    <string name="welcome_point_auto_body">bluetooth ականջակցերն ինքնաբերաբար գրանցվում են միացման պահից: ոչ մի ծրագիր պետք չէ բաց թողնել</string>
+    <string name="welcome_point_lifetime_title">մեկ զույգ, մեկ կյանք</string>
+    <string name="welcome_point_lifetime_body">երբ ականջակցերն անջատվեն, բաժանեք դրանք. դրանց ընդամենը սառեցվում է, իսկ նույն ականջակցերի հաջորդ զույգը սկսվում է զրոյից</string>
+    <string name="welcome_point_detailed_title">մետաղալար և հատոկ</string>
+    <string name="welcome_point_detailed_body">մանրամասն հետևում կարգավորումներում ավելացնում է մետաղալար ականջակցեր և չափում է, թե որքան ժամանակ էր ուղղակի հատոկ</string>
+    <string name="welcome_privacy">ամբողջ տվյալը մնում է ձեր հեռախոսում: հաշիվ չկա, և հավելվածը ինտերնետ թույլտվություն չունի</string>
+    <string name="welcome_start">սկսել</string>
+    <string name="welcome_next">հաջորդ</string>
+    <string name="welcome_allow">թույլատրել</string>
+    <string name="welcome_step">քայլ %1$d / %2$d-ից</string>
+    <string name="welcome_bluetooth_title">bluetooth միացում</string>
+    <string name="welcome_bluetooth_why">android-ը հավելվածին ասում է միայն, թե որ bluetooth սարքն է միացված և ինչպես է կոչվում, եթե հավելվածը ունի bluetooth թույլտվություն: հենց այս կերպ ylih-ը տարբերում է ականջակցերը ավտոմոբիլային ստերեոյից և մեկ զույգը մյուսից</string>
+    <string name="welcome_bluetooth_with">դրանով. յուրաքանչյուր զույգ գրանցվում է միացման պահից՝ առանց ծրագիր բաց թողելու և մեկ ընտրություն կատարելու</string>
+    <string name="welcome_bluetooth_without">առանց դրա. bluetooth ականջակցերը ընդամենը չեն գրանցվի: հավելվածի մնացած մասը հետ շարունակում է աշխատել, և դուք կարող եք այն թույլատրել ավելի ուշ Android-ի կարգավորումներում</string>
+    <string name="welcome_notifications_title">ծանուցումներ</string>
+    <string name="welcome_notifications_why">մանրամասն հետևումը պահպանում է փոքր ֆոնային ծառայություն, և android-ը պահանջում է, որ ցանկացած հավելված ունենա տեսանելի ծանուցում</string>
+    <string name="welcome_notifications_with">դրանով. ծանուցումը ցույց է տալիս, թե ինչ է այս պահին գրանցվում, ինչը միակ նշանն է մանրամասն հետևման գործունեության</string>
+    <string name="welcome_notifications_without">առանց դրա. մանրամասն հետևումը շարունակում է աշխատել: android-ը պարզապես չի ցույց տալու տեղեկում</string>
+    <string name="hibernation_title">շարունակել հաշվել, մինչ մոռանաք</string>
+    <string name="hibernation_body">android-ը դադարեցնում է մի քանի ամիս չբացված հավելվածները և վերցնում է դրանց թույլտվությունները, ինչի պատճառով ylih-ը ոչ մի գրանցում չի անցկացներ: հավելվածի նպատակն է մոռացվել, այնպես որ հարմար է դա այժմ անջատել</string>
+    <string name="action_not_now">այժմ ոչ</string>
+
+    <string name="devices_in_use">օգտագործման մեջ</string>
+    <string name="devices_retired">տեղադրված</string>
+    <string name="devices_empty_title">ակնկալ ձեր առաջին ականջակցերը</string>
+    <string name="devices_empty_body">միացրեք bluetooth ականջակցերի զույգ և դրանք կհայտնվեն այստեղ: մետաղալար ականջակցերներն անհրաժեշտ են մանրամասն հետևում կարգավորումներում</string>
+    <string name="devices_generation">զույգ #%1$d</string>
+    <string name="devices_retired_on">տեղադրված %1$s</string>
+    <string name="devices_connected_for">միացված %1$s</string>
+    <string name="devices_recent">%1$s / 7 օր</string>
+
+    <string name="stats_title">բոլոր ականջակցերը</string>
+    <string name="stats_sessions_since">%1$s %2$s-ից</string>
+    <string name="stats_today">այսօր</string>
+    <string name="stats_last_7">վերջին 7 օր</string>
+    <string name="stats_last_30">վերջին 30 օր</string>
+    <string name="stats_average_session">միջին սեսիա</string>
+    <string name="stats_longest_session">ամենաերկար սեսիա</string>
+    <string name="stats_playing">ձայն հատոկ</string>
+    <string name="stats_measured_span">հատոկի չափում</string>
+    <string name="stats_share">հատոկի ամբ</string>
+    <string name="stats_playback_only_note">հատոկի ժամանակի հաշվում միայն</string>
+    <string name="stats_daily_hours_30">ամենօրյա ժամեր (30 օր)</string>
+    <string name="stats_by_pair">հատվածի համար</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · տեղադրված</string>
+    <string name="chart_max">%1$s առավելագույն</string>
+
+    <string name="pair_fallback_title">զույգ</string>
+    <string name="pair_back">հետ</string>
+    <string name="pair_more">ավելի շատ</string>
+    <string name="pair_menu_rename">վերանվանել</string>
+    <string name="pair_menu_purchase">գնման տեղեկություն</string>
+    <string name="pair_menu_retire">տեղադրել / փոխարեն</string>
+    <string name="pair_menu_delete">ջնջել</string>
+    <string name="pair_lifetime">այս զույգի կյանքի տևողություն</string>
+    <string name="pair_retired_on">տեղադրված %1$s</string>
+    <string name="pair_retired_with_reason">տեղադրված %1$s · %2$s</string>
+    <string name="pair_connected_now">այժմ միացված · %1$s</string>
+    <string name="pair_sessions">սեսիաներ</string>
+    <string name="pair_average">միջին</string>
+    <string name="pair_longest">ամենաերկար</string>
+    <string name="pair_since">%1$s-ից</string>
+    <string name="pair_of_measured">հատոկի ամբ</string>
+    <string name="pair_measured">հատոկի չափում</string>
+    <string name="pair_paid">վճարված</string>
+    <string name="pair_per_hour">ժամի համար</string>
+    <string name="pair_bought">գնված</string>
+    <string name="pair_daily_hours_14">ամենօրյա ժամեր (14 օր)</string>
+    <string name="pair_rename_title">զույգը վերանվանել</string>
+    <string name="pair_rename_label">անուն</string>
+    <string name="pair_retire_title">այս զույգը տեղադրել</string>
+    <string name="pair_retire_label">պատճառ (կոտրվել, վաճառվել, կորել...)</string>
+    <string name="pair_retire_confirm">տեղադրել</string>
+    <string name="pair_retire_supporting">ընդամենը կմեծանա այստեղ: նույն սարքի նորից միացումը նոր զույգ է սկսում զրոյից</string>
+    <string name="pair_price_title">վճարված գինը</string>
+    <string name="pair_price_label">գումար (ամբողջ միավորներ)</string>
+    <string name="pair_price_supporting">ժամի վարկածի վերլուծության համար օգտագործվում է</string>
+    <string name="pair_delete_title">այս զույգը ջնջե՞լ</string>
+    <string name="pair_delete_body">դրա համար հավաքված յուրաքանչյուր սեսիա նույնպես ջնջվում է: դա հետ չի կարող կատարվել</string>
+
+    <string name="session_ongoing">շարունակական</string>
+    <string name="session_until">մինչ %1$s</string>
+    <string name="session_playing">%1$s հատոկ</string>
+    <string name="session_recovered">վերականգնվել</string>
+
+    <string name="settings_tracking">հետևում</string>
+    <string name="settings_detailed_title">մանրամասն հետևում</string>
+    <string name="settings_detailed_body">ավելացնում է մետաղալար ականջակցեր և հատոկի ժամանակ: android-ը մետաղալար միացման իրադարձություններ միայն վազող հավելվածներին է հայտնում, այս պատճառով այստեղ կա անթիվ ծանուցում: bluetooth-ը յուրաքանչյուր դեպքում հետևել է</string>
+    <string name="settings_detailed_unavailable">հասանելի չէ, մինչ bluetooth թույլտվություն տրվի. այս տարբերակն ունի միայն connectedDevice ծառայության տեսակը, որը android 14+ կապում է bluetooth թույլտվության հետ</string>
+    <string name="settings_playback_only_title">հաշվել միայն հատոկ</string>
+    <string name="settings_playback_only_body">վիճակագրությունը հաշվում է ձայն գործակցման ժամանակ, բայց ոչ միացման: միայն մանրամասն հետևմամբ հատկացված սեսիաներ չափել հատոկ; մնացածը բաց թողնված են</string>
+    <string name="settings_language">լեզու</string>
+    <string name="settings_language_system">համակարգի լեզու</string>
+    <string name="settings_devices">սարքեր</string>
+    <string name="settings_devices_body">վերացրեք ամբողջ, որ ականջակցեր չէ — ավտոմոբիլային ստերեո կամ բարձրախոս — դրա գրանցումը դադարեցնել</string>
+    <string name="settings_device_subtitle">%1$s · առաջին անգամ տեսել %2$s</string>
+    <string name="settings_data">տվյալ</string>
+    <string name="settings_export">json արտահանել</string>
+    <string name="settings_import">ներմուծել</string>
+    <string name="settings_import_warning">ներմուծումը փոխարինում է ամբողջ պահվածը</string>
+    <string name="settings_troubleshooting">խնդրահարում</string>
+    <string name="settings_battery_body">եթե սեսիաների գրանցումը դադարում է, ստուգեք, որ ylih-ը բացառված է մարտկոցի օպտիմալացումից. բաց թողնված հավելվածը հետևորդ հեռուստատեսության չի ստանում, մինչև բացվի</string>
+    <string name="settings_battery_button">մարտկոցի կարգավորումներ</string>
+    <string name="settings_battery_path">կարգավորումներ → հավելվածներ → ylih → մարտկոց → անսահմանափակ</string>
+    <string name="settings_hibernation_body">եթե ylih-ը մի քանի ամիս չբացվեր, android-ը միջժամկետական փուլ կա և վերցնում է թույլտվությունները, և ոչինչ չէ հաշվել, մինչ բացեք: դրա անջատումն այն է, որ մի պատ շարունակել պահել մի սեզոնի ընթացքում, երբ չեք մտածում հավելվածի մասին</string>
+    <string name="settings_hibernation_on">android-ը կարող է durationhus ylih</string>
+    <string name="settings_hibernation_off">ylih-ը բացառված է և շարունակում է գրանցել</string>
+    <string name="settings_hibernation_button">չօգտագործված հավելվածի կարգավորումներ</string>
+    <string name="settings_about">մեր մասին</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — ականջակցերի ժամեր, պահված տեղային և հավերժ</string>
+    <string name="settings_import_confirm_title">բոլոր տվյալը փոխարինե՞լ</string>
+    <string name="settings_import_confirm_body">այս պահանջի ներմուծումը ջնջում է պահվածը բոլոր սարքերը, զույգերը և սեսիաներ</string>
+
+    <string name="widget_lifetime_label">ylih · կյանքի տևողություն</string>
+    <string name="widget_lifetime_description">ժամեր մեկ զույգի համար, վերջինիս միացված ստատուսով</string>
+    <string name="widget_activity_label">ylih · գործունեություն</string>
+    <string name="widget_activity_description">բոլոր զույգերի ժամեր միասին, ինչպես նաև այսօր, 7 օր և 30 օր</string>
+    <string name="widget_chart_label">ylih · 30 օր</string>
+    <string name="widget_chart_description">ամենօրյա դրվածի ժամեր վերջին 30 օրերում</string>
+
+    <string name="action_save">պահպանել</string>
+    <string name="action_cancel">հրաժարվել</string>
+    <string name="action_delete">ջնջել</string>
+    <string name="action_import">ներմուծել</string>
+
+    <string name="channel_tracking">ականջակցերի հետևում</string>
+    <string name="channel_tracking_description">ցույց տուր, որ ylih-ը դիտում է մետաղալար ականջակցեր և հատոկ: android-ը մետաղալար միացման իրադարձություններ չի հայտնում չգործող հավելվածներին</string>
+    <string name="notification_title">ականջակցերի ժամանակ հետևում</string>
+    <string name="notification_starting">սկսում է...</string>
+    <string name="notification_idle">ականջակցերի համար սպասում</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d միացված · %2$s</item>
+        <item quantity="other">%1$d միացված · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d միացված · %2$s · հատոկ</item>
+        <item quantity="other">%1$d միացված · %2$s · հատոկ</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">այս տարբերակն անհրաժեշտ է bluetooth թույլտվություն մինչ այն կարող է մետաղալար ականջակցերներ հետևել</string>
+    <string name="export_done">վերապահպանում արտահանվել</string>
+    <string name="export_failed">արտահանումը ձախողվել է</string>
+    <string name="import_failed">ներմուծումը ձախողվել է</string>
+    <string name="error_could_not_open">%1$s չկար բացել</string>
+    <plurals name="import_done">
+        <item quantity="one">ներմուծել %d սեսիա</item>
+        <item quantity="other">ներմուծել %d սեսիա</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d սեսիա</item>
+        <item quantity="other">%d սեսիա</item>
+    </plurals>
+    <string name="edit_failed">փոփոխությունը չհաջողվեց պահել</string>
+</resources>

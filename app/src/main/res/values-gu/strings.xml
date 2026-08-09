@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Gujarati. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - તમારું જીવન હેડફોનમાં</string>
+
+    <string name="nav_headphones">હેડફોન</string>
+    <string name="nav_stats">આંકડાઓ</string>
+    <string name="nav_settings">સેટિંગ્સ</string>
+
+    <string name="kind_bluetooth">બ્લુટૂથ</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">તારવાળું</string>
+    <string name="kind_usb">યુએસબી</string>
+    <string name="kind_unknown">અજ્ઞાત</string>
+
+    <string name="welcome_title">ylih માં આવકાર</string>
+    <string name="welcome_intro">ylih રેકોર્ડ કરે છે કે દરેક હેડફોનની જોડી કેટલા સમય માટે જોડાયેલ રહે છે, જેથી વર્ષો પછી તમે હજું પણ તે એક જ મહત્વનો પ્રશ્ન પૂછી શકો: તેઓ કેટલા કલાક ચાલ્યા?</string>
+    <string name="welcome_point_auto_title">જોડાઓ અને ભૂલી જાઓ</string>
+    <string name="welcome_point_auto_body">બ્લુટૂથ હેડફોન આપોઆપ રેકોર્ડ થાય છે, જે ક્ષણે તે જોડાય છે. કંઈપણ ચાલુ રાખવું જરૂરી નથી.</string>
+    <string name="welcome_point_lifetime_title">એક જોડી, એક જીવન</string>
+    <string name="welcome_point_lifetime_body">જ્યારે એક જોડી મર જાય, તો તેને સેવાનિવૃત્ત કરો: તેનો કુલ ત્યાં ફ્રીજ થઈ જાય છે અને તે જ હેડફોનની આગલી જોડી શૂન્યથી ફરી શરૂ થાય છે.</string>
+    <string name="welcome_point_detailed_title">તારવાળું અને પ્લેબેક</string>
+    <string name="welcome_point_detailed_body">સેટિંગ્સમાં વિગતવાર ટ્રેકિંગ તારવાળા હેડફોન ઉમેરે છે અને માપે છે કે કેટલો સમય વાસ્તવમાં ચાલી રહ્યું હતું.</string>
+    <string name="welcome_privacy">બધું આ ફોને પર રહે છે. ત્યાં કોઈ ખાતું નથી, અને એપ્લિકેશનને ઇન્ટરનેટ પરવાનગી નથી.</string>
+    <string name="welcome_start">શરૂ કરો</string>
+    <string name="welcome_next">આગલું</string>
+    <string name="welcome_allow">માટે આધુનિક</string>
+    <string name="welcome_step">પગલું %1$d માંથી %2$d</string>
+    <string name="welcome_bluetooth_title">બ્લુટૂથ ઍક્સેસ</string>
+    <string name="welcome_bluetooth_why">android ફક્ત ત્યારે જ એપ્લિકેશનને જણાવે છે કે કયું બ્લુટૂથ ডિવાઇસ જોડાઈ છે અને તેને શું કહેવામાં આવે છે, જો એપ્લિકેશનમાં બ્લુટૂથ ઍક્સેસ છે. તે કેવી રીતે ylih એક હેડફોનની જોડીને કાર સ્ટીરિયોમાંથી અલગ કરે છે અને તે કેવી રીતે એક જોડીને બીજાથી જાણે છે.</string>
+    <string name="welcome_bluetooth_with">તેની સાથે: દરેક જોડી જોડાણના ક્ષણથી રેકોર્ડ થાય છે, કંઈ ચલાતું નથી અને કંઈ દબાવવું યાદ નથી.</string>
+    <string name="welcome_bluetooth_without">તેના વિના: બ્લુટૂથ હેડફોન બિલકુલ રેકોર્ડ થતા નથી. એપ્લિકેશનનો બાકી ભાગ હજુ પણ કામ કરે છે, અને તમે પછીથી android ની એપ્લિકેશન સેટિંગ્સમાં તેને આધુનિક આપી શકો છો.</string>
+    <string name="welcome_notifications_title">સૂચનાઓ</string>
+    <string name="welcome_notifications_why">વિગતવાર ટ્રેકિંગ એક નાની પૃષ્ઠભૂમિ સેવા ચલાવે છે, અને android અમુક પણ સૂચના દૃશ્યમાન રાખવાની જરૂર છે જે તે કરે છે.</string>
+    <string name="welcome_notifications_with">તેની સાથે: સૂચના બતાવે છે કે અત્યારે શું રેકોર્ડ કરવામાં આવી રહ્યું છે, જે વિગતવાર ટ્રેકિંગ જીવંત છે તેનું એકમાત્ર સંકેત છે.</string>
+    <string name="welcome_notifications_without">તેના વિના: વિગતવાર ટ્રેકિંગ હજુ પણ ચાલુ રહે છે અને હજુ પણ રેકોર્ડ કરે છે. android ફક્ત તેની સૂચના બતાવશે નહીં.</string>
+    <string name="hibernation_title">તમે તેને ભૂલી ગયા તે દરમિયાન ગણતરી ચાલુ રાખો</string>
+    <string name="hibernation_body">android એપ્લિકેશનોને અટકાવે છે જે કેટલાક મહિનાની અવધિ માટે અનુલધ્ય રહે છે અને તેમની પરવાનગી વળતી લે છે, જે ylih ને કંઈ પણ રેકોર્ડ કરવા માટે છોડી દેશે જ્યાં સુધી તમે તેને આગલીવાર ખોલો. ભૂલી જવું એ બરાબર તે છે જે આ એપ્લિકેશન માટે છે, તેથી તે હવે બંધ કરવા લાયક છે.</string>
+    <string name="action_not_now">હમણાં નહીં</string>
+
+    <string name="devices_in_use">ઉપયોગમાં</string>
+    <string name="devices_retired">સેવાનિવૃત્ત</string>
+    <string name="devices_empty_title">અથી હજી કોઈ હેડફોન નથી</string>
+    <string name="devices_empty_body">બ્લુટૂથ હેડફોનની એક જોડી જોડાઓ અને તે અહીં દેખાશે. તારવાળા હેડફોનને સેટિંગ્સમાં વિગતવાર ટ્રેકિંગ જરૂર છે.</string>
+    <string name="devices_generation">જોડી #%1$d</string>
+    <string name="devices_retired_on">સેવાનિવૃત્ત %1$s</string>
+    <string name="devices_connected_for">જોડાયેલ %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">તમામ હેડફોન</string>
+    <string name="stats_sessions_since">%1$s %2$s થી</string>
+    <string name="stats_today">આજ</string>
+    <string name="stats_last_7">છેલ્લા 7 દિવસ</string>
+    <string name="stats_last_30">છેલ્લા 30 દિવસ</string>
+    <string name="stats_average_session">સરેરાશ સત્ર</string>
+    <string name="stats_longest_session">સૌથી લાંબો સત્ર</string>
+    <string name="stats_playing">ઓડિયો વાગી રહ્યું છે</string>
+    <string name="stats_measured_span">પ્લેબેક માટે માપવામાં આવ્યું</string>
+    <string name="stats_share">પ્લેબેક શેર</string>
+    <string name="stats_playback_only_note">માત્ર પ્લેબેક સમય ગણતરી</string>
+    <string name="stats_daily_hours_30">દૈનિક કલાક (30 દિવસ)</string>
+    <string name="stats_by_pair">જોડી દ્વારા</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · સેવાનિવૃત્ત</string>
+    <string name="chart_max">%1$s મહત્તમ</string>
+
+    <string name="pair_fallback_title">જોડી</string>
+    <string name="pair_back">પાછળ</string>
+    <string name="pair_more">વધુ</string>
+    <string name="pair_menu_rename">નામ બદલો</string>
+    <string name="pair_menu_purchase">ખરીદી માહિતી</string>
+    <string name="pair_menu_retire">સેવાનિવૃત્ત / બદલી દીધું</string>
+    <string name="pair_menu_delete">હટાવો</string>
+    <string name="pair_lifetime">આ જોડીનું આજીવન</string>
+    <string name="pair_retired_on">સેવાનિવૃત્ત %1$s</string>
+    <string name="pair_retired_with_reason">સેવાનિવૃત્ત %1$s · %2$s</string>
+    <string name="pair_connected_now">હવે જોડાયેલ · %1$s</string>
+    <string name="pair_sessions">સત્રો</string>
+    <string name="pair_average">સરેરાશ</string>
+    <string name="pair_longest">સૌથી લાંબો</string>
+    <string name="pair_since">%1$s થી</string>
+    <string name="pair_of_measured">પ્લેબેક શેર</string>
+    <string name="pair_measured">પ્લેબેક માટે માપવામાં આવ્યું</string>
+    <string name="pair_paid">ચુકવ્યું</string>
+    <string name="pair_per_hour">પ્રતિ કલાક</string>
+    <string name="pair_bought">ખરીદ્યું</string>
+    <string name="pair_daily_hours_14">દૈનિક કલાક (14 દિવસ)</string>
+    <string name="pair_rename_title">જોડીનું નામ બદલો</string>
+    <string name="pair_rename_label">નામ</string>
+    <string name="pair_retire_title">આ જોડીને સેવાનિવૃત્ત કરો</string>
+    <string name="pair_retire_label">કારણ (મર્યો, વેચ્યો, ગુમ…)</string>
+    <string name="pair_retire_confirm">સેવાનિવૃત્ત</string>
+    <string name="pair_retire_supporting">કુલ અહીં ફ્રીજ થઈ જાય છે. તે જ ডિવાઇસને ફરી જોડાવું એક તાજી જોડીને શૂન્યથી શરૂ કરે છે.</string>
+    <string name="pair_price_title">ચુકવેલ કિંમત</string>
+    <string name="pair_price_label">રકમ (આખા એકમો)</string>
+    <string name="pair_price_supporting">ઘટા દર માટે વપરાય છે.</string>
+    <string name="pair_delete_title">આ જોડીને હટાવું?</string>
+    <string name="pair_delete_body">તેના માટે રેકોર્ડ કરાયેલ દરેક સત્ર પણ હટાવવામાં આવે છે. આ પૂર્વવત્ કરી શકાતું નથી.</string>
+
+    <string name="session_ongoing">ચાલુ</string>
+    <string name="session_until">%1$s સુધી</string>
+    <string name="session_playing">%1$s વાગી રહ્યું છે</string>
+    <string name="session_recovered">પુનરુદ્ધાર</string>
+
+    <string name="settings_tracking">ટ્રેકિંગ</string>
+    <string name="settings_detailed_title">વિગતવાર ટ્રેકિંગ</string>
+    <string name="settings_detailed_body">તારવાળા હેડફોન અને પ્લેબેક સમય ઉમેરે છે. android તારવાળા પ્લગ ઇવેન્ટ્સ માત્ર ચલતા એપ્લિકેશનને જાણ કરે છે, તેથી આ છાયામાં એક મૌન સૂચના રાખે છે. બ્લુટૂથ કોઈપણ રીતે ટ્રેક કરવામાં આવે છે.</string>
+    <string name="settings_detailed_unavailable">બ્લુટૂથ ઍક્સેસ આધુનિક આપતા પર ઉપલબ્ધ નથી: આ બિલ્ડ માત્ર connectedDevice સેવા પ્રકાર જાહેર કરે છે, જે android 14+ બ્લુટૂથ પરવાનગીને બાંધે છે.</string>
+    <string name="settings_playback_only_title">માત્ર પ્લેબેક ગણો</string>
+    <string name="settings_playback_only_body">આંકડાઓ સમય ગણે છે જ્યાં ઓડિયો વાસ્તવમાં વાગ્યું હતું અલ્ટર્નેટિવ જોડાણ સમય માટે. માત્ર વિગતવાર ટ્રેકિંગ સાથે રેકોર્ડ સત્રો માપ પ્લેબેક; બાકીને બહાર મૂકવામાં આવે છે.</string>
+    <string name="settings_language">ભાષા</string>
+    <string name="settings_language_system">સિસ્ટમ ભાષા</string>
+    <string name="settings_devices">ડિવાઇસેસ</string>
+    <string name="settings_devices_body">હેડફોન ન હોય તેવું કંઈ પણ અનચેક કરો — એક કાર સ્ટીરિયો અથવા વક્તા — તેનું રેકોર્ડીંગ બંધ કરવા માટે.</string>
+    <string name="settings_device_subtitle">%1$s · પ્રથમ દર્શન %2$s</string>
+    <string name="settings_data">ડેટા</string>
+    <string name="settings_export">json નિકાસ કરો</string>
+    <string name="settings_import">આયાત કરો</string>
+    <string name="settings_import_warning">આયાત કરવું વર્તમાનમાં સંગ્રહીત બધું બદલે છે.</string>
+    <string name="settings_troubleshooting">સમસ્યા નિવારણ</string>
+    <string name="settings_battery_body">જો સત્રો રેકોર્ડ કરવું બંધ કરે, તો તપાસો કે ylih બેટરી ઑપ્ટિમાઇઝેશનમાંથી મુક્ત છે — એક એપ્લિકેશન જે બળજબરી બંધ કર્યું હોય તે તેને ખોલતા સુધી ફરી કોઈ જોડાણ પ્રસારણ પ્રાપ્ત કરતું નથી.</string>
+    <string name="settings_battery_button">બેટરી સેટિંગ્સ</string>
+    <string name="settings_battery_path">સેટિંગ્સ → એપ્લિકેશનો → ylih → બેટરી → અનિયંત્રિત।</string>
+    <string name="settings_hibernation_body">જો ylih કેટલાક મહિનાની અવધિ માટે અનુલધ્ય રહે, તો android તેને અટકાવે અને તેની પરવાનગી વળતી લે, અને જ્યાં સુધી તમે તેને ખોલો ત્યાં સુધી કંઈ પણ રેકોર્ડ કરવામાં આવતું નથી. તે બંધ કરવું એ જ છે કે જે જોડીને એવા સીઝનમાંથી ગણતરી ચાલુ રાખવા દે છે જેમાં તમે એપ્લિકેશન વિશે કોઈ વિચાર કરતા નથી.</string>
+    <string name="settings_hibernation_on">android ylih અટકાવી શકે છે.</string>
+    <string name="settings_hibernation_off">ylih મુક્ત છે અને રેકોર્ડીંગ ચાલુ રાખે છે.</string>
+    <string name="settings_hibernation_button">અનુપયોગી એપ્લિકેશન સેટિંગ્સ</string>
+    <string name="settings_about">વિશે</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — હેડફોન કલાક, સ્થાનિક અને કાયમ માટે સંગ્રહિત.</string>
+    <string name="settings_import_confirm_title">તમામ ડેટા બદલો?</string>
+    <string name="settings_import_confirm_body">આ બેકআપ આયાત કરવું વર્તમાનમાં સંગ્રહીત દરેક ડિવાઇસ, જોડી અને સત્ર હટાવે છે.</string>
+
+    <string name="widget_lifetime_label">ylih · આજીવન</string>
+    <string name="widget_lifetime_description">જોડી દીઠ કલાક, જે પણ જોડાયેલ છે તેના પર લાઇવ ટાઇમર સાથે</string>
+    <string name="widget_activity_label">ylih · પ્રવૃત્તિ</string>
+    <string name="widget_activity_description">દરેક જોડીના કલાક એક સાથે, વત્તા આજ, 7 દિવસ અને 30 દિવસ</string>
+    <string name="widget_chart_label">ylih · 30 દિવસ</string>
+    <string name="widget_chart_description">છેલ્લા 30 દિવસમાં દૈનિક સાંભળવાના કલાક</string>
+
+    <string name="action_save">સંરક્ષણ કરો</string>
+    <string name="action_cancel">રદ કરો</string>
+    <string name="action_delete">હટાવો</string>
+    <string name="action_import">આયાત કરો</string>
+
+    <string name="channel_tracking">હેડફોન ટ્રેકિંગ</string>
+    <string name="channel_tracking_description">જ્યારે ylih તારવાળા હેડફોન અને પ્લેબેક માટે જોઈ રહ્યું હોય તો બતાવવામાં આવે છે. android તારવાળા પ્લગ ઇવેન્ટ્સ એપ્લિકેશનોને સંતાડતું નથી જે ચાલતા નથી.</string>
+    <string name="notification_title">હેડફોન સમય ટ્રેકિંગ</string>
+    <string name="notification_starting">શરૂ કરી રહ્યું…</string>
+    <string name="notification_idle">હેડફોનની રાહ જોઈ રહ્યું</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d જોડાયેલ · %2$s</item>
+        <item quantity="other">%1$d જોડાયેલ · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d જોડાયેલ · %2$s · વાગી રહ્યું છે</item>
+        <item quantity="other">%1$d જોડાયેલ · %2$s · વાગી રહ્યું છે</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">આ બિલ્ડને તારવાળા હેડફોન ટ્રેક કરતા પહેલા બ્લુટૂથ ઍક્સેસની જરૂર છે</string>
+    <string name="export_done">બેકআપ નિકાસ કરવામાં આવ્યું</string>
+    <string name="export_failed">નિકાસ નિષ્ફળ</string>
+    <string name="import_failed">આયાત નિષ્ફળ</string>
+    <string name="error_could_not_open">%1$s ખોલી શક્યા નથી</string>
+    <plurals name="import_done">
+        <item quantity="one">%d સત્ર આયાત કર્યું</item>
+        <item quantity="other">%d સત્રો આયાત કર્યા</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d સત્ર</item>
+        <item quantity="other">%d સત્રો</item>
+    </plurals>
+    <string name="edit_failed">ફેરફાર સાચવી શકાયો નથી</string>
+</resources>

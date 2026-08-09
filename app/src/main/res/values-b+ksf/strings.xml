@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Bafia. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - likolo la-bu li-makinanzi</string>
+
+    <string name="nav_headphones">makinanzi</string>
+    <string name="nav_stats">takwimu</string>
+    <string name="nav_settings">mipango</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">udio le</string>
+    <string name="kind_wired">ya waya</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">haijulikani</string>
+
+    <string name="welcome_title">welkom ylih</string>
+    <string name="welcome_intro">ylih i-kanema kilo nde bu-makinanzi bi-pita moo, su kilo-kilo i-bu fa, u-du tsib na mbuang na nyame i-ba: otu njul a-ba?</string>
+    <string name="welcome_point_auto_title">zu ni puga</string>
+    <string name="welcome_point_auto_body">bu-makinanzi ba-bluetooth bi-kanam sila, mzambi i-zu. ndap chi i-ba ka-kolo.</string>
+    <string name="welcome_point_lifetime_title">moo na mzambi</string>
+    <string name="welcome_point_lifetime_body">mzambi bu fa, i-puga je: nba-bu i-ba fa nde ba-makinanzi ba-semli i-gwo tsi.</string>
+    <string name="welcome_point_detailed_title">waya ni ma-playing</string>
+    <string name="welcome_point_detailed_body">ka-tracking ka-nkpoong, mfamba chi mipango, i-zu bu-waya ni gba chi ma-time a-ba ka-nje.</string>
+    <string name="welcome_privacy">ka nchi a-ba minfutu yi. ndap ka-konto, ni app nka i-ba chitak i-internet.</string>
+    <string name="welcome_start">gwo</string>
+    <string name="welcome_next">zek</string>
+    <string name="welcome_allow">bu</string>
+    <string name="welcome_step">nap %1$d bo %2$d</string>
+    <string name="welcome_bluetooth_title">bu bluetooth</string>
+    <string name="welcome_bluetooth_why">android i-gbin app chi device ya-bluetooth a-zu, ni chi a-koli, mzambi app i-ba bu bluetooth. nda i-gbin ylih i-pwo bu-makinanzi ba-simu, ni chi i-jen moo ba-zek.</string>
+    <string name="welcome_bluetooth_with">ku-ba: bu-makinanzi ba-yak i-kanam kilo bu-zu, ku-ndap chi i-ba kolo ni kap ku-bu.</string>
+    <string name="welcome_bluetooth_without">ku-ba-nka: bu-makinanzi ba-bluetooth ndap chi i-kanam. mfamba chi app i-ba ka-gwo, ni u-dung i-bu ka-minfutu ya-app.</string>
+    <string name="welcome_notifications_title">matonsi</string>
+    <string name="welcome_notifications_why">ka-tracking ka-nkpoong i-ta huduma chi nkpoong, ni android i-gwob app chi chi-ba ka-ta i-ba notification i-nje mzambi i-ta.</string>
+    <string name="welcome_notifications_with">ku-ba: notification i-gbin chi chi-kanam a-ba saa, nde a-bu chu cha-tracking chi-ta.</string>
+    <string name="welcome_notifications_without">ku-ba-nka: ka-tracking ka-nkpoong i-ta ni i-kanam. android yak ndap i-gbin notification.</string>
+    <string name="hibernation_title">kont kilo mzambi u-puga</string>
+    <string name="hibernation_body">android i-to app chi u-ta ko miezi, ni ku-ku bu-chi, nde ylih ndap chi i-kanam kilo u-bu app ye. puga yi ndde app yi i-ba, kwa nda i-ba chu i-ka u-gwo a-ba ye.</string>
+    <string name="action_not_now">ndap a-ba saa</string>
+
+    <string name="devices_in_use">i-ta</string>
+    <string name="devices_retired">i-puga</string>
+    <string name="devices_empty_title">bu-makinanzi ndap ba-ba ye</string>
+    <string name="devices_empty_body">zu bu-makinanzi ba-bluetooth ni bi-ba ye mfamba. bu-waya i-gwob ka-tracking ka-nkpoong, mfamba mipango.</string>
+    <string name="devices_generation">bu-yak #%1$d</string>
+    <string name="devices_retired_on">i-puga %1$s</string>
+    <string name="devices_connected_for">i-zu %1$s</string>
+    <string name="devices_recent">%1$s / miezi 7</string>
+
+    <string name="stats_title">bu-makinanzi ba-yak</string>
+    <string name="stats_sessions_since">%1$s kilo %2$s</string>
+    <string name="stats_today">a-ba</string>
+    <string name="stats_last_7">miezi 7 i-ba</string>
+    <string name="stats_last_30">miezi 30 i-ba</string>
+    <string name="stats_average_session">nkpoong ba-mean</string>
+    <string name="stats_longest_session">nkpoong chi-long</string>
+    <string name="stats_playing">udio chi-ta</string>
+    <string name="stats_measured_span">i-gbin kwa ma-playing</string>
+    <string name="stats_share">chi-ta di-gbin</string>
+    <string name="stats_playback_only_note">kont chi ma-playing yak</string>
+    <string name="stats_daily_hours_30">otu kilo miezi (miezi 30)</string>
+    <string name="stats_by_pair">bo bu-yak</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · i-puga</string>
+    <string name="chart_max">%1$s kiwango</string>
+
+    <string name="pair_fallback_title">bu-yak</string>
+    <string name="pair_back">zuk</string>
+    <string name="pair_more">mambak</string>
+    <string name="pair_menu_rename">su nam</string>
+    <string name="pair_menu_purchase">chi nkpoong</string>
+    <string name="pair_menu_retire">puga / i-su</string>
+    <string name="pair_menu_delete">futa</string>
+    <string name="pair_lifetime">mzambi bu bu-yak yi</string>
+    <string name="pair_retired_on">i-puga %1$s</string>
+    <string name="pair_retired_with_reason">i-puga %1$s · %2$s</string>
+    <string name="pair_connected_now">i-zu a-ba · %1$s</string>
+    <string name="pair_sessions">nkpoong</string>
+    <string name="pair_average">nkpoong ba-mean</string>
+    <string name="pair_longest">chi-long</string>
+    <string name="pair_since">kilo %1$s</string>
+    <string name="pair_of_measured">chi-ta di-gbin</string>
+    <string name="pair_measured">i-gbin kwa ma-playing</string>
+    <string name="pair_paid">i-bu</string>
+    <string name="pair_per_hour">bo otu</string>
+    <string name="pair_bought">i-nu</string>
+    <string name="pair_daily_hours_14">otu kilo miezi (miezi 14)</string>
+    <string name="pair_rename_title">su nam ba bu-yak</string>
+    <string name="pair_rename_label">nam</string>
+    <string name="pair_retire_title">puga bu-yak yi</string>
+    <string name="pair_retire_label">chi nkpoong (i-fa, i-su, i-bat...)</string>
+    <string name="pair_retire_confirm">puga</string>
+    <string name="pair_retire_supporting">nba-bu i-ba ye. zu device chi-semli bu-yak ba-ba kwa-chi.</string>
+    <string name="pair_price_title">chi bu i-bu</string>
+    <string name="pair_price_label">kilo (chi nkpoong)</string>
+    <string name="pair_price_supporting">i-ta kwa chi bu bo otu.</string>
+    <string name="pair_delete_title">futa bu-yak yi?</string>
+    <string name="pair_delete_body">nkpoong ba-yak ba-kanam i-ba futa ye. nda i-ba undo.</string>
+
+    <string name="session_ongoing">i-ta ye</string>
+    <string name="session_until">hadi %1$s</string>
+    <string name="session_playing">%1$s chi-ta</string>
+    <string name="session_recovered">i-gwo</string>
+
+    <string name="settings_tracking">ka-tracking</string>
+    <string name="settings_detailed_title">ka-tracking ka-nkpoong</string>
+    <string name="settings_detailed_body">i-zu bu-waya ni ma-time chi-ta. android yak i-gbin chi-waya kwa app chi-ta, kwa nda notification chi-bak mfamba. bluetooth i-ta yak.</string>
+    <string name="settings_detailed_unavailable">ndap chi i-ba kilo bu bluetooth i-bu: nde yi gbin service type chi-connectedDevice yak, nde android 14+ i-ka bu bluetooth.</string>
+    <string name="settings_playback_only_title">kont yak ma-playing</string>
+    <string name="settings_playback_only_body">takwimu i-kont maa chi udio chi-ta halisi mamba chi-zu. nkpoong yak i-kanam kwa ka-tracking ka-nkpoong gbin ma-playing; zek i-ba futa.</string>
+    <string name="settings_language">lugha</string>
+    <string name="settings_language_system">lugha ya system</string>
+    <string name="settings_devices">simu</string>
+    <string name="settings_devices_body">bak chi ndap bu-makinanzi — simu ya-car o chezeana — kwa ku-ku ka-tracking.</string>
+    <string name="settings_device_subtitle">%1$s · kwanza gbin %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">chu json</string>
+    <string name="settings_import">ku-ku</string>
+    <string name="settings_import_warning">ku-ku i-su ba-data ba-yak.</string>
+    <string name="settings_troubleshooting">ku-tatua chi-taag</string>
+    <string name="settings_battery_body">mzambi nkpoong i-baak ka-kanam, gbin kwa ylih ndap chi-ba battery optimization — app chi i-to ndap i-bu connection chi-kilo kilo u-bu.</string>
+    <string name="settings_battery_button">mipango ya battery</string>
+    <string name="settings_battery_path">mipango → app → ylih → battery → unrestricted.</string>
+    <string name="settings_hibernation_body">mzambi ylih ndap u-bu miezi, android i-to ni ku-ku bu-chi, ni nda chi-kanam hadi u-bu. gwo chi ndde bu-yak i-ta kwa msimu u-ndap ku-ku app.</string>
+    <string name="settings_hibernation_on">android i-dung ku-to ylih.</string>
+    <string name="settings_hibernation_off">ylih ndap chi-ba ni i-kanam.</string>
+    <string name="settings_hibernation_button">mipango ya app chi-ndap ta</string>
+    <string name="settings_about">kuhusu</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — otu ba-makinanzi, i-ba kwa ye ni nzambi.</string>
+    <string name="settings_import_confirm_title">su ba-data ba-yak?</string>
+    <string name="settings_import_confirm_body">ku-ku nde chi-backup i-futa simu, bu-yak ni nkpoong ba-yak.</string>
+
+    <string name="widget_lifetime_label">ylih · mzambi</string>
+    <string name="widget_lifetime_description">otu bo bu-yak, ni clock chi-ta chi chi-zu</string>
+    <string name="widget_activity_label">ylih · chi-ta</string>
+    <string name="widget_activity_description">otu ba bu-yak ba-yak, mfamba a-ba, miezi 7 ni miezi 30</string>
+    <string name="widget_chart_label">ylih · miezi 30</string>
+    <string name="widget_chart_description">otu chi-ma-playing kilo miezi ya miezi 30 i-ba</string>
+
+    <string name="action_save">bu</string>
+    <string name="action_cancel">bak</string>
+    <string name="action_delete">futa</string>
+    <string name="action_import">ku-ku</string>
+
+    <string name="channel_tracking">ka-tracking ba-makinanzi</string>
+    <string name="channel_tracking_description">i-ba mzambi ylih i-gbin bu-waya ni ma-playing. android ndap i-gbin chi-waya kwa app chi ndap i-ta.</string>
+    <string name="notification_title">ka-tracking chi ma-time ba-makinanzi</string>
+    <string name="notification_starting">gwo...</string>
+    <string name="notification_idle">bak kwa bu-makinanzi</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d i-zu · %2$s</item>
+        <item quantity="many">%1$d i-zu · %2$s</item>
+        <item quantity="other">%1$d i-zu · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d i-zu · %2$s · chi-ta</item>
+        <item quantity="many">%1$d i-zu · %2$s · chi-ta</item>
+        <item quantity="other">%1$d i-zu · %2$s · chi-ta</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">nde yi gwob bu bluetooth kilo ka-track bu-waya</string>
+    <string name="export_done">chi-backup chu</string>
+    <string name="export_failed">chu i-ba bat</string>
+    <string name="import_failed">ku-ku i-ba bat</string>
+    <string name="error_could_not_open">ndap chi gwo %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">ku-ku %d nkpoong</item>
+        <item quantity="many">ku-ku %d nkpoong</item>
+        <item quantity="other">ku-ku %d nkpoong</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d nkpoong</item>
+        <item quantity="many">%d nkpoong</item>
+        <item quantity="other">%d nkpoong</item>
+    </plurals>
+    <string name="edit_failed">á bɛ́ nde sá</string>
+</resources>

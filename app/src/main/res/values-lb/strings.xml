@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Luxembourgish. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - deng liewen an de kappelen</string>
+
+    <string name="nav_headphones">kappelen</string>
+    <string name="nav_stats">statistiken</string>
+    <string name="nav_settings">astellungen</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">LE audio</string>
+    <string name="kind_wired">dréht</string>
+    <string name="kind_usb">USB</string>
+    <string name="kind_unknown">onbekannt</string>
+
+    <string name="welcome_title">willkummen bei ylih</string>
+    <string name="welcome_intro">ylih registriert, wéi laang jiddes paar kappelen verbonnen bleift, sou datt du joren spéiter ëmmer nach d\'eenzeg wichteg fro beäntweren kannst: wéi vill stonne hunn se gedauert?</string>
+    <string name="welcome_point_auto_title">verbinn a vergéiss</string>
+    <string name="welcome_point_auto_body">Bluetooth kappelen ginn vu sech selwer opgeholl, vum moment wou si sech verbinnen. satisfait eng nout.</string>
+    <string name="welcome_point_lifetime_title">een paar, een liewen</string>
+    <string name="welcome_point_lifetime_body">Wann een paar stirbt, pensionéiert et: seng total friert do un de nächsten paar vun de selwechte kappelen fänkt erëm bei null un.</string>
+    <string name="welcome_point_detailed_title">dréht a spillback</string>
+    <string name="welcome_point_detailed_body">detailléiert verfolgung, an astellungen, fügt dréht kappelen hei an a miëst wéi vill vun der zäit tatsächlech gespillt gouf.</string>
+    <string name="welcome_privacy">alles bleift op dësem telefoun. et gëtt kee kont, an d\'app huet kee internet erlabnis.</string>
+    <string name="welcome_start">ufänken</string>
+    <string name="welcome_next">nächst</string>
+    <string name="welcome_allow">erlab</string>
+    <string name="welcome_step">schratt %1$d vun %2$d</string>
+    <string name="welcome_bluetooth_title">Bluetooth zougang</string>
+    <string name="welcome_bluetooth_why">Android seet eng app nëmmen wéi Bluetooth apparat verbonnen ass, an wéi et genannt gëtt, wann d\'app bluetooth zougang hält. et ass wéi ylih ee paar kappelen vu engem auto stereo ënnerscheidt, an wéi et ee paar vun engem aneren wëst.</string>
+    <string name="welcome_bluetooth_with">domat: all paar ginn vum moment un wou si sech verbinnen opgeholl, mat näischt dat laanscht leefen ass.</string>
+    <string name="welcome_bluetooth_without">ouni dëst: bluetooth kappelen ginn guer net opgeholl. de rescht vun der app funktionnéiert ëmmer nach, a du kannst et spéider an androiden app astellungen ginn.</string>
+    <string name="welcome_notifications_title">benoriichtegungen</string>
+    <string name="welcome_notifications_why">detailléiert verfolgung fiert een kleng hënnergrondsservice, an android verlaangt datt jidderek app dat maachen hält eng benoriichtegung visibel wärend hie dat deet.</string>
+    <string name="welcome_notifications_with">domat: d\'benoriichtegung weist wéi elo opgehavven gëtt, wat d\'eenzeg zeechen ass datt detailléiert verfolgung leeft.</string>
+    <string name="welcome_notifications_without">ouni dëst: detailléiert verfolgung läift nach a registriert nach. android wäert blénk net seng benoriichtegung weizan.</string>
+    <string name="hibernation_title">fuert op zréck Zielen während du de et vergiess</string>
+    <string name="hibernation_body">android pauséiert apps déi längstens e puer méint net opgesat ginn an huelen zeréck hir erlabnis, wat ylih liesse géif nix ze registréieren bis du et reopenest. vergiesslechen sinn genau wéi dës app ass, sou et ass wäert dat ze schalter elo off.</string>
+    <string name="action_not_now">net elo</string>
+
+    <string name="devices_in_use">an der benutzung</string>
+    <string name="devices_retired">pensionéiert</string>
+    <string name="devices_empty_title">nach keng kappelen</string>
+    <string name="devices_empty_body">verbinn ee paar bluetooth kappelen an si weisen hei op. dréht kappelen hunn detailléiert verfolgung brucht, an astellungen.</string>
+    <string name="devices_generation">paar #%1$d</string>
+    <string name="devices_retired_on">pensionéiert %1$s</string>
+    <string name="devices_connected_for">verbonnen %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">all kappelen</string>
+    <string name="stats_sessions_since">%1$s zënter %2$s</string>
+    <string name="stats_today">haut</string>
+    <string name="stats_last_7">lescht 7 deeg</string>
+    <string name="stats_last_30">lescht 30 deeg</string>
+    <string name="stats_average_session">duerchschnëttlech session</string>
+    <string name="stats_longest_session">längst session</string>
+    <string name="stats_playing">audio spillback</string>
+    <string name="stats_measured_span">fir spillback gemooss</string>
+    <string name="stats_share">spillback teil</string>
+    <string name="stats_playback_only_note">zielen nëmmen spillback zäit</string>
+    <string name="stats_daily_hours_30">dägel stonnen (30 deeg)</string>
+    <string name="stats_by_pair">no paar</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · pensionéiert</string>
+    <string name="chart_max">%1$s max</string>
+
+    <string name="pair_fallback_title">paar</string>
+    <string name="pair_back">zréck</string>
+    <string name="pair_more">méi</string>
+    <string name="pair_menu_rename">men</string>
+    <string name="pair_menu_purchase">kaf info</string>
+    <string name="pair_menu_retire">pensionéier / ersat</string>
+    <string name="pair_menu_delete">läschen</string>
+    <string name="pair_lifetime">liewen op dësem paar</string>
+    <string name="pair_retired_on">pensionéiert %1$s</string>
+    <string name="pair_retired_with_reason">pensionéiert %1$s · %2$s</string>
+    <string name="pair_connected_now">verbonnen elo · %1$s</string>
+    <string name="pair_sessions">sessioune</string>
+    <string name="pair_average">duerchschnëtt</string>
+    <string name="pair_longest">längst</string>
+    <string name="pair_since">zënter %1$s</string>
+    <string name="pair_of_measured">spillback teil</string>
+    <string name="pair_measured">fir spillback gemooss</string>
+    <string name="pair_paid">bezuelt</string>
+    <string name="pair_per_hour">pro stonn</string>
+    <string name="pair_bought">kaaft</string>
+    <string name="pair_daily_hours_14">dägel stonnen (14 deeg)</string>
+    <string name="pair_rename_title">paar ëmbenenne</string>
+    <string name="pair_rename_label">non</string>
+    <string name="pair_retire_title">dësen paar pensionéieren</string>
+    <string name="pair_retire_label">grond (gestuerwen, verkaaft, verluer…)</string>
+    <string name="pair_retire_confirm">pensionéier</string>
+    <string name="pair_retire_supporting">gesamt friert do. reconnectend dee selwechte apparat start ee frësch paar bei null.</string>
+    <string name="pair_price_title">priis bezuelt</string>
+    <string name="pair_price_label">summ (ganz eenheete)</string>
+    <string name="pair_price_supporting">benotzt fir d\'koschte pro stonn figur.</string>
+    <string name="pair_delete_title">dësen paar läschen?</string>
+    <string name="pair_delete_body">all session registréiert fir et gëtt och geläscht. dëst kann net rückgängeg gemaach ginn.</string>
+
+    <string name="session_ongoing">lafe</string>
+    <string name="session_until">bis %1$s</string>
+    <string name="session_playing">%1$s spillback</string>
+    <string name="session_recovered">erholl</string>
+
+    <string name="settings_tracking">verfolgung</string>
+    <string name="settings_detailed_title">detailléiert verfolgung</string>
+    <string name="settings_detailed_body">fügt dréht kappelen an spillback zäit hei. Android registriert nëmmen dréht plug events op eng running app, sou hält dëse stëllen benoriichtegung an der schat. bluetooth gëtt verfollegt anyway.</string>
+    <string name="settings_detailed_unavailable">onverfügbar bis bluetooth zougang ginn: dëst bauen deklaréiert just de connectedDevice service type, wat androide 14+ op ee bluetooth erlabnis verbitt.</string>
+    <string name="settings_playback_only_title">zielen nëmmen spillback</string>
+    <string name="settings_playback_only_body">statistiken zielen d\'zäit audio tatsächlech gespillt gëtt amplaz vun der zäit verbonnen. nëmmen sessioune registréiert mat detailléiert verfolgung op gemooss spillback; de rescht ginn verlongen.</string>
+    <string name="settings_language">sprooch</string>
+    <string name="settings_language_system">systemsprach</string>
+    <string name="settings_devices">apparater</string>
+    <string name="settings_devices_body">uncheck alles dat net kappelen ass — een auto stereo oder lautsprecher — fir et ze stoppen.</string>
+    <string name="settings_device_subtitle">%1$s · éischt gese %2$s</string>
+    <string name="settings_data">donnéeën</string>
+    <string name="settings_export">exportéier json</string>
+    <string name="settings_import">importéieren</string>
+    <string name="settings_import_warning">importéieren ersat alles elo gespäichert.</string>
+    <string name="settings_troubleshooting">problem lësen</string>
+    <string name="settings_battery_body">wann sessiounen net méi registréiert ginn, kontroléiert datt ylih net vu batterie optimisatioun ausgenomm ass — eng app déi gewalt-gestoppt gouf kréint ni nees verbindungsausstrahlung bis et wier ufgesat.</string>
+    <string name="settings_battery_button">batterie astellungen</string>
+    <string name="settings_battery_path">astellungen → appen → ylih → batterie → ongrenzt.</string>
+    <string name="settings_hibernation_body">wann ylih längstens e puer méint net ufgesat bleift, pauséiert android et a huelt hir erlabnis zréck, an näischt gëtt méi registréiert bis du et reopenest. dëst schalter ass wéi ee paar weider zréck zielen läisst duerch eng saison du ni iwwer d\'app dënks.</string>
+    <string name="settings_hibernation_on">androide kann ylih pauséieren.</string>
+    <string name="settings_hibernation_off">ylih ass ausnam a bleift registratioun.</string>
+    <string name="settings_hibernation_button">benotzung app astellungen</string>
+    <string name="settings_about">iwwer</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — kappelenston, lokal an eewéeg gehalen.</string>
+    <string name="settings_import_confirm_title">all donnéeën ersat?</string>
+    <string name="settings_import_confirm_body">importéieren dëse backup läscht all apparat, paar an session elo gespäichert.</string>
+
+    <string name="widget_lifetime_label">ylih · liewen</string>
+    <string name="widget_lifetime_description">stonnen pro paar, mat ee lewe timer op wat verbonnen ass</string>
+    <string name="widget_activity_label">ylih · aktivitéit</string>
+    <string name="widget_activity_description">all paar stonnen zesummen, plus haut, 7 deeg an 30 deeg</string>
+    <string name="widget_chart_label">ylih · 30 deeg</string>
+    <string name="widget_chart_description">dägel lëschesstonne iwwer de leschten 30 deeg</string>
+
+    <string name="action_save">spéicheren</string>
+    <string name="action_cancel">ofbroch</string>
+    <string name="action_delete">läschen</string>
+    <string name="action_import">importéieren</string>
+
+    <string name="channel_tracking">kappelenverfollegung</string>
+    <string name="channel_tracking_description">gewise während ylih fir dréht kappelen an spillback kuckt. android levert näischt dréht plug events op appen déi net lafe.</string>
+    <string name="notification_title">kappelenzeit verfolgung</string>
+    <string name="notification_starting">ufänken…</string>
+    <string name="notification_idle">waarden fir kappelen</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d verbonnen · %2$s</item>
+        <item quantity="other">%1$d verbonnen · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d verbonnen · %2$s · spillback</item>
+        <item quantity="other">%1$d verbonnen · %2$s · spillback</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">dëst bauen braucht bluetooth zougang ier et kéint dréht kappelen verfollegen</string>
+    <string name="export_done">backup exportéiert</string>
+    <string name="export_failed">export fehlgeschlagene</string>
+    <string name="import_failed">import fehlgeschlagene</string>
+    <string name="error_could_not_open">konnt net opmaachen %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">importéiert %d session</item>
+        <item quantity="other">importéiert %d sessioune</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d session</item>
+        <item quantity="other">%d sessioune</item>
+    </plurals>
+    <string name="edit_failed">Ännerung net gespäichert</string>
+</resources>

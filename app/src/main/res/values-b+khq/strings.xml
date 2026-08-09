@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Koyra Chiini. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - jenna ga iyo haani ceeci</string>
+
+    <string name="nav_headphones">ceeci</string>
+    <string name="nav_stats">bayni</string>
+    <string name="nav_settings">saajante</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">kulu</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">a tindi</string>
+
+    <string name="welcome_title">foofoo se ylih ga</string>
+    <string name="welcome_intro">ylih ga ceeci jinne din duura, kaata do moofon awo, foo nda andi se sanda ay ceeci din baani: sanda senni di ay kaata?</string>
+    <string name="welcome_point_auto_title">duusu nda daa kaala</string>
+    <string name="welcome_point_auto_body">bluetooth ceeci ga dunsee boore, kaata do ay duusu. aloka foo ka hari ganda.</string>
+    <string name="welcome_point_lifetime_title">ceeci foo, jenna foo</string>
+    <string name="welcome_point_lifetime_body">kaata do ay filla, fusu nda: jenna nda di tukkule no borey, nda ceeci taaga ga afo ga duusu kaata foo boore haya ga.</string>
+    <string name="welcome_point_detailed_title">kulu nda warey</string>
+    <string name="welcome_point_detailed_body">dunsee jerra, saajante ga, kulu ceeci nda wayante sanda ay warey boona ay kaata haya ga.</string>
+    <string name="welcome_privacy">aloku bize do ka hari telefon ga. akawada foo aloku, nda aplikaasi ga interneti hinna aloka.</string>
+    <string name="welcome_start">duusu</string>
+    <string name="welcome_next">gara</string>
+    <string name="welcome_allow">yala</string>
+    <string name="welcome_step">alastari %1$d ga %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth hinna</string>
+    <string name="welcome_bluetooth_why">android ga aplikaasi se bluetooth gara duusu nda tonton borey, kaata ay hinna hala nda. ylih ga garaw-kanji duusu telefono borey, nda kanji foo duusu kanji taaga ga.</string>
+    <string name="welcome_bluetooth_with">hinna borey nda: ceeci foo bize ga kaata do ay duusu, aloka hinna hari, nda buto foo ka tonton.</string>
+    <string name="welcome_bluetooth_without">hinna hinna nda: bluetooth ceeci foo dunsee aloku. aplikaasi taaga ga baanu, nda hinna ay yala sanda android saajante ga.</string>
+    <string name="welcome_notifications_title">sanda jerre</string>
+    <string name="welcome_notifications_why">dunsee jerra farugu aplikaasi booru, nda android ga jerre moo asbira sanda dun borey.</string>
+    <string name="welcome_notifications_with">hinna borey nda: jerre ga dunsee kaata, foo aloku dunsee jerra hantum borey.</string>
+    <string name="welcome_notifications_without">hinna hinna nda: dunsee jerra farugu dun, aplikaasi nda android ga jerre ga misi no.</string>
+    <string name="hibernation_title">joysu sanda ay daa</string>
+    <string name="hibernation_body">android ga aplikaasi nda hinnante kaata jor, nda hinna aloka koy, foo ylih ga aloku dunsee walla kaata ay jinde. daa ganda ylih jire nda, hinna duusu sutu sanda hala ay haya no.</string>
+    <string name="action_not_now">sanda hala</string>
+
+    <string name="devices_in_use">sanda hala</string>
+    <string name="devices_retired">fusu</string>
+    <string name="devices_empty_title">ceeci aloku hala</string>
+    <string name="devices_empty_body">bluetooth ceeci foo duusu nda di ga duura kaansu. kulu ceeci saajante jerre borey.</string>
+    <string name="devices_generation">ceeci #%1$d</string>
+    <string name="devices_retired_on">fusu %1$s</string>
+    <string name="devices_connected_for">duusu %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">ceeci bize</string>
+    <string name="stats_sessions_since">%1$s kaata %2$s</string>
+    <string name="stats_today">zaani</string>
+    <string name="stats_last_7">zaani 7 hala</string>
+    <string name="stats_last_30">zaani 30 hala</string>
+    <string name="stats_average_session">dunsee alay</string>
+    <string name="stats_longest_session">dunsee gara</string>
+    <string name="stats_playing">audio warey</string>
+    <string name="stats_measured_span">wayante warey</string>
+    <string name="stats_share">warey gara</string>
+    <string name="stats_playback_only_note">warey sanda joysu</string>
+    <string name="stats_daily_hours_30">zaani sanda (30 zaani)</string>
+    <string name="stats_by_pair">ceeci borey</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · fusu</string>
+    <string name="chart_max">%1$s max</string>
+
+    <string name="pair_fallback_title">ceeci</string>
+    <string name="pair_back">kaala</string>
+    <string name="pair_more">taaga</string>
+    <string name="pair_menu_rename">tonton taaga</string>
+    <string name="pair_menu_purchase">kaynte aloku</string>
+    <string name="pair_menu_retire">fusu / taaga</string>
+    <string name="pair_menu_delete">koy</string>
+    <string name="pair_lifetime">jenna ceeci ga</string>
+    <string name="pair_retired_on">fusu %1$s</string>
+    <string name="pair_retired_with_reason">fusu %1$s · %2$s</string>
+    <string name="pair_connected_now">duusu zaani · %1$s</string>
+    <string name="pair_sessions">dunsee</string>
+    <string name="pair_average">alay</string>
+    <string name="pair_longest">gara</string>
+    <string name="pair_since">kaata %1$s</string>
+    <string name="pair_of_measured">warey gara</string>
+    <string name="pair_measured">wayante warey</string>
+    <string name="pair_paid">kaynte</string>
+    <string name="pair_per_hour">sanda foo borey</string>
+    <string name="pair_bought">kaynte</string>
+    <string name="pair_daily_hours_14">zaani sanda (14 zaani)</string>
+    <string name="pair_rename_title">ceeci tonton taaga</string>
+    <string name="pair_rename_label">tonton</string>
+    <string name="pair_retire_title">ceeci ga fusu</string>
+    <string name="pair_retire_label">karana (filla, safu, taba...)</string>
+    <string name="pair_retire_confirm">fusu</string>
+    <string name="pair_retire_supporting">jenna tukkule kaata no. gara taaga duusu ga kaata taaga duusu haya ga zero borey.</string>
+    <string name="pair_price_title">kaynte</string>
+    <string name="pair_price_label">sanda (korosu)</string>
+    <string name="pair_price_supporting">cost-per-sanda hinnante borey.</string>
+    <string name="pair_delete_title">ceeci ga koy?</string>
+    <string name="pair_delete_body">dunsee foo kaansu koy nda. ay hinna koy aloku.</string>
+
+    <string name="session_ongoing">farugu</string>
+    <string name="session_until">kaata %1$s</string>
+    <string name="session_playing">%1$s warey</string>
+    <string name="session_recovered">kaara</string>
+
+    <string name="settings_tracking">dunsee</string>
+    <string name="settings_detailed_title">dunsee jerra</string>
+    <string name="settings_detailed_body">kulu ceeci nda warey sanda joysu. android ga kulu gara jerre aplikaasi cimi se, hinna jerre silaka kaata. bluetooth dunsee borey kaara nda.</string>
+    <string name="settings_detailed_unavailable">bluetooth hinna kaata no: sanda ga connectedDevice jerre sutu filla, android 14+ bluetooth hinna toodu borey.</string>
+    <string name="settings_playback_only_title">warey sanda joysu</string>
+    <string name="settings_playback_only_body">bayni ga warey sanda duusu kaata haani borey. dunsee jerre dunsee sanda wayante warey borey; taaga koy aloku.</string>
+    <string name="settings_language">dongo</string>
+    <string name="settings_language_system">dongo ayuka</string>
+    <string name="settings_devices">gara</string>
+    <string name="settings_devices_body">ceeci aloku bize duusu hinna no - stereo foo wala ceeci - dunsee daa borey.</string>
+    <string name="settings_device_subtitle">%1$s · foofoo %2$s</string>
+    <string name="settings_data">aloku</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">import</string>
+    <string name="settings_import_warning">import ga aloku bize taaga borey.</string>
+    <string name="settings_troubleshooting">kaara</string>
+    <string name="settings_battery_body">dunsee daa borey, ylih ga battery dunsee aley hinnante tonton. aplikaasi koy aloku broadcast moo amee kaata ay jinde.</string>
+    <string name="settings_battery_button">battery saajante</string>
+    <string name="settings_battery_path">saajante → gara → ylih → battery → unrestricted.</string>
+    <string name="settings_hibernation_body">ylih ga zaani kaata jinde, android ga pausing, nda hinna koy aloku. hinna daa borey ceeci ga kaata hala sanda joysu ga jende jinda ay hinnante nda.</string>
+    <string name="settings_hibernation_on">android ga pausing ylih ga.</string>
+    <string name="settings_hibernation_off">ylih ga aloku hinnante, dunsee nda.</string>
+    <string name="settings_hibernation_button">unused aplikaasi saajante</string>
+    <string name="settings_about">boobaa</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — ceeci sanda, kaata ka nda jire.</string>
+    <string name="settings_import_confirm_title">aloku bize taaga?</string>
+    <string name="settings_import_confirm_body">import ga kaara backup aloku foo, ceeci nda dunsee bize koyo aloku.</string>
+
+    <string name="widget_lifetime_label">ylih · jenna</string>
+    <string name="widget_lifetime_description">sanda ceeci borey, duusu gara hala borey</string>
+    <string name="widget_activity_label">ylih · gara</string>
+    <string name="widget_activity_description">ceeci sanda bize taaga, zaani, 7 zaani nda 30 zaani</string>
+    <string name="widget_chart_label">ylih · 30 zaani</string>
+    <string name="widget_chart_description">zaani sanda 30 zaani jinna</string>
+
+    <string name="action_save">kaara</string>
+    <string name="action_cancel">daa</string>
+    <string name="action_delete">koy</string>
+    <string name="action_import">import</string>
+
+    <string name="channel_tracking">ceeci dunsee</string>
+    <string name="channel_tracking_description">ylih ga kulu ceeci nda warey dunsee. android ga kulu gara jerre aplikaasi cimi se no.</string>
+    <string name="notification_title">ceeci sanda dunsee</string>
+    <string name="notification_starting">duusu...</string>
+    <string name="notification_idle">ceeci jinde</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d duusu · %2$s</item>
+        <item quantity="many">%1$d duusu · %2$s</item>
+        <item quantity="other">%1$d duusu · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d duusu · %2$s · warey</item>
+        <item quantity="many">%1$d duusu · %2$s · warey</item>
+        <item quantity="other">%1$d duusu · %2$s · warey</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">sanda ga bluetooth hinna borey kaata kulu ceeci dunsee ga</string>
+    <string name="export_done">kaara export</string>
+    <string name="export_failed">export kayni</string>
+    <string name="import_failed">import kayni</string>
+    <string name="error_could_not_open">ay duusu aloku %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">import %d dunsee</item>
+        <item quantity="many">import %d dunsee</item>
+        <item quantity="other">import %d dunsee</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d dunsee</item>
+        <item quantity="many">%d dunsee</item>
+        <item quantity="other">%d dunsee</item>
+    </plurals>
+    <string name="edit_failed">barmayyan mana gani</string>
+</resources>

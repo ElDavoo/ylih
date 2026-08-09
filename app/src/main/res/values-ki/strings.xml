@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Kikuyu. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - wĩ waku thina cia mahoya</string>
+
+    <string name="nav_headphones">mahoya</string>
+    <string name="nav_stats">ũrĩa wa mahoya</string>
+    <string name="nav_settings">ũrũngarũ</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">na warangi</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ũtaarũ</string>
+
+    <string name="welcome_title">wĩ arĩ mwega yi ylih</string>
+    <string name="welcome_intro">ylih nĩguo kũmenyithia kwa mahoya ĩrĩa yoigaga, nĩguo ũũmenyithie mwaka-inĩ ũrĩa ũmwe ĩmwe yakinyire sanda hĩngĩ gũkĩruta</string>
+    <string name="welcome_point_auto_title">hooya na tigwo</string>
+    <string name="welcome_point_auto_body">mahoya ma bluetooth nĩmagĩkinyithia yene, rĩrĩa mahoya makinyaga. kĩndũ kĩa gũikara kĩrambĩrĩmbaga.</string>
+    <string name="welcome_point_lifetime_title">mahoya magu, hĩndũ ĩyoigaga</string>
+    <string name="welcome_point_lifetime_body">rĩrĩa mahoya makĩruta, mĩe: kendi yayo ĩkooyaga, mahoya macio mahoya meerũ no meethira kuuma zero.</string>
+    <string name="welcome_point_detailed_title">na warangi na ũguo</string>
+    <string name="welcome_point_detailed_body">ũrũngarũ rũa gũthaaga, rũruta mahoya ma na warangi nĩ ũguo ũrĩa maarutĩtwo.</string>
+    <string name="welcome_privacy">ũtũ-ũtũ ũrĩa ũrĩ hĩndũ ĩyoigaga ĩgĩkĩra mwĩrĩ wa wĩ. akawanda ĩtarĩ, nĩ akawanda ya gũthaaga ĩtarĩ.</string>
+    <string name="welcome_start">menya</string>
+    <string name="welcome_next">rũngano rũrũa</string>
+    <string name="welcome_allow">reke</string>
+    <string name="welcome_step">mwanzo %1$d wa %2$d</string>
+    <string name="welcome_bluetooth_title">mahoya ma bluetooth</string>
+    <string name="welcome_bluetooth_why">android nĩguo kũmenya akawanda rĩrĩa gũthaaga rĩĩmenya ũrĩa gũthaaga rĩĩkũmenya, rĩĩreke ylih ĩmenya mahoya mamo nĩmabathani mahoya ma gũthaaga, ĩmenya mahoya amwe ma mahoya.</string>
+    <string name="welcome_bluetooth_with">rĩrĩa ĩrĩ: mahoya o wothe nĩmagĩkinyithia rĩrĩa mahoya makinyaga, gũtaari na akawanda ĩrĩa ĩĩkaaga, na kĩndũ kĩ gũciiha.</string>
+    <string name="welcome_bluetooth_without">rĩrĩa ĩtarĩ: mahoya ma bluetooth nĩmakoonya kinyithia. gũthaaga riria kĩndũ kĩmwe nĩkĩĩkaaga, nĩ ũmenyaga reke kĩndũ ũndũ rũa gũthaaga rĩa ũrũngarũ.</string>
+    <string name="welcome_notifications_title">ũmenyĩtho</string>
+    <string name="welcome_notifications_why">ũrũngarũ rũa gũthaaga rũkaaga gũthaaga gĩkĩruta, android nĩguo kũmenya akawanda o wothe yoigaga ĩrĩ na ũmenyĩtho o rĩrĩa rũguo rũĩruta.</string>
+    <string name="welcome_notifications_with">rĩrĩa ĩrĩ: ũmenyĩtho nĩguo kumenya ĩrĩa ĩrathuuraga rĩu rĩambĩrĩmbaga, nĩ ũmenyĩtho rũa ũrũngarũ rũa gũthaaga rũĩruta.</string>
+    <string name="welcome_notifications_without">rĩrĩa ĩtarĩ: ũrũngarũ rũa gũthaaga rũkaaga gũthaaga nĩ gũruta. android nĩguo gũtaarũ guoya ũmenyĩtho.</string>
+    <string name="hibernation_title">kana na ĩguo</string>
+    <string name="hibernation_body">android nĩguo gũthĩwa akawanda ĩrĩa ĩtaigwo nĩ mahinda maingĩ, rĩmbura ũrũngarũ wayo, ũrĩa ũkĩrekera ylih gũtaarũ kinyithia kĩndũ rĩkĩambĩrĩmbĩka. wĩ ũrĩa ũrũngarũ rũa gũthaaga rũĩruta nĩguo ũrũrago rũa ylih, nĩ ũmenya reke wĩ ũmene.</string>
+    <string name="action_not_now">ũtaarũ</string>
+
+    <string name="devices_in_use">ĩrĩa ĩrĩa ĩrĩkaagĩ</string>
+    <string name="devices_retired">yakwenyithia</string>
+    <string name="devices_empty_title">mahoya nĩmaarĩ</string>
+    <string name="devices_empty_body">hooya mahoya ma bluetooth nĩmagĩkinyithia haha. mahoya ma na warangi mahoya no ma ũrũngarũ rũa gũthaaga.</string>
+    <string name="devices_generation">mahoya #%1$d</string>
+    <string name="devices_retired_on">yakwenyithia %1$s</string>
+    <string name="devices_connected_for">hooya %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">mahoya mothe</string>
+    <string name="stats_sessions_since">%1$s kuuma %2$s</string>
+    <string name="stats_today">ũmũthina</string>
+    <string name="stats_last_7">matukũ 7 mahera</string>
+    <string name="stats_last_30">matukũ 30 mahera</string>
+    <string name="stats_average_session">ĩrĩa ĩĩrĩĩtũũo</string>
+    <string name="stats_longest_session">ĩrĩa ĩnini</string>
+    <string name="stats_playing">gũtaini kwa mĩtwe</string>
+    <string name="stats_measured_span">kũmenya no gũtaini</string>
+    <string name="stats_share">mahoya yoigaga</string>
+    <string name="stats_playback_only_note">kũiya gũtaini no</string>
+    <string name="stats_daily_hours_30">mahoya ma mũthenya (matukũ 30)</string>
+    <string name="stats_by_pair">na mahoya</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · yakwenyithia</string>
+    <string name="chart_max">%1$s max</string>
+
+    <string name="pair_fallback_title">mahoya</string>
+    <string name="pair_back">cooka</string>
+    <string name="pair_more">ũrĩa ũngĩ</string>
+    <string name="pair_menu_rename">rekaania</string>
+    <string name="pair_menu_purchase">ũrĩa wa ndonye</string>
+    <string name="pair_menu_retire">kwenyithia / kwaria</string>
+    <string name="pair_menu_delete">ruta</string>
+    <string name="pair_lifetime">hĩndũ ĩyoigaga ya mahoya</string>
+    <string name="pair_retired_on">yakwenyithia %1$s</string>
+    <string name="pair_retired_with_reason">yakwenyithia %1$s · %2$s</string>
+    <string name="pair_connected_now">hooya ũmũthina · %1$s</string>
+    <string name="pair_sessions">ĩrĩa ĩĩrĩĩtũũo</string>
+    <string name="pair_average">ĩrĩa ĩĩrĩĩtũũo</string>
+    <string name="pair_longest">ĩrĩa ĩnini</string>
+    <string name="pair_since">kuuma %1$s</string>
+    <string name="pair_of_measured">mahoya yoigaga</string>
+    <string name="pair_measured">kũmenya no gũtaini</string>
+    <string name="pair_paid">rĩndĩ</string>
+    <string name="pair_per_hour">o mahoya mā ho</string>
+    <string name="pair_bought">rĩndĩ</string>
+    <string name="pair_daily_hours_14">mahoya ma mũthenya (matukũ 14)</string>
+    <string name="pair_rename_title">rekaania mahoya</string>
+    <string name="pair_rename_label">ĩkwa</string>
+    <string name="pair_retire_title">kwenyithia mahoya aya</string>
+    <string name="pair_retire_label">karana (ruta, rīhũa, mahoya...)</string>
+    <string name="pair_retire_confirm">kwenyithia</string>
+    <string name="pair_retire_supporting">mahoya moigaga no mahoya. mahoya macio mahoya meerũ no meethira kuuma zero.</string>
+    <string name="pair_price_title">rĩndĩ yoigaga</string>
+    <string name="pair_price_label">ũrĩa (mahoya)</string>
+    <string name="pair_price_supporting">gũkũmenyithia rĩndĩ mahoya mā ho.</string>
+    <string name="pair_delete_title">ruta mahoya aya?</string>
+    <string name="pair_delete_body">ĩrĩa ĩrĩa ĩrathuuraga nĩyoigaga ruta. ũtũũkĩĩka wĩ ũrĩa ũrĩa.</string>
+
+    <string name="session_ongoing">ĩrĩa ĩĩrĩĩtũũo</string>
+    <string name="session_until">mahinda ya %1$s</string>
+    <string name="session_playing">%1$s gũtaini</string>
+    <string name="session_recovered">yooyaga</string>
+
+    <string name="settings_tracking">kũmenyithia</string>
+    <string name="settings_detailed_title">kũmenyithia gũkĩruta</string>
+    <string name="settings_detailed_body">mahoya ma na warangi nĩ gũtaini. android nĩguo gũmenya mahoya ma na warangi rũa gũthaaga kĩndũ rũĩruta, nĩ gũtaarũ ũmenyĩtho ĩrĩa ĩtaarũ. bluetooth nĩkũmenyithia o rĩrĩa rĩothe.</string>
+    <string name="settings_detailed_unavailable">ũtaarũ kĩndũ bluetooth mahoya meenyithie: sanda ĩrĩa ĩrĩ, connectedDevice, android 14+ nĩguo mahoya ma bluetooth.</string>
+    <string name="settings_playback_only_title">kũiya gũtaini no</string>
+    <string name="settings_playback_only_body">bayni nĩguo kũmenya mahoya yoigaga no mahoya. ĩrĩa ĩrĩa ĩrathuuraga nĩ kũmenya no gũtaini; ũrĩa ũngĩ nĩwaruta.</string>
+    <string name="settings_language">rũruma</string>
+    <string name="settings_language_system">rũruma rũa kĩbango</string>
+    <string name="settings_devices">gũthaaga</string>
+    <string name="settings_devices_body">ruta kĩndũ kĩu kĩtaguo mahoya — kambuni wĩ gũthaaga — kũtaarũ kĩndũ rũĩruta.</string>
+    <string name="settings_device_subtitle">%1$s · ĩrĩa ĩrarũthaga %2$s</string>
+    <string name="settings_data">ũrĩa wa</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">import</string>
+    <string name="settings_import_warning">import nĩguo kwaria kĩndũ kĩa gũthaaga kĩu kĩu.</string>
+    <string name="settings_troubleshooting">kũhoya</string>
+    <string name="settings_battery_body">rĩrĩa ĩrĩa ĩrĩa ĩrĩka gũtaarũ kinyithia, menya ylih nĩĩrĩ kĩndũ kĩa baterĩ — akawanda ĩrĩa ĩrĩ nayo nĩyoigaga taarũ broadcast o rĩkĩambĩrĩmbĩka.</string>
+    <string name="settings_battery_button">ũrũngarũ rũa baterĩ</string>
+    <string name="settings_battery_path">ũrũngarũ → gũthaaga → ylih → baterĩ → unrestricted.</string>
+    <string name="settings_hibernation_body">rĩrĩa ylih ĩtaigwo mahinda maingĩ, android nĩguo gũthĩwa ĩrĩ, rĩmbura ũrũngarũ wayo, na kĩndũ kĩtaarũ kinyithia mahinda wĩ ũrĩa ũrũngarũ. kũruta ĩrĩa ĩrĩ nĩguo mahoya yoigaga kũkaaga mahinda ũrĩa wĩ ũtarũmenya akawanda rĩa ylih.</string>
+    <string name="settings_hibernation_on">android nĩguo gũthĩwa ylih.</string>
+    <string name="settings_hibernation_off">ylih nĩĩrĩ kĩndũ kĩa gũthaaga, kinyithia nĩ gũruta.</string>
+    <string name="settings_hibernation_button">ũrũngarũ rũa akawanda ĩrĩa ĩtagĩkwa</string>
+    <string name="settings_about">ũrĩa wa</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — mahoya yoigaga, kana nĩ kĩndũ kĩa mahinda mothe.</string>
+    <string name="settings_import_confirm_title">kwaria ũrĩa wa gũthaaga mothe?</string>
+    <string name="settings_import_confirm_body">import nĩguo kwaria kaara ĩrĩa ĩrĩa ĩrĩ, gũthaaga nĩ ĩrĩa ĩrĩa ĩrĩ rũa rũa.</string>
+
+    <string name="widget_lifetime_label">ylih · hĩndũ ĩyoigaga</string>
+    <string name="widget_lifetime_description">mahoya o mahoya, nĩ ũmenyĩtho wa mahoya oigaga ũrĩa ũĩhooyaga</string>
+    <string name="widget_activity_label">ylih · gara</string>
+    <string name="widget_activity_description">mahoya ma mahoya o mothe, rĩrĩa ũmũthina, matukũ 7 nĩ 30</string>
+    <string name="widget_chart_label">ylih · 30 matukũ</string>
+    <string name="widget_chart_description">mahoya ma mũthenya mahinda 30 matukũ</string>
+
+    <string name="action_save">kaara</string>
+    <string name="action_cancel">tiga</string>
+    <string name="action_delete">ruta</string>
+    <string name="action_import">import</string>
+
+    <string name="channel_tracking">kũmenyithia mahoya</string>
+    <string name="channel_tracking_description">ylih ĩrĩa ĩrathuuraga mahoya ma na warangi nĩ gũtaini. android nĩguo gũmenya mahoya ma na warangi rũa gũthaaga kĩndũ rũĩruta.</string>
+    <string name="notification_title">kũmenyithia mahoya yoigaga</string>
+    <string name="notification_starting">menya...</string>
+    <string name="notification_idle">jinde mahoya</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d hooya · %2$s</item>
+        <item quantity="many">%1$d hooya · %2$s</item>
+        <item quantity="other">%1$d hooya · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d hooya · %2$s · gũtaini</item>
+        <item quantity="many">%1$d hooya · %2$s · gũtaini</item>
+        <item quantity="other">%1$d hooya · %2$s · gũtaini</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">sanda ĩrĩa ĩrĩ mahoya ma bluetooth mahinda ĩkũmenyithia mahoya ma na warangi</string>
+    <string name="export_done">kaara export</string>
+    <string name="export_failed">export kayni</string>
+    <string name="import_failed">import kayni</string>
+    <string name="error_could_not_open">ay kĩndũ gũkĩruta %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">import %d ĩrĩa</item>
+        <item quantity="many">import %d ĩrĩa</item>
+        <item quantity="other">import %d ĩrĩa</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d ĩrĩa</item>
+        <item quantity="many">%d ĩrĩa</item>
+        <item quantity="other">%d ĩrĩa</item>
+    </plurals>
+    <string name="edit_failed">kũiga ũgarũrũku gũtiahotekire</string>
+</resources>

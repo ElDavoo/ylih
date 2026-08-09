@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Kuvi (Telugu). Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - మీ జీవితం హెడ్‌ఫోన్‌లలో</string>
+
+    <string name="nav_headphones">హెడ్‌ఫోన్‌లు</string>
+    <string name="nav_stats">గణాంకాలు</string>
+    <string name="nav_settings">సెట్టింగ్‌లు</string>
+
+    <string name="kind_bluetooth">బ్లూటూత్</string>
+    <string name="kind_ble">LE ఆడియో</string>
+    <string name="kind_wired">వైర్‌డ్</string>
+    <string name="kind_usb">USB</string>
+    <string name="kind_unknown">తెలియని</string>
+
+    <string name="welcome_title">ylih కు స్వాగతం</string>
+    <string name="welcome_intro">ylih ప్రతి హెడ్‌ఫోన్ జత ఎంత కాలం కనెక్ట్ చేయబడి ఉందో రికార్డ్ చేస్తుంది, తద్వారా వर్షాల తర్వాత మీరు ఇప్పటికీ ఒక జత గురించి ముఖ్యమైన ఏకైక ప్రశ్నకు సమాధానం ఇవ్వవచ్చు: వారు ఎంత గంటలు ఉన్నారు?</string>
+    <string name="welcome_point_auto_title">కనెక్ట్ చేసి మరచిపోండి</string>
+    <string name="welcome_point_auto_body">బ్లూటూత్ హెడ్‌ఫోన్‌లు సంযోగం చేసిన క్షణం నుండి తమ స్వంతంగా రికార్డ్ చేయబడతాయి. ఏదీ నడుస్తూ ఉండవలసిన అవసరం లేదు.</string>
+    <string name="welcome_point_lifetime_title">ఒక జత, ఒక జీవితకాలం</string>
+    <string name="welcome_point_lifetime_body">ఒక జత సంపూర్ణమైనప్పుడు, దానిని రిటైర్ చేయండి: దాని మొత్తం అక్కడ స్థిరపడుతుంది మరియు ఒకే హెడ్‌ఫోన్‌ల తరువాతి జత సున్నా నుండి మళ్లీ ప్రారంభమవుతుంది.</string>
+    <string name="welcome_point_detailed_title">వైర్‌డ్ మరియు ప్లేబ్యాక్</string>
+    <string name="welcome_point_detailed_body">సెట్టింగ్‌లలో వివరణాత్మక ట్రాకింగ్ వైర్‌డ్ హెడ్‌ఫోన్‌లను జోడిస్తుంది మరియు సమయం నిజానికి ఆడుకుంటున్నదో కొలుస్తుంది.</string>
+    <string name="welcome_privacy">ప్రతిదీ ఈ ఫోన్‌లో ఉంటుంది. ఏ ఖాతా లేదు, మరియు యాప్‌కు ఇంటర్నెట్ అనుమతి లేదు.</string>
+    <string name="welcome_start">ప్రారంభం చేయండి</string>
+    <string name="welcome_next">తరువాత</string>
+    <string name="welcome_allow">అనుమతించు</string>
+    <string name="welcome_step">దశ %1$d / %2$d</string>
+    <string name="welcome_bluetooth_title">బ్లూటూత్ యాక్సెస్</string>
+    <string name="welcome_bluetooth_why">Android యాప్‌కు బ్లూటూత్ యాక్సెస్ ఉంటే మాత్రమే ఏ బ్లూటూత్ పరికరం కనెక్ట్ చేయబడిందో మరియు దానిని ఏమని పిలుస్తారో చెప్పడానికి అనుమతిస్తుంది. హెడ్‌ఫోన్‌ల జత కారు స్టెరియో నుండి ఎలా వేరు చేస్తుందో, మరియు ఒక జత మరొక జత నుండి ఎలా అనుమితం చేస్తుందో.</string>
+    <string name="welcome_bluetooth_with">దానితో: ప్రతి జత నడుస్తూ కనెక్ట్ చేసిన క్షణం నుండి రికార్డ్ చేయబడుతుంది మరియు నడుస్తూ ఉండవలసిన ఏదీ లేదు.</string>
+    <string name="welcome_bluetooth_without">దానిలేకుండా: బ్లూటూత్ హెడ్‌ఫోన్‌లు అస్సలు రికార్డ్ చేయబడవు. యాప్‌లోని మిగిలిన భాగం ఇప్పటికీ పనిచేస్తుంది, మరియు మీరు దానిని Android యాప్ సెట్టింగ్‌లలో తరువాతకు ఇవ్వవచ్చు.</string>
+    <string name="welcome_notifications_title">నోటిఫికేషన్‌లు</string>
+    <string name="welcome_notifications_why">వివరణాత్మక ట్రాకింగ్ చిన్న నేపథ్య సేవను నడుపుతుంది, మరియు Android దీన్ని చేసే ఏదైనా యాప్‌కు దాని సమయంలో నోటిఫికేషన్‌ను కనిపించేలా ఉంచాలని కోరుకుంటుంది.</string>
+    <string name="welcome_notifications_with">దానితో: నోటిఫికేషన్ ఈ సమయంలో కూడా రికార్డ్ చేయబడుతున్నది చూపిస్తుంది, ఇది వివరణాత్మక ట్రాకింగ్ సజీవంగా ఉందని సూచించే ఏకైక సంకేతం.</string>
+    <string name="welcome_notifications_without">దానిలేకుండా: వివరణాత్మక ట్రాకింగ్ ఇప్పటికీ నడుస్తుంది మరియు ఇప్పటికీ రికార్డ్ చేస్తుంది. Android దాని నోటిఫికేషన్‌ను చూపించదు.</string>
+    <string name="hibernation_title">మీరు మరచిపోయినప్పుడు లెక్కలు చేయడం కొనసాగించండి</string>
+    <string name="hibernation_body">Android ఎన్నో నెలలపాటు తెరవని యాప్‌లను పాజ్ చేస్తుంది మరియు వాటి అనుమతులను తిరిగి తీసుకుంటుంది, ఇది ylih ను మీ ఆ క్షణం తెరిచేవరకు ఏదీ రికార్డ్ చేయవద్దు. మరచిపోవడం ఈ యాప్ మొత్తం కారణం, కాబట్టి ఇప్పుడు దాన్ని ఆపివేయడం విలువైనది.</string>
+    <string name="action_not_now">ఇప్పుడు కాదు</string>
+
+    <string name="devices_in_use">ఉపయోగంలో</string>
+    <string name="devices_retired">రిటైర్డ్</string>
+    <string name="devices_empty_title">ఇంకా హెడ్‌ఫోన్ లేదు</string>
+    <string name="devices_empty_body">బ్లూటూత్ హెడ్‌ఫోన్‌ల జతను కనెక్ట్ చేసి, అవి ఇక్కడ కనిపిస్తాయి. వైర్‌డ్ హెడ్‌ఫోన్‌లకు సెట్టింగ్‌లలో వివరణాత్మక ట్రాకింగ్ అవసరం.</string>
+    <string name="devices_generation">జత #%1$d</string>
+    <string name="devices_retired_on">రిటైర్డ్ %1$s</string>
+    <string name="devices_connected_for">కనెక్ట్ చేసిన %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">అన్ని హెడ్‌ఫోన్‌లు</string>
+    <string name="stats_sessions_since">%1$s %2$s నుండి</string>
+    <string name="stats_today">ఈ రోజు</string>
+    <string name="stats_last_7">గత 7 రోజులు</string>
+    <string name="stats_last_30">గత 30 రోజులు</string>
+    <string name="stats_average_session">సగటు సెషన్</string>
+    <string name="stats_longest_session">పొడవైన సెషన్</string>
+    <string name="stats_playing">ఆడియో ఆడుకుంటున్నది</string>
+    <string name="stats_measured_span">ప్లేబ్యాక్ కోసం కొలిచిన</string>
+    <string name="stats_share">ఆడుకుంటున్న షేర్</string>
+    <string name="stats_playback_only_note">ప్లేబ్యాక్ సమయం మాత్రమే లెక్కించుకోవడం</string>
+    <string name="stats_daily_hours_30">రోజువారీ గంటలు (30 రోజులు)</string>
+    <string name="stats_by_pair">జత ద్వారా</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · రిటైర్డ్</string>
+    <string name="chart_max">%1$s గరిష్ఠం</string>
+
+    <string name="pair_fallback_title">జత</string>
+    <string name="pair_back">వెనుకకు</string>
+    <string name="pair_more">మరిన్ని</string>
+    <string name="pair_menu_rename">పేరు మార్చు</string>
+    <string name="pair_menu_purchase">కొనుగోలు సమాచారం</string>
+    <string name="pair_menu_retire">రిటైర్ / భర్తీ</string>
+    <string name="pair_menu_delete">తొలిగించు</string>
+    <string name="pair_lifetime">ఈ జతపై జీవితకాలం</string>
+    <string name="pair_retired_on">రిటైర్డ్ %1$s</string>
+    <string name="pair_retired_with_reason">రిటైర్డ్ %1$s · %2$s</string>
+    <string name="pair_connected_now">ఇప్పుడు కనెక్ట్ చేసిన · %1$s</string>
+    <string name="pair_sessions">సెషన్‌లు</string>
+    <string name="pair_average">సగటు</string>
+    <string name="pair_longest">పొడవైన</string>
+    <string name="pair_since">%1$s నుండి</string>
+    <string name="pair_of_measured">ఆడుకుంటున్న షేర్</string>
+    <string name="pair_measured">ప్లేబ్యాక్ కోసం కొలిచిన</string>
+    <string name="pair_paid">చెల్లించిన</string>
+    <string name="pair_per_hour">గంటకు</string>
+    <string name="pair_bought">కొనుగోలు చేసిన</string>
+    <string name="pair_daily_hours_14">రోజువారీ గంటలు (14 రోజులు)</string>
+    <string name="pair_rename_title">జత పేరు మార్చు</string>
+    <string name="pair_rename_label">పేరు</string>
+    <string name="pair_retire_title">ఈ జతను రిటైర్ చేయండి</string>
+    <string name="pair_retire_label">కారణం (చేనర్, విక్రయించిన, కోల్పోయిన...)</string>
+    <string name="pair_retire_confirm">రిటైర్</string>
+    <string name="pair_retire_supporting">మొత్తం ఇక్కడ స్థిరపడుతుంది. ఒకే పరికరం పునరీక్షణ ఆరంభ నుండి సూచన దూరపథ చేస్తుంది.</string>
+    <string name="pair_price_title">ధర చెల్లించిన</string>
+    <string name="pair_price_label">మొత్తం (మొత్తం యూనిట్‌లు)</string>
+    <string name="pair_price_supporting">గంటకు ఖర్చు చిత్రం కోసం ఉపయోగించబడుతుంది.</string>
+    <string name="pair_delete_title">ఈ జతను తొలిగించాలా?</string>
+    <string name="pair_delete_body">దీనికి రికార్డ్ చేయబడిన ప్రతి సెషన్ కూడా తొలిగించబడుతుంది. ఇది చేయరు.</string>
+
+    <string name="session_ongoing">కొనసాగుతున్న</string>
+    <string name="session_until">%1$s వరకు</string>
+    <string name="session_playing">%1$s ఆడుకుంటున్న</string>
+    <string name="session_recovered">పునరుద్ధరించిన</string>
+
+    <string name="settings_tracking">ట్రాకింగ్</string>
+    <string name="settings_detailed_title">వివరణాత్మక ట్రాకింగ్</string>
+    <string name="settings_detailed_body">వైర్‌డ్ హెడ్‌ఫోన్‌లు మరియు ప్లేబ్యాక్ సమయం జోడిస్తుంది. Android చేతితో ప్లగ్ ఈవెంట్‌లను నడుస్తున్న యాప్‌కు మాత్రమే నివేదిస్తుంది, కాబట్టి ఇది నిర్లక్ష్య నోటిఫికేషన్‌ను బట్టలో ఉంచుతుంది. బ్లూటూత్ ఎందుకైనా ట్రాక్ చేయబడుతుంది.</string>
+    <string name="settings_detailed_unavailable">బ్లూటూత్ యాక్సెస్ ఇచ్చేవరకు అందుబాటులో లేనిది: ఈ బిల్డ్ connectedDevice సేవ రకం ప్రకటించబడింది, ఇది Android 14+ బ్లూటూత్ అనుమతితో కూడుకుంటుంది.</string>
+    <string name="settings_playback_only_title">ప్లేబ్యాక్ మాత్రమే లెక్కించుకోండి</string>
+    <string name="settings_playback_only_body">గణాంకాలు కనెక్ట్ చేసిన సమయానికి బదులుగా ఆడియో నిజానికి ఆడుకున్న సమయం లెక్కించుకుంటాయి. వివరణాత్మక ట్రాకింగ్‌తో రికార్డ్ చేయబడిన సెషన్‌లు మాత్రమే ప్లేబ్యాక్‌ను కొలుస్తాయి; మిగిలినవి వదిలివేయబడతాయి.</string>
+    <string name="settings_language">భాష</string>
+    <string name="settings_language_system">సిస్టమ్ భాష</string>
+    <string name="settings_devices">పరికరాలు</string>
+    <string name="settings_devices_body">హెడ్‌ఫోన్ కానిది - కారు స్టెరియో లేదా స్పీకర్ - కూడా రికార్డ్ చేయడం ఆపివేయడానికి ఏదైనా పరిశీలించండి.</string>
+    <string name="settings_device_subtitle">%1$s · మొదటిసారి చూసిన %2$s</string>
+    <string name="settings_data">డేటా</string>
+    <string name="settings_export">json ను ఎగుమతి చేయండి</string>
+    <string name="settings_import">దిగుమతి</string>
+    <string name="settings_import_warning">దిగుమతి ప్రస్తుతం నిల్వ చేయబడిన ప్రతిదీ భర్తీ చేస్తుంది.</string>
+    <string name="settings_troubleshooting">సమస్య సమాధానం</string>
+    <string name="settings_battery_body">సెషన్‌లు రికార్డ్ చేయడం ఆపితే, ylih బ్యాటరీ ఆప్టిమైజేషన్ నుండి విముక్త కాదని చెక్ చేయండి — శక్తిశీలితను ఆపిన యాప్ దానిని తెరిచేవరకు కనెక్షన్ ప్రసారణని మళ్లీ పొందుకోదు.</string>
+    <string name="settings_battery_button">బ్యాటరీ సెట్టింగ్‌లు</string>
+    <string name="settings_battery_path">సెట్టింగ్‌లు → యాప్‌లు → ylih → బ్యాటరీ → పరిమితం చేయని.</string>
+    <string name="settings_hibernation_body">ylih ఎన్నో నెలలపాటు తెరవని ఉంటే, Android దానిని పాజ్ చేస్తుంది మరియు దాని అనుమతులను తిరిగి తీసుకుంటుంది, మరియు మీరు దానిని తెరిచేవరకు ఏదీ రికార్డ్ చేయబడదు. ఆ ఆపివేయడం ఏ జతను సీజన్ ద్వారా లెక్కించడం కొనసాగించేలా చేస్తుంది.</string>
+    <string name="settings_hibernation_on">Android ylih ని పాజ్ చేయవచ్చు.</string>
+    <string name="settings_hibernation_off">ylih విముక్త మరియు రికార్డ్ చేయడం కొనసాగిస్తుంది.</string>
+    <string name="settings_hibernation_button">ఉపయోగం లేని యాప్ సెట్టింగ్‌లు</string>
+    <string name="settings_about">గురించి</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — హెడ్‌ఫోన్ గంటలు, స్థానికంగా మరియు శాశ్వతంగా ఉంచిన.</string>
+    <string name="settings_import_confirm_title">అన్ని డేటా భర్తీ చేయాలా?</string>
+    <string name="settings_import_confirm_body">ఈ బ్యాకప్‌ను దిగుమతి చేయడం ప్రతి పరికరం, జత మరియు సెషన్‌ను ఇప్పుడు నిల్వ చేయడం తొలిగిస్తుంది.</string>
+
+    <string name="widget_lifetime_label">ylih · జీవితకాలం</string>
+    <string name="widget_lifetime_description">జత కోసం గంటలు, కనెక్ట్ చేయబడిన ఏదైనా పై లైవ్ టైమర్ తో</string>
+    <string name="widget_activity_label">ylih · కార్యకలాపం</string>
+    <string name="widget_activity_description">ప్రతి జత యొక్క గంటలు కూడా, ప్లస్ ఈ రోజు, 7 రోజులు మరియు 30 రోజులు</string>
+    <string name="widget_chart_label">ylih · 30 రోజులు</string>
+    <string name="widget_chart_description">గత 30 రోజుల్లో రోజువారీ వినుట గంటలు</string>
+
+    <string name="action_save">సేవ్ చేయండి</string>
+    <string name="action_cancel">రద్దు చేయండి</string>
+    <string name="action_delete">తొలిగించు</string>
+    <string name="action_import">దిగుమతి</string>
+
+    <string name="channel_tracking">హెడ్‌ఫోన్ ట్రాకింగ్</string>
+    <string name="channel_tracking_description">ylih వైర్‌డ్ హెడ్‌ఫోన్‌లు మరియు ప్లేబ్యాక్‌ల కోసం చూస్తున్నప్పుడు చూపించబడుతుంది. Android నడుస్తున్న యాప్‌కు వైర్‌డ్ ప్లగ్ ఈవెంట్‌ను డిలివరీ చేయదు.</string>
+    <string name="notification_title">హెడ్‌ఫోన్ సమయం ట్రాకింగ్</string>
+    <string name="notification_starting">ప్రారంభం...</string>
+    <string name="notification_idle">హెడ్‌ఫోన్ కోసం ఎదురుచూస్తున్న</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d కనెక్ట్ చేసిన · %2$s</item>
+        <item quantity="many">%1$d కనెక్ట్ చేసిన · %2$s</item>
+        <item quantity="other">%1$d కనెక్ట్ చేసిన · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d కనెక్ట్ చేసిన · %2$s · ఆడుకుంటున్న</item>
+        <item quantity="many">%1$d కనెక్ట్ చేసిన · %2$s · ఆడుకుంటున్న</item>
+        <item quantity="other">%1$d కనెక్ట్ చేసిన · %2$s · ఆడుకుంటున్న</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">ఈ బిల్డ్ వైర్‌డ్ హెడ్‌ఫోన్‌లను ట్రాక్ చేయడానికి ముందు బ్లూటూత్ యాక్సెస్ అవసరం</string>
+    <string name="export_done">బ్యాకప్ ఎగుమతి చేయబడింది</string>
+    <string name="export_failed">ఎగుమతి విఫలమైంది</string>
+    <string name="import_failed">దిగుమతి విఫలమైంది</string>
+    <string name="error_could_not_open">%1$s ను తెరవలేకపోయారు</string>
+    <plurals name="import_done">
+        <item quantity="one">%d సెషన్ దిగుమతి చేయబడింది</item>
+        <item quantity="many">%d సెషన్‌లు దిగుమతి చేయబడ్డాయి</item>
+        <item quantity="other">%d సెషన్‌లు దిగుమతి చేయబడ్డాయి</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d సెషన్</item>
+        <item quantity="many">%d సెషన్‌లు</item>
+        <item quantity="other">%d సెషన్‌లు</item>
+    </plurals>
+    <string name="edit_failed">బదల్ జతన్ కి ఆవురె ని</string>
+</resources>

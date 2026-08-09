@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Kako. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - mɛn mə mɛ nə ŋɡə makɔ́ŋ</string>
+
+    <string name="nav_headphones">makɔ́ŋ</string>
+    <string name="nav_stats">ŋɡa fə</string>
+    <string name="nav_settings">njìbala</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">kə tàm</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ŋkɛmɛtə</string>
+
+    <string name="welcome_title">baŋ kɔ ylih</string>
+    <string name="welcome_intro">ylih wé ndə fə dùː a makɔ́ŋ wéŋ mə kə sàŋ, nə ɛ́fəŋ nə ìŋɡə wàfə́: a makɔ́ŋ jə́ tè ata kɛn?</string>
+    <string name="welcome_point_auto_title">kə wa nə taa</string>
+    <string name="welcome_point_auto_body">bluetooth makɔ́ŋ a ndə fə kə kə́ wá, kə ndə nə sàŋ. ŋkɔ kɛn ŋka wé.</string>
+    <string name="welcome_point_lifetime_title">makɔ́ŋ akɔ́, ŋɡə akɔ́</string>
+    <string name="welcome_point_lifetime_body">kə makɔ́ŋ a ndə fìŋ, tù fì: a kə́ bù kə mbù ŋka, nə makɔ́ŋ a fíŋ a ndə dùː tí ndə a bàːŋ.</string>
+    <string name="welcome_point_detailed_title">kə tàm nə ŋɡə</string>
+    <string name="welcome_point_detailed_body">njìbala jə́ŋɡa, kə njìbala taamə makɔ́ŋ a kə tàm nə ŋɡə ta fə.</string>
+    <string name="welcome_privacy">aloku bùzhù kə fɔ́n a. akɔ́ntɔ́ ŋkɛn, nə aplikaasi a ŋka interneti tàm.</string>
+    <string name="welcome_start">tú</string>
+    <string name="welcome_next">ŋka mbɔ</string>
+    <string name="welcome_allow">́pè</string>
+    <string name="welcome_step">kəsɛ̀n %1$d nə %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth kə</string>
+    <string name="welcome_bluetooth_why">android wé ndə tùː aplikaasi se bluetooth gara kə sàŋ, nə ŋtɔ́n nə, kə ndə aplikaasi a bluetooth kə. ɛ́ nə ylih tùː makɔ́ŋ nə kaa stereo, nə ŋtɔ́n akɔ́ nə akɔ́ mbɔ.</string>
+    <string name="welcome_bluetooth_with">tɔ́ tɔ́: makɔ́ŋ aloku a ndə fə kə ndə nə sàŋ, ŋkɔ kɛn ŋka, nə buto kɛn tàm ŋka.</string>
+    <string name="welcome_bluetooth_without">tɔ́ mɛn: bluetooth makɔ́ŋ ŋkɛmɛtə ndə fə. aplikaasi mbɔ wé a ndə, nə ŋka tú kə njìbala aplikaasi nə.</string>
+    <string name="welcome_notifications_title">ŋɡa kùn</string>
+    <string name="welcome_notifications_why">njìbala jə́ŋɡa wé asənjə a nə gələ́, nə android wé ŋka aplikaasi fə ŋɡa kùn kə nə tàm a ndə.</string>
+    <string name="welcome_notifications_with">tɔ́ tɔ́: ŋɡa kùn wé ndə se aloku nə́ŋɡa zaːnì, ɛ́ njìbala jə́ŋɡa nə a tú.</string>
+    <string name="welcome_notifications_without">tɔ́ mɛn: njìbala jə́ŋɡa wé asənjə nə fə. android mə́ ŋka ŋɡa kùn tàm.</string>
+    <string name="hibernation_title">ndə kə nə taa ŋtɔ́n</string>
+    <string name="hibernation_body">android wé nə ŋka aplikaasi ŋka táː tí dɛ̀ŋ, nə kə kə́ koy, ŋka ŋka ylih ndə fə aloku kə ŋka tú fɔ́n a. tàː ŋtɔ́n a ɛ́ aplikaasi tú, nə ŋka ndu fɔ́ kɛ̀ kaːnà.</string>
+    <string name="action_not_now">ŋka zaːnì</string>
+
+    <string name="devices_in_use">wé nə tàm</string>
+    <string name="devices_retired">tuŋ́</string>
+    <string name="devices_empty_title">makɔ́ŋ ŋkɛn</string>
+    <string name="devices_empty_body">bluetooth makɔ́ŋ kə wa nə djə ba ŋka. makɔ́ŋ a kə tàm a njìbala jə́ŋɡa.</string>
+    <string name="devices_generation">makɔ́ŋ #%1$d</string>
+    <string name="devices_retired_on">tuŋ́ %1$s</string>
+    <string name="devices_connected_for">kə wa %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">makɔ́ŋ aloku</string>
+    <string name="stats_sessions_since">%1$s tí %2$s</string>
+    <string name="stats_today">zaːnì</string>
+    <string name="stats_last_7">sɛn 7 wəŋ</string>
+    <string name="stats_last_30">sɛn 30 wəŋ</string>
+    <string name="stats_average_session">ŋɡa kè</string>
+    <string name="stats_longest_session">ŋɡa njɛn</string>
+    <string name="stats_playing">saŋ ŋɡə</string>
+    <string name="stats_measured_span">ŋɡə ndə fə</string>
+    <string name="stats_share">ŋɡə gara</string>
+    <string name="stats_playback_only_note">ŋɡə nta sɛn</string>
+    <string name="stats_daily_hours_30">sɛn ŋɡə (30 sɛn)</string>
+    <string name="stats_by_pair">makɔ́ŋ tó</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · tuŋ́</string>
+    <string name="chart_max">%1$s max</string>
+
+    <string name="pair_fallback_title">makɔ́ŋ</string>
+    <string name="pair_back">kəyo</string>
+    <string name="pair_more">mbɔ</string>
+    <string name="pair_menu_rename">ŋtɔ́n mbɔ</string>
+    <string name="pair_menu_purchase">kəbìː ŋɡa</string>
+    <string name="pair_menu_retire">tuŋ́ / wayə</string>
+    <string name="pair_menu_delete">ɛ́bàŋ</string>
+    <string name="pair_lifetime">makɔ́ŋ ŋɡə kə nə</string>
+    <string name="pair_retired_on">tuŋ́ %1$s</string>
+    <string name="pair_retired_with_reason">tuŋ́ %1$s · %2$s</string>
+    <string name="pair_connected_now">kə wa zaːnì · %1$s</string>
+    <string name="pair_sessions">ndə fə</string>
+    <string name="pair_average">ŋɡa kè</string>
+    <string name="pair_longest">ŋɡa njɛn</string>
+    <string name="pair_since">tí %1$s</string>
+    <string name="pair_of_measured">ŋɡə gara</string>
+    <string name="pair_measured">ŋɡə ndə fə</string>
+    <string name="pair_paid">bìː</string>
+    <string name="pair_per_hour">sàŋ fə</string>
+    <string name="pair_bought">bìː</string>
+    <string name="pair_daily_hours_14">sɛn ŋɡə (14 sɛn)</string>
+    <string name="pair_rename_title">makɔ́ŋ ŋtɔ́n mbɔ</string>
+    <string name="pair_rename_label">ŋtɔ́n</string>
+    <string name="pair_retire_title">makɔ́ŋ tuŋ́</string>
+    <string name="pair_retire_label">karana (fìŋ, safu, koy…)</string>
+    <string name="pair_retire_confirm">tuŋ́</string>
+    <string name="pair_retire_supporting">kə́ bù ŋka kaːnà. gara mbɔ kə wa a makɔ́ŋ mbɔ wé dùː tí ndə a bàːŋ.</string>
+    <string name="pair_price_title">bìː kə wé</string>
+    <string name="pair_price_label">ta (taːn)</string>
+    <string name="pair_price_supporting">bìː-sàŋ fə wé tàm.</string>
+    <string name="pair_delete_title">makɔ́ŋ ɛ́bàŋ?</string>
+    <string name="pair_delete_body">ndə fə aloku a ɛ́bàŋ nda. mə́ ŋka ɛ́bàŋ kəyo.</string>
+
+    <string name="session_ongoing">ndə tàm</string>
+    <string name="session_until">kə %1$s</string>
+    <string name="session_playing">%1$s ŋɡə</string>
+    <string name="session_recovered">kə kəyo</string>
+
+    <string name="settings_tracking">ndə fə</string>
+    <string name="settings_detailed_title">ndə fə jə́ŋɡa</string>
+    <string name="settings_detailed_body">makɔ́ŋ a kə tàm nə ŋɡə ta fə. android kə tàm gara jəre ŋka aplikaasi taːn nta, nə ŋɡa kùn silaka ŋka. bluetooth ndə fə nta wəŋ.</string>
+    <string name="settings_detailed_unavailable">bluetooth kə ŋka kaːnà: sanda a connectedDevice jəre tú, android 14+ bluetooth kə tùː.</string>
+    <string name="settings_playback_only_title">ŋɡə nta sɛn</string>
+    <string name="settings_playback_only_body">ŋɡa fə wé kə wa kə ŋɡə ta sɛn. ndə fə jə́ŋɡa tú a ŋɡə ndə fə; mbɔ koy.</string>
+    <string name="settings_language">dɔmɔ</string>
+    <string name="settings_language_system">dɔmɔ sistɛm</string>
+    <string name="settings_devices">gara</string>
+    <string name="settings_devices_body">makɔ́ŋ ŋka kɛn - kaa stereo wàŋ spiker - ndə fə daa.</string>
+    <string name="settings_device_subtitle">%1$s · dùː wé %2$s</string>
+    <string name="settings_data">aloku</string>
+    <string name="settings_export">json ndə fə</string>
+    <string name="settings_import">kə wa</string>
+    <string name="settings_import_warning">kə wa wé aloku taaga.</string>
+    <string name="settings_troubleshooting">kəyo</string>
+    <string name="settings_battery_body">ndə fə daa, ylih a batiri njìbala kə tù. aplikaasi koy ŋka siŋ́ ka ndə nta ŋka kaːnà.</string>
+    <string name="settings_battery_button">batiri njìbala</string>
+    <string name="settings_battery_path">njìbala → gara → ylih → batiri → unrestricted.</string>
+    <string name="settings_hibernation_body">ylih taːn tí nɔ́ŋɡ, android wé nə ŋka, nə kə kəyo, aloku ndə fə kə ŋka tú fɔ́n a. kəyo wé mə́ makɔ́ŋ ndə wəŋ ŋka nə sɛn nə taa tùː.</string>
+    <string name="settings_hibernation_on">android mə́ ŋka ylih nə.</string>
+    <string name="settings_hibernation_off">ylih a kə, ndə fə nta.</string>
+    <string name="settings_hibernation_button">aplikaasi taːn njìbala</string>
+    <string name="settings_about">ŋɡa</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — makɔ́ŋ sàŋ, kə fɔ́n nə kəkə.</string>
+    <string name="settings_import_confirm_title">aloku taaga?</string>
+    <string name="settings_import_confirm_body">kə wa saka kaːnà aloku aloku, gara, makɔ́ŋ nə ndə fə aloku.</string>
+
+    <string name="widget_lifetime_label">ylih · ŋɡə</string>
+    <string name="widget_lifetime_description">makɔ́ŋ sàŋ, kə wa ŋtɔ́n tamar ba</string>
+    <string name="widget_activity_label">ylih · gara</string>
+    <string name="widget_activity_description">makɔ́ŋ sàŋ aloku, nə zaːnì, 7 sɛn nə 30 sɛn</string>
+    <string name="widget_chart_label">ylih · 30 sɛn</string>
+    <string name="widget_chart_description">sɛn ŋɡə sàŋ 30 sɛn</string>
+
+    <string name="action_save">kaara</string>
+    <string name="action_cancel">taa</string>
+    <string name="action_delete">ɛ́bàŋ</string>
+    <string name="action_import">kə wa</string>
+
+    <string name="channel_tracking">makɔ́ŋ ndə fə</string>
+    <string name="channel_tracking_description">ylih wé kə tàm makɔ́ŋ nə ŋɡə. android kə tàm gara jəre ŋka aplikaasi taːn nta.</string>
+    <string name="notification_title">makɔ́ŋ sàŋ ndə fə</string>
+    <string name="notification_starting">tú...</string>
+    <string name="notification_idle">makɔ́ŋ jinde</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d kə wa · %2$s</item>
+        <item quantity="other">%1$d kə wa · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d kə wa · %2$s · ŋɡə</item>
+        <item quantity="other">%1$d kə wa · %2$s · ŋɡə</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">sanda a bluetooth kə tù kə tàm makɔ́ŋ ndə fə</string>
+    <string name="export_done">kaara ndə fə</string>
+    <string name="export_failed">ndə fə kayni</string>
+    <string name="import_failed">kə wa kayni</string>
+    <string name="error_could_not_open">mə́ tù %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">kə wa %d ndə fə</item>
+        <item quantity="other">kə wa %d ndə fə</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d ndə fə</item>
+        <item quantity="other">%d ndə fə</item>
+    </plurals>
+    <string name="edit_failed">pɛ mɛ nɛ bo</string>
+</resources>

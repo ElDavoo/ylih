@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Sichuan Yi. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ni a yv hxa tsu ji vx</string>
+
+    <string name="nav_headphones">hxa tsu</string>
+    <string name="nav_stats">shu yo</string>
+    <string name="nav_settings">tshi</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le hu</string>
+    <string name="kind_wired">tshi ap</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">vx mo</string>
+
+    <string name="welcome_title">zzyx ylih</string>
+    <string name="welcome_intro">ylih ye ffu hxa tsu zzi ffu guo, ffu mit go nuo nuo zzyx, ni a yv ve hxa tsu zzi guo je tu: hxa tsu zzi guo hxa mo?</string>
+    <string name="welcome_point_auto_title">zzi vex</string>
+    <string name="welcome_point_auto_body">bluetooth hxa tsu ye ffu hxa tsu zzi guo, ffu zzi vex. vx mo guo.</string>
+    <string name="welcome_point_lifetime_title">hxa tsu zzi guo, ap zzi guo</string>
+    <string name="welcome_point_lifetime_body">hxa tsu ffu, tshi ap: guo zzy ffu, hxa tsu zzi guo ap zzy ffu guo.</string>
+    <string name="welcome_point_detailed_title">tshi ap ma hu</string>
+    <string name="welcome_point_detailed_body">tshi akaukwu, na tshi, ap tshi ap hxa tsu ma shu yo hu jie zzy.</string>
+    <string name="welcome_privacy">zzi nuo nuo ap fon. vx mo ko, ylih vx mo kua hni kuo.</string>
+    <string name="welcome_start">ap jie</string>
+    <string name="welcome_next">ap</string>
+    <string name="welcome_allow">ffu</string>
+    <string name="welcome_step">jie %1$d ap %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth ffu</string>
+    <string name="welcome_bluetooth_why">android ye ffu app kua hni ko zzi vex, ap guo, ko app ffu bluetooth ffu. ylih ye ffu hxa tsu ap ko yo fu, ap guo hxa tsu zzi guo.</string>
+    <string name="welcome_bluetooth_with">ffu: hxa tsu nuo nuo ye ffu zzi vex, vx mo guo ma vx mo tshi.</string>
+    <string name="welcome_bluetooth_without">vx ffu: bluetooth hxa tsu vx ye. app zzi nuo nuo guo, ni a yv ffu ma tshi app.</string>
+    <string name="welcome_notifications_title">zzyx ama</string>
+    <string name="welcome_notifications_why">tshi akaukwu ye ffu gu ho, android ye app tshi ap zzyx ama ko tshi.</string>
+    <string name="welcome_notifications_with">ffu: zzyx ama ap shu yo zzy ffu, zzyx tshi akaukwu.</string>
+    <string name="welcome_notifications_without">vx ffu: tshi akaukwu ye ffu ma ffu. android vx mo zzyx ama.</string>
+    <string name="hibernation_title">shu yo ap ni vx</string>
+    <string name="hibernation_body">android ap app nuo nuo jie mo ap guo, ap kua hni ko azu, ylih vx mo ffu ruo ni a yv emeghere. vx jie mo ap ylih guo, yabụ ap zzi ap ffu mo.</string>
+    <string name="action_not_now">mo taa</string>
+
+    <string name="devices_in_use">na iji</string>
+    <string name="devices_retired">ap gbadoro</string>
+    <string name="devices_empty_title">hxa tsu vx</string>
+    <string name="devices_empty_body">zzi vex bluetooth hxa tsu ma guo ebe. hxa tsu tshi ap ap tshi akaukwu, na tshi.</string>
+    <string name="devices_generation">hxa tsu #%1$d</string>
+    <string name="devices_retired_on">ap gbadoro %1$s</string>
+    <string name="devices_connected_for">zzi vex %1$s</string>
+    <string name="devices_recent">%1$s / jie 7</string>
+
+    <string name="stats_title">hxa tsu nuo nuo</string>
+    <string name="stats_sessions_since">%1$s ap %2$s</string>
+    <string name="stats_today">taa</string>
+    <string name="stats_last_7">jie 7 ma</string>
+    <string name="stats_last_30">jie 30 ma</string>
+    <string name="stats_average_session">yv ho guo</string>
+    <string name="stats_longest_session">hxa mo guo</string>
+    <string name="stats_playing">hu zzy</string>
+    <string name="stats_measured_span">shu yo hu</string>
+    <string name="stats_share">hu guo</string>
+    <string name="stats_playback_only_note">shu yo hu time</string>
+    <string name="stats_daily_hours_30">ho zzyx jie (jie 30)</string>
+    <string name="stats_by_pair">hxa tsu ap</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · ap gbadoro</string>
+    <string name="chart_max">%1$s hxa mo</string>
+
+    <string name="pair_fallback_title">hxa tsu</string>
+    <string name="pair_back">azụ</string>
+    <string name="pair_more">nuo nuo</string>
+    <string name="pair_menu_rename">gbanwee guo</string>
+    <string name="pair_menu_purchase">ozi zzu</string>
+    <string name="pair_menu_retire">gbado / gbanwee</string>
+    <string name="pair_menu_delete">hichapụ</string>
+    <string name="pair_lifetime">zzi guo hxa tsu</string>
+    <string name="pair_retired_on">ap gbadoro %1$s</string>
+    <string name="pair_retired_with_reason">ap gbadoro %1$s · %2$s</string>
+    <string name="pair_connected_now">zzi vex mo · %1$s</string>
+    <string name="pair_sessions">zzi hu</string>
+    <string name="pair_average">yv ho</string>
+    <string name="pair_longest">hxa mo</string>
+    <string name="pair_since">ap %1$s</string>
+    <string name="pair_of_measured">hu guo</string>
+    <string name="pair_measured">shu yo hu</string>
+    <string name="pair_paid">akwara</string>
+    <string name="pair_per_hour">jie ho</string>
+    <string name="pair_bought">zzu</string>
+    <string name="pair_daily_hours_14">ho zzyx jie (jie 14)</string>
+    <string name="pair_rename_title">gbanwee hxa tsu guo</string>
+    <string name="pair_rename_label">guo</string>
+    <string name="pair_retire_title">gbado hxa tsu</string>
+    <string name="pair_retire_label">ihe (nwu, ere, funwere...)</string>
+    <string name="pair_retire_confirm">gbado</string>
+    <string name="pair_retire_supporting">guo ap ffu. hxa tsu zzi guo ap zzy ffu.</string>
+    <string name="pair_price_title">ozi akwara</string>
+    <string name="pair_price_label">guo (ọrụ)</string>
+    <string name="pair_price_supporting">oji ozi-jie-ho.</string>
+    <string name="pair_delete_title">hichapụ hxa tsu?</string>
+    <string name="pair_delete_body">zzi hu nuo nuo hichapụ. atughari vx.</string>
+
+    <string name="session_ongoing">na-aga</string>
+    <string name="session_until">ruo %1$s</string>
+    <string name="session_playing">%1$s hu</string>
+    <string name="session_recovered">weghachiri</string>
+
+    <string name="settings_tracking">tshi shu yo</string>
+    <string name="settings_detailed_title">tshi shu yo akaụkwụ</string>
+    <string name="settings_detailed_body">ap tshi ap hxa tsu ma hu time. android ye tshi ap hxa tsu plug app na agba, yabụ ap na jide zzyx ama. bluetooth na shu yo.</string>
+    <string name="settings_detailed_unavailable">vx mma ruo bluetooth ffu: isigwe ap kọ naanị ụdị ọrụ vex, nke android 14+ na jikọ na bluetooth ffu.</string>
+    <string name="settings_playback_only_title">shu yo hu naanị</string>
+    <string name="settings_playback_only_body">shu yo na shu yo hu karịa time vex. naanị hu shu yo na tshi shu yo akaụkwụ shu yo hu; ndị ọzọ ka hapụ.</string>
+    <string name="settings_language">yv</string>
+    <string name="settings_language_system">yv sistemu</string>
+    <string name="settings_devices">ngosi ọrụ</string>
+    <string name="settings_devices_body">wepụ nuo nuo vx hxa tsu - yo fu maọbụ ụkasi - iji kuziri ịde ndekọ.</string>
+    <string name="settings_device_subtitle">%1$s · hụ mbụ %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">bupụta json</string>
+    <string name="settings_import">kwa</string>
+    <string name="settings_import_warning">ịkwa na agbanwe nuo nuo ap mo.</string>
+    <string name="settings_troubleshooting">tshi mgbaaka</string>
+    <string name="settings_battery_body">ma hu kụziri ịde ndekọ, gbaranye na ylih nwere ngwugwu na iwu mpi - app akụ ap mpi na agaghị ahu ozọ ruo emeghere.</string>
+    <string name="settings_battery_button">tshi mpi</string>
+    <string name="settings_battery_path">tshi → isigwe → ylih → mpi → nwụtụrụ.</string>
+    <string name="settings_hibernation_body">ma ylih adịghị emeghe jie mo, android na akwụsị ma na ewere ngwugwu azụ, ihe vx edekọ ọzọ ruo ni a yv meghere. ịtụ bụ ihe na eme ka hxa tsu nọgide na shu yo jie gị na echefụ ngwa.</string>
+    <string name="settings_hibernation_on">android nwere ike ịkwụsị ylih.</string>
+    <string name="settings_hibernation_off">ylih nwere ngwugwu ma na edekọ.</string>
+    <string name="settings_hibernation_button">tshi ngwa a na ewụghị iji</string>
+    <string name="settings_about">gbasara</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - ho hxa tsu, jiri mo ma ruo ebighi ebi.</string>
+    <string name="settings_import_confirm_title">gbanwee data nuo nuo?</string>
+    <string name="settings_import_confirm_body">ịkwa ap na hichapụ ngosi nuo nuo, hxa tsu na hu ap mo.</string>
+
+    <string name="widget_lifetime_label">ylih · zzi guo</string>
+    <string name="widget_lifetime_description">ho kwa hxa tsu, na ọtụtụ time na nuo nuo vex</string>
+    <string name="widget_activity_label">ylih · ihe guo</string>
+    <string name="widget_activity_description">ho hxa tsu nuo nuo ọnụ, na taa, jie 7 ma jie 30</string>
+    <string name="widget_chart_label">ylih · jie 30</string>
+    <string name="widget_chart_description">ho hu kwa jie n jie 30 ma</string>
+
+    <string name="action_save">zọpụta</string>
+    <string name="action_cancel">kagbuo</string>
+    <string name="action_delete">hichapụ</string>
+    <string name="action_import">kwa</string>
+
+    <string name="channel_tracking">tshi shu yo hxa tsu</string>
+    <string name="channel_tracking_description">egosi ma ylih na achọ hxa tsu ap ma hu. android a naghị etupụ ihe hu plug na ngwa na agaghị agba ọrụ.</string>
+    <string name="notification_title">tshi shu yo ho hxa tsu</string>
+    <string name="notification_starting">na amalite...</string>
+    <string name="notification_idle">na achere hxa tsu</string>
+    <plurals name="notification_active">
+        <item quantity="other">%1$d connected · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="other">%1$d connected · %2$s · playing</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">isigwe na achọ bluetooth ffu tupu ọ nwee ike ịnazi hxa tsu</string>
+    <string name="export_done">akwekọ bupụta</string>
+    <string name="export_failed">bupụta dara ada</string>
+    <string name="import_failed">ịkwa dara ada</string>
+    <string name="error_could_not_open">enweghị ike imepe %1$s</string>
+    <plurals name="import_done">
+        <item quantity="other">kwaara %d hu</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="other">%d hu</item>
+    </plurals>
+    <string name="edit_failed">ꆈꌠꉙ ꀋꉬ</string>
+</resources>
