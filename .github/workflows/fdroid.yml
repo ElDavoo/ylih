@@ -34,6 +34,10 @@ on:
       - ".github/scripts/fdroid-*"
       - "app/build.gradle.kts"
       - "settings.gradle.kts"
+      # The file Dependabot edits, and where AGP, Kotlin, KSP and every library version live —
+      # so the PRs most likely to break a reproducible build. It fired on those only by accident
+      # before, because a version bump also rewrites the verification metadata below.
+      - "gradle/libs.versions.toml"
       - "gradle/wrapper/gradle-wrapper.properties"
       - "gradle/verification-metadata.xml"
       - "fastlane/**"
@@ -44,6 +48,10 @@ on:
       - ".github/scripts/fdroid-*"
       - "app/build.gradle.kts"
       - "settings.gradle.kts"
+      # The file Dependabot edits, and where AGP, Kotlin, KSP and every library version live —
+      # so the PRs most likely to break a reproducible build. It fired on those only by accident
+      # before, because a version bump also rewrites the verification metadata below.
+      - "gradle/libs.versions.toml"
       - "gradle/wrapper/gradle-wrapper.properties"
       - "gradle/verification-metadata.xml"
       - "fastlane/**"
@@ -77,12 +85,12 @@ jobs:
       # tag it should be — a shallow clone has neither the tag nor the object. 101 commits and
       # 6 MB, so the whole history costs less than the fetch that would replace it.
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v7
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
         with:
           python-version: "3.12"
 
@@ -147,10 +155,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Set up Python
-        uses: actions/setup-python@v7
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
         with:
           python-version: "3.12"
 
@@ -177,10 +185,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Set up Python
-        uses: actions/setup-python@v7
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
         with:
           python-version: "3.12"
 
@@ -203,7 +211,7 @@ jobs:
       # that assumption gets tested; if AGP's auto-download breaks, this job fails and the
       # F-Droid build would have failed the same way.
       - name: Set up Android SDK
-        uses: android-actions/setup-android@v4
+        uses: android-actions/setup-android@40fd30fb8d7440372e1316f5d1809ec01dcd3699 # v4
 
       # The Gradle home the script writes the daemon/toolchain settings into, matching what the
       # buildserver puts in ~/.gradle. Set here rather than in the job's `env:` because
@@ -291,7 +299,7 @@ jobs:
 
       - name: Upload the built APK and logs
         if: always()
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: fdroid-build
           path: |

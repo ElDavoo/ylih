@@ -1,6 +1,7 @@
 package it.eldavo.ylih.widget
 
 import android.content.Context
+import androidx.annotation.VisibleForTesting
 import it.eldavo.ylih.AppLocale
 import it.eldavo.ylih.YlihApp
 import it.eldavo.ylih.data.AppContainer
@@ -49,7 +50,8 @@ data class WidgetData(
  * Deliberately free of Glance, so it is testable the way `Stats.kt` is — a widget's rendered
  * output only exists inside the launcher, and none of the arithmetic here should need one.
  */
-suspend fun loadWidgetData(
+@VisibleForTesting
+internal suspend fun loadWidgetData(
     container: AppContainer,
     zone: ZoneId = ZoneId.systemDefault(),
 ): WidgetData = widgetDataFlow(container, zone).first()

@@ -50,14 +50,16 @@ object Restrictions {
             )
             continuation.invokeOnCancellation { future.cancel(false) }
         }
+        // Only the two constants that mean "nothing to report" fall through to UNAVAILABLE.
+        // Listing the enabled ones instead would silently stop the prompt appearing the day
+        // androidx adds an API_33-shaped value, which is a `when` that rots by standing still.
         return when (status) {
             UnusedAppRestrictionsConstants.DISABLED -> Hibernation.DISABLED
-            UnusedAppRestrictionsConstants.API_30_BACKPORT,
-            UnusedAppRestrictionsConstants.API_30,
-            UnusedAppRestrictionsConstants.API_31,
-            -> Hibernation.ENABLED
+            UnusedAppRestrictionsConstants.ERROR,
+            UnusedAppRestrictionsConstants.FEATURE_NOT_AVAILABLE,
+            -> Hibernation.UNAVAILABLE
 
-            else -> Hibernation.UNAVAILABLE
+            else -> Hibernation.ENABLED
         }
     }
 

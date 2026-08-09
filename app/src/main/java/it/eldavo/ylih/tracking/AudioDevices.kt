@@ -35,6 +35,19 @@ object AudioDevices {
     private val MAC_SUFFIX = Regex("[0-9A-F]{2}:[0-9A-F]{2}")
 
     /**
+     * What the last two octets of `02:00:00:00:00:00` come to.
+     *
+     * That is the address `BluetoothDevice.getAddress()` hands an app without BLUETOOTH_CONNECT
+     * from API 31, and taken at face value it keys *every* headset to `bt:00:00` — one pair, with
+     * everyone's hours in it. Not reachable today, because receiving the ACL broadcast that
+     * carries the device needs the same permission, and the audio stack's redaction keeps these
+     * two octets rather than zeroing them (`XX:XX:XX:XX:5E:C2`, which is why they are the key at
+     * all). One line to refuse it anyway, since the cost of being wrong is every pair's history
+     * merged into one and nothing to unpick it with afterwards.
+     */
+    private const val ANONYMISED_SUFFIX = "00:00"
+
+    /**
      * Both platform views of a headset have to produce the same key, or one pair's hours end up
      * split across two rows.
      *
@@ -50,7 +63,7 @@ object AudioDevices {
             ?.filter { it.isNotBlank() }
             ?.takeLast(2)
             ?.joinToString(":") { it.uppercase() }
-            ?.takeIf { MAC_SUFFIX.matches(it) }
+            ?.takeIf { MAC_SUFFIX.matches(it) && it != ANONYMISED_SUFFIX }
         return when {
             suffix != null -> "bt:$suffix"
             !name.isNullOrBlank() -> "bt:name:$name"

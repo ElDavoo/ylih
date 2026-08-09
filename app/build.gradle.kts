@@ -66,11 +66,22 @@ android {
     val signingKeyAlias = System.getenv("ANDROID_SIGNING_KEY_ALIAS")
     val signingKeyPassword = System.getenv("ANDROID_SIGNING_KEY_PASSWORD")
 
-    if (!signingKeystorePath.isNullOrBlank() &&
-        !signingStorePassword.isNullOrBlank() &&
-        !signingKeyAlias.isNullOrBlank() &&
-        !signingKeyPassword.isNullOrBlank()
-    ) {
+    // All four or none. Three of the four set — a typo'd secret name, a variable that did not
+    // reach the job — used to skip the block silently and publish an APK the release workflow then
+    // named `*-unsigned.apk` without anyone being told why.
+    val signingVars = mapOf(
+        "ANDROID_SIGNING_KEYSTORE_PATH" to signingKeystorePath,
+        "ANDROID_SIGNING_STORE_PASSWORD" to signingStorePassword,
+        "ANDROID_SIGNING_KEY_ALIAS" to signingKeyAlias,
+        "ANDROID_SIGNING_KEY_PASSWORD" to signingKeyPassword,
+    )
+    val signingProvided = signingVars.filterValues { !it.isNullOrBlank() }.keys
+    require(signingProvided.isEmpty() || signingProvided.size == signingVars.size) {
+        "Release signing needs all four ANDROID_SIGNING_* variables or none. " +
+            "Missing: ${signingVars.keys - signingProvided}"
+    }
+
+    if (signingProvided.size == signingVars.size) {
         signingConfigs {
             create("release") {
                 storeFile = file(signingKeystorePath)

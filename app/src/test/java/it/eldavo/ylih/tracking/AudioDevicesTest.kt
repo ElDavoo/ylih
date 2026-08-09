@@ -92,6 +92,24 @@ class AudioDevicesTest {
         )
     }
 
+    /**
+     * `02:00:00:00:00:00` is what `BluetoothDevice.getAddress()` hands an app without
+     * BLUETOOTH_CONNECT from API 31. Its last two octets are a valid-looking pair, so taken at
+     * face value it keys every headset on the phone to `bt:00:00` — one pair holding everyone's
+     * hours, and no way to unpick it afterwards. The name is the honest answer instead.
+     */
+    @Test
+    fun `the anonymised address is refused rather than made everyone's key`() {
+        assertEquals(
+            AudioDevices.bluetoothKey("02:00:00:00:00:00", name),
+            AudioDevices.bluetoothKey(null, name),
+        )
+        assertNotEquals(
+            AudioDevices.bluetoothKey("02:00:00:00:00:00", name),
+            AudioDevices.bluetoothKey("02:00:00:00:00:00", "Other headphones"),
+        )
+    }
+
     @Test
     fun `a fully redacted address falls back to the product name`() {
         val key = AudioDevices.bluetoothKey("XX:XX:XX:XX:XX:XX", name)

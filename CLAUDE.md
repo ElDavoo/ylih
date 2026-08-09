@@ -79,10 +79,10 @@ and prints the summary table into the job summary.
 
 **It is a gate, not just a report.** CI passes `--min-instruction=95 --min-line=99
 --min-branch=70` and the job fails below any of them. Instruction and line sit just under where
-the suite actually is (96.4 and 99.6 on classic), so they catch a regression rather than track
+the suite actually is (96.3 and 99.1 on classic), so they catch a regression rather than track
 noise; the failure message prints the miss budget, not just the percentage.
 
-Branch is gated differently and is worth understanding before moving it. The suite is at 75.7 and
+Branch is gated differently and is worth understanding before moving it. The suite is at 77.1 and
 the floor is 70 — deliberately loose, because the counter does not measure what the other two do.
 For the reason two paragraphs down, it moves when a composable gains a parameter rather than when
 testing gets worse, so a floor set just under it would fail ordinary UI work as a coverage
@@ -357,7 +357,7 @@ widget at it shows three rows crammed into the space of two.
 ### Material 3 Expressive
 
 `ui/theme/Theme.kt` uses `MaterialExpressiveTheme` with `MotionScheme.expressive()`. The app is on
-`material3 = "1.5.0-alpha24"`, pinned *ahead of the Compose BOM* in `libs.versions.toml`, because
+`material3 = "1.5.0-alpha25"`, pinned *ahead of the Compose BOM* in `libs.versions.toml`, because
 the Expressive components (`ShortNavigationBar`, `ButtonGroup`, `MediumFlexibleTopAppBar`,
 `MaterialShapes`) only exist there; the BOM's 1.4.0 stable has the theme but not the components.
 That pin drags compose runtime/foundation/ui to `1.12.0-beta01` for the whole app — the one
