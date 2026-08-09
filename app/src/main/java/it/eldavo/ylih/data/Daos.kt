@@ -113,7 +113,7 @@ interface PairDao {
      * Playback is clamped per session, `MIN(playingMs, disconnectedAt - connectedAt)`, because the
      * watcher banks in slices and a clock step between two of them can credit more playback than
      * the span it was measured in is long. `Stats.durationMs` does the same clamp, and the two have
-     * to agree — `SessionRepositoryLifetimeTest` is what holds them to it. The open session is left
+     * to agree — `SummarizeLifetimeTest` is what holds them to it. The open session is left
      * to Kotlin throughout: clamping it needs `now`, which SQL has no notion of, and a pair can
      * only ever have one, so `openPlayingMs` is an aggregate over a single row.
      */

@@ -7,6 +7,7 @@ import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import androidx.test.core.app.ApplicationProvider
+import it.eldavo.ylih.data.Clock
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -30,7 +31,15 @@ class PlaybackWatcherTest {
     private val shadowAudio = shadowOf(audioManager)
 
     private var credited = 0L
-    private val watcher = PlaybackWatcher(audioManager) { credited += it }
+
+    /**
+     * What the callback stamps its slices with. Every other path here is handed an instant by its
+     * caller, so before the watcher took a clock this one read the wall and a slice measured
+     * between the two meant nothing — which is why the callback could only ever be asked whether
+     * it was playing, never what it banked.
+     */
+    private var clockNow = 0L
+    private val watcher = PlaybackWatcher(audioManager, Clock { clockNow }) { credited += it }
 
     private fun attributes(usage: Int): AudioAttributes =
         AudioAttributes.Builder().setUsage(usage).build()
@@ -167,6 +176,42 @@ class PlaybackWatcherTest {
 
         assertFalse(watcher.isPlaying)
         assertEquals(0L, credited)
+    }
+
+    /**
+     * The one edge that pushes rather than handing its slice back, measured.
+     *
+     * [PlaybackWatcher.refresh] and [PlaybackWatcher.stop] return their slice so the service can
+     * credit it before closing a session; the callback has no caller to hand anything to and so
+     * calls `onDelta` itself. That is the path a process death loses time on, and it went untested
+     * for a value until the watcher took a clock.
+     */
+    @Test
+    fun `a callback edge banks the slice it measured`() {
+        watcher.start(Handler(Looper.getMainLooper()))
+        report(AudioAttributes.USAGE_MEDIA)
+        assertEquals("nothing has elapsed yet", 0L, credited)
+
+        clockNow += 40_000
+        // A second player starting is an edge like any other; the time between them is the point.
+        report(AudioAttributes.USAGE_MEDIA, AudioAttributes.USAGE_GAME)
+
+        assertEquals(40_000L, credited)
+    }
+
+    @Test
+    fun `a callback edge below the floor banks nothing and loses nothing`() {
+        watcher.start(Handler(Looper.getMainLooper()))
+        report(AudioAttributes.USAGE_MEDIA)
+
+        clockNow += 5_000
+        report(AudioAttributes.USAGE_MEDIA, AudioAttributes.USAGE_GAME)
+        assertEquals("a chatty phone must not write on every player it starts", 0L, credited)
+
+        // The service's own tick passes no floor, and finds the whole span still accruing.
+        clockNow += 5_000
+        refresh(now = clockNow)
+        assertEquals(10_000L, credited)
     }
 
     @Test

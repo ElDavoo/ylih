@@ -318,7 +318,7 @@ fun PairSummary.countedMs(now: Long, counting: Counting): Long = when (counting)
  * `Stats.summarize` answers the same question from a `List<Span>`, and did until this existed —
  * which meant `SELECT * FROM sessions` on every invalidation of a table the heartbeat writes to
  * once a minute, growing for as long as the app is used, to produce figures SQL had already
- * grouped. The two must agree exactly, and `SessionRepositoryLifetimeTest` is what says they do;
+ * grouped. The two must agree exactly, and `SummarizeLifetimeTest` is what says they do;
  * treat that test as the definition and this as an implementation of it.
  *
  * Each pair contributes its finished sessions from SQL and its open one from here, because

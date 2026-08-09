@@ -191,6 +191,32 @@ class PairDetailScreenTest {
         compose.onNodeWithText(text(R.string.session_recovered), substring = true).assertExists()
     }
 
+    /**
+     * That both sources of a figure on this page are wired up, which one assertion can cover
+     * because they have to agree.
+     *
+     * The headline is read off the per-pair aggregate (`summarizeLifetime`) and the today/7/30 row
+     * off the thirty-day window (`spansByPair`) — neither is derived from this pair's own session
+     * list any more, because doing that re-summarised a decade of history on the main thread every
+     * minute. The seeded pair has four hours, one hour and an hour still running, all inside the
+     * last week, so every one of those figures is the same six hours. Drop either wiring and the
+     * count falls to one: an empty window still leaves the headline right.
+     */
+    @Test
+    fun `the headline and the recent windows are the same six hours`() {
+        val pairId = seedPair()
+
+        show(pairId)
+
+        val sixHours = formatHours(6 * hour)
+        compose.waitUntil(timeoutMillis = 10_000) { nodeCount(sixHours) > 1 }
+        assertEquals(
+            "the headline, the last 7 days and the last 30 all cover the same sessions",
+            3,
+            nodeCount(sixHours),
+        )
+    }
+
     @Test
     fun `a pair with no price and no playback leaves those rows out`() {
         val pairId = runBlocking {

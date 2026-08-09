@@ -51,8 +51,16 @@ fun PairDetailScreen(
     contentPadding: PaddingValues,
     onBack: () -> Unit,
 ) {
-    val summary by viewModel.summary(pairId).collectAsStateWithLifecycle(initialValue = null)
-    val sessions by viewModel.sessions(pairId).collectAsStateWithLifecycle(initialValue = emptyList())
+    // Remembered because these are functions rather than properties: each call builds a new Flow,
+    // and `collectAsStateWithLifecycle` keys its collection on the instance it was handed. Without
+    // this both Room subscriptions were torn down and re-established on every recomposition — at
+    // least once a minute, since the body below reads the minute clock, and again on every write
+    // that moves the summary. MainActivity's `openPairFlow` records the same trap.
+    val summaryFlow = remember(pairId) { viewModel.summary(pairId) }
+    val sessionsFlow = remember(pairId) { viewModel.sessions(pairId) }
+    val summary by summaryFlow.collectAsStateWithLifecycle(initialValue = null)
+    val sessions by sessionsFlow.collectAsStateWithLifecycle(initialValue = emptyList())
+    val spansByPair by viewModel.spansByPair.collectAsStateWithLifecycle()
     // Two clocks: [liveNow] drives the "connected for …" line and the open session's row, which
     // are the only things here meant to move every second. Everything else is derived from this
     // pair's whole history and reads the minute clock — see YlihViewModel.nowMinute.
@@ -68,8 +76,17 @@ fun PairDetailScreen(
     var deleting by remember { mutableStateOf(false) }
 
     val current = summary
-    val spans = remember(sessions) { sessions.map { it.toSpan() } }
-    val stats = remember(spans, now, counting) { Stats.summarize(spans, now, counting) }
+    // Off the aggregate, not out of every session this pair has ever had. `Stats.summarize` answers
+    // the same question from a `List<Span>` and is what stood here — which meant re-summarising the
+    // pair's whole history on the main thread every minute, for a figure SQL had already grouped
+    // and a cost that grows for as long as the pair is used. `SummarizeLifetimeTest` is what says
+    // the two agree; the stats and devices screens moved this way already.
+    val stats = remember(current, now, counting) {
+        listOfNotNull(current).summarizeLifetime(now, counting)
+    }
+    // The thirty-day window, which is the same one the devices screen reads for its cards. A chart
+    // cannot draw more than it holds, and unlike this pair's history the window is bounded.
+    val spans = spansByPair[pairId].orEmpty()
     val series = remember(spans, now, counting, zone) {
         Stats.dailySeries(spans, zone, now, days = WINDOW_DAYS, counting = counting)
     }

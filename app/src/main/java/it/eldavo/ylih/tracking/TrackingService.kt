@@ -89,8 +89,9 @@ class TrackingService : LifecycleService() {
         // tracking for anyone who had denied the notification permission.
         startForegroundCompat(getString(R.string.notification_starting))
 
-        playbackWatcher = PlaybackWatcher(audioManager) { deltaMs -> creditFromCallback(deltaMs) }
-            .also { it.start(handler) }
+        playbackWatcher = PlaybackWatcher(audioManager, container.clock) { deltaMs ->
+            creditFromCallback(deltaMs)
+        }.also { it.start(handler) }
         audioManager.registerAudioDeviceCallback(deviceCallback, handler)
 
         lifecycleScope.launch {

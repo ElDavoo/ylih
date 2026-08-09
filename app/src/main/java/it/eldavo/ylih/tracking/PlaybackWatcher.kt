@@ -6,6 +6,7 @@ import android.media.AudioPlaybackConfiguration
 import android.os.Build
 import android.os.Handler
 import androidx.annotation.RequiresApi
+import it.eldavo.ylih.data.Clock
 
 /**
  * Measures how much of a connected span is *actual playback*.
@@ -21,6 +22,15 @@ import androidx.annotation.RequiresApi
 @RequiresApi(Build.VERSION_CODES.O)
 class PlaybackWatcher(
     private val audioManager: AudioManager,
+    /**
+     * The same clock the service stamps everything else with.
+     *
+     * Injected rather than read from the wall, because this class holds a *pair* of instants — the
+     * one banked in [playingSince] and the one a slice is measured to — and mixing two sources
+     * between them gives a difference that means nothing. In the app they are the same clock either
+     * way; what it buys is a test that can bank a callback's slice without sleeping through it.
+     */
+    private val clock: Clock = Clock.Wall,
     private val onDelta: (Long) -> Unit,
 ) {
     private var configsActive = false
@@ -32,7 +42,7 @@ class PlaybackWatcher(
         override fun onPlaybackConfigChanged(configs: MutableList<AudioPlaybackConfiguration>) {
             configsActive = configs.any { it.audioAttributes.isMediaLike() }
             // The one edge that cannot be waited for, so the one that still has to push.
-            onDelta(refresh(System.currentTimeMillis(), minSliceMs = MIN_BANKED_SLICE_MS))
+            onDelta(refresh(clock.now(), minSliceMs = MIN_BANKED_SLICE_MS))
         }
     }
 

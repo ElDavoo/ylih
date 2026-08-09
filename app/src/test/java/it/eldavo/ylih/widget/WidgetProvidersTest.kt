@@ -165,35 +165,11 @@ class WidgetProvidersTest {
     }
 
     /** Runs [check] over the corners and the middle of the range the provider hands the launcher. */
-    private fun sweep(providerInfo: Int, check: (width: Float, height: Float) -> Unit) {
-        val dimen = providerDimens(providerInfo)
-        val widths = spread(dimen("minResizeWidth"), dimen("maxResizeWidth"))
-        val heights = spread(dimen("minResizeHeight"), dimen("maxResizeHeight"))
-        widths.forEach { width -> heights.forEach { height -> check(width, height) } }
-    }
+    private fun sweep(providerInfo: Int, check: (width: Float, height: Float) -> Unit) =
+        ProviderSizes.sweep(context, providerInfo, check)
 
-    /** Both ends of the range and every 10dp in between — a drag handle moves in pixels. */
-    private fun spread(from: Float, to: Float): List<Float> =
-        generateSequence(from) { it + 10f }.takeWhile { it < to }.toList() + to
-
-    /**
-     * The `<appwidget-provider>` attributes, in dp. Read from the compiled resource rather than
-     * the source file, so this sees what the launcher will be handed.
-     */
-    private fun providerDimens(providerInfo: Int): (String) -> Float {
-        val parser = context.resources.getXml(providerInfo)
-        @Suppress("ControlFlowWithEmptyBody")
-        while (parser.next() != XmlPullParser.START_TAG);
-        assertEquals("appwidget-provider", parser.name)
-        val dimens = (0 until parser.attributeCount).associate { i ->
-            // Compiled dimensions come back as "250.0dip"; only the number matters here.
-            parser.getAttributeName(i) to
-                DIMENSION.find(parser.getAttributeValue(i))?.value?.toFloat()
-        }
-        return { attribute ->
-            requireNotNull(dimens[attribute]) { "$attribute is not declared, or is not a dimension" }
-        }
-    }
+    private fun providerDimens(providerInfo: Int): (String) -> Float =
+        ProviderSizes.dimens(context, providerInfo)
 
     /** `resizeMode` is a flag rather than a dimension, so it comes out of the parser differently. */
     private fun resizeMode(providerInfo: Int): Int {
@@ -204,7 +180,6 @@ class WidgetProvidersTest {
     }
 
     private companion object {
-        val DIMENSION = Regex("""^-?\d+(\.\d+)?""")
         const val ANDROID_NS = "http://schemas.android.com/apk/res/android"
 
         /** Five launcher cells: a phone's home screen, corner to corner. */
