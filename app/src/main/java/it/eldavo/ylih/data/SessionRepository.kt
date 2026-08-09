@@ -36,7 +36,15 @@ class SessionRepository(
 
     fun observeSessionsFor(pairId: Long): Flow<List<SessionEntity>> = sessions.observeForPair(pairId)
 
-    fun observeAllSessions(): Flow<List<SessionEntity>> = sessions.observeAll()
+    /**
+     * Sessions inside a window that moves, re-read whenever the table changes.
+     *
+     * [from] is a lambda rather than a value because the window's edge follows the clock: a flow
+     * built once at start-up would keep answering for the day the screen was opened. Room re-runs
+     * the query on every invalidation of `sessions`, and each run asks again where the edge is.
+     */
+    fun observeRecentSessions(from: () -> Long): Flow<List<SessionEntity>> =
+        db.invalidationTracker.createFlow("sessions").map { sessions.since(from()) }
 
     fun observeOpenSessions(): Flow<List<SessionEntity>> = sessions.observeOpen()
 

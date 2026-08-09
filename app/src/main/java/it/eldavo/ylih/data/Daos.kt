@@ -30,6 +30,18 @@ data class PairSummary(
     val openSince: Long?,
     val lastSeenAt: Long?,
     val longestMs: Long,
+    /** Earliest session of any kind, and earliest one that measured playback. */
+    val firstAt: Long?,
+    val firstMeasuredAt: Long?,
+    /** Latest session that measured playback, for the same reason [firstMeasuredAt] exists. */
+    val lastMeasuredAt: Long?,
+    /** How many sessions measured playback at all; the rest cannot answer a playback question. */
+    val measuredSessionCount: Int,
+    /** Playback over finished sessions, each clamped to the span it was measured in. */
+    val closedPlaybackMs: Long,
+    val longestClosedPlaybackMs: Long,
+    /** The open session's playback, or null when there is none or it is not measuring. */
+    val openPlayingMs: Long?,
 )
 
 @Dao
@@ -93,6 +105,17 @@ interface PairDao {
      * twenty-two lines twice over, differing only by the `WHERE`, so any change to the arithmetic
      * had to be made in both by hand — and a projection this size is exactly where that goes
      * unnoticed. The `ORDER BY` is wasted work on a single row and cheaper than a third copy.
+     *
+     * The columns past `longestMs` exist so that the stats screen's lifetime figures can be read
+     * from here rather than by loading every session ever recorded — see `summarizeLifetime`. They
+     * cost nothing: this already groups over the same rows.
+     *
+     * Playback is clamped per session, `MIN(playingMs, disconnectedAt - connectedAt)`, because the
+     * watcher banks in slices and a clock step between two of them can credit more playback than
+     * the span it was measured in is long. `Stats.durationMs` does the same clamp, and the two have
+     * to agree — `SessionRepositoryLifetimeTest` is what holds them to it. The open session is left
+     * to Kotlin throughout: clamping it needs `now`, which SQL has no notion of, and a pair can
+     * only ever have one, so `openPlayingMs` is an aggregate over a single row.
      */
     @Query(
         """
@@ -110,7 +133,19 @@ interface PairDao {
                MIN(CASE WHEN s.disconnectedAt IS NULL THEN s.connectedAt END) AS openSince,
                MAX(IFNULL(s.disconnectedAt, s.connectedAt)) AS lastSeenAt,
                IFNULL(MAX(CASE WHEN s.disconnectedAt IS NOT NULL
-                               THEN s.disconnectedAt - s.connectedAt ELSE 0 END), 0) AS longestMs
+                               THEN s.disconnectedAt - s.connectedAt ELSE 0 END), 0) AS longestMs,
+               MIN(s.connectedAt) AS firstAt,
+               MIN(CASE WHEN s.playingMs IS NOT NULL THEN s.connectedAt END) AS firstMeasuredAt,
+               SUM(CASE WHEN s.playingMs IS NOT NULL THEN 1 ELSE 0 END) AS measuredSessionCount,
+               IFNULL(SUM(CASE WHEN s.playingMs IS NOT NULL AND s.disconnectedAt IS NOT NULL
+                               THEN MAX(0, MIN(s.playingMs, s.disconnectedAt - s.connectedAt))
+                               ELSE 0 END), 0) AS closedPlaybackMs,
+               IFNULL(MAX(CASE WHEN s.playingMs IS NOT NULL AND s.disconnectedAt IS NOT NULL
+                               THEN MAX(0, MIN(s.playingMs, s.disconnectedAt - s.connectedAt))
+                               ELSE 0 END), 0) AS longestClosedPlaybackMs,
+               MAX(CASE WHEN s.playingMs IS NOT NULL
+                        THEN IFNULL(s.disconnectedAt, s.connectedAt) END) AS lastMeasuredAt,
+               MAX(CASE WHEN s.disconnectedAt IS NULL THEN s.playingMs END) AS openPlayingMs
         FROM pairs p
         JOIN devices d ON d.id = p.deviceId
         LEFT JOIN sessions s ON s.pairId = p.id
@@ -170,9 +205,6 @@ interface SessionDao {
 
     @Query("SELECT * FROM sessions WHERE pairId = :pairId ORDER BY connectedAt DESC")
     fun observeForPair(pairId: Long): Flow<List<SessionEntity>>
-
-    @Query("SELECT * FROM sessions ORDER BY connectedAt")
-    fun observeAll(): Flow<List<SessionEntity>>
 
     @Query("SELECT * FROM sessions ORDER BY connectedAt")
     suspend fun getAll(): List<SessionEntity>

@@ -18,6 +18,7 @@ import it.eldavo.ylih.export.JsonBackup
 import it.eldavo.ylih.runCatchingCancellable
 import it.eldavo.ylih.stats.Counting
 import it.eldavo.ylih.stats.Span
+import it.eldavo.ylih.stats.Summary
 import it.eldavo.ylih.widget.refreshWidgets
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
@@ -93,23 +94,30 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
     /**
-     * The whole session history, read once for both of the shapes the screens want it in.
+     * The sessions the charts can actually draw: the last [WINDOW_DAYS] days, plus whatever is
+     * still open.
      *
-     * These used to open an `observeAllSessions()` each. Room's invalidation is table-granular and
-     * the service heartbeats every open session once a minute, so every one of those minutes ran
-     * `SELECT * FROM sessions` twice over a table that grows forever, and mapped the result twice,
-     * to hand two screens the same rows.
+     * This used to be the whole table, twice — an `observeAllSessions()` per shape. Room's
+     * invalidation is table-granular and the service writes a heartbeat to `sessions` once a
+     * minute, so every one of those minutes re-ran `SELECT * FROM sessions ORDER BY connectedAt`
+     * over a table that grows for as long as the app is used: a scan and a sort of the lot,
+     * measured at 26 ms against 22,000 rows, to redraw a thirty-day chart and produce lifetime
+     * figures SQL had already grouped. The lifetime figures come off the aggregate now
+     * (`summarizeLifetime`) and this covers the windows, which is all a chart can show.
+     *
+     * A day of slack past the window so that a bucket on the boundary is whole, and re-read
+     * whenever the table changes because the window's own edge moves with the clock.
      */
-    private val allSessions: SharedFlow<List<SessionEntity>> =
-        container.repository.observeAllSessions()
-            .shareIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), replay = 1)
+    private val recentSessions: SharedFlow<List<SessionEntity>> = container.repository
+        .observeRecentSessions { container.clock.now() - (WINDOW_DAYS + 1) * DAY_MS }
+        .shareIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), replay = 1)
 
-    val allSpans: StateFlow<List<Span>> = allSessions
+    val recentSpans: StateFlow<List<Span>> = recentSessions
         .map { sessions -> sessions.map { it.toSpan() } }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
 
-    /** Sessions grouped per pair, so time-window stats can be computed without extra queries. */
-    val spansByPair: StateFlow<Map<Long, List<Span>>> = allSessions
+    /** The same window grouped per pair, so a card's figures need no query of its own. */
+    val spansByPair: StateFlow<Map<Long, List<Span>>> = recentSessions
         .map { sessions -> sessions.groupBy({ it.pairId }, { it.toSpan() }) }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyMap())
 
@@ -286,6 +294,7 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
         private val RES_DETAILED_NEEDS_BLUETOOTH = R.string.detailed_needs_bluetooth
 
         private const val MINUTE_MS = 60_000L
+        private const val DAY_MS = 24 * 60 * MINUTE_MS
     }
 }
 
@@ -300,4 +309,85 @@ fun SessionEntity.toSpan(): Span = Span(connectedAt, disconnectedAt, playingMs)
 fun PairSummary.countedMs(now: Long, counting: Counting): Long = when (counting) {
     Counting.CONNECTED -> closedMs + (openSince?.let { now - it } ?: 0L)
     Counting.PLAYBACK -> playingMs
+}
+
+/**
+ * The stats screen's headline block, out of the per-pair aggregates rather than out of every
+ * session ever recorded.
+ *
+ * `Stats.summarize` answers the same question from a `List<Span>`, and did until this existed —
+ * which meant `SELECT * FROM sessions` on every invalidation of a table the heartbeat writes to
+ * once a minute, growing for as long as the app is used, to produce figures SQL had already
+ * grouped. The two must agree exactly, and `SessionRepositoryLifetimeTest` is what says they do;
+ * treat that test as the definition and this as an implementation of it.
+ *
+ * Each pair contributes its finished sessions from SQL and its open one from here, because
+ * clamping an open session's playback needs `now`. A pair holds at most one open session, which is
+ * what makes that a single term rather than a scan.
+ */
+fun List<PairSummary>.summarizeLifetime(now: Long, counting: Counting): Summary {
+    val openConnected = { it: PairSummary -> it.openSince?.let { at -> (now - at).coerceAtLeast(0) } }
+    // The open session counts here only if it can answer the question being asked: under playback
+    // that means it is measuring, which is exactly what a non-null `openPlayingMs` says.
+    val openCounted = { it: PairSummary ->
+        when (counting) {
+            Counting.CONNECTED -> openConnected(it)
+            Counting.PLAYBACK ->
+                it.openPlayingMs?.let { played -> played.coerceIn(0L, openConnected(it) ?: 0L) }
+        }
+    }
+    val sessions = sumOf {
+        when (counting) {
+            Counting.CONNECTED -> it.sessionCount
+            Counting.PLAYBACK -> it.measuredSessionCount
+        }
+    }
+    if (sessions == 0) return Summary(0, 0, 0, 0, 0, 0, null, null, null)
+
+    val total = sumOf {
+        val closed = when (counting) {
+            Counting.CONNECTED -> it.closedMs
+            Counting.PLAYBACK -> it.closedPlaybackMs
+        }
+        closed + (openCounted(it) ?: 0L)
+    }
+    return Summary(
+        sessionCount = sessions,
+        totalMs = total,
+        longestMs = maxOf(
+            maxOfOrNull {
+                when (counting) {
+                    Counting.CONNECTED -> it.longestMs
+                    Counting.PLAYBACK -> it.longestClosedPlaybackMs
+                }
+            } ?: 0L,
+            mapNotNull(openCounted).maxOrNull() ?: 0L,
+        ),
+        averageMs = total / sessions,
+        // Unclamped, like `Stats.summarize`: this is what the watcher banked, and the row it
+        // appears in reads it against `measuredMs` as a share.
+        playingMs = sumOf { it.playingMs },
+        measuredMs = sumOf {
+            it.measuredPlaybackMs + (if (it.openPlayingMs != null) openConnected(it) ?: 0L else 0L)
+        },
+        firstAt = mapNotNull {
+            when (counting) {
+                Counting.CONNECTED -> it.firstAt
+                Counting.PLAYBACK -> it.firstMeasuredAt
+            }
+        }.minOrNull(),
+        // `now` only where the open session is one this counting mode can see: an unmeasured
+        // session still running says nothing about when playback was last heard.
+        lastAt = mapNotNull { summary ->
+            if (openCounted(summary) != null) {
+                now
+            } else {
+                when (counting) {
+                    Counting.CONNECTED -> summary.lastSeenAt
+                    Counting.PLAYBACK -> summary.lastMeasuredAt
+                }
+            }
+        }.maxOrNull(),
+        openSince = mapNotNull { if (openCounted(it) != null) it.openSince else null }.minOrNull(),
+    )
 }

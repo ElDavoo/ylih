@@ -290,8 +290,10 @@ class SessionRepositoryEditsTest {
             repository.observeSessionsFor(pairId).first().map { it.connectedAt },
         )
         assertEquals(
+            "the windowed flow, oldest first, with the moving edge asked for on each read",
             listOf(clockNow - 3 * hour, clockNow - hour),
-            repository.observeAllSessions().first().map { it.connectedAt },
+            repository.observeRecentSessions { clockNow - 30 * 24 * hour }.first()
+                .map { it.connectedAt },
         )
         assertEquals(
             listOf(clockNow - hour),

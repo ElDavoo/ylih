@@ -221,7 +221,7 @@ class YlihViewModelTest {
             .map { it.label })
         assertEquals(listOf("ACCENTUM Plus"), viewModel.devices.first { it.isNotEmpty() }
             .map { it.defaultName })
-        assertEquals(1, viewModel.allSpans.first { it.isNotEmpty() }.size)
+        assertEquals(1, viewModel.recentSpans.first { it.isNotEmpty() }.size)
         assertEquals(
             setOf(pairId),
             viewModel.spansByPair.first { it.isNotEmpty() }.keys,

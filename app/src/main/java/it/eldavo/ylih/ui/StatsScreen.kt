@@ -33,7 +33,7 @@ fun StatsScreen(
     contentPadding: PaddingValues,
     listState: LazyListState = rememberLazyListState(),
 ) {
-    val spans by viewModel.allSpans.collectAsStateWithLifecycle()
+    val spans by viewModel.recentSpans.collectAsStateWithLifecycle()
     val summaries by viewModel.summaries.collectAsStateWithLifecycle()
     // The minute clock, not the second one: every figure below is derived from the whole history
     // and none of them can display a change faster than that. See YlihViewModel.nowMinute.
@@ -41,7 +41,9 @@ fun StatsScreen(
     val counting by viewModel.counting.collectAsStateWithLifecycle()
     val zone = remember { ZoneId.systemDefault() }
 
-    val summary = remember(spans, now, counting) { Stats.summarize(spans, now, counting) }
+    // Off the per-pair aggregates, not off every session ever recorded — see summarizeLifetime,
+    // and SummarizeLifetimeTest for why the two are the same answer.
+    val summary = remember(summaries, now, counting) { summaries.summarizeLifetime(now, counting) }
     val series = remember(spans, now, counting, zone) {
         Stats.dailySeries(spans, zone, now, days = WINDOW_DAYS, counting = counting)
     }
