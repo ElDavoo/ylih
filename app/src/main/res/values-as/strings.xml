@@ -35,7 +35,7 @@
     <string name="welcome_allow">অনুমতি দিয়ক</string>
     <string name="welcome_step">স্তৰ %1$d / %2$d</string>
     <string name="welcome_bluetooth_title">ব্লুটুথ অভিগম</string>
-    <string name="welcome_bluetooth_why">কোনটো ব্লুটুথ ডিভাইচ সংযোগ হ\'ল আৰু তাৰ নাম কি, android-এ সেয়া কোনো এপক তেতিয়াহে কয় যেতিয়া এপটোৰ ব্লুটুথ অভিগম থাকে। ইয়াৰ দ্বাৰাই ylih হেডফোনক গাড়ীৰ ষ্টেৰিঅ\'ৰ পৰা, আৰু এযোৰক আনটোৰ পৰা চিনি পায়।</string>
+    <string name="welcome_bluetooth_why">কোনটো ব্লুটুথ ডিভাইচ সংযোগ হ’ল আৰু তাৰ নাম কি, android-এ সেয়া কোনো এপক তেতিয়াহে কয় যেতিয়া এপটোৰ ব্লুটুথ অভিগম থাকে। ইয়াৰ দ্বাৰাই ylih হেডফোনক গাড়ীৰ ষ্টেৰিঅ’ৰ পৰা, আৰু এযোৰক আনটোৰ পৰা চিনি পায়।</string>
     <string name="welcome_bluetooth_with">অভিগমৰ সৈতে: প্ৰতিযোৰ সংযোগ হোৱাৰ মুহূৰ্তৰ পৰাই লিপিবদ্ধ হয়, একো চলি থকাৰ প্ৰয়োজন নাই আৰু একো টিপিবলৈ মনত ৰখাৰো প্ৰয়োজন নাই।</string>
     <string name="welcome_bluetooth_without">অভিগম নোহোৱাকৈ: কোনো ব্লুটুথ হেডফোনেই লিপিবদ্ধ নহয়। এপটোৰ বাকী অংশ চলি থাকে, আৰু আপুনি পিছত android-ৰ এপ ছেটিংছত অনুমতি দিব পাৰে।</string>
     <string name="welcome_notifications_title">জাননী</string>
@@ -64,7 +64,7 @@
     <string name="stats_last_30">গত 30 দিন</string>
     <string name="stats_average_session">গড় সেশন</string>
     <string name="stats_longest_session">দীৰ্ঘতম সেশন</string>
-    <string name="stats_playing">অডিঅ\' বাজিছে</string>
+    <string name="stats_playing">অডিঅ’ বাজিছে</string>
     <string name="stats_measured_span">প্লেবেকৰ বাবে জোখা</string>
     <string name="stats_share">প্লেবেকৰ অংশ</string>
     <string name="stats_playback_only_note">কেৱল প্লেবেকৰ সময় গণনা</string>
@@ -120,7 +120,7 @@
     <string name="settings_detailed_body">তাৰযুক্ত শিৰোফোন আৰু প্লেবেক সময় যোগ কৰে। android কেৱল চলি থকা এপটোলৈ তাৰযুক্ত প্লাগ ইভেন্ট জানায়, তাই এটি ছাঁয়াত এটা নীৰৱ বিজ্ঞপ্তি ৰাখে। bluetooth যিকোনো ক্ষেত্রে ট্র্যাক কৰা হয়।</string>
     <string name="settings_detailed_unavailable">bluetooth অ্যাক্সেস প্রদান না হোৱা পৰ্যন্ত উপলব্ধ নহয়: এই বিল্ড কেৱল connectedDevice সেবা প্ৰকাৰ ঘোষণা কৰে, যি android 14+ bluetooth অনুমতিত বান্ধে।</string>
     <string name="settings_playback_only_title">কেৱল প্লেবেক গণনা কৰক</string>
-    <string name="settings_playback_only_body">পৰিসংখ্যাই সংযোগ থকা সময়ৰ সলনি অডিঅ\' প্ৰকৃততে বাজি থকা সময় গণনা কৰে। কেৱল বিস্তৃত ট্ৰেকিং অন থকা অৱস্থাত ৰেকৰ্ড হোৱা ছেছনেহে প্লেবেক জুখিছিল; বাকীবোৰ বাদ দিয়া হয়।</string>
+    <string name="settings_playback_only_body">পৰিসংখ্যাই সংযোগ থকা সময়ৰ সলনি অডিঅ’ প্ৰকৃততে বাজি থকা সময় গণনা কৰে। কেৱল বিস্তৃত ট্ৰেকিং অন থকা অৱস্থাত ৰেকৰ্ড হোৱা ছেছনেহে প্লেবেক জুখিছিল; বাকীবোৰ বাদ দিয়া হয়।</string>
     <string name="settings_language">ভাষা</string>
     <string name="settings_language_system">ছিষ্টেমৰ ভাষা</string>
     <string name="settings_devices">ডিভাইস</string>
@@ -175,7 +175,7 @@
     <string name="export_done">ব্যাকআপ ৰপ্তানি কৰা</string>
     <string name="export_failed">ৰপ্তানি বিফল</string>
     <string name="import_failed">আমদানি বিফল</string>
-    <string name="edit_failed">সালসলনি সংৰক্ষণ কৰিব পৰা নগ\'ল</string>
+    <string name="edit_failed">সালসলনি সংৰক্ষণ কৰিব পৰা নগ’ল</string>
     <string name="error_could_not_open">%1$s খুলিব পৰা নগল</string>
     <plurals name="import_done">
         <item quantity="one">%d সেশন আমদানি কৰা</item>

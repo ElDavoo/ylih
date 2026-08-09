@@ -29,11 +29,6 @@
          keys still have to stay separate because other languages do distinguish them. -->
     <issue id="DuplicateStrings" severity="ignore" />
 
-    <!-- Wants ' rewritten as the typographic ’. The text is translator-supplied and languages
-         disagree about which mark is correct, so rewriting it here would be editing translations
-         to satisfy a style check. -->
-    <issue id="TypographyQuotes" severity="ignore" />
-
     <!-- The widget picker previews are generated, not drawn: WidgetPreviews records them with
          Roborazzi, which writes PNG and only PNG. Converting them by hand after every re-record is
          a step that gets skipped, and the whole folder is under 45 kB — the saving WebP is asking

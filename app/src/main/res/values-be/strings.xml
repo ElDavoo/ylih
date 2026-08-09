@@ -124,7 +124,7 @@
     <string name="settings_language">мова</string>
     <string name="settings_language_system">мова сістэмы</string>
     <string name="settings_devices">прыстасаванні</string>
-    <string name="settings_devices_body">звярніце на тое, што не з\'яўляецца наушніком — аўтамагнітола або дынамік, — каб адключыць яго запіс.</string>
+    <string name="settings_devices_body">звярніце на тое, што не з’яўляецца наушніком — аўтамагнітола або дынамік, — каб адключыць яго запіс.</string>
     <string name="settings_device_subtitle">%1$s · першы раз замечана %2$s</string>
     <string name="settings_data">дадзеныя</string>
     <string name="settings_export">экспорт json</string>

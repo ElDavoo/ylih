@@ -22,35 +22,35 @@
 
     <!-- Primer usu -->
     <string name="welcome_title">bienventu a ylih</string>
-    <string name="welcome_intro">ylih guarda cuántu tiempu cada par d\'auriculares permanez conectáu, pa que dientro de muchos años entá puedas responder la única pregunta que importa sobre un par: ¿cuántes hores duraron?</string>
+    <string name="welcome_intro">ylih guarda cuántu tiempu cada par d’auriculares permanez conectáu, pa que dientro de muchos años entá puedas responder la única pregunta que importa sobre un par: ¿cuántes hores duraron?</string>
     <string name="welcome_point_auto_title">conecta y escuéyate</string>
-    <string name="welcome_point_auto_body">los auriculares bluetooth se graben solos, dende\'l momentu en que se conecten. nun hai d\'axar nada corriendo.</string>
+    <string name="welcome_point_auto_body">los auriculares bluetooth se graben solos, dende’l momentu en que se conecten. nun hai d’axar nada corriendo.</string>
     <string name="welcome_point_lifetime_title">una par, una vida</string>
     <string name="welcome_point_lifetime_body">cuando una par se muere, xubildala: \'l total s\'azota equí y\'l siguiente par d\'esos mesmos auriculares empieza de nuevu dende cero.</string>
     <string name="welcome_point_detailed_title">cableáu y reproducción</string>
-    <string name="welcome_point_detailed_body">el rastrexu detallau, nos axustes, añade auriculares cableáu y mide cuántu d\'esi tiempu yera reproducción de verdá.</string>
-    <string name="welcome_privacy">tou permanez nesti teléfonu. nun hai cuentes, ni l\'app tien permisu d\'internet.</string>
+    <string name="welcome_point_detailed_body">el rastrexu detallau, nos axustes, añade auriculares cableáu y mide cuántu d’esi tiempu yera reproducción de verdá.</string>
+    <string name="welcome_privacy">tou permanez nesti teléfonu. nun hai cuentes, ni l’app tien permisu d’internet.</string>
     <string name="welcome_start">comienza</string>
     <string name="welcome_next">siguiente</string>
     <string name="welcome_allow">permitir</string>
     <string name="welcome_step">pasu %1$d de %2$d</string>
     <string name="welcome_bluetooth_title">accesu al bluetooth</string>
-    <string name="welcome_bluetooth_why">android namás-y diz a una aplicación qué preséu bluetooth se coneutó, y cómo se llama, si la aplicación tien accesu al bluetooth. asina estrema ylih unos auriculares de la radio del coche, y un par d\'otru.</string>
-    <string name="welcome_bluetooth_with">col accesu: cada par rexístrase dende\'l momentu en que se coneuta, ensin dexar nada furrulando y ensin tener qu\'alcordase de calcar nada.</string>
-    <string name="welcome_bluetooth_without">ensin l\'accesu: nun se rexistra dengún auricular bluetooth. el restu de l\'aplicación sigue furrulando, y pues concedelu más sero nos axustes d\'aplicaciones d\'android.</string>
+    <string name="welcome_bluetooth_why">android namás-y diz a una aplicación qué preséu bluetooth se coneutó, y cómo se llama, si la aplicación tien accesu al bluetooth. asina estrema ylih unos auriculares de la radio del coche, y un par d’otru.</string>
+    <string name="welcome_bluetooth_with">col accesu: cada par rexístrase dende’l momentu en que se coneuta, ensin dexar nada furrulando y ensin tener qu’alcordase de calcar nada.</string>
+    <string name="welcome_bluetooth_without">ensin l’accesu: nun se rexistra dengún auricular bluetooth. el restu de l’aplicación sigue furrulando, y pues concedelu más sero nos axustes d’aplicaciones d’android.</string>
     <string name="welcome_notifications_title">avisos</string>
     <string name="welcome_notifications_why">el siguimientu detalláu executa un serviciu pequeñu en segundu planu, y android obliga a cualquier aplicación que lo faiga a caltener un avisu visible.</string>
-    <string name="welcome_notifications_with">col permisu: l\'avisu amuesa lo que se ta rexistrando agora mesmo, la única seña de que\'l siguimientu detalláu ta vivu.</string>
+    <string name="welcome_notifications_with">col permisu: l’avisu amuesa lo que se ta rexistrando agora mesmo, la única seña de que’l siguimientu detalláu ta vivu.</string>
     <string name="welcome_notifications_without">ensin el permisu: el siguimientu detalláu sigue funcionando y sigue rexistrando. android namás nun va amosar el so avisu.</string>
-    <string name="hibernation_title">sigui contando mentanto te escaeces d\'ella</string>
-    <string name="hibernation_body">android detién les aplicaciones que llevan ensin abrise dellos meses y retira-yos los permisos, lo que dexaría a ylih ensin rexistrar nada hasta que la vuelvas abrir. que te escaezas d\'ella ye exactamente pa lo que ta pensada esta app, asina que val la pena desactivar eso agora.</string>
+    <string name="hibernation_title">sigui contando mentanto te escaeces d’ella</string>
+    <string name="hibernation_body">android detién les aplicaciones que llevan ensin abrise dellos meses y retira-yos los permisos, lo que dexaría a ylih ensin rexistrar nada hasta que la vuelvas abrir. que te escaezas d’ella ye exactamente pa lo que ta pensada esta app, asina que val la pena desactivar eso agora.</string>
     <string name="action_not_now">agora non</string>
 
     <!-- Llista d\'auriculares -->
-    <string name="devices_in_use">n\'usu</string>
+    <string name="devices_in_use">n’usu</string>
     <string name="devices_retired">xubildaos</string>
     <string name="devices_empty_title">sin auriculares entá</string>
-    <string name="devices_empty_body">conecta un par d\'auriculares bluetooth y apaecerán equí. los auriculares cableáu necesiten rastrexu detallau, nos axustes.</string>
+    <string name="devices_empty_body">conecta un par d’auriculares bluetooth y apaecerán equí. los auriculares cableáu necesiten rastrexu detallau, nos axustes.</string>
     <string name="devices_generation">par #%1$d</string>
     <string name="devices_retired_on">xubildaos %1$s</string>
     <string name="devices_connected_for">conectáu %1$s</string>
@@ -82,7 +82,7 @@
     <string name="pair_menu_purchase">información de compra</string>
     <string name="pair_menu_retire">xubildar / reemplazáu</string>
     <string name="pair_menu_delete">desaniciar</string>
-    <string name="pair_lifetime">tiempu d\'esta par</string>
+    <string name="pair_lifetime">tiempu d’esta par</string>
     <string name="pair_retired_on">xubildaos %1$s</string>
     <string name="pair_retired_with_reason">xubildaos %1$s · %2$s</string>
     <string name="pair_connected_now">conectáu agora · %1$s</string>
@@ -101,10 +101,10 @@
     <string name="pair_retire_title">xubildar esta par</string>
     <string name="pair_retire_label">razón (rompíen, vendíen, perdíen…)</string>
     <string name="pair_retire_confirm">xubildar</string>
-    <string name="pair_retire_supporting">los totales se conguen equí. reconectando\'l mesmu dispositivu empieza una par nueva dende cero.</string>
+    <string name="pair_retire_supporting">los totales se conguen equí. reconectando’l mesmu dispositivu empieza una par nueva dende cero.</string>
     <string name="pair_price_title">preciu pagáu</string>
     <string name="pair_price_label">cantidá (unidaes enteres)</string>
-    <string name="pair_price_supporting">usáu pa\'l preciu per hora.</string>
+    <string name="pair_price_supporting">usáu pa’l preciu per hora.</string>
     <string name="pair_delete_title">¿desaniciar esta par?</string>
     <string name="pair_delete_body">toles sesiones grabáes pa ella también se desanicien. esto nun se pue deshacer.</string>
 
@@ -118,26 +118,26 @@
     <string name="settings_tracking">rastrexu</string>
     <string name="settings_detailed_title">rastrexu detallau</string>
     <string name="settings_detailed_body">añade auriculares cableáu y tiempu de reproducción. android namái reporta eventos de conexón de cable a una app corriendo, asina que guarda una notificación silenciosa na cortina. bluetooth siempre se rastrea.</string>
-    <string name="settings_detailed_unavailable">nun ta disponible hasta que se conceda accesu a bluetooth: esta compilación namái declara\'l tipu de serviciu connectedDevice, que android 14+ enlaza a un permisu de bluetooth.</string>
+    <string name="settings_detailed_unavailable">nun ta disponible hasta que se conceda accesu a bluetooth: esta compilación namái declara’l tipu de serviciu connectedDevice, que android 14+ enlaza a un permisu de bluetooth.</string>
     <string name="settings_playback_only_title">cuntar namás la reproducción</string>
-    <string name="settings_playback_only_body">les estadístiques cunten el tiempu que l\'audiu tuvo reproduciéndose de verdá en cuenta del tiempu coneutáu. namás les sesiones rexistraes col rastrexu detallau activáu midieron la reproducción; les demás quéden fuera.</string>
+    <string name="settings_playback_only_body">les estadístiques cunten el tiempu que l’audiu tuvo reproduciéndose de verdá en cuenta del tiempu coneutáu. namás les sesiones rexistraes col rastrexu detallau activáu midieron la reproducción; les demás quéden fuera.</string>
     <string name="settings_language">llingua</string>
     <string name="settings_language_system">llingua del sistema</string>
     <string name="settings_devices">dispositivus</string>
-    <string name="settings_devices_body">desclinca too lo que nun seya auriculares — un sistema d\'auto o un altavoz — pa dexa de grabalo.</string>
+    <string name="settings_devices_body">desclinca too lo que nun seya auriculares — un sistema d’auto o un altavoz — pa dexa de grabalo.</string>
     <string name="settings_device_subtitle">%1$s · primera vegada visto %2$s</string>
     <string name="settings_data">datos</string>
     <string name="settings_export">esportar json</string>
     <string name="settings_import">importar</string>
-    <string name="settings_import_warning">importar reemplaza too lo qu\'agora tá guardáu.</string>
+    <string name="settings_import_warning">importar reemplaza too lo qu’agora tá guardáu.</string>
     <string name="settings_troubleshooting">solucionar problemes</string>
-    <string name="settings_battery_body">si les sesiones dexen de grabarse, comprueba que ylih ta escluyíu de l\'optimización de batería — una app parada a la fuerza nunca vuelve a recibir eventos de conexón hasta que se abre de nuevu.</string>
+    <string name="settings_battery_body">si les sesiones dexen de grabarse, comprueba que ylih ta escluyíu de l’optimización de batería — una app parada a la fuerza nunca vuelve a recibir eventos de conexón hasta que se abre de nuevu.</string>
     <string name="settings_battery_button">axustes de batería</string>
     <string name="settings_battery_path">axustes → apps → ylih → batería → non restrinxíu.</string>
     <string name="settings_hibernation_body">si ylih pasa dellos meses ensin abrise, android detiénla y retira-y los permisos, y nada se vuelve rexistrar hasta que la abras. desactivar eso ye lo que dexa que un par siga contando mientres una temporada na que nin te alcuerdes de la app.</string>
     <string name="settings_hibernation_on">android pue detener ylih.</string>
     <string name="settings_hibernation_off">ylih ta exenta y sigui rexistrando.</string>
-    <string name="settings_hibernation_button">axustes d\'aplicaciones ensin usar</string>
+    <string name="settings_hibernation_button">axustes d’aplicaciones ensin usar</string>
     <string name="settings_about">acerca de</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — hores en auriculares, guaardaes localmente pa siempre.</string>
     <string name="settings_import_confirm_title">¿reemplazar tolos datos?</string>
@@ -147,7 +147,7 @@
     <string name="widget_activity_label">ylih · actividá</string>
     <string name="widget_activity_description">les hores de tolos pares xuntes, amás de güei, 7 díes y 30 díes</string>
     <string name="widget_chart_label">ylih · 30 díes</string>
-    <string name="widget_chart_description">hores d\'escucha diaries nos últimos 30 díes</string>
+    <string name="widget_chart_description">hores d’escucha diaries nos últimos 30 díes</string>
 
     <!-- Acciones compartíes -->
     <string name="action_save">guardar</string>
@@ -156,7 +156,7 @@
     <string name="action_import">importar</string>
 
     <!-- Notificación -->
-    <string name="channel_tracking">rastrexu d\'auriculares</string>
+    <string name="channel_tracking">rastrexu d’auriculares</string>
     <string name="channel_tracking_description">apaez mentre ylih ta mirando por auriculares cableáu y reproducción. android nun entrega eventos de conexón de cable a apps que nun tán corriendo.</string>
     <string name="notification_title">rastrexando tiempu en auriculares</string>
     <string name="notification_starting">iniciando…</string>
@@ -173,8 +173,8 @@
     <!-- Mensaxes de snackbar -->
     <string name="detailed_needs_bluetooth">esta compilación precisa accesu a bluetooth pa poder rastrexar auriculares cableáu</string>
     <string name="export_done">copia de seguridá esportáa</string>
-    <string name="export_failed">falló l\'esportación</string>
-    <string name="import_failed">falló l\'importación</string>
+    <string name="export_failed">falló l’esportación</string>
+    <string name="import_failed">falló l’importación</string>
     <string name="edit_failed">nun se pudo guardar el cambiu</string>
     <string name="error_could_not_open">nun se pudo abrir %1$s</string>
     <plurals name="import_done">

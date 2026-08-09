@@ -143,7 +143,7 @@
     <string name="settings_import_confirm_title">tundu iso elongo?</string>
     <string name="settings_import_confirm_body">masolo likolo mota e nja suma moto esuala, ndúmu, isela elongo osambé.</string>
     <string name="widget_lifetime_label">ylih · likúmu</string>
-    <string name="widget_lifetime_description">mabe o ndúmu tɛ́, na ngand\'a nsele</string>
+    <string name="widget_lifetime_description">mabe o ndúmu tɛ́, na ngand’a nsele</string>
     <string name="widget_activity_label">ylih · ebolo</string>
     <string name="widget_activity_description">mabe ma ndúmu iɓasu, na wɛ́ŋgɛ̄, mílu 7 na mílu 30</string>
     <string name="widget_chart_label">ylih · mílu 30</string>

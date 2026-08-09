@@ -22,34 +22,34 @@
 
     <!-- Premier lancement -->
     <string name="welcome_title">bienvenue sur ylih</string>
-    <string name="welcome_intro">ylih enregistre combien de temps chaque paire de casques reste connectée, pour que, des années plus tard, vous puissiez encore répondre à la seule question qui compte sur une paire : combien d\'heures a-t-elle tenu ?</string>
+    <string name="welcome_intro">ylih enregistre combien de temps chaque paire de casques reste connectée, pour que, des années plus tard, vous puissiez encore répondre à la seule question qui compte sur une paire : combien d’heures a-t-elle tenu ?</string>
     <string name="welcome_point_auto_title">connectez et oubliez</string>
-    <string name="welcome_point_auto_body">les casques bluetooth sont enregistrés tout seuls, dès qu\'ils se connectent. rien n\'a besoin de rester en cours d\'exécution.</string>
+    <string name="welcome_point_auto_body">les casques bluetooth sont enregistrés tout seuls, dès qu’ils se connectent. rien n’a besoin de rester en cours d’exécution.</string>
     <string name="welcome_point_lifetime_title">une paire, une vie</string>
-    <string name="welcome_point_lifetime_body">quand une paire rend l\'âme, retirez-la : son total se fige et la paire suivante du même casque repart de zéro.</string>
+    <string name="welcome_point_lifetime_body">quand une paire rend l’âme, retirez-la : son total se fige et la paire suivante du même casque repart de zéro.</string>
     <string name="welcome_point_detailed_title">filaire et lecture</string>
     <string name="welcome_point_detailed_body">le suivi détaillé, dans les réglages, ajoute les casques filaires et mesure la part du temps réellement passée en lecture.</string>
-    <string name="welcome_privacy">tout reste sur ce téléphone. il n\'y a pas de compte, et l\'app n\'a pas la permission internet.</string>
+    <string name="welcome_privacy">tout reste sur ce téléphone. il n’y a pas de compte, et l’app n’a pas la permission internet.</string>
     <string name="welcome_start">commencer</string>
     <string name="welcome_next">suivant</string>
     <string name="welcome_allow">autoriser</string>
     <string name="welcome_step">étape %1$d sur %2$d</string>
     <string name="welcome_bluetooth_title">accès au bluetooth</string>
-    <string name="welcome_bluetooth_why">android n\'indique à une application quel appareil bluetooth s\'est connecté, et comment il s\'appelle, que si elle dispose de l\'accès au bluetooth. c\'est ainsi que ylih distingue un casque d\'un autoradio, et une paire d\'une autre.</string>
-    <string name="welcome_bluetooth_with">avec l\'accès : chaque paire est enregistrée dès qu\'elle se connecte, sans rien laisser tourner et sans rien à penser à appuyer.</string>
-    <string name="welcome_bluetooth_without">sans l\'accès : aucun casque bluetooth n\'est enregistré. le reste de l\'application fonctionne toujours, et vous pouvez l\'autoriser plus tard dans les paramètres d\'applications d\'android.</string>
+    <string name="welcome_bluetooth_why">android n’indique à une application quel appareil bluetooth s’est connecté, et comment il s’appelle, que si elle dispose de l’accès au bluetooth. c’est ainsi que ylih distingue un casque d’un autoradio, et une paire d’une autre.</string>
+    <string name="welcome_bluetooth_with">avec l’accès : chaque paire est enregistrée dès qu’elle se connecte, sans rien laisser tourner et sans rien à penser à appuyer.</string>
+    <string name="welcome_bluetooth_without">sans l’accès : aucun casque bluetooth n’est enregistré. le reste de l’application fonctionne toujours, et vous pouvez l’autoriser plus tard dans les paramètres d’applications d’android.</string>
     <string name="welcome_notifications_title">notifications</string>
     <string name="welcome_notifications_why">le suivi détaillé utilise un petit service en arrière-plan, et android impose à toute application qui en utilise un de garder une notification visible.</string>
-    <string name="welcome_notifications_with">avec l\'autorisation : la notification montre ce qui est enregistré en ce moment, seul signe que le suivi détaillé est actif.</string>
-    <string name="welcome_notifications_without">sans l\'autorisation : le suivi détaillé fonctionne et enregistre quand même. android n\'affichera simplement pas sa notification.</string>
-    <string name="hibernation_title">continue à compter pendant que vous l\'oubliez</string>
-    <string name="hibernation_body">android met en pause les applis qui restent quelques mois sans être ouvertes et leur retire leurs autorisations, ce qui laisserait ylih n\'enregistrer plus rien jusqu\'à la prochaine ouverture. être oubliée est précisément ce à quoi cette appli sert, alors il vaut mieux désactiver cela tout de suite.</string>
+    <string name="welcome_notifications_with">avec l’autorisation : la notification montre ce qui est enregistré en ce moment, seul signe que le suivi détaillé est actif.</string>
+    <string name="welcome_notifications_without">sans l’autorisation : le suivi détaillé fonctionne et enregistre quand même. android n’affichera simplement pas sa notification.</string>
+    <string name="hibernation_title">continue à compter pendant que vous l’oubliez</string>
+    <string name="hibernation_body">android met en pause les applis qui restent quelques mois sans être ouvertes et leur retire leurs autorisations, ce qui laisserait ylih n’enregistrer plus rien jusqu’à la prochaine ouverture. être oubliée est précisément ce à quoi cette appli sert, alors il vaut mieux désactiver cela tout de suite.</string>
     <string name="action_not_now">pas maintenant</string>
 
     <!-- Liste des casques -->
     <string name="devices_in_use">en service</string>
     <string name="devices_retired">retirés</string>
-    <string name="devices_empty_title">aucun casque pour l\'instant</string>
+    <string name="devices_empty_title">aucun casque pour l’instant</string>
     <string name="devices_empty_body">connectez une paire de casques bluetooth et elle apparaîtra ici. les casques filaires ont besoin du suivi détaillé, dans les réglages.</string>
     <string name="devices_generation">paire n° %1$d</string>
     <string name="devices_retired_on">retirée le %1$s</string>
@@ -60,7 +60,7 @@
     <string name="stats_title">tous les casques</string>
     <!-- %1$s is an already-pluralised session count, %2$s a date. -->
     <string name="stats_sessions_since">%1$s depuis le %2$s</string>
-    <string name="stats_today">aujourd\'hui</string>
+    <string name="stats_today">aujourd’hui</string>
     <string name="stats_last_7">7 derniers jours</string>
     <string name="stats_last_30">30 derniers jours</string>
     <string name="stats_average_session">session moyenne</string>
@@ -80,7 +80,7 @@
     <string name="pair_back">retour</string>
     <string name="pair_more">plus</string>
     <string name="pair_menu_rename">renommer</string>
-    <string name="pair_menu_purchase">infos d\'achat</string>
+    <string name="pair_menu_purchase">infos d’achat</string>
     <string name="pair_menu_retire">retirer / remplacée</string>
     <string name="pair_menu_delete">supprimer</string>
     <string name="pair_lifetime">total de cette paire</string>
@@ -94,7 +94,7 @@
     <string name="pair_of_measured">part en lecture</string>
     <string name="pair_measured">mesuré pour la lecture</string>
     <string name="pair_paid">payé</string>
-    <string name="pair_per_hour">de l\'heure</string>
+    <string name="pair_per_hour">de l’heure</string>
     <string name="pair_bought">achetée</string>
     <string name="pair_daily_hours_14">heures par jour (14 jours)</string>
     <string name="pair_rename_title">renommer la paire</string>
@@ -107,37 +107,37 @@
     <string name="pair_price_label">montant (unités entières)</string>
     <string name="pair_price_supporting">sert au calcul du coût horaire.</string>
     <string name="pair_delete_title">supprimer cette paire ?</string>
-    <string name="pair_delete_body">toutes les sessions enregistrées pour elle sont supprimées aussi. c\'est irréversible.</string>
+    <string name="pair_delete_body">toutes les sessions enregistrées pour elle sont supprimées aussi. c’est irréversible.</string>
 
     <!-- Lignes de session -->
     <string name="session_ongoing">en cours</string>
-    <string name="session_until">jusqu\'à %1$s</string>
+    <string name="session_until">jusqu’à %1$s</string>
     <string name="session_playing">%1$s en lecture</string>
     <string name="session_recovered">récupérée</string>
 
     <!-- Réglages -->
     <string name="settings_tracking">suivi</string>
     <string name="settings_detailed_title">suivi détaillé</string>
-    <string name="settings_detailed_body">ajoute les casques filaires et le temps de lecture. android ne signale les événements de branchement jack qu\'à une app déjà en cours d\'exécution, ce qui maintient donc une notification silencieuse dans le panneau. le bluetooth est suivi dans tous les cas.</string>
-    <string name="settings_detailed_unavailable">indisponible tant que l\'accès bluetooth n\'est pas accordé : cette build ne déclare que le type de service connectedDevice, qu\'android 14+ lie à une permission bluetooth.</string>
+    <string name="settings_detailed_body">ajoute les casques filaires et le temps de lecture. android ne signale les événements de branchement jack qu’à une app déjà en cours d’exécution, ce qui maintient donc une notification silencieuse dans le panneau. le bluetooth est suivi dans tous les cas.</string>
+    <string name="settings_detailed_unavailable">indisponible tant que l’accès bluetooth n’est pas accordé : cette build ne déclare que le type de service connectedDevice, qu’android 14+ lie à une permission bluetooth.</string>
     <string name="settings_playback_only_title">compter seulement la lecture</string>
-    <string name="settings_playback_only_body">les statistiques comptent le temps pendant lequel l\'audio jouait vraiment plutôt que le temps connecté. seules les sessions enregistrées avec le suivi détaillé activé ont mesuré la lecture ; les autres sont laissées de côté.</string>
+    <string name="settings_playback_only_body">les statistiques comptent le temps pendant lequel l’audio jouait vraiment plutôt que le temps connecté. seules les sessions enregistrées avec le suivi détaillé activé ont mesuré la lecture ; les autres sont laissées de côté.</string>
     <string name="settings_language">langue</string>
     <string name="settings_language_system">langue du système</string>
     <string name="settings_devices">appareils</string>
-    <string name="settings_devices_body">décochez ce qui n\'est pas des casques — une autoradio, une enceinte — pour arrêter de l\'enregistrer.</string>
+    <string name="settings_devices_body">décochez ce qui n’est pas des casques — une autoradio, une enceinte — pour arrêter de l’enregistrer.</string>
     <string name="settings_device_subtitle">%1$s · vu pour la première fois le %2$s</string>
     <string name="settings_data">données</string>
     <string name="settings_export">exporter en json</string>
     <string name="settings_import">importer</string>
-    <string name="settings_import_warning">l\'importation remplace tout ce qui est actuellement stocké.</string>
+    <string name="settings_import_warning">l’importation remplace tout ce qui est actuellement stocké.</string>
     <string name="settings_troubleshooting">dépannage</string>
-    <string name="settings_battery_body">si les sessions cessent d\'être enregistrées, vérifiez que ylih est exempté de l\'optimisation de la batterie — une app qui a été arrêtée de force ne reçoit plus jamais de diffusions de connexion tant qu\'elle n\'est pas rouverte.</string>
+    <string name="settings_battery_body">si les sessions cessent d’être enregistrées, vérifiez que ylih est exempté de l’optimisation de la batterie — une app qui a été arrêtée de force ne reçoit plus jamais de diffusions de connexion tant qu’elle n’est pas rouverte.</string>
     <string name="settings_battery_button">réglages de batterie</string>
     <string name="settings_battery_path">réglages → applications → ylih → batterie → sans restriction.</string>
-    <string name="settings_hibernation_body">si ylih reste quelques mois sans être ouverte, android la met en pause et lui retire ses autorisations, et plus rien n\'est enregistré jusqu\'à ce que vous l\'ouvriez. désactiver cela est ce qui permet à un casque de continuer à compter pendant une saison où vous ne pensez jamais à l\'appli.</string>
+    <string name="settings_hibernation_body">si ylih reste quelques mois sans être ouverte, android la met en pause et lui retire ses autorisations, et plus rien n’est enregistré jusqu’à ce que vous l’ouvriez. désactiver cela est ce qui permet à un casque de continuer à compter pendant une saison où vous ne pensez jamais à l’appli.</string>
     <string name="settings_hibernation_on">android peut mettre ylih en pause.</string>
-    <string name="settings_hibernation_off">ylih est exemptée et continue d\'enregistrer.</string>
+    <string name="settings_hibernation_off">ylih est exemptée et continue d’enregistrer.</string>
     <string name="settings_hibernation_button">paramètres des applis inutilisées</string>
     <string name="settings_about">à propos</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — les heures de vos casques, conservées en local et pour toujours.</string>
@@ -146,9 +146,9 @@
     <string name="widget_lifetime_label">ylih · durée de vie</string>
     <string name="widget_lifetime_description">heures par paire, avec un chrono en direct sur celle qui est connectée</string>
     <string name="widget_activity_label">ylih · activité</string>
-    <string name="widget_activity_description">les heures de toutes les paires réunies, plus aujourd\'hui, 7 jours et 30 jours</string>
+    <string name="widget_activity_description">les heures de toutes les paires réunies, plus aujourd’hui, 7 jours et 30 jours</string>
     <string name="widget_chart_label">ylih · 30 jours</string>
-    <string name="widget_chart_description">heures d\'écoute quotidiennes sur les 30 derniers jours</string>
+    <string name="widget_chart_description">heures d’écoute quotidiennes sur les 30 derniers jours</string>
 
     <!-- Actions communes -->
     <string name="action_save">enregistrer</string>
@@ -158,7 +158,7 @@
 
     <!-- Notification -->
     <string name="channel_tracking">suivi des casques</string>
-    <string name="channel_tracking_description">affichée pendant que ylih surveille les casques filaires et la lecture. android ne délivre pas les événements de branchement jack aux apps qui ne sont pas en cours d\'exécution.</string>
+    <string name="channel_tracking_description">affichée pendant que ylih surveille les casques filaires et la lecture. android ne délivre pas les événements de branchement jack aux apps qui ne sont pas en cours d’exécution.</string>
     <string name="notification_title">suivi du temps en casque</string>
     <string name="notification_starting">démarrage…</string>
     <string name="notification_idle">en attente de casques</string>
@@ -174,12 +174,12 @@
     </plurals>
 
     <!-- Messages -->
-    <string name="detailed_needs_bluetooth">cette build a besoin de l\'accès bluetooth avant de pouvoir suivre les casques filaires</string>
+    <string name="detailed_needs_bluetooth">cette build a besoin de l’accès bluetooth avant de pouvoir suivre les casques filaires</string>
     <string name="export_done">sauvegarde exportée</string>
-    <string name="export_failed">échec de l\'exportation</string>
-    <string name="import_failed">échec de l\'importation</string>
-    <string name="edit_failed">échec de l\'enregistrement de la modification</string>
-    <string name="error_could_not_open">impossible d\'ouvrir %1$s</string>
+    <string name="export_failed">échec de l’exportation</string>
+    <string name="import_failed">échec de l’importation</string>
+    <string name="edit_failed">échec de l’enregistrement de la modification</string>
+    <string name="error_could_not_open">impossible d’ouvrir %1$s</string>
     <plurals name="import_done">
         <item quantity="one">%d session importée</item>
         <item quantity="many">%d sessions importées</item>

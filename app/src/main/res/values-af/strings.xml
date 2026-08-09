@@ -124,7 +124,7 @@
     <string name="settings_language">taal</string>
     <string name="settings_language_system">stelseltaal</string>
     <string name="settings_devices">toestelle</string>
-    <string name="settings_devices_body">teken alles uit wat nie koptelefone is nie — motorstereo\'s of sprekers — om dit nie op te neem nie.</string>
+    <string name="settings_devices_body">teken alles uit wat nie koptelefone is nie — motorstereo’s of sprekers — om dit nie op te neem nie.</string>
     <string name="settings_device_subtitle">%1$s · eerste keer gesien %2$s</string>
     <string name="settings_data">data</string>
     <string name="settings_export">voer json uit</string>

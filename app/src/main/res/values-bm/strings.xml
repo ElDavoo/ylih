@@ -42,8 +42,8 @@
     <string name="welcome_notifications_why">kɔlɔsili dafalen bɛ baara fitini dɔ boli kɔfɛ, ani android bɛ porogaramu bɛɛ ɲini min bɛ o kɛ ko a ka kunnafoni dɔ to yeli la.</string>
     <string name="welcome_notifications_with">ni sɔnni ye: kunnafoni bɛ min bɛ sɛbɛn sisan jira, o dɔrɔn de bɛ a jira ko kɔlɔsili dafalen bɛ ɲɛnamaya la.</string>
     <string name="welcome_notifications_without">ni sɔnni tɛ: kɔlɔsili dafalen bɛ baara kɛ halibi ani a bɛ sɛbɛn. android dɔrɔn tɛna a ka kunnafoni jira.</string>
-    <string name="hibernation_title">a bɛ jate kɛnɛ, hali n\'i ɲinɛna</string>
-    <string name="hibernation_body">android bɛ aparatigi minnu ma dabɔ kalo caaman kɔnɔ tɔgɔ, dɔn u ka sigida. o kɔ, ylih tɛna foyi sɛbɛn fɔ i k\'a dabɔ tugun. ɲinɛli ye aparatigi nin ka baara ye, o la a dɔn sisan.</string>
+    <string name="hibernation_title">a bɛ jate kɛnɛ, hali n’i ɲinɛna</string>
+    <string name="hibernation_body">android bɛ aparatigi minnu ma dabɔ kalo caaman kɔnɔ tɔgɔ, dɔn u ka sigida. o kɔ, ylih tɛna foyi sɛbɛn fɔ i k’a dabɔ tugun. ɲinɛli ye aparatigi nin ka baara ye, o la a dɔn sisan.</string>
     <string name="action_not_now">sisan tɛ</string>
 
     <!-- Kopila lisigiyi -->
@@ -134,7 +134,7 @@
     <string name="settings_battery_body">jiginna sutu bi wɛrɛ, ylih apparatigi bi batiri dɔrɔ jɔ tɛ - aparatigi jɛ damɛ jɛ ka jiginna kuma se se ka wɛrɛ dɔrɔn.</string>
     <string name="settings_battery_button">batiri soriyasoo</string>
     <string name="settings_battery_path">soriyasoo → aparatigi → ylih → batiri → a sigida tɛ.</string>
-    <string name="settings_hibernation_body">ni ylih ma dabɔ kalo caaman kɔnɔ, android b\'a dɔn ka a ka sigida bɔ, a tɛna foyi sɛbɛn fɔ i k\'a dabɔ tugun. o dɔn walasa aparatigi ka to ka jate hali waati min i tɛ miiri aparatigi nin na.</string>
+    <string name="settings_hibernation_body">ni ylih ma dabɔ kalo caaman kɔnɔ, android b’a dɔn ka a ka sigida bɔ, a tɛna foyi sɛbɛn fɔ i k’a dabɔ tugun. o dɔn walasa aparatigi ka to ka jate hali waati min i tɛ miiri aparatigi nin na.</string>
     <string name="settings_hibernation_on">android bɛ se ka ylih dɔn.</string>
     <string name="settings_hibernation_off">ylih ma dɔn — a bɛ to ka sɛbɛn.</string>
     <string name="settings_hibernation_button">aparatigi minnu ma baara kɛ soriyasoo</string>

@@ -22,28 +22,28 @@
 
     <!-- Okwambuka kwanza -->
     <string name="welcome_title">mukaribire mu ylih</string>
-    <string name="welcome_intro">ylih iwandika omugeni wegukira enandi imwe ya mahembe ikunyiikirize, amasigara n\'akakyo wihayo nate wiyinzirize okubaza okubazo ekika ekamu ekigira nini ku nandi: saati ngaahi zayigabiire?</string>
+    <string name="welcome_intro">ylih iwandika omugeni wegukira enandi imwe ya mahembe ikunyiikirize, amasigara n’akakyo wihayo nate wiyinzirize okubaza okubazo ekika ekamu ekigira nini ku nandi: saati ngaahi zayigabiire?</string>
     <string name="welcome_point_auto_title">oyunie, arikaho</string>
     <string name="welcome_point_auto_body">mahembe ya bluetooth andikibwa okweyene, okuva agakubanya. tatembekeza okukumaniza ekigwe.</string>
     <string name="welcome_point_lifetime_title">enandi imwe, omutindo umwe</string>
-    <string name="welcome_point_lifetime_body">nkoora enandi eyafirize, izikire: oniyimba yayo izikira aho, n\'enandi enteka eya mahembe agakora anza okuva nti zero.</string>
-    <string name="welcome_point_detailed_title">agacwire n\'okusigira</string>
-    <string name="welcome_point_detailed_body">okuwandika okukweru, mu amateekate, akongeeza mahembe agacwire n\'akamanya amasigara magakoresebwa mu kwesigira.</string>
-    <string name="welcome_privacy">byona byakuuma mu mugambi ugu. ntekina akawonto, n\'applicesheni nayo ntakina ichaato ca ntiniti.</string>
+    <string name="welcome_point_lifetime_body">nkoora enandi eyafirize, izikire: oniyimba yayo izikira aho, n’enandi enteka eya mahembe agakora anza okuva nti zero.</string>
+    <string name="welcome_point_detailed_title">agacwire n’okusigira</string>
+    <string name="welcome_point_detailed_body">okuwandika okukweru, mu amateekate, akongeeza mahembe agacwire n’akamanya amasigara magakoresebwa mu kwesigira.</string>
+    <string name="welcome_privacy">byona byakuuma mu mugambi ugu. ntekina akawonto, n’applicesheni nayo ntakina ichaato ca ntiniti.</string>
     <string name="welcome_start">terekezaaga</string>
     <string name="welcome_next">ekiraaho</string>
     <string name="welcome_allow">ikiriza</string>
     <string name="welcome_step">omuringo %1$d ahari %2$d</string>
     <string name="welcome_bluetooth_title">okutunga bluetooth</string>
-    <string name="welcome_bluetooth_why">android nigambira apu ekyuma kya bluetooth eki kihonzirwe, n\'eiziina ryakyo, kwonka apu yaba eine okutunga bluetooth. nikwo ylih arikwanukura ebyokuhurira n\'eredio y\'emotoka, n\'ekipiira kimwe aha kindi.</string>
-    <string name="welcome_bluetooth_with">n\'okutunga: buri kipiira nikihandiikwa kuruga obu kihonzirwe, hatariho ekintu ekirikwetengyesa kukora kandi otari kwijuka kuhwera ekintu.</string>
-    <string name="welcome_bluetooth_without">otariine okutunga: tihariho byokuhurira bya bluetooth ebirikuhandiikwa. ebindi bya apu nibikora, kandi noobaasa kwikiriza bwanyima omu ntebeekanisa z\'apu za android.</string>
+    <string name="welcome_bluetooth_why">android nigambira apu ekyuma kya bluetooth eki kihonzirwe, n’eiziina ryakyo, kwonka apu yaba eine okutunga bluetooth. nikwo ylih arikwanukura ebyokuhurira n’eredio y’emotoka, n’ekipiira kimwe aha kindi.</string>
+    <string name="welcome_bluetooth_with">n’okutunga: buri kipiira nikihandiikwa kuruga obu kihonzirwe, hatariho ekintu ekirikwetengyesa kukora kandi otari kwijuka kuhwera ekintu.</string>
+    <string name="welcome_bluetooth_without">otariine okutunga: tihariho byokuhurira bya bluetooth ebirikuhandiikwa. ebindi bya apu nibikora, kandi noobaasa kwikiriza bwanyima omu ntebeekanisa z’apu za android.</string>
     <string name="welcome_notifications_title">obutumwa</string>
-    <string name="welcome_notifications_why">okukuratira okurikwesigika nikukora omurimo mukye ogw\'enyima, kandi android neyetenga buri apu erikukora ekyo kureeba obutumwa nibubonekana.</string>
-    <string name="welcome_notifications_with">n\'okwikiriza: obutumwa nibworeka ekirikuhandiikwa hati, kandi niyo nkyekyo yonka erikworeka ngu okukuratira okurikwesigika nikukora.</string>
+    <string name="welcome_notifications_why">okukuratira okurikwesigika nikukora omurimo mukye ogw’enyima, kandi android neyetenga buri apu erikukora ekyo kureeba obutumwa nibubonekana.</string>
+    <string name="welcome_notifications_with">n’okwikiriza: obutumwa nibworeka ekirikuhandiikwa hati, kandi niyo nkyekyo yonka erikworeka ngu okukuratira okurikwesigika nikukora.</string>
     <string name="welcome_notifications_without">otariine okwikiriza: okukuratira okurikwesigika nikukora kandi nikihandiika. android yonka teerikworeka obutumwa bwakyo.</string>
-    <string name="hibernation_title">nikaguma nyekubara, n\'obu otaijukira</string>
-    <string name="hibernation_body">android neegabana applicesheni ezitakuguzirwe emyezi mingi, kandi neegyihakwo ichaato zaayo. baitu ylih terigire kubara kintu kihi kutungatunga oshoboole kwiguza. okwijukirwa nikyo ekikwo applicesheni egi neegira, n\'ahabw\'ekyo gabana kinu hati.</string>
+    <string name="hibernation_title">nikaguma nyekubara, n’obu otaijukira</string>
+    <string name="hibernation_body">android neegabana applicesheni ezitakuguzirwe emyezi mingi, kandi neegyihakwo ichaato zaayo. baitu ylih terigire kubara kintu kihi kutungatunga oshoboole kwiguza. okwijukirwa nikyo ekikwo applicesheni egi neegira, n’ahabw’ekyo gabana kinu hati.</string>
     <string name="action_not_now">tikwo hati</string>
 
     <!-- Omusolo gwa mahembe -->
@@ -64,10 +64,10 @@
     <string name="stats_last_30">amasigara 30 agakwata</string>
     <string name="stats_average_session">kasooti yo mu kazo</string>
     <string name="stats_longest_session">okugyaala okukira</string>
-    <string name="stats_playing">okusigira kw\'amaraka</string>
+    <string name="stats_playing">okusigira kw’amaraka</string>
     <string name="stats_measured_span">ekyapimirwe okusigira</string>
-    <string name="stats_share">ekicweka ky\'okusigira</string>
-    <string name="stats_playback_only_note">kubara obwire bw\'okusigira bwonka</string>
+    <string name="stats_share">ekicweka ky’okusigira</string>
+    <string name="stats_playback_only_note">kubara obwire bw’okusigira bwonka</string>
     <string name="stats_daily_hours_30">saati ku musi (30 amasigara)</string>
     <string name="stats_by_pair">nka enandi</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
@@ -90,7 +90,7 @@
     <string name="pair_average">kasooti</string>
     <string name="pair_longest">okugyaala okukira</string>
     <string name="pair_since">kuva %1$s</string>
-    <string name="pair_of_measured">ekicweka ky\'okusigira</string>
+    <string name="pair_of_measured">ekicweka ky’okusigira</string>
     <string name="pair_measured">ekyapimirwe okusigira</string>
     <string name="pair_paid">akagaseekwa</string>
     <string name="pair_per_hour">ku saati</string>
@@ -117,10 +117,10 @@
     <!-- Amateekate -->
     <string name="settings_tracking">okuwandika</string>
     <string name="settings_detailed_title">okuwandika okukweru</string>
-    <string name="settings_detailed_body">akongeza mahembe agacwire n\'amasigara ga okusigira. android abamanya okumanya amasigara ga agacwire kuko ku applicesheni itazikira okukora, abasigalira okukuba okukwereza mu ntiniti. bluetooth andikibwa kigwe.</string>
+    <string name="settings_detailed_body">akongeza mahembe agacwire n’amasigara ga okusigira. android abamanya okumanya amasigara ga agacwire kuko ku applicesheni itazikira okukora, abasigalira okukuba okukwereza mu ntiniti. bluetooth andikibwa kigwe.</string>
     <string name="settings_detailed_unavailable">ntakiboneka kuza kwoha ichaato ca bluetooth: akakakona guno kasigala kananga connectDevice ekika kya service, ekyuma ka android 14+ ekikwata ku ichaato ca bluetooth.</string>
     <string name="settings_playback_only_title">bara okusigira kwonka</string>
-    <string name="settings_playback_only_body">ebibaruzo nibibara obwire amaraka gaabaire nigasigirwa buzima, ti obwire bw\'okwehanguraho. sesyoni ezaandiikirwe okuwandika okukweru kuriho zonka nizo zaapimire okusigira; ezindi nizirekwa.</string>
+    <string name="settings_playback_only_body">ebibaruzo nibibara obwire amaraka gaabaire nigasigirwa buzima, ti obwire bw’okwehanguraho. sesyoni ezaandiikirwe okuwandika okukweru kuriho zonka nizo zaapimire okusigira; ezindi nizirekwa.</string>
     <string name="settings_language">orurimi</string>
     <string name="settings_language_system">orurimi rwa sisitemu</string>
     <string name="settings_devices">ekyuma</string>
@@ -134,20 +134,20 @@
     <string name="settings_battery_body">nkoba okussozo taandikibwa, tekeza atiyini ylih antakwere nka ekikumaaniza — applicesheni eyafirize yaayagirwe tategembana okuwandika kuza ekikwata aba ntakwengereza okwacumbura ichaato.</string>
     <string name="settings_battery_button">amateekate ga batireeri</string>
     <string name="settings_battery_path">amateekate → applicesheni → ylih → batireeri → etakyamibaza.</string>
-    <string name="settings_hibernation_body">ylih yaataijukurwe emyezi mingi, android neegihi n\'okugihakwo ichaato zaayo, kandi tikirimu kubara kintu kihi kutungatunga oshoboole kwiguza. gabana kinu ngu applicesheni ecomorre kubara n\'omu mwanya ogu otaijukira applicesheni egi.</string>
+    <string name="settings_hibernation_body">ylih yaataijukurwe emyezi mingi, android neegihi n’okugihakwo ichaato zaayo, kandi tikirimu kubara kintu kihi kutungatunga oshoboole kwiguza. gabana kinu ngu applicesheni ecomorre kubara n’omu mwanya ogu otaijukira applicesheni egi.</string>
     <string name="settings_hibernation_on">android nibaasa gabana ylih.</string>
     <string name="settings_hibernation_off">ylih tigabaine — neegukomeza kubara.</string>
-    <string name="settings_hibernation_button">amateekate g\'applicesheni ezitakuguzirwe</string>
+    <string name="settings_hibernation_button">amateekate g’applicesheni ezitakuguzirwe</string>
     <string name="settings_about">ku ka egi</string>
-    <string name="settings_about_body">ylih %1$s (%2$s) — saati mu mahembe, ekuuma locally n\'inini.</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — saati mu mahembe, ekuuma locally n’inini.</string>
     <string name="settings_import_confirm_title">babyiza byona?</string>
-    <string name="settings_import_confirm_body">okushyira oku ka gakuba gubabyiza ekyuma, enandi n\'okussozo kusosere kose kusigala nkano.</string>
+    <string name="settings_import_confirm_body">okushyira oku ka gakuba gubabyiza ekyuma, enandi n’okussozo kusosere kose kusigala nkano.</string>
     <string name="widget_lifetime_label">ylih · omutindo</string>
-    <string name="widget_lifetime_description">saati aha buri nandi, hamwe n\'esaha erikwenda aha ekunyana</string>
+    <string name="widget_lifetime_description">saati aha buri nandi, hamwe n’esaha erikwenda aha ekunyana</string>
     <string name="widget_activity_label">ylih · emirimo</string>
-    <string name="widget_activity_description">saati z\'enandi zoona hamwe, na erizooba, amasigara 7 n\'amasigara 30</string>
+    <string name="widget_activity_description">saati z’enandi zoona hamwe, na erizooba, amasigara 7 n’amasigara 30</string>
     <string name="widget_chart_label">ylih · amasigara 30</string>
-    <string name="widget_chart_description">saati z\'okuhurira buri musi omu masigara 30 agakwata</string>
+    <string name="widget_chart_description">saati z’okuhurira buri musi omu masigara 30 agakwata</string>
 
     <!-- Amashindano ga gose -->
     <string name="action_save">kuba</string>
@@ -157,7 +157,7 @@
 
     <!-- Okuyinziriza -->
     <string name="channel_tracking">okuwandika mahembe</string>
-    <string name="channel_tracking_description">akakibakiliza kwoha ylih agukubanya mahembe agacwire n\'okusigira. android atabamanye amasigara ga agacwire ku applicesheni etakorekera.</string>
+    <string name="channel_tracking_description">akakibakiliza kwoha ylih agukubanya mahembe agacwire n’okusigira. android atabamanye amasigara ga agacwire ku applicesheni etakorekera.</string>
     <string name="notification_title">okuwandika omugeni wa mahembe</string>
     <string name="notification_starting">akuterekeza…</string>
     <string name="notification_idle">akwemeza mahembe</string>

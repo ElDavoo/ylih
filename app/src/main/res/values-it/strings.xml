@@ -22,25 +22,25 @@
 
     <!-- Primo avvio -->
     <string name="welcome_title">benvenuto in ylih</string>
-    <string name="welcome_intro">ylih registra per quanto tempo ogni paio di cuffie resta connesso, così fra anni potrai ancora rispondere all\'unica domanda che conta su un paio di cuffie: quante ore sono durate?</string>
+    <string name="welcome_intro">ylih registra per quanto tempo ogni paio di cuffie resta connesso, così fra anni potrai ancora rispondere all’unica domanda che conta su un paio di cuffie: quante ore sono durate?</string>
     <string name="welcome_point_auto_title">collega e dimentica</string>
     <string name="welcome_point_auto_body">le cuffie bluetooth vengono registrate da sole, dal momento in cui si connettono. non serve lasciare in esecuzione nulla.</string>
     <string name="welcome_point_lifetime_title">un paio, una vita</string>
     <string name="welcome_point_lifetime_body">quando un paio muore, ritiralo: il suo totale si ferma lì e il paio successivo delle stesse cuffie riparte da zero.</string>
     <string name="welcome_point_detailed_title">cavo e riproduzione</string>
     <string name="welcome_point_detailed_body">il tracciamento dettagliato, nelle impostazioni, aggiunge le cuffie via cavo e misura quanta parte del tempo stavi davvero ascoltando.</string>
-    <string name="welcome_privacy">tutto resta su questo telefono. non c\'è nessun account e l\'app non ha il permesso di accedere a internet.</string>
+    <string name="welcome_privacy">tutto resta su questo telefono. non c’è nessun account e l’app non ha il permesso di accedere a internet.</string>
     <string name="welcome_start">iniziamo</string>
     <string name="welcome_next">avanti</string>
     <string name="welcome_allow">consenti</string>
     <string name="welcome_step">passo %1$d di %2$d</string>
     <string name="welcome_bluetooth_title">accesso al bluetooth</string>
-    <string name="welcome_bluetooth_why">android dice a un\'app quale dispositivo bluetooth si è collegato, e come si chiama, solo se l\'app ha l\'accesso al bluetooth. è così che ylih distingue un paio di cuffie da un\'autoradio, e un paio dall\'altro.</string>
-    <string name="welcome_bluetooth_with">con l\'accesso: ogni paio viene registrato dal momento in cui si collega, senza lasciare nulla in esecuzione e senza ricordarsi di premere niente.</string>
-    <string name="welcome_bluetooth_without">senza l\'accesso: nessun paio di cuffie bluetooth viene registrato. il resto dell\'app funziona lo stesso, e puoi concederlo più tardi nelle impostazioni delle app di android.</string>
+    <string name="welcome_bluetooth_why">android dice a un’app quale dispositivo bluetooth si è collegato, e come si chiama, solo se l’app ha l’accesso al bluetooth. è così che ylih distingue un paio di cuffie da un’autoradio, e un paio dall’altro.</string>
+    <string name="welcome_bluetooth_with">con l’accesso: ogni paio viene registrato dal momento in cui si collega, senza lasciare nulla in esecuzione e senza ricordarsi di premere niente.</string>
+    <string name="welcome_bluetooth_without">senza l’accesso: nessun paio di cuffie bluetooth viene registrato. il resto dell’app funziona lo stesso, e puoi concederlo più tardi nelle impostazioni delle app di android.</string>
     <string name="welcome_notifications_title">notifiche</string>
     <string name="welcome_notifications_why">il tracciamento dettagliato usa un piccolo servizio in background, e android obbliga qualsiasi app che lo faccia a tenere visibile una notifica mentre è attivo.</string>
-    <string name="welcome_notifications_with">con il permesso: la notifica mostra cosa si sta registrando in questo momento, ed è l\'unico segno che il tracciamento dettagliato è vivo.</string>
+    <string name="welcome_notifications_with">con il permesso: la notifica mostra cosa si sta registrando in questo momento, ed è l’unico segno che il tracciamento dettagliato è vivo.</string>
     <string name="welcome_notifications_without">senza il permesso: il tracciamento dettagliato funziona e registra lo stesso. android semplicemente non mostrerà la sua notifica.</string>
     <string name="hibernation_title">continua a contare mentre te ne dimentichi</string>
     <string name="hibernation_body">android mette in pausa le app che restano qualche mese senza essere aperte e ne revoca i permessi, il che lascerebbe ylih a non registrare nulla fino alla volta successiva in cui la apri. essere dimenticata è esattamente lo scopo di questa app, quindi conviene disattivarlo subito.</string>
@@ -79,7 +79,7 @@
     <string name="pair_back">indietro</string>
     <string name="pair_more">altro</string>
     <string name="pair_menu_rename">rinomina</string>
-    <string name="pair_menu_purchase">dati d\'acquisto</string>
+    <string name="pair_menu_purchase">dati d’acquisto</string>
     <string name="pair_menu_retire">ritira / sostituite</string>
     <string name="pair_menu_delete">elimina</string>
     <string name="pair_lifetime">totale di questo paio</string>
@@ -93,7 +93,7 @@
     <string name="pair_of_measured">quota in riproduzione</string>
     <string name="pair_measured">misurato per la riproduzione</string>
     <string name="pair_paid">pagate</string>
-    <string name="pair_per_hour">all\'ora</string>
+    <string name="pair_per_hour">all’ora</string>
     <string name="pair_bought">acquistate</string>
     <string name="pair_daily_hours_14">ore al giorno (14 giorni)</string>
     <string name="pair_rename_title">rinomina paio</string>
@@ -106,7 +106,7 @@
     <string name="pair_price_label">importo (unità intere)</string>
     <string name="pair_price_supporting">serve per il costo orario.</string>
     <string name="pair_delete_title">eliminare questo paio?</string>
-    <string name="pair_delete_body">verranno eliminate anche tutte le sessioni registrate. l\'operazione non è reversibile.</string>
+    <string name="pair_delete_body">verranno eliminate anche tutte le sessioni registrate. l’operazione non è reversibile.</string>
 
     <!-- Righe sessione -->
     <string name="session_ongoing">in corso</string>
@@ -117,24 +117,24 @@
     <!-- Impostazioni -->
     <string name="settings_tracking">tracciamento</string>
     <string name="settings_detailed_title">tracciamento dettagliato</string>
-    <string name="settings_detailed_body">aggiunge le cuffie via cavo e il tempo di riproduzione. android segnala gli eventi del jack solo a un\'app già in esecuzione, quindi resta una notifica silenziosa nel pannello. il bluetooth è tracciato in ogni caso.</string>
-    <string name="settings_detailed_unavailable">non disponibile finché non concedi l\'accesso al bluetooth: questa build dichiara solo il tipo di servizio connectedDevice, che android 14+ lega a un permesso bluetooth.</string>
+    <string name="settings_detailed_body">aggiunge le cuffie via cavo e il tempo di riproduzione. android segnala gli eventi del jack solo a un’app già in esecuzione, quindi resta una notifica silenziosa nel pannello. il bluetooth è tracciato in ogni caso.</string>
+    <string name="settings_detailed_unavailable">non disponibile finché non concedi l’accesso al bluetooth: questa build dichiara solo il tipo di servizio connectedDevice, che android 14+ lega a un permesso bluetooth.</string>
     <string name="settings_playback_only_title">conta solo la riproduzione</string>
-    <string name="settings_playback_only_body">le statistiche contano il tempo in cui l\'audio stava davvero suonando invece del tempo di connessione. solo le sessioni registrate con il tracciamento dettagliato attivo hanno misurato la riproduzione; le altre restano fuori.</string>
+    <string name="settings_playback_only_body">le statistiche contano il tempo in cui l’audio stava davvero suonando invece del tempo di connessione. solo le sessioni registrate con il tracciamento dettagliato attivo hanno misurato la riproduzione; le altre restano fuori.</string>
     <string name="settings_language">lingua</string>
     <string name="settings_language_system">lingua di sistema</string>
     <string name="settings_devices">dispositivi</string>
-    <string name="settings_devices_body">togli la spunta a ciò che non sono cuffie — l\'impianto dell\'auto, una cassa — per smettere di registrarlo.</string>
+    <string name="settings_devices_body">togli la spunta a ciò che non sono cuffie — l’impianto dell’auto, una cassa — per smettere di registrarlo.</string>
     <string name="settings_device_subtitle">%1$s · prima volta %2$s</string>
     <string name="settings_data">dati</string>
     <string name="settings_export">esporta json</string>
     <string name="settings_import">importa</string>
-    <string name="settings_import_warning">l\'importazione sostituisce tutto quello che c\'è ora.</string>
+    <string name="settings_import_warning">l’importazione sostituisce tutto quello che c’è ora.</string>
     <string name="settings_troubleshooting">problemi</string>
-    <string name="settings_battery_body">se le sessioni smettono di essere registrate, controlla che ylih sia esente dall\'ottimizzazione della batteria — un\'app arrestata forzatamente non riceve più alcun evento di connessione finché non la riapri.</string>
+    <string name="settings_battery_body">se le sessioni smettono di essere registrate, controlla che ylih sia esente dall’ottimizzazione della batteria — un’app arrestata forzatamente non riceve più alcun evento di connessione finché non la riapri.</string>
     <string name="settings_battery_button">impostazioni batteria</string>
     <string name="settings_battery_path">impostazioni → app → ylih → batteria → senza restrizioni.</string>
-    <string name="settings_hibernation_body">se ylih resta qualche mese senza essere aperta, android la mette in pausa e ne revoca i permessi, e non viene registrato più nulla finché non la apri. disattivarlo è ciò che permette a un paio di cuffie di continuare a contare per una stagione intera in cui non pensi mai all\'app.</string>
+    <string name="settings_hibernation_body">se ylih resta qualche mese senza essere aperta, android la mette in pausa e ne revoca i permessi, e non viene registrato più nulla finché non la apri. disattivarlo è ciò che permette a un paio di cuffie di continuare a contare per una stagione intera in cui non pensi mai all’app.</string>
     <string name="settings_hibernation_on">android può mettere ylih in pausa.</string>
     <string name="settings_hibernation_off">ylih è esente e continua a registrare.</string>
     <string name="settings_hibernation_button">impostazioni app inutilizzate</string>
@@ -174,7 +174,7 @@
     </plurals>
 
     <!-- Messaggi -->
-    <string name="detailed_needs_bluetooth">questa build ha bisogno dell\'accesso al bluetooth per tracciare le cuffie via cavo</string>
+    <string name="detailed_needs_bluetooth">questa build ha bisogno dell’accesso al bluetooth per tracciare le cuffie via cavo</string>
     <string name="export_done">backup esportato</string>
     <string name="export_failed">esportazione non riuscita</string>
     <string name="import_failed">importazione non riuscita</string>

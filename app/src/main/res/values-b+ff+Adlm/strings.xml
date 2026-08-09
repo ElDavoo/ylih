@@ -125,7 +125,7 @@
     <string name="settings_language_system">𞤸𞤢𞥄𞤤𞤢 𞤧𞤭𞤧𞤼𞤫𞤥</string>
     <string name="settings_devices">taruuji</string>
     <string name="settings_devices_body">deleete teegno taruuji hakkunde kaalangal baakɗo - oto tummuki wala ɓelɓel - haa ko dum jannginoa baakɗo.</string>
-    <string name="settings_device_subtitle">%1$s · hay\'i hollito %2$s</string>
+    <string name="settings_device_subtitle">%1$s · hay’i hollito %2$s</string>
     <string name="settings_data">baytal</string>
     <string name="settings_export">golluki json</string>
     <string name="settings_import">gaŋŋa</string>

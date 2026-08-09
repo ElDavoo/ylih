@@ -43,7 +43,7 @@
     <string name="welcome_notifications_with">yadda banda: baaru ga cabe haŋ kaŋ ga hantum sohõ, nga hinne no ga cabe kaŋ gunayan kaŋ ga tondi go fundi ra.</string>
     <string name="welcome_notifications_without">yadda si: gunayan kaŋ ga tondi ga goy jina nda a ga hantum. android hinne si a baaro cabe.</string>
     <string name="hibernation_title">a ga to kabari, baa ni dinya</string>
-    <string name="hibernation_body">android ga sanda kaŋ i mana feeri handu boobo ra dabu, ka ngey haya ta i gaa. woodin banda, ylih si hay kul hantum kala ni g\'a feeri koyne. dinya, woodin no sanda wo goo se, kal ka woodin dabu sohõ.</string>
+    <string name="hibernation_body">android ga sanda kaŋ i mana feeri handu boobo ra dabu, ka ngey haya ta i gaa. woodin banda, ylih si hay kul hantum kala ni g’a feeri koyne. dinya, woodin no sanda wo goo se, kal ka woodin dabu sohõ.</string>
     <string name="action_not_now">manti sohõ</string>
 
     <!-- Headphones list -->
@@ -120,7 +120,7 @@
     <string name="settings_detailed_body">labali hima kul-kul agandu mey. android ga labali gaskuya hankurey de borey ga kaaji, kabu sanda ga gida ganda. bluetooth ga hangarey kabarey de.</string>
     <string name="settings_detailed_unavailable">ba ga kaa sanda bluetooth ka haya ne: sanda kabu ga connectedDevice gaskuya gonda haali, android 14+ ga bluetooth haya ga kirey ne.</string>
     <string name="settings_playback_only_title">ido hinne cindi</string>
-    <string name="settings_playback_only_body">hisaabey ga alwaati kaŋ jinde goono ga ido cimi cindi, manti alwaati kaŋ i margu. sessiyon kaŋ i hantum hangarey gara ganda go ga tunandi hinne no ka ido neesi; cindey i g\'i naŋ.</string>
+    <string name="settings_playback_only_body">hisaabey ga alwaati kaŋ jinde goono ga ido cimi cindi, manti alwaati kaŋ i margu. sessiyon kaŋ i hantum hangarey gara ganda go ga tunandi hinne no ka ido neesi; cindey i g’i naŋ.</string>
     <string name="settings_language">sanni</string>
     <string name="settings_language_system">sistem sanni</string>
     <string name="settings_devices">borey</string>
@@ -134,7 +134,7 @@
     <string name="settings_battery_body">anda gasaandi ga hangarey ganda ne, goo ylih ga batari kaarey ga baa - sanda ba du-du ga haw ka gasaandi ne sanda kafara kanji zama ga.</string>
     <string name="settings_battery_button">batari karkari</string>
     <string name="settings_battery_path">karkari → sanda → ylih → batari → unguu baaba.</string>
-    <string name="settings_hibernation_body">da ylih mana feeri handu boobo ra, android g\'a dabu ka ngey haya ta i gaa, a si hay kul hantum koyne kala ni g\'a feeri. woodin dabu, zama sanda ma to kabari baa waato kaŋ ni si dinya sanda wo gaa.</string>
+    <string name="settings_hibernation_body">da ylih mana feeri handu boobo ra, android g’a dabu ka ngey haya ta i gaa, a si hay kul hantum koyne kala ni g’a feeri. woodin dabu, zama sanda ma to kabari baa waato kaŋ ni si dinya sanda wo gaa.</string>
     <string name="settings_hibernation_on">android ga hin ka ylih dabu.</string>
     <string name="settings_hibernation_off">ylih si dabu — a ga to hantum.</string>
     <string name="settings_hibernation_button">karkari sanda kaŋ i si haw</string>

@@ -34,10 +34,10 @@
     <string name="welcome_next">ndzɨ</string>
     <string name="welcome_allow">yuu</string>
     <string name="welcome_step">kɨdzɨ %1$d ne %2$d</string>
-    <string name="welcome_bluetooth_title">nu\'ni bluetooth</string>
-    <string name="welcome_bluetooth_why">android dzə tsuʼ ghɛɛ a mbɨŋ bluetooth wu bɨ kɨ ghɛɛ, ne enə̀ ye, ndzəŋ ghɛɛ wu kɨ nu\'ni bluetooth. a ndzə ylih tsə ghɛɛ mbɨŋ ntsu ne mbɨŋ motoka, ne mbɨŋ ntsu wu ne wu.</string>
-    <string name="welcome_bluetooth_with">ne nu\'ni: mbɨŋ ntsu tsɨm bɨ kɨ ŋwaʼa a nɨ dzə wu bɨ kɨ ghɛɛ, ne kɨ mɔʼ tsə ghɛɛ, ne kɨ mɔʼ tsə ghɔŋ.</string>
-    <string name="welcome_bluetooth_without">kɨ nu\'ni: mbɨŋ ntsu bluetooth tsɨm bɨ dzə ŋwaʼa. ghɛɛ tsɨm bɨ ghɛɛ, ne wo dzə yuu a nɨ dzə mɔʼ nɨ ntsuʼ ghɛɛ android.</string>
+    <string name="welcome_bluetooth_title">nu’ni bluetooth</string>
+    <string name="welcome_bluetooth_why">android dzə tsuʼ ghɛɛ a mbɨŋ bluetooth wu bɨ kɨ ghɛɛ, ne enə̀ ye, ndzəŋ ghɛɛ wu kɨ nu’ni bluetooth. a ndzə ylih tsə ghɛɛ mbɨŋ ntsu ne mbɨŋ motoka, ne mbɨŋ ntsu wu ne wu.</string>
+    <string name="welcome_bluetooth_with">ne nu’ni: mbɨŋ ntsu tsɨm bɨ kɨ ŋwaʼa a nɨ dzə wu bɨ kɨ ghɛɛ, ne kɨ mɔʼ tsə ghɛɛ, ne kɨ mɔʼ tsə ghɔŋ.</string>
+    <string name="welcome_bluetooth_without">kɨ nu’ni: mbɨŋ ntsu bluetooth tsɨm bɨ dzə ŋwaʼa. ghɛɛ tsɨm bɨ ghɛɛ, ne wo dzə yuu a nɨ dzə mɔʼ nɨ ntsuʼ ghɛɛ android.</string>
     <string name="welcome_notifications_title">ntsuʼni</string>
     <string name="welcome_notifications_why">ŋwaʼa nɨ tsɨm dzə ghɛɛ ntsu nɨ mfɛ, ne android dzə bɔŋ ghɛɛ tsɨm wu dzə a ndzə ntsuʼni dzə nɨ ntsə.</string>
     <string name="welcome_notifications_with">ne yuu: ntsuʼni dzə tsuʼ a bɨ ŋwaʼa a nɨ dzə wa, a ndzə mɔʼ tsə ŋwaʼa nɨ tsɨm dzə ghɛɛ.</string>

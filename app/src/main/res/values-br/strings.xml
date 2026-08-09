@@ -22,35 +22,35 @@
 
     <!-- Kentañ ober -->
     <string name="welcome_title">degemer mat e ylih</string>
-    <string name="welcome_intro">ylih a noa an hañsoñj a-se e-pad ma vo stag ur parol a doneloù, evit ma c\'halloc\'h digañ ar muiañ a vloazvezhioù a-raok da respont an hevelep er-maez a-zegouezh a zo gwir a-zivout ur parol: pegen a eurvezhioù hag a servijas anezhañ?</string>
+    <string name="welcome_intro">ylih a noa an hañsoñj a-se e-pad ma vo stag ur parol a doneloù, evit ma c’halloc’h digañ ar muiañ a vloazvezhioù a-raok da respont an hevelep er-maez a-zegouezh a zo gwir a-zivout ur parol: pegen a eurvezhioù hag a servijas anezhañ?</string>
     <string name="welcome_point_auto_title">stagañ hag ankouañ</string>
-    <string name="welcome_point_auto_body">tonelloù bluetooth a vo enrollet e-unan, adalek an amzer ma int staget. nemet tra ebet hag a c\'helle chom lanv.</string>
+    <string name="welcome_point_auto_body">tonelloù bluetooth a vo enrollet e-unan, adalek an amzer ma int staget. nemet tra ebet hag a c’helle chom lanv.</string>
     <string name="welcome_point_lifetime_title">ur parol, unn buhez</string>
-    <string name="welcome_point_lifetime_body">pa c\'h ez ur parol da ziorzh, digemer a c\'helloc\'h anezhi: he zivout a stoñk da-heul hag ur parol nevez eus an hevelep tonelloù a ya adalek zero.</string>
+    <string name="welcome_point_lifetime_body">pa c’h ez ur parol da ziorzh, digemer a c’helloc’h anezhi: he zivout a stoñk da-heul hag ur parol nevez eus an hevelep tonelloù a ya adalek zero.</string>
     <string name="welcome_point_detailed_title">gwiriek hag kanañ</string>
-    <string name="welcome_point_detailed_body">heuliadur kuzh, en arventennoù, a ouzhpennañ tonelloù gwiriek hag a mejur pezh eus an amzer a oa war-lerc\'h.</string>
+    <string name="welcome_point_detailed_body">heuliadur kuzh, en arventennoù, a ouzhpennañ tonelloù gwiriek hag a mejur pezh eus an amzer a oa war-lerc’h.</string>
     <string name="welcome_privacy">a-bezh a chom war ar bellgomz-mañ. nemet kont ebet, hag an arload neus nemet gwele-kennaskañ.</string>
     <string name="welcome_start">da-geñver</string>
-    <string name="welcome_next">war-lerc\'h</string>
+    <string name="welcome_next">war-lerc’h</string>
     <string name="welcome_allow">aotren</string>
     <string name="welcome_step">paz %1$d eus %2$d</string>
     <string name="welcome_bluetooth_title">haeziñ ar bluetooth</string>
-    <string name="welcome_bluetooth_why">ne lavar android d\'un arload pehini trevnad bluetooth zo bet kevreet, nag e anv, nemet m\'en deus an arload haeziñ ar bluetooth. evel-se e ra ylih an diforc\'h etre selaouelloù ha radio ur c\'harr, hag etre ur re hag unan all.</string>
+    <string name="welcome_bluetooth_why">ne lavar android d’un arload pehini trevnad bluetooth zo bet kevreet, nag e anv, nemet m’en deus an arload haeziñ ar bluetooth. evel-se e ra ylih an diforc’h etre selaouelloù ha radio ur c’harr, hag etre ur re hag unan all.</string>
     <string name="welcome_bluetooth_with">gant an haeziñ: pep re a vez enrollet adalek ar mare ma kevre, hep lezel netra o vont en-dro ha hep ret bezañ soñj da bouezañ war netra.</string>
-    <string name="welcome_bluetooth_without">hep an haeziñ: n\'eus selaouell bluetooth ebet enrollet. peurrest an arload a ya en-dro atav, ha gallout a rit e aotren diwezhatoc\'h e arventennoù arloadoù android.</string>
+    <string name="welcome_bluetooth_without">hep an haeziñ: n’eus selaouell bluetooth ebet enrollet. peurrest an arload a ya en-dro atav, ha gallout a rit e aotren diwezhatoc’h e arventennoù arloadoù android.</string>
     <string name="welcome_notifications_title">kemennoù</string>
-    <string name="welcome_notifications_why">an heuliañ munudek a lak ur servij bihan da vont en-dro en drekleur, hag android a c\'houlenn digant pep arload a ra se derc\'hel ur c\'hemenn gwelus.</string>
-    <string name="welcome_notifications_with">gant an aotre: ar c\'hemenn a ziskouez petra zo o vezañ enrollet bremañ, an nemetañ arouez ez eo bev an heuliañ munudek.</string>
-    <string name="welcome_notifications_without">hep an aotre: an heuliañ munudek a ya en-dro hag a enroll atav. n\'eo ket android a ziskouezo e gemenn, setu tout.</string>
-    <string name="hibernation_title">kenderc\'hel a ra da gontañ tra ma vez ankouaet ganeoc\'h</string>
-    <string name="hibernation_body">android a laka an arloadoù n\'int ket digoret e-pad un nebeud mizioù en ehan hag a zistro o aotreoù, ar pezh a lezfe ylih hep enrollañ netra betek ma vefe digoret adarre. bezañ ankouaet eo just abeg an arload-mañ, neuze e talvez ar boan lazhañ an dra-se bremañ.</string>
+    <string name="welcome_notifications_why">an heuliañ munudek a lak ur servij bihan da vont en-dro en drekleur, hag android a c’houlenn digant pep arload a ra se derc’hel ur c’hemenn gwelus.</string>
+    <string name="welcome_notifications_with">gant an aotre: ar c’hemenn a ziskouez petra zo o vezañ enrollet bremañ, an nemetañ arouez ez eo bev an heuliañ munudek.</string>
+    <string name="welcome_notifications_without">hep an aotre: an heuliañ munudek a ya en-dro hag a enroll atav. n’eo ket android a ziskouezo e gemenn, setu tout.</string>
+    <string name="hibernation_title">kenderc’hel a ra da gontañ tra ma vez ankouaet ganeoc’h</string>
+    <string name="hibernation_body">android a laka an arloadoù n’int ket digoret e-pad un nebeud mizioù en ehan hag a zistro o aotreoù, ar pezh a lezfe ylih hep enrollañ netra betek ma vefe digoret adarre. bezañ ankouaet eo just abeg an arload-mañ, neuze e talvez ar boan lazhañ an dra-se bremañ.</string>
     <string name="action_not_now">ket bremañ</string>
 
     <!-- Rolloù tonelloù -->
     <string name="devices_in_use">en ober</string>
     <string name="devices_retired">digemerz</string>
-    <string name="devices_empty_title">tonelloù ebet c\'hoazh</string>
-    <string name="devices_empty_body">stagañ ur parol a doneloù bluetooth hag e tigont e-ba-ma. tonelloù gwiriek a c\'hellac\'h heuliadur kuzh, en arventennoù.</string>
+    <string name="devices_empty_title">tonelloù ebet c’hoazh</string>
+    <string name="devices_empty_body">stagañ ur parol a doneloù bluetooth hag e tigont e-ba-ma. tonelloù gwiriek a c’hellac’h heuliadur kuzh, en arventennoù.</string>
     <string name="devices_generation">parol #%1$d</string>
     <string name="devices_retired_on">digemerz %1$s</string>
     <string name="devices_connected_for">staget %1$s</string>
@@ -63,7 +63,7 @@
     <string name="stats_last_7">ar 7 devezhioù diwezhañ</string>
     <string name="stats_last_30">ar 30 devezhioù diwezhañ</string>
     <string name="stats_average_session">kurmediañ an daolenn</string>
-    <string name="stats_longest_session">an dalc\'h hirañ</string>
+    <string name="stats_longest_session">an dalc’h hirañ</string>
     <string name="stats_playing">son o seniñ</string>
     <string name="stats_measured_span">muzuliet evit ar seniñ</string>
     <string name="stats_share">lodenn o seniñ</string>
@@ -77,7 +77,7 @@
     <!-- Muntr parol -->
     <string name="pair_fallback_title">parol</string>
     <string name="pair_back">distreiñ</string>
-    <string name="pair_more">muioc\'h</string>
+    <string name="pair_more">muioc’h</string>
     <string name="pair_menu_rename">adenvel</string>
     <string name="pair_menu_purchase">stlennoù prenañ</string>
     <string name="pair_menu_retire">digemer / cheñchet</string>
@@ -106,7 +106,7 @@
     <string name="pair_price_label">sammad (unizoù a-zeskar)</string>
     <string name="pair_price_supporting">ober gant ar mesur prizhañ dre eurvezh.</string>
     <string name="pair_delete_title">diverkañ ar parol-mañ?</string>
-    <string name="pair_delete_body">e sesiun a zo enrollet eus anezhi a vo diverket ivez. ne c\'heller ket disteurel ar brezel-se.</string>
+    <string name="pair_delete_body">e sesiun a zo enrollet eus anezhi a vo diverket ivez. ne c’heller ket disteurel ar brezel-se.</string>
 
     <!-- Rannoù daolenn -->
     <string name="session_ongoing">en ur deus</string>
@@ -117,31 +117,31 @@
     <!-- Arventennoù -->
     <string name="settings_tracking">heuliadur</string>
     <string name="settings_detailed_title">heuliadur en diwantet</string>
-    <string name="settings_detailed_body">ouzhpennañ tonelloù gwiriek hag amzer kanañ. android ne roue kendaol gwele-kennaskañ nemet d\'ur prog a zo lanv, evit-se e tistro kuñviñ amañ en droed. bluetooth a heulier a-boa ur c\'hentañ.</string>
-    <string name="settings_detailed_unavailable">c\'hortoz bi-se bluetooth da vezout graet kuzh: ar stajenn-mañ neus nemet sorzhioù connectedDevice, ar pezh a zo stag android 14+ d\'ur retlaij bluetooth.</string>
+    <string name="settings_detailed_body">ouzhpennañ tonelloù gwiriek hag amzer kanañ. android ne roue kendaol gwele-kennaskañ nemet d’ur prog a zo lanv, evit-se e tistro kuñviñ amañ en droed. bluetooth a heulier a-boa ur c’hentañ.</string>
+    <string name="settings_detailed_unavailable">c’hortoz bi-se bluetooth da vezout graet kuzh: ar stajenn-mañ neus nemet sorzhioù connectedDevice, ar pezh a zo stag android 14+ d’ur retlaij bluetooth.</string>
     <string name="settings_playback_only_title">kontañ ar seniñ hepken</string>
-    <string name="settings_playback_only_body">ar stadegoù a gont an amzer ma oa ar son o seniñ e gwirionez e-lec\'h an amzer kevreet. n\'eus nemet ar prantadoù enrollet gant an heuliadur en diwantet gweredekaet o deus muzuliet ar seniñ; ar re all a vez lezet er-maez.</string>
+    <string name="settings_playback_only_body">ar stadegoù a gont an amzer ma oa ar son o seniñ e gwirionez e-lec’h an amzer kevreet. n’eus nemet ar prantadoù enrollet gant an heuliadur en diwantet gweredekaet o deus muzuliet ar seniñ; ar re all a vez lezet er-maez.</string>
     <string name="settings_language">yezh</string>
     <string name="settings_language_system">yezh ar reizhiad</string>
     <string name="settings_devices">tachenn</string>
-    <string name="settings_devices_body">nullañ nemet tra n\'eo ket tonelloù — ur garantell pe ur ganer — da staoañ e enrollañ.</string>
+    <string name="settings_devices_body">nullañ nemet tra n’eo ket tonelloù — ur garantell pe ur ganer — da staoañ e enrollañ.</string>
     <string name="settings_device_subtitle">%1$s · gwelet evit ar wechañ %2$s</string>
     <string name="settings_data">roadennoù</string>
     <string name="settings_export">ezporzhañ json</string>
     <string name="settings_import">enderzhañ</string>
-    <string name="settings_import_warning">enderzhañ a c\'hellac\'h holl tra zo bet gwarchañ bremañ.</string>
+    <string name="settings_import_warning">enderzhañ a c’hellac’h holl tra zo bet gwarchañ bremañ.</string>
     <string name="settings_troubleshooting">diskar a valoù</string>
-    <string name="settings_battery_body">ma ne vo ket enrollet daolenn, gwiriañ ylih n\'eo ket digarget eus sturmañ baterienn — ur prog harzet n\'hall ket kaout kemennadenn kennaskañ, betek ma vez digeriñ anezhi c\'hoazh.</string>
+    <string name="settings_battery_body">ma ne vo ket enrollet daolenn, gwiriañ ylih n’eo ket digarget eus sturmañ baterienn — ur prog harzet n’hall ket kaout kemennadenn kennaskañ, betek ma vez digeriñ anezhi c’hoazh.</string>
     <string name="settings_battery_button">arventennoù baterienn</string>
     <string name="settings_battery_path">arventennoù → progidi → ylih → baterienn → distelleget.</string>
-    <string name="settings_hibernation_body">ma ne vez ket digoret ylih e-pad un nebeud mizioù, android al laka en ehan hag a zistro e aotreoù, ha netra ne vez enrollet ken betek ma tigorot anezhañ. lazhañ an dra-se eo ar pezh a laka ur re selaouerezhioù da genderc\'hel da gontañ e-pad ur mare ma ne soñjit james en arload.</string>
+    <string name="settings_hibernation_body">ma ne vez ket digoret ylih e-pad un nebeud mizioù, android al laka en ehan hag a zistro e aotreoù, ha netra ne vez enrollet ken betek ma tigorot anezhañ. lazhañ an dra-se eo ar pezh a laka ur re selaouerezhioù da genderc’hel da gontañ e-pad ur mare ma ne soñjit james en arload.</string>
     <string name="settings_hibernation_on">gallout a ra android lakaat ylih en ehan.</string>
-    <string name="settings_hibernation_off">ylih zo dieubet ha kenderc\'hel a ra d\'enrollañ.</string>
+    <string name="settings_hibernation_off">ylih zo dieubet ha kenderc’hel a ra d’enrollañ.</string>
     <string name="settings_hibernation_button">arventennoù an arloadoù dizimplij</string>
     <string name="settings_about">diwar-benn</string>
-    <string name="settings_about_body">ylih %1$s (%2$s) — eurvezhioù en tonelloù, gwarchañ e-lec\'h hag bepred.</string>
-    <string name="settings_import_confirm_title">c\'hellac\'h holl roadennoù?</string>
-    <string name="settings_import_confirm_body">enderzhañ ar savegezh-mañ a c\'hellac\'h bep tachenn, parol hag daolenn gwarchañ bremañ.</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — eurvezhioù en tonelloù, gwarchañ e-lec’h hag bepred.</string>
+    <string name="settings_import_confirm_title">c’hellac’h holl roadennoù?</string>
+    <string name="settings_import_confirm_body">enderzhañ ar savegezh-mañ a c’hellac’h bep tachenn, parol hag daolenn gwarchañ bremañ.</string>
     <string name="widget_lifetime_label">ylih · buhez</string>
     <string name="widget_lifetime_description">eurvezhioù dre re, gant un amzerier bev war ar re staget</string>
     <string name="widget_activity_label">ylih · oberiantiz</string>
@@ -157,7 +157,7 @@
 
     <!-- Kemennadenn -->
     <string name="channel_tracking">heuliadur tonelloù</string>
-    <string name="channel_tracking_description">diskouezet e-pad ylih a seul tonelloù gwiriek hag kanañ. android ne skignañ kemennadenn gwiñzoñ d\'ur prog n\'eo ket lanv.</string>
+    <string name="channel_tracking_description">diskouezet e-pad ylih a seul tonelloù gwiriek hag kanañ. android ne skignañ kemennadenn gwiñzoñ d’ur prog n’eo ket lanv.</string>
     <string name="notification_title">heuliadur amzer tonelloù</string>
     <string name="notification_starting">startañ…</string>
     <string name="notification_idle">gortozañ tonelloù</string>
@@ -177,12 +177,12 @@
     </plurals>
 
     <!-- Kemennadoù -->
-    <string name="detailed_needs_bluetooth">ar stajenn-mañ a c\'hallac\'h bluetooth da heuliadur tonelloù gwiriek</string>
+    <string name="detailed_needs_bluetooth">ar stajenn-mañ a c’hallac’h bluetooth da heuliadur tonelloù gwiriek</string>
     <string name="export_done">ezporzhañ graet</string>
-    <string name="export_failed">ezporzhañ c\'hwall</string>
-    <string name="import_failed">enderzhañ c\'hwall</string>
-    <string name="edit_failed">n\'eus ket bet gallet enrollañ ar c\'hemm</string>
-    <string name="error_could_not_open">ne c\'hallan ket digeriñ %1$s</string>
+    <string name="export_failed">ezporzhañ c’hwall</string>
+    <string name="import_failed">enderzhañ c’hwall</string>
+    <string name="edit_failed">n’eus ket bet gallet enrollañ ar c’hemm</string>
+    <string name="error_could_not_open">ne c’hallan ket digeriñ %1$s</string>
     <plurals name="import_done">
         <item quantity="one">enderzhañ %d daolenn</item>
         <item quantity="two">enderzhañ %d daolenn</item>

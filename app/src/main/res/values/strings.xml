@@ -43,7 +43,7 @@
     <string name="welcome_bluetooth_title">bluetooth access</string>
     <string name="welcome_bluetooth_why">android only tells an app which bluetooth device connected, and what it is called, if the app holds bluetooth access. it is how ylih tells a pair of headphones from a car stereo, and how it knows one pair from another.</string>
     <string name="welcome_bluetooth_with">with it: every pair is recorded from the moment it connects, with nothing left running and nothing to remember to press.</string>
-    <string name="welcome_bluetooth_without">without it: no bluetooth headphones are recorded at all. the rest of the app still works, and you can grant it later in android\'s app settings.</string>
+    <string name="welcome_bluetooth_without">without it: no bluetooth headphones are recorded at all. the rest of the app still works, and you can grant it later in android’s app settings.</string>
     <string name="welcome_notifications_title">notifications</string>
     <string name="welcome_notifications_why">detailed tracking runs a small background service, and android requires any app doing that to keep a notification visible while it does.</string>
     <string name="welcome_notifications_with">with it: the notification shows what is being recorded right now, which is the only sign detailed tracking is alive.</string>
@@ -56,7 +56,7 @@
     <string name="devices_in_use">in use</string>
     <string name="devices_retired">retired</string>
     <string name="devices_empty_title">no headphones yet</string>
-    <string name="devices_empty_body">connect a pair of bluetooth headphones and they\'ll show up here. wired headphones need detailed tracking, in settings.</string>
+    <string name="devices_empty_body">connect a pair of bluetooth headphones and they’ll show up here. wired headphones need detailed tracking, in settings.</string>
     <string name="devices_generation">pair #%1$d</string>
     <string name="devices_retired_on">retired %1$s</string>
     <string name="devices_connected_for">connected %1$s</string>
@@ -134,7 +134,7 @@
     <string name="settings_language">language</string>
     <string name="settings_language_system">system language</string>
     <string name="settings_devices">devices</string>
-    <string name="settings_devices_body">uncheck anything that isn\'t headphones — a car stereo or a speaker — to stop recording it.</string>
+    <string name="settings_devices_body">uncheck anything that isn’t headphones — a car stereo or a speaker — to stop recording it.</string>
     <string name="settings_device_subtitle">%1$s · first seen %2$s</string>
     <string name="settings_data">data</string>
     <string name="settings_export">export json</string>
@@ -159,7 +159,7 @@
     <string name="widget_lifetime_label">ylih · lifetime</string>
     <string name="widget_lifetime_description">hours per pair, with a live timer on whatever is connected</string>
     <string name="widget_activity_label">ylih · activity</string>
-    <string name="widget_activity_description">every pair\'s hours together, plus today, 7 days and 30 days</string>
+    <string name="widget_activity_description">every pair’s hours together, plus today, 7 days and 30 days</string>
     <string name="widget_chart_label">ylih · 30 days</string>
     <string name="widget_chart_description">daily listening hours over the last 30 days</string>
 

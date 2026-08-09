@@ -21,7 +21,7 @@
     <string name="kind_unknown">bilinmiyor</string>
 
     <!-- İlk açılış -->
-    <string name="welcome_title">ylih\'e hoş geldin</string>
+    <string name="welcome_title">ylih’e hoş geldin</string>
     <string name="welcome_intro">ylih her kulaklığın ne kadar süre bağlı kaldığını kaydeder, böylece yıllar sonra bile bir kulaklık çifti hakkında önemli olan tek soruyu yanıtlayabilirsin: kaç saat dayandı?</string>
     <string name="welcome_point_auto_title">tak ve unut</string>
     <string name="welcome_point_auto_body">bluetooth kulaklıklar bağlandığı andan itibaren kendiliğinden kaydedilir. hiçbir şeyin açık kalması gerekmez.</string>
@@ -37,13 +37,13 @@
     <string name="welcome_bluetooth_title">bluetooth erişimi</string>
     <string name="welcome_bluetooth_why">android bir uygulamaya hangi bluetooth cihazının bağlandığını ve adının ne olduğunu yalnızca uygulamanın bluetooth erişimi varsa söyler. ylih bir kulaklığı araç teybinden, bir çifti diğerinden böyle ayırır.</string>
     <string name="welcome_bluetooth_with">erişimle: her çift bağlandığı andan itibaren kaydedilir, arkada çalışan bir şey kalmadan ve basmayı hatırlamanız gereken bir şey olmadan.</string>
-    <string name="welcome_bluetooth_without">erişim olmadan: hiçbir bluetooth kulaklık kaydedilmez. uygulamanın geri kalanı yine çalışır ve izni daha sonra android\'in uygulama ayarlarından verebilirsiniz.</string>
+    <string name="welcome_bluetooth_without">erişim olmadan: hiçbir bluetooth kulaklık kaydedilmez. uygulamanın geri kalanı yine çalışır ve izni daha sonra android’in uygulama ayarlarından verebilirsiniz.</string>
     <string name="welcome_notifications_title">bildirimler</string>
     <string name="welcome_notifications_why">ayrıntılı takip küçük bir arka plan hizmeti çalıştırır ve android bunu yapan her uygulamadan görünür bir bildirim tutmasını ister.</string>
     <string name="welcome_notifications_with">izinle: bildirim şu anda neyin kaydedildiğini gösterir; ayrıntılı takibin çalıştığının tek işareti budur.</string>
     <string name="welcome_notifications_without">izin olmadan: ayrıntılı takip yine çalışır ve yine kaydeder. android sadece bildirimini göstermez.</string>
     <string name="hibernation_title">onu unutsan bile saymaya devam et</string>
-    <string name="hibernation_body">android birkaç aydır açılmayan uygulamaları durdurur ve izinlerini geri alır; bu da ylih\'in sen onu yeniden açana kadar hiçbir şey kaydetmemesine yol açar. unutulmak zaten bu uygulamanın var oluş amacı, o yüzden bunu şimdi kapatmakta fayda var.</string>
+    <string name="hibernation_body">android birkaç aydır açılmayan uygulamaları durdurur ve izinlerini geri alır; bu da ylih’in sen onu yeniden açana kadar hiçbir şey kaydetmemesine yol açar. unutulmak zaten bu uygulamanın var oluş amacı, o yüzden bunu şimdi kapatmakta fayda var.</string>
     <string name="action_not_now">şimdi değil</string>
 
     <!-- Kulaklık listesi -->
@@ -53,13 +53,13 @@
     <string name="devices_empty_body">bir bluetooth kulaklık bağla, burada görünecek. kablolu kulaklıklar için ayarlardan ayrıntılı takip gerekir.</string>
     <string name="devices_generation">çift #%1$d</string>
     <string name="devices_retired_on">%1$s tarihinde emekliye ayrıldı</string>
-    <string name="devices_connected_for">%1$s\'dir bağlı</string>
+    <string name="devices_connected_for">%1$s’dir bağlı</string>
     <string name="devices_recent">%1$s / 7g</string>
 
     <!-- İstatistik -->
     <string name="stats_title">tüm kulaklıklar</string>
     <!-- %1$s is an already-pluralised session count, %2$s a date. -->
-    <string name="stats_sessions_since">%2$s\'den beri %1$s</string>
+    <string name="stats_sessions_since">%2$s’den beri %1$s</string>
     <string name="stats_today">bugün</string>
     <string name="stats_last_7">son 7 gün</string>
     <string name="stats_last_30">son 30 gün</string>
@@ -90,7 +90,7 @@
     <string name="pair_sessions">oturumlar</string>
     <string name="pair_average">ortalama</string>
     <string name="pair_longest">en uzun</string>
-    <string name="pair_since">%1$s\'den beri</string>
+    <string name="pair_since">%1$s’den beri</string>
     <string name="pair_of_measured">çalma oranı</string>
     <string name="pair_measured">çalma için ölçülen</string>
     <string name="pair_paid">ödenen</string>
@@ -111,7 +111,7 @@
 
     <!-- Oturum satırları -->
     <string name="session_ongoing">devam ediyor</string>
-    <string name="session_until">%1$s\'e kadar</string>
+    <string name="session_until">%1$s’e kadar</string>
     <string name="session_playing">%1$s çalma</string>
     <string name="session_recovered">kurtarıldı</string>
 
@@ -132,11 +132,11 @@
     <string name="settings_import">içe aktar</string>
     <string name="settings_import_warning">içe aktarma şu anda saklanan her şeyin yerini alır.</string>
     <string name="settings_troubleshooting">sorun giderme</string>
-    <string name="settings_battery_body">oturumlar kaydedilmemeye başlarsa ylih\'in pil optimizasyonundan muaf olduğunu kontrol et — zorla durdurulmuş bir uygulama, açılana kadar bağlantı yayınlarını bir daha almaz.</string>
+    <string name="settings_battery_body">oturumlar kaydedilmemeye başlarsa ylih’in pil optimizasyonundan muaf olduğunu kontrol et — zorla durdurulmuş bir uygulama, açılana kadar bağlantı yayınlarını bir daha almaz.</string>
     <string name="settings_battery_button">pil ayarları</string>
     <string name="settings_battery_path">ayarlar → uygulamalar → ylih → pil → kısıtlanmamış.</string>
     <string name="settings_hibernation_body">ylih birkaç aydır açılmazsa android onu durdurur ve izinlerini geri alır, sen onu açana kadar hiçbir şey yeniden kaydedilmez. bunu kapatmak, uygulamayı hiç düşünmediğin bir mevsim boyunca bile bir çiftin sayılmaya devam etmesini sağlayan şeydir.</string>
-    <string name="settings_hibernation_on">android ylih\'i durdurabilir.</string>
+    <string name="settings_hibernation_on">android ylih’i durdurabilir.</string>
     <string name="settings_hibernation_off">ylih muaf ve kaydetmeye devam ediyor.</string>
     <string name="settings_hibernation_button">kullanılmayan uygulama ayarları</string>
     <string name="settings_about">hakkında</string>

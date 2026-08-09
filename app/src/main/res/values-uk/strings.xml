@@ -50,7 +50,7 @@
     <string name="devices_in_use">використовується</string>
     <string name="devices_retired">списані</string>
     <string name="devices_empty_title">поки що немає навушників</string>
-    <string name="devices_empty_body">підключи пару bluetooth-навушників, і вони з\'являться тут. для дротових навушників потрібне детальне відстеження, у налаштуваннях.</string>
+    <string name="devices_empty_body">підключи пару bluetooth-навушників, і вони з’являться тут. для дротових навушників потрібне детальне відстеження, у налаштуваннях.</string>
     <string name="devices_generation">пара №%1$d</string>
     <string name="devices_retired_on">списано %1$s</string>
     <string name="devices_connected_for">підключено %1$s</string>
@@ -118,8 +118,8 @@
     <!-- Налаштування -->
     <string name="settings_tracking">відстеження</string>
     <string name="settings_detailed_title">детальне відстеження</string>
-    <string name="settings_detailed_body">додає дротові навушники та час відтворення. android повідомляє про підключення дротового роз\'єму лише запущеному застосунку, тож у шторці залишається тихе сповіщення. bluetooth відстежується у будь-якому разі.</string>
-    <string name="settings_detailed_unavailable">недоступно, доки не надано доступ до bluetooth: ця збірка оголошує лише тип служби connectedDevice, який android 14+ прив\'язує до дозволу bluetooth.</string>
+    <string name="settings_detailed_body">додає дротові навушники та час відтворення. android повідомляє про підключення дротового роз’єму лише запущеному застосунку, тож у шторці залишається тихе сповіщення. bluetooth відстежується у будь-якому разі.</string>
+    <string name="settings_detailed_unavailable">недоступно, доки не надано доступ до bluetooth: ця збірка оголошує лише тип служби connectedDevice, який android 14+ прив’язує до дозволу bluetooth.</string>
     <string name="settings_playback_only_title">рахувати лише відтворення</string>
     <string name="settings_playback_only_body">статистика рахує час, коли звук справді грав, а не час підключення. відтворення виміряли лише сеанси, записані з увімкненим детальним відстеженням; решта не враховується.</string>
     <string name="settings_language">мова</string>
@@ -132,7 +132,7 @@
     <string name="settings_import">імпортувати</string>
     <string name="settings_import_warning">імпорт замінює все, що зараз збережено.</string>
     <string name="settings_troubleshooting">усунення несправностей</string>
-    <string name="settings_battery_body">якщо сесії перестали записуватися, перевір, що ylih звільнено від оптимізації акумулятора — примусово зупинений застосунок більше не отримує сповіщень про з\'єднання, доки його не відкриють знову.</string>
+    <string name="settings_battery_body">якщо сесії перестали записуватися, перевір, що ylih звільнено від оптимізації акумулятора — примусово зупинений застосунок більше не отримує сповіщень про з’єднання, доки його не відкриють знову.</string>
     <string name="settings_battery_button">налаштування акумулятора</string>
     <string name="settings_battery_path">налаштування → застосунки → ylih → акумулятор → без обмежень.</string>
     <string name="settings_hibernation_body">якщо ylih не відкривати кілька місяців, android зупиняє його і забирає його дозволи, і нічого не записується знову, доки ти його не відкриєш. вимкнення цього дає змогу парі рахуватися далі навіть у сезон, коли ти взагалі не думаєш про застосунок.</string>
@@ -158,7 +158,7 @@
 
     <!-- Сповіщення -->
     <string name="channel_tracking">відстеження навушників</string>
-    <string name="channel_tracking_description">показується, поки ylih стежить за дротовими навушниками та відтворенням. android не надсилає застосункам, які не запущені, події про підключення дротового роз\'єму.</string>
+    <string name="channel_tracking_description">показується, поки ylih стежить за дротовими навушниками та відтворенням. android не надсилає застосункам, які не запущені, події про підключення дротового роз’єму.</string>
     <string name="notification_title">відстеження часу в навушниках</string>
     <string name="notification_starting">запуск…</string>
     <string name="notification_idle">очікування навушників</string>

@@ -16,7 +16,7 @@
     <!-- Mathau o ddyfais -->
     <string name="kind_bluetooth">bluetooth</string>
     <string name="kind_ble">le audio</string>
-    <string name="kind_wired">wedi\'i weirio</string>
+    <string name="kind_wired">wedi’i weirio</string>
     <string name="kind_usb">usb</string>
     <string name="kind_unknown">anhysbys</string>
 
@@ -24,11 +24,11 @@
     <string name="welcome_title">croeso i ylih</string>
     <string name="welcome_intro">mae ylih yn cofnodi faint o amser mae pob pâr o glustffonau yn aros yn gysylltiedig, er mwyn y gallwch ateb yr unig gwestiwn sydd o bwys am bâr: faint o oriau a baraon nhw?</string>
     <string name="welcome_point_auto_title">cysylltu ac anghofio</string>
-    <string name="welcome_point_auto_body">mae clustffonau bluetooth yn cael eu cofnodi ar eu pennau eu hunain, o\'r eiliad y cysylltiant. nid oes angen cadw dim byd yn rhedeg.</string>
+    <string name="welcome_point_auto_body">mae clustffonau bluetooth yn cael eu cofnodi ar eu pennau eu hunain, o’r eiliad y cysylltiant. nid oes angen cadw dim byd yn rhedeg.</string>
     <string name="welcome_point_lifetime_title">un pâr, un oes</string>
-    <string name="welcome_point_lifetime_body">pan fydd pâr yn marw, tynnu ef ymaith: mae ei gyfanswm yn rhewi yno ac mae\'r pâr nesaf o\'r clustffonau hynny yn dechrau eto o sero.</string>
-    <string name="welcome_point_detailed_title">wedi\'i weirio a chwarae</string>
-    <string name="welcome_point_detailed_body">mae tracio manwl, mewn gosodiadau, yn ychwanegu clustffonau wedi\'u gweirio ac yn mesur faint o\'r amser yr oedd yn chwarae go iawn.</string>
+    <string name="welcome_point_lifetime_body">pan fydd pâr yn marw, tynnu ef ymaith: mae ei gyfanswm yn rhewi yno ac mae’r pâr nesaf o’r clustffonau hynny yn dechrau eto o sero.</string>
+    <string name="welcome_point_detailed_title">wedi’i weirio a chwarae</string>
+    <string name="welcome_point_detailed_body">mae tracio manwl, mewn gosodiadau, yn ychwanegu clustffonau wedi’u gweirio ac yn mesur faint o’r amser yr oedd yn chwarae go iawn.</string>
     <string name="welcome_privacy">mae popeth yn aros ar y ffôn hwn. nid oes cyfrif, ac nid oes caniatad rhyngrwyd.</string>
     <string name="welcome_start">cael dechrau</string>
     <string name="welcome_next">nesaf</string>
@@ -36,21 +36,21 @@
     <string name="welcome_step">cam %1$d o %2$d</string>
     <string name="welcome_bluetooth_title">mynediad bluetooth</string>
     <string name="welcome_bluetooth_why">dim ond os oes gan ap fynediad bluetooth y bydd android yn dweud wrtho pa ddyfais bluetooth a gysylltodd, a beth yw ei henw. dyna sut mae ylih yn gwahaniaethu rhwng clustffonau a system sain car, ac un pâr oddi wrth y llall.</string>
-    <string name="welcome_bluetooth_with">gyda\'r mynediad: caiff pob pâr ei gofnodi o\'r eiliad y mae\'n cysylltu, heb adael dim yn rhedeg a heb orfod cofio pwyso dim.</string>
-    <string name="welcome_bluetooth_without">heb y mynediad: ni chofnodir yr un pâr o glustffonau bluetooth. mae gweddill yr ap yn dal i weithio, a gallwch ei ganiatáu\'n ddiweddarach yng ngosodiadau apiau android.</string>
+    <string name="welcome_bluetooth_with">gyda’r mynediad: caiff pob pâr ei gofnodi o’r eiliad y mae’n cysylltu, heb adael dim yn rhedeg a heb orfod cofio pwyso dim.</string>
+    <string name="welcome_bluetooth_without">heb y mynediad: ni chofnodir yr un pâr o glustffonau bluetooth. mae gweddill yr ap yn dal i weithio, a gallwch ei ganiatáu’n ddiweddarach yng ngosodiadau apiau android.</string>
     <string name="welcome_notifications_title">hysbysiadau</string>
-    <string name="welcome_notifications_why">mae olrhain manwl yn rhedeg gwasanaeth cefndir bach, ac mae android yn mynnu bod unrhyw ap sy\'n gwneud hynny yn cadw hysbysiad yn weladwy.</string>
-    <string name="welcome_notifications_with">gyda\'r caniatâd: mae\'r hysbysiad yn dangos beth sy\'n cael ei gofnodi ar hyn o bryd, sef yr unig arwydd bod olrhain manwl yn fyw.</string>
+    <string name="welcome_notifications_why">mae olrhain manwl yn rhedeg gwasanaeth cefndir bach, ac mae android yn mynnu bod unrhyw ap sy’n gwneud hynny yn cadw hysbysiad yn weladwy.</string>
+    <string name="welcome_notifications_with">gyda’r caniatâd: mae’r hysbysiad yn dangos beth sy’n cael ei gofnodi ar hyn o bryd, sef yr unig arwydd bod olrhain manwl yn fyw.</string>
     <string name="welcome_notifications_without">heb y caniatâd: mae olrhain manwl yn dal i redeg ac yn dal i gofnodi. dim ond nad yw android yn dangos ei hysbysiad.</string>
-    <string name="hibernation_title">dal i gyfrif tra byddwch chi\'n anghofio amdani</string>
-    <string name="hibernation_body">mae android yn oedi apiau nad ydynt yn cael eu hagor am ychydig fisoedd ac yn cymryd eu caniatâd yn ôl, a fyddai\'n gadael ylih heb gofnodi dim nes i chi ei hagor nesaf. cael eich anghofio yw union bwrpas yr ap hwn, felly mae\'n werth diffodd hynny nawr.</string>
+    <string name="hibernation_title">dal i gyfrif tra byddwch chi’n anghofio amdani</string>
+    <string name="hibernation_body">mae android yn oedi apiau nad ydynt yn cael eu hagor am ychydig fisoedd ac yn cymryd eu caniatâd yn ôl, a fyddai’n gadael ylih heb gofnodi dim nes i chi ei hagor nesaf. cael eich anghofio yw union bwrpas yr ap hwn, felly mae’n werth diffodd hynny nawr.</string>
     <string name="action_not_now">nid nawr</string>
 
     <!-- Rhestr clustffonau -->
     <string name="devices_in_use">mewn defnydd</string>
     <string name="devices_retired">wedi tynnu ymaith</string>
     <string name="devices_empty_title">dim clustffonau eto</string>
-    <string name="devices_empty_body">cysylltwch bâr o glustffonau bluetooth ac fe fyddant yn ymddangos yma. mae clustffonau wedi\'u gweirio angen tracio manwl, mewn gosodiadau.</string>
+    <string name="devices_empty_body">cysylltwch bâr o glustffonau bluetooth ac fe fyddant yn ymddangos yma. mae clustffonau wedi’u gweirio angen tracio manwl, mewn gosodiadau.</string>
     <string name="devices_generation">pâr #%1$d</string>
     <string name="devices_retired_on">tynnwyd ymaith %1$s</string>
     <string name="devices_connected_for">cysylltiedig %1$s</string>
@@ -98,14 +98,14 @@
     <string name="pair_daily_hours_14">oriau bob dydd (14 diwrnod)</string>
     <string name="pair_rename_title">ailenwi pâr</string>
     <string name="pair_rename_label">enw</string>
-    <string name="pair_retire_title">tynnu\'r pâr hwn ymaith</string>
+    <string name="pair_retire_title">tynnu’r pâr hwn ymaith</string>
     <string name="pair_retire_label">rheswm (marw, gwerthu, colli…)</string>
     <string name="pair_retire_confirm">tynnu ymaith</string>
-    <string name="pair_retire_supporting">mae\'r cyfanswm yn rhewi yma. cysylltu\'r ddyfais yr un peth eto yn dechrau pâr newydd ar sero.</string>
+    <string name="pair_retire_supporting">mae’r cyfanswm yn rhewi yma. cysylltu’r ddyfais yr un peth eto yn dechrau pâr newydd ar sero.</string>
     <string name="pair_price_title">pris a dalwyd</string>
     <string name="pair_price_label">swm (unedau cyfan)</string>
     <string name="pair_price_supporting">defnyddiwyd ar gyfer y ffigur cost fesul awr.</string>
-    <string name="pair_delete_title">dileu\'r pâr hwn?</string>
+    <string name="pair_delete_title">dileu’r pâr hwn?</string>
     <string name="pair_delete_body">mae pob sesiwn a gofnodwyd ar ei gyfer yn cael ei dileu hefyd. ni ellir chwaith hyn.</string>
 
     <!-- Rhesi sesiwn -->
@@ -117,35 +117,35 @@
     <!-- Gosodiadau -->
     <string name="settings_tracking">tracio</string>
     <string name="settings_detailed_title">tracio manwl</string>
-    <string name="settings_detailed_body">yn ychwanegu clustffonau wedi\'u gweirio ac amser atgynhyrchu. android yn unig yn adrodd digwyddiadau plwg wedi\'u gweirio i app sy\'n rhedeg, felly mae hyn yn cadw hysbysiad tawel yn yr ystafell. mae bluetooth yn cael ei dracio p\'un bynnag.</string>
-    <string name="settings_detailed_unavailable">dim ar gael nes y rhoddif mynediad bluetooth: mae\'r adeilad hwn yn unig yn datgan y math gwasanaeth connectedDevice, y mae android 14+ yn ei chlymu i ganiatad bluetooth.</string>
+    <string name="settings_detailed_body">yn ychwanegu clustffonau wedi’u gweirio ac amser atgynhyrchu. android yn unig yn adrodd digwyddiadau plwg wedi’u gweirio i app sy’n rhedeg, felly mae hyn yn cadw hysbysiad tawel yn yr ystafell. mae bluetooth yn cael ei dracio p’un bynnag.</string>
+    <string name="settings_detailed_unavailable">dim ar gael nes y rhoddif mynediad bluetooth: mae’r adeilad hwn yn unig yn datgan y math gwasanaeth connectedDevice, y mae android 14+ yn ei chlymu i ganiatad bluetooth.</string>
     <string name="settings_playback_only_title">cyfrif chwarae yn unig</string>
-    <string name="settings_playback_only_body">mae\'r ystadegau\'n cyfrif yr amser roedd y sain yn chwarae go iawn yn lle\'r amser wedi\'i gysylltu. dim ond sesiynau a gofnodwyd gyda thracio manwl ymlaen a fesurodd y chwarae; caiff y gweddill eu gadael allan.</string>
+    <string name="settings_playback_only_body">mae’r ystadegau’n cyfrif yr amser roedd y sain yn chwarae go iawn yn lle’r amser wedi’i gysylltu. dim ond sesiynau a gofnodwyd gyda thracio manwl ymlaen a fesurodd y chwarae; caiff y gweddill eu gadael allan.</string>
     <string name="settings_language">iaith</string>
     <string name="settings_language_system">iaith y system</string>
     <string name="settings_devices">dyfeisiau</string>
-    <string name="settings_devices_body">tynnu\'r tic oddi wrth unrhyw beth nad yw\'n glustffonau — radio ceir neu siaradwr — i roi\'r gorau i\'w gofnodi.</string>
+    <string name="settings_devices_body">tynnu’r tic oddi wrth unrhyw beth nad yw’n glustffonau — radio ceir neu siaradwr — i roi’r gorau i’w gofnodi.</string>
     <string name="settings_device_subtitle">%1$s · gweld yn gyntaf %2$s</string>
     <string name="settings_data">data</string>
     <string name="settings_export">allforio json</string>
     <string name="settings_import">mewnforio</string>
-    <string name="settings_import_warning">mae mewnforio yn disodli popeth sy\'n cael ei storio ar hyn o bryd.</string>
+    <string name="settings_import_warning">mae mewnforio yn disodli popeth sy’n cael ei storio ar hyn o bryd.</string>
     <string name="settings_troubleshooting">datrys problemau</string>
-    <string name="settings_battery_body">os bydd sesiynau yn rhoi\'r gorau i gael eu cofnodi, gwiriwch fod ylih yn eithriad o optimeiddio batri — app sydd wedi\'i orfodi i stopio byth yn derbyn darllediadau cysylltiad eto nes ei agor.</string>
+    <string name="settings_battery_body">os bydd sesiynau yn rhoi’r gorau i gael eu cofnodi, gwiriwch fod ylih yn eithriad o optimeiddio batri — app sydd wedi’i orfodi i stopio byth yn derbyn darllediadau cysylltiad eto nes ei agor.</string>
     <string name="settings_battery_button">gosodiadau batri</string>
     <string name="settings_battery_path">gosodiadau → apiau → ylih → batri → heb gyfyngiad.</string>
-    <string name="settings_hibernation_body">os na chaiff ylih ei hagor am ychydig fisoedd, mae android yn ei hoedi ac yn cymryd ei chaniatâd yn ôl, ac ni chofnodir dim eto nes i chi ei hagor. diffodd hynny sy\'n gadael i bâr ddal i gyfrif drwy dymor pan nad ydych byth yn meddwl am yr ap.</string>
+    <string name="settings_hibernation_body">os na chaiff ylih ei hagor am ychydig fisoedd, mae android yn ei hoedi ac yn cymryd ei chaniatâd yn ôl, ac ni chofnodir dim eto nes i chi ei hagor. diffodd hynny sy’n gadael i bâr ddal i gyfrif drwy dymor pan nad ydych byth yn meddwl am yr ap.</string>
     <string name="settings_hibernation_on">gall android oedi ylih.</string>
-    <string name="settings_hibernation_off">mae ylih wedi\'i heithrio ac yn dal i gofnodi.</string>
+    <string name="settings_hibernation_off">mae ylih wedi’i heithrio ac yn dal i gofnodi.</string>
     <string name="settings_hibernation_button">gosodiadau apiau nas defnyddir</string>
     <string name="settings_about">ynghylch</string>
-    <string name="settings_about_body">ylih %1$s (%2$s) — oriau clustffonau, wedi\'u cadw\'n lleol ac am byth.</string>
-    <string name="settings_import_confirm_title">disodli\'r holl ddata?</string>
-    <string name="settings_import_confirm_body">mae mewnforio\'r cefnwp hwn yn dileu pob dyfais, pâr a sesiwn wedi\'u storio nawr.</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — oriau clustffonau, wedi’u cadw’n lleol ac am byth.</string>
+    <string name="settings_import_confirm_title">disodli’r holl ddata?</string>
+    <string name="settings_import_confirm_body">mae mewnforio’r cefnwp hwn yn dileu pob dyfais, pâr a sesiwn wedi’u storio nawr.</string>
     <string name="widget_lifetime_label">ylih · oes</string>
     <string name="widget_lifetime_description">oriau fesul pâr, gydag amserydd byw ar yr un cysylltiedig</string>
     <string name="widget_activity_label">ylih · gweithgarwch</string>
-    <string name="widget_activity_description">oriau pob pâr gyda\'i gilydd, a heddiw, 7 diwrnod a 30 diwrnod</string>
+    <string name="widget_activity_description">oriau pob pâr gyda’i gilydd, a heddiw, 7 diwrnod a 30 diwrnod</string>
     <string name="widget_chart_label">ylih · 30 diwrnod</string>
     <string name="widget_chart_description">oriau gwrando bob dydd dros y 30 diwrnod diwethaf</string>
 
@@ -157,7 +157,7 @@
 
     <!-- Hysbysiad -->
     <string name="channel_tracking">tracio clustffonau</string>
-    <string name="channel_tracking_description">dangosir tra mae ylih yn gwylio clustffonau wedi\'u gweirio ac atgynhyrchu. android yn unig yn anfon digwyddiadau plwg wedi\'u gweirio i apiau sydd ddim yn rhedeg.</string>
+    <string name="channel_tracking_description">dangosir tra mae ylih yn gwylio clustffonau wedi’u gweirio ac atgynhyrchu. android yn unig yn anfon digwyddiadau plwg wedi’u gweirio i apiau sydd ddim yn rhedeg.</string>
     <string name="notification_title">tracio amser clustffonau</string>
     <string name="notification_starting">dechrau…</string>
     <string name="notification_idle">aros am glustffonau</string>
@@ -179,11 +179,11 @@
     </plurals>
 
     <!-- Negeseuon bar sglodion -->
-    <string name="detailed_needs_bluetooth">mae angen mynediad bluetooth ar yr adeilad hwn cyn y gall dracio clustffonau wedi\'u gweirio</string>
-    <string name="export_done">cefnwp wedi\'i allforio</string>
+    <string name="detailed_needs_bluetooth">mae angen mynediad bluetooth ar yr adeilad hwn cyn y gall dracio clustffonau wedi’u gweirio</string>
+    <string name="export_done">cefnwp wedi’i allforio</string>
     <string name="export_failed">methodd allforio</string>
     <string name="import_failed">methodd mewnforio</string>
-    <string name="edit_failed">methwyd cadw\'r newid</string>
+    <string name="edit_failed">methwyd cadw’r newid</string>
     <string name="error_could_not_open">ni allwn agor %1$s</string>
     <plurals name="import_done">
         <item quantity="zero">mewnforiwyd %d sesiwn</item>

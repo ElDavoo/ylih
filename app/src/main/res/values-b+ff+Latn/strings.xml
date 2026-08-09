@@ -23,8 +23,8 @@
     <!-- Jiiɗɓal fuɗɗo -->
     <string name="welcome_title">jonngol kiisima e ylih</string>
     <string name="welcome_intro">ylih notere waktu peere hiirde miiɗum keewdo, haŋka yaawde ɓe waawi ko jaybade roggo duuɗe maɓɓe sella peere: waktuuji njooni ko faareema?</string>
-    <string name="welcome_point_auto_title">seedd\'a kana sagal</string>
-    <string name="welcome_point_auto_body">hiirde bluetooth notere kaɗtee hoo, to peere seedd\'u. alaa sifa mum danɓal ko tee hakkunde.</string>
+    <string name="welcome_point_auto_title">seedd’a kana sagal</string>
+    <string name="welcome_point_auto_body">hiirde bluetooth notere kaɗtee hoo, to peere seedd’u. alaa sifa mum danɓal ko tee hakkunde.</string>
     <string name="welcome_point_lifetime_title">peere duuɗe, ndiyam duuɗe</string>
     <string name="welcome_point_lifetime_body">peere cuɓo, dum binde: liseede feewo cugal, peere kadi hiirde suutaa sey jiiɗɓal humpito e nolla.</string>
     <string name="welcome_point_detailed_title">kaable e sekii</string>
@@ -53,7 +53,7 @@
     <string name="devices_empty_body">seedd peere hiirde bluetooth, haŋka yeeso ne. hiirde kaable ɗuuɓa haasiraa jamano, e teggite.</string>
     <string name="devices_generation">peere #%1$d</string>
     <string name="devices_retired_on">ko binte %1$s</string>
-    <string name="devices_connected_for">seedd\'i %1$s</string>
+    <string name="devices_connected_for">seedd’i %1$s</string>
     <string name="devices_recent">%1$s / 7d</string>
 
     <!-- Haasiraa -->
@@ -85,7 +85,7 @@
     <string name="pair_lifetime">ndiyam peere ngii</string>
     <string name="pair_retired_on">ko binte %1$s</string>
     <string name="pair_retired_with_reason">ko binte %1$s · %2$s</string>
-    <string name="pair_connected_now">seedd\'i haŋ-tii · %1$s</string>
+    <string name="pair_connected_now">seedd’i haŋ-tii · %1$s</string>
     <string name="pair_sessions">sekkuuji</string>
     <string name="pair_average">hakkilinaa</string>
     <string name="pair_longest">gonŋude</string>
@@ -143,7 +143,7 @@
     <string name="settings_import_confirm_title">miiɗ joɓinol foofe?</string>
     <string name="settings_import_confirm_body">seede backup ngii ko miiɗ kuuseeje, peere, sekkuuji notere haŋ-tii.</string>
     <string name="widget_lifetime_label">ylih · ndiyam</string>
-    <string name="widget_lifetime_description">waktuuji e kala peere, e waktu wuurɗo e ko seedd\'i</string>
+    <string name="widget_lifetime_description">waktuuji e kala peere, e waktu wuurɗo e ko seedd’i</string>
     <string name="widget_activity_label">ylih · golle</string>
     <string name="widget_activity_description">waktuuji peere fof denndaangal, e hannde, joomuuji 7 e joomuuji 30</string>
     <string name="widget_chart_label">ylih · joomuuji 30</string>
@@ -162,12 +162,12 @@
     <string name="notification_starting">fuɗɗal…</string>
     <string name="notification_idle">miijo hiirde</string>
     <plurals name="notification_active">
-        <item quantity="one">seedd\'i: %1$d · %2$s</item>
-        <item quantity="other">seedd\'i: %1$d · %2$s</item>
+        <item quantity="one">seedd’i: %1$d · %2$s</item>
+        <item quantity="other">seedd’i: %1$d · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
-        <item quantity="one">seedd\'i: %1$d · %2$s · sekii</item>
-        <item quantity="other">seedd\'i: %1$d · %2$s · sekii</item>
+        <item quantity="one">seedd’i: %1$d · %2$s · sekii</item>
+        <item quantity="other">seedd’i: %1$d · %2$s · sekii</item>
     </plurals>
 
     <!-- Sekkuuji jinnaje -->
