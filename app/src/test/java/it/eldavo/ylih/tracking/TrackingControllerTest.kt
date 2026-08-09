@@ -142,7 +142,7 @@ class TrackingControllerTest {
     fun `the boot instant is where the elapsed-realtime clock started`() {
         // Sessions are never counted across a boot, so this is what decides whether an open
         // session predates the phone being switched on.
-        assertEquals(clockNow - SystemClock.elapsedRealtime(), controller.bootAt())
+        assertEquals(clockNow - SystemClock.elapsedRealtime(), controller.bootAt)
     }
 
     @Test

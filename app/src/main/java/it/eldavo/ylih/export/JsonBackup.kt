@@ -6,6 +6,7 @@ import it.eldavo.ylih.data.DeviceKind
 import it.eldavo.ylih.data.EndReason
 import it.eldavo.ylih.data.PairEntity
 import it.eldavo.ylih.data.SessionEntity
+import it.eldavo.ylih.data.SettingEntity
 import it.eldavo.ylih.data.YlihDatabase
 import kotlinx.serialization.EncodeDefault
 import kotlinx.serialization.ExperimentalSerializationApi
@@ -37,7 +38,16 @@ object JsonBackup {
         val devices: List<Device>,
         val pairs: List<Pair>,
         val sessions: List<Session>,
+        /**
+         * Absent in a file written before this field existed, which is why it has a default: an
+         * older backup restores its history and leaves the current settings alone, which is the
+         * behaviour every backup had until now.
+         */
+        val settings: List<Setting> = emptyList(),
     )
+
+    @Serializable
+    data class Setting(val key: String, val value: String)
 
     @Serializable
     data class Device(
@@ -73,13 +83,22 @@ object JsonBackup {
         val endReason: String? = null,
     )
 
-    suspend fun export(db: YlihDatabase, now: Long): String {
+    /**
+     * The whole database as JSON.
+     *
+     * One transaction, because three separate reads are three different instants: a connect
+     * landing between the second and the third writes a session whose pair is not in the snapshot,
+     * and the file that produces fails to import on the foreign key it dangles.
+     */
+    suspend fun export(db: YlihDatabase, now: Long): String = db.withTransaction {
         val devices = db.deviceDao().getAll()
         val pairs = db.pairDao().getAll()
         val sessions = db.sessionDao().getAll()
-        return json.encodeToString(
+        val settings = db.settingsDao().getAll()
+        json.encodeToString(
             Backup(
                 exportedAt = now,
+                settings = settings.map { Setting(it.key, it.value) },
                 devices = devices.map {
                     Device(it.id, it.deviceKey, it.kind.name, it.defaultName, it.firstSeenAt, it.ignored)
                 },
@@ -151,6 +170,11 @@ object JsonBackup {
                     ),
                 )
             }
+            // Not cleared first, unlike the tables above: a file written before settings were
+            // carried has none, and wiping them would silently reset the tracking mode and the
+            // language of anyone restoring an older backup.
+            val settingsDao = db.settingsDao()
+            backup.settings.forEach { settingsDao.put(SettingEntity(it.key, it.value)) }
         }
         return backup.sessions.size
     }

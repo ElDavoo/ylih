@@ -42,8 +42,17 @@ class TrackingController(
 ) {
     private val audioManager: AudioManager = context.getSystemService(AudioManager::class.java)
 
-    /** Wall-clock instant the phone booted; sessions are never counted across it. */
-    fun bootAt(): Long = clock.now() - SystemClock.elapsedRealtime()
+    /**
+     * Wall-clock instant the phone booted; sessions are never counted across it.
+     *
+     * Latched for the life of the process rather than recomputed. Both halves move — the wall
+     * clock steps whenever the phone is corrected, most commonly by the NTP sync that lands a
+     * minute or two after a boot with no network, while `elapsedRealtime` does not — so a fresh
+     * subtraction drags the answer forward with the correction. `reconcile` treats this as hard
+     * truth: a session legitimately opened after the boot then reads as `connectedAt < bootAt`
+     * and is force-closed as RECOVERED while the headphones are still on.
+     */
+    val bootAt: Long by lazy { clock.now() - SystemClock.elapsedRealtime() }
 
     /**
      * Whether the foreground service can legally start right now.
@@ -94,7 +103,7 @@ class TrackingController(
         repository.reconcile(
             connected = connected,
             now = clock.now(),
-            bootAt = bootAt(),
+            bootAt = bootAt,
             measurePlayback = detailed,
         )
         if (detailed) startService() else stopService()

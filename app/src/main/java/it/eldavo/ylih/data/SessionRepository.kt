@@ -19,7 +19,13 @@ class SessionRepository(
     private val pairs = db.pairDao()
     private val sessions = db.sessionDao()
 
-    /** Serialises writes from receivers, the service and the worker, which race freely. */
+    /**
+     * Serialises writes from receivers, the service and the worker, which race freely.
+     *
+     * Not reentrant, and nothing here nests two public calls — but `setDetailedTracking` already
+     * takes it twice in a row, via `closeSessionsForKinds` and then `syncWithSystem`, so a
+     * refactor that merged those into one would deadlock with no diagnostic at all.
+     */
     private val mutex = Mutex()
 
     fun observeSummaries(): Flow<List<PairSummary>> = pairs.observeSummaries()
@@ -131,8 +137,19 @@ class SessionRepository(
                         // Started before this boot: the connection cannot have survived.
                         sessions.close(session.id, minOf(lastKnownAlive, bootAt), EndReason.RECOVERED)
 
-                    stillConnected -> sessions.heartbeat(session.id, now)
+                    // Still connected, and watched recently enough to believe it never stopped.
+                    stillConnected && now - lastKnownAlive <= UNWATCHED_SESSION_MS ->
+                        sessions.heartbeat(session.id, now)
 
+                    // Still connected, but nothing of ours has looked in far longer than the
+                    // system would ever defer the heartbeat — a force-stop, or a process gone
+                    // since something else needed the memory. The headphones may well have been
+                    // taken off and put back on in between; nothing knows, so the gap is not
+                    // credited. Closing at the last proof of life lets the pass below open a
+                    // fresh session, which is the same split `openSession` does for a connect
+                    // arriving on a stale one. This case used to fall into the heartbeat above
+                    // and stretch the session over the whole gap — and it defeated that split
+                    // too, by moving `heartbeatAt` up to `now` before `openSession` could look.
                     else -> sessions.close(session.id, lastKnownAlive, EndReason.RECOVERED)
                 }
             }
@@ -183,6 +200,9 @@ class SessionRepository(
     ): Unit = mutex.withLock {
         db.withTransaction {
             val pair = pairs.byId(pairId) ?: return@withTransaction
+            // Already retired: the totals are frozen and the date is part of the record. A second
+            // call — a double tap, or the app and a widget both landing — must not move either.
+            if (pair.retiredAt != null) return@withTransaction
             sessions.openFor(pairId)?.let { open ->
                 sessions.close(open.id, maxOf(open.connectedAt, at), EndReason.MANUAL)
             }
@@ -201,6 +221,20 @@ class SessionRepository(
             pairs.byId(pairId)?.let { pairs.update(it.copy(purchaseDate = purchaseDate, priceCents = priceCents)) }
         }
     }
+
+    /**
+     * Runs [block] holding the write lock, for the one writer that lives outside this class.
+     *
+     * `JsonBackup` replaces the whole database, which is a write like any other and has to be
+     * serialised with the four tracking sources — a connect arriving mid-import wrote a session
+     * that the import's `deleteAll` cascade then destroyed, which made it a fifth writer beside
+     * the ones this class exists to funnel. It builds its own statements rather than calling the
+     * methods here, so what it needs is the lock rather than the funnel. Export takes it too, so
+     * that the file is a snapshot of a database nothing is halfway through changing.
+     *
+     * Not reentrant — see [mutex]. Nothing inside [block] may call back into this class.
+     */
+    suspend fun <T> withWriteLock(block: suspend () -> T): T = mutex.withLock { block() }
 
     suspend fun deletePair(pairId: Long) = mutex.withLock { pairs.delete(pairId) }
 
@@ -288,9 +322,15 @@ class SessionRepository(
             )
             return entity.copy(id = devices.insert(entity))
         }
-        // Names change (renamed headset, better name once BLUETOOTH_CONNECT is granted).
-        if (identity.name.isNotBlank() && identity.name != existing.defaultName) {
-            val updated = existing.copy(defaultName = identity.name, kind = identity.kind)
+        // Names change (renamed headset, better name once BLUETOOTH_CONNECT is granted), and so
+        // does the kind — the same headset is reported as A2DP by one platform view and BLE by
+        // another. The kind was previously only ever written alongside a name change, so a headset
+        // that changed kind under an unchanged name kept the stale one forever; `trackedKinds` and
+        // `closeSessionsForKinds` both filter on it, so a wrong kind leaves a session neither can
+        // reach.
+        val name = identity.name.takeIf { it.isNotBlank() } ?: existing.defaultName
+        if (name != existing.defaultName || identity.kind != existing.kind) {
+            val updated = existing.copy(defaultName = name, kind = identity.kind)
             devices.update(updated)
             return updated
         }
@@ -304,7 +344,31 @@ class SessionRepository(
         /**
          * An open session whose last heartbeat is older than this cannot be the connection we
          * are being told about now — three times the 15-minute heartbeat interval.
+         *
+         * This is a question about a *connect event*: a device that never dropped fires no second
+         * ACL_CONNECTED, so an event arriving at all means either a repeat of one already handled
+         * or a genuinely new connection, and the gap since the last proof of life is what tells
+         * the two apart. Deliberately not the ceiling [UNWATCHED_SESSION_MS] sets, which answers
+         * something else entirely.
          */
         const val STALE_SESSION_MS = 45 * 60_000L
+
+        /**
+         * How long a still-connected session may go unwatched before the app stops believing it
+         * ran without a break.
+         *
+         * Much longer than [STALE_SESSION_MS] on purpose. This one decides whether to credit a
+         * stretch of time nothing observed at all, and the ordinary reason for one is Doze, which
+         * defers a periodic worker to its next maintenance window — hours away on an idle phone.
+         * A ceiling anywhere near the heartbeat interval would turn every night in a pocket into
+         * a split session and lose the listening along with it.
+         *
+         * Six hours is about the longest the platform will legitimately keep the worker from
+         * running, so past it the explanation is no longer battery management: the app was
+         * force-stopped, or its process has been gone since something else needed the memory.
+         * Nothing knows what the headphones did in between, and unobserved time is not listening
+         * time — so the session is closed at its last proof of life and a fresh one opened.
+         */
+        const val UNWATCHED_SESSION_MS = 6 * 3_600_000L
     }
 }

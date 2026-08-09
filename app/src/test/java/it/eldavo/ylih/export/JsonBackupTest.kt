@@ -8,6 +8,7 @@ import it.eldavo.ylih.data.DeviceKind
 import it.eldavo.ylih.data.EndReason
 import it.eldavo.ylih.data.PairEntity
 import it.eldavo.ylih.data.SessionEntity
+import it.eldavo.ylih.data.SettingEntity
 import it.eldavo.ylih.data.YlihDatabase
 import kotlinx.coroutines.test.runTest
 import kotlinx.serialization.json.Json
@@ -170,6 +171,51 @@ class JsonBackupTest {
             assertEquals(db.sessionDao().getAll(), restored.sessionDao().getAll())
         } finally {
             restored.close()
+        }
+    }
+
+    /**
+     * The settings are five flags and a language tag, and losing them on a new phone means the
+     * restored history is suddenly counting something else — playback rather than connected time,
+     * say — with nothing to explain why the totals moved.
+     */
+    @Test
+    fun `the settings travel with the history`() = runTest {
+        seed(db)
+        db.settingsDao().put(SettingEntity("detailed_tracking", "true"))
+        db.settingsDao().put(SettingEntity("language", "it"))
+        val payload = JsonBackup.export(db, now)
+
+        val restored = newDatabase()
+        try {
+            JsonBackup.import(restored, payload)
+            assertEquals(db.settingsDao().getAll(), restored.settingsDao().getAll())
+        } finally {
+            restored.close()
+        }
+    }
+
+    /**
+     * The field arrived after the format did, so a file written by an older build has no settings
+     * at all — and must leave the ones on the phone alone rather than clearing them, which is what
+     * every backup did before this existed.
+     */
+    @Test
+    fun `a backup written before settings existed leaves the current ones alone`() = runTest {
+        seed(db)
+        val payload = JsonBackup.export(db, now)
+
+        val other = newDatabase()
+        try {
+            other.settingsDao().put(SettingEntity("playback_only_stats", "true"))
+            JsonBackup.import(other, payload)
+
+            assertEquals(
+                listOf(SettingEntity("playback_only_stats", "true")),
+                other.settingsDao().getAll(),
+            )
+        } finally {
+            other.close()
         }
     }
 

@@ -153,11 +153,17 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
 
     fun setDeviceIgnored(deviceId: Long, ignored: Boolean) = mutate {
         container.repository.setDeviceIgnored(deviceId, ignored)
+        // Ignoring closes the open session itself. Un-ignoring has nothing to reopen from — the
+        // device is connected right now but no event will say so again — so without this, tracking
+        // resumed only whenever something else happened to sync, up to fifteen minutes later.
+        if (!ignored) container.trackingController.syncWithSystem()
     }
 
     fun exportTo(uri: Uri) = viewModelScope.launch {
         runCatching {
-            val payload = JsonBackup.export(container.database, container.clock.now())
+            val payload = container.repository.withWriteLock {
+                JsonBackup.export(container.database, container.clock.now())
+            }
             getApplication<Application>().contentResolver.openOutputStream(uri)?.use {
                 it.write(payload.toByteArray())
             } ?: error(string(RES_COULD_NOT_OPEN, uri))
@@ -170,7 +176,7 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
             val content = getApplication<Application>().contentResolver.openInputStream(uri)
                 ?.use { it.readBytes().decodeToString() }
                 ?: error(string(RES_COULD_NOT_OPEN, uri))
-            JsonBackup.import(container.database, content)
+            container.repository.withWriteLock { JsonBackup.import(container.database, content) }
         }.onSuccess { count ->
             messageChannel.send(
                 getApplication<Application>().resources.getQuantityString(RES_IMPORT_OK, count, count),

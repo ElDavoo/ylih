@@ -27,8 +27,11 @@ class SessionRepositoryTest {
     private lateinit var repository: SessionRepository
 
     private val hour = 3_600_000L
+    private val day = 24 * hour
     private var clockNow = 1_800_000_000_000L
-    private val bootAt get() = clockNow - 12 * hour
+
+    /** Far enough back that nothing this class opens reads as predating the boot. */
+    private val bootAt get() = clockNow - 30 * day
 
     private val buds = DeviceIdentity("bt:AA:BB:CC:DD:EE:FF", DeviceKind.BLUETOOTH, "Buds")
     private val wired = DeviceIdentity("wired:headphones", DeviceKind.WIRED, "Wired headphones")
@@ -184,6 +187,8 @@ class SessionRepositoryTest {
     @Test
     fun `process death without a reboot keeps a live session open`() = runTest {
         repository.onConnected(buds, at = clockNow - 2 * hour)
+        // Inside the unwatched ceiling: a gap this short is Doze holding the heartbeat back, or
+        // the process dying and coming back, and the headphones really were on throughout.
         repository.heartbeat(at = clockNow - hour)
 
         repository.reconcile(connected = listOf(buds), now = clockNow, bootAt = bootAt)
@@ -191,6 +196,30 @@ class SessionRepositoryTest {
         val session = sessions().single()
         assertNull(session.disconnectedAt)
         assertEquals(clockNow, session.heartbeatAt)
+    }
+
+    /**
+     * The other side of the rule above, and the one that stops a lifetime total from quietly
+     * gaining a day.
+     *
+     * A force-stop, or a battery manager that starves the heartbeat worker, leaves a session open
+     * with nothing watching it. Reconnecting the app later found the same headphones connected and
+     * stretched the session across the whole gap — and defeated the split `openSession` would
+     * otherwise have done, because heartbeating to `now` first made the session look fresh.
+     */
+    @Test
+    fun `a still-connected session nobody watched for too long is split, not stretched`() = runTest {
+        repository.onConnected(buds, at = clockNow - 3 * day)
+        repository.heartbeat(at = clockNow - 2 * day)
+
+        repository.reconcile(connected = listOf(buds), now = clockNow, bootAt = bootAt)
+
+        val all = sessions()
+        assertEquals("the unwatched gap is a second session, not part of the first", 2, all.size)
+        assertEquals(clockNow - 2 * day, all[0].disconnectedAt)
+        assertEquals(EndReason.RECOVERED, all[0].endReason)
+        assertEquals("and the live one starts now", clockNow, all[1].connectedAt)
+        assertNull(all[1].disconnectedAt)
     }
 
     @Test
@@ -327,6 +356,38 @@ class SessionRepositoryTest {
         repository.creditPlayback(wired.key, 20 * 60_000)
 
         assertEquals(10 * 60_000L, sessions().single().playingMs)
+    }
+
+    /**
+     * `kind` decides which tracking mode can see a session at all — `trackedKinds` filters on it,
+     * and so does `closeSessionsForKinds` — so a stale one leaves a session neither can reach. It
+     * used to be written only alongside a name change, which the same headset reported by two
+     * platform views does not necessarily bring.
+     */
+    @Test
+    fun `a device that changes kind under the same name is corrected`() = runTest {
+        repository.onConnected(buds, at = clockNow - hour)
+        repository.onDisconnected(buds.key, at = clockNow)
+
+        repository.onConnected(buds.copy(kind = DeviceKind.BLE), at = clockNow + hour)
+
+        val device = db.deviceDao().findByKey(buds.key)!!
+        assertEquals(DeviceKind.BLE, device.kind)
+        assertEquals("without splitting the identity", "Buds", device.defaultName)
+        assertEquals(1, db.deviceDao().getAll().size)
+    }
+
+    @Test
+    fun `retiring a pair twice does not move the date it was retired on`() = runTest {
+        repository.onConnected(buds, at = clockNow - hour)
+        val pairId = db.pairDao().getAll().single().id
+
+        repository.retirePair(pairId, reason = "died", at = clockNow)
+        repository.retirePair(pairId, reason = "tapped again", at = clockNow + hour)
+
+        val pair = db.pairDao().byId(pairId)!!
+        assertEquals("the frozen total is dated once and stays dated", clockNow, pair.retiredAt)
+        assertEquals("died", pair.retireReason)
     }
 
     @Test
