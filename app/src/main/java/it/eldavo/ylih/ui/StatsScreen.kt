@@ -156,5 +156,15 @@ fun StatsScreen(
     }
 }
 
+/**
+ * A share, through the locale's own percent format rather than a `%` glued on the end.
+ *
+ * That matters more than it looks: Arabic writes the sign with its own directional marks, Russian
+ * and Finnish put a space before it, and several locales use different digits entirely.
+ */
 internal fun percent(part: Long, whole: Long): String =
-    if (whole <= 0) "—" else "${(part * 100 / whole).coerceIn(0, 100)}%"
+    if (whole <= 0) {
+        "—"
+    } else {
+        formatPercent((part.toDouble() / whole).coerceIn(0.0, 1.0))
+    }

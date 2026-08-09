@@ -1,5 +1,6 @@
 package it.eldavo.ylih.ui
 
+import android.os.Build
 import java.time.LocalDate
 import java.time.ZoneId
 import java.util.Locale
@@ -7,12 +8,21 @@ import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.annotation.Config
 
 /**
  * Every formatter here goes through `Locale.getDefault()`, which no resource qualifier reaches —
  * the same trap `StoreScreenshots` has to work around. Pinning the locale is therefore part of
  * the test rather than an incidental setup detail.
+ *
+ * Under Robolectric rather than as a plain JVM test, because the durations come from
+ * `android.icu` — which is the point of them: the units are CLDR's, in every language the app
+ * ships, and not something anyone here has to translate.
  */
+@RunWith(RobolectricTestRunner::class)
+@Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
 class FormatTest {
 
     private lateinit var original: Locale
@@ -31,21 +41,56 @@ class FormatTest {
 
     @Test
     fun `durations drop the units that would read as zero`() {
-        assertEquals("3h 07m", formatDurationShort(3 * 3_600_000L + 7 * 60_000L))
+        assertEquals("3h 7m", formatDurationShort(3 * 3_600_000L + 7 * 60_000L))
         assertEquals("12m", formatDurationShort(12 * 60_000L))
         assertEquals("45s", formatDurationShort(45_000L))
         assertEquals("0s", formatDurationShort(0))
     }
 
+    /**
+     * The whole reason these go through ICU. "h", "m" and "s" are English, and a screen reader
+     * says them aloud in all 77 languages; CLDR has the abbreviation each language actually uses,
+     * and the ordering and separators that go with it.
+     */
+    @Test
+    fun `every language gets its own units, not English ones`() {
+        val threeSeven = 3 * 3_600_000L + 7 * 60_000L
+
+        Locale.setDefault(Locale.ITALY)
+        assertEquals("3h 7min", formatDurationShort(threeSeven))
+
+        Locale.setDefault(Locale.JAPAN)
+        assertEquals("3h7m", formatDurationShort(threeSeven))
+
+        Locale.setDefault(Locale.forLanguageTag("fi"))
+        assertEquals("3t 7min", formatDurationShort(threeSeven))
+        assertEquals("45s", formatDurationShort(45_000L))
+    }
+
+    /**
+     * Android 6 has no `android.icu`, and still has to print something. It gets the format every
+     * language used to get, zero padding and all — this branch is the old code, unchanged.
+     */
+    @Test
+    @Config(sdk = [Build.VERSION_CODES.M])
+    fun `below android 7 the units fall back to the ones every language used to get`() {
+        assertEquals("3h 07m", formatDurationShort(3 * 3_600_000L + 7 * 60_000L))
+        assertEquals("12m", formatDurationShort(12 * 60_000L))
+        assertEquals("1,240.5 h", formatHours(1_240_500 * 3_600L))
+    }
+
     @Test
     fun `a clock that jumped backwards never prints a negative duration`() {
         assertEquals("0s", formatDurationShort(-5_000))
-        assertEquals("0.0 h", formatHours(-5_000))
+        assertEquals("0.0h", formatHours(-5_000))
     }
 
     @Test
     fun `the lifetime headline is grouped and given one decimal`() {
-        assertEquals("1,240.5 h", formatHours(1_240_500 * 3_600L))
+        assertEquals("1,240.5h", formatHours(1_240_500 * 3_600L))
+
+        Locale.setDefault(Locale.ITALY)
+        assertEquals("a decimal comma and a point for grouping", "1.240,5h", formatHours(1_240_500 * 3_600L))
     }
 
     @Test

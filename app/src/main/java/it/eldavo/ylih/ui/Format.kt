@@ -1,5 +1,10 @@
 package it.eldavo.ylih.ui
 
+import android.icu.text.MeasureFormat
+import android.icu.util.Measure
+import android.icu.util.MeasureUnit
+import android.os.Build
+import androidx.annotation.RequiresApi
 import java.math.BigDecimal
 import java.math.RoundingMode
 import java.time.Instant
@@ -8,6 +13,7 @@ import java.time.ZoneId
 import java.time.chrono.IsoChronology
 import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeFormatterBuilder
+import java.text.NumberFormat
 import java.time.format.FormatStyle
 import java.util.Locale
 
@@ -15,22 +21,31 @@ private const val SECOND = 1_000L
 private const val MINUTE = 60 * SECOND
 private const val HOUR = 60 * MINUTE
 
-/** "3h 07m" / "12m" / "45s" — for live timers and session rows. */
+/**
+ * "3h 7m" / "12m" / "45s" — for live timers and session rows, in the reader's own units.
+ *
+ * The units come from CLDR through ICU rather than from string resources. They are the same
+ * abbreviations the platform's own clock and battery screens use, in all 77 languages, and there
+ * is nothing here for anyone to translate: "3t 7min" in Finnish, "3小时7分钟" in Chinese, and the
+ * right ordering and separator in Arabic and Hebrew, none of which a `"%dh %02dm"` could reach.
+ *
+ * It used to be exactly that format string, so every language read the English "h", "m" and "s" —
+ * and a screen reader said them aloud.
+ *
+ * The zero padding goes with it: ICU has no notion of it, and the alternative was giving up the
+ * localisation to keep a live timer one character steadier as it crosses 9 to 10 minutes.
+ */
 fun formatDurationShort(ms: Long): String {
     val safe = ms.coerceAtLeast(0)
     val hours = safe / HOUR
     val minutes = (safe % HOUR) / MINUTE
     val seconds = (safe % MINUTE) / SECOND
-    return when {
-        hours > 0 -> String.format(Locale.getDefault(), "%dh %02dm", hours, minutes)
-        minutes > 0 -> String.format(Locale.getDefault(), "%dm", minutes)
-        else -> String.format(Locale.getDefault(), "%ds", seconds)
-    }
+    return formatters().duration(hours, minutes, seconds)
 }
 
-/** "1,240.5 h" — the lifetime headline. */
+/** "1,240.5h" — the lifetime headline, with the hour unit from CLDR. See [formatDurationShort]. */
 fun formatHours(ms: Long): String =
-    String.format(Locale.getDefault(), "%,.1f h", ms.coerceAtLeast(0) / HOUR.toDouble())
+    formatters().hours(ms.coerceAtLeast(0) / HOUR.toDouble())
 
 /**
  * The three localized formatters, built once per locale rather than once per call.
@@ -42,6 +57,40 @@ fun formatHours(ms: Long): String =
  * and every one of these reads `Locale.getDefault()`.
  */
 private class Formatters(val locale: Locale) {
+
+    val percent: NumberFormat = NumberFormat.getPercentInstance(locale)
+
+    /** Null on Android 6, the one release this ships to without `android.icu`. */
+    private val icu: IcuUnits? =
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) IcuUnits(locale) else null
+
+    // The `SDK_INT` test rather than a null check on [icu], which is the same question asked the
+    // same way once already: lint reads the version comparison and nothing else as a guard, and it
+    // is right to, since a null here would otherwise be free to mean something new later.
+    fun duration(hours: Long, minutes: Long, seconds: Long): String =
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && icu != null) {
+            icu.duration(hours, minutes, seconds)
+        } else {
+            legacy(hours, minutes, seconds)
+        }
+
+    fun hours(value: Double): String =
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && icu != null) {
+            icu.hours(value)
+        } else {
+            String.format(locale, "%,.1f h", value)
+        }
+
+    /**
+     * What every language used to get. There is no CLDR to ask below API 24, and one platform
+     * version is not worth carrying a translated copy of the unit names for.
+     */
+    private fun legacy(hours: Long, minutes: Long, seconds: Long): String = when {
+        hours > 0 -> String.format(locale, "%dh %02dm", hours, minutes)
+        minutes > 0 -> String.format(locale, "%dm", minutes)
+        else -> String.format(locale, "%ds", seconds)
+    }
+
     val dateTime: DateTimeFormatter =
         DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM, FormatStyle.SHORT)
             .withLocale(locale)
@@ -70,6 +119,47 @@ private class Formatters(val locale: Locale) {
 /** A run of year letters with any punctuation it is attached to on either side. */
 private val YEAR_FIELD = Regex("[^\\p{L}]*[yu]+[^\\p{L}]*")
 
+/**
+ * Every `android.icu` type in this file, behind one API check.
+ *
+ * A class rather than a few guarded calls so that the version gate is the single act of building
+ * it: nothing outside can name a `MeasureUnit`, so there is nowhere left to reach API 24 from a
+ * path that has not checked. `Formatters` holds one or null and falls back on the null.
+ *
+ * NARROW rather than SHORT because these sit in chips, cards and a headline where "3h 7m" belongs
+ * and "3 hrs, 7 mins" does not. Two formats because the whole-unit durations want no decimals and
+ * the lifetime headline wants exactly one.
+ */
+@RequiresApi(Build.VERSION_CODES.N)
+private class IcuUnits(locale: Locale) {
+
+    private val whole = measures(locale, fractionDigits = 0)
+    private val fractional = measures(locale, fractionDigits = 1)
+
+    fun duration(hours: Long, minutes: Long, seconds: Long): String = when {
+        hours > 0 -> whole.formatMeasures(
+            Measure(hours, MeasureUnit.HOUR),
+            Measure(minutes, MeasureUnit.MINUTE),
+        )
+
+        minutes > 0 -> whole.formatMeasures(Measure(minutes, MeasureUnit.MINUTE))
+        else -> whole.formatMeasures(Measure(seconds, MeasureUnit.SECOND))
+    }
+
+    fun hours(value: Double): String = fractional.format(Measure(value, MeasureUnit.HOUR))
+
+    private fun measures(locale: Locale, fractionDigits: Int): MeasureFormat =
+        MeasureFormat.getInstance(
+            locale,
+            MeasureFormat.FormatWidth.NARROW,
+            android.icu.text.NumberFormat.getInstance(locale).apply {
+                minimumFractionDigits = fractionDigits
+                maximumFractionDigits = fractionDigits
+                isGroupingUsed = true
+            },
+        )
+}
+
 @Volatile
 private var formatters: Formatters? = null
 
@@ -85,6 +175,9 @@ fun formatDate(epochMs: Long, zone: ZoneId = ZoneId.systemDefault()): String =
     formatters().date.format(Instant.ofEpochMilli(epochMs).atZone(zone))
 
 fun formatDayLabel(date: LocalDate): String = formatters().dayLabel.format(date)
+
+/** A fraction as the locale writes a percentage — see `percent`. */
+fun formatPercent(fraction: Double): String = formatters().percent.format(fraction)
 
 fun formatMoney(cents: Long): String =
     String.format(Locale.getDefault(), "%,.2f", cents / 100.0)
