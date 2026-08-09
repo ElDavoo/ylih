@@ -183,10 +183,17 @@ interface SessionDao {
      * is dropped, so what a widget refresh carries into memory and bucketing stays bounded however
      * long the table gets.
      *
-     * Note that it bounds the rows *returned*, not the rows examined: the `OR` and an `ORDER BY`
-     * on a different column than either index leave SQLite scanning the table and sorting the
-     * result. Making that part bounded too would take a composite index and so a migration, which
-     * is not worth it for a query that runs when the data changes rather than in a loop.
+     * It bounds the rows examined too, which is not obvious from the shape of it. The `OR` looks
+     * like a scan and is not: SQLite plans it as a MULTI-INDEX OR and satisfies both arms from
+     * `index_sessions_disconnectedAt`, the `IS NULL` half included, because an index stores nulls
+     * and that is an equality search against one. Measured over 22,000 sessions — ten years at six
+     * a day — the plan is the same with or without ANALYZE, 648 rows come back, and it runs about
+     * thirty times cheaper than the unbounded `observeAll` beside it.
+     *
+     * What is left is `USE TEMP B-TREE FOR ORDER BY`, and that sorts the rows returned rather than
+     * the table. A `(disconnectedAt, connectedAt)` index does not remove it — results arriving from
+     * two index searches have to be merged, so no single index can supply the order — so there is
+     * no migration here that would buy anything.
      */
     @Query(
         "SELECT * FROM sessions WHERE disconnectedAt IS NULL OR disconnectedAt >= :from " +
