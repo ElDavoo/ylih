@@ -64,6 +64,44 @@ class FormatTest {
         assertEquals("0.281", formatPerHour(0.2814))
     }
 
+    /**
+     * The price a pair was bought for is typed once and then re-read every time the dialog is
+     * opened, so the two directions have to agree exactly. They used to disagree twice over: the
+     * field was filled from `cents / 100`, which dropped the minor units, and the answer was
+     * parsed as a Double, which lost a cent to binary rounding.
+     */
+    @Test
+    fun `a price survives being written into the field and read back`() {
+        for (cents in listOf(0L, 5L, 99L, 1_299L, 12_345L, 1_234_567L)) {
+            assertEquals("$cents cents", cents, parsePriceCents(formatPriceInput(cents)))
+        }
+    }
+
+    @Test
+    fun `a typed price keeps its minor units`() {
+        assertEquals(1_299L, parsePriceCents("12.99"))
+        assertEquals(1_299L, parsePriceCents(" 12,99 "))
+        assertEquals(12_300L, parsePriceCents("123"))
+        // Rounded rather than truncated, so half a cent does not quietly disappear.
+        assertEquals(1_300L, parsePriceCents("12.995"))
+    }
+
+    @Test
+    fun `anything that is not a price reads as no price at all`() {
+        assertEquals(null, parsePriceCents(""))
+        assertEquals(null, parsePriceCents("   "))
+        assertEquals(null, parsePriceCents("free"))
+        assertEquals(null, parsePriceCents("1.234.56"))
+        assertEquals(null, parsePriceCents("-5"))
+    }
+
+    @Test
+    fun `the field is filled without grouping so it can be read back`() {
+        // formatMoney groups for display; the field must not, or "1,234.56" comes back as 1.234.
+        assertEquals("1,234.56", formatMoney(123_456))
+        assertEquals("1234.56", formatPriceInput(123_456))
+    }
+
     @Test
     fun `a share of nothing is a dash rather than a division by zero`() {
         assertEquals("—", percent(100, 0))

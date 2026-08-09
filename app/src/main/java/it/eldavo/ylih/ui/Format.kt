@@ -1,5 +1,7 @@
 package it.eldavo.ylih.ui
 
+import java.math.BigDecimal
+import java.math.RoundingMode
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
@@ -43,6 +45,32 @@ fun formatDayLabel(date: LocalDate): String =
 
 fun formatMoney(cents: Long): String =
     String.format(Locale.getDefault(), "%,.2f", cents / 100.0)
+
+/**
+ * [formatMoney] without the grouping separators, for the field that has to be read back.
+ *
+ * Grouping is what makes a price ambiguous to re-parse: an Italian install writes 1234.56 as
+ * "1.234,56", and there is no honest way to tell that apart from someone typing "1.234" meaning
+ * one and a bit. Without it there is only ever one separator in the string, so [parsePriceCents]
+ * can take either character to mean the decimal point and the field round-trips whatever this put
+ * in it.
+ */
+fun formatPriceInput(cents: Long): String =
+    String.format(Locale.getDefault(), "%.2f", cents / 100.0)
+
+/**
+ * Reads a typed price back into minor units, or null for anything that is not one.
+ *
+ * `BigDecimal` rather than a `Double`: "12.99" is 12.989999999999998 as a Double, and truncating
+ * that after multiplying by a hundred stored 1298 — a cent less than was typed, every time.
+ */
+fun parsePriceCents(text: String): Long? {
+    val normalised = text.trim().replace(',', '.')
+    if (normalised.isEmpty()) return null
+    return runCatching {
+        BigDecimal(normalised).movePointRight(2).setScale(0, RoundingMode.HALF_UP).toLong()
+    }.getOrNull()?.takeIf { it >= 0 }
+}
 
 /** Cost per listening hour; three decimals because the number gets small fast. */
 fun formatPerHour(value: Double): String =

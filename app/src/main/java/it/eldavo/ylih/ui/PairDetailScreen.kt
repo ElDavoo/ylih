@@ -261,12 +261,15 @@ fun PairDetailScreen(
     if (editingPurchase && current != null) {
         TextFieldDialog(
             title = stringResource(R.string.pair_price_title),
-            initial = current.priceCents?.let { (it / 100).toString() }.orEmpty(),
+            // The whole price, not `cents / 100`: integer division dropped the minor units, so a
+            // pair bought for 123.45 opened the dialog reading "123" and confirming it unchanged
+            // rewrote the price as 123.00.
+            initial = current.priceCents?.let { formatPriceInput(it) }.orEmpty(),
             label = stringResource(R.string.pair_price_label),
             supporting = stringResource(R.string.pair_price_supporting),
             onDismiss = { editingPurchase = false },
             onConfirm = { value ->
-                val cents = value.trim().toDoubleOrNull()?.let { (it * 100).toLong() }
+                val cents = parsePriceCents(value)
                 viewModel.setPurchaseInfo(
                     pairId,
                     current.purchaseDate ?: current.startedAt,
