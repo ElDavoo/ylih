@@ -1,6 +1,7 @@
 package it.eldavo.ylih
 
 import android.content.Context
+import android.os.Build
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
 import androidx.glance.appwidget.GlanceAppWidgetReceiver
@@ -50,10 +51,25 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class MinifiedReleaseTest {
 
+    /**
+     * Only the permissions that exist on the device this is running on.
+     *
+     * `BLUETOOTH_CONNECT` arrived in API 31 and `POST_NOTIFICATIONS` in API 33, and asking for one
+     * that does not exist fails the *grant* rather than being ignored — which fails every test in
+     * the class before a line of it runs, with "Failed to grant permissions, see logcat". Asking
+     * unconditionally was fine while this only ever ran on API 34; it is what the minSdk leg found
+     * the first time it ran.
+     */
     @get:Rule
     val permissions: GrantPermissionRule = GrantPermissionRule.grant(
-        "android.permission.BLUETOOTH_CONNECT",
-        "android.permission.POST_NOTIFICATIONS",
+        *buildList {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                add("android.permission.BLUETOOTH_CONNECT")
+            }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                add("android.permission.POST_NOTIFICATIONS")
+            }
+        }.toTypedArray(),
     )
 
     private val context: Context get() = ApplicationProvider.getApplicationContext()
