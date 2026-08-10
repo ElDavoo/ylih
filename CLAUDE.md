@@ -275,11 +275,33 @@ Four things about this code are load-bearing and not obvious:
   Glance's own API-31 dynamic tokens is in the same position, which is why the chrome colours are
   `@color/widget_*` in four folders (`values`, `-night`, `-v31`, `-night-v31`) — the launcher
   resolves those in its own configuration at inflate time.
-- **Refreshes are pushed, never polled.** `updatePeriodMillis` is 0. Background writes reach the
-  widgets through `TrackingController.onDataChanged` (wired in `AppContainer`), foreground edits
-  through `YlihViewModel.mutate`. Adding a write path means adding it to one of those two, and
-  `refreshWidgets` swallows its own failures on purpose: a cosmetic redraw must never be able to
-  fail a session write.
+- **Refreshes are pushed, never polled — except once a day.** `updatePeriodMillis` is 0. Background
+  writes reach the widgets through `TrackingController.onDataChanged` (wired in `AppContainer`),
+  foreground edits through `YlihViewModel.mutate`. Adding a write path means adding it to one of
+  those two, and `refreshWidgets` swallows its own failures on purpose: a cosmetic redraw must never
+  be able to fail a session write.
+
+  The exception is the one figure a write cannot announce. `todayMs`, the two window totals and the
+  chart's series are bucketed by *local midnight*, so they also move when the **date** does — and
+  crossing midnight with nothing connected reaches neither push. `ylih · activity` went on showing
+  yesterday's hours under "today" until the first connect of the new day; the app's own screens never
+  had this, because they re-derive from `nowMinute`, and a launcher has nothing that ticks.
+  `widget/WidgetRollover.kt` is the daily wakeup that closes it, and it is deliberately small: armed
+  only while a widget showing a dated figure is actually placed (asked of `AppWidgetManager`, not of
+  `GlanceAppWidgetManager`, whose own provider map is empty until a widget has composed — on a fresh
+  boot that would cancel the very schedule it is meant to keep), and cancelled again when the last
+  one goes. `LifetimeWidget` is not in the list: lifetime hours and a `Chronometer` do not know what
+  day it is.
+
+  It is *periodic* work with `setNextScheduleTimeOverride` rather than a chain of one-shots, and that
+  is the part worth not undoing. One-shot work cannot re-arm itself — enqueued under its own unique
+  name from inside its own run, `KEEP` drops the request as a duplicate of the run making it and
+  `REPLACE` cancels that run halfway through. The override also has to be re-stated on every run,
+  because WorkManager measures the next period from the *end* of the last one: however late the
+  system chose to deliver a run is otherwise added to every day after it, and a job that started at
+  00:00 slides into the afternoon over a few months. `UPDATE` is the one policy that re-times work in
+  place without cancelling the caller; the ordinary callers pass `KEEP`, since the service's tick
+  reaches `refreshWidgets` once a minute and an existing schedule must not be rewritten each time.
 
   The controller exposes three doors onto that one callback and they are not interchangeable.
   `onSessionOpened`/`onSessionClosed` are the broadcast receiver's; `onSessionsChanged` is the
@@ -489,7 +511,7 @@ These are easy to break and the failures are confusing:
 
   `.github/scripts/r8-keep-check.py` is the cheap half. It reads the `mapping.txt` an
   `assemble<Variant>Release` writes and asserts R8 ran at all and that the classes reached only
-  by name — `HeartbeatWorker` above all, whose name WorkManager persists in its own database —
+  by name — the two workers above all, whose names WorkManager persists in its own database —
   survived with their names intact. No device, so CI runs it per flavor on every push:
 
   ```sh
@@ -546,7 +568,7 @@ test activity to users.
 
 `app/src/androidTest/MinifiedReleaseTest.kt` is the only place the shipped code is executed. It
 runs on an emulator in CI and covers what a name rather than a symbol reaches — Room's
-`_Impl` lookup, WorkManager instantiating `HeartbeatWorker` from a stored class name,
+`_Impl` lookup, WorkManager instantiating both workers from a stored class name,
 serialization's generated descriptors, and the app starting at all. Its `-dontwarn` rules live in
 `app/src/androidTest/keepRules/`; nothing there touches the shipped APK. Running it locally needs
 a device and the four `ANDROID_SIGNING_*` variables, because an unsigned APK will not install:

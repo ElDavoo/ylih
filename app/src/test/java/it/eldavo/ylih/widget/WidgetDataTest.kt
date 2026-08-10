@@ -230,6 +230,36 @@ class WidgetDataTest {
     }
 
     @Test
+    fun `the next midnight is the next one this zone actually has`() {
+        assertEquals(
+            today.plusDays(1).atStartOfDay(zone).toInstant().toEpochMilli(),
+            nextLocalMidnight(clockNow, zone),
+        )
+        // A minute past midnight belongs to the day that has just started, not to the one ending
+        // 24 hours later — the rollover would otherwise fire a day late for good.
+        assertEquals(
+            today.plusDays(2).atStartOfDay(zone).toInstant().toEpochMilli(),
+            nextLocalMidnight(today.plusDays(1).atStartOfDay(zone).toInstant().toEpochMilli() + 60_000, zone),
+        )
+    }
+
+    @Test
+    fun `the day the clocks go forward still has a next midnight`() {
+        // Europe/Rome springs forward on 2026-03-29 at 02:00, so that day is 23 hours long. The
+        // arithmetic is `atStartOfDay`, not `+ 24h`, which is what keeps this the real instant.
+        val zone = ZoneId.of("Europe/Rome")
+        val saturday = LocalDate.of(2026, 3, 28).atStartOfDay(zone).toInstant().toEpochMilli()
+        val sunday = LocalDate.of(2026, 3, 29).atStartOfDay(zone).toInstant().toEpochMilli()
+
+        assertEquals(sunday, nextLocalMidnight(saturday, zone))
+        assertEquals(
+            "and the short day is 23 hours, not 24",
+            23 * hour,
+            nextLocalMidnight(sunday, zone) - sunday,
+        )
+    }
+
+    @Test
     fun `the chronometer is handed the moment the session opened`() {
         // Chronometer counts in elapsedRealtime, which has no relation to wall time, so the widget
         // shows the wrong age unless the two are subtracted in the right order.

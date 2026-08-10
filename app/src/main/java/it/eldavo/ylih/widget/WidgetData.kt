@@ -152,6 +152,20 @@ internal fun windowStart(now: Long, zone: ZoneId): Long =
         .toEpochMilli()
 
 /**
+ * The next instant at which every window above answers a different question — see [WidgetRolloverWorker].
+ *
+ * `atStartOfDay(zone)` rather than `+ 24h`, for the reason `Stats.dailyMs` gives: a DST day is 23
+ * or 25 hours long, and on the spring-forward day midnight itself may not exist, where this hands
+ * back the first instant that does.
+ */
+internal fun nextLocalMidnight(now: Long, zone: ZoneId): Long =
+    Instant.ofEpochMilli(now).atZone(zone).toLocalDate()
+        .plusDays(1)
+        .atStartOfDay(zone)
+        .toInstant()
+        .toEpochMilli()
+
+/**
  * What a `Chronometer` must count up from to show the age of a session opened at [openSince].
  *
  * Chronometer works in `SystemClock.elapsedRealtime()`, which bears no relation to wall time, so

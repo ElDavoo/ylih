@@ -34,6 +34,13 @@ suspend fun refreshWidgets(context: Context) {
         LifetimeWidget().updateAll(context)
         ActivityWidget().updateAll(context)
         ChartWidget().updateAll(context)
+        // A redraw is only half of what the home screen needs. Some of these figures move with the
+        // date rather than with the database, and no write announces a date — so every refresh also
+        // makes sure the one thing that can is armed. See [WidgetRolloverWorker]. It is here rather
+        // than in `TrackingController` because the controller deliberately knows nothing about
+        // widgets beyond the callback it is handed, and here rather than in a caller of its own
+        // because these are already the two points every write converges on.
+        scheduleWidgetRollover(context)
     }.onFailure { Log.w(TAG, "Could not refresh the home-screen widgets", it) }
 }
 

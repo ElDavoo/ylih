@@ -117,18 +117,25 @@ class MinifiedReleaseTest {
      * of as heartbeats that silently stop for installs that already had one scheduled.
      */
     @Test
-    fun workManagerCanStillReachTheHeartbeatWorkerByName() {
-        val name = "it.eldavo.ylih.tracking.HeartbeatWorker"
-        val clazz = Class.forName(name)
+    fun workManagerCanStillReachItsWorkersByName() {
+        // Both of them: the heartbeat, whose loss is a session that runs forever, and the widget
+        // rollover, whose loss is a home screen stuck on yesterday's figures.
+        for (name in listOf(
+            "it.eldavo.ylih.tracking.HeartbeatWorker",
+            "it.eldavo.ylih.widget.WidgetRolloverWorker",
+        )) {
+            val clazz = Class.forName(name)
 
-        assertTrue(
-            "$name is no longer a ListenableWorker, so WorkManager could not run it",
-            ListenableWorker::class.java.isAssignableFrom(clazz),
-        )
-        // The two-argument constructor is what WorkerFactory reflects for; R8 removing it as
-        // unused would leave the class present and the worker still unrunnable.
-        val constructor = clazz.getDeclaredConstructor(Context::class.java, WorkerParameters::class.java)
-        assertNotNull(constructor)
+            assertTrue(
+                "$name is no longer a ListenableWorker, so WorkManager could not run it",
+                ListenableWorker::class.java.isAssignableFrom(clazz),
+            )
+            // The two-argument constructor is what WorkerFactory reflects for; R8 removing it as
+            // unused would leave the class present and the worker still unrunnable.
+            val constructor =
+                clazz.getDeclaredConstructor(Context::class.java, WorkerParameters::class.java)
+            assertNotNull(constructor)
+        }
     }
 
     /**
