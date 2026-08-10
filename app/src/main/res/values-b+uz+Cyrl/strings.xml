@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Uzbek (Cyrillic). Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - сизнинг аудиотосмачага жизни</string>
+
+    <string name="nav_headphones">аудиотосмалар</string>
+    <string name="nav_stats">статистика</string>
+    <string name="nav_settings">созламалар</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">симли</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">номаълум</string>
+
+    <string name="welcome_title">ylih\'га хуш келибсиз</string>
+    <string name="welcome_intro">ylih ҳар бир аудиотосма нечадан туя қўлилганлигини ҳисобловчи дастур. бир нечаёл кейин, сизнинг аудиотосмалари қанча соат давом этганлигини сўрашингиз мумкин болади.</string>
+    <string name="welcome_point_auto_title">улаш ва унутиш</string>
+    <string name="welcome_point_auto_body">bluetooth аудиотосмалари ўзи қайд этилади. ҳеч нарса ишлаб турсин.</string>
+    <string name="welcome_point_lifetime_title">бир жуфт, бир умр</string>
+    <string name="welcome_point_lifetime_body">аудиотосма иштирок қилар эди, унга яхши айтинг: унинг жамисі шўнда ўз турадилан кейинги жуфт нол дан бошланади.</string>
+    <string name="welcome_point_detailed_title">симли ва чоён ўйин</string>
+    <string name="welcome_point_detailed_body">батафсил қўнун, созламаларда, симли аудиотосмалар ва нечадан воқтингнинг жунини колимасинг.</string>
+    <string name="welcome_privacy">ҳар нарса телефоннингда қўлилади. ҳисобинок йўқ ва дастур интернетга уланмайди.</string>
+    <string name="welcome_start">бошлаш</string>
+    <string name="welcome_next">кейинги</string>
+    <string name="welcome_allow">рухсат беринг</string>
+    <string name="welcome_step">%1$d / %2$d қадамда</string>
+    <string name="welcome_bluetooth_title">bluetooth уланиш</string>
+    <string name="welcome_bluetooth_why">android фақат дастур bluetooth уланишнинг рухсатига эга болса, қайси bluetooth қурилма уланганлигини аёлатади. ушбу ylih аудиотосмаларни машина мўзикасидан ажратади.</string>
+    <string name="welcome_bluetooth_with">рухсат берилса: ҳар бир аудиотосма уланиш дан сўнг қайд этилади.</string>
+    <string name="welcome_bluetooth_without">рухсат берилмаса: bluetooth аудиотосмалари қайд этилмайди. қолган дастур ишлайди.</string>
+    <string name="welcome_notifications_title">билдирги</string>
+    <string name="welcome_notifications_why">батафсил қўнун суст фон хизматини ишлатади ва android уни индирмаси лозим.</string>
+    <string name="welcome_notifications_with">рухсат берилса: билдирги қайси аудиотосма қайд этилаётганлигини кўрсатади.</string>
+    <string name="welcome_notifications_without">рухсат берилмаса: батафсил қўнун ишлайди лекин android билдирги кўрсатмайди.</string>
+    <string name="hibernation_title">унутингиз булса ҳам хисоблаб туринг</string>
+    <string name="hibernation_body">android бир нечаёл ичида ўзи фасли дастурларни тўхтатади ва уларнинг рухсатларини олади. android\'нинг ушбу хусусиятини ўчиринг.</string>
+    <string name="action_not_now">ҳозирда йўқ</string>
+
+    <string name="devices_in_use">ишлатилмоқда</string>
+    <string name="devices_retired">рахметдан қолди</string>
+    <string name="devices_empty_title">аудиотосма йўқ</string>
+    <string name="devices_empty_body">bluetooth аудиотосма уланганда у сўнда пайдо болади. симли аудиотосмалар батафсил қўнун талаб қилади.</string>
+    <string name="devices_generation">жуфт #%1$d</string>
+    <string name="devices_retired_on">рахметдан қолди %1$s</string>
+    <string name="devices_connected_for">уланган %1$s</string>
+    <string name="devices_recent">%1$s / 7 куни</string>
+
+    <string name="stats_title">ҳар бирибул аудиотосмалар</string>
+    <string name="stats_sessions_since">%1$s %2$s нинг кейин</string>
+    <string name="stats_today">бугун</string>
+    <string name="stats_last_7">охирги 7 куни</string>
+    <string name="stats_last_30">охирги 30 куни</string>
+    <string name="stats_average_session">ўртача сеанс</string>
+    <string name="stats_longest_session">энг узоқ сеанс</string>
+    <string name="stats_playing">аудио ўйинлар</string>
+    <string name="stats_measured_span">чоён ўйинга ўлчовши</string>
+    <string name="stats_share">чоён улуши</string>
+    <string name="stats_playback_only_note">фақат чоён вақтини саноқлаши</string>
+    <string name="stats_daily_hours_30">ҳар куннинг сўлари (30 куни)</string>
+    <string name="stats_by_pair">жуфт буйича</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · рахметдан қолди</string>
+    <string name="chart_max">%1$s максимум</string>
+
+    <string name="pair_fallback_title">жуфт</string>
+    <string name="pair_back">орқага</string>
+    <string name="pair_more">ккейин</string>
+    <string name="pair_menu_rename">номи ўзгартириш</string>
+    <string name="pair_menu_purchase">хариди маълумотлари</string>
+    <string name="pair_menu_retire">рахметдан қайдириш / алмаштириш</string>
+    <string name="pair_menu_delete">ўчириш</string>
+    <string name="pair_lifetime">жуфтнинг умри</string>
+    <string name="pair_retired_on">рахметдан қолди %1$s</string>
+    <string name="pair_retired_with_reason">рахметдан қолди %1$s · %2$s</string>
+    <string name="pair_connected_now">ҳозир уланган · %1$s</string>
+    <string name="pair_sessions">сеансле</string>
+    <string name="pair_average">ўртача</string>
+    <string name="pair_longest">энг узоқ</string>
+    <string name="pair_since">%1$s нинг кейин</string>
+    <string name="pair_of_measured">чоён улуши</string>
+    <string name="pair_measured">чоён ўйинга ўлчовши</string>
+    <string name="pair_paid">тўланди</string>
+    <string name="pair_per_hour">соат ўша</string>
+    <string name="pair_bought">сотинди</string>
+    <string name="pair_daily_hours_14">ҳар куннинг сўлари (14 куни)</string>
+    <string name="pair_rename_title">жуфтни номи ўзгартириш</string>
+    <string name="pair_rename_label">ном</string>
+    <string name="pair_retire_title">бу жуфтни рахметдан қайдириш</string>
+    <string name="pair_retire_label">сабаб (ўлди, сотилди, йўқолди...)</string>
+    <string name="pair_retire_confirm">рахметдан қайдириш</string>
+    <string name="pair_retire_supporting">жамисі шўнда ўз турадилан. қайта уланиш янги жуфт нол дан бошланади.</string>
+    <string name="pair_price_title">тўланган нарх</string>
+    <string name="pair_price_label">миқдори (бутун бирлилар)</string>
+    <string name="pair_price_supporting">соат ўша нарх учун ишлатилади.</string>
+    <string name="pair_delete_title">бу жуфтни ўчиришми?</string>
+    <string name="pair_delete_body">унинг ҳар бир сеанси ўчирилади. бу орқага қайтувча йўқ.</string>
+
+    <string name="session_ongoing">давомий</string>
+    <string name="session_until">%1$s гача</string>
+    <string name="session_playing">%1$s чоён ўйинлар</string>
+    <string name="session_recovered">қайта тиклабди</string>
+
+    <string name="settings_tracking">қўнун</string>
+    <string name="settings_detailed_title">батафсил қўнун</string>
+    <string name="settings_detailed_body">симли аудиотосмалар ва чоён вақти қўш қилади. android фақат ишлаб турган дастурга сим туташ воқалириби аттирғули йиберади. bluetooth ҳар қанда қўнун қилинади.</string>
+    <string name="settings_detailed_unavailable">bluetooth рухсати берилмаса онергана йўқ. ушбу қуруллма faqat connectedDevice хизматини эълон қилади.</string>
+    <string name="settings_playback_only_title">фақат чоён вақтини саноқлаш</string>
+    <string name="settings_playback_only_body">статистика уланиш вақти ўрнига фақат чоён вақтини саноқлайди. батафсил қўнун билан қайд этилган сеансле фақат.</string>
+    <string name="settings_language">тил</string>
+    <string name="settings_language_system">тизимнинг тили</string>
+    <string name="settings_devices">қўрилмалар</string>
+    <string name="settings_devices_body">аудиотосма эмаслар - машинанинг мўзикаси ёки спикер - ўчириб қўйинг.</string>
+    <string name="settings_device_subtitle">%1$s · биринчи қўлилди %2$s</string>
+    <string name="settings_data">маълумот</string>
+    <string name="settings_export">json экспорти</string>
+    <string name="settings_import">импорт</string>
+    <string name="settings_import_warning">импорт ҳозир ҳаммасинин ўзгартирибди.</string>
+    <string name="settings_troubleshooting">муаммо ечиш</string>
+    <string name="settings_battery_body">сеансле қайд этилмаса, ylih батарея оптимизациядан озод эканлигини текширинг.</string>
+    <string name="settings_battery_button">батарея созламалари</string>
+    <string name="settings_battery_path">созламалар - дастурлар - ylih - батарея - чеклашмаган.</string>
+    <string name="settings_hibernation_body">ylih бир нечаёл ичида ўчилмаса, android унинг рухсатларини олади ва қайд этилмайди. бу қўллик ўчирииш юмур.</string>
+    <string name="settings_hibernation_on">android ylih\'ни тўхтатиши мумкин.</string>
+    <string name="settings_hibernation_off">ylih озод ва қайд этибди.</string>
+    <string name="settings_hibernation_button">ишлатилмаган дастур созламалари</string>
+    <string name="settings_about">маъқул</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - аудиотосма сўлари, локально сақланади ва абад.</string>
+    <string name="settings_import_confirm_title">ҳамма маълумотни ўзгартиршими?</string>
+    <string name="settings_import_confirm_body">импорт ҳозир ҳар қўрилма, жуфт ва сеансни ўчирибди.</string>
+
+    <string name="widget_lifetime_label">ylih · умр</string>
+    <string name="widget_lifetime_description">жуфт ҳар соат, уланган сўра таймери билан</string>
+    <string name="widget_activity_label">ylih · фаолиянт</string>
+    <string name="widget_activity_description">ҳар жуфтнинг соат, плюс бугун, 7 куни ва 30 куни</string>
+    <string name="widget_chart_label">ylih · 30 куни</string>
+    <string name="widget_chart_description">охирги 30 куннинг ҳар куннинг сўлари</string>
+
+    <string name="action_save">сақлаш</string>
+    <string name="action_cancel">бекор қилиш</string>
+    <string name="action_delete">ўчириш</string>
+    <string name="action_import">импорт</string>
+
+    <string name="channel_tracking">аудиотосма қўнун</string>
+    <string name="channel_tracking_description">ylih симли аудиотосма ва чоён қўетишни кўзлаяптиган вақтда кўрсатилади.</string>
+    <string name="notification_title">аудиотосма вақтини қўнун</string>
+    <string name="notification_starting">бошланяпти...</string>
+    <string name="notification_idle">аудиотосмага кутимоқда</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d уланган · %2$s</item>
+        <item quantity="other">%1$d уланган · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d уланган · %2$s · чоён ўйинлар</item>
+        <item quantity="other">%1$d уланган · %2$s · чоён ўйинлар</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">ушбу қуруллма симли аудиотосмалари қўнун қилиши учун bluetooth рухсати таллаб қилади.</string>
+    <string name="export_done">файл экспорти</string>
+    <string name="export_failed">экспорт мўваффақ болмади</string>
+    <string name="import_failed">импорт мўваффақ болмади</string>
+    <string name="edit_failed">уни ўзгартириб бўлмади</string>
+    <string name="error_could_not_open">%1$s ач бўлмади</string>
+    <plurals name="import_done">
+        <item quantity="one">импорт %d сеанс</item>
+        <item quantity="other">импорт %d сеансле</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d сеанс</item>
+        <item quantity="other">%d сеансле</item>
+    </plurals>
+</resources>

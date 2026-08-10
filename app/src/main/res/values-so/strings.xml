@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Somali. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - nolol ku dhegga</string>
+
+    <string name="nav_headphones">dhegga</string>
+    <string name="nav_stats">tilaamaha</string>
+    <string name="nav_settings">xawaaraha</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">xadka</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">laan yaqaannin</string>
+
+    <string name="welcome_title">salaam gal u yimaado ylih</string>
+    <string name="welcome_intro">ylih waxay soo shuruqdaa sida gaarka oo dhegga ah iska hadhay iska xiran, si aad mararka hadii kulul oo dhawr sanno ay kaa dambeeyo aad wali jawaab ku siiso su\'aasha keliya oo macashay nololka: dhegga xanuun baxda ay joog dhacdeen?</string>
+    <string name="welcome_point_auto_title">xidhka oo ilaalinka</string>
+    <string name="welcome_point_auto_body">dhegga bluetooth waxaa lagula sameeyay naftooda, marka ay xidhaan. waxba lumay inaga lagula joogsiyo.</string>
+    <string name="welcome_point_lifetime_title">gaarka mid, nololka mid</string>
+    <string name="welcome_point_lifetime_body">marka gaarka ay dhinto, isagoo haday naga halis; tirada beddelka ay qabatay waxyar halista inta dhegga kalay xidhaan dhegga cusub ee laga shuruqday zero.</string>
+    <string name="welcome_point_detailed_title">xadka iyo ciyaarta</string>
+    <string name="welcome_point_detailed_body">shaaca qoray kheyr, xawaaraha, dhegga xadka iyo imika ay joogtay. gayraan yixidhu.</string>
+    <string name="welcome_privacy">wixii jira waxaa ku kul tihiin siiddan. waxba akun ama akun, appka oo aan internet oggolaanshahan.</string>
+    <string name="welcome_start">bilaab</string>
+    <string name="welcome_next">hadii</string>
+    <string name="welcome_allow">ogolaadh</string>
+    <string name="welcome_step">albaab %1$d %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth oggolaanshah</string>
+    <string name="welcome_bluetooth_why">android app waxaa lagala sheegay bluetooth qalabka ay xidhayan, iyo waxa lagu yiraahan, haddii app-ku bluetooth oggolaanshah. waxaa kula dhego ylih gaarka dhegga iska saarto stereo gaadiidka, iyo sida ay gaarka ka iska gaarta mid.</string>
+    <string name="welcome_bluetooth_with">waxaa lagu: gaarka gaarka waxaa lagula sameeyay marka ay xidhaan, waxba dushe iska jogsiyo iyo waxba iska liilacinayo.</string>
+    <string name="welcome_bluetooth_without">ilaa: bluetooth dhegga waxba laguma sameeyay oo dhan. hadii kale ee app waxaa iska iska shaqeeya, iyo waad ogolaadhan hadii gaar ahaan android app xawaaraha.</string>
+    <string name="welcome_notifications_title">tilmaamaha</string>
+    <string name="welcome_notifications_why">shaaca qoray waxaa lagu shaqeeya adeeg yar oo hoostiisa, iyo android waxaa loo baahan in app gaacdo tilmaamah muuqdo</string>
+    <string name="welcome_notifications_with">waxaa lagu: tilmaamah waxay muujineysaa waxa ay lagula qoraan oo hadda, oo ah calaamad keliya ee shaaca qoray ay nool.</string>
+    <string name="welcome_notifications_without">ilaa: shaaca qoray waxaa iska iska shaqeeya iyo lagula qoraa. android oo keliya waxba tilmaamaha laguma muuqdo.</string>
+    <string name="hibernation_title">shicar sibida raacda ilaalinka</string>
+    <string name="hibernation_body">android waxaa lagu joogsiiyo app gaarka ay aanan furin kana muddo iyo waxaa ay oggolaanshah dhaadhacisay, taas oo markaan ylih waxba laguma qoraa ilaa aad hadii furto. sidii lagu dhaafsiisan yahan axsanihi app waxaa lagula adeegsado, soo waxa qiimo leh kala bixin oo hadda.</string>
+    <string name="action_not_now">maya hadda</string>
+
+    <string name="devices_in_use">waxaa lagu isticmaalaa</string>
+    <string name="devices_retired">iska baxday</string>
+    <string name="devices_empty_title">dhegga waxba jooga</string>
+    <string name="devices_empty_body">xidhka gaarka ee bluetooth dhegga iyo ay muuqdaan halkan. xadka dhegga waxaa loo baahan shaaca qoray, xawaaraha.</string>
+    <string name="devices_generation">gaarka #%1$d</string>
+    <string name="devices_retired_on">iska baxday %1$s</string>
+    <string name="devices_connected_for">xidhka %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">dhegga oo dhan</string>
+    <string name="stats_sessions_since">%1$s laga soo bilaabay %2$s</string>
+    <string name="stats_today">maanta</string>
+    <string name="stats_last_7">maalinta 7 ee dhaafka</string>
+    <string name="stats_last_30">maalinta 30 ee dhaafka</string>
+    <string name="stats_average_session">ismicdhaafka socod</string>
+    <string name="stats_longest_session">socod dheer</string>
+    <string name="stats_playing">ciyaarta dhegga</string>
+    <string name="stats_measured_span">la caasimay ciyaarta</string>
+    <string name="stats_share">ciyaarta caasirka</string>
+    <string name="stats_playback_only_note">tirinta ciyaarta oo keliya</string>
+    <string name="stats_daily_hours_30">saacadaha maalinlaha (30 maalinta)</string>
+    <string name="stats_by_pair">gaarka</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · iska baxday</string>
+    <string name="chart_max">%1$s max</string>
+
+    <string name="pair_fallback_title">gaarka</string>
+    <string name="pair_back">laabta</string>
+    <string name="pair_more">hadii</string>
+    <string name="pair_menu_rename">labida</string>
+    <string name="pair_menu_purchase">aqoonta iibka</string>
+    <string name="pair_menu_retire">iska bax / badbaadin</string>
+    <string name="pair_menu_delete">tirtir</string>
+    <string name="pair_lifetime">nololka gaarka</string>
+    <string name="pair_retired_on">iska baxday %1$s</string>
+    <string name="pair_retired_with_reason">iska baxday %1$s · %2$s</string>
+    <string name="pair_connected_now">xidhka hadda · %1$s</string>
+    <string name="pair_sessions">socodka</string>
+    <string name="pair_average">ismicdhaafka</string>
+    <string name="pair_longest">dheer</string>
+    <string name="pair_since">laga soo bilaabay %1$s</string>
+    <string name="pair_of_measured">ciyaarta caasirka</string>
+    <string name="pair_measured">la caasimay ciyaarta</string>
+    <string name="pair_paid">bixiyay</string>
+    <string name="pair_per_hour">saacad kasta</string>
+    <string name="pair_bought">iibiay</string>
+    <string name="pair_daily_hours_14">saacadaha maalinlaha (14 maalinta)</string>
+    <string name="pair_rename_title">labida gaarka</string>
+    <string name="pair_rename_label">magaca</string>
+    <string name="pair_retire_title">iska bax gaarka</string>
+    <string name="pair_retire_label">sababka (dhinto, lagu iibiyay, lumay...)</string>
+    <string name="pair_retire_confirm">iska bax</string>
+    <string name="pair_retire_supporting">tirada waxaa jooga halkan. xidhka qalabka kalay bilowga gaarka cusub zero.</string>
+    <string name="pair_price_title">qiimaha lagu bixiyay</string>
+    <string name="pair_price_label">tirada (unka oo dhan)</string>
+    <string name="pair_price_supporting">la isticmaala qiimaha-saacad.</string>
+    <string name="pair_delete_title">tirtir gaarka?</string>
+    <string name="pair_delete_body">socod kasta lagula qoraa ay tirtirtamaa. taan waxba dib loo noqon mayo.</string>
+
+    <string name="session_ongoing">socdaalka</string>
+    <string name="session_until">ilaa %1$s</string>
+    <string name="session_playing">%1$s ciyaarta</string>
+    <string name="session_recovered">lagu heshay</string>
+
+    <string name="settings_tracking">suuraalinta</string>
+    <string name="settings_detailed_title">shaaca qoraw</string>
+    <string name="settings_detailed_body">dhegga xadka iyo saacadaha ay joogtay. android oo keliya waxaa lagu sheegaa xadka plug ay gaarka shaqeeya, soo taan waxaa ku jooqa tilmaamah gabanaan. bluetooth waxaa lagu suuraalin kasta.</string>
+    <string name="settings_detailed_unavailable">oo aan karbaasho ilaa bluetooth oggolaanshah la siiyo: adeegga waxaa lagu sheegaa connectedDevice nooca oo keliya, kaas oo android 14+ ay xidhaan bluetooth oggolaanshah.</string>
+    <string name="settings_playback_only_title">tiri ciyaarta oo keliya</string>
+    <string name="settings_playback_only_body">tilaamaha waxaa lagu tiri saacadaha ciyaarta lagula joogtay halka xidhka. socodka oo keliya lagula qoraa shaaca qoray ay joogtay ciyaarta; hadii kale waxaa lagu celine.</string>
+    <string name="settings_language">luqada</string>
+    <string name="settings_language_system">luqada nidaamka</string>
+    <string name="settings_devices">qalabka</string>
+    <string name="settings_devices_body">jamba waxa ay dhegga oo kaliya - stereo gaadiidka ama cod - joojinta qorida.</string>
+    <string name="settings_device_subtitle">%1$s · markaa hore looga arkay %2$s</string>
+    <string name="settings_data">xogta</string>
+    <string name="settings_export">soo saara json</string>
+    <string name="settings_import">gal</string>
+    <string name="settings_import_warning">galkoolihaaxxa qof kaloo xogta jooga oo hadda kaydka.</string>
+    <string name="settings_troubleshooting">firfircoon</string>
+    <string name="settings_battery_body">haddii socodka ay joojiyaan qorida, eeg haddii ylih ay iska baxday battery optimization - app lagala joojiyay waxba laguma ogaad iska soo bilaabi ilaa ay furmaan.</string>
+    <string name="settings_battery_button">xawaaraha bateri</string>
+    <string name="settings_battery_path">xawaaraha → qalabka → ylih → bateri → aan xad-gudbin.</string>
+    <string name="settings_hibernation_body">haddii ylih ay aanan furin muddo kaas ah, android waxaa lagu joogsiiyo iyo oggolaanshah iska cileysay, iyo xogta waxba laguma qoraa ilaa aad furto. kala bixin taas ayaa kugu sii dhawareegga gaarka tiri muddo fadhan aad codka app iska joojiyay.</string>
+    <string name="settings_hibernation_on">android waxa ay suurtan joogsiiyo ylih.</string>
+    <string name="settings_hibernation_off">ylih waxaa iska baxday iyo waxaa iska qora.</string>
+    <string name="settings_hibernation_button">xawaaraha app aan loo isticmaali</string>
+    <string name="settings_about">ku saabsan</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - saacadaha dhegga, ay kaydka halkan iyo muddo.</string>
+    <string name="settings_import_confirm_title">badbaadi xogta oo dhan?</string>
+    <string name="settings_import_confirm_body">galkoolihaaxxa backup taan waxaa tirtirtama qalabka oo dhan, gaarka iyo socodka kaydka hadda.</string>
+
+    <string name="widget_lifetime_label">ylih · nololka</string>
+    <string name="widget_lifetime_description">saacadaha gaarka, iyada oo tilmaamah nooqda xidhka</string>
+    <string name="widget_activity_label">ylih · kuti</string>
+    <string name="widget_activity_description">saacadaha gaarka oo dhan, iyo maanta, 7 maalinta iyo 30 maalinta</string>
+    <string name="widget_chart_label">ylih · 30 maalinta</string>
+    <string name="widget_chart_description">saacadaha maalinlaha 30 maalinta dhaafka</string>
+
+    <string name="action_save">kaydi</string>
+    <string name="action_cancel">jooji</string>
+    <string name="action_delete">tirtir</string>
+    <string name="action_import">gal</string>
+
+    <string name="channel_tracking">suuraalinta dhegga</string>
+    <string name="channel_tracking_description">muujiyay ylih ay suuraalin dhegga xadka iyo ciyaarta. android oo keliya waxba laguma sheegaa xadka plug ay app aan shaqeyn.</string>
+    <string name="notification_title">suuraalinta saacadaha dhegga</string>
+    <string name="notification_starting">bilaabaa...</string>
+    <string name="notification_idle">raacda dhegga</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d xidhka · %2$s</item>
+        <item quantity="other">%1$d xidhka · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d xidhka · %2$s · ciyaarta</item>
+        <item quantity="other">%1$d xidhka · %2$s · ciyaarta</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">adeegga waxaa loo baahan bluetooth oggolaanshah suuraalinta dhegga xadka</string>
+    <string name="export_done">backup soo saara</string>
+    <string name="export_failed">soo saarka gaboobay</string>
+    <string name="import_failed">gelida gaboobay</string>
+    <string name="edit_failed">waxba kaydin kahdar</string>
+    <string name="error_could_not_open">waxba furin %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">galkoolihaaxxa %d socodka</item>
+        <item quantity="other">galkoolihaaxxa %d socodka</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d socodka</item>
+        <item quantity="other">%d socodka</item>
+    </plurals>
+</resources>

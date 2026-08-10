@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Shona. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - upenyu hwako mumasinete</string>
+
+    <string name="nav_headphones">masinete</string>
+    <string name="nav_stats">mihlelo</string>
+    <string name="nav_settings">zvitunzvi</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">nomwe</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">zvisingazivikanwe</string>
+
+    <string name="welcome_title">kamukamirai kuylic</string>
+    <string name="welcome_intro">ylih inotsanangura kuti pairingana yemasinete inogara yakasangana nani, kuitira kuti muna mazuva acho unogona kutozvicarira chidimuro chisinei panyama pasi: mahora mangani akagara?</string>
+    <string name="welcome_point_auto_title">sangana ubvunzuke</string>
+    <string name="welcome_point_auto_body">bluetooth masinete anobhadharwa pachavo, kubvira panguva yamacangana. hapana chinhu chinofanira kusara kuchiitwa.</string>
+    <string name="welcome_point_lifetime_title">sora imwe, upenyu umwe</string>
+    <string name="welcome_point_lifetime_body">kana sora yarova, isundire: zvakakora zvayo zvinomirayira ipapo uye pairingana yomasinete imwechete ichamba zvinodzoka kubva zero.</string>
+    <string name="welcome_point_detailed_title">nomwe nechikomborekedzo</string>
+    <string name="welcome_point_detailed_body">kurangarira kwinzira, muzvitunzvi, kwinowedzera nomwe masinete uye inosumudzira mangani oupenyu ainyorwa kuchiita.</string>
+    <string name="welcome_privacy">zvose zvinogara muphone iyi. hapana akawunti, uye app haina mvumo yeinterneti.</string>
+    <string name="welcome_start">chiwedzero</string>
+    <string name="welcome_next">rinotevera</string>
+    <string name="welcome_allow">zyakenai</string>
+    <string name="welcome_step">hundo %1$d ye %2$d</string>
+    <string name="welcome_bluetooth_title">mvumo yebluetooth</string>
+    <string name="welcome_bluetooth_why">android inoudzisa app chete yebluetooth gadget yakasangana, uye zvinoitwa, kana app ine mvumo yebluetooth. ndicho chinyarara ylih inotarisana sora yemasinete kubva mota stereo, uye inozviziva pairingana imwe kubva kumwe.</string>
+    <string name="welcome_bluetooth_with">nemazviri: sora imwe iyoyi inobhadharwa kubvira panguva yamacangana, hamuna zvinogara kuchiitwa uye hamuna chavakanyarara kurangarira.</string>
+    <string name="welcome_bluetooth_without">pasina: bluetooth masinete hasongazviiti kufa. zvimwe zvapp zvichiramba zvichishanda, uye unogona kuzvipiwa gare-gare muandroid app zvitunzvi.</string>
+    <string name="welcome_notifications_title">mburongudzo</string>
+    <string name="welcome_notifications_why">kurangarira kwinzira kunonzwa seavhi yakareruka, uye android inoda kana app ine zvakadai kunatsa mburongudzo inobvisikwa ndiko kwechii.</string>
+    <string name="welcome_notifications_with">nemazviri: mburongudzo inoratidzira zvinobhadharwa ipapo, chigaro chimwe choga chinosangana kurangarira kwinzira kuraramba.</string>
+    <string name="welcome_notifications_without">pasina: kurangarira kwinzira kunoramba kunoshanda uye kunobhadharwa. android chete haizviratidzi mburongudzo yayo.</string>
+    <string name="hibernation_title">tongeredzera uri unorambidza zvino</string>
+    <string name="hibernation_body">android inomisa app dzinogara dzisazviroorwa kwechimwe nguva uye inotora mvumo dzazo, izvo zvingadai ylih isave kufa kusvika unofukura ipapo. kushanduka iwe zviri chete zvinyorwa app iyi, saka inofanira kubvisa kune zvivhunga.</string>
+    <string name="action_not_now">kwete ikozvino</string>
+
+    <string name="devices_in_use">hunozivikanwa</string>
+    <string name="devices_retired">yabvisa</string>
+    <string name="devices_empty_title">masinete akasikwa</string>
+    <string name="devices_empty_body">sangana sora yebluetooth uye ichaonekwa ipapo. nomwe masinete inoda kurangarira kwinzira, muzvitunzvi.</string>
+    <string name="devices_generation">sora #%1$d</string>
+    <string name="devices_retired_on">yabvisa %1$s</string>
+    <string name="devices_connected_for">yakasangana %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">masinete ose</string>
+    <string name="stats_sessions_since">%1$s kubvira %2$s</string>
+    <string name="stats_today">nhasi</string>
+    <string name="stats_last_7">mazuva apfumbamwe apfira</string>
+    <string name="stats_last_30">mazuva makumi matatu apfira</string>
+    <string name="stats_average_session">mipikiso yepakati</string>
+    <string name="stats_longest_session">mipikiso yakareba</string>
+    <string name="stats_playing">kunhemutsa kushandira</string>
+    <string name="stats_measured_span">kusumudzirwa kunhemutsa</string>
+    <string name="stats_share">kunhemutsa mhano</string>
+    <string name="stats_playback_only_note">kuverengeza kunhemutsa chete</string>
+    <string name="stats_daily_hours_30">mahora pazuva (30 mazuva)</string>
+    <string name="stats_by_pair">nesora</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · yabvisa</string>
+    <string name="chart_max">%1$s max</string>
+
+    <string name="pair_fallback_title">sora</string>
+    <string name="pair_back">shure</string>
+    <string name="pair_more">zvimwe</string>
+    <string name="pair_menu_rename">zvirudziro</string>
+    <string name="pair_menu_purchase">ruzivo rwekutenga</string>
+    <string name="pair_menu_retire">bvisa / yabvisa</string>
+    <string name="pair_menu_delete">dzura</string>
+    <string name="pair_lifetime">upenyu pane sora iyi</string>
+    <string name="pair_retired_on">yabvisa %1$s</string>
+    <string name="pair_retired_with_reason">yabvisa %1$s · %2$s</string>
+    <string name="pair_connected_now">yakasangana ikozvino · %1$s</string>
+    <string name="pair_sessions">mipikiso</string>
+    <string name="pair_average">pakati</string>
+    <string name="pair_longest">yakareba</string>
+    <string name="pair_since">kubvira %1$s</string>
+    <string name="pair_of_measured">kunhemutsa mhano</string>
+    <string name="pair_measured">kusumudzirwa kunhemutsa</string>
+    <string name="pair_paid">kuberekedzwa</string>
+    <string name="pair_per_hour">panhema</string>
+    <string name="pair_bought">kutenga</string>
+    <string name="pair_daily_hours_14">mahora pazuva (14 mazuva)</string>
+    <string name="pair_rename_title">zvirudziro sora</string>
+    <string name="pair_rename_label">zita</string>
+    <string name="pair_retire_title">bvisa sora iyi</string>
+    <string name="pair_retire_label">chikonzero (kubva, kutengeswa, kurasika...)</string>
+    <string name="pair_retire_confirm">bvisa</string>
+    <string name="pair_retire_supporting">zvikwame zvago zvinomirayira ipapo. machina akasangana chete ichamba pairingana yomasinete kubva kutsva pane zero.</string>
+    <string name="pair_price_title">mutengo wekutenga</string>
+    <string name="pair_price_label">nhamba (zvizere zvose)</string>
+    <string name="pair_price_supporting">zvinoshandiswa munhamba-panhema.</string>
+    <string name="pair_delete_title">dzura sora iyi?</string>
+    <string name="pair_delete_body">mipikiso iyoyi yose inobhadharwa yayo inodzorudzwa. izvi hazvigone kuzoroywa.</string>
+
+    <string name="session_ongoing">kuenderera</string>
+    <string name="session_until">kusvika %1$s</string>
+    <string name="session_playing">%1$s kunhemutsa</string>
+    <string name="session_recovered">kuwanikwa</string>
+
+    <string name="settings_tracking">kurangarira</string>
+    <string name="settings_detailed_title">kurangarira kwinzira</string>
+    <string name="settings_detailed_body">kwinowedzera nomwe masinete uye mahora ekushanda. android inoudzisa nomwe plug zvingapinda chete kuapp inoshanda, saka iyi ichichengeta mburongudzo yakanyarara. bluetooth inorangarira zvose.</string>
+    <string name="settings_detailed_unavailable">hasisikiro kusvika bluetooth mvumo ipiwe: build iyi inoratidzira chete connectedDevice seavhi yakaita, izvo android 14+ inosungira nebluetooth mvumo.</string>
+    <string name="settings_playback_only_title">verengeza kunhemutsa chete</string>
+    <string name="settings_playback_only_body">mihlelo inorangarira mahora ekushanda sezvakaiitwa zvinoshanda. mipikiso chete inobhadharwa nokurangarira kwinzira panguva yokusumudzirwa kunhemutsa; zvimwe zvingasiiwa.</string>
+    <string name="settings_language">chirungu</string>
+    <string name="settings_language_system">chirungu chehurongi</string>
+    <string name="settings_devices">migadget</string>
+    <string name="settings_devices_body">disanganidza zvose zvisingaziva masinete - mota stereo kana mutsara - kutsiva kurangarira.</string>
+    <string name="settings_device_subtitle">%1$s · kumakaonekwa %2$s</string>
+    <string name="settings_data">ruzivo</string>
+    <string name="settings_export">bubwire json</string>
+    <string name="settings_import">kwaita</string>
+    <string name="settings_import_warning">kuita kunotsivanira zvose zvine zviri kumajikidze ikozvino.</string>
+    <string name="settings_troubleshooting">kuitawo nokuzvitwika</string>
+    <string name="settings_battery_body">kana mipikiso imisa kurangarira, tarisa kuti ylih hasisikiro kubvira battery optimization - app yakakurudzwa inogona kusiiwa kumatanho okurangarira kusvika ifukurwa.</string>
+    <string name="settings_battery_button">zvitunzvi zvebattery</string>
+    <string name="settings_battery_path">zvitunzvi → migadget → ylih → battery → musungu.</string>
+    <string name="settings_hibernation_body">kana ylih igara isina kufukurwa kwemazuva, android inomisa uye inotora mvumo dzayo, uye hapana chinhu chinobhadharwa kusvika ufukure. kujamba kudai ndiko kunyanyanya kubvumidza sora kuenderera kubva pazuva regichana usina rangarira app.</string>
+    <string name="settings_hibernation_on">android inogona kumiisa ylih.</string>
+    <string name="settings_hibernation_off">ylih hasisikiro uye inoramba ichirangarira.</string>
+    <string name="settings_hibernation_button">zvitunzvi zveapp zvisina kushandiswa</string>
+    <string name="settings_about">kunokonzerwa</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - mahora emasinete, anochengetedzwa zviraivanaka nokusvika rinhi.</string>
+    <string name="settings_import_confirm_title">shanduro yose ruzivo?</string>
+    <string name="settings_import_confirm_body">kuita backup iyi inodzura migadget iyoyi, sora neuye mipikiso inobhadharwa ikozvino.</string>
+
+    <string name="widget_lifetime_label">ylih · upenyu</string>
+    <string name="widget_lifetime_description">mahora pane sora, nemudzidziso unoshanda kune yakaangana</string>
+    <string name="widget_activity_label">ylih · kuti</string>
+    <string name="widget_activity_description">mahora ose esora, kupera nhasi, mazuva 7 nemakumi matatu</string>
+    <string name="widget_chart_label">ylih · 30 mazuva</string>
+    <string name="widget_chart_description">mahora pazuva mukati me30 mazuva</string>
+
+    <string name="action_save">sanagura</string>
+    <string name="action_cancel">kanganisa</string>
+    <string name="action_delete">dzura</string>
+    <string name="action_import">kwaita</string>
+
+    <string name="channel_tracking">kurangarira masinete</string>
+    <string name="channel_tracking_description">inoratidza ylih ichingorangarira nomwe masinete uye kushanda. android hainoudzisa nomwe plug zvingapinda kuapp zvisina kushanda.</string>
+    <string name="notification_title">kurangarira mahora emasinete</string>
+    <string name="notification_starting">kubudisira...</string>
+    <string name="notification_idle">kudzikarira masinete</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d yakasangana · %2$s</item>
+        <item quantity="other">%1$d yakasangana · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d yakasangana · %2$s · kunhemutsa</item>
+        <item quantity="other">%1$d yakasangana · %2$s · kunhemutsa</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">build iyi inoda bluetooth mvumo kurangarira nomwe masinete</string>
+    <string name="export_done">backup yabviswa</string>
+    <string name="export_failed">export yakakundikana</string>
+    <string name="import_failed">kuita kukakundikana</string>
+    <string name="edit_failed">hasisikiro kusanagura kushandura</string>
+    <string name="error_could_not_open">hasisikiro kufukura %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">kwaita %d mipikiso</item>
+        <item quantity="other">kwaita %d mipikiso</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d mipikiso</item>
+        <item quantity="other">%d mipikiso</item>
+    </plurals>
+</resources>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Xhosa. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ubomi bakho kumilambo</string>
+
+    <string name="nav_headphones">imilambo</string>
+    <string name="nav_stats">isitayistiki</string>
+    <string name="nav_settings">isethingiselelo</string>
+
+    <string name="kind_bluetooth">i-bluetooth</string>
+    <string name="kind_ble">i-le audio</string>
+    <string name="kind_wired">izinzimu</string>
+    <string name="kind_usb">i-usb</string>
+    <string name="kind_unknown">ayiwa</string>
+
+    <string name="welcome_title">wamkelekile ku ylih</string>
+    <string name="welcome_intro">ylih ibhala ingokufa kubukhulu bemilambo, ukuze emva kweminyaka ingabuya unaphendula umbuzo obalulekile kumqala: zingaphi iiyure azazikhonze?</string>
+    <string name="welcome_point_auto_title">qhagamshela u yilahle</string>
+    <string name="welcome_point_auto_body">imilambo ye-bluetooth iqala ukufakwa ngoobusuku bethu, kwangoko xa ixhuma. akukho kufumana ekusindeni.</string>
+    <string name="welcome_point_lifetime_title">imilambo enye, ubomi obunye</string>
+    <string name="welcome_point_lifetime_body">xa imilambo iyafa, phakamisela: inani layo leziziba apho kwaye imilambo entsha yefariwaringu ifumane ekulaleni.</string>
+    <string name="welcome_point_detailed_title">izinzimu kunye nokudlala</string>
+    <string name="welcome_point_detailed_body">ukufikelela inkcazo, kumisethi, kudibanisa izinzimu kunye nokulinganisa ingxowethu yokuqhubeka.</string>
+    <string name="welcome_privacy">yonke into iyabusiswa kwisfowuneli sakho. akukho i-akhawunti, kunye napp ayinayo ithuba le-intanethi.</string>
+    <string name="welcome_start">qalani</string>
+    <string name="welcome_next">okulandelayo</string>
+    <string name="welcome_allow">vumela</string>
+    <string name="welcome_step">intsinga %1$d ye %2$d</string>
+    <string name="welcome_bluetooth_title">ukufinyelela i-bluetooth</string>
+    <string name="welcome_bluetooth_why">i-android yitsho kwisicelo nje ukuba isixhobo se-bluetooth sixhume, kunye nokuba libizwa njani, xa isicelo sinotumelo lwe-bluetooth. ke kanjikelele ylih yamkela imilambo kumotori, kunye nokwazi imilambo enye kwenye.</string>
+    <string name="welcome_bluetooth_with">konke oku: imilambo ngilinye iqalwa kwi-record kwangoko xa ixhuma, kunye akukho into esindayo kunye akukho into eninimemthe ukucinezela.</string>
+    <string name="welcome_bluetooth_without">ngaphandle kwesicelo: awekho imilambo ye-bluetooth iqaliwe. inxalenye enye yeapp isebenza, kunye ningakunika imvume kamva kumisethi yeapp yakho.</string>
+    <string name="welcome_notifications_title">isaziso</string>
+    <string name="welcome_notifications_why">inkcazo-enkcazo ibusisa isixhobo esincinane, kwaye i-android isithi nawuphi na isicelo esenza njalo kufuneka sigcine isaziso esibonakala." </string>
+    <string name="welcome_notifications_with">ngale nto: isaziso sibonisa ukuba sithini esibhalwayo okwangoku, eyona nkolo kuba inkcazo-enkcazo iphila.</string>
+    <string name="welcome_notifications_without">ngaphandle koko: inkcazo-enkcazo ibusisa iphinda ibhalwa. i-android nje ayibonisi isaziso sayo.</string>
+    <string name="hibernation_title">qhubeka ukubala ngelixa ukulibali</string>
+    <string name="hibernation_body">i-android iphumeza iisicelo ezingavulwanga kumakhulu amashumi eminyaka, kunye nokuthatha imvume yayo, leyo inokuyikhungela yi-ylih ayithandi ukuqala ukusebenza kwakhona uninzi wonke. ukubaleka ngumkhosi oweyani iyanda appiliyisheni, ke akukho njalo ulwanele ukuyisomkela ngoku.</string>
+    <string name="action_not_now">hayi ngoku</string>
+
+    <string name="devices_in_use">kusetyenziswe</string>
+    <string name="devices_retired">igqitse</string>
+    <string name="devices_empty_title">akukho imilambo esingekwazi</string>
+    <string name="devices_empty_body">qhagamshela imilambo ye-bluetooth kwaye izakubonakala apha. izinzimu zifuna inkcazo-enkcazo, kwimisethe.</string>
+    <string name="devices_generation">imilambo #%1$d</string>
+    <string name="devices_retired_on">igqitse %1$s</string>
+    <string name="devices_connected_for">ixhume %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">yonke imilambo</string>
+    <string name="stats_sessions_since">%1$s ukusukela %2$s</string>
+    <string name="stats_today">namhla</string>
+    <string name="stats_last_7">ezinhlanu amaxesha</string>
+    <string name="stats_last_30">amashumi-osi emali</string>
+    <string name="stats_average_session">umuntu owomeleleyo</string>
+    <string name="stats_longest_session">kukhona ukubala</string>
+    <string name="stats_playing">ukudlala izandi</string>
+    <string name="stats_measured_span">kulinganiswa nge-playback</string>
+    <string name="stats_share">ukwabelana ngokudlala</string>
+    <string name="stats_playback_only_note">ukubala ixesha lokudlala kuphela</string>
+    <string name="stats_daily_hours_30">iiyure zosuku (amashumi-osi emali)</string>
+    <string name="stats_by_pair">ngilinye</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · igqitse</string>
+    <string name="chart_max">%1$s umaximam</string>
+
+    <string name="pair_fallback_title">imilambo</string>
+    <string name="pair_back">buya</string>
+    <string name="pair_more">omnye</string>
+    <string name="pair_menu_rename">biza kwakhona</string>
+    <string name="pair_menu_purchase">inkcazo yokuthenga</string>
+    <string name="pair_menu_retire">igqitshile / intshintshwe</string>
+    <string name="pair_menu_delete">cima</string>
+    <string name="pair_lifetime">ubomi obubonke kule milambo</string>
+    <string name="pair_retired_on">igqitse %1$s</string>
+    <string name="pair_retired_with_reason">igqitse %1$s · %2$s</string>
+    <string name="pair_connected_now">ixhume ngoku · %1$s</string>
+    <string name="pair_sessions">iimenyane</string>
+    <string name="pair_average">umuntu owomeleleyo</string>
+    <string name="pair_longest">kukhona ukubala</string>
+    <string name="pair_since">ukusukela %1$s</string>
+    <string name="pair_of_measured">ukwabelana ngokudlala</string>
+    <string name="pair_measured">kulinganiswa nge-playback</string>
+    <string name="pair_paid">okuthengiswe</string>
+    <string name="pair_per_hour">nge-yure</string>
+    <string name="pair_bought">kwathengwa</string>
+    <string name="pair_daily_hours_14">iiyure zosuku (amashumi-amathandathu emali)</string>
+    <string name="pair_rename_title">biza le milambo kwakhona</string>
+    <string name="pair_rename_label">igama</string>
+    <string name="pair_retire_title">igqitshile ezi milambo</string>
+    <string name="pair_retire_label">isizathu (yafa, uthengiswe, yalahla...)</string>
+    <string name="pair_retire_confirm">igqitshile</string>
+    <string name="pair_retire_supporting">inani lisindile apho. ukuqhubeka nesixhobo esifanayo kwabisulule imilambo entsha ukusukela kunelunga.</string>
+    <string name="pair_price_title">imali ethengwayo</string>
+    <string name="pair_price_label">inani (amayunithi onke)</string>
+    <string name="pair_price_supporting">isetwa ge-cost-per-hour figure.</string>
+    <string name="pair_delete_title">cima le milambo?</string>
+    <string name="pair_delete_body">yonke inxalenye ye-session eyaqala nayo iyacimwa. enzi ayisawo.</string>
+
+    <string name="session_ongoing">okuqhubekileyo</string>
+    <string name="session_until">ukuya %1$s</string>
+    <string name="session_playing">%1$s ukudlala</string>
+    <string name="session_recovered">kubuyisiwe</string>
+
+    <string name="settings_tracking">ubukholeleli</string>
+    <string name="settings_detailed_title">inkcazo-enkcazo</string>
+    <string name="settings_detailed_body">idibine izinzimu kunye nexesha lokudlala. i-android iyakuxoxa izinzimu plug events kuisicelo esisebenzayo kuphela, ke le imiyalelo ibusisa isaziso esijulile. i-bluetooth ilandelwe nayiphi na indlela.</string>
+    <string name="settings_detailed_unavailable">ayifumanekiyo kuze kube kuthunyelwe i-bluetooth: le building itsho nje iconnectedDevice service type, yo andoido 14+ ibophele ibluetooth permission.</string>
+    <string name="settings_playback_only_title">ubala ixesha lokudlala kuphela</string>
+    <string name="settings_playback_only_body">isitayistiki sibala ixesha lokudlala ngokwenene kunokuba ixhume. iisession eziqaliwe kunye nokufikelela inkcazo kugqithisele kulinganiswa; abaye bakuba ekunene balahla.</string>
+    <string name="settings_language">ulwimi</string>
+    <string name="settings_language_system">ulwimi lesistimu</string>
+    <string name="settings_devices">isixhobo</string>
+    <string name="settings_devices_body">aar konke akufani nesimilambo — umotori okanye incwadi — uyazivala ukuniphakamisa.</string>
+    <string name="settings_device_subtitle">%1$s · ibona kuqala %2$s</string>
+    <string name="settings_data">idata</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">ngena</string>
+    <string name="settings_import_warning">ukungena kutshintshe yonke into eyafakwa ngoku.</string>
+    <string name="settings_troubleshooting">ukulungisa iinkinga</string>
+    <string name="settings_battery_body">iisession aziqalwa ukuqala, butha ylih iindlela zokugcina amandla — isicelo esacinywe akwazi ukuwamkela amavumba kuze kube sifunyanwe.</string>
+    <string name="settings_battery_button">imisethi yamandla</string>
+    <string name="settings_battery_path">imisethi → iisicelo → ylih → amandla → unrestricted.</string>
+    <string name="settings_hibernation_body">ylih ayivulelwanga okuncinane iinyanga, i-android iyiphumza kunye nokuthatha imvume yayo, akukho into eyaqaliwe ukuqala kuze kube uvule. ukuthi off ayinto eyayinqabilisayo imilambo ekulungele ikhuloni lonke unikholelele.</string>
+    <string name="settings_hibernation_on">i-android inokuyiphumza i-ylih.</string>
+    <string name="settings_hibernation_off">i-ylih ikhululekile kunye nokuqhubeka nokukhubula.</string>
+    <string name="settings_hibernation_button">imisethi yesicelo esingasetyenziswayo</string>
+    <string name="settings_about">ngomfundi</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — iiyure nemilambo, ezigciniwe ngaphakamngeni kunye kaninzi.</string>
+    <string name="settings_import_confirm_title">tshintsha yonke idata?</string>
+    <string name="settings_import_confirm_body">ukungena le backup iyacima yonke isixhobo, imilambo kunye neesession eziyafakwa ngoku.</string>
+
+    <string name="widget_lifetime_label">ylih · ubomi obubonke</string>
+    <string name="widget_lifetime_description">iiyure nge milambo, kunye nelivelatimer kwiluncwadi enixhumeneyo</string>
+    <string name="widget_activity_label">ylih · isenzo</string>
+    <string name="widget_activity_description">iiyure nemilambo yonke kumqala, kunye nale namhla, amaxesha, amashumi-osi emali</string>
+    <string name="widget_chart_label">ylih · amashumi-osi emali</string>
+    <string name="widget_chart_description">iiyure zosuku ukutsho amashumi-osi emali</string>
+
+    <string name="action_save">sinda</string>
+    <string name="action_cancel">rhiya</string>
+    <string name="action_delete">cima</string>
+    <string name="action_import">ngena</string>
+
+    <string name="channel_tracking">ubukholeleli bemilambo</string>
+    <string name="channel_tracking_description">iboniswe ylih ilindela izinzimu kunye nokudlala. i-android ayibonakalisa izinzimu plug events kuisicelo esisebenzayo.</string>
+    <string name="notification_title">ubukholeleli bexesha lemilambo</string>
+    <string name="notification_starting">qalani...</string>
+    <string name="notification_idle">ilindela imilambo</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d ixhume · %2$s</item>
+        <item quantity="other">%1$d ixhume · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d ixhume · %2$s · ukudlala</item>
+        <item quantity="other">%1$d ixhume · %2$s · ukudlala</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">le building isifuna i-bluetooth permission uyakwazi ukufikelela izinzimu</string>
+    <string name="export_done">i-backup yothunyelwe</string>
+    <string name="export_failed">uthunyelwel walengela</string>
+    <string name="import_failed">ukungena walengela</string>
+    <string name="edit_failed">ayinakho ukusinda loo ntshintshwano</string>
+    <string name="error_could_not_open">ayinakho ukuvula %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">%d session ingena</item>
+        <item quantity="other">%d session ingena</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d session</item>
+        <item quantity="other">%d session</item>
+    </plurals>
+</resources>

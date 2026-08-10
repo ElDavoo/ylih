@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Uzbek (Latin). Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - sizning audiotosmachaga jizni</string>
+
+    <string name="nav_headphones">audiotosmalar</string>
+    <string name="nav_stats">statistika</string>
+    <string name="nav_settings">sozlamalar</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">simli</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">nomalum</string>
+
+    <string name="welcome_title">ylih\'ga xush kelibsiz</string>
+    <string name="welcome_intro">ylih har bir audiotosmа nechadan tuya qullilganligini hisoblovchi dasturdur. bir necha yol keyin, sizning audiotosmalaringiz qancha soat davom etganligini surishingiz mumkin boladi.</string>
+    <string name="welcome_point_auto_title">ulash va unutish</string>
+    <string name="welcome_point_auto_body">bluetooth audiotosmalar ozi qayd etiladi. hech narsa ishlabtursin.</string>
+    <string name="welcome_point_lifetime_title">bir jufт, bir umr</string>
+    <string name="welcome_point_lifetime_body">audiotosmа iobirlik qilardi, unga yaxshi aytinг: uning jamisi shunda uz turadilan keyingi jufт nol dan boshlanadi.</string>
+    <string name="welcome_point_detailed_title">simli va choyon oyin</string>
+    <string name="welcome_point_detailed_body">batafsil qonun, sozlamalarda, simli audiotosmalar va nechadan voqtingning junini kolmashing.</string>
+    <string name="welcome_privacy">har narsa telefonningda quyldi. hisobnok yoq va dasturdur internetga ulanmaydi.</string>
+    <string name="welcome_start">boshlash</string>
+    <string name="welcome_next">keyingi</string>
+    <string name="welcome_allow">ruhsat berinг</string>
+    <string name="welcome_step">%1$d / %2$d qadamda</string>
+    <string name="welcome_bluetooth_title">bluetooth ulanish</string>
+    <string name="welcome_bluetooth_why">android faqat dasturdur bluetooth ulanishning ruhsatiga ega bolsa, qaysi bluetooth qurilmа ulanganligini ayolatadi. ushbu ylih audiotosmalarni mashina muzikasidan ajratadi.</string>
+    <string name="welcome_bluetooth_with">ruhsat berilsa: har bir audiotosmа ulanish dan sung qayd etiladi.</string>
+    <string name="welcome_bluetooth_without">ruhsat berilmasa: bluetooth audiotosmalar qayd etilmaydi. qolgan dasturdur ishlaydi.</string>
+    <string name="welcome_notifications_title">bildirgi</string>
+    <string name="welcome_notifications_why">batafsil qonun sust fon xizmatini ishlatadir va android uni indirmasi lozim.</string>
+    <string name="welcome_notifications_with">ruhsat berilsa: bildirgi qaysi audiotosmа qayd etilayotganligini koratadi.</string>
+    <string name="welcome_notifications_without">ruhsat berilmasa: batafsil qonun ishlaydi lekin android bildirgi koratmaydi.</string>
+    <string name="hibernation_title">untingiviz bulsa ham hisoблabturring</string>
+    <string name="hibernation_body">android bir necha yol ichida ozi fasli dastururlarni tuhtatadi va ularning ruhsatlarini oladi. android\'ning ushbu xususiyatini ochirring.</string>
+    <string name="action_not_now">hoziردа yoq</string>
+
+    <string name="devices_in_use">ishlatilmоqda</string>
+    <string name="devices_retired">rahmetdan qoldi</string>
+    <string name="devices_empty_title">audiotosmа yoq</string>
+    <string name="devices_empty_body">bluetooth audiotosmа ulangan da u shunda paydo boladi. simli audiotosmalar batafsil qonun talаb qiladi.</string>
+    <string name="devices_generation">jufт #%1$d</string>
+    <string name="devices_retired_on">rahmetdan qoldi %1$s</string>
+    <string name="devices_connected_for">ulangan %1$s</string>
+    <string name="devices_recent">%1$s / 7 kuni</string>
+
+    <string name="stats_title">har biribi ul audiotosmalar</string>
+    <string name="stats_sessions_since">%1$s %2$s ning keyin</string>
+    <string name="stats_today">bugun</string>
+    <string name="stats_last_7">oxirgi 7 kuni</string>
+    <string name="stats_last_30">oxirgi 30 kuni</string>
+    <string name="stats_average_session">ortacha seаns</string>
+    <string name="stats_longest_session">eng uzoq seаns</string>
+    <string name="stats_playing">audio oyinlar</string>
+    <string name="stats_measured_span">choyon oyinga olchоvshi</string>
+    <string name="stats_share">choyon ulus-hi</string>
+    <string name="stats_playback_only_note">faqat choyon vaqtini sanоqlashi</string>
+    <string name="stats_daily_hours_30">har kunning surlari (30 kuni)</string>
+    <string name="stats_by_pair">jufт buyicha</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · rahmetdan qoldi</string>
+    <string name="chart_max">%1$s maksimum</string>
+
+    <string name="pair_fallback_title">jufт</string>
+    <string name="pair_back">orqaga</string>
+    <string name="pair_more">keyin</string>
+    <string name="pair_menu_rename">nomi ozgartirish</string>
+    <string name="pair_menu_purchase">xaridi mаlumotlari</string>
+    <string name="pair_menu_retire">rahmetdan qaydir-ish / almashtirish</string>
+    <string name="pair_menu_delete">ochirish</string>
+    <string name="pair_lifetime">jufтning umri</string>
+    <string name="pair_retired_on">rahmetdan qoldi %1$s</string>
+    <string name="pair_retired_with_reason">rahmetdan qoldi %1$s · %2$s</string>
+    <string name="pair_connected_now">hozir ulangan · %1$s</string>
+    <string name="pair_sessions">seanisle</string>
+    <string name="pair_average">ortacha</string>
+    <string name="pair_longest">eng uzoq</string>
+    <string name="pair_since">%1$s ning keyin</string>
+    <string name="pair_of_measured">choyon ulus-hi</string>
+    <string name="pair_measured">choyon oyinga olchоvshi</string>
+    <string name="pair_paid">tulandi</string>
+    <string name="pair_per_hour">soат usha</string>
+    <string name="pair_bought">sotindi</string>
+    <string name="pair_daily_hours_14">har kunning surlari (14 kuni)</string>
+    <string name="pair_rename_title">jufтni nomi ozgartirish</string>
+    <string name="pair_rename_label">nom</string>
+    <string name="pair_retire_title">bu jufтni rahmetdan qaydir-ish</string>
+    <string name="pair_retire_label">sabab (uldi, sotildi, yoqoldi...)</string>
+    <string name="pair_retire_confirm">rahmetdan qaydir-ish</string>
+    <string name="pair_retire_supporting">jamisi shunda uz turadilan. qayta ulanish yangi jufт nol dan boshlanadi.</string>
+    <string name="pair_price_title">tulangan narx</string>
+    <string name="pair_price_label">miqdori (butun birlilar)</string>
+    <string name="pair_price_supporting">soат usha narx uchun ishlatiladi.</string>
+    <string name="pair_delete_title">bu jufтni ochirshimi?</string>
+    <string name="pair_delete_body">uning har bir sеansi ochirилadi. bu orqaga qaytuvcha yoq.</string>
+
+    <string name="session_ongoing">davomir</string>
+    <string name="session_until">%1$s gacha</string>
+    <string name="session_playing">%1$s choyon oyinlar</string>
+    <string name="session_recovered">qayta tiklanbi</string>
+
+    <string name="settings_tracking">qonun</string>
+    <string name="settings_detailed_title">batafsil qonun</string>
+    <string name="settings_detailed_body">simli audiotosmalar va choyon vaqti qush qiladi. android faqat ishlabturgan dasturdur sim tutash voqalirib-i attirg-uli yiberadi. bluetooth har qanday qonun qilinadi.</string>
+    <string name="settings_detailed_unavailable">bluetooth ruhsati berilmasa onergana yoq. ushbu quruллma faqat connectedDevice xizmatini elоn qiladi.</string>
+    <string name="settings_playback_only_title">faqat choyon vaqtini sanоqlash</string>
+    <string name="settings_playback_only_body">statistika ulanish vaqti orniga faqat choyon vaqtini sanоqlaydi. batafsil qonun bilan qayd etilgan seansle faqat.</string>
+    <string name="settings_language">til</string>
+    <string name="settings_language_system">tizimning tili</string>
+    <string name="settings_devices">qurilmalar</string>
+    <string name="settings_devices_body">audiotosmа emaslar - mashinaning muzikаsi yoki spiker - ochirib quyinг.</string>
+    <string name="settings_device_subtitle">%1$s · birinchi quldi %2$s</string>
+    <string name="settings_data">mаlumot</string>
+    <string name="settings_export">json eksporti</string>
+    <string name="settings_import">import</string>
+    <string name="settings_import_warning">import hozir hammasinin ozgartiribi.</string>
+    <string name="settings_troubleshooting">muammо echish</string>
+    <string name="settings_battery_body">seansle qayd etilmasa, ylih batareya optimizаciyadayz ozod ekanligini tekshirring.</string>
+    <string name="settings_battery_button">batareyа sozlamalari</string>
+    <string name="settings_battery_path">sozlamalar - dastururlar - ylih - batareya - cheklashmagan.</string>
+    <string name="settings_hibernation_body">ylih bir necha yol ichida ochilmasa, android unıng ruhsatlarini oladi va qayd etilmaydi. bu qullик ochirish yumur.</string>
+    <string name="settings_hibernation_on">android ylih\'ni tuhtatishi mumkın.</string>
+    <string name="settings_hibernation_off">ylih ozod va qayd etib-di.</string>
+    <string name="settings_hibernation_button">ishlatilmagan dasturdur sozlamalari</string>
+    <string name="settings_about">maqbul</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - audiotosmа surlari, lokalno saqlanadi va abad.</string>
+    <string name="settings_import_confirm_title">hamma mаlumotni ozgartirshimi?</string>
+    <string name="settings_import_confirm_body">import hozir har qurilmа, jufт va seansni ochiribi.</string>
+
+    <string name="widget_lifetime_label">ylih · umr</string>
+    <string name="widget_lifetime_description">jufт har soат, ulangan sura taymeri bilan</string>
+    <string name="widget_activity_label">ylih · faоliyanт</string>
+    <string name="widget_activity_description">har jufтning soат, plyus bugun, 7 kuni va 30 kuni</string>
+    <string name="widget_chart_label">ylih · 30 kuni</string>
+    <string name="widget_chart_description">oxirgi 30 kunning har kunning surlari</string>
+
+    <string name="action_save">saqlas-h</string>
+    <string name="action_cancel">bekor qilish</string>
+    <string name="action_delete">ochirish</string>
+    <string name="action_import">import</string>
+
+    <string name="channel_tracking">audiotosmа qonun</string>
+    <string name="channel_tracking_description">ylih simli audiotosmа va choyon quetishni kozlayaптgan vaqtda koratiladi.</string>
+    <string name="notification_title">audiotosmа vaqtini qonun</string>
+    <string name="notification_starting">boshlanяpti...</string>
+    <string name="notification_idle">audiotos-maga kutimоqda</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d ulangan · %2$s</item>
+        <item quantity="other">%1$d ulangan · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d ulangan · %2$s · choyon oyinlar</item>
+        <item quantity="other">%1$d ulangan · %2$s · choyon oyinlar</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">ushbu quruллma simli audiotosmalar qonun qilishi uchun bluetooth ruhsati tallab qiladi.</string>
+    <string name="export_done">fayl eksporti</string>
+    <string name="export_failed">eksport muvaffaq bolmadi</string>
+    <string name="import_failed">import muvaffaq bolmadi</string>
+    <string name="edit_failed">uni ozgartirring bolmadi</string>
+    <string name="error_could_not_open">%1$s ach bolmadi</string>
+    <plurals name="import_done">
+        <item quantity="one">import %d seаns</item>
+        <item quantity="other">import %d seаnsle</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d seаns</item>
+        <item quantity="other">%d seаnsle</item>
+    </plurals>
+</resources>

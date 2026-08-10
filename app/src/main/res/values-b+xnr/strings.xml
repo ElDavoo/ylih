@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Kangri. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ṭhik gam mimiñ kānd</string>
+
+    <string name="nav_headphones">mimiñ kānd</string>
+    <string name="nav_stats">tankhiir</string>
+    <string name="nav_settings">sanḍbāz</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">tangsār</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">nā jānn</string>
+
+    <string name="welcome_title">ylih anta brānd</string>
+    <string name="welcome_intro">ylih rakhel khai mimiñ kānd rāth khāiṇ thāl tāraṅ, tah pir sāl viċ tum dhii sak: khai mimiñ ghañṭā ṭik rahe?</string>
+    <string name="welcome_point_auto_title">jor kunḍ bhul</string>
+    <string name="welcome_point_auto_body">bluetooth mimiñ kānd ābāl tan, jab jor hun. kuj na run rakh.</string>
+    <string name="welcome_point_lifetime_title">ikk jor, ikk jīvan</string>
+    <string name="welcome_point_lifetime_body">jab mimiñ mar jān, nish kar: tāl uthē aithē rok jān, aur nayin mimiñ shurun hoi jayn.</string>
+    <string name="welcome_point_detailed_title">tangsār aur aavāz</string>
+    <string name="welcome_point_detailed_body">vistarīt nazar-rakhā, sanḍbāz vich, tangsār mimiñ kānd aur āvāz smāi kar.</string>
+    <string name="welcome_privacy">sab kuj tum kī fon uthē rakh. koi khāt na, aur app kē intarnet nahi hai.</string>
+    <string name="welcome_start">shurun kar</string>
+    <string name="welcome_next">agle</string>
+    <string name="welcome_allow">svīkār kar</string>
+    <string name="welcome_step">pag %1$d kē %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth phuñjṭhvāz</string>
+    <string name="welcome_bluetooth_why">android app kō sirf tab batāth ki bluetooth device jor huā hai aur uske nām kya hain, jab app kē pāsh bluetooth phuñjṭhvāz hai. ylih mimiñ kānd aur gādi kē stereo kar ar sak, aur ikk mimiñ durse kar sak.</string>
+    <string name="welcome_bluetooth_with">is se: har mimiñ nish ho jab jor hun, kunj bhi na run kunj bhi na dar.</string>
+    <string name="welcome_bluetooth_without">is vinā: koi bluetooth mimiñ kānd na nish hon. app kā bāki hissa kām kart, aur tum baad mein sanḍbāz vich day sak.</string>
+    <string name="welcome_notifications_title">sūchna</string>
+    <string name="welcome_notifications_why">vistarīt nazar-rakhā choti background service chalāth, aur android taat ki zarūrat sūchna dekh. </string>
+    <string name="welcome_notifications_with">is se: sūchna dikhāth kya nish ho rahe, jishe vistarīt nazar-rakhā jīvit hai.</string>
+    <string name="welcome_notifications_without">is vinā: vistarīt nazar-rakhā chalāth aur nish karth. android sūchna nahi dikhāth.</string>
+    <string name="hibernation_title">ginn-ti chalā jab bhul jā</string>
+    <string name="hibernation_body">android app kō ruk ay jab kuch māhīn khul na, aur permishan vasul kar, ylih kunj na kām kar jab tak tum khol. aisā bhulnā ylih kā kām hai, to ab hī band kar.</string>
+    <string name="action_not_now">ab na</string>
+
+    <string name="devices_in_use">upyog mein</string>
+    <string name="devices_retired">nish</string>
+    <string name="devices_empty_title">koi mimiñ kānd nahi</string>
+    <string name="devices_empty_body">bluetooth mimiñ kānd jor kar kunj sūch hon. tangsār mimiñ kānd kō vistarīt nazar-rakhā chahie.</string>
+    <string name="devices_generation">mimiñ #%1$d</string>
+    <string name="devices_retired_on">nish %1$s</string>
+    <string name="devices_connected_for">jor %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">sab mimiñ kānd</string>
+    <string name="stats_sessions_since">%1$s baad %2$s</string>
+    <string name="stats_today">aj</string>
+    <string name="stats_last_7">gat 7 din</string>
+    <string name="stats_last_30">gat 30 din</string>
+    <string name="stats_average_session">avgat samay</string>
+    <string name="stats_longest_session">lambe samay</string>
+    <string name="stats_playing">āvāz baj</string>
+    <string name="stats_measured_span">playback khātur nāp</string>
+    <string name="stats_share">bajeñ bhāg</string>
+    <string name="stats_playback_only_note">kunj aavāz bajeñ samay ginn</string>
+    <string name="stats_daily_hours_30">din ke ghnṭā (30 din)</string>
+    <string name="stats_by_pair">mimiñ hisāb</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · nish</string>
+    <string name="chart_max">%1$s adhik</string>
+
+    <string name="pair_fallback_title">mimiñ</string>
+    <string name="pair_back">peche</string>
+    <string name="pair_more">aur</string>
+    <string name="pair_menu_rename">nam badal</string>
+    <string name="pair_menu_purchase">khrīd je sūchna</string>
+    <string name="pair_menu_retire">nish / badalā</string>
+    <string name="pair_menu_delete">hata</string>
+    <string name="pair_lifetime">is mimiñ kā sārā jīvan</string>
+    <string name="pair_retired_on">nish %1$s</string>
+    <string name="pair_retired_with_reason">nish %1$s · %2$s</string>
+    <string name="pair_connected_now">ab jor hai · %1$s</string>
+    <string name="pair_sessions">samay</string>
+    <string name="pair_average">avgat</string>
+    <string name="pair_longest">lambe</string>
+    <string name="pair_since">baad %1$s</string>
+    <string name="pair_of_measured">bajeñ bhāg</string>
+    <string name="pair_measured">playback khātur nāp</string>
+    <string name="pair_paid">khrīd</string>
+    <string name="pair_per_hour">ghnṭā anusar</string>
+    <string name="pair_bought">khareed</string>
+    <string name="pair_daily_hours_14">din ke ghnṭā (14 din)</string>
+    <string name="pair_rename_title">mimiñ kā nam badal</string>
+    <string name="pair_rename_label">nam</string>
+    <string name="pair_retire_title">is mimiñ kō nish kar</string>
+    <string name="pair_retire_label">sāran (marā, bechā, kho...)</string>
+    <string name="pair_retire_confirm">nish kar</string>
+    <string name="pair_retire_supporting">kul uthē rok jay. jab dobāra Device jor hun, nayā mimiñ shurū hon.</string>
+    <string name="pair_price_title">khareed kī kīmat</string>
+    <string name="pair_price_label">rāsh (purā ekaiñ)</string>
+    <string name="pair_price_supporting">kīmat-prati-ghnṭā mein use hota hai.</string>
+    <string name="pair_delete_title">is mimiñ kō hata?</string>
+    <string name="pair_delete_body">is khātur sab samay hata ja. yah bilkul undo na ho sak.</string>
+
+    <string name="session_ongoing">chalā huā</string>
+    <string name="session_until">jab tak %1$s</string>
+    <string name="session_playing">%1$s bajeñ</string>
+    <string name="session_recovered">dubārā</string>
+
+    <string name="settings_tracking">nazar-rakhā</string>
+    <string name="settings_detailed_title">vistarīt nazar-rakhā</string>
+    <string name="settings_detailed_body">tangsār mimiñ kānd aur aavāz samay add kar. android tangsār plug events kunj chalte app kō hi de, to is silent sūchna rakh. bluetooth sāre samay nazar rakhā ja.</string>
+    <string name="settings_detailed_unavailable">bluetooth access tab tak na jo jab connectedDevice service type, android 14+ bluetooth permishan band kar.</string>
+    <string name="settings_playback_only_title">kunj aavāz bajeñ samay ginn</string>
+    <string name="settings_playback_only_body">tankhiir us samay ginn jo aavāz chalā, jor na. vistarīt nazar-rakhā se samay kunj nāp; bāki chor.</string>
+    <string name="settings_language">bhāsā</string>
+    <string name="settings_language_system">system bhāsā</string>
+    <string name="settings_devices">upkaran</string>
+    <string name="settings_devices_body">jo mimiñ kānd na — gādi ya speaker — sab chor kar nish kar.</string>
+    <string name="settings_device_subtitle">%1$s · pehle dekh %2$s</string>
+    <string name="settings_data">sūchna</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">ānāy</string>
+    <string name="settings_import_warning">ānāy sab kuj badal de.</string>
+    <string name="settings_troubleshooting">samasyā hal</string>
+    <string name="settings_battery_body">samay nish na hon to ylih battery se dur rakh — jo app rok huā to bhrāe bar connect na hoi jab khul.</string>
+    <string name="settings_battery_button">battery sanḍbāz</string>
+    <string name="settings_battery_path">sanḍbāz → app → ylih → battery → unrestricted.</string>
+    <string name="settings_hibernation_body">ylih kuch māhīn khul na to android rok kar aur permishan vasul kar, samay na nish hon jab khol. yah band kar ke mimiñ mausum bhar ginn chale.</string>
+    <string name="settings_hibernation_on">android ylih rok sak.</string>
+    <string name="settings_hibernation_off">ylih dur hai aur ginn chale.</string>
+    <string name="settings_hibernation_button">na use app sanḍbāz</string>
+    <string name="settings_about">baare mein</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — mimiñ ghnṭā, sthānīya aur har samay.</string>
+    <string name="settings_import_confirm_title">sab badal de?</string>
+    <string name="settings_import_confirm_body">is backup ānāy sab upkaran, mimiñ aur samay hata.</string>
+
+    <string name="widget_lifetime_label">ylih · sārā jīvan</string>
+    <string name="widget_lifetime_description">mimiñ ghnṭā, live timer kē sāth jo jor huā</string>
+    <string name="widget_activity_label">ylih · kārya</string>
+    <string name="widget_activity_description">sab mimiñ kā ghnṭā, plus aj, 7 din, 30 din</string>
+    <string name="widget_chart_label">ylih · 30 din</string>
+    <string name="widget_chart_description">din ke ghnṭā gat 30 din</string>
+
+    <string name="action_save">rakhō</string>
+    <string name="action_cancel">ruk</string>
+    <string name="action_delete">hata</string>
+    <string name="action_import">ānāy</string>
+
+    <string name="channel_tracking">mimiñ nazar-rakhā</string>
+    <string name="channel_tracking_description">ylih tangsār mimiñ dekh. android tangsār plug events kunj chalte app kō na de.</string>
+    <string name="notification_title">mimiñ samay nazar-rakhā</string>
+    <string name="notification_starting">shurū...</string>
+    <string name="notification_idle">mimiñ wait</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d jor · %2$s</item>
+        <item quantity="many">%1$d jor · %2$s</item>
+        <item quantity="other">%1$d jor · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d jor · %2$s · bajeñ</item>
+        <item quantity="many">%1$d jor · %2$s · bajeñ</item>
+        <item quantity="other">%1$d jor · %2$s · bajeñ</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">is build kō tangsār mimiñ track karnē ke liye bluetooth chahie</string>
+    <string name="export_done">backup export</string>
+    <string name="export_failed">export fail</string>
+    <string name="import_failed">import fail</string>
+    <string name="edit_failed">badlāv na sak</string>
+    <string name="error_could_not_open">na khol sak %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">%d samay import</item>
+        <item quantity="many">%d samay import</item>
+        <item quantity="other">%d samay import</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d samay</item>
+        <item quantity="many">%d samay</item>
+        <item quantity="other">%d samay</item>
+    </plurals>
+</resources>

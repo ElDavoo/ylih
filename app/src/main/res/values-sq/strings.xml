@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Albanian. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - jeta jote ne kufje</string>
+
+    <string name="nav_headphones">kufje</string>
+    <string name="nav_stats">statistika</string>
+    <string name="nav_settings">cilësimet</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">me tela</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">i panjohur</string>
+
+    <string name="welcome_title">mirëdita ne ylih</string>
+    <string name="welcome_intro">ylih regjistron sa poluate çdo palë kufjesh qëndron e lidhur, kështu që vitet më vonë ju ende mund të përgjigjeni të vetmit pyetje që ka rëndësi për një palë: sa orë zgjat?</string>
+    <string name="welcome_point_auto_title">lidhu dhe harroje</string>
+    <string name="welcome_point_auto_body">kufjet bluetooth regjistrohen vetë, që kur ato lidhen. asgjë nuk duhet të lihet duke punuar.</string>
+    <string name="welcome_point_lifetime_title">një palë, një jetë</string>
+    <string name="welcome_point_lifetime_body">kur një palë vdes, pensionojeni atë: totali i tij ngryset atje dhe çifti tjetër i të njëjtave kufje fillon përsëri nga zero.</string>
+    <string name="welcome_point_detailed_title">me tela dhe riprodhim</string>
+    <string name="welcome_point_detailed_body">gjurmimi i detajuar, në cilësimet, shton kufjet me tela dhe mat sa shumë e kohës ishte përfundimisht duke luajtur.</string>
+    <string name="welcome_privacy">gjithçka qëndron në këtë telefon. nuk ka llogari, dhe aplikacioni nuk ka leje interneti.</string>
+    <string name="welcome_start">filloje</string>
+    <string name="welcome_next">përpara</string>
+    <string name="welcome_allow">lejo</string>
+    <string name="welcome_step">hapi %1$d i %2$d</string>
+    <string name="welcome_bluetooth_title">akses bluetooth</string>
+    <string name="welcome_bluetooth_why">android vetëm i thotë një aplikacioni se cili pajisje bluetooth lidhet dhe si quhet, nëse aplikacioni ka akses bluetooth. është se si ylih dalloj një palë kufjesh nga një stereo makine, dhe se si e di një palë nga një tjetër.</string>
+    <string name="welcome_bluetooth_with">me të: çdo palë regjistrohet nga momenti kur lidhet, pa asgjë të mbetur duke punuar dhe pa asgjë për të kujtuar për të shtypur.</string>
+    <string name="welcome_bluetooth_without">pa të: kufjet bluetooth nuk regjistrohen përgjithnjë. pjesa tjetër e aplikacionit ende punon, dhe ju mund ta jepni atë më vonë në cilësimet e aplikacionit të android.</string>
+    <string name="welcome_notifications_title">njoftime</string>
+    <string name="welcome_notifications_why">gjurmimi i detajuar drejton një shërbim të vogël në sfond, dhe android kërkon çdo aplikacion që bën këtë të mbajë një njoftim të dukshëm ndërsa bën.</string>
+    <string name="welcome_notifications_with">me të: njoftimi tregon se çfarë regjistrohet tani, e cila është shenja e vetme që gjurmimi i detajuar është gjallë.</string>
+    <string name="welcome_notifications_without">pa të: gjurmimi i detajuar ende punon dhe ende regjistron. android thjesht nuk do të tregojë njoftimin e tij.</string>
+    <string name="hibernation_title">vazhdoni të numëroni ndërsa e harroni</string>
+    <string name="hibernation_body">android e pauzon aplikacionet që bien pa u hapur për disa muaj dhe i merr përsëri lejet e tyre, e cila do të linte ylih duke mos regjistruar asgjë derisa ta hapni përsëri. të harrohesh është pikërisht ajo për të cilën është ky aplikacion, kështu që ia vlen ta çaktivizoni atë tani.</string>
+    <string name="action_not_now">jo tani</string>
+
+    <string name="devices_in_use">ne përdorim</string>
+    <string name="devices_retired">në pension</string>
+    <string name="devices_empty_title">asnjë kufje ende</string>
+    <string name="devices_empty_body">lidhni një palë kufje bluetooth dhe do të shfaqen këtu. kufjet me tela kanë nevojë për gjurmim të detajuar, në cilësimet.</string>
+    <string name="devices_generation">palë #%1$d</string>
+    <string name="devices_retired_on">në pension %1$s</string>
+    <string name="devices_connected_for">e lidhur %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">të gjitha kufjet</string>
+    <string name="stats_sessions_since">%1$s që kur %2$s</string>
+    <string name="stats_today">sot</string>
+    <string name="stats_last_7">7 ditët e fundit</string>
+    <string name="stats_last_30">30 ditët e fundit</string>
+    <string name="stats_average_session">seanca mesatare</string>
+    <string name="stats_longest_session">seanca më e gjatë</string>
+    <string name="stats_playing">audio që luan</string>
+    <string name="stats_measured_span">matur për riprodhim</string>
+    <string name="stats_share">ndarje riprodhimi</string>
+    <string name="stats_playback_only_note">numëron vetëm kohën e riprodhimit</string>
+    <string name="stats_daily_hours_30">orë ditore (30 ditë)</string>
+    <string name="stats_by_pair">sipas palës</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · në pension</string>
+    <string name="chart_max">%1$s max</string>
+
+    <string name="pair_fallback_title">palë</string>
+    <string name="pair_back">mbrapa</string>
+    <string name="pair_more">më shumë</string>
+    <string name="pair_menu_rename">riemëro</string>
+    <string name="pair_menu_purchase">info blerje</string>
+    <string name="pair_menu_retire">pensionohu / zëvendëso</string>
+    <string name="pair_menu_delete">fshij</string>
+    <string name="pair_lifetime">jetëgjatësia në këtë palë</string>
+    <string name="pair_retired_on">në pension %1$s</string>
+    <string name="pair_retired_with_reason">në pension %1$s · %2$s</string>
+    <string name="pair_connected_now">e lidhur tani · %1$s</string>
+    <string name="pair_sessions">seancat</string>
+    <string name="pair_average">mesatare</string>
+    <string name="pair_longest">më e gjatë</string>
+    <string name="pair_since">që kur %1$s</string>
+    <string name="pair_of_measured">ndarje riprodhimi</string>
+    <string name="pair_measured">matur për riprodhim</string>
+    <string name="pair_paid">paguar</string>
+    <string name="pair_per_hour">për orë</string>
+    <string name="pair_bought">blerë</string>
+    <string name="pair_daily_hours_14">orë ditore (14 ditë)</string>
+    <string name="pair_rename_title">riemëro palën</string>
+    <string name="pair_rename_label">emri</string>
+    <string name="pair_retire_title">pensionojeni këtë palë</string>
+    <string name="pair_retire_label">arsye (vdiq, u shit, u humb...)</string>
+    <string name="pair_retire_confirm">pensionohu</string>
+    <string name="pair_retire_supporting">totalet ngryset këtu. rilidhja e të njëjtit pajisje fillon një palë të re në zero.</string>
+    <string name="pair_price_title">çmimi i paguar</string>
+    <string name="pair_price_label">shuma (njësitë e plota)</string>
+    <string name="pair_price_supporting">përdoret për figurën e kostos për orë.</string>
+    <string name="pair_delete_title">fshij këtë palë?</string>
+    <string name="pair_delete_body">çdo seancë e regjistruar për këtë fshihet gjithashtu. kjo nuk mund të ndryshojë.</string>
+
+    <string name="session_ongoing">në vazhdim</string>
+    <string name="session_until">deri %1$s</string>
+    <string name="session_playing">%1$s duke luajtur</string>
+    <string name="session_recovered">rikuperuar</string>
+
+    <string name="settings_tracking">gjurmim</string>
+    <string name="settings_detailed_title">gjurmim i detajuar</string>
+    <string name="settings_detailed_body">shton kufjet me tela dhe kohën e riprodhimit. android vetëm raporton ngjarje me tela të lidhur me një aplikacion që punon, kështu që kjo mbron një njoftim të heshtur në sfondin. bluetooth gjendet gjithsesi.</string>
+    <string name="settings_detailed_unavailable">jo i disponueshëm derisa të jepet akses bluetooth: ky ndërtim vetëm deklaroi llojin e shërbimit connectedDevice, të cilën android 14+ e lidh me një leje bluetooth.</string>
+    <string name="settings_playback_only_title">numëro vetëm riprodhimin</string>
+    <string name="settings_playback_only_body">statistika numëron kohën kur audio ishte përfundimisht duke luajtur në vend se koha e lidhur. vetëm seancat e regjistruara me gjurmim të detajuar matur riprodhim; pjesa tjetër lihet jashtë.</string>
+    <string name="settings_language">gjuha</string>
+    <string name="settings_language_system">gjuha e sistemit</string>
+    <string name="settings_devices">pajisjet</string>
+    <string name="settings_devices_body">kontrolloni asgjë që nuk është kufje - një stereo makine ose një relator - për të ndalur regjistrimin e tij.</string>
+    <string name="settings_device_subtitle">%1$s · parë për herë %2$s</string>
+    <string name="settings_data">të dhënat</string>
+    <string name="settings_export">eksporto json</string>
+    <string name="settings_import">importo</string>
+    <string name="settings_import_warning">importimi zëvendëson gjithçka të ruajtur aktualisht.</string>
+    <string name="settings_troubleshooting">zgjidhe problemet</string>
+    <string name="settings_battery_body">nëse seancat ndalojnë të regjistrohen, kontrolloni nëse ylih është përjashtuar nga optimizimi i baterisë - një aplikacion që është ndalur me forcë nuk pëson më kurrë transmetetime lidhje derisa të hapet.</string>
+    <string name="settings_battery_button">cilësimet e baterisë</string>
+    <string name="settings_battery_path">cilësimet → pajisjet → ylih → bateria → pa limit.</string>
+    <string name="settings_hibernation_body">nëse ylih mbetet i mbyllur për disa muaj, android e pauzon atë dhe i merr përsëri lejet e tij, dhe asgjë nuk regjistrohet përsëri derisa ta hapni atë. ta çaktivizoni atë është se çfarë lejon një palë të vazhdojë të numërojë përmes një sezoni kur nuk mendon për aplikacionin.</string>
+    <string name="settings_hibernation_on">android mund ta pauzon ylih.</string>
+    <string name="settings_hibernation_off">ylih është përjashtuar dhe vazhdon të regjistroj.</string>
+    <string name="settings_hibernation_button">cilësimet e aplikacionit të pashfrytëzuar</string>
+    <string name="settings_about">rreth</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - orë kufjesh, ruajtur lokalisht dhe përgjithmonë.</string>
+    <string name="settings_import_confirm_title">zëvendësoni të gjitha të dhënat?</string>
+    <string name="settings_import_confirm_body">importimi i këtij rezervimi fshij çdo pajisje, palë dhe seancë të ruajtur tani.</string>
+
+    <string name="widget_lifetime_label">ylih · jetëgjatësi</string>
+    <string name="widget_lifetime_description">orë për palë, me një tabelë të drejtpërdrejtë në atë që është e lidhur</string>
+    <string name="widget_activity_label">ylih · aktivitet</string>
+    <string name="widget_activity_description">orë të të gjithë palës, plus sot, 7 ditë dhe 30 ditë</string>
+    <string name="widget_chart_label">ylih · 30 ditë</string>
+    <string name="widget_chart_description">orë ditoreprzimin gjatë 30 ditëve të fundit</string>
+
+    <string name="action_save">ruaj</string>
+    <string name="action_cancel">anullo</string>
+    <string name="action_delete">fshij</string>
+    <string name="action_import">importo</string>
+
+    <string name="channel_tracking">gjurmim kufjesh</string>
+    <string name="channel_tracking_description">shfaqet ndërsa ylih po ndjek kufjet me tela dhe riprodhimin. android nuk ka ngjarje me tela të lidhur me aplikacionet që nuk punojnë.</string>
+    <string name="notification_title">gjurmimi i kohës së kufjeve</string>
+    <string name="notification_starting">po fillonte...</string>
+    <string name="notification_idle">në pritje të kufjeve</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d e lidhur · %2$s</item>
+        <item quantity="other">%1$d e lidhur · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d e lidhur · %2$s · duke luajtur</item>
+        <item quantity="other">%1$d e lidhur · %2$s · duke luajtur</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">ky ndërtim ka nevojë për akses bluetooth përpara se të mund të ndjekë kufjet me tela</string>
+    <string name="export_done">rezervimi u eksportua</string>
+    <string name="export_failed">eksporti dështoi</string>
+    <string name="import_failed">importimi dështoi</string>
+    <string name="edit_failed">nuk mund të ruaj atë ndryshim</string>
+    <string name="error_could_not_open">nuk mund të hap %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">importoi %d seancë</item>
+        <item quantity="other">importoi %d seancat</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d seancë</item>
+        <item quantity="other">%d seancat</item>
+    </plurals>
+</resources>

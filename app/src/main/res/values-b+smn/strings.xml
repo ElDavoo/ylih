@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Inari Sami. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - du ealet hearas</string>
+
+    <string name="nav_headphones">hearas</string>
+    <string name="nav_stats">statistihkah</string>
+    <string name="nav_settings">sieđet</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">sáhppat</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">tuntumateš</string>
+
+    <string name="welcome_title">tervismerkkam ylihii</string>
+    <string name="welcome_intro">ylih pándooš kuá maná hearas čulhkan siimdá, mainna veari majeehist vahtta klahtestađ dan ieleš káskkáa: mánne jahkaj ojis väldiduustoj?</string>
+    <string name="welcome_point_auto_title">čulhke já maahta</string>
+    <string name="welcome_point_auto_body">bluetooth hearas pándooštaš ittáá, ja čulhkan siimdá. midá ejä tahta jáhtta siirvun.</string>
+    <string name="welcome_point_lifetime_title">okta pair, okta elo</string>
+    <string name="welcome_point_lifetime_body">jos pair nuabbat, maahtat: sen sumpá ásttu čeakcu já seakke pair mainna samá hearas aalgá jällen nolla siimdá.</string>
+    <string name="welcome_point_detailed_title">sáhppat já kuullamievvi</string>
+    <string name="welcome_point_detailed_body">detaljálâš sieđemužžan sieđetiin lasseduvvá sáhppat hearas já mieltá kuá maná aiges oai kuullamin.</string>
+    <string name="welcome_privacy">kaik jäi tánná telefoanain. ejä luo kontua, já appil ejä luo internet-turvvaa.</string>
+    <string name="welcome_start">alggá</string>
+    <string name="welcome_next">majeehâ</string>
+    <string name="welcome_allow">maannak</string>
+    <string name="welcome_step">viesu %1$d %2$d:stá</string>
+    <string name="welcome_bluetooth_title">bluetooth turvva</string>
+    <string name="welcome_bluetooth_why">android kääva app\'le kuá bluetooth-laittá čulhkan já kuá se kuddim, jos app\'al vejá bluetooth turvva. taat on kuá ylih erommahtá pair headphones auto-stereo:stá, já kuá se tajja okta pair mainna seakke.</string>
+    <string name="welcome_bluetooth_with">siinan: juohke pair pándooštaš čulhkan siimdá, midá ejä tahta jáhtta siirvun já midä ejä tahta muštit painat.</string>
+    <string name="welcome_bluetooth_without">ilman: bluetooth hearas ejä pándooštaš ollohkta. aplikaacen seakke oza siirvua, já vahtta maannak tah majeehist android app-sieđetiin.</string>
+    <string name="welcome_notifications_title">kuulmahuhtivážža</string>
+    <string name="welcome_notifications_why">detaljálâš sieđemužžan siirvua pieni taagga-seavvi, já android vahtta midä app\'a taam jáhtat kuulmahuhtivážža näkkin siinan.</string>
+    <string name="welcome_notifications_with">siinan: kuulmahuhtivážža näättá kuá pándooštaš juo, mainna on okta merkke detaljálâš sieđemužžan elo.</string>
+    <string name="welcome_notifications_without">ilman: detaljálâš sieđemužžan siirvua já pándooštaš. android jus ejä näätá sen kuulmahuhtivážža.</string>
+    <string name="hibernation_title">jáhta luoigat siiná já maahtat</string>
+    <string name="hibernation_body">android peatá app\'a mainna ejä av kuulmahuhti monda kuavvi já majja niiden turvva joallu, mainna juohtta ylih pándooštaš midä ellei vahtta aav taam jällen. maahtat taan on juohke tánná app\'a vuođe, nai se vejá kalaá taam jällen.</string>
+    <string name="action_not_now">jus majeehâ</string>
+
+    <string name="devices_in_use">sieđemužžan</string>
+    <string name="devices_retired">maahtan</string>
+    <string name="devices_empty_title">jáhta hearas maajje</string>
+    <string name="devices_empty_body">čulhke pair bluetooth hearas já sin näättaš tánná. sáhppat hearas vahtta detaljálâš sieđemužžaa, sieđetiin.</string>
+    <string name="devices_generation">pair #%1$d</string>
+    <string name="devices_retired_on">maahtan %1$s</string>
+    <string name="devices_connected_for">čulhkan %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">kaik hearas</string>
+    <string name="stats_sessions_since">%1$s siimdá %2$s</string>
+    <string name="stats_today">juohke</string>
+    <string name="stats_last_7">majeehâ 7 pájvvá</string>
+    <string name="stats_last_30">majeehâ 30 pájvvá</string>
+    <string name="stats_average_session">keskes session</string>
+    <string name="stats_longest_session">maržá session</string>
+    <string name="stats_playing">kuullamin</string>
+    <string name="stats_measured_span">mieltá kuullamievvi</string>
+    <string name="stats_share">kuullamin oazzu</string>
+    <string name="stats_playback_only_note">luoigat kuullamin-aiges jus</string>
+    <string name="stats_daily_hours_30">juohke-aige jahkaj (30 pájvvá)</string>
+    <string name="stats_by_pair">pair:</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · maahtan</string>
+    <string name="chart_max">%1$s max</string>
+
+    <string name="pair_fallback_title">pair</string>
+    <string name="pair_back">jällen</string>
+    <string name="pair_more">seakke</string>
+    <string name="pair_menu_rename">maajje-nimá</string>
+    <string name="pair_menu_purchase">ostos-tievvi</string>
+    <string name="pair_menu_retire">maahta / vahtta</string>
+    <string name="pair_menu_delete">poistá</string>
+    <string name="pair_lifetime">ielo tánná pairá</string>
+    <string name="pair_retired_on">maahtan %1$s</string>
+    <string name="pair_retired_with_reason">maahtan %1$s · %2$s</string>
+    <string name="pair_connected_now">čulhkan juo · %1$s</string>
+    <string name="pair_sessions">sessions</string>
+    <string name="pair_average">keskes</string>
+    <string name="pair_longest">maržá</string>
+    <string name="pair_since">siimdá %1$s</string>
+    <string name="pair_of_measured">kuullamin oazzu</string>
+    <string name="pair_measured">mieltá kuullamievvi</string>
+    <string name="pair_paid">maksam</string>
+    <string name="pair_per_hour">jahka</string>
+    <string name="pair_bought">ostetam</string>
+    <string name="pair_daily_hours_14">juohke-aige jahkaj (14 pájvvá)</string>
+    <string name="pair_rename_title">maajje-nimá pair</string>
+    <string name="pair_rename_label">nimá</string>
+    <string name="pair_retire_title">maahta tánná pair</string>
+    <string name="pair_retire_label">siivu (kuolin, muađil, pajul...)</string>
+    <string name="pair_retire_confirm">maahta</string>
+    <string name="pair_retire_supporting">sumá čeakcu tánná. majeehâ čulhkan samá laittá alggá jällen fresh pair nuolla.</string>
+    <string name="pair_price_title">osmahtu</string>
+    <string name="pair_price_label">sumá (kaik unitta)</string>
+    <string name="pair_price_supporting">sieđetuvvá kosto-jahka kuvvasa.</string>
+    <string name="pair_delete_title">poistá tánná pair?</string>
+    <string name="pair_delete_body">juohke session pándooštam tánná poistáá. taat ejä mahta vahta jällen.</string>
+
+    <string name="session_ongoing">jáhta</string>
+    <string name="session_until">siihtá %1$s</string>
+    <string name="session_playing">%1$s kuullamin</string>
+    <string name="session_recovered">joalluduvvam</string>
+
+    <string name="settings_tracking">sieđemužžan</string>
+    <string name="settings_detailed_title">detaljálâš sieđemužžan</string>
+    <string name="settings_detailed_body">lasseduvvá sáhppat hearas já kuullamin-aiges. android jus kuudal wired plug-eventta jáhta appii, nai taat jáhta hiljâ kuulmahuhtivážža suohppas. bluetooth sieđetuvvá juohke veara.</string>
+    <string name="settings_detailed_unavailable">majje siihtá bluetooth turvva maandukam: tánná build jus kahttim connectedDevice seavvi typan, mainna android 14+ čoakcu bluetooth turvvaa.</string>
+    <string name="settings_playback_only_title">luoigat juohke kuullamin</string>
+    <string name="settings_playback_only_body">statistihkah luoigá kuullamin-aiges oai čulhkan-aiges. jus sessions pándooshtam detaljálâš sieđemužžan pealdin mieltaj kuullamin; seakke jäá eres.</string>
+    <string name="settings_language">gielâ</string>
+    <string name="settings_language_system">system gielâ</string>
+    <string name="settings_devices">laittá</string>
+    <string name="settings_devices_body">jáhta midä ejä luo hearas - auto stereó vaj kuulga - luoigat pándooštamast.</string>
+    <string name="settings_device_subtitle">%1$s · vuođel nähtam %2$s</string>
+    <string name="settings_data">dieđo</string>
+    <string name="settings_export">vijdá json</string>
+    <string name="settings_import">maajje</string>
+    <string name="settings_import_warning">maajje väliheivá juohke dieđo mainna juo sieđetaš.</string>
+    <string name="settings_troubleshooting">virggáj</string>
+    <string name="settings_battery_body">jos sessions lappá pándooštamasta, teksá ylih vejá batereja optimimeeža eres - app mainna vuođel peatáh jáhta sieđa broadcasts siihtá sii aav aalgán.</string>
+    <string name="settings_battery_button">batereja sieđet</string>
+    <string name="settings_battery_path">sieđet → laittá → ylih → batereja → ceavvi.</string>
+    <string name="settings_hibernation_body">jos ylih jáhta aav kuulmahuhti monda kuavvi, android peatá taam já majja turvva joallu, já midä ejä pándooštaš siihtá sii aav aalgán. kalaá taat pealdin vejá pair jáhta luoigat seakke season mainna tahc maahtat app:a.</string>
+    <string name="settings_hibernation_on">android vahtta peatá ylih.</string>
+    <string name="settings_hibernation_off">ylih vejá eres já jáhta pándooštaa.</string>
+    <string name="settings_hibernation_button">sieđemužžan app sieđet</string>
+    <string name="settings_about">birra</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - hearas jahkaj, jáhtan lokalâ já majeehist.</string>
+    <string name="settings_import_confirm_title">väliheivá kaik dieđo?</string>
+    <string name="settings_import_confirm_body">maajje tánná backup poistá juohke laittá, pair já session juo sieđetam.</string>
+
+    <string name="widget_lifetime_label">ylih · ielo</string>
+    <string name="widget_lifetime_description">jahkaj pair, jus jáhta timer čulhkan laittá</string>
+    <string name="widget_activity_label">ylih · toiminta</string>
+    <string name="widget_activity_description">juohke pair jahkaj keškážat, plus juohke, 7 pájvvá já 30 pájvvá</string>
+    <string name="widget_chart_label">ylih · 30 pájvvá</string>
+    <string name="widget_chart_description">juohke-aige jahkaj majeehâ 30 pájvvá</string>
+
+    <string name="action_save">jáhta</string>
+    <string name="action_cancel">mahta</string>
+    <string name="action_delete">poistá</string>
+    <string name="action_import">maajje</string>
+
+    <string name="channel_tracking">hearas sieđemužžan</string>
+    <string name="channel_tracking_description">nähtam siiná ylih jáhta sáhppat hearas já kuullamin. android jus ejä vijdá wired plug-eventta appii mainna ejä luo siirvun.</string>
+    <string name="notification_title">sieđemužžan hearas aiges</string>
+    <string name="notification_starting">alggá...</string>
+    <string name="notification_idle">maajje hearas</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d čulhkan · %2$s</item>
+        <item quantity="two">%1$d čulhkan · %2$s</item>
+        <item quantity="other">%1$d čulhkan · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d čulhkan · %2$s · kuullamin</item>
+        <item quantity="two">%1$d čulhkan · %2$s · kuullamin</item>
+        <item quantity="other">%1$d čulhkan · %2$s · kuullamin</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">tánná build vahtta bluetooth turvva siihtá sáhppat hearas sieđemužžaa</string>
+    <string name="export_done">backup vijdám</string>
+    <string name="export_failed">vijdé mahtumin</string>
+    <string name="import_failed">maajje mahtumin</string>
+    <string name="edit_failed">ejä vejjam jáhta taam vahtu</string>
+    <string name="error_could_not_open">ejä vejjam aav %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">maajhem %d session</item>
+        <item quantity="two">maajhem %d sessions</item>
+        <item quantity="other">maajhem %d sessions</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d session</item>
+        <item quantity="two">%d sessions</item>
+        <item quantity="other">%d sessions</item>
+    </plurals>
+</resources>

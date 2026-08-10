@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Wolof. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - jàngale sa bopp ci sikasiit</string>
+
+    <string name="nav_headphones">sikasiit</string>
+    <string name="nav_stats">taalisiir</string>
+    <string name="nav_settings">melokaan</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">audio le</string>
+    <string name="kind_wired">joñ</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">xamul</string>
+
+    <string name="welcome_title">dalal ba ylih</string>
+    <string name="welcome_intro">ylih dem jot na seet ci jëm sikasiit endi jëm gu meggul ci, noo na ko jáng suubaaga ko foofu sunu soobma mbeetu: jàngal seet am leegi?</string>
+    <string name="welcome_point_auto_title">jëm te yaar</string>
+    <string name="welcome_point_auto_body">sikasiit bluetooth gu yaa jot ngir ndax ñu jëm, buuji-buuji litaa. aju joom njëkk leen.</string>
+    <string name="welcome_point_lifetime_title">sikasiit bu ben, jiggaleej bu ben</string>
+    <string name="welcome_point_lifetime_body">sikasiit bu nag yemoo, gis-mi ba: jëm am jëm daal ñu, sikasiit bu ndëm ay sikasiit gu jëm kele.</string>
+    <string name="welcome_point_detailed_title">joñ ak rekk</string>
+    <string name="welcome_point_detailed_body">jot bu jarii, ci melokaan, daal joñ sikasiit te dal jàngal wi ñu jotal.</string>
+    <string name="welcome_privacy">melokaan ay demmiñ suubaaga sa. buuji kontu te app am jot internet sa.</string>
+    <string name="welcome_start">jéem</string>
+    <string name="welcome_next">xool</string>
+    <string name="welcome_allow">jëm</string>
+    <string name="welcome_step">garab %1$d ci %2$d</string>
+    <string name="welcome_bluetooth_title">am jëm bluetooth</string>
+    <string name="welcome_bluetooth_why">android nu joxe app ab sikasiit gu jëm, yendu gu lay, bu app mel bluetooth sa. ko ngir ylih amee sikasiit ci botis, yo amee sikasiit ci sikasiit.</string>
+    <string name="welcome_bluetooth_with">mel sa: sikasiit gu yaa jot ngir ndax ñu jëm, buuji-buuji litaa, te aju dijit jaam.</string>
+    <string name="welcome_bluetooth_without">buuji mel sa: sikasiit bluetooth buuji yaa. app yi rakk mel bu baax, te ko jëm su melokaan android ko.</string>
+    <string name="welcome_notifications_title">xooliante</string>
+    <string name="welcome_notifications_why">jot bu jarii mel jëm bu ndax, te android teet tëj app gu jotul xooliante ci waxtu bu gis.</string>
+    <string name="welcome_notifications_with">mel sa: xooliante gi jotul ndax gu yaa, ki ñu xooliante bu mel bu jarii gu ci.</string>
+    <string name="welcome_notifications_without">buuji mel sa: jot bu jarii mel te jotul su waxtu. android mu jotul xooliante.</string>
+    <string name="hibernation_title">mel yi jut bu sa yaar</string>
+    <string name="hibernation_body">android mel app yi dëkk ngir koo bisu ak yuur, te mel jëm na ci, kon ylih mu yaa yotul ko bi ndax ko so agale. yaar bu sa ko ko bu am ylih su seen, noo ko rekk fi ay yobee.</string>
+    <string name="action_not_now">buuji jara</string>
+
+    <string name="devices_in_use">mel yi</string>
+    <string name="devices_retired">sikasiit yi jëm</string>
+    <string name="devices_empty_title">sikasiit buuji set</string>
+    <string name="devices_empty_body">jëm sikasiit bluetooth te ñu mel ko ndey. sikasiit joñ gu mël jot bu jarii, ci melokaan.</string>
+    <string name="devices_generation">sikasiit #%1$d</string>
+    <string name="devices_retired_on">sikasiit jëm %1$s</string>
+    <string name="devices_connected_for">jëm %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">sikasiit gu meggul</string>
+    <string name="stats_sessions_since">%1$s dale %2$s</string>
+    <string name="stats_today">jeen</string>
+    <string name="stats_last_7">7 sukkandé yu bees</string>
+    <string name="stats_last_30">30 sukkandé yu bees</string>
+    <string name="stats_average_session">sikasiit ay jëm</string>
+    <string name="stats_longest_session">sikasiit bu gis</string>
+    <string name="stats_playing">rekk bu toowoole</string>
+    <string name="stats_measured_span">taalisiir ne ba rekk</string>
+    <string name="stats_share">bopp bu rekk</string>
+    <string name="stats_playback_only_note">taalisiir rekk bu toowoole</string>
+    <string name="stats_daily_hours_30">jàngal bu sum (30 sukkandé)</string>
+    <string name="stats_by_pair">sikasiit ju</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · sikasiit jëm</string>
+    <string name="chart_max">%1$s melni</string>
+
+    <string name="pair_fallback_title">sikasiit</string>
+    <string name="pair_back">jege</string>
+    <string name="pair_more">dëgg</string>
+    <string name="pair_menu_rename">may ci seriñ</string>
+    <string name="pair_menu_purchase">ndax gulè</string>
+    <string name="pair_menu_retire">sikasiit jëm / yendu</string>
+    <string name="pair_menu_delete">rém</string>
+    <string name="pair_lifetime">jiggaleej bu sikasiit bi</string>
+    <string name="pair_retired_on">sikasiit jëm %1$s</string>
+    <string name="pair_retired_with_reason">sikasiit jëm %1$s · %2$s</string>
+    <string name="pair_connected_now">jëm jeen · %1$s</string>
+    <string name="pair_sessions">sikasiit yu</string>
+    <string name="pair_average">sikasiit ay jëm</string>
+    <string name="pair_longest">sikasiit bu gis</string>
+    <string name="pair_since">dale %1$s</string>
+    <string name="pair_of_measured">bopp bu rekk</string>
+    <string name="pair_measured">taalisiir ne ba rekk</string>
+    <string name="pair_paid">jot</string>
+    <string name="pair_per_hour">jàngal bu</string>
+    <string name="pair_bought">aget</string>
+    <string name="pair_daily_hours_14">jàngal bu sum (14 sukkandé)</string>
+    <string name="pair_rename_title">sikasiit bi may ci seriñ</string>
+    <string name="pair_rename_label">seriñ</string>
+    <string name="pair_retire_title">sikasiit bi sikasiit jëm</string>
+    <string name="pair_retire_label">ndax (nagal, gis, koto...)</string>
+    <string name="pair_retire_confirm">sikasiit jëm</string>
+    <string name="pair_retire_supporting">jëm jëm daal ñu. ngir ndax sikasiit gu xoolale, sikasiit bu bees gu jëm.</string>
+    <string name="pair_price_title">ndax yem</string>
+    <string name="pair_price_label">taatu (ben gu meggul)</string>
+    <string name="pair_price_supporting">mel ba jàngal bu jeem jàngal.</string>
+    <string name="pair_delete_title">sikasiit bi rém?</string>
+    <string name="pair_delete_body">sikasiit gu yaa ne ba rém. ndax bu buuji.</string>
+
+    <string name="session_ongoing">jotul</string>
+    <string name="session_until">bi %1$s</string>
+    <string name="session_playing">%1$s bu toowoole</string>
+    <string name="session_recovered">yoo ni</string>
+
+    <string name="settings_tracking">jotul</string>
+    <string name="settings_detailed_title">jot bu jarii</string>
+    <string name="settings_detailed_body">daal joñ sikasiit ak jàngal rekk. android xooliante joñ buuji tëj app gu mel sa, noo jëm xooliante bu ndax. bluetooth mel ngir ndax bu meggul.</string>
+    <string name="settings_detailed_unavailable">buuji mel ko bi ndax bluetooth am jëm: app bu mel connectedDevice sa, ko android 14+ mel bluetooth am jëm.</string>
+    <string name="settings_playback_only_title">taalisiir rekk bu toowoole</string>
+    <string name="settings_playback_only_body">taalisiir taatu jàngal gu toowoole bu dal nee jàngal jëm. sikasiit yu jot bu jarii gu dal ne ba; yi yu baax gu yaar.</string>
+    <string name="settings_language">kat</string>
+    <string name="settings_language_system">kat android</string>
+    <string name="settings_devices">mel yu</string>
+    <string name="settings_devices_body">aar joom sikasiit buuji — botis ko speaker — ko yaar jotul ci.</string>
+    <string name="settings_device_subtitle">%1$s · suubare %2$s</string>
+    <string name="settings_data">datos</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">mel ci</string>
+    <string name="settings_import_warning">mel ci mel gu meggul bu jotul jara.</string>
+    <string name="settings_troubleshooting">farata jit</string>
+    <string name="settings_battery_body">sikasiit buuji mel, kontrole ylih bu away sa ween batere — app gu rèp buuji tëj xooliante ko bi ndax ko so agale.</string>
+    <string name="settings_battery_button">melokaan batere</string>
+    <string name="settings_battery_path">melokaan → app → ylih → batere → unrestricted.</string>
+    <string name="settings_hibernation_body">ylih buuji mel bu koo bisu, android mel na ci ak jëm na ci, sikasiit buuji mel ko bi ndax ko so agale. yaar ko ay sikasiit mel ji sukkande buuji atu.</string>
+    <string name="settings_hibernation_on">android may mel ylih.</string>
+    <string name="settings_hibernation_off">ylih mel te dëgël jotul.</string>
+    <string name="settings_hibernation_button">melokaan app buuji mel</string>
+    <string name="settings_about">ci ylih</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — jàngal sikasiit, jotul lokal te jamm.</string>
+    <string name="settings_import_confirm_title">mel gu meggul bu?</string>
+    <string name="settings_import_confirm_body">mel ci me rém mel gu meggul, sikasiit yu ak jotul yu.</string>
+
+    <string name="widget_lifetime_label">ylih · jiggaleej</string>
+    <string name="widget_lifetime_description">jàngal sikasiit ju, ak jamm ku gu jëm jeen</string>
+    <string name="widget_activity_label">ylih · mel</string>
+    <string name="widget_activity_description">jàngal sikasiit gu meggul, ak jeen, 7 sukkandé, 30 sukkandé</string>
+    <string name="widget_chart_label">ylih · 30 sukkandé</string>
+    <string name="widget_chart_description">jàngal bu sum ci 30 sukkandé yu bees</string>
+
+    <string name="action_save">jot</string>
+    <string name="action_cancel">nee</string>
+    <string name="action_delete">rém</string>
+    <string name="action_import">mel ci</string>
+
+    <string name="channel_tracking">jotul sikasiit</string>
+    <string name="channel_tracking_description">mel bi jaanga joñ sikasiit ak rekk. android buuji xooliante joñ tëj app gu mel.</string>
+    <string name="notification_title">jotul jàngal sikasiit</string>
+    <string name="notification_starting">jotul...</string>
+    <string name="notification_idle">sikasiit ji dammu</string>
+    <plurals name="notification_active">
+        <item quantity="other">%1$d jëm · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="other">%1$d jëm · %2$s · toowoole</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">app mel bluetooth am jëm ko joñ sikasiit</string>
+    <string name="export_done">mel ni yu jot</string>
+    <string name="export_failed">export sagal</string>
+    <string name="import_failed">mel ci sagal</string>
+    <string name="edit_failed">mel bu jot buuji</string>
+    <string name="error_could_not_open">buuji mel %1$s</string>
+    <plurals name="import_done">
+        <item quantity="other">%d sikasiit mel ci</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="other">%d sikasiit</item>
+    </plurals>
+</resources>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Makhuwa. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - kuphela kwekhomo yako na auriyo</string>
+
+    <string name="nav_headphones">auriyo</string>
+    <string name="nav_stats">chiwerengero</string>
+    <string name="nav_settings">mpangano</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">ine wailesi</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">kusadziwa</string>
+
+    <string name="welcome_title">karibuni ku ylih</string>
+    <string name="welcome_intro">ylih ikulemba nthawi yomwe ayiriyo yooyipika iyakhalitsa, kutero kuti zaka zazikali mulankhulo inu mukadandaula funso lokha lomwe lili ndi chiyani: nthawi yomwe anatereka?</string>
+    <string name="welcome_point_auto_title">lumpikira ndi kusiyana</string>
+    <string name="welcome_point_auto_body">auriyo ya bluetooth ikulemba yekha, kuchokera nthawi yolumikira. paliyense chinachake chikuwotcha.</string>
+    <string name="welcome_point_lifetime_title">ayiriyo imodzi, umoyo umodzi</string>
+    <string name="welcome_point_lifetime_body">nthawi yomwe ayiriyo imutsika, ikupipitsa kumbuyo: ndalamo yake imaziletsa ndi ayiriyo yotsatira ya gawo lomwelo imayamba kachiwiri kuchokera pa zero.</string>
+    <string name="welcome_point_detailed_title">ine wailesi ndi kusakala</string>
+    <string name="welcome_point_detailed_body">kudzambira kolingalirangalirani, mu mpangano, kumawonjeza auriyo ine wailesi ndi kuyeza nthawi yomwe idalikhalitsidwa.</string>
+    <string name="welcome_privacy">chilichonse chikhalitsa pa foni yako. paliyense akawunti, ndi pulogalamu yaku ilibe chilolezo cha intaneti.</string>
+    <string name="welcome_start">tayambira</string>
+    <string name="welcome_next">lotsatira</string>
+    <string name="welcome_allow">lumikire</string>
+    <string name="welcome_step">kapena %1$d kwa %2$d</string>
+    <string name="welcome_bluetooth_title">kupatsira chilolezo cha bluetooth</string>
+    <string name="welcome_bluetooth_why">android akuuzani pulogalamu yanu kuti chipangizo cha bluetooth chimene chidalumikira ndi chiyani, ngati pulogalamu yanu ili ndi chilolezo cha bluetooth. ndicho chimene ylih chikuyang\'anitsa ayiriyo kuchokera kupipila pa makala.</string>
+    <string name="welcome_bluetooth_with">nalo: ayiriyo yooyipika iyakhaletsedwa kuchokera nthawi yolumikira, osakhala chilichonse chipikiche ndi kusiyikira kusankhanitsa.</string>
+    <string name="welcome_bluetooth_without">pasinoona: auriyo ina pa bluetooth siilakhaletsedwa. gawo lina la pulogalamu likudze, ndi inu mudzatha kulipatsira chilolezo mutsogoleri wa android.</string>
+    <string name="welcome_notifications_title">chipemphero</string>
+    <string name="welcome_notifications_why">kudzambira kolingalirangalirani kumatha pulogalamu yaying\'anitso ya chuma, ndi android akudindimbitsa pulogalamu iliyonse yomwe ikuwonongeka kuti sangaganitsire chipemphero pomwe ikudze.</string>
+    <string name="welcome_notifications_with">nalo: chipemphero chikasikiriza kung\'anitsa chiyani chikuyambira, chisanachike chomwe chipemphero cha kudzambira kolingalirangalirani chikuwotcha.</string>
+    <string name="welcome_notifications_without">pasinoona: kudzambira kolingalirangalirani kumadze kupitilizira ndi kudzambira. android okha sukulalika chipemphero.</string>
+    <string name="hibernation_title">pitiliza kuwerengera pomwe ukusiyana</string>
+    <string name="hibernation_body">android amaletsa mapulogalamu omwe siamavulikirira kwa miyezi inayonse ndi kuchira chilolezo, komwe kumabweretsa ylih kusiyikira kudzambira mpaka inu munama otsatira. kusiyikira ndi chomwe pulogalamu iyi inzere, motero kuphaya ndi komaliza.</string>
+    <string name="action_not_now">osati pano</string>
+
+    <string name="devices_in_use">okugwira ntchito</string>
+    <string name="devices_retired">okukhalitsa kupitilizira</string>
+    <string name="devices_empty_title">auriyo ilibe pano</string>
+    <string name="devices_empty_body">lumpikira ayiriyo ya bluetooth ndi iza zikawoneka pano. auriyo ine wailesi imafunikira kudzambira kolingalirangalirani, mu mpangano.</string>
+    <string name="devices_generation">ayiriyo #%1$d</string>
+    <string name="devices_retired_on">okukhalitsa kupitilizira %1$s</string>
+    <string name="devices_connected_for">alumpikira %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">auriyo yooyipika</string>
+    <string name="stats_sessions_since">%1$s kuchokera %2$s</string>
+    <string name="stats_today">lero</string>
+    <string name="stats_last_7">masiku 7 opitilizira</string>
+    <string name="stats_last_30">masiku 30 opitilizira</string>
+    <string name="stats_average_session">nthawi yomwe ingachite</string>
+    <string name="stats_longest_session">nthawi yayitali</string>
+    <string name="stats_playing">saundi yomwe ikusalaka</string>
+    <string name="stats_measured_span">kuyeza kwa kusakala</string>
+    <string name="stats_share">gawo losakala</string>
+    <string name="stats_playback_only_note">kuwerengera nthawi ya kusakala okha</string>
+    <string name="stats_daily_hours_30">maola a tsiku (masiku 30)</string>
+    <string name="stats_by_pair">momalinga ayiriyo</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · okukhalitsa kupitilizira</string>
+    <string name="chart_max">%1$s kupitilizira</string>
+
+    <string name="pair_fallback_title">ayiriyo</string>
+    <string name="pair_back">kumakongoletsa</string>
+    <string name="pair_more">zambiri</string>
+    <string name="pair_menu_rename">kusintha dzina</string>
+    <string name="pair_menu_purchase">zambiri za kugula</string>
+    <string name="pair_menu_retire">kupitilizira / kusinthanitsira</string>
+    <string name="pair_menu_delete">kufutsa</string>
+    <string name="pair_lifetime">moyo wa ayiriyo iyi</string>
+    <string name="pair_retired_on">okukhalitsa kupitilizira %1$s</string>
+    <string name="pair_retired_with_reason">okukhalitsa kupitilizira %1$s · %2$s</string>
+    <string name="pair_connected_now">alumpikira pano · %1$s</string>
+    <string name="pair_sessions">masekeleto</string>
+    <string name="pair_average">imomwe</string>
+    <string name="pair_longest">yayitali</string>
+    <string name="pair_since">kuchokera %1$s</string>
+    <string name="pair_of_measured">gawo losakala</string>
+    <string name="pair_measured">kuyeza kwa kusakala</string>
+    <string name="pair_paid">kugula</string>
+    <string name="pair_per_hour">pa ola</string>
+    <string name="pair_bought">kugula</string>
+    <string name="pair_daily_hours_14">maola a tsiku (masiku 14)</string>
+    <string name="pair_rename_title">kusintha dzina la ayiriyo</string>
+    <string name="pair_rename_label">dzina</string>
+    <string name="pair_retire_title">kupitilizira ayiriyo iyi</string>
+    <string name="pair_retire_label">mfundo (imufa, igulitsidwa, iyodalira...)</string>
+    <string name="pair_retire_confirm">kupitilizira</string>
+    <string name="pair_retire_supporting">chiwerengero chikuziletsa pano. kulumikira ndi chipango chomwecho chimayamba kachiwiri kuchokera pa zero.</string>
+    <string name="pair_price_title">galimoto yomwe idagula</string>
+    <string name="pair_price_label">ndi yeniyeni (zungu lonse)</string>
+    <string name="pair_price_supporting">igwiritsidwe mu chiwerengero cha galimoto pa ola.</string>
+    <string name="pair_delete_title">kufutsa ayiriyo iyi?</string>
+    <string name="pair_delete_body">nthawi yooyipika yomwe idalemba iyo ifutsidwakwanso. izi sizingabweretse kumakongoletsa.</string>
+
+    <string name="session_ongoing">ikudze</string>
+    <string name="session_until">mpaka %1$s</string>
+    <string name="session_playing">%1$s kusakala</string>
+    <string name="session_recovered">mabwetsa</string>
+
+    <string name="settings_tracking">kudzambira</string>
+    <string name="settings_detailed_title">kudzambira kolingalirangalirani</string>
+    <string name="settings_detailed_body">wonjeza auriyo ine wailesi ndi nthawi ya kusakala. android akuma uzani events ya wailesi okha kwa mapulogalamu omwe akudze, motero izi zamakhalitsa chipemphero cha mu nyumba. bluetooth idzambira mwansi monse.</string>
+    <string name="settings_detailed_unavailable">silingathe mpaka chilolezo cha bluetooth chipatsirire: kompila iyi ikulalika mtundu wa ntchito ya connectedDevice okha, omwe android 14+ amasinthira ku chilolezo cha bluetooth.</string>
+    <string name="settings_playback_only_title">werengera kusakala okha</string>
+    <string name="settings_playback_only_body">chiwerengero chikuwerengera nthawi yomwe saundi inali ikunyamula m\'malo mwa nthawi yolumikira. nthawi zoonse zakulemba ndi kudzambira kolingalirangalirani kuchinyamulidwe kusakala; zina sizigwiritsidwa.</string>
+    <string name="settings_language">chilankhulo</string>
+    <string name="settings_language_system">chilankhulo cha siputala</string>
+    <string name="settings_devices">zida</string>
+    <string name="settings_devices_body">siyani checbox zabinthu zomwe sizingauriyo - pipila ya makala kapena msano - kuti musiyikire kudzambira izo.</string>
+    <string name="settings_device_subtitle">%1$s · first seen %2$s</string>
+    <string name="settings_data">zambiri</string>
+    <string name="settings_export">kuchulutsa json</string>
+    <string name="settings_import">kuyingira</string>
+    <string name="settings_import_warning">kuyingira kumbuyo kumasintha zonse zimene zasungirako pano.</string>
+    <string name="settings_troubleshooting">kuthana ndi mavuto</string>
+    <string name="settings_battery_body">ngati nthawi zoyambira zisiyikira kudzambira, sungani kuti ylih ili ndi chilolezo chokha chibatari - pulogalamu yomwe yasiyidwa sutha sizimadalira ntchito zolumikira mpaka inafuikiridwe.</string>
+    <string name="settings_battery_button">misonkhano ya betri</string>
+    <string name="settings_battery_path">misonkhano - mapulogalamu - ylih - betri - opanda malire.</string>
+    <string name="settings_hibernation_body">ngati ylih siifuikiridwe kwa miyezi inayonse, android imaletsa ndi kuchira chilolezo, ndi chilichonse chisiyikira kudzambira mpaka inu munayifukira. kutohetsa ndi chomwe chimalola ayiriyo kuti ipitilizire kuwerengera m\'maola omwe simukuganiza pulogalamu.</string>
+    <string name="settings_hibernation_on">android ingathe kutsekanitsa ylih.</string>
+    <string name="settings_hibernation_off">ylih ili ndi chilolezo ndi kupitilizira kudzambira.</string>
+    <string name="settings_hibernation_button">misonkhano ya mapulogalamu osagwiritsidwe</string>
+    <string name="settings_about">zokhudza</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - maola a auriyo, asungidwe mkati ndi nyengo yoopsya.</string>
+    <string name="settings_import_confirm_title">kusintha zambiri zonse?</string>
+    <string name="settings_import_confirm_body">kuyingira mbiri iyi kumasuta chipangizo chonse, ayiriyo ndi nthawi zomwe zinasungidwe pano.</string>
+
+    <string name="widget_lifetime_label">ylih · moyo</string>
+    <string name="widget_lifetime_description">maola pa ayiriyo, ndi kowerengera komweko pa lomwe lulumpikira</string>
+    <string name="widget_activity_label">ylih · malinga</string>
+    <string name="widget_activity_description">maola a ayiriyo yooyipika, kuwonjeza lero, masiku 7 ndi masiku 30</string>
+    <string name="widget_chart_label">ylih · masiku 30</string>
+    <string name="widget_chart_description">maola a masiku a kumvetseka pa masiku 30 opitilizira</string>
+
+    <string name="action_save">sunga</string>
+    <string name="action_cancel">siyani</string>
+    <string name="action_delete">kufutsa</string>
+    <string name="action_import">kuyingira</string>
+
+    <string name="channel_tracking">kudzambira kwa auriyo</string>
+    <string name="channel_tracking_description">lowonetsedwa pomwe ylih ikunkhani pa auriyo ine wailesi ndi kusakala. android simapereka events ya wailesi kwa mapulogalamu omwe siakudze.</string>
+    <string name="notification_title">kudzambira nthawi ya auriyo</string>
+    <string name="notification_starting">kuyambira...</string>
+    <string name="notification_idle">kusunga auriyo</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d alumpikira · %2$s</item>
+        <item quantity="many">%1$d alumpikira · %2$s</item>
+        <item quantity="other">%1$d alumpikira · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d alumpikira · %2$s · kusakala</item>
+        <item quantity="many">%1$d alumpikira · %2$s · kusakala</item>
+        <item quantity="other">%1$d alumpikira · %2$s · kusakala</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">kompila iyi ifunika chilolezo cha bluetooth tisanathe kudzambira auriyo ine wailesi</string>
+    <string name="export_done">mbiri yachulutsa</string>
+    <string name="export_failed">kuchulutsa kusadza</string>
+    <string name="import_failed">kuyingira kusadza</string>
+    <string name="edit_failed">sangathe kusungira ubale umene</string>
+    <string name="error_could_not_open">sangathe kuvulira %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">kuyingira %d nthawi</item>
+        <item quantity="many">kuyingira %d nthawi</item>
+        <item quantity="other">kuyingira %d nthawi</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d nthawi</item>
+        <item quantity="many">%d nthawi</item>
+        <item quantity="other">%d nthawi</item>
+    </plurals>
+</resources>

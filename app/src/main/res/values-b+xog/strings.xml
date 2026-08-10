@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Soga. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - bugole byo mu minwa</string>
+
+    <string name="nav_headphones">minwa</string>
+    <string name="nav_stats">okubalirira</string>
+    <string name="nav_settings">okuteekawo</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">enkwali</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">atamanyi</string>
+
+    <string name="welcome_title">karibu ku ylih</string>
+    <string name="welcome_intro">ylih ebalirira okamala gw\'ensawo minwa gye nkwata, awo emakumi g\'emyaka ogiyinza okuba wansi okunoza okukola: minwa egyi osinga okubeekawo ssente?</string>
+    <string name="welcome_point_auto_title">kwataganya okukoma</string>
+    <string name="welcome_point_auto_body">minwa gy\'ebluutusi gikoma okulembedde, buli kiseera gy\'ensobya. tewali kintu kyeyambisaamu.</string>
+    <string name="welcome_point_lifetime_title">ensewo emu, bulamu bumu</string>
+    <string name="welcome_point_lifetime_body">ensawo gy\'okufa, gyigire: ssente yaayo ez\'omalako awo, n\'ensawo empya y\'omuntu omu etandika okuva zeero.</string>
+    <string name="welcome_point_detailed_title">enkwali n\'okukubaganya</string>
+    <string name="welcome_point_detailed_body">okuteekawo okw\'omulala, mu okuteekawo, kuweke enkwali n\'okukalkulaatimu okukaakatifu.</string>
+    <string name="welcome_privacy">buli kintu kigigira wamu mu simu yo. tewali akawunti, era app etakozesa intaaneti.</string>
+    <string name="welcome_start">tandika</string>
+    <string name="welcome_next">ekigendererwamu</string>
+    <string name="welcome_allow">kkiriza</string>
+    <string name="welcome_step">entikko %1$d ya %2$d</string>
+    <string name="welcome_bluetooth_title">okukoma ku bluetooth</string>
+    <string name="welcome_bluetooth_why">android ettegeeza pulogiramu se nti bluetooth device ya nkwata, n\'erinnya lyo, singa pulogiramu erina okukoma ku bluetooth. gwe ylih eyigwawo minwa okuva ku simu y\'omulimu, n\'eyigwawo ensewo emu okuva ku nzira ennya.</string>
+    <string name="welcome_bluetooth_with">ne eno: ensewo ey\'omuntu yomu ecoweka okulembedde buli kiseera gy\'ensobya, tewali kintu kyeyambisaamu, n\'akawayamba kuziwamu.</string>
+    <string name="welcome_bluetooth_without">nga tewali eno: minwa gy\'ebluutusi tekulembeddeko. pulogiramu emirala mirungi, era oyinza okuwa layisensi mu maaso mu okuteekawo kw\'android.</string>
+    <string name="welcome_notifications_title">xooliante</string>
+    <string name="welcome_notifications_why">okuteekawo okw\'omulala ebusisa service enzibu, era android etegeka xooliante okukama. </string>
+    <string name="welcome_notifications_with">ne eno: xooliante ejja kulabika ndax gu yaa, eyona ttegeeza okuteekawo okw\'omulala gu mabanga.</string>
+    <string name="welcome_notifications_without">nga tewali eno: okuteekawo okw\'omulala ebusisa n\'ekuba namu. android yalitegeka xooliante.</string>
+    <string name="hibernation_title">koma okubala bw\'oyigala</string>
+    <string name="hibernation_body">android ekoma pulogiramu ezigigala omwezi omusanvu, n\'eguwa layisensi zaayo, ylih etayinza kubala okutuuka bw\'oyigala. okugigala ye mulimu gw\'ylih, kale kale kaleyo ngabye mu bukodyo bwokukoma.</string>
+    <string name="action_not_now">okwata ng\'abagamba</string>
+
+    <string name="devices_in_use">omu nkozesa</string>
+    <string name="devices_retired">egiriko</string>
+    <string name="devices_empty_title">tewali minwa</string>
+    <string name="devices_empty_body">kwataganya minwa gy\'ebluutusi, n\'ejja kulabika wano. minwa y\'enkwali neyaka okuteekawo okw\'omulala.</string>
+    <string name="devices_generation">ensawo #%1$d</string>
+    <string name="devices_retired_on">egiriko %1$s</string>
+    <string name="devices_connected_for">eyesozi %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">minwa gyonna</string>
+    <string name="stats_sessions_since">%1$s okukoma %2$s</string>
+    <string name="stats_today">leero</string>
+    <string name="stats_last_7">ennaku 7 eziyita</string>
+    <string name="stats_last_30">ennaku 30 eziyita</string>
+    <string name="stats_average_session">ekigendererwamu kya saawa</string>
+    <string name="stats_longest_session">saawa eringa okubala</string>
+    <string name="stats_playing">okukubaganya kukunywegenya</string>
+    <string name="stats_measured_span">kubalirira okukubaganya</string>
+    <string name="stats_share">ekigendererwamu ky\'okukubaganya</string>
+    <string name="stats_playback_only_note">okubala saawa z\'okukubaganya</string>
+    <string name="stats_daily_hours_30">saawa z\'enday (ennaku 30)</string>
+    <string name="stats_by_pair">buli ensawo</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · egiriko</string>
+    <string name="chart_max">%1$s okusinga okubala</string>
+
+    <string name="pair_fallback_title">ensawo</string>
+    <string name="pair_back">yambuka</string>
+    <string name="pair_more">kyakya</string>
+    <string name="pair_menu_rename">gamba ngeri</string>
+    <string name="pair_menu_purchase">amawulire g\'okugula</string>
+    <string name="pair_menu_retire">giriko / ggusuubire</string>
+    <string name="pair_menu_delete">siba</string>
+    <string name="pair_lifetime">bulamu b\'ensawo eno</string>
+    <string name="pair_retired_on">egiriko %1$s</string>
+    <string name="pair_retired_with_reason">egiriko %1$s · %2$s</string>
+    <string name="pair_connected_now">eyesozi mu nnaku · %1$s</string>
+    <string name="pair_sessions">okukola</string>
+    <string name="pair_average">ekigendererwamu</string>
+    <string name="pair_longest">eringa okubala</string>
+    <string name="pair_since">okukoma %1$s</string>
+    <string name="pair_of_measured">ekigendererwamu ky\'okukubaganya</string>
+    <string name="pair_measured">kubalirira okukubaganya</string>
+    <string name="pair_paid">essente eyakozesebwa</string>
+    <string name="pair_per_hour">buli saawa</string>
+    <string name="pair_bought">guli</string>
+    <string name="pair_daily_hours_14">saawa z\'enday (ennaku 14)</string>
+    <string name="pair_rename_title">gamba ensawo ngeri</string>
+    <string name="pair_rename_label">erinnya</string>
+    <string name="pair_retire_title">giriko ensawo eno</string>
+    <string name="pair_retire_label">kifo (gikufa, ggusuubire, ggunsudde...)</string>
+    <string name="pair_retire_confirm">giriko</string>
+    <string name="pair_retire_supporting">ssente zakyo z\'omalako wano. buli kiseera ekyuma ky\'eragulidde eyigeza, ensawo empya etandika okuva zeero.</string>
+    <string name="pair_price_title">ssente z\'okugula</string>
+    <string name="pair_price_label">kwewunti (bungi)</string>
+    <string name="pair_price_supporting">kigerwamu mu nkwata y\'essente buli saawa.</string>
+    <string name="pair_delete_title">siba ensawo eno?</string>
+    <string name="pair_delete_body">okukola kwokolebwa kunabwo kusibibwa. kino tekiyinza kuddamu.</string>
+
+    <string name="session_ongoing">kukolebwa mu nnaku</string>
+    <string name="session_until">okutuuka %1$s</string>
+    <string name="session_playing">%1$s okukubaganya</string>
+    <string name="session_recovered">okuzuula</string>
+
+    <string name="settings_tracking">okukomekawo</string>
+    <string name="settings_detailed_title">okuteekawo okw\'omulala</string>
+    <string name="settings_detailed_body">wagira enkwali ne okukubaganya saawa. android eyigwamu enkwali events singa pulogiramu ekolebwa, kale ayigwamu kasiya k\'emiwendo. bluetooth egikomekawo mu nzira yonna.</string>
+    <string name="settings_detailed_unavailable">tewali ya mu nnaku okukoma ku bluetooth: pulogiramu eno yetegeka kasiya ka connectedDevice, android 14+ esuumufu layisensi ya bluetooth.</string>
+    <string name="settings_playback_only_title">obala saawa z\'okukubaganya</string>
+    <string name="settings_playback_only_body">okubalirira obala saawa ng\'okukubaganya kwe kwaka, ssomo okukomekawo. okukola okukolebwa n\'okuteekawo okw\'omulala gwetegeke kubalirira; ekiya kya sibo.</string>
+    <string name="settings_language">olulimi</string>
+    <string name="settings_language_system">olulimi lw\'android</string>
+    <string name="settings_devices">mirimu</string>
+    <string name="settings_devices_body">siba buli kintu tekya minwa — motoka oba sipiki — okukoma okubala.</string>
+    <string name="settings_device_subtitle">%1$s · yenjigira okukubaganya %2$s</string>
+    <string name="settings_data">amawulire</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">kwataganya</string>
+    <string name="settings_import_warning">okukwataganya kuggusuubira birina byonna.</string>
+    <string name="settings_troubleshooting">okuteekawo okujeempukire</string>
+    <string name="settings_battery_body">okukola tekukolebwako, tegeeza nti ylih etali essente okukwataganya — pulogiramu eyakusiba ayinza okukoma okuwayo empagutsa okukubaganya.</string>
+    <string name="settings_battery_button">okuteekawo kw\'essente</string>
+    <string name="settings_battery_path">okuteekawo → pulogiramu → ylih → essente → unrestricted.</string>
+    <string name="settings_hibernation_body">ylih eye ekowumbulire omwezi oguggufu, android ekoma era eguwa layisensi, okukola tekukolebwako okukutuuka bw\'oyigala. okukoma kuno ekigendererwamu ensawo okubala mu nyinza enzikirira okugigala.</string>
+    <string name="settings_hibernation_on">android elinza okukoma ylih.</string>
+    <string name="settings_hibernation_off">ylih etawayo, n\'okubala ne kutuyinza.</string>
+    <string name="settings_hibernation_button">okuteekawo kw\'pulogiramu ezitakozesebwa</string>
+    <string name="settings_about">ku lwazi</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — saawa z\'minwa, okugigira mu nnimiro n\'okukamata.</string>
+    <string name="settings_import_confirm_title">ggusuubira birina byonna?</string>
+    <string name="settings_import_confirm_body">okukwataganya kasiya eno kusiba mirimu, ensawo ne okukola kwomu.</string>
+
+    <string name="widget_lifetime_label">ylih · bulamu b\'omu</string>
+    <string name="widget_lifetime_description">saawa buli ensawo, n\'ensokofu ya nkomekawo mu nnaku</string>
+    <string name="widget_activity_label">ylih · ebikolebwa</string>
+    <string name="widget_activity_description">saawa z\'ensawo yonna kumala, wamu ne leero, ennaku 7, ennaku 30</string>
+    <string name="widget_chart_label">ylih · ennaku 30</string>
+    <string name="widget_chart_description">saawa z\'enday mu nnaku 30 eziyita</string>
+
+    <string name="action_save">gira wamu</string>
+    <string name="action_cancel">kumalawo</string>
+    <string name="action_delete">siba</string>
+    <string name="action_import">kwataganya</string>
+
+    <string name="channel_tracking">okukomekawo kwa minwa</string>
+    <string name="channel_tracking_description">kyisazibwa ylih okukomekawo enkwali ne okukubaganya. android etegeka enkwali events singa pulogiramu ekolebwa.</string>
+    <string name="notification_title">okukomekawo saawa z\'minwa</string>
+    <string name="notification_starting">okunayukira...</string>
+    <string name="notification_idle">okakira minwa</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d eyesozi · %2$s</item>
+        <item quantity="other">%1$d eyesozi · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d eyesozi · %2$s · okukubaganya</item>
+        <item quantity="other">%1$d eyesozi · %2$s · okukubaganya</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">pulogiramu eno eyaka layisensi ya bluetooth okukomekawo enkwali</string>
+    <string name="export_done">kasiya eyakozesebwa</string>
+    <string name="export_failed">okugigira kawala</string>
+    <string name="import_failed">okukwataganya kawala</string>
+    <string name="edit_failed">okuggusuubiza tekiyinza kukolebwa</string>
+    <string name="error_could_not_open">tekiyinza kuvula %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">%d okukola okukwataganya</item>
+        <item quantity="other">%d okukola okukwataganya</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d okukola</item>
+        <item quantity="other">%d okukola</item>
+    </plurals>
+</resources>
