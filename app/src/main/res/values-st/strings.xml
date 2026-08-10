@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Southern Sotho. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - tvoj zivot u slusalicama</string>
+
+    <string name="nav_headphones">slusalice</string>
+    <string name="nav_stats">statistika</string>
+    <string name="nav_settings">postavke</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">zicane</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">nepoznato</string>
+
+    <string name="welcome_title">dobrodosli u ylih</string>
+    <string name="welcome_intro">ylih belezi koliko dugo svaki par slusalica ostaje povezan, tako da mozete odgovoriti na jedino bitno pitanje o paru: koliko sati su trajale?</string>
+    <string name="welcome_point_auto_title">konekcija i zaboravljanje</string>
+    <string name="welcome_point_auto_body">bluetooth slusalice se beleze automatski, od trenutka konekcije. nista ne treba da bude ukljuceno.</string>
+    <string name="welcome_point_lifetime_title">jedan par, jedan zivot</string>
+    <string name="welcome_point_lifetime_body">kada par umre, penzionisajte ga: njegov ukupan rezultat se zamrzava i sledeci par istih slusalica pocinje ispocetka sa nulom.</string>
+    <string name="welcome_point_detailed_title">zicane i reproduciranje</string>
+    <string name="welcome_point_detailed_body">detaljno pracenje, u postavkama, dodaje zicane slusalice i meri koliko je vremena zaista reproduciranje bilo ukljuceno.</string>
+    <string name="welcome_privacy">sve ostaje na vasa telefonu. nema naloga i aplikacija nema dozvole za internet.</string>
+    <string name="welcome_start">pocnite</string>
+    <string name="welcome_next">dalje</string>
+    <string name="welcome_allow">dozvoli</string>
+    <string name="welcome_step">korak %1$d od %2$d</string>
+    <string name="welcome_bluetooth_title">pristup bluetooth-u</string>
+    <string name="welcome_bluetooth_why">android samo kaze aplikaciji koji je bluetooth uredaj povezan i kako se zove, ako aplikacija ima pristup bluetooth-u. na taj nacin ylih razlikuje par slusalica od avtomobilskog stereo sistema i kako zna jedan par od drugog.</string>
+    <string name="welcome_bluetooth_with">sa njim: svaki par se belezi od trenutka konekcije, bez ikakvog pokretanja i bez potrebe da pamtite ista.</string>
+    <string name="welcome_bluetooth_without">bez njega: bluetooth slusalice se ne beleze uopste. ostatak aplikacije funkcionise i mozete mu dodeliti dozvolu kasnije u android postavkama aplikacije.</string>
+    <string name="welcome_notifications_title">obavestavanja</string>
+    <string name="welcome_notifications_why">detaljno pracenje pokrece malu pozadinska servisa, i android zahteva da svaka aplikacija koja to radi bude vidljiva tokom rada.</string>
+    <string name="welcome_notifications_with">sa njim: obavestavanja prikazuje sta se upravo sada belezi, sto je jedini znak da je detaljno pracenje zivo.</string>
+    <string name="welcome_notifications_without">bez njega: detaljno pracenje se i dalje pokrece i belezi. android samo nece pokazati njegovu obavestavanja.</string>
+    <string name="hibernation_title">nastavite brojanje dok zaboravljate na to</string>
+    <string name="hibernation_body">android pauzira aplikacije koje nisu otvorene nekoliko meseci i uzima njihove dozvole, sto bi ostavilo ylih bez beleska dok je ne otvorite ponovo. biti zaboravljen je upravo ono za sta je ova aplikacija namenjena, tako da je vredno iskljuciti to sada.</string>
+    <string name="action_not_now">ne sada</string>
+
+    <string name="devices_in_use">u upotrebi</string>
+    <string name="devices_retired">penzionisano</string>
+    <string name="devices_empty_title">jos nema slusalica</string>
+    <string name="devices_empty_body">povezite par bluetooth slusalica i pojavljuju se ovde. zicane slusalice trebaju detaljno pracenje, u postavkama.</string>
+    <string name="devices_generation">par #%1$d</string>
+    <string name="devices_retired_on">penzionisano %1$s</string>
+    <string name="devices_connected_for">povezano %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">sve slusalice</string>
+    <string name="stats_sessions_since">%1$s od %2$s</string>
+    <string name="stats_today">danasnje</string>
+    <string name="stats_last_7">poslednjih 7 dana</string>
+    <string name="stats_last_30">poslednjih 30 dana</string>
+    <string name="stats_average_session">prosecna sesija</string>
+    <string name="stats_longest_session">najduza sesija</string>
+    <string name="stats_playing">zvuk se reprodukuje</string>
+    <string name="stats_measured_span">mereno za reproduciranje</string>
+    <string name="stats_share">udeo reproduciranja</string>
+    <string name="stats_playback_only_note">brojanje samo vreme reproduciranja</string>
+    <string name="stats_daily_hours_30">satni dnevno (30 dana)</string>
+    <string name="stats_by_pair">po paru</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · penzionisano</string>
+    <string name="chart_max">%1$s max</string>
+
+    <string name="pair_fallback_title">par</string>
+    <string name="pair_back">nazad</string>
+    <string name="pair_more">vise</string>
+    <string name="pair_menu_rename">preimenovati</string>
+    <string name="pair_menu_purchase">informacije o kupovini</string>
+    <string name="pair_menu_retire">penzionisati / zamenjeno</string>
+    <string name="pair_menu_delete">obrisati</string>
+    <string name="pair_lifetime">zivotni vek na ovom paru</string>
+    <string name="pair_retired_on">penzionisano %1$s</string>
+    <string name="pair_retired_with_reason">penzionisano %1$s · %2$s</string>
+    <string name="pair_connected_now">sada povezano · %1$s</string>
+    <string name="pair_sessions">sesije</string>
+    <string name="pair_average">prosecno</string>
+    <string name="pair_longest">najduze</string>
+    <string name="pair_since">od %1$s</string>
+    <string name="pair_of_measured">udeo reproduciranja</string>
+    <string name="pair_measured">mereno za reproduciranje</string>
+    <string name="pair_paid">placeno</string>
+    <string name="pair_per_hour">po satu</string>
+    <string name="pair_bought">kupljeno</string>
+    <string name="pair_daily_hours_14">satni dnevno (14 dana)</string>
+    <string name="pair_rename_title">preimenovati par</string>
+    <string name="pair_rename_label">ime</string>
+    <string name="pair_retire_title">penzionisati ovaj par</string>
+    <string name="pair_retire_label">razlog (umro, prodato, izgubljeno...)</string>
+    <string name="pair_retire_confirm">penzionisati</string>
+    <string name="pair_retire_supporting">ukupan rezultat se zamrzava ovde. ponovno povezivanje istog uredaja pocinje novi par sa nulom.</string>
+    <string name="pair_price_title">cena placena</string>
+    <string name="pair_price_label">iznos (celi brojevi)</string>
+    <string name="pair_price_supporting">koriscen za cifru trosak-po-satu.</string>
+    <string name="pair_delete_title">obrisati ovaj par?</string>
+    <string name="pair_delete_body">svaka sesija zabeleska za njega je obrisana. ovo se ne moze opozvati.</string>
+
+    <string name="session_ongoing">u toku</string>
+    <string name="session_until">do %1$s</string>
+    <string name="session_playing">%1$s reproduciranje</string>
+    <string name="session_recovered">oporavljen</string>
+
+    <string name="settings_tracking">pracenje</string>
+    <string name="settings_detailed_title">detaljno pracenje</string>
+    <string name="settings_detailed_body">dodaje zicane slusalice i vreme reproduciranja. android samo prijavljuje zicane dogadjaje samo pokrenuto aplikaciji, tako da ovo cuva tiho obavestavanja u senci. bluetooth se prati ionako.</string>
+    <string name="settings_detailed_unavailable">nedostupno dok se ne odobri pristup bluetooth-u: ova verzija deklarise samo vrstu connectedDevice usluge, koju android 14+ vezuje za bluetooth dozvolu.</string>
+    <string name="settings_playback_only_title">brojite samo reproduciranje</string>
+    <string name="settings_playback_only_body">statistika broji vreme kada se zvuk zaista reproducuje umesto vremena povezanosti. samo sesije zabeleske sa ukljucenim detaljnim pracenjem za reproduciranje; ostatak se ostavlja.</string>
+    <string name="settings_language">jezik</string>
+    <string name="settings_language_system">sistemski jezik</string>
+    <string name="settings_devices">uredaji</string>
+    <string name="settings_devices_body">odmarkirajte sve sto nije slusalice - avtomobilski stereo ili zvucnik - da ga prestanete beleaka.</string>
+    <string name="settings_device_subtitle">%1$s · prvi put videno %2$s</string>
+    <string name="settings_data">podaci</string>
+    <string name="settings_export">izvezi json</string>
+    <string name="settings_import">uvezi</string>
+    <string name="settings_import_warning">uvozenje zamenjuje sve sto je trenutno skladisteno.</string>
+    <string name="settings_troubleshooting">otklanjanje problema</string>
+    <string name="settings_battery_body">ako sesije prestanu biti zabeleske, proverite da li je ylih izuzet od optimizacije baterije - aplikacija koja je forsiran zaustavljanje nikada ne prima emitovanja konekcije ponovo dok je ne otvorite.</string>
+    <string name="settings_battery_button">postavke baterije</string>
+    <string name="settings_battery_path">postavke → aplikacije → ylih → baterija → neograniceno.</string>
+    <string name="settings_hibernation_body">ako ylih ostane neotvorenm nekoliko meseci, android ga pauzira i uzima njegove dozvole, i nista se ne belezi ponovo dok ga ne otvorite. iskljucivanje toga je ono sto dozvoljava paru da nastavlja brojanje kroz sezonu za koju nikada ne razmisljate o aplikaciji.</string>
+    <string name="settings_hibernation_on">android moze pauzirati ylih.</string>
+    <string name="settings_hibernation_off">ylih je izuzet i nastavlja beleski.</string>
+    <string name="settings_hibernation_button">postavke nekoriscenih aplikacija</string>
+    <string name="settings_about">o aplikaciji</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — satni slusalica, cuvani lokalno i zauvek.</string>
+    <string name="settings_import_confirm_title">zamenjiti sve podatke?</string>
+    <string name="settings_import_confirm_body">uvozenje ovog rezervnog kopija brise svaki uredaj, par i sesiju sadrzanu sada.</string>
+
+    <string name="widget_lifetime_label">ylih · zivotni vek</string>
+    <string name="widget_lifetime_description">satni po paru, sa zivim tajmerom na ono sto je povezano</string>
+    <string name="widget_activity_label">ylih · aktivnost</string>
+    <string name="widget_activity_description">satni svakog para zajedno, plus danasnje, 7 dana i 30 dana</string>
+    <string name="widget_chart_label">ylih · 30 dana</string>
+    <string name="widget_chart_description">dnevni satni tokom poslednjih 30 dana</string>
+
+    <string name="action_save">sacuvaj</string>
+    <string name="action_cancel">otkazi</string>
+    <string name="action_delete">obrisati</string>
+    <string name="action_import">uvezi</string>
+
+    <string name="channel_tracking">pracenje slusalica</string>
+    <string name="channel_tracking_description">prikazano dok ylih prati zicane slusalice i reproduciranje. android ne dostavlja zicane dogadjaje aplikacijama koje se ne pokrecu.</string>
+    <string name="notification_title">pracenje vremena slusalica</string>
+    <string name="notification_starting">pokretanje...</string>
+    <string name="notification_idle">cekanje na slusalice</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d povezano · %2$s</item>
+        <item quantity="other">%1$d povezanih · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d povezano · %2$s · reproduciranje</item>
+        <item quantity="other">%1$d povezanih · %2$s · reproduciranje</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">ova verzija treba pristup bluetooth-u pre nego sto moze pratiti zicane slusalice</string>
+    <string name="export_done">rezervna kopija izvezena</string>
+    <string name="export_failed">izvoz neuspesna</string>
+    <string name="import_failed">uvoz neuspesna</string>
+    <string name="edit_failed">nije mogao sacuvati tu promenu</string>
+    <string name="error_could_not_open">nije mogao otvoriti %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">uvezen %d sesija</item>
+        <item quantity="other">uvezenih %d sesija</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sesija</item>
+        <item quantity="other">%d sesija</item>
+    </plurals>
+</resources>

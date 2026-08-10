@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Quechua. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - rikuq bida auqui</string>
+
+    <string name="nav_headphones">auqui</string>
+    <string name="nav_stats">rikuq</string>
+    <string name="nav_settings">allincha</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">wayqiña</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ama rimayqa</string>
+
+    <string name="welcome_title">sulpayki ylih</string>
+    <string name="welcome_intro">ylih ima sumaq auqui pares rimaywan maskachka, quhanaq watakuna ari camariy imaymanata llapan: phaña oras durawan?</string>
+    <string name="welcome_point_auto_title">kuskunchay ama apachiy</string>
+    <string name="welcome_point_auto_body">bluetooth auqui kimsa rimachkan, kuskunchaywan hamut\'aptin. ama imayna rimaychu.</string>
+    <string name="welcome_point_lifetime_title">huklla pares, huklla bida</string>
+    <string name="welcome_point_lifetime_body">pares wanuyachun, retirayki: llaqui yupaykunaq wañunun chaypitaq llaqui pares alpamanta hamut\'an.</string>
+    <string name="welcome_point_detailed_title">wayqiña rikuqwan</string>
+    <string name="welcome_point_detailed_body">detalle rikuq, allinchakupi, wayqiña rikuq llamkachkan rikuq oras.</string>
+    <string name="welcome_privacy">llapan kay telefonupi sakirisun. ama cuentachu, ama internet permisyuchu.</string>
+    <string name="welcome_start">hamut\'a</string>
+    <string name="welcome_next">sapai</string>
+    <string name="welcome_allow">ama rikichiychu</string>
+    <string name="welcome_step">pacha %1$d %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth rimaywan</string>
+    <string name="welcome_bluetooth_why">android rimaywan imayri bluetooth kimsachasun, haynapi ylih pares rikuspan. hukllata bluetooth rimaywan.</string>
+    <string name="welcome_bluetooth_with">riqiwan: llapan pares rimachkan kuskunchaywan, ama imaynachu rimaychu.</string>
+    <string name="welcome_bluetooth_without">ama riqiwan: ama bluetooth pares rimachakunchu. llapa rimaykunaq llamkachakunmi, atiyawman android allinchakupi.</string>
+    <string name="welcome_notifications_title">rimachiy</string>
+    <string name="welcome_notifications_why">detalle rikuq ullqu rimaywan llamkachan, android ama rimaychu rimachiy sakirisun.</string>
+    <string name="welcome_notifications_with">riqiwan: rimachiy imayna rikuq rimachkan, ylih rimaywan.</string>
+    <string name="welcome_notifications_without">ama riqiwan: detalle rikuq rimachkan. android ama rimachiychu.</string>
+    <string name="hibernation_title">yupay ama rikichiy</string>
+    <string name="hibernation_body">android kimsa watakuna ama atunchiypi yapaywan, ylih ama rimaychu. ama hapiychu llaqui rimayta, sulpayki desactivaywan.</string>
+    <string name="action_not_now">mana kunan</string>
+
+    <string name="devices_in_use">llamkachkan</string>
+    <string name="devices_retired">retirarin</string>
+    <string name="devices_empty_title">ama auquichu</string>
+    <string name="devices_empty_body">bluetooth auqui kuskunchay, kaypi rikuchisun. wayqiña detalle rikuq allinchakupi.</string>
+    <string name="devices_generation">pares #%1$d</string>
+    <string name="devices_retired_on">retirarin %1$s</string>
+    <string name="devices_connected_for">kuskunchay %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">llapan auqui</string>
+    <string name="stats_sessions_since">%1$s %2$s mañakun</string>
+    <string name="stats_today">kuna</string>
+    <string name="stats_last_7">panta 7 oras</string>
+    <string name="stats_last_30">panta 30 oras</string>
+    <string name="stats_average_session">chiqap rimay</string>
+    <string name="stats_longest_session">aswan sayay rimay</string>
+    <string name="stats_playing">rigay rimay</string>
+    <string name="stats_measured_span">yupay rigaywan</string>
+    <string name="stats_share">rigay rimay</string>
+    <string name="stats_playback_only_note">rigay yupaywan solos</string>
+    <string name="stats_daily_hours_30">punchau oras (30 oras)</string>
+    <string name="stats_by_pair">pares</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · retirarin</string>
+    <string name="chart_max">%1$s aswan</string>
+
+    <string name="pair_fallback_title">pares</string>
+    <string name="pair_back">kutiy</string>
+    <string name="pair_more">aswan</string>
+    <string name="pair_menu_rename">sutiyamuy</string>
+    <string name="pair_menu_purchase">rantiypa rimay</string>
+    <string name="pair_menu_retire">retira / ruwarisqa</string>
+    <string name="pair_menu_delete">pakay</string>
+    <string name="pair_lifetime">kay pares bidawan</string>
+    <string name="pair_retired_on">retirarin %1$s</string>
+    <string name="pair_retired_with_reason">retirarin %1$s · %2$s</string>
+    <string name="pair_connected_now">kuskunchay kunan · %1$s</string>
+    <string name="pair_sessions">rimaykunak</string>
+    <string name="pair_average">chiqap</string>
+    <string name="pair_longest">aswan sayay</string>
+    <string name="pair_since">%1$s mañakun</string>
+    <string name="pair_of_measured">rigay rimay</string>
+    <string name="pair_measured">yupay rigaywan</string>
+    <string name="pair_paid">pagarin</string>
+    <string name="pair_per_hour">horawta</string>
+    <string name="pair_bought">rantisqa</string>
+    <string name="pair_daily_hours_14">punchau oras (14 oras)</string>
+    <string name="pair_rename_title">pares sutiyamuy</string>
+    <string name="pair_rename_label">suti</string>
+    <string name="pair_retire_title">kay pares retira</string>
+    <string name="pair_retire_label">imarayki (wanuy, ranti, maskay…)</string>
+    <string name="pair_retire_confirm">retira</string>
+    <string name="pair_retire_supporting">llaqui yupaykunaq wañun kay. haytaq kuskunchay alpamanta hamut\'an.</string>
+    <string name="pair_price_title">rantiy hatun</string>
+    <string name="pair_price_label">hatun (sapai)</string>
+    <string name="pair_price_supporting">oras cost sapai yupaywan.</string>
+    <string name="pair_delete_title">kay pares pakay?</string>
+    <string name="pair_delete_body">llapan rimay pakay. ama kutiymanchu.</string>
+
+    <string name="session_ongoing">rimay</string>
+    <string name="session_until">%1$s ama rikichiychu</string>
+    <string name="session_playing">%1$s rigay</string>
+    <string name="session_recovered">kutiycharisqa</string>
+
+    <string name="settings_tracking">rikuq</string>
+    <string name="settings_detailed_title">detalle rikuq</string>
+    <string name="settings_detailed_body">wayqiña rikuq oras. android wayqiña rimay llamkachkankunapi, mana rimachiy. bluetooth llapantaq.</string>
+    <string name="settings_detailed_unavailable">ama riqiwan bluetooth rimaywan: ylih connectedDevice allincha.</string>
+    <string name="settings_playback_only_title">rigay yupay</string>
+    <string name="settings_playback_only_body">estadistica rigay oras. rimay kuskunchay detalle rikuq alli. aswan rimay manam.</string>
+    <string name="settings_language">rimay</string>
+    <string name="settings_language_system">sistema rimay</string>
+    <string name="settings_devices">llamkaykunak</string>
+    <string name="settings_devices_body">ama auquikunachu - radyo maychu speaker - ama yupaychu.</string>
+    <string name="settings_device_subtitle">%1$s · hamut\'atin rimaypi %2$s</string>
+    <string name="settings_data">rimaykunak</string>
+    <string name="settings_export">exportar json</string>
+    <string name="settings_import">importar</string>
+    <string name="settings_import_warning">importar rimaykunayta ruwariq.</string>
+    <string name="settings_troubleshooting">yachaywan rikuq</string>
+    <string name="settings_battery_body">rimay ama llamkaychu, ylih bateria saq mana. app killka ama rimaychu mañakuwan.</string>
+    <string name="settings_battery_button">bateria allincha</string>
+    <string name="settings_battery_path">allincha → app → ylih → bateria → manam.</string>
+    <string name="settings_hibernation_body">ylih ama atunchiypi, android yapay permisyukunaq, ama rimaychu atunchun. desactivaywan pares rikuq sayachun.</string>
+    <string name="settings_hibernation_on">android ylih yapay.</string>
+    <string name="settings_hibernation_off">ylih libre rimay.</string>
+    <string name="settings_hibernation_button">ama rimay allincha</string>
+    <string name="settings_about">imakayta</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - auqui oras, sakirisun.</string>
+    <string name="settings_import_confirm_title">rimaykunayta pakay?</string>
+    <string name="settings_import_confirm_body">importar llapan pakaychun.</string>
+
+    <string name="widget_lifetime_label">ylih · bidawan</string>
+    <string name="widget_lifetime_description">oras pares, rigay oras</string>
+    <string name="widget_activity_label">ylih · llamkay</string>
+    <string name="widget_activity_description">pares oras, kuna, 7 oras, 30 oras</string>
+    <string name="widget_chart_label">ylih · 30 oras</string>
+    <string name="widget_chart_description">punchau oras 30</string>
+
+    <string name="action_save">sakiriy</string>
+    <string name="action_cancel">llaquiy</string>
+    <string name="action_delete">pakay</string>
+    <string name="action_import">importar</string>
+
+    <string name="channel_tracking">auqui rikuq</string>
+    <string name="channel_tracking_description">paryarisqa ylih wayqiña rikuq. android wayqiña rimay ama.</string>
+    <string name="notification_title">auqui oras rikuq</string>
+    <string name="notification_starting">hamut\'a…</string>
+    <string name="notification_idle">auqui maskan</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d kuskunchay · %2$s</item>
+        <item quantity="many">%1$d kuskunchay · %2$s</item>
+        <item quantity="other">%1$d kuskunchay · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d kuskunchay · %2$s · rigay</item>
+        <item quantity="many">%1$d kuskunchay · %2$s · rigay</item>
+        <item quantity="other">%1$d kuskunchay · %2$s · rigay</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">ylih bluetooth rimaywan wayqiña rikuq</string>
+    <string name="export_done">exportar alli</string>
+    <string name="export_failed">exportar mana</string>
+    <string name="import_failed">importar mana</string>
+    <string name="edit_failed">ruwayta atiyamanta</string>
+    <string name="error_could_not_open">%1$s atiyamanta</string>
+    <plurals name="import_done">
+        <item quantity="one">importar %d rimay</item>
+        <item quantity="many">importar %d rimay</item>
+        <item quantity="other">importar %d rimay</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d rimay</item>
+        <item quantity="many">%d rimay</item>
+        <item quantity="other">%d rimay</item>
+    </plurals>
+</resources>

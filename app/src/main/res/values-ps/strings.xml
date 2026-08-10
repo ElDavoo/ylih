@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Pashto. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ستاسو ژوند په هیڈفونونو کې</string>
+
+    <string name="nav_headphones">هیڈفونونه</string>
+    <string name="nav_stats">احصائیه</string>
+    <string name="nav_settings">ترتیبات</string>
+
+    <string name="kind_bluetooth">بلوټوث</string>
+    <string name="kind_ble">ال ای آڈیو</string>
+    <string name="kind_wired">سیم شوی</string>
+    <string name="kind_usb">یو ایس بی</string>
+    <string name="kind_unknown">نامعلوم</string>
+
+    <string name="welcome_title">حوصلا افزایی سره یلیح ته</string>
+    <string name="welcome_intro">ylih د هیڈفون هر جوړې کتنې کوي چې څومره وخت تري متصل وي، نو کله چې کاليونه وروسته ستاسو لاندې یوازینۍ پوښتنه ځواب ورکړی شي: دې جوړې څومره ساعتونه دوام کړي؟</string>
+    <string name="welcome_point_auto_title">متصل کړئ او هیروئ</string>
+    <string name="welcome_point_auto_body">بلوټوث هیڈفونونه خپل سر د متصل کیدو له پیل تجي ثبت کیږي. کوم شی پریږدي نه لګيدلی.</string>
+    <string name="welcome_point_lifetime_title">یو جوړه، یو ژوند</string>
+    <string name="welcome_point_lifetime_body">کله چې جوړه مري، اسي کړئ: د هغې مجموعې یخ شي او د ورته هیڈفونې بل جوړه د صفر تجي پیل شي.</string>
+    <string name="welcome_point_detailed_title">سیم شوی او پخپل</string>
+    <string name="welcome_point_detailed_body">تفصيلی تعقیب، د ترتیبات کې، سیم شوی هیڈفونونه اضافه کوي او د وخت مقدار اندازه کوي.</string>
+    <string name="welcome_privacy">هرچې په دې ګاډي کې پاته دي. کوم حساب نشته، او غوښتنې کې انټرنېט اجازت نشته.</string>
+    <string name="welcome_start">پیل کړئ</string>
+    <string name="welcome_next">بل</string>
+    <string name="welcome_allow">اجازت</string>
+    <string name="welcome_step">مرحله %1$d له %2$d</string>
+    <string name="welcome_bluetooth_title">بلوټوث رسائی</string>
+    <string name="welcome_bluetooth_why">اندروید یوازې یو غوښتنې ته وایي کوم بلوټوث وسیلې متصل شوې، او د هغې نوم، که د غوښتنې بلوټوث رسائی وي. دا دي چې ylih یو جوړې هیڈفونونه د موټر اسپیکر څخه فرق کړي، او دا پوهيږي یو جوړه بل تجي.</string>
+    <string name="welcome_bluetooth_with">د دې سره: هر جوړه د متصل کیدو له پیل تجي ثبت کیږي، د کوم چيز پریږدي نه او د کوم شي په یاد رونه.</string>
+    <string name="welcome_bluetooth_without">د دې پرته: بلوټوث هیڈفونونه په لاره کې نه ثبت کیږي. د غوښتنې باقي حصه کار کوي، او تاسو کولی شئ وروسته د اندروید د غوښتنې ترتیبات کې رسائی ورکړی.</string>
+    <string name="welcome_notifications_title">خبرتیاوې</string>
+    <string name="welcome_notifications_why">تفصيلی تعقیب یو چھوٹی پس منظر خدمت چلاوي، او اندروید د اي کوم غوښتنے لازمي کوي چې دا کړي درملې خبرتیا واضح وساتي.</string>
+    <string name="welcome_notifications_with">د دې سره: خبرتیا ښايي کوم د اوس مهاله ثبت کیږي، کوم د تفصيلی تعقیب ژوند د یوازینۍ علامت دي.</string>
+    <string name="welcome_notifications_without">د دې پرته: تفصيلی تعقیب هنوز هم چلاوي او هنوز هم ثبت کوي. اندروید د خبرتیا ظاهر نه کوي.</string>
+    <string name="hibernation_title">شمار درولي دوام ورکړئ</string>
+    <string name="hibernation_body">اندروید غوښتنې کې ځنډ کوي چې ځنډ شوي وي او د دوی اجازتونه ترلاسه کوي، کوم ylih د شمار کولو له وسیلې پریږدي. مت وساتل یوازې د دې غوښتنے دنده ده، نو اوس د دې خاموشي کول د ارزش دي.</string>
+    <string name="action_not_now">لا نه</string>
+
+    <string name="devices_in_use">د استعمال کې</string>
+    <string name="devices_retired">لرې شو</string>
+    <string name="devices_empty_title">هنوز هیڈفون نشته</string>
+    <string name="devices_empty_body">یو بلوټوث هیڈفون جوړه متصل کړئ او دا به دلته ظاهر شي. سیم شوی هیڈفونونو د تفصيلی تعقیب ضرورت دي، ترتیبات کې.</string>
+    <string name="devices_generation">جوړه #%1$d</string>
+    <string name="devices_retired_on">لرې شو %1$s</string>
+    <string name="devices_connected_for">متصل %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">ټول هیڈفونونه</string>
+    <string name="stats_sessions_since">%1$s د %2$s تجي</string>
+    <string name="stats_today">نن</string>
+    <string name="stats_last_7">ډیر وخت 7 ورځې</string>
+    <string name="stats_last_30">ډیر وخت 30 ورځې</string>
+    <string name="stats_average_session">متوسط جلسه</string>
+    <string name="stats_longest_session">ترټولو اوږده جلسه</string>
+    <string name="stats_playing">آڈیو چلاوي</string>
+    <string name="stats_measured_span">د پخپل لپاره اندازه کړل شوې</string>
+    <string name="stats_share">چلاوي برخه</string>
+    <string name="stats_playback_only_note">یوازې چلاوي وخت شمار کول</string>
+    <string name="stats_daily_hours_30">روزمره ساعتونه (30 ورځې)</string>
+    <string name="stats_by_pair">د جوړې له مخې</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · لرې شو</string>
+    <string name="chart_max">%1$s اعظم</string>
+
+    <string name="pair_fallback_title">جوړه</string>
+    <string name="pair_back">شاته</string>
+    <string name="pair_more">نور</string>
+    <string name="pair_menu_rename">نوم بدل کړئ</string>
+    <string name="pair_menu_purchase">د خریدو معلومات</string>
+    <string name="pair_menu_retire">لرې کړئ / بدل شوی</string>
+    <string name="pair_menu_delete">حذف</string>
+    <string name="pair_lifetime">د دې جوړې ژوند</string>
+    <string name="pair_retired_on">لرې شو %1$s</string>
+    <string name="pair_retired_with_reason">لرې شو %1$s · %2$s</string>
+    <string name="pair_connected_now">اوس متصل · %1$s</string>
+    <string name="pair_sessions">جلسې</string>
+    <string name="pair_average">متوسط</string>
+    <string name="pair_longest">ترټولو اوږده</string>
+    <string name="pair_since">د %1$s تجي</string>
+    <string name="pair_of_measured">چلاوي برخه</string>
+    <string name="pair_measured">د پخپل لپاره اندازه کړل شوې</string>
+    <string name="pair_paid">ادا شوی</string>
+    <string name="pair_per_hour">هر ساعت</string>
+    <string name="pair_bought">خریدل شوی</string>
+    <string name="pair_daily_hours_14">روزمره ساعتونه (14 ورځې)</string>
+    <string name="pair_rename_title">جوړه نوم بدل کړئ</string>
+    <string name="pair_rename_label">نوم</string>
+    <string name="pair_retire_title">دا جوړه لرې کړئ</string>
+    <string name="pair_retire_label">دلیل (مات شو، پلورل شو، گم شو…)</string>
+    <string name="pair_retire_confirm">لرې کړئ</string>
+    <string name="pair_retire_supporting">مجموعې اینجا یخ شوې. د ورته وسیلې نوې متصل د صفر تجي نویه جوړه پیل کوي.</string>
+    <string name="pair_price_title">د ادا کول قیمت</string>
+    <string name="pair_price_label">رقم (مکمل واحدونه)</string>
+    <string name="pair_price_supporting">د هزینې فی ساعت سره استعمال شوی.</string>
+    <string name="pair_delete_title">دا جوړه حذف کړی؟</string>
+    <string name="pair_delete_body">هر جلسه د هغې لپاره ثبت شوي هم حذف کیږي. دا نه شي کولی ټیک شي.</string>
+
+    <string name="session_ongoing">جاري</string>
+    <string name="session_until">تر %1$s پوري</string>
+    <string name="session_playing">%1$s چلاوي</string>
+    <string name="session_recovered">بیا ترلاسه شوی</string>
+
+    <string name="settings_tracking">تعقیب</string>
+    <string name="settings_detailed_title">تفصيلی تعقیب</string>
+    <string name="settings_detailed_body">سیم شوی هیڈفونونه اضافه کوي او چلاوي وخت. اندروید یوازې سیم شوی پلګ وقایع د چلاوي غوښتنے ته راپور کوي، نو دا خاموش خبرتیا سایه کې ساتي. بلوټوث د دواړو طریقو سره تعقیب کیږي.</string>
+    <string name="settings_detailed_unavailable">تر هغه وخت دستیاب نشته چې بلوټوث رسائی ورکړی شي: دا جوړه یوازې connectedDevice خدمت قسم اعلان کوي، کوم اندروید 14+ د بلوټوث اجازت سره تي کوي.</string>
+    <string name="settings_playback_only_title">یوازې چلاوي شمار کړئ</string>
+    <string name="settings_playback_only_body">احصائیه د متصل وخت پرځای آڈیو چلاوي شمار کول. یوازې جلسې د تفصيلی تعقیب سره ثبت شوې اندازه شدې چلاوي؛ باقي نه شو.</string>
+    <string name="settings_language">ژبه</string>
+    <string name="settings_language_system">سسټم ژبه</string>
+    <string name="settings_devices">وسایل</string>
+    <string name="settings_devices_body">هر چيز چې هیڈفون نه وي - موټر اسپیکر یا اسپیکر - شمار کولو بند کړئ.</string>
+    <string name="settings_device_subtitle">%1$s · لومړي ځل لیدل شو %2$s</string>
+    <string name="settings_data">ډاټا</string>
+    <string name="settings_export">json نمایندګی</string>
+    <string name="settings_import">درواړ</string>
+    <string name="settings_import_warning">درواړ هرچې اوس ذخیره شوي بدل کوي.</string>
+    <string name="settings_troubleshooting">د مسایلو حل</string>
+    <string name="settings_battery_body">که جلسې ثبت شمار کول بند شي، چک کړئ چې ylih د بیٹري بهتري له وسیلې نه وي - هغه غوښتنې کوم force-stop شوي نه شي ګټوتي متصل ترانسمیشن ترلاسه کولای تر هغه وخت چې پرانستل شي.</string>
+    <string name="settings_battery_button">بیٹري ترتیبات</string>
+    <string name="settings_battery_path">ترتیبات → غوښتنې → ylih → بیٹري → بې محدود.</string>
+    <string name="settings_hibernation_body">که ylih ماهيانه بند وي، اندروید سست کوي او د اجازتونو پریږدي، او هیچ شی تر هغه وخت شمار نه شو چې تاسو پرانستل شي. د دې خاموشي کول د ګټې د فصل له پیل دنده سره جوړو ته اجازت ورکوي.</string>
+    <string name="settings_hibernation_on">اندروید ylih سست کولی شي.</string>
+    <string name="settings_hibernation_off">ylih معاف ده او شمار درولي.</string>
+    <string name="settings_hibernation_button">غیر استعمال شده غوښتنې ترتیبات</string>
+    <string name="settings_about">په اړه</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - هیڈفون ساعتونه، په مقامي او ابدي ذخیره شوي.</string>
+    <string name="settings_import_confirm_title">ټول ډاټا بدل کړی؟</string>
+    <string name="settings_import_confirm_body">د دې backup درواړ هر وسیله، جوړه او جلسه اوس ذخیره شوي حذف کوي.</string>
+
+    <string name="widget_lifetime_label">ylih · ژوند</string>
+    <string name="widget_lifetime_description">ساعتونه د جوړې، د زندو ټایمر سره متصل کم وخت</string>
+    <string name="widget_activity_label">ylih · فعالیت</string>
+    <string name="widget_activity_description">هر جوړه ساعتونه یوځای، پلس نن، 7 ورځې او 30 ورځې</string>
+    <string name="widget_chart_label">ylih · 30 ورځې</string>
+    <string name="widget_chart_description">روزمره ساعتونه د ډیری وخت 30 ورځو کې</string>
+
+    <string name="action_save">ذخیره کړئ</string>
+    <string name="action_cancel">لغوه</string>
+    <string name="action_delete">حذف</string>
+    <string name="action_import">درواړ</string>
+
+    <string name="channel_tracking">هیڈفون تعقیب</string>
+    <string name="channel_tracking_description">ظاهر شوی چې ylih سیم شوی هیڈفونونه او چلاوي تعقیب کوي. اندروید سیم شوی پلګ وقایع د غوښتنو ته راپور نه کوي چې چلاوي نه وي.</string>
+    <string name="notification_title">هیڈفون وخت تعقیب</string>
+    <string name="notification_starting">پیل…</string>
+    <string name="notification_idle">هیڈفون انتظار</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d متصل · %2$s</item>
+        <item quantity="other">%1$d متصل · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d متصل · %2$s · چلاوي</item>
+        <item quantity="other">%1$d متصل · %2$s · چلاوي</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">دا جوړه بلوټوث رسائی ضرورت دي کول یا سیم شوی هیڈفون تعقیب</string>
+    <string name="export_done">backup نمایندګی شوی</string>
+    <string name="export_failed">نمایندګی ناکام</string>
+    <string name="import_failed">درواړ ناکام</string>
+    <string name="edit_failed">د دې تبدیلۍ ذخیره کولای نشو</string>
+    <string name="error_could_not_open">%1$s پرانستل نشو</string>
+    <plurals name="import_done">
+        <item quantity="one">درواړ %d جلسه</item>
+        <item quantity="other">درواړ %d جلسې</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d جلسه</item>
+        <item quantity="other">%d جلسې</item>
+    </plurals>
+</resources>

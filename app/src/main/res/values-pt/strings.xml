@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Portuguese. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - sua vida em fones</string>
+
+    <string name="nav_headphones">fones</string>
+    <string name="nav_stats">estatisticas</string>
+    <string name="nav_settings">configuracoes</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">com fio</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">desconhecido</string>
+
+    <string name="welcome_title">bem-vindo ao ylih</string>
+    <string name="welcome_intro">ylih registra quanto tempo cada par de fones fica conectado, para que anos depois voce ainda possa responder a unica pergunta que importa sobre um par: quantas horas duraram?</string>
+    <string name="welcome_point_auto_title">conecte e esqueca</string>
+    <string name="welcome_point_auto_body">fones bluetooth sao gravados automaticamente, desde o momento em que se conectam. nada precisa ficar funcionando.</string>
+    <string name="welcome_point_lifetime_title">um par, uma vida</string>
+    <string name="welcome_point_lifetime_body">quando um par morre, aposente-o: seu total congela alí e o proximo par dos mesmos fones comeca do zero.</string>
+    <string name="welcome_point_detailed_title">fones com fio e reproducao</string>
+    <string name="welcome_point_detailed_body">rastreamento detalhado, nas configuracoes, adiciona fones com fio e mede quanto tempo foi realmente em reproducao.</string>
+    <string name="welcome_privacy">tudo fica neste telefone. nao ha conta, e o app nao tem permissao de internet.</string>
+    <string name="welcome_start">comece</string>
+    <string name="welcome_next">proximo</string>
+    <string name="welcome_allow">permitir</string>
+    <string name="welcome_step">passo %1$d de %2$d</string>
+    <string name="welcome_bluetooth_title">acesso bluetooth</string>
+    <string name="welcome_bluetooth_why">android so diz a um app qual dispositivo bluetooth se conectou e qual e seu nome se o app tiver acesso bluetooth. e como ylih diferencia um par de fones de um som de carro, e como sabe um par do outro.</string>
+    <string name="welcome_bluetooth_with">com isso: cada par e gravado desde o momento em que se conecta, sem nada deixado funcionando e sem nada para lembrar de pressionar.</string>
+    <string name="welcome_bluetooth_without">sem isso: nenhum fone bluetooth e gravado. o resto do app ainda funciona, e voce pode conceder depois nas configuracoes do app android.</string>
+    <string name="welcome_notifications_title">notificacoes</string>
+    <string name="welcome_notifications_why">rastreamento detalhado executa um pequeno servico em segundo plano, e android requer que qualquer app fazendo isso mantenha uma notificacao visivel enquanto faz.</string>
+    <string name="welcome_notifications_with">com isso: a notificacao mostra o que esta sendo gravado agora, que e o unico sinal de que o rastreamento detalhado esta vivo.</string>
+    <string name="welcome_notifications_without">sem isso: rastreamento detalhado ainda funciona e ainda grava. android apenas nao mostrara sua notificacao.</string>
+    <string name="hibernation_title">continue contando enquanto voce esquece</string>
+    <string name="hibernation_body">android pausa apps que ficam sem abertura por alguns meses e retira suas permissoes, o que deixaria ylih gravando nada ate que voce o abrisse novamente. ser esquecido e exatamente para o que este app existe, entao vale a pena desligar isso agora.</string>
+    <string name="action_not_now">agora nao</string>
+
+    <string name="devices_in_use">em uso</string>
+    <string name="devices_retired">aposentado</string>
+    <string name="devices_empty_title">nenhum fone ainda</string>
+    <string name="devices_empty_body">conecte um par de fones bluetooth e eles apareccerao aqui. fones com fio precisam de rastreamento detalhado, nas configuracoes.</string>
+    <string name="devices_generation">par #%1$d</string>
+    <string name="devices_retired_on">aposentado %1$s</string>
+    <string name="devices_connected_for">conectado %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">todos os fones</string>
+    <string name="stats_sessions_since">%1$s desde %2$s</string>
+    <string name="stats_today">hoje</string>
+    <string name="stats_last_7">ultimos 7 dias</string>
+    <string name="stats_last_30">ultimos 30 dias</string>
+    <string name="stats_average_session">sessao media</string>
+    <string name="stats_longest_session">sessao mais longa</string>
+    <string name="stats_playing">audio tocando</string>
+    <string name="stats_measured_span">medido para reproducao</string>
+    <string name="stats_share">participacao de reproducao</string>
+    <string name="stats_playback_only_note">contando apenas tempo de reproducao</string>
+    <string name="stats_daily_hours_30">horas diarias (30 dias)</string>
+    <string name="stats_by_pair">por par</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · aposentado</string>
+    <string name="chart_max">%1$s maximo</string>
+
+    <string name="pair_fallback_title">par</string>
+    <string name="pair_back">voltar</string>
+    <string name="pair_more">mais</string>
+    <string name="pair_menu_rename">renomear</string>
+    <string name="pair_menu_purchase">informacoes de compra</string>
+    <string name="pair_menu_retire">aposentar / substituido</string>
+    <string name="pair_menu_delete">excluir</string>
+    <string name="pair_lifetime">vida util neste par</string>
+    <string name="pair_retired_on">aposentado %1$s</string>
+    <string name="pair_retired_with_reason">aposentado %1$s · %2$s</string>
+    <string name="pair_connected_now">conectado agora · %1$s</string>
+    <string name="pair_sessions">sessoes</string>
+    <string name="pair_average">media</string>
+    <string name="pair_longest">mais longa</string>
+    <string name="pair_since">desde %1$s</string>
+    <string name="pair_of_measured">participacao de reproducao</string>
+    <string name="pair_measured">medido para reproducao</string>
+    <string name="pair_paid">pago</string>
+    <string name="pair_per_hour">por hora</string>
+    <string name="pair_bought">comprado</string>
+    <string name="pair_daily_hours_14">horas diarias (14 dias)</string>
+    <string name="pair_rename_title">renomear par</string>
+    <string name="pair_rename_label">nome</string>
+    <string name="pair_retire_title">aposentar este par</string>
+    <string name="pair_retire_label">razao (morreu, vendido, perdido…)</string>
+    <string name="pair_retire_confirm">aposentar</string>
+    <string name="pair_retire_supporting">totais congelam aqui. reconectar o mesmo dispositivo inicia um novo par do zero.</string>
+    <string name="pair_price_title">preco pago</string>
+    <string name="pair_price_label">quantia (unidades inteiras)</string>
+    <string name="pair_price_supporting">usado para a figura de custo por hora.</string>
+    <string name="pair_delete_title">excluir este par?</string>
+    <string name="pair_delete_body">cada sessao gravada para ele tambem e excluida. isso nao pode ser desfeito.</string>
+
+    <string name="session_ongoing">em andamento</string>
+    <string name="session_until">ate %1$s</string>
+    <string name="session_playing">%1$s tocando</string>
+    <string name="session_recovered">recuperado</string>
+
+    <string name="settings_tracking">rastreamento</string>
+    <string name="settings_detailed_title">rastreamento detalhado</string>
+    <string name="settings_detailed_body">adiciona fones com fio e tempo de reproducao. android so relata eventos de plugue de fio para um app em execucao, entao isso mantem uma notificacao silenciosa na area. bluetooth e rastreado de qualquer forma.</string>
+    <string name="settings_detailed_unavailable">indisponivel ate que o acesso bluetooth seja concedido: esta compilacao apenas declara o tipo de servico connectedDevice, que o android 14+ vincula a uma permissao bluetooth.</string>
+    <string name="settings_playback_only_title">contar apenas reproducao</string>
+    <string name="settings_playback_only_body">estatisticas contam o tempo que o audio estava realmente tocando em vez do tempo conectado. apenas sessoes gravadas com rastreamento detalhado acionado mediram reproducao; o resto sao deixadas de fora.</string>
+    <string name="settings_language">idioma</string>
+    <string name="settings_language_system">idioma do sistema</string>
+    <string name="settings_devices">dispositivos</string>
+    <string name="settings_devices_body">desmarque qualquer coisa que nao seja fones - um som de carro ou um alto-falante - para parar de grava-lo.</string>
+    <string name="settings_device_subtitle">%1$s · visto pela primeira vez %2$s</string>
+    <string name="settings_data">dados</string>
+    <string name="settings_export">exportar json</string>
+    <string name="settings_import">importar</string>
+    <string name="settings_import_warning">importar substitui tudo o que esta atualmente armazenado.</string>
+    <string name="settings_troubleshooting">solucao de problemas</string>
+    <string name="settings_battery_body">se as sessoes pararem de ser gravadas, verifique se ylih esta isento de otimizacao de bateria - um app que foi forcado a parar nunca recebe transmissoes de conexao novamente ate que seja aberto.</string>
+    <string name="settings_battery_button">configuracoes de bateria</string>
+    <string name="settings_battery_path">configuracoes → aplicativos → ylih → bateria → ilimitado.</string>
+    <string name="settings_hibernation_body">se ylih ficar sem abertura por alguns meses, android o pausa e retira suas permissoes, e nada e gravado novamente ate que voce o abra. desativar isso e o que permite que um par continue contando durante uma estacao em que voce nunca pensa no app.</string>
+    <string name="settings_hibernation_on">android pode pausar ylih.</string>
+    <string name="settings_hibernation_off">ylih e isento e continua gravando.</string>
+    <string name="settings_hibernation_button">configuracoes de app nao utilizado</string>
+    <string name="settings_about">sobre</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - horas de fone, mantidas localmente e para sempre.</string>
+    <string name="settings_import_confirm_title">substituir todos os dados?</string>
+    <string name="settings_import_confirm_body">importar este backup deleta todos os dispositivos, pares e sessoes atualmente armazenados.</string>
+
+    <string name="widget_lifetime_label">ylih · vida util</string>
+    <string name="widget_lifetime_description">horas por par, com um temporizador ativo em qualquer coisa conectada</string>
+    <string name="widget_activity_label">ylih · atividade</string>
+    <string name="widget_activity_description">horas de cada par juntas, mais hoje, 7 dias e 30 dias</string>
+    <string name="widget_chart_label">ylih · 30 dias</string>
+    <string name="widget_chart_description">horas diarias de audiencia nos ultimos 30 dias</string>
+
+    <string name="action_save">salvar</string>
+    <string name="action_cancel">cancelar</string>
+    <string name="action_delete">excluir</string>
+    <string name="action_import">importar</string>
+
+    <string name="channel_tracking">rastreamento de fone</string>
+    <string name="channel_tracking_description">mostrado enquanto ylih esta procurando fones com fio e reproducao. android nao entrega eventos de plugue de fio para apps que nao estao em execucao.</string>
+    <string name="notification_title">rastreamento de tempo de fone</string>
+    <string name="notification_starting">iniciando…</string>
+    <string name="notification_idle">aguardando fones</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d conectado · %2$s</item>
+        <item quantity="many">%1$d conectado · %2$s</item>
+        <item quantity="other">%1$d conectado · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d conectado · %2$s · tocando</item>
+        <item quantity="many">%1$d conectado · %2$s · tocando</item>
+        <item quantity="other">%1$d conectado · %2$s · tocando</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">esta compilacao precisa de acesso bluetooth antes de poder rastrear fones com fio</string>
+    <string name="export_done">backup exportado</string>
+    <string name="export_failed">falha na exportacao</string>
+    <string name="import_failed">falha na importacao</string>
+    <string name="edit_failed">nao foi possivel salvar essa alteracao</string>
+    <string name="error_could_not_open">nao foi possivel abrir %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">importada %d sessao</item>
+        <item quantity="many">importada %d sessao</item>
+        <item quantity="other">importadas %d sessoes</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sessao</item>
+        <item quantity="many">%d sessao</item>
+        <item quantity="other">%d sessoes</item>
+    </plurals>
+</resources>

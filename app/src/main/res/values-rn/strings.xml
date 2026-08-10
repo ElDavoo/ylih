@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Rundi. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ubwami bwacu mu inyanda</string>
+
+    <string name="nav_headphones">inyanda</string>
+    <string name="nav_stats">ibaruhuuko</string>
+    <string name="nav_settings">igenga</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">ugufi</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">kitajuje</string>
+
+    <string name="welcome_title">murakaze kuri ylih</string>
+    <string name="welcome_intro">ylih irikora igihe icyo inyanda zose zifitanye ahubwo, kugira ngo mu mwaka ubwambara wongera kwibuza ibibazo bimwe gusa: saa zingahe zahasize?</string>
+    <string name="welcome_point_auto_title">fushe kandi wireke</string>
+    <string name="welcome_point_auto_body">inyanda ya bluetooth zimikora kwaricwa igihe cyo kufitanya. nta kintu kigomba kuva gihora.</string>
+    <string name="welcome_point_lifetime_title">inzira imwe, ubwami bwimwe</string>
+    <string name="welcome_point_lifetime_body">iyo inzira irapfakire, ifatanije: igice cyayo kirazama kuri aho kandi inzira nshya ya inyanda nzira yumunsi zacyatangira.</string>
+    <string name="welcome_point_detailed_title">ugufi kandi guceca</string>
+    <string name="welcome_point_detailed_body">kurikira no mu mahoro, mu igenga, onje inyanda zugufi kandi gupima igihe cyose gari gari.</string>
+    <string name="welcome_privacy">ikintu cyose kirahita mu telefoni iyi. ntagenwe ni konti, kandi gusenya ntiwumvu internet.</string>
+    <string name="welcome_start">tangira</string>
+    <string name="welcome_next">ikibazo kiriya</string>
+    <string name="welcome_allow">emeza</string>
+    <string name="welcome_step">urwego %1$d kuri %2$d</string>
+    <string name="welcome_bluetooth_title">ubwumvire bwa bluetooth</string>
+    <string name="welcome_bluetooth_why">android igera kuri gusenya inyaburuko iyhe ya bluetooth ifitanye, kandi inzira yayo, niba gusenya ari na ubwumvire bwa bluetooth. niyo ndyo ylih ihitamo inzira y\'inyanda kuva mu mugambi w\'umwanya.</string>
+    <string name="welcome_bluetooth_with">hamwe niyo: inzira zose zimikora icyambat cyo kufitanya, nta kintu kigomba kuva gihora.</string>
+    <string name="welcome_bluetooth_without">utarimo: nta nyanda ya bluetooth zimikora. ibindi bya gusenya biracyakora, kandi urashobora gutanga kinyarwanda mu igenga ry\'android.</string>
+    <string name="welcome_notifications_title">abimenyetso</string>
+    <string name="welcome_notifications_why">kurikira no mu mahoro niguo serivisi nto mu mwanya, kandi android isaba kuri gusenya kigomba kurinda abimenyetso bivugwa.</string>
+    <string name="welcome_notifications_with">hamwe niyo: abimenyetso byerekeza ikintu cyose gikora, niyo ntyo ishyaka ry\'ikuri no mu mahoro rihama.</string>
+    <string name="welcome_notifications_without">utarimo: kurikira no mu mahoro biracyakora kandi birikora. android idategura abimenyetso.</string>
+    <string name="hibernation_title">komeza kubara mugihe wese wireky</string>
+    <string name="hibernation_body">android irumva gusenya ntifungukwa mu nyungu kandi ifata impushya, ikintu cyo gusenya ylih ntigerekwa kugeza iyo kigurwa. kuva guhagururwa ni ikintu iyo gusenya ikubwira, kuburyo harya bigize inzira.</string>
+    <string name="action_not_now">ntihantu</string>
+
+    <string name="devices_in_use">mu gihe cyo gukoreshwa</string>
+    <string name="devices_retired">yateriwe</string>
+    <string name="devices_empty_title">nta nyanda kwa none</string>
+    <string name="devices_empty_body">fushe inzira y\'inyanda ya bluetooth kandi ziyerekeza aha. inyanda zugufi zisaba kurikira no mu mahoro, mu igenga.</string>
+    <string name="devices_generation">inzira #%1$d</string>
+    <string name="devices_retired_on">yateriwe %1$s</string>
+    <string name="devices_connected_for">wifitanye %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">inyanda zose</string>
+    <string name="stats_sessions_since">%1$s kuva %2$s</string>
+    <string name="stats_today">uyumunsi</string>
+    <string name="stats_last_7">iminsi 7 yiswe</string>
+    <string name="stats_last_30">iminsi 30 yiswe</string>
+    <string name="stats_average_session">isiganiro ry\'imigezi</string>
+    <string name="stats_longest_session">isiganiro kirekire</string>
+    <string name="stats_playing">ubwenge buiceka</string>
+    <string name="stats_measured_span">rimenyeshwa ku mwiceka</string>
+    <string name="stats_share">igice cyamwiceka</string>
+    <string name="stats_playback_only_note">kubara igihe cy\'amwiceka gusa</string>
+    <string name="stats_daily_hours_30">amasaha buri munsi (iminsi 30)</string>
+    <string name="stats_by_pair">ku inzira</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · yateriwe</string>
+    <string name="chart_max">%1$s kinini</string>
+
+    <string name="pair_fallback_title">inzira</string>
+    <string name="pair_back">subira</string>
+    <string name="pair_more">byinshi</string>
+    <string name="pair_menu_rename">fata izina rinya</string>
+    <string name="pair_menu_purchase">ama\'amakuru y\'uko birandikwa</string>
+    <string name="pair_menu_retire">tereka / yashyitswe</string>
+    <string name="pair_menu_delete">siba</string>
+    <string name="pair_lifetime">ubwami bw\'iyi nzira</string>
+    <string name="pair_retired_on">yateriwe %1$s</string>
+    <string name="pair_retired_with_reason">yateriwe %1$s · %2$s</string>
+    <string name="pair_connected_now">wifitanye ubu · %1$s</string>
+    <string name="pair_sessions">isiganiro</string>
+    <string name="pair_average">averegisi</string>
+    <string name="pair_longest">kirekire</string>
+    <string name="pair_since">kuva %1$s</string>
+    <string name="pair_of_measured">igice cyamwiceka</string>
+    <string name="pair_measured">rimenyeshwa ku mwiceka</string>
+    <string name="pair_paid">yoseweyo</string>
+    <string name="pair_per_hour">buri masaha</string>
+    <string name="pair_bought">yabitswe</string>
+    <string name="pair_daily_hours_14">amasaha buri munsi (iminsi 14)</string>
+    <string name="pair_rename_title">fata izina ry\'inzira</string>
+    <string name="pair_rename_label">izina</string>
+    <string name="pair_retire_title">tereka iyi nzira</string>
+    <string name="pair_retire_label">impamvu (irapfakire, yarandikwa, irasibiye…)</string>
+    <string name="pair_retire_confirm">tereka</string>
+    <string name="pair_retire_supporting">igice cyose kizama aha. gufitanya inyaburuko nzira nshya zacyatangira.</string>
+    <string name="pair_price_title">amafaranga yoseweyo</string>
+    <string name="pair_price_label">igipimo (imibare yose)</string>
+    <string name="pair_price_supporting">gukoreshwa mu mibare y\'idukiro buri masaha.</string>
+    <string name="pair_delete_title">siba iyi nzira?</string>
+    <string name="pair_delete_body">buri isiganiro rimenyeshwa kuri iyo no sipwibwa. ibi ntibikurebure.</string>
+
+    <string name="session_ongoing">iracyakora</string>
+    <string name="session_until">kugeza %1$s</string>
+    <string name="session_playing">%1$s iceka</string>
+    <string name="session_recovered">kwiyubakwa</string>
+
+    <string name="settings_tracking">kurikira</string>
+    <string name="settings_detailed_title">kurikira no mu mahoro</string>
+    <string name="settings_detailed_body">onje inyanda zugufi kandi igihe cyamwiceka. android igera mu nyanda zugufi kuri gusenya gikora gusa, kuburyo igira imenyetso nto mu mahoro. bluetooth irikora iyo aricyo arihe.</string>
+    <string name="settings_detailed_unavailable">ntihabwa kugeza ubwumvire bwa bluetooth budatanzwe: iri banki rigucira ubwumvire bwa connectedDevice, ikintu android 14+ iguhuza ku bwumvire bwa bluetooth.</string>
+    <string name="settings_playback_only_title">kubara amwiceka gusa</string>
+    <string name="settings_playback_only_body">ibaruhuuko bayubara igihe cyamwiceka aho cyo gufitanya. isiganiro rimenyeshwa hamwe na kurikira no mu mahoro yibwabukishije amwiceka gusa; ibindi bipwibwa.</string>
+    <string name="settings_language">imvugo</string>
+    <string name="settings_language_system">imvugo y\'igenga</string>
+    <string name="settings_devices">inyaburuko</string>
+    <string name="settings_devices_body">sumurika ikintu kitajuje inyanda - umwanya umugambi cyangwa serikali - kubigira beteta.</string>
+    <string name="settings_device_subtitle">%1$s · yambaye %2$s</string>
+    <string name="settings_data">amakuru</string>
+    <string name="settings_export">kubusha json</string>
+    <string name="settings_import">kwinjiza</string>
+    <string name="settings_import_warning">kwinjiza bikunashyiramo ikintu cyose kimenyeshwa.</string>
+    <string name="settings_troubleshooting">gukumira ibibazo</string>
+    <string name="settings_battery_body">niba isiganiro nterimikora, rerekana ko ylih itari mu mibare y\'amavuta - gusenya rifatwe ntiyubwayo impushya kugeza iyo gigurwa.</string>
+    <string name="settings_battery_button">igenga ry\'amavuta</string>
+    <string name="settings_battery_path">igenga → gusenya → ylih → amavuta → utarimo umuperi.</string>
+    <string name="settings_hibernation_body">niba ylih ntifungukwa mu nyungu, android irumva kandi ifata impushya, nta kintu kimikora kugeza iyo kigurwa. kunga iyo ikintu kigira ko inzira ikomeza kubara mu myaka iyo wese ntacyumva gusenya.</string>
+    <string name="settings_hibernation_on">android irashobora kunyina ylih.</string>
+    <string name="settings_hibernation_off">ylih irashyira kandi ikomeza kubara.</string>
+    <string name="settings_hibernation_button">igenga ry\'ubwiyunge ntaburengeri</string>
+    <string name="settings_about">kubyerekeranye</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - amasaha y\'inyanda, akavulwa cyangwa utarimo.</string>
+    <string name="settings_import_confirm_title">shyira amakuru yose aho?</string>
+    <string name="settings_import_confirm_body">kwinjiza iyi vuriro sibuje inyaburuko, inzira kandi isiganiro rimenyeshwa.</string>
+
+    <string name="widget_lifetime_label">ylih · ubwami</string>
+    <string name="widget_lifetime_description">amasaha buri nzira, hamwe n\'isahasi zivugwa</string>
+    <string name="widget_activity_label">ylih · igikorwa</string>
+    <string name="widget_activity_description">amasaha y\'inzira zose hamwe, ni uyumunsi, iminsi 7 kandi iminsi 30</string>
+    <string name="widget_chart_label">ylih · iminsi 30</string>
+    <string name="widget_chart_description">amasaha buri munsi mu minsi 30 yiswe</string>
+
+    <string name="action_save">kabiri</string>
+    <string name="action_cancel">sumurika</string>
+    <string name="action_delete">siba</string>
+    <string name="action_import">kwinjiza</string>
+
+    <string name="channel_tracking">kurikira k\'inyanda</string>
+    <string name="channel_tracking_description">bivugwa mugihe ylih irikira inyanda zugufi kandi amwiceka. android ntegera inyanda zugufi mu gusenya ntikora.</string>
+    <string name="notification_title">kurikira igihe cy\'inyanda</string>
+    <string name="notification_starting">batangira…</string>
+    <string name="notification_idle">akubanza inyanda</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d wifitanye · %2$s</item>
+        <item quantity="many">%1$d wifitanye · %2$s</item>
+        <item quantity="other">%1$d wifitanye · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d wifitanye · %2$s · iceka</item>
+        <item quantity="many">%1$d wifitanye · %2$s · iceka</item>
+        <item quantity="other">%1$d wifitanye · %2$s · iceka</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">iyi banki isaba ubwumvire bwa bluetooth mbere yo kurikira inyanda zugufi</string>
+    <string name="export_done">backup yabushshwe</string>
+    <string name="export_failed">bushyiro birantabira</string>
+    <string name="import_failed">kwinjiza birantabira</string>
+    <string name="edit_failed">kidakikubwira iyi senyukiriza</string>
+    <string name="error_could_not_open">ntakikubusha %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">kwinjiza %d isiganiro</item>
+        <item quantity="many">kwinjiza %d isiganiro</item>
+        <item quantity="other">kwinjiza %d isiganiro</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d isiganiro</item>
+        <item quantity="many">%d isiganiro</item>
+        <item quantity="other">%d isiganiro</item>
+    </plurals>
+</resources>

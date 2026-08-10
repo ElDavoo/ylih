@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Romansh. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - tia vita in auscultaders</string>
+
+    <string name="nav_headphones">auscultaders</string>
+    <string name="nav_stats">statisticas</string>
+    <string name="nav_settings">configuraziuns</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">cun fil</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">nunenconuschent</string>
+
+    <string name="welcome_title">bainvegni a ylih</string>
+    <string name="welcome_intro">ylih registrescha co long che mintga pair da auscultaders staja conectads, per che tu pos respunder, onns pli tard, a la única dumonda che importa: quantas uras han durà?</string>
+    <string name="welcome_point_auto_title">connectescha e forgiescha</string>
+    <string name="welcome_point_auto_body">auscultaders bluetooth vegnan registrads automaticamain, dapi che sa connectan. nagut na stat d\'esser aviert.</string>
+    <string name="welcome_point_lifetime_title">ina pair, ina vita</string>
+    <string name="welcome_point_lifetime_body">sche ina pair muorra, pensiunescha la: sia totalitad cuntgiela là e la proxima pair da medem auscultaders cumenzia oravontaifer.</string>
+    <string name="welcome_point_detailed_title">cun fil e reproducziun</string>
+    <string name="welcome_point_detailed_body">il tracciament detalià, en ils configuraziuns, agiunscha auscultaders cun fil e mesira co blera temps che steva realmain reproducziun.</string>
+    <string name="welcome_privacy">tut rest en quest telefon. na stat inga cunta, e l\'app na stat inga permissiun d\'internet.</string>
+    <string name="welcome_start">comenza</string>
+    <string name="welcome_next">proxim</string>
+    <string name="welcome_allow">permetta</string>
+    <string name="welcome_step">pass %1$d da %2$d</string>
+    <string name="welcome_bluetooth_title">access bluetooth</string>
+    <string name="welcome_bluetooth_why">android mo dapli a l\'app tge apparat bluetooth s\'ha connectà, sche l\'app ha access bluetooth. uschia ylih po differenziar ina pair da auscultaders d\'in audio da voitura.</string>
+    <string name="welcome_bluetooth_with">cun quai: mintga pair vegn registrada dapi che sa connecta, senza nagut che staja d\'esser aviert.</string>
+    <string name="welcome_bluetooth_without">senza quai: nagin auscultader bluetooth vegn registrà. la rest da l\'app funcziunescha, e tu pos permetter pli tard en ils configuraziuns da android.</string>
+    <string name="welcome_notifications_title">notificaziuns</string>
+    <string name="welcome_notifications_why">il tracciament detalià funcziuna in pign service en il fund, e android exigescha che mintga app che fa quai mantengia ina notificaziun visibla.</string>
+    <string name="welcome_notifications_with">cun quai: la notificaziun muossa tge che vegn registrà güsauas, che es l\'unica indicaziun che il tracciament detalià es viv.</string>
+    <string name="welcome_notifications_without">senza quai: il tracciament detalià ancravenda funcziunescha e registrescha. android mo betg muossa sia notificaziun.</string>
+    <string name="hibernation_title">tiencha a cuntar durant che ti forgiescha</string>
+    <string name="hibernation_body">android pausescha apps che na vegnan betg avirts per tschintels e piglia lur permissiuns, tge che laschascha ylih betg registrar fin che tu l\'avrais da nouv. esser forgià es exactamain tge ch\'aquest app exista, perquai vala la paina da spgnir quai malhora.</string>
+    <string name="action_not_now">betg sche</string>
+
+    <string name="devices_in_use">en us</string>
+    <string name="devices_retired">pensiunà</string>
+    <string name="devices_empty_title">nagins auscultaders anc</string>
+    <string name="devices_empty_body">connectescha ina pair da auscultaders bluetooth e la vegnan visiblas qua. auscultaders cun fil necessiteschen il tracciament detalià, en ils configuraziuns.</string>
+    <string name="devices_generation">pair #%1$d</string>
+    <string name="devices_retired_on">pensiunà %1$s</string>
+    <string name="devices_connected_for">connectà %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">tuts auscultaders</string>
+    <string name="stats_sessions_since">%1$s dapi %2$s</string>
+    <string name="stats_today">güsauas</string>
+    <string name="stats_last_7">ultims 7 dis</string>
+    <string name="stats_last_30">ultims 30 dis</string>
+    <string name="stats_average_session">sessiun media</string>
+    <string name="stats_longest_session">sessiun pli lunga</string>
+    <string name="stats_playing">audio reproducziun</string>
+    <string name="stats_measured_span">mesirà per reproducziun</string>
+    <string name="stats_share">cundivisiun reproducziun</string>
+    <string name="stats_playback_only_note">contend mo temp da reproducziun</string>
+    <string name="stats_daily_hours_30">uras giurnodas (30 dis)</string>
+    <string name="stats_by_pair">per pair</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · pensiunà</string>
+    <string name="chart_max">%1$s maximum</string>
+
+    <string name="pair_fallback_title">pair</string>
+    <string name="pair_back">back</string>
+    <string name="pair_more">dapli</string>
+    <string name="pair_menu_rename">renumner</string>
+    <string name="pair_menu_purchase">infurmaziuns davart l\'achat</string>
+    <string name="pair_menu_retire">pensiunar / substituida</string>
+    <string name="pair_menu_delete">tschunar</string>
+    <string name="pair_lifetime">durada d\'aquesta pair</string>
+    <string name="pair_retired_on">pensiunà %1$s</string>
+    <string name="pair_retired_with_reason">pensiunà %1$s · %2$s</string>
+    <string name="pair_connected_now">connectà güsauas · %1$s</string>
+    <string name="pair_sessions">sessiuns</string>
+    <string name="pair_average">media</string>
+    <string name="pair_longest">pli lunga</string>
+    <string name="pair_since">dapi %1$s</string>
+    <string name="pair_of_measured">cundivisiun reproducziun</string>
+    <string name="pair_measured">mesirà per reproducziun</string>
+    <string name="pair_paid">pagà</string>
+    <string name="pair_per_hour">per ura</string>
+    <string name="pair_bought">cumpra</string>
+    <string name="pair_daily_hours_14">uras giurnodas (14 dis)</string>
+    <string name="pair_rename_title">renumner pair</string>
+    <string name="pair_rename_label">num</string>
+    <string name="pair_retire_title">pensiunar questa pair</string>
+    <string name="pair_retire_label">motiv (murtüra, venda, pierdida…)</string>
+    <string name="pair_retire_confirm">pensiunar</string>
+    <string name="pair_retire_supporting">las totalitads cuntgia qua. reconnectar il medem apparat cumenzia ina nova pair da zero.</string>
+    <string name="pair_price_title">prezi pagà</string>
+    <string name="pair_price_label">suma (unitads interas)</string>
+    <string name="pair_price_supporting">duvrà per la cifra da cost per ura.</string>
+    <string name="pair_delete_title">tschunar questa pair?</string>
+    <string name="pair_delete_body">mintga sessiun registrada per ella vegn tschunada. quai na po betg esser annullà.</string>
+
+    <string name="session_ongoing">en curs</string>
+    <string name="session_until">fin %1$s</string>
+    <string name="session_playing">%1$s reproducziun</string>
+    <string name="session_recovered">recuperà</string>
+
+    <string name="settings_tracking">tracciament</string>
+    <string name="settings_detailed_title">tracciament detalià</string>
+    <string name="settings_detailed_body">agiunscha auscultaders cun fil e temp da reproducziun. android mo rapporta events da plug cun fil a apps che fugnuschclavan, uschia quai mantenvia ina notificaziun sonda en la vart. bluetooth vegn tracciada uschia u uschia.</string>
+    <string name="settings_detailed_unavailable">betg disponibel fin che l\'access bluetooth n\'es permettì: quella cumpilada declara mo il typ da service connectedDevice, tge che android 14+ conectescha a ina permissiun bluetooth.</string>
+    <string name="settings_playback_only_title">cunta mo reproducziun</string>
+    <string name="settings_playback_only_body">las statisticas cunteschen il temp che l\'audio steva realmain reproducziun, betg il temp connectà. mo sessiuns registradas cun il tracciament detalià aviert han mesirà la reproducziun; las autras vegnan lasadas ora.</string>
+    <string name="settings_language">lingua</string>
+    <string name="settings_language_system">lingua dal sistem</string>
+    <string name="settings_devices">apparats</string>
+    <string name="settings_devices_body">deselecziunescha tut tge che betg es auscultaders - ina sa da voitura u in speaker - per betg registrar ella.</string>
+    <string name="settings_device_subtitle">%1$s · emprendaz stos %2$s</string>
+    <string name="settings_data">datas</string>
+    <string name="settings_export">exportar json</string>
+    <string name="settings_import">importar</string>
+    <string name="settings_import_warning">l\'importaziun substituesa tut tge che vegn actualmain memorisà.</string>
+    <string name="settings_troubleshooting">schliaziun da problems</string>
+    <string name="settings_battery_body">sche sessiuns na vegnan betg registradas, controllescha che ylih n\'es betg da l\'optimisaziun da bataria - ina app che vegn stoppa d\'forza na riciva betg emprova pli autras vias da connexiun fin ch\'ella vegn averta.</string>
+    <string name="settings_battery_button">configuraziuns da bataria</string>
+    <string name="settings_battery_path">configuraziuns → apps → ylih → bataria → senza limita.</string>
+    <string name="settings_hibernation_body">sche ylih n\'es betg averta per tschintels, android la pausa e piglia lur permissiuns, e nagut vegn registrà fin che tu l\'avrais oravontaifer. spgnir quai lascha ina pair tegnair a cuntar durant ina stagiun durant che ti na pinsas betg a l\'app.</string>
+    <string name="settings_hibernation_on">android po pausar ylih.</string>
+    <string name="settings_hibernation_off">ylih es libre e tiencha a registrar.</string>
+    <string name="settings_hibernation_button">configuraziuns da l\'app betg duvr</string>
+    <string name="settings_about">davart</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - uras da auscultaders, memorisadas localamain e eternalmain.</string>
+    <string name="settings_import_confirm_title">substituir tut las datas?</string>
+    <string name="settings_import_confirm_body">l\'importaziun da questo backup tschuna mintga apparat, pair e sessiun memorisà actualmain.</string>
+
+    <string name="widget_lifetime_label">ylih · durada</string>
+    <string name="widget_lifetime_description">uras per pair, cun ina cuntaura viva</string>
+    <string name="widget_activity_label">ylih · activitad</string>
+    <string name="widget_activity_description">uras da mintga pair insembel, pli güsauas, 7 dis e 30 dis</string>
+    <string name="widget_chart_label">ylih · 30 dis</string>
+    <string name="widget_chart_description">uras giurnodas durant ils ultims 30 dis</string>
+
+    <string name="action_save">memorar</string>
+    <string name="action_cancel">annullar</string>
+    <string name="action_delete">tschunar</string>
+    <string name="action_import">importar</string>
+
+    <string name="channel_tracking">tracciament da auscultaders</string>
+    <string name="channel_tracking_description">mussa durant che ylih traccia auscultaders cun fil e reproducziun. android na rapporta betg events da plug cun fil a apps che betg fungnuschclavan.</string>
+    <string name="notification_title">tracciament da temp d\'auscultaders</string>
+    <string name="notification_starting">cumenchia…</string>
+    <string name="notification_idle">s\'aspetta auscultaders</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d connectà · %2$s</item>
+        <item quantity="other">%1$d connectà · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d connectà · %2$s · reproducziun</item>
+        <item quantity="other">%1$d connectà · %2$s · reproducziun</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">quella cumpilada ha access bluetooth necessari ancha che po tracciair auscultaders cun fil</string>
+    <string name="export_done">backup exportà</string>
+    <string name="export_failed">exportaziun fallida</string>
+    <string name="import_failed">importaziun fallida</string>
+    <string name="edit_failed">na pudeva betg memorar quella midada</string>
+    <string name="error_could_not_open">na pudeva betg avrir %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">importada %d sessiun</item>
+        <item quantity="other">importadas %d sessiuns</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sessiun</item>
+        <item quantity="other">%d sessiuns</item>
+    </plurals>
+</resources>

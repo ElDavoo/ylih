@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Prussian. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - twai laips in ausim</string>
+
+    <string name="nav_headphones">ausai</string>
+    <string name="nav_stats">statistikans</string>
+    <string name="nav_settings">konfigūras</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audijas</string>
+    <string name="kind_wired">wārtis</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">nenatikis</string>
+
+    <string name="welcome_title">wailydom in ylih</string>
+    <string name="welcome_intro">ylih sēmay kaigi ausims gals astātun, kad tu metai pēc tu gal ainastu: kaigi stundas tays asteitun?</string>
+    <string name="welcome_point_auto_title">konnektay ir fargisey</string>
+    <string name="welcome_point_auto_body">bluetooth ausai sēmaytons antaisistikkai, nūn tay konnektaynt. nikas nai sūttan rutunti.</string>
+    <string name="welcome_point_lifetime_title">viens ausas pāra, viens laips</string>
+    <string name="welcome_point_lifetime_body">kai ausas pāra miray, atistaiti: tas totals freizay un nagstas ausas pāra ēnaskaitun nuł.</string>
+    <string name="welcome_point_detailed_title">wārti ir skaitunas</string>
+    <string name="welcome_point_detailed_body">detalize skaitunas, in konfigūras, adda wārtis ir mety kaigi dēls skaitunas.</string>
+    <string name="welcome_privacy">wiss astāy in ti telefon. nai konta, ir app nai interneta laiby.</string>
+    <string name="welcome_start">pražieyti</string>
+    <string name="welcome_next">nagstas</string>
+    <string name="welcome_allow">duoti</string>
+    <string name="welcome_step">skaits %1$d iš %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth access</string>
+    <string name="welcome_bluetooth_why">android tik saky app kuri bluetooth device konnektay, ir kā tis skaitun, kai app tūri bluetooth access. tis kaigi ylih skayty ausas pāra iš auto stereo, ir kaigi it žiny viens ausas pāra iš antras.</string>
+    <string name="welcome_bluetooth_with">su tuo: katra ausas pāra sēmaytons nūn it konnektay, su nikas nai rutunti ir nikas musti primienti tu paspausti.</string>
+    <string name="welcome_bluetooth_without">be tuo: nai bluetooth ausai sēmaytons vis. likti app darbay, ir tu gali duoti jis vēliau in android\'s app konfigūras.</string>
+    <string name="welcome_notifications_title">notifikacijas</string>
+    <string name="welcome_notifications_why">detalize skaitunas dirba mazu fona servisa, ir android prasa kai app darunti tā tūri notifikaciją vidēti kol tis darba.</string>
+    <string name="welcome_notifications_with">su tuo: notifikacija parydy kā sēmaytnā jūrin, kuri tis vienā ženkls detalize skaitunas gīva.</string>
+    <string name="welcome_notifications_without">be tuo: detalize skaitunas vis dirba ir vis sēmayta. android jūst nai parydy jis notifikaciją.</string>
+    <string name="hibernation_title">tūrēti skaityti kai tu fargisey</string>
+    <string name="hibernation_body">android pausay apps kuri neper atidary manis mēnešus ir paymay jų laiby, kuri palikt ylih sēmayti nikas. būti fargisey apie tis app jūst dēl, tis verts tu isłūčiti dabar.</string>
+    <string name="action_not_now">nau dabar</string>
+
+    <string name="devices_in_use">naudunti</string>
+    <string name="devices_retired">pensēti</string>
+    <string name="devices_empty_title">nai ausim dar</string>
+    <string name="devices_empty_body">konnektay bluetooth ausas pāra ir tay atparydy čia. wārti ausai prireikty detalize skaitunas, in konfigūras.</string>
+    <string name="devices_generation">pāra #%1$d</string>
+    <string name="devices_retired_on">pensēti %1$s</string>
+    <string name="devices_connected_for">konnektay %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">visos ausai</string>
+    <string name="stats_sessions_since">%1$s nūn %2$s</string>
+    <string name="stats_today">šiandien</string>
+    <string name="stats_last_7">paskutinis 7 dienas</string>
+    <string name="stats_last_30">paskutinis 30 dienų</string>
+    <string name="stats_average_session">vidutinis sesija</string>
+    <string name="stats_longest_session">ilgyčiausias sesija</string>
+    <string name="stats_playing">audijas dirba</string>
+    <string name="stats_measured_span">mety dēl skaitunas</string>
+    <string name="stats_share">dirba dalins</string>
+    <string name="stats_playback_only_note">skaityti dirba laiką tik</string>
+    <string name="stats_daily_hours_30">dienavandinės (30 dienų)</string>
+    <string name="stats_by_pair">pagal pāra</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · pensēti</string>
+    <string name="chart_max">%1$s maksimalus</string>
+
+    <string name="pair_fallback_title">pāra</string>
+    <string name="pair_back">atgal</string>
+    <string name="pair_more">daugiau</string>
+    <string name="pair_menu_rename">pervadinti</string>
+    <string name="pair_menu_purchase">pirmo info</string>
+    <string name="pair_menu_retire">pensėti / pakeittas</string>
+    <string name="pair_menu_delete">trinti</string>
+    <string name="pair_lifetime">gyvavimas šitam pāra</string>
+    <string name="pair_retired_on">pensēti %1$s</string>
+    <string name="pair_retired_with_reason">pensēti %1$s · %2$s</string>
+    <string name="pair_connected_now">konnektay dabar · %1$s</string>
+    <string name="pair_sessions">sesijas</string>
+    <string name="pair_average">vidutinis</string>
+    <string name="pair_longest">ilgyčiausias</string>
+    <string name="pair_since">nūn %1$s</string>
+    <string name="pair_of_measured">dirba dalins</string>
+    <string name="pair_measured">mety dēl skaitunas</string>
+    <string name="pair_paid">mokēty</string>
+    <string name="pair_per_hour">per valandą</string>
+    <string name="pair_bought">pirmas</string>
+    <string name="pair_daily_hours_14">dienavandinės (14 dienų)</string>
+    <string name="pair_rename_title">pervadinti pāra</string>
+    <string name="pair_rename_label">vardas</string>
+    <string name="pair_retire_title">pensėti tī pāra</string>
+    <string name="pair_retire_label">priežastis (mirė, pardotas, prarastas…)</string>
+    <string name="pair_retire_confirm">pensėti</string>
+    <string name="pair_retire_supporting">totals freizay čia. nagstas konnektay tis pats device pradėty nauja pāra iš nulė.</string>
+    <string name="pair_price_title">kaina mokėta</string>
+    <string name="pair_price_label">suma (sveiki vienetai)</string>
+    <string name="pair_price_supporting">nauduntas dēl kasto-per-valandą skaitymas.</string>
+    <string name="pair_delete_title">trinti tī pāra?</string>
+    <string name="pair_delete_body">kiekvienas sesija sēmaytas dēl jis tringtas ir. tis negalima atistaiti.</string>
+
+    <string name="session_ongoing">tęstis</string>
+    <string name="session_until">iki %1$s</string>
+    <string name="session_playing">%1$s dirba</string>
+    <string name="session_recovered">atsikūrė</string>
+
+    <string name="settings_tracking">skaitunas</string>
+    <string name="settings_detailed_title">detalize skaitunas</string>
+    <string name="settings_detailed_body">adda wārti ausai ir dirba laiką. android tik raporty wārti iš plug įvykis į dirba app, tis tūri tylumos notifikaciją in šėnyje. bluetooth skaitytas abiem būdu.</string>
+    <string name="settings_detailed_unavailable">neprieinama kol bluetooth access duotas: tis build tik deklaruota connectedDevice serviso tipas, kuris android 14+ sety bluetooth laiby.</string>
+    <string name="settings_playback_only_title">skaityti tik dirba</string>
+    <string name="settings_playback_only_body">statistikans skaityti audijas skaitytas vieta iš konnektay laiko. tik sesijas sēmaytas su detalize skaitunas on mety dirba; likti palikt iš.</string>
+    <string name="settings_language">kalba</string>
+    <string name="settings_language_system">sistemos kalba</string>
+    <string name="settings_devices">prietaisai</string>
+    <string name="settings_devices_body">nečekinti kas nai ausai - auto stereo ar kalbėtojas - tūrėti skaityti jis.</string>
+    <string name="settings_device_subtitle">%1$s · pirmasis matyta %2$s</string>
+    <string name="settings_data">duomenys</string>
+    <string name="settings_export">eksporty json</string>
+    <string name="settings_import">importy</string>
+    <string name="settings_import_warning">importy keičia viską dabar saugota.</string>
+    <string name="settings_troubleshooting">šalinimas</string>
+    <string name="settings_battery_body">jei sesijas stoti sėmaytos, patikrinti kad ylih nai iš batarėjų optimizacijas - app kuris buvo force-stopt niekad negavai konnektay transliacijas kol atidary.</string>
+    <string name="settings_battery_button">batarėjos nustatymai</string>
+    <string name="settings_battery_path">nustatymai → apps → ylih → batarėja → neribojama.</string>
+    <string name="settings_hibernation_body">jei ylih neper atidary manis mėnešus, android pausay ir paymay laiby, ir nikas sėmaytas kol tu atidary. išjungti tā leidžia pāra tūrėti skaityti per sezoną tu niekad negalvoji apie app.</string>
+    <string name="settings_hibernation_on">android gali pausay ylih.</string>
+    <string name="settings_hibernation_off">ylih yra immune ir tūri skaityti.</string>
+    <string name="settings_hibernation_button">nenaudoti app nustatymai</string>
+    <string name="settings_about">apie</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - ausas valandos, saugota lokaliai ir amžinai.</string>
+    <string name="settings_import_confirm_title">keisti viską duomenys?</string>
+    <string name="settings_import_confirm_body">importy tis backup tringa kiekvienas prietaisas, pāra ir sesija saugota dabar.</string>
+
+    <string name="widget_lifetime_label">ylih · gyvavimas</string>
+    <string name="widget_lifetime_description">valandos per pāra, su live timeriu kai konnektay</string>
+    <string name="widget_activity_label">ylih · veiklas</string>
+    <string name="widget_activity_description">kiekvienas pāra valandos kartu, plius šiandien, 7 dienas ir 30 dienų</string>
+    <string name="widget_chart_label">ylih · 30 dienų</string>
+    <string name="widget_chart_description">dienavandinės per paskutinius 30 dienų</string>
+
+    <string name="action_save">saugoti</string>
+    <string name="action_cancel">atšaukti</string>
+    <string name="action_delete">trinti</string>
+    <string name="action_import">importy</string>
+
+    <string name="channel_tracking">ausas skaitunas</string>
+    <string name="channel_tracking_description">parydy kai ylih žūri wārti ausai ir dirba. android nai translate wārti iš plug įvykis apps kuris nai dirba.</string>
+    <string name="notification_title">skaityti ausas laiką</string>
+    <string name="notification_starting">pradėty…</string>
+    <string name="notification_idle">tikėty ausai</string>
+    <plurals name="notification_active">
+        <item quantity="zero">%1$d konnektay · %2$s</item>
+        <item quantity="one">%1$d konnektay · %2$s</item>
+        <item quantity="other">%1$d konnektay · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="zero">%1$d konnektay · %2$s · dirba</item>
+        <item quantity="one">%1$d konnektay · %2$s · dirba</item>
+        <item quantity="other">%1$d konnektay · %2$s · dirba</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">tis build prireikty bluetooth access kol jis gali skaityti wārti ausai</string>
+    <string name="export_done">backup eksportyta</string>
+    <string name="export_failed">eksporty nepavyko</string>
+    <string name="import_failed">importy nepavyko</string>
+    <string name="edit_failed">negalima saugoti tī pakeitą</string>
+    <string name="error_could_not_open">negalima atidary %1$s</string>
+    <plurals name="import_done">
+        <item quantity="zero">importyta %d sesijas</item>
+        <item quantity="one">importyta %d sesija</item>
+        <item quantity="other">importyta %d sesijas</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="zero">%d sesijas</item>
+        <item quantity="one">%d sesija</item>
+        <item quantity="other">%d sesijas</item>
+    </plurals>
+</resources>
