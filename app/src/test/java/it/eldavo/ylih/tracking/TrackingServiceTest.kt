@@ -11,6 +11,7 @@ import androidx.work.WorkManager
 import androidx.work.testing.WorkManagerTestInitHelper
 import it.eldavo.ylih.R
 import it.eldavo.ylih.YlihApp
+import it.eldavo.ylih.data.DeviceEntity
 import it.eldavo.ylih.data.DeviceIdentity
 import it.eldavo.ylih.data.DeviceKind
 import it.eldavo.ylih.data.SessionEntity
@@ -107,6 +108,30 @@ class TrackingServiceTest {
 
     private fun wired() =
         outputDevice(AudioDeviceInfo.TYPE_WIRED_HEADPHONES, productName = "Plugged in")
+
+    /**
+     * A Bluetooth output that is not headphones, for the ignore list to be about something.
+     *
+     * The audio stack's view of a device carries no class, so [AudioDevices.identityOf] cannot tell
+     * this from a headset the way the ACL broadcast's view can — which is exactly why unticking it
+     * in settings is the only thing that keeps it out, and why it still reaches the service.
+     */
+    private fun speaker() =
+        outputDevice(AudioDeviceInfo.TYPE_BLUETOOTH_A2DP, "XX:XX:XX:XX:11:22", "Kitchen speaker")
+
+    /** Untick a device in Settings › devices, before it has ever been seen. */
+    private fun ignore(device: AudioDeviceInfo) = runBlocking {
+        val identity = checkNotNull(AudioDevices.identityOf(device))
+        db.deviceDao().insert(
+            DeviceEntity(
+                deviceKey = identity.key,
+                kind = identity.kind,
+                defaultName = identity.name,
+                firstSeenAt = app.container.clock.now(),
+                ignored = true,
+            ),
+        )
+    }
 
     /** The service's work is launched on the main looper and finished on Room's own threads. */
     private fun settle(what: String = "the service to catch up", until: () -> Boolean) {
@@ -489,6 +514,72 @@ class TrackingServiceTest {
         val onBuds = settled("what the pair coming off holds") { sessions().first().playingMs!! }
         assertTrue("$onBuds is no more than the $atLastTick it held at the last tick", onBuds > atLastTick)
         assertEquals("and none of it landed on the pair coming on", 0L, sessions().last().playingMs)
+    }
+
+    /**
+     * The other half of the swap above, which is where the target used to be stranded.
+     *
+     * Unplugging the pair that holds it left it cleared with nothing to take over, so a pair that
+     * had never gone anywhere stopped being measured — silently, with its session still open and
+     * its connected time still counting. Nothing would say so again either: the audio callback only
+     * reports *changes* after its first delivery, so the buds were unmeasured until they were
+     * disconnected and reconnected.
+     */
+    @Test
+    fun `unplugging one of two pairs leaves the other still measured`() {
+        shadowOf(audioManager).setIsMusicActive(true)
+        start()
+        connect(buds())
+        settle("the first session to open") { sessions().isNotEmpty() }
+
+        connect(wired())
+        settle("the second session to open") { sessions().size == 2 }
+        disconnect(wired())
+        settle("the wired session to close") { sessions().count { it.disconnectedAt != null } == 1 }
+
+        // The one still open is the buds', by position rather than by index: the two connects can
+        // land in the same millisecond, and `getAll` orders by `connectedAt`, so `first()` is a
+        // coin toss between them.
+        val buds = { sessions().single { it.disconnectedAt == null } }
+        val onBuds = settled("what the buds hold once the wired pair is gone") { buds().playingMs!! }
+        playUntickedFor(50)
+        settleAcrossTicks("the buds to go on being credited") { buds().playingMs!! > onBuds }
+    }
+
+    /**
+     * A device unticked in Settings › devices opens no session, so it has nothing to be credited —
+     * and taking the playback target anyway left whatever *was* playing unmeasured for as long as
+     * it stayed connected. A car stereo, which is the case the ignore list is written for, holds it
+     * for a whole drive.
+     */
+    @Test
+    fun `a device the user ignores does not take playback off the pair that is playing`() {
+        shadowOf(audioManager).setIsMusicActive(true)
+        ignore(speaker())
+        start()
+        connect(buds())
+        settle("the session to open") { sessions().isNotEmpty() }
+        // Proof the buds are being measured at all before the speaker arrives; without it this
+        // could pass on a service that never credited anything.
+        creditedAtLastTick()
+
+        connect(speaker())
+        assertEquals(
+            "the ignored device records nothing",
+            1,
+            settled("the session count") { sessions().size },
+        )
+
+        // Read *after* the speaker is on, not before: the connect banks the slice accrued up to
+        // that moment to the buds either way, so a baseline taken earlier is cleared by the very
+        // edge this test is about and the assertion passes without measuring anything.
+        val onBuds = settled("what the buds hold once the speaker is on") {
+            sessions().single().playingMs!!
+        }
+        playUntickedFor(50)
+        settleAcrossTicks("the buds to go on being credited") {
+            sessions().single().playingMs!! > onBuds
+        }
     }
 
     @Test

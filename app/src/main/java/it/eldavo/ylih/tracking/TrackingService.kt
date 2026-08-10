@@ -49,8 +49,24 @@ class TrackingService : LifecycleService() {
     private val audioManager: AudioManager by lazy { getSystemService(AudioManager::class.java) }
     private val handler = Handler(Looper.getMainLooper())
 
-    /** Playback is credited to the most recently connected pair. */
-    private var playbackTargetKey: String? = null
+    /**
+     * The keys with a session open, oldest first — playback is credited to the last of them.
+     *
+     * A list rather than the single "most recently connected" key it used to be, because that key
+     * was a latch with two ways of being stranded, and a stranded one stops playback being measured
+     * at all while the session it belongs to goes on looking perfectly normal. A pair connecting
+     * took it *whether or not a session had been opened for it*, so an ignored device — a car
+     * stereo, the thing the ignore list is for — held it for the whole drive and credited every
+     * slice to a pair that has no open session to write to. And the pair holding it disconnecting
+     * cleared it with nothing to take over, so unplugging wired headphones while Bluetooth ones
+     * were still on left them unmeasured until they were disconnected and reconnected: the audio
+     * callback only reports *changes* after the first delivery, so nothing would say so again.
+     *
+     * Keeping the whole set makes both cases the same one line — a key is in here exactly while it
+     * has a session to credit, and the newest one that still does is the target.
+     */
+    private val playbackTargets = mutableListOf<String>()
+    private val playbackTargetKey: String? get() = playbackTargets.lastOrNull()
     private var playbackWatcher: PlaybackWatcher? = null
 
     /**
@@ -156,16 +172,21 @@ class TrackingService : LifecycleService() {
                     // call starts the clock where audio is already running — a service start, or
                     // that same swap — rather than leaving it to the first tick.
                     creditAccrued(playbackWatcher?.refresh(now) ?: 0L)
-                    container.repository.onConnected(identity, now, measurePlayback = true)
-                    playbackTargetKey = identity.key
+                    // Only a device that got a session becomes the target: `onConnected` returns
+                    // null for one the user has ignored, and there is nothing to credit those.
+                    if (container.repository.onConnected(identity, now, measurePlayback = true) != null) {
+                        playbackTargets.remove(identity.key)
+                        playbackTargets += identity.key
+                    }
                 } else {
                     if (playbackTargetKey == identity.key) {
                         // Before the close, and waited for: playback is credited to whatever
                         // session the pair has *open*, so a slice banked after the disconnect finds
                         // nothing to write to. That silently cost every session its last part-minute.
                         creditAccrued(playbackWatcher?.refresh(now) ?: 0L)
-                        playbackTargetKey = null
                     }
+                    // Dropped rather than cleared, so whatever else is still connected takes over.
+                    playbackTargets.remove(identity.key)
                     container.repository.onDisconnected(identity.key, now)
                 }
             }
