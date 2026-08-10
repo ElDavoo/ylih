@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Sango. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - sûa mo ti aûzo</string>
+
+    <string name="nav_headphones">aûzo</string>
+    <string name="nav_stats">zali</string>
+    <string name="nav_settings">sogandá</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">fîlo</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">tî sô</string>
+
+    <string name="welcome_title">welekô na ylih</string>
+    <string name="welcome_intro">ylih ro gbalá ngö ti ndâ mo kobo mo tongana, ndeke ngö mo, o gba ti kûê su ala sali sô ti kobo: sa mbi fâ?</string>
+    <string name="welcome_point_auto_title">tangâ na kwalâ</string>
+    <string name="welcome_point_auto_body">aûzo bluetooth ro gbalá kobo mo na sâ, dé kango mo tî ko kwê. alema li tî kwalâ.</string>
+    <string name="welcome_point_lifetime_title">kobo moi, sûa mo</string>
+    <string name="welcome_point_lifetime_body">kobo mo tî kü, sô î: sûa mo za dé na lokö. kobo tî aûzo mo tî ko sândi ndë dé.</string>
+    <string name="welcome_point_detailed_title">fîlo na kô timá</string>
+    <string name="welcome_point_detailed_body">gbalá zali, na sogandá, ra fîlo na kô timá nda ngö tî gé tî ko timá.</string>
+    <string name="welcome_privacy">alema za, mobî mo sô. bangi tî sô, na app yî internet sogandá tî sô.</string>
+    <string name="welcome_start">tandá</string>
+    <string name="welcome_next">sânda</string>
+    <string name="welcome_allow">yê</string>
+    <string name="welcome_step">pâsi %1$d ti %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth sogandá</string>
+    <string name="welcome_bluetooth_why">android ro tî app mo: ndâ mo ni kobo moi, nde fâ mo, sô app mo yî bluetooth sogandá. ylih ro gba kobo moï ti fâ mo likolo moi, nde sô kobo moi moi ti sânda.</string>
+    <string name="welcome_bluetooth_with">na î: kobo kûê ro gbalá kobo mo na sâ, dé alema tî sô na alema kwalâ tî sô.</string>
+    <string name="welcome_bluetooth_without">na tî sô: aûzo bluetooth tî sô gbalá kobo. app yî ko âla, na o gba yê îko sânda na app sogandá.</string>
+    <string name="welcome_notifications_title">kô</string>
+    <string name="welcome_notifications_why">gbalá zali ro sûa mobï app tî ko gwegwe, nde android ro app kûê tî kwalâ kô mo.</string>
+    <string name="welcome_notifications_with">na î: kô ro kà ndâ tî gbalá dé, nde ylih yî ko tî gwegwe.</string>
+    <string name="welcome_notifications_without">na tî sô: gbalá zali kwalâ na gbalá. android ra kô tî ko sô.</string>
+    <string name="hibernation_title">gbalá sûa ndeke tî kwalâ</string>
+    <string name="hibernation_body">android ro app tî kü ndeke tî kwalâ na sânda sogandá, kîla ylih ra gbalá alema jiraw. ylih yî ko tî dé, kul kûê tî ko dé.</string>
+    <string name="action_not_now">sani tî sô</string>
+
+    <string name="devices_in_use">tî ko</string>
+    <string name="devices_retired">kü</string>
+    <string name="devices_empty_title">aûzo tî sô</string>
+    <string name="devices_empty_body">bluetooth aûzo tangâ kûê i ko zali. fîlo aûzo nda gbalá zali, na sogandá.</string>
+    <string name="devices_generation">kobo #%1$d</string>
+    <string name="devices_retired_on">kü %1$s</string>
+    <string name="devices_connected_for">tangâ %1$s</string>
+    <string name="devices_recent">%1$s / zêni 7</string>
+
+    <string name="stats_title">aûzo kûê</string>
+    <string name="stats_sessions_since">%1$s dé %2$s</string>
+    <string name="stats_today">doni</string>
+    <string name="stats_last_7">zêni 7 tî kera</string>
+    <string name="stats_last_30">zêni 30 tî kera</string>
+    <string name="stats_average_session">gbalá senti</string>
+    <string name="stats_longest_session">gbalá tali</string>
+    <string name="stats_playing">timá tî ko</string>
+    <string name="stats_measured_span">timá tî gbalá</string>
+    <string name="stats_share">timá tî gbalá</string>
+    <string name="stats_playback_only_note">timá kûê ro gbalá</string>
+    <string name="stats_daily_hours_30">ngö kûê (zêni 30)</string>
+    <string name="stats_by_pair">kobo mo mo</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · kü</string>
+    <string name="chart_max">%1$s tali</string>
+
+    <string name="pair_fallback_title">kobo</string>
+    <string name="pair_back">sânda</string>
+    <string name="pair_more">ganda</string>
+    <string name="pair_menu_rename">famene sânda</string>
+    <string name="pair_menu_purchase">kô kobo</string>
+    <string name="pair_menu_retire">kü / sânda</string>
+    <string name="pair_menu_delete">dele</string>
+    <string name="pair_lifetime">kobo mo sûa</string>
+    <string name="pair_retired_on">kü %1$s</string>
+    <string name="pair_retired_with_reason">kü %1$s · %2$s</string>
+    <string name="pair_connected_now">tangâ doni · %1$s</string>
+    <string name="pair_sessions">gbalá</string>
+    <string name="pair_average">senti</string>
+    <string name="pair_longest">tali</string>
+    <string name="pair_since">dé %1$s</string>
+    <string name="pair_of_measured">timá tî gbalá</string>
+    <string name="pair_measured">timá tî gbalá</string>
+    <string name="pair_paid">kô</string>
+    <string name="pair_per_hour">na ngö mo</string>
+    <string name="pair_bought">bili</string>
+    <string name="pair_daily_hours_14">ngö kûê (zêni 14)</string>
+    <string name="pair_rename_title">kobo mo famene sânda</string>
+    <string name="pair_rename_label">famene</string>
+    <string name="pair_retire_title">kobo mo kü</string>
+    <string name="pair_retire_label">nzambi (kü, bili, lala...)</string>
+    <string name="pair_retire_confirm">kü</string>
+    <string name="pair_retire_supporting">sûa mo za dé lokö. ndâ mo tî ko sândi, kobo kula gua mo dé.</string>
+    <string name="pair_price_title">kô tî ko</string>
+    <string name="pair_price_label">zali (mobu mo)</string>
+    <string name="pair_price_supporting">tî ko na sûa ngö mo.</string>
+    <string name="pair_delete_title">kobo mo dele?</string>
+    <string name="pair_delete_body">gbalá kûê dé dele. na tî ko sândi.</string>
+
+    <string name="session_ongoing">kwalâ</string>
+    <string name="session_until">jiraw %1$s</string>
+    <string name="session_playing">%1$s timá</string>
+    <string name="session_recovered">sânda</string>
+
+    <string name="settings_tracking">gbalá</string>
+    <string name="settings_detailed_title">gbalá zali</string>
+    <string name="settings_detailed_body">fîlo na timá kô tî jara. android fîlo bozo ra app tî ko tî gbalá, kul kô tî gwegwe. bluetooth gbalá kûê.</string>
+    <string name="settings_detailed_unavailable">bluetooth sogandá jiraw: app yî connectedDevice tî ko, android 14+ bluetooth sogandá tî ko.</string>
+    <string name="settings_playback_only_title">timá kûê gbalá</string>
+    <string name="settings_playback_only_body">zali ro timá kûê gbalá, ti tangâ. gbalá zali ro timá tî gbalá; ganda tî sô.</string>
+    <string name="settings_language">lingala</string>
+    <string name="settings_language_system">dijis lingala</string>
+    <string name="settings_devices">dijis</string>
+    <string name="settings_devices_body">dijis gî tî sô - aûzo tî sô - dele. stereo dijis wala karti tî sô.</string>
+    <string name="settings_device_subtitle">%1$s · kera %2$s</string>
+    <string name="settings_data">alama</string>
+    <string name="settings_export">json sânda</string>
+    <string name="settings_import">jara</string>
+    <string name="settings_import_warning">jara ro alama kûê dele.</string>
+    <string name="settings_troubleshooting">alama</string>
+    <string name="settings_battery_body">gbalá tî sô, ylih na battery kele tî sô. app kü ro broacast tî sô i jiraw.</string>
+    <string name="settings_battery_button">battery sogandá</string>
+    <string name="settings_battery_path">sogandá - dijis - ylih - battery - unlimited.</string>
+    <string name="settings_hibernation_body">ylih tî kü ndeke, android na kü nde sogandá sânda, alama tî sô gbalá i jiraw. kü dé a kobo ga kulu gbalá.</string>
+    <string name="settings_hibernation_on">android na ylih kü no.</string>
+    <string name="settings_hibernation_off">ylih kü tî sô nde kulu gbalá.</string>
+    <string name="settings_hibernation_button">app kera sogandá</string>
+    <string name="settings_about">kô mo</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — aûzo ngö, mobî ga kulu.</string>
+    <string name="settings_import_confirm_title">alama kûê sânda?</string>
+    <string name="settings_import_confirm_body">jara sânda ro dijis, kobo nda gbalá kûê dele.</string>
+
+    <string name="widget_lifetime_label">ylih · sûa</string>
+    <string name="widget_lifetime_description">ngö na kobo, tangâ ga kulu</string>
+    <string name="widget_activity_label">ylih · tî ko</string>
+    <string name="widget_activity_description">kobo kûê ngö, doni, zêni 7 nda zêni 30</string>
+    <string name="widget_chart_label">ylih · zêni 30</string>
+    <string name="widget_chart_description">ngö zêni 30 tî kera</string>
+
+    <string name="action_save">kafa</string>
+    <string name="action_cancel">kale</string>
+    <string name="action_delete">dele</string>
+    <string name="action_import">jara</string>
+
+    <string name="channel_tracking">aûzo gbalá</string>
+    <string name="channel_tracking_description">ylih tî gbalá fîlo nda timá. android broacast tî sô gbalá app tî sô.</string>
+    <string name="notification_title">aûzo ngö gbalá</string>
+    <string name="notification_starting">tandá...</string>
+    <string name="notification_idle">aûzo nda jabu</string>
+    <plurals name="notification_active">
+        <item quantity="other">%1$d tangâ · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="other">%1$d tangâ · %2$s · timá</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">app yî bluetooth sogandá jiraw fîlo gbalá</string>
+    <string name="export_done">jara sânda</string>
+    <string name="export_failed">sânda woro</string>
+    <string name="import_failed">jara woro</string>
+    <string name="edit_failed">kaara sânda tî sô</string>
+    <string name="error_could_not_open">%1$s bure tî sô</string>
+    <plurals name="import_done">
+        <item quantity="other">%d gbalá jara</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="other">%d gbalá</item>
+    </plurals>
+</resources>

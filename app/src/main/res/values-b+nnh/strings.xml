@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Ngiemboon. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - a ghɔ ghɔ mɛ ghiɛ e kopɛfoŋ</string>
+
+    <string name="nav_headphones">kopɛfoŋ</string>
+    <string name="nav_stats">a shyɔ</string>
+    <string name="nav_settings">a kəbuʔ</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">a kɔ̀ kə</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">a khɛ̌ shɛ</string>
+
+    <string name="welcome_title">a tə yi kəti ylih</string>
+    <string name="welcome_intro">ylih a kə shyɔ kɛ̀ a shɛ ghɔ ghɔ wɛt ghɛ ŋkəlɛ nka, mɛ̌n ghə u də yə a ghɔ ghɔ ŋ yi kə kə kəti nka - a shɛ ghɔ ghɔ wɛt mə?</string>
+    <string name="welcome_point_auto_title">ŋkəlɛ nka hə ŋkɔ bə</string>
+    <string name="welcome_point_auto_body">bluetooth kopɛfoŋ ŋ shyɔ təŋ, ghə a shɛ ghɔ ghɔ a ŋkəlɛ. khɛ̌ ghə lɛŋ a kɛ.</string>
+    <string name="welcome_point_lifetime_title">ghɔ ghɔ kɔ̀, ghiɛ kɔ̀</string>
+    <string name="welcome_point_lifetime_body">ghə a ghɔ ghɔ a bə, u nkɔ nka: a tɔn a kə nuŋ nka, hə a ghɔ ghɔ yi tən ghɛ a kɔ̀ nka.</string>
+    <string name="welcome_point_detailed_title">a kɔ̀ kə hə a shɛ</string>
+    <string name="welcome_point_detailed_body">a shyɔ mi kə, a kəbuʔ nka, ŋ jɔŋ a kɔ̀ kə kopɛfoŋ hə ŋ pə kɛ̀ kɛ̀ nka a shɛ wɛt a kə.</string>
+    <string name="welcome_privacy">ghə wɛt ŋ duŋ a tɔfɔn nka. khɛ̌ kɔ̀ ŋ nka, hə app nɛ khɛ̌ internet kə.</string>
+    <string name="welcome_start">tə gə kəti</string>
+    <string name="welcome_next">tən</string>
+    <string name="welcome_allow">duŋ</string>
+    <string name="welcome_step">step %1$d mɛ %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth kə</string>
+    <string name="welcome_bluetooth_why">android a tə yi app nka kɛ̌ bluetooth tɔsə a ŋkəlɛ, hə kɛ̌ a bə ghɔŋ, ghə app a khə bluetooth kə. ghə kə kəbɛ ylih ə mə ghə a ghɔ ghɔ kopɛfoŋ ghə a ghɔ ghɔ melò, hə kə bə tə ghə a ghɔ ghɔ kɔ̀ ghə a kɔ̀ yi.</string>
+    <string name="welcome_bluetooth_with">a ghə nka: ghɔ ghɔ kɔ̀ ŋ shyɔ ghə a shɛ ghɔ ghɔ a ŋkəlɛ, khɛ̌ ŋ lɛŋ a kə, khɛ̌ ŋ tuŋ a kə.</string>
+    <string name="welcome_bluetooth_without">khɛ̌ a ghə nka: bluetooth kopɛfoŋ khɛ̌ shyɔ tə. a tən app ŋ kɛ gə, hə u ŋ kə ghə nka android app kəbuʔ nka.</string>
+    <string name="welcome_notifications_title">a kəfu</string>
+    <string name="welcome_notifications_why">a shyɔ mi kə ŋ kə a sə tɔŋ kə, hə android a bə ghə app wɛt ŋ kə nka u duŋ a kəfu a ghə a ghɛ a ghə nka.</string>
+    <string name="welcome_notifications_with">a ghə nka: a kəfu a kə shɔ kɛ̌ wɛt a shyɔ a tɛ nka, ghə kə sɛ kə a shyɔ mi kə a lɛ gə.</string>
+    <string name="welcome_notifications_without">khɛ̌ a ghə nka: a shyɔ mi kə ŋ lɛŋ kə hə shyɔ gə. android a tə yi a kəfu nka.</string>
+    <string name="hibernation_title">tə pə a shɛ a ghə u bə nka</string>
+    <string name="hibernation_body">android a kə ghə app wɛt ŋ kɔ ghə mə tə nka, hə ŋ tɔ a kə, ghə ylih khɛ̌ shyɔ kə ghə u kɔ a ghə nka. a bə nka ghə kə ghə ghə app nka, kə u kə a ghə nka.</string>
+    <string name="action_not_now">khɛ̌ a ghə</string>
+
+    <string name="devices_in_use">a kə</string>
+    <string name="devices_retired">a nkɔ</string>
+    <string name="devices_empty_title">khɛ̌ kopɛfoŋ tə</string>
+    <string name="devices_empty_body">ŋkəlɛ a ghɔ ghɔ bluetooth kopɛfoŋ, hə ŋ gə a ghə nka. a kɔ̀ kə kopɛfoŋ bə a shyɔ mi kə, a kəbuʔ nka.</string>
+    <string name="devices_generation">ghɔ ghɔ #%1$d</string>
+    <string name="devices_retired_on">a nkɔ %1$s</string>
+    <string name="devices_connected_for">ŋkəlɛ %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">kopɛfoŋ wɛt</string>
+    <string name="stats_sessions_since">%1$s ghə %2$s</string>
+    <string name="stats_today">a tɛ</string>
+    <string name="stats_last_7">a tɛ 7 ŋgə</string>
+    <string name="stats_last_30">a tɛ 30 ŋgə</string>
+    <string name="stats_average_session">a kə mi</string>
+    <string name="stats_longest_session">a ghə kə</string>
+    <string name="stats_playing">audio a shɛ</string>
+    <string name="stats_measured_span">a pə a shɛ</string>
+    <string name="stats_share">a shɛ tə</string>
+    <string name="stats_playback_only_note">pə a shɛ tɛ tən</string>
+    <string name="stats_daily_hours_30">a tɛ nkɛp (30 ŋgə)</string>
+    <string name="stats_by_pair">ghɔ ghɔ mə</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · a nkɔ</string>
+    <string name="chart_max">%1$s kə</string>
+
+    <string name="pair_fallback_title">ghɔ ghɔ</string>
+    <string name="pair_back">ghə kə</string>
+    <string name="pair_more">tən</string>
+    <string name="pair_menu_rename">ghɔŋ ye</string>
+    <string name="pair_menu_purchase">kɛ̌ shyɔ</string>
+    <string name="pair_menu_retire">nkɔ / ye</string>
+    <string name="pair_menu_delete">kə</string>
+    <string name="pair_lifetime">ghɔ ghɔ ghiɛ a ghə nka</string>
+    <string name="pair_retired_on">a nkɔ %1$s</string>
+    <string name="pair_retired_with_reason">a nkɔ %1$s · %2$s</string>
+    <string name="pair_connected_now">ŋkəlɛ a tɛ · %1$s</string>
+    <string name="pair_sessions">kə</string>
+    <string name="pair_average">a kə mi</string>
+    <string name="pair_longest">a ghə</string>
+    <string name="pair_since">ghə %1$s</string>
+    <string name="pair_of_measured">a shɛ tə</string>
+    <string name="pair_measured">a pə a shɛ</string>
+    <string name="pair_paid">kə kə</string>
+    <string name="pair_per_hour">nkɛp kə</string>
+    <string name="pair_bought">kə</string>
+    <string name="pair_daily_hours_14">a tɛ nkɛp (14 ŋgə)</string>
+    <string name="pair_rename_title">ghɔ ghɔ ghɔŋ ye</string>
+    <string name="pair_rename_label">ghɔŋ</string>
+    <string name="pair_retire_title">ghɔ ghɔ nka nkɔ</string>
+    <string name="pair_retire_label">kɛ̌ (bə, kə, tɔ)</string>
+    <string name="pair_retire_confirm">nkɔ</string>
+    <string name="pair_retire_supporting">tɔn a ghə nka. tɔsə nka a ŋkəlɛ ghə ghɔ ghɔ yi tən ghə tə kəti.</string>
+    <string name="pair_price_title">kə kə kɛ̌</string>
+    <string name="pair_price_label">sum (kə nka)</string>
+    <string name="pair_price_supporting">kə a kə nkɛp kə kə nka.</string>
+    <string name="pair_delete_title">ghɔ ghɔ kə?</string>
+    <string name="pair_delete_body">kə wɛt a shyɔ a ghə nka ŋ kə gə. ghə khɛ̌ gə a ye nka.</string>
+
+    <string name="session_ongoing">a lɛŋ</string>
+    <string name="session_until">ghə %1$s</string>
+    <string name="session_playing">%1$s a shɛ</string>
+    <string name="session_recovered">a gə kəti</string>
+
+    <string name="settings_tracking">a shyɔ</string>
+    <string name="settings_detailed_title">a shyɔ mi kə</string>
+    <string name="settings_detailed_body">ŋ jɔŋ a kɔ̀ kə kopɛfoŋ hə a shɛ tɛ. android a tə yi a kɔ̀ kə tɔsə ghə app a lɛŋ nka, kə u duŋ a kəfu a ghuŋ nka. bluetooth a shyɔ kɛ̀.</string>
+    <string name="settings_detailed_unavailable">khɛ̌ gə ghə bluetooth kə a ghə nka: ghə bɛŋ nɛ connectedDevice tə kə tən, ghə android 14+ a bɛŋ ghə bluetooth kə.</string>
+    <string name="settings_playback_only_title">pə a shɛ tən</string>
+    <string name="settings_playback_only_body">shyɔ ŋ pə tɛ a shɛ tə ghə ŋkəlɛ tə. kə nka a shyɔ a ghə nka a pə a shɛ; tən khɛ̌ ghə.</string>
+    <string name="settings_language">wɛ</string>
+    <string name="settings_language_system">ghə wɛ</string>
+    <string name="settings_devices">tɔsə</string>
+    <string name="settings_devices_body">ye khɛ̌ kə ghə kopɛfoŋ khɛ̌ - melò or a sə - ghə shyɔ khɛ̌ kə.</string>
+    <string name="settings_device_subtitle">%1$s · ghə kɔ %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">import</string>
+    <string name="settings_import_warning">import ŋ ye ghə wɛt a ghə nka.</string>
+    <string name="settings_troubleshooting">a kə kəti</string>
+    <string name="settings_battery_body">ghə kə khɛ̌ shyɔ, kɔ ghə ylih khɛ̌ batteri kə - app a bə khɛ̌ khə khɛ̌ kə gə ghə u kɔ nka.</string>
+    <string name="settings_battery_button">batteri kəbuʔ</string>
+    <string name="settings_battery_path">kəbuʔ → app → ylih → batteri → khɛ̌ ghuŋ.</string>
+    <string name="settings_hibernation_body">ghə ylih khɛ̌ kɔ tə mə, android a kə nka hə ŋ tɔ a kə, hə khɛ̌ shyɔ kə ghə u kɔ nka. ghə u ghə nka ghə ghə a ghɔ ghɔ pə a shɛ ghə tɛ u khɛ̌ tuŋ app nka.</string>
+    <string name="settings_hibernation_on">android ŋ kə ylih nka.</string>
+    <string name="settings_hibernation_off">ylih khɛ̌ ghuŋ hə shyɔ.</string>
+    <string name="settings_hibernation_button">khɛ̌ kə app kəbuʔ</string>
+    <string name="settings_about">a ghə</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — kopɛfoŋ nkɛp, duŋ a tɔfɔn nka hə forever.</string>
+    <string name="settings_import_confirm_title">ye ghə wɛt a ghə nka?</string>
+    <string name="settings_import_confirm_body">import ghə kə ŋ ye tɔsə, ghɔ ghɔ, hə kə wɛt a ghə nka.</string>
+
+    <string name="widget_lifetime_label">ylih · ghiɛ</string>
+    <string name="widget_lifetime_description">nkɛp ghɔ ghɔ mə, a time lɛŋ ghə ŋkəlɛ nka</string>
+    <string name="widget_activity_label">ylih · a kə</string>
+    <string name="widget_activity_description">ghɔ ghɔ nkɛp kəti, plɔ a tɛ, 7 ŋgə, hə 30 ŋgə</string>
+    <string name="widget_chart_label">ylih · 30 ŋgə</string>
+    <string name="widget_chart_description">a tɛ nkɛp kə 30 ŋgə tən</string>
+
+    <string name="action_save">duŋ</string>
+    <string name="action_cancel">ye</string>
+    <string name="action_delete">kə</string>
+    <string name="action_import">import</string>
+
+    <string name="channel_tracking">kopɛfoŋ a shyɔ</string>
+    <string name="channel_tracking_description">gə a ghə ylih a wə a kɔ̀ kə kopɛfoŋ hə a shɛ. android khɛ̌ ye a kɔ̀ kə tɔsə ghə app khɛ̌ lɛŋ nka.</string>
+    <string name="notification_title">kopɛfoŋ tɛ a shyɔ</string>
+    <string name="notification_starting">tə ghɛ...</string>
+    <string name="notification_idle">wə kopɛfoŋ</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d ŋkəlɛ · %2$s</item>
+        <item quantity="other">%1$d ŋkəlɛ · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d ŋkəlɛ · %2$s · a shɛ</item>
+        <item quantity="other">%1$d ŋkəlɛ · %2$s · a shɛ</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">ghə bɛŋ bə bluetooth kə ghə a kɔ̀ kə kopɛfoŋ a shyɔ nka</string>
+    <string name="export_done">kə export</string>
+    <string name="export_failed">export kə</string>
+    <string name="import_failed">import kə</string>
+    <string name="edit_failed">khɛ̌ gə a ye nka</string>
+    <string name="error_could_not_open">khɛ̌ gə %1$s kɔ nka</string>
+    <plurals name="import_done">
+        <item quantity="one">import %d kə</item>
+        <item quantity="other">import %d kə</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d kə</item>
+        <item quantity="other">%d kə</item>
+    </plurals>
+</resources>

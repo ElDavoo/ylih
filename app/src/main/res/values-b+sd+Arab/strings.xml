@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Sindhi (Arabic). Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - توهان جي ڄاڻ ۾ هيڊ فون</string>
+
+    <string name="nav_headphones">هيڊ فون</string>
+    <string name="nav_stats">اعدادوشمار</string>
+    <string name="nav_settings">سيٽنگون</string>
+
+    <string name="kind_bluetooth">بلوٽوٿ</string>
+    <string name="kind_ble">ايل اي آڊيو</string>
+    <string name="kind_wired">تار سان</string>
+    <string name="kind_usb">يو ايس بي</string>
+    <string name="kind_unknown">نامعلوم</string>
+
+    <string name="welcome_title">ylih ۾ خوش آمديد</string>
+    <string name="welcome_intro">ylih رجسٽر ڪري ٿو ته هر جوڙي هيڊ فون ڪيترو وقت جڙي رهي ٿي، تنهن ڪري سالن بعد توهان اهو واحد سوال جواب ڏئي سگهو ٿا جو جوڙي بابت اهم آهي: اهي ڪتني ڪلاڪ رهي؟</string>
+    <string name="welcome_point_auto_title">ڳن ۽ وسري ويندا</string>
+    <string name="welcome_point_auto_body">بلوٽوٿ هيڊ فون خودڪار طور تي رجسٽر ٿيندا آهن، اڃ جي لمحي کان جڏهن اهي ڳ ٿين. ڪجهه ڪري ڇڏڻو نہ پوندو.</string>
+    <string name="welcome_point_lifetime_title">هڪ جوڙي، هڪ عمر</string>
+    <string name="welcome_point_lifetime_body">جڏهن هڪ جوڙي مري ويندي تڏهن اسان کي رٽائر ڪريو: اڃ جو ڪل جھليل ٿيل جاڏو ۽ ساڳيا هيڊ فون جي ايندڙ جوڙي صفر کان شروع ٿيندي.</string>
+    <string name="welcome_point_detailed_title">تار والا ۽ پلے بيڪ</string>
+    <string name="welcome_point_detailed_body">تفصيلي ٽريکنگ، سيٽنگون ۾، تار والا هيڊ فون شامل ڪري ٿي ۽ اندازو لڳاتي ٿي ته وقت جو ڪيترو حصو واقعي پلے ٿي رهيو ڇو.</string>
+    <string name="welcome_privacy">سڀ ڪجهه هن فون تي رهي ٿو. نه ڪوئي اکاؤنٽ آهي، ۽ اپليڪيشن کي انٽرنيٽ جي اجازت نہ آهي.</string>
+    <string name="welcome_start">شروع ڪريو</string>
+    <string name="welcome_next">اڳيون</string>
+    <string name="welcome_allow">اجازت ڏيو</string>
+    <string name="welcome_step">مرحلو %1$d کان %2$d</string>
+    <string name="welcome_bluetooth_title">بلوٽوٿ رسائي</string>
+    <string name="welcome_bluetooth_why">انڊرائيڈ ، صرف هڪ اپليڪيشن کي ٻڌائي ٿو ته ڪون سا بلوٽوٿ ڊيوائس جڙيو، ۽ اهو ڪہ ڪندو آهي، جيڪڏ اپليڪيشن بلوٽوٿ رسائي رکي. ائي اهو آهي ته ylih هڪ جوڙي هيڊ فون کي ڪار سٽيريو کان ڌميل ڪري ٿو، ۽ ائي اهو آهي ته اهو هڪ جوڙي کي ٻي جوڙي کان ڄاڻي ٿو.</string>
+    <string name="welcome_bluetooth_with">ان سان: هر جوڙي اڃ تي رجسٹر ٿيندي آهي جڏهن ائي جڙي ٿي، ڪجهه نہ ڇڙيل ۽ ڪجهه ياد ڏيڻو نہ پوندو.</string>
+    <string name="welcome_bluetooth_without">ان کان بغير: بلوٽوٿ هيڊ فون رجسٹر نہ ٿيندا. اپليڪيشن جو باقي حصو اڃ ڪم ڪري ٿو، ۽ توهان اسان کي بعد ۾ android جي سيٽنگون ۾ اجازت ڏئي سگهو ٿا.</string>
+    <string name="welcome_notifications_title">اطلاعات</string>
+    <string name="welcome_notifications_why">تفصيلي ٽريکنگ هڪ ننڍي پس منظر سروس چلائي ٿي، ۽ android جي ضرورت آهي ته کي اپليڪيشن جو اطلاع دينی ٿو جڏهن اهو ائي ڪري رهيو آهي.</string>
+    <string name="welcome_notifications_with">ان سان: اطلاع ظاهر ڪري ٿو ته اڃ ڪهڙو رجسٹر ٿي رهيو آهي، جيڪو واحد نشاني آهي ته تفصيلي ٽريکنگ جيندي آهي.</string>
+    <string name="welcome_notifications_without">ان کان بغير: تفصيلي ٽريکنگ ڪم ڪري ٿي ۽ رجسٹر ڪري ٿي. android صرف اطلاع ظاهر نہ ڪندو.</string>
+    <string name="hibernation_title">شمار ڪندو رهيو جڏهن توهان وسري ويو</string>
+    <string name="hibernation_body">انڈرائيڈ اپليڪيشنز کي روڪي ٿو جيڪو ڪجهه مهين کي نہ کھليا وڃي ۽ انهن جون اجازتون واپس ڪري ٿي، جيڪا ylih کي ڪجهه به رجسٹر نہ ڪرڻ تک ڇڏي ويندو جڏهن تائين توهان اسان کو نہ کھولو. وسرجڻو بالڪل اهو آهي جنهن لاء اهو اپليڪيشن آهي، تنهن ڪري اهو اڃ ائي بند ڪرڻ لائق آهي.</string>
+    <string name="action_not_now">اڃ نہ</string>
+
+    <string name="devices_in_use">استعمال ۾</string>
+    <string name="devices_retired">رٹائر ٿيل</string>
+    <string name="devices_empty_title">ابھي تائين نہ ڪوئي هيڊ فون</string>
+    <string name="devices_empty_body">بلوٽوٿ هيڈ فون جي جوڙي ڳ ڪريو ۽ اهي اتي ظاهر ٿيندا. تار والا هيڊ فون کو تفصيلي ٽريکنگ جي ضرورت آهي، سيٽنگون ۾.</string>
+    <string name="devices_generation">جوڙي #%1$d</string>
+    <string name="devices_retired_on">رٹائر ٿيل %1$s</string>
+    <string name="devices_connected_for">جڙيل %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">سڀ هيڊ فون</string>
+    <string name="stats_sessions_since">%1$s کان %2$s</string>
+    <string name="stats_today">اڄ</string>
+    <string name="stats_last_7">پوئين 7 ڏينهن</string>
+    <string name="stats_last_30">پوئين 30 ڏينهن</string>
+    <string name="stats_average_session">اوسط سيشن</string>
+    <string name="stats_longest_session">سڀ کان ڊگهو سيشن</string>
+    <string name="stats_playing">آڊيو پلے</string>
+    <string name="stats_measured_span">پلے بيڪ لاء ماپيو</string>
+    <string name="stats_share">پلے ڪرڻ جو حصو</string>
+    <string name="stats_playback_only_note">صرف پلے بيڪ وقت شمار</string>
+    <string name="stats_daily_hours_30">روزانہ ڪلاڪ (30 ڏينهن)</string>
+    <string name="stats_by_pair">جوڙي جي لحاظ سان</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · رٹائر ٿيل</string>
+    <string name="chart_max">%1$s زيادہ سے زيادہ</string>
+
+    <string name="pair_fallback_title">جوڙي</string>
+    <string name="pair_back">پوئين</string>
+    <string name="pair_more">وڌيڪ</string>
+    <string name="pair_menu_rename">نام بدليو</string>
+    <string name="pair_menu_purchase">خريداري جي معلومات</string>
+    <string name="pair_menu_retire">ريٽائر / تبديل ٿيل</string>
+    <string name="pair_menu_delete">حذف ڪريو</string>
+    <string name="pair_lifetime">هن جوڙي تي عمر</string>
+    <string name="pair_retired_on">رٹائر ٿيل %1$s</string>
+    <string name="pair_retired_with_reason">رٹائر ٿيل %1$s · %2$s</string>
+    <string name="pair_connected_now">اڃ جڙيل · %1$s</string>
+    <string name="pair_sessions">سيشنز</string>
+    <string name="pair_average">اوسط</string>
+    <string name="pair_longest">سڀ کان ڊگهو</string>
+    <string name="pair_since">%1$s کان</string>
+    <string name="pair_of_measured">پلے ڪرڻ جو حصو</string>
+    <string name="pair_measured">پلے بيڪ لاء ماپيو</string>
+    <string name="pair_paid">ادا ٿيل</string>
+    <string name="pair_per_hour">في ڪلاڪ</string>
+    <string name="pair_bought">خريدو</string>
+    <string name="pair_daily_hours_14">روزانہ ڪلاڪ (14 ڏينهن)</string>
+    <string name="pair_rename_title">جوڙي کو نام دوبارہ ڏيو</string>
+    <string name="pair_rename_label">نام</string>
+    <string name="pair_retire_title">هن جوڙي کو ريٽائر ڪريو</string>
+    <string name="pair_retire_label">سبب (مرو، وڪرو، کيو ويو...)</string>
+    <string name="pair_retire_confirm">ريٽائر ڪريو</string>
+    <string name="pair_retire_supporting">ڪل اتي جھليل ٿي ويندا. ساڳي ڊيوائس سان ٻيهر ڳ ڪرڻ سان صفر تي هڪ نئي جوڙي شروع ٿي ويندي.</string>
+    <string name="pair_price_title">قيمت ادا ڪي</string>
+    <string name="pair_price_label">رقم (پورو يونٽ)</string>
+    <string name="pair_price_supporting">في ڪلاڪ لاگت جي اعداد و شمار لاء استعمال ٿيندو.</string>
+    <string name="pair_delete_title">هن جوڙي کو حذف ڪريو؟</string>
+    <string name="pair_delete_body">اڃ تي رجسٹر ٿيل هر سيشن به حذف ٿي ويندو. اهو واپس نہ ٿو ڪري سگهو.</string>
+
+    <string name="session_ongoing">جاري آهي</string>
+    <string name="session_until">جڏهن تائين %1$s</string>
+    <string name="session_playing">%1$s پلے ٿي رهيو</string>
+    <string name="session_recovered">بحال ٿيل</string>
+
+    <string name="settings_tracking">ٽريکنگ</string>
+    <string name="settings_detailed_title">تفصيلي ٽريکنگ</string>
+    <string name="settings_detailed_body">تار والا هيڊ فون ۽ پلے بيڪ وقت شامل ڪري ٿو. انڊرائيڈ صرف تار والي پلگ ايونٹس هڪ چل رہي هيڪ رپوٽ ڪري ٿو، تنهن ڪري اهو سائو ۾ هڪ خاموش اطلاع رکي ٿو. بلوٽوٿ ڪنهن به طريقي سان ٽريک ٿيندو.</string>
+    <string name="settings_detailed_unavailable">دستياب نہ آهي جڏهن تائين بلوٽوٿ رسائي منظور نہ ٿي: هن تعمير ۾ صرف منسلک ڊيوائس سروس قسم اعلان ڪوشش جو هو آهي، جيڪا android 14+ بلوٽوٿ اجازت سے ڳنڌيل آهي.</string>
+    <string name="settings_playback_only_title">صرف پلے بيڪ شمار ڪريو</string>
+    <string name="settings_playback_only_body">اعدادوشمار وقت کي شمار ڪري ٿا جڏهن آڊيو واقعي چل رهيو ڇو جڏهن جڙيل وقت جي جاء تي. صرف تفصيلي ٽريکنگ سان ريکارڊ شدہ سيشنز ۾ پلے بيڪ ماپيو؛ باقي باہر رکيا ويندا.</string>
+    <string name="settings_language">ٻولي</string>
+    <string name="settings_language_system">سسٽم جي ٻولي</string>
+    <string name="settings_devices">ڈيوائس</string>
+    <string name="settings_devices_body">ڪجهه به غير منتخب ڪريو جيڪو هيڊ فون نہ آهي - هڪ گاڏي اسٹيريو يا هڪ اسپيڪر - اهو ريکارڈ ڪرڻ بند ڪرڻ لاء.</string>
+    <string name="settings_device_subtitle">%1$s · پهلو ڏٺو %2$s</string>
+    <string name="settings_data">ڊيٽا</string>
+    <string name="settings_export">برآمد json</string>
+    <string name="settings_import">درآمد</string>
+    <string name="settings_import_warning">درآمد موجودہ طور تي محفوظ کل شيء کو تبديل ڪري ٿو.</string>
+    <string name="settings_troubleshooting">خرابي ختم ڪرڻ</string>
+    <string name="settings_battery_body">جيڪڏ سيشنز ريکارڈ ٿيڻ بند ٿي وڃن، چيڪ ڪريو ته ylih بيٽري آپٽيمائزيشن کان استثنٰی آهي - هڪ اپليڪيشن جيڪو جبرن بند ڪيو ويو آهي، اڃ کانپوئين ڪوئي ڳ وسيل نہ وٺندو جڏهن تائين اهو نہ کھليا ويندو.</string>
+    <string name="settings_battery_button">بيٽري سيٽنگون</string>
+    <string name="settings_battery_path">سيٽنگون → apps → ylih → بيٽري → غير محدود.</string>
+    <string name="settings_hibernation_body">جيڪڏ ylih ڪجهه مهين کان نہ کھليا وڃي، انڈرائيڊ اسان کي روڪي ٿو ۽ اجازتون واپس ڪري ٿي، ۽ نہ ڪجهه تي ريکارڈ نہ ٿيندو جڏهن تائين توهان اسان کو نہ کھولو. اهو بند ڪرڻ جو مطلب آهي هڪ جوڙي موسم ذريعي شمار ڪندو رهي ويو جڏهن تائين توهان اپليڪيشن بابت سوچو ئي نہ ڪريو.</string>
+    <string name="settings_hibernation_on">انڈرائيڈ ylih کو روڪي سگهي ٿو.</string>
+    <string name="settings_hibernation_off">ylih استثنٰی آهي ۽ ريکارڈ ڪري رهيو.</string>
+    <string name="settings_hibernation_button">غير استعمال شدہ اپليڪيشن سيٽنگون</string>
+    <string name="settings_about">بابت</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — هيڈ فون جي ڪلاڪ، مقامي ۽ ابدي طور تي رکيل.</string>
+    <string name="settings_import_confirm_title">سڀ ڊيٽا تبديل ڪريو؟</string>
+    <string name="settings_import_confirm_body">هن بيڪ اپ کو درآمد ڪرڻ سان سڀ موجودہ ڊيوائس، جوڑي ۽ سيشن حذف ٿي ويندا.</string>
+
+    <string name="widget_lifetime_label">ylih · عمر</string>
+    <string name="widget_lifetime_description">جوڙي في ڪلاڪ، جيڪو به جڙيل آهي اڃ جو ۽ لائي ٽائمر سان</string>
+    <string name="widget_activity_label">ylih · سرگرمي</string>
+    <string name="widget_activity_description">هر جوڙي جي ڪلاڪ گڏ، نيز اڄ، 7 ڏينهن ۽ 30 ڏينهن</string>
+    <string name="widget_chart_label">ylih · 30 ڏينهن</string>
+    <string name="widget_chart_description">پوئين 30 ڏينهن ۾ روزانہ وچ ڪلاڪ</string>
+
+    <string name="action_save">بچاؤ</string>
+    <string name="action_cancel">منسوخ ڪريو</string>
+    <string name="action_delete">حذف ڪريو</string>
+    <string name="action_import">درآمد</string>
+
+    <string name="channel_tracking">هيڊ فون ٽريکنگ</string>
+    <string name="channel_tracking_description">ظاهر ٿيل جڏهن ylih تار والا هيڊ فون ۽ پلے بيڪ لاء ڏسي رهيو آهي. انڊرائيڈ تار والي پلگ ايونٹس ڏيڻ نہ ڪري ٿو اپليڪيشنز جيڪو چل نہ رهيا آهن.</string>
+    <string name="notification_title">هيڊ فون وقت ٽريکنگ</string>
+    <string name="notification_starting">شروع ٿي رهيو...</string>
+    <string name="notification_idle">هيڊ فون جي انتظار</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d جڙيل · %2$s</item>
+        <item quantity="other">%1$d جڙيل · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d جڙيل · %2$s · پلے ٿي رهيو</item>
+        <item quantity="other">%1$d جڙيل · %2$s · پلے ٿي رهيو</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">هن تعمير کو تار والا هيڊ فون ٽريڪ ڪري سگهڻ کان پهلان بلوٽوٿ رسائي جي ضرورت آهي</string>
+    <string name="export_done">بيڪ اپ برآمد</string>
+    <string name="export_failed">برآمد ناڪام</string>
+    <string name="import_failed">درآمد ناڪام</string>
+    <string name="edit_failed">اهو تبديلي محفوظ نہ ڪري سگيو</string>
+    <string name="error_could_not_open">%1$s کھول نہ سگيو</string>
+    <plurals name="import_done">
+        <item quantity="one">درآمد ٿيل %d سيشن</item>
+        <item quantity="other">درآمد ٿيل %d سيشنز</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d سيشن</item>
+        <item quantity="other">%d سيشنز</item>
+    </plurals>
+</resources>

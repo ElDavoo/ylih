@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Nama. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ǃaus di ǃaudi</string>
+
+    <string name="nav_headphones">ǃaudi</string>
+    <string name="nav_stats">hara ǃara</string>
+    <string name="nav_settings">ǃuma</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le ǃara</string>
+    <string name="kind_wired">ǃaoi</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ǃaba ti ǃua</string>
+
+    <string name="welcome_title">ǃoha ne ylih</string>
+    <string name="welcome_intro">ylih hara ǂo-ǃares di ǃaudi ǃoare ǂkhoeb, e ka ǃene hamga di hoko a ǃouǃou ba ǃuan ǃares: gara ǂo-hoeba di ǃares di hamga?</string>
+    <string name="welcome_point_auto_title">ǃoa o ǃaba</string>
+    <string name="welcome_point_auto_body">bluetooth ǃaudi ǃoare hob hara ǃau, ǂo khohe ba ǃoa. matje a hamga di tsi.</string>
+    <string name="welcome_point_lifetime_title">ǃares ǁou, ǃaus ǁou</string>
+    <string name="welcome_point_lifetime_body">ǂo ǃares ba ǃoa, ǃaba ǃo: ǃu total ti gidi hee e ǃares ǂoe di hara hob ǃau kaone.</string>
+    <string name="welcome_point_detailed_title">ǃaoi o ǃara ǃui</string>
+    <string name="welcome_point_detailed_body">hara ti ǃuma, ti settings, ǃoa ǃaoi ǃaudi o hara gara ǃares ǃui ba.</string>
+    <string name="welcome_privacy">hara di hamga ti tsi ǃ\'o. matje account o app ǃaba internet.</string>
+    <string name="welcome_start">ǃuma</string>
+    <string name="welcome_next">ǂone</string>
+    <string name="welcome_allow">duma</string>
+    <string name="welcome_step">ǃuma %1$d di %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth ǃou</string>
+    <string name="welcome_bluetooth_why">android hara ǂoa app ǂo bluetooth ǂoha ba ǃoa o ǂo ǃaudi ti na, ǂoa ylih hara ǃaudi di tsi ǂoa stereo e ylih hara ǃares ǂoe.</string>
+    <string name="welcome_bluetooth_with">ǂoa ne: ǃares ǂo ǃoa hara ǃau, matje hamga ba ǃoa o matje ǃumu ǃou.</string>
+    <string name="welcome_bluetooth_without">ǂaba ne: bluetooth ǃaudi ǃaba hara ǃau. app di ǂone hara tsi o ǂoa android settings.</string>
+    <string name="welcome_notifications_title">ǃuma ǃara</string>
+    <string name="welcome_notifications_why">hara ti ǃuma hara tsi ǂkhoebe o android hara ǃumu ǃum ǃara ǃuma.</string>
+    <string name="welcome_notifications_with">ǂoa ne: ǃuma ǃara hara ǂo tsi ǃau, e ǃ\'ou ylih.</string>
+    <string name="welcome_notifications_without">ǂaba ne: hara ti ǃuma hara tsi o hara ǃau. android ǃaba ǃuma ǃara.</string>
+    <string name="hibernation_title">tsi ǃumu ǂoa ǃaba</string>
+    <string name="hibernation_body">android app ǃaba ǃua ǂo gara o ǃaba ǃou e ylih ǃaba hara. ǃaba ti hamga ǂoa app ǃ\'ou, e tsi ǂoa ǃuma.</string>
+    <string name="action_not_now">ǃaba hee</string>
+
+    <string name="devices_in_use">tsi hara</string>
+    <string name="devices_retired">ǃaba hara</string>
+    <string name="devices_empty_title">ǃaudi ǃaba</string>
+    <string name="devices_empty_body">bluetooth ǃaudi ǃoa o ǃ\'ou hee. ǃaoi ǃaudi hara ǃuma.</string>
+    <string name="devices_generation">ǃares #%1$d</string>
+    <string name="devices_retired_on">ǃaba hara %1$s</string>
+    <string name="devices_connected_for">ǃoa %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">ǃaudi di hamga</string>
+    <string name="stats_sessions_since">%1$s ǂkhos %2$s</string>
+    <string name="stats_today">heio</string>
+    <string name="stats_last_7">7 ǁau</string>
+    <string name="stats_last_30">30 ǁau</string>
+    <string name="stats_average_session">tsi ǂaub</string>
+    <string name="stats_longest_session">ǃares ǃaba</string>
+    <string name="stats_playing">ǃara tsi</string>
+    <string name="stats_measured_span">hara ǃara tsi</string>
+    <string name="stats_share">ǃara tsi duma</string>
+    <string name="stats_playback_only_note">tsi ǃara ǁau</string>
+    <string name="stats_daily_hours_30">ǂo-hora tsi (30 ǁau)</string>
+    <string name="stats_by_pair">ǃares by</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · ǃaba hara</string>
+    <string name="chart_max">%1$s ǃaba</string>
+
+    <string name="pair_fallback_title">ǃares</string>
+    <string name="pair_back">ǃu</string>
+    <string name="pair_more">ǂone</string>
+    <string name="pair_menu_rename">ǂao tsi</string>
+    <string name="pair_menu_purchase">na ǃara</string>
+    <string name="pair_menu_retire">ǃaba / ǃaoe</string>
+    <string name="pair_menu_delete">ǃo</string>
+    <string name="pair_lifetime">ǃaus ti ǃares di</string>
+    <string name="pair_retired_on">ǃaba hara %1$s</string>
+    <string name="pair_retired_with_reason">ǃaba hara %1$s · %2$s</string>
+    <string name="pair_connected_now">ǃoa hee · %1$s</string>
+    <string name="pair_sessions">hara ǃares</string>
+    <string name="pair_average">tsi ǂaub</string>
+    <string name="pair_longest">ǃares ǃaba</string>
+    <string name="pair_since">ǂkhos %1$s</string>
+    <string name="pair_of_measured">ǃara tsi duma</string>
+    <string name="pair_measured">hara ǃara tsi</string>
+    <string name="pair_paid">duma</string>
+    <string name="pair_per_hour">hora by</string>
+    <string name="pair_bought">guba</string>
+    <string name="pair_daily_hours_14">ǂo-hora tsi (14 ǁau)</string>
+    <string name="pair_rename_title">ǂao ǃares tsi</string>
+    <string name="pair_rename_label">tsi</string>
+    <string name="pair_retire_title">ǃaba ǃares di</string>
+    <string name="pair_retire_label">hara (ǃoa, guba, ǃaba...)</string>
+    <string name="pair_retire_confirm">ǃaba</string>
+    <string name="pair_retire_supporting">total hara gidi hee. ǂoha ǂoe ǃares ǂou ǃau kaone.</string>
+    <string name="pair_price_title">duma gara</string>
+    <string name="pair_price_label">ǃu (hara di)</string>
+    <string name="pair_price_supporting">tsi ǃu hora by.</string>
+    <string name="pair_delete_title">ǃo ǃares di?</string>
+    <string name="pair_delete_body">ǃares ǃ\'ou ǃo. ǃaba ǃou.</string>
+
+    <string name="session_ongoing">tsi hara</string>
+    <string name="session_until">sal %1$s</string>
+    <string name="session_playing">%1$s ǃara tsi</string>
+    <string name="session_recovered">ǃu ǃau</string>
+
+    <string name="settings_tracking">hara</string>
+    <string name="settings_detailed_title">hara ti ǃuma</string>
+    <string name="settings_detailed_body">ǃaoi ǃaudi o ǃara tsi. android ǃaoi ǂoe app, e tsi ǃuma ǃara. bluetooth hara.</string>
+    <string name="settings_detailed_unavailable">ǃaba bluetooth ǃou: build hara connectedDevice.</string>
+    <string name="settings_playback_only_title">ǃara tsi ǁau</string>
+    <string name="settings_playback_only_body">stats ǃara tsi hara, ǃao ǃoa. ǃares hara ǃuma, ǂone ǃaba.</string>
+    <string name="settings_language">tsi</string>
+    <string name="settings_language_system">tsi ti system</string>
+    <string name="settings_devices">hara ǂoha</string>
+    <string name="settings_devices_body">ǃaba ǃaudi, stereo o speaker, ǃo hara.</string>
+    <string name="settings_device_subtitle">%1$s · ǂkhou %2$s</string>
+    <string name="settings_data">hara</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">import</string>
+    <string name="settings_import_warning">import ǃao hara di hamga.</string>
+    <string name="settings_troubleshooting">hara ti ǂoen</string>
+    <string name="settings_battery_body">ǃares ǃaba hara, hara ylih battery. app ǃoa ǃaba ǃu hara.</string>
+    <string name="settings_battery_button">battery ǃuma</string>
+    <string name="settings_battery_path">ǃuma → app → ylih → battery → hamga.</string>
+    <string name="settings_hibernation_body">ylih ǃaba ǃua, android ǃaba ǃo. tsi ǃuma hara ǃau ǃaudi.</string>
+    <string name="settings_hibernation_on">android ǃaba ylih.</string>
+    <string name="settings_hibernation_off">ylih hamga o hara.</string>
+    <string name="settings_hibernation_button">app ǃaba ǃuma</string>
+    <string name="settings_about">deb</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — ǃaudi hora, tsi di hamga.</string>
+    <string name="settings_import_confirm_title">ǃao hara di?</string>
+    <string name="settings_import_confirm_body">import ǃo hara ǂoha, ǃares, ǃares.</string>
+
+    <string name="widget_lifetime_label">ylih · lifetime</string>
+    <string name="widget_lifetime_description">hora ǃares by, ǃoa timer ǃoa ǂoha</string>
+    <string name="widget_activity_label">ylih · activity</string>
+    <string name="widget_activity_description">hora ǃares, heio, 7 ǁau, 30 ǁau</string>
+    <string name="widget_chart_label">ylih · 30 ǁau</string>
+    <string name="widget_chart_description">ǃaudi hora tsi 30 ǁau</string>
+
+    <string name="action_save">gidi</string>
+    <string name="action_cancel">ǃaba</string>
+    <string name="action_delete">ǃo</string>
+    <string name="action_import">import</string>
+
+    <string name="channel_tracking">ǃaudi hara</string>
+    <string name="channel_tracking_description">ǃ\'ou ylih ǃaoi ǃaudi o ǃara tsi. android ǃaoi ǂoe app.</string>
+    <string name="notification_title">ǃaudi hora hara</string>
+    <string name="notification_starting">ǃuma...</string>
+    <string name="notification_idle">ǃaudi tsi</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d ǃoa · %2$s</item>
+        <item quantity="two">%1$d ǃoa · %2$s</item>
+        <item quantity="other">%1$d ǃoa · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d ǃoa · %2$s · ǃara tsi</item>
+        <item quantity="two">%1$d ǃoa · %2$s · ǃara tsi</item>
+        <item quantity="other">%1$d ǃoa · %2$s · ǃara tsi</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">build bluetooth ǃou ǃaoi ǃaudi hara</string>
+    <string name="export_done">backup export</string>
+    <string name="export_failed">export ǃaba</string>
+    <string name="import_failed">import ǃaba</string>
+    <string name="edit_failed">gidi ǃaba</string>
+    <string name="error_could_not_open">%1$s ǃaba</string>
+    <plurals name="import_done">
+        <item quantity="one">import %d ǃares</item>
+        <item quantity="two">import %d ǃares</item>
+        <item quantity="other">import %d ǃares</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d ǃares</item>
+        <item quantity="two">%d ǃares</item>
+        <item quantity="other">%d ǃares</item>
+    </plurals>
+</resources>

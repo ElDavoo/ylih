@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  N’Ko. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - i fɛ kɛ ma sɔ̀rɔ</string>
+
+    <string name="nav_headphones">sɔ̀rɔ</string>
+    <string name="nav_stats">sɛbɛn</string>
+    <string name="nav_settings">tɛme</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">gara wɔɔ</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">a ma sɔni</string>
+
+    <string name="welcome_title">i bow ylih la</string>
+    <string name="welcome_intro">ylih be i fɛ kɛ baara bi tɛ ma wɔɔli kɛ se, na i tigi wari din ka i ma kɔfɔ kɛ serigwale a fɔ wɛrɛ - sɔ̀rɔ min yili?</string>
+    <string name="welcome_point_auto_title">kɛ se nɛ dumbuni</string>
+    <string name="welcome_point_auto_body">bluetooth sɔ̀rɔ be bara sɔn fara, tɛ na a kɛ se. bɛ ta kɔ ligi.</string>
+    <string name="welcome_point_lifetime_title">kɛ se kɔrɔ, i gara kɔrɔ</string>
+    <string name="welcome_point_lifetime_body">n sɔ̀rɔ ba kɔ, i dali a: a baara bè dusu tɛ nɛ, kɛ se filan bi bara kɔfɔ sɔ̀rɔ ta kɔ sifɛ.</string>
+    <string name="welcome_point_detailed_title">gara wɔɔ kɛ dɔn</string>
+    <string name="welcome_point_detailed_body">baara sɛbɛn, tɛme la, a jɔ gara wɔɔ sɔ̀rɔ kɛ, a taara kɛnɛ tɛ bi dɔn walan.</string>
+    <string name="welcome_privacy">baara wɛrɛ ta dusu tɛ telefɔn la. kɔnte kɔrɔ kɔ surun, kɛ application ta internɛte layida kɔ.</string>
+    <string name="welcome_start">kɛ fara</string>
+    <string name="welcome_next">kɛ filan</string>
+    <string name="welcome_allow">siya</string>
+    <string name="welcome_step">tɛ %1$d, %2$d la</string>
+    <string name="welcome_bluetooth_title">bluetooth layida</string>
+    <string name="welcome_bluetooth_why">android be application la sɛbɛn kɛnɛ bluetooth cɛ a kɛ se, nɛ wɛrɛ a din, n application ta bluetooth layida ka. ni ylih nɔ sɔ̀rɔ kɛ se bɔ siyara kuma ta, kɛ sɔ̀rɔ kɛ se bɔ kɛ se filan.</string>
+    <string name="welcome_bluetooth_with">a be ka la: kɛ se kɔrɔ be baara sɔn fara a kɛ se kɛ, bɛ ta kɔ ligi, bɛ ta laali kɔ.</string>
+    <string name="welcome_bluetooth_without">a ma ka la: bluetooth sɔ̀rɔ ta bara waran. application kɛ filan be sira dusu, kɛ i ŋ siya a kɛ android tɛme la.</string>
+    <string name="welcome_notifications_title">sɛbɛnnaw</string>
+    <string name="welcome_notifications_why">baara sɛbɛn be kɔ surun kɔ baasi, kɛ android be sɔ application wɛrɛ ka baara la a sɛbɛnna gara dusu kɛ.</string>
+    <string name="welcome_notifications_with">a be ka la: sɛbɛnna be sɔ kɛnɛ tɛ baara ta kɔ, ni baara sɛbɛn be gara wale.</string>
+    <string name="welcome_notifications_without">a ma ka la: baara sɛbɛn be kɔ dusu kɛ a baara. android ta sɛbɛnna gara waran.</string>
+    <string name="hibernation_title">baara ta dusu kɛ i dumbuni tɛ</string>
+    <string name="hibernation_body">android be application wɛrɛ ka dusu i gara nana tɛ, a layida ta sɔ, ylih baara ta dusu dusu waran i kɔ kɛ filan. dumbuni ni application nɔ, to ni sira dusu kɛ.</string>
+    <string name="action_not_now">sago nɔ</string>
+
+    <string name="devices_in_use">kɔ sira</string>
+    <string name="devices_retired">a dali</string>
+    <string name="devices_empty_title">sɔ̀rɔ kɔrɔ ta sago</string>
+    <string name="devices_empty_body">bluetooth sɔ̀rɔ kɛ se kɛ, n gara dusu la. gara wɔɔ sɔ̀rɔ be baara sɛbɛn ka, tɛme la.</string>
+    <string name="devices_generation">kɛ se #%1$d</string>
+    <string name="devices_retired_on">a dali %1$s</string>
+    <string name="devices_connected_for">a kɛ se %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">sɔ̀rɔ wɛrɛ</string>
+    <string name="stats_sessions_since">%1$s, %2$s sɔn</string>
+    <string name="stats_today">don nɔ</string>
+    <string name="stats_last_7">don 7 na</string>
+    <string name="stats_last_30">don 30 na</string>
+    <string name="stats_average_session">baara gara du</string>
+    <string name="stats_longest_session">baara gara jɔ</string>
+    <string name="stats_playing">sabu dɔn</string>
+    <string name="stats_measured_span">a taara dɔn la</string>
+    <string name="stats_share">dɔn baara</string>
+    <string name="stats_playback_only_note">dɔn tɛ tuma</string>
+    <string name="stats_daily_hours_30">don yili (30 na)</string>
+    <string name="stats_by_pair">kɛ se ta</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · a dali</string>
+    <string name="chart_max">%1$s gara</string>
+
+    <string name="pair_fallback_title">kɛ se</string>
+    <string name="pair_back">kan</string>
+    <string name="pair_more">filan</string>
+    <string name="pair_menu_rename">din ye</string>
+    <string name="pair_menu_purchase">saara sɛbɛn</string>
+    <string name="pair_menu_retire">dali / ye</string>
+    <string name="pair_menu_delete">ka</string>
+    <string name="pair_lifetime">kɛ se nka, i gara wale</string>
+    <string name="pair_retired_on">a dali %1$s</string>
+    <string name="pair_retired_with_reason">a dali %1$s · %2$s</string>
+    <string name="pair_connected_now">a kɛ se don · %1$s</string>
+    <string name="pair_sessions">baara</string>
+    <string name="pair_average">gara du</string>
+    <string name="pair_longest">gara jɔ</string>
+    <string name="pair_since">%1$s sɔn</string>
+    <string name="pair_of_measured">dɔn baara</string>
+    <string name="pair_measured">a taara dɔn la</string>
+    <string name="pair_paid">baara</string>
+    <string name="pair_per_hour">yili kɔ</string>
+    <string name="pair_bought">saara</string>
+    <string name="pair_daily_hours_14">don yili (14 na)</string>
+    <string name="pair_rename_title">kɛ se din ye</string>
+    <string name="pair_rename_label">din</string>
+    <string name="pair_retire_title">kɛ se nka dali</string>
+    <string name="pair_retire_label">sababu (kɔ, saara, sɔrɔ)</string>
+    <string name="pair_retire_confirm">dali</string>
+    <string name="pair_retire_supporting">baara bè dusu tɛ. cɛ nka kɛ se filan kɔ sifɛ.</string>
+    <string name="pair_price_title">saara baara</string>
+    <string name="pair_price_label">baara (kɔrɔ)</string>
+    <string name="pair_price_supporting">saara-yili baara ta kɔ.</string>
+    <string name="pair_delete_title">kɛ se nka ka?</string>
+    <string name="pair_delete_body">baara wɛrɛ a ka gə. ni ta ma kɔ gə.</string>
+
+    <string name="session_ongoing">kɔ dusu</string>
+    <string name="session_until">%1$s don</string>
+    <string name="session_playing">%1$s dɔn</string>
+    <string name="session_recovered">a sɔ</string>
+
+    <string name="settings_tracking">baara</string>
+    <string name="settings_detailed_title">baara sɛbɛn</string>
+    <string name="settings_detailed_body">gara wɔɔ sɔ̀rɔ kɛ dɔn tɛ. android be gara wɔɔ cɛ sɔ application kɔ dusu la, to ni sɛbɛnna dusu kɛ kuma. bluetooth be bara waran.</string>
+    <string name="settings_detailed_unavailable">bluetooth layida siya dusu waran: nka be connectedDevice surun tuma, ni android 14+ bluetooth layida ka.</string>
+    <string name="settings_playback_only_title">dɔn tuma tɛ</string>
+    <string name="settings_playback_only_body">sɛbɛn be dɔn tɛ taara kɛ, a kɛ se tɛ kɔ dusu la. baara sɛbɛn ta dɔn taara sɔn; kɛ filan ta sɔ.</string>
+    <string name="settings_language">kuma</string>
+    <string name="settings_language_system">surun kuma</string>
+    <string name="settings_devices">cɛ wɛrɛ</string>
+    <string name="settings_devices_body">sɔ̀rɔ ma ka cɛ - siyara kuma wɛ surun - a kɔ baara waran.</string>
+    <string name="settings_device_subtitle">%1$s · fara %2$s</string>
+    <string name="settings_data">baara</string>
+    <string name="settings_export">json ta sɔ</string>
+    <string name="settings_import">kɛ</string>
+    <string name="settings_import_warning">kɛ be baara wɛrɛ ye.</string>
+    <string name="settings_troubleshooting">baara kɔfɔ</string>
+    <string name="settings_battery_body">baara kɔ waran, ŋ taara ylih batiri baara ma ka. application a kɔ dusu tɛ kɔ kɔlu waran i kɔ filan.</string>
+    <string name="settings_battery_button">batiri tɛme</string>
+    <string name="settings_battery_path">tɛme → application → ylih → batiri → dusu waran.</string>
+    <string name="settings_hibernation_body">ylih kɔ waran na tɛ, android a dusu kɛ, a layida ta sɔ, baara ta dusu dusu waran i kɔ filan. ni sira dusu kɛ kɛ se ta baara dusu kɛ tɛ u duŋ application nɔ.</string>
+    <string name="settings_hibernation_on">android ŋ dusu ylih kɛ.</string>
+    <string name="settings_hibernation_off">ylih dusu waran kɛ a baara.</string>
+    <string name="settings_hibernation_button">application ta ma kɔ tɛme</string>
+    <string name="settings_about">a ghə</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — sɔ̀rɔ yili, telefɔn ta nka kɛ kɛ.</string>
+    <string name="settings_import_confirm_title">baara wɛrɛ ye?</string>
+    <string name="settings_import_confirm_body">nka ye be cɛ wɛrɛ, kɛ se wɛrɛ, baara wɛrɛ ka.</string>
+
+    <string name="widget_lifetime_label">ylih · gara wale</string>
+    <string name="widget_lifetime_description">yili kɛ se ta, dɔn tɛ kɛ se la</string>
+    <string name="widget_activity_label">ylih · kɔ</string>
+    <string name="widget_activity_description">kɛ se yili kəti, don nɔ, 7 na, kɛ 30 na</string>
+    <string name="widget_chart_label">ylih · 30 na</string>
+    <string name="widget_chart_description">don yili 30 na gara wale</string>
+
+    <string name="action_save">dusu</string>
+    <string name="action_cancel">ye</string>
+    <string name="action_delete">ka</string>
+    <string name="action_import">kɛ</string>
+
+    <string name="channel_tracking">sɔ̀rɔ baara</string>
+    <string name="channel_tracking_description">gara ylih a wə gara wɔɔ kɛ dɔn la. android ta gara wɔɔ cɛ sɔ application kɔ dusu ma.</string>
+    <string name="notification_title">sɔ̀rɔ yili baara</string>
+    <string name="notification_starting">fara...</string>
+    <string name="notification_idle">sɔ̀rɔ wə</string>
+    <plurals name="notification_active">
+        <item quantity="other">%1$d kɛ se · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="other">%1$d kɛ se · %2$s · dɔn</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">nka be bluetooth layida ka gara wɔɔ baara dusu waran</string>
+    <string name="export_done">kɛ ta sɔ</string>
+    <string name="export_failed">sɔ kɔ</string>
+    <string name="import_failed">kɛ kɔ</string>
+    <string name="edit_failed">dusu ta baara waran</string>
+    <string name="error_could_not_open">%1$s kɔ waran</string>
+    <plurals name="import_done">
+        <item quantity="other">kɛ %d baara</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="other">%d baara</item>
+    </plurals>
+</resources>

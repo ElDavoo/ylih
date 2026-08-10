@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Sanskrit. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - bhavataah jaivane</string>
+
+    <string name="nav_headphones">sravana-yantra</string>
+    <string name="nav_stats">sankhya-laksha</string>
+    <string name="nav_settings">sthapana</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le dhvani</string>
+    <string name="kind_wired">sutra-yojita</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">anirvachita</string>
+
+    <string name="welcome_title">ylih-e svagata</string>
+    <string name="welcome_intro">ylih pratyek sravana-yantra-yugma katividhikalam yojita rahu-adhyayane avadhih karoti. tatra paramvatsarebhyah samaye tvam eva prasnasya uttaram eva dasyasi - ye sravana-yantra-yugma katividhikalam sthita-abhavat?</string>
+    <string name="welcome_point_auto_title">yogga kartvi cha vismartu</string>
+    <string name="welcome_point_auto_body">bluetooth sravana-yantra-yugma sva-matra samyojana-kshane suchi-bhuta bhavanti. na kascit karyakrama chalita bhavitavya.</string>
+    <string name="welcome_point_lifetime_title">eka yugma, eka jaivana-kala</string>
+    <string name="welcome_point_lifetime_body">yada sravana-yantra-yugma vinashta bhavati, tade nivartti kartvi - tatra yogi-ankah tatah sthira bhavati cha puna-samyojane nava-yugma shunya-matra arambha bhavati.</string>
+    <string name="welcome_point_detailed_title">sutra-yojita cha avadhih-gita</string>
+    <string name="welcome_point_detailed_body">vistrita sthapana-goshthisu, sutra-yojita sravana-yantra-yugma cha yatah-madhye vastutah avadhih-gita-kala parimitir bhavati, tad adhyayane sangrahyate.</string>
+    <string name="welcome_privacy">sarvam etad bhavananam eva sthita. na kascit sangha-gana, cha karyakrama-asya na kascit antarala-adhikara.</string>
+    <string name="welcome_start">arambha kartvi</string>
+    <string name="welcome_next">anusmarti</string>
+    <string name="welcome_allow">anumate</string>
+    <string name="welcome_step">padah %1$d tah %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth adhikara</string>
+    <string name="welcome_bluetooth_why">android eva karyakrama-asya kevalam yat bluetooth-yantra samyojita-bhavat cha tat-nama yadi karyakrama-asya bluetooth adhikara asti, tad eva samjanam karoti. etad eva ylih-anam sravana-yantra-yugma-vah sva-yantra-vah pariccheda kartum cha dvayoh yugma-vah antaram parijnanat.</string>
+    <string name="welcome_bluetooth_with">anena - pratyek yugma-dvayoh samyojana-kshane suchi-bhuta bhavati, nihil chalita cha nihil smrti-kartavyam.</string>
+    <string name="welcome_bluetooth_without">anena-vina - na kascit bluetooth sravana-yantra-yugma suchi-bhuta bhavati. karyakrama-asya itara-amsah karyakrama eva karoti, cha tvam tat-anantaram android-asya karyakrama-goshthisu danam kartum shaknosha.</string>
+    <string name="welcome_notifications_title">suchana</string>
+    <string name="welcome_notifications_why">vistrita adhyayana-kshetram eka laghu-anya-karyakrama-sthapana chalita karoti, cha android-asya kasyacit eva tat-alpa-suchana-vidyamanam avasthapita kartavyam.</string>
+    <string name="welcome_notifications_with">anena - suchana-dvayah yatah-madhye adhyayate tad vidyamanam darsayati, yatah eva vistrita adhyayana-kshetram jaivana-kalaparyapt.</string>
+    <string name="welcome_notifications_without">anena-vina - vistrita adhyayana-kshetram ev chalita karoti cha sukhi-karana ev karoti. android eva tad-suchana-dvayah na darsayishyati.</string>
+    <string name="hibernation_title">gana-krana-madhye smaranam karoti</string>
+    <string name="hibernation_body">android-asya karyakrama-vah antah-puratarah katividhikalam apyukte sthita-bhavat, adhikara-dvayah punah triguha-bhavanti, ylih-asya ev karyakrama-adhyayana-gana-sthanam na karoti. etad ev ylih-asya karyakrama-asya gamya, tat-anantaram tat-adharnanam sthapana-svarupam.</string>
+    <string name="action_not_now">na idanIm</string>
+
+    <string name="devices_in_use">prayoge</string>
+    <string name="devices_retired">nivartti-bhuta</string>
+    <string name="devices_empty_title">na kascit sravana-yantra-yugma abhayt</string>
+    <string name="devices_empty_body">bluetooth sravana-yantra-yugma-dvayah samyojita kartvi cha tatah tatraha vidyamanam bhavishyanti. sutra-yojita sravana-yantra-yugma vistrita adhyayana-goshthisu avasthapita kartavya.</string>
+    <string name="devices_generation">yugma #%1$d</string>
+    <string name="devices_retired_on">nivartti %1$s</string>
+    <string name="devices_connected_for">samyojita %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">sarva sravana-yantra-yugma</string>
+    <string name="stats_sessions_since">%1$s yatra %2$s</string>
+    <string name="stats_today">adhye</string>
+    <string name="stats_last_7">pura-sapta-divas</string>
+    <string name="stats_last_30">pura-trimshat-divas</string>
+    <string name="stats_average_session">madhya-adhyayana-gana</string>
+    <string name="stats_longest_session">dirghahyayana-gana</string>
+    <string name="stats_playing">dhvani-prayojana</string>
+    <string name="stats_measured_span">avadhih-gitah-parimana</string>
+    <string name="stats_share">prayojana-vyavahara</string>
+    <string name="stats_playback_only_note">avadhih-gita-kala-eva gana-karoti</string>
+    <string name="stats_daily_hours_30">divasik-hora (trimshat-divas)</string>
+    <string name="stats_by_pair">yugma-dvayah-dvarah</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · nivartti</string>
+    <string name="chart_max">%1$s paramah</string>
+
+    <string name="pair_fallback_title">yugma</string>
+    <string name="pair_back">pratiloma</string>
+    <string name="pair_more">adhika</string>
+    <string name="pair_menu_rename">puna-nama</string>
+    <string name="pair_menu_purchase">aya-suchana</string>
+    <string name="pair_menu_retire">nivartti / parivartta</string>
+    <string name="pair_menu_delete">nasa-kartvi</string>
+    <string name="pair_lifetime">jaivana-kala etad yugma-dvayah</string>
+    <string name="pair_retired_on">nivartti %1$s</string>
+    <string name="pair_retired_with_reason">nivartti %1$s · %2$s</string>
+    <string name="pair_connected_now">idanIm samyojita · %1$s</string>
+    <string name="pair_sessions">adhyayana-gana</string>
+    <string name="pair_average">madhya</string>
+    <string name="pair_longest">dirghah</string>
+    <string name="pair_since">yatra %1$s</string>
+    <string name="pair_of_measured">prayojana-vyavahara</string>
+    <string name="pair_measured">avadhih-gita-parimana</string>
+    <string name="pair_paid">bhugta</string>
+    <string name="pair_per_hour">pratihoram</string>
+    <string name="pair_bought">krita</string>
+    <string name="pair_daily_hours_14">divasik-hora (chaturdash-divas)</string>
+    <string name="pair_rename_title">yugma-dvayah puna-nama kartvi</string>
+    <string name="pair_rename_label">nama</string>
+    <string name="pair_retire_title">etad yugma-dvayah nivartti kartvi</string>
+    <string name="pair_retire_label">kara-na (mrita, bita, hrta...)</string>
+    <string name="pair_retire_confirm">nivartti</string>
+    <string name="pair_retire_supporting">yogi-ankah tatah sthira bhavati. puna-samyojane nava-yugma shunya-matra arambha bhavati.</string>
+    <string name="pair_price_title">mulya bhugta</string>
+    <string name="pair_price_label">pramana (purna-eka)</string>
+    <string name="pair_price_supporting">mulya-pratihoram-ankha-dvarah prayojita.</string>
+    <string name="pair_delete_title">etad yugma-dvayah nasa-kartvi?</string>
+    <string name="pair_delete_body">pratyek adhyayana-gana tat-dvarah sukhi-krita nasa-bhavati. etad punar-karoti na shakta.</string>
+
+    <string name="session_ongoing">chalana-sthita</string>
+    <string name="session_until">yavat %1$s</string>
+    <string name="session_playing">%1$s prayojana-karotu</string>
+    <string name="session_recovered">punar-praptah</string>
+
+    <string name="settings_tracking">adhyayana</string>
+    <string name="settings_detailed_title">vistrita adhyayana</string>
+    <string name="settings_detailed_body">sutra-yojita sravana-yantra-yugma cha avadhih-gita-kala-yogga kartum. android-asya sutra-yojita samyojana-samchara-goshthisu jivanta-karyakrama-vah eva samprajapana karoti, tat-anantaram etad sukhi-suchana-gana-sthanam karoti. bluetooth sahaja-margena adhyayate.</string>
+    <string name="settings_detailed_unavailable">bluetooth adhikara-dvayah pradana-kale apraptavya - etad nirmana-grama-dhisthana-sthapana-seva-praka-dvarah, yatah android 14+ bluetooth adhikara-dvayah yojita.</string>
+    <string name="settings_playback_only_title">avadhih-gita-kale-eva gana-kartvi</string>
+    <string name="settings_playback_only_body">samkhya-laksha-goshthisu samyojita-kala vah vastutah avadhih-gita-kala-vah parimiti karoti. adhyayana-gana vistrita adhyayana-gana-saha avadhih-gita-kala-parimitir bhavati - itara-vah vigata-bhavanti.</string>
+    <string name="settings_language">bhasha</string>
+    <string name="settings_language_system">bhavana-bhasha</string>
+    <string name="settings_devices">yantra-vah</string>
+    <string name="settings_devices_body">sva-yantra-dvayah - sva-yantra-cha sravaka - adhyayana-gana-yat-kale sthanam na kartvi.</string>
+    <string name="settings_device_subtitle">%1$s · prathama-darsana %2$s</string>
+    <string name="settings_data">suchana</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">samavesha</string>
+    <string name="settings_import_warning">samavesha-dvayah sarva-idanIm sthita-suchana-dvayah parivartti karoti.</string>
+    <string name="settings_troubleshooting">samasyah-nirakarana</string>
+    <string name="settings_battery_body">adhyayana-gana sukhi-kartavya-avastha-prapta bhavat, ylih-asya shakti-samada-kartavya adhiratih iti smarati - karyakrama-vyavahara-viryam vinashta-bhavat, samyojana-suchana-dvayah punar-praptah na bhavati yavat-kale tat-dvarah avabudhya bhavati.</string>
+    <string name="settings_battery_button">shakti-sthapana</string>
+    <string name="settings_battery_path">sthapana - karyakrama-vah - ylih - shakti - asangarita.</string>
+    <string name="settings_hibernation_body">ylih-asya katividhikalam apriyaya bhavat, android-asya tat-anantaram sthapana cha adhikara-dvayah punah triguha-bhavanti, suchana-gana punah-sukhikarta-bhavat yavat-kale tat-dvarah avabudhya bhavati. etad-bhava-kartavya, ylih-asya yugma-dvayah gatih calan-sthita rahu-adhyayane avasthapita bhavati.</string>
+    <string name="settings_hibernation_on">android-asya ylih-asya sthapana karta shakta.</string>
+    <string name="settings_hibernation_off">ylih-asya asangarita cha chalita-sthita rahu-adhyayane.</string>
+    <string name="settings_hibernation_button">aprayojita-karyakrama-sthapana</string>
+    <string name="settings_about">parichaya</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - sravana-yantra-hora, sthita bhavana-gana-sthapita-sarvada.</string>
+    <string name="settings_import_confirm_title">sarva-suchana-dvayah parivartti kartvi?</string>
+    <string name="settings_import_confirm_body">etad-sthapana-dvayah samavesha-kale pratyek yantra-dvayah, yugma-dvayah cha adhyayana-gana sukhi-krita nasa-bhavanti.</string>
+
+    <string name="widget_lifetime_label">ylih · jaivana-kala</string>
+    <string name="widget_lifetime_description">hora yugma-dvayah-dvarah, samyojita-yantra-dvayah-saha jivanta-samayapata</string>
+    <string name="widget_activity_label">ylih · karya</string>
+    <string name="widget_activity_description">pratyek yugma-dvayah-hora sangraha, adhya, sapta-divas cha trimshat-divas</string>
+    <string name="widget_chart_label">ylih · trimshat-divas</string>
+    <string name="widget_chart_description">divasik-sravana-hora trimshat-divas-pura</string>
+
+    <string name="action_save">sampad</string>
+    <string name="action_cancel">sthapana-viradhana</string>
+    <string name="action_delete">nasa-kartvi</string>
+    <string name="action_import">samavesha</string>
+
+    <string name="channel_tracking">sravana-yantra-adhyayana</string>
+    <string name="channel_tracking_description">ylih-dvarah sutra-yojita sravana-yantra-yugma cha avadhih-gita-kala-yogga-kathyam-chalita-sthita. android-asya sutra-yojita samyojana-samchara-karyakrama-vah-dvarah suchana-dvayah na prapta.</string>
+    <string name="notification_title">sravana-yantra-hora-adhyayana-karoti</string>
+    <string name="notification_starting">arambha-karoti...</string>
+    <string name="notification_idle">sravana-yantra-yugma-dvayah pratiksha</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d samyojita · %2$s</item>
+        <item quantity="many">%1$d samyojita · %2$s</item>
+        <item quantity="other">%1$d samyojita · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d samyojita · %2$s · prayojana-karotu</item>
+        <item quantity="many">%1$d samyojita · %2$s · prayojana-karotu</item>
+        <item quantity="other">%1$d samyojita · %2$s · prayojana-karotu</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">etad nirmana-grama-dvayah bluetooth adhikara-dvayah sutra-yojita sravana-yantra-yugma-adhyayana-kartva pura avasthapita</string>
+    <string name="export_done">sthapana-dvayah nirmana-krita</string>
+    <string name="export_failed">nirmana-dvayah aphalita</string>
+    <string name="import_failed">samavesha-dvayah aphalita</string>
+    <string name="edit_failed">etad parivartana-dvayah sampad na kartum shakta</string>
+    <string name="error_could_not_open">%1$s avabudhya na shakta</string>
+    <plurals name="import_done">
+        <item quantity="one">samavesha %d adhyayana</item>
+        <item quantity="many">samavesha %d adhyayana</item>
+        <item quantity="other">samavesha %d adhyayana</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d adhyayana</item>
+        <item quantity="many">%d adhyayana</item>
+        <item quantity="other">%d adhyayana</item>
+    </plurals>
+</resources>

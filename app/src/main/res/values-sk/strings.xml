@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Slovak. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - vaš život v slúchadlách</string>
+
+    <string name="nav_headphones">slúchadlá</string>
+    <string name="nav_stats">štatistika</string>
+    <string name="nav_settings">nastavenia</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">drôtové</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">neznáme</string>
+
+    <string name="welcome_title">vitajte v ylih</string>
+    <string name="welcome_intro">ylih zaznamenáva, ako dlho zostáva každý pár slúchadiel pripojený, aby ste o roky neskôr stále mohli odpovedať na jedinú dôležitú otázku: koľko hodín vydržali?</string>
+    <string name="welcome_point_auto_title">pripoj a zabudni</string>
+    <string name="welcome_point_auto_body">bluetooth slúchadlá sú zaznamenávané automaticky, od chvíle ich pripojenia. nič nemusí zostať spustené.</string>
+    <string name="welcome_point_lifetime_title">jeden pár, jeden život</string>
+    <string name="welcome_point_lifetime_body">keď sa pár pokazí, vyberte ho: jeho celkový čas sa tu zmrazí a ďalší pár rovnakých slúchadiel sa opäť spustí od nuly.</string>
+    <string name="welcome_point_detailed_title">drôtové a prehrávanie</string>
+    <string name="welcome_point_detailed_body">podrobné sledovanie v nastaveniach pridáva drôtené slúchadlá a meria, koľko času sa skutočne hralo.</string>
+    <string name="welcome_privacy">všetko zostáva na tomto telefóne. nie je žiadny účet a aplikácia nemá povolenie na internet.</string>
+    <string name="welcome_start">začať</string>
+    <string name="welcome_next">ďalej</string>
+    <string name="welcome_allow">povoliť</string>
+    <string name="welcome_step">krok %1$d z %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth prístup</string>
+    <string name="welcome_bluetooth_why">android povie aplikácii iba o tom, ktoré zariadenie sa pripojilo a ako sa nazýva, ak má aplikácia bluetooth prístup. takto ylih rozlíši pár slúchadiel od autorádia a ako pozná jeden pár od druhého.</string>
+    <string name="welcome_bluetooth_with">s ním: každý pár je zaznamenávaný od okamihu pripojenia bez nič, čo by muselo zostať spustené, a bez čoho sa treba pamätať.</string>
+    <string name="welcome_bluetooth_without">bez neho: bluetooth slúchadlá vôbec nie sú zaznamenávané. zvyšok aplikácie stále funguje a môžete mu dať povolenie neskôr v android nastaveniach.</string>
+    <string name="welcome_notifications_title">oznámenia</string>
+    <string name="welcome_notifications_why">podrobné sledovanie spúšťa malú službu na pozadí a android vyžaduje, aby každá aplikácia to robiaca, udržiavala viditeľné oznámenie.</string>
+    <string name="welcome_notifications_with">s ním: oznámenie ukazuje, čo sa práve zaznamenáva, čo je jediný znak, že podrobné sledovanie je aktívne.</string>
+    <string name="welcome_notifications_without">bez neho: podrobné sledovanie stále beží a stále zaznamenáva. android jednoducho neukazuje jeho oznámenie.</string>
+    <string name="hibernation_title">keep counting while you forget about it</string>
+    <string name="hibernation_body">android pozastavuje aplikácie, ktoré nie sú otvorené niekoľko mesiacov a odoberie im oprávnenia, čo by nechálo ylih bez zaznamenávania, kým ho opäť neotvoríte. byť zabudnutý je presne to, na čo je táto aplikácia, takže je to stojí vypnúť teraz.</string>
+    <string name="action_not_now">nie teraz</string>
+
+    <string name="devices_in_use">v používaní</string>
+    <string name="devices_retired">vyradené</string>
+    <string name="devices_empty_title">zatiaľ žiadne slúchadlá</string>
+    <string name="devices_empty_body">pripojte pár bluetooth slúchadiel a objaví sa tu. drôtené slúchadlá potrebujú podrobné sledovanie v nastaveniach.</string>
+    <string name="devices_generation">pár #%1$d</string>
+    <string name="devices_retired_on">vyradené %1$s</string>
+    <string name="devices_connected_for">pripojené %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">všetky slúchadlá</string>
+    <string name="stats_sessions_since">%1$s od %2$s</string>
+    <string name="stats_today">dnes</string>
+    <string name="stats_last_7">posledných 7 dní</string>
+    <string name="stats_last_30">posledných 30 dní</string>
+    <string name="stats_average_session">priemerná relácia</string>
+    <string name="stats_longest_session">najdlhšia relácia</string>
+    <string name="stats_playing">audio prehrávanie</string>
+    <string name="stats_measured_span">merané pre prehrávanie</string>
+    <string name="stats_share">podiel prehrávania</string>
+    <string name="stats_playback_only_note">počítam iba čas prehrávania</string>
+    <string name="stats_daily_hours_30">denné hodiny (30 dní)</string>
+    <string name="stats_by_pair">podľa páru</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · vyradené</string>
+    <string name="chart_max">%1$s max</string>
+
+    <string name="pair_fallback_title">pár</string>
+    <string name="pair_back">späť</string>
+    <string name="pair_more">viac</string>
+    <string name="pair_menu_rename">premenovať</string>
+    <string name="pair_menu_purchase">informácie o nákupe</string>
+    <string name="pair_menu_retire">vyradiť / nahradiť</string>
+    <string name="pair_menu_delete">vymazať</string>
+    <string name="pair_lifetime">celý život tohto páru</string>
+    <string name="pair_retired_on">vyradené %1$s</string>
+    <string name="pair_retired_with_reason">vyradené %1$s · %2$s</string>
+    <string name="pair_connected_now">teraz pripojené · %1$s</string>
+    <string name="pair_sessions">relácie</string>
+    <string name="pair_average">priemer</string>
+    <string name="pair_longest">najdlhší</string>
+    <string name="pair_since">od %1$s</string>
+    <string name="pair_of_measured">podiel prehrávania</string>
+    <string name="pair_measured">merané pre prehrávanie</string>
+    <string name="pair_paid">zaplatené</string>
+    <string name="pair_per_hour">za hodinu</string>
+    <string name="pair_bought">kúpené</string>
+    <string name="pair_daily_hours_14">denné hodiny (14 dní)</string>
+    <string name="pair_rename_title">premenovať pár</string>
+    <string name="pair_rename_label">meno</string>
+    <string name="pair_retire_title">vyradiť tento pár</string>
+    <string name="pair_retire_label">dôvod (zlomené, predané, stratené...)</string>
+    <string name="pair_retire_confirm">vyradiť</string>
+    <string name="pair_retire_supporting">celkový čas sa tu zmrazí. opätovné pripojenie toho istého zariadenia spustí svežý pár od nuly.</string>
+    <string name="pair_price_title">zaplatená cena</string>
+    <string name="pair_price_label">suma (celé jednotky)</string>
+    <string name="pair_price_supporting">používa sa na údaj o cene za hodinu.</string>
+    <string name="pair_delete_title">vymazať tento pár?</string>
+    <string name="pair_delete_body">všetky relácie zaznamenané preňho sú tiež vymazané. toto nemôže byť vrátené.</string>
+
+    <string name="session_ongoing">prebiehajúce</string>
+    <string name="session_until">do %1$s</string>
+    <string name="session_playing">%1$s prehrávanie</string>
+    <string name="session_recovered">obnovené</string>
+
+    <string name="settings_tracking">sledovanie</string>
+    <string name="settings_detailed_title">podrobné sledovanie</string>
+    <string name="settings_detailed_body">pridáva drôtené slúchadlá a čas prehrávania. android oznamuje prípojné udalosti drôtov iba spustenej aplikácii, takže to udržuje tichý oznam. bluetooth sa sleduje v každom prípade.</string>
+    <string name="settings_detailed_unavailable">dostupné až po udelení bluetooth prístupu: tento build iba vyhlasuje typ služby connectedDevice, ktorý android 14+ viazal na povolenie bluetooth.</string>
+    <string name="settings_playback_only_title">počítaj iba prehrávanie</string>
+    <string name="settings_playback_only_body">štatistika počítajú čas, kedy sa audio skutočne prehrávalo namiesto času pripojeného. iba relácie zaznamenané s podrobným sledovaním zmeral prehrávanie; zvyšok je vynechaný.</string>
+    <string name="settings_language">jazyk</string>
+    <string name="settings_language_system">jazyk systému</string>
+    <string name="settings_devices">zariadenia</string>
+    <string name="settings_devices_body">odskrtnite všetko, čo nie sú slúchadlá - autorádiá alebo reproduktory - prestať to zaznamenávať.</string>
+    <string name="settings_device_subtitle">%1$s · prvý krát videný %2$s</string>
+    <string name="settings_data">údaje</string>
+    <string name="settings_export">exportovať json</string>
+    <string name="settings_import">importovať</string>
+    <string name="settings_import_warning">import nahradí všetko, čo je v súčasnosti uložené.</string>
+    <string name="settings_troubleshooting">riešenie problémov</string>
+    <string name="settings_battery_body">ak sa relácie prestanú zaznamenávať, skontrolujte, že ylih je oslobodená z optimalizácie batérie — aplikácia, ktorá bola nútene zastavená, nikdy dostane znova spojovací vysielací signál, kým sa neotvorí.</string>
+    <string name="settings_battery_button">nastavenia batérie</string>
+    <string name="settings_battery_path">nastavenia → aplikácie → ylih → batéria → bez obmedzení.</string>
+    <string name="settings_hibernation_body">ak ylih nie je otvorený niekoľko mesiacov, android ho pozastaví a odoberie mu oprávnenia a nič sa opäť nezaznamenáva, kým ho neotvoríte. vypnutie je to, čo umožňuje páru držať počet cez sezónu, na ktorú ste si aplikáciu nespomenuli.</string>
+    <string name="settings_hibernation_on">android môže pozastaviť ylih.</string>
+    <string name="settings_hibernation_off">ylih je oslobodená a naďalej zaznamenáva.</string>
+    <string name="settings_hibernation_button">nepoužívané nastavenia aplikácie</string>
+    <string name="settings_about">o aplikácii</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — hodiny slúchadiel, uchovávané lokálne a navždy.</string>
+    <string name="settings_import_confirm_title">nahradiť všetky údaje?</string>
+    <string name="settings_import_confirm_body">import tejto zálohy vymaže každé zariadenie, pár a reláciu v súčasnosti uloženú.</string>
+
+    <string name="widget_lifetime_label">ylih · celý život</string>
+    <string name="widget_lifetime_description">hodiny na pár, s živým časovačom na čo je pripojené</string>
+    <string name="widget_activity_label">ylih · aktivita</string>
+    <string name="widget_activity_description">hodiny každého páru spolu, plus dnes, 7 dní a 30 dní</string>
+    <string name="widget_chart_label">ylih · 30 dní</string>
+    <string name="widget_chart_description">denné hodiny za posledných 30 dní</string>
+
+    <string name="action_save">uložiť</string>
+    <string name="action_cancel">zrušiť</string>
+    <string name="action_delete">vymazať</string>
+    <string name="action_import">importovať</string>
+
+    <string name="channel_tracking">sledovanie slúchadiel</string>
+    <string name="channel_tracking_description">zobrazené počas sledovania ylih drôtených slúchadiel a prehrávania. android nedoručuje udalosti drôtov do aplikácií, ktoré nie sú spustené.</string>
+    <string name="notification_title">sledovanie času slúchadiel</string>
+    <string name="notification_starting">spúšťanie...</string>
+    <string name="notification_idle">čakajúce na slúchadlá</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d pripojené · %2$s</item>
+        <item quantity="few">%1$d pripojené · %2$s</item>
+        <item quantity="many">%1$d pripojené · %2$s</item>
+        <item quantity="other">%1$d pripojené · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d pripojené · %2$s · prehrávanie</item>
+        <item quantity="few">%1$d pripojené · %2$s · prehrávanie</item>
+        <item quantity="many">%1$d pripojené · %2$s · prehrávanie</item>
+        <item quantity="other">%1$d pripojené · %2$s · prehrávanie</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">tento build potrebuje bluetooth prístup skôr, ako bude môcť sledovať drôtené slúchadlá</string>
+    <string name="export_done">záloha exportovaná</string>
+    <string name="export_failed">export zlyhal</string>
+    <string name="import_failed">import zlyhal</string>
+    <string name="edit_failed">tuto zmenu sa nepodarilo uložiť</string>
+    <string name="error_could_not_open">nie je možné otvoriť %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">importovaná %d relácia</item>
+        <item quantity="few">importovaných %d relácií</item>
+        <item quantity="many">importovaných %d relácií</item>
+        <item quantity="other">importovaných %d relácií</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d relácia</item>
+        <item quantity="few">%d relácie</item>
+        <item quantity="many">%d relácií</item>
+        <item quantity="other">%d relácií</item>
+    </plurals>
+</resources>

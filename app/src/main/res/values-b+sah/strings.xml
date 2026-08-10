@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Yakut. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - tihin bihe oyun</string>
+
+    <string name="nav_headphones">yumukchit</string>
+    <string name="nav_stats">sanhayn</string>
+    <string name="nav_settings">saallatya</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">LE aajy</string>
+    <string name="kind_wired">tiethe</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">anyk tusuya</string>
+
+    <string name="welcome_title">ylih-ge kelem</string>
+    <string name="welcome_intro">ylih har bir yumukchit-yumukchit toguruhu tolonnu suluullaabyt sannattyy. amma aastakh yyllar songor gyn, ebit kysmyt: yumukchittar sanne kaaq caasqa toluonnullar?</string>
+    <string name="welcome_point_auto_title">ilges typpyt tuggaryt</string>
+    <string name="welcome_point_auto_body">bluetooth yumukchit-yumukchit ol isiterge toguruhu sannabyt. khampyr khaam baaryy sallataxyy kiele.</string>
+    <string name="welcome_point_lifetime_title">bir yumukchit toguruhu - bir kihin</string>
+    <string name="welcome_point_lifetime_body">yumukchit khatyna emes ettighe, sallat: annya yhaal buollar. khara toguruu aha kulustuhe tutula nannyy kelle hannyy.</string>
+    <string name="welcome_point_detailed_title">tithe tuis taas</string>
+    <string name="welcome_point_detailed_body">mannyy sallat diite, tithe yumukchit taas tuis kaaqhyhy. onon mannyy aajy-tuis cayaan eberibyt.</string>
+    <string name="welcome_privacy">yhaal baka man telephone-de. achchyt akkaant kylla, app-ta internet permiission kylla.</string>
+    <string name="welcome_start">kynsaa</string>
+    <string name="welcome_next">onnuk</string>
+    <string name="welcome_allow">ono</string>
+    <string name="welcome_step">kynsay %1$d %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth permisyon</string>
+    <string name="welcome_bluetooth_why">android-ta app ahagha bluetooth-yantra tyyllybyt tyusy, onon bluetooth khol hanara sabaryna billiyte. ylih-ta yumukchit ottajajayt machina taas ondollaabyt, aajy-taas ondollaabyt.</string>
+    <string name="welcome_bluetooth_with">bayta: har bir yumukchit toguruu isiterge toguruhu sannabyt, baaryy sallataxyy kylla.</string>
+    <string name="welcome_bluetooth_without">baytaha: bluetooth yumukchit kylla sannabyta. app-ta ootin-ootin uonna oiionnaah, sallataxyy aha android-ta app sallat aajybita.</string>
+    <string name="welcome_notifications_title">annyy</string>
+    <string name="welcome_notifications_why">mannyy treksing-ta kyshtaan sallata ispes-ispes, android-ta app annyy daa argyraat sallataxyy kiele.</string>
+    <string name="welcome_notifications_with">bayta: annyy nyu sannabyt byt bahaabyn, mannyy treksing onn yaaskan killiine.</string>
+    <string name="welcome_notifications_without">baytaha: mannyy treksing onn yaaskan killiine. android-ta annyy kylla koruosuokkun killiine.</string>
+    <string name="hibernation_title">oittionne tyupceen sannaabyt</string>
+    <string name="hibernation_body">android-ta app ehilleen axtara-oigee biyye deekke pauselaabyt, permisyon tunnaabyt, ylih-ta treksing kylla sannabyta sannattyy. application-ta oyunun bihir sordu buollaryn tiethe oyunun kysta ataarahta, andyy eh talyy tuhalaargan.</string>
+    <string name="action_not_now">baqa</string>
+
+    <string name="devices_in_use">kasyllaaha</string>
+    <string name="devices_retired">sallabyt</string>
+    <string name="devices_empty_title">yumukchit kylla</string>
+    <string name="devices_empty_body">bluetooth yumukchit-yumukchit toguruu isiterty tabaara ettii. tithe yumukchit mannyy treksing kile diite kerek.</string>
+    <string name="devices_generation">yumukchit #%1$d</string>
+    <string name="devices_retired_on">sallabyt %1$s</string>
+    <string name="devices_connected_for">toguruu %1$s</string>
+    <string name="devices_recent">%1$s / 7k</string>
+
+    <string name="stats_title">barjy yumukchit</string>
+    <string name="stats_sessions_since">%1$s %2$s songor</string>
+    <string name="stats_today">kunu kyun</string>
+    <string name="stats_last_7">songor 7 kyun</string>
+    <string name="stats_last_30">songor 30 kyun</string>
+    <string name="stats_average_session">ortdo session</string>
+    <string name="stats_longest_session">kelu session</string>
+    <string name="stats_playing">audio oyun</string>
+    <string name="stats_measured_span">aajy tuisyy</string>
+    <string name="stats_share">oyun utalbyt</string>
+    <string name="stats_playback_only_note">aajy utalbyt billyyt</string>
+    <string name="stats_daily_hours_30">kunuttuun caasqa (30 kyun)</string>
+    <string name="stats_by_pair">yumukchit bohoo</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · sallabyt</string>
+    <string name="chart_max">%1$s maksimalny</string>
+
+    <string name="pair_fallback_title">yumukchit</string>
+    <string name="pair_back">artka</string>
+    <string name="pair_more">koruobyt</string>
+    <string name="pair_menu_rename">aat tulaghy</string>
+    <string name="pair_menu_purchase">satylaarga kihi</string>
+    <string name="pair_menu_retire">sallat / alaasybyt</string>
+    <string name="pair_menu_delete">tiis</string>
+    <string name="pair_lifetime">yumukchit bohoo kihin</string>
+    <string name="pair_retired_on">sallabyt %1$s</string>
+    <string name="pair_retired_with_reason">sallabyt %1$s · %2$s</string>
+    <string name="pair_connected_now">kunu toguruu · %1$s</string>
+    <string name="pair_sessions">session</string>
+    <string name="pair_average">ortdo</string>
+    <string name="pair_longest">kelu</string>
+    <string name="pair_since">songor %1$s</string>
+    <string name="pair_of_measured">oyun utalbyt</string>
+    <string name="pair_measured">aajy tuisyy</string>
+    <string name="pair_paid">tuluu</string>
+    <string name="pair_per_hour">caasqykkha</string>
+    <string name="pair_bought">satylaa</string>
+    <string name="pair_daily_hours_14">kunuttuun caasqa (14 kyun)</string>
+    <string name="pair_rename_title">yumukchit bohoo aat tulaghy</string>
+    <string name="pair_rename_label">aat</string>
+    <string name="pair_retire_title">yumukchit bohoo sallat</string>
+    <string name="pair_retire_label">sebep (khuuy, satyllaa, aar...)</string>
+    <string name="pair_retire_confirm">sallat</string>
+    <string name="pair_retire_supporting">aaba sannattyy tyuustyy tatyy. aha sanaha kelle hannyy kelle hannyy.</string>
+    <string name="pair_price_title">tuluu satylaa</string>
+    <string name="pair_price_label">sum (byt)</string>
+    <string name="pair_price_supporting">caasqa-tuluu sanhayna alaghabyt.</string>
+    <string name="pair_delete_title">yumukchit bohoo tiis?</string>
+    <string name="pair_delete_body">har bir session tiis taabyta. biylya tiis tabyy kylla buollaah.</string>
+
+    <string name="session_ongoing">yaaskan</string>
+    <string name="session_until">%1$s sannattyy</string>
+    <string name="session_playing">%1$s oyun</string>
+    <string name="session_recovered">tuttu</string>
+
+    <string name="settings_tracking">treksing</string>
+    <string name="settings_detailed_title">mannyy treksing</string>
+    <string name="settings_detailed_body">tithe yumukchit taas aajy utalbyt taas. android-ta tithe yaaskan app-tat app sannataxyy kiele, apptan annyy sallataxyy byt. bluetooth sorbu-taryhta treksing taabyta.</string>
+    <string name="settings_detailed_unavailable">bluetooth permisyon hannyy boloonnughe - tatyy billik connectedDevice service type kereppes, android 14+ bluetooth permisyonny pylyya.</string>
+    <string name="settings_playback_only_title">aajy aabyt billyyt</string>
+    <string name="settings_playback_only_body">sanhayn toguruu-sannattyy oyunnuu billyyt. session mannyy treksing bahtaa aajy tuisyy; itineen khaliyt.</string>
+    <string name="settings_language">tyla</string>
+    <string name="settings_language_system">system tyla</string>
+    <string name="settings_devices">apparatus</string>
+    <string name="settings_devices_body">khompyuter taas - avtomobil stereo kile speaker kile - treksing kylla sannataxyy.</string>
+    <string name="settings_device_subtitle">%1$s · birinchi kaara %2$s</string>
+    <string name="settings_data">suruller</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">import</string>
+    <string name="settings_import_warning">import byt suruller tienges alaasybyt.</string>
+    <string name="settings_troubleshooting">probleme tiis</string>
+    <string name="settings_battery_body">session sannattyy byysytta, ylih-ta battery optimization kylla billiyte - app force-stop taappyta, toguruu annyy aas aabyta sannattyy kylla buollaah.</string>
+    <string name="settings_battery_button">battery sallat</string>
+    <string name="settings_battery_path">sallat - applications - ylih - battery - unlimited.</string>
+    <string name="settings_hibernation_body">ylih ehilleen axtara-oigee biyye deekke pauselaabyt, permisyon tunnaabyt, sannattyy kylla buollaah app abuhulen sannattyy. ehkile tulaghy app sannattyy yumukchit bhir oluorge kelle mardybyt.</string>
+    <string name="settings_hibernation_on">android ylih pauselaabyn bolar.</string>
+    <string name="settings_hibernation_off">ylih sannattyy yaaskan.</string>
+    <string name="settings_hibernation_button">unused application sallat</string>
+    <string name="settings_about">surulle</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - yumukchit caasqa, lokal iyo onnuk.</string>
+    <string name="settings_import_confirm_title">barjy suruller alaasybyt?</string>
+    <string name="settings_import_confirm_body">import apparatus, yumukchit bohoo, session tiis taabyta.</string>
+
+    <string name="widget_lifetime_label">ylih · kihin</string>
+    <string name="widget_lifetime_description">caasqa yumukchit bohoo, toguruu apparatus bahtaa live taimmer</string>
+    <string name="widget_activity_label">ylih · oyun</string>
+    <string name="widget_activity_description">barjy yumukchit caasqa, kunu kyun, 7 kyun iyo 30 kyun</string>
+    <string name="widget_chart_label">ylih · 30 kyun</string>
+    <string name="widget_chart_description">kunuttuun sravana caasqa 30 kyun songor</string>
+
+    <string name="action_save">sakhtar</string>
+    <string name="action_cancel">tulaghy</string>
+    <string name="action_delete">tiis</string>
+    <string name="action_import">import</string>
+
+    <string name="channel_tracking">yumukchit treksing</string>
+    <string name="channel_tracking_description">ylih tithe yumukchit taas aajy utalbyt bahtaa yaaskan. android-ta tithe toguruu annyy kylla sannattyy.</string>
+    <string name="notification_title">yumukchit caasqa treksing</string>
+    <string name="notification_starting">kynsaa...</string>
+    <string name="notification_idle">yumukchit bohoo oittiot</string>
+    <plurals name="notification_active">
+        <item quantity="other">%1$d toguruu · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="other">%1$d toguruu · %2$s · oyun</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">tatyy billik bluetooth permisyon hannyy tithe yumukchit treksing onnughe</string>
+    <string name="export_done">sthapana tuttu</string>
+    <string name="export_failed">sthapana tyuey</string>
+    <string name="import_failed">import tyuey</string>
+    <string name="edit_failed">taas tulaghy kylla buollaah</string>
+    <string name="error_could_not_open">%1$s abuhuley kylla buollaah</string>
+    <plurals name="import_done">
+        <item quantity="other">import %d session</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="other">%d session</item>
+    </plurals>
+</resources>

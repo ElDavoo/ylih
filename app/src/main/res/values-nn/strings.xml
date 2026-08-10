@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Norwegian Nynorsk. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - livet ditt i hovudtelefon</string>
+
+    <string name="nav_headphones">hovudtelefon</string>
+    <string name="nav_stats">statistikk</string>
+    <string name="nav_settings">innstillingar</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">trådd</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ukjend</string>
+
+    <string name="welcome_title">velkomen til ylih</string>
+    <string name="welcome_intro">ylih registrerer kor lenge kvart par hovudtelefon held seg kopla til, slik at du framleis kan svara på det eine spørsmålet som betyr noko for eit par - kor mange timar heldt dei?</string>
+    <string name="welcome_point_auto_title">kopla til og gløym</string>
+    <string name="welcome_point_auto_body">bluetooth hovudtelefon blir registrert sjølv, frå det same augeblikket dei koplar til. ingenting treng å halda fram med å køyra.</string>
+    <string name="welcome_point_lifetime_title">eitt par, eitt liv</string>
+    <string name="welcome_point_lifetime_body">når eit par døyr, pensjoner det: summen frys der, og det neste paret av same hovudtelefon startar frå null igjen.</string>
+    <string name="welcome_point_detailed_title">trådd og avspeling</string>
+    <string name="welcome_point_detailed_body">nøyaktig registrering, i innstillingane, legg til trådd hovudtelefon og måler kor mykje av tida som faktisk var avspeling.</string>
+    <string name="welcome_privacy">alt held seg på denne telefonen. det finst ikkje ein konto, og appen har ikkje internett-løyve.</string>
+    <string name="welcome_start">kom i gang</string>
+    <string name="welcome_next">neste</string>
+    <string name="welcome_allow">tillat</string>
+    <string name="welcome_step">steg %1$d av %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth-tilgang</string>
+    <string name="welcome_bluetooth_why">android seier berre til ei app kva bluetooth-eining som kopla til, og kva han heiter, dersom appen held bluetooth-tilgang. det er korleis ylih kan skilja eit par hovudtelefon frå ein bilystereo, og korleis han veit det eine paret frå eit anna.</string>
+    <string name="welcome_bluetooth_with">med det: kvart par blir registrert frå det same augeblikket det koplar til, utan noko som køyrer og utan noko å hugsa å trykkja.</string>
+    <string name="welcome_bluetooth_without">utan det: bluetooth hovudtelefon blir ikkje registrert i det heile. resten av appen fungerer framleis, og du kan gje det seinare i android sine appinnstillingar.</string>
+    <string name="welcome_notifications_title">merkingar</string>
+    <string name="welcome_notifications_why">nøyaktig registrering køyrer ein liten bakgrunnsteneste, og android krev at alle appane som gjer det held ein merking synleg medan det gjer det.</string>
+    <string name="welcome_notifications_with">med det: merkinga viser kva som blir registrert akkurat no, som er det eina teiknet på at nøyaktig registrering held fram.</string>
+    <string name="welcome_notifications_without">utan det: nøyaktig registrering held framleis fram og registrerer framleis. android vil berre ikkje visa merkinga hans.</string>
+    <string name="hibernation_title">halda telingen vidare medan du gløymer det</string>
+    <string name="hibernation_body">android set i dvale appane som blir ikkje opna i fleire månader og tek lova deira attende, som ville la ylih registrera ingenting til du opna det att. å bli gløymd er eksakt det denne appen er til for, so det er verd å slå det av no.</string>
+    <string name="action_not_now">ikkje no</string>
+
+    <string name="devices_in_use">i bruk</string>
+    <string name="devices_retired">pensjonert</string>
+    <string name="devices_empty_title">ingen hovudtelefon enno</string>
+    <string name="devices_empty_body">kopla til eit par bluetooth hovudtelefon og dei kjem til å synast her. trådd hovudtelefon treng nøyaktig registrering, i innstillingane.</string>
+    <string name="devices_generation">par #%1$d</string>
+    <string name="devices_retired_on">pensjonert %1$s</string>
+    <string name="devices_connected_for">kopla til %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">alle hovudtelefon</string>
+    <string name="stats_sessions_since">%1$s sidan %2$s</string>
+    <string name="stats_today">i dag</string>
+    <string name="stats_last_7">siste 7 dagar</string>
+    <string name="stats_last_30">siste 30 dagar</string>
+    <string name="stats_average_session">gjennomsnittleg økt</string>
+    <string name="stats_longest_session">lengste økt</string>
+    <string name="stats_playing">lyd avspeling</string>
+    <string name="stats_measured_span">målt for avspeling</string>
+    <string name="stats_share">avspeling andel</string>
+    <string name="stats_playback_only_note">telja berre avspeling tid</string>
+    <string name="stats_daily_hours_30">dagleg timar (30 dagar)</string>
+    <string name="stats_by_pair">etter par</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · pensjonert</string>
+    <string name="chart_max">%1$s maks</string>
+
+    <string name="pair_fallback_title">par</string>
+    <string name="pair_back">attende</string>
+    <string name="pair_more">meir</string>
+    <string name="pair_menu_rename">endr namn</string>
+    <string name="pair_menu_purchase">kjøp informasjon</string>
+    <string name="pair_menu_retire">pensjonere / erstatt</string>
+    <string name="pair_menu_delete">slett</string>
+    <string name="pair_lifetime">levetid på dette paret</string>
+    <string name="pair_retired_on">pensjonert %1$s</string>
+    <string name="pair_retired_with_reason">pensjonert %1$s · %2$s</string>
+    <string name="pair_connected_now">kopla til no · %1$s</string>
+    <string name="pair_sessions">økter</string>
+    <string name="pair_average">gjennomsnitt</string>
+    <string name="pair_longest">lengste</string>
+    <string name="pair_since">sidan %1$s</string>
+    <string name="pair_of_measured">avspeling andel</string>
+    <string name="pair_measured">målt for avspeling</string>
+    <string name="pair_paid">betalt</string>
+    <string name="pair_per_hour">per time</string>
+    <string name="pair_bought">kjøpt</string>
+    <string name="pair_daily_hours_14">dagleg timar (14 dagar)</string>
+    <string name="pair_rename_title">endr namn på par</string>
+    <string name="pair_rename_label">namn</string>
+    <string name="pair_retire_title">pensjonere dette paret</string>
+    <string name="pair_retire_label">grunn (døde, selt, bortkomne)</string>
+    <string name="pair_retire_confirm">pensjonere</string>
+    <string name="pair_retire_supporting">sumane frys der. å kopla den same eininga til att startar eit ferskt par frå null.</string>
+    <string name="pair_price_title">pris betalt</string>
+    <string name="pair_price_label">beløp (heile einingar)</string>
+    <string name="pair_price_supporting">brukt for kostnaden-per-time figur.</string>
+    <string name="pair_delete_title">slette dette paret?</string>
+    <string name="pair_delete_body">kvar økt registrert for det blir også sletta. dette kan ikkje gjerast om.</string>
+
+    <string name="session_ongoing">pågåande</string>
+    <string name="session_until">til %1$s</string>
+    <string name="session_playing">%1$s avspeling</string>
+    <string name="session_recovered">gjenvunne</string>
+
+    <string name="settings_tracking">registrering</string>
+    <string name="settings_detailed_title">nøyaktig registrering</string>
+    <string name="settings_detailed_body">legg til trådd hovudtelefon og avspeling tid. android seier berre trådd plugg hendingane til ein app som køyrer, so det held ein stille merking i skuggen. bluetooth blir registrert uansett.</string>
+    <string name="settings_detailed_unavailable">utilgjengelig inntil bluetooth tilgang er gitt: denne versjonen deklarerer berre connectedDevice teneste typen, som android 14+ binder til ein bluetooth løyve.</string>
+    <string name="settings_playback_only_title">telja berre avspeling</string>
+    <string name="settings_playback_only_body">statistikken teljar tida lyden var faktisk avspeling i stedet for tida kopla. berre øktar registrert med nøyaktig registrering på målt avspeling; resten er laten ut.</string>
+    <string name="settings_language">språk</string>
+    <string name="settings_language_system">system språk</string>
+    <string name="settings_devices">einingar</string>
+    <string name="settings_devices_body">avkryssa alt som ikkje er hovudtelefon - ein bilystereo eller ein høgtalare - for å sluta å registrera det.</string>
+    <string name="settings_device_subtitle">%1$s · først sett %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">eksport json</string>
+    <string name="settings_import">import</string>
+    <string name="settings_import_warning">import erstattar alt som er lagra no.</string>
+    <string name="settings_troubleshooting">feilsøking</string>
+    <string name="settings_battery_body">dersom øktar sluttar å bli registrert, kontroller at ylih er friteken for batteri optimering - ei app som er tvangsavslutta aldri mottar tilknyting kringkastingar att inntil ho er opna.</string>
+    <string name="settings_battery_button">batteri innstillingar</string>
+    <string name="settings_battery_path">innstillingar → appane → ylih → batteri → ubegrensa.</string>
+    <string name="settings_hibernation_body">dersom ylih går uopna i fleire månader, android set henne i dvale og tek lova hans attende, og ingenting blir registrert att inntil du opnar ho. det å slå det av er det som let eit par halda telingen gjennom ein sesong du aldri tenker på appen.</string>
+    <string name="settings_hibernation_on">android kan setja ylih i dvale.</string>
+    <string name="settings_hibernation_off">ylih er fri og held registrering.</string>
+    <string name="settings_hibernation_button">ubrukt app innstillingar</string>
+    <string name="settings_about">om</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — hovudtelefon timar, heldt lokalt og evig.</string>
+    <string name="settings_import_confirm_title">erstatte all data?</string>
+    <string name="settings_import_confirm_body">import av denne sikkerheitskopien slettar kvar eining, par og økt lagra no.</string>
+
+    <string name="widget_lifetime_label">ylih · levetid</string>
+    <string name="widget_lifetime_description">timar per par, med ein live tidtakar på kva som er kopla til</string>
+    <string name="widget_activity_label">ylih · aktivitet</string>
+    <string name="widget_activity_description">kvar par sine timar saman, pluss i dag, 7 dagar og 30 dagar</string>
+    <string name="widget_chart_label">ylih · 30 dagar</string>
+    <string name="widget_chart_description">dagleg lyttings timar over dei siste 30 dagane</string>
+
+    <string name="action_save">lagre</string>
+    <string name="action_cancel">avbryt</string>
+    <string name="action_delete">slett</string>
+    <string name="action_import">import</string>
+
+    <string name="channel_tracking">hovudtelefon registrering</string>
+    <string name="channel_tracking_description">vises medan ylih er på utkikk etter trådd hovudtelefon og avspeling. android leverer ikkje trådd plugg hendingane til appane som ikkje køyrer.</string>
+    <string name="notification_title">registrering hovudtelefon tid</string>
+    <string name="notification_starting">startar...</string>
+    <string name="notification_idle">venter på hovudtelefon</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d kopla til · %2$s</item>
+        <item quantity="other">%1$d kopla til · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d kopla til · %2$s · avspeling</item>
+        <item quantity="other">%1$d kopla til · %2$s · avspeling</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">denne versjonen treng bluetooth tilgang før han kan registrera trådd hovudtelefon</string>
+    <string name="export_done">sikkerheit kopi eksportert</string>
+    <string name="export_failed">eksport feil</string>
+    <string name="import_failed">import feil</string>
+    <string name="edit_failed">kunne ikkje lagra den endring</string>
+    <string name="error_could_not_open">kunne ikkje opne %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">importert %d økt</item>
+        <item quantity="other">importert %d øktar</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d økt</item>
+        <item quantity="other">%d øktar</item>
+    </plurals>
+</resources>

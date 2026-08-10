@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Low German. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - dien leven in kopphörer</string>
+
+    <string name="nav_headphones">kopphörer</string>
+    <string name="nav_stats">statistik</string>
+    <string name="nav_settings">instellingen</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">dröppt</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">bekannt</string>
+
+    <string name="welcome_title">willkomen to ylih</string>
+    <string name="welcome_intro">ylih protokolliert, hoeveel tiet elk paar kopphörer verbunnen blift, sodat du in jaoren noch immer de eenige vraog beantwoorden kannst, de wat toet: hoeveel ouren hebben se duert?</string>
+    <string name="welcome_point_auto_title">verbinnen en fergeten</string>
+    <string name="welcome_point_auto_body">bluetooth kopphörer worden sülvst opnahmt, van dat ogenblik se verbinnen. nix mutt lopen laten.</string>
+    <string name="welcome_point_lifetime_title">een paar, een leven</string>
+    <string name="welcome_point_lifetime_body">wenn een paar dood geit, pensioneer et: de sum fries dar un de nagest paar vun düssülve kopphörer fant op null an weer.</string>
+    <string name="welcome_point_detailed_title">dröppt un avspeel</string>
+    <string name="welcome_point_detailed_body">detaljert protokollierung in de instellingen addiert dröppt kopphörer un mett, hoeveel vun de tiet aktual avspeel weren.</string>
+    <string name="welcome_privacy">allens blift op dit telefoon. dar is kein konto, un de app hett kein interneterlaubnis.</string>
+    <string name="welcome_start">an de slag gaan</string>
+    <string name="welcome_next">nagest</string>
+    <string name="welcome_allow">tolaten</string>
+    <string name="welcome_step">schritt %1$d van %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth-tillang</string>
+    <string name="welcome_bluetooth_why">android seggt en app alenks, welk bluetooth-toestel verbunnen is, un wat et hait, wenn de app bluetooth-tillang hett. dat is, hoalang ylih een paar kopphörer van en autoradio unterscheidt, un hoalang et een paar van en ander weett.</string>
+    <string name="welcome_bluetooth_with">damit: elk paar wordt protokolliert van dat et verbinnt, sunder wat lopen to laten un nix to remembern.</string>
+    <string name="welcome_bluetooth_without">sunder: bluetooth kopphörer worden heelendal neet protokolliert. de rest vun de app würkt noch, un du kannst et later in android seine app-instellingen geven.</string>
+    <string name="welcome_notifications_title">berichten</string>
+    <string name="welcome_notifications_why">detaljert protokollering fahrt en lütte achtergrundtöövst, un android forlangt, dat elke app, de dat deit, en bericht sichtbar hellt, während dat.</string>
+    <string name="welcome_notifications_with">damit: de bericht weist, wat just nu protokolliert werd, wat de eenige teken is, dat detaljert protokollering leeft.</string>
+    <string name="welcome_notifications_without">sunder: detaljert protokollering fahrt noch un protokolliert noch. android will alenks sine berichten neet wiesen.</string>
+    <string name="hibernation_title">tellen haldden, während du dat fergetes</string>
+    <string name="hibernation_body">android pauseert apps, de maanden neet openmaket, un nimt ehr erlaubnis terug, wat ylih nix protokollert laten weg bet du et nagest openmaakst. fergeten warrn is genau, wovöre de app is, so et is wert, dat nu utet to maken.</string>
+    <string name="action_not_now">neet nu</string>
+
+    <string name="devices_in_use">in gebruuk</string>
+    <string name="devices_retired">pensionert</string>
+    <string name="devices_empty_title">noch kein kopphörer</string>
+    <string name="devices_empty_body">verbinnt en paar bluetooth kopphörer un se wiesen hier up. dröppt kopphörer brauk detaljert protokollering, in de instellingen.</string>
+    <string name="devices_generation">paar #%1$d</string>
+    <string name="devices_retired_on">pensionert %1$s</string>
+    <string name="devices_connected_for">verbunnen %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">alle kopphörer</string>
+    <string name="stats_sessions_since">%1$s siet %2$s</string>
+    <string name="stats_today">vandaag</string>
+    <string name="stats_last_7">nagest 7 daag</string>
+    <string name="stats_last_30">nagest 30 daag</string>
+    <string name="stats_average_session">dürksnets-sitzung</string>
+    <string name="stats_longest_session">langste sitzung</string>
+    <string name="stats_playing">audio avspeelend</string>
+    <string name="stats_measured_span">met for avspeel</string>
+    <string name="stats_share">avspeelend deel</string>
+    <string name="stats_playback_only_note">tellen avenks avspeeltiet</string>
+    <string name="stats_daily_hours_30">daaglike ouren (30 daag)</string>
+    <string name="stats_by_pair">per paar</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · pensionert</string>
+    <string name="chart_max">%1$s max</string>
+
+    <string name="pair_fallback_title">paar</string>
+    <string name="pair_back">torüch</string>
+    <string name="pair_more">mehr</string>
+    <string name="pair_menu_rename">ander nomen geven</string>
+    <string name="pair_menu_purchase">koop-info</string>
+    <string name="pair_menu_retire">pensioneren / vervangen</string>
+    <string name="pair_menu_delete">schrieken</string>
+    <string name="pair_lifetime">leven op dit paar</string>
+    <string name="pair_retired_on">pensionert %1$s</string>
+    <string name="pair_retired_with_reason">pensionert %1$s · %2$s</string>
+    <string name="pair_connected_now">verbunnen nu · %1$s</string>
+    <string name="pair_sessions">sitzungen</string>
+    <string name="pair_average">dürksnets</string>
+    <string name="pair_longest">langste</string>
+    <string name="pair_since">siet %1$s</string>
+    <string name="pair_of_measured">avspeelend deel</string>
+    <string name="pair_measured">met for avspeel</string>
+    <string name="pair_paid">betaalt</string>
+    <string name="pair_per_hour">per our</string>
+    <string name="pair_bought">kocht</string>
+    <string name="pair_daily_hours_14">daaglike ouren (14 daag)</string>
+    <string name="pair_rename_title">paar ander nomen geven</string>
+    <string name="pair_rename_label">nomen</string>
+    <string name="pair_retire_title">dit paar pensioneren</string>
+    <string name="pair_retire_label">grund (dood, verkochen, verluren)</string>
+    <string name="pair_retire_confirm">pensioneren</string>
+    <string name="pair_retire_supporting">summen fries dar. dat verbinnen van dat samme toestel fant en ferscht paar up null an weer.</string>
+    <string name="pair_price_title">betaalde prys</string>
+    <string name="pair_price_label">betrag (ganske enheten)</string>
+    <string name="pair_price_supporting">brukt for de prys-per-our tal.</string>
+    <string name="pair_delete_title">dit paar schrieken?</string>
+    <string name="pair_delete_body">elk protokolleert sitzung for et wodt ook schreeken. dat kann neet unmaket warrn.</string>
+
+    <string name="session_ongoing">leavend</string>
+    <string name="session_until">bet %1$s</string>
+    <string name="session_playing">%1$s avspeelend</string>
+    <string name="session_recovered">wedderfunnen</string>
+
+    <string name="settings_tracking">protokollering</string>
+    <string name="settings_detailed_title">detaljert protokollering</string>
+    <string name="settings_detailed_body">addiert dröppt kopphörer un avspeeltiet. android reportiert dröppt-toevallen alenks an leavende apps, so dit hellt en still bericht in de schaduw. bluetooth wordt protokolleert elk geval.</string>
+    <string name="settings_detailed_unavailable">onbeschieker bet bluetooth-tillang gegeaven wodt: dit build deklariert alenks de connectedDevice-sörtwus, wat android 14+ an en bluetooth-erlaubnis bindt.</string>
+    <string name="settings_playback_only_title">tellen avenks avspeel</string>
+    <string name="settings_playback_only_body">statistik tellen de tiet, audio aktual avspeel, statt de verbunnenheid-tiet. alenks sitzungen, protokolleert mit detaljert protokollering an, metten avspeel; de rest leavt utenbi.</string>
+    <string name="settings_language">spraak</string>
+    <string name="settings_language_system">systeem-spraak</string>
+    <string name="settings_devices">toestellen</string>
+    <string name="settings_devices_body">uncheck wat neet kopphörer is - en autoradio of en spreker - to dat neet mehr protokolliert warrn.</string>
+    <string name="settings_device_subtitle">%1$s · eerst sehn %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">import</string>
+    <string name="settings_import_warning">import ersetst alles, nu opslaan.</string>
+    <string name="settings_troubleshooting">foutupsporing</string>
+    <string name="settings_battery_body">wenn sitzungen neet mehr protokolleert warrn, kontrolleer, dat ylih fry is vun batterij-optimisering - en app, de forst-stopt is, kreegt neet weer verbinnen-utsendingen bet et openmaak warrn.</string>
+    <string name="settings_battery_button">batterij-instellingen</string>
+    <string name="settings_battery_path">instellingen → apps → ylih → batterij → unbegrenset.</string>
+    <string name="settings_hibernation_body">wenn ylih maanden neet openmaak warrn, pauseert android et un nimt erlaubnis torüch, un nix warrn mehr protokolleert bet du et openmaakst. dat utet maaken is, wat en paar tellen holt dör en tietdeel, wo du de app neet denkst.</string>
+    <string name="settings_hibernation_on">android kann ylih pauseren.</string>
+    <string name="settings_hibernation_off">ylih is fry un holt protokollering.</string>
+    <string name="settings_hibernation_button">ongenutte app-instellingen</string>
+    <string name="settings_about">over</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - kopphörer-ouren, holt lokal un for ewik.</string>
+    <string name="settings_import_confirm_title">alle data ersetsen?</string>
+    <string name="settings_import_confirm_body">import van dit sicherungs schikt elk toestel, paar un sitzung, nu opslaan.</string>
+
+    <string name="widget_lifetime_label">ylih · leven</string>
+    <string name="widget_lifetime_description">ouren per paar, mit en leaven-timer up wat verbunnen is</string>
+    <string name="widget_activity_label">ylih · aktiviteet</string>
+    <string name="widget_activity_description">elk paar seine ouren tosamen, plus vandaag, 7 daag un 30 daag</string>
+    <string name="widget_chart_label">ylih · 30 daag</string>
+    <string name="widget_chart_description">daaglike ouren over de nagest 30 daag</string>
+
+    <string name="action_save">opslaan</string>
+    <string name="action_cancel">afbreken</string>
+    <string name="action_delete">schrieken</string>
+    <string name="action_import">import</string>
+
+    <string name="channel_tracking">kopphörer-protokollering</string>
+    <string name="channel_tracking_description">wisst, während ylih wacht for dröppt kopphörer un avspeel. android delivert dröppt-toevallen neet an apps, de neet leavend zijn.</string>
+    <string name="notification_title">protokollering kopphörer-tiet</string>
+    <string name="notification_starting">startend...</string>
+    <string name="notification_idle">wartend for kopphörer</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d verbunnen · %2$s</item>
+        <item quantity="many">%1$d verbunnen · %2$s</item>
+        <item quantity="other">%1$d verbunnen · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d verbunnen · %2$s · avspeelend</item>
+        <item quantity="many">%1$d verbunnen · %2$s · avspeelend</item>
+        <item quantity="other">%1$d verbunnen · %2$s · avspeelend</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">dit build brauk bluetooth-tillang, ehr et dröppt kopphörer protokolleren kann</string>
+    <string name="export_done">sicherung exporteert</string>
+    <string name="export_failed">export mislöckt</string>
+    <string name="import_failed">import mislöckt</string>
+    <string name="edit_failed">da wiede dat nicht spaaren</string>
+    <string name="error_could_not_open">da wiede %1$s neet openmaaken</string>
+    <plurals name="import_done">
+        <item quantity="one">importeert %d sitzung</item>
+        <item quantity="many">importeert %d sitzungen</item>
+        <item quantity="other">importeert %d sitzungen</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sitzung</item>
+        <item quantity="many">%d sitzungen</item>
+        <item quantity="other">%d sitzungen</item>
+    </plurals>
+</resources>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Koyraboro Senni. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - sira ga a ce jine</string>
+
+    <string name="nav_headphones">dagara</string>
+    <string name="nav_stats">tiliyali</string>
+    <string name="nav_settings">fasal</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">telefonu feere</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">a bay</string>
+
+    <string name="welcome_title">sannu ylih ga</string>
+    <string name="welcome_intro">ylih ra timide koydameeyan nda a jina bote ga jigara borey koy, kul waati sa fe, tun i ga ala ajagey kulu se cemdim: a demiya si meeyan?</string>
+    <string name="welcome_point_auto_title">jokere kul hasa</string>
+    <string name="welcome_point_auto_body">bluetooth dagara ra jara timide koydameeyan nda a jina bote, kul waati se a jokere. alama kaasi ga hala a kul.</string>
+    <string name="welcome_point_lifetime_title">koydameeyan gaa, jamun jigara gaa</string>
+    <string name="welcome_point_lifetime_body">koydameeyan gaa se a woro, i timide ra kafa di: a jigara ra kafa di hala nd araw tun koydameeyan kula gaa a jina kul duurey ka.</string>
+    <string name="welcome_point_detailed_title">telefonu feere nda se karti</string>
+    <string name="welcome_point_detailed_body">timide kayey ga, fasal ga, ra telefonu feere nda ra se karti nda a timide alayaa.</string>
+    <string name="welcome_privacy">alama ra a telefon ga. alama bankey bay, kul app ga internet fasal bay.</string>
+    <string name="welcome_start">faala</string>
+    <string name="welcome_next">sanda</string>
+    <string name="welcome_allow">jokere</string>
+    <string name="welcome_step">taray %1$d %2$d ga</string>
+    <string name="welcome_bluetooth_title">bluetooth fasal</string>
+    <string name="welcome_bluetooth_why">android ra app ga timide a kul bluetooth dijis jokere nda a tuma se, alabisa app ga bluetooth fasal jara. ylih ra ni tun koydameeyan mara gabay dijis, nda ni tun koydameeyan gaa mara gaa.</string>
+    <string name="welcome_bluetooth_with">ni gaa: koydameeyan kulu ra jara timide koydameeyan nda a jina bote, kulu alama hala nda alama kaasi bay.</string>
+    <string name="welcome_bluetooth_without">ni bay: bluetooth dagara bay timide koydameeyan. app ga ganda kulu ra hala, kul bluetooth fasal ganda android fasal ga duurey.</string>
+    <string name="welcome_notifications_title">sahabu</string>
+    <string name="welcome_notifications_why">timide kayey ra sebene app jara, kul android ra app kulu ra sahabu taara di ay.</string>
+    <string name="welcome_notifications_with">ni gaa: sahabu ra tuma ay nda ya timide dun, yan kulu timide kayey hala di.</string>
+    <string name="welcome_notifications_without">ni bay: timide kayey ga kulu ra hala nda kulu ra timide. android ra sahabu taara bay.</string>
+    <string name="hibernation_title">jigara kul nda ci ga a maale</string>
+    <string name="hibernation_body">android ra app ga fusacine ga waati jigara nda i fasal sanda, kul ylih ga alama timide bay jiraw i nda i bure. a ga tuma ay ni app ga tamasa, kul kafa di kul a kaara dun.</string>
+    <string name="action_not_now">sani bay</string>
+
+    <string name="devices_in_use">isilaama ga</string>
+    <string name="devices_retired">kafa</string>
+    <string name="devices_empty_title">dagara bay sani</string>
+    <string name="devices_empty_body">bluetooth koydameeyan jokere kul i ga taara ni. telefonu feere koydameeyan timide kayey nda, fasal ga.</string>
+    <string name="devices_generation">koydameeyan #%1$d</string>
+    <string name="devices_retired_on">kafa %1$s</string>
+    <string name="devices_connected_for">jokere %1$s</string>
+    <string name="devices_recent">%1$s / jiyaaru 7</string>
+
+    <string name="stats_title">dagara kulu</string>
+    <string name="stats_sessions_since">%1$s %2$s nda</string>
+    <string name="stats_today">sani</string>
+    <string name="stats_last_7">jiyaaru 7 ga baaba</string>
+    <string name="stats_last_30">jiyaaru 30 ga baaba</string>
+    <string name="stats_average_session">timide soo</string>
+    <string name="stats_longest_session">timide kaa</string>
+    <string name="stats_playing">se karti ka</string>
+    <string name="stats_measured_span">se karti kulu</string>
+    <string name="stats_share">se karti timide</string>
+    <string name="stats_playback_only_note">se karti kulu ra timide</string>
+    <string name="stats_daily_hours_30">jiyaaru demiya jiyaaru 30 ga</string>
+    <string name="stats_by_pair">koydameeyan ga</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · kafa</string>
+    <string name="chart_max">%1$s kaa</string>
+
+    <string name="pair_fallback_title">koydameeyan</string>
+    <string name="pair_back">sanda</string>
+    <string name="pair_more">ganda</string>
+    <string name="pair_menu_rename">tuma sanda</string>
+    <string name="pair_menu_purchase">jara alama</string>
+    <string name="pair_menu_retire">kafa / sanda</string>
+    <string name="pair_menu_delete">dele</string>
+    <string name="pair_lifetime">koydameeyan ni jigara</string>
+    <string name="pair_retired_on">kafa %1$s</string>
+    <string name="pair_retired_with_reason">kafa %1$s · %2$s</string>
+    <string name="pair_connected_now">jokere sani · %1$s</string>
+    <string name="pair_sessions">timide</string>
+    <string name="pair_average">soo</string>
+    <string name="pair_longest">kaa</string>
+    <string name="pair_since">%1$s nda</string>
+    <string name="pair_of_measured">se karti timide</string>
+    <string name="pair_measured">se karti kulu</string>
+    <string name="pair_paid">bire</string>
+    <string name="pair_per_hour">demiya koy</string>
+    <string name="pair_bought">jara</string>
+    <string name="pair_daily_hours_14">jiyaaru demiya jiyaaru 14 ga</string>
+    <string name="pair_rename_title">koydameeyan tuma sanda</string>
+    <string name="pair_rename_label">tuma</string>
+    <string name="pair_retire_title">koydameeyan ni kafa</string>
+    <string name="pair_retire_label">kabaari (woro, sanda, bay...)</string>
+    <string name="pair_retire_confirm">kafa</string>
+    <string name="pair_retire_supporting">jigara ra kafa di ni. dijis gaa jokere tun koydameeyan kula gaa a jina kul ka.</string>
+    <string name="pair_price_title">bire ay</string>
+    <string name="pair_price_label">sanda (kokey)</string>
+    <string name="pair_price_supporting">demiya koy alama ga tumande.</string>
+    <string name="pair_delete_title">koydameeyan ni dele?</string>
+    <string name="pair_delete_body">timide kulu koydameeyan nda dele han. ni ala ganda bay.</string>
+
+    <string name="session_ongoing">kul ga</string>
+    <string name="session_until">jiraw %1$s</string>
+    <string name="session_playing">%1$s se karti</string>
+    <string name="session_recovered">sanda</string>
+
+    <string name="settings_tracking">timide</string>
+    <string name="settings_detailed_title">timide kayey</string>
+    <string name="settings_detailed_body">telefonu feere nda se karti jara. android telefonu feere borey ra app kulu ga timide, kul sahabu mo ga. bluetooth timide kulu ga.</string>
+    <string name="settings_detailed_unavailable">bluetooth fasal jiraw: ni app ra connectedDevice jara, android 14+ bluetooth fasal ga.</string>
+    <string name="settings_playback_only_title">se karti kulu timide</string>
+    <string name="settings_playback_only_body">tiliyali ra se karti ay timide jokere ay nda. timide kayey ga se karti timide; ganda kulu bay.</string>
+    <string name="settings_language">jina</string>
+    <string name="settings_language_system">dijis jina</string>
+    <string name="settings_devices">dijis</string>
+    <string name="settings_devices_body">dijis gey - dagara bay - dele kul kade. stereo dijis wala karti bay.</string>
+    <string name="settings_device_subtitle">%1$s · baaba %2$s</string>
+    <string name="settings_data">alama</string>
+    <string name="settings_export">json sanda</string>
+    <string name="settings_import">jara</string>
+    <string name="settings_import_warning">jara ra alama kulu dele.</string>
+    <string name="settings_troubleshooting">alama</string>
+    <string name="settings_battery_body">timide kul bay se, ylih ra battery kele bay se. app woro se ay broacast bay i bure.</string>
+    <string name="settings_battery_button">battery fasal</string>
+    <string name="settings_battery_path">fasal -&gt; dijis -&gt; ylih -&gt; battery -&gt; unlimited.</string>
+    <string name="settings_hibernation_body">ylih ga fusacine ga waati nda kul, android ra kafa nda i fasal sanda, alama bay timide i bure. kafa dun a koydameeyan ga kulu timide ay.</string>
+    <string name="settings_hibernation_on">android ra ylih kafa no.</string>
+    <string name="settings_hibernation_off">ylih kafa bay nda kulu timide.</string>
+    <string name="settings_hibernation_button">app baaba fasal</string>
+    <string name="settings_about">kabaari</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — dagara demiya, telefon ga kulu.</string>
+    <string name="settings_import_confirm_title">alama kulu sanda?</string>
+    <string name="settings_import_confirm_body">jara sanda ra dijis, koydameeyan nda timide kulu dele.</string>
+
+    <string name="widget_lifetime_label">ylih · jigara</string>
+    <string name="widget_lifetime_description">koydameeyan demiya, jokere ga kulu</string>
+    <string name="widget_activity_label">ylih · isilaama</string>
+    <string name="widget_activity_description">koydameeyan kulu demiya, sani, jiyaaru 7 nda jiyaaru 30</string>
+    <string name="widget_chart_label">ylih · jiyaaru 30</string>
+    <string name="widget_chart_description">jiyaaru demiya jiyaaru 30 baaba</string>
+
+    <string name="action_save">kafa</string>
+    <string name="action_cancel">kale</string>
+    <string name="action_delete">dele</string>
+    <string name="action_import">jara</string>
+
+    <string name="channel_tracking">dagara timide</string>
+    <string name="channel_tracking_description">ylih ra telefonu feere nda se karti taara ga. android broacast bay timide app bay.</string>
+    <string name="notification_title">dagara demiya timide</string>
+    <string name="notification_starting">faala...</string>
+    <string name="notification_idle">dagara nda jabu</string>
+    <plurals name="notification_active">
+        <item quantity="other">%1$d jokere · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="other">%1$d jokere · %2$s · se karti</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">ni app bluetooth fasal jiraw ay telefonu feere timide</string>
+    <string name="export_done">jara sanda</string>
+    <string name="export_failed">sanda woro</string>
+    <string name="import_failed">jara woro</string>
+    <string name="edit_failed">kaara sanda bay</string>
+    <string name="error_could_not_open">%1$s bure bay</string>
+    <plurals name="import_done">
+        <item quantity="other">%d timide jara</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="other">%d timide</item>
+    </plurals>
+</resources>

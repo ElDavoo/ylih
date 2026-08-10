@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Sangu. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - igino-nja igabw</string>
+
+    <string name="nav_headphones">amagabwa</string>
+    <string name="nav_stats">amakoni</string>
+    <string name="nav_settings">isuusu</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le amakoya</string>
+    <string name="kind_wired">amaleni</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ndiikire</string>
+
+    <string name="welcome_title">mukunga ku-ylih</string>
+    <string name="welcome_intro">ylih ikasava ngani amagabwa agaale amakw\'ingusi amee, kwa kusu amiaka mibila mnene mungi ntiti ungie kwisa - amagabwa agaale akagumikire saa ngani?</string>
+    <string name="welcome_point_auto_title">kuongesha andu kubililia</string>
+    <string name="welcome_point_auto_body">amagabwa ga-bluetooth agakasava mwenyewe, kusukuma agasumbana. ndinapaswa kuacha nono wakati mmofu.</string>
+    <string name="welcome_point_lifetime_title">amagabwa agaale moja, igabw moja</string>
+    <string name="welcome_point_lifetime_body">amagabwa agaale akikufa, kushangalia - amakw\'ingusi agasimama hapo andu amagabwa mapya ya-bluetooth nayo yajua mwanzo nene.</string>
+    <string name="welcome_point_detailed_title">amaleni na amakoya</string>
+    <string name="welcome_point_detailed_body">kusava kwa anzia, isuusu-ni, amaleni amagabwa nandu amakoya agakabililia saa ngani ikiaga amakaw.</string>
+    <string name="welcome_privacy">kusava kwote kwalwe simu- iyi. hakuna akaunti, andu app haina internet wao.</string>
+    <string name="welcome_start">jua jua</string>
+    <string name="welcome_next">shukulieni</string>
+    <string name="welcome_allow">kumkubali</string>
+    <string name="welcome_step">kilo %1$d kwa %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth wanakuwezesha</string>
+    <string name="welcome_bluetooth_why">android ndiimanya app ya amagabwa-bluetooth agasumbana, ifikiri lineno, ikiwa app ina bluetooth wanakuwezesha. ylih ndi mara ya kukasunga amagabwa kwa chargers, andu mara ya kukasunga agaale agakufa moja kwa moja.</string>
+    <string name="welcome_bluetooth_with">kwa muiyya: amagabwa agaale agaasava mwenyewe kusukuma agasumbana, hakuna kuweka wakati isuusu.</string>
+    <string name="welcome_bluetooth_without">bila iyi: amagabwa ga-bluetooth haina kusava. app ndia yoste ikilikwa, andu ungie kumkubali nere mu-android-asya app isuusu.</string>
+    <string name="welcome_notifications_title">amakubililia</string>
+    <string name="welcome_notifications_why">kusava kwa anzia igana gakagana nyakazi - android indarike app yoyote kusangira amakubililia agaale wakati igana ikagana.</string>
+    <string name="welcome_notifications_with">kwa muiyya: amakubililia yagakamanya nkamwa ikasava nda, igana ndiikagana amandike.</string>
+    <string name="welcome_notifications_without">bila iyi: igana ikagana nda. android nditakapia amakubililia.</string>
+    <string name="hibernation_title">kuacha kumona wakati usumbufu</string>
+    <string name="hibernation_body">android ikakapia app ifupi miezi-ne andu ikatambua wanakuwezesha nayo, ylih-asya app haina kusava wakati itabuye. app iyi ndi kwa hili, jua kwamba kilo iyi ni maamuzi nzuri.</string>
+    <string name="action_not_now">siyandikubali sasa</string>
+
+    <string name="devices_in_use">igana</string>
+    <string name="devices_retired">kushangaliwe</string>
+    <string name="devices_empty_title">hakuna amagabwa</string>
+    <string name="devices_empty_body">amagabwa ga-bluetooth agasumbana, magaika hapa. amaleni amagabwa indarike kusava kwa anzia, mu-isuusu.</string>
+    <string name="devices_generation">amagabwa #%1$d</string>
+    <string name="devices_retired_on">kushangaliwe %1$s</string>
+    <string name="devices_connected_for">agasumbana %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">amagabwa yoste</string>
+    <string name="stats_sessions_since">%1$s kisha %2$s</string>
+    <string name="stats_today">lino</string>
+    <string name="stats_last_7">mila 7 iliyopita</string>
+    <string name="stats_last_30">mila 30 iliyopita</string>
+    <string name="stats_average_session">kusava kwenye kawaida</string>
+    <string name="stats_longest_session">kusava kwa muda mrefu</string>
+    <string name="stats_playing">amakoya ikagana</string>
+    <string name="stats_measured_span">kukamatwa kwa amakoya</string>
+    <string name="stats_share">amakoya akagana</string>
+    <string name="stats_playback_only_note">kukamatwa kwa amakoya ndiikasava</string>
+    <string name="stats_daily_hours_30">masaa ya kila siku (mila 30)</string>
+    <string name="stats_by_pair">amagabwa agilangate</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · kushangaliwe</string>
+    <string name="chart_max">%1$s kulingana</string>
+
+    <string name="pair_fallback_title">amagabwa</string>
+    <string name="pair_back">ndigelamuke</string>
+    <string name="pair_more">isuusu-isuusu</string>
+    <string name="pair_menu_rename">jua nena-ni</string>
+    <string name="pair_menu_purchase">kilingana kinunua</string>
+    <string name="pair_menu_retire">kushangalia / badilika</string>
+    <string name="pair_menu_delete">kufuta</string>
+    <string name="pair_lifetime">igabw-njia amagabwa agaale</string>
+    <string name="pair_retired_on">kushangaliwe %1$s</string>
+    <string name="pair_retired_with_reason">kushangaliwe %1$s · %2$s</string>
+    <string name="pair_connected_now">sasa agasumbana · %1$s</string>
+    <string name="pair_sessions">kusava</string>
+    <string name="pair_average">kwenye kawaida</string>
+    <string name="pair_longest">kwa muda mrefu</string>
+    <string name="pair_since">kisha %1$s</string>
+    <string name="pair_of_measured">amakoya akagana</string>
+    <string name="pair_measured">kukamatwa kwa amakoya</string>
+    <string name="pair_paid">kumkabali</string>
+    <string name="pair_per_hour">kila saa</string>
+    <string name="pair_bought">kulipwa</string>
+    <string name="pair_daily_hours_14">masaa ya kila siku (mila 14)</string>
+    <string name="pair_rename_title">jua nena-ni amagabwa</string>
+    <string name="pair_rename_label">nena</string>
+    <string name="pair_retire_title">kushangalia amagabwa agaale</string>
+    <string name="pair_retire_label">sababu (akufa, akuuzwa, akupoteza...)</string>
+    <string name="pair_retire_confirm">kushangalia</string>
+    <string name="pair_retire_supporting">amakw\'ingusi agasimama hapo. agasumbana nene, amagabwa mapya yajua mwanzo nene.</string>
+    <string name="pair_price_title">bei kulingana</string>
+    <string name="pair_price_label">kamatusi (kulingana)</string>
+    <string name="pair_price_supporting">kumkabali kila saa kulingana iyi.</string>
+    <string name="pair_delete_title">kufuta amagabwa agaale?</string>
+    <string name="pair_delete_body">kusava yoste kulingana nayo kifutwe. hii itabadilika isiwe.</string>
+
+    <string name="session_ongoing">igana</string>
+    <string name="session_until">mpaka %1$s</string>
+    <string name="session_playing">%1$s amakoya</string>
+    <string name="session_recovered">kukamatwa</string>
+
+    <string name="settings_tracking">kusava</string>
+    <string name="settings_detailed_title">kusava kwa anzia</string>
+    <string name="settings_detailed_body">amaleni amagabwa nandu amakoya. android amaleni agasumbana kwa app ifupi tu, neno agaika amakubililia. bluetooth ikaasava mwenyewe.</string>
+    <string name="settings_detailed_unavailable">bluetooth wanakuwezesha - app iyi ndi connectedDevice serikali, android 14+ inaomba bluetooth wanakuwezesha.</string>
+    <string name="settings_playback_only_title">kukamatwa kwa amakoya tu</string>
+    <string name="settings_playback_only_body">amakoni yoste amakoya ndiikasava mara ngu. kusava kulingana na-anzia kukamatwa amakoya; isuusu-isuusu kufutwa.</string>
+    <string name="settings_language">ndimi</string>
+    <string name="settings_language_system">ndimi ya system</string>
+    <string name="settings_devices">igana</string>
+    <string name="settings_devices_body">kusambaza amagabwa - stereo ya gari ahe - kusava kyya.</string>
+    <string name="settings_device_subtitle">%1$s · kamatusi %2$s</string>
+    <string name="settings_data">kilingana</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">kuleta</string>
+    <string name="settings_import_warning">kuleta agabuye nkamwa ndiikagana kilingana.</string>
+    <string name="settings_troubleshooting">kusambaza matatizo</string>
+    <string name="settings_battery_body">kusava ifupi, ylih-asya shida ya betri - app ifupi, kusambaza ndiikagana wakati itabuye.</string>
+    <string name="settings_battery_button">isuusu ya betri</string>
+    <string name="settings_battery_path">isuusu - igana - ylih - betri - isiyofungwa.</string>
+    <string name="settings_hibernation_body">ylih ifupi miezi-ne, android ikakapia nanduwanakuwezesha, kusava ndiikagana wakati itabuye. agabuye agaale, ylih igaasa kusava wakati isumbufu.</string>
+    <string name="settings_hibernation_on">android ingie kukapia ylih.</string>
+    <string name="settings_hibernation_off">ylih sharufu kusava.</string>
+    <string name="settings_hibernation_button">isuusu ya app isiyofaa</string>
+    <string name="settings_about">nkamwa</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - amagabwa masaa, kukamatwa kwa njia na milele.</string>
+    <string name="settings_import_confirm_title">kubuye kilingana yoste?</string>
+    <string name="settings_import_confirm_body">kuleta agabuye kufuta igana, amagabwa, nandu kusava yoste.</string>
+
+    <string name="widget_lifetime_label">ylih · igabw</string>
+    <string name="widget_lifetime_description">masaa kwa amagabwa, agasumbana wakati ingine</string>
+    <string name="widget_activity_label">ylih · igana</string>
+    <string name="widget_activity_description">amagabwa masaa yoste, lino, mila 7 iyo 30</string>
+    <string name="widget_chart_label">ylih · mila 30</string>
+    <string name="widget_chart_description">masaa ya kila siku kwenye mila 30 iliyopita</string>
+
+    <string name="action_save">kamatusi</string>
+    <string name="action_cancel">kubadilika</string>
+    <string name="action_delete">kufuta</string>
+    <string name="action_import">kuleta</string>
+
+    <string name="channel_tracking">amagabwa kusava</string>
+    <string name="channel_tracking_description">ylih amaleni nandu amakoya igana. android amaleni ndiiyambayi app ifupi kusambaza.</string>
+    <string name="notification_title">amagabwa masaa kusava</string>
+    <string name="notification_starting">jua jua...</string>
+    <string name="notification_idle">amagabwa oottia</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d agasumbana · %2$s</item>
+        <item quantity="many">%1$d agasumbana · %2$s</item>
+        <item quantity="other">%1$d agasumbana · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d agasumbana · %2$s · amakoya</item>
+        <item quantity="many">%1$d agasumbana · %2$s · amakoya</item>
+        <item quantity="other">%1$d agasumbana · %2$s · amakoya</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">app iyi indarike bluetooth wanakuwezesha ole amaleni kusava</string>
+    <string name="export_done">agabuye kasambaza</string>
+    <string name="export_failed">kasambaza iliyapitia</string>
+    <string name="import_failed">kuleta iliyapitia</string>
+    <string name="edit_failed">kubadilika ndiikagana kukamatusi</string>
+    <string name="error_could_not_open">%1$s ndiikagana kubuka</string>
+    <plurals name="import_done">
+        <item quantity="one">kuleta %d kusava</item>
+        <item quantity="many">kuleta %d kusava</item>
+        <item quantity="other">kuleta %d kusava</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d kusava</item>
+        <item quantity="many">%d kusava</item>
+        <item quantity="other">%d kusava</item>
+    </plurals>
+</resources>

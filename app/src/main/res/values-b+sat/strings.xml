@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Santali. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - do-ino-ar do-mu</string>
+
+    <string name="nav_headphones">do-mu</string>
+    <string name="nav_stats">i-lakani</string>
+    <string name="nav_settings">a-ti-kataa</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le i-mu</string>
+    <string name="kind_wired">ole-siaai</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">a-itaa inkindani</string>
+
+    <string name="welcome_title">o-wele a-mu ylih</string>
+    <string name="welcome_intro">ylih a-saa a-mu a-lebo i-saani asamai a-karatai, moki o-yio uu-ti i-karatai - a-mu a-lebo i-saani kamuuk iiye nare?</string>
+    <string name="welcome_point_auto_title">a-sano e-ketaa</string>
+    <string name="welcome_point_auto_body">a-mu a-bluetooth a-saa a-karatai o-kamatai. a-kiikwa kyy o-karake.</string>
+    <string name="welcome_point_lifetime_title">e-mu e-moji, i-somo i-moji</string>
+    <string name="welcome_point_lifetime_body">moki a-mu o-maa, a-buri - i-karatai a-saa a-ki-buri. e-mu e-ingine e-sano a-karatai kopikopi sifuri.</string>
+    <string name="welcome_point_detailed_title">ole-siaai e-mu</string>
+    <string name="welcome_point_detailed_body">a-tibo a-karatai ata, ole-siaai a-mu e-kamatai e-mu e-karatai kamuuk iiye nare.</string>
+    <string name="welcome_privacy">o-karatai o-muuk o-simu. kyy ni o-akaunti, app kyy ni internet permission.</string>
+    <string name="welcome_start">a-kamatai</string>
+    <string name="welcome_next">e-kataata</string>
+    <string name="welcome_allow">a-yombe</string>
+    <string name="welcome_step">o-kamatai %1$d ata %2$d</string>
+    <string name="welcome_bluetooth_title">a-tibo bluetooth</string>
+    <string name="welcome_bluetooth_why">android a-saa app ole a-mu-bluetooth e-kamatai, moki app o-yi o-tibo-bluetooth. ylih a-saa e-mu a-lebo a-kitenya a-mu-kinyanya a-gari stereo, a-saa e-mu e-kitenya.</string>
+    <string name="welcome_bluetooth_with">moki: e-mu o-karatai a-kamatai, kyy karake e-kitalia.</string>
+    <string name="welcome_bluetooth_without">kyya: a-mu-bluetooth kyy o-karatai a-kamatai. app e-karatai e-kitalia, moki o-yi o-tibo-bluetooth ata.</string>
+    <string name="welcome_notifications_title">a-simu</string>
+    <string name="welcome_notifications_why">a-tibo a-karatai a-karatai i-somo nyingi, android a-si a-simu a-karata asamai.</string>
+    <string name="welcome_notifications_with">moki: a-simu a-saa o-karata na, a-tibo a-karata onaini.</string>
+    <string name="welcome_notifications_without">kyya: a-tibo a-karata mara. android kyy a-simu.</string>
+    <string name="hibernation_title">a-karata moki o-ti-kililia</string>
+    <string name="hibernation_body">android a-kililia app moki o-timiliikana oigee-mara, a-tibo a-karata kyya, ylih kyy a-karata asamai. app ile ata kamuuk a-karata, nana tulaghy a-karata ole.</string>
+    <string name="action_not_now">kyya sasa</string>
+
+    <string name="devices_in_use">i-karata</string>
+    <string name="devices_retired">a-buri</string>
+    <string name="devices_empty_title">kyy e-mu</string>
+    <string name="devices_empty_body">a-mu-bluetooth e-sano e-kamatai, a-ti-tebea hapa. a-mu-ole-siaai a-tibo a-karata ata.</string>
+    <string name="devices_generation">e-mu #%1$d</string>
+    <string name="devices_retired_on">a-buri %1$s</string>
+    <string name="devices_connected_for">e-sano %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">a-mu o-karatai</string>
+    <string name="stats_sessions_since">%1$s ata %2$s</string>
+    <string name="stats_today">n-toga</string>
+    <string name="stats_last_7">n-toga 7 i-kitoni</string>
+    <string name="stats_last_30">n-toga 30 i-kitoni</string>
+    <string name="stats_average_session">i-karata e-katikati</string>
+    <string name="stats_longest_session">i-karata a-raba</string>
+    <string name="stats_playing">a-mu-reka</string>
+    <string name="stats_measured_span">e-karata ile muuma</string>
+    <string name="stats_share">a-mu-reka e-karata</string>
+    <string name="stats_playback_only_note">a-mu-reka e-karata</string>
+    <string name="stats_daily_hours_30">n-toga a-saati (30 i-kitoni)</string>
+    <string name="stats_by_pair">a-mu o-karatai</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · a-buri</string>
+    <string name="chart_max">%1$s a-raba</string>
+
+    <string name="pair_fallback_title">e-mu</string>
+    <string name="pair_back">o-inaka</string>
+    <string name="pair_more">e-karatai</string>
+    <string name="pair_menu_rename">e-karata atin</string>
+    <string name="pair_menu_purchase">i-kiti a-karata</string>
+    <string name="pair_menu_retire">a-buri / e-karata</string>
+    <string name="pair_menu_delete">a-buru</string>
+    <string name="pair_lifetime">i-somo e-mu a-mu</string>
+    <string name="pair_retired_on">a-buri %1$s</string>
+    <string name="pair_retired_with_reason">a-buri %1$s · %2$s</string>
+    <string name="pair_connected_now">sasa e-sano · %1$s</string>
+    <string name="pair_sessions">a-karata</string>
+    <string name="pair_average">e-katikati</string>
+    <string name="pair_longest">a-raba</string>
+    <string name="pair_since">ata %1$s</string>
+    <string name="pair_of_measured">a-mu-reka e-karata</string>
+    <string name="pair_measured">e-karata ile muuma</string>
+    <string name="pair_paid">a-li-pea</string>
+    <string name="pair_per_hour">a-saati i-moji</string>
+    <string name="pair_bought">a-li-nunua</string>
+    <string name="pair_daily_hours_14">n-toga a-saati (14 i-kitoni)</string>
+    <string name="pair_rename_title">e-karata atin e-mu</string>
+    <string name="pair_rename_label">atin</string>
+    <string name="pair_retire_title">a-buri e-mu</string>
+    <string name="pair_retire_label">o-karatai (a-maa, a-li-bea, a-li-baa...)</string>
+    <string name="pair_retire_confirm">a-buri</string>
+    <string name="pair_retire_supporting">a-karata a-buri. a-mu-kinyanya e-sano kopikopi sifuri.</string>
+    <string name="pair_price_title">a-li-pea i-bei</string>
+    <string name="pair_price_label">i-karata (o-karata)</string>
+    <string name="pair_price_supporting">a-saati i-moji a-karata asamai.</string>
+    <string name="pair_delete_title">a-buru e-mu?</string>
+    <string name="pair_delete_body">a-karata o-karatai a-buru. e-karata kyy a-ti-rudia.</string>
+
+    <string name="session_ongoing">o-karata</string>
+    <string name="session_until">mpaka %1$s</string>
+    <string name="session_playing">%1$s a-mu-reka</string>
+    <string name="session_recovered">e-karata</string>
+
+    <string name="settings_tracking">a-karata</string>
+    <string name="settings_detailed_title">a-karata o-karatai</string>
+    <string name="settings_detailed_body">a-mu-ole-siaai e-karata-muuma. android a-mu-ole-siaai a-si app o-karata, ata a-simu kyy o-karata. a-mu-bluetooth o-karata mara.</string>
+    <string name="settings_detailed_unavailable">a-tibo bluetooth kyy - tatyy billik connectedDevice o-karata, android 14+ a-tibo bluetooth.</string>
+    <string name="settings_playback_only_title">a-mu-reka e-karata</string>
+    <string name="settings_playback_only_body">a-lakani a-mu-reka a-karata mara. a-karata o-karata a-tibo e-karata-muuma - e-karata kyy.</string>
+    <string name="settings_language">o-leshon</string>
+    <string name="settings_language_system">system o-leshon</string>
+    <string name="settings_devices">o-karatai</string>
+    <string name="settings_devices_body">o-karata kyy a-mu - a-mu-gari stereo ahe - a-karata kyya.</string>
+    <string name="settings_device_subtitle">%1$s · a-karata %2$s</string>
+    <string name="settings_data">a-karata</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">import</string>
+    <string name="settings_import_warning">import a-karata o-karatai o-karata.</string>
+    <string name="settings_troubleshooting">a-karata a-karatai</string>
+    <string name="settings_battery_body">a-karata a-karata a-karata, ylih a-tibo battery - app a-karata, a-si a-karata asamai app a-karata.</string>
+    <string name="settings_battery_button">a-tibo battery</string>
+    <string name="settings_battery_path">sallat - o-karata - ylih - battery - a-ti-paa.</string>
+    <string name="settings_hibernation_body">ylih o-timiliikana oigee-mara, android a-karata a-tibo, a-karata kyya app a-karata. a-karata ole e-mu kamuuk oigee.</string>
+    <string name="settings_hibernation_on">android a-karata ylih.</string>
+    <string name="settings_hibernation_off">ylih a-karata.</string>
+    <string name="settings_hibernation_button">a-karata kyya o-karata</string>
+    <string name="settings_about">a-karata</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - a-mu a-saati, o-karata e-karata.</string>
+    <string name="settings_import_confirm_title">a-karata o-karatai?</string>
+    <string name="settings_import_confirm_body">import e-karata a-karata, e-mu a-karata, a-karata o-karatai.</string>
+
+    <string name="widget_lifetime_label">ylih · i-somo</string>
+    <string name="widget_lifetime_description">a-saati e-mu, e-sano o-karata live timer</string>
+    <string name="widget_activity_label">ylih · o-karata</string>
+    <string name="widget_activity_description">a-mu o-karata a-saati, n-toga, 7 i-kitoni iyo 30 i-kitoni</string>
+    <string name="widget_chart_label">ylih · 30 i-kitoni</string>
+    <string name="widget_chart_description">n-toga a-mu a-saati 30 i-kitoni</string>
+
+    <string name="action_save">a-karata</string>
+    <string name="action_cancel">a-ti-karata</string>
+    <string name="action_delete">a-buru</string>
+    <string name="action_import">import</string>
+
+    <string name="channel_tracking">a-mu a-karata</string>
+    <string name="channel_tracking_description">ylih a-mu-ole-siaai a-karata-muuma bahtaa. android a-mu-ole-siaai a-si app a-karata.</string>
+    <string name="notification_title">a-mu a-saati a-karata</string>
+    <string name="notification_starting">a-kamatai...</string>
+    <string name="notification_idle">a-mu o-karata</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d e-sano · %2$s</item>
+        <item quantity="two">%1$d e-sano · %2$s</item>
+        <item quantity="other">%1$d e-sano · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d e-sano · %2$s · a-mu-reka</item>
+        <item quantity="two">%1$d e-sano · %2$s · a-mu-reka</item>
+        <item quantity="other">%1$d e-sano · %2$s · a-mu-reka</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">tatyy billik a-tibo bluetooth ole a-mu-ole-siaai a-karata</string>
+    <string name="export_done">e-karata sthapana</string>
+    <string name="export_failed">sthapana a-karata</string>
+    <string name="import_failed">import a-karata</string>
+    <string name="edit_failed">a-karata kyya a-ti-karata</string>
+    <string name="error_could_not_open">%1$s kyy a-ti-buka</string>
+    <plurals name="import_done">
+        <item quantity="one">import %d a-karata</item>
+        <item quantity="two">import %d a-karata</item>
+        <item quantity="other">import %d a-karata</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d a-karata</item>
+        <item quantity="two">%d a-karata</item>
+        <item quantity="other">%d a-karata</item>
+    </plurals>
+</resources>

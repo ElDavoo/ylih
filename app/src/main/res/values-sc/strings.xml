@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Sardinian. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - sa tua bida in cuffias</string>
+
+    <string name="nav_headphones">cuffias</string>
+    <string name="nav_stats">statisticas</string>
+    <string name="nav_settings">cunfiguratzionis</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">cun filu</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">non cognitu</string>
+
+    <string name="welcome_title">benvenidu a ylih</string>
+    <string name="welcome_intro">ylih reghistrat quantu tempus durad sa connessioine de kada para de cuffias, cusì ca dopo annos podeis ancora rispondere sa dumanda chi calat: quantas oras durarana?</string>
+    <string name="welcome_point_auto_title">conneti e iscordia</string>
+    <string name="welcome_point_auto_body">is cuffias bluetooth sunt registratas in automàticu, dae sa momentu ca si connetent. nulla depet èssere lassadu funzionade.</string>
+    <string name="welcome_point_lifetime_title">una para, una bida</string>
+    <string name="welcome_point_lifetime_body">cando una para murit, pensionala: sa totale si gela lì e sa prochima para de is matessi cuffias incumintza dae zero.</string>
+    <string name="welcome_point_detailed_title">cun filu e riprodutzione</string>
+    <string name="welcome_point_detailed_body">sa tracciadura detallada, in is cunfiguratzionis, adigit is cuffias cun filu e mesurat quantas oras estava in riprodutzione.</string>
+    <string name="welcome_privacy">tottu rimant in custu telèfonu. nono b\'at contu, e s\'apa nono at permissu de internet.</string>
+    <string name="welcome_start">incumintza</string>
+    <string name="welcome_next">prossima</string>
+    <string name="welcome_allow">permiti</string>
+    <string name="welcome_step">pasu %1$d de %2$d</string>
+    <string name="welcome_bluetooth_title">accèssu bluetooth</string>
+    <string name="welcome_bluetooth_why">android narat a s\'apa su dispositivu bluetooth connetidu, e su nòmine su at, si s\'apa tenit accèssu bluetooth. custu est sa modu ca ylih distint una para de cuffias dae una caravana, e sa modu ca sait una para dae sa otra.</string>
+    <string name="welcome_bluetooth_with">cun issa: kada para est registrata dae sa momentu ca si connete, cun nulla lassadu funzionade e nulla de reminni de premere.</string>
+    <string name="welcome_bluetooth_without">senza issa: nulla cuffias bluetooth sunt registratas. sa residu de s\'apa funzionat ancora, e podeis permítilu dae in is cunfiguratzionis de android.</string>
+    <string name="welcome_notifications_title">notìficas</string>
+    <string name="welcome_notifications_why">sa tracciadura detallada est que servidu de fundu, e android cunticat chi kala apa ca faet custu depet mantene una notìfica bìsìbile mentre o faet.</string>
+    <string name="welcome_notifications_with">cun issa: sa notìfica ammustra sa sa est reghistradu in custu momentu, chi est sa ùnica sinna ca sa tracciadura detallada est biva.</string>
+    <string name="welcome_notifications_without">senza issa: sa tracciadura detallada funzionat ancora e ancora reghistrat. android non mustraraai sa notìfica.</string>
+    <string name="hibernation_title">abanti contande mentre ti isscordis</string>
+    <string name="hibernation_body">android pasat is apa chi non sunt abeltas pro pausas meses e tollit sa permissus bake, chi deparachiraai ylih no reghistrade nudda fintzas ca ti abeltas. essida iscordida est prus tantu sa modu de custu apa, cusì che est bale girare isse off in custu momentu.</string>
+    <string name="action_not_now">no in custu momentu</string>
+
+    <string name="devices_in_use">in usu</string>
+    <string name="devices_retired">pensionadu</string>
+    <string name="devices_empty_title">nulla cuffias ancora</string>
+    <string name="devices_empty_body">conneti una para de cuffias bluetooth e si ammustraraint in custu logu. is cuffias cun filu tenent bisogna de tracciadura detallada, in is cunfiguratzionis.</string>
+    <string name="devices_generation">para #%1$d</string>
+    <string name="devices_retired_on">pensionadu %1$s</string>
+    <string name="devices_connected_for">connetidu %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">is cuffias totu</string>
+    <string name="stats_sessions_since">%1$s dae %2$s</string>
+    <string name="stats_today">oi</string>
+    <string name="stats_last_7">ùltimis 7 dies</string>
+    <string name="stats_last_30">ùltimis 30 dies</string>
+    <string name="stats_average_session">sessione meida</string>
+    <string name="stats_longest_session">sessione prus larga</string>
+    <string name="stats_playing">audio in riprodutzione</string>
+    <string name="stats_measured_span">misurada pro riprodutzione</string>
+    <string name="stats_share">parta de riprodutzione</string>
+    <string name="stats_playback_only_note">contande sa tempada de riprodutzione nara</string>
+    <string name="stats_daily_hours_30">oras giurnadas (30 dies)</string>
+    <string name="stats_by_pair">pro para</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · pensionadu</string>
+    <string name="chart_max">%1$s màx</string>
+
+    <string name="pair_fallback_title">para</string>
+    <string name="pair_back">bake</string>
+    <string name="pair_more">prus</string>
+    <string name="pair_menu_rename">bennomine</string>
+    <string name="pair_menu_purchase">informatzionis de cumpra</string>
+    <string name="pair_menu_retire">pensiona / cambiau</string>
+    <string name="pair_menu_delete">cantzella</string>
+    <string name="pair_lifetime">bida cumpagna in custa para</string>
+    <string name="pair_retired_on">pensionadu %1$s</string>
+    <string name="pair_retired_with_reason">pensionadu %1$s · %2$s</string>
+    <string name="pair_connected_now">connetidu in custu momentu · %1$s</string>
+    <string name="pair_sessions">sessiones</string>
+    <string name="pair_average">meida</string>
+    <string name="pair_longest">prus larga</string>
+    <string name="pair_since">dae %1$s</string>
+    <string name="pair_of_measured">parta de riprodutzione</string>
+    <string name="pair_measured">misurada pro riprodutzione</string>
+    <string name="pair_paid">pagadu</string>
+    <string name="pair_per_hour">pro ora</string>
+    <string name="pair_bought">cumpradu</string>
+    <string name="pair_daily_hours_14">oras giurnadas (14 dies)</string>
+    <string name="pair_rename_title">bennomine para</string>
+    <string name="pair_rename_label">nòmine</string>
+    <string name="pair_retire_title">pensiona custa para</string>
+    <string name="pair_retire_label">motivu (morta, bendida, perida...)</string>
+    <string name="pair_retire_confirm">pensiona</string>
+    <string name="pair_retire_supporting">is totales si gelant lì. si si connet de nou su dispositivu matessi, si incumintza una para freska a zero.</string>
+    <string name="pair_price_title">pretzu pagadu</string>
+    <string name="pair_price_label">cantidadi (idades enteras)</string>
+    <string name="pair_price_supporting">impreaddu pro sa figura de costu pro ora.</string>
+    <string name="pair_delete_title">cantzella custa para?</string>
+    <string name="pair_delete_body">kada sessione reghistrada pro issa est cancellada matessi. custu no podet èssere desfatu.</string>
+
+    <string name="session_ongoing">in cursu</string>
+    <string name="session_until">fintzas %1$s</string>
+    <string name="session_playing">%1$s in riprodutzione</string>
+    <string name="session_recovered">recuperadu</string>
+
+    <string name="settings_tracking">tracciadura</string>
+    <string name="settings_detailed_title">tracciadura detallada</string>
+    <string name="settings_detailed_body">adigit is cuffias cun filu e sa tempada de riprodutzione. android narat sa acontziiments de plugu cun filu a s\'apa ca est funzionade, cusì custu mantenet una notìfica silentiosa in su tónu. bluetooth est tracciadu comunque.</string>
+    <string name="settings_detailed_unavailable">no bìsìbile fintzas ca s\'accèssu bluetooth no est permisu: custu build narat nara su tipu de servidu connectedDevice, chi android 14+ ligat a un permissu bluetooth.</string>
+    <string name="settings_playback_only_title">conta nara sa riprodutzione</string>
+    <string name="settings_playback_only_body">is statisticas contant sa tempada ca s\'audio estava in riprodutzione in logu de sa tempada connetida. sa sessiones registradas cun tracciadura detallada acta misurant riprodutzione; is residas sunt lassadas fora.</string>
+    <string name="settings_language">lìngua</string>
+    <string name="settings_language_system">lìngua de su sistema</string>
+    <string name="settings_devices">dispositivus</string>
+    <string name="settings_devices_body">tollit sa marca dae cudda cosa chi no est cuffias - un caravana o un altoparlante - pro istopada de reghistrare issa.</string>
+    <string name="settings_device_subtitle">%1$s · prima bida %2$s</string>
+    <string name="settings_data">datos</string>
+    <string name="settings_export">exporta json</string>
+    <string name="settings_import">importa</string>
+    <string name="settings_import_warning">importare cambiat totu sa cosa sa est archiviada in custu momentu.</string>
+    <string name="settings_troubleshooting">risoluzione de problemas</string>
+    <string name="settings_battery_body">si is sessiones istopant de essida registratas, controlat chi ylih est dispensada dae optimizatzione de baterìa - un\'apa ca est istada detzada a forza no recbet més de custu momentu fintzas ca no est abelada.</string>
+    <string name="settings_battery_button">cunfiguratzionis de baterìa</string>
+    <string name="settings_battery_path">cunfiguratzionis → apa → ylih → baterìa → ilimitadu.</string>
+    <string name="settings_hibernation_body">si ylih at istadu non abelta pro pausas meses, android a pasat e a tollit is permissus bake, e nulla est reghistradu de nou fintzas ca no ti abeltas. girare isse off est sa modu ca deascieit una para abanti contande per sa stagione chi ti no pensas de s\'apa.</string>
+    <string name="settings_hibernation_on">android podada pausare ylih.</string>
+    <string name="settings_hibernation_off">ylih est dispensadu e abanti a reghistrare.</string>
+    <string name="settings_hibernation_button">cunfiguratzionis de apa no impreadda</string>
+    <string name="settings_about">a depas</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — oras de cuffias, archiviadas in logu e pro sempre.</string>
+    <string name="settings_import_confirm_title">cambiat is datos totu?</string>
+    <string name="settings_import_confirm_body">importande custu backup cancellat kada dispositivu, para e sessione archiviada in custu momentu.</string>
+
+    <string name="widget_lifetime_label">ylih · bida cumpagna</string>
+    <string name="widget_lifetime_description">oras pro para, cun un cronòmetru vivu in sa cosa connetida</string>
+    <string name="widget_activity_label">ylih · atividadi</string>
+    <string name="widget_activity_description">is oras de kada para in sima, prus oi, 7 dies e 30 dies</string>
+    <string name="widget_chart_label">ylih · 30 dies</string>
+    <string name="widget_chart_description">oras de ascultada giurnadas in is ùltimis 30 dies</string>
+
+    <string name="action_save">archivia</string>
+    <string name="action_cancel">cancella</string>
+    <string name="action_delete">cantzella</string>
+    <string name="action_import">importa</string>
+
+    <string name="channel_tracking">tracciadura de cuffias</string>
+    <string name="channel_tracking_description">ammustrada mentre ylih est guardande pro cuffias cun filu e riprodutzione. android no entat acontziiments de plugu cun filu a is apa chi no sunt funzionade.</string>
+    <string name="notification_title">tracciadura de tempada de cuffias</string>
+    <string name="notification_starting">incumintza...</string>
+    <string name="notification_idle">aspettande cuffias</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d connetidu · %2$s</item>
+        <item quantity="other">%1$d connetidu · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d connetidu · %2$s · in riprodutzione</item>
+        <item quantity="other">%1$d connetidu · %2$s · in riprodutzione</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">custu build tentat bisogna de accèssu bluetooth anti ca podat tracciare cuffias cun filu</string>
+    <string name="export_done">backup exportadu</string>
+    <string name="export_failed">exporta desfallidu</string>
+    <string name="import_failed">importa desfallidu</string>
+    <string name="edit_failed">no ppoadada salvare cale cantu</string>
+    <string name="error_could_not_open">no ppoadada abelada %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">importada %d sessione</item>
+        <item quantity="other">importadas %d sessiones</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sessione</item>
+        <item quantity="other">%d sessiones</item>
+    </plurals>
+</resources>

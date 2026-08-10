@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Northern Sami. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - do eallu bohccu beakcu</string>
+
+    <string name="nav_headphones">beakcu</string>
+    <string name="nav_stats">dieđut</string>
+    <string name="nav_settings">jieggadussat</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">viđa</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">dovdatekohtas</string>
+
+    <string name="welcome_title">bures boahtan ylih:a</string>
+    <string name="welcome_intro">ylih maiddá dieđutan ahte goas geažes beakcu bohcejeakcu bidjat ráhppen, maiddá jagi maŋŋel sáhtát vástádahttir dan geažes gažaldahkii mii lea deaŋga vahkku: maŋŋebargga maŋŋebargga mat ledje?</string>
+    <string name="welcome_point_auto_title">cealkage ja daŧŧat</string>
+    <string name="welcome_point_auto_body">bluetooth beakcu bohccejut maiddáhttojuvvojit, mas leat cealkame mat viđa leat. ii daid leat dárbu geažes maiddáhttot.</string>
+    <string name="welcome_point_lifetime_title">okta bohccu, okta eallu</string>
+    <string name="welcome_point_lifetime_body">go bohccu gidda, maiddáhttojuvvojit: dan oktasalat giždejit leat ja maŋŋel bohccu seamma beakcu bidjat maŋŋebargga maŋŋebargga nulli maŋŋel.</string>
+    <string name="welcome_point_detailed_title">viđa ja maiddáhttamearri</string>
+    <string name="welcome_point_detailed_body">detaljalaš maiddáhttugoahti, jieggadusain, lasihidde viđa beakcu ja maiddáhttá ahte geažes maŋŋebargga bohce lei maiddáhttuheapme.</string>
+    <string name="welcome_privacy">buohkki golla dás fovva. ii leat konttu, ja app ii leat internet duođa.</string>
+    <string name="welcome_start">maŋŋebargga</string>
+    <string name="welcome_next">maŋŋel</string>
+    <string name="welcome_allow">loktet</string>
+    <string name="welcome_step">vahkka %1$d / %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth maiddáhttu</string>
+    <string name="welcome_bluetooth_why">android maiddáhtta app:i maŋŋel bluetooth reaidu geažes maiddáhttan, ja mii son leago, go app maiddáhtta bluetooth maiddáhttu. dát lea makkár ylih maiddáhtta okta bohccu bohccejut birra auttu radiosta, ja makkár son maiddáhtta okta bohccu maŋŋel.</string>
+    <string name="welcome_bluetooth_with">dan maŋŋel: okta bohccu bohcejeakcu bohccejut, mas leat cealkame mat viđa leat, dárbu maŋŋebargga ja dárbu maiddáhtte.</string>
+    <string name="welcome_bluetooth_without">golla: bluetooth beakcu bohccejut ii leat maiddáhttugovvan. app maŋŋel golla maiddáhtta, ja sáhtát loktet dan maŋŋel android app jieggadusain.</string>
+    <string name="welcome_notifications_title">dieđuhemiela</string>
+    <string name="welcome_notifications_why">detaljalaš maiddáhttugoahti maiddáhtta juhkaruotkodoallu, ja android duođa go maŋŋebargga app maiddáhtta dan dieđuhemiela.</string>
+    <string name="welcome_notifications_with">dan maŋŋel: dieđuhemiela maiddáhtta ahte mii lea maiddáhttuheapme dás, mii lea dan okta dieđuhemiela ahte detaljalaš maiddáhttugoahti lea eallu.</string>
+    <string name="welcome_notifications_without">golla: detaljalaš maiddáhttugoahti maiddáhtta ja maiddáhtta. android maŋŋebargga maiddáhtta dieđuhemiela.</string>
+    <string name="hibernation_title">maiddáhte maŋŋebargga go daŧŧat</string>
+    <string name="hibernation_body">android maiddáhtte app:id maŋŋel go leat jiehgaid ráhpes dás, ja maiddáhtta das maŋŋel, mii daid ylih maiddáhtta ii maŋŋebargga maŋŋebargga jus daŧŧat. daŧŧat lea deaŋga makkár dás app lea, nai lea buvttas geažes dat maŋŋel.</string>
+    <string name="action_not_now">ii dás</string>
+
+    <string name="devices_in_use">maiddáhtan</string>
+    <string name="devices_retired">maiddáhttugovvan</string>
+    <string name="devices_empty_title">ii beakcu dás</string>
+    <string name="devices_empty_body">cealkage bluetooth beakcu bohcejeakcu ja dat maiddáhttojuvvojit dás. viđa beakcu duođa detaljalaš maiddáhttugoahta, jieggadusain.</string>
+    <string name="devices_generation">bohccu #%1$d</string>
+    <string name="devices_retired_on">maiddáhttugovvan %1$s</string>
+    <string name="devices_connected_for">cealkame %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">buohkka beakcu</string>
+    <string name="stats_sessions_since">%1$s maŋŋel %2$s</string>
+    <string name="stats_today">dát beaivi</string>
+    <string name="stats_last_7">maŋŋel vahkka 7</string>
+    <string name="stats_last_30">maŋŋel vahkka 30</string>
+    <string name="stats_average_session">gaskem vahkka</string>
+    <string name="stats_longest_session">maŋŋebargga vahkka</string>
+    <string name="stats_playing">audio maiddáhtan</string>
+    <string name="stats_measured_span">maiddáhttugovvame maiddáhttamearri</string>
+    <string name="stats_share">maiddáhttamearri maŋŋel</string>
+    <string name="stats_playback_only_note">maiddáhte dan maiddáhttamearri maŋŋebargga</string>
+    <string name="stats_daily_hours_30">beaivemearri (vahkka 30)</string>
+    <string name="stats_by_pair">bohccu maŋŋel</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · maiddáhttugovvan</string>
+    <string name="chart_max">%1$s max</string>
+
+    <string name="pair_fallback_title">bohccu</string>
+    <string name="pair_back">maŋŋel</string>
+    <string name="pair_more">maŋŋebargga</string>
+    <string name="pair_menu_rename">mainna</string>
+    <string name="pair_menu_purchase">oastudieđut</string>
+    <string name="pair_menu_retire">maiddáhttugovva / mainna</string>
+    <string name="pair_menu_delete">maŋŋebargga</string>
+    <string name="pair_lifetime">eallu dás bohccus</string>
+    <string name="pair_retired_on">maiddáhttugovvan %1$s</string>
+    <string name="pair_retired_with_reason">maiddáhttugovvan %1$s · %2$s</string>
+    <string name="pair_connected_now">cealkame dás · %1$s</string>
+    <string name="pair_sessions">vahkka</string>
+    <string name="pair_average">gaskem</string>
+    <string name="pair_longest">maŋŋebargga</string>
+    <string name="pair_since">maŋŋel %1$s</string>
+    <string name="pair_of_measured">maiddáhttamearri maŋŋel</string>
+    <string name="pair_measured">maiddáhttugovvame maiddáhttamearri</string>
+    <string name="pair_paid">maiddáhttan</string>
+    <string name="pair_per_hour">vahkka maŋŋel</string>
+    <string name="pair_bought">oastume</string>
+    <string name="pair_daily_hours_14">beaivemearri (vahkka 14)</string>
+    <string name="pair_rename_title">mainna bohccu</string>
+    <string name="pair_rename_label">namma</string>
+    <string name="pair_retire_title">maiddáhttugovva dát bohccu</string>
+    <string name="pair_retire_label">seatnán (gidda, oastume, vahca...)</string>
+    <string name="pair_retire_confirm">maiddáhttugovva</string>
+    <string name="pair_retire_supporting">oktasalat maiddáhttojuvvojit dás. seamma reaidu cealkage maŋŋel, maŋŋebargga bohccu maŋŋebargga nulli.</string>
+    <string name="pair_price_title">maiddáhttan maŋŋebargga</string>
+    <string name="pair_price_label">oktasalat (buohkka vahkka)</string>
+    <string name="pair_price_supporting">maiddáhttugovvame vahkka maŋŋebargga figuuran.</string>
+    <string name="pair_delete_title">maŋŋebargga dát bohccu?</string>
+    <string name="pair_delete_body">okta vahkka bohccejut maiddáhttugovvame maŋŋebargga. dát ii sáhte vahcenai.</string>
+
+    <string name="session_ongoing">maiddáhtan</string>
+    <string name="session_until">maŋŋel %1$s</string>
+    <string name="session_playing">%1$s maiddáhtan</string>
+    <string name="session_recovered">maŋŋebargga</string>
+
+    <string name="settings_tracking">maiddáhttugoahti</string>
+    <string name="settings_detailed_title">detaljalaš maiddáhttugoahti</string>
+    <string name="settings_detailed_body">lasihidde viđa beakcu ja maiddáhttamearri. android maiddáhtta viđa cealkage dieđuhemiela app:i maŋŋel, nai dát maiddáhtta juhkaruotka dieđuhemiela. bluetooth maiddáhttojuvvojit.</string>
+    <string name="settings_detailed_unavailable">ii geavahallat jus bluetooth maiddáhttu ii leat lokteme: dát build maiddáhtte dan connectedDevice serviidiga, mii android 14+ maŋŋel bluetooth maiddáhttu.</string>
+    <string name="settings_playback_only_title">maiddáhte maiddáhttamearri maŋŋebargga</string>
+    <string name="settings_playback_only_body">dieđut maiddáhte ahte geažes audio lei maiddáhtan maŋŋebargga cealkame vahkka. seavvi vahkka maiddáhttugovvame detaljalaš maiddáhttugoahtan maiddáhttamearri; maŋŋebargga leat maŋŋel.</string>
+    <string name="settings_language">giella</string>
+    <string name="settings_language_system">sisdoallu giella</string>
+    <string name="settings_devices">reaidu</string>
+    <string name="settings_devices_body">loktedahtti mii ii leat beakcu - auttu radiosta vaj oktasalat - maŋŋebargga maiddáhttugoahta.</string>
+    <string name="settings_device_subtitle">%1$s · maŋŋel vahkka %2$s</string>
+    <string name="settings_data">dieđut</string>
+    <string name="settings_export">maiddáhtte json</string>
+    <string name="settings_import">maŋŋebargga</string>
+    <string name="settings_import_warning">maŋŋebargga maiddáhtte buohkka dás maiddáhttan.</string>
+    <string name="settings_troubleshooting">vahcen</string>
+    <string name="settings_battery_body">jus vahkka ii maiddáhttugovva, veadjal ahte ylih ii leat battery optimization maŋŋel - app maŋŋebargga force-stopped ii oađđa connection broadcast jus dát.</string>
+    <string name="settings_battery_button">battery jieggadussat</string>
+    <string name="settings_battery_path">jieggadussat → app:at → ylih → battery → unrestricted.</string>
+    <string name="settings_hibernation_body">jus ylih ii leat vahccame maŋŋel vahkka, android maiddáhtte dan ja maiddáhta das maŋŋel, ja ii maŋŋebargga maiddáhttugovva jus daŧŧat. dahte geažes ahte bohccu maiddáhte moallu geažes app ii leat maiddáhtan.</string>
+    <string name="settings_hibernation_on">android sáhta maiddáhtte ylih.</string>
+    <string name="settings_hibernation_off">ylih maiddáhtte ja maiddáhta.</string>
+    <string name="settings_hibernation_button">unused app jieggadussat</string>
+    <string name="settings_about">birra</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — beakcu vahkka, maiddáhttugovvame ja sempre.</string>
+    <string name="settings_import_confirm_title">mainna buohkka dieđut?</string>
+    <string name="settings_import_confirm_body">maŋŋebargga dát maiddáhttugoahti maŋŋebargga buohkka reaidu, bohccu ja vahkka dás.</string>
+
+    <string name="widget_lifetime_label">ylih · eallu</string>
+    <string name="widget_lifetime_description">vahkka bohccu maŋŋel, live timer mii cealkame dás</string>
+    <string name="widget_activity_label">ylih · aktivitehta</string>
+    <string name="widget_activity_description">vahkka okta bohccu maŋŋel, okta dát beaivi, vahkka 7 ja vahkka 30</string>
+    <string name="widget_chart_label">ylih · vahkka 30</string>
+    <string name="widget_chart_description">beaivemearri listening vahkka maŋŋel vahkka 30</string>
+
+    <string name="action_save">maiddáhte</string>
+    <string name="action_cancel">maŋŋebargga</string>
+    <string name="action_delete">maŋŋebargga</string>
+    <string name="action_import">maŋŋebargga</string>
+
+    <string name="channel_tracking">beakcu maiddáhttugoahti</string>
+    <string name="channel_tracking_description">maiddáhtet go ylih veadjá viđa beakcu ja maiddáhttamearri. android ii maiddáhtte viđa cealkage dieđuhemiela app:i maŋŋel.</string>
+    <string name="notification_title">beakcu vahkka maiddáhttugoahti</string>
+    <string name="notification_starting">maŋŋebargga...</string>
+    <string name="notification_idle">beakcu geažes</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d cealkame · %2$s</item>
+        <item quantity="two">%1$d cealkame · %2$s</item>
+        <item quantity="other">%1$d cealkame · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d cealkame · %2$s · maiddáhtan</item>
+        <item quantity="two">%1$d cealkame · %2$s · maiddáhtan</item>
+        <item quantity="other">%1$d cealkame · %2$s · maiddáhtan</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">dát build duođa bluetooth maiddáhttu áigi viđa beakcu maiddáhttugovva</string>
+    <string name="export_done">maiddáhttugoahti maiddáhtte</string>
+    <string name="export_failed">maiddáhte vahca</string>
+    <string name="import_failed">maŋŋebargga vahca</string>
+    <string name="edit_failed">ii sáhte maŋŋebargga dan</string>
+    <string name="error_could_not_open">ii sáhte cealkage %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">maŋŋebargga %d vahkka</item>
+        <item quantity="two">maŋŋebargga %d vahkka</item>
+        <item quantity="other">maŋŋebargga %d vahkka</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d vahkka</item>
+        <item quantity="two">%d vahkka</item>
+        <item quantity="other">%d vahkka</item>
+    </plurals>
+</resources>
