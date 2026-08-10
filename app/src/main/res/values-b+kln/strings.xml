@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Kalenjin. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ubweni gwabwaek</string>
+
+    <string name="nav_headphones">emwusis</string>
+    <string name="nav_stats">sitaatistik</string>
+    <string name="nav_settings">saitinsi</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">entaap</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">mibisitin</string>
+
+    <string name="welcome_title">karibu kwa ylih</string>
+    <string name="welcome_intro">ylih ibokisyek indet ya emwusis koktit, ikicha kokwei kolaaki wechi - kobo ng\'a eosek kwa pongeta mot: kobo kotagit?</string>
+    <string name="welcome_point_auto_title">inyokosyek ari botiset</string>
+    <string name="welcome_point_auto_body">emwusis bluetooth botiyek osae keny ne kokiminik. iten mibisitin ko botek.</string>
+    <string name="welcome_point_lifetime_title">emwusis aiot, ubweni aiot</string>
+    <string name="welcome_point_lifetime_body">emwusis ki kimatik, titiek: koney kosiyek kuche, ari emwusis kopiisyek emwusis mot tapweny.</string>
+    <string name="welcome_point_detailed_title">entaap ari kogo</string>
+    <string name="welcome_point_detailed_body">sitaatistik mabunyin, kwa saitinsi, ibotik entaap emwusis ari korekta ng\'a sekisyek.</string>
+    <string name="welcome_privacy">saita iten simu inye. mibisitin koniitet, ari ylih mibisitin simu intainet.</string>
+    <string name="welcome_start">koimo</string>
+    <string name="welcome_next">taata</string>
+    <string name="welcome_allow">chepkitit</string>
+    <string name="welcome_step">saina %1$d ng\'a %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth chosindet</string>
+    <string name="welcome_bluetooth_why">android ibichok kwa aap koni bluetooth simu kosiyek, ari eng\'a sitit, ikicha aap itekik bluetooth chosindet. se cha ylih imben emwusis koni stereo ng\'a moget, ari se apmit ibenindet.</string>
+    <string name="welcome_bluetooth_with">kiwot: emwusis kosiyek osae ne botik miten, iten mibisitin kotek, ari mibisitin kotenget chopiyek.</string>
+    <string name="welcome_bluetooth_without">ari mibisitin: emwusis bluetooth mibisitin botiek. ylih taata ikitek, ari ne igosubok later kwa android simu aap saitinsi.</string>
+    <string name="welcome_notifications_title">korogeta</string>
+    <string name="welcome_notifications_why">sitaatistik mabunyin ibotiyek simu nyini backend, ari android chopiyek aap kotik korogeta rotiyek intabes ne osae.</string>
+    <string name="welcome_notifications_with">kiwot: korogeta ibochok eng\'a kotok ara, eng\'a sitit kobo sitaatistik mabunyin osae.</string>
+    <string name="welcome_notifications_without">ari mibisitin: sitaatistik mabunyin ikitek ari kotik. android mibisitin ibochok korogeta.</string>
+    <string name="hibernation_title">kotenget kotenget ne botiset</string>
+    <string name="hibernation_body">android ibochepak aap ne mibisitin ikimuet ng\'a lacha, ari kotik chosindet, ylih mibisitin botiek intabes ne imiot. kobotweny se cha aap se cha, ikicha ko weng\'ito ariki.</string>
+    <string name="action_not_now">mibisitin ara</string>
+
+    <string name="devices_in_use">kotik ara</string>
+    <string name="devices_retired">kosimiyek</string>
+    <string name="devices_empty_title">emwusis mibisitin ara</string>
+    <string name="devices_empty_body">inyokoyek emwusis bluetooth, koney ibogit hapa. entaap emwusis chopiyek sitaatistik mabunyin, kwa saitinsi.</string>
+    <string name="devices_generation">emwusis #%1$d</string>
+    <string name="devices_retired_on">kosimiyek %1$s</string>
+    <string name="devices_connected_for">kosiyek %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">emwusis kotagit</string>
+    <string name="stats_sessions_since">%1$s osae %2$s</string>
+    <string name="stats_today">ara</string>
+    <string name="stats_last_7">saina 7 kotagit</string>
+    <string name="stats_last_30">saina 30 kotagit</string>
+    <string name="stats_average_session">osae kotagit</string>
+    <string name="stats_longest_session">kotagit monet</string>
+    <string name="stats_playing">kogo kotik</string>
+    <string name="stats_measured_span">kotagit kwa kogo</string>
+    <string name="stats_share">kogo bonyet</string>
+    <string name="stats_playback_only_note">kotagit kogo tamanyi</string>
+    <string name="stats_daily_hours_30">saina kotagit (30 kotagit)</string>
+    <string name="stats_by_pair">emwusis aiot</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · kosimiyek</string>
+    <string name="chart_max">%1$s monet</string>
+
+    <string name="pair_fallback_title">emwusis</string>
+    <string name="pair_back">koreruk</string>
+    <string name="pair_more">taata</string>
+    <string name="pair_menu_rename">korengo</string>
+    <string name="pair_menu_purchase">kitiit kobo</string>
+    <string name="pair_menu_retire">kosimiyek / kipwoyek</string>
+    <string name="pair_menu_delete">kibotik</string>
+    <string name="pair_lifetime">ubweni kwa emwusis</string>
+    <string name="pair_retired_on">kosimiyek %1$s</string>
+    <string name="pair_retired_with_reason">kosimiyek %1$s · %2$s</string>
+    <string name="pair_connected_now">kosiyek ara · %1$s</string>
+    <string name="pair_sessions">kotagit</string>
+    <string name="pair_average">osae</string>
+    <string name="pair_longest">monet</string>
+    <string name="pair_since">osae %1$s</string>
+    <string name="pair_of_measured">kogo bonyet</string>
+    <string name="pair_measured">kotagit kwa kogo</string>
+    <string name="pair_paid">kitiet</string>
+    <string name="pair_per_hour">kwa saina</string>
+    <string name="pair_bought">kitiit ye</string>
+    <string name="pair_daily_hours_14">saina kotagit (14 kotagit)</string>
+    <string name="pair_rename_title">korengo emwusis</string>
+    <string name="pair_rename_label">kiit</string>
+    <string name="pair_retire_title">kosimiyek emwusis</string>
+    <string name="pair_retire_label">kitiit (komaak, kipwoy, kolosik...)</string>
+    <string name="pair_retire_confirm">kosimiyek</string>
+    <string name="pair_retire_supporting">bonyet kosiyek kuche hapa. ikicha emwusis mot kosiyek taata, emwusis kot koimo koraninet.</string>
+    <string name="pair_price_title">tabu kosiyek</string>
+    <string name="pair_price_label">tabu (kotagit kotagit)</string>
+    <string name="pair_price_supporting">kotik kwa tabu-kwa-saina kiit.</string>
+    <string name="pair_delete_title">kibotik emwusis?</string>
+    <string name="pair_delete_body">kotagit kotagit kotagit kibotiyek. se cha mibisitin korotik.</string>
+
+    <string name="session_ongoing">kotik ara</string>
+    <string name="session_until">kichia %1$s</string>
+    <string name="session_playing">%1$s kogo</string>
+    <string name="session_recovered">koreruk</string>
+
+    <string name="settings_tracking">kotagit</string>
+    <string name="settings_detailed_title">kotagit mabunyin</string>
+    <string name="settings_detailed_body">ibotik entaap emwusis ari kogo kotagit. android ibochok entaap simu kwa aap kotik, ikicha ibotiyek korogeta arayu. bluetooth kotagiyek kobo.</string>
+    <string name="settings_detailed_unavailable">mibisitin chopiyek osae bluetooth chosindet: simu aap connectedDevice saina, ikicha android 14+ kwa bluetooth chosindet.</string>
+    <string name="settings_playback_only_title">kotagit kogo tamanyi</string>
+    <string name="settings_playback_only_body">sitaatistik kotagit kogo kotagit ari kotagit kosiyek. kotagit sitaatistik mabunyin kotagit kogo tamanyi; taata kibotiyek.</string>
+    <string name="settings_language">lasa</string>
+    <string name="settings_language_system">lasa system</string>
+    <string name="settings_devices">simu</string>
+    <string name="settings_devices_body">kibotik eng\'a mibisitin emwusis - stereo moget akilak - kotagit kibotik.</string>
+    <string name="settings_device_subtitle">%1$s · kosiyek taata %2$s</string>
+    <string name="settings_data">tamaglareeq</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">import</string>
+    <string name="settings_import_warning">import kibotiyek tamaglareeq ara kotagit.</string>
+    <string name="settings_troubleshooting">kitiit asitak</string>
+    <string name="settings_battery_body">kotagit kotagiyek kibotik, nalunaiqut ylih battery - aap kibotik mibisitin kotonget korogeta intabes ne imiot.</string>
+    <string name="settings_battery_button">battery saitinsi</string>
+    <string name="settings_battery_path">saitinsi → simu → ylih → battery → mibisitin.</string>
+    <string name="settings_hibernation_body">ylih imiot lacha, android kibotik aap chosindet, kotagit mibisitin osae ne imiot. kibotik se cha ubweni kotenget lacha ne botiset.</string>
+    <string name="settings_hibernation_on">android kibotiyek ylih.</string>
+    <string name="settings_hibernation_off">ylih mibisitin kotagit.</string>
+    <string name="settings_hibernation_button">aap mibisitin saitinsi</string>
+    <string name="settings_about">kobo</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - emwusis saina, simu-yai ari ubweni.</string>
+    <string name="settings_import_confirm_title">kibotiyek tamaglareeq?</string>
+    <string name="settings_import_confirm_body">import backup kibotiyek simu, emwusis, kotagit ara.</string>
+
+    <string name="widget_lifetime_label">ylih · ubweni</string>
+    <string name="widget_lifetime_description">saina emwusis, kecho kogo kosiyek</string>
+    <string name="widget_activity_label">ylih · kotik</string>
+    <string name="widget_activity_description">saina emwusis kotagit, ara, 7 kotagit, 30 kotagit</string>
+    <string name="widget_chart_label">ylih · 30 kotagit</string>
+    <string name="widget_chart_description">saina kotagit 30 kotagit taakuppok</string>
+
+    <string name="action_save">simiyek</string>
+    <string name="action_cancel">kibotik</string>
+    <string name="action_delete">kibotik</string>
+    <string name="action_import">import</string>
+
+    <string name="channel_tracking">emwusis kotagit</string>
+    <string name="channel_tracking_description">entaap emwusis kogo kotagit. android entaap korogeta aap mibisitin immiksumut.</string>
+    <string name="notification_title">emwusis saina kotagit</string>
+    <string name="notification_starting">koimo...</string>
+    <string name="notification_idle">emwusis kigut</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d kosiyek · %2$s</item>
+        <item quantity="many">%1$d kosiyek · %2$s</item>
+        <item quantity="other">%1$d kosiyek · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d kosiyek · %2$s · kogo</item>
+        <item quantity="many">%1$d kosiyek · %2$s · kogo</item>
+        <item quantity="other">%1$d kosiyek · %2$s · kogo</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">simu chopiyek bluetooth chosindet entaap emwusis kotagit</string>
+    <string name="export_done">backup kipwoyit</string>
+    <string name="export_failed">kipwoyit assissutaq</string>
+    <string name="import_failed">import assissutaq</string>
+    <string name="edit_failed">tamaassa simiyek assissutaq</string>
+    <string name="error_could_not_open">%1$s ajoqilinnilaq assissutaq</string>
+    <plurals name="import_done">
+        <item quantity="one">import %d kotagit</item>
+        <item quantity="many">import %d kotagit</item>
+        <item quantity="other">import %d kotagit</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d kotagit</item>
+        <item quantity="many">%d kotagit</item>
+        <item quantity="other">%d kotagit</item>
+    </plurals>
+</resources>

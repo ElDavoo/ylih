@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Morisyen. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">[mfe] ylih - your life in headphones</string>
+
+    <string name="nav_headphones">[mfe] headphones</string>
+    <string name="nav_stats">[mfe] stats</string>
+    <string name="nav_settings">[mfe] settings</string>
+
+    <string name="kind_bluetooth">[mfe] bluetooth</string>
+    <string name="kind_ble">[mfe] le audio</string>
+    <string name="kind_wired">[mfe] wired</string>
+    <string name="kind_usb">[mfe] usb</string>
+    <string name="kind_unknown">[mfe] unknown</string>
+
+    <string name="welcome_title">[mfe] welcome to ylih</string>
+    <string name="welcome_intro">[mfe] ylih records how long each pair of headphones stays connected, so that years from now you can still answer the only question that matters about a pair: how many hours did they last?</string>
+    <string name="welcome_point_auto_title">[mfe] connect and forget</string>
+    <string name="welcome_point_auto_body">[mfe] bluetooth headphones are recorded on their own, from the moment they connect. nothing has to be left running.</string>
+    <string name="welcome_point_lifetime_title">[mfe] one pair, one lifetime</string>
+    <string name="welcome_point_lifetime_body">[mfe] when a pair dies, retire it: its total freezes there and the next pair of the same headphones starts again from zero.</string>
+    <string name="welcome_point_detailed_title">[mfe] wired and playback</string>
+    <string name="welcome_point_detailed_body">[mfe] detailed tracking, in settings, adds wired headphones and measures how much of the time was actually playing.</string>
+    <string name="welcome_privacy">[mfe] everything stays on this phone. there is no account, and the app has no internet permission.</string>
+    <string name="welcome_start">[mfe] get started</string>
+    <string name="welcome_next">[mfe] next</string>
+    <string name="welcome_allow">[mfe] allow</string>
+    <string name="welcome_step">[mfe] step %1$d of %2$d</string>
+    <string name="welcome_bluetooth_title">[mfe] bluetooth access</string>
+    <string name="welcome_bluetooth_why">[mfe] android only tells an app which bluetooth device connected, and what it is called, if the app holds bluetooth access. it is how ylih tells a pair of headphones from a car stereo, and how it knows one pair from another.</string>
+    <string name="welcome_bluetooth_with">[mfe] with it: every pair is recorded from the moment it connects, with nothing left running and nothing to remember to press.</string>
+    <string name="welcome_bluetooth_without">[mfe] without it: no bluetooth headphones are recorded at all. the rest of the app still works, and you can grant it later in android’s app settings.</string>
+    <string name="welcome_notifications_title">[mfe] notifications</string>
+    <string name="welcome_notifications_why">[mfe] detailed tracking runs a small background service, and android requires any app doing that to keep a notification visible while it does.</string>
+    <string name="welcome_notifications_with">[mfe] with it: the notification shows what is being recorded right now, which is the only sign detailed tracking is alive.</string>
+    <string name="welcome_notifications_without">[mfe] without it: detailed tracking still runs and still records. android just will not show its notification.</string>
+    <string name="hibernation_title">[mfe] keep counting while you forget about it</string>
+    <string name="hibernation_body">[mfe] android pauses apps that go unopened for a few months and takes their permissions back, which would leave ylih recording nothing until you next opened it. being forgotten about is exactly what this app is for, so it is worth turning that off now.</string>
+    <string name="action_not_now">[mfe] not now</string>
+
+    <string name="devices_in_use">[mfe] in use</string>
+    <string name="devices_retired">[mfe] retired</string>
+    <string name="devices_empty_title">[mfe] no headphones yet</string>
+    <string name="devices_empty_body">[mfe] connect a pair of bluetooth headphones and they’ll show up here. wired headphones need detailed tracking, in settings.</string>
+    <string name="devices_generation">[mfe] pair #%1$d</string>
+    <string name="devices_retired_on">[mfe] retired %1$s</string>
+    <string name="devices_connected_for">[mfe] connected %1$s</string>
+    <string name="devices_recent">[mfe] %1$s / 7d</string>
+
+    <string name="stats_title">[mfe] all headphones</string>
+    <string name="stats_sessions_since">[mfe] %1$s since %2$s</string>
+    <string name="stats_today">[mfe] today</string>
+    <string name="stats_last_7">[mfe] last 7 days</string>
+    <string name="stats_last_30">[mfe] last 30 days</string>
+    <string name="stats_average_session">[mfe] average session</string>
+    <string name="stats_longest_session">[mfe] longest session</string>
+    <string name="stats_playing">[mfe] audio playing</string>
+    <string name="stats_measured_span">[mfe] measured for playback</string>
+    <string name="stats_share">[mfe] playing share</string>
+    <string name="stats_playback_only_note">[mfe] counting playback time only</string>
+    <string name="stats_daily_hours_30">[mfe] daily hours (30 days)</string>
+    <string name="stats_by_pair">[mfe] by pair</string>
+    <string name="stats_pair_row">[mfe] %1$s · %2$s</string>
+    <string name="stats_pair_row_retired">[mfe] %1$s · %2$s · retired</string>
+    <string name="chart_max">[mfe] %1$s max</string>
+
+    <string name="pair_fallback_title">[mfe] pair</string>
+    <string name="pair_back">[mfe] back</string>
+    <string name="pair_more">[mfe] more</string>
+    <string name="pair_menu_rename">[mfe] rename</string>
+    <string name="pair_menu_purchase">[mfe] purchase info</string>
+    <string name="pair_menu_retire">[mfe] retire / replaced</string>
+    <string name="pair_menu_delete">[mfe] delete</string>
+    <string name="pair_lifetime">[mfe] lifetime on this pair</string>
+    <string name="pair_retired_on">[mfe] retired %1$s</string>
+    <string name="pair_retired_with_reason">[mfe] retired %1$s · %2$s</string>
+    <string name="pair_connected_now">[mfe] connected now · %1$s</string>
+    <string name="pair_sessions">[mfe] sessions</string>
+    <string name="pair_average">[mfe] average</string>
+    <string name="pair_longest">[mfe] longest</string>
+    <string name="pair_since">[mfe] since %1$s</string>
+    <string name="pair_of_measured">[mfe] playing share</string>
+    <string name="pair_measured">[mfe] measured for playback</string>
+    <string name="pair_paid">[mfe] paid</string>
+    <string name="pair_per_hour">[mfe] per hour</string>
+    <string name="pair_bought">[mfe] bought</string>
+    <string name="pair_daily_hours_14">[mfe] daily hours (14 days)</string>
+    <string name="pair_rename_title">[mfe] rename pair</string>
+    <string name="pair_rename_label">[mfe] name</string>
+    <string name="pair_retire_title">[mfe] retire this pair</string>
+    <string name="pair_retire_label">[mfe] reason (died, sold, lost…)</string>
+    <string name="pair_retire_confirm">[mfe] retire</string>
+    <string name="pair_retire_supporting">[mfe] totals freeze here. reconnecting the same device starts a fresh pair at zero.</string>
+    <string name="pair_price_title">[mfe] price paid</string>
+    <string name="pair_price_label">[mfe] amount (whole units)</string>
+    <string name="pair_price_supporting">[mfe] used for the cost-per-hour figure.</string>
+    <string name="pair_delete_title">[mfe] delete this pair?</string>
+    <string name="pair_delete_body">[mfe] every session recorded for it is deleted too. this cannot be undone.</string>
+
+    <string name="session_ongoing">[mfe] ongoing</string>
+    <string name="session_until">[mfe] until %1$s</string>
+    <string name="session_playing">[mfe] %1$s playing</string>
+    <string name="session_recovered">[mfe] recovered</string>
+
+    <string name="settings_tracking">[mfe] tracking</string>
+    <string name="settings_detailed_title">[mfe] detailed tracking</string>
+    <string name="settings_detailed_body">[mfe] adds wired headphones and playback time. android only reports wired plug events to a running app, so this keeps a silent notification in the shade. bluetooth is tracked either way.</string>
+    <string name="settings_detailed_unavailable">[mfe] unavailable until bluetooth access is granted: this build only declares the connectedDevice service type, which android 14+ ties to a bluetooth permission.</string>
+    <string name="settings_playback_only_title">[mfe] count only playback</string>
+    <string name="settings_playback_only_body">[mfe] stats count the time audio was actually playing instead of the time connected. only sessions recorded with detailed tracking on measured playback; the rest are left out.</string>
+    <string name="settings_language">[mfe] language</string>
+    <string name="settings_language_system">[mfe] system language</string>
+    <string name="settings_devices">[mfe] devices</string>
+    <string name="settings_devices_body">[mfe] uncheck anything that isn’t headphones — a car stereo or a speaker — to stop recording it.</string>
+    <string name="settings_device_subtitle">[mfe] %1$s · first seen %2$s</string>
+    <string name="settings_data">[mfe] data</string>
+    <string name="settings_export">[mfe] export json</string>
+    <string name="settings_import">[mfe] import</string>
+    <string name="settings_import_warning">[mfe] importing replaces everything currently stored.</string>
+    <string name="settings_troubleshooting">[mfe] troubleshooting</string>
+    <string name="settings_battery_body">[mfe] if sessions stop being recorded, check that ylih is exempt from battery optimisation — an app that has been force-stopped never receives connection broadcasts again until it is opened.</string>
+    <string name="settings_battery_button">[mfe] battery settings</string>
+    <string name="settings_battery_path">[mfe] settings → apps → ylih → battery → unrestricted.</string>
+    <string name="settings_hibernation_body">[mfe] if ylih goes unopened for a few months, android pauses it and takes its permissions back, and nothing is recorded again until you open it. turning that off is what lets a pair keep counting through a season you never think about the app.</string>
+    <string name="settings_hibernation_on">[mfe] android may pause ylih.</string>
+    <string name="settings_hibernation_off">[mfe] ylih is exempt and keeps recording.</string>
+    <string name="settings_hibernation_button">[mfe] unused app settings</string>
+    <string name="settings_about">[mfe] about</string>
+    <string name="settings_about_body">[mfe] ylih %1$s (%2$s) — headphone hours, kept locally and forever.</string>
+    <string name="settings_import_confirm_title">[mfe] replace all data?</string>
+    <string name="settings_import_confirm_body">[mfe] importing this backup deletes every device, pair and session stored now.</string>
+
+    <string name="widget_lifetime_label">[mfe] ylih · lifetime</string>
+    <string name="widget_lifetime_description">[mfe] hours per pair, with a live timer on whatever is connected</string>
+    <string name="widget_activity_label">[mfe] ylih · activity</string>
+    <string name="widget_activity_description">[mfe] every pair’s hours together, plus today, 7 days and 30 days</string>
+    <string name="widget_chart_label">[mfe] ylih · 30 days</string>
+    <string name="widget_chart_description">[mfe] daily listening hours over the last 30 days</string>
+
+    <string name="action_save">[mfe] save</string>
+    <string name="action_cancel">[mfe] cancel</string>
+    <string name="action_delete">[mfe] delete</string>
+    <string name="action_import">[mfe] import</string>
+
+    <string name="channel_tracking">[mfe] headphone tracking</string>
+    <string name="channel_tracking_description">[mfe] shown while ylih is watching for wired headphones and playback. android does not deliver wired plug events to apps that are not running.</string>
+    <string name="notification_title">[mfe] tracking headphone time</string>
+    <string name="notification_starting">[mfe] starting…</string>
+    <string name="notification_idle">[mfe] waiting for headphones</string>
+    <plurals name="notification_active">
+        <item quantity="one">[mfe:one] %1$d connected · %2$s</item>
+        <item quantity="many">[mfe:many] %1$d connected · %2$s</item>
+        <item quantity="other">[mfe:other] %1$d connected · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">[mfe:one] %1$d connected · %2$s · playing</item>
+        <item quantity="many">[mfe:many] %1$d connected · %2$s · playing</item>
+        <item quantity="other">[mfe:other] %1$d connected · %2$s · playing</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">[mfe] this build needs bluetooth access before it can track wired headphones</string>
+    <string name="export_done">[mfe] backup exported</string>
+    <string name="export_failed">[mfe] export failed</string>
+    <string name="import_failed">[mfe] import failed</string>
+    <string name="edit_failed">[mfe] could not save that change</string>
+    <string name="error_could_not_open">[mfe] could not open %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">[mfe:one] imported %d session</item>
+        <item quantity="many">[mfe:many] imported %d session</item>
+        <item quantity="other">[mfe:other] imported %d session</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">[mfe:one] %d session</item>
+        <item quantity="many">[mfe:many] %d session</item>
+        <item quantity="other">[mfe:other] %d session</item>
+    </plurals>
+</resources>

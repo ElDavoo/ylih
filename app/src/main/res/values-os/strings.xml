@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Ossetic. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - dywwoe aw gom kurasy</string>
+
+    <string name="nav_headphones">kurasy</string>
+    <string name="nav_stats">statag</string>
+    <string name="nav_settings">parametag</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">wired</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">naxycyd</string>
+
+    <string name="welcome_title">fewwadkyd ylih alyje</string>
+    <string name="welcome_intro">ylih te cawwaj ma daqqa ga kurasy fydykgaj azon xsy, se uja-myly daqqa, daeuw cag fe laegaj mudy: swat saetag se ajon?</string>
+    <string name="welcome_point_auto_title">amonyd aw feroj</string>
+    <string name="welcome_point_auto_body">bluetooth kurasy tew razamydwncyd salon, se amonyd raxycyd doj. nycydxer nag te azon kard.</string>
+    <string name="welcome_point_lifetime_title">paery se, paery arvytty</string>
+    <string name="welcome_point_lifetime_body">se paery arvydta, nykkecy dy: jemaj we syl razama sedag, aw paery aeldar se sadon kurasy raganyd dy se nul aeldar.</string>
+    <string name="welcome_point_detailed_title">wired aw playback</string>
+    <string name="welcome_point_detailed_body">sywgaj razama, parametag alyje, wired kurasy banyd aw cawwaj mot ga saetag ardau xsy.</string>
+    <string name="welcome_privacy">aelon se telephonejy dy kard. accounty nag, aw applicationy internety permission nag.</string>
+    <string name="welcome_start">byndzdyd</string>
+    <string name="welcome_next">aeldar</string>
+    <string name="welcome_allow">ammaj</string>
+    <string name="welcome_step">seledtag %1$d %2$d doj</string>
+    <string name="welcome_bluetooth_title">bluetooth fewwad</string>
+    <string name="welcome_bluetooth_why">android applicationmy ne datta ycyw bluetooth device xyd, aw cwad din aestad, sedag application bluetooth fewwad tsydad. sew doxxyj ylih kurasy paery car stereo doxta aw paery nycyd nycyd ytsarydsta.</string>
+    <string name="welcome_bluetooth_with">fe: paery ra razamydwncyd doj, arcy ardau nag aw arcy kard acyddad nag.</string>
+    <string name="welcome_bluetooth_without">fydyk: bluetooth kurasy razamydwncyd nag. application aelondy hojyddy dy, aw daeuw nodag android application parametag alyje ammaj danydd.</string>
+    <string name="welcome_notifications_title">notifications</string>
+    <string name="welcome_notifications_why">sywgaj razama application azon service astaj du, aw android kudy application dy notification nycydx cawe ardy.</string>
+    <string name="welcome_notifications_with">fe: notification xyd cawwaj ce ardau ylih doj, dy se se sywgaj razama dy nycyd.</string>
+    <string name="welcome_notifications_without">fydyk: sywgaj razama hojyddy aw razamyddy. android notification xyd cawwe nag.</string>
+    <string name="hibernation_title">cawwaj ardy nykkecy daeuw</string>
+    <string name="hibernation_body">android application azon moetag myly fydyd aw jemaj nykked aeldar, se ylih razama nag razamydta nodag aeldar daeuw telephonejy fewwad. tyx application ty se ardy, se dojy sywgaj dy sar nycydx.</string>
+    <string name="action_not_now">nycyd nodag</string>
+
+    <string name="devices_in_use">hojaryd dy</string>
+    <string name="devices_retired">nykkecy</string>
+    <string name="devices_empty_title">kurasy nodag doj</string>
+    <string name="devices_empty_body">bluetooth kurasy paery amonyd aw dy aeldar doj xyd. wired kurasy sywgaj razama doxad, parametag alyje.</string>
+    <string name="devices_generation">kurasy paery #%1$d</string>
+    <string name="devices_retired_on">nykkecy %1$s</string>
+    <string name="devices_connected_for">amonyd %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">kurasy aelon</string>
+    <string name="stats_sessions_since">%1$s doj %2$s</string>
+    <string name="stats_today">nodag</string>
+    <string name="stats_last_7">mylydag 7 aeldar</string>
+    <string name="stats_last_30">mylydag 30 aeldar</string>
+    <string name="stats_average_session">average session</string>
+    <string name="stats_longest_session">longest session</string>
+    <string name="stats_playing">audio playing</string>
+    <string name="stats_measured_span">measured for playback</string>
+    <string name="stats_share">playing share</string>
+    <string name="stats_playback_only_note">counting playback time only</string>
+    <string name="stats_daily_hours_30">daily hours (30 days)</string>
+    <string name="stats_by_pair">by pair</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · nykkecy</string>
+    <string name="chart_max">%1$s max</string>
+
+    <string name="pair_fallback_title">kurasy paery</string>
+    <string name="pair_back">aeldar</string>
+    <string name="pair_more">aelondy</string>
+    <string name="pair_menu_rename">cydgaj nom</string>
+    <string name="pair_menu_purchase">purchase info</string>
+    <string name="pair_menu_retire">retire / replaced</string>
+    <string name="pair_menu_delete">bazydta</string>
+    <string name="pair_lifetime">lifetime on this pair</string>
+    <string name="pair_retired_on">retired %1$s</string>
+    <string name="pair_retired_with_reason">retired %1$s · %2$s</string>
+    <string name="pair_connected_now">connected now · %1$s</string>
+    <string name="pair_sessions">sessions</string>
+    <string name="pair_average">average</string>
+    <string name="pair_longest">longest</string>
+    <string name="pair_since">since %1$s</string>
+    <string name="pair_of_measured">playing share</string>
+    <string name="pair_measured">measured for playback</string>
+    <string name="pair_paid">paid</string>
+    <string name="pair_per_hour">per hour</string>
+    <string name="pair_bought">bought</string>
+    <string name="pair_daily_hours_14">daily hours (14 days)</string>
+    <string name="pair_rename_title">rename pair</string>
+    <string name="pair_rename_label">name</string>
+    <string name="pair_retire_title">retire this pair</string>
+    <string name="pair_retire_label">reason (died, sold, lost...)</string>
+    <string name="pair_retire_confirm">retire</string>
+    <string name="pair_retire_supporting">totals freeze here. reconnecting the same device starts a fresh pair at zero.</string>
+    <string name="pair_price_title">price paid</string>
+    <string name="pair_price_label">amount (whole units)</string>
+    <string name="pair_price_supporting">used for the cost-per-hour figure.</string>
+    <string name="pair_delete_title">delete this pair?</string>
+    <string name="pair_delete_body">every session recorded for it is deleted too. this cannot be undone.</string>
+
+    <string name="session_ongoing">ongoing</string>
+    <string name="session_until">until %1$s</string>
+    <string name="session_playing">%1$s playing</string>
+    <string name="session_recovered">recovered</string>
+
+    <string name="settings_tracking">tracking</string>
+    <string name="settings_detailed_title">detailed tracking</string>
+    <string name="settings_detailed_body">adds wired headphones and playback time. android only reports wired plug events to a running app, so this keeps a silent notification in the shade. bluetooth is tracked either way.</string>
+    <string name="settings_detailed_unavailable">unavailable until bluetooth access is granted: this build only declares the connectedDevice service type, which android 14+ ties to a bluetooth permission.</string>
+    <string name="settings_playback_only_title">count only playback</string>
+    <string name="settings_playback_only_body">stats count the time audio was actually playing instead of the time connected. only sessions recorded with detailed tracking on measured playback; the rest are left out.</string>
+    <string name="settings_language">language</string>
+    <string name="settings_language_system">system language</string>
+    <string name="settings_devices">devices</string>
+    <string name="settings_devices_body">uncheck anything that isn\'t headphones — a car stereo or a speaker — to stop recording it.</string>
+    <string name="settings_device_subtitle">%1$s · first seen %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">import</string>
+    <string name="settings_import_warning">importing replaces everything currently stored.</string>
+    <string name="settings_troubleshooting">troubleshooting</string>
+    <string name="settings_battery_body">if sessions stop being recorded, check that ylih is exempt from battery optimisation — an app that has been force-stopped never receives connection broadcasts again until it is opened.</string>
+    <string name="settings_battery_button">battery settings</string>
+    <string name="settings_battery_path">settings → apps → ylih → battery → unrestricted.</string>
+    <string name="settings_hibernation_body">if ylih goes unopened for a few months, android pauses it and takes its permissions back, and nothing is recorded again until you open it. turning that off is what lets a pair keep counting through a season you never think about the app.</string>
+    <string name="settings_hibernation_on">android may pause ylih.</string>
+    <string name="settings_hibernation_off">ylih is exempt and keeps recording.</string>
+    <string name="settings_hibernation_button">unused app settings</string>
+    <string name="settings_about">about</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — headphone hours, kept locally and forever.</string>
+    <string name="settings_import_confirm_title">replace all data?</string>
+    <string name="settings_import_confirm_body">importing this backup deletes every device, pair and session stored now.</string>
+
+    <string name="widget_lifetime_label">ylih · lifetime</string>
+    <string name="widget_lifetime_description">hours per pair, with a live timer on whatever is connected</string>
+    <string name="widget_activity_label">ylih · activity</string>
+    <string name="widget_activity_description">every pair\'s hours together, plus today, 7 days and 30 days</string>
+    <string name="widget_chart_label">ylih · 30 days</string>
+    <string name="widget_chart_description">daily listening hours over the last 30 days</string>
+
+    <string name="action_save">aske</string>
+    <string name="action_cancel">nykked</string>
+    <string name="action_delete">bazydta</string>
+    <string name="action_import">banyd</string>
+
+    <string name="channel_tracking">headphone tracking</string>
+    <string name="channel_tracking_description">shown while ylih is watching for wired headphones and playback. android does not deliver wired plug events to apps that are not running.</string>
+    <string name="notification_title">tracking headphone time</string>
+    <string name="notification_starting">starting...</string>
+    <string name="notification_idle">waiting for headphones</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d connected · %2$s</item>
+        <item quantity="other">%1$d connected · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d connected · %2$s · playing</item>
+        <item quantity="other">%1$d connected · %2$s · playing</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">this build needs bluetooth access before it can track wired headphones</string>
+    <string name="export_done">backup exported</string>
+    <string name="export_failed">export failed</string>
+    <string name="import_failed">import failed</string>
+    <string name="edit_failed">could not save that change</string>
+    <string name="error_could_not_open">could not open %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">imported %d session</item>
+        <item quantity="other">imported %d sessions</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d session</item>
+        <item quantity="other">%d sessions</item>
+    </plurals>
+</resources>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Meru. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">[mer] ylih - your life in headphones</string>
+
+    <string name="nav_headphones">[mer] headphones</string>
+    <string name="nav_stats">[mer] stats</string>
+    <string name="nav_settings">[mer] settings</string>
+
+    <string name="kind_bluetooth">[mer] bluetooth</string>
+    <string name="kind_ble">[mer] le audio</string>
+    <string name="kind_wired">[mer] wired</string>
+    <string name="kind_usb">[mer] usb</string>
+    <string name="kind_unknown">[mer] unknown</string>
+
+    <string name="welcome_title">[mer] welcome to ylih</string>
+    <string name="welcome_intro">[mer] ylih records how long each pair of headphones stays connected, so that years from now you can still answer the only question that matters about a pair: how many hours did they last?</string>
+    <string name="welcome_point_auto_title">[mer] connect and forget</string>
+    <string name="welcome_point_auto_body">[mer] bluetooth headphones are recorded on their own, from the moment they connect. nothing has to be left running.</string>
+    <string name="welcome_point_lifetime_title">[mer] one pair, one lifetime</string>
+    <string name="welcome_point_lifetime_body">[mer] when a pair dies, retire it: its total freezes there and the next pair of the same headphones starts again from zero.</string>
+    <string name="welcome_point_detailed_title">[mer] wired and playback</string>
+    <string name="welcome_point_detailed_body">[mer] detailed tracking, in settings, adds wired headphones and measures how much of the time was actually playing.</string>
+    <string name="welcome_privacy">[mer] everything stays on this phone. there is no account, and the app has no internet permission.</string>
+    <string name="welcome_start">[mer] get started</string>
+    <string name="welcome_next">[mer] next</string>
+    <string name="welcome_allow">[mer] allow</string>
+    <string name="welcome_step">[mer] step %1$d of %2$d</string>
+    <string name="welcome_bluetooth_title">[mer] bluetooth access</string>
+    <string name="welcome_bluetooth_why">[mer] android only tells an app which bluetooth device connected, and what it is called, if the app holds bluetooth access. it is how ylih tells a pair of headphones from a car stereo, and how it knows one pair from another.</string>
+    <string name="welcome_bluetooth_with">[mer] with it: every pair is recorded from the moment it connects, with nothing left running and nothing to remember to press.</string>
+    <string name="welcome_bluetooth_without">[mer] without it: no bluetooth headphones are recorded at all. the rest of the app still works, and you can grant it later in android’s app settings.</string>
+    <string name="welcome_notifications_title">[mer] notifications</string>
+    <string name="welcome_notifications_why">[mer] detailed tracking runs a small background service, and android requires any app doing that to keep a notification visible while it does.</string>
+    <string name="welcome_notifications_with">[mer] with it: the notification shows what is being recorded right now, which is the only sign detailed tracking is alive.</string>
+    <string name="welcome_notifications_without">[mer] without it: detailed tracking still runs and still records. android just will not show its notification.</string>
+    <string name="hibernation_title">[mer] keep counting while you forget about it</string>
+    <string name="hibernation_body">[mer] android pauses apps that go unopened for a few months and takes their permissions back, which would leave ylih recording nothing until you next opened it. being forgotten about is exactly what this app is for, so it is worth turning that off now.</string>
+    <string name="action_not_now">[mer] not now</string>
+
+    <string name="devices_in_use">[mer] in use</string>
+    <string name="devices_retired">[mer] retired</string>
+    <string name="devices_empty_title">[mer] no headphones yet</string>
+    <string name="devices_empty_body">[mer] connect a pair of bluetooth headphones and they’ll show up here. wired headphones need detailed tracking, in settings.</string>
+    <string name="devices_generation">[mer] pair #%1$d</string>
+    <string name="devices_retired_on">[mer] retired %1$s</string>
+    <string name="devices_connected_for">[mer] connected %1$s</string>
+    <string name="devices_recent">[mer] %1$s / 7d</string>
+
+    <string name="stats_title">[mer] all headphones</string>
+    <string name="stats_sessions_since">[mer] %1$s since %2$s</string>
+    <string name="stats_today">[mer] today</string>
+    <string name="stats_last_7">[mer] last 7 days</string>
+    <string name="stats_last_30">[mer] last 30 days</string>
+    <string name="stats_average_session">[mer] average session</string>
+    <string name="stats_longest_session">[mer] longest session</string>
+    <string name="stats_playing">[mer] audio playing</string>
+    <string name="stats_measured_span">[mer] measured for playback</string>
+    <string name="stats_share">[mer] playing share</string>
+    <string name="stats_playback_only_note">[mer] counting playback time only</string>
+    <string name="stats_daily_hours_30">[mer] daily hours (30 days)</string>
+    <string name="stats_by_pair">[mer] by pair</string>
+    <string name="stats_pair_row">[mer] %1$s · %2$s</string>
+    <string name="stats_pair_row_retired">[mer] %1$s · %2$s · retired</string>
+    <string name="chart_max">[mer] %1$s max</string>
+
+    <string name="pair_fallback_title">[mer] pair</string>
+    <string name="pair_back">[mer] back</string>
+    <string name="pair_more">[mer] more</string>
+    <string name="pair_menu_rename">[mer] rename</string>
+    <string name="pair_menu_purchase">[mer] purchase info</string>
+    <string name="pair_menu_retire">[mer] retire / replaced</string>
+    <string name="pair_menu_delete">[mer] delete</string>
+    <string name="pair_lifetime">[mer] lifetime on this pair</string>
+    <string name="pair_retired_on">[mer] retired %1$s</string>
+    <string name="pair_retired_with_reason">[mer] retired %1$s · %2$s</string>
+    <string name="pair_connected_now">[mer] connected now · %1$s</string>
+    <string name="pair_sessions">[mer] sessions</string>
+    <string name="pair_average">[mer] average</string>
+    <string name="pair_longest">[mer] longest</string>
+    <string name="pair_since">[mer] since %1$s</string>
+    <string name="pair_of_measured">[mer] playing share</string>
+    <string name="pair_measured">[mer] measured for playback</string>
+    <string name="pair_paid">[mer] paid</string>
+    <string name="pair_per_hour">[mer] per hour</string>
+    <string name="pair_bought">[mer] bought</string>
+    <string name="pair_daily_hours_14">[mer] daily hours (14 days)</string>
+    <string name="pair_rename_title">[mer] rename pair</string>
+    <string name="pair_rename_label">[mer] name</string>
+    <string name="pair_retire_title">[mer] retire this pair</string>
+    <string name="pair_retire_label">[mer] reason (died, sold, lost…)</string>
+    <string name="pair_retire_confirm">[mer] retire</string>
+    <string name="pair_retire_supporting">[mer] totals freeze here. reconnecting the same device starts a fresh pair at zero.</string>
+    <string name="pair_price_title">[mer] price paid</string>
+    <string name="pair_price_label">[mer] amount (whole units)</string>
+    <string name="pair_price_supporting">[mer] used for the cost-per-hour figure.</string>
+    <string name="pair_delete_title">[mer] delete this pair?</string>
+    <string name="pair_delete_body">[mer] every session recorded for it is deleted too. this cannot be undone.</string>
+
+    <string name="session_ongoing">[mer] ongoing</string>
+    <string name="session_until">[mer] until %1$s</string>
+    <string name="session_playing">[mer] %1$s playing</string>
+    <string name="session_recovered">[mer] recovered</string>
+
+    <string name="settings_tracking">[mer] tracking</string>
+    <string name="settings_detailed_title">[mer] detailed tracking</string>
+    <string name="settings_detailed_body">[mer] adds wired headphones and playback time. android only reports wired plug events to a running app, so this keeps a silent notification in the shade. bluetooth is tracked either way.</string>
+    <string name="settings_detailed_unavailable">[mer] unavailable until bluetooth access is granted: this build only declares the connectedDevice service type, which android 14+ ties to a bluetooth permission.</string>
+    <string name="settings_playback_only_title">[mer] count only playback</string>
+    <string name="settings_playback_only_body">[mer] stats count the time audio was actually playing instead of the time connected. only sessions recorded with detailed tracking on measured playback; the rest are left out.</string>
+    <string name="settings_language">[mer] language</string>
+    <string name="settings_language_system">[mer] system language</string>
+    <string name="settings_devices">[mer] devices</string>
+    <string name="settings_devices_body">[mer] uncheck anything that isn’t headphones — a car stereo or a speaker — to stop recording it.</string>
+    <string name="settings_device_subtitle">[mer] %1$s · first seen %2$s</string>
+    <string name="settings_data">[mer] data</string>
+    <string name="settings_export">[mer] export json</string>
+    <string name="settings_import">[mer] import</string>
+    <string name="settings_import_warning">[mer] importing replaces everything currently stored.</string>
+    <string name="settings_troubleshooting">[mer] troubleshooting</string>
+    <string name="settings_battery_body">[mer] if sessions stop being recorded, check that ylih is exempt from battery optimisation — an app that has been force-stopped never receives connection broadcasts again until it is opened.</string>
+    <string name="settings_battery_button">[mer] battery settings</string>
+    <string name="settings_battery_path">[mer] settings → apps → ylih → battery → unrestricted.</string>
+    <string name="settings_hibernation_body">[mer] if ylih goes unopened for a few months, android pauses it and takes its permissions back, and nothing is recorded again until you open it. turning that off is what lets a pair keep counting through a season you never think about the app.</string>
+    <string name="settings_hibernation_on">[mer] android may pause ylih.</string>
+    <string name="settings_hibernation_off">[mer] ylih is exempt and keeps recording.</string>
+    <string name="settings_hibernation_button">[mer] unused app settings</string>
+    <string name="settings_about">[mer] about</string>
+    <string name="settings_about_body">[mer] ylih %1$s (%2$s) — headphone hours, kept locally and forever.</string>
+    <string name="settings_import_confirm_title">[mer] replace all data?</string>
+    <string name="settings_import_confirm_body">[mer] importing this backup deletes every device, pair and session stored now.</string>
+
+    <string name="widget_lifetime_label">[mer] ylih · lifetime</string>
+    <string name="widget_lifetime_description">[mer] hours per pair, with a live timer on whatever is connected</string>
+    <string name="widget_activity_label">[mer] ylih · activity</string>
+    <string name="widget_activity_description">[mer] every pair’s hours together, plus today, 7 days and 30 days</string>
+    <string name="widget_chart_label">[mer] ylih · 30 days</string>
+    <string name="widget_chart_description">[mer] daily listening hours over the last 30 days</string>
+
+    <string name="action_save">[mer] save</string>
+    <string name="action_cancel">[mer] cancel</string>
+    <string name="action_delete">[mer] delete</string>
+    <string name="action_import">[mer] import</string>
+
+    <string name="channel_tracking">[mer] headphone tracking</string>
+    <string name="channel_tracking_description">[mer] shown while ylih is watching for wired headphones and playback. android does not deliver wired plug events to apps that are not running.</string>
+    <string name="notification_title">[mer] tracking headphone time</string>
+    <string name="notification_starting">[mer] starting…</string>
+    <string name="notification_idle">[mer] waiting for headphones</string>
+    <plurals name="notification_active">
+        <item quantity="one">[mer:one] %1$d connected · %2$s</item>
+        <item quantity="many">[mer:many] %1$d connected · %2$s</item>
+        <item quantity="other">[mer:other] %1$d connected · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">[mer:one] %1$d connected · %2$s · playing</item>
+        <item quantity="many">[mer:many] %1$d connected · %2$s · playing</item>
+        <item quantity="other">[mer:other] %1$d connected · %2$s · playing</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">[mer] this build needs bluetooth access before it can track wired headphones</string>
+    <string name="export_done">[mer] backup exported</string>
+    <string name="export_failed">[mer] export failed</string>
+    <string name="import_failed">[mer] import failed</string>
+    <string name="edit_failed">[mer] could not save that change</string>
+    <string name="error_could_not_open">[mer] could not open %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">[mer:one] imported %d session</item>
+        <item quantity="many">[mer:many] imported %d session</item>
+        <item quantity="other">[mer:other] imported %d session</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">[mer:one] %d session</item>
+        <item quantity="many">[mer:many] %d session</item>
+        <item quantity="other">[mer:other] %d session</item>
+    </plurals>
+</resources>

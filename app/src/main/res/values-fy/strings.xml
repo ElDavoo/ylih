@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Western Frisian. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - jo libben yn tskofhâlderskes</string>
+
+    <string name="nav_headphones">tskofhâlderskes</string>
+    <string name="nav_stats">statistiken</string>
+    <string name="nav_settings">ynstellingen</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">bedraad</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ûnbekend</string>
+
+    <string name="welcome_title">wolkom by ylih</string>
+    <string name="welcome_intro">ylih registrearret hoe lang elk pear tskofhâlderskes ferbûn bliuwt, sodat dy jierren fierder kin du still beäntwurdzje de ienige fraach dy\'t saken docht: hoefolle oeren hawwe dy duere?</string>
+    <string name="welcome_point_auto_title">ferbine en ferjitte</string>
+    <string name="welcome_point_auto_body">bluetooth tskofhâlderskes wurde registrearre op har eigen, fan it momint dat sy ferbine. der hoecht neat omheech te stean.</string>
+    <string name="welcome_point_lifetime_title">ien pear, ien leawensdier</string>
+    <string name="welcome_point_lifetime_body">as in pear deade gait, stillsette it: de totaal kin hjir en it folgjende pear fan deselde tskofhâlderskes begjint wer by nul.</string>
+    <string name="welcome_point_detailed_title">bedraad en ôfspeel</string>
+    <string name="welcome_point_detailed_body">detaillearre spanning, yn ynstellingen, foarget bedraad tskofhâlderskes en mjit hoe folle fan de tiid it gelûd echt spile gien.</string>
+    <string name="welcome_privacy">alles bliuwt op disse telefoan. der is gjin rekken, en ylih hat gjin ynternet-tastimming.</string>
+    <string name="welcome_start">oan de gong</string>
+    <string name="welcome_next">folgjende</string>
+    <string name="welcome_allow">tastean</string>
+    <string name="welcome_step">stap %1$d fan %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth-tagong</string>
+    <string name="welcome_bluetooth_why">android fertelt in app allinne wat bluetooth-apparaat ferbûn is, en wat it hiete kin, as de app bluetooth-tagong hat. it is hoe ylih in pear tskofhâlderskes fan in auto-stereo ûnderskie, en hoe it it iene pear fan it oare wit.</string>
+    <string name="welcome_bluetooth_with">dêrmei: elk pear wurde registrearre fan it momint dat it ferbint, mei neat dat fuort stean moat en neat dat jo hoege te ûntholden.</string>
+    <string name="welcome_bluetooth_without">sonein: gjin bluetooth tskofhâlderskes wurde registrearre. it rest fan de app wurket der noch, en jo kinne it letter yn android syn app-ynstellingen tastean.</string>
+    <string name="welcome_notifications_title">meldings</string>
+    <string name="welcome_notifications_why">detaillearre spanning fieret in lyts eftergrûn-tsjinst, en android easkje fan elk app dat dat docht om in melding sichtber te hâlden wylst dy doedt.</string>
+    <string name="welcome_notifications_with">dêrmei: de melding toant wat no registrearre wurde, dat is it ienige teken dat detaillearre spanning libben is.</string>
+    <string name="welcome_notifications_without">sonein: detaillearre spanning fieret der noch of en registrearet noch. android sil allinne syn melding net werjaan.</string>
+    <string name="hibernation_title">tellen trochsette wylst do it ferjitst</string>
+    <string name="hibernation_body">android pauseret apps dy\'t in pear moannen iepene nimme en nimt har berjochting werom, wat ylih soe litten registrearje oant do dy nochris iepene. ferjitting wêze is presys wat dit app is foar, dus it is wurdich om dat no út te setten.</string>
+    <string name="action_not_now">net no</string>
+
+    <string name="devices_in_use">yn brûk</string>
+    <string name="devices_retired">ôfskied</string>
+    <string name="devices_empty_title">noch gjin tskofhâlderskes</string>
+    <string name="devices_empty_body">ferbine in pear bluetooth tskofhâlderskes en sy sille hjir ferskine. bedraad tskofhâlderskes hawwe detaillearre spanning nedich, yn ynstellingen.</string>
+    <string name="devices_generation">pear #%1$d</string>
+    <string name="devices_retired_on">ôfskied %1$s</string>
+    <string name="devices_connected_for">ferbûn %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">alle tskofhâlderskes</string>
+    <string name="stats_sessions_since">%1$s sûnt %2$s</string>
+    <string name="stats_today">vandag</string>
+    <string name="stats_last_7">lêste 7 dagen</string>
+    <string name="stats_last_30">lêste 30 dagen</string>
+    <string name="stats_average_session">gemiddelde sesje</string>
+    <string name="stats_longest_session">langste sesje</string>
+    <string name="stats_playing">audio ôfspeel</string>
+    <string name="stats_measured_span">metten foar ôfspeel</string>
+    <string name="stats_share">ôfspeel-part</string>
+    <string name="stats_playback_only_note">allinnich ôfspeel-tiid telle</string>
+    <string name="stats_daily_hours_30">deistige oeren (30 dagen)</string>
+    <string name="stats_by_pair">per pear</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · ôfskied</string>
+    <string name="chart_max">%1$s max</string>
+
+    <string name="pair_fallback_title">pear</string>
+    <string name="pair_back">werom</string>
+    <string name="pair_more">mear</string>
+    <string name="pair_menu_rename">omneame</string>
+    <string name="pair_menu_purchase">oankeap-ynfo</string>
+    <string name="pair_menu_retire">ôfskied / ferfongen</string>
+    <string name="pair_menu_delete">fuortsmite</string>
+    <string name="pair_lifetime">libbensdier op dit pear</string>
+    <string name="pair_retired_on">ôfskied %1$s</string>
+    <string name="pair_retired_with_reason">ôfskied %1$s · %2$s</string>
+    <string name="pair_connected_now">ferbûn no · %1$s</string>
+    <string name="pair_sessions">sesjes</string>
+    <string name="pair_average">gemiddelde</string>
+    <string name="pair_longest">langste</string>
+    <string name="pair_since">sûnt %1$s</string>
+    <string name="pair_of_measured">ôfspeel-part</string>
+    <string name="pair_measured">metten foar ôfspeel</string>
+    <string name="pair_paid">betelle</string>
+    <string name="pair_per_hour">per oere</string>
+    <string name="pair_bought">keapte</string>
+    <string name="pair_daily_hours_14">deistige oeren (14 dagen)</string>
+    <string name="pair_rename_title">dit pear omneame</string>
+    <string name="pair_rename_label">namme</string>
+    <string name="pair_retire_title">dit pear ôfskied</string>
+    <string name="pair_retire_label">reden (dea, ferrûn, ferlern...)</string>
+    <string name="pair_retire_confirm">ôfskied</string>
+    <string name="pair_retire_supporting">totalen frie hjir. op \'e taal it dieselde apparaat wer ferbint, begjint in fersk pear by nul.</string>
+    <string name="pair_price_title">priis betelle</string>
+    <string name="pair_price_label">bedrach (heule ienheden)</string>
+    <string name="pair_price_supporting">brûkt foar de koste-per-oere figuer.</string>
+    <string name="pair_delete_title">dit pear fuortsmite?</string>
+    <string name="pair_delete_body">alle sesje registrearre der foar wurde ek fuortsmiten. dit kin net ungedien wurde makke.</string>
+
+    <string name="session_ongoing">loopende</string>
+    <string name="session_until">oant %1$s</string>
+    <string name="session_playing">%1$s ôfspeel</string>
+    <string name="session_recovered">taram</string>
+
+    <string name="settings_tracking">spanning</string>
+    <string name="settings_detailed_title">detaillearre spanning</string>
+    <string name="settings_detailed_body">voarget bedraad tskofhâlderskes en ôfspeel-tiid. android meldt allinne bedraad-plugin-eveneminten oan in lûpende app, dus dit hâldt in stille melding yn de skaad. bluetooth wurde yn alle gefallen spand.</string>
+    <string name="settings_detailed_unavailable">net beskikber oant bluetooth-tagong waard jûn: dit bouwsel deklarearret allinnich it connectedDevice-tsjinst-type, dat android 14+ oan in bluetooth-berjochting bindt.</string>
+    <string name="settings_playback_only_title">allinnich ôfspeel telle</string>
+    <string name="settings_playback_only_body">statistiken telle de tiid dat de audio wirklik ôfspiele waard ynstee fan de tiid ferbûn. allinnich sesjes registrearre mei detaillearre spanning oan gementen ôfspeel; de rest wurde efterlaten.</string>
+    <string name="settings_language">taal</string>
+    <string name="settings_language_system">systeem-taal</string>
+    <string name="settings_devices">apparaten</string>
+    <string name="settings_devices_body">uncheck alles dat net tskofhâlderskes is - in auto-stereo of in spreker - om it registrearjen te stopjen.</string>
+    <string name="settings_device_subtitle">%1$s · earst sjoen %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">eksport json</string>
+    <string name="settings_import">ymport</string>
+    <string name="settings_import_warning">ymport fersangje alles wat no op opslagene.</string>
+    <string name="settings_troubleshooting">problemen oplosse</string>
+    <string name="settings_battery_body">as sesjes ophâlde mei registrearjen, tsjinsjech dat ylih frij is fan batterij-optimisaasje - in app dy\'t dwong stopt ûntfangt gjin ferbining-broadcast nochris oant it iepene wurde.</string>
+    <string name="settings_battery_button">batterij-ynstellingen</string>
+    <string name="settings_battery_path">ynstellingen → apps → ylih → batterij → unbeheind.</string>
+    <string name="settings_hibernation_body">as ylih moannen iepene net wurden, android pauseret it en nimt syn berjochting werom, en neat wurde registrearre oant do dy iepene. it út sette is wat in pear trochsette telle kin troch in seizoen dy\'t do noait oan it app tinkst.</string>
+    <string name="settings_hibernation_on">android kin ylih paussearje.</string>
+    <string name="settings_hibernation_off">ylih is frij en hâldt registrearjen.</string>
+    <string name="settings_hibernation_button">unbrûkte app-ynstellingen</string>
+    <string name="settings_about">oer</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - tskofhâlderskes-oeren, lokaal en oar bewarre.</string>
+    <string name="settings_import_confirm_title">alle data fersangje?</string>
+    <string name="settings_import_confirm_body">ymport dit baksup fuortsmite elk apparaat, pear en sesje no op opslagene.</string>
+
+    <string name="widget_lifetime_label">ylih · libbensdier</string>
+    <string name="widget_lifetime_description">oeren per pear, mei in live timer op wat ferbûn is</string>
+    <string name="widget_activity_label">ylih · aktiviteit</string>
+    <string name="widget_activity_description">alle pear syn oeren tegearre, plus vandag, 7 dagen en 30 dagen</string>
+    <string name="widget_chart_label">ylih · 30 dagen</string>
+    <string name="widget_chart_description">deistige oeren yn \'e lêste 30 dagen</string>
+
+    <string name="action_save">bewarje</string>
+    <string name="action_cancel">annulearje</string>
+    <string name="action_delete">fuortsmite</string>
+    <string name="action_import">ymport</string>
+
+    <string name="channel_tracking">tskofhâlderskes spanning</string>
+    <string name="channel_tracking_description">werjaan wylst ylih foar bedraad tskofhâlderskes en ôfspeel sjocht. android meldt gjin bedraad-plugin-eveneminten oan apps dy\'t net lûpe.</string>
+    <string name="notification_title">tracking tskofhâlderskes tiid</string>
+    <string name="notification_starting">begjinnend...</string>
+    <string name="notification_idle">wachtsje op tskofhâlderskes</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d ferbûn · %2$s</item>
+        <item quantity="other">%1$d ferbûn · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d ferbûn · %2$s · ôfspeel</item>
+        <item quantity="other">%1$d ferbûn · %2$s · ôfspeel</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">dit bouwsel fereasket bluetooth-tagong eardat it bedraad tskofhâlderskes kin folge</string>
+    <string name="export_done">backup eksportearre</string>
+    <string name="export_failed">eksport mislearre</string>
+    <string name="import_failed">ymport mislearre</string>
+    <string name="edit_failed">koe dy feroaring net bewarre</string>
+    <string name="error_could_not_open">koe %1$s net iepene</string>
+    <plurals name="import_done">
+        <item quantity="one">ymportearre %d sesje</item>
+        <item quantity="other">ymportearre %d sesjes</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sesje</item>
+        <item quantity="other">%d sesjes</item>
+    </plurals>
+</resources>

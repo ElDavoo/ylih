@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Luo. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">[luo] ylih - your life in headphones</string>
+
+    <string name="nav_headphones">[luo] headphones</string>
+    <string name="nav_stats">[luo] stats</string>
+    <string name="nav_settings">[luo] settings</string>
+
+    <string name="kind_bluetooth">[luo] bluetooth</string>
+    <string name="kind_ble">[luo] le audio</string>
+    <string name="kind_wired">[luo] wired</string>
+    <string name="kind_usb">[luo] usb</string>
+    <string name="kind_unknown">[luo] unknown</string>
+
+    <string name="welcome_title">[luo] welcome to ylih</string>
+    <string name="welcome_intro">[luo] ylih records how long each pair of headphones stays connected, so that years from now you can still answer the only question that matters about a pair: how many hours did they last?</string>
+    <string name="welcome_point_auto_title">[luo] connect and forget</string>
+    <string name="welcome_point_auto_body">[luo] bluetooth headphones are recorded on their own, from the moment they connect. nothing has to be left running.</string>
+    <string name="welcome_point_lifetime_title">[luo] one pair, one lifetime</string>
+    <string name="welcome_point_lifetime_body">[luo] when a pair dies, retire it: its total freezes there and the next pair of the same headphones starts again from zero.</string>
+    <string name="welcome_point_detailed_title">[luo] wired and playback</string>
+    <string name="welcome_point_detailed_body">[luo] detailed tracking, in settings, adds wired headphones and measures how much of the time was actually playing.</string>
+    <string name="welcome_privacy">[luo] everything stays on this phone. there is no account, and the app has no internet permission.</string>
+    <string name="welcome_start">[luo] get started</string>
+    <string name="welcome_next">[luo] next</string>
+    <string name="welcome_allow">[luo] allow</string>
+    <string name="welcome_step">[luo] step %1$d of %2$d</string>
+    <string name="welcome_bluetooth_title">[luo] bluetooth access</string>
+    <string name="welcome_bluetooth_why">[luo] android only tells an app which bluetooth device connected, and what it is called, if the app holds bluetooth access. it is how ylih tells a pair of headphones from a car stereo, and how it knows one pair from another.</string>
+    <string name="welcome_bluetooth_with">[luo] with it: every pair is recorded from the moment it connects, with nothing left running and nothing to remember to press.</string>
+    <string name="welcome_bluetooth_without">[luo] without it: no bluetooth headphones are recorded at all. the rest of the app still works, and you can grant it later in android’s app settings.</string>
+    <string name="welcome_notifications_title">[luo] notifications</string>
+    <string name="welcome_notifications_why">[luo] detailed tracking runs a small background service, and android requires any app doing that to keep a notification visible while it does.</string>
+    <string name="welcome_notifications_with">[luo] with it: the notification shows what is being recorded right now, which is the only sign detailed tracking is alive.</string>
+    <string name="welcome_notifications_without">[luo] without it: detailed tracking still runs and still records. android just will not show its notification.</string>
+    <string name="hibernation_title">[luo] keep counting while you forget about it</string>
+    <string name="hibernation_body">[luo] android pauses apps that go unopened for a few months and takes their permissions back, which would leave ylih recording nothing until you next opened it. being forgotten about is exactly what this app is for, so it is worth turning that off now.</string>
+    <string name="action_not_now">[luo] not now</string>
+
+    <string name="devices_in_use">[luo] in use</string>
+    <string name="devices_retired">[luo] retired</string>
+    <string name="devices_empty_title">[luo] no headphones yet</string>
+    <string name="devices_empty_body">[luo] connect a pair of bluetooth headphones and they’ll show up here. wired headphones need detailed tracking, in settings.</string>
+    <string name="devices_generation">[luo] pair #%1$d</string>
+    <string name="devices_retired_on">[luo] retired %1$s</string>
+    <string name="devices_connected_for">[luo] connected %1$s</string>
+    <string name="devices_recent">[luo] %1$s / 7d</string>
+
+    <string name="stats_title">[luo] all headphones</string>
+    <string name="stats_sessions_since">[luo] %1$s since %2$s</string>
+    <string name="stats_today">[luo] today</string>
+    <string name="stats_last_7">[luo] last 7 days</string>
+    <string name="stats_last_30">[luo] last 30 days</string>
+    <string name="stats_average_session">[luo] average session</string>
+    <string name="stats_longest_session">[luo] longest session</string>
+    <string name="stats_playing">[luo] audio playing</string>
+    <string name="stats_measured_span">[luo] measured for playback</string>
+    <string name="stats_share">[luo] playing share</string>
+    <string name="stats_playback_only_note">[luo] counting playback time only</string>
+    <string name="stats_daily_hours_30">[luo] daily hours (30 days)</string>
+    <string name="stats_by_pair">[luo] by pair</string>
+    <string name="stats_pair_row">[luo] %1$s · %2$s</string>
+    <string name="stats_pair_row_retired">[luo] %1$s · %2$s · retired</string>
+    <string name="chart_max">[luo] %1$s max</string>
+
+    <string name="pair_fallback_title">[luo] pair</string>
+    <string name="pair_back">[luo] back</string>
+    <string name="pair_more">[luo] more</string>
+    <string name="pair_menu_rename">[luo] rename</string>
+    <string name="pair_menu_purchase">[luo] purchase info</string>
+    <string name="pair_menu_retire">[luo] retire / replaced</string>
+    <string name="pair_menu_delete">[luo] delete</string>
+    <string name="pair_lifetime">[luo] lifetime on this pair</string>
+    <string name="pair_retired_on">[luo] retired %1$s</string>
+    <string name="pair_retired_with_reason">[luo] retired %1$s · %2$s</string>
+    <string name="pair_connected_now">[luo] connected now · %1$s</string>
+    <string name="pair_sessions">[luo] sessions</string>
+    <string name="pair_average">[luo] average</string>
+    <string name="pair_longest">[luo] longest</string>
+    <string name="pair_since">[luo] since %1$s</string>
+    <string name="pair_of_measured">[luo] playing share</string>
+    <string name="pair_measured">[luo] measured for playback</string>
+    <string name="pair_paid">[luo] paid</string>
+    <string name="pair_per_hour">[luo] per hour</string>
+    <string name="pair_bought">[luo] bought</string>
+    <string name="pair_daily_hours_14">[luo] daily hours (14 days)</string>
+    <string name="pair_rename_title">[luo] rename pair</string>
+    <string name="pair_rename_label">[luo] name</string>
+    <string name="pair_retire_title">[luo] retire this pair</string>
+    <string name="pair_retire_label">[luo] reason (died, sold, lost…)</string>
+    <string name="pair_retire_confirm">[luo] retire</string>
+    <string name="pair_retire_supporting">[luo] totals freeze here. reconnecting the same device starts a fresh pair at zero.</string>
+    <string name="pair_price_title">[luo] price paid</string>
+    <string name="pair_price_label">[luo] amount (whole units)</string>
+    <string name="pair_price_supporting">[luo] used for the cost-per-hour figure.</string>
+    <string name="pair_delete_title">[luo] delete this pair?</string>
+    <string name="pair_delete_body">[luo] every session recorded for it is deleted too. this cannot be undone.</string>
+
+    <string name="session_ongoing">[luo] ongoing</string>
+    <string name="session_until">[luo] until %1$s</string>
+    <string name="session_playing">[luo] %1$s playing</string>
+    <string name="session_recovered">[luo] recovered</string>
+
+    <string name="settings_tracking">[luo] tracking</string>
+    <string name="settings_detailed_title">[luo] detailed tracking</string>
+    <string name="settings_detailed_body">[luo] adds wired headphones and playback time. android only reports wired plug events to a running app, so this keeps a silent notification in the shade. bluetooth is tracked either way.</string>
+    <string name="settings_detailed_unavailable">[luo] unavailable until bluetooth access is granted: this build only declares the connectedDevice service type, which android 14+ ties to a bluetooth permission.</string>
+    <string name="settings_playback_only_title">[luo] count only playback</string>
+    <string name="settings_playback_only_body">[luo] stats count the time audio was actually playing instead of the time connected. only sessions recorded with detailed tracking on measured playback; the rest are left out.</string>
+    <string name="settings_language">[luo] language</string>
+    <string name="settings_language_system">[luo] system language</string>
+    <string name="settings_devices">[luo] devices</string>
+    <string name="settings_devices_body">[luo] uncheck anything that isn’t headphones — a car stereo or a speaker — to stop recording it.</string>
+    <string name="settings_device_subtitle">[luo] %1$s · first seen %2$s</string>
+    <string name="settings_data">[luo] data</string>
+    <string name="settings_export">[luo] export json</string>
+    <string name="settings_import">[luo] import</string>
+    <string name="settings_import_warning">[luo] importing replaces everything currently stored.</string>
+    <string name="settings_troubleshooting">[luo] troubleshooting</string>
+    <string name="settings_battery_body">[luo] if sessions stop being recorded, check that ylih is exempt from battery optimisation — an app that has been force-stopped never receives connection broadcasts again until it is opened.</string>
+    <string name="settings_battery_button">[luo] battery settings</string>
+    <string name="settings_battery_path">[luo] settings → apps → ylih → battery → unrestricted.</string>
+    <string name="settings_hibernation_body">[luo] if ylih goes unopened for a few months, android pauses it and takes its permissions back, and nothing is recorded again until you open it. turning that off is what lets a pair keep counting through a season you never think about the app.</string>
+    <string name="settings_hibernation_on">[luo] android may pause ylih.</string>
+    <string name="settings_hibernation_off">[luo] ylih is exempt and keeps recording.</string>
+    <string name="settings_hibernation_button">[luo] unused app settings</string>
+    <string name="settings_about">[luo] about</string>
+    <string name="settings_about_body">[luo] ylih %1$s (%2$s) — headphone hours, kept locally and forever.</string>
+    <string name="settings_import_confirm_title">[luo] replace all data?</string>
+    <string name="settings_import_confirm_body">[luo] importing this backup deletes every device, pair and session stored now.</string>
+
+    <string name="widget_lifetime_label">[luo] ylih · lifetime</string>
+    <string name="widget_lifetime_description">[luo] hours per pair, with a live timer on whatever is connected</string>
+    <string name="widget_activity_label">[luo] ylih · activity</string>
+    <string name="widget_activity_description">[luo] every pair’s hours together, plus today, 7 days and 30 days</string>
+    <string name="widget_chart_label">[luo] ylih · 30 days</string>
+    <string name="widget_chart_description">[luo] daily listening hours over the last 30 days</string>
+
+    <string name="action_save">[luo] save</string>
+    <string name="action_cancel">[luo] cancel</string>
+    <string name="action_delete">[luo] delete</string>
+    <string name="action_import">[luo] import</string>
+
+    <string name="channel_tracking">[luo] headphone tracking</string>
+    <string name="channel_tracking_description">[luo] shown while ylih is watching for wired headphones and playback. android does not deliver wired plug events to apps that are not running.</string>
+    <string name="notification_title">[luo] tracking headphone time</string>
+    <string name="notification_starting">[luo] starting…</string>
+    <string name="notification_idle">[luo] waiting for headphones</string>
+    <plurals name="notification_active">
+        <item quantity="one">[luo:one] %1$d connected · %2$s</item>
+        <item quantity="many">[luo:many] %1$d connected · %2$s</item>
+        <item quantity="other">[luo:other] %1$d connected · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">[luo:one] %1$d connected · %2$s · playing</item>
+        <item quantity="many">[luo:many] %1$d connected · %2$s · playing</item>
+        <item quantity="other">[luo:other] %1$d connected · %2$s · playing</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">[luo] this build needs bluetooth access before it can track wired headphones</string>
+    <string name="export_done">[luo] backup exported</string>
+    <string name="export_failed">[luo] export failed</string>
+    <string name="import_failed">[luo] import failed</string>
+    <string name="edit_failed">[luo] could not save that change</string>
+    <string name="error_could_not_open">[luo] could not open %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">[luo:one] imported %d session</item>
+        <item quantity="many">[luo:many] imported %d session</item>
+        <item quantity="other">[luo:other] imported %d session</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">[luo:one] %d session</item>
+        <item quantity="many">[luo:many] %d session</item>
+        <item quantity="other">[luo:other] %d session</item>
+    </plurals>
+</resources>

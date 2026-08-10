@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Friulian. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - la tô vite tai cuffiis</string>
+
+    <string name="nav_headphones">cuffiis</string>
+    <string name="nav_stats">statistichis</string>
+    <string name="nav_settings">impostazions</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">con cjabe</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">no cognossit</string>
+
+    <string name="welcome_title">benvignût a ylih</string>
+    <string name="welcome_intro">ylih al regjistre tant lonc che o cuglia di cuffiis la reste conetes, cojal che dopo un po\' di agns ti puedis cjara rispondile a la sola domande che importe: cuante oris le an durât?</string>
+    <string name="welcome_point_auto_title">conete e scjace</string>
+    <string name="welcome_point_auto_body">lis cuffiis bluetooth a vegnin registradis di par lor, dal moment che si conetes. non ven a mancjâ lassâ nuje chi furisi.</string>
+    <string name="welcome_point_lifetime_title">une cuglia, une vite</string>
+    <string name="welcome_point_lifetime_body">cuant che o cuglia muor, pensionile: il totâl si fighe li e la prossime cuglia des medemes cuffiis i torna di zerç.</string>
+    <string name="welcome_point_detailed_title">con cjabe e riproduzion</string>
+    <string name="welcome_point_detailed_body">il seguiment detaiât, tes impostazions, al zonte lis cuffiis con cjabe e al misure cuante dal timp si stupia riproduzion.</string>
+    <string name="welcome_privacy">dut al reste intune telefon. nol ha cont, e ylih nol ha lasse a internet.</string>
+    <string name="welcome_start">inizia</string>
+    <string name="welcome_next">avant</string>
+    <string name="welcome_allow">acete</string>
+    <string name="welcome_step">spost %1$d di %2$d</string>
+    <string name="welcome_bluetooth_title">acès bluetooth</string>
+    <string name="welcome_bluetooth_why">android al disial a une app sa doi un dispositif bluetooth si conete, e cose si clame, se l\'app à l\'acès bluetooth. e cemdi ylih al sas une cuglia di cuffiis da un stereo di machine, e cemdi al sas une cuglia di l\'altre.</string>
+    <string name="welcome_bluetooth_with">cu li: ogni cuglia e ven registrade dal moment che si conete, cence lassâ nuje chi furisi e cence rivuardi di schjacie.</string>
+    <string name="welcome_bluetooth_without">cence li: nisune cuffiis bluetooth no vein registradis. il rest dal app al tache a funzionâ, e tu puedis jê l\'acès dopo tes impostazions di android.</string>
+    <string name="welcome_notifications_title">notifichis</string>
+    <string name="welcome_notifications_why">il seguiment detaiât al fascia girâ un servicj par dri, e android al domande a ogni app che o fâs di lassâ une notifia visibil intant che al funzion.</string>
+    <string name="welcome_notifications_with">cu li: la notifia e visualize ce che si sta registrant ara, ce che al è l\'unicj segnâl che il seguiment detaiât al è vif.</string>
+    <string name="welcome_notifications_without">cence li: il seguiment detaiât al tache a girâ e a registrâ. android al visualize la notifia.</string>
+    <string name="hibernation_title">cjape a contâ cuant che tu scjacis di dut</string>
+    <string name="hibernation_body">android al pausa lis aplacazions che a vegnin no doparadis par un po\' di mês e al jove indri lis lasses, ce che al à lassât ylih registrant nule fintant che tu no lo viertas. jessi dimentidis al è propri ce che sto app, cojal che al valç la piene di disativâ sar ara.</string>
+    <string name="action_not_now">no ara</string>
+
+    <string name="devices_in_use">in doprâ</string>
+    <string name="devices_retired">pensionadis</string>
+    <string name="devices_empty_title">no cuffiis ancjemò</string>
+    <string name="devices_empty_body">conete une cuglia di cuffiis bluetooth e si visualizarà chi. lis cuffiis con cjabe a an bisugne dal seguiment detaiât, tes impostazions.</string>
+    <string name="devices_generation">cuglia #%1$d</string>
+    <string name="devices_retired_on">pensionade %1$s</string>
+    <string name="devices_connected_for">conete %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">dutis lis cuffiis</string>
+    <string name="stats_sessions_since">%1$s dal %2$s</string>
+    <string name="stats_today">vuê</string>
+    <string name="stats_last_7">ultim 7 dis</string>
+    <string name="stats_last_30">ultims 30 dis</string>
+    <string name="stats_average_session">session in medie</string>
+    <string name="stats_longest_session">session plui longe</string>
+    <string name="stats_playing">audio in riproduzion</string>
+    <string name="stats_measured_span">mesuradis par la riproduzion</string>
+    <string name="stats_share">part di riproduzion</string>
+    <string name="stats_playback_only_note">contantin la riproduzion dome</string>
+    <string name="stats_daily_hours_30">oris al dì (30 dis)</string>
+    <string name="stats_by_pair">par cuglia</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · pensionade</string>
+    <string name="chart_max">%1$s max</string>
+
+    <string name="pair_fallback_title">cuglia</string>
+    <string name="pair_back">indàre</string>
+    <string name="pair_more">altri</string>
+    <string name="pair_menu_rename">ribate non</string>
+    <string name="pair_menu_purchase">info dal acuist</string>
+    <string name="pair_menu_retire">pensionâle / cjangjadis</string>
+    <string name="pair_menu_delete">eliminate</string>
+    <string name="pair_lifetime">vite in cheste cuglia</string>
+    <string name="pair_retired_on">pensionade %1$s</string>
+    <string name="pair_retired_with_reason">pensionade %1$s · %2$s</string>
+    <string name="pair_connected_now">conete ara · %1$s</string>
+    <string name="pair_sessions">sessions</string>
+    <string name="pair_average">in medie</string>
+    <string name="pair_longest">plui longe</string>
+    <string name="pair_since">dal %1$s</string>
+    <string name="pair_of_measured">part di riproduzion</string>
+    <string name="pair_measured">mesuradis par la riproduzion</string>
+    <string name="pair_paid">pagjadis</string>
+    <string name="pair_per_hour">par ore</string>
+    <string name="pair_bought">compratis</string>
+    <string name="pair_daily_hours_14">oris al dì (14 dis)</string>
+    <string name="pair_rename_title">ribate non a cheste cuglia</string>
+    <string name="pair_rename_label">non</string>
+    <string name="pair_retire_title">pensionâ cheste cuglia</string>
+    <string name="pair_retire_label">motif (murts, vendudis, pierdudis...)</string>
+    <string name="pair_retire_confirm">pensionâ</string>
+    <string name="pair_retire_supporting">i totâls si figjin chi. se la medeme classe di dispozitif si conete di nuê, si tache une cuglia gnove da zerç.</string>
+    <string name="pair_price_title">prezi pagjat</string>
+    <string name="pair_price_label">total (unitâts complete)</string>
+    <string name="pair_price_supporting">dopradis par la figure dal cost-par-ore.</string>
+    <string name="pair_delete_title">eliminate cheste cuglia?</string>
+    <string name="pair_delete_body">ogni session registrade par li si elimine. no si poç mai indûn ent duter.</string>
+
+    <string name="session_ongoing">in cors</string>
+    <string name="session_until">fintant a %1$s</string>
+    <string name="session_playing">%1$s in riproduzion</string>
+    <string name="session_recovered">riportat</string>
+
+    <string name="settings_tracking">seguiment</string>
+    <string name="settings_detailed_title">seguiment detaiât</string>
+    <string name="settings_detailed_body">al zonte lis cuffiis con cjabe e il timp di riproduzion. android al comuniche i events dai cjabis dome a une app che al funzion, cojal che sto al lasse une notifia silensie tes sombris. bluetooth al ven seguît in ogni cas.</string>
+    <string name="settings_detailed_unavailable">no disponibil fintant che l\'acès bluetooth no ven jât: cheste build e declare dome il servicj connectedDevice, ce che android 14+ al coleghe a une lasse bluetooth.</string>
+    <string name="settings_playback_only_title">conte dome la riproduzion</string>
+    <string name="settings_playback_only_body">lis statistichis a contin il timp che l\'audio al stuvave riprodot inveze dal timp contat. dome lis sessions registradis cu il seguiment detaiât ative a mesurin la riproduzion; i restons a vegnin scjelts.</string>
+    <string name="settings_language">lenghe</string>
+    <string name="settings_language_system">lenghe dal sisteme</string>
+    <string name="settings_devices">dispozitifs</string>
+    <string name="settings_devices_body">unchecja dutis lis robis che no sedin cuffiis - un stereo di machine o un speaker - par pesterâ dal registrâje.</string>
+    <string name="settings_device_subtitle">%1$s · vistu la prime vole %2$s</string>
+    <string name="settings_data">dâts</string>
+    <string name="settings_export">esporte json</string>
+    <string name="settings_import">impuarte</string>
+    <string name="settings_import_warning">impuartâ al sostituìs dut ce che a ven registrât ara.</string>
+    <string name="settings_troubleshooting">risoluzion dai problemis</string>
+    <string name="settings_battery_body">se lis sessions a piessin di jessi registradis, controle che ylih al sedi esent da l\'optimizazion dal batarie - une app che e ven fermade a fûr di vore non al ric mai i broadcasts di conession fintant che tu no lo viertas.</string>
+    <string name="settings_battery_button">impostazions dal batarie</string>
+    <string name="settings_battery_path">impostazions → aplacazions → ylih → batarie → no limitât.</string>
+    <string name="settings_hibernation_body">se ylih al reste no viert par un po\' di mês, android al pausa e al jove indri lis lasses, i nule ven registradis fintant che tu no lo viertas. disativâ sto al è ce che permot a une cuglia di contâ par une stagjion che tu no pensacjis mai al app.</string>
+    <string name="settings_hibernation_on">android al podarà pausâ ylih.</string>
+    <string name="settings_hibernation_off">ylih al è esent i al tache a registrâ.</string>
+    <string name="settings_hibernation_button">impostazions des aplacazions no doparadis</string>
+    <string name="settings_about">di ce che si tratte</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - oris di cuffiis, mantendudis localmentri e par simpri.</string>
+    <string name="settings_import_confirm_title">sostituìs dutis lis dâts?</string>
+    <string name="settings_import_confirm_body">impuartâ sto backup al elimine ogni dispozitif, cuglia e session registradis ara.</string>
+
+    <string name="widget_lifetime_label">ylih · vite</string>
+    <string name="widget_lifetime_description">oris par cuglia, cu un timer vif intune che si conete</string>
+    <string name="widget_activity_label">ylih · ativitât</string>
+    <string name="widget_activity_description">lis oris di dutis lis cugliis, plui vuê, 7 dis e 30 dis</string>
+    <string name="widget_chart_label">ylih · 30 dis</string>
+    <string name="widget_chart_description">oris al dì dal ultims 30 dis</string>
+
+    <string name="action_save">salvâ</string>
+    <string name="action_cancel">anule</string>
+    <string name="action_delete">eliminate</string>
+    <string name="action_import">impuarte</string>
+
+    <string name="channel_tracking">seguiment lis cuffiis</string>
+    <string name="channel_tracking_description">visualizat intant che ylih al cjate lis cuffiis con cjabe e la riproduzion. android non comuniche i events dai cjabis a lis aplacazions che no funzionin.</string>
+    <string name="notification_title">seguiment dal timp lis cuffiis</string>
+    <string name="notification_starting">iniziâ...</string>
+    <string name="notification_idle">che si spacj lis cuffiis</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d conete · %2$s</item>
+        <item quantity="other">%1$d conetes · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d conete · %2$s · in riproduzion</item>
+        <item quantity="other">%1$d conetes · %2$s · in riproduzion</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">cheste build e domande l\'acès bluetooth par che podidis seguî lis cuffiis con cjabe</string>
+    <string name="export_done">backup esportat</string>
+    <string name="export_failed">esportazion falide</string>
+    <string name="import_failed">impuartazion falide</string>
+    <string name="edit_failed">no podust salvâ ce câmb</string>
+    <string name="error_could_not_open">no podust vierzi %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">impuartat %d session</item>
+        <item quantity="other">impuartadis %d sessions</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d session</item>
+        <item quantity="other">%d sessions</item>
+    </plurals>
+</resources>

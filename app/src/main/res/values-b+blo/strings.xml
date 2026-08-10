@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Anii. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - di bi kuke</string>
+
+    <string name="nav_headphones">na mba kuke</string>
+    <string name="nav_stats">mma bi</string>
+    <string name="nav_settings">ka ti na</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">i ti</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">a ma ko</string>
+
+    <string name="welcome_title">a tu ti ylih</string>
+    <string name="welcome_intro">ylih ta ka na mma di a kuke ta ga kpo na a bi ya kpo, yi bi a se ti ya kpo ya wo na: sa wa ya kuke ta?</string>
+    <string name="welcome_point_auto_title">a ko di a bu</string>
+    <string name="welcome_point_auto_body">bluetooth na mba kuke ta na wo a ka di a tu, ta ga ti a ko. a ma ta ga ka di</string>
+    <string name="welcome_point_lifetime_title">a bi yi a wo</string>
+    <string name="welcome_point_lifetime_body">yi a kuke wo, ta na ka ti: a mma ya ka ta ti a wo di a ko na mba kuke wo ta ga ti wo ka</string>
+    <string name="welcome_point_detailed_title">i ti di a na</string>
+    <string name="welcome_point_detailed_body">ka ti na wo ta ga ti i ti na mba kuke di ta ka na mma sa a na a kwo ta</string>
+    <string name="welcome_privacy">di yi yi ta ti na a fon yi a wo. a ma ka ko, di ylih a ma ta di internet</string>
+    <string name="welcome_start">a ko di</string>
+    <string name="welcome_next">a yu</string>
+    <string name="welcome_allow">a na ka</string>
+    <string name="welcome_step">a ti %1$d ya %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth a di</string>
+    <string name="welcome_bluetooth_why">android ta ga ti na a app na yi a bluetooth kuke wo di a ta a bi a wo ya yi, yi di a na. a wo ko ylih ta ka na mba kuke ya a ka stereo yi, di yi ta ka yi wo ka na wo</string>
+    <string name="welcome_bluetooth_with">yi ta wo: di a bi a kuke wo ta ga ti a ti a ko, yi a ma ka di di a ma wu ka di</string>
+    <string name="welcome_bluetooth_without">yi a wo: a ma bluetooth na mba kuke wo ta na ka. a se ti di a app wo ya ta ga, di yi ta na wo ka a android a app ka ti na wo a yu</string>
+    <string name="welcome_notifications_title">a ko na</string>
+    <string name="welcome_notifications_why">ka ti na wo ta ga ti a se ti a ka di a fon yi ta, di android ta tu ka di a app wo ta na ka a ko na ta a yi di a ka ti a wo</string>
+    <string name="welcome_notifications_with">yi ta wo: a ko na wo ta ga ti yi yi a ka ti a wo yi a bi, yi a wo ko a ka ti na wo ta wo</string>
+    <string name="welcome_notifications_without">yi a wo: ka ti na wo ya ta ga di a ka ti. android a ma ga ti a ko na wo</string>
+    <string name="hibernation_title">a ka ti di yi a bu ta gi</string>
+    <string name="hibernation_body">android ta ga ti a app wo ta bu di ya wo a se ya di ta ga ti a ko a ku ka, yi ta ga ti ylih a ma ka di yi na ko ya ta. a bu di ya wo a ko yi app wa yi ta wo, yi ta wo ka di a wu a ka na yi</string>
+    <string name="action_not_now">a wu yi</string>
+
+    <string name="devices_in_use">a ta na</string>
+    <string name="devices_retired">a yo ta</string>
+    <string name="devices_empty_title">a ma na mba kuke yi</string>
+    <string name="devices_empty_body">a ko di na mba kuke yi yi ta ka yi wo yi yu. i ti na mba kuke wo ta tu ka ti na, a ka ti na wo</string>
+    <string name="devices_generation">a bi #%1$d</string>
+    <string name="devices_retired_on">a yo ta %1$s</string>
+    <string name="devices_connected_for">a ko di %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">di a na mba kuke</string>
+    <string name="stats_sessions_since">%1$s ta ga %2$s</string>
+    <string name="stats_today">a yi yi</string>
+    <string name="stats_last_7">a se ya yi 7</string>
+    <string name="stats_last_30">a se ya yi 30</string>
+    <string name="stats_average_session">a na yi ka wu</string>
+    <string name="stats_longest_session">a se yi ka wu</string>
+    <string name="stats_playing">a na ta i</string>
+    <string name="stats_measured_span">a ka ti na a na</string>
+    <string name="stats_share">a na ta i ye</string>
+    <string name="stats_playback_only_note">a ka ti a na ta i yi wo</string>
+    <string name="stats_daily_hours_30">a yi sa (30 yi)</string>
+    <string name="stats_by_pair">a bi wu</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · a yo ta</string>
+    <string name="chart_max">%1$s ma</string>
+
+    <string name="pair_fallback_title">a bi</string>
+    <string name="pair_back">a kpe</string>
+    <string name="pair_more">ya wu</string>
+    <string name="pair_menu_rename">a bi ta ka</string>
+    <string name="pair_menu_purchase">a bo ka ma</string>
+    <string name="pair_menu_retire">a yo / a ka na</string>
+    <string name="pair_menu_delete">a wu ta</string>
+    <string name="pair_lifetime">a wo yi a bi yi</string>
+    <string name="pair_retired_on">a yo ta %1$s</string>
+    <string name="pair_retired_with_reason">a yo ta %1$s · %2$s</string>
+    <string name="pair_connected_now">a ko di yi · %1$s</string>
+    <string name="pair_sessions">a ka ti wo</string>
+    <string name="pair_average">a na yi</string>
+    <string name="pair_longest">a se yi</string>
+    <string name="pair_since">ta ga %1$s</string>
+    <string name="pair_of_measured">a na ta i ye</string>
+    <string name="pair_measured">a ka ti na a na</string>
+    <string name="pair_paid">a bo</string>
+    <string name="pair_per_hour">a sa wu</string>
+    <string name="pair_bought">a bo yi</string>
+    <string name="pair_daily_hours_14">a yi sa (14 yi)</string>
+    <string name="pair_rename_title">a bi ta ka ta</string>
+    <string name="pair_rename_label">a bi</string>
+    <string name="pair_retire_title">a yo di a bi yi</string>
+    <string name="pair_retire_label">a ko (a wo, a se, a bu...)</string>
+    <string name="pair_retire_confirm">a yo</string>
+    <string name="pair_retire_supporting">a mma ya ka ta ti yi. a ko di na mba kuke wo yi a yu ta a se a bi ta ka yi a wu</string>
+    <string name="pair_price_title">a bo ka</string>
+    <string name="pair_price_label">a mma (a bi yi)</string>
+    <string name="pair_price_supporting">a ta ka yi a bo yi sa wu</string>
+    <string name="pair_delete_title">a wu di a bi yi?</string>
+    <string name="pair_delete_body">di a ka ti a wo a bi wu ta a wu yi. yi a ma ka di a yu</string>
+
+    <string name="session_ongoing">a ka ti ta wo</string>
+    <string name="session_until">ya kpo %1$s</string>
+    <string name="session_playing">%1$s a na</string>
+    <string name="session_recovered">a ka wu</string>
+
+    <string name="settings_tracking">a ka ti</string>
+    <string name="settings_detailed_title">a ka ti ka wu</string>
+    <string name="settings_detailed_body">ta ga ti i ti na mba kuke di a na ka. android ta wu a ta ti i ti a ko na a app wu a ka, yi a na ka a ko na a yi. bluetooth ta ka di wo a wu</string>
+    <string name="settings_detailed_unavailable">a ma ka di ya kpo bluetooth a di ta ka: yi a bu ta tu a connectedDevice a ka ti na yi, yi android 14+ ta ko bluetooth a di na</string>
+    <string name="settings_playback_only_title">a ka ti a na yi wu</string>
+    <string name="settings_playback_only_body">a mma bi ta ka na sa a na yi a ko ya sa a ka ti. a ka ti a wo ka ti na wu wu a na yi; a se wu a yo</string>
+    <string name="settings_language">a ka yi</string>
+    <string name="settings_language_system">a ka yi a fon wu</string>
+    <string name="settings_devices">a ka wu</string>
+    <string name="settings_devices_body">a wu yi a ma na mba kuke wu - a ka stereo yi a ma a speaker - ya kpo a ka ti a wu</string>
+    <string name="settings_device_subtitle">%1$s · a ti ta %2$s</string>
+    <string name="settings_data">a ma yi</string>
+    <string name="settings_export">a yu json</string>
+    <string name="settings_import">a ko di</string>
+    <string name="settings_import_warning">a ko di yi wu di a ma yi a ta na yi a ka ta</string>
+    <string name="settings_troubleshooting">a ma wu ka</string>
+    <string name="settings_battery_body">yi a ka ti a wo a yu, a ka ti a wu ylih a ma a bu a ta na - a app yi a bu a wo a ma ti a ko na a ka a yu ya kpo yi a wu a yu</string>
+    <string name="settings_battery_button">a ta na a ka</string>
+    <string name="settings_battery_path">a ka na → a app → ylih → a ta na → a wu wu.</string>
+    <string name="settings_hibernation_body">yi ylih a wu ya kpo a se a bi, android ta ga ti a wo di ta ka a ko a ku ka, di a ma ka ti a yu ya kpo yi a wu a yu. a wu yi ta wo a ka ti a bi a ka ti a se a yi yi a app wu</string>
+    <string name="settings_hibernation_on">android ta ga ti a wo ylih.</string>
+    <string name="settings_hibernation_off">ylih ta a bu di a ka ti ta wo</string>
+    <string name="settings_hibernation_button">a app wu a ka</string>
+    <string name="settings_about">a ma yi</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - na mba kuke sa, a wa ta ka di a wu.</string>
+    <string name="settings_import_confirm_title">a wu di a ma yi?</string>
+    <string name="settings_import_confirm_body">a ko di yi a bu yi a wu di a ka wu a bi di a ka ti a wo ta na yi</string>
+
+    <string name="widget_lifetime_label">ylih · a wo yi</string>
+    <string name="widget_lifetime_description">sa a bi wu, yi a ka ti ta yi a ko di wu</string>
+    <string name="widget_activity_label">ylih · a ka ti</string>
+    <string name="widget_activity_description">di a bi wu sa wu, ya kpo a yi yi, 7 yi di 30 yi</string>
+    <string name="widget_chart_label">ylih · 30 yi</string>
+    <string name="widget_chart_description">a yi sa ta ga a se ya yi 30</string>
+
+    <string name="action_save">a wu ta</string>
+    <string name="action_cancel">a wu yi</string>
+    <string name="action_delete">a wu ta</string>
+    <string name="action_import">a ko di</string>
+
+    <string name="channel_tracking">na mba kuke a ka ti</string>
+    <string name="channel_tracking_description">a yi ta wo ylih a ma na i ti na mba kuke di a na. android a ma ti i ti a ko na a ka a app wu a ma ka</string>
+    <string name="notification_title">a ka ti na mba kuke sa</string>
+    <string name="notification_starting">a ko ta...</string>
+    <string name="notification_idle">a ka na na mba kuke</string>
+    <plurals name="notification_active">
+        <item quantity="zero">%1$d a ko di · %2$s</item>
+        <item quantity="one">%1$d a ko di · %2$s</item>
+        <item quantity="other">%1$d a ko di · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="zero">%1$d a ko di · %2$s · a na</item>
+        <item quantity="one">%1$d a ko di · %2$s · a na</item>
+        <item quantity="other">%1$d a ko di · %2$s · a na</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">yi a bu ta tu bluetooth a di ya kpo yi ta ka i ti na mba kuke</string>
+    <string name="export_done">a bu a yu ta</string>
+    <string name="export_failed">a yu a wu</string>
+    <string name="import_failed">a ko di a wu</string>
+    <string name="edit_failed">a ma ka yi a wu ta</string>
+    <string name="error_could_not_open">a ma ka a wu %1$s</string>
+    <plurals name="import_done">
+        <item quantity="zero">a ko di %d a ka ti</item>
+        <item quantity="one">a ko di %d a ka ti</item>
+        <item quantity="other">a ko di %d a ka ti</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="zero">%d a ka ti</item>
+        <item quantity="one">%d a ka ti</item>
+        <item quantity="other">%d a ka ti</item>
+    </plurals>
+</resources>

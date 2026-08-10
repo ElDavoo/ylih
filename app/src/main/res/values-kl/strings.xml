@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Kalaallisut. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - toquamasoq allaguat</string>
+
+    <string name="nav_headphones">nukappiaaq</string>
+    <string name="nav_stats">tamaglareeq</string>
+    <string name="nav_settings">pinngutat</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">misile</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">nalunngil</string>
+
+    <string name="welcome_title">kipajoq ylih</string>
+    <string name="welcome_intro">ylih pingasutaq allagua nukappiaaq malilisui, tamarmilugo uugujoq takunngassaaq allattoq misigissuni: kigutaa sapaappoq?</string>
+    <string name="welcome_point_auto_title">tapatik ippumuk</string>
+    <string name="welcome_point_auto_body">bluetooth nukappiaaq ilortariaqartuq asillalerniq, tamarmik angijorniq. pium akutukkunnissutaqaaq.</string>
+    <string name="welcome_point_lifetime_title">allagua ataaq, inugujoq ataaq</string>
+    <string name="welcome_point_lifetime_body">allagua nukappiaaq nutaa marluk ilunnersuu, ikinnik allajorpoq: tamassumalu malilisui pinngortamarsaraq, allagua pisaraq nukappiaaq malilisui sapparilira nuliani.</string>
+    <string name="welcome_point_detailed_title">misile tamanittuq</string>
+    <string name="welcome_point_detailed_body">ilortariassutaq annertuugujoq, pinngutat-imi, misile nukappiaaq malmik ilaruguleq asarpa tamanittuq.</string>
+    <string name="welcome_privacy">tamassumalu tamati pium inugujoq-imi allattarpoq. alakkaartuq pijariaqtunngillaq, ylih-imi internet-ataaseq pijariaqtunngillaq.</string>
+    <string name="welcome_start">ajoqiliq</string>
+    <string name="welcome_next">ajoqinn</string>
+    <string name="welcome_allow">ajaanngineq</string>
+    <string name="welcome_step">ulloq %1$d / %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth ikkinnguttaq</string>
+    <string name="welcome_bluetooth_why">android qitirneq app-imut anersaasut bluetooth-inut immikkut, ikinnik ataanilinnut, app-am bluetooth ikkinnguttaq ataanilugujoq. siullerni ylih nukappiaaq qallaligunilaq qanuja-stereotunik, ikinnik allagua nukappiaaq misigissuni.</string>
+    <string name="welcome_bluetooth_with">tamannalu: allagua nukappiaaq immiksut atorta, tamassumalu angijorniq, pium akutukkunnissutaqaaq.</string>
+    <string name="welcome_bluetooth_without">tamannaalaq: bluetooth nukappiaaq ilortariaqartuq ataallaq. ylih-imi ataatsimut atorpoq, ikinnik android-imi app-imi pinngutat-imi ajaanngineq.</string>
+    <string name="welcome_notifications_title">notifications</string>
+    <string name="welcome_notifications_why">detailed tracking runs a small background service, and android requires any app doing that to keep a notification visible while it does.</string>
+    <string name="welcome_notifications_with">with it: the notification shows what is being recorded right now, which is the only sign detailed tracking is alive.</string>
+    <string name="welcome_notifications_without">without it: detailed tracking still runs and still records. android just will not show its notification.</string>
+    <string name="hibernation_title">kigut ippumuk aqviliorsugut</string>
+    <string name="hibernation_body">android app-ik tunngasugut qessutsimut tupikkasoq sappaaq taassumagit ikkinnguttat, ylih ilortariaqarpoq pium ajoqilinnilaq. taassumagit aqviliorsunngillat taannalu ilaa app-ima, tamannalu unangasilinnaleq.</string>
+    <string name="action_not_now">imaq anneq</string>
+
+    <string name="devices_in_use">atorni-likooq</string>
+    <string name="devices_retired">ikinngussallalinniq</string>
+    <string name="devices_empty_title">nukappiaaq imaq</string>
+    <string name="devices_empty_body">bluetooth nukappiaaq tappatunngakaluk, silaki saqqaaq. misile nukappiaaq ilortariassutaq annertuugujoq pium pinngutat-imi.</string>
+    <string name="devices_generation">allagua #%1$d</string>
+    <string name="devices_retired_on">ikinngussallalinniq %1$s</string>
+    <string name="devices_connected_for">tapatik %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">nukappiaaq tamassumalu</string>
+    <string name="stats_sessions_since">%1$s %2$s inugujoq-tunut</string>
+    <string name="stats_today">tassaappok</string>
+    <string name="stats_last_7">ulloq 7 taakuppoq</string>
+    <string name="stats_last_30">ulloq 30 taakuppoq</string>
+    <string name="stats_average_session">ilortariaq arvinngooraq</string>
+    <string name="stats_longest_session">ilortariaq angijorra</string>
+    <string name="stats_playing">audio atorni</string>
+    <string name="stats_measured_span">ilortariassuq atorni</string>
+    <string name="stats_share">atorni tamaani</string>
+    <string name="stats_playback_only_note">atorni tamaani tamarumik kiguppok</string>
+    <string name="stats_daily_hours_30">ulloqatigiit tamaasa (30 ulloq)</string>
+    <string name="stats_by_pair">allagua-imi</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · ikinngussallalinniq</string>
+    <string name="chart_max">%1$s angijorra</string>
+
+    <string name="pair_fallback_title">allagua</string>
+    <string name="pair_back">atuat</string>
+    <string name="pair_more">atuma</string>
+    <string name="pair_menu_rename">ataanigaleruk</string>
+    <string name="pair_menu_purchase">pilerniassa</string>
+    <string name="pair_menu_retire">ikinngussallaleruk / tamaassarleruk</string>
+    <string name="pair_menu_delete">paatileruk</string>
+    <string name="pair_lifetime">allagua-imi inugujoq</string>
+    <string name="pair_retired_on">ikinngussallalinniq %1$s</string>
+    <string name="pair_retired_with_reason">ikinngussallalinniq %1$s · %2$s</string>
+    <string name="pair_connected_now">tapatik tassaappok · %1$s</string>
+    <string name="pair_sessions">ilortariaq</string>
+    <string name="pair_average">arvinngooraq</string>
+    <string name="pair_longest">angijorra</string>
+    <string name="pair_since">%1$s inugujoq-tunut</string>
+    <string name="pair_of_measured">atorni tamaani</string>
+    <string name="pair_measured">ilortariassuq atorni</string>
+    <string name="pair_paid">sagssuq</string>
+    <string name="pair_per_hour">tamaasa sapaaq</string>
+    <string name="pair_bought">pilerpok</string>
+    <string name="pair_daily_hours_14">ulloqatigiit tamaasa (14 ulloq)</string>
+    <string name="pair_rename_title">allagua ataanigaleruk</string>
+    <string name="pair_rename_label">ataa</string>
+    <string name="pair_retire_title">allagua ikinngussallaleruk</string>
+    <string name="pair_retire_label">pillugu (nutaa, pileq, tupik...)</string>
+    <string name="pair_retire_confirm">ikinngussallaleruk</string>
+    <string name="pair_retire_supporting">malilisui-suminut pinngortarpoq. allagua nukappiaaq tamaassanik tapatikka sappaaq allagua nutaa nuliani.</string>
+    <string name="pair_price_title">sagssup tamaasa</string>
+    <string name="pair_price_label">tamaasa (imarinnaq tamarumik)</string>
+    <string name="pair_price_supporting">sapaaq-inaarut tamaasa-imi atortoq.</string>
+    <string name="pair_delete_title">allagua paatileruk?</string>
+    <string name="pair_delete_body">ilortariaq tamassumalu allagua-imi paatileq. tamannalu nautsimavoq.</string>
+
+    <string name="session_ongoing">atorni-likooq</string>
+    <string name="session_until">%1$s inugujoq-tunut</string>
+    <string name="session_playing">%1$s atorni</string>
+    <string name="session_recovered">sallererpoq</string>
+
+    <string name="settings_tracking">ilortariassutaq</string>
+    <string name="settings_detailed_title">ilortariassutaq annertuugujoq</string>
+    <string name="settings_detailed_body">misile nukappiaaq malmik atorni-samaasut. android misile misile-inut qitirneq app-imut immiksumut assinasutaq, tamannalu siornaq atorni sileq-imi. bluetooth ilortariaqartarpoq tamarmik.</string>
+    <string name="settings_detailed_unavailable">bluetooth ikkinnguttaq atanngillaq: siullerni app-imi connectedDevice taarserneq taassumagit android 14+ bluetooth ikkinnguttaq-imi.</string>
+    <string name="settings_playback_only_title">atorni tamaani tamarumik</string>
+    <string name="settings_playback_only_body">tamaglareeq atorni tamaani sapaaq assinasutaq, pium atorni tamaanittua. ilortariaq ilortariassutaq annertuugujoq-imi tamaani assinasutaarneri; atuma taqallerpok.</string>
+    <string name="settings_language">oqaasei</string>
+    <string name="settings_language_system">oqaasei system-imi</string>
+    <string name="settings_devices">apparaatit</string>
+    <string name="settings_devices_body">nukappiaaq misigissunngillat imaq - qanuja-stereo akilak amasuunngillat - ilortariassutaq paatileruk.</string>
+    <string name="settings_device_subtitle">%1$s · taakuppa %2$s-mi</string>
+    <string name="settings_data">tamaglareeq</string>
+    <string name="settings_export">json sanngertarneq</string>
+    <string name="settings_import">siulerneq</string>
+    <string name="settings_import_warning">siulerneq tamassumalu tamaglareeq tamaassanik paatileq.</string>
+    <string name="settings_troubleshooting">assissutaq pilerniassa</string>
+    <string name="settings_battery_body">ilortariaq ilortariaqarpoq sappaalliqaaq, nalunaiqut ylih tamaassanik akiulerniassa tamaasa - app-imi paatillissallilinniq ataallaq qitirneq ilortariaq ajoqilinnilaq.</string>
+    <string name="settings_battery_button">tamaassa pinngutat</string>
+    <string name="settings_battery_path">pinngutat → apparaatit → ylih → tamaassa → taakuppiginnaq.</string>
+    <string name="settings_hibernation_body">ylih ajoqilinnilaq qessutsimut, android app-a sappaaq ataassallaq, ilortariaqarpoq pium ajoqilinnilaq. tamannalu patertoq app-ima taassumagit inugujoq assinasutaq.</string>
+    <string name="settings_hibernation_on">android ylih-a sappaaq.</string>
+    <string name="settings_hibernation_off">ylih taakuppiginnaq ilortariaqarpoq.</string>
+    <string name="settings_hibernation_button">app imaq atorni-likooq pinngutat</string>
+    <string name="settings_about">pillugu</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - nukappiaaq sapaaq, pium-imi allattarpoq inugujoq.</string>
+    <string name="settings_import_confirm_title">tamaglareeq tamassumalu tamaassarleruk?</string>
+    <string name="settings_import_confirm_body">siulerneq backup-imi apparaatit, allagua, ilortariaq tamassumalu paatileq.</string>
+
+    <string name="widget_lifetime_label">ylih · inugujoq</string>
+    <string name="widget_lifetime_description">sapaaq allagua-imi, timer atorni tapatik-imi</string>
+    <string name="widget_activity_label">ylih · atorni</string>
+    <string name="widget_activity_description">sapaaq allagua tamassumalu, tassaappok, 7 ulloq, 30 ulloq</string>
+    <string name="widget_chart_label">ylih · 30 ulloq</string>
+    <string name="widget_chart_description">ulloqatigiit sapaaq 30 ulloq taakuppok</string>
+
+    <string name="action_save">allattarnerq</string>
+    <string name="action_cancel">paatilerq</string>
+    <string name="action_delete">paatilerq</string>
+    <string name="action_import">siulerneq</string>
+
+    <string name="channel_tracking">nukappiaaq ilortariassutaq</string>
+    <string name="channel_tracking_description">misile nukappiaaq atorni ilortariassutaq. android misile-inut qitirneq app imaq immiksumut assinasutaq.</string>
+    <string name="notification_title">nukappiaaq sapaaq ilortariassutaq</string>
+    <string name="notification_starting">ajoqiliq...</string>
+    <string name="notification_idle">nukappiaaq kigut</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d tapatik · %2$s</item>
+        <item quantity="other">%1$d tapatik · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d tapatik · %2$s · atorni</item>
+        <item quantity="other">%1$d tapatik · %2$s · atorni</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">app-ima bluetooth ikkinnguttaq pilerniassuq misile nukappiaaq ilortariassutaq</string>
+    <string name="export_done">backup sanngertarneq</string>
+    <string name="export_failed">sanngertarneq assissutaq</string>
+    <string name="import_failed">siulerneq assissutaq</string>
+    <string name="edit_failed">tamaassa allattarnerq assissutaq</string>
+    <string name="error_could_not_open">%1$s ajoqilinnilaq assissutaq</string>
+    <plurals name="import_done">
+        <item quantity="one">siulerpok %d ilortariaq</item>
+        <item quantity="other">siulerpok %d ilortariaq</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d ilortariaq</item>
+        <item quantity="other">%d ilortariaq</item>
+    </plurals>
+</resources>

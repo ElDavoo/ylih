@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Kannada. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ನಿಮ್ಮ ಜೀವನ ಹೆಡ್ಫೋನ್ಗಳಲ್ಲಿ</string>
+
+    <string name="nav_headphones">ಹೆಡ್ಫೋನ್ಗಳು</string>
+    <string name="nav_stats">ಅಂಕಿಅಂಶಗಳು</string>
+    <string name="nav_settings">ಸೆಟ್ಟಿಂಗ್ಗಳು</string>
+
+    <string name="kind_bluetooth">ಬ್ಲೂಟೂತ್</string>
+    <string name="kind_ble">ಲೆ ಆಡಿಯೋ</string>
+    <string name="kind_wired">ತಂತ್ರದ</string>
+    <string name="kind_usb">ಯುಎಸ್ಬಿ</string>
+    <string name="kind_unknown">ಅಜ್ಞಾತ</string>
+
+    <string name="welcome_title">ylih ಗೆ ಸುಸ್ವಾಗತ</string>
+    <string name="welcome_intro">ylih ಹೆಡ್ಫೋನ್ ಜೋಡಿ ಎಷ್ಟು ದಿನ ಸಂಪರ್ಕಿತವಾಗಿರುತ್ತದೆ ಎಂಬುದನ್ನು ದಾಖಲಿಸುತ್ತದೆ, ಆದ್ದರಿಂದ ವರ್ಷಗಳ ನಂತರ ನೀವು ಅವರ ಬಗ್ಗೆ ಮುಖ್ಯವಾದ ಏಕೈಕ ಪ್ರಶ್ನೆಗೆ ಉತ್ತರ ನೀಡಬಹುದು: ಎಷ್ಟು ಗಂಟೆಗಳು ಇವೆ?</string>
+    <string name="welcome_point_auto_title">ಸಂಪರ್ಕ ಮತ್ತು ಮರೆತುಬಿಡಿ</string>
+    <string name="welcome_point_auto_body">ಬ್ಲೂಟೂತ್ ಹೆಡ್ಫೋನ್ಗಳು ತಾವೇ ದಾಖಲಿಸಲ್ಪಡುತ್ತವೆ, ಅವರು ಸಂಪರ್ಕ ಮಾಡುವ ಕ್ಷಣದಿಂದ. ಏನೂ ಚಾಲನೆಯಲ್ಲಿರಬೇಕಾಗಿಲ್ಲ.</string>
+    <string name="welcome_point_lifetime_title">ಒಂದು ಜೋಡಿ, ಒಂದು ಜೀವನ</string>
+    <string name="welcome_point_lifetime_body">ಒಂದು ಜೋಡಿ ಮೃತವಾದರೆ, ಅದನ್ನು ನಿವೃತ್ತ ಮಾಡಿ: ಅದರ ಒಟ್ಟು ಮೊತ್ತ ಇಲ್ಲಿ ಠೇವಣಿ ನೀಡಿ ಮತ್ತು ಅದೇ ಹೆಡ್ಫೋನ್ಗಳ ಮುಂದಿನ ಜೋಡಿ ಶೂನ್ಯದಿಂದ ಪುನಃ ಆರಂಭವಾಗುತ್ತದೆ.</string>
+    <string name="welcome_point_detailed_title">ತಂತ್ರದ ಮತ್ತು ಪ್ಲೇಬ್ಯಾಕ್</string>
+    <string name="welcome_point_detailed_body">ವಿವರವಾದ ಟ್ರ್যಾಕಿಂಗ್, ಸೆಟ್ಟಿಂಗ್ಗಳಲ್ಲಿ, ತಂತ್ರದ ಹೆಡ್ಫೋನ್ಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ ಮತ್ತು ಎಷ್ಟು ಸಮಯ ವಾಸ್ತವವಾಗಿ ಪ್ಲೇ ಆಗುತ್ತಿತ್ತು ಎಂದು ಆಯಾಮ ಮಾಡುತ್ತದೆ.</string>
+    <string name="welcome_privacy">ಎಲ್ಲವೂ ಈ ಫೋನ್ ಮೇಲೆ ಕಾಯಿ. ಯಾವುದೇ ಖಾತೆ ಇಲ್ಲ, ಮತ್ತು ylih ಇಂಟರನೆಟ್ ಅನುಮತಿ ಇಲ್ಲ.</string>
+    <string name="welcome_start">ಪ್ರಾರಂಭಿಸಿ</string>
+    <string name="welcome_next">ಮುಂದಿನ</string>
+    <string name="welcome_allow">ಅನುಮತಿ</string>
+    <string name="welcome_step">ಹಂತ %1$d / %2$d</string>
+    <string name="welcome_bluetooth_title">ಬ್ಲೂಟೂತ್ ಪ್ರವೇಶ</string>
+    <string name="welcome_bluetooth_why">android ಯಾವ ಬ್ಲೂಟೂತ್ ಸಾಧನ ಸಂಪರ್ಕಿತ ಮತ್ತು ಅದರ ಹೆಸರು ಏನೆಂದು ಅಪ್ಲಿಕೇಶನಗೆ ತಿಳಿಸುತ್ತದೆ, ಹೆಡ್ಫೋನ್ ಪ್ರವೇಶ ಹೊಂದಿದ್ದರೆ ಮಾತ್ರ. ಹೆಡ್ಫೋನ್ ಜೋಡಿ ಕಾರು ಸ್ಟೀರಿಯೋ ಗಿಂತ ಹೆಡ್ಫೋನ್ ಗಿಂತ ಪ್ರತ್ಯೇಕ ಮಾಡಿದರೆ ಮತ್ತು ಹೇಗೆ ಇಟಿಲಿ ಜೋಡಿ ಮೆಟರಿಯೊ ಗಿಂತ ತಿಳಿಯುತ್ತದೆ.</string>
+    <string name="welcome_bluetooth_with">ಇದೊಂದಿಗೆ: ಪ್ರತಿ ಜೋಡಿ ಸಂಪರ್ಕ ಮುಹೂರ್ತ ದಾಖಲಿಸಲ್ಪಡುತ್ತದೆ, ಏನೂ ಚಾಲನೆಯಲ್ಲಿ ತೊರೆಯುವುದಿಲ್ಲ ಮತ್ತು ಏನೂ ನೆನಪು ಮಾಡಿಕೊಳ್ಳುವುದಿಲ್ಲ.</string>
+    <string name="welcome_bluetooth_without">ಅದು ಇಲ್ಲದೆ: ಯಾವುದೇ ಬ್ಲೂಟೂತ್ ಹೆಡ್ಫೋನ್ ದಾಖಲಿಸಿಲ್ಲ. ಅಪ್ಲಿಕೇಶನ ಇತರ ಭಾಗ ಇನ್ನೂ ಕೆಲಸ ಮಾಡುತ್ತದೆ, ಮತ್ತು ನೀವು android app ಸೆಟ್ಟಿಂಗ್ ನಂತರ ಮಧ್ಯೆ ಅನುಮತಿ ಪಡೆಯಬಹುದು.</string>
+    <string name="welcome_notifications_title">ಅಧಿಸೂಚನೆಗಳು</string>
+    <string name="welcome_notifications_why">ವಿವರವಾದ ಟ್ರ್যಾಕಿಂಗ್ ಸಣ್ಣ ಪಿಸುಳುಸೇವೆ ಚಲಾತ್ಮಕ ಏಕೆಂದರೆ ಯಾವುದೇ ಸಾಧನಯೋಗ್ಯ ಅಪ್ಲಿಕೇಶನ ತೊರೆಯುವುದು ಮಾಡುವಾಗ ಇಂದ್ರಿಯಲಬ್ಧ ಸಮೀಪಿಸ್ತದೆ.</string>
+    <string name="welcome_notifications_with">ಇದೊಂದಿಗೆ: ಅಧಿಸೂಚನೆ ಎನ್ನಾಗಿ ದಾಖಲಿಸಿಸದ್ದನ್ನು ತೋರಿಸುತ್ತದೆ, ವಿವರವಾದ ಟ್ರ್ಯಾಕಿಂಗ್ ಜೀವಂತವಾಗಿದೆ ಏಕೈಕ ಚಿಹ್ನೆ ಯಾವುದು.</string>
+    <string name="welcome_notifications_without">ಅದು ಇಲ್ಲದೆ: ವಿವರವಾದ ಟ್ರ್ಯಾಕಿಂಗ್ ಇನ್ನೂ ಚಾಲನೆ ಸಹ ದಾಖಲಿ. android ಸಿದ್ಧಪ್ರಿಥಂಕಟಪೈಸುಸುಂಡುಚಿಬ್ಬಕ ನಿಜಅಯುಸುಜೇ.</string>
+    <string name="hibernation_title">ನೀವು ಅದರ ಬಗ್ಗೆ ಮರೆಬಿಟ್ಟರೆ ಎಣಿಸಲು ಇಲ್ಲಿರುತ್ತದೆ</string>
+    <string name="hibernation_body">android ಮಾಸ ಕೆಲವು ಬದಲಾಪನ್ನ ಅಪ್ಲಿಕೇಶನ ಅವಲಂಬೋವುನನ್ನು, ಮತ್ತು ಅವರ ಅನುಮತಿ ಹಿಂತೆಗೆ. ಆದರೆ ylih ರೆಕಾರ್ಡ ಎಂದು ನೀವು ಅದನ್ನು ಮುಂದೆ ಎತ್ತುವ ತನಕ ನಿಜವೇ. ತಲೆಬಾಗಿದೆ ಗುಣವಾಗಿ ಈ ಅಪ್ಲಿಕೇಶನ ಏನು, ತು ಸಂಪರ್ಕ ಆನೆ ನೋಡುತ್ತದೆ ಸಮಯ ಎನೆದೆ ಪ್ರಾರಂಭ ಅಪ್ಲಿಕೇಶನಿಗೆ ಬಿಟ್ಟುಕೊಡುತ್ತದೆ.</string>
+    <string name="action_not_now">ಇಲ್ಲ ಸರಿ</string>
+
+    <string name="devices_in_use">ಬಳಕೆಯಲ್ಲಿ</string>
+    <string name="devices_retired">ನಿವೃತ್ತ</string>
+    <string name="devices_empty_title">ಇನ್ನೂ ಹೆಡ್ಫೋನ್</string>
+    <string name="devices_empty_body">ಬ್ಲೂಟೂತ್ ಹೆಡ್ಫೋನ್ ಜೋಡಿ ಸಂಪರ್ಕ ಮತ್ತು ಅವುಗಳು ಇಲ್ಲಿ ಪ್ರದರ್ಶಿತ. ತಂತ್ರದ ಹೆಡ್ಫೋನ್ ವಿವರವಾದ ಟ್ರ್ಯಾಕಿಂಗ್ ಬೇಕು, ಸೆಟ್ಟಿಂಗ್ ನಲ್ಲಿ.</string>
+    <string name="devices_generation">ಜೋಡಿ #%1$d</string>
+    <string name="devices_retired_on">ನಿವೃತ್ತ %1$s</string>
+    <string name="devices_connected_for">ಸಂಪರ್ಕ %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">ಎಲ್ಲ ಹೆಡ್ಫೋನ್ಗಳು</string>
+    <string name="stats_sessions_since">%1$s ರಿಂದ %2$s</string>
+    <string name="stats_today">ಇಂದು</string>
+    <string name="stats_last_7">ಕಳೆದ 7 ದಿನ</string>
+    <string name="stats_last_30">ಕಳೆದ 30 ದಿನ</string>
+    <string name="stats_average_session">ಸರಾಸರಿ ಸೆಶನ್</string>
+    <string name="stats_longest_session">ಉದ್ದ ಸೆಶನ್</string>
+    <string name="stats_playing">ಆಡಿಯೋ ಆಡುತ್ತಿದೆ</string>
+    <string name="stats_measured_span">ಪ್ಲೇಬ್ಯಾಕ್ ಅಳತೆ ಗೆಟೀಡೆ</string>
+    <string name="stats_share">ಪ್ಲೇಬ್ಯಾಕ್ ಹಿಸ್ಸೆ</string>
+    <string name="stats_playback_only_note">ಪ್ಲೇಬ್ಯಾಕ್ ಒಂದೇ ಸಮಯ ಎಣಿಸುವ</string>
+    <string name="stats_daily_hours_30">ದೈನಿಕ ಗಂಟೆ (30 ದಿನ)</string>
+    <string name="stats_by_pair">ಜೋಡಿ ಮೂಲಕ</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · ನಿವೃತ್ತ</string>
+    <string name="chart_max">%1$s ಗರಿಷ್ಠ</string>
+
+    <string name="pair_fallback_title">ಜೋಡಿ</string>
+    <string name="pair_back">ಹಿಂದಕ್ಕೆ</string>
+    <string name="pair_more">ಇನ್ನೂ</string>
+    <string name="pair_menu_rename">ಮರುಹೆಸರಿಸಿ</string>
+    <string name="pair_menu_purchase">ಖರೀದಿ ಮಾಹಿತಿ</string>
+    <string name="pair_menu_retire">ನಿವೃತ್ತ / ಬದಲಾಯಿತು</string>
+    <string name="pair_menu_delete">ಅಳಿಸಿ</string>
+    <string name="pair_lifetime">ಜೀವಕಾಲ ಈ ಜೋಡಿ ನಲ್ಲಿ</string>
+    <string name="pair_retired_on">ನಿವೃತ್ತ %1$s</string>
+    <string name="pair_retired_with_reason">ನಿವೃತ್ತ %1$s · %2$s</string>
+    <string name="pair_connected_now">ಸಂಪರ್ಕ ಇಪ್ಪೋ · %1$s</string>
+    <string name="pair_sessions">ಸೆಶನ್ಗಳು</string>
+    <string name="pair_average">ಸರಾಸರಿ</string>
+    <string name="pair_longest">ಉದ್ದ</string>
+    <string name="pair_since">%1$s ರಿಂದ</string>
+    <string name="pair_of_measured">ಪ್ಲೇಬ್ಯಾಕ್ ಹಿಸ್ಸೆ</string>
+    <string name="pair_measured">ಪ್ಲೇಬ್ಯಾಕ್ ಅಳತೆ ಗೆಟೀಡೆ</string>
+    <string name="pair_paid">ಪಾವತಿ</string>
+    <string name="pair_per_hour">ಗಂಟೆಗೆ</string>
+    <string name="pair_bought">ಖರೀದಿ ಮಾಡಿದರು</string>
+    <string name="pair_daily_hours_14">ದೈನಿಕ ಗಂಟೆ (14 ದಿನ)</string>
+    <string name="pair_rename_title">ಜೋಡಿ ಪುನರನಾಮಿತ</string>
+    <string name="pair_rename_label">ಹೆಸರು</string>
+    <string name="pair_retire_title">ಈ ಜೋಡಿ ನಿವೃತ್ತ</string>
+    <string name="pair_retire_label">ಕಾರಣ (ಸತ್ತ, ಮಾರಿದ, ಕಳೆದ...)</string>
+    <string name="pair_retire_confirm">ನಿವೃತ್ತ</string>
+    <string name="pair_retire_supporting">ಒಟ್ಟು ಗಲ್ಪಿ ಭವನೆ. ಅದೇ ಸಾಧನ ಪುನಃ ಸಂಪರ್ಕ ಕೊಡುವ, ತಾರೀ ತಾರೀ ಶೂನ್ಯ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ.</string>
+    <string name="pair_price_title">ಖರೀದಿ ಖರೀದಿ</string>
+    <string name="pair_price_label">ರಾಶಿ (ಘೀಷೆ ಯೂನಿಟ)</string>
+    <string name="pair_price_supporting">ವೆಚ್ಚ ಪ್ರತಿ ಗಂಟೆ ಚಿತ್ರ ಪಾಲಿದೆ.</string>
+    <string name="pair_delete_title">ಈ ಜೋಡಿ ಅಳಿಸಿ?</string>
+    <string name="pair_delete_body">ಪ್ರತಿ ಸೆಶನ್ ಇದಕ್ಕೆ ಧರಿಸಿ ಅಳಿಸಲ್ಪಡುತ್ತದೆ. ಇದನ್ನು ಪುನಃ ತಿರುಗಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ.</string>
+
+    <string name="session_ongoing">ನಡೆಯುತ್ತಿದೆ</string>
+    <string name="session_until">%1$s ತನಕ</string>
+    <string name="session_playing">%1$s ಆಡುತ್ತಿದೆ</string>
+    <string name="session_recovered">ಪುನರುದ್ಧಾರಿತ</string>
+
+    <string name="settings_tracking">ಟ್ರ್ಯಾಕಿಂಗ್</string>
+    <string name="settings_detailed_title">ವಿವರವಾದ ಟ್ರ್ಯಾಕಿಂಗ್</string>
+    <string name="settings_detailed_body">ತಂತ್ರದ ಹೆಡ್ಫೋನ್ ಮತ್ತು ಪ್ಲೇಬ್ಯಾಕ್ ಸಮಯ ಸೇರಿಸುತ್ತದೆ. android ಕೆಲಸ ಅಪ್ಲಿಕೇಶನ ಮಾತ್ರ ತಂತ್ರದ ಪ್ಲಗ್ ಇವೆಂಟ್ ರೆಪೋರ್ಟ ಸಿ ಅದು ಮಌನ ಸೂಚನೆ ಛಾಯೆ ಇದು ಇಡುತ್ತದೆ. ಬ್ಲೂಟೂತ್ ಯಾವುದೇ ವಿಧಾನ ಟ್ರ್ಯಾಕ ಪ್ರಭಾವಿತ.</string>
+    <string name="settings_detailed_unavailable">ಬ್ಲೂಟೂತ್ ಪ್ರವೇಶ ಅನುಮತಿ ತನಕ ಲಭ್ಯವಿಲ್ಲ: ಈ ಬಿಲ್ಡ್ connectedDevice ಸೇವೆ ಪ್ರಕಾರ ಘೋಷಿತ ಮಾತ್ರ ಏಕೆಂದರೆ android 14+ ಬ್ಲೂಟೂತ್ ಪ್ರವೇಶ ರಾಯಲಟಿ.</string>
+    <string name="settings_playback_only_title">ಪ್ಲೇಬ್ಯಾಕ್ ಮಾತ್ರ ಎಣಿಸಿ</string>
+    <string name="settings_playback_only_body">ಅಂಕಿ ಆಡಿಯೋ ಸರಿಸಿ ಲೌಡ್ತೊಂದೆ ಮಾಪನ ಸಂಪರ್ಕ ಸಮಯ. ವಿವರವಾದ ಟ್ರ್ಯಾಕಿಂಗ್ ಅನುಮತಿ ಸೆಶನ್ ಮಾತ್ರ ಪ್ಲೇಬ್ಯಾಕ್ ಅಳತೆ; ಉಳಿದ ಬಿಟ್ಟುಕೊಡಿ.</string>
+    <string name="settings_language">ಭಾಷೆ</string>
+    <string name="settings_language_system">ವ್ಯವಸ್ಥೆ ಭಾಷೆ</string>
+    <string name="settings_devices">ಸಾಧನ</string>
+    <string name="settings_devices_body">ಏನೂ ಹೆಡ್ಫೋನ್ - ಕಾರು ಸ್ಟೀರಿಯೊ ಅಥವಾ ಸ್ಪೀಕರ್ - ಇದಿದೆ ಟ್ರ್ಯಾಕಿಂಗ್ ನಿಲ್ಲಿಸಲು ಅನ್ಚೆಕ್.</string>
+    <string name="settings_device_subtitle">%1$s · ಮೊದಲ ತಿದೆ %2$s</string>
+    <string name="settings_data">ಡೇಟಾ</string>
+    <string name="settings_export">ರಫ್ತು json</string>
+    <string name="settings_import">ಆಮದು</string>
+    <string name="settings_import_warning">ಆಮದು ಎಲ್ಲ ಪ್ರಸ್ತುತ ಸಂಗ್ರಹಿತ ಮೇಲೆ ಇದೆ.</string>
+    <string name="settings_troubleshooting">ಸಮಸ್ಯೆ ಸಮಾಧಾನ</string>
+    <string name="settings_battery_body">ಸೆಶನ್ ಟ್ರ್ಯಾಕಿಂಗ್ ಬಿದ್ದರೆ ಕೋರ ylih ಬ್ಯಾಟರಿ ಅಪ್ಟಿಮೈಜೇಶನ್ ಹೇಗೆ ಬಿಡೆಮೀಶೂನನ್ನು - ಫೋರ್ಸ್ ಸ್ಟಾಪ್ ಅಪ್ಲಿಕೇಶನ ಸಂಪರ್ಕ ಲೌಡ್ಕ್ಸ್ಡ್ ನೋಡುತ್ತದೆ ತನಕ ಅದನ್ನು ತೆರೆಯುತ್ತಾರೆ.</string>
+    <string name="settings_battery_button">ಬ್ಯಾಟರಿ ಸೆಟ್ಟಿಂಗ್</string>
+    <string name="settings_battery_path">ಸೆಟ್ಟಿಂಗ್ → ಸಾಧನ → ylih → ಬ್ಯಾಟರಿ → ಅನಿರ್ಬಂಧಿತ.</string>
+    <string name="settings_hibernation_body">ylih ಕೆಲವು ತೆರೆಯಿಸಿ ನಿಜ ಮಾಸ ನಾಮಧೇಯ ಆ ಅನುಮತಿ ವಾಪಸ್, ಮತ್ತು ನಿಜ ಟ್ರ್ಯಾಕ ನೀವು ತೆರೆಯುವ ತನಕ. ಸೂಕ್ಷ್ಮ ನಿವೃತ್ತ ಜೋಡಿ ಕಳೆದ ವಿನಾ ಒಂದು ಸೆಷನ್ ನೀವೊ ಭಾಗ ಮೂಲಕ ಎಣಿಸುತ್ತ.</string>
+    <string name="settings_hibernation_on">android ylih ಬೆಚಿರಿದೆ.</string>
+    <string name="settings_hibernation_off">ylih ಮುಕ್ತ ಮತ್ತು ಟ್ರ್ಯಾಕಿಂಗ್.</string>
+    <string name="settings_hibernation_button">ಅಪ್ಲಿಕೇಶನ ಅನಧಿಕೃತ ಸೆಟ್ಟಿಂಗ್</string>
+    <string name="settings_about">ವಿಷಯದ</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - ಹೆಡ್ಫೋನ್ ಗಂಟೆ, ಸ್ಥಳೀಯವಾಗಿ ಮತ್ತು ಖಿತಿಯ ರಾಖ.</string>
+    <string name="settings_import_confirm_title">ಎಲ್ಲ ಡೇಟಾ ಬದಲಿ?</string>
+    <string name="settings_import_confirm_body">ಆಮದು ಬ್ಯಾಕಅಪ್ ಪ್ರತಿ ಸಾಧನ ಅಳಿಸುತ್ತದೆ ಜೋಡಿ ಮತ್ತು ಪ್ರಸ್ತುತ ಸೆಶನ್ ಸಂಗ್ರಹಿತ.</string>
+
+    <string name="widget_lifetime_label">ylih · ಜೀವಕಾಲ</string>
+    <string name="widget_lifetime_description">ಗಂಟೆ ಜೋಡಿ ಲೈವ್ ಕಿಕ್ ಮೇ ಸಂಪರ್ಕ ಅದೇ</string>
+    <string name="widget_activity_label">ylih · ಚಟುವಟಿಕೆ</string>
+    <string name="widget_activity_description">ಗಂಟೆ ಜೋಡಿ ಎಲ್ಲ, ಜೊತೆಗೆ ಇಂದು 7 ದಿನ ಮತ್ತು 30 ದಿನ</string>
+    <string name="widget_chart_label">ylih · 30 ದಿನ</string>
+    <string name="widget_chart_description">ದೈನಿಕ ಗಂಟೆ ಹೆಕ್ಕೆ 30 ದಿನ</string>
+
+    <string name="action_save">ಸಂರಕ್ಷಿಸಿ</string>
+    <string name="action_cancel">ರದ್ದು</string>
+    <string name="action_delete">ಅಳಿಸಿ</string>
+    <string name="action_import">ಆಮದು</string>
+
+    <string name="channel_tracking">ಹೆಡ್ಫೋನ್ ಟ್ರ್ಯಾಕಿಂಗ್</string>
+    <string name="channel_tracking_description">ತಂತ್ರದ ಹೆಡ್ಫೋನ್ ಮತ್ತು ಪ್ಲೇಬ್ಯಾಕ್ ವೀಕ್ಷಿಸುತ್ತ ಹಾಗೆ ತೋರಿಸಲ. android ತಂತ್ರದ ಪ್ಲಗ್ ಘೋಷಿತ ಸಾಧನ ಅಪ್ಲಿಕೇಶನ ರೂನಾಗಿದ ಸಂವೇದನೆ ಮಾಡಬೇಕೆ.</string>
+    <string name="notification_title">ಹೆಡ್ಫೋನ್ ಸಮಯ ಸೂಚಕಾಂಕ</string>
+    <string name="notification_starting">ಪ್ರಾರಂಭ...</string>
+    <string name="notification_idle">ಹೆಡ್ಫೋನ್ಗಳು ಕಾಯುತ್ತಿರುವ</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d ಸಂಪರ್ಕ · %2$s</item>
+        <item quantity="other">%1$d ಸಂಪರ್ಕ · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d ಸಂಪರ್ಕ · %2$s · ಆಡುತ್ತಿದೆ</item>
+        <item quantity="other">%1$d ಸಂಪರ್ಕ · %2$s · ಆಡುತ್ತಿದೆ</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">ಈ ಬಿಲ್ಡ್ ತಂತ್ರದ ಹೆಡ್ಫೋನ್ ಕ್ಲಿನ್ ಮುಖ್ಯ ಬ್ಲೂಟೂತ್ ಪ್ರವೇಶ</string>
+    <string name="export_done">ಬ್ಯಾಕಅಪ್ ರಫ್ತು</string>
+    <string name="export_failed">ರಫ್ತು ವಿಫಲ</string>
+    <string name="import_failed">ಆಮದು ವಿಫಲ</string>
+    <string name="edit_failed">ಪರಿವರ್ತನೆ ಸಂರಕ್ಷಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ</string>
+    <string name="error_could_not_open">%1$s ತೆರೆಯಲು ಸಾಧ್ಯವಾಗಲೆ</string>
+    <plurals name="import_done">
+        <item quantity="one">%d ಸೆಶನ್ ಆಮದು</item>
+        <item quantity="other">%d ಸೆಶನ್ ಆಮದು</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d ಸೆಶನ್</item>
+        <item quantity="other">%d ಸೆಶನ್</item>
+    </plurals>
+</resources>

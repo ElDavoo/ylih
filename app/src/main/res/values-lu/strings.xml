@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Luba-Katanga. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - bulumi bwa kikalangishi</string>
+
+    <string name="nav_headphones">kikalangishi</string>
+    <string name="nav_stats">statistiki</string>
+    <string name="nav_settings">zitiva</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">na misala</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">kitambwe</string>
+
+    <string name="welcome_title">karibu na ylih</string>
+    <string name="welcome_intro">ylih isalisha bufu bu nkubwa kikalangishi kabuaki mu masowa</string>
+    <string name="welcome_point_auto_title">kwamanya na kusalikilisya</string>
+    <string name="welcome_point_auto_body">kikalangishi ka bluetooth kasolishwe mu bwazyeto kusambuka</string>
+    <string name="welcome_point_lifetime_title">kikalangishi kimu, bulumi kimu</string>
+    <string name="welcome_point_lifetime_body">mubaike kikalangishi kafinue, kamike: kuzongera kwayo kudumagala kino</string>
+    <string name="welcome_point_detailed_title">misala na isikiwelo</string>
+    <string name="welcome_point_detailed_body">usalishaji wa kina, mu zitiva, wakungebile misala</string>
+    <string name="welcome_privacy">kintu kinzoto mu foni iyi. wali musonzi wambi</string>
+    <string name="welcome_start">simanya</string>
+    <string name="welcome_next">bwambule</string>
+    <string name="welcome_allow">kwalowa</string>
+    <string name="welcome_step">likulu %1$d ya %2$d</string>
+    <string name="welcome_bluetooth_title">muntu muntu wa bluetooth</string>
+    <string name="welcome_bluetooth_why">android ivuzi alapu mapiko ya bluetooth</string>
+    <string name="welcome_bluetooth_with">ina iyo: kikalangishi kinzoto kasolishwe kusambuka</string>
+    <string name="welcome_bluetooth_without">kasila iyo: kikalangishi kinzoto ka bluetooth wali kisoliye</string>
+    <string name="welcome_notifications_title">italama</string>
+    <string name="welcome_notifications_why">usalishaji wa kina wakulakita masangu</string>
+    <string name="welcome_notifications_with">ina iyo: italama isalisha kintu kisoliye</string>
+    <string name="welcome_notifications_without">kasila iyo: usalishaji wa kina walakwa kusala</string>
+    <string name="hibernation_title">kusala kumikila mutua</string>
+    <string name="hibernation_body">android kubakala alapu idawanile mu misonzo</string>
+    <string name="action_not_now">kasila pele</string>
+
+    <string name="devices_in_use">mu butumibu</string>
+    <string name="devices_retired">kuleta mu busemi</string>
+    <string name="devices_empty_title">wali kikalangishi kasili</string>
+    <string name="devices_empty_body">kwamanya kikalangishi ka bluetooth</string>
+    <string name="devices_generation">kikalangishi ka #%1$d</string>
+    <string name="devices_retired_on">kuleta mu busemi %1$s</string>
+    <string name="devices_connected_for">kwamanya %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">kikalangishi kinzoto</string>
+    <string name="stats_sessions_since">%1$s kusambuka %2$s</string>
+    <string name="stats_today">lelu</string>
+    <string name="stats_last_7">masawu 7</string>
+    <string name="stats_last_30">masawu 30</string>
+    <string name="stats_average_session">musala yakabuakana</string>
+    <string name="stats_longest_session">musala mulongo</string>
+    <string name="stats_playing">isikiwelo yi kulakwa</string>
+    <string name="stats_measured_span">kuyalala isikiwelo</string>
+    <string name="stats_share">kimvekileli cha isikiwelo</string>
+    <string name="stats_playback_only_note">kusalisha bulumi bwa isikiwelo</string>
+    <string name="stats_daily_hours_30">saatisi za masawu</string>
+    <string name="stats_by_pair">kwa kikalangishi</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · kuleta</string>
+    <string name="chart_max">%1$s kinini</string>
+
+    <string name="pair_fallback_title">kikalangishi</string>
+    <string name="pair_back">wambula</string>
+    <string name="pair_more">mingi</string>
+    <string name="pair_menu_rename">kabuakile zina</string>
+    <string name="pair_menu_purchase">malanga ya kununua</string>
+    <string name="pair_menu_retire">leta mu busemi</string>
+    <string name="pair_menu_delete">funika</string>
+    <string name="pair_lifetime">bulumi wa kikalangishi</string>
+    <string name="pair_retired_on">kuleta mu busemi %1$s</string>
+    <string name="pair_retired_with_reason">kuleta mu busemi %1$s · %2$s</string>
+    <string name="pair_connected_now">kwamanya pele · %1$s</string>
+    <string name="pair_sessions">musala</string>
+    <string name="pair_average">yakabuakana</string>
+    <string name="pair_longest">mingi</string>
+    <string name="pair_since">kusambuka %1$s</string>
+    <string name="pair_of_measured">kimvekileli cha isikiwelo</string>
+    <string name="pair_measured">kuyalala isikiwelo</string>
+    <string name="pair_paid">kupele</string>
+    <string name="pair_per_hour">kwa saati</string>
+    <string name="pair_bought">kanuntie</string>
+    <string name="pair_daily_hours_14">saatisi za masawu</string>
+    <string name="pair_rename_title">kabuakile zina kikalangishi</string>
+    <string name="pair_rename_label">zina</string>
+    <string name="pair_retire_title">leta mu busemi kikalangishi</string>
+    <string name="pair_retire_label">impango</string>
+    <string name="pair_retire_confirm">leta mu busemi</string>
+    <string name="pair_retire_supporting">kuzongera kwayo kudumagala kino</string>
+    <string name="pair_price_title">mpila yina</string>
+    <string name="pair_price_label">kwinini kimu</string>
+    <string name="pair_price_supporting">kusalishwa kwa kinini</string>
+    <string name="pair_delete_title">funika kikalangishi</string>
+    <string name="pair_delete_body">musala minzoto yisalishwe</string>
+
+    <string name="session_ongoing">ikulakwa</string>
+    <string name="session_until">kutegefela %1$s</string>
+    <string name="session_playing">%1$s ikulakwa</string>
+    <string name="session_recovered">kubweka</string>
+
+    <string name="settings_tracking">usalishaji</string>
+    <string name="settings_detailed_title">usalishaji wa kina</string>
+    <string name="settings_detailed_body">wakungebile misala</string>
+    <string name="settings_detailed_unavailable">itakusi kumbi munanyaka</string>
+    <string name="settings_playback_only_title">salisha isikiwelo</string>
+    <string name="settings_playback_only_body">mfumo isalisha bulumi</string>
+    <string name="settings_language">lulimi</string>
+    <string name="settings_language_system">lulimi lyasisteme</string>
+    <string name="settings_devices">muntu</string>
+    <string name="settings_devices_body">ka ipile kinzoto</string>
+    <string name="settings_device_subtitle">%1$s · kusobanula %2$s</string>
+    <string name="settings_data">malanga</string>
+    <string name="settings_export">kuleta kinzoto</string>
+    <string name="settings_import">kuwambila</string>
+    <string name="settings_import_warning">kuwambila kamikilile</string>
+    <string name="settings_troubleshooting">kulagamuka</string>
+    <string name="settings_battery_body">musala iweta kusalye</string>
+    <string name="settings_battery_button">zitiva za batiri</string>
+    <string name="settings_battery_path">zitiva mualapu ylih</string>
+    <string name="settings_hibernation_body">ylih itawambukilwe</string>
+    <string name="settings_hibernation_on">android inza kumwaili</string>
+    <string name="settings_hibernation_off">ylih ifu nende</string>
+    <string name="settings_hibernation_button">zitiva zalapu</string>
+    <string name="settings_about">kumpepesa</string>
+    <string name="settings_about_body">ylih %1$s (%2$s)</string>
+    <string name="settings_import_confirm_title">kamikilile</string>
+    <string name="settings_import_confirm_body">kuwambila sifusiko</string>
+
+    <string name="widget_lifetime_label">ylih · lifetime</string>
+    <string name="widget_lifetime_description">saatisi kwa kikalangishi</string>
+    <string name="widget_activity_label">ylih · activity</string>
+    <string name="widget_activity_description">saatisi zikalangishi</string>
+    <string name="widget_chart_label">ylih · 30 masawu</string>
+    <string name="widget_chart_description">saatisi zamasawu</string>
+
+    <string name="action_save">mimba</string>
+    <string name="action_cancel">funika</string>
+    <string name="action_delete">funika</string>
+    <string name="action_import">kuwambila</string>
+
+    <string name="channel_tracking">usalishaji wa kikalangishi</string>
+    <string name="channel_tracking_description">lonekana kwalakwa ylih</string>
+    <string name="notification_title">kusala bulumi</string>
+    <string name="notification_starting">kusambuka</string>
+    <string name="notification_idle">kulindila kikalangishi</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d kwamanyilwe · %2$s</item>
+        <item quantity="many">%1$d kwamanyilwe · %2$s</item>
+        <item quantity="other">%1$d kwamanyilwe · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d kwamanyilwe · %2$s · ikulakwa</item>
+        <item quantity="many">%1$d kwamanyilwe · %2$s · ikulakwa</item>
+        <item quantity="other">%1$d kwamanyilwe · %2$s · ikulakwa</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">ibu alapu iyo</string>
+    <string name="export_done">sifusiko yileta</string>
+    <string name="export_failed">kuleta kinzoto kasile</string>
+    <string name="import_failed">kuwambila kasile</string>
+    <string name="edit_failed">itakusi kumba</string>
+    <string name="error_could_not_open">itakusi kwambula %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">kuwambiliwile %d musala</item>
+        <item quantity="many">kuwambiliwile %d musala</item>
+        <item quantity="other">kuwambiliwile %d musala</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d musala</item>
+        <item quantity="many">%d musala</item>
+        <item quantity="other">%d musala</item>
+    </plurals>
+</resources>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Chuvash. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - e yisvace antan</string>
+
+    <string name="nav_headphones">nalme</string>
+    <string name="nav_stats">statistika</string>
+    <string name="nav_settings">paramtry</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">sarniy</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">pila malalla</string>
+
+    <string name="welcome_title">ylih-a karivasya</string>
+    <string name="welcome_intro">ylih nalme-na shyvarintsene ka pahnava, ma suri yilti virente tantal i yilme putara vit: sara shava nalme-ne tutri?</string>
+    <string name="welcome_point_auto_title">khavari heri tapkala</string>
+    <string name="welcome_point_auto_body">bluetooth nalme-ne tuna tapkalannu khavari yere, tapkalannu kalte tal. pu yok viyya tavan pahnane peles.</string>
+    <string name="welcome_point_lifetime_title">pir nalme - pir vitta</string>
+    <string name="welcome_point_lifetime_body">nalme khavari shayna putarre, pahnava: tapkalannu vit tutri tal, tal antan nalme-na khavari yanatma yilte kayter nulla tal.</string>
+    <string name="welcome_point_detailed_title">sarniy i yashcha</string>
+    <string name="welcome_point_detailed_body">tanniya tapkala, paramtry-a tal, sarniy nalme-ne huri, ma yashcha virenta ka pahnava.</string>
+    <string name="welcome_privacy">pu yok ava yurnite kana. akkaunt peles, ylih-a internet privetnaya peles.</string>
+    <string name="welcome_start">puste katsiteme</string>
+    <string name="welcome_next">puskal</string>
+    <string name="welcome_allow">puste</string>
+    <string name="welcome_step">sharsh %1$d %2$d tal</string>
+    <string name="welcome_bluetooth_title">bluetooth privetnaya</string>
+    <string name="welcome_bluetooth_why">android app-a khavari bluetooth ayta tapkalanna harsam, ma yashcha yere, takka app-a bluetooth privetnaya yakart. ava ylih-a nalme-ne stereo-ra tapkaltara, ma pir nalme pi-ta tapkalara.</string>
+    <string name="welcome_bluetooth_with">ava: nalme-na pir tapkaltarra harsam, peles raste pavan i peles tavan tuptartse.</string>
+    <string name="welcome_bluetooth_without">ava peles: bluetooth nalme-ne piles tunne peles. ylih tal raste yere, i tul android-a paramtry-a tal tutte putarre.</string>
+    <string name="welcome_notifications_title">privetleve</string>
+    <string name="welcome_notifications_why">tanniya tapkala fon sere servis yashcha, ma android app-a privetleve karsi tutterne mal.</string>
+    <string name="welcome_notifications_with">ava: privetleve ylih-a tu yere kayter, ma ava tanniya tapkala-na yasalt.</string>
+    <string name="welcome_notifications_without">ava peles: tanniya tapkala raste tunne i pavan. android privetleve karsi peles.</string>
+    <string name="hibernation_title">tapkale tavan hupshe kal tupe</string>
+    <string name="hibernation_body">android app-ne vitta tun sharsh aytalsa pavan, ma privatnya kayterra, ylih peles tunne putarre. ava app-a yasalt-na parva, tal tukkale piste viyat.</string>
+    <string name="action_not_now">piles tanniya</string>
+
+    <string name="devices_in_use">tapkalanne</string>
+    <string name="devices_retired">katsalam</string>
+    <string name="devices_empty_title">nalme piles tunne</string>
+    <string name="devices_empty_body">bluetooth nalme-ne tapkale, ma eri eske tivate. sarniy nalme-ne tanniya tapkala piste paramtry-a tal.</string>
+    <string name="devices_generation">nalme #%1$d</string>
+    <string name="devices_retired_on">katsalam %1$s</string>
+    <string name="devices_connected_for">tapkalam %1$s</string>
+    <string name="devices_recent">%1$s / 7 kun</string>
+
+    <string name="stats_title">nalme-na pu yok</string>
+    <string name="stats_sessions_since">%1$s %2$s tal</string>
+    <string name="stats_today">tanniya kun</string>
+    <string name="stats_last_7">pir 7 kun-a tal</string>
+    <string name="stats_last_30">pir 30 kun-a tal</string>
+    <string name="stats_average_session">videsh tunne tap</string>
+    <string name="stats_longest_session">ushka tap</string>
+    <string name="stats_playing">yashcha yere</string>
+    <string name="stats_measured_span">yashcha-para tapkalam</string>
+    <string name="stats_share">yashcha yuksi</string>
+    <string name="stats_playback_only_note">yashcha-na tu ye takka</string>
+    <string name="stats_daily_hours_30">kun hattavay (30 kun)</string>
+    <string name="stats_by_pair">nalme-para</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · katsalam</string>
+    <string name="chart_max">%1$s ushka</string>
+
+    <string name="pair_fallback_title">nalme</string>
+    <string name="pair_back">artav</string>
+    <string name="pair_more">tana ushka</string>
+    <string name="pair_menu_rename">serhilahe</string>
+    <string name="pair_menu_purchase">putan ma</string>
+    <string name="pair_menu_retire">katsalam / samyan</string>
+    <string name="pair_menu_delete">kaytarre</string>
+    <string name="pair_lifetime">nalme-a vitta tu</string>
+    <string name="pair_retired_on">katsalam %1$s</string>
+    <string name="pair_retired_with_reason">katsalam %1$s · %2$s</string>
+    <string name="pair_connected_now">tapkalam tanniya · %1$s</string>
+    <string name="pair_sessions">tap-ne</string>
+    <string name="pair_average">videsh</string>
+    <string name="pair_longest">ushka</string>
+    <string name="pair_since">%1$s tal</string>
+    <string name="pair_of_measured">yashcha yuksi</string>
+    <string name="pair_measured">yashcha-para tapkalam</string>
+    <string name="pair_paid">putan</string>
+    <string name="pair_per_hour">hatta-vara</string>
+    <string name="pair_bought">putan ye</string>
+    <string name="pair_daily_hours_14">kun hattavay (14 kun)</string>
+    <string name="pair_rename_title">nalme-na serhilaha</string>
+    <string name="pair_rename_label">seri</string>
+    <string name="pair_retire_title">nalme-na katsal</string>
+    <string name="pair_retire_label">parva (shayan, putan, hupsham...)</string>
+    <string name="pair_retire_confirm">katsalam</string>
+    <string name="pair_retire_supporting">tu takka tutallih. antan nalme-na tapkale, samyan nalme nulla tal-ta sakkar.</string>
+    <string name="pair_price_title">putan putanna</string>
+    <string name="pair_price_label">hattavay (tutne hukhte)</string>
+    <string name="pair_price_supporting">hatta-vara putanna tuppa.</string>
+    <string name="pair_delete_title">nalme-ne kaytarre?</string>
+    <string name="pair_delete_body">tap-na pu yok kaytarre. ava piste tuptartse peles.</string>
+
+    <string name="session_ongoing">raste tunne</string>
+    <string name="session_until">%1$s tal</string>
+    <string name="session_playing">%1$s yashcha</string>
+    <string name="session_recovered">atkare putarre</string>
+
+    <string name="settings_tracking">tapkala</string>
+    <string name="settings_detailed_title">tanniya tapkala</string>
+    <string name="settings_detailed_body">sarniy nalme i yashcha tapkale pavan. android sarniy yistar-na raste app-a kaiter, tal privetleve kayterte pavan. bluetooth tapkalanne pu til.</string>
+    <string name="settings_detailed_unavailable">bluetooth privetnaya tal piste peles: ava fon-a connectedDevice sershil tal, ma android 14+ bluetooth privetnaya-na hakala tal.</string>
+    <string name="settings_playback_only_title">tu yashcha-na takka</string>
+    <string name="settings_playback_only_body">statistika yashcha tu hattava takka. tap tanniya tapkala-ne tu ye yashcha tu hakala; tana piles kaytarre.</string>
+    <string name="settings_language">serhalkka</string>
+    <string name="settings_language_system">fon serhalkka</string>
+    <string name="settings_devices">ayta-ne</string>
+    <string name="settings_devices_body">nalme piles tunte ayta-ne kaythure - stereo-ra ma speaker-na - tapkala-na puste kaythure.</string>
+    <string name="settings_device_subtitle">%1$s · ta katsalam %2$s</string>
+    <string name="settings_data">tanniyine</string>
+    <string name="settings_export">json yuksi</string>
+    <string name="settings_import">karathupe</string>
+    <string name="settings_import_warning">karathupe tutne putan tanniyine kaytarre.</string>
+    <string name="settings_troubleshooting">yapala hupshe</string>
+    <string name="settings_battery_body">tap tapkalannu piles putarre, ylih-a battery piste peles takka - app raste yilte piles putan takka privet piles tal, tul app tutla.</string>
+    <string name="settings_battery_button">battery paramtry</string>
+    <string name="settings_battery_path">paramtry → ayta → ylih → battery → shaptav.</string>
+    <string name="settings_hibernation_body">ylih vitta yilte tun piles yanar, android app-a katsalam, ma privet kayterre, i peles tunne tal kana app-a tutme. ava piste tukkale app-a tapkale raste vitta sharsh.</string>
+    <string name="settings_hibernation_on">android ylih-a katsalam talaltir.</string>
+    <string name="settings_hibernation_off">ylih privatnya i tapkala raste.</string>
+    <string name="settings_hibernation_button">piles tunte app paramtry</string>
+    <string name="settings_about">parva</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - nalme hattava, ava yurnite i vitta.</string>
+    <string name="settings_import_confirm_title">tanniyine kaytarre?</string>
+    <string name="settings_import_confirm_body">karathupe ava tutne ayta, nalme, tap putan kaytarre.</string>
+
+    <string name="widget_lifetime_label">ylih · vitta</string>
+    <string name="widget_lifetime_description">nalme-a hattava, raste tap ayta-na</string>
+    <string name="widget_activity_label">ylih · tapkala</string>
+    <string name="widget_activity_description">nalme-na pu hattava, tal pusta tanniya, 7 kun i 30 kun</string>
+    <string name="widget_chart_label">ylih · 30 kun</string>
+    <string name="widget_chart_description">kun hattava pir 30 kun tal</string>
+
+    <string name="action_save">tutarre</string>
+    <string name="action_cancel">kaythure</string>
+    <string name="action_delete">kaytarre</string>
+    <string name="action_import">karathupe</string>
+
+    <string name="channel_tracking">nalme tapkala</string>
+    <string name="channel_tracking_description">ylih sarniy nalme i yashcha ma teri. android sarniy ayta privet piles app-a pavan peles.</string>
+    <string name="notification_title">nalme hattava tapkala</string>
+    <string name="notification_starting">katsiteme...</string>
+    <string name="notification_idle">nalme ka khavari</string>
+    <plurals name="notification_active">
+        <item quantity="zero">%1$d tapkalam · %2$s</item>
+        <item quantity="one">%1$d tapkalam · %2$s</item>
+        <item quantity="other">%1$d tapkalam · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="zero">%1$d tapkalam · %2$s · yashcha</item>
+        <item quantity="one">%1$d tapkalam · %2$s · yashcha</item>
+        <item quantity="other">%1$d tapkalam · %2$s · yashcha</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">ava fon-a bluetooth privetnaya tal piste sarniy nalme tapkala</string>
+    <string name="export_done">tutarne yuksi</string>
+    <string name="export_failed">yuksi hupshe putarre</string>
+    <string name="import_failed">karathupe hupshe putarre</string>
+    <string name="edit_failed">tapkala tutarre hupshe putarre</string>
+    <string name="error_could_not_open">a ma ka %1$s tutarre</string>
+    <plurals name="import_done">
+        <item quantity="zero">karathupe %d tap</item>
+        <item quantity="one">karathupe %d tap</item>
+        <item quantity="other">karathupe %d tap</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="zero">%d tap</item>
+        <item quantity="one">%d tap</item>
+        <item quantity="other">%d tap</item>
+    </plurals>
+</resources>

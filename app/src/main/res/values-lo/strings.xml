@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Lao. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ຊີວິດຂອງເຈົ້າໃນຫູຟັງ</string>
+
+    <string name="nav_headphones">ຫູຟັງ</string>
+    <string name="nav_stats">ສະຖິຕິ</string>
+    <string name="nav_settings">ການຕັ້ງຄ່າ</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">ສາຍ</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ບໍ່ທາບຊາຍ</string>
+
+    <string name="welcome_title">ຍິນດີຕ້ອນຮັບສູ່ ylih</string>
+    <string name="welcome_intro">ylih ບັນທຶກວ່າຫູຟັງຂອງເຈົ້າເຊື່ອມຕໍ່ໄວ້ນານເທົ່າໃດ ເພື່ອໃຫ້ເຈົ້າສາມາດຕອບຄໍາຖາມ: ຫູຟັງນັ້ນໃຊ້ໄດ້ກີ່ຊົ່ວໂມງ?</string>
+    <string name="welcome_point_auto_title">ເຊື່ອມຕໍ່ແລະລືມ</string>
+    <string name="welcome_point_auto_body">ຫູຟັງ bluetooth ຖືກບັນທຶກເອງ ທັນທີທີ່ເຊື່ອມຕໍ່. ບໍ່ມີຫຍັງຕ້ອງວາງໄວ້.</string>
+    <string name="welcome_point_lifetime_title">ຫູຟັງຄູ່ຫນຶ່ງ ອາຍຸການໃຊ້ຄູ່ຫນຶ່ງ</string>
+    <string name="welcome_point_lifetime_body">ເມື່ອຫູຟັງລົ້ມເລວ ໃຫ້ປະຕິເສດມັນ: ລວມກະໂຫຼກຢູ່ບ່ອນນັ້ນ ແລະຄູ່ຕໍ່ໄປເລີ່ມໃຫມ່ຈາກສູນ.</string>
+    <string name="welcome_point_detailed_title">ສາຍແລະ playback</string>
+    <string name="welcome_point_detailed_body">ການຕິດຕາມລາຍລະອຽດ ໃນການຕັ້ງຄ່າ ເພີ່ມຫູຟັງສາຍແລະວັດແທກເວລາ playback.</string>
+    <string name="welcome_privacy">ທຸກຢ່າງຢູ່ໃນໂທລະສັບນີ້. ບໍ່ມີບັນຊີ ແລະບໍ່ມີສິດອະນຸຍາດອິນເທີເນັດ.</string>
+    <string name="welcome_start">ເລີ່ມຕົ້ນ</string>
+    <string name="welcome_next">ຕໍ່ໄປ</string>
+    <string name="welcome_allow">ອະນຸຍາດ</string>
+    <string name="welcome_step">ຂັ້ນຕອນ %1$d ຂອງ %2$d</string>
+    <string name="welcome_bluetooth_title">ການເຂົ້າເຖິງ bluetooth</string>
+    <string name="welcome_bluetooth_why">android ບອກແອັບ bluetooth ທີ່ເຊື່ອມຕໍ່ຖ້າມີສິດອະນຸຍາດ. ນີ້ແມ່ນວິທີ ylih ຮູ້ຫູຟັງ ແລະແຕກຕ່າງກັນ.</string>
+    <string name="welcome_bluetooth_with">ກັບມັນ: ຫູຟັງທຸກຄູ່ຖືກບັນທຶກເມື່ອເຊື່ອມຕໍ່ ໂດຍບໍ່ມີຫຍັງຕ້ອງສະ.</string>
+    <string name="welcome_bluetooth_without">ໂດຍບໍ່ມີມັນ: ບໍ່ມີຫູຟັງ bluetooth ຖືກບັນທຶກ. ສ່ວນທີ່ເຫລືອຍັງໃຊ້ໄດ້ ແລະອະນຸຍາດໃຫ້ຕໍ່ມາ.</string>
+    <string name="welcome_notifications_title">ການແຈ້ງເຕືອນ</string>
+    <string name="welcome_notifications_why">ການຕິດຕາມລາຍລະອຽດເປີດບໍລິການ ແລະ android ຕ້ອງສະແດງການແຈ້ງເຕືອນ.</string>
+    <string name="welcome_notifications_with">ກັບມັນ: ສະແດງສິ່ງທີ່ບັນທຶກ ເປັນສັນຍານວ່າການຕິດຕາມກຳລັງເຮັດວຽກ.</string>
+    <string name="welcome_notifications_without">ໂດຍບໍ່ມີມັນ: ການຕິດຕາມຍັງເຮັດວຽກ. android ພຽງບໍ່ສະແດງການແຈ້ງ.</string>
+    <string name="hibernation_title">ໃຫ້ນັບຕໍ່ໄປເມື່ອລືມ</string>
+    <string name="hibernation_body">android ຢຸດ apps ຫລາຍເດືອນ ແລະເອົາສິດກັບຄືນ. ylih ຈະບໍ່ບັນທຶກ ຈົນກ່ວາເປີດ. ປິດສະ ເພື່ອໃຫ້ຕໍ່ໄປນັບ.</string>
+    <string name="action_not_now">ບໍ່ແມ່ນຕອນນີ້</string>
+
+    <string name="devices_in_use">ກໍາລັງໃຊ້</string>
+    <string name="devices_retired">ອອກມາຈາກບໍລິການ</string>
+    <string name="devices_empty_title">ຍັງບໍ່ມີຫູຟັງ</string>
+    <string name="devices_empty_body">ເຊື່ອມຕໍ່ bluetooth ແລະໃຈຈະປະກົດຢູ່ນີ້. ສາຍຕ້ອງການລາຍລະອຽດ.</string>
+    <string name="devices_generation">ຄູ່ #%1$d</string>
+    <string name="devices_retired_on">ອອກມາຈາກບໍລິການ %1$s</string>
+    <string name="devices_connected_for">ເຊື່ອມຕໍ່ %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">ຫູຟັງທັງຫມົດ</string>
+    <string name="stats_sessions_since">%1$s ນັບຕັ້ງແຕ່ %2$s</string>
+    <string name="stats_today">ວັນນີ້</string>
+    <string name="stats_last_7">7 ວັນ</string>
+    <string name="stats_last_30">30 ວັນ</string>
+    <string name="stats_average_session">ສະເລ່ຍ</string>
+    <string name="stats_longest_session">ທີ່ຍາວທີ່ສຸດ</string>
+    <string name="stats_playing">ເຄື່ອງສຽងຫຼິ້ນ</string>
+    <string name="stats_measured_span">ວັດແທກ playback</string>
+    <string name="stats_share">ສ່ວນ playback</string>
+    <string name="stats_playback_only_note">ນັບ playback ເທົ່ານັ້ນ</string>
+    <string name="stats_daily_hours_30">ຊົ່ວໂມງ 30 ວັນ</string>
+    <string name="stats_by_pair">ຕາມຄູ່</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · ອອກມາຈາກ</string>
+    <string name="chart_max">%1$s max</string>
+
+    <string name="pair_fallback_title">ຄູ່</string>
+    <string name="pair_back">ກັບຄືນ</string>
+    <string name="pair_more">ເພີ່ມ</string>
+    <string name="pair_menu_rename">ປ່ຽນຊື່</string>
+    <string name="pair_menu_purchase">ຂໍ້ມູນຊື້</string>
+    <string name="pair_menu_retire">ອອກ / ແທນ</string>
+    <string name="pair_menu_delete">ລົບ</string>
+    <string name="pair_lifetime">ອາຍຸຂອງຄູ່ນີ້</string>
+    <string name="pair_retired_on">ອອກ %1$s</string>
+    <string name="pair_retired_with_reason">ອອກ %1$s · %2$s</string>
+    <string name="pair_connected_now">ເຊື່ອມ · %1$s</string>
+    <string name="pair_sessions">ຊັ່ວໂມງ</string>
+    <string name="pair_average">ສະເລ່ຍ</string>
+    <string name="pair_longest">ຍາວ</string>
+    <string name="pair_since">ນັບຕັ້ງແຕ່ %1$s</string>
+    <string name="pair_of_measured">ສ່ວນ playback</string>
+    <string name="pair_measured">ວັດແທກ playback</string>
+    <string name="pair_paid">ຈ່າຍ</string>
+    <string name="pair_per_hour">ຕໍ່ຊົ່ວໂມງ</string>
+    <string name="pair_bought">ຊື້</string>
+    <string name="pair_daily_hours_14">ຊົ່ວໂມງ 14 ວັນ</string>
+    <string name="pair_rename_title">ປ່ຽນຊື່ຄູ່</string>
+    <string name="pair_rename_label">ຊື່</string>
+    <string name="pair_retire_title">ອອກຄູ່ນີ້</string>
+    <string name="pair_retire_label">ເຫດຜົນ</string>
+    <string name="pair_retire_confirm">ອອກ</string>
+    <string name="pair_retire_supporting">ລວມກະໂຫຼກຢູ່ນີ້. ເຊື່ອມຕໍ່ອີກຄູ່ໃໝ່ຈາກສູນ.</string>
+    <string name="pair_price_title">ລາຄາ</string>
+    <string name="pair_price_label">ຈໍານວນ</string>
+    <string name="pair_price_supporting">ສໍາລັບລາຄາຕໍ່ຊົ່ວໂມງ.</string>
+    <string name="pair_delete_title">ລົບຄູ່ນີ້?</string>
+    <string name="pair_delete_body">ລົບຊັ່ວໂມງທັງໝົດ. ບໍ່ສາມາດຍົກເລີກ.</string>
+
+    <string name="session_ongoing">ຕໍ່ໄປ</string>
+    <string name="session_until">ຈົນກ່ວາ %1$s</string>
+    <string name="session_playing">%1$s ຫຼິ້ນ</string>
+    <string name="session_recovered">ຟື້ນ</string>
+
+    <string name="settings_tracking">ການຕິດຕາມ</string>
+    <string name="settings_detailed_title">ລາຍລະອຽດ</string>
+    <string name="settings_detailed_body">ເພີ່ມສາຍ ແລະ playback. android ສົ່ງສາຍທີ່ app ເຮັດວຽກ. bluetooth ທັກສະ ທຸກກັບ.</string>
+    <string name="settings_detailed_unavailable">ບໍ່ສາມາດຈົນ bluetooth ຮັບອະນຸຍາດ.</string>
+    <string name="settings_playback_only_title">ນັບ playback</string>
+    <string name="settings_playback_only_body">ນັບເວລາ playback ແທນເວລາເຊື່ອມ. ຊັ່ວໂມງລາຍລະອຽດເທົ່ານັ້ນ.</string>
+    <string name="settings_language">ພາສາ</string>
+    <string name="settings_language_system">ພາສາລະບົບ</string>
+    <string name="settings_devices">ອຸປະກອນ</string>
+    <string name="settings_devices_body">ບໍ່ກວດອື່ນ - ລຳໂພງ, ລໍ້ - ເພື່ອຢຸດບັນທຶກ.</string>
+    <string name="settings_device_subtitle">%1$s · ມອງຫາ %2$s</string>
+    <string name="settings_data">ຂໍ້ມູນ</string>
+    <string name="settings_export">ສົ່ງອອກ json</string>
+    <string name="settings_import">ນໍາເຂົ້າ</string>
+    <string name="settings_import_warning">ທົ່ວທັງການເກັບໄວ້.</string>
+    <string name="settings_troubleshooting">ແກ້ໄຂ</string>
+    <string name="settings_battery_body">ຖ້າຢຸດບໍລິການ, ກວດ ylih ຢູ່ຕໍ່ສະກໍາ. app ບັງຄັບຢຸດບໍ່ໄດ້ຮັບເຊື່ອມຕໍ່.</string>
+    <string name="settings_battery_button">ຕັ້ງຄ່າແບັດ</string>
+    <string name="settings_battery_path">ຕັ້ງຄ່າ → apps → ylih → battery → unrestricted.</string>
+    <string name="settings_hibernation_body">ຖ້າບໍ່ເປີດຫຼາຍເດືອນ, android ຢຸດ ແລະເອົາສິດກັບຄືນ. ປິດເພື່ອນັບຕໍ່.</string>
+    <string name="settings_hibernation_on">android ອາດຢຸດ ylih.</string>
+    <string name="settings_hibernation_off">ylih ບໍ່ຢຸດ ແລະບັນທຶກ.</string>
+    <string name="settings_hibernation_button">app ຍັງບໍ່ໃຊ້</string>
+    <string name="settings_about">ກ່ຽວກັບ</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - ຊົ່ວໂມງ ເກັບນະ.</string>
+    <string name="settings_import_confirm_title">ແທນທີ່?</string>
+    <string name="settings_import_confirm_body">ລົບອຸປະກອນ ຄູ່ ແລະຊັ່ວໂມງ.</string>
+
+    <string name="widget_lifetime_label">ylih · lifetime</string>
+    <string name="widget_lifetime_description">ຊົ່ວໂມງຕໍ່ຄູ່</string>
+    <string name="widget_activity_label">ylih · activity</string>
+    <string name="widget_activity_description">ຊົ່ວໂມງທັງໝົດ</string>
+    <string name="widget_chart_label">ylih · 30 ວັນ</string>
+    <string name="widget_chart_description">ຊົ່ວໂມງ 30 ວັນ</string>
+
+    <string name="action_save">ບັນທຶກ</string>
+    <string name="action_cancel">ຍົກເລີກ</string>
+    <string name="action_delete">ລົບ</string>
+    <string name="action_import">ນໍາເຂົ້າ</string>
+
+    <string name="channel_tracking">ບັນທຶກຫູຟັງ</string>
+    <string name="channel_tracking_description">ສະແດງໃນຂະນະ ylih ຕິດຕາມສາຍ ແລະ playback.</string>
+    <string name="notification_title">ບັນທຶກຫູຟັງ</string>
+    <string name="notification_starting">ເລີ່ມ...</string>
+    <string name="notification_idle">ລໍຖ້າຫູຟັງ</string>
+    <plurals name="notification_active">
+        <item quantity="other">%1$d connected · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="other">%1$d connected · %2$s · playing</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">ຕ້ອງການ bluetooth ກ່ອນສາຍ.</string>
+    <string name="export_done">ສົ່ງອອກ</string>
+    <string name="export_failed">ສົ່ງອອກລົ້ມ</string>
+    <string name="import_failed">ນໍາເຂົ້າລົ້ມ</string>
+    <string name="edit_failed">ບໍ່ສາມາດບັນທຶກ</string>
+    <string name="error_could_not_open">ບໍ່ສາມາດເປີດ %1$s</string>
+    <plurals name="import_done">
+        <item quantity="other">imported %d sessions</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="other">%d sessions</item>
+    </plurals>
+</resources>
