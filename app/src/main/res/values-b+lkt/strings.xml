@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Lakota. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - nitao mitawa wahpáya</string>
+
+    <string name="nav_headphones">naptewictakpe</string>
+    <string name="nav_stats">owótakhta</string>
+    <string name="nav_settings">oyúza</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">psín oyuspéya</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">sdonúnkta</string>
+
+    <string name="welcome_title">tuwe iyókhiyah ylih ekta</string>
+    <string name="welcome_intro">ylih he naptewictakpe wahpáya owáshi takú kikhúwate hécha, hecél waná omákahe makóche kiksúyapi kin hé wachíŋ itanwichʻáyapi kiŋ: opáwhte oyáshi he kená tahináphe kin?</string>
+    <string name="welcome_point_auto_title">ozuya qa amniyeya</string>
+    <string name="welcome_point_auto_body">naptewictakpe bluetooth kin iyokhíyapi kiŋ ozúyapi kin hecekhán, iš etáŋhan ozúyapi kiŋ. tóksa wachíŋ napʻi yešte kiŋ héc wachʻítʻeya.</string>
+    <string name="welcome_point_lifetime_title">napé kiŋ wachʻítʻe, wosátami kiŋ wachʻítʻe</string>
+    <string name="welcome_point_lifetime_body">napé kiŋ he takhísni kiŋ, kasálde: tawóhta kiŋ he yélo écʼa qa napé kiŋ ékta napé waŋ pʻítʻe ozúyapi kin sunka kiŋ hecekhán.</string>
+    <string name="welcome_point_detailed_title">psín oyuspéya qa niyowápi</string>
+    <string name="welcome_point_detailed_body">owótakhta óspeya kiŋ oyúza kin ekta, psín oyuspéya qa niyowápi owáshi owaŋkó hiyúyapi kiŋ oyúzi oyuŋkpé kin.</string>
+    <string name="welcome_privacy">niš ówaŋkʻu kin oháŋkʻa kiŋ aŋke. oyáte kiŋ waŋ wachʻítʻe, qa okodákidata kiŋ itanwichʻáyapi waŋ yeshte wachʻítʻe.</string>
+    <string name="welcome_start">ozúya</string>
+    <string name="welcome_next">hokšína waŋ</string>
+    <string name="welcome_allow">iyówahi</string>
+    <string name="welcome_step">%1$d kiŋ %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth iyówahi kiŋ</string>
+    <string name="welcome_bluetooth_why">android ghe túwa kiŋ oyáte kiŋ waŋ wóta bluetooth ozúyapi kiŋ qa tí kin sétaksi he, oyáte kiŋ heŋ bluetooth iyówahi kiŋ yuhá wachʻítʻe. he ylih wopʻitʻé wáŋ naptewictakpe kiŋ wachʻítʻe qa wachʻítʻe napé kiŋ naglekcéda.</string>
+    <string name="welcome_bluetooth_with">he yukhá: napé oyáŋste wahóŋpi kiŋ ozúyapi kiŋ hecekhán, tóksa wachʻíŋ napʻi yešte kiŋ héc wachʻítʻe.</string>
+    <string name="welcome_bluetooth_without">he yušte: bluetooth naptewictakpe waŋ oyáŋste wahóŋpi kiŋ wachʻítʻe. oyáte kiŋ hecʼón waná waɣá, qa oyáte waŋ naglekcéda.</string>
+    <string name="welcome_notifications_title">owáhonye kiŋ</string>
+    <string name="welcome_notifications_why">owótakhta óspeya kiŋ oyáte kiŋ waŋ okhódukta hin kiŋ kiksúye, qa android túwa kiŋ oyáte kiŋ he kʻóhaŋ owaŋkʻu itanwichʻáyapi kiŋ itamčʻihpaye ehʻeya.</string>
+    <string name="welcome_notifications_with">he yukhá: owáhonye kiŋ oyáŋste kʻóta táwa tunʻékta, he túwa wopʻitʻé owótakhta óspeya kiŋ napʻi.</string>
+    <string name="welcome_notifications_without">he yušte: owótakhta óspeya kiŋ waná waɣá qa oyáŋste tunʻékta. android ghe owáhonye kiŋ itamčʻihpaye wachʻítʻe.</string>
+    <string name="hibernation_title">owótakhta éyaš amniyeya ekhó</string>
+    <string name="hibernation_body">android oyáte kiŋ wósápe tokhíhna wazúya eyáku kta qa iyówahi kiŋ hduhe kta, oyáte ylih oyáŋste tunʻékta ekhó wazúya wapʻí kiŋ. amniyeya oyáte kiŋ he wópʼe wáŋ ylih oyáte, he ghe takúni iyoksiža etáŋhan iyehákhpaye.</string>
+    <string name="action_not_now">míla</string>
+
+    <string name="devices_in_use">oyáŋste</string>
+    <string name="devices_retired">kičʼúŋ</string>
+    <string name="devices_empty_title">naptewictakpe waŋ wachʻítʻe</string>
+    <string name="devices_empty_body">naptewictakpe bluetooth napé kiŋ ozúya qa waŋ ówaŋkʻa yukhá. psín oyuspéya naptewictakpe wóta owótakhta óspeya kiŋ oyúza kin ekta.</string>
+    <string name="devices_generation">napé #%1$d</string>
+    <string name="devices_retired_on">kičʼúŋ %1$s</string>
+    <string name="devices_connected_for">ozúyapi %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">naptewictakpe ówaŋkʻa</string>
+    <string name="stats_sessions_since">%1$s hecʼó %2$s</string>
+    <string name="stats_today">lé aŋpétu</string>
+    <string name="stats_last_7">aŋpétu šápʼa išt\'ámakȟa</string>
+    <string name="stats_last_30">aŋpétu wičʼóžaža išt\'ámakȟa</string>
+    <string name="stats_average_session">owótakhta wahóŋpi</string>
+    <string name="stats_longest_session">owótakhta kitʼáŋ</string>
+    <string name="stats_playing">niyowápi oyáŋste</string>
+    <string name="stats_measured_span">niyowápi akʼákhta</string>
+    <string name="stats_share">niyowápi okhóza</string>
+    <string name="stats_playback_only_note">niyowápi owaŋkó ghe</string>
+    <string name="stats_daily_hours_30">aŋpétu opáwhte (aŋpétu wičʼóžaža)</string>
+    <string name="stats_by_pair">napé kiŋ</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · kičʼúŋ</string>
+    <string name="chart_max">%1$s wažúŋka</string>
+
+    <string name="pair_fallback_title">napé</string>
+    <string name="pair_back">íyaye</string>
+    <string name="pair_more">kʻóta waŋ</string>
+    <string name="pair_menu_rename">ti iyéchʼu</string>
+    <string name="pair_menu_purchase">kiŋ owóta kiŋ</string>
+    <string name="pair_menu_retire">kičʼúŋ / yačʻúŋ</string>
+    <string name="pair_menu_delete">yúta</string>
+    <string name="pair_lifetime">napé kiŋ wosátami</string>
+    <string name="pair_retired_on">kičʼúŋ %1$s</string>
+    <string name="pair_retired_with_reason">kičʼúŋ %1$s · %2$s</string>
+    <string name="pair_connected_now">ozúyapi lékhé · %1$s</string>
+    <string name="pair_sessions">owótakhta</string>
+    <string name="pair_average">wahóŋpi</string>
+    <string name="pair_longest">kitʼáŋ</string>
+    <string name="pair_since">hecʼó %1$s</string>
+    <string name="pair_of_measured">niyowápi okhóza</string>
+    <string name="pair_measured">niyowápi akʼákhta</string>
+    <string name="pair_paid">kiŋ</string>
+    <string name="pair_per_hour">opáwhte kiŋ</string>
+    <string name="pair_bought">kiŋ</string>
+    <string name="pair_daily_hours_14">aŋpétu opáwhte (aŋpétu akʼéšta)</string>
+    <string name="pair_rename_title">napé kiŋ ti iyéchʼu</string>
+    <string name="pair_rename_label">ti</string>
+    <string name="pair_retire_title">napé kiŋ kičʼúŋ</string>
+    <string name="pair_retire_label">tuke (tákʼu, yeči, níhdekhá…)</string>
+    <string name="pair_retire_confirm">kičʼúŋ</string>
+    <string name="pair_retire_supporting">tawóhta kiŋ yélo écʼa lékhé. wóta kiŋ ozúya hecekhán napé pʼítʼe kiŋ sunka.</string>
+    <string name="pair_price_title">kiŋ owóta</string>
+    <string name="pair_price_label">ékta (owaŋkʻu čʼuwé)</string>
+    <string name="pair_price_supporting">owótakhta opáwhte kiŋ kʼíčʼa.</string>
+    <string name="pair_delete_title">napé kiŋ yúta?</string>
+    <string name="pair_delete_body">owótakhta ówaŋkʻa ówaŋkʻa kiŋ óta yúta. tókhta šte.</string>
+
+    <string name="session_ongoing">waná</string>
+    <string name="session_until">hecʼó %1$s</string>
+    <string name="session_playing">%1$s niyowápi</string>
+    <string name="session_recovered">šákta</string>
+
+    <string name="settings_tracking">oyáŋste</string>
+    <string name="settings_detailed_title">owótakhta óspeya</string>
+    <string name="settings_detailed_body">psín oyuspéya qa niyowápi owaŋkó. android túwa oyáte kiŋ psín oyuspéya event oyúyupta kiŋ wachʻítʻe, hecekhán ówaŋkʻa kiŋ he napʻi okodákidata kiŋ okhódukta. bluetooth wazúya wayáŋ.</string>
+    <string name="settings_detailed_unavailable">bluetooth iyówahi kiŋ yušte hecʼó iyókhiyah: oyáte kiŋ connectedDevice wokhódukta wopʼe ghe, android 14+ bluetooth iyówahi kiŋ kʼóta.</string>
+    <string name="settings_playback_only_title">niyowápi ghe</string>
+    <string name="settings_playback_only_body">owótakhta niyowápi owaŋkó owaŋkʻu kiŋ. owótakhta óspeya yukhá owótakhta ghe niyowápi akʼákhta; hecʼón oyúta.</string>
+    <string name="settings_language">oleakhta</string>
+    <string name="settings_language_system">sisitiemu oleakhta</string>
+    <string name="settings_devices">wópʼe</string>
+    <string name="settings_devices_body">naptewictakpe šte wópʼe - kʻókhta oyáŋste ičʼó - oyáŋste yešte.</string>
+    <string name="settings_device_subtitle">%1$s · ékhó wanyág %2$s</string>
+    <string name="settings_data">ówaŋkʻa</string>
+    <string name="settings_export">json yúta</string>
+    <string name="settings_import">kupi</string>
+    <string name="settings_import_warning">kupi ówaŋkʻa ówaŋkʻa oyáŋste lékhé.</string>
+    <string name="settings_troubleshooting">tʼakuskiŋ ogle</string>
+    <string name="settings_battery_body">owótakhta waŋ oyáŋste šte wachʻítʻe, ylih okʼohéyan oyáŋste šte - oyáte kiŋ okʼó yuŋkʼa ičʼó ozúya event oyúyupta yeshte hecʼó wazúya wapʼí kiŋ.</string>
+    <string name="settings_battery_button">okʼohéyan oyúza</string>
+    <string name="settings_battery_path">oyúza → oyáte → ylih → okʼohéyan → wačʼítʼeya.</string>
+    <string name="settings_hibernation_body">ylih wósápe tokhíhna wazúya eyáku, android napʻi kta qa iyówahi kiŋ hduhe kta, qa oyáŋste tuŋ hecʼó wazúya wapʼí kiŋ. yušte he napé owaŋkó wósápe yukhá olé oyáte amniyeya.</string>
+    <string name="settings_hibernation_on">android ylih napʻi kta.</string>
+    <string name="settings_hibernation_off">ylih napʻi yešte qa oyáŋste waná.</string>
+    <string name="settings_hibernation_button">oyáte awichʻáŋu oyúza</string>
+    <string name="settings_about">owóta</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — naptewictakpe opáwhte, ohókhta qa wosátami.</string>
+    <string name="settings_import_confirm_title">ówaŋkʻa ówaŋkʻa?</string>
+    <string name="settings_import_confirm_body">kupi šákta ówaŋkʻa ówaŋkʻa oyáŋste lékhé yúta.</string>
+
+    <string name="widget_lifetime_label">ylih · wosátami</string>
+    <string name="widget_lifetime_description">napé opáwhte, okhóta lékhé ozúyapi</string>
+    <string name="widget_activity_label">ylih · yawaŋkʻa</string>
+    <string name="widget_activity_description">napé ówaŋkʻa opáwhte, lé aŋpétu, aŋpétu šápʼa qa aŋpétu wičʼóžaža</string>
+    <string name="widget_chart_label">ylih · aŋpétu wičʼóžaža</string>
+    <string name="widget_chart_description">aŋpétu niyowápi opáwhte aŋpétu wičʼóžaža išt\'ámakȟa</string>
+
+    <string name="action_save">yuza</string>
+    <string name="action_cancel">amniyeya</string>
+    <string name="action_delete">yúta</string>
+    <string name="action_import">kupi</string>
+
+    <string name="channel_tracking">naptewictakpe oyáŋste</string>
+    <string name="channel_tracking_description">ylih psín oyuspéya qa niyowápi ayúž kiŋ. android psín oyuspéya event oyáte napʻi yešte tutktéya.</string>
+    <string name="notification_title">naptewictakpe owaŋkó oyáŋste</string>
+    <string name="notification_starting">ozúya…</string>
+    <string name="notification_idle">naptewictakpe inák\'u</string>
+    <plurals name="notification_active">
+        <item quantity="other">%1$d ozúyapi · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="other">%1$d ozúyapi · %2$s · niyowápi</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">oyáte kiŋ bluetooth iyówahi kiŋ duhe ešte psín oyuspéya oyáŋste kta</string>
+    <string name="export_done">šákta yúta</string>
+    <string name="export_failed">yúta tʼakuskiŋ</string>
+    <string name="import_failed">kupi tʼakuskiŋ</string>
+    <string name="edit_failed">túkta wachʻítʻe</string>
+    <string name="error_could_not_open">yúwapi %1$s wachʻítʻe</string>
+    <plurals name="import_done">
+        <item quantity="other">kupi owótakhta %d</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="other">owótakhta %d</item>
+    </plurals>
+</resources>

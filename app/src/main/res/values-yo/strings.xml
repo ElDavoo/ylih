@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Yoruba. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ise eti ori alalade</string>
+
+    <string name="nav_headphones">alalade</string>
+    <string name="nav_stats">iwe</string>
+    <string name="nav_settings">eto</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">waya</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">aimọ</string>
+
+    <string name="welcome_title">kaabo si ylih</string>
+    <string name="welcome_intro">ylih naa akiwé ise ti alalade kọọkan wa ninu ise isalaye, ki o le beere laipe sile: ise melo logun ni iwa alalade?</string>
+    <string name="welcome_point_auto_title">ba sile ki o mã ba ní àkiyesi</string>
+    <string name="welcome_point_auto_body">alalade bluetooth naa jija fun ara wọn, lati ibi ti won ba nsopẹ. ohun kii ni alailé sile.</string>
+    <string name="welcome_point_lifetime_title">alalade kan, ise kan</string>
+    <string name="welcome_point_lifetime_body">nigba ti alalade ba ku, tẹ: ise ti o wa naa da ninu ibẹ, alalade titun ti ẹgbẹ ọlọ naa bẹẹ gidi biẹ lati òdo.</string>
+    <string name="welcome_point_detailed_title">waya ati isalaye</string>
+    <string name="welcome_point_detailed_body">akiwé eto, ninu eto, a dabaa waya alalade ati iwe ise ti alaye naa waa.</string>
+    <string name="welcome_privacy">ohun gbogbo wa lori fonu yii. ko si akọọnu, ati app naa ki lo ete ina.</string>
+    <string name="welcome_start">bẹrẹ</string>
+    <string name="welcome_next">atẹle</string>
+    <string name="welcome_allow">gba</string>
+    <string name="welcome_step">ẹsẹ %1$d ti %2$d</string>
+    <string name="welcome_bluetooth_title">ẹsẹ bluetooth</string>
+    <string name="welcome_bluetooth_why">android ko sọ fun app alalade ipadosi ti bluetooth wo, ati kini a pe ẹ, ti kosi ẹsẹ bluetooth. eyi ni awon akọọnu ti ylih nkan alalade lati ọkunrin kariọkọ, ati bi o ti mọ alalade kan lati iwa kan.</string>
+    <string name="welcome_bluetooth_with">ti o ba ni: alalade kọọkan jija lati ibi ti won ba nsopẹ, kosi ohun alailé sile ati kosi nkankan lati ranti lati titẹ.</string>
+    <string name="welcome_bluetooth_without">ti ko ba ni: alalade bluetooth ko jija o. ilẹkẹ ilẹ ti app na naa ṣiṣẹ, ati o le gba a laipe ninu eto android app.</string>
+    <string name="welcome_notifications_title">ilè àti isèlè</string>
+    <string name="welcome_notifications_why">akiwé akiyesi maa ṣiṣẹ service kekere, ati android nilo gba nipa ohun ti yoo ṣe yii lati ha ilè ni akoko ti o ba nṣiṣẹ.</string>
+    <string name="welcome_notifications_with">ti o ba ni: ilè yii yoo fi ohun ti a ti ranti ìbálópẹ́ han, eyi ni ẹnikan ti o le ṣe ilè akiyesi nṣiṣẹ.</string>
+    <string name="welcome_notifications_without">ti ko ba ni: akiwé akiyesi yii yoo ṣiṣẹ ati ranti. android yii kii ri ilè rẹ o.</string>
+    <string name="hibernation_title">tẹ ti o ba ri fun jiyan o ba mã ba ní àkiyesi</string>
+    <string name="hibernation_body">android fi app sile pẹlu olupin ọgọ ọdun ati gba ẹsẹ ti o wa naa, eyi yoo fi ylih tan ki o kọ ohunkohun akiyesi gigun ki o ba ti ṣii application naa. jiyẹn loju ohun alaye app yii wa fun, nitorina o bara ti o ka o nkan yi.</string>
+    <string name="action_not_now">ko ni bayi</string>
+
+    <string name="devices_in_use">lo wa ninu ise</string>
+    <string name="devices_retired">tẹ</string>
+    <string name="devices_empty_title">alalade ko wa lẹ</string>
+    <string name="devices_empty_body">ba wolu alalade bluetooth kan ati won yoo han ibẹ. alalade waya nilo akiwé eto, ninu eto.</string>
+    <string name="devices_generation">alalade #%1$d</string>
+    <string name="devices_retired_on">tẹ %1$s</string>
+    <string name="devices_connected_for">ba wa ninu ise %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">alalade gbogbo</string>
+    <string name="stats_sessions_since">%1$s lati %2$s</string>
+    <string name="stats_today">loni</string>
+    <string name="stats_last_7">ojo mẹje to kẹhin</string>
+    <string name="stats_last_30">ojo ogoji to kẹhin</string>
+    <string name="stats_average_session">ise akọkọ</string>
+    <string name="stats_longest_session">ise ti o gaju</string>
+    <string name="stats_playing">isalaye isiwèlé</string>
+    <string name="stats_measured_span">lo lokan fun isalaye</string>
+    <string name="stats_share">isalaye isiwèlé</string>
+    <string name="stats_playback_only_note">ka isalaye nikan</string>
+    <string name="stats_daily_hours_30">logun owurọ (30 ojo)</string>
+    <string name="stats_by_pair">alalade nipasẹ</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · tẹ</string>
+    <string name="chart_max">%1$s gaju</string>
+
+    <string name="pair_fallback_title">alalade</string>
+    <string name="pair_back">pada</string>
+    <string name="pair_more">ẹkun</string>
+    <string name="pair_menu_rename">tun akawe</string>
+    <string name="pair_menu_purchase">alaye rira</string>
+    <string name="pair_menu_retire">tẹ / iyipada</string>
+    <string name="pair_menu_delete">paṣẹ</string>
+    <string name="pair_lifetime">ise gbogbo ti alalade eni</string>
+    <string name="pair_retired_on">tẹ %1$s</string>
+    <string name="pair_retired_with_reason">tẹ %1$s · %2$s</string>
+    <string name="pair_connected_now">ba wa ninu ise loni · %1$s</string>
+    <string name="pair_sessions">isèwa ise</string>
+    <string name="pair_average">akọkọ</string>
+    <string name="pair_longest">ti o gaju</string>
+    <string name="pair_since">lati %1$s</string>
+    <string name="pair_of_measured">isalaye isiwèlé</string>
+    <string name="pair_measured">lo lokan fun isalaye</string>
+    <string name="pair_paid">sisan</string>
+    <string name="pair_per_hour">ni logun kan</string>
+    <string name="pair_bought">rira</string>
+    <string name="pair_daily_hours_14">logun owurọ (14 ojo)</string>
+    <string name="pair_rename_title">tun akawe alalade</string>
+    <string name="pair_rename_label">oruko</string>
+    <string name="pair_retire_title">tẹ alalade yii</string>
+    <string name="pair_retire_label">idi (ku, ta, sonu…)</string>
+    <string name="pair_retire_confirm">tẹ</string>
+    <string name="pair_retire_supporting">ise ti o wa naa da ninu ibẹ. ba wolu igwe ti o kanna ati alalade titun bẹẹ gidi biẹ lati òdo.</string>
+    <string name="pair_price_title">iye ti a ra</string>
+    <string name="pair_price_label">owó (akoko iwe)</string>
+    <string name="pair_price_supporting">lo lokan fun iye kela logun kan.</string>
+    <string name="pair_delete_title">pa alalade yii lẹ?</string>
+    <string name="pair_delete_body">ise gbogbo ti o rira fun ara naa lo pẹlu. kii le se iyalẹnu yii o.</string>
+
+    <string name="session_ongoing">ba wa ninu ise</string>
+    <string name="session_until">titi di %1$s</string>
+    <string name="session_playing">%1$s isalaye</string>
+    <string name="session_recovered">ri pada</string>
+
+    <string name="settings_tracking">akiwé</string>
+    <string name="settings_detailed_title">akiwé akiyesi</string>
+    <string name="settings_detailed_body">a dabaa waya alalade ati isalaye ise. android ko sọ wired plug events si app ti ko ba nsilẹ, nitorina eyi tẹ alaye ilẹ iwe ilẹ. bluetooth lo lokan nibi kini.</string>
+    <string name="settings_detailed_unavailable">ti a ko ba gba ẹsẹ bluetooth: app yii ko sọ lẹ connectedDevice service type, eyiti android 14+ ba tẹ si ẹsẹ bluetooth.</string>
+    <string name="settings_playback_only_title">ka isalaye nikan</string>
+    <string name="settings_playback_only_body">iwe ka ise ti isalaye naa ṣiṣẹ dipo ise ti ba wa ninu. isèwa kan lo lokan isalaye pelu akiwé akiyesi; iyoku ko ni akiyesi.</string>
+    <string name="settings_language">ede</string>
+    <string name="settings_language_system">ede android</string>
+    <string name="settings_devices">awon igwe</string>
+    <string name="settings_devices_body">yi adari kii alalade — ọkunrin kariọkọ tabi aparo — ki o to jija ara wọn.</string>
+    <string name="settings_device_subtitle">%1$s · ikini ri %2$s</string>
+    <string name="settings_data">alaye</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">wó gbá</string>
+    <string name="settings_import_warning">gbigbe yin paja ohun ti a ti tọ silẹ loni.</string>
+    <string name="settings_troubleshooting">idanwo</string>
+    <string name="settings_battery_body">ti isèwa ko ba jija sile, ji ylih ko ni ise battery iyipada — app ti a tẹ ki o to gba eto isopẹ lẹẹkansi ti o ba ṣii ara ara e.</string>
+    <string name="settings_battery_button">eto ise</string>
+    <string name="settings_battery_path">eto → apps → ylih → battery → alailé.</string>
+    <string name="settings_hibernation_body">ti ylih ba ti jẹ ki o ta ṣii fun ọgọ ọdun kan, android lo tu ara ara e to gba ẹsẹ ti o wa naa, ati kii se ri ohun kan akiyesi tiẹ ki o ba ti ṣii application naa. gbe eyi naa ti o le ṣe alalade keep ka ti o ba ri lakoko season ti o ko ranti app naa.</string>
+    <string name="settings_hibernation_on">android le tu ylih ká.</string>
+    <string name="settings_hibernation_off">ylih ko ni ọ le lo ji ka.</string>
+    <string name="settings_hibernation_button">eto app ti ko lo</string>
+    <string name="settings_about">nipa</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — logun alalade, ti a di niwaye ti o le ní fun lálái.</string>
+    <string name="settings_import_confirm_title">tun igbe ohun gbogbo?</string>
+    <string name="settings_import_confirm_body">gbigbe yin paja paṣẹ igwe, alalade ati isèwa ti a ti tọ silẹ.</string>
+
+    <string name="widget_lifetime_label">ylih · ise gbogbo</string>
+    <string name="widget_lifetime_description">logun ni alalade, pelu iye isalaye ti a ba nlo</string>
+    <string name="widget_activity_label">ylih · ise</string>
+    <string name="widget_activity_description">logun alalade gbogbo ni oapu, ti pelu loni, 7 ojo ati 30 ojo</string>
+    <string name="widget_chart_label">ylih · 30 ojo</string>
+    <string name="widget_chart_description">logun owurọ owurọ ni ojo 30 to kẹhin</string>
+
+    <string name="action_save">tọ</string>
+    <string name="action_cancel">ko ni</string>
+    <string name="action_delete">paṣẹ</string>
+    <string name="action_import">wó gbá</string>
+
+    <string name="channel_tracking">akiwé alalade</string>
+    <string name="channel_tracking_description">han nigba ti ylih ba lo waya alalade ati isalaye ise. android ko sọ wired plug events si app ti ko ba nsilẹ.</string>
+    <string name="notification_title">akiwé ise alalade</string>
+    <string name="notification_starting">bẹrẹ...</string>
+    <string name="notification_idle">alayé fun alalade</string>
+    <plurals name="notification_active">
+        <item quantity="other">%1$d ba wa ninu ise · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="other">%1$d ba wa ninu ise · %2$s · isalaye</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">app yii nilo ẹsẹ bluetooth ri ki o le lo waya alalade</string>
+    <string name="export_done">alaye alaye jade</string>
+    <string name="export_failed">ise ti o jade ko de</string>
+    <string name="import_failed">wó gbá ko de</string>
+    <string name="edit_failed">ko le tọ iyipada yẹn</string>
+    <string name="error_could_not_open">ko le ṣii %1$s</string>
+    <plurals name="import_done">
+        <item quantity="other">wó gbá %d isèwa</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="other">%d isèwa</item>
+    </plurals>
+</resources>

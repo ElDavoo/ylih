@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Urdu. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - آپ کے ہیڈ فونز میں زندگی</string>
+
+    <string name="nav_headphones">ہیڈ فونز</string>
+    <string name="nav_stats">اعدادوشمار</string>
+    <string name="nav_settings">ترتیبات</string>
+
+    <string name="kind_bluetooth">بلیو ٹوتھ</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">تار والا</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">نامعلوم</string>
+
+    <string name="welcome_title">ylih میں خوش آمدید</string>
+    <string name="welcome_intro">ylih ریکارڈ کرتا ہے کہ ہر ہیڈ فون کتنے عرصے تک منسلک رہتا ہے</string>
+    <string name="welcome_point_auto_title">منسلک کریں اور بھول جائیں</string>
+    <string name="welcome_point_auto_body">بلیو ٹوتھ ہیڈ فونز خود بخود ریکارڈ ہوتے ہیں</string>
+    <string name="welcome_point_lifetime_title">ایک جوڑی ایک زندگی</string>
+    <string name="welcome_point_lifetime_body">جب ہیڈ فون ختم ہو جائے تو اسے ریٹائر کریں</string>
+    <string name="welcome_point_detailed_title">تار والا اور پلے بیک</string>
+    <string name="welcome_point_detailed_body">تفصیلی ٹریکنگ تار والے ہیڈ فونز شامل کرتی ہے</string>
+    <string name="welcome_privacy">سب کچھ اس فون پر رہتا ہے</string>
+    <string name="welcome_start">شروع کریں</string>
+    <string name="welcome_next">اگلا</string>
+    <string name="welcome_allow">اجازت دیں</string>
+    <string name="welcome_step">مرحلہ %1$d از %2$d</string>
+    <string name="welcome_bluetooth_title">بلیو ٹوتھ رسائی</string>
+    <string name="welcome_bluetooth_why">android کو بلیو ٹوتھ کی اجازت چاہیے</string>
+    <string name="welcome_bluetooth_with">ہیڈ فونز خود بخود ریکارڈ ہوتے ہیں</string>
+    <string name="welcome_bluetooth_without">بلیو ٹوتھ ہیڈ فونز ریکارڈ نہیں ہوتے</string>
+    <string name="welcome_notifications_title">اطلاعات</string>
+    <string name="welcome_notifications_why">تفصیلی ٹریکنگ ایک پس منظر کی سروس چلاتی ہے</string>
+    <string name="welcome_notifications_with">اطلاع تفصیلی ٹریکنگ دکھاتی ہے</string>
+    <string name="welcome_notifications_without">تفصیلی ٹریکنگ کام کرتی رہتی ہے</string>
+    <string name="hibernation_title">یاد رکھیں بھی اور نہ رکھیں بھی</string>
+    <string name="hibernation_body">android ماہ کے بعد ایپ کو روک دیتا ہے</string>
+    <string name="action_not_now">ابھی نہیں</string>
+
+    <string name="devices_in_use">استعمال میں</string>
+    <string name="devices_retired">ریٹائر شدہ</string>
+    <string name="devices_empty_title">ابھی کوئی ہیڈ فون نہیں</string>
+    <string name="devices_empty_body">بلیو ٹوتھ ہیڈ فون منسلک کریں</string>
+    <string name="devices_generation">جوڑی #%1$d</string>
+    <string name="devices_retired_on">ریٹائر شدہ %1$s</string>
+    <string name="devices_connected_for">منسلک %1$s</string>
+    <string name="devices_recent">%1$s / 7 دن</string>
+
+    <string name="stats_title">تمام ہیڈ فونز</string>
+    <string name="stats_sessions_since">%1$s سے %2$s تک</string>
+    <string name="stats_today">آج</string>
+    <string name="stats_last_7">آخری 7 دن</string>
+    <string name="stats_last_30">آخری 30 دن</string>
+    <string name="stats_average_session">اوسط سیشن</string>
+    <string name="stats_longest_session">سب سے لمبا سیشن</string>
+    <string name="stats_playing">آڈیو چل رہا ہے</string>
+    <string name="stats_measured_span">پلے بیک کے لیے ناپا گیا</string>
+    <string name="stats_share">پلے بیک شامل</string>
+    <string name="stats_playback_only_note">صرف پلے بیک وقت</string>
+    <string name="stats_daily_hours_30">روزانہ کے گھنٹے (30 دن)</string>
+    <string name="stats_by_pair">جوڑی کے لحاظ سے</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · ریٹائر شدہ</string>
+    <string name="chart_max">%1$s زیادہ سے زیادہ</string>
+
+    <string name="pair_fallback_title">جوڑی</string>
+    <string name="pair_back">پیچھے</string>
+    <string name="pair_more">مزید</string>
+    <string name="pair_menu_rename">نام تبدیل کریں</string>
+    <string name="pair_menu_purchase">خریداری کی معلومات</string>
+    <string name="pair_menu_retire">ریٹائر / متبادل</string>
+    <string name="pair_menu_delete">حذف کریں</string>
+    <string name="pair_lifetime">اس جوڑی کی عمر</string>
+    <string name="pair_retired_on">ریٹائر شدہ %1$s</string>
+    <string name="pair_retired_with_reason">ریٹائر شدہ %1$s · %2$s</string>
+    <string name="pair_connected_now">منسلک %1$s</string>
+    <string name="pair_sessions">سیشنز</string>
+    <string name="pair_average">اوسط</string>
+    <string name="pair_longest">سب سے لمبا</string>
+    <string name="pair_since">%1$s سے</string>
+    <string name="pair_of_measured">پلے بیک شامل</string>
+    <string name="pair_measured">پلے بیک کے لیے ناپا گیا</string>
+    <string name="pair_paid">ادا کی گئی</string>
+    <string name="pair_per_hour">فی گھنٹہ</string>
+    <string name="pair_bought">خریدی گئی</string>
+    <string name="pair_daily_hours_14">روزانہ کے گھنٹے (14 دن)</string>
+    <string name="pair_rename_title">جوڑی کا نام تبدیل کریں</string>
+    <string name="pair_rename_label">نام</string>
+    <string name="pair_retire_title">اس جوڑی کو ریٹائر کریں</string>
+    <string name="pair_retire_label">وجہ (مر گیا وغیرہ)</string>
+    <string name="pair_retire_confirm">ریٹائر</string>
+    <string name="pair_retire_supporting">کل یہاں منجمد ہوتا ہے</string>
+    <string name="pair_price_title">ادائیگی کی قیمت</string>
+    <string name="pair_price_label">رقم (مکمل یونٹ)</string>
+    <string name="pair_price_supporting">فی گھنٹہ قیمت کے لیے استعمال</string>
+    <string name="pair_delete_title">اس جوڑی کو حذف کریں؟</string>
+    <string name="pair_delete_body">تمام سیشنز حذف ہو جاتے ہیں</string>
+
+    <string name="session_ongoing">جاری</string>
+    <string name="session_until">%1$s تک</string>
+    <string name="session_playing">%1$s چل رہا ہے</string>
+    <string name="session_recovered">بحال کیا گیا</string>
+
+    <string name="settings_tracking">ٹریکنگ</string>
+    <string name="settings_detailed_title">تفصیلی ٹریکنگ</string>
+    <string name="settings_detailed_body">تار والے اور پلے بیک وقت شامل کرتا ہے</string>
+    <string name="settings_detailed_unavailable">بلیو ٹوتھ رسائی کی ضرورت ہے</string>
+    <string name="settings_playback_only_title">صرف پلے بیک وقت</string>
+    <string name="settings_playback_only_body">اعدادوشمار صرف پلے بیک وقت شمار کرتے ہیں</string>
+    <string name="settings_language">زبان</string>
+    <string name="settings_language_system">سسٹم زبان</string>
+    <string name="settings_devices">آلات</string>
+    <string name="settings_devices_body">ہیڈ فونز کو منتخب کریں</string>
+    <string name="settings_device_subtitle">%1$s · پہلا دیکھا %2$s</string>
+    <string name="settings_data">ڈیٹا</string>
+    <string name="settings_export">json برآمد کریں</string>
+    <string name="settings_import">درآمد</string>
+    <string name="settings_import_warning">درآمد موجودہ سب کچھ بدل دیتا ہے</string>
+    <string name="settings_troubleshooting">مسائل کا حل</string>
+    <string name="settings_battery_body">بیٹری کی بہتری</string>
+    <string name="settings_battery_button">بیٹری کی ترتیبات</string>
+    <string name="settings_battery_path">ترتیبات → آلات → ylih → بیٹری → غیر محدود</string>
+    <string name="settings_hibernation_body">ylih مہینے کے بعد روک دیا جاتا ہے</string>
+    <string name="settings_hibernation_on">android ylih کو روک سکتا ہے</string>
+    <string name="settings_hibernation_off">ylih روکی نہیں جاتی</string>
+    <string name="settings_hibernation_button">غیر استعمال شدہ آلہ کی ترتیبات</string>
+    <string name="settings_about">بارے میں</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — ہیڈ فون کے گھنٹے</string>
+    <string name="settings_import_confirm_title">تمام ڈیٹا بدلیں؟</string>
+    <string name="settings_import_confirm_body">درآمد تمام ڈیٹا حذف کر دیتا ہے</string>
+
+    <string name="widget_lifetime_label">ylih · عمر</string>
+    <string name="widget_lifetime_description">جوڑی کے گھنٹے منسلک ٹائمر کے ساتھ</string>
+    <string name="widget_activity_label">ylih · سرگرمی</string>
+    <string name="widget_activity_description">تمام جوڑیوں کے گھنٹے آج 7 دن 30 دن</string>
+    <string name="widget_chart_label">ylih · 30 دن</string>
+    <string name="widget_chart_description">آخری 30 دن میں روزانہ کے گھنٹے</string>
+
+    <string name="action_save">بچائیں</string>
+    <string name="action_cancel">منسوخ کریں</string>
+    <string name="action_delete">حذف کریں</string>
+    <string name="action_import">درآمد</string>
+
+    <string name="channel_tracking">ہیڈ فون ٹریکنگ</string>
+    <string name="channel_tracking_description">ylih تار والے ہیڈ فونز ٹریک کرتا ہے</string>
+    <string name="notification_title">ہیڈ فون کے وقت کو ٹریک کرنا</string>
+    <string name="notification_starting">شروع ہو رہا ہے...</string>
+    <string name="notification_idle">ہیڈ فونز کا انتظار کر رہے ہیں</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d منسلک · %2$s</item>
+        <item quantity="other">%1$d منسلک · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d منسلک · %2$s · چل رہا ہے</item>
+        <item quantity="other">%1$d منسلک · %2$s · چل رہا ہے</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">تفصیلی ٹریکنگ کو بلیو ٹوتھ کی ضرورت ہے</string>
+    <string name="export_done">بیک اپ برآمد کیا گیا</string>
+    <string name="export_failed">برآمد ناکام</string>
+    <string name="import_failed">درآمد ناکام</string>
+    <string name="edit_failed">تبدیلی نہیں کی جا سکی</string>
+    <string name="error_could_not_open">%1$s کھول نہیں سکے</string>
+    <plurals name="import_done">
+        <item quantity="one">%d سیشن درآمد</item>
+        <item quantity="other">%d سیشنز درآمد</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d سیشن</item>
+        <item quantity="other">%d سیشنز</item>
+    </plurals>
+</resources>

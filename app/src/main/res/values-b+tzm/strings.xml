@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Central Atlas Tamazight. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - tabburt nk g tmaza</string>
+
+    <string name="nav_headphones">tmaza</string>
+    <string name="nav_stats">tisqifin</string>
+    <string name="nav_settings">asnas</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">slawen</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ur nezrin</string>
+
+    <string name="welcome_title">azul g ylih</string>
+    <string name="welcome_intro">ylih yeskr amzdaz n tmaza</string>
+    <string name="welcome_point_auto_title">seksel u ling</string>
+    <string name="welcome_point_auto_body">tmaza n bluetooth tskr s ufus</string>
+    <string name="welcome_point_lifetime_title">yat tmaza yat azal</string>
+    <string name="welcome_point_lifetime_body">ma tmaza d yufa tuttwi</string>
+    <string name="welcome_point_detailed_title">slawen d awick</string>
+    <string name="welcome_point_detailed_body">tisqifin tuzr slawen d waqt n awick</string>
+    <string name="welcome_privacy">kra ur ifekk s unaraw</string>
+    <string name="welcome_start">senker</string>
+    <string name="welcome_next">sdat</string>
+    <string name="welcome_allow">segh</string>
+    <string name="welcome_step">taqarurt %1$d seg %2$d</string>
+    <string name="welcome_bluetooth_title">tuqqna n bluetooth</string>
+    <string name="welcome_bluetooth_why">android yuzmir-as tuqqna n bluetooth</string>
+    <string name="welcome_bluetooth_with">tmaza tskr s ufus</string>
+    <string name="welcome_bluetooth_without">tmaza n bluetooth ur tskr</string>
+    <string name="welcome_notifications_title">ilaqan</string>
+    <string name="welcome_notifications_why">tisqifin tazra tasrtiut</string>
+    <string name="welcome_notifications_with">ilaqan azeklan n tisqifin</string>
+    <string name="welcome_notifications_without">tisqifin tigi</string>
+    <string name="hibernation_title">ur yettussirem m ling</string>
+    <string name="hibernation_body">android yekkes tamezdad n iseggasen</string>
+    <string name="action_not_now">ugar tura</string>
+
+    <string name="devices_in_use">ktayassn</string>
+    <string name="devices_retired">tutwi</string>
+    <string name="devices_empty_title">ur izrin tmaza</string>
+    <string name="devices_empty_body">seksel tmaza n bluetooth</string>
+    <string name="devices_generation">tmaza #%1$d</string>
+    <string name="devices_retired_on">tutwi %1$s</string>
+    <string name="devices_connected_for">yettuskel %1$s</string>
+    <string name="devices_recent">%1$s / ayyur 7</string>
+
+    <string name="stats_title">kra tmaza</string>
+    <string name="stats_sessions_since">%1$s seg %2$s</string>
+    <string name="stats_today">assa</string>
+    <string name="stats_last_7">ayyur 7 izrin</string>
+    <string name="stats_last_30">ayyur 30 izrin</string>
+    <string name="stats_average_session">amezdaz n tasrtiut</string>
+    <string name="stats_longest_session">tasrtiut tallast</string>
+    <string name="stats_playing">awick uttig</string>
+    <string name="stats_measured_span">uttig itsilen</string>
+    <string name="stats_share">azqas n awick</string>
+    <string name="stats_playback_only_note">awick nkul</string>
+    <string name="stats_daily_hours_30">tisrat n unebdu (ayyur 30)</string>
+    <string name="stats_by_pair">s tmaza</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · tutwi</string>
+    <string name="chart_max">%1$s tallast</string>
+
+    <string name="pair_fallback_title">tmaza</string>
+    <string name="pair_back">sluq</string>
+    <string name="pair_more">yadni</string>
+    <string name="pair_menu_rename">asgg n izem</string>
+    <string name="pair_menu_purchase">tallit n gsawn</string>
+    <string name="pair_menu_retire">tutwi / sgg</string>
+    <string name="pair_menu_delete">sffed</string>
+    <string name="pair_lifetime">azal n tmaza</string>
+    <string name="pair_retired_on">tutwi %1$s</string>
+    <string name="pair_retired_with_reason">tutwi %1$s · %2$s</string>
+    <string name="pair_connected_now">yettuskel %1$s</string>
+    <string name="pair_sessions">tasrtiutin</string>
+    <string name="pair_average">amezdaz</string>
+    <string name="pair_longest">tallast</string>
+    <string name="pair_since">seg %1$s</string>
+    <string name="pair_of_measured">azqas n awick</string>
+    <string name="pair_measured">uttig itsilen</string>
+    <string name="pair_paid">asgira</string>
+    <string name="pair_per_hour">ger tsrat</string>
+    <string name="pair_bought">yuwsan</string>
+    <string name="pair_daily_hours_14">tisrat n unebdu (ayyur 14)</string>
+    <string name="pair_rename_title">asgg izem n tmaza</string>
+    <string name="pair_rename_label">izem</string>
+    <string name="pair_retire_title">tutwi tmaza</string>
+    <string name="pair_retire_label">tamsalt (d yufa n.)</string>
+    <string name="pair_retire_confirm">tutwi</string>
+    <string name="pair_retire_supporting">tigmi d tagi</string>
+    <string name="pair_price_title">tasgira n gsawn</string>
+    <string name="pair_price_label">anaw (n wudem asnubl)</string>
+    <string name="pair_price_supporting">asqas n tasgira</string>
+    <string name="pair_delete_title">sffed tmaza?</string>
+    <string name="pair_delete_body">tasrtiutin fofon d sffed</string>
+
+    <string name="session_ongoing">agi tigi</string>
+    <string name="session_until">ar %1$s</string>
+    <string name="session_playing">%1$s awick</string>
+    <string name="session_recovered">tasant</string>
+
+    <string name="settings_tracking">asgra</string>
+    <string name="settings_detailed_title">tisqifin tallast</string>
+    <string name="settings_detailed_body">tisqifin sluq slawen u waqt n awick</string>
+    <string name="settings_detailed_unavailable">bluetooth ur yufan</string>
+    <string name="settings_playback_only_title">awick nkul</string>
+    <string name="settings_playback_only_body">tisqifin waqt awick nkul</string>
+    <string name="settings_language">tutlayt</string>
+    <string name="settings_language_system">tutlayt n usasf</string>
+    <string name="settings_devices">inagrawen</string>
+    <string name="settings_devices_body">fren tmaza</string>
+    <string name="settings_device_subtitle">%1$s · azeklan %2$s</string>
+    <string name="settings_data">tallit</string>
+    <string name="settings_export">sffed json</string>
+    <string name="settings_import">sluq</string>
+    <string name="settings_import_warning">sluq tallit fofon</string>
+    <string name="settings_troubleshooting">tasargi</string>
+    <string name="settings_battery_body">usfru n umdu</string>
+    <string name="settings_battery_button">asnas n umdu</string>
+    <string name="settings_battery_path">asnas → inagrawen → ylih → umdu → ur iqqes</string>
+    <string name="settings_hibernation_body">ylih yettussirem m ling seg ayyur</string>
+    <string name="settings_hibernation_on">android may yessiremt ylih</string>
+    <string name="settings_hibernation_off">ylih ur yettussirem</string>
+    <string name="settings_hibernation_button">asnas n inagrawen ur nttksin</string>
+    <string name="settings_about">aglam</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — tisrat n tmaza</string>
+    <string name="settings_import_confirm_title">sluq tallit fofon?</string>
+    <string name="settings_import_confirm_body">sluq tallit fofon d sffed</string>
+
+    <string name="widget_lifetime_label">ylih · azal</string>
+    <string name="widget_lifetime_description">tisrat n tmaza s unaraw ittuskel</string>
+    <string name="widget_activity_label">ylih · igul</string>
+    <string name="widget_activity_description">tisrat fofon assa ayyur 7 ayyur 30</string>
+    <string name="widget_chart_label">ylih · ayyur 30</string>
+    <string name="widget_chart_description">tisrat n unebdu g ayyur 30</string>
+
+    <string name="action_save">kker</string>
+    <string name="action_cancel">sluq</string>
+    <string name="action_delete">sffed</string>
+    <string name="action_import">sluq</string>
+
+    <string name="channel_tracking">asgra n tmaza</string>
+    <string name="channel_tracking_description">ylih asgra slawen u awick</string>
+    <string name="notification_title">asgra n waqt n tmaza</string>
+    <string name="notification_starting">senker...</string>
+    <string name="notification_idle">aregna n tmaza</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d yttuskel · %2$s</item>
+        <item quantity="other">%1$d yttuskel · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d yttuskel · %2$s · awick</item>
+        <item quantity="other">%1$d yttuskel · %2$s · awick</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">tisqifin yuzmir-as bluetooth</string>
+    <string name="export_done">sffed aglam</string>
+    <string name="export_failed">sffed ur yufan</string>
+    <string name="import_failed">sluq ur yufan</string>
+    <string name="edit_failed">ur nffugh asgg</string>
+    <string name="error_could_not_open">ur nffugh uffar %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">%d tasrtiut sluq</item>
+        <item quantity="other">%d tasrtiutin sluq</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d tasrtiut</item>
+        <item quantity="other">%d tasrtiutin</item>
+    </plurals>
+</resources>

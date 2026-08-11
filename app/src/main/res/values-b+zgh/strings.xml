@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Standard Moroccan Tamazight. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - tudert n weggur</string>
+
+    <string name="nav_headphones">weggur</string>
+    <string name="nav_stats">tizmilin</string>
+    <string name="nav_settings">izenzaren</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">idugen</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">annect</string>
+
+    <string name="welcome_title">azul g ylih</string>
+    <string name="welcome_intro">ylih ittnef amud n weggur n usekcal, akka ilaq yiwen wass i d amuq: weggur aqelmayen kra n yiseggasen?</string>
+    <string name="welcome_point_auto_title">sekcal ibeɛden</string>
+    <string name="welcome_point_auto_body">weggur bluetooth ttnofen s yafus, seg yessusem. ulac asiwel n usekcal alelli.</string>
+    <string name="welcome_point_lifetime_title">weggur yiwen, tudert yiwet</string>
+    <string name="welcome_point_lifetime_body">melmi weggur yeɛmud, ader s akken yeffe: tizmilin yis tuggemt dagi, segment ibeddew weggur amaynu seg 0.</string>
+    <string name="welcome_point_detailed_title">idugen d useggas</string>
+    <string name="welcome_point_detailed_body">s izenzaren, rmed idugen d useggas n uzeit n useggas tigezzifin.</string>
+    <string name="welcome_privacy">akk tizmilin yal azrar s ufus-inek. ulac amiḍan, d usekcal ulac tarubaɛt n internet.</string>
+    <string name="welcome_start">beggu</string>
+    <string name="welcome_next">azwel</string>
+    <string name="welcome_allow">ssireg</string>
+    <string name="welcome_step">asqel %1$d, gis %2$d</string>
+    <string name="welcome_bluetooth_title">tbaɛutin bluetooth</string>
+    <string name="welcome_bluetooth_why">android ittnef n usekcal yesɛan tbaɛutin bluetooth achal anasen bluetooth sekcelin d wacu yestimen. d ayen yakin ylih akken ad izzin weggur ibeɛden n assugem, d wacu akken ad izzin weggur d weggur.</string>
+    <string name="welcome_bluetooth_with">s snat-a: weggur amuk ttnofen seg yessusem, ulac asiwel n usekcal.</string>
+    <string name="welcome_bluetooth_without">bedda snat-a: weggur bluetooth ulac ttnofen o. yisaɣ n usekcal yella, tzemred ad d-aseggaɛ laḥcen s izenzaren n usekcal.</string>
+    <string name="welcome_notifications_title">asnubgin</string>
+    <string name="welcome_notifications_why">tuttra tafziranit yettnef n service meqqren, android yettnef n usekcal akken ad ttnofen asnubgin mi ttamdal.</string>
+    <string name="welcome_notifications_with">s snat-a: asnubgin yay d ad ten-sken akken tuttra, d ayen akken ad ẓran tuttra tafziranit tettnef.</string>
+    <string name="welcome_notifications_without">bedda snat-a: tuttra tafziranit yella tettnef akka tuttnef. android glas ur ten-sken ara asnubgin-nsen.</string>
+    <string name="hibernation_title">kemmek teɛcud tettumeggru kceṛɛ ur tesɛid ara ara</string>
+    <string name="hibernation_body">android izzar usekcal i yeggan tarwa d kra seg yiseggasen, akka ylih ulac tettumeggru alamma tesnewliḍ application-nni. d ayen yuɣal n weḥed n ylih, kesed azzar-it akka tura.</string>
+    <string name="action_not_now">ur tura</string>
+
+    <string name="devices_in_use">sekcal n tura</string>
+    <string name="devices_retired">yerred</string>
+    <string name="devices_empty_title">weggur ulac</string>
+    <string name="devices_empty_body">sekcal weggur bluetooth, d ad d-sken dagi. weggur idugen sran tbaɛutin izenzaren.</string>
+    <string name="devices_generation">tazwart #%1$d</string>
+    <string name="devices_retired_on">yerred %1$s</string>
+    <string name="devices_connected_for">sekcal %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">akk weggur</string>
+    <string name="stats_sessions_since">%1$s seg %2$s</string>
+    <string name="stats_today">azlide</string>
+    <string name="stats_last_7">yiseggasen 7 ineggura</string>
+    <string name="stats_last_30">yiseggasen 30 ineggura</string>
+    <string name="stats_average_session">seggasen askudan</string>
+    <string name="stats_longest_session">seggasen agejdan</string>
+    <string name="stats_playing">audio n useggas</string>
+    <string name="stats_measured_span">tuttra n useggas</string>
+    <string name="stats_share">anezwu n useggas</string>
+    <string name="stats_playback_only_note">tuttra n useggas kan</string>
+    <string name="stats_daily_hours_30">yiseggasen n yimeɣnasen (30 yiseggasen)</string>
+    <string name="stats_by_pair">weggur s weggur</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · yerred</string>
+    <string name="chart_max">%1$s agejdan</string>
+
+    <string name="pair_fallback_title">weggur</string>
+    <string name="pair_back">ɣef uɣer</string>
+    <string name="pair_more">ugar</string>
+    <string name="pair_menu_rename">senɣel isem</string>
+    <string name="pair_menu_purchase">tizmilin n useggen</string>
+    <string name="pair_menu_retire">rred / isengel</string>
+    <string name="pair_menu_delete">kkes</string>
+    <string name="pair_lifetime">tudert akk n weggur yagi</string>
+    <string name="pair_retired_on">yerred %1$s</string>
+    <string name="pair_retired_with_reason">yerred %1$s · %2$s</string>
+    <string name="pair_connected_now">sekcal tura · %1$s</string>
+    <string name="pair_sessions">seggasen</string>
+    <string name="pair_average">askudan</string>
+    <string name="pair_longest">agejdan</string>
+    <string name="pair_since">seg %1$s</string>
+    <string name="pair_of_measured">anezwu n useggas</string>
+    <string name="pair_measured">tuttra n useggas</string>
+    <string name="pair_paid">iseggaɛ</string>
+    <string name="pair_per_hour">yiseggasen</string>
+    <string name="pair_bought">useggen</string>
+    <string name="pair_daily_hours_14">yiseggasen n yimeɣnasen (14 yiseggasen)</string>
+    <string name="pair_rename_title">senɣel isem n weggur</string>
+    <string name="pair_rename_label">isem</string>
+    <string name="pair_retire_title">rred weggur yagi</string>
+    <string name="pair_retire_label">tasafat (yeɛmud, tersaqel, tuɣal…)</string>
+    <string name="pair_retire_confirm">rred</string>
+    <string name="pair_retire_supporting">tudert tuggemt dagi. tikelt deg tis, weggur amaynu beg seg 0.</string>
+    <string name="pair_price_title">tizmilin n useggen</string>
+    <string name="pair_price_label">amahal (yiseggasen ifessisen)</string>
+    <string name="pair_price_supporting">yulin akken ad texseb amahal yiseggasen.</string>
+    <string name="pair_delete_title">kkes weggur yagi?</string>
+    <string name="pair_delete_body">akk seggasen ttujin gumi d kkes. ur kkan ara ad yuɣal.</string>
+
+    <string name="session_ongoing">seggasen n tura</string>
+    <string name="session_until">alamma %1$s</string>
+    <string name="session_playing">%1$s useggas</string>
+    <string name="session_recovered">d-aɣelfen</string>
+
+    <string name="settings_tracking">tuttra</string>
+    <string name="settings_detailed_title">tuttra tafziranit</string>
+    <string name="settings_detailed_body">rmed idugen d useggas. android yettnef n idugen i usekcal alelli, kra anect d asnubgin taqunit. bluetooth ttnofen ibeddew.</string>
+    <string name="settings_detailed_unavailable">ulac alamma d-aseggaɛ tbaɛutin bluetooth: usekcal yagi taznzagt kan connectedDevice, android 14+ d tbaɛutin bluetooth.</string>
+    <string name="settings_playback_only_title">tuttra n useggas kan</string>
+    <string name="settings_playback_only_body">tizmilin ttuxelqen yizeggasen n useggas i yiwen, ur yizeggasen n sekcal. seggasen ttujin s tuttra tafziranit kan d tuttra n useggas; isaɣ d kkes.</string>
+    <string name="settings_language">tutlayt</string>
+    <string name="settings_language_system">tutlayt n android</string>
+    <string name="settings_devices">inasiyen</string>
+    <string name="settings_devices_body">ader taseɣ akken ur d weggur — assugem n yiseɣ neɣ asnudgin — akken ad ɣelmeḍ tuttra-nsent.</string>
+    <string name="settings_device_subtitle">%1$s · tikira tamezwart %2$s</string>
+    <string name="settings_data">tizmilin</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">sekcal</string>
+    <string name="settings_import_warning">sekcal ay iseggel tizmilin akk n tura.</string>
+    <string name="settings_troubleshooting">afus n tefṛeḥṭ</string>
+    <string name="settings_battery_body">ma seggasen ur ttujin ara, ẓar akken ylih ur d-iseggel ǧǧa n battery — usekcal d-iɣellen ulac yettnef n isehsiyen ittuqqen alamma tesnewliḍ-tt.</string>
+    <string name="settings_battery_button">izenzaren n battery</string>
+    <string name="settings_battery_path">izenzaren → usekla → ylih → battery → ur isselsed.</string>
+    <string name="settings_hibernation_body">ma ylih d-temmutaɣ tarwa d kra seg yiseggasen, android ay izzar-itt akka yezgal ulac tuttra alamma tesnewliḍ application-nni. azzar-it ayen akken weggur ad kemmel tuttra ɣef warug i ur tesɛiḍ ara ara.</string>
+    <string name="settings_hibernation_on">android ay kkan ad izzar ylih.</string>
+    <string name="settings_hibernation_off">ylih ur isselsed akka ttnofen.</string>
+    <string name="settings_hibernation_button">izenzaren n usekla ur yettnef</string>
+    <string name="settings_about">ɣef</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — yiseggasen n weggur, yal azrar akka caev.</string>
+    <string name="settings_import_confirm_title">iseggel akk tizmilin?</string>
+    <string name="settings_import_confirm_body">sekcal n backup ay kkes inasiyen, weggur akka seggasen n tura.</string>
+
+    <string name="widget_lifetime_label">ylih · tudert</string>
+    <string name="widget_lifetime_description">yiseggasen n weggur, d asnubgin n tura sekcalen</string>
+    <string name="widget_activity_label">ylih · seggasen</string>
+    <string name="widget_activity_description">akk yiseggasen n weggur, azlide, 7 yiseggasen d 30 yiseggasen</string>
+    <string name="widget_chart_label">ylih · 30 yiseggasen</string>
+    <string name="widget_chart_description">yiseggasen n yimeɣnasen alamma seg 30 yiseggasen</string>
+
+    <string name="action_save">seggel</string>
+    <string name="action_cancel">ur tura</string>
+    <string name="action_delete">kkes</string>
+    <string name="action_import">sekcal</string>
+
+    <string name="channel_tracking">tuttra n weggur</string>
+    <string name="channel_tracking_description">d-sken mi ylih tazdayt idugen d useggas. android yettnef n idugen i usekcal alelli.</string>
+    <string name="notification_title">tuttra n yiseggasen n weggur</string>
+    <string name="notification_starting">ibeddew…</string>
+    <string name="notification_idle">alayje n weggur</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d sekcal · %2$s</item>
+        <item quantity="many">%1$d sekcal · %2$s</item>
+        <item quantity="other">%1$d sekcal · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d sekcal · %2$s · useggas</item>
+        <item quantity="many">%1$d sekcal · %2$s · useggas</item>
+        <item quantity="other">%1$d sekcal · %2$s · useggas</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">usekcal yagi sran tbaɛutin bluetooth akken ad tuttra idugen</string>
+    <string name="export_done">backup d-aseggaɛ</string>
+    <string name="export_failed">aseggaɛ yeggug</string>
+    <string name="import_failed">sekcal yeggug</string>
+    <string name="edit_failed">ur kkan ara ad d-aseggel sengel yagi</string>
+    <string name="error_could_not_open">ur kkan ara ad d-aseggel %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">sekcal %d seggasen</item>
+        <item quantity="many">sekcal %d seggasen</item>
+        <item quantity="other">sekcal %d seggasen</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d seggasen</item>
+        <item quantity="many">%d seggasen</item>
+        <item quantity="other">%d seggasen</item>
+    </plurals>
+</resources>

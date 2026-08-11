@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Georgian. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - თქვენი ცხოვრება ყურსასმენებში</string>
+
+    <string name="nav_headphones">ყურსასმენი</string>
+    <string name="nav_stats">სტატისტიკა</string>
+    <string name="nav_settings">პარამეტრები</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">მავთულიანი</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">უცნობი</string>
+
+    <string name="welcome_title">კეთილი იყოს თქვენი მობრძანება ylih-ში</string>
+    <string name="welcome_intro">ylih აღრიცხავს, რამდენ ხანს რჩება დაკავშირებული ყურსასმენების თითოეული წყვილი, რათა მომავალი წელი თქვენ მაინც შეძლოთ ერთი მნიშვნელოვანი კითხვის გადაჭრა წყვილის შესახებ: რამდენი საათი გაძრა ისინი?</string>
+    <string name="welcome_point_auto_title">დაკავშირება და დავიწყება</string>
+    <string name="welcome_point_auto_body">bluetooth ყურსასმენი ირეგისტრირება ავტომატურად, დაკავშირებისთანავე. არ სჭირდება რაიმე ფოновი პროცესი.</string>
+    <string name="welcome_point_lifetime_title">ერთი წყვილი, მთელი სიცოცხლე</string>
+    <string name="welcome_point_lifetime_body">როდესაც წყვილი გაფუჭდება, გამოიყენეთ: მისი ჯამი იქ იყრება და შემდეგი იგივე ყურსასმენის წყვილი თავიდან იწყება ნულიდან.</string>
+    <string name="welcome_point_detailed_title">მავთულიანი და ხმის ჩაწერა</string>
+    <string name="welcome_point_detailed_body">დეტალური მეთოდი, პარამეტრებში, დამატებული მავთულიანი ყურსასმენი და ზომავს, რამდენი დროის განმავლობაში იყო რეალურად მუსიკა.</string>
+    <string name="welcome_privacy">ყველაფერი ამ ტელეფონზე რჩება. არ არის ანგარიში და აპლიკაციას არ აქვს ინტერნეტის დაშვება.</string>
+    <string name="welcome_start">დაწყება</string>
+    <string name="welcome_next">შემდეგი</string>
+    <string name="welcome_allow">დაშვება</string>
+    <string name="welcome_step">ეტაპი %1$d %2$d-დან</string>
+    <string name="welcome_bluetooth_title">bluetooth წვდომა</string>
+    <string name="welcome_bluetooth_why">android-ი თავის თავში არ ეუბნება აპლიკაციას რომელი bluetooth მოწყობილობა დაკავშირდა და რა ჰქვია მას, თუ აპლიკაციას უფლება არ აქვს bluetooth-ზე წვდომა. ასე იცნობს ylih ყურსასმენის წყვილი მანქანის სტერეოდან და როგორ იცოდის ერთი წყვილი მეორეს.</string>
+    <string name="welcome_bluetooth_with">ამის შემთხვევაში: ყველა წყვილი დარეგისტრირდება დაკავშირებამდე, არაფერი არ რჩება აქტიური და არაფერი აგაკეთებელი.</string>
+    <string name="welcome_bluetooth_without">ამის გარეშე: bluetooth ყურსასმენი არ დარეგისტრირდება თავიდან. აპლიკაციის დანარჩენი ნაწილი მუშაობს და თქვენ შეძლებთ უფლება მოგვიანებით მიანიჭოთ android-ის აპლიკაციის პარამეტრებში.</string>
+    <string name="welcome_notifications_title">შეტყობინებები</string>
+    <string name="welcome_notifications_why">დეტალური მეთოდი ახორციელებს პატარა ფოనურ სერვისს, და android მოითხოვს ნებისმიერი აპლიკაციისგან, რომელიც ამას აკეთებს, მის შეტყობინება ხილული დარჩეს.</string>
+    <string name="welcome_notifications_with">ამის შემთხვევაში: შეტყობინება აჩვენებს რა ირეგისტრირება ახლა, რაც ერთადერთი ნიშანია, რომ დეტალური მეთოდი ცოცხალია.</string>
+    <string name="welcome_notifications_without">ამის გარეშე: დეტალური მეთოდი კვლავ მუშაობს და კვლავ რეგისტრირდება. android უბრალოდ არ აჩვენებს მის შეტყობინებას.</string>
+    <string name="hibernation_title">დაითვალი, სიტყვით რომ დაგვიწყა</string>
+    <string name="hibernation_body">android აჩერებს აპლიკაციებს, რომლებიც რამდენიმე თვე არ იყო გახსნილი და აბრუნებს მათ უფლებებს, რაც ylih-ს დაეტოვებდა რომელიმე რეგისტრაციის გარეშე. დავიწყება კი არის ის, რაზე ეს აპლიკაცია აკეთებს, ამიტომ ახლა ღირს გამორთვა.</string>
+    <string name="action_not_now">არა, ახლა არა</string>
+
+    <string name="devices_in_use">გამოყენებაში</string>
+    <string name="devices_retired">გამოყენების გარეთ</string>
+    <string name="devices_empty_title">ჯერ ყურსასმენი არ არის</string>
+    <string name="devices_empty_body">დაკავშირეთ bluetooth ყურსასმენის წყვილი და ისინი აქ გამოჩნდებიან. მავთულიანი ყურსასმენი საჭიროებს დეტალურ მეთოდს, პარამეტრებში.</string>
+    <string name="devices_generation">წყვილი #%1$d</string>
+    <string name="devices_retired_on">გამოყენების გარეთ %1$s</string>
+    <string name="devices_connected_for">დაკავშირებული %1$s</string>
+    <string name="devices_recent">%1$s / 7 დღე</string>
+
+    <string name="stats_title">ყველა ყურსასმენი</string>
+    <string name="stats_sessions_since">%1$s %2$s-დან</string>
+    <string name="stats_today">დღეს</string>
+    <string name="stats_last_7">გასული 7 დღე</string>
+    <string name="stats_last_30">გასული 30 დღე</string>
+    <string name="stats_average_session">საშუალო სესია</string>
+    <string name="stats_longest_session">ყველაზე გრძელი სესია</string>
+    <string name="stats_playing">აუდიო დაკვდება</string>
+    <string name="stats_measured_span">გაზომილი დაკვდებისთვის</string>
+    <string name="stats_share">დაკვდების წილი</string>
+    <string name="stats_playback_only_note">დაკვდების დროის დათვლა მხოლოდ</string>
+    <string name="stats_daily_hours_30">დღიური საათები (30 დღე)</string>
+    <string name="stats_by_pair">წყვილის მიხედვით</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · გამოყენების გარეთ</string>
+    <string name="chart_max">%1$s მაქს</string>
+
+    <string name="pair_fallback_title">წყვილი</string>
+    <string name="pair_back">უკან</string>
+    <string name="pair_more">მეტი</string>
+    <string name="pair_menu_rename">სახელის გადარქმევა</string>
+    <string name="pair_menu_purchase">ვარაუდი მიხედვით</string>
+    <string name="pair_menu_retire">გამოყენების გარეთ / შეცვლა</string>
+    <string name="pair_menu_delete">წაშლა</string>
+    <string name="pair_lifetime">ცხოვრება ამ წყვილზე</string>
+    <string name="pair_retired_on">გამოყენების გარეთ %1$s</string>
+    <string name="pair_retired_with_reason">გამოყენების გარეთ %1$s · %2$s</string>
+    <string name="pair_connected_now">დაკავშირებული ახლა · %1$s</string>
+    <string name="pair_sessions">სესიები</string>
+    <string name="pair_average">საშუალო</string>
+    <string name="pair_longest">ყველაზე გრძელი</string>
+    <string name="pair_since">%1$s-დან</string>
+    <string name="pair_of_measured">დაკვდების წილი</string>
+    <string name="pair_measured">გაზომილი დაკვდებისთვის</string>
+    <string name="pair_paid">გადახდილი</string>
+    <string name="pair_per_hour">საათზე</string>
+    <string name="pair_bought">ნაყიდი</string>
+    <string name="pair_daily_hours_14">დღიური საათები (14 დღე)</string>
+    <string name="pair_rename_title">წყვილის სახელის გადარქმევა</string>
+    <string name="pair_rename_label">სახელი</string>
+    <string name="pair_retire_title">ამ წყვილის გამოყენების გარეთ</string>
+    <string name="pair_retire_label">მიზეზი (გაფუჭდა, გაყიდა, დაიკარგა…)</string>
+    <string name="pair_retire_confirm">გამოყენების გარეთ</string>
+    <string name="pair_retire_supporting">ჯამი იქ ყინულია. იგივე მოწყობილობის ხელახლა დაკავშირება ახალი წყვილი იწყება ნულიდან.</string>
+    <string name="pair_price_title">გადახდილი ფასი</string>
+    <string name="pair_price_label">თანხა (მთელი ერთეული)</string>
+    <string name="pair_price_supporting">გამოყენებული ღირებულების ღირებულების ფიგურისთვის.</string>
+    <string name="pair_delete_title">ამ წყვილი წაიშალოს?</string>
+    <string name="pair_delete_body">თითოეული დარეგისტრირებული სესია წაიშალოს. ეს არ შეიძლება დაბრუნდეს.</string>
+
+    <string name="session_ongoing">მიმდინარე</string>
+    <string name="session_until">%1$s-მდე</string>
+    <string name="session_playing">%1$s დაკვდება</string>
+    <string name="session_recovered">აღდგინებული</string>
+
+    <string name="settings_tracking">ადგილმდებარეობის განსაზღვრა</string>
+    <string name="settings_detailed_title">დეტალური მეთოდი</string>
+    <string name="settings_detailed_body">დამატებული მავთულიანი ყურსასმენი და დაკვდების დროის დათვლა. android უბრალოდ რეგისტრირდება მავთულიანი კვამლის მოვლენები გაშვებული აპლიკაციისთვის, ასე რომ ეს განაგრძობს ჩხუბთან შეტყობინებას. bluetooth დაიცვა ყველაფერი.</string>
+    <string name="settings_detailed_unavailable">მიუწვდომელია, სანამ bluetooth წვდომა არ მინიჭებულია: ეს კომპილაცია მხოლოდ აცხადებს დაკავშირებული მოწყობილობის სერვის ტიპი, რომელიც android 14+ უკავშირდება bluetooth უფლებას.</string>
+    <string name="settings_playback_only_title">დაკვდების დათვლა მხოლოდ</string>
+    <string name="settings_playback_only_body">სტატისტიკა დაკვდების რეალური დროის დათვლა დაკავშირებული დროის ნაცვლად. სესიები მხოლოდ დეტალური მეთოდით გაზომილი დაკვდება; დანარჩენი დატოვებული.</string>
+    <string name="settings_language">ენა</string>
+    <string name="settings_language_system">სისტემის ენა</string>
+    <string name="settings_devices">მოწყობილობები</string>
+    <string name="settings_devices_body">მოხსნა რათა რომელი არ არის ყურსასმენი — მანქანის სტერეო ან დინამიკი — რომ გაჩერდეს რეგისტრაცია.</string>
+    <string name="settings_device_subtitle">%1$s · პირველად ნანახი %2$s</string>
+    <string name="settings_data">მონაცემები</string>
+    <string name="settings_export">json გატანა</string>
+    <string name="settings_import">აქვს</string>
+    <string name="settings_import_warning">აქვს შემცვლელი ყველაფერი ახლა შენახული.</string>
+    <string name="settings_troubleshooting">პრობლემის გადაჭრა</string>
+    <string name="settings_battery_body">თუ სესიები გაჩერდეს რეგისტრაციისთვის, შეამოწმეთ ylih ისა ქვემოთ ბატარეის ოპტიმიზაცია — აპლიკაცია შეჩერებული არასოდეს იღებს კავშირის გამოყვნა პროცესი და სანამ არ გახსნილი.</string>
+    <string name="settings_battery_button">ბატარეის პარამეტრები</string>
+    <string name="settings_battery_path">პარამეტრები → აპლიკაციები → ylih → ბატარეა → შეუზღუდო.</string>
+    <string name="settings_hibernation_body">თუ ylih არ გახსნილია რამდენიმე თვე, android აჩერებს და აბრუნებს მის უფლებებს, და ყველაფერი არეგისტრირდება სანამ არ გახსნილი. გამორთვა აქ თავის თავში ის არის რაც პირი დაითვალოთ მთელი სეზონი უბრალოდ აპლიკაციის დაწერთ.</string>
+    <string name="settings_hibernation_on">android შეიძლება შეაჩეროს ylih.</string>
+    <string name="settings_hibernation_off">ylih თავისუფალი და განაგრძობს რეგისტრაციას.</string>
+    <string name="settings_hibernation_button">გამოუყენებელი აპლიკაციის პარამეტრები</string>
+    <string name="settings_about">შესახებ</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — ყურსასმენის საათები, ადგილობრივი და სამუდამოდ.</string>
+    <string name="settings_import_confirm_title">შემცვლელი ყველა მონაცემები?</string>
+    <string name="settings_import_confirm_body">ამ რეზერვის აქვს წაშლა თითოეული მოწყობილობა, წყვილი და სესია ახლა შენახული.</string>
+
+    <string name="widget_lifetime_label">ylih · ცხოვრება</string>
+    <string name="widget_lifetime_description">საათები წყვილი, ცოცხალი ტაიმერი რაც დაკავშირებული</string>
+    <string name="widget_activity_label">ylih · საქმიანობა</string>
+    <string name="widget_activity_description">თითოეული წყვილის საათები ერთად, პლუს დღეს, 7 დღე და 30 დღე</string>
+    <string name="widget_chart_label">ylih · 30 დღე</string>
+    <string name="widget_chart_description">დღიური გაყვნა საათები გასული 30 დღის განმავლობაში</string>
+
+    <string name="action_save">შენახვა</string>
+    <string name="action_cancel">გაუქმება</string>
+    <string name="action_delete">წაშლა</string>
+    <string name="action_import">აქვს</string>
+
+    <string name="channel_tracking">ყურსასმენის მეთოდი</string>
+    <string name="channel_tracking_description">ნაჩვენები ylih უთხრა მავთულიანი ყურსასმენი და დაკვდება. android არ უგემის მავთულიანი უღელი მოვლენები აპლიკაციებისთვის არ გამოშვებული.</string>
+    <string name="notification_title">ყურსასმენის დროის მეთოდი</string>
+    <string name="notification_starting">დასაწყები…</string>
+    <string name="notification_idle">ელიან ყურსასმენი</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d დაკავშირებული · %2$s</item>
+        <item quantity="other">%1$d დაკავშირებული · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d დაკავშირებული · %2$s · დაკვდება</item>
+        <item quantity="other">%1$d დაკავშირებული · %2$s · დაკვდება</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">ეს კომპილაცია საჭიროებს bluetooth წვდომა მავთულიანი ყურსასმენი რეგისტრაციის წინ</string>
+    <string name="export_done">რეზერვი გატანილი</string>
+    <string name="export_failed">გატანა ბარდა</string>
+    <string name="import_failed">აქვს ბარდა</string>
+    <string name="error_could_not_open">არ შეძლო გახსნა %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">აქვს %d სესია</item>
+        <item quantity="other">აქვს %d სესიები</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d სესია</item>
+        <item quantity="other">%d სესიები</item>
+    </plurals>
+    <string name="edit_failed">ცვლილების შენახვა ვერ მოხერხდა</string>
+</resources>

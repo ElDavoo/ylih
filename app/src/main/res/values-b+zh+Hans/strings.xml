@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Simplified Chinese. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - 你的耳机人生</string>
+
+    <string name="nav_headphones">耳机</string>
+    <string name="nav_stats">统计</string>
+    <string name="nav_settings">设置</string>
+
+    <string name="kind_bluetooth">蓝牙</string>
+    <string name="kind_ble">le 音频</string>
+    <string name="kind_wired">有线</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">未知</string>
+
+    <string name="welcome_title">欢迎来到 ylih</string>
+    <string name="welcome_intro">ylih 会记录每副耳机连接的时间，这样多年后你仍然能回答最重要的问题：这副耳机能用多少小时？</string>
+    <string name="welcome_point_auto_title">连接后就忘记</string>
+    <string name="welcome_point_auto_body">蓝牙耳机会自动记录，从连接那一刻起。无需让应用保持运行。</string>
+    <string name="welcome_point_lifetime_title">一副耳机，一个生命周期</string>
+    <string name="welcome_point_lifetime_body">当一副耳机坏了，把它标记为已退休：它的总时间就冻结在那里，下次同样的设备连接时会从零开始新的一副。</string>
+    <string name="welcome_point_detailed_title">有线和播放</string>
+    <string name="welcome_point_detailed_body">在设置中打开详细追踪，可以添加有线耳机并测量实际播放的时间。</string>
+    <string name="welcome_privacy">所有数据都保存在你的手机上。没有账户，应用也没有互联网权限。</string>
+    <string name="welcome_start">开始使用</string>
+    <string name="welcome_next">下一步</string>
+    <string name="welcome_allow">允许</string>
+    <string name="welcome_step">第 %1$d 步，共 %2$d 步</string>
+    <string name="welcome_bluetooth_title">蓝牙访问权限</string>
+    <string name="welcome_bluetooth_why">安卓只有在应用拥有蓝牙访问权限时，才会告诉应用哪个蓝牙设备已连接以及它叫什么。这是 ylih 用来区分耳机和汽车音响的方法，也是识别不同耳机对的方法。</string>
+    <string name="welcome_bluetooth_with">有了它：每一副耳机从连接那一刻起就被记录，无需后台运行任何东西。</string>
+    <string name="welcome_bluetooth_without">没有它：蓝牙耳机完全不会被记录。应用的其他部分仍然可用，你可以稍后在安卓应用设置中授予权限。</string>
+    <string name="welcome_notifications_title">通知</string>
+    <string name="welcome_notifications_why">详细追踪会运行一个小型后台服务，安卓要求任何这样做的应用都要在运行时保持通知可见。</string>
+    <string name="welcome_notifications_with">有了它：通知会显示正在记录的内容，这是详细追踪运行的唯一标志。</string>
+    <string name="welcome_notifications_without">没有它：详细追踪仍然会运行并记录。安卓只是不会显示其通知。</string>
+    <string name="hibernation_title">即使你忘记了也继续计时</string>
+    <string name="hibernation_body">安卓会暂停几个月内未打开的应用并撤销其权限，这会导致 ylih 不记录任何内容直到你再次打开它。被遗忘正是这个应用存在的原因，所以现在关闭它值得。</string>
+    <string name="action_not_now">暂不</string>
+
+    <string name="devices_in_use">在使用中</string>
+    <string name="devices_retired">已退休</string>
+    <string name="devices_empty_title">还没有耳机</string>
+    <string name="devices_empty_body">连接一副蓝牙耳机，它们就会出现在这里。有线耳机需要在设置中打开详细追踪。</string>
+    <string name="devices_generation">一代 #%1$d</string>
+    <string name="devices_retired_on">已退休 %1$s</string>
+    <string name="devices_connected_for">已连接 %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">所有耳机</string>
+    <string name="stats_sessions_since">%1$s 自 %2$s 起</string>
+    <string name="stats_today">今天</string>
+    <string name="stats_last_7">过去 7 天</string>
+    <string name="stats_last_30">过去 30 天</string>
+    <string name="stats_average_session">平均会话</string>
+    <string name="stats_longest_session">最长会话</string>
+    <string name="stats_playing">音频播放</string>
+    <string name="stats_measured_span">测量播放时间</string>
+    <string name="stats_share">播放占比</string>
+    <string name="stats_playback_only_note">仅计数播放时间</string>
+    <string name="stats_daily_hours_30">每日小时数（30 天）</string>
+    <string name="stats_by_pair">按耳机对</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · 已退休</string>
+    <string name="chart_max">%1$s 最大</string>
+
+    <string name="pair_fallback_title">耳机对</string>
+    <string name="pair_back">返回</string>
+    <string name="pair_more">更多</string>
+    <string name="pair_menu_rename">重命名</string>
+    <string name="pair_menu_purchase">购买信息</string>
+    <string name="pair_menu_retire">退休 / 已更换</string>
+    <string name="pair_menu_delete">删除</string>
+    <string name="pair_lifetime">这副耳机的总生命周期</string>
+    <string name="pair_retired_on">已退休 %1$s</string>
+    <string name="pair_retired_with_reason">已退休 %1$s · %2$s</string>
+    <string name="pair_connected_now">现在已连接 · %1$s</string>
+    <string name="pair_sessions">会话</string>
+    <string name="pair_average">平均</string>
+    <string name="pair_longest">最长</string>
+    <string name="pair_since">自 %1$s 起</string>
+    <string name="pair_of_measured">播放占比</string>
+    <string name="pair_measured">测量播放时间</string>
+    <string name="pair_paid">已支付</string>
+    <string name="pair_per_hour">每小时</string>
+    <string name="pair_bought">购买</string>
+    <string name="pair_daily_hours_14">每日小时数（14 天）</string>
+    <string name="pair_rename_title">重命名耳机对</string>
+    <string name="pair_rename_label">名称</string>
+    <string name="pair_retire_title">退休这副耳机</string>
+    <string name="pair_retire_label">原因（坏了、卖出、丢失...）</string>
+    <string name="pair_retire_confirm">退休</string>
+    <string name="pair_retire_supporting">总时间在这里冻结。重新连接同一设备会从零开始新的一代。</string>
+    <string name="pair_price_title">支付价格</string>
+    <string name="pair_price_label">金额（整数单位）</string>
+    <string name="pair_price_supporting">用于计算每小时成本。</string>
+    <string name="pair_delete_title">删除这副耳机？</string>
+    <string name="pair_delete_body">为它记录的每个会话也会被删除。这不能撤销。</string>
+
+    <string name="session_ongoing">进行中</string>
+    <string name="session_until">直到 %1$s</string>
+    <string name="session_playing">%1$s 播放</string>
+    <string name="session_recovered">已恢复</string>
+
+    <string name="settings_tracking">追踪</string>
+    <string name="settings_detailed_title">详细追踪</string>
+    <string name="settings_detailed_body">添加有线耳机并测量播放时间。安卓只会将有线插头事件传递给正在运行的应用，因此这会保持一个静默通知。蓝牙无论如何都会被追踪。</string>
+    <string name="settings_detailed_unavailable">不可用，直到授予蓝牙访问权限：此版本只声明了 connectedDevice 服务类型，安卓 14+ 会将其与蓝牙权限关联。</string>
+    <string name="settings_playback_only_title">仅计数播放</string>
+    <string name="settings_playback_only_body">统计计数实际播放音频的时间，而不是连接时间。只有使用详细追踪记录的会话才测量播放时间；其他的被排除。</string>
+    <string name="settings_language">语言</string>
+    <string name="settings_language_system">系统语言</string>
+    <string name="settings_devices">设备</string>
+    <string name="settings_devices_body">取消选中不是耳机的任何东西 — 汽车音响或扬声器 — 以停止记录它。</string>
+    <string name="settings_device_subtitle">%1$s · 首次看到 %2$s</string>
+    <string name="settings_data">数据</string>
+    <string name="settings_export">导出 json</string>
+    <string name="settings_import">导入</string>
+    <string name="settings_import_warning">导入会替换当前存储的所有内容。</string>
+    <string name="settings_troubleshooting">故障排查</string>
+    <string name="settings_battery_body">如果会话停止被记录，检查 ylih 是否豁免电池优化 — 一个被强行停止的应用将不会再收到连接广播，直到它被打开。</string>
+    <string name="settings_battery_button">电池设置</string>
+    <string name="settings_battery_path">设置 → 应用 → ylih → 电池 → 不限制。</string>
+    <string name="settings_hibernation_body">如果 ylih 几个月内未打开，安卓会暂停它并撤销其权限，这样就不会再记录任何内容，直到你打开它。关闭这一点是让一副耳机在你很久没想起这个应用的整个季节里继续计时的方法。</string>
+    <string name="settings_hibernation_on">安卓可能会暂停 ylih。</string>
+    <string name="settings_hibernation_off">ylih 豁免且继续记录。</string>
+    <string name="settings_hibernation_button">未使用的应用设置</string>
+    <string name="settings_about">关于</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — 耳机小时数，本地保存且永久保存。</string>
+    <string name="settings_import_confirm_title">替换所有数据？</string>
+    <string name="settings_import_confirm_body">导入此备份会删除现在存储的每个设备、对和会话。</string>
+
+    <string name="widget_lifetime_label">ylih · 生命周期</string>
+    <string name="widget_lifetime_description">每对的小时数，带有当前连接的实时计时器</string>
+    <string name="widget_activity_label">ylih · 活动</string>
+    <string name="widget_activity_description">每对的总小时数，加上今天、7 天和 30 天</string>
+    <string name="widget_chart_label">ylih · 30 天</string>
+    <string name="widget_chart_description">过去 30 天的每日听音小时数</string>
+
+    <string name="action_save">保存</string>
+    <string name="action_cancel">取消</string>
+    <string name="action_delete">删除</string>
+    <string name="action_import">导入</string>
+
+    <string name="channel_tracking">耳机追踪</string>
+    <string name="channel_tracking_description">在 ylih 监视有线耳机和播放时显示。安卓不会将有线插头事件传递给未运行的应用。</string>
+    <string name="notification_title">正在追踪耳机时间</string>
+    <string name="notification_starting">启动中...</string>
+    <string name="notification_idle">等待耳机</string>
+    <plurals name="notification_active">
+        <item quantity="other">%1$d 已连接 · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="other">%1$d 已连接 · %2$s · 播放中</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">此版本需要蓝牙访问权限才能追踪有线耳机</string>
+    <string name="export_done">备份已导出</string>
+    <string name="export_failed">导出失败</string>
+    <string name="import_failed">导入失败</string>
+    <string name="edit_failed">无法保存该更改</string>
+    <string name="error_could_not_open">无法打开 %1$s</string>
+    <plurals name="import_done">
+        <item quantity="other">已导入 %d 个会话</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="other">%d 个会话</item>
+    </plurals>
+</resources>

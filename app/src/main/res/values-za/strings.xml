@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Zhuang. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - nyi ndungz nyungh caev</string>
+
+    <string name="nav_headphones">ndungz nyungh</string>
+    <string name="nav_stats">gunz doengj</string>
+    <string name="nav_settings">seggae wuenh</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le gunz</string>
+    <string name="kind_wired">liuen seungj</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">bun heiz</string>
+
+    <string name="welcome_title">caev haj nyungz ylih</string>
+    <string name="welcome_intro">ylih yengh gvaf ndungz nyungh seungj doengx ndungh haj, hoeuq nhat youq mboen seih gajnz yengh sawj: ndungz nyungh deij seij gunz?</string>
+    <string name="welcome_point_auto_title">joengj liaez yenj mboq</string>
+    <string name="welcome_point_auto_body">ndungz bluetooth yengh gvaf seih doengx wuenh, doengx gyaez joengj. mboq youq app caev seih.</string>
+    <string name="welcome_point_lifetime_title">ndungz haeq, caev haeq</string>
+    <string name="welcome_point_lifetime_body">ndungz deij youq, youq souj: caev gunz youq deij caev nih, seungj cuz muenj deij youq caev.</string>
+    <string name="welcome_point_detailed_title">liuen seungj na gunz</string>
+    <string name="welcome_point_detailed_body">seggae wuenh, caev seggae, joengj liuen seungj na gunz youq seih.</string>
+    <string name="welcome_privacy">caev mboq youq njei fwnzangx. bun yuenh, na app bun internet doengz.</string>
+    <string name="welcome_start">caev seih</string>
+    <string name="welcome_next">seungj cuz</string>
+    <string name="welcome_allow">gvaf</string>
+    <string name="welcome_step">seungj %1$d, gya %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth doengz</string>
+    <string name="welcome_bluetooth_why">android gvaf app youq bluetooth doengz, cauq gaeuq bluetooth seuj joengj, caev ylih youq ndungz na seuj, na youq ndungz haeq.</string>
+    <string name="welcome_bluetooth_with">youq: ndungz haeq gvaf seih doengx, mboq seih.</string>
+    <string name="welcome_bluetooth_without">bun youq: bluetooth ndungz bun gvaf o. app seungj youq, na nyi gvaf seih hoeuq app seggae.</string>
+    <string name="welcome_notifications_title">ndé ndonga</string>
+    <string name="welcome_notifications_why">ndé ndonga a búe a service muanda a súk, na android a níe kóm app na ta na kóm a búe ndé ndonga.</string>
+    <string name="welcome_notifications_with">a búe: ndé ndonga a súk kóm a rek muanda a búe, kóm a búe ndé ndonga a súk.</string>
+    <string name="welcome_notifications_without">kóm búe: ndé ndonga a súk na a rek muanda. android kóm a súk a ndé ndonga o.</string>
+    <string name="hibernation_title">deij nyi seih gajnz caev</string>
+    <string name="hibernation_body">android youq app bun seih duengq seungj na youq doengz, caev ylih bun seih hoeuq nyi seih. deij bun seih gajnz app, kboq youq seih o.</string>
+    <string name="action_not_now">bun gaeuq</string>
+
+    <string name="devices_in_use">seih youq</string>
+    <string name="devices_retired">youq</string>
+    <string name="devices_empty_title">bun youq ndungz</string>
+    <string name="devices_empty_body">joengj ndungz bluetooth, youq hen. ndungz liuen seungj youq seggae wuenh.</string>
+    <string name="devices_generation">seungj #%1$d</string>
+    <string name="devices_retired_on">youq %1$s</string>
+    <string name="devices_connected_for">seih %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">ndungz caev</string>
+    <string name="stats_sessions_since">%1$s doengx %2$s</string>
+    <string name="stats_today">ndieq</string>
+    <string name="stats_last_7">ndieq 7 doengx</string>
+    <string name="stats_last_30">ndieq 30 doengx</string>
+    <string name="stats_average_session">seih caeuq</string>
+    <string name="stats_longest_session">seih doengx</string>
+    <string name="stats_playing">gunz seih</string>
+    <string name="stats_measured_span">gunz youq seih</string>
+    <string name="stats_share">gunz seih</string>
+    <string name="stats_playback_only_note">gunz o</string>
+    <string name="stats_daily_hours_30">gunz ndieq (30 ndieq)</string>
+    <string name="stats_by_pair">ndungz by</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · youq</string>
+    <string name="chart_max">%1$s doengx</string>
+
+    <string name="pair_fallback_title">ndungz</string>
+    <string name="pair_back">caev haj</string>
+    <string name="pair_more">seungj</string>
+    <string name="pair_menu_rename">seungj haeq</string>
+    <string name="pair_menu_purchase">gvuq gunz</string>
+    <string name="pair_menu_retire">youq / youq</string>
+    <string name="pair_menu_delete">souj</string>
+    <string name="pair_lifetime">ndungz caev gunz</string>
+    <string name="pair_retired_on">youq %1$s</string>
+    <string name="pair_retired_with_reason">youq %1$s · %2$s</string>
+    <string name="pair_connected_now">seih youq · %1$s</string>
+    <string name="pair_sessions">seih</string>
+    <string name="pair_average">caeuq</string>
+    <string name="pair_longest">doengx</string>
+    <string name="pair_since">doengx %1$s</string>
+    <string name="pair_of_measured">gunz seih</string>
+    <string name="pair_measured">gunz youq seih</string>
+    <string name="pair_paid">gvuq</string>
+    <string name="pair_per_hour">gunz by haeq</string>
+    <string name="pair_bought">gvuq</string>
+    <string name="pair_daily_hours_14">gunz ndieq (14 ndieq)</string>
+    <string name="pair_rename_title">seungj haeq ndungz</string>
+    <string name="pair_rename_label">haeq</string>
+    <string name="pair_retire_title">youq ndungz yien</string>
+    <string name="pair_retire_label">raeuq (youq, youq, youq…)</string>
+    <string name="pair_retire_confirm">youq</string>
+    <string name="pair_retire_supporting">gunz youq nih. seuh seuj joengj ndungz caev o.</string>
+    <string name="pair_price_title">gvuq gunz</string>
+    <string name="pair_price_label">vei (haeq gunz)</string>
+    <string name="pair_price_supporting">gunz by haeq.</string>
+    <string name="pair_delete_title">souj ndungz yien?</string>
+    <string name="pair_delete_body">seih caev souj muq. bun youq o.</string>
+
+    <string name="session_ongoing">seih youq</string>
+    <string name="session_until">kboq %1$s</string>
+    <string name="session_playing">%1$s gunz</string>
+    <string name="session_recovered">gvaf</string>
+
+    <string name="settings_tracking">seih</string>
+    <string name="settings_detailed_title">seih youq</string>
+    <string name="settings_detailed_body">joengj liuen seungj na gunz youq. android youq liuen seungj app seih, kboq youq notification. bluetooth seih caev o.</string>
+    <string name="settings_detailed_unavailable">bun youq, kboq youq bluetooth doengz: app youq connectedDevice service, android 14+ youq bluetooth doengz.</string>
+    <string name="settings_playback_only_title">gunz o</string>
+    <string name="settings_playback_only_body">gunz gunz seih gunz, bun seih gunz. seih youq seih gunz o; seih bun youq.</string>
+    <string name="settings_language">haeq</string>
+    <string name="settings_language_system">haeq android</string>
+    <string name="settings_devices">seuj</string>
+    <string name="settings_devices_body">souj ndungz bun o — seuj sae na boq — kboq souj seih.</string>
+    <string name="settings_device_subtitle">%1$s · seih youq %2$s</string>
+    <string name="settings_data">gunz</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">youq</string>
+    <string name="settings_import_warning">youq youq caev gunz youq.</string>
+    <string name="settings_troubleshooting">seih raeuq</string>
+    <string name="settings_battery_body">seih bun seih, gvaf ylih bun battery youq — app youq seih bun youq, kboq seih o.</string>
+    <string name="settings_battery_button">battery seggae</string>
+    <string name="settings_battery_path">seggae → apps → ylih → battery → bun youq.</string>
+    <string name="settings_hibernation_body">ylih bun seih duengq seungj, android youq o na youq doengz, bun seih hoeuq nyi seih. seih youq ndungz caev seungj nyi bun ylih.</string>
+    <string name="settings_hibernation_on">android youq ylih o.</string>
+    <string name="settings_hibernation_off">ylih bun youq na seih.</string>
+    <string name="settings_hibernation_button">seggae app bun seih</string>
+    <string name="settings_about">gvuq</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — ndungz gunz, youq njei na caev.</string>
+    <string name="settings_import_confirm_title">youq caev gunz?</string>
+    <string name="settings_import_confirm_body">youq backup souj seuj, ndungz na seih youq.</string>
+
+    <string name="widget_lifetime_label">ylih · caev caev</string>
+    <string name="widget_lifetime_description">gunz ndungz, youq timer seih</string>
+    <string name="widget_activity_label">ylih · seih</string>
+    <string name="widget_activity_description">gunz ndungz caev, na ndieq, 7 ndieq na 30 ndieq</string>
+    <string name="widget_chart_label">ylih · 30 ndieq</string>
+    <string name="widget_chart_description">gunz ndieq 30 ndieq</string>
+
+    <string name="action_save">youq</string>
+    <string name="action_cancel">bun gaeuq</string>
+    <string name="action_delete">souj</string>
+    <string name="action_import">youq</string>
+
+    <string name="channel_tracking">ndungz seih</string>
+    <string name="channel_tracking_description">hen kboq ylih liuen seungj na gunz seih. android bun youq liuen seungj app bun seih o.</string>
+    <string name="notification_title">ndungz seih gunz</string>
+    <string name="notification_starting">caev…</string>
+    <string name="notification_idle">gvaf ndungz</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d seih · %2$s</item>
+        <item quantity="many">%1$d seih · %2$s</item>
+        <item quantity="other">%1$d seih · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d seih · %2$s · gunz</item>
+        <item quantity="many">%1$d seih · %2$s · gunz</item>
+        <item quantity="other">%1$d seih · %2$s · gunz</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">app youq bluetooth doengz kboq liuen seungj seih</string>
+    <string name="export_done">backup youq</string>
+    <string name="export_failed">youq raeuq</string>
+    <string name="import_failed">youq raeuq</string>
+    <string name="edit_failed">bun youq seih youq</string>
+    <string name="error_could_not_open">bun youq %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">youq %d seih</item>
+        <item quantity="many">youq %d seih</item>
+        <item quantity="other">youq %d seih</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d seih</item>
+        <item quantity="many">%d seih</item>
+        <item quantity="other">%d seih</item>
+    </plurals>
+</resources>

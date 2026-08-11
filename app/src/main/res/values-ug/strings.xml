@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Uyghur. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - سىز ئاۋاز بولۇمى ۋاقتى</string>
+
+    <string name="nav_headphones">ئاۋاز بولۇمى</string>
+    <string name="nav_stats">ئېلان</string>
+    <string name="nav_settings">تەڭشەلىك</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">سىممىلىق</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">نامەلۇم</string>
+
+    <string name="welcome_title">ylih غا خوش كەلدىڭىز</string>
+    <string name="welcome_intro">ylih ھەر بىر ئاۋاز بولۇمى قاچان ئالاقتاشقان ۋاقتنى ساقلايدۇ</string>
+    <string name="welcome_point_auto_title">قولۇ ئۆرتىلېشىپ ئۇنتىشىش</string>
+    <string name="welcome_point_auto_body">bluetooth ئاۋاز بولۇمى ئۆزلىرىدىن ساقلىنىدۇ</string>
+    <string name="welcome_point_lifetime_title">بىر جۈپ بىر ئۆمۈر</string>
+    <string name="welcome_point_lifetime_body">ئاۋاز بولۇمى ئۆلسە ئونى پېنسىيىگە چىقار</string>
+    <string name="welcome_point_detailed_title">سىملىق ۋە پىسىق</string>
+    <string name="welcome_point_detailed_body">تولىق مولازىمەت سىملىق ئاۋاز بولۇمى ۋە پىسىق ۋاقتى قوشىدۇ</string>
+    <string name="welcome_privacy">ھەممە نەرسە بۇ تېلېفوندا قىلىنىدۇ</string>
+    <string name="welcome_start">باشلا</string>
+    <string name="welcome_next">كېيىن</string>
+    <string name="welcome_allow">رۇخسەت بەر</string>
+    <string name="welcome_step">پې %1$d - %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth زىيارەت</string>
+    <string name="welcome_bluetooth_why">ئەندرويد ئاۋاز بولۇمىنىڭ ئادرېسىنى بىلىشى ئۈچۈن bluetooth ئىجازىتىنى چېكىش كېرەك</string>
+    <string name="welcome_bluetooth_with">ئاۋاز بولۇمى ئۆزلىرىدىن ساقلىنىدۇ</string>
+    <string name="welcome_bluetooth_without">bluetooth ئاۋاز بولۇمى ساقلىنمايدۇ</string>
+    <string name="welcome_notifications_title">خەتتە</string>
+    <string name="welcome_notifications_why">تولىق مولازىمەت فون خىزمىتىنى باشلايدۇ</string>
+    <string name="welcome_notifications_with">خەتتە تولىق مولازىمەتنى كۆرسىتىدۇ</string>
+    <string name="welcome_notifications_without">تولىق مولازىمەت ئىشلەيدۇ</string>
+    <string name="hibernation_title">سىز ئونتسىڭىز بىلەن مولازىمەت قىلىۋ</string>
+    <string name="hibernation_body">ئەندرويد چۈشۈنتۈرۈشتە قايتا ئېتىپ قىلىشقا باشلایدۇ</string>
+    <string name="action_not_now">مۈلتۈمە بولماسمىن</string>
+
+    <string name="devices_in_use">ئىشتىتىلىۋاتىدۇ</string>
+    <string name="devices_retired">پېنسىيىلاشتى</string>
+    <string name="devices_empty_title">ھېچقايسى ئاۋاز بولۇمى يوق</string>
+    <string name="devices_empty_body">bluetooth ئاۋاز بولۇمى قولۇ ئۆرتىلېشىپ بىلەن ئالاقتاش</string>
+    <string name="devices_generation">جۈپ #%1$d</string>
+    <string name="devices_retired_on">پېنسىيىلاشتى %1$s</string>
+    <string name="devices_connected_for">قولۇ ئۆرتىلاشتى %1$s</string>
+    <string name="devices_recent">%1$s / 7 كۈن</string>
+
+    <string name="stats_title">بارلىق ئاۋاز بولۇمى</string>
+    <string name="stats_sessions_since">%1$s - %2$s</string>
+    <string name="stats_today">بۈگۈن</string>
+    <string name="stats_last_7">ئاخىرقى 7 كۈن</string>
+    <string name="stats_last_30">ئاخىرقى 30 كۈن</string>
+    <string name="stats_average_session">ئورتىچە سەئاي</string>
+    <string name="stats_longest_session">ئەڭ ئۇزۇن سەئاي</string>
+    <string name="stats_playing">ئاۋاز چال</string>
+    <string name="stats_measured_span">پىسىق ۈچۈن ئۆلچەندى</string>
+    <string name="stats_share">پىسىق پايى</string>
+    <string name="stats_playback_only_note">پىسىق ۋاقتى بىلى</string>
+    <string name="stats_daily_hours_30">كۈندىلىك سائات (30 كۈن)</string>
+    <string name="stats_by_pair">جۈپ بويۇنچە</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · پېنسىيىلاشتى</string>
+    <string name="chart_max">%1$s ئەڭ كۆپ</string>
+
+    <string name="pair_fallback_title">جۈپ</string>
+    <string name="pair_back">كۆپ</string>
+    <string name="pair_more">تېخى</string>
+    <string name="pair_menu_rename">ئات ئۆزگەرت</string>
+    <string name="pair_menu_purchase">سېتىۋالغان ئۇچۇن</string>
+    <string name="pair_menu_retire">پېنسىيىلاشتۇرۇش / ئۆزگىرت</string>
+    <string name="pair_menu_delete">ئۆچۈر</string>
+    <string name="pair_lifetime">بۇ جۈپنىڭ ئۆمۈرى</string>
+    <string name="pair_retired_on">پېنسىيىلاشتى %1$s</string>
+    <string name="pair_retired_with_reason">پېنسىيىلاشتى %1$s · %2$s</string>
+    <string name="pair_connected_now">قولۇ ئۆرتىلاشتى %1$s</string>
+    <string name="pair_sessions">سەئايلار</string>
+    <string name="pair_average">ئورتىچە</string>
+    <string name="pair_longest">ئەڭ ئۇزۇن</string>
+    <string name="pair_since">%1$s چىقىپ</string>
+    <string name="pair_of_measured">پىسىق پايى</string>
+    <string name="pair_measured">پىسىق ۈچۈن ئۆلچەندى</string>
+    <string name="pair_paid">تۆلەندى</string>
+    <string name="pair_per_hour">سائات ۈچۈن</string>
+    <string name="pair_bought">سېتىۋالغان</string>
+    <string name="pair_daily_hours_14">كۈندىلىك سائات (14 كۈن)</string>
+    <string name="pair_rename_title">جۈپنىڭ ئاتىنى ئۆزگىرت</string>
+    <string name="pair_rename_label">ئات</string>
+    <string name="pair_retire_title">بۇ جۈپنى پېنسىيىلاشتۇرۇش</string>
+    <string name="pair_retire_label">سەۋەب (ئۆلگەن ۋە.)</string>
+    <string name="pair_retire_confirm">پېنسىيىلاشتۇرۇش</string>
+    <string name="pair_retire_supporting">جەمئۆسۈ بۇ يەردە توختايدۇ</string>
+    <string name="pair_price_title">سېتىۋالغان نارخى</string>
+    <string name="pair_price_label">مىقدار (پۈتۈن بىرلىكلىرى)</string>
+    <string name="pair_price_supporting">سائات ۈچۈن نارخى ۈچۈن</string>
+    <string name="pair_delete_title">بۇ جۈپنى ئۆچۈرسۈمۈ?</string>
+    <string name="pair_delete_body">بارلىق سەئايلار ئۆچۈرۈلىدۇ</string>
+
+    <string name="session_ongoing">ھازىر داۋاملاشتۇرۇلماقتا</string>
+    <string name="session_until">%1$s غىچە</string>
+    <string name="session_playing">%1$s پىسىق</string>
+    <string name="session_recovered">قايتا تىكلىندى</string>
+
+    <string name="settings_tracking">ئىزدەش</string>
+    <string name="settings_detailed_title">تولىق مولازىمەت</string>
+    <string name="settings_detailed_body">سىملىق ئاۋاز بولۇمى ۋە پىسىق ۋاقتى قوشىدۇ</string>
+    <string name="settings_detailed_unavailable">bluetooth رۇخسەتىنى چېكىش كېرەك</string>
+    <string name="settings_playback_only_title">پىسىق ۋاقتى بىلى</string>
+    <string name="settings_playback_only_body">ئېلان پىسىق ۋاقتى بىلى</string>
+    <string name="settings_language">تىل</string>
+    <string name="settings_language_system">سىستېما تىلى</string>
+    <string name="settings_devices">ئۈسكۈنە</string>
+    <string name="settings_devices_body">ئاۋاز بولۇمىنى تاللا</string>
+    <string name="settings_device_subtitle">%1$s · بىرىنچى جېھەت %2$s</string>
+    <string name="settings_data">سانلىق مەلۇمات</string>
+    <string name="settings_export">json چىقار</string>
+    <string name="settings_import">كىرگۈز</string>
+    <string name="settings_import_warning">كىرگۈزۈش بارلىق سانلىق مەلۇماتنى ئالماشتۇرىدۇ</string>
+    <string name="settings_troubleshooting">مەسىلە ھەل قىل</string>
+    <string name="settings_battery_body">باتارېيىنى ياخشىلاش</string>
+    <string name="settings_battery_button">باتارېيىنىڭ تەڭشەلىكى</string>
+    <string name="settings_battery_path">تەڭشەلىك → ئۈسكۈنە → ylih → باتارېيى → چەكسىز</string>
+    <string name="settings_hibernation_body">ylih چۈشۈنتۈرۈش دېۋرىسىدە قايتا ئېتىپ قىلىنىدۇ</string>
+    <string name="settings_hibernation_on">ئەندرويد ylih قايتا ئېتىپ قىلىشى مۇمكىن</string>
+    <string name="settings_hibernation_off">ylih قايتا ئېتىپ قىلىنمايدۇ</string>
+    <string name="settings_hibernation_button">ئىشلىتىلمىگەن ئۈسكۈنىنىڭ تەڭشەلىكى</string>
+    <string name="settings_about">ھەققىدە</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — ئاۋاز بولۇمىنىڭ سائاتى</string>
+    <string name="settings_import_confirm_title">بارلىق سانلىق مەلۇماتنى ئالماشتۇرسۇمۈ?</string>
+    <string name="settings_import_confirm_body">كىرگۈزۈش بارلىق سانلىق مەلۇماتنى ئۆچۈرىدۇ</string>
+
+    <string name="widget_lifetime_label">ylih · ئۆمۈر</string>
+    <string name="widget_lifetime_description">جۈپ سائاتى قولۇ ئۆرتىلاشتى تايمېر بىلەن</string>
+    <string name="widget_activity_label">ylih · پېئالىي</string>
+    <string name="widget_activity_description">جۈپ سائاتى بۈگۈن 7 كۈن 30 كۈن</string>
+    <string name="widget_chart_label">ylih · 30 كۈن</string>
+    <string name="widget_chart_description">30 كۈندە كۈندىلىك سائات</string>
+
+    <string name="action_save">ساقلا</string>
+    <string name="action_cancel">بىكار</string>
+    <string name="action_delete">ئۆچۈر</string>
+    <string name="action_import">كىرگۈز</string>
+
+    <string name="channel_tracking">ئاۋاز بولۇمى ئىزدەش</string>
+    <string name="channel_tracking_description">ylih سىملىق ئاۋاز بولۇمى ئىزدىيدۇ</string>
+    <string name="notification_title">ئاۋاز بولۇمى ۋاقتى ئىزدەش</string>
+    <string name="notification_starting">باشلىنىۋاتىدۇ...</string>
+    <string name="notification_idle">ئاۋاز بولۇمى ساقلاش</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d قولۇ ئۆرتىلاشتى · %2$s</item>
+        <item quantity="other">%1$d قولۇ ئۆرتىلاشتى · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d قولۇ ئۆرتىلاشتى · %2$s · پىسىق</item>
+        <item quantity="other">%1$d قولۇ ئۆرتىلاشتى · %2$s · پىسىق</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">تولىق مولازىمەت bluetooth ئىجازىتىنى چېكىش كېرەك</string>
+    <string name="export_done">بەكەت چىقىپ بولدى</string>
+    <string name="export_failed">چىقار مەغلۇپ</string>
+    <string name="import_failed">كىرگۈز مەغلۇپ</string>
+    <string name="edit_failed">ئۆزگىرتىلمىدى</string>
+    <string name="error_could_not_open">%1$s ئاچالمىدى</string>
+    <plurals name="import_done">
+        <item quantity="one">%d سەئاي كىرگۈزۈلدى</item>
+        <item quantity="other">%d سەئاي كىرگۈزۈلدى</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d سەئاي</item>
+        <item quantity="other">%d سەئاي</item>
+    </plurals>
+</resources>

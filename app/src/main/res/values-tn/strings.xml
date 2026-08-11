@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Tswana. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - dipelo tsa gago mo kopong</string>
+
+    <string name="nav_headphones">kopong</string>
+    <string name="nav_stats">dikeletso</string>
+    <string name="nav_settings">diakantsho</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">kopane</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ga ise</string>
+
+    <string name="welcome_title">welcome go ylih</string>
+    <string name="welcome_intro">ylih e rekota gore kopong tsa gago di dumile gabedi bokae</string>
+    <string name="welcome_point_auto_title">kopana le go lebala</string>
+    <string name="welcome_point_auto_body">kopong tsa bluetooth di rekota go go otlhe pele</string>
+    <string name="welcome_point_lifetime_title">kopong e le nngwe, dipelo di le nngwe</string>
+    <string name="welcome_point_lifetime_body">fa kopong ya gago e sule, e lebale</string>
+    <string name="welcome_point_detailed_title">kopane le puisano</string>
+    <string name="welcome_point_detailed_body">mefutafuta o phakamiso kopong tsa kopane le nako ya puisano</string>
+    <string name="welcome_privacy">sengwe se ntsha mo pofonong yeno</string>
+    <string name="welcome_start">simolola</string>
+    <string name="welcome_next">e latelago</string>
+    <string name="welcome_allow">eletsa</string>
+    <string name="welcome_step">serama %1$d sa %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth lefokwa</string>
+    <string name="welcome_bluetooth_why">android o tlhoka bluetooth lefokwa go bona kopong</string>
+    <string name="welcome_bluetooth_with">kopong tsa bluetooth di rekota otlhe pele</string>
+    <string name="welcome_bluetooth_without">kopong tsa bluetooth ga di rekote</string>
+    <string name="welcome_notifications_title">dimodimo</string>
+    <string name="welcome_notifications_why">mefutafuta o dira servikhase</string>
+    <string name="welcome_notifications_with">dimodimo di bontsha mefutafuta</string>
+    <string name="welcome_notifications_without">mefutafuta di dira</string>
+    <string name="hibernation_title">go ntsha ke go ipela fela</string>
+    <string name="hibernation_body">android o besetsa mofoko fa o se go butswe</string>
+    <string name="action_not_now">jaanong nnyaa</string>
+
+    <string name="devices_in_use">tšepe</string>
+    <string name="devices_retired">go iketla</string>
+    <string name="devices_empty_title">ga go kopong go fapana</string>
+    <string name="devices_empty_body">kopana kopong ya bluetooth</string>
+    <string name="devices_generation">kopong #%1$d</string>
+    <string name="devices_retired_on">o iketile %1$s</string>
+    <string name="devices_connected_for">o kopantswe %1$s</string>
+    <string name="devices_recent">%1$s / matsatsi a le 7</string>
+
+    <string name="stats_title">kopong otlhe</string>
+    <string name="stats_sessions_since">%1$s go tloga %2$s</string>
+    <string name="stats_today">lebakabaka</string>
+    <string name="stats_last_7">matsatsi a 7 a fetileng</string>
+    <string name="stats_last_30">matsatsi a 30 a fetileng</string>
+    <string name="stats_average_session">kgetsi ya kgang</string>
+    <string name="stats_longest_session">kgamogetsi ye kgolo</string>
+    <string name="stats_playing">ho kopa hoya</string>
+    <string name="stats_measured_span">e lekilwe go ho kopang</string>
+    <string name="stats_share">ho kopang fari</string>
+    <string name="stats_playback_only_note">ho kopang nako fela</string>
+    <string name="stats_daily_hours_30">dithuta tsa letsatsi (matsatsi a 30)</string>
+    <string name="stats_by_pair">ka pabetsa</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · go iketla</string>
+    <string name="chart_max">%1$s kgolo</string>
+
+    <string name="pair_fallback_title">pabetsa</string>
+    <string name="pair_back">go sa morago</string>
+    <string name="pair_more">fapana</string>
+    <string name="pair_menu_rename">go lesa leina</string>
+    <string name="pair_menu_purchase">go reka kwatseba</string>
+    <string name="pair_menu_retire">go iketla / go buisiwa</string>
+    <string name="pair_menu_delete">go fapotsa</string>
+    <string name="pair_lifetime">dipelo tsa pabetsa ye</string>
+    <string name="pair_retired_on">o iketile %1$s</string>
+    <string name="pair_retired_with_reason">o iketile %1$s · %2$s</string>
+    <string name="pair_connected_now">o kopantswe %1$s</string>
+    <string name="pair_sessions">dikhutshane</string>
+    <string name="pair_average">kgetsi</string>
+    <string name="pair_longest">kgolo</string>
+    <string name="pair_since">go tloga %1$s</string>
+    <string name="pair_of_measured">ho kopang fari</string>
+    <string name="pair_measured">e lekilwe go ho kopang</string>
+    <string name="pair_paid">go reka</string>
+    <string name="pair_per_hour">ka hora</string>
+    <string name="pair_bought">o isiwe</string>
+    <string name="pair_daily_hours_14">dithuta tsa letsatsi (matsatsi a 14)</string>
+    <string name="pair_rename_title">go lesa leina la pabetsa</string>
+    <string name="pair_rename_label">leina</string>
+    <string name="pair_retire_title">go iketla pabetsa ye</string>
+    <string name="pair_retire_label">lebaka (o sule, &amp;wa.)</string>
+    <string name="pair_retire_confirm">go iketla</string>
+    <string name="pair_retire_supporting">kakaretso e gana mo gae</string>
+    <string name="pair_price_title">go reka theko</string>
+    <string name="pair_price_label">kgato (madi a felela)</string>
+    <string name="pair_price_supporting">e dirisiwa go le kakaretso</string>
+    <string name="pair_delete_title">go fapotsa pabetsa ye?</string>
+    <string name="pair_delete_body">dikhutshane otlhe di fapotsiwe</string>
+
+    <string name="session_ongoing">ke e ntsha jaanong</string>
+    <string name="session_until">go ra %1$s</string>
+    <string name="session_playing">%1$s ko kopang</string>
+    <string name="session_recovered">o tabollana</string>
+
+    <string name="settings_tracking">rekodiso</string>
+    <string name="settings_detailed_title">mefutafuta</string>
+    <string name="settings_detailed_body">o phakamisa kopang le nako ya puisano</string>
+    <string name="settings_detailed_unavailable">bluetooth o tlhoka</string>
+    <string name="settings_playback_only_title">ho kopang nako fela</string>
+    <string name="settings_playback_only_body">dikgetsi di akanya nako ya ho kopang</string>
+    <string name="settings_language">puo</string>
+    <string name="settings_language_system">puo ya pholofotholo</string>
+    <string name="settings_devices">dithuso</string>
+    <string name="settings_devices_body">tlhopha kopong</string>
+    <string name="settings_device_subtitle">%1$s · go qala %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">json go kotula</string>
+    <string name="settings_import">go kopanela</string>
+    <string name="settings_import_warning">go kopanela go leonatsa otlhe</string>
+    <string name="settings_troubleshooting">go itologa</string>
+    <string name="settings_battery_body">bathari a optimisa</string>
+    <string name="settings_battery_button">bathari e dirisiwa</string>
+    <string name="settings_battery_path">diakantsho → dithuso → ylih → bathari → go se na le mogole</string>
+    <string name="settings_hibernation_body">ylih o a besetsiwe fa o se go butswe</string>
+    <string name="settings_hibernation_on">android a ka besetsa ylih</string>
+    <string name="settings_hibernation_off">ylih ga a besetsiwe</string>
+    <string name="settings_hibernation_button">dithuso tse se di dirisiwang</string>
+    <string name="settings_about">ka gare</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — dithuta tsa kopong</string>
+    <string name="settings_import_confirm_title">go leonatsa otlhe?</string>
+    <string name="settings_import_confirm_body">go kopanela go fapotsa dithuso otlhe</string>
+
+    <string name="widget_lifetime_label">ylih · dipelo</string>
+    <string name="widget_lifetime_description">dithuta tsa pabetsa ka timagelo</string>
+    <string name="widget_activity_label">ylih · go e abelana</string>
+    <string name="widget_activity_description">dithuta tsa pabetsa otlhe, lebakabaka, 7 matsatsi, 30 matsatsi</string>
+    <string name="widget_chart_label">ylih · 30 matsatsi</string>
+    <string name="widget_chart_description">dithuta tsa letsatsi mo matsatsing a 30</string>
+
+    <string name="action_save">boloka</string>
+    <string name="action_cancel">eme</string>
+    <string name="action_delete">fapotsa</string>
+    <string name="action_import">kopanela</string>
+
+    <string name="channel_tracking">rekodiso ya kopong</string>
+    <string name="channel_tracking_description">ylih e rekoda kopang go kopong</string>
+    <string name="notification_title">rekodiso ya nako ya kopong</string>
+    <string name="notification_starting">go simolola...</string>
+    <string name="notification_idle">go letela kopong</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d o kopantswe · %2$s</item>
+        <item quantity="other">%1$d o kopantswe · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d o kopantswe · %2$s · ho kopang</item>
+        <item quantity="other">%1$d o kopantswe · %2$s · ho kopang</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">mefutafuta o tlhoka bluetooth</string>
+    <string name="export_done">go reka e dirisiwa</string>
+    <string name="export_failed">go reka go palentse</string>
+    <string name="import_failed">go kopanela go palentse</string>
+    <string name="edit_failed">o se kgone go boloka</string>
+    <string name="error_could_not_open">ga se kgone go bula %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">%d khutshane go kopanela</item>
+        <item quantity="other">%d dikhutshane go kopanela</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d khutshane</item>
+        <item quantity="other">%d dikhutshane</item>
+    </plurals>
+</resources>

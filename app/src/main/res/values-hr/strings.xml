@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Croatian. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - tvoj život u slušalicama</string>
+
+    <string name="nav_headphones">slušalice</string>
+    <string name="nav_stats">statistika</string>
+    <string name="nav_settings">postavke</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">žičane</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">nepoznato</string>
+
+    <string name="welcome_title">dobrodošli u ylih</string>
+    <string name="welcome_intro">ylih bilježi koliko dugo svaki par slušalica ostaje povezan, tako da godinama kasnije još uvijek možeš odgovoriti na jedino bitno pitanje: koliko sati su trajale?</string>
+    <string name="welcome_point_auto_title">poveži i zaboravi</string>
+    <string name="welcome_point_auto_body">bluetooth slušalice se beleže same od sebe, čim se povežu. ništa se ne mora ostaviti pokrenuto.</string>
+    <string name="welcome_point_lifetime_title">jedan par, jedan životni vijek</string>
+    <string name="welcome_point_lifetime_body">kada par umre, povuci ga: njegov zbroj se zamrzne ovdje, a sljedeći par istih slušalica počinje ponovno od nule.</string>
+    <string name="welcome_point_detailed_title">žičane i reprodukcija</string>
+    <string name="welcome_point_detailed_body">detaljno praćenje u postavkama dodaje žičane slušalice i mjeri koliko je vremena zapravo puštana glazba.</string>
+    <string name="welcome_privacy">sve ostaje na ovom telefonu. nema računa, i aplikacija nema dozvolu za internet.</string>
+    <string name="welcome_start">započni</string>
+    <string name="welcome_next">sljedeće</string>
+    <string name="welcome_allow">dopusti</string>
+    <string name="welcome_step">korak %1$d od %2$d</string>
+    <string name="welcome_bluetooth_title">pristup bluetooth-u</string>
+    <string name="welcome_bluetooth_why">android samo kaže aplikaciji koju bluetooth uređaj je povezan i kako se zove ako aplikacija ima bluetooth pristup. to je kako ylih razlikuje slušalice od auto-stereo, i kako zna jedan par od drugoga.</string>
+    <string name="welcome_bluetooth_with">s njim: svaki par se bilježi čim se poveže, bez ničega pokrenuto i ničega da se zapamti.</string>
+    <string name="welcome_bluetooth_without">bez toga: bluetooth slušalice se uopće ne bilježe. ostatak aplikacije još uvijek radi, i možeš je dati dozvolu kasnije u android postavkama.</string>
+    <string name="welcome_notifications_title">obavijesti</string>
+    <string name="welcome_notifications_why">detaljno praćenje pokreće mali background servis, a android zahtijeva da bilo koja aplikacija koja to radi ima vidljivu obavijest dok to čini.</string>
+    <string name="welcome_notifications_with">s njom: obavijest pokazuje što se trenutno bilježi, što je jedini znak da je detaljno praćenje aktivno.</string>
+    <string name="welcome_notifications_without">bez nje: detaljno praćenje se i dalje pokreće i dalje bilježi. android jednostavno neće prikazati njegovu obavijest.</string>
+    <string name="hibernation_title">nastavi brojati dok ne zaboraviš</string>
+    <string name="hibernation_body">android pauzira aplikacije koje se ne otvaraju nekoliko mjeseci i vraća njihove dozvole, što bi ostavilo ylih da ne bilježi ništa dok je ne otvoriš ponovo. biti zaboravljen je upravo za što je ova aplikacija, pa je sada vrijedno isključiti.</string>
+    <string name="action_not_now">ne sada</string>
+
+    <string name="devices_in_use">u upotrebi</string>
+    <string name="devices_retired">povučeno</string>
+    <string name="devices_empty_title">još nema slušalica</string>
+    <string name="devices_empty_body">poveži par bluetooth slušalica i bit će prikazane ovdje. žičane slušalice trebaju detaljno praćenje u postavkama.</string>
+    <string name="devices_generation">par #%1$d</string>
+    <string name="devices_retired_on">povučeno %1$s</string>
+    <string name="devices_connected_for">povezano %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">sve slušalice</string>
+    <string name="stats_sessions_since">%1$s od %2$s</string>
+    <string name="stats_today">danas</string>
+    <string name="stats_last_7">zadnjih 7 dana</string>
+    <string name="stats_last_30">zadnjih 30 dana</string>
+    <string name="stats_average_session">prosječna sesija</string>
+    <string name="stats_longest_session">najduža sesija</string>
+    <string name="stats_playing">reprodukcija zvuka</string>
+    <string name="stats_measured_span">izmjereno za reprodukciju</string>
+    <string name="stats_share">udio reprodukcije</string>
+    <string name="stats_playback_only_note">brojanje samo vremena reprodukcije</string>
+    <string name="stats_daily_hours_30">sati dnevno (30 dana)</string>
+    <string name="stats_by_pair">po paru</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · povučeno</string>
+    <string name="chart_max">%1$s maks</string>
+
+    <string name="pair_fallback_title">par</string>
+    <string name="pair_back">nazad</string>
+    <string name="pair_more">više</string>
+    <string name="pair_menu_rename">preimenujem</string>
+    <string name="pair_menu_purchase">info o kupnji</string>
+    <string name="pair_menu_retire">povuci / zamijenio</string>
+    <string name="pair_menu_delete">izbriši</string>
+    <string name="pair_lifetime">životni vijek na ovom paru</string>
+    <string name="pair_retired_on">povučeno %1$s</string>
+    <string name="pair_retired_with_reason">povučeno %1$s · %2$s</string>
+    <string name="pair_connected_now">povezano sada · %1$s</string>
+    <string name="pair_sessions">sesije</string>
+    <string name="pair_average">prosjek</string>
+    <string name="pair_longest">najduži</string>
+    <string name="pair_since">od %1$s</string>
+    <string name="pair_of_measured">udio reprodukcije</string>
+    <string name="pair_measured">izmjereno za reprodukciju</string>
+    <string name="pair_paid">plaćeno</string>
+    <string name="pair_per_hour">po satu</string>
+    <string name="pair_bought">kupljeno</string>
+    <string name="pair_daily_hours_14">sati dnevno (14 dana)</string>
+    <string name="pair_rename_title">preimenujem par</string>
+    <string name="pair_rename_label">ime</string>
+    <string name="pair_retire_title">povuci ovaj par</string>
+    <string name="pair_retire_label">razlog (uništen, prodan, izgubljen…)</string>
+    <string name="pair_retire_confirm">povuci</string>
+    <string name="pair_retire_supporting">zbrojevi se zamrznu ovdje. ponovno povezivanje istog uređaja počinje svježi par na nuli.</string>
+    <string name="pair_price_title">plaćena cijena</string>
+    <string name="pair_price_label">iznos (cijele jedinice)</string>
+    <string name="pair_price_supporting">koristi se za brojku cijena po satu.</string>
+    <string name="pair_delete_title">izbriši ovaj par?</string>
+    <string name="pair_delete_body">svaka sesija zabilježena za nju se također briše. ovo se ne može opozvati.</string>
+
+    <string name="session_ongoing">u tijeku</string>
+    <string name="session_until">do %1$s</string>
+    <string name="session_playing">%1$s reprodukcije</string>
+    <string name="session_recovered">oporavljen</string>
+
+    <string name="settings_tracking">praćenje</string>
+    <string name="settings_detailed_title">detaljno praćenje</string>
+    <string name="settings_detailed_body">dodaje žičane slušalice i vrijeme reprodukcije. android samo javlja događaje žičanih utikača pokrenuto aplikaciji, tako da ovo čuva tihu obavijest u sjeni. bluetooth se prati ionako.</string>
+    <string name="settings_detailed_unavailable">nije dostupno dok se ne odobri pristup bluetooth: ova verzija samo deklarira vrstu servisa connectedDevice, koju android 14+ veže na dozvolu bluetooth.</string>
+    <string name="settings_playback_only_title">brojaj samo reprodukciju</string>
+    <string name="settings_playback_only_body">statistika broji vrijeme tijekom kojeg se zvuk zapravo reproducirao umjesto vremena povezivanja. samo sesije zabilježene s detaljnim praćenjem uključenim mjere reprodukciju; ostale se ostavljaju.</string>
+    <string name="settings_language">jezik</string>
+    <string name="settings_language_system">sistemski jezik</string>
+    <string name="settings_devices">uređaji</string>
+    <string name="settings_devices_body">odznači sve što nije slušalice — auto-stereo ili zvučnik — da prestaneš bilježiti.</string>
+    <string name="settings_device_subtitle">%1$s · prvi put vidljen %2$s</string>
+    <string name="settings_data">podaci</string>
+    <string name="settings_export">izvezi json</string>
+    <string name="settings_import">uvezi</string>
+    <string name="settings_import_warning">uvoz zamjenjuje sve što je trenutno pohranjeno.</string>
+    <string name="settings_troubleshooting">rješavanje problema</string>
+    <string name="settings_battery_body">ako sesije prestanu biti zabilježene, provjeri je li ylih oslobođen od optimizacije baterije — aplikacija koja je prisilno zaustavljena više nikada ne prima veze dok je ne otvoriš.</string>
+    <string name="settings_battery_button">postavke baterije</string>
+    <string name="settings_battery_path">postavke → aplikacije → ylih → baterija → neograničeno.</string>
+    <string name="settings_hibernation_body">ako ylih ostane neotvarana nekoliko mjeseci, android je pauzira i vraća dozvole, i ništa se ne bilježi dok je ne otvoriš. isključivanje toga je što omogućava paru da broji kroz sezonu koju nikad nisi razmišljao o aplikaciji.</string>
+    <string name="settings_hibernation_on">android može pauzirati ylih.</string>
+    <string name="settings_hibernation_off">ylih je oslobođena i nastavlja s bilježenjem.</string>
+    <string name="settings_hibernation_button">postavke nekorištene aplikacije</string>
+    <string name="settings_about">o</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — sati slušalica, čuvane lokalno i zauvijek.</string>
+    <string name="settings_import_confirm_title">zamijeni sve podatke?</string>
+    <string name="settings_import_confirm_body">uvoz ove sigurnosne kopije briše svaki uređaj, par i sesiju pohranjene sada.</string>
+
+    <string name="widget_lifetime_label">ylih · životni vijek</string>
+    <string name="widget_lifetime_description">sati po paru sa živom stoperom na bilo čemu što je povezano</string>
+    <string name="widget_activity_label">ylih · aktivnost</string>
+    <string name="widget_activity_description">satima svakog para zajedno, plus danas, 7 dana i 30 dana</string>
+    <string name="widget_chart_label">ylih · 30 dana</string>
+    <string name="widget_chart_description">dnevni sati slušanja tijekom zadnjih 30 dana</string>
+
+    <string name="action_save">spremi</string>
+    <string name="action_cancel">otkaži</string>
+    <string name="action_delete">izbriši</string>
+    <string name="action_import">uvezi</string>
+
+    <string name="channel_tracking">praćenje slušalica</string>
+    <string name="channel_tracking_description">prikazano dok ylih prati žičane slušalice i reprodukciju. android ne dostavljanja događajima žičanih utikača aplikacijama koje nisu pokrenute.</string>
+    <string name="notification_title">praćenje vremena slušalica</string>
+    <string name="notification_starting">počinjanje…</string>
+    <string name="notification_idle">čekanje na slušalice</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d povezano · %2$s</item>
+        <item quantity="few">%1$d povezana · %2$s</item>
+        <item quantity="other">%1$d povezano · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d povezano · %2$s · reprodukcija</item>
+        <item quantity="few">%1$d povezana · %2$s · reprodukcija</item>
+        <item quantity="other">%1$d povezano · %2$s · reprodukcija</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">ova verzija trebava pristup bluetooth-u prije nego što može pratiti žičane slušalice</string>
+    <string name="export_done">sigurnosna kopija izvezena</string>
+    <string name="export_failed">izvoz neuspješan</string>
+    <string name="import_failed">uvoz neuspješan</string>
+    <string name="error_could_not_open">nije moguće otvoriti %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">uvezena %d sesija</item>
+        <item quantity="few">uvezene %d sesije</item>
+        <item quantity="other">uvezeno %d sesija</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sesija</item>
+        <item quantity="few">%d sesije</item>
+        <item quantity="other">%d sesija</item>
+    </plurals>
+    <string name="edit_failed">promjena nije spremljena</string>
+</resources>

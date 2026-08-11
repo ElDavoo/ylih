@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Tigrinya. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ሕይወትህን በሔዱ</string>
+
+    <string name="nav_headphones">ሔዱ</string>
+    <string name="nav_stats">ስታስቲክስ</string>
+    <string name="nav_settings">ማቀናበሪያ</string>
+
+    <string name="kind_bluetooth">ብሉቱዝ</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">ሽብሩ</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ዘይተሰማምዐ</string>
+
+    <string name="welcome_title">ወደ ylih ደህና መጻወት</string>
+    <string name="welcome_intro">ylih ሩጉእ ሔዱ ርግግ ሰዓት ይመዝገብ</string>
+    <string name="welcome_point_auto_title">ሪኖ ጣልቅ</string>
+    <string name="welcome_point_auto_body">ብሉቱዝ ሔዱ ብ ራሳቶም ይመዝገብ</string>
+    <string name="welcome_point_lifetime_title">ሓደ ሔዱ ሓደ ሕይወት</string>
+    <string name="welcome_point_lifetime_body">ሔዱ ተወሲኹ ገዝተ</string>
+    <string name="welcome_point_detailed_title">ሽብሩ ስርዓተ መሪጻ</string>
+    <string name="welcome_point_detailed_body">ዝርዝር ምስጅ ሽብሩ ሔዱ ወ መሪጻ ሰዓት ይሙዝገብ</string>
+    <string name="welcome_privacy">ሓንቲ ሌላ መዓዝ ኣይሕዋትን</string>
+    <string name="welcome_start">ጀምር</string>
+    <string name="welcome_next">ዝኾነ</string>
+    <string name="welcome_allow">ፈቒድ</string>
+    <string name="welcome_step">ደረጃ %1$d ካብ %2$d</string>
+    <string name="welcome_bluetooth_title">ብሉቱዝ መላዕክ</string>
+    <string name="welcome_bluetooth_why">ኣንድሮድ ብሉቱዝ መወከሲ ምግላጽ የድልዮ</string>
+    <string name="welcome_bluetooth_with">ምስ ሔዱ ሪኖ ይመዝገብ</string>
+    <string name="welcome_bluetooth_without">ብ ሔዱ ብሉቱዝ ኣይመዝገብን</string>
+    <string name="welcome_notifications_title">ማሳወቂያ</string>
+    <string name="welcome_notifications_why">ዝርዝር ምስጅ ኣፈገገ ስሌት ይምልስ</string>
+    <string name="welcome_notifications_with">ማሳወቂያ ዝርዝር ምስጅ ይሕብር</string>
+    <string name="welcome_notifications_without">ዝርዝር ምስጅ ይምልስ</string>
+    <string name="hibernation_title">ረሊኻ ሁኑ ይሒስ</string>
+    <string name="hibernation_body">ኣንድሮድ ዓመታት ምሕዳር ኣብ ቦታ ይሐውስ</string>
+    <string name="action_not_now">ሕጂ ዘይ</string>
+
+    <string name="devices_in_use">ሓጊዙ ስራሕ</string>
+    <string name="devices_retired">ተገዲሱ</string>
+    <string name="devices_empty_title">ሔዱ ኣይሕዋትን</string>
+    <string name="devices_empty_body">ብሉቱዝ ሔዱ ሪኖ ወጺኡ</string>
+    <string name="devices_generation">ሔዱ #%1$d</string>
+    <string name="devices_retired_on">ተገዲሱ %1$s</string>
+    <string name="devices_connected_for">ሪኖ %1$s</string>
+    <string name="devices_recent">%1$s / 7 ሞያ</string>
+
+    <string name="stats_title">ሓሙሽተ ሔዱ</string>
+    <string name="stats_sessions_since">%1$s ካብ %2$s</string>
+    <string name="stats_today">ሕጂ ሞያ</string>
+    <string name="stats_last_7">ሓምሳ 7 ሞያ</string>
+    <string name="stats_last_30">ሓምሳ 30 ሞያ</string>
+    <string name="stats_average_session">ምሕታይ ምስጅ</string>
+    <string name="stats_longest_session">ረሲዑ ምስጅ</string>
+    <string name="stats_playing">ስምዒት ምስጅ</string>
+    <string name="stats_measured_span">ስምዒት ለ ወሲደ</string>
+    <string name="stats_share">ምስጅ ሹፍቲ</string>
+    <string name="stats_playback_only_note">ስምዒት ሰዓት ብ ብቻ</string>
+    <string name="stats_daily_hours_30">ሕምሳ ሰዓት (30 ሞያ)</string>
+    <string name="stats_by_pair">ብ ሔዱ</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · ተገዲሱ</string>
+    <string name="chart_max">%1$s ምቡር</string>
+
+    <string name="pair_fallback_title">ሔዱ</string>
+    <string name="pair_back">ተኸለ</string>
+    <string name="pair_more">ሌላ</string>
+    <string name="pair_menu_rename">ስም ዓይነ</string>
+    <string name="pair_menu_purchase">ገዢ ሓበሬታ</string>
+    <string name="pair_menu_retire">ተገዲስ / ተሸጠ</string>
+    <string name="pair_menu_delete">ሓገዘ</string>
+    <string name="pair_lifetime">ሕይወት ሔዱ</string>
+    <string name="pair_retired_on">ተገዲሱ %1$s</string>
+    <string name="pair_retired_with_reason">ተገዲሱ %1$s · %2$s</string>
+    <string name="pair_connected_now">ሪኖ %1$s</string>
+    <string name="pair_sessions">ምስጃት</string>
+    <string name="pair_average">ምሕታይ</string>
+    <string name="pair_longest">ረሲዑ</string>
+    <string name="pair_since">ካብ %1$s</string>
+    <string name="pair_of_measured">ምስጅ ሹፍቲ</string>
+    <string name="pair_measured">ስምዒት ለ ወሲደ</string>
+    <string name="pair_paid">ገዢ</string>
+    <string name="pair_per_hour">ሰዓት ብ</string>
+    <string name="pair_bought">ይገዘ</string>
+    <string name="pair_daily_hours_14">ሕምሳ ሰዓት (14 ሞያ)</string>
+    <string name="pair_rename_title">ሔዱ ስም ዓይነ</string>
+    <string name="pair_rename_label">ስም</string>
+    <string name="pair_retire_title">ሔዱ ተገዲስ</string>
+    <string name="pair_retire_label">ምክንያት (ሞተ ወ.)</string>
+    <string name="pair_retire_confirm">ተገዲስ</string>
+    <string name="pair_retire_supporting">ውጤታት ወዲ</string>
+    <string name="pair_price_title">ገዢ ዋጋ</string>
+    <string name="pair_price_label">መጠን (ሓሙሽተ ደሪቦ)</string>
+    <string name="pair_price_supporting">ዋጋ-ሰዓት ስሌት ብ ተዋሂደ</string>
+    <string name="pair_delete_title">ሔዱ ሓገዘ?</string>
+    <string name="pair_delete_body">ሓሙሽተ ምስጃት ሓገዘ</string>
+
+    <string name="session_ongoing">ሕጂ ዳሕሪ</string>
+    <string name="session_until">ክሳብ %1$s</string>
+    <string name="session_playing">%1$s ምስጅ</string>
+    <string name="session_recovered">ተወሲደ</string>
+
+    <string name="settings_tracking">ምስጅ</string>
+    <string name="settings_detailed_title">ዝርዝር ምስጅ</string>
+    <string name="settings_detailed_body">ሽብሩ ሔዱ ወ ምስጅ ሰዓት ውሑድ</string>
+    <string name="settings_detailed_unavailable">ብሉቱዝ ኣይምገናን</string>
+    <string name="settings_playback_only_title">ምስጅ ሰዓት ብቻ</string>
+    <string name="settings_playback_only_body">ስታት ሰዓት ምስጅ ብ ብቻ</string>
+    <string name="settings_language">ቋንቋ</string>
+    <string name="settings_language_system">ቋንቋ ስራሕ</string>
+    <string name="settings_devices">መወከሲ</string>
+    <string name="settings_devices_body">ሔዱ ሸምታ ምክንያት ሓገዘ</string>
+    <string name="settings_device_subtitle">%1$s · ሕጂ ተዘውተረ %2$s</string>
+    <string name="settings_data">ሓበሬታ</string>
+    <string name="settings_export">ሓገዝ json</string>
+    <string name="settings_import">ወድቂ</string>
+    <string name="settings_import_warning">ወድቂ ሓሙሽተ ሓበሬታ ተሸጠ</string>
+    <string name="settings_troubleshooting">ምእላይ ልክ</string>
+    <string name="settings_battery_body">ምስጃት ይታወቁ ኣይሓሙትን</string>
+    <string name="settings_battery_button">ባትሪ ማቀናበሪያ</string>
+    <string name="settings_battery_path">ማቀናበሪያ → ሌላ → ylih → ባትሪ → ዝሪድ</string>
+    <string name="settings_hibernation_body">ylih ዓመታት ሞያ ተጫወተ ሌላ ጸንሐ</string>
+    <string name="settings_hibernation_on">ኣንድሮድ ylih ጸንሐ</string>
+    <string name="settings_hibernation_off">ylih ዓሚ ሓገዘ ወ ምስጅ</string>
+    <string name="settings_hibernation_button">ዘይተወሲደ ሌላ ማቀናበሪያ</string>
+    <string name="settings_about">ገብሪ</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — ሔዱ ሰዓት ሓንቲ ሕይወት</string>
+    <string name="settings_import_confirm_title">ሓሙሽተ ሓበሬታ ተሸጠ?</string>
+    <string name="settings_import_confirm_body">ወድቂ ሓንቲ ሓበሬታ ሓሙሽተ መወከሲ ሓገዘ</string>
+
+    <string name="widget_lifetime_label">ylih · ሕይወት</string>
+    <string name="widget_lifetime_description">ሰዓት ሔዱ ሓሙሽተ ከ ነቃሞ ሔዱ ልክ</string>
+    <string name="widget_activity_label">ylih · ሕልኽ</string>
+    <string name="widget_activity_description">ሰዓት ሔዱ ሓሙሽተ ሕጂ 7 ሞያ 30 ሞያ</string>
+    <string name="widget_chart_label">ylih · 30 ሞያ</string>
+    <string name="widget_chart_description">ሕምሳ ሰዓት ሓምሳ 30 ሞያ</string>
+
+    <string name="action_save">ጸሓፍ</string>
+    <string name="action_cancel">ይጓዝ</string>
+    <string name="action_delete">ሓገዘ</string>
+    <string name="action_import">ወድቂ</string>
+
+    <string name="channel_tracking">ሔዱ ምስጅ</string>
+    <string name="channel_tracking_description">ylih ሽብሩ ሔዱ ወ ምስጅ ሰዓት ይምስጅ</string>
+    <string name="notification_title">ሔዱ ሰዓት ምስጅ</string>
+    <string name="notification_starting">ጀምር...</string>
+    <string name="notification_idle">ሔዱ ጸላሂ</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d ሪኖ · %2$s</item>
+        <item quantity="other">%1$d ሪኖ · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d ሪኖ · %2$s · ምስጅ</item>
+        <item quantity="other">%1$d ሪኖ · %2$s · ምስጅ</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">ዝርዝር ምስጅ ብሉቱዝ ይድልዩ</string>
+    <string name="export_done">ሓገዝ ነስተጫወተ</string>
+    <string name="export_failed">ሓገዝ ውድቁ</string>
+    <string name="import_failed">ወድቂ ውድቁ</string>
+    <string name="edit_failed">ተሸጠ ዘይ</string>
+    <string name="error_could_not_open">%1$s ዝውስከ ዘይ</string>
+    <plurals name="import_done">
+        <item quantity="one">%d ምስጅ ወድሪ</item>
+        <item quantity="other">%d ምስጃት ወድሪ</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d ምስጅ</item>
+        <item quantity="other">%d ምስጃት</item>
+    </plurals>
+</resources>

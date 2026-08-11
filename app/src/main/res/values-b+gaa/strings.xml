@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Ga. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ni pio ne muon a</string>
+
+    <string name="nav_headphones">kuŋ</string>
+    <string name="nav_stats">sonraí</string>
+    <string name="nav_settings">atiŋ</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">tiŋ</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">o saa</string>
+
+    <string name="welcome_title">welcome to ylih</string>
+    <string name="welcome_intro">taifeadadh ylih fad fanann kuŋ naas ceangailte, tu du faeda puun buɔa ka siyaa din ke ga: da muon nuga?</string>
+    <string name="welcome_point_auto_title">ceangail ne gɔ</string>
+    <string name="welcome_point_auto_body">kuŋ bluetooth taifeadadh po gara, pu baat a ceangal. o ga ka ruŋ.</string>
+    <string name="welcome_point_lifetime_title">naas kaŋ, pio kaŋ</string>
+    <string name="welcome_point_lifetime_body">din naas pa sii, siŋ e: o pele daan din o ceangal naas nuu pu baat pia zero.</string>
+    <string name="welcome_point_detailed_title">tiŋ ne imirt</string>
+    <string name="welcome_point_detailed_body">taifeadadh pele lira, o atiŋ, si o kuŋ tiŋ ne da pele muon ka pa a imirt.</string>
+    <string name="welcome_privacy">pele ne li o fon sii. o suba o, ne o aip o gali doo.</string>
+    <string name="welcome_start">baat</string>
+    <string name="welcome_next">kaaba</string>
+    <string name="welcome_allow">si</string>
+    <string name="welcome_step">pele %1$d pu %2$d</string>
+    <string name="welcome_bluetooth_title">gali bluetooth</string>
+    <string name="welcome_bluetooth_why">android pele an aip ka kuke device bluetooth ne siyaa e, ne pi e ke di, ka aip gali bluetooth. e kudu da si kuŋ kaaba ne stereo kaa, ne kudu e naas kaŋ kaaba.</string>
+    <string name="welcome_bluetooth_with">du ɛ: taifeadadh naas pu baat a ceangal, gan o ne o pilin.</string>
+    <string name="welcome_bluetooth_without">gan ɛ: kuŋ bluetooth taifeadadh o ga. aip saa ka taa, ne tu faeda si di o atiŋ aip android.</string>
+    <string name="welcome_notifications_title">kuŋ siyaa</string>
+    <string name="welcome_notifications_why">taifeadadh pele ka seirbhís kaŋ ne ba, ne android minsele aip sa kuŋ siyaa agus ka la.</string>
+    <string name="welcome_notifications_with">du ɛ: kuŋ siyaa pa kuke ka taifeadadh i peleŋ, ka e muon suŋ da taifeadadh pele ka li.</string>
+    <string name="welcome_notifications_without">gan ɛ: taifeadadh pele ka taa ne ka taifeadadh. android o pele kuŋ siyaa.</string>
+    <string name="hibernation_title">kaari ne tu gɔ o</string>
+    <string name="hibernation_body">android la aip da o pa nuu muon ne po gali, ne da li, ka ylih taifeadadh o ga i pele tu pa lin. a gɔ e kudu ka aip sii, ne e ka i pele nii.</string>
+    <string name="action_not_now">o nii</string>
+
+    <string name="devices_in_use">o ka la</string>
+    <string name="devices_retired">siŋ</string>
+    <string name="devices_empty_title">kuŋ o ga</string>
+    <string name="devices_empty_body">ceangal naas kuŋ bluetooth ne po lira sii. kuŋ tiŋ minsele taifeadadh pele, o atiŋ.</string>
+    <string name="devices_generation">naas #%1$d</string>
+    <string name="devices_retired_on">siŋ %1$s</string>
+    <string name="devices_connected_for">ceangailte %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">kuŋ mɔ</string>
+    <string name="stats_sessions_since">%1$s pu %2$s</string>
+    <string name="stats_today">i pele nii</string>
+    <string name="stats_last_7">muon 7 da sɔŋ</string>
+    <string name="stats_last_30">muon 30 da sɔŋ</string>
+    <string name="stats_average_session">pele siyaa</string>
+    <string name="stats_longest_session">pele ba</string>
+    <string name="stats_playing">fuaim ka la</string>
+    <string name="stats_measured_span">tuso do imirt</string>
+    <string name="stats_share">scoir imirt</string>
+    <string name="stats_playback_only_note">kaari ɔra imirt kaŋ</string>
+    <string name="stats_daily_hours_30">muon kili (30 muon)</string>
+    <string name="stats_by_pair">po naas</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · siŋ</string>
+    <string name="chart_max">%1$s ba</string>
+
+    <string name="pair_fallback_title">naas</string>
+    <string name="pair_back">ka sɔŋ</string>
+    <string name="pair_more">saa</string>
+    <string name="pair_menu_rename">siyaa din</string>
+    <string name="pair_menu_purchase">sonraí sun</string>
+    <string name="pair_menu_retire">siŋ / nuu</string>
+    <string name="pair_menu_delete">gɔ</string>
+    <string name="pair_lifetime">pio o naas sii</string>
+    <string name="pair_retired_on">siŋ %1$s</string>
+    <string name="pair_retired_with_reason">siŋ %1$s · %2$s</string>
+    <string name="pair_connected_now">ceangailte nii · %1$s</string>
+    <string name="pair_sessions">seisiúin</string>
+    <string name="pair_average">pele siyaa</string>
+    <string name="pair_longest">da ba</string>
+    <string name="pair_since">pu %1$s</string>
+    <string name="pair_of_measured">scoir imirt</string>
+    <string name="pair_measured">tuso do imirt</string>
+    <string name="pair_paid">di</string>
+    <string name="pair_per_hour">po muon</string>
+    <string name="pair_bought">sun</string>
+    <string name="pair_daily_hours_14">muon kili (14 muon)</string>
+    <string name="pair_rename_title">siyaa naas</string>
+    <string name="pair_rename_label">siyaa</string>
+    <string name="pair_retire_title">siŋ naas sii</string>
+    <string name="pair_retire_label">fon (pa sii, sun, gɔ…)</string>
+    <string name="pair_retire_confirm">siŋ</string>
+    <string name="pair_retire_supporting">pele daan sii. ceangal device siyaa baat naas nuu pu zero.</string>
+    <string name="pair_price_title">sita di</string>
+    <string name="pair_price_label">sita (aonad li)</string>
+    <string name="pair_price_supporting">ka sita-po-muon.</string>
+    <string name="pair_delete_title">gɔ naas sii?</string>
+    <string name="pair_delete_body">pele taifeadadh mɔ gɔ saa. o faeda sii.</string>
+
+    <string name="session_ongoing">ka la</string>
+    <string name="session_until">i %1$s</string>
+    <string name="session_playing">%1$s ka la</string>
+    <string name="session_recovered">nuu</string>
+
+    <string name="settings_tracking">taifeadadh</string>
+    <string name="settings_detailed_title">taifeadadh pele</string>
+    <string name="settings_detailed_body">si o kuŋ tiŋ ne ɔra imirt. android pele naŋ ceangal kuŋ tiŋ pu aip ka la, ne sii kuŋ siyaa o ba o kɔ. bluetooth tuso pele saa.</string>
+    <string name="settings_detailed_unavailable">o saa i pele gali bluetooth: agbada sii pele connectedDevice seirbhís kaŋ, android 14+ ceangal bluetooth gali.</string>
+    <string name="settings_playback_only_title">kaari imirt kaŋ</string>
+    <string name="settings_playback_only_body">sonraí kaari muon fuaim pa a imirt siyaa i yoo muon ceangal. seisiúin pele taifeadadh pele tuso imirt; saa gɔ.</string>
+    <string name="settings_language">teanga</string>
+    <string name="settings_language_system">teanga poŋ</string>
+    <string name="settings_devices">gléasanna</string>
+    <string name="settings_devices_body">gɔ kuŋ saa o kuŋ — kaa stereo o kɔ — a sta taifeadadh.</string>
+    <string name="settings_device_subtitle">%1$s · ar dtús lira %2$s</string>
+    <string name="settings_data">sonraí</string>
+    <string name="settings_export">onnmhairtí json</string>
+    <string name="settings_import">iompórtáil</string>
+    <string name="settings_import_warning">iompórtáil di pele mɔ nii.</string>
+    <string name="settings_troubleshooting">socrú fadhbanna</string>
+    <string name="settings_battery_body">din seisiúin sta taifeadadh, tuso da ylih o ba sita — aip din sta riamh fada kuŋ kaaba i pele du pa sɔŋ.</string>
+    <string name="settings_battery_button">socruithe sita</string>
+    <string name="settings_battery_path">socruithe → aip → ylih → sita → o ga faata.</string>
+    <string name="settings_hibernation_body">din ylih pa gan lin muon kaŋ, android la ne da li, ne taifeadadh o ga i pele du pa lin. a gɔ ne faeda naas kaari i muon tu saa o aip.</string>
+    <string name="settings_hibernation_on">android faeda la ylih.</string>
+    <string name="settings_hibernation_off">ylih ba ne kaari taifeadadh.</string>
+    <string name="settings_hibernation_button">socruithe aip o ka</string>
+    <string name="settings_about">faoi</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — muon kuŋ, kaari i o ne i sakile.</string>
+    <string name="settings_import_confirm_title">di pele mɔ?</string>
+    <string name="settings_import_confirm_body">iompórtáil cúltaca gɔ gléas, naas ne seisiúin kaari nii.</string>
+
+    <string name="widget_lifetime_label">ylih · pio</string>
+    <string name="widget_lifetime_description">muon po naas, du sita ka i rud ceangailte</string>
+    <string name="widget_activity_label">ylih · ka la</string>
+    <string name="widget_activity_description">muon naas mɔ li, ne i pele nii, 7 muon ne 30 muon</string>
+    <string name="widget_chart_label">ylih · 30 muon</string>
+    <string name="widget_chart_description">muon eista i pele po muon 30 da sɔŋ</string>
+
+    <string name="action_save">kaari</string>
+    <string name="action_cancel">gɔ</string>
+    <string name="action_delete">gɔ</string>
+    <string name="action_import">iompórtáil</string>
+
+    <string name="channel_tracking">taifeadadh kuŋ</string>
+    <string name="channel_tracking_description">lira agus ylih a nɔ kuŋ tiŋ ne imirt. android o na ceangal kuŋ tiŋ pu aip o ka.</string>
+    <string name="notification_title">taifeadadh muon kuŋ</string>
+    <string name="notification_starting">baat nii…</string>
+    <string name="notification_idle">a tɔ kuŋ</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d ceangailte · %2$s</item>
+        <item quantity="many">%1$d ceangailte · %2$s</item>
+        <item quantity="other">%1$d ceangailte · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d ceangailte · %2$s · ka la</item>
+        <item quantity="many">%1$d ceangailte · %2$s · ka la</item>
+        <item quantity="other">%1$d ceangailte · %2$s · ka la</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">agbada sii teastaí gali bluetooth i pele ka kuŋ tiŋ taifeadadh</string>
+    <string name="export_done">cúltaca onnmhairithe</string>
+    <string name="export_failed">theip onnmhairt</string>
+    <string name="import_failed">theip iompórtáil</string>
+    <string name="error_could_not_open">o faeda %1$s lin</string>
+    <plurals name="import_done">
+        <item quantity="one">iompórtáilte %d pele</item>
+        <item quantity="many">iompórtáilte %d pele</item>
+        <item quantity="other">iompórtáilte %d pele</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d pele</item>
+        <item quantity="many">%d pele</item>
+        <item quantity="other">%d pele</item>
+    </plurals>
+    <string name="edit_failed">anyɛ nyɛɛ tsakemɔ lɛ he nii</string>
+</resources>

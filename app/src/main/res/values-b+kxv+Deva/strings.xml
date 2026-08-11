@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Kuvi (Devanagari). Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - तुमारु जीवन हेडफुनमे</string>
+
+    <string name="nav_headphones">हेडफुन</string>
+    <string name="nav_stats">आंकडे</string>
+    <string name="nav_settings">सेटिंगस</string>
+
+    <string name="kind_bluetooth">ब्लूटुथ</string>
+    <string name="kind_ble">ले आडियो</string>
+    <string name="kind_wired">तारदार</string>
+    <string name="kind_usb">यूएसबी</string>
+    <string name="kind_unknown">अनजान</string>
+
+    <string name="welcome_title">ylih मे स्वागत</string>
+    <string name="welcome_intro">ylih रिकॉर्ड करे कि कैसे हरेक जोड़ी हेडफुन जुड़ी रहेत, तो बरसु आगे तुमु अभी वो एक सवाल जवाब दे सकु: कितनु घंटे तक यह चल्लु?</string>
+    <string name="welcome_point_auto_title">जुड़ु अने भुलु</string>
+    <string name="welcome_point_auto_body">ब्लूटुथ हेडफुन अपने आप से रिकॉर्ड होतु, जब ये जुड़तु। कुछ भी नहीं रखनु पड़तु।</string>
+    <string name="welcome_point_lifetime_title">एक जोड़ी, एक जीवन</string>
+    <string name="welcome_point_lifetime_body">जब एक जोड़ी खराब होतु, तो इसु सेवनिवृत्त करु: इसका कुल यहाँ जम जातु अने अगली जोड़ी फिरु से शुरु होतु।</string>
+    <string name="welcome_point_detailed_title">तारदार अने चलचित्र</string>
+    <string name="welcome_point_detailed_body">विस्तृत ट्रैकिंग, सेटिंगस मे, तारदार हेडफुन जोडु अने नापु कि कितनु समय चल्लु।</string>
+    <string name="welcome_privacy">सब कुछ इस फोन मे रहतु। कोई खाता नहीं, अने ऐप को इंटरनेट कि अनुमति नहीं।</string>
+    <string name="welcome_start">शुरु करु</string>
+    <string name="welcome_next">अगला</string>
+    <string name="welcome_allow">अनुमति दु</string>
+    <string name="welcome_step">चरण %1$d का %2$d</string>
+    <string name="welcome_bluetooth_title">ब्लूटुथ पहुंच</string>
+    <string name="welcome_bluetooth_why">एंड्रॉयड ऐप को सिर्फ बताता है कि कौन सा ब्लूटुथ डिवाइस जुड़ा, अगर ऐप ब्लूटुथ पहुंच रखु। यह है कि ylih कैसे हेडफुन को कार स्टीरियो से अलग करु।</string>
+    <string name="welcome_bluetooth_with">इसके साथ: हरेक जोड़ी रिकॉर्ड होतु जब जुड़तु, कोई चल नहीं।</string>
+    <string name="welcome_bluetooth_without">इसके बिना: कोई ब्लूटुथ हेडफुन रिकॉर्ड नहीं होतु। ऐप अभी काम करु, अने तुमु बाद मे अनुमति दे सकु।</string>
+    <string name="welcome_notifications_title">सूचनाए</string>
+    <string name="welcome_notifications_why">विस्तृत ट्रैकिंग एक छोटु पृष्ठभूमि सेवा चलाता है, अने एंड्रॉयड चाहता है कि कोई भी ऐप सूचना दिखाए।</string>
+    <string name="welcome_notifications_with">इसके साथ: सूचना दिखातु है कि अभी क्या रिकॉर्ड हो रहु है।</string>
+    <string name="welcome_notifications_without">इसके बिना: विस्तृत ट्रैकिंग अभी चलतु है। एंड्रॉयड सिर्फ सूचना नहीं दिखातु।</string>
+    <string name="hibernation_title">गिनने वाले रहु जब भुल जाओ</string>
+    <string name="hibernation_body">एंड्रॉयड ऐप को रोक देता है अगर महीनु नहीं खोलु, अने अनुमति लेता है। ylih कुछ रिकॉर्ड नहीं करु जब तक तुमु फिरु से खोलो। यह ऐप के लिए ही है।</string>
+    <string name="action_not_now">अभी नहीं</string>
+
+    <string name="devices_in_use">उपयोग मे</string>
+    <string name="devices_retired">सेवनिवृत्त</string>
+    <string name="devices_empty_title">अभी कोई हेडफुन नहीं</string>
+    <string name="devices_empty_body">ब्लूटुथ हेडफुन जुड़ु अने यह यहाँ दिखु। तारदार हेडफुन को विस्तृत ट्रैकिंग चाहिए।</string>
+    <string name="devices_generation">जोड़ी #%1$d</string>
+    <string name="devices_retired_on">सेवनिवृत्त %1$s</string>
+    <string name="devices_connected_for">जुड़े हुए %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">सब हेडफुन</string>
+    <string name="stats_sessions_since">%1$s से %2$s</string>
+    <string name="stats_today">आज</string>
+    <string name="stats_last_7">पिछले 7 दिन</string>
+    <string name="stats_last_30">पिछले 30 दिन</string>
+    <string name="stats_average_session">औसत सत्र</string>
+    <string name="stats_longest_session">सबसे लंबा सत्र</string>
+    <string name="stats_playing">ऑडियो चल रहु है</string>
+    <string name="stats_measured_span">चलचित्र के लिए नापा</string>
+    <string name="stats_share">चलचित्र शेयर</string>
+    <string name="stats_playback_only_note">सिर्फ चलचित्र समय गिनु</string>
+    <string name="stats_daily_hours_30">दैनिक घंटे (30 दिन)</string>
+    <string name="stats_by_pair">जोड़ी के अनुसार</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · सेवनिवृत्त</string>
+    <string name="chart_max">%1$s अधिकतम</string>
+
+    <string name="pair_fallback_title">जोड़ी</string>
+    <string name="pair_back">पिछला</string>
+    <string name="pair_more">अधिक</string>
+    <string name="pair_menu_rename">नाम बदलु</string>
+    <string name="pair_menu_purchase">खरीद जानकारी</string>
+    <string name="pair_menu_retire">सेवनिवृत्त / बदला</string>
+    <string name="pair_menu_delete">हटाऊ</string>
+    <string name="pair_lifetime">इस जोड़ी का जीवनकाल</string>
+    <string name="pair_retired_on">सेवनिवृत्त %1$s</string>
+    <string name="pair_retired_with_reason">सेवनिवृत्त %1$s · %2$s</string>
+    <string name="pair_connected_now">अभी जुड़ा हुआ · %1$s</string>
+    <string name="pair_sessions">सत्र</string>
+    <string name="pair_average">औसत</string>
+    <string name="pair_longest">सबसे लंबा</string>
+    <string name="pair_since">से %1$s</string>
+    <string name="pair_of_measured">चलचित्र शेयर</string>
+    <string name="pair_measured">चलचित्र के लिए नापा</string>
+    <string name="pair_paid">भुगतान किया</string>
+    <string name="pair_per_hour">प्रति घंटा</string>
+    <string name="pair_bought">खरीदा</string>
+    <string name="pair_daily_hours_14">दैनिक घंटे (14 दिन)</string>
+    <string name="pair_rename_title">जोड़ी का नाम बदलु</string>
+    <string name="pair_rename_label">नाम</string>
+    <string name="pair_retire_title">इस जोड़ी को सेवनिवृत्त करु</string>
+    <string name="pair_retire_label">कारण (खराब, बेचा, खो गया…)</string>
+    <string name="pair_retire_confirm">सेवनिवृत्त करु</string>
+    <string name="pair_retire_supporting">कुल यहाँ जम जातु। वही डिवाइस फिरु से जुड़ु तो नई जोड़ी शुरु होतु।</string>
+    <string name="pair_price_title">भुगतान की गई कीमत</string>
+    <string name="pair_price_label">राशि (पूरे इकाइयाँ)</string>
+    <string name="pair_price_supporting">प्रति घंटा लागत के लिए उपयोग किया।</string>
+    <string name="pair_delete_title">इस जोड़ी को हटाऊ?</string>
+    <string name="pair_delete_body">सभी सत्र भी हटाऊ। यह वापस नहीं हो सकु।</string>
+
+    <string name="session_ongoing">जारी है</string>
+    <string name="session_until">तक %1$s</string>
+    <string name="session_playing">%1$s चल रहु है</string>
+    <string name="session_recovered">बरामद</string>
+
+    <string name="settings_tracking">ट्रैकिंग</string>
+    <string name="settings_detailed_title">विस्तृत ट्रैकिंग</string>
+    <string name="settings_detailed_body">तारदार हेडफुन अने चलचित्र समय जोडु। एंड्रॉयड सिर्फ चल रहु ऐप को तार घटनाए देता है, तो यह एक चुप सूचना रखु।</string>
+    <string name="settings_detailed_unavailable">ब्लूटुथ पहुंच तक उपलब्ध नहीं: यह बिल्ड सिर्फ connectedDevice सेवा प्रकार की घोषणा करु।</string>
+    <string name="settings_playback_only_title">सिर्फ चलचित्र गिनु</string>
+    <string name="settings_playback_only_body">आंकडे उस समय गिनतु हैं जब ऑडियो अभी चल रहु था। सिर्फ विस्तृत ट्रैकिंग सत्र नापु।</string>
+    <string name="settings_language">भाषा</string>
+    <string name="settings_language_system">प्रणाली भाषा</string>
+    <string name="settings_devices">डिवाइस</string>
+    <string name="settings_devices_body">जो हेडफुन नहीं हैं उसे अनचेक करु - कार स्टीरियो या स्पीकर।</string>
+    <string name="settings_device_subtitle">%1$s · पहले देखा %2$s</string>
+    <string name="settings_data">डेटा</string>
+    <string name="settings_export">json निर्यात करु</string>
+    <string name="settings_import">आयात करु</string>
+    <string name="settings_import_warning">आयात सब कुछ बदल देतु है।</string>
+    <string name="settings_troubleshooting">समस्या निवारण</string>
+    <string name="settings_battery_body">सत्र रिकॉर्ड नहीं हो रहु, तो ylih को बैटरी अनुकूलन से छूट दु। बल से रोका गया ऐप फिरु से जुड़ नहीं होतु।</string>
+    <string name="settings_battery_button">बैटरी सेटिंगस</string>
+    <string name="settings_battery_path">सेटिंगस → ऐप → ylih → बैटरी → असीमित।</string>
+    <string name="settings_hibernation_body">ylih महीनु नहीं खोलु, तो एंड्रॉयड इसे रोक देता है अने कुछ रिकॉर्ड नहीं होतु।</string>
+    <string name="settings_hibernation_on">एंड्रॉयड ylih को रोक सकतु है।</string>
+    <string name="settings_hibernation_off">ylih छूट है अने रिकॉर्ड करतु रहु।</string>
+    <string name="settings_hibernation_button">अप्रयुक्त ऐप सेटिंगस</string>
+    <string name="settings_about">के बारे मे</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — हेडफुन घंटे, स्थानीय और हमेशा।</string>
+    <string name="settings_import_confirm_title">सब डेटा बदलु?</string>
+    <string name="settings_import_confirm_body">यह बैकअप आयात सब कुछ हटातु है।</string>
+
+    <string name="widget_lifetime_label">ylih · जीवनकाल</string>
+    <string name="widget_lifetime_description">प्रति जोड़ी घंटे, जीवंत टाइमर के साथ</string>
+    <string name="widget_activity_label">ylih · गतिविधि</string>
+    <string name="widget_activity_description">सब जोड़ी के घंटे, आज, 7 दिन अने 30 दिन</string>
+    <string name="widget_chart_label">ylih · 30 दिन</string>
+    <string name="widget_chart_description">पिछले 30 दिनु मे दैनिक सुनने के घंटे</string>
+
+    <string name="action_save">सहेजु</string>
+    <string name="action_cancel">रद्द करु</string>
+    <string name="action_delete">हटाऊ</string>
+    <string name="action_import">आयात करु</string>
+
+    <string name="channel_tracking">हेडफुन ट्रैकिंग</string>
+    <string name="channel_tracking_description">जब ylih तारदार हेडफुन देखु। एंड्रॉयड चल नहीं रहु ऐप को तार घटनाए नहीं देता।</string>
+    <string name="notification_title">हेडफुन समय ट्रैकिंग</string>
+    <string name="notification_starting">शुरु हो रहु है…</string>
+    <string name="notification_idle">हेडफुन की प्रतीक्षा</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d जुड़ा हुआ · %2$s</item>
+        <item quantity="many">%1$d जुड़े हुए · %2$s</item>
+        <item quantity="other">%1$d जुड़े हुए · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d जुड़ा हुआ · %2$s · चल रहु है</item>
+        <item quantity="many">%1$d जुड़े हुए · %2$s · चल रहु है</item>
+        <item quantity="other">%1$d जुड़े हुए · %2$s · चल रहु है</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">यह बिल्ड को तारदार हेडफुन ट्रैक करने से पहले ब्लूटुथ पहुंच चाहिए</string>
+    <string name="export_done">बैकअप निर्यात</string>
+    <string name="export_failed">निर्यात विफल</string>
+    <string name="import_failed">आयात विफल</string>
+    <string name="error_could_not_open">%1$s खोल नहीं सकु</string>
+    <plurals name="import_done">
+        <item quantity="one">आयात %d सत्र</item>
+        <item quantity="many">आयात %d सत्र</item>
+        <item quantity="other">आयात %d सत्र</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d सत्र</item>
+        <item quantity="many">%d सत्र</item>
+        <item quantity="other">%d सत्र</item>
+    </plurals>
+    <string name="edit_failed">बदल जतन कि आउरे नि</string>
+</resources>

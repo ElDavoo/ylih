@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Ligurian. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - a t\' vita in scuffie</string>
+
+    <string name="nav_headphones">scuffie</string>
+    <string name="nav_stats">statistiche</string>
+    <string name="nav_settings">impostascioin</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">co-a dra</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">nescio</string>
+
+    <string name="welcome_title">benvegnu a ylih</string>
+    <string name="welcome_intro">ylih a registra quant\'o temp che torna conligada cada pariscia de scuffie, dunque che tra qualchi anno tu poeiva respondde a-a unica domanda che a conta for da pâriggia: quante ore le é durate?</string>
+    <string name="welcome_point_auto_title">conliga e scorda</string>
+    <string name="welcome_point_auto_body">scuffie bluetooth se registran da saie, da-o moment ch\'an se conligan. nisciun progamma a l\'ha de resta accian.</string>
+    <string name="welcome_point_lifetime_title">una pâriggia, una vita</string>
+    <string name="welcome_point_lifetime_body">quando una pâriggia a scassa, a ritira: o total se congia li e-a prósima pâriggia de-e steise scuffie a comensa da zero.</string>
+    <string name="welcome_point_detailed_title">co-a dra e riprodotio</string>
+    <string name="welcome_point_detailed_body">o registraggio minuço, into impostascioin, a gionta scuffie co-a dra e a mezzora quant\'o temp ch\'era veramenti en riprodotio.</string>
+    <string name="welcome_privacy">tott ò sciovvina scri tio telefono. no ghe n\'è accountu, e-a app no a n\'ha permiso d\'internet.</string>
+    <string name="welcome_start">comensa</string>
+    <string name="welcome_next">prosima</string>
+    <string name="welcome_allow">permetti</string>
+    <string name="welcome_step">pass %1$d de %2$d</string>
+    <string name="welcome_bluetooth_title">accesso bluetooth</string>
+    <string name="welcome_bluetooth_why">android a-o dice a-a app sóe che dispositivo bluetooth s\'è conligou e com\'è ciamô, se-a app a tegn\'o accesso bluetooth. ghe la çittou a-o regae ylih de distingue una pâriggia de scuffie da un stereo de machina, e com\'è que la sa recognosce una pâriggia de l\'atra.</string>
+    <string name="welcome_bluetooth_with">co-a: tota pâriggia a vegn registrada da quand\'a se conliga, sensa progamma che sciovv e sensa ninte da recordâ.</string>
+    <string name="welcome_bluetooth_without">sensa: nisciun scuffie bluetooth no se registran. o resto de-a app a funzionn comunque, e-tu poeiva permetti doppu, inte impostascioin de android.</string>
+    <string name="welcome_notifications_title">notifiche</string>
+    <string name="welcome_notifications_why">o registraggio minuço a fa ronn un servisio de sfondo muciciu, e android a lo manda a totta app che a fa cusì de mantegne una notifica visibile mentre ch\'a l\'ha.</string>
+    <string name="welcome_notifications_with">co-a: a notifica a te mostra que ghe vegn registrouva en tanta ora, che ghe l\'è l\'unica segno che-o registraggio minuço a l\'è vivo.</string>
+    <string name="welcome_notifications_without">sensa: o registraggio minuço a contiña a fâ e a registrâ. android sóe no a te mostra a notifica.</string>
+    <string name="hibernation_title">mantegn\'a contâ mentre tu te scordi</string>
+    <string name="hibernation_body">android a fa dormî app che a vegn lassâ sensa avî për mugli mesi e che ghe tegn torra i permisi, che a farebbe ylih registrâ nisciun mentre che tu no l\'abrissi. esse dimenticatô ghe l\'è propriu che cosa l\'è fâta sta app, entonces ghe val a pein togliela adesso.</string>
+    <string name="action_not_now">no mo</string>
+
+    <string name="devices_in_use">en uzo</string>
+    <string name="devices_retired">ritirô</string>
+    <string name="devices_empty_title">nisciun scuffie inta</string>
+    <string name="devices_empty_body">conliga una pâriggia de scuffie bluetooth e appaira chi. scuffie co-a dra gh\'an de avî-o registraggio minuço, into impostascioin.</string>
+    <string name="devices_generation">pâriggia #%1$d</string>
+    <string name="devices_retired_on">ritirô %1$s</string>
+    <string name="devices_connected_for">conligou %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">totte scuffie</string>
+    <string name="stats_sessions_since">%1$s da %2$s</string>
+    <string name="stats_today">ancheu</string>
+    <string name="stats_last_7">ultimi 7 giorni</string>
+    <string name="stats_last_30">ultimi 30 giorni</string>
+    <string name="stats_average_session">sessioun media</string>
+    <string name="stats_longest_session">sessioun a ciù longa</string>
+    <string name="stats_playing">audio en riprodotio</string>
+    <string name="stats_measured_span">misurou per riprodotio</string>
+    <string name="stats_share">cuota de riprodotio</string>
+    <string name="stats_playback_only_note">contaggio tempo de riprodotio ghe ghe sóe</string>
+    <string name="stats_daily_hours_30">ore de giurni (30 giorni)</string>
+    <string name="stats_by_pair">per pâriggia</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · ritirô</string>
+    <string name="chart_max">%1$s massimo</string>
+
+    <string name="pair_fallback_title">pâriggia</string>
+    <string name="pair_back">torna de segua</string>
+    <string name="pair_more">de ciù</string>
+    <string name="pair_menu_rename">cambya nome</string>
+    <string name="pair_menu_purchase">info de compra</string>
+    <string name="pair_menu_retire">ritira / cambiatô</string>
+    <string name="pair_menu_delete">scancella</string>
+    <string name="pair_lifetime">vita scri tia pâriggia</string>
+    <string name="pair_retired_on">ritirô %1$s</string>
+    <string name="pair_retired_with_reason">ritirô %1$s · %2$s</string>
+    <string name="pair_connected_now">conligou mo · %1$s</string>
+    <string name="pair_sessions">sessioun</string>
+    <string name="pair_average">media</string>
+    <string name="pair_longest">a ciù longa</string>
+    <string name="pair_since">da %1$s</string>
+    <string name="pair_of_measured">cuota de riprodotio</string>
+    <string name="pair_measured">misurou per riprodotio</string>
+    <string name="pair_paid">pagatô</string>
+    <string name="pair_per_hour">per ora</string>
+    <string name="pair_bought">compratô</string>
+    <string name="pair_daily_hours_14">ore de giurni (14 giorni)</string>
+    <string name="pair_rename_title">cambya nome a-a pâriggia</string>
+    <string name="pair_rename_label">nome</string>
+    <string name="pair_retire_title">ritira tia pâriggia</string>
+    <string name="pair_retire_label">motivo (rotta, venduta, sperduta…)</string>
+    <string name="pair_retire_confirm">ritira</string>
+    <string name="pair_retire_supporting">o total se congia chi. riconligandu o steiso dispositivo commensa una nova pâriggia da zero.</string>
+    <string name="pair_price_title">prezzo pagô</string>
+    <string name="pair_price_label">somma (unita intere)</string>
+    <string name="pair_price_supporting">dovrâ per a figua do costo-por-ora.</string>
+    <string name="pair_delete_title">scancella tia pâriggia?</string>
+    <string name="pair_delete_body">tota sessioun registrâ per quella a vignen scanciê. questo no ghe se pöe disfâ.</string>
+
+    <string name="session_ongoing">inta cors</string>
+    <string name="session_until">fina a %1$s</string>
+    <string name="session_playing">%1$s riprodotio</string>
+    <string name="session_recovered">recuperou</string>
+
+    <string name="settings_tracking">registraggio</string>
+    <string name="settings_detailed_title">registraggio minuço</string>
+    <string name="settings_detailed_body">giunta scuffie co-a dra e tempo de riprodotio. android sóe a dice a-a app che cosa tegn\'a vedde evento de presa co-a dra se-a app a l\'è en cors, entonces questo a tegn\'a mantegne una notifica scivâ into basso. bluetooth a vignen registrou comunghe.</string>
+    <string name="settings_detailed_unavailable">no disponibile fina che l\'accesso bluetooth no vegn permessu: sta build a dichiara sóe o tipo de servisio connectedDevice, che android 14+ a leva a permiso bluetooth.</string>
+    <string name="settings_playback_only_title">conta sóe riprodotio</string>
+    <string name="settings_playback_only_body">statistiche a contann\'o tempo che l\'audio a l\'era veramenti en riprodotio anziche-o tempo conligou. sóe sessioun registrâ co-o registraggio minuço attivô misuran o riprodotio; altre segnan lassâ fuvi.</string>
+    <string name="settings_language">lengua</string>
+    <string name="settings_language_system">lengua de sisitiema</string>
+    <string name="settings_devices">dispositivi</string>
+    <string name="settings_devices_body">deselezionn tota cosa che no ghè scuffie - un stereo de machina ò un altarlante - per smette de registrâa.</string>
+    <string name="settings_device_subtitle">%1$s · vediu per prima volta %2$s</string>
+    <string name="settings_data">dâte</string>
+    <string name="settings_export">esporta json</string>
+    <string name="settings_import">importa</string>
+    <string name="settings_import_warning">importâ a rimpiassa tott quell che ghe ghè scrivû adesso.</string>
+    <string name="settings_troubleshooting">risolvimen\'a de problemi</string>
+    <string name="settings_battery_body">se sessioun a vegn a cessâ de ressistâ registrâ, verifica che ylih no ghe stà ottimizâ da bateria - un\'app che a l\'è stâ fermâ a no tegn mai de resevve broadcast de conligazioun fina a che-a no vegn aperta.</string>
+    <string name="settings_battery_button">impostascioin bateria</string>
+    <string name="settings_battery_path">impostascioin → app → ylih → bateria → sensa limitascioin.</string>
+    <string name="settings_hibernation_body">se ylih a vegn lassâ sensa avî për mugli mesi, android a la fa dormî e ghe tegn torra i permisi, e nisciun a vegn registrou fina a che tu l\'abrissi. tollie tia ghe permette a una pâriggia de contiñâ a contâ tota una staggioun che tu nu te ricordi de-a app.</string>
+    <string name="settings_hibernation_on">android a pöe fâ dormî ylih.</string>
+    <string name="settings_hibernation_off">ylih no a vegn fâta dormî e a contiña a registrâ.</string>
+    <string name="settings_hibernation_button">impostascioin app no dovrâ</string>
+    <string name="settings_about">informascioin</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — ore de scuffie, mantegne localment e sempre.</string>
+    <string name="settings_import_confirm_title">rimpiassa totte dâte?</string>
+    <string name="settings_import_confirm_body">importâ sta cöpia a scancella tota cosa che ghe ghè scrivû adesso.</string>
+
+    <string name="widget_lifetime_label">ylih · vita</string>
+    <string name="widget_lifetime_description">ore per pâriggia, co-a un timer vivo scri quell che a ghè conligou</string>
+    <string name="widget_activity_label">ylih · attivita</string>
+    <string name="widget_activity_description">ore de tote pâriggie insieme, ciù ancheu, 7 giorni e 30 giorni</string>
+    <string name="widget_chart_label">ylih · 30 giorni</string>
+    <string name="widget_chart_description">ore de ascolto giurnaliere durante i ultimi 30 giorni</string>
+
+    <string name="action_save">salva</string>
+    <string name="action_cancel">anussa</string>
+    <string name="action_delete">scancella</string>
+    <string name="action_import">importa</string>
+
+    <string name="channel_tracking">registraggio scuffie</string>
+    <string name="channel_tracking_description">mostrou mentre ylih a viggia scuffie co-a dra e riprodotio. android a no manda evento de presa co-a dra a app che a no favonzionn.</string>
+    <string name="notification_title">registraggio tempo scuffie</string>
+    <string name="notification_starting">commensandu…</string>
+    <string name="notification_idle">aspettandu scuffie</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d conligou · %2$s</item>
+        <item quantity="other">%1$d conligou · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d conligou · %2$s · riprodotio</item>
+        <item quantity="other">%1$d conligou · %2$s · riprodotio</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">sta build a gh\'ha de avî accesso bluetooth prima de potse registrâ scuffie co-a dra</string>
+    <string name="export_done">cöpia esportâ</string>
+    <string name="export_failed">esportascioin fallî</string>
+    <string name="import_failed">importascioin fallî</string>
+    <string name="edit_failed">no ghè possibile salvâ cambio</string>
+    <string name="error_could_not_open">no ghè possibile avî %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">importâ %d sessioun</item>
+        <item quantity="other">importâ %d sessioun</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sessioun</item>
+        <item quantity="other">%d sessioun</item>
+    </plurals>
+</resources>

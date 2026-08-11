@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Hausa. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - rayuwar halayya da kula-kula</string>
+
+    <string name="nav_headphones">kula-kula</string>
+    <string name="nav_stats">lissafin</string>
+    <string name="nav_settings">saita</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">wired</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ba a sani</string>
+
+    <string name="welcome_title">sannu wa ylih</string>
+    <string name="welcome_intro">ylih yana riƙa yadda haka kula-kula ta tsaya haɗe, don a nan gida na gida ka iya amsa tambaya ɗaya gida: sawun kaliru ne na karkama?</string>
+    <string name="welcome_point_auto_title">haɗe kuma sakaci</string>
+    <string name="welcome_point_auto_body">an riƙa kula-kula bluetooth ta kansu, daga lokacin da ta haɗe. babu abin da ke buƙatar jira.</string>
+    <string name="welcome_point_lifetime_title">jimla ɗaya, waje gida</string>
+    <string name="welcome_point_lifetime_body">lokacin da kula-kula ta mutu, dakatar da ita: jumlorin ta tsaya a nan kuma sabo na sabuwar na’ura ɗaya yana farawa daga sifili.</string>
+    <string name="welcome_point_detailed_title">mabuda kuma wasa</string>
+    <string name="welcome_point_detailed_body">binciken zuriya a saita yana ƙari kula-kula mabuda da uke lokaci wasa. amma kula-kula bluetooth ake riƙa haba.</string>
+    <string name="welcome_privacy">komai yana zauna a jiyya. babu akawun kuma ba na’ura ita internet izini.</string>
+    <string name="welcome_start">fara</string>
+    <string name="welcome_next">gaba</string>
+    <string name="welcome_allow">ba da izin</string>
+    <string name="welcome_step">mataki %1$d na %2$d</string>
+    <string name="welcome_bluetooth_title">buɗin bluetooth</string>
+    <string name="welcome_bluetooth_why">android na gida yana gida na’ura bluetooth da ta haɗe, kuma menene aka kira, sai a na’ura yi riƙa izini bluetooth. shi ne ylih ta nemo kula-kula daga wuta waja, kuma ita ce tare shine.</string>
+    <string name="welcome_bluetooth_with">tare: kowane jimla ake riƙa daga lokacin da ta haɗe, babu abin da jira kuma babu abin da ke buƙatar tuki.</string>
+    <string name="welcome_bluetooth_without">ba tare: babu kula-kula bluetooth da ake riƙa ko kaɗai. komi na na’ura ya aiki yanzu, kuma ka iya ba da izini a gida android saita.</string>
+    <string name="welcome_notifications_title">sanarwa</string>
+    <string name="welcome_notifications_why">binciken zuriya yana tare dabbar a gida, kuma android na buƙata kowane na’ura yana tare ta ajiye sanarwa da ta gida wajen yana aiki.</string>
+    <string name="welcome_notifications_with">tare: sanarwa ta nuna abin da ake riƙa a yanzu, wanda ne sigina gida ita ce binciken zuriya sai tsini.</string>
+    <string name="welcome_notifications_without">ba tare: binciken zuriya a tare riƙa kuma riƙa. android ba kaɗai ba tare sanarwa.</string>
+    <string name="hibernation_title">ci gida ƙidaya wajen ka sakaci</string>
+    <string name="hibernation_body">android yana tsayar na’ura wajen ba a buɗe lokaci kaɗai kuma yana dawo da izinin, wanda zai bar ylih riƙa babu komai sai wajen ka buɗe. dalilin nan ne na na’ura nan, don ya wajabe bugaje jiya.</string>
+    <string name="action_not_now">a yanzu ba</string>
+
+    <string name="devices_in_use">ana aiki</string>
+    <string name="devices_retired">dakatar</string>
+    <string name="devices_empty_title">babu kula-kula jiya</string>
+    <string name="devices_empty_body">haɗe jimlar kula-kula bluetooth kuma za ta nuna a nan. kula-kula mabuda za ta buƙata binciken zuriya, a saita.</string>
+    <string name="devices_generation">jimla #%1$d</string>
+    <string name="devices_retired_on">dakatar %1$s</string>
+    <string name="devices_connected_for">haɗe %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">duk kula-kula</string>
+    <string name="stats_sessions_since">%1$s tun %2$s</string>
+    <string name="stats_today">yau</string>
+    <string name="stats_last_7">kwanaki 7 da suka wuce</string>
+    <string name="stats_last_30">kwanaki 30 da suka wuce</string>
+    <string name="stats_average_session">matsakaicin zaman</string>
+    <string name="stats_longest_session">babbar zaman</string>
+    <string name="stats_playing">sauti wasa</string>
+    <string name="stats_measured_span">auna don wasa</string>
+    <string name="stats_share">rabiya wasa</string>
+    <string name="stats_playback_only_note">ƙidaya lokaci wasa ne kaɗai</string>
+    <string name="stats_daily_hours_30">awannin yau-yau (kwanaki 30)</string>
+    <string name="stats_by_pair">ta hanyar jimla</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · dakatar</string>
+    <string name="chart_max">%1$s max</string>
+
+    <string name="pair_fallback_title">jimla</string>
+    <string name="pair_back">koma</string>
+    <string name="pair_more">kari</string>
+    <string name="pair_menu_rename">sayi suna</string>
+    <string name="pair_menu_purchase">bayani sayan</string>
+    <string name="pair_menu_retire">dakatar / maye gurbin</string>
+    <string name="pair_menu_delete">guje</string>
+    <string name="pair_lifetime">waje gida akan jimlar nan</string>
+    <string name="pair_retired_on">dakatar %1$s</string>
+    <string name="pair_retired_with_reason">dakatar %1$s · %2$s</string>
+    <string name="pair_connected_now">haɗe jiya · %1$s</string>
+    <string name="pair_sessions">zaman</string>
+    <string name="pair_average">matsakaici</string>
+    <string name="pair_longest">babbar</string>
+    <string name="pair_since">tun %1$s</string>
+    <string name="pair_of_measured">rabiya wasa</string>
+    <string name="pair_measured">auna don wasa</string>
+    <string name="pair_paid">kudin biya</string>
+    <string name="pair_per_hour">a awa</string>
+    <string name="pair_bought">sabani</string>
+    <string name="pair_daily_hours_14">awannin yau-yau (kwanaki 14)</string>
+    <string name="pair_rename_title">sayi suna jimla</string>
+    <string name="pair_rename_label">suna</string>
+    <string name="pair_retire_title">dakatar jimlar nan</string>
+    <string name="pair_retire_label">dalili (mutu, sayar, asarar…)</string>
+    <string name="pair_retire_confirm">dakatar</string>
+    <string name="pair_retire_supporting">jumlorin su tsaya a nan. haɗi na kusan gaida ya budde sabon jimla daga sifili.</string>
+    <string name="pair_price_title">kudin da aka biya</string>
+    <string name="pair_price_label">adedi (cikakkiyar jumla)</string>
+    <string name="pair_price_supporting">ana aiki da ita don lissafin kusada a awa.</string>
+    <string name="pair_delete_title">guje jimlar nan?</string>
+    <string name="pair_delete_body">kowane zaman da aka riƙa shi ya guje. baɗa bukata karya.</string>
+
+    <string name="session_ongoing">ita sai yanzu</string>
+    <string name="session_until">har %1$s</string>
+    <string name="session_playing">%1$s wasa</string>
+    <string name="session_recovered">kuwa sakonin</string>
+
+    <string name="settings_tracking">bincike</string>
+    <string name="settings_detailed_title">binciken bayyananne</string>
+    <string name="settings_detailed_body">yana ƙari kula-kula mabuda da lokaci wasa. android na gida wired plug events kaɗai kaɗai wajen na’ura yana aiki, don haka ita tare sanarwa a shade. bluetooth ake riƙa haba.</string>
+    <string name="settings_detailed_unavailable">babu sai a buɗe bluetooth: jiyya ne ya aika connectedDevice nau’i ne kawai, wanda android 14+ ke rike da bluetooth izini.</string>
+    <string name="settings_playback_only_title">ƙidaya wasa kaɗai</string>
+    <string name="settings_playback_only_body">lissafin ƙidaya lokaci sauti a wasa da gaske a maimakon lokaci haɗe. sai zaman da aka riƙa tare binciken zuriya wasa; sauran ake ajiye.</string>
+    <string name="settings_language">harshe</string>
+    <string name="settings_language_system">harshen tsarin</string>
+    <string name="settings_devices">na’ura</string>
+    <string name="settings_devices_body">toshe komai da ba kula-kula kaɗai — wuta waja ko maɗakar — don guje riƙa shi.</string>
+    <string name="settings_device_subtitle">%1$s · na farko ga’i %2$s</string>
+    <string name="settings_data">bayani</string>
+    <string name="settings_export">fita json</string>
+    <string name="settings_import">shiga</string>
+    <string name="settings_import_warning">shiga ya maye gurbin duk abin da aka riƙa jiya.</string>
+    <string name="settings_troubleshooting">kareshi kuskuri</string>
+    <string name="settings_battery_body">in zaman ba a riƙa, duba cewa ylih babu karwar ajiyar bateri — na’ura da aka dakatar ba ya karba haɗi saman babes sai a buɗe.</string>
+    <string name="settings_battery_button">saita bateri</string>
+    <string name="settings_battery_path">saita → na’ura → ylih → bateri → mara ƙunƙunta.</string>
+    <string name="settings_hibernation_body">in ylih ta tsada lokaci kaɗai, android yana tsayar kuma yana dawo da izinin, kuma babu abin da ake riƙa sai wajen ka buɗe. bugaje jiyya shi ne abin da zai sanar jimla ta ci gida ƙidaya wajen season ba ka tunatuwa na’ura.</string>
+    <string name="settings_hibernation_on">android na iya tsayar ylih.</string>
+    <string name="settings_hibernation_off">ylih ta tsananta kuma ta ci gida riƙa.</string>
+    <string name="settings_hibernation_button">saita na’ura babu aiki</string>
+    <string name="settings_about">game da</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — awannin kula-kula, an ajiye a gida kuma har abada.</string>
+    <string name="settings_import_confirm_title">maye gurbin duk bayani?</string>
+    <string name="settings_import_confirm_body">shiga ayya nan ta guje kowane na’ura, jimla da zaman da an riƙa jiya.</string>
+
+    <string name="widget_lifetime_label">ylih · waje gida</string>
+    <string name="widget_lifetime_description">awannin kowane jimla, tare da kwarawa mai rai a abin da aka haɗa</string>
+    <string name="widget_activity_label">ylih · aiki</string>
+    <string name="widget_activity_description">awannin duk jimla tare, kuma yau, kwanaki 7 da 30</string>
+    <string name="widget_chart_label">ylih · 30 kwanaki</string>
+    <string name="widget_chart_description">awannin sauraron yau-yau bayan kwanaki 30 da suka wuce</string>
+
+    <string name="action_save">kayar</string>
+    <string name="action_cancel">soke</string>
+    <string name="action_delete">guje</string>
+    <string name="action_import">shiga</string>
+
+    <string name="channel_tracking">binciken kula-kula</string>
+    <string name="channel_tracking_description">nuna wajen ylih yana kula kula-kula mabuda da wasa. android na gida wired plug events kaɗai wajen na’ura yana aiki.</string>
+    <string name="notification_title">binciken lokaci kula-kula</string>
+    <string name="notification_starting">fara…</string>
+    <string name="notification_idle">jira kula-kula</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d haɗe · %2$s</item>
+        <item quantity="other">%1$d haɗe · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d haɗe · %2$s · wasa</item>
+        <item quantity="other">%1$d haɗe · %2$s · wasa</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">jiyya na kira ya buɗe bluetooth kafin ya iya binciken kula-kula mabuda</string>
+    <string name="export_done">ayya an fita</string>
+    <string name="export_failed">fita ta kasa</string>
+    <string name="import_failed">shiga ta kasa</string>
+    <string name="error_could_not_open">baɗa bukata buɗe %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">shiga zaman %d</item>
+        <item quantity="other">shiga zaman %d</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">zaman %d</item>
+        <item quantity="other">zaman %d</item>
+    </plurals>
+    <string name="edit_failed">ba a iya ajiye canjin ba</string>
+</resources>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Kashmiri (Arabic). Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - تمہاری ہیڈفونز زندگی</string>
+
+    <string name="nav_headphones">ہیڈفونز</string>
+    <string name="nav_stats">شماریات</string>
+    <string name="nav_settings">ترتیبات</string>
+
+    <string name="kind_bluetooth">بلیو ٹوتھ</string>
+    <string name="kind_ble">لے آڈیو</string>
+    <string name="kind_wired">تاری</string>
+    <string name="kind_usb">یوایسبی</string>
+    <string name="kind_unknown">نامعلوم</string>
+
+    <string name="welcome_title">ylih میں خوش آمدید</string>
+    <string name="welcome_intro">ylih ریکارڈ کرتا ہے کہ ہیڈفونز کے ہر جوڑے کتنے عرصے تک جڑے رہتے ہیں، تاکہ سالوں بعد آپ ابھی بھی اس سوال کا جواب دے سکیں جو ایک جوڑے کے بارے میں سب سے اہم ہے: وہ کتنے گھنٹے رہے؟</string>
+    <string name="welcome_point_auto_title">جڑیں اور بھول جائیں</string>
+    <string name="welcome_point_auto_body">بلیو ٹوتھ ہیڈفونز خود بخود ریکارڈ کیے جاتے ہیں، جیسے ہی وہ جڑتے ہیں۔ کچھ بھی چلتا نہیں رہنا پڑتا۔</string>
+    <string name="welcome_point_lifetime_title">ایک جوڑی، ایک عمر</string>
+    <string name="welcome_point_lifetime_body">جب ایک جوڑی ختم ہو جائے تو اسے ریٹائر کریں: اس کا کل وہاں رک جاتا ہے اور اسی ہیڈفونز کی اگلی جوڑی پھر سے شروع ہوتی ہے۔</string>
+    <string name="welcome_point_detailed_title">تاری اور چلانا</string>
+    <string name="welcome_point_detailed_body">تفصیلی ٹریکنگ ترتیبات میں تاری ہیڈفونز شامل کرتی ہے اور یہ ناپتی ہے کہ وقت کا کتنا حصہ درحقیقت بج رہا تھا۔</string>
+    <string name="welcome_privacy">سب کچھ اس فون پر رہتا ہے۔ کوئی اکاؤنٹ نہیں ہے، اور ایپ کو انٹرنیٹ اجازت نہیں ہے۔</string>
+    <string name="welcome_start">شروع کریں</string>
+    <string name="welcome_next">آگے</string>
+    <string name="welcome_allow">اجازت دیں</string>
+    <string name="welcome_step">قدم %1$d از %2$d</string>
+    <string name="welcome_bluetooth_title">بلیو ٹوتھ رسائی</string>
+    <string name="welcome_bluetooth_why">اینڈروڈ صرف ایک ایپ کو بتاتا ہے کہ کون سا بلیو ٹوتھ ڈیوائس جڑا ہے، اور اسے کیا کہا جاتا ہے، اگر ایپ کے پاس بلیو ٹوتھ رسائی ہو۔ یہی وہ طریقہ ہے جس سے ylih ہیڈفونز کو کار اسٹیرو سے الگ کرتا ہے، اور یہ جانتا ہے کہ ایک جوڑی دوسری سے الگ ہے۔</string>
+    <string name="welcome_bluetooth_with">اس کے ساتھ: ہر جوڑی جڑتے ہی ریکارڈ کی جاتی ہے، کچھ بھی چلتا نہیں رہتا اور کوئی دبانے کو کچھ نہیں رہتا۔</string>
+    <string name="welcome_bluetooth_without">اس کے بغیر: کوئی بھی بلیو ٹوتھ ہیڈفونز ریکارڈ نہیں ہوتے۔ ایپ کا باقی حصہ ابھی بھی کام کرتا ہے، اور آپ اسے بعد میں اینڈروڈ کی ایپ ترتیبات میں اجازت دے سکتے ہیں۔</string>
+    <string name="welcome_notifications_title">اطلاعات</string>
+    <string name="welcome_notifications_why">تفصیلی ٹریکنگ ایک چھوٹی سی بیک گراؤنڈ سروس چلاتی ہے، اور اینڈروڈ کسی بھی ایپ کو ایسا کرتے ہوئے ایک اطلاع نظر آنے دینا درکار ہے۔</string>
+    <string name="welcome_notifications_with">اس کے ساتھ: اطلاع دکھاتی ہے کہ اب کیا ریکارڈ ہو رہا ہے، جو تفصیلی ٹریکنگ کے زندہ ہونے کی واحد علامت ہے۔</string>
+    <string name="welcome_notifications_without">اس کے بغیر: تفصیلی ٹریکنگ ابھی بھی چلتی رہتی ہے اور ریکارڈ کرتے رہتے ہیں۔ اینڈروڈ صرف اس کی اطلاع نہیں دکھائے گا۔</string>
+    <string name="hibernation_title">بھولے ہوئے وقت میں شمار کریں</string>
+    <string name="hibernation_body">اینڈروڈ ایپس کو موقوف کرتا ہے جو کئی ماہ تک نہ کھولے جائیں اور ان کی اجازتیں واپس لے لیتے ہیں، جو ylih کو کچھ ریکارڈ نہ کرنے دیتا جب تک آپ اسے پھر نہ کھول دیں۔ بھولا جانا بالکل یہی ہے جس کے لیے یہ ایپ ہے، لہذا اسے اب بند کرنا قابلِ قدر ہے۔</string>
+    <string name="action_not_now">ابھی نہیں</string>
+
+    <string name="devices_in_use">استعمال میں</string>
+    <string name="devices_retired">ریٹائر ہو گئے</string>
+    <string name="devices_empty_title">ابھی کوئی ہیڈفونز نہیں</string>
+    <string name="devices_empty_body">بلیو ٹوتھ ہیڈفونز کا ایک جوڑا جڑیں اور وہ یہاں نمودار ہوں گے۔ تاری ہیڈفونز کو ترتیبات میں تفصیلی ٹریکنگ کی ضرورت ہے۔</string>
+    <string name="devices_generation">جوڑی #%1$d</string>
+    <string name="devices_retired_on">ریٹائر %1$s</string>
+    <string name="devices_connected_for">جڑا %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">تمام ہیڈفونز</string>
+    <string name="stats_sessions_since">%1$s %2$s کے بعد سے</string>
+    <string name="stats_today">آج</string>
+    <string name="stats_last_7">گزشتہ 7 دن</string>
+    <string name="stats_last_30">گزشتہ 30 دن</string>
+    <string name="stats_average_session">اوسط سیشن</string>
+    <string name="stats_longest_session">سب سے لمبا سیشن</string>
+    <string name="stats_playing">آڈیو بج رہا ہے</string>
+    <string name="stats_measured_span">چلانے کے لیے ناپا گیا</string>
+    <string name="stats_share">بجتے ہوئے کا حصہ</string>
+    <string name="stats_playback_only_note">صرف چلانے کا وقت شمار کریں</string>
+    <string name="stats_daily_hours_30">روزانہ گھنٹے (30 دن)</string>
+    <string name="stats_by_pair">جوڑی کے لحاظ سے</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · ریٹائر ہو گئے</string>
+    <string name="chart_max">%1$s زیادہ سے زیادہ</string>
+
+    <string name="pair_fallback_title">جوڑی</string>
+    <string name="pair_back">واپس</string>
+    <string name="pair_more">مزید</string>
+    <string name="pair_menu_rename">نام تبدیل کریں</string>
+    <string name="pair_menu_purchase">خریداری کی معلومات</string>
+    <string name="pair_menu_retire">ریٹائر / بدلا گیا</string>
+    <string name="pair_menu_delete">حذف کریں</string>
+    <string name="pair_lifetime">اس جوڑی کی عمر بھر</string>
+    <string name="pair_retired_on">ریٹائر %1$s</string>
+    <string name="pair_retired_with_reason">ریٹائر %1$s · %2$s</string>
+    <string name="pair_connected_now">ابھی جڑا · %1$s</string>
+    <string name="pair_sessions">سیشنز</string>
+    <string name="pair_average">اوسط</string>
+    <string name="pair_longest">سب سے لمبا</string>
+    <string name="pair_since">%1$s کے بعد سے</string>
+    <string name="pair_of_measured">بجتے ہوئے کا حصہ</string>
+    <string name="pair_measured">چلانے کے لیے ناپا گیا</string>
+    <string name="pair_paid">ادا کی گئی</string>
+    <string name="pair_per_hour">فی گھنٹہ</string>
+    <string name="pair_bought">خریدا گیا</string>
+    <string name="pair_daily_hours_14">روزانہ گھنٹے (14 دن)</string>
+    <string name="pair_rename_title">جوڑی کا نام تبدیل کریں</string>
+    <string name="pair_rename_label">نام</string>
+    <string name="pair_retire_title">اس جوڑی کو ریٹائر کریں</string>
+    <string name="pair_retire_label">وجہ (ختم ہو گئے، فروخت، کھو گئے…)</string>
+    <string name="pair_retire_confirm">ریٹائر کریں</string>
+    <string name="pair_retire_supporting">کل یہاں منجمد ہو جاتا ہے۔ اسی ڈیوائس کو دوبارہ جڑنے سے شروع سے صفر سے نیا جوڑا شروع ہوتا ہے۔</string>
+    <string name="pair_price_title">ادا کی گئی قیمت</string>
+    <string name="pair_price_label">رقم (مکمل اکائیاں)</string>
+    <string name="pair_price_supporting">فی گھنٹہ لاگت کی شکل میں استعمال۔</string>
+    <string name="pair_delete_title">اس جوڑی کو حذف کریں؟</string>
+    <string name="pair_delete_body">اس کے لیے ریکارڈ شدہ ہر سیشن بھی حذف ہو جاتا ہے۔ یہ واپس نہیں کیا جا سکتا۔</string>
+
+    <string name="session_ongoing">جاری ہے</string>
+    <string name="session_until">جب تک %1$s</string>
+    <string name="session_playing">%1$s بج رہا ہے</string>
+    <string name="session_recovered">بحال</string>
+
+    <string name="settings_tracking">ٹریکنگ</string>
+    <string name="settings_detailed_title">تفصیلی ٹریکنگ</string>
+    <string name="settings_detailed_body">تاری ہیڈفونز اور چلانے کا وقت شامل کرتا ہے۔ اینڈروڈ صرف تاری پلگ ایونٹس رن کر رہی ایپ کو بتاتا ہے، لہذا یہ سائے میں ایک خاموش اطلاع رکھتا ہے۔ بلیو ٹوتھ بہر حال ٹریک کیا جاتا ہے۔</string>
+    <string name="settings_detailed_unavailable">بلیو ٹوتھ رسائی دینے تک دستیاب نہیں: یہ بلڈ صرف connectedDevice سروس کی قسم کا اعلان کرتا ہے، جو اینڈروڈ 14+ بلیو ٹوتھ اجازت سے بندھا ہے۔</string>
+    <string name="settings_playback_only_title">صرف چلانا شمار کریں</string>
+    <string name="settings_playback_only_body">شماریات جڑنے کے وقت کی بجائے آڈیو درحقیقت بجتے ہوئے وقت کو شمار کرتی ہے۔ صرف تفصیلی ٹریکنگ کے ساتھ ریکارڈ شدہ سیشنز ناپے ہوئے چلانے کو شمار کرتے ہیں؛ باقی باہر رہ جاتے ہیں۔</string>
+    <string name="settings_language">زبان</string>
+    <string name="settings_language_system">سسٹم زبان</string>
+    <string name="settings_devices">ڈیوائسز</string>
+    <string name="settings_devices_body">ہیڈفونز نہ ہونے والی کسی بھی چیز کو ان چیک کریں — کار اسٹیرو یا اسپیکر — اسے ریکارڈ کرنا بند کریں۔</string>
+    <string name="settings_device_subtitle">%1$s · پہلے دیکھا %2$s</string>
+    <string name="settings_data">ڈیٹا</string>
+    <string name="settings_export">json برآمد کریں</string>
+    <string name="settings_import">درآمد کریں</string>
+    <string name="settings_import_warning">درآمد موجودہ طور پر محفوظ ہر چیز کو بدل دیتا ہے۔</string>
+    <string name="settings_troubleshooting">خرابی کی تشخیص</string>
+    <string name="settings_battery_body">اگر سیشنز ریکارڈ ہونا بند ہو جائیں تو چیک کریں کہ ylih بیٹری کی بہتری سے مستثنیٰ ہے — جو ایپ جبری بند ہو گئی ہے اسے جب تک کھول نہ دیں تب تک دوبارہ کبھی جڑنے کی اطلاع نہیں ملے۔</string>
+    <string name="settings_battery_button">بیٹری ترتیبات</string>
+    <string name="settings_battery_path">ترتیبات → ایپس → ylih → بیٹری → غیر محدود۔</string>
+    <string name="settings_hibernation_body">اگر ylih کئی ماہ تک نہ کھولا جائے تو اینڈروڈ اسے موقوف کرتا ہے اور اس کی اجازتیں واپس لیتا ہے، اور جب تک آپ اسے کھول نہ دیں تب تک کچھ بھی دوبارہ ریکارڈ نہیں ہوتا۔ اسے بند کرنا یہی ہے جو جوڑی کو اسی موسم میں شمار جاری رکھنے دیتا ہے جس کے بارے میں آپ کبھی ایپ کے بارے میں سوچتے ہی نہیں۔</string>
+    <string name="settings_hibernation_on">اینڈروڈ ylih کو موقوف کر سکتا ہے۔</string>
+    <string name="settings_hibernation_off">ylih مستثنیٰ ہے اور ریکارڈ کرتے رہتا ہے۔</string>
+    <string name="settings_hibernation_button">غیر استعمال شدہ ایپ ترتیبات</string>
+    <string name="settings_about">کے بارے میں</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — ہیڈفونز کے گھنٹے، مقامی طور پر اور ہمیشہ کے لیے محفوظ۔</string>
+    <string name="settings_import_confirm_title">تمام ڈیٹا بدلیں؟</string>
+    <string name="settings_import_confirm_body">اس بیک اپ کو درآمد کرنا موجودہ طور پر محفوظ ہر ڈیوائس، جوڑی اور سیشن حذف کرتا ہے۔</string>
+
+    <string name="widget_lifetime_label">ylih · عمر بھر</string>
+    <string name="widget_lifetime_description">جوڑی فی گھنٹہ، جو بھی جڑا ہو اس پر لائیو ٹائمر کے ساتھ</string>
+    <string name="widget_activity_label">ylih · سرگرمی</string>
+    <string name="widget_activity_description">ہر جوڑی کے گھنٹے، آج، 7 دن اور 30 دن کے علاوہ</string>
+    <string name="widget_chart_label">ylih · 30 دن</string>
+    <string name="widget_chart_description">گزشتہ 30 دن میں روزانہ سننے کے گھنٹے</string>
+
+    <string name="action_save">محفوظ کریں</string>
+    <string name="action_cancel">منسوخ کریں</string>
+    <string name="action_delete">حذف کریں</string>
+    <string name="action_import">درآمد کریں</string>
+
+    <string name="channel_tracking">ہیڈفونز ٹریکنگ</string>
+    <string name="channel_tracking_description">تاری ہیڈفونز اور چلانے کے لیے ylih دیکھ رہے ہوئے وقت دکھایا جاتا ہے۔ اینڈروڈ غیر رن کر رہی ایپس کو تاری پلگ ایونٹس نہیں بتاتا۔</string>
+    <string name="notification_title">ہیڈفونز کا وقت ٹریک کریں</string>
+    <string name="notification_starting">شروع ہو رہا ہے…</string>
+    <string name="notification_idle">ہیڈفونز کا انتظار ہے</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d جڑا · %2$s</item>
+        <item quantity="other">%1$d جڑے · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d جڑا · %2$s · بج رہا ہے</item>
+        <item quantity="other">%1$d جڑے · %2$s · بج رہے ہیں</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">یہ بلڈ تاری ہیڈفونز ٹریک کرنے سے پہلے بلیو ٹوتھ رسائی کی ضرورت ہے</string>
+    <string name="export_done">بیک اپ برآمد کیا گیا</string>
+    <string name="export_failed">برآمد ناکام</string>
+    <string name="import_failed">درآمد ناکام</string>
+    <string name="error_could_not_open">%1$s کھول نہیں سکے</string>
+    <plurals name="import_done">
+        <item quantity="one">درآمد شدہ %d سیشن</item>
+        <item quantity="other">درآمد شدہ %d سیشنز</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d سیشن</item>
+        <item quantity="other">%d سیشنز</item>
+    </plurals>
+    <string name="edit_failed">تبدیلی محفوظ کرِنہٕ آو نہٕ</string>
+</resources>

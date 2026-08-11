@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Uzbek (Arabic). Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - سىز ھوسیلاسندا ھایات</string>
+
+    <string name="nav_headphones">ھوسیلاسی</string>
+    <string name="nav_stats">تاتسٻئ</string>
+    <string name="nav_settings">تناقوسو</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">سیملی</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">نومعلوم</string>
+
+    <string name="welcome_title">ylih غا خوش کیلدینگیز</string>
+    <string name="welcome_intro">ylih ھور بیر ھوسیلاسی قاندی ۋاقت الاقتاشکان وقتنی ساقلایدو</string>
+    <string name="welcome_point_auto_title">الاقتاش ۋا ئونتیش</string>
+    <string name="welcome_point_auto_body">bluetooth ھوسیلاسی ئۆزلاری ساقلانادو</string>
+    <string name="welcome_point_lifetime_title">بیر جوپ بیر ومور</string>
+    <string name="welcome_point_lifetime_body">ھوسیلاسی ۆلسا ئونی پنسیوگا چیقار</string>
+    <string name="welcome_point_detailed_title">سیملی ۋا پویش</string>
+    <string name="welcome_point_detailed_body">توللق مولازیمت سیملی ھوسیلاسی ۋا پویش وقتی قوشادو</string>
+    <string name="welcome_privacy">ھمما نارسا بو تالیفوندا قالادو</string>
+    <string name="welcome_start">باشلا</string>
+    <string name="welcome_next">کییاتسی</string>
+    <string name="welcome_allow">روخسات بار</string>
+    <string name="welcome_step">قادام %1$d - %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth رسایسی</string>
+    <string name="welcome_bluetooth_why">android ھوسیلاسی نومی بیلیش ۋاسلى bluetooth اجازتی چاھادو</string>
+    <string name="welcome_bluetooth_with">ھوسیلاسی ئۆزلاری ساقلانادو</string>
+    <string name="welcome_bluetooth_without">bluetooth ھوسیلاسی ساقلانمایدو</string>
+    <string name="welcome_notifications_title">خبارتمالار</string>
+    <string name="welcome_notifications_why">توللق مولازیمت فون خیزماتی باشلایدو</string>
+    <string name="welcome_notifications_with">خبارتما توللق مولازیمتنی کارسىتادو</string>
+    <string name="welcome_notifications_without">توللق مولازیمت ایشلایدو</string>
+    <string name="hibernation_title">سیز ئونتسانگیز ھام موللا مولازیمت</string>
+    <string name="hibernation_body">android وقتی وقت الاقتاشمیسا یئی</string>
+    <string name="action_not_now">ھالی ئامس</string>
+
+    <string name="devices_in_use">ایشتیتیلمودا</string>
+    <string name="devices_retired">پنسیودالاستو</string>
+    <string name="devices_empty_title">ھالی ھیچ ھوسیلاسی یوق</string>
+    <string name="devices_empty_body">bluetooth ھوسیلاسی الاقتاش</string>
+    <string name="devices_generation">جوپ #%1$d</string>
+    <string name="devices_retired_on">پنسیودالاستو %1$s</string>
+    <string name="devices_connected_for">الاقتاشتو %1$s</string>
+    <string name="devices_recent">%1$s / 7 کون</string>
+
+    <string name="stats_title">بارلیق ھوسیلاسی</string>
+    <string name="stats_sessions_since">%1$s - %2$s</string>
+    <string name="stats_today">بۆگون</string>
+    <string name="stats_last_7">سونگى 7 کون</string>
+    <string name="stats_last_30">سونگى 30 کون</string>
+    <string name="stats_average_session">یگینی سیانس</string>
+    <string name="stats_longest_session">انگ یزون سیانس</string>
+    <string name="stats_playing">آۆاز چالمودا</string>
+    <string name="stats_measured_span">پویش اۋقاتى اۆلچاندو</string>
+    <string name="stats_share">پویش بیلیشی</string>
+    <string name="stats_playback_only_note">پویش وقتی بیلاند</string>
+    <string name="stats_daily_hours_30">کونلیك سائات (30 کون)</string>
+    <string name="stats_by_pair">جوپ بوینچا</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · پنسیودالاستو</string>
+    <string name="chart_max">%1$s انگ کوپ</string>
+
+    <string name="pair_fallback_title">جوپ</string>
+    <string name="pair_back">ارقاسى</string>
+    <string name="pair_more">تاقا</string>
+    <string name="pair_menu_rename">نام ۆزگارت</string>
+    <string name="pair_menu_purchase">سیتیۋالغان اۋقاتى</string>
+    <string name="pair_menu_retire">پنسیودالاستو / ۆزگارت</string>
+    <string name="pair_menu_delete">ۆچۈر</string>
+    <string name="pair_lifetime">بو جوپنىڭ ومورى</string>
+    <string name="pair_retired_on">پنسیودالاستو %1$s</string>
+    <string name="pair_retired_with_reason">پنسیودالاستو %1$s · %2$s</string>
+    <string name="pair_connected_now">الاقتاشتو %1$s</string>
+    <string name="pair_sessions">سیانسلار</string>
+    <string name="pair_average">یگینی</string>
+    <string name="pair_longest">انگ یزون</string>
+    <string name="pair_since">%1$s چیقیپ</string>
+    <string name="pair_of_measured">پویش بیلیشی</string>
+    <string name="pair_measured">پویش اۋقاتى اۆلچاندو</string>
+    <string name="pair_paid">توللیندى</string>
+    <string name="pair_per_hour">سائات اۋقاتى</string>
+    <string name="pair_bought">سیتیۋالغان</string>
+    <string name="pair_daily_hours_14">کونلیك سائات (14 کون)</string>
+    <string name="pair_rename_title">جوپنىڭ نامى ۆزگارت</string>
+    <string name="pair_rename_label">نام</string>
+    <string name="pair_retire_title">بو جوپنى پنسیودالاستو</string>
+    <string name="pair_retire_label">سابب (ۆلگان واسىل.)</string>
+    <string name="pair_retire_confirm">پنسیودالاستو</string>
+    <string name="pair_retire_supporting">جامی بو ھام توختایدو</string>
+    <string name="pair_price_title">سیتیۋالغان نارخى</string>
+    <string name="pair_price_label">مىقدار (پوتون بیرلىک)</string>
+    <string name="pair_price_supporting">سائات اۋقاتى نارخى اۋقاتى</string>
+    <string name="pair_delete_title">بو جوپنى ۆچۈرسۈ؟</string>
+    <string name="pair_delete_body">بارلیق سیانسلار ۆچۈرولادو</string>
+
+    <string name="session_ongoing">ھالى دأۋاملاشتورولمودا</string>
+    <string name="session_until">%1$s غىچا</string>
+    <string name="session_playing">%1$s پویش</string>
+    <string name="session_recovered">قایتا تیکلاندى</string>
+
+    <string name="settings_tracking">ئیزداش</string>
+    <string name="settings_detailed_title">توللق مولازیمت</string>
+    <string name="settings_detailed_body">سیملی ھوسیلاسی ۋا پویش اۋقاتى قوشادو</string>
+    <string name="settings_detailed_unavailable">bluetooth رسایسى چاھادو</string>
+    <string name="settings_playback_only_title">پویش وقتی بیلاند</string>
+    <string name="settings_playback_only_body">تاتسٻی پویش وقتی بیلاند</string>
+    <string name="settings_language">تیل</string>
+    <string name="settings_language_system">سیستما تیلى</string>
+    <string name="settings_devices">ۆسکونا</string>
+    <string name="settings_devices_body">ھوسیلاسى تاللا</string>
+    <string name="settings_device_subtitle">%1$s · بىرىنچى جاھاندى %2$s</string>
+    <string name="settings_data">ماعلوماتى</string>
+    <string name="settings_export">json چىقار</string>
+    <string name="settings_import">کىرگۈز</string>
+    <string name="settings_import_warning">کىرگۈز بارلىق ماعلوماتنى الماشتورادو</string>
+    <string name="settings_troubleshooting">مسئالا ھال قیل</string>
+    <string name="settings_battery_body">باتاریانى یاخشى قیل</string>
+    <string name="settings_battery_button">باتاریانىڭ تناقوسو</string>
+    <string name="settings_battery_path">تناقوسو → ۆسکونا → ylih → باتاریا → چاکسىز</string>
+    <string name="settings_hibernation_body">ylih کونو دۆرفیسىدا یئی قایتا ئیتىپ قیلىنادو</string>
+    <string name="settings_hibernation_on">android ylih قایتا ئیتىپ قیل شى موموکین</string>
+    <string name="settings_hibernation_off">ylih قایتا ئیتىپ قیلىنمایدو</string>
+    <string name="settings_hibernation_button">ایشلیتىلمیگان ۆسکونانىڭ تناقوسو</string>
+    <string name="settings_about">ھاقیدا</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — ھوسیلاسى سائاتى</string>
+    <string name="settings_import_confirm_title">بارلىق ماعلوماتنى الماشتورسۇ؟</string>
+    <string name="settings_import_confirm_body">کىرگۈز بارلىق ماعلوماتنى ۆچۈرادو</string>
+
+    <string name="widget_lifetime_label">ylih · ومور</string>
+    <string name="widget_lifetime_description">جوپ سائاتى الاقتاش تایمار بیلان</string>
+    <string name="widget_activity_label">ylih · فائالیات</string>
+    <string name="widget_activity_description">جوپ سائاتى بۆگون 7 کون 30 کون</string>
+    <string name="widget_chart_label">ylih · 30 کون</string>
+    <string name="widget_chart_description">30 کوندا کونلیك سائات</string>
+
+    <string name="action_save">ساقلا</string>
+    <string name="action_cancel">بیکار</string>
+    <string name="action_delete">ۆچۈر</string>
+    <string name="action_import">کىرگۈز</string>
+
+    <string name="channel_tracking">ھوسیلاسى ئیزداش</string>
+    <string name="channel_tracking_description">ylih سیملی ھوسیلاسى ئیزدایدو</string>
+    <string name="notification_title">ھوسیلاسى وقتى ئیزداش</string>
+    <string name="notification_starting">باشلانمودا...</string>
+    <string name="notification_idle">ھوسیلاسى ساقلاش</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d الاقتاشتو · %2$s</item>
+        <item quantity="other">%1$d الاقتاشتو · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d الاقتاشتو · %2$s · پویش</item>
+        <item quantity="other">%1$d الاقتاشتو · %2$s · پویش</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">توللق مولازیمت bluetooth رسایسى چاھادو</string>
+    <string name="export_done">بیکاپ چىقىپ بولدى</string>
+    <string name="export_failed">چىقار مکام ایماسدى</string>
+    <string name="import_failed">کىرگۈز مکام ایماسدى</string>
+    <string name="edit_failed">ۆزگارتىلمادى</string>
+    <string name="error_could_not_open">%1$s ئاچالمادى</string>
+    <plurals name="import_done">
+        <item quantity="one">%d سیانس کىرگۈزۈلدى</item>
+        <item quantity="other">%d سیانس کىرگۈزۈلدى</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d سیانس</item>
+        <item quantity="other">%d سیانس</item>
+    </plurals>
+</resources>

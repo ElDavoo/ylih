@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Turkmen. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - hayatynyz akustika telefonlarda</string>
+
+    <string name="nav_headphones">akustika telefonlar</string>
+    <string name="nav_stats">statistika</string>
+    <string name="nav_settings">sazlamalar</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">simli</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">nbildim</string>
+
+    <string name="welcome_title">ylih-e hoş geldiňiz</string>
+    <string name="welcome_intro">ylih her akustika telefonynyz nädip gyzylmakaýynynyň waktyny ýazýp saklaýar</string>
+    <string name="welcome_point_auto_title">birikdirmek we unutmak</string>
+    <string name="welcome_point_auto_body">bluetooth akustika telefonlary gyzylmakaý bolýarlar</string>
+    <string name="welcome_point_lifetime_title">bir juplanyş bir ömür</string>
+    <string name="welcome_point_lifetime_body">akustika telefonynyz ölände, ony pensiýa çykaryň</string>
+    <string name="welcome_point_detailed_title">simli we oynatmak</string>
+    <string name="welcome_point_detailed_body">detallylmak gyzylmak simli akustika telefonlaryny goşýar</string>
+    <string name="welcome_privacy">hemme zat bu telefonda galýar. hasap ýok</string>
+    <string name="welcome_start">başlaň</string>
+    <string name="welcome_next">indiki</string>
+    <string name="welcome_allow">rugsat beriň</string>
+    <string name="welcome_step">addym %1$d - %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth girişi</string>
+    <string name="welcome_bluetooth_why">android bluetooth enjamynynyň adresini bermelidir</string>
+    <string name="welcome_bluetooth_with">akustika telefonlary talypdan ýazylýarlar</string>
+    <string name="welcome_bluetooth_without">bluetooth akustika telefonlary ýazylmaýar</string>
+    <string name="welcome_notifications_title">duýduryşlar</string>
+    <string name="welcome_notifications_why">detallylmak gyzylmak fonanyň hyzmatyny başlaýar</string>
+    <string name="welcome_notifications_with">duýduryş detallylmak gyzylmagy görkezýär</string>
+    <string name="welcome_notifications_without">detallylmak gyzylmak işleýär</string>
+    <string name="hibernation_title">saňa unutsa-da, ýadma</string>
+    <string name="hibernation_body">android aýlary açylmasa hemme zady saklaýar</string>
+    <string name="action_not_now">şu wagty däl</string>
+
+    <string name="devices_in_use">işlemede</string>
+    <string name="devices_retired">pensiýa</string>
+    <string name="devices_empty_title">haliŋiz akustika telefon ýok</string>
+    <string name="devices_empty_body">bluetooth akustika telefonlaryny birikdiriň</string>
+    <string name="devices_generation">juplanyş #%1$d</string>
+    <string name="devices_retired_on">pensiýa %1$s</string>
+    <string name="devices_connected_for">birikdirilen %1$s</string>
+    <string name="devices_recent">%1$s / 7 gün</string>
+
+    <string name="stats_title">ähli akustika telefonlar</string>
+    <string name="stats_sessions_since">%1$s - %2$s</string>
+    <string name="stats_today">bu gün</string>
+    <string name="stats_last_7">soňky 7 gün</string>
+    <string name="stats_last_30">soňky 30 gün</string>
+    <string name="stats_average_session">ortaça session</string>
+    <string name="stats_longest_session">iň uzyn session</string>
+    <string name="stats_playing">ses oynatmak</string>
+    <string name="stats_measured_span">oynatmak üçin ölçülen</string>
+    <string name="stats_share">oynatmak paýy</string>
+    <string name="stats_playback_only_note">diňe oynatmak wagty</string>
+    <string name="stats_daily_hours_30">gündelik sagat (30 gün)</string>
+    <string name="stats_by_pair">juplanyş boýunça</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · pensiýa</string>
+    <string name="chart_max">%1$s iň belli</string>
+
+    <string name="pair_fallback_title">juplanyş</string>
+    <string name="pair_back">yza</string>
+    <string name="pair_more">köp</string>
+    <string name="pair_menu_rename">ady üýtget</string>
+    <string name="pair_menu_purchase">satyn almak maglumatlar</string>
+    <string name="pair_menu_retire">pensiýa / çalyst</string>
+    <string name="pair_menu_delete">poz</string>
+    <string name="pair_lifetime">bu juplanyşynyň ömrü</string>
+    <string name="pair_retired_on">pensiýa %1$s</string>
+    <string name="pair_retired_with_reason">pensiýa %1$s · %2$s</string>
+    <string name="pair_connected_now">birikdirilen %1$s</string>
+    <string name="pair_sessions">sessions</string>
+    <string name="pair_average">ortaça</string>
+    <string name="pair_longest">iň uzyn</string>
+    <string name="pair_since">%1$s akhynt</string>
+    <string name="pair_of_measured">oynatmak paýy</string>
+    <string name="pair_measured">oynatmak üçin ölçülen</string>
+    <string name="pair_paid">töleg</string>
+    <string name="pair_per_hour">sagat başyna</string>
+    <string name="pair_bought">satyn alyndy</string>
+    <string name="pair_daily_hours_14">gündelik sagat (14 gün)</string>
+    <string name="pair_rename_title">juplanyş ady üýtget</string>
+    <string name="pair_rename_label">ady</string>
+    <string name="pair_retire_title">bu juplanyşy pensiýa çykar</string>
+    <string name="pair_retire_label">sebäp (öldi ş.)</string>
+    <string name="pair_retire_confirm">pensiýa</string>
+    <string name="pair_retire_supporting">jemi durmuşda saklanyp galýar</string>
+    <string name="pair_price_title">satyn almak bahasy</string>
+    <string name="pair_price_label">mukdar (bütün birlikleri)</string>
+    <string name="pair_price_supporting">sagat başyna bahasy üçin ulanyldy</string>
+    <string name="pair_delete_title">bu juplanyşy pozasyňyz?</string>
+    <string name="pair_delete_body">ähli sessions pozulýarlar</string>
+
+    <string name="session_ongoing">dowam edip barýar</string>
+    <string name="session_until">%1$s çenli</string>
+    <string name="session_playing">%1$s oynatmak</string>
+    <string name="session_recovered">dikeldildi</string>
+
+    <string name="settings_tracking">gyzylmak</string>
+    <string name="settings_detailed_title">detallylmak gyzylmak</string>
+    <string name="settings_detailed_body">simli akustika telefonlaryny we oynatmak wagtyny goşýar</string>
+    <string name="settings_detailed_unavailable">bluetooth berelmeli</string>
+    <string name="settings_playback_only_title">diňe oynatmak wagty</string>
+    <string name="settings_playback_only_body">statistika oynatmak wagtyny hasaplaýar</string>
+    <string name="settings_language">dil</string>
+    <string name="settings_language_system">enjam dili</string>
+    <string name="settings_devices">enjamlar</string>
+    <string name="settings_devices_body">akustika telefonlary saýlaň</string>
+    <string name="settings_device_subtitle">%1$s · ilkinji gezek %2$s</string>
+    <string name="settings_data">maglumatlar</string>
+    <string name="settings_export">json çykar</string>
+    <string name="settings_import">gir</string>
+    <string name="settings_import_warning">import ähli maglumatly üýtget</string>
+    <string name="settings_troubleshooting">çydama</string>
+    <string name="settings_battery_body">batareýa optimizasiýasy</string>
+    <string name="settings_battery_button">batareýa sazlamalary</string>
+    <string name="settings_battery_path">sazlamalar → enjamlar → ylih → batareýa → çäksiz</string>
+    <string name="settings_hibernation_body">enjam aýlary açylmasa saklanmalydyr</string>
+    <string name="settings_hibernation_on">android ylih saklamagy mümkin</string>
+    <string name="settings_hibernation_off">ylih saklanmandyr</string>
+    <string name="settings_hibernation_button">işlemedik enjam sazlamalary</string>
+    <string name="settings_about">barada</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — akustika telefonynyz sagatlary</string>
+    <string name="settings_import_confirm_title">ähli maglumatly üýtget?</string>
+    <string name="settings_import_confirm_body">import ähli enjamlary poz</string>
+
+    <string name="widget_lifetime_label">ylih · ömür</string>
+    <string name="widget_lifetime_description">juplanyş sagatlary, birikdirilen juplanyş timer</string>
+    <string name="widget_activity_label">ylih · işjeň</string>
+    <string name="widget_activity_description">ähli juplanyş sagatlary, bu gün, 7 gün, 30 gün</string>
+    <string name="widget_chart_label">ylih · 30 gün</string>
+    <string name="widget_chart_description">soňky 30 günde gündelik sagat</string>
+
+    <string name="action_save">sakla</string>
+    <string name="action_cancel">yzyna gal</string>
+    <string name="action_delete">poz</string>
+    <string name="action_import">gir</string>
+
+    <string name="channel_tracking">akustika telefon gyzylmak</string>
+    <string name="channel_tracking_description">ylih simli akustika telefonlaryny gyzylýar</string>
+    <string name="notification_title">akustika telefon wagtyny gyzylmak</string>
+    <string name="notification_starting">başlanýar...</string>
+    <string name="notification_idle">akustika telefony garaşyşy</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d birikdirilen · %2$s</item>
+        <item quantity="other">%1$d birikdirilen · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d birikdirilen · %2$s · oynatmak</item>
+        <item quantity="other">%1$d birikdirilen · %2$s · oynatmak</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">detallylmak gyzylmak bluetooth gerekli</string>
+    <string name="export_done">back-up çykaryldy</string>
+    <string name="export_failed">çykar şowsuz</string>
+    <string name="import_failed">girmek şowsuz</string>
+    <string name="edit_failed">üýtgemedu</string>
+    <string name="error_could_not_open">%1$s aça inenok</string>
+    <plurals name="import_done">
+        <item quantity="one">%d session girmek</item>
+        <item quantity="other">%d sessions girmek</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d session</item>
+        <item quantity="other">%d sessions</item>
+    </plurals>
+</resources>

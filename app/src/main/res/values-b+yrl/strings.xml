@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Nheengatu. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - a sua iwa ne xingu</string>
+
+    <string name="nav_headphones">umusuka</string>
+    <string name="nav_stats">retapihaka</string>
+    <string name="nav_settings">a pukapika</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">itasú</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">i xé amu umunha</string>
+
+    <string name="welcome_title">bé-ẽ uyukú ylih rupí</string>
+    <string name="welcome_intro">ylih uyumunha akanhẽ umusuka-itá rupí ayura, panhẽ ẽ ayé i waá paá: umusuka retama taína ayura?</string>
+    <string name="welcome_point_auto_title">arama rupí i unhekapitá</string>
+    <string name="welcome_point_auto_body">umusuka bluetooth arama putári i unhekapitá yenye rupí, nẽ i paá apigara. nẽ a umusuka apigara-itá riáitá rupí.</string>
+    <string name="welcome_point_lifetime_title">umusuka pupe, umusuka pupe</string>
+    <string name="welcome_point_lifetime_body">umusuka pukú i unhekapitá, a rema ã retara ã rupí ka umusuka yenye rupí i anhekapitá puruã rupí.</string>
+    <string name="welcome_point_detailed_title">itasú nẽ i yaskuari</string>
+    <string name="welcome_point_detailed_body">a pukapika tukura, piri tukura, itasú arama nẽ i yaskuari ayura ã reteita.</string>
+    <string name="welcome_privacy">panhẽ a ruma apigara ã rupí. nẽ arama ã hamarama, nẽ app a internet rupí ã pukapika.</string>
+    <string name="welcome_start">arama putári</string>
+    <string name="welcome_next">yenye</string>
+    <string name="welcome_allow">kuá</string>
+    <string name="welcome_step">apigara %1$d piri %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth ã pukapika</string>
+    <string name="welcome_bluetooth_why">android kuá app akanhẽ umusuka bluetooth arama, nẽ a té arama retama, kumé ylih i umusuka amu ãma paá, nẽ kumé ã umusuka retama a umusuka retama.</string>
+    <string name="welcome_bluetooth_with">kuá a ruma: umusuka kuxipoã i unhekapitá yenye rupí, nẽ a apigara nẽ a umusuka apigara retama.</string>
+    <string name="welcome_bluetooth_without">nẽ kuá a ruma: umusuka bluetooth nẽ i unhekapitá o. app yenye a siía, nẽ a kuá a rema ã android app pukapika.</string>
+    <string name="welcome_notifications_title">ilè àti isèlè yenye</string>
+    <string name="welcome_notifications_why">akiwé akiyesi maa ṣiṣẹ service kekere, ati android nilo gba nipa ohun ti yoo ṣe yii lati ha ilè ni akoko ti o ba nṣiṣẹ.</string>
+    <string name="welcome_notifications_with">ti o ba ni: ilè yii yoo fi ohun ti a ti ranti ìbálópẹ́ han, eyi ni ẹnikan ti o le ṣe ilè akiyesi nṣiṣẹ.</string>
+    <string name="welcome_notifications_without">ti ko ba ni: akiwé akiyesi yii yoo ṣiṣẹ ati ranti. android yii kii ri ilè rẹ o.</string>
+    <string name="hibernation_title">a kaá apigara i kaxiwé ka i ú nungara putári</string>
+    <string name="hibernation_body">android a app paá i unhekapitá retama i pukapika a irumu ã rupí, itá a ylih nẽ i kaxiwé apigara kuxé i kaá ã pukapika. i kaxiwé app retama retama, kumé kumé a rema ã.</string>
+    <string name="action_not_now">nẽ muña ã</string>
+
+    <string name="devices_in_use">i apigara rupí</string>
+    <string name="devices_retired">a remá</string>
+    <string name="devices_empty_title">umusuka nẽ muña à</string>
+    <string name="devices_empty_body">umusuka bluetooth retama akura ã retama piri ibá. umusuka itasú a pukapika tukura rupí.</string>
+    <string name="devices_generation">umusuka #%1$d</string>
+    <string name="devices_retired_on">a remá %1$s</string>
+    <string name="devices_connected_for">i pukapika %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">umusuka kuxipoã</string>
+    <string name="stats_sessions_since">%1$s iñe %2$s</string>
+    <string name="stats_today">ãwé</string>
+    <string name="stats_last_7">ãwé-itá 7 retama</string>
+    <string name="stats_last_30">ãwé-itá 30 retama</string>
+    <string name="stats_average_session">apigara akanhẽ</string>
+    <string name="stats_longest_session">apigara pukúa</string>
+    <string name="stats_playing">i yaskuari ayura</string>
+    <string name="stats_measured_span">i yaskuari rupí retama</string>
+    <string name="stats_share">i yaskuari seputí</string>
+    <string name="stats_playback_only_note">i yaskuari puxipoã reteita</string>
+    <string name="stats_daily_hours_30">yaskuari irũma (30 ãwé-itá)</string>
+    <string name="stats_by_pair">umusuka rupí</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · a remá</string>
+    <string name="chart_max">%1$s retama</string>
+
+    <string name="pair_fallback_title">umusuka</string>
+    <string name="pair_back">i yetá</string>
+    <string name="pair_more">ẽ yenye</string>
+    <string name="pair_menu_rename">tamba retama</string>
+    <string name="pair_menu_purchase">retama umumtima</string>
+    <string name="pair_menu_retire">remá / iyatama</string>
+    <string name="pair_menu_delete">rembá</string>
+    <string name="pair_lifetime">umusuka pite ayura panhẽ</string>
+    <string name="pair_retired_on">a remá %1$s</string>
+    <string name="pair_retired_with_reason">a remá %1$s · %2$s</string>
+    <string name="pair_connected_now">i pukapika ãwé · %1$s</string>
+    <string name="pair_sessions">apigara-itá</string>
+    <string name="pair_average">akanhẽ</string>
+    <string name="pair_longest">pukúa</string>
+    <string name="pair_since">iñe %1$s</string>
+    <string name="pair_of_measured">i yaskuari seputí</string>
+    <string name="pair_measured">i yaskuari rupí retama</string>
+    <string name="pair_paid">se kuxé</string>
+    <string name="pair_per_hour">yaskuari akanhẽ rupí</string>
+    <string name="pair_bought">umumtima</string>
+    <string name="pair_daily_hours_14">yaskuari irũma (14 ãwé-itá)</string>
+    <string name="pair_rename_title">tamba retama umusuka</string>
+    <string name="pair_rename_label">tamba</string>
+    <string name="pair_retire_title">remá umusuka pite</string>
+    <string name="pair_retire_label">siía (pukú, ya, sunu…)</string>
+    <string name="pair_retire_confirm">remá</string>
+    <string name="pair_retire_supporting">ayura retara ã rupí. igwe retama i unhekapitá umusuka yenye puruã rupí.</string>
+    <string name="pair_price_title">umumtima retama</string>
+    <string name="pair_price_label">sendu (pite irũma)</string>
+    <string name="pair_price_supporting">i yaskuari retama yaskuari akanhẽ rupí.</string>
+    <string name="pair_delete_title">rembá umusuka pite?</string>
+    <string name="pair_delete_body">apigara kuxipoã i unhekapitá rupí rembá o. itá a yetáta o.</string>
+
+    <string name="session_ongoing">i pukapika ãwé</string>
+    <string name="session_until">kuxé %1$s</string>
+    <string name="session_playing">%1$s i yaskuari</string>
+    <string name="session_recovered">i yené</string>
+
+    <string name="settings_tracking">i pukapika</string>
+    <string name="settings_detailed_title">i pukapika tukura</string>
+    <string name="settings_detailed_body">itasú arama nẽ i yaskuari ayura. android kuá wired plug events app pukapika rupí, kumé ã apigara ilé ã putári. bluetooth i pukapika kuxipoã.</string>
+    <string name="settings_detailed_unavailable">nẽ muña bluetooth ã pukapika kuá rema o: app a connectedDevice service type piri sapekaí, kumé android 14+ bluetooth ã pukapika rupí.</string>
+    <string name="settings_playback_only_title">i yaskuari puxipoã reteita</string>
+    <string name="settings_playback_only_body">retapihaka i yaskuari ayura tukura i apigara ayura rupí. apigara retama i pukapika tukura ayura ã; iyoku nẽ ayura o.</string>
+    <string name="settings_language">tamba</string>
+    <string name="settings_language_system">tamba android</string>
+    <string name="settings_devices">igwe-itá</string>
+    <string name="settings_devices_body">se nẽ muña umusuka — igwe kariõ taba — kumé nẽ i pukapika rembá.</string>
+    <string name="settings_device_subtitle">%1$s · iñe ihé %2$s</string>
+    <string name="settings_data">retapihaka</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">i wó</string>
+    <string name="settings_import_warning">i wó panhẽ retama nuzé putári.</string>
+    <string name="settings_troubleshooting">retama siía</string>
+    <string name="settings_battery_body">apigara nẽ i unhekapitá o, ihé ylih nẽ battery iyatama pukapika — app i úka nuzé nẽ a unhekapitá ã ãwé kuxipoã ẽ kaá ã.</string>
+    <string name="settings_battery_button">battery pukapika</string>
+    <string name="settings_battery_path">pukapika → apps → ylih → battery → nẽ pita.</string>
+    <string name="settings_hibernation_body">ylih i úka apigara retama nuzé kaá, android a o i pukapika ã rembá, nẽ kuxé i unhekapitá ãwé ẽ kaá ã siía o. itá remá kumé umusuka ayura estación ã retama i app ã nungara ã.</string>
+    <string name="settings_hibernation_on">android ylih o remá kuxé.</string>
+    <string name="settings_hibernation_off">ylih nẽ pita nẽ a pukapika reteita.</string>
+    <string name="settings_hibernation_button">app nẽ apigara pukapika</string>
+    <string name="settings_about">nuzé</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — umusuka yaskuari, pukapika rupí nẽ panhẽ.</string>
+    <string name="settings_import_confirm_title">retama panhẽ nuzé?</string>
+    <string name="settings_import_confirm_body">retama remá backup panhẽ igwe, umusuka nẽ apigara nuzé.</string>
+
+    <string name="widget_lifetime_label">ylih · umusuka ayura</string>
+    <string name="widget_lifetime_description">yaskuari umusuka rupí, i yaskuari apigara pukapika</string>
+    <string name="widget_activity_label">ylih · apigara</string>
+    <string name="widget_activity_description">umusuka kuxipoã yaskuari i seputí, ãwé, 7 ãwé-itá nẽ 30 ãwé-itá</string>
+    <string name="widget_chart_label">ylih · 30 ãwé-itá</string>
+    <string name="widget_chart_description">yaskuari irũma ãwé-itá 30 retama</string>
+
+    <string name="action_save">ã nuzé</string>
+    <string name="action_cancel">nẽ muña</string>
+    <string name="action_delete">rembá</string>
+    <string name="action_import">i wó</string>
+
+    <string name="channel_tracking">umusuka i pukapika</string>
+    <string name="channel_tracking_description">han kuxé ylih itasú nẽ i yaskuari ayura. android kuá wired plug events app pukapika rupí o.</string>
+    <string name="notification_title">umusuka i pukapika ayura</string>
+    <string name="notification_starting">arama putári...</string>
+    <string name="notification_idle">umusuka alayé</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d i pukapika · %2$s</item>
+        <item quantity="many">%1$d i pukapika · %2$s</item>
+        <item quantity="other">%1$d i pukapika · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d i pukapika · %2$s · i yaskuari</item>
+        <item quantity="many">%1$d i pukapika · %2$s · i yaskuari</item>
+        <item quantity="other">%1$d i pukapika · %2$s · i yaskuari</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">app a bluetooth ã pukapika kuá kumé itasú i pukapika</string>
+    <string name="export_done">retama jade</string>
+    <string name="export_failed">retama jade siía</string>
+    <string name="import_failed">i wó siía</string>
+    <string name="edit_failed">nẽ a kumé iyatama</string>
+    <string name="error_could_not_open">nẽ a kumé %1$s ã</string>
+    <plurals name="import_done">
+        <item quantity="one">i wó %d apigara</item>
+        <item quantity="many">i wó %d apigara</item>
+        <item quantity="other">i wó %d apigara</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d apigara</item>
+        <item quantity="many">%d apigara</item>
+        <item quantity="other">%d apigara</item>
+    </plurals>
+</resources>

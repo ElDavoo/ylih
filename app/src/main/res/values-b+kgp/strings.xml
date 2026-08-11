@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Kaingang. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ag tĩ nũ ki kutulunan</string>
+
+    <string name="nav_headphones">kutulunan</string>
+    <string name="nav_stats">estad</string>
+    <string name="nav_settings">rég</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">som le</string>
+    <string name="kind_wired">tig</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">tẽ gõ</string>
+
+    <string name="welcome_title">felág vũ ylih</string>
+    <string name="welcome_intro">ylih tẽ tukré kãgó ũ jĩ kutulunan kimẽ tã tymĩ tĩ, pa ke anũ mu nũ ta té vũ pẽpég ki ta jõ tĩ jag kutulunan: upe rẽ sé kimẽ tã ku?</string>
+    <string name="welcome_point_auto_title">vũ no ség</string>
+    <string name="welcome_point_auto_body">kutulunan bluetooth tẽ ukré prũ se, dedu se vũ. nũ ga ty kré rĩ.</string>
+    <string name="welcome_point_lifetime_title">kimẽ nũ, ty kimẽ</string>
+    <string name="welcome_point_lifetime_body">kãgó kutulunan té, kórta se: kré se ty rê lũ. kutulunan jĩ kutulunan se ty ambĩ fỹ fõ.</string>
+    <string name="welcome_point_detailed_title">tig no kí rĩ</string>
+    <string name="welcome_point_detailed_body">tukré gĩ, na rég, ty ũ kutulunan tig no ty ũ kãgó kí ta kõ.</string>
+    <string name="welcome_privacy">tud ty rê lũ nũ telefon. ty akẽ, no app ty ty rẽnpéjó interneti.</string>
+    <string name="welcome_start">fám</string>
+    <string name="welcome_next">jĩ</string>
+    <string name="welcome_allow">nĩ</string>
+    <string name="welcome_step">pej %1$d ty %2$d</string>
+    <string name="welcome_bluetooth_title">rẽ bluetooth</string>
+    <string name="welcome_bluetooth_why">android só ty nẽ app ki dispositivo bluetooth tã vũ, no ki jag se ty nẽ, se app ty rẽ bluetooth. é té ylih ta ty nẽ kimẽ kutulunan ty carro, no té se ty nẽ jĩ nũ jĩ.</string>
+    <string name="welcome_bluetooth_with">nĩ: kutulunan kimẽ tẽ ukré dedu se vũ, nĩ nũ ty rĩ no nĩ nũ ty fág.</string>
+    <string name="welcome_bluetooth_without">nĩ ty: kutulunan bluetooth ty ukré nũ tud. rég jĩ ta rĩ, no wé ga ty nĩ pag nu stinísi android.</string>
+    <string name="welcome_notifications_title">tẽn</string>
+    <string name="welcome_notifications_why">tukré gĩ ta kí servisu fundu, no android ty ag app kãgó ty fág pa ty nẽ tẽn dum se ta kí.</string>
+    <string name="welcome_notifications_with">nĩ: tẽn ta ty nẽ ki ta kré sãgí, ke úniku nẽ ty tukré gĩ ta ty rĩ.</string>
+    <string name="welcome_notifications_without">nĩ ty: tukré gĩ ta rĩ no ta kré. android só ty nẽ tẽn se.</string>
+    <string name="hibernation_title">rẽ kré dum wé ség</string>
+    <string name="hibernation_body">android ta pãrá apps ki ty ta nũ pag mẽ no ty tír rẽ, ke gera ylih a ty nũ kré até ku wé ta fám tena. ség prũ ke app ta jag pa, ó ty fág agora.</string>
+    <string name="action_not_now">nĩ agora</string>
+
+    <string name="devices_in_use">ta ty usádu</string>
+    <string name="devices_retired">ta ku</string>
+    <string name="devices_empty_title">ty kutulunan andu</string>
+    <string name="devices_empty_body">vũ kutulunan bluetooth no ty aparé. kutulunan tig ty ag tukré gĩ, na rég.</string>
+    <string name="devices_generation">kimẽ #%1$d</string>
+    <string name="devices_retired_on">ta ku %1$s</string>
+    <string name="devices_connected_for">vũ %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">kutulunan tud</string>
+    <string name="stats_sessions_since">%1$s dedu %2$s</string>
+    <string name="stats_today">jágó</string>
+    <string name="stats_last_7">7 dia sẽg</string>
+    <string name="stats_last_30">30 dia sẽg</string>
+    <string name="stats_average_session">mea té</string>
+    <string name="stats_longest_session">té nẽ</string>
+    <string name="stats_playing">som ta kí</string>
+    <string name="stats_measured_span">gẽ pa kí</string>
+    <string name="stats_share">kré kí</string>
+    <string name="stats_playback_only_note">rẽ sómente kí</string>
+    <string name="stats_daily_hours_30">upe dia (30 dia)</string>
+    <string name="stats_by_pair">kõ kimẽ</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · ta ku</string>
+    <string name="chart_max">%1$s nẽ</string>
+
+    <string name="pair_fallback_title">kimẽ</string>
+    <string name="pair_back">rẽ</string>
+    <string name="pair_more">jĩ</string>
+    <string name="pair_menu_rename">trok jag</string>
+    <string name="pair_menu_purchase">dadu kupra</string>
+    <string name="pair_menu_retire">ku / trokádu</string>
+    <string name="pair_menu_delete">té</string>
+    <string name="pair_lifetime">ty nũ kimẽ iã</string>
+    <string name="pair_retired_on">ta ku %1$s</string>
+    <string name="pair_retired_with_reason">ta ku %1$s · %2$s</string>
+    <string name="pair_connected_now">vũ agora · %1$s</string>
+    <string name="pair_sessions">té</string>
+    <string name="pair_average">mea</string>
+    <string name="pair_longest">nẽ</string>
+    <string name="pair_since">dedu %1$s</string>
+    <string name="pair_of_measured">kré kí</string>
+    <string name="pair_measured">gẽ pa kí</string>
+    <string name="pair_paid">pagádu</string>
+    <string name="pair_per_hour">kõ upe</string>
+    <string name="pair_bought">kuprádu</string>
+    <string name="pair_daily_hours_14">upe dia (14 dia)</string>
+    <string name="pair_rename_title">trok jag kimẽ</string>
+    <string name="pair_rename_label">jag</string>
+    <string name="pair_retire_title">ku kimẽ iã</string>
+    <string name="pair_retire_label">kiã (tegí, bendí, pesí…)</string>
+    <string name="pair_retire_confirm">ku</string>
+    <string name="pair_retire_supporting">kré ty rê lũ. vũ tena dispositivo jĩ ta fám kimẽ jĩ fõ fỹ.</string>
+    <string name="pair_price_title">kré pagádu</string>
+    <string name="pair_price_label">kiã (kiã tud)</string>
+    <string name="pair_price_supporting">ta usá pa mea kré-kõ-upe.</string>
+    <string name="pair_delete_title">té kimẽ iã?</string>
+    <string name="pair_delete_body">té kimu tẽ ukré pá ta té. iã ty ga té.</string>
+
+    <string name="session_ongoing">ta rĩ</string>
+    <string name="session_until">até %1$s</string>
+    <string name="session_playing">%1$s ta kí</string>
+    <string name="session_recovered">kurá</string>
+
+    <string name="settings_tracking">tukré</string>
+    <string name="settings_detailed_title">tukré gĩ</string>
+    <string name="settings_detailed_body">ty ũ kutulunan tig no kré kí. android só ty nẽ evéntu tig kõ apps ta rĩ, ó ty nẽ tẽn lũ. bluetooth ta kré kãgó.</string>
+    <string name="settings_detailed_unavailable">ty ty pá até rẽ bluetooth ta ty dádu: versãu iã só ty nẽ tipu servisu connectedDevice, ke android 14+ ta ty rẽ bluetooth.</string>
+    <string name="settings_playback_only_title">rẽ sómente kí</string>
+    <string name="settings_playback_only_body">estad ta rẽ tempu som ta kí de tempu vũ. sómente té tẽ ukré nĩ tukré gĩ ta gẽ kí; jĩ ta ská fõ.</string>
+    <string name="settings_language">ling</string>
+    <string name="settings_language_system">ling sistema</string>
+    <string name="settings_devices">disositifu</string>
+    <string name="settings_devices_body">nĩ ty ki ty kutulunan — som carro au falanti — pa pa tukré.</string>
+    <string name="settings_device_subtitle">%1$s · kwé-fy %2$s</string>
+    <string name="settings_data">dádu</string>
+    <string name="settings_export">ékspor json</string>
+    <string name="settings_import">imporá</string>
+    <string name="settings_import_warning">imporá ta trok tud ki ta rê agora.</string>
+    <string name="settings_troubleshooting">rezúl problema</string>
+    <string name="settings_battery_body">se té ta pa ty kré, verifikí ke ylih ta izẽ ty otimizasãu batéria — app ki ta forsa-pa ty ricib vũ até ta fám.</string>
+    <string name="settings_battery_button">rég batéria</string>
+    <string name="settings_battery_path">rég → apps → ylih → batéria → ty ty rẽstritu.</string>
+    <string name="settings_hibernation_body">se ylih ta pa pag mẽ, android ta pãrá no ty tír rẽ, no nũ ty kré até fám. desligí iã ke ta leva kimẽ ta rẽ kré, dum tempu wé ség app.</string>
+    <string name="settings_hibernation_on">android ga pãrá ylih.</string>
+    <string name="settings_hibernation_off">ylih ta izẽ no ta rẽ kré.</string>
+    <string name="settings_hibernation_button">rég apps ty usádu</string>
+    <string name="settings_about">sõbri</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — upe kutulunan, rê nũ no kasale.</string>
+    <string name="settings_import_confirm_title">trok tud dádu?</string>
+    <string name="settings_import_confirm_body">imporá iã ta nũ disositifu, kimẽ, té rê agora.</string>
+
+    <string name="widget_lifetime_label">ylih · ty</string>
+    <string name="widget_lifetime_description">upe kõ kimẽ, nĩ métrụ rĩ kõ ki ta vũ</string>
+    <string name="widget_activity_label">ylih · ativida</string>
+    <string name="widget_activity_description">upe kimẽ tud, pũ jágó, 7 dia no 30 dia</string>
+    <string name="widget_chart_label">ylih · 30 dia</string>
+    <string name="widget_chart_description">upe dia di kí dum 30 dia sẽg</string>
+
+    <string name="action_save">garda</string>
+    <string name="action_cancel">kansé</string>
+    <string name="action_delete">té</string>
+    <string name="action_import">imporá</string>
+
+    <string name="channel_tracking">tukré kutulunan</string>
+    <string name="channel_tracking_description">ta nẽ dum ylih ta nẽ kutulunan tig no kí. android ty nẽ evéntu tig kõ apps ty rĩ.</string>
+    <string name="notification_title">tukré tempu kutulunan</string>
+    <string name="notification_starting">ta iniciándu…</string>
+    <string name="notification_idle">ta agardándu kutulunan</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d vũ · %2$s</item>
+        <item quantity="many">%1$d vũ · %2$s</item>
+        <item quantity="other">%1$d vũ · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d vũ · %2$s · ta kí</item>
+        <item quantity="many">%1$d vũ · %2$s · ta kí</item>
+        <item quantity="other">%1$d vũ · %2$s · ta kí</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">versãu iã ta ag rẽ bluetooth anta ta tukré kutulunan tig</string>
+    <string name="export_done">kurá ta ékspor</string>
+    <string name="export_failed">ékspor ta fa</string>
+    <string name="import_failed">imporá ta fa</string>
+    <string name="error_could_not_open">ty pódí fám %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">imporá %d té</item>
+        <item quantity="many">imporá %d té</item>
+        <item quantity="other">imporá %d té</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d té</item>
+        <item quantity="many">%d té</item>
+        <item quantity="other">%d té</item>
+    </plurals>
+    <string name="edit_failed">tũ ki han mũ tũ</string>
+</resources>

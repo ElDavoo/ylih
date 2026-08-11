@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Lingala. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - motema na yo oyo</string>
+
+    <string name="nav_headphones">makelele</string>
+    <string name="nav_stats">statistike</string>
+    <string name="nav_settings">makambo ma lokumu</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">mwa sima</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">ayebi te</string>
+
+    <string name="welcome_title">boyambí na ylih</string>
+    <string name="welcome_intro">ylih ezali kosala biso motema monene moye oyo makelele esali kovanda, ndimelo na bango mibu moye to okoki lisusu kotatola yango solo yo moaye oyo esaleli: myele mingi mwa motema ino esali?</string>
+    <string name="welcome_point_auto_title">linkisa na mamela</string>
+    <string name="welcome_point_auto_body">makelele ya bluetooth ezali kosama na yango, wuta na motema esika esikaka ezali kovanda. te na kosalela bato te ko.</string>
+    <string name="welcome_point_lifetime_title">makambo moko, motema moko</string>
+    <string name="welcome_point_lifetime_body">soki makambo moko ezali kokufa, lakisá yango: motema na yango esali makasi wana mpe makambo mosusu ya makelele ezali kolamuka wuta na nol.</string>
+    <string name="welcome_point_detailed_title">mwa sima na somi</string>
+    <string name="welcome_point_detailed_body">kosala kya koa kya makingi, o makambo ma lokumu, elongi makelele mwa sima mpe esali esango ya motema na somi.</string>
+    <string name="welcome_privacy">bililingi nyonso ezali kokala o singa yako. te na konte, mpe app te na ya moyibi makambo.</string>
+    <string name="welcome_start">tangáka</string>
+    <string name="welcome_next">olangi</string>
+    <string name="welcome_allow">tiká</string>
+    <string name="welcome_step">motuka %1$d na %2$d</string>
+    <string name="welcome_bluetooth_title">tikisano ya bluetooth</string>
+    <string name="welcome_bluetooth_why">android ezali kolobela app okola kang esano ya bluetooth ezali kovanda, mpe olia esango nini soki app elia na tikisano ya bluetooth. tina na kokata ylih kobasana makambo ma somi ya makelele mwa monene, mpe komfuni te komfuni.</string>
+    <string name="welcome_bluetooth_with">na yango: makambo nyonso esami kosama wuta esika ezali kovanda, na kosambela oyo moku moku.</string>
+    <string name="welcome_bluetooth_without">te na: makelele ya bluetooth te na kosama. app mosusu ezali kosala ndoto te, mpe okoki tiká balanda.</string>
+    <string name="welcome_notifications_title">makambo ma sabela</string>
+    <string name="welcome_notifications_why">kosala kya koa kya makambo makingi esali bililingi ya koa, mpe android azali komanda app oyo kobenga na yango kobenga sabela ya ndoto atika lokumu.</string>
+    <string name="welcome_notifications_with">na yango: sabela ezali komonisa oyo esala kosamama kino, kina kina ko wa singa kobonga kya koa esali ete.</string>
+    <string name="welcome_notifications_without">te na: kosala kya koa kya makambo makingi ezali kolinga mpe kosama. android te ekoka monisa sabela.</string>
+    <string name="hibernation_title">motema te makambo oyoko te</string>
+    <string name="hibernation_body">android ezali konionda app oyo te koyambaka mingi na mibu mpe ekonzwa mayibi, yango wana ylih te esama te ata wokoni koyambáka. koyambi te kina se oyo app ino ekofanda, ndimelo na bango likambo.</string>
+    <string name="action_not_now">te kino</string>
+
+    <string name="devices_in_use">o mosalela</string>
+    <string name="devices_retired">elekidi</string>
+    <string name="devices_empty_title">te na makelele te</string>
+    <string name="devices_empty_body">linkisa makelele ya bluetooth mpe elongi wana okoka monisa wana. makelele mwa sima bazali na kosaka kosala kya koa kya makingi, o makambo ma lokumu.</string>
+    <string name="devices_generation">makambo #%1$d</string>
+    <string name="devices_retired_on">elekidi %1$s</string>
+    <string name="devices_connected_for">kovanda %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">makelele nyonso</string>
+    <string name="stats_sessions_since">%1$s wuta %2$s</string>
+    <string name="stats_today">lelo</string>
+    <string name="stats_last_7">mikolo 7 ya nsuka</string>
+    <string name="stats_last_30">mikolo 30 ya nsuka</string>
+    <string name="stats_average_session">bilakisi ya losangu</string>
+    <string name="stats_longest_session">bilakisi ya nkolo mingi</string>
+    <string name="stats_playing">somi ezali kosamama</string>
+    <string name="stats_measured_span">eleki pro somi</string>
+    <string name="stats_share">melo ya somi</string>
+    <string name="stats_playback_only_note">mbalá somi kina ko</string>
+    <string name="stats_daily_hours_30">myele ya mokolo (mikolo 30)</string>
+    <string name="stats_by_pair">na makambo</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · elekidi</string>
+    <string name="chart_max">%1$s likelabo</string>
+
+    <string name="pair_fallback_title">makambo</string>
+    <string name="pair_back">buanga</string>
+    <string name="pair_more">mosusu</string>
+    <string name="pair_menu_rename">sunga nkombo mosusu</string>
+    <string name="pair_menu_purchase">makambo ma kula</string>
+    <string name="pair_menu_retire">elekidi / mobungi</string>
+    <string name="pair_menu_delete">sika</string>
+    <string name="pair_lifetime">motema o makambo oyo</string>
+    <string name="pair_retired_on">elekidi %1$s</string>
+    <string name="pair_retired_with_reason">elekidi %1$s · %2$s</string>
+    <string name="pair_connected_now">kovanda kino · %1$s</string>
+    <string name="pair_sessions">bilakisi</string>
+    <string name="pair_average">losangu</string>
+    <string name="pair_longest">nkolo mingi</string>
+    <string name="pair_since">wuta %1$s</string>
+    <string name="pair_of_measured">melo ya somi</string>
+    <string name="pair_measured">eleki pro somi</string>
+    <string name="pair_paid">bayiki</string>
+    <string name="pair_per_hour">pro myele</string>
+    <string name="pair_bought">kulaki</string>
+    <string name="pair_daily_hours_14">myele ya mokolo (mikolo 14)</string>
+    <string name="pair_rename_title">sunga nkombo ya makambo</string>
+    <string name="pair_rename_label">nkombo</string>
+    <string name="pair_retire_title">elekidi makambo oyo</string>
+    <string name="pair_retire_label">liyebi (kufi, wendi, nakendeke…)</string>
+    <string name="pair_retire_confirm">elekidi</string>
+    <string name="pair_retire_supporting">motema esali makasi okolo. soki kovanda makambo mosusu, makambo mosusu elongi wuta nol.</string>
+    <string name="pair_price_title">ndimelo ya kula</string>
+    <string name="pair_price_label">motangi (limbimbi)</string>
+    <string name="pair_price_supporting">ezali kosalela na bilakisi ya ndimelo-pro-myele.</string>
+    <string name="pair_delete_title">sika makambo oyo?</string>
+    <string name="pair_delete_body">bilakisi nyonso eleki pro yango ezali kosikama. likambo oyo te okoki kolamuka.</string>
+
+    <string name="session_ongoing">kino</string>
+    <string name="session_until">ata %1$s</string>
+    <string name="session_playing">%1$s somi</string>
+    <string name="session_recovered">boandi</string>
+
+    <string name="settings_tracking">kosama</string>
+    <string name="settings_detailed_title">kosala kya koa kya makambo makingi</string>
+    <string name="settings_detailed_body">elongi makelele mwa sima mpe motema ya somi. android te kolobela app te oyo ezali komona makambo ma sima soki app te esali, yango wana likambo oyo bazali na kobenga sabela ya ndoto. bluetooth ezali kosama na mambimbi ya bililingi.</string>
+    <string name="settings_detailed_unavailable">te na motema ata bluetooth te: bilakisi oyo te ya komanda kina se ya connectedDevice, oyo android 14+ ezali na bluetooth.</string>
+    <string name="settings_playback_only_title">mbalá somi kina ko</string>
+    <string name="settings_playback_only_body">statistike ezali kobakala motema oyo somi esali verament invezi de motema oyo kovanda. kina se bilakisi eleki na kosala kya koa kya makingi eleki somi; mosusu ezali lasama.</string>
+    <string name="settings_language">lokota</string>
+    <string name="settings_language_system">lokota ya sisitimu</string>
+    <string name="settings_devices">bilokolo</string>
+    <string name="settings_devices_body">longola bililingi te oyo te makelele te - stereo ya motuka te lokokoli - bonzela kosama te.</string>
+    <string name="settings_device_subtitle">%1$s · makanga eyebi %2$s</string>
+    <string name="settings_data">bililingi</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">import</string>
+    <string name="settings_import_warning">import ezali kobanda bililingi nyonso oyo kino.</string>
+    <string name="settings_troubleshooting">kusolanya te ya makambo mabe</string>
+    <string name="settings_battery_body">soki bilakisi ezali lokaki kosama, yeba soki ylih te ezali na mpalangi ya moteka - app oyo esikwa te te ekoka ata teyi ya singa ezali kovanda ata wokoni koyambáka.</string>
+    <string name="settings_battery_button">makambo ma moteka</string>
+    <string name="settings_battery_path">makambo → app → ylih → moteka → te na limitasio.</string>
+    <string name="settings_hibernation_body">soki ylih te koyambaka mingi na mibu, android ezali konionda yango mpe ekonzwa mayibi, mpe te na kosama te ata wokoni koyambáka. kutunga likambo oyo ezali komonya makambo na motema na mokapo oyo te koyambaki.</string>
+    <string name="settings_hibernation_on">android okoki konionda ylih.</string>
+    <string name="settings_hibernation_off">ylih te na konionda mpe ezali kolinga kosama.</string>
+    <string name="settings_hibernation_button">makambo ma app oyo te na kosalela</string>
+    <string name="settings_about">likambo</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — myele ya makelele, kobenga na etuka mpe kolanga.</string>
+    <string name="settings_import_confirm_title">banda bililingi nyonso?</string>
+    <string name="settings_import_confirm_body">import ya backup oyo ezali kosika bilokolo, makambo mpe bilakisi nyonso oyo kino.</string>
+
+    <string name="widget_lifetime_label">ylih · motema</string>
+    <string name="widget_lifetime_description">myele pro makambo, na kolengela ya motema oyo kovanda</string>
+    <string name="widget_activity_label">ylih · yasala</string>
+    <string name="widget_activity_description">myele ya makambo nyonso, nde lelo, mikolo 7 mpe mikolo 30</string>
+    <string name="widget_chart_label">ylih · mikolo 30</string>
+    <string name="widget_chart_description">myele ya somi na mokolo o mikolo 30 ya nsuka</string>
+
+    <string name="action_save">benga</string>
+    <string name="action_cancel">kassa</string>
+    <string name="action_delete">sika</string>
+    <string name="action_import">import</string>
+
+    <string name="channel_tracking">kosama ya makelele</string>
+    <string name="channel_tracking_description">monisa wata ylih izali komona makelele mwa sima mpe somi. android te kolobela app te makambo ma sima soki app te esali.</string>
+    <string name="notification_title">kosama ya motema ya makelele</string>
+    <string name="notification_starting">kolamuka…</string>
+    <string name="notification_idle">kolindaka makelele</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d kovanda · %2$s</item>
+        <item quantity="other">%1$d kovanda · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d kovanda · %2$s · somi</item>
+        <item quantity="other">%1$d kovanda · %2$s · somi</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">bilakisi oyo ezali na kosaka bluetooth ata kosama makelele mwa sima</string>
+    <string name="export_done">backup yeyemi</string>
+    <string name="export_failed">export ezali pakola</string>
+    <string name="import_failed">import ezali pakola</string>
+    <string name="edit_failed">te okoki benga likambo</string>
+    <string name="error_could_not_open">te okoki fungola %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">imported %d bilakisi</item>
+        <item quantity="other">imported %d bilakisi</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d bilakisi</item>
+        <item quantity="other">%d bilakisi</item>
+    </plurals>
+</resources>

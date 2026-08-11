@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Igbo. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ịnụ ndụ gị n’igu isi</string>
+
+    <string name="nav_headphones">isi obia</string>
+    <string name="nav_stats">ọkọ ihe omume</string>
+    <string name="nav_settings">ntọ ụlọ</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le ụda</string>
+    <string name="kind_wired">ụsọ</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">amaghị</string>
+
+    <string name="welcome_title">nnọọ na ylih</string>
+    <string name="welcome_intro">ylih na-edekọ oge ndị isi obia ka ọ dị, ka mgbe ọtụtụ afọ gasịrị, ị nwee ike ịza ihe naanị a dị mkpa maka otu: tupu ole ka ha rụrụ?</string>
+    <string name="welcome_point_auto_title">jikọ wee chefụ</string>
+    <string name="welcome_point_auto_body">a na-edekọ isi obia bluetooth n’ụzọ ha nwere, site n’oge ha jikọchara. ọ dịghị ihe ọ bụ na a gaara ikwàmkwa.</string>
+    <string name="welcome_point_lifetime_title">otu peeà, otu oge ịnụ ndụ</string>
+    <string name="welcome_point_lifetime_body">mgbe peeà ndị a nwụrụ, kwado ya: mkpọkọ ya ka a gbụchiri ebe ahụ ma peeà ọzọ nke igu isi ọzọ na-amalite ọzọ site na mkpọkọ ụfọdụ.</string>
+    <string name="welcome_point_detailed_title">ụsọ na ụda omume</string>
+    <string name="welcome_point_detailed_body">nhazi ihe omume anya, na ntọ ụlọ, na-agbakwu ụsọ isi obia ma na-atụ anya oge ole kara mma ụda na-eme.</string>
+    <string name="welcome_privacy">ihe niile ka dị na fọn a. ọ dịghị akaụntụ ọbụla, app a enweghịkwa ikike ntanetị.</string>
+    <string name="welcome_start">bido</string>
+    <string name="welcome_next">ọzọ</string>
+    <string name="welcome_allow">kwere</string>
+    <string name="welcome_step">usoro %1$d nke %2$d</string>
+    <string name="welcome_bluetooth_title">ịnụ maka bluetooth</string>
+    <string name="welcome_bluetooth_why">android naanị na-agwa app ihe ngosi bluetooth jikọchara, na aha ya, ma app nwere ịnụ bluetooth. ọ bụ otu ylih si na-esikarị otu isi obia na stereo ụgbọ, na otu o si maara otu peeà n’ihu nke ibe ya.</string>
+    <string name="welcome_bluetooth_with">na ya: a na-edekọ peeà ọ bụla site n’oge ọ jikọchara, na ọ dịghị ọ bụ ihe ka a ikwàmkwa na ọ dịghị etu ọ bụ na a gaara ibupu.</string>
+    <string name="welcome_bluetooth_without">na-enweghị ya: a naghị edekọ isi obia bluetooth ọbụla. ike ndị ọzọ nke app ka na-arụ ọrụ, ma ị nwere ike ịkwanye ya mgbe emechaa na nhazi app nke android.</string>
+    <string name="welcome_notifications_title">ọkwa ama</string>
+    <string name="welcome_notifications_why">nhazi ihe omume anya na-agba ọrụ nkịtị mbutụ, na android na-achọ ka app ọ bụla na-eme nke a jide ọkwa ama nke kpachapụ mgbe ọ na-eme.</string>
+    <string name="welcome_notifications_with">na ya: ọkwa ama na-egosi ihe a na-edekọ ugbu a, na ọ bụ naanị ihe ngosi nhazi ihe omume anya dị ndụ.</string>
+    <string name="welcome_notifications_without">na-enweghị ya: nhazi ihe omume anya ka na-agba ọrụ ma ka na-edekọ. android naanị na-agaghị egosi ọkwa ama ya.</string>
+    <string name="hibernation_title">gụọ na ọ tụrụ gị afụ</string>
+    <string name="hibernation_body">android na-akwụsị app ndị na-adịghị meghe ọtụtụ ọnwa ma na-ewere ngwugwu ha azụ, nke ga-echa ylih edekọ ihe ọbụla ruo n’oge ị meghere ya ọzọ. ichefụ bụ ihe naanị a app a bụ maka, yabụ ọ dị mkpa ịtụghachi ya ugbu a.</string>
+    <string name="action_not_now">ọbụ taa mba</string>
+
+    <string name="devices_in_use">na iji</string>
+    <string name="devices_retired">a gbadoro</string>
+    <string name="devices_empty_title">isi obia ọbụla adịbeghị</string>
+    <string name="devices_empty_body">jikọ peeà isi obia bluetooth ma ha ga-apụta ebe a. isi obia ụsọ na-achọ nhazi ihe omume anya, na ntọ ụlọ.</string>
+    <string name="devices_generation">peeà #%1$d</string>
+    <string name="devices_retired_on">a gbadoro %1$s</string>
+    <string name="devices_connected_for">jikọchara %1$s</string>
+    <string name="devices_recent">%1$s / ụbọchị 7</string>
+
+    <string name="stats_title">isi obia niile</string>
+    <string name="stats_sessions_since">%1$s kemgbe %2$s</string>
+    <string name="stats_today">taa</string>
+    <string name="stats_last_7">ụbọchị asaa gara aga</string>
+    <string name="stats_last_30">ụbọchị ịrị gara aga</string>
+    <string name="stats_average_session">nkezi oge na-agwa</string>
+    <string name="stats_longest_session">oge kacha ogologo</string>
+    <string name="stats_playing">ụda na-eme</string>
+    <string name="stats_measured_span">atụnyere maka omume</string>
+    <string name="stats_share">nkezi omume</string>
+    <string name="stats_playback_only_note">na-agụ naanị oge omume</string>
+    <string name="stats_daily_hours_30">ọrọ kwa ụbọchị (ụbọchị ịrị)</string>
+    <string name="stats_by_pair">site na peeà</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · a gbadoro</string>
+    <string name="chart_max">%1$s kacha elu</string>
+
+    <string name="pair_fallback_title">peeà</string>
+    <string name="pair_back">azụ</string>
+    <string name="pair_more">ihe ọzọ</string>
+    <string name="pair_menu_rename">gbanwee aha</string>
+    <string name="pair_menu_purchase">ozi ịzụ</string>
+    <string name="pair_menu_retire">gbado / gbanwee</string>
+    <string name="pair_menu_delete">hichapụ</string>
+    <string name="pair_lifetime">oge ịnụ ndụ na peeà a</string>
+    <string name="pair_retired_on">a gbadoro %1$s</string>
+    <string name="pair_retired_with_reason">a gbadoro %1$s · %2$s</string>
+    <string name="pair_connected_now">jikọchara ugbu a · %1$s</string>
+    <string name="pair_sessions">oge omume</string>
+    <string name="pair_average">nkezi</string>
+    <string name="pair_longest">kacha ogologo</string>
+    <string name="pair_since">kemgbe %1$s</string>
+    <string name="pair_of_measured">nkezi omume</string>
+    <string name="pair_measured">atụnyere maka omume</string>
+    <string name="pair_paid">akwara</string>
+    <string name="pair_per_hour">kwa awa</string>
+    <string name="pair_bought">zụrụ</string>
+    <string name="pair_daily_hours_14">ọrọ kwa ụbọchị (ụbọchị 14)</string>
+    <string name="pair_rename_title">gbanwee aha peeà</string>
+    <string name="pair_rename_label">aha</string>
+    <string name="pair_retire_title">gbado peeà a</string>
+    <string name="pair_retire_label">ihe kpatara (nwụrụ, ere, funwere…)</string>
+    <string name="pair_retire_confirm">gbado</string>
+    <string name="pair_retire_supporting">mkpọkọ ka a gbụchiri ebe a. ijikọ ngosi ọzọ na-amalite peeà ọhụrụ site na mkpọkọ ụfọdụ.</string>
+    <string name="pair_price_title">ọnụahụ akwara</string>
+    <string name="pair_price_label">ụkpụ (ọrụ nkuku)</string>
+    <string name="pair_price_supporting">a na-eji ya maka ọnụahụ-kwa-awa.</string>
+    <string name="pair_delete_title">hichapụ peeà a?</string>
+    <string name="pair_delete_body">a hichapụkwa oge omume nke ọ bụla edekọ ya. ọ gaghị atụghari nke a.</string>
+
+    <string name="session_ongoing">na-aga n’ihu</string>
+    <string name="session_until">ruo %1$s</string>
+    <string name="session_playing">%1$s na-eme omume</string>
+    <string name="session_recovered">weghachiri</string>
+
+    <string name="settings_tracking">nhazi ihe omume anya</string>
+    <string name="settings_detailed_title">nhazi ihe omume anya akaụkwụ</string>
+    <string name="settings_detailed_body">na-agbakwu ụsọ isi obia ma oge omume. android naanị na-agwa app ihe omume ụsọ pụtụ na ọrụ nke na-agba, yabụ nke a na-ejide ọkwa ama nke nwere ike ime ihe na-agbagojiri. bluetooth ka a nhazi ma o ziri ezi.</string>
+    <string name="settings_detailed_unavailable">o nweghị mma ruo ịnụ bluetooth a kwere: isigwe a na-akọ naanị ụdị ọrụ jikọchara ngosi, nke android 14+ na-ejikọ n’ịnụ bluetooth.</string>
+    <string name="settings_playback_only_title">gụọ naanị omume</string>
+    <string name="settings_playback_only_body">ọkọ ihe omume na-agụ oge ụda na-eme karịa oge jikọchara. naanị oge omume edekọ na nhazi ihe omume anya akaụkwụ atụnyere omume; ndị ọzọ ka a hapụrụ.</string>
+    <string name="settings_language">asụsụ</string>
+    <string name="settings_language_system">asụsụ sistemu</string>
+    <string name="settings_devices">ngosi ọrụ</string>
+    <string name="settings_devices_body">wepụ ihe onweghi isi obia - stereo ụgbọ maọbụ ụkasi - iji kuziri ịde ndekọ ya.</string>
+    <string name="settings_device_subtitle">%1$s · hụrụ mbụ %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">bupụta json</string>
+    <string name="settings_import">kwa</string>
+    <string name="settings_import_warning">ịkwa na-agbanwe ihe niile a burul ugbu a.</string>
+    <string name="settings_troubleshooting">nhazi mgbaaka</string>
+    <string name="settings_battery_body">ma oge omume kụziri ịde ndekọ, gbaranye na ylih nwere ngwugwu na iwu mpi - app akụchighi site na mpi na-agaghị ahu ozọ ruo mgbe emeghere ya.</string>
+    <string name="settings_battery_button">ntọ ụlọ mpi</string>
+    <string name="settings_battery_path">ntọ ụlọ → isigwe → ylih → mpi → nwụtụrụ.</string>
+    <string name="settings_hibernation_body">ma ylih adịghị emeghe ọtụtụ ọnwa, android na-akwụsị ya ma na-ewere ngwugwu ya azụ, ma ihe ọbụla a na-edekọ ọzọ ruo mgbe ị meghere ya. ịtụghachi ya bụ ihe na-eme ka peeà nọgide na-agụ n’oge gị na-echefụ ngwa.</string>
+    <string name="settings_hibernation_on">android nwere ike ịkwụsị ylih.</string>
+    <string name="settings_hibernation_off">ylih nwere ngwugwu ma na-edekọ.</string>
+    <string name="settings_hibernation_button">ntọ ụlọ ngwa a na-ewụghị iji</string>
+    <string name="settings_about">gbasara</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - ọrọ isi obia, jiri n’ebe nke mma ma ruo mgbe ebighi ebi.</string>
+    <string name="settings_import_confirm_title">gbanwee data niile?</string>
+    <string name="settings_import_confirm_body">ịkwa mgbapụta a na-hichapụ ngosi niile, peeà na oge omume a burul ugbu a.</string>
+
+    <string name="widget_lifetime_label">ylih · oge ịnụ ndụ</string>
+    <string name="widget_lifetime_description">ọrọ kwa peeà, na ọtụtụ oge na ihe onweghi jikọ</string>
+    <string name="widget_activity_label">ylih · ihe omume</string>
+    <string name="widget_activity_description">ọrọ peeà niile ọnụ, na taa, ụbọchị asaa ma ụbọchị ịrị</string>
+    <string name="widget_chart_label">ylih · ụbọchị ịrị</string>
+    <string name="widget_chart_description">ọrọ ụda kwa ụbọchị n’ụbọchị ịrị gara aga</string>
+
+    <string name="action_save">zọpụta</string>
+    <string name="action_cancel">kagbuo</string>
+    <string name="action_delete">hichapụ</string>
+    <string name="action_import">kwa</string>
+
+    <string name="channel_tracking">nhazi ihe omume anya isi obia</string>
+    <string name="channel_tracking_description">egosi mgbe ylih na-achọ ụsọ isi obia ma omume. android a naghị etupụ ihe omume ụsọ pụtụ na ngwa na-agaghị agba ọrụ.</string>
+    <string name="notification_title">nhazi ihe omume anya ọrọ isi obia</string>
+    <string name="notification_starting">na-amalite…</string>
+    <string name="notification_idle">na-achere isi obia</string>
+    <plurals name="notification_active">
+        <item quantity="other">%1$d connected · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="other">%1$d connected · %2$s · playing</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">isigwe a na-achọ ịnụ bluetooth tupu ọ nwee ike ịnazi ụsọ isi obia</string>
+    <string name="export_done">akwekọ bupụtara</string>
+    <string name="export_failed">bupụta dara ada</string>
+    <string name="import_failed">ịkwa dara ada</string>
+    <string name="error_could_not_open">enweghị ike imepe %1$s</string>
+    <plurals name="import_done">
+        <item quantity="other">kwaara %d oge omume</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="other">%d oge omume</item>
+    </plurals>
+    <string name="edit_failed">enweghị ike ịchekwa mgbanwe ahụ</string>
+</resources>

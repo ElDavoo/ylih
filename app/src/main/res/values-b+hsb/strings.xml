@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Upper Sorbian. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - waše žiwjenje w słuchawkach</string>
+
+    <string name="nav_headphones">słuchawki</string>
+    <string name="nav_stats">statistika</string>
+    <string name="nav_settings">nastajenja</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">přewodne</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">njeznata</string>
+
+    <string name="welcome_title">witajće k ylihu</string>
+    <string name="welcome_intro">ylih nachwliva, kak dołho je so kóžda para słuchawkow zwězkana, aby wy w lětach móhli na pytanje wotmołwić: kolko hodźin su durjeli?</string>
+    <string name="welcome_point_auto_title">zwězkej a zabydź</string>
+    <string name="welcome_point_auto_body">bluetooth słuchawki so notuja samy, hdy se zwězkaju. ničcy njemamy běžeć</string>
+    <string name="welcome_point_lifetime_title">jedna para, jedno žiwjenje</string>
+    <string name="welcome_point_lifetime_body">hdyž para skońči, ju zažywej: jeje suma so tu zaměrnja a přida para tych samych słuchawkow znochwali nula</string>
+    <string name="welcome_point_detailed_title">přewodne a wotehranje</string>
+    <string name="welcome_point_detailed_body">detaljna nachwila w nastajenjach dodawa přewodne słuchawki a měri, kolyko časa je prawje so wotehrało</string>
+    <string name="welcome_privacy">wšitko staja na tutym telefonje. nima konta a aplikacija nima internetneho prawa</string>
+    <string name="welcome_start">započmi</string>
+    <string name="welcome_next">přichodne</string>
+    <string name="welcome_allow">dowolić</string>
+    <string name="welcome_step">krok %1$d z %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth přistup</string>
+    <string name="welcome_bluetooth_why">android jenož powěda aplikaciji, kiž bluetooth přistrojenja su zwězkana a kich mjeno maju, hdyž aplikacija ma bluetooth přistup. tak ylih pozna paru słuchawkow wot awtoradija a jednu paru wot druhe</string>
+    <string name="welcome_bluetooth_with">z tym: kóžda para so notuje, hdy se zwězkuje, a ničcy njemaja běžeć a na ničco njemaja čekać</string>
+    <string name="welcome_bluetooth_without">bjez toho: žane bluetooth słuchawki so njenotuja. ostatk aplikacije hišće dělajo, a móžeš to pozdźišće w nastajenjach dowolić</string>
+    <string name="welcome_notifications_title">powědomjenja</string>
+    <string name="welcome_notifications_why">detaljna nachwila wuwjeduje mały službu na pozadku, a android žada, zo aplikacija to zworhuje zwobraznjeće powědomjenje</string>
+    <string name="welcome_notifications_with">z tym: powědomjenje pokazuje, što so prawje nachwluje, što je jedyny znak, zo je detaljna nachwila aktiwna</string>
+    <string name="welcome_notifications_without">bjez toho: detaljna nachwila hišće běži a hišće notuje. android jenož jeje powědomjenje njezwobraznuje</string>
+    <string name="hibernation_title">počítaj hišće, dokelž zabyjaš</string>
+    <string name="hibernation_body">android stawy aplikacije, kiž dołho njestanu wotworjene, a wzamě jich prawa. to by njechodiło, zo ylih ničcy notuje. aplikacija je za to, zo so na ju zabudy, tak je warto to nětka wupinać</string>
+    <string name="action_not_now">nic nětka</string>
+
+    <string name="devices_in_use">w wužiwanju</string>
+    <string name="devices_retired">zažywjeno</string>
+    <string name="devices_empty_title">ještě žane słuchawki</string>
+    <string name="devices_empty_body">zwězkej paru bluetooth słuchawkow a tu so pokažu. přewodne słuchawki trjebuja detaljnu nachwilu w nastajenjach</string>
+    <string name="devices_generation">para #%1$d</string>
+    <string name="devices_retired_on">zažywjeno %1$s</string>
+    <string name="devices_connected_for">zwězkane %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">wšě słuchawki</string>
+    <string name="stats_sessions_since">%1$s wot %2$s</string>
+    <string name="stats_today">dnjeska</string>
+    <string name="stats_last_7">za ostatnich 7 dnjow</string>
+    <string name="stats_last_30">za ostatnich 30 dnjow</string>
+    <string name="stats_average_session">přerězna sesija</string>
+    <string name="stats_longest_session">najdołša sesija</string>
+    <string name="stats_playing">awdio so wotehrajo</string>
+    <string name="stats_measured_span">za wotehranje měřene</string>
+    <string name="stats_share">deł wotehranja</string>
+    <string name="stats_playback_only_note">jenož čas wotehranja počítane</string>
+    <string name="stats_daily_hours_30">każnodennje hodźiny (30 dnjow)</string>
+    <string name="stats_by_pair">po parje</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · zažywjeno</string>
+    <string name="chart_max">%1$s maximum</string>
+
+    <string name="pair_fallback_title">para</string>
+    <string name="pair_back">wróćo</string>
+    <string name="pair_more">wěcej</string>
+    <string name="pair_menu_rename">přemjenować</string>
+    <string name="pair_menu_purchase">informacije wo nakupje</string>
+    <string name="pair_menu_retire">zažywić / wuměnić</string>
+    <string name="pair_menu_delete">zničić</string>
+    <string name="pair_lifetime">žiwjenje na tutej parje</string>
+    <string name="pair_retired_on">zažywjeno %1$s</string>
+    <string name="pair_retired_with_reason">zažywjeno %1$s · %2$s</string>
+    <string name="pair_connected_now">zwězkane nětka · %1$s</string>
+    <string name="pair_sessions">sesije</string>
+    <string name="pair_average">přerézna</string>
+    <string name="pair_longest">najdołša</string>
+    <string name="pair_since">wot %1$s</string>
+    <string name="pair_of_measured">deł wotehranja</string>
+    <string name="pair_measured">za wotehranje měřene</string>
+    <string name="pair_paid">płacenje</string>
+    <string name="pair_per_hour">na hodźinu</string>
+    <string name="pair_bought">nakupjena</string>
+    <string name="pair_daily_hours_14">každodennje hodźiny (14 dnjow)</string>
+    <string name="pair_rename_title">paru přemjenować</string>
+    <string name="pair_rename_label">mjeno</string>
+    <string name="pair_retire_title">tutu paru zažywić</string>
+    <string name="pair_retire_label">důwod (skončena, prodana, zhubjana…)</string>
+    <string name="pair_retire_confirm">zažywić</string>
+    <string name="pair_retire_supporting">sumi so tu zapinuja. přinoćenje tołhož přistrojenja započina nowu paru na nule</string>
+    <string name="pair_price_title">płaceny cenowy</string>
+    <string name="pair_price_label">suma (cyłe jednotki)</string>
+    <string name="pair_price_supporting">za liczenje nákladów na hodźinu wužiwane</string>
+    <string name="pair_delete_title">tutu paru zničić?</string>
+    <string name="pair_delete_body">kóžda sesija za ju nachwlowana so tež zniči. to njemóže so cofnjeć</string>
+
+    <string name="session_ongoing">běži</string>
+    <string name="session_until">hač %1$s</string>
+    <string name="session_playing">%1$s so wotehrajo</string>
+    <string name="session_recovered">wobnowjena</string>
+
+    <string name="settings_tracking">nachwila</string>
+    <string name="settings_detailed_title">detaljna nachwila</string>
+    <string name="settings_detailed_body">dodawa přewodne słuchawki a čas wotehranja. android wohlasuje zdźěł přewodkich słuchawkow jenož běžaccej aplikaciji, tak tutaj běži ćiche powědomjenje. bluetooth so nachwluje w kóždym padźe</string>
+    <string name="settings_detailed_unavailable">njejsna, dokelž se bluetooth přistup njedowa: tuta wersija jenož službu connectedDevice zwěšćo, kotruž android 14+ na bluetooth prawa swjaza</string>
+    <string name="settings_playback_only_title">jenož wotehranje počítane</string>
+    <string name="settings_playback_only_body">statistika počítaja čas wotehranja, njemjesta zwězkanja. jenož sesije nachwlowane z detaljnu nachwilu měrja wotehranje; ostatk so wuwopušćo</string>
+    <string name="settings_language">rěč</string>
+    <string name="settings_language_system">rěč systema</string>
+    <string name="settings_devices">přistrojenja</string>
+    <string name="settings_devices_body">wuplinuj wšitko, što njejsu słuchawki — awtoradio abo spiker — zo by njestej notowaj</string>
+    <string name="settings_device_subtitle">%1$s · prěnje widane %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">JSON eksportować</string>
+    <string name="settings_import">importować</string>
+    <string name="settings_import_warning">importowanje wšitko aktualne nachwowane wuměnja</string>
+    <string name="settings_troubleshooting">porady w problemach</string>
+    <string name="settings_battery_body">jeli sesije njenateja so nachwlować, kontroluj, zo je ylih wuwzato wot optimizacije baterije. aplikacija, kotraž je přinucena zastajeć, hiždy wotsłanja wěksmołwu nimo toho, hač wutworjena njebuda</string>
+    <string name="settings_battery_button">nastajenja baterije</string>
+    <string name="settings_battery_path">nastajenja → aplikacije → ylih → baterija → wobmjezowanje</string>
+    <string name="settings_hibernation_body">jeli ylih dołho wutworjena njebuda, android ju stawy a wzamě jich prawa. to by znamenało, zo ničcy se notuje, dokelž wutworjena njebuda. to wupinać zmóžniwa parje, na to počítać, dokelž na aplikaciju zabyjaš</string>
+    <string name="settings_hibernation_on">android móže ylih stajeć</string>
+    <string name="settings_hibernation_off">ylih je wuwzata a staja notować</string>
+    <string name="settings_hibernation_button">nastajenja njewužiwanych aplikacijow</string>
+    <string name="settings_about">wo aplikaciji</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — hodźiny słuchawkow, lokalne a za wšědy chowane</string>
+    <string name="settings_import_confirm_title">wšitko nachwowane wuměnić?</string>
+    <string name="settings_import_confirm_body">importowanje teje zawěski zniči kóžde přistrojenje, paru a sesiju, kotraž je aktualne chowana</string>
+
+    <string name="widget_lifetime_label">ylih · žiwjenje</string>
+    <string name="widget_lifetime_description">hodźiny na paru, z žiwym čaščiměrom za zwězkane słuchawki</string>
+    <string name="widget_activity_label">ylih · aktivita</string>
+    <string name="widget_activity_description">hodźiny kóždej pary dohromady plus dnjeska, 7 dnjow a 30 dnjow</string>
+    <string name="widget_chart_label">ylih · 30 dnjow</string>
+    <string name="widget_chart_description">każnodennje hodźiny słuchanja za ostatnich 30 dnjow</string>
+
+    <string name="action_save">składować</string>
+    <string name="action_cancel">wotwolać</string>
+    <string name="action_delete">zničić</string>
+    <string name="action_import">importować</string>
+
+    <string name="channel_tracking">nachwila słuchawkow</string>
+    <string name="channel_tracking_description">zwobraznjena, dokelž ylih slěduje přewodne słuchawki a wotehranje. android nedostawa zdźěły přewodkich słuchawkow aplikacijam, kiž njeběžaće</string>
+    <string name="notification_title">čas słuchawkow nachwluje so</string>
+    <string name="notification_starting">započanja…</string>
+    <string name="notification_idle">na słuchawki čeka</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d zwězkane · %2$s</item>
+        <item quantity="two">%1$d zwězkane · %2$s</item>
+        <item quantity="few">%1$d zwězkane · %2$s</item>
+        <item quantity="other">%1$d zwězkanych · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d zwězkane · %2$s · wotehrajo so</item>
+        <item quantity="two">%1$d zwězkane · %2$s · wotehrajo so</item>
+        <item quantity="few">%1$d zwězkane · %2$s · wotehrajo so</item>
+        <item quantity="other">%1$d zwězkanych · %2$s · wotehraju so</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">tuta wersija trjeba bluetooth přistup, prjedy hač móže přewodne słuchawki nachwlować</string>
+    <string name="export_done">zawěska eksportowana</string>
+    <string name="export_failed">eksport njeporadźił</string>
+    <string name="import_failed">import njeporadźił</string>
+    <string name="error_could_not_open">%1$s njedał so wutworić</string>
+    <plurals name="import_done">
+        <item quantity="one">importowanych %d sesija</item>
+        <item quantity="two">importowanych %d sesiji</item>
+        <item quantity="few">importowanych %d sesije</item>
+        <item quantity="other">importowanych %d sesijow</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sesija</item>
+        <item quantity="two">%d sesiji</item>
+        <item quantity="few">%d sesije</item>
+        <item quantity="other">%d sesijow</item>
+    </plurals>
+    <string name="edit_failed">změna njeje so składowała</string>
+</resources>

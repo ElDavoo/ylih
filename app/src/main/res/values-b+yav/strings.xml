@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Yangben. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - a nkúm abe m\'ab ne</string>
+
+    <string name="nav_headphones">ab ne</string>
+    <string name="nav_stats">ndé na mbu</string>
+    <string name="nav_settings">ndé ndonga</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">abe be taa</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">kóm tanga</string>
+
+    <string name="welcome_title">welkom a ylih</string>
+    <string name="welcome_intro">ylih rek a tem bue ab ne a sáp ka, mbo a muaana muanda a ákó a pwa gane: ab ne abe a tem nla a go?</string>
+    <string name="welcome_point_auto_title">konjók na mbwé</string>
+    <string name="welcome_point_auto_body">ab ne bluetooth a rek a tem muanda, a búe a sáp. kóm bue a táa a súk.</string>
+    <string name="welcome_point_lifetime_title">ab ne muanda, muanda muanda</string>
+    <string name="welcome_point_lifetime_body">a búe ab ne a ku, tó a ní: tem bue a níe kóm ánda na muanda, na ab ne a búe a muanda a sáp muanda a búe o.</string>
+    <string name="welcome_point_detailed_title">abe be taa na muak</string>
+    <string name="welcome_point_detailed_body">ndé ndonga a búe abe be taa na muak a tem a rek a ábé ka.</string>
+    <string name="welcome_privacy">kóm bue a súk a síá a fúu. kóm nkúm na mbwé, na app kóm a mbwé na íbú.</string>
+    <string name="welcome_start">konjók</string>
+    <string name="welcome_next">muanda</string>
+    <string name="welcome_allow">níe</string>
+    <string name="welcome_step">ndé %1$d na %2$d</string>
+    <string name="welcome_bluetooth_title">mbwé a bluetooth</string>
+    <string name="welcome_bluetooth_why">android a kóm nkúm nla a app kóm a bluetooth a búe muanda, na a kóm a súk, a búe a app a síá ab ne muanda a car stereo, na a súk muanda na muanda.</string>
+    <string name="welcome_bluetooth_with">a búe: ab ne muanda a rek muanda a búe a sáp, kóm bue a súk na kóm a táa a súk.</string>
+    <string name="welcome_bluetooth_without">kóm búe: ab ne bluetooth kóm a rek o. app na muanda a súk, na a níe a búe a muanda a android app ndé ndonga.</string>
+    <string name="welcome_notifications_title">ndé ndonga</string>
+    <string name="welcome_notifications_why">ndé ndonga a búe a service muanda a súk, na android a níe kóm app na ta na kóm a búe ndé ndonga.</string>
+    <string name="welcome_notifications_with">a búe: ndé ndonga a súk kóm a rek muanda a búe, kóm a búe ndé ndonga a súk.</string>
+    <string name="welcome_notifications_without">kóm búe: ndé ndonga a súk na a rek muanda. android kóm a súk a ndé ndonga o.</string>
+    <string name="hibernation_title">súk a tem a búe a kóm a nkúm</string>
+    <string name="hibernation_body">android a níe app a súk a muanda na muanda na a níe mbwé a búe, kóm a búe ylih a kóm a rek kóm a búe a síá. kóm búe a súk a muanda a app na ta, kóm a níe a búe o.</string>
+    <string name="action_not_now">kóm muanda</string>
+
+    <string name="devices_in_use">a súk muanda</string>
+    <string name="devices_retired">a níe</string>
+    <string name="devices_empty_title">ab ne kóm muanda</string>
+    <string name="devices_empty_body">a búe ab ne bluetooth na a súk muanda o. ab ne be taa a níe ndé ndonga, a ndé ndonga.</string>
+    <string name="devices_generation">ab ne #%1$d</string>
+    <string name="devices_retired_on">a níe %1$s</string>
+    <string name="devices_connected_for">a súk %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">ab ne muanda</string>
+    <string name="stats_sessions_since">%1$s a búe %2$s</string>
+    <string name="stats_today">muanda</string>
+    <string name="stats_last_7">muanda 7 níe</string>
+    <string name="stats_last_30">muanda 30 níe</string>
+    <string name="stats_average_session">muanda a súk</string>
+    <string name="stats_longest_session">muanda a níe</string>
+    <string name="stats_playing">muak a súk</string>
+    <string name="stats_measured_span">a tem muak</string>
+    <string name="stats_share">muak a súk</string>
+    <string name="stats_playback_only_note">a tem muak o</string>
+    <string name="stats_daily_hours_30">tem muanda (30 níe)</string>
+    <string name="stats_by_pair">ab ne muanda</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · a níe</string>
+    <string name="chart_max">%1$s a níe</string>
+
+    <string name="pair_fallback_title">ab ne</string>
+    <string name="pair_back">kóm muanda</string>
+    <string name="pair_more">na muanda</string>
+    <string name="pair_menu_rename">súk a kóm</string>
+    <string name="pair_menu_purchase">ndé a búe</string>
+    <string name="pair_menu_retire">níe / a búe</string>
+    <string name="pair_menu_delete">súk</string>
+    <string name="pair_lifetime">tem muanda a ab ne ánda</string>
+    <string name="pair_retired_on">a níe %1$s</string>
+    <string name="pair_retired_with_reason">a níe %1$s · %2$s</string>
+    <string name="pair_connected_now">a súk muanda · %1$s</string>
+    <string name="pair_sessions">muanda</string>
+    <string name="pair_average">muanda a súk</string>
+    <string name="pair_longest">muanda a níe</string>
+    <string name="pair_since">a búe %1$s</string>
+    <string name="pair_of_measured">muak a súk</string>
+    <string name="pair_measured">a tem muak</string>
+    <string name="pair_paid">a búe</string>
+    <string name="pair_per_hour">a tem muanda</string>
+    <string name="pair_bought">a búe</string>
+    <string name="pair_daily_hours_14">tem muanda (14 níe)</string>
+    <string name="pair_rename_title">súk a kóm a ab ne</string>
+    <string name="pair_rename_label">kóm</string>
+    <string name="pair_retire_title">níe a ab ne ánda</string>
+    <string name="pair_retire_label">ndé (a ku, a búe, a súk…)</string>
+    <string name="pair_retire_confirm">níe</string>
+    <string name="pair_retire_supporting">tem bue a níe kóm ánda. a búe a device a muanda a ab ne a búe muanda a búe o.</string>
+    <string name="pair_price_title">ndé a búe</string>
+    <string name="pair_price_label">mbu (tem muanda)</string>
+    <string name="pair_price_supporting">a súk a tem muak a ab ne.</string>
+    <string name="pair_delete_title">súk a ab ne ánda?</string>
+    <string name="pair_delete_body">muanda muanda a rek a ab ne a súk muanda. kóm a búe a muanda o.</string>
+
+    <string name="session_ongoing">a súk muanda</string>
+    <string name="session_until">kóm %1$s</string>
+    <string name="session_playing">%1$s a muak</string>
+    <string name="session_recovered">a búe</string>
+
+    <string name="settings_tracking">a tem</string>
+    <string name="settings_detailed_title">ndé ndonga a búe</string>
+    <string name="settings_detailed_body">a búe abe be taa na muak a tem. android kóm a kóm a wired plug events a app a súk o, kóm a níe ndé ndonga a shade. bluetooth a tem a muanda o.</string>
+    <string name="settings_detailed_unavailable">a níe kóm a mbwé a bluetooth a níe: app ánda a súk a connectedDevice service type, kóm android 14+ a níe a bluetooth mbwé.</string>
+    <string name="settings_playback_only_title">a tem muak o</string>
+    <string name="settings_playback_only_body">ndé a súk a tem a muak a súk a búe a tem a súk. muanda a rek a ndé ndonga a búe a muak; na muanda a níe o.</string>
+    <string name="settings_language">kóm</string>
+    <string name="settings_language_system">kóm a android</string>
+    <string name="settings_devices">a device</string>
+    <string name="settings_devices_body">a súk kóm a kóm a ab ne o — a car stereo na a speaker — kóm a súk a rek a o.</string>
+    <string name="settings_device_subtitle">%1$s · a búe a súk %2$s</string>
+    <string name="settings_data">a mbu</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">a búe</string>
+    <string name="settings_import_warning">a búe a níe kóm muanda a súk muanda.</string>
+    <string name="settings_troubleshooting">ndé a súk</string>
+    <string name="settings_battery_body">a muanda a súk a rek o, a súk ylih a kóm a battery optimisation — a app a búe a force-stopped kóm a níe a connection broadcasts kóm a búe a muanda a síá o.</string>
+    <string name="settings_battery_button">ndé a battery</string>
+    <string name="settings_battery_path">ndé → apps → ylih → battery → unrestricted.</string>
+    <string name="settings_hibernation_body">a búe ylih a súk a muanda na muanda, android a níe a o na a níe mbwé a búe, na kóm a rek a muanda kóm a búe a síá. a níe a búe o a súk a ab ne a súk a muanda a season a búe a app.</string>
+    <string name="settings_hibernation_on">android a níe a ylih o.</string>
+    <string name="settings_hibernation_off">ylih a níe na a súk a rek.</string>
+    <string name="settings_hibernation_button">ndé a app a súk</string>
+    <string name="settings_about">a búe</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — ab ne tem, a súk muanda na muanda.</string>
+    <string name="settings_import_confirm_title">níe kóm muanda a mbu?</string>
+    <string name="settings_import_confirm_body">a búe a backup ánda a súk a device, ab ne na muanda a súk muanda.</string>
+
+    <string name="widget_lifetime_label">ylih · muanda muanda</string>
+    <string name="widget_lifetime_description">tem a ab ne, a súk a timer a súk a ab ne</string>
+    <string name="widget_activity_label">ylih · a súk muanda</string>
+    <string name="widget_activity_description">ab ne a tem muanda, na muanda, 7 níe na 30 níe</string>
+    <string name="widget_chart_label">ylih · 30 níe</string>
+    <string name="widget_chart_description">tem muanda muanda a 30 níe</string>
+
+    <string name="action_save">súk</string>
+    <string name="action_cancel">kóm muanda</string>
+    <string name="action_delete">súk</string>
+    <string name="action_import">a búe</string>
+
+    <string name="channel_tracking">a tem a ab ne</string>
+    <string name="channel_tracking_description">a súk kóm ylih a súk abe be taa na muak a tem. android kóm a kóm a wired plug events a app a súk o.</string>
+    <string name="notification_title">a súk a tem a ab ne</string>
+    <string name="notification_starting">a búe...</string>
+    <string name="notification_idle">a súk a ab ne</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d a súk · %2$s</item>
+        <item quantity="many">%1$d a súk · %2$s</item>
+        <item quantity="other">%1$d a súk · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d a súk · %2$s · a muak</item>
+        <item quantity="many">%1$d a súk · %2$s · a muak</item>
+        <item quantity="other">%1$d a súk · %2$s · a muak</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">app ánda a níe a mbwé a bluetooth a búe a rek abe be taa</string>
+    <string name="export_done">backup a búe</string>
+    <string name="export_failed">a búe a súk</string>
+    <string name="import_failed">a búe a súk</string>
+    <string name="edit_failed">kóm a súk kóm a níe a ánda</string>
+    <string name="error_could_not_open">kóm a súk %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">a búe %d muanda</item>
+        <item quantity="many">a búe %d muanda</item>
+        <item quantity="other">a búe %d muanda</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d muanda</item>
+        <item quantity="many">%d muanda</item>
+        <item quantity="other">%d muanda</item>
+    </plurals>
+</resources>

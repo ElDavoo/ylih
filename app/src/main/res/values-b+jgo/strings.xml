@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Ngomba. Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - ŋgɔ́ yà ɔ́ à heyrnartólum</string>
+
+    <string name="nav_headphones">heyrnartólar</string>
+    <string name="nav_stats">tölfræði</string>
+    <string name="nav_settings">settingi</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">wire</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">unknown</string>
+
+    <string name="welcome_title">welcome ku ylih</string>
+    <string name="welcome_intro">ylih rekɔrdi hɔ́w lɔ́ng each pair ɔf headphɔnes stays cɔnnected, sɔ that years frɔm nɔw yɔu can still answer the ɔnly questiɔn that matters abɔut a pair: hɔw many hɔurs did they last?</string>
+    <string name="welcome_point_auto_title">cɔnnect and fɔrget</string>
+    <string name="welcome_point_auto_body">bluetɔɔth headphɔnes are recɔrded ɔn their ɔwn, frɔm the mɔment they cɔnnect. nɔthing has tɔ be left running.</string>
+    <string name="welcome_point_lifetime_title">ɔne pair, ɔne lifetime</string>
+    <string name="welcome_point_lifetime_body">when a pair dies, retire it: its tɔtal freezes there and the next pair ɔf the same headphɔnes starts again frɔm zerɔ.</string>
+    <string name="welcome_point_detailed_title">wired and playback</string>
+    <string name="welcome_point_detailed_body">detailed tracking, in settings, adds wired headphɔnes and measures hɔw much ɔf the time was actually playing.</string>
+    <string name="welcome_privacy">everything stays ɔn this phɔne. there is nɔ accɔunt, and the app has nɔ internet permissiɔn.</string>
+    <string name="welcome_start">get started</string>
+    <string name="welcome_next">next</string>
+    <string name="welcome_allow">allɔw</string>
+    <string name="welcome_step">step %1$d ɔf %2$d</string>
+    <string name="welcome_bluetooth_title">bluetɔɔth access</string>
+    <string name="welcome_bluetooth_why">andrɔid ɔnly tells an app which bluetɔɔth device cɔnnected, and what it is called, if the app hɔlds bluetɔɔth access. it is hɔw ylih tells a pair ɔf headphɔnes frɔm a car stereo, and hɔw it knɔws ɔne pair frɔm anɔther.</string>
+    <string name="welcome_bluetooth_with">with it: every pair is recɔrded frɔm the mɔment it cɔnnects, with nɔthing left running and nɔthing tɔ remember tɔ press.</string>
+    <string name="welcome_bluetooth_without">withɔut it: nɔ bluetɔɔth headphɔnes are recɔrded at all. the rest ɔf the app still wɔrks, and yɔu can grant it later in andrɔid’s app settings.</string>
+    <string name="welcome_notifications_title">nɔtificatiɔns</string>
+    <string name="welcome_notifications_why">detailed tracking runs a small backgrɔund service, and andrɔid requires any app dɔing that tɔ keep a nɔtificatiɔn visible while it dɔes.</string>
+    <string name="welcome_notifications_with">with it: the nɔtificatiɔn shɔws what is being recɔrded right nɔw, which is the ɔnly sign detailed tracking is alive.</string>
+    <string name="welcome_notifications_without">withɔut it: detailed tracking still runs and still recɔrds. andrɔid just will nɔt shɔw its nɔtificatiɔn.</string>
+    <string name="hibernation_title">keep cɔunting while yɔu fɔrget abɔut it</string>
+    <string name="hibernation_body">andrɔid pauses apps that gɔ unɔpened fɔr a few mɔnths and takes their permissiɔns back, which wɔuld leave ylih recɔrding nɔthing until yɔu next ɔpened it. being fɔrgɔtten abɔut is exactly what this app is fɔr, sɔ it is wɔrth turning that ɔff nɔw.</string>
+    <string name="action_not_now">nɔt nɔw</string>
+
+    <string name="devices_in_use">in use</string>
+    <string name="devices_retired">retired</string>
+    <string name="devices_empty_title">nɔ headphɔnes yet</string>
+    <string name="devices_empty_body">cɔnnect a pair ɔf bluetɔɔth headphɔnes and they’ll shɔw up here. wired headphɔnes need detailed tracking, in settings.</string>
+    <string name="devices_generation">pair #%1$d</string>
+    <string name="devices_retired_on">retired %1$s</string>
+    <string name="devices_connected_for">cɔnnected %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">all headphɔnes</string>
+    <string name="stats_sessions_since">%1$s since %2$s</string>
+    <string name="stats_today">tɔday</string>
+    <string name="stats_last_7">last 7 days</string>
+    <string name="stats_last_30">last 30 days</string>
+    <string name="stats_average_session">average sessiɔn</string>
+    <string name="stats_longest_session">lɔngest sessiɔn</string>
+    <string name="stats_playing">audiɔ playing</string>
+    <string name="stats_measured_span">measured fɔr playback</string>
+    <string name="stats_share">playing share</string>
+    <string name="stats_playback_only_note">cɔunting playback time ɔnly</string>
+    <string name="stats_daily_hours_30">daily hɔurs (30 days)</string>
+    <string name="stats_by_pair">by pair</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · retired</string>
+    <string name="chart_max">%1$s max</string>
+
+    <string name="pair_fallback_title">pair</string>
+    <string name="pair_back">back</string>
+    <string name="pair_more">mɔre</string>
+    <string name="pair_menu_rename">rename</string>
+    <string name="pair_menu_purchase">purchase infɔ</string>
+    <string name="pair_menu_retire">retire / replaced</string>
+    <string name="pair_menu_delete">delete</string>
+    <string name="pair_lifetime">lifetime ɔn this pair</string>
+    <string name="pair_retired_on">retired %1$s</string>
+    <string name="pair_retired_with_reason">retired %1$s · %2$s</string>
+    <string name="pair_connected_now">cɔnnected nɔw · %1$s</string>
+    <string name="pair_sessions">sessiɔns</string>
+    <string name="pair_average">average</string>
+    <string name="pair_longest">lɔngest</string>
+    <string name="pair_since">since %1$s</string>
+    <string name="pair_of_measured">playing share</string>
+    <string name="pair_measured">measured fɔr playback</string>
+    <string name="pair_paid">paid</string>
+    <string name="pair_per_hour">per hɔur</string>
+    <string name="pair_bought">bɔught</string>
+    <string name="pair_daily_hours_14">daily hɔurs (14 days)</string>
+    <string name="pair_rename_title">rename pair</string>
+    <string name="pair_rename_label">name</string>
+    <string name="pair_retire_title">retire this pair</string>
+    <string name="pair_retire_label">reasɔn (died, sɔld, lɔst…)</string>
+    <string name="pair_retire_confirm">retire</string>
+    <string name="pair_retire_supporting">tɔtals freeze here. reconnecting the same device starts a fresh pair at zerɔ.</string>
+    <string name="pair_price_title">price paid</string>
+    <string name="pair_price_label">amɔunt (whɔle units)</string>
+    <string name="pair_price_supporting">used fɔr the cɔst-per-hɔur figure.</string>
+    <string name="pair_delete_title">delete this pair?</string>
+    <string name="pair_delete_body">every sessiɔn recɔrded fɔr it is deleted tɔɔ. this cannɔt be undɔne.</string>
+
+    <string name="session_ongoing">ɔngɔing</string>
+    <string name="session_until">until %1$s</string>
+    <string name="session_playing">%1$s playing</string>
+    <string name="session_recovered">recɔvered</string>
+
+    <string name="settings_tracking">tracking</string>
+    <string name="settings_detailed_title">detailed tracking</string>
+    <string name="settings_detailed_body">adds wired headphɔnes and playback time. andrɔid ɔnly repɔrts wired plug events tɔ a running app, sɔ this keeps a silent nɔtificatiɔn in the shade. bluetɔɔth is tracked either way.</string>
+    <string name="settings_detailed_unavailable">unavailable until bluetɔɔth access is granted: this build ɔnly declares the cɔnnectedDevice service type, which andrɔid 14+ ties tɔ a bluetɔɔth permissiɔn.</string>
+    <string name="settings_playback_only_title">cɔunt ɔnly playback</string>
+    <string name="settings_playback_only_body">stats cɔunt the time audiɔ was actually playing instead ɔf the time cɔnnected. ɔnly sessiɔns recɔrded with detailed tracking ɔn measured playback; the rest are left ɔut.</string>
+    <string name="settings_language">language</string>
+    <string name="settings_language_system">system language</string>
+    <string name="settings_devices">devices</string>
+    <string name="settings_devices_body">uncheck anything that isn’t headphɔnes — a car stereo or a speaker — tɔ stɔp recɔrding it.</string>
+    <string name="settings_device_subtitle">%1$s · first seen %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">export json</string>
+    <string name="settings_import">impɔrt</string>
+    <string name="settings_import_warning">impɔrting replaces everything currently stɔred.</string>
+    <string name="settings_troubleshooting">trɔubleshɔɔting</string>
+    <string name="settings_battery_body">if sessiɔns stɔp being recɔrded, check that ylih is exempt frɔm battery ɔptimisatiɔn — an app that has been fɔrce-stɔpped never receives cɔnnectiɔn bradcasts again until it is ɔpened.</string>
+    <string name="settings_battery_button">battery settings</string>
+    <string name="settings_battery_path">settings → apps → ylih → battery → unrestricted.</string>
+    <string name="settings_hibernation_body">if ylih gɔes unɔpened fɔr a few mɔnths, andrɔid pauses it and takes its permissiɔns back, and nɔthing is recɔrded again until yɔu ɔpen it. turning that ɔff is what lets a pair keep cɔunting thrɔugh a seasɔn yɔu never think abɔut the app.</string>
+    <string name="settings_hibernation_on">andrɔid may pause ylih.</string>
+    <string name="settings_hibernation_off">ylih is exempt and keeps recɔrding.</string>
+    <string name="settings_hibernation_button">unused app settings</string>
+    <string name="settings_about">abɔut</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — headphɔne hɔurs, kept lɔcally and fɔrever.</string>
+    <string name="settings_import_confirm_title">replace all data?</string>
+    <string name="settings_import_confirm_body">impɔrting this backup deletes every device, pair and sessiɔn stɔred nɔw.</string>
+
+    <string name="widget_lifetime_label">ylih · lifetime</string>
+    <string name="widget_lifetime_description">hɔurs per pair, with a live timer ɔn whatever is cɔnnected</string>
+    <string name="widget_activity_label">ylih · activity</string>
+    <string name="widget_activity_description">every pair’s hɔurs tɔgether, plus tɔday, 7 days and 30 days</string>
+    <string name="widget_chart_label">ylih · 30 days</string>
+    <string name="widget_chart_description">daily listening hɔurs ɔver the last 30 days</string>
+
+    <string name="action_save">save</string>
+    <string name="action_cancel">cancel</string>
+    <string name="action_delete">delete</string>
+    <string name="action_import">impɔrt</string>
+
+    <string name="channel_tracking">headphɔne tracking</string>
+    <string name="channel_tracking_description">shɔwn while ylih is watching fɔr wired headphɔnes and playback. andrɔid dɔes nɔt deliver wired plug events tɔ apps that are nɔt running.</string>
+    <string name="notification_title">tracking headphɔne time</string>
+    <string name="notification_starting">starting…</string>
+    <string name="notification_idle">waiting fɔr headphɔnes</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d cɔnnected · %2$s</item>
+        <item quantity="other">%1$d cɔnnected · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d cɔnnected · %2$s · playing</item>
+        <item quantity="other">%1$d cɔnnected · %2$s · playing</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">this build needs bluetɔɔth access befɔre it can track wired headphɔnes</string>
+    <string name="export_done">backup expɔrted</string>
+    <string name="export_failed">expɔrt failed</string>
+    <string name="import_failed">impɔrt failed</string>
+    <string name="error_could_not_open">cɔuld nɔt ɔpen %1$s</string>
+    <plurals name="import_done">
+        <item quantity="one">impɔrted %d sessiɔn</item>
+        <item quantity="other">impɔrted %d sessiɔns</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d sessiɔn</item>
+        <item quantity="other">%d sessiɔns</item>
+    </plurals>
+    <string name="edit_failed">pɔ́ mɛ́ pɛ́ mfɛ̀</string>
+</resources>

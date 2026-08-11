@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Konkani (Latin). Same house style as the default locale: lowercase throughout, on purpose.
+
+  `app_name` is deliberately absent — the launcher label is a name, not a word, and does not
+  translate. So is `value_none`, which is an em dash.
+-->
+<resources>
+    <string name="app_title">ylih - tumche headphon jiwan</string>
+
+    <string name="nav_headphones">headphon</string>
+    <string name="nav_stats">ankde</string>
+    <string name="nav_settings">setting</string>
+
+    <string name="kind_bluetooth">bluetooth</string>
+    <string name="kind_ble">le audio</string>
+    <string name="kind_wired">tar valem</string>
+    <string name="kind_usb">usb</string>
+    <string name="kind_unknown">angatam</string>
+
+    <string name="welcome_title">ylih maddhe aplem svagat</string>
+    <string name="welcome_intro">ylih record korta ki prattyek headphon jodi kitne kalh julem rahte, tymmulle varshanntar tum ank punn ek prashnache uttar dest shakt: te kitni taas tiklem?</string>
+    <string name="welcome_point_auto_title">joda ani visar</string>
+    <string name="welcome_point_auto_body">bluetooth headphon svat record kelem jatam, te jultat sam. kaheebhee challu thakvnyanchi garej nahi.</string>
+    <string name="welcome_point_lifetime_title">ek jodi, ek ajiwan</string>
+    <string name="welcome_point_lifetime_body">jev ek jodi marte, tev ti nivrut kra: tchi ekkul thethan gothni kra ani samaan headphonchi puddhel jodi shunny pasun punn suru hote.</string>
+    <string name="welcome_point_detailed_title">tar valem ani playback</string>
+    <string name="welcome_point_detailed_body">setting maddhel tapshelvar tracking tar valem headphon jodte ani audio kitni velh kharkhur vajt hota he moste.</string>
+    <string name="welcome_privacy">sarvkaheebhee hya phonvar raahte. konathem khate nahi, ani appla internet parvangi nahi.</string>
+    <string name="welcome_start">surukvat kra</string>
+    <string name="welcome_next">puddhel</string>
+    <string name="welcome_allow">parvangi de</string>
+    <string name="welcome_step">charn %1$d cha %2$d</string>
+    <string name="welcome_bluetooth_title">bluetooth pravesh</string>
+    <string name="welcome_bluetooth_why">android fukt appla sangt ki konate bluetooth device julem ani tyala kay mhntat, jar appla bluetooth pravesh assel tar. yehi karun ylih headphonchi jodi kar stereo pasun veglem karte, ani he kase janate ki ek jodi dusryanpasun veglem ahe.</string>
+    <string name="welcome_bluetooth_with">tyachy sah: prattyek jodi tyachy jultat record kelem jate, kaheebhee challu n thakvta ani dabhnyachi kaheebhee garej nahi.</string>
+    <string name="welcome_bluetooth_without">tyache vina: konathem bluetooth headphon ajibhat record kelem jat nahet. appcha urverit bhag ajun kary karte, ani tum nanttar android ya app setting maddhel parvangi dilyas te dillem jauu shaktem.</string>
+    <string name="welcome_notifications_title">suchna</string>
+    <string name="welcome_notifications_why">tapshelvar tracking ek lahaan parshvbhumi sev chlaute, ani android konatyahi appla he karth astana suchna drishmnan thevnyachi avashyakta aset.</string>
+    <string name="welcome_notifications_with">tyachy sah: suchna darshvte ki kay record kelem jat ahe abhi, je tapshelvar tracking sajeev ahe he ekmev sanket ahe.</string>
+    <string name="welcome_notifications_without">tyache vina: tapshelvar tracking ajun chalte ani ajun record karte. android fukt tchi suchna dakshvnar nahi.</string>
+    <string name="hibernation_title">tum visrlyas mojni challu thev</string>
+    <string name="hibernation_body">android appz janchya kahi mahine upyog kelem jat nahi te thambvte ani tyanchi parvangi parat ghet, je ylih la kaheebhee record n karta sodtel johpryant tum te punn ughadtat nahi. visrun janem yeech hya appche uddisht ahe, tymmulle te band karnnem ajja layak ahe.</string>
+    <string name="action_not_now">ajja nahi</string>
+
+    <string name="devices_in_use">vapprat</string>
+    <string name="devices_retired">nivrut</string>
+    <string name="devices_empty_title">ajunchey konathem headphon nahi</string>
+    <string name="devices_empty_body">bluetooth headphonchi jodi joda ani te yethan distil. tar valem headphonla setting maddhel tapshelvar tracking avashyak ahe.</string>
+    <string name="devices_generation">jodi #%1$d</string>
+    <string name="devices_retired_on">nivrut %1$s</string>
+    <string name="devices_connected_for">julem %1$s</string>
+    <string name="devices_recent">%1$s / 7d</string>
+
+    <string name="stats_title">sarv headphon</string>
+    <string name="stats_sessions_since">%1$s %2$s pasun</string>
+    <string name="stats_today">aaj</string>
+    <string name="stats_last_7">gelya 7 divs</string>
+    <string name="stats_last_30">gelya 30 divs</string>
+    <string name="stats_average_session">sarasan seshan</string>
+    <string name="stats_longest_session">sarvant lanb seshan</string>
+    <string name="stats_playing">audio vajt ahe</string>
+    <string name="stats_measured_span">playback sathe molem</string>
+    <string name="stats_share">vajt aslelem hissa</string>
+    <string name="stats_playback_only_note">fukt playback velh mojnem</string>
+    <string name="stats_daily_hours_30">dainik taas (30 divs)</string>
+    <string name="stats_by_pair">jodichy aadharev</string>
+    <string name="stats_pair_row">%1$s · %2$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · nivrut</string>
+    <string name="chart_max">%1$s kamal</string>
+
+    <string name="pair_fallback_title">jodi</string>
+    <string name="pair_back">parat</string>
+    <string name="pair_more">adhik</string>
+    <string name="pair_menu_rename">punn nav de</string>
+    <string name="pair_menu_purchase">kharedi mahiti</string>
+    <string name="pair_menu_retire">nivrut / badlem</string>
+    <string name="pair_menu_delete">hatva</string>
+    <string name="pair_lifetime">hya jodiv ajiwan</string>
+    <string name="pair_retired_on">nivrut %1$s</string>
+    <string name="pair_retired_with_reason">nivrut %1$s · %2$s</string>
+    <string name="pair_connected_now">ajja julem · %1$s</string>
+    <string name="pair_sessions">seshan</string>
+    <string name="pair_average">sarasan</string>
+    <string name="pair_longest">sarvant lanb</string>
+    <string name="pair_since">%1$s pasun</string>
+    <string name="pair_of_measured">vajt aslelem hissa</string>
+    <string name="pair_measured">playback sathe molem</string>
+    <string name="pair_paid">dil</string>
+    <string name="pair_per_hour">prati taas</string>
+    <string name="pair_bought">kharedi kem</string>
+    <string name="pair_daily_hours_14">dainik taas (14 divs)</string>
+    <string name="pair_rename_title">jodihe punn nav de</string>
+    <string name="pair_rename_label">nav</string>
+    <string name="pair_retire_title">hya jodihe nivrut kra</string>
+    <string name="pair_retire_label">karun (marem, vikey, harem…)</string>
+    <string name="pair_retire_confirm">nivrut kra</string>
+    <string name="pair_retire_supporting">ekkul yethan gothni kra. samaan device punn julem zalyane shunny pasun taj jodi suru hote.</string>
+    <string name="pair_price_title">dilem kimat</string>
+    <string name="pair_price_label">rakam (sampurn units)</string>
+    <string name="pair_price_supporting">kharj-prati-taas akrutisathe vapplem.</string>
+    <string name="pair_delete_title">hya jodihe hatavaychay?</string>
+    <string name="pair_delete_body">tyasathe record kelem prattyek seshan hatvel jate. he purvarvet kelem jauu shaknate.</string>
+
+    <string name="session_ongoing">suru ahe</string>
+    <string name="session_until">johpryant %1$s</string>
+    <string name="session_playing">%1$s vajt ahe</string>
+    <string name="session_recovered">punarpraapt</string>
+
+    <string name="settings_tracking">tracking</string>
+    <string name="settings_detailed_title">tapshelvar tracking</string>
+    <string name="settings_detailed_body">tar valem headphon ani playback velh jodte. android fukt challu appla tar valem plug events report karte, tymmulle he shadmadhe ek muk suchna thevet. bluetooth kointyahi prakare track kelem jate.</string>
+    <string name="settings_detailed_unavailable">bluetooth pravesh dilyas paryat uplabdh nahi: he build fukt connectedDevice sev prakhar ghodshit karte, je android 14+ bluetooth parvangi sodte.</string>
+    <string name="settings_playback_only_title">fukt playback moj</string>
+    <string name="settings_playback_only_body">ankde julem velh aitvj audio kharkhur vajt aslelem velh mojte. fukt tapshelvar tracking sah record kelem seshan molem playback; baaki vgleem jatam.</string>
+    <string name="settings_language">bhasha</string>
+    <string name="settings_language_system">system bhasha</string>
+    <string name="settings_devices">device</string>
+    <string name="settings_devices_body">headphon naslelem kaheebhee ancchek kra — kar stereo ki speaker — he record karnem thambv.</string>
+    <string name="settings_device_subtitle">%1$s · prahthum pehlem %2$s</string>
+    <string name="settings_data">data</string>
+    <string name="settings_export">json niryyat kra</string>
+    <string name="settings_import">aayat kra</string>
+    <string name="settings_import_warning">aayat karnem vartaman sangrahit sarvkaheebhee badlem.</string>
+    <string name="settings_troubleshooting">samassya nirashan</string>
+    <string name="settings_battery_body">jar seshan record hone band ho tar tapas ki ylih battery optimization pasun mukt ahe — je app jbardasthine thambvlem gelem tyala johpryant te ughadtat nahi tohpryant punn kadheebhee julem nanchi suchna milat nahi.</string>
+    <string name="settings_battery_button">battery setting</string>
+    <string name="settings_battery_path">setting → app → ylih → battery → pratibandhit.</string>
+    <string name="settings_hibernation_body">jar ylih kahi mahine ughadtat nahi tar android te thambvte ani tyanchi parvangi parat ghet, ani johpryant tum te ughadtat nahi tohpryant kaheebhee punn record kelem jat nahi. he band karnem he ahe je jodihe appbaddhal kadheebhee vichar n karta ek ritutu mojni jaari thevet.</string>
+    <string name="settings_hibernation_on">android ylih he thambvu shaknate.</string>
+    <string name="settings_hibernation_off">ylih mukt ahe ani record kart thevet.</string>
+    <string name="settings_hibernation_button">apryukt app setting</string>
+    <string name="settings_about">yabaddhal</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — headphon taas, sthanikan ani kayamsvrupi sangrahit.</string>
+    <string name="settings_import_confirm_title">sarv data badlavaychay?</string>
+    <string name="settings_import_confirm_body">ha backup aayat kelyas ajja sangrahit prattyek device, jodi ani seshan hatvel jate.</string>
+
+    <string name="widget_lifetime_label">ylih · ajiwan</string>
+    <string name="widget_lifetime_description">jodi prati taas, julem var laiv timer sah</string>
+    <string name="widget_activity_label">ylih · kriyakalaap</string>
+    <string name="widget_activity_description">prattyek jodiche taas, aaj, 7 divs ani 30 divs atyrik</string>
+    <string name="widget_chart_label">ylih · 30 divs</string>
+    <string name="widget_chart_description">gelya 30 divsat dainik aiknnem taas</string>
+
+    <string name="action_save">jatan kra</string>
+    <string name="action_cancel">radd kra</string>
+    <string name="action_delete">hatva</string>
+    <string name="action_import">aayat kra</string>
+
+    <string name="channel_tracking">headphon tracking</string>
+    <string name="channel_tracking_description">tar valem headphon ani playback sathe ylih paht astana darshvel. android achlit n aslelem appz la tar valem plug events vipran karat nahi.</string>
+    <string name="notification_title">headphon velh tracking</string>
+    <string name="notification_starting">suru karth ahe…</string>
+    <string name="notification_idle">headphonchi prthiki karth ahe</string>
+    <plurals name="notification_active">
+        <item quantity="one">%1$d julem · %2$s</item>
+        <item quantity="other">%1$d julem · %2$s</item>
+    </plurals>
+    <plurals name="notification_active_playing">
+        <item quantity="one">%1$d julem · %2$s · vajt ahe</item>
+        <item quantity="other">%1$d julem · %2$s · vajt ahe</item>
+    </plurals>
+
+    <string name="detailed_needs_bluetooth">he build tar valem headphon track karnyasathe bluetooth pravesh avashyak ahe</string>
+    <string name="export_done">backup niryyat kem</string>
+    <string name="export_failed">niryyat ayashvrit</string>
+    <string name="import_failed">aayat ayashvrit</string>
+    <string name="error_could_not_open">%1$s ughaddu shkel nahi</string>
+    <plurals name="import_done">
+        <item quantity="one">aayat kem %d seshan</item>
+        <item quantity="other">aayat kem %d seshan</item>
+    </plurals>
+
+    <plurals name="session_count">
+        <item quantity="one">%d seshan</item>
+        <item quantity="other">%d seshan</item>
+    </plurals>
+    <string name="edit_failed">badal jatan korunk zalo na</string>
+</resources>
