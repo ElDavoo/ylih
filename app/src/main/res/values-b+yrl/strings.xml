@@ -150,7 +150,7 @@
     <string name="channel_tracking">umusuka i pukapika</string>
     <string name="channel_tracking_description">han kuxé ylih itasú nẽ i yaskuari ayura. android kuá wired plug events app pukapika rupí o.</string>
     <string name="notification_title">umusuka i pukapika ayura</string>
-    <string name="notification_starting">arama putári...</string>
+    <string name="notification_starting">arama putári…</string>
     <string name="notification_idle">umusuka alayé</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d i pukapika · %2$s</item>

@@ -150,7 +150,7 @@
     <string name="channel_tracking">akustika telefon gyzylmak</string>
     <string name="channel_tracking_description">ylih simli akustika telefonlaryny gyzylýar</string>
     <string name="notification_title">akustika telefon wagtyny gyzylmak</string>
-    <string name="notification_starting">başlanýar...</string>
+    <string name="notification_starting">başlanýar…</string>
     <string name="notification_idle">akustika telefony garaşyşy</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d birikdirilen · %2$s</item>

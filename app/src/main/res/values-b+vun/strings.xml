@@ -93,7 +93,7 @@
     <string name="pair_rename_title">badilisha jina la jozi</string>
     <string name="pair_rename_label">jina</string>
     <string name="pair_retire_title">tupa jozi hii</string>
-    <string name="pair_retire_label">sababu (ilikofa, kuuzwa, ilipotea...)</string>
+    <string name="pair_retire_label">sababu (ilikofa, kuuzwa, ilipotea…)</string>
     <string name="pair_retire_confirm">tupa</string>
     <string name="pair_retire_supporting">jumla inategeuka hapa. unganisha upya dispositifu sawa inayoanza jozi mpya kutoka sifuri.</string>
     <string name="pair_price_title">bei iliyolipwa</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">kusomeka kwa asusu</string>
     <string name="channel_tracking_description">iliyoonyeshwa wakati ylih inatembea kwa asusu wa waya nag kuigiza. android haipatii matukio ya waya kwa programu ambazo hazifanyi kazi.</string>
     <string name="notification_title">kusomeka muda wa asusu</string>
-    <string name="notification_starting">kuanza...</string>
+    <string name="notification_starting">kuanza…</string>
     <string name="notification_idle">kusunga asusu</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d iliyounganishwa · %2$s</item>

@@ -150,7 +150,7 @@
     <string name="channel_tracking">gara seyante</string>
     <string name="channel_tracking_description">ylih jowdi seyante</string>
     <string name="notification_title">gara guuru seyante</string>
-    <string name="notification_starting">hantum...</string>
+    <string name="notification_starting">hantum…</string>
     <string name="notification_idle">gara gaara</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d jebere · %2$s</item>

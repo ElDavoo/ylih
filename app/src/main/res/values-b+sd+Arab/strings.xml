@@ -93,7 +93,7 @@
     <string name="pair_rename_title">جوڙي کو نام دوبارہ ڏيو</string>
     <string name="pair_rename_label">نام</string>
     <string name="pair_retire_title">هن جوڙي کو ريٽائر ڪريو</string>
-    <string name="pair_retire_label">سبب (مرو، وڪرو، کيو ويو...)</string>
+    <string name="pair_retire_label">سبب (مرو، وڪرو، کيو ويو…)</string>
     <string name="pair_retire_confirm">ريٽائر ڪريو</string>
     <string name="pair_retire_supporting">ڪل اتي جھليل ٿي ويندا. ساڳي ڊيوائس سان ٻيهر ڳ ڪرڻ سان صفر تي هڪ نئي جوڙي شروع ٿي ويندي.</string>
     <string name="pair_price_title">قيمت ادا ڪي</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">هيڊ فون ٽريکنگ</string>
     <string name="channel_tracking_description">ظاهر ٿيل جڏهن ylih تار والا هيڊ فون ۽ پلے بيڪ لاء ڏسي رهيو آهي. انڊرائيڈ تار والي پلگ ايونٹس ڏيڻ نہ ڪري ٿو اپليڪيشنز جيڪو چل نہ رهيا آهن.</string>
     <string name="notification_title">هيڊ فون وقت ٽريکنگ</string>
-    <string name="notification_starting">شروع ٿي رهيو...</string>
+    <string name="notification_starting">شروع ٿي رهيو…</string>
     <string name="notification_idle">هيڊ فون جي انتظار</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d جڙيل · %2$s</item>

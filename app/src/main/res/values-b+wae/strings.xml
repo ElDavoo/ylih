@@ -93,7 +93,7 @@
     <string name="pair_rename_title">paar umbenennen</string>
     <string name="pair_rename_label">noma</string>
     <string name="pair_retire_title">däs paar ischtellee</string>
-    <string name="pair_retire_label">grund (sterbe, verka, verloor...)</string>
+    <string name="pair_retire_label">grund (sterbe, verka, verloor…)</string>
     <string name="pair_retire_confirm">ischtellee</string>
     <string name="pair_retire_supporting">d\'total friert dort. wen d\'sälle apparat wieder verbunde wird, fangt i nöi paar bi nu oo.</string>
     <string name="pair_price_title">prys bezohlt</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">chopfhörer verfolgig</string>
     <string name="channel_tracking_description">zeigt während ylih uf dradtet chopfhörer u playback wartet. android säit wired plug events nit aa apps, wo nit laufe.</string>
     <string name="notification_title">chopfhörer zytt verfölge</string>
-    <string name="notification_starting">starta...</string>
+    <string name="notification_starting">starta…</string>
     <string name="notification_idle">uf chopfhörer warte</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d verbunde · %2$s</item>

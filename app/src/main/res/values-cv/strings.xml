@@ -93,7 +93,7 @@
     <string name="pair_rename_title">nalme-na serhilaha</string>
     <string name="pair_rename_label">seri</string>
     <string name="pair_retire_title">nalme-na katsal</string>
-    <string name="pair_retire_label">parva (shayan, putan, hupsham...)</string>
+    <string name="pair_retire_label">parva (shayan, putan, hupsham…)</string>
     <string name="pair_retire_confirm">katsalam</string>
     <string name="pair_retire_supporting">tu takka tutallih. antan nalme-na tapkale, samyan nalme nulla tal-ta sakkar.</string>
     <string name="pair_price_title">putan putanna</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">nalme tapkala</string>
     <string name="channel_tracking_description">ylih sarniy nalme i yashcha ma teri. android sarniy ayta privet piles app-a pavan peles.</string>
     <string name="notification_title">nalme hattava tapkala</string>
-    <string name="notification_starting">katsiteme...</string>
+    <string name="notification_starting">katsiteme…</string>
     <string name="notification_idle">nalme ka khavari</string>
     <plurals name="notification_active">
         <item quantity="zero">%1$d tapkalam · %2$s</item>

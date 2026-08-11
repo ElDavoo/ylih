@@ -93,7 +93,7 @@
     <string name="pair_rename_title">isemmi l-par mill-ġdid</string>
     <string name="pair_rename_label">isem</string>
     <string name="pair_retire_title">ritira l-par din</string>
-    <string name="pair_retire_label">raġuni (mietet, mitgħac, mitliqa...)</string>
+    <string name="pair_retire_label">raġuni (mietet, mitgħac, mitliqa…)</string>
     <string name="pair_retire_confirm">ritira</string>
     <string name="pair_retire_supporting">it-totali jiffirżu hawn. il-qbala mill-ġdid tal-istess device tibda par gdida minn żero.</string>
     <string name="pair_price_title">prezz ħalliet</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">headphone tracking</string>
     <string name="channel_tracking_description">murija filwaqt li ylih tħares għal wired headphones u playback. android ma tderġix wired plug events għal apps li mhux sejra.</string>
     <string name="notification_title">tracking tal-ħin tal-headphones</string>
-    <string name="notification_starting">tibda...</string>
+    <string name="notification_starting">tibda…</string>
     <string name="notification_idle">stennija għal headphones</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d qabbad · %2$s</item>

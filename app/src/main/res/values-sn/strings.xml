@@ -93,7 +93,7 @@
     <string name="pair_rename_title">zvirudziro sora</string>
     <string name="pair_rename_label">zita</string>
     <string name="pair_retire_title">bvisa sora iyi</string>
-    <string name="pair_retire_label">chikonzero (kubva, kutengeswa, kurasika...)</string>
+    <string name="pair_retire_label">chikonzero (kubva, kutengeswa, kurasika…)</string>
     <string name="pair_retire_confirm">bvisa</string>
     <string name="pair_retire_supporting">zvikwame zvago zvinomirayira ipapo. machina akasangana chete ichamba pairingana yomasinete kubva kutsva pane zero.</string>
     <string name="pair_price_title">mutengo wekutenga</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">kurangarira masinete</string>
     <string name="channel_tracking_description">inoratidza ylih ichingorangarira nomwe masinete uye kushanda. android hainoudzisa nomwe plug zvingapinda kuapp zvisina kushanda.</string>
     <string name="notification_title">kurangarira mahora emasinete</string>
-    <string name="notification_starting">kubudisira...</string>
+    <string name="notification_starting">kubudisira…</string>
     <string name="notification_idle">kudzikarira masinete</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d yakasangana · %2$s</item>

@@ -150,7 +150,7 @@
     <string name="channel_tracking">ឯកសារផ្តល់ឱ្យ</string>
     <string name="channel_tracking_description">បង្ហាញខណៈពេលដែល ylih ក្នុងលក្ខខណ្ឌឯកសារខ្សែ ហើយលេង។ android មិនលាក់ឯកសារប្រាក់ផ្តល់ឱ្យក្រុមបង្កើត មិនលេង។</string>
     <string name="notification_title">ផ្តល់ឱ្យឯកសារម៉ោង</string>
-    <string name="notification_starting">ចាប់ផ្តើម...</string>
+    <string name="notification_starting">ចាប់ផ្តើម…</string>
     <string name="notification_idle">រង់ចាំឯកសារលោហៈ</string>
     <plurals name="notification_active">
         <item quantity="other">%1$d connected · %2$s</item>

@@ -93,7 +93,7 @@
     <string name="pair_rename_title">biza le milambo kwakhona</string>
     <string name="pair_rename_label">igama</string>
     <string name="pair_retire_title">igqitshile ezi milambo</string>
-    <string name="pair_retire_label">isizathu (yafa, uthengiswe, yalahla...)</string>
+    <string name="pair_retire_label">isizathu (yafa, uthengiswe, yalahla…)</string>
     <string name="pair_retire_confirm">igqitshile</string>
     <string name="pair_retire_supporting">inani lisindile apho. ukuqhubeka nesixhobo esifanayo kwabisulule imilambo entsha ukusukela kunelunga.</string>
     <string name="pair_price_title">imali ethengwayo</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">ubukholeleli bemilambo</string>
     <string name="channel_tracking_description">iboniswe ylih ilindela izinzimu kunye nokudlala. i-android ayibonakalisa izinzimu plug events kuisicelo esisebenzayo.</string>
     <string name="notification_title">ubukholeleli bexesha lemilambo</string>
-    <string name="notification_starting">qalani...</string>
+    <string name="notification_starting">qalani…</string>
     <string name="notification_idle">ilindela imilambo</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d ixhume · %2$s</item>

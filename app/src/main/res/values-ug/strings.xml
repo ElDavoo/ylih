@@ -150,7 +150,7 @@
     <string name="channel_tracking">ئاۋاز بولۇمى ئىزدەش</string>
     <string name="channel_tracking_description">ylih سىملىق ئاۋاز بولۇمى ئىزدىيدۇ</string>
     <string name="notification_title">ئاۋاز بولۇمى ۋاقتى ئىزدەش</string>
-    <string name="notification_starting">باشلىنىۋاتىدۇ...</string>
+    <string name="notification_starting">باشلىنىۋاتىدۇ…</string>
     <string name="notification_idle">ئاۋاز بولۇمى ساقلاش</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d قولۇ ئۆرتىلاشتى · %2$s</item>

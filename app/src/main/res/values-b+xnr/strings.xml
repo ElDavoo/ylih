@@ -93,7 +93,7 @@
     <string name="pair_rename_title">mimiñ kā nam badal</string>
     <string name="pair_rename_label">nam</string>
     <string name="pair_retire_title">is mimiñ kō nish kar</string>
-    <string name="pair_retire_label">sāran (marā, bechā, kho...)</string>
+    <string name="pair_retire_label">sāran (marā, bechā, kho…)</string>
     <string name="pair_retire_confirm">nish kar</string>
     <string name="pair_retire_supporting">kul uthē rok jay. jab dobāra Device jor hun, nayā mimiñ shurū hon.</string>
     <string name="pair_price_title">khareed kī kīmat</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">mimiñ nazar-rakhā</string>
     <string name="channel_tracking_description">ylih tangsār mimiñ dekh. android tangsār plug events kunj chalte app kō na de.</string>
     <string name="notification_title">mimiñ samay nazar-rakhā</string>
-    <string name="notification_starting">shurū...</string>
+    <string name="notification_starting">shurū…</string>
     <string name="notification_idle">mimiñ wait</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d jor · %2$s</item>

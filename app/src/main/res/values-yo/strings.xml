@@ -150,7 +150,7 @@
     <string name="channel_tracking">akiwé alalade</string>
     <string name="channel_tracking_description">han nigba ti ylih ba lo waya alalade ati isalaye ise. android ko sọ wired plug events si app ti ko ba nsilẹ.</string>
     <string name="notification_title">akiwé ise alalade</string>
-    <string name="notification_starting">bẹrẹ...</string>
+    <string name="notification_starting">bẹrẹ…</string>
     <string name="notification_idle">alayé fun alalade</string>
     <plurals name="notification_active">
         <item quantity="other">%1$d ba wa ninu ise · %2$s</item>

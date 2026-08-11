@@ -150,7 +150,7 @@
     <string name="channel_tracking">кулакберүләр сакланышы</string>
     <string name="channel_tracking_description">ylih сыммалы һәм уйнау сакланышы</string>
     <string name="notification_title">кулакберүләр вакыты сакланышы</string>
-    <string name="notification_starting">башланур...</string>
+    <string name="notification_starting">башланур…</string>
     <string name="notification_idle">кулакберүләр сак</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d кушылды · %2$s</item>

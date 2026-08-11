@@ -93,7 +93,7 @@
     <string name="pair_rename_title">sinthani dzina la makedzeni</string>
     <string name="pair_rename_label">dzina</string>
     <string name="pair_retire_title">asintha makedzeni ano</string>
-    <string name="pair_retire_label">chifukwa (akufa, agulitsidwa, ataya...)</string>
+    <string name="pair_retire_label">chifukwa (akufa, agulitsidwa, ataya…)</string>
     <string name="pair_retire_confirm">asintha</string>
     <string name="pair_retire_supporting">kabuzi kake kakhala kumayimiliki pano. kuvankha chipangizo chimodzimodziche, makedzeni amasunga kuyambira ziro.</string>
     <string name="pair_price_title">mtengo walipira</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">kumva kwa matako</string>
     <string name="channel_tracking_description">kuwonetsedwa pamene ylih ikumva matako onamuko wumadzi ndi kumdandalira. android isikupeza zonetsa za plug ya wumadzi kutumbuwa yomwe ikudutsa.</string>
     <string name="notification_title">kumva kwa nthawi ya matako</string>
-    <string name="notification_starting">kuthani...</string>
+    <string name="notification_starting">kuthani…</string>
     <string name="notification_idle">kusunga matako</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d vankha · %2$s</item>

@@ -93,7 +93,7 @@
     <string name="pair_rename_title">rename pair</string>
     <string name="pair_rename_label">name</string>
     <string name="pair_retire_title">retire this pair</string>
-    <string name="pair_retire_label">reason (died, sold, lost...)</string>
+    <string name="pair_retire_label">reason (died, sold, lost…)</string>
     <string name="pair_retire_confirm">retire</string>
     <string name="pair_retire_supporting">totals freeze here. reconnecting the same device starts a fresh pair at zero.</string>
     <string name="pair_price_title">price paid</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">headphone tracking</string>
     <string name="channel_tracking_description">shown while ylih is watching for wired headphones and playback. android does not deliver wired plug events to apps that are not running.</string>
     <string name="notification_title">tracking headphone time</string>
-    <string name="notification_starting">starting...</string>
+    <string name="notification_starting">starting…</string>
     <string name="notification_idle">waiting for headphones</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d connected · %2$s</item>

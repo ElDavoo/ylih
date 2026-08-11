@@ -150,7 +150,7 @@
     <string name="channel_tracking">ھوسیلاسى ئیزداش</string>
     <string name="channel_tracking_description">ylih سیملی ھوسیلاسى ئیزدایدو</string>
     <string name="notification_title">ھوسیلاسى وقتى ئیزداش</string>
-    <string name="notification_starting">باشلانمودا...</string>
+    <string name="notification_starting">باشلانمودا…</string>
     <string name="notification_idle">ھوسیلاسى ساقلاش</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d الاقتاشتو · %2$s</item>

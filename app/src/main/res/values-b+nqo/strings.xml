@@ -150,7 +150,7 @@
     <string name="channel_tracking">sɔ̀rɔ baara</string>
     <string name="channel_tracking_description">gara ylih a wə gara wɔɔ kɛ dɔn la. android ta gara wɔɔ cɛ sɔ application kɔ dusu ma.</string>
     <string name="notification_title">sɔ̀rɔ yili baara</string>
-    <string name="notification_starting">fara...</string>
+    <string name="notification_starting">fara…</string>
     <string name="notification_idle">sɔ̀rɔ wə</string>
     <plurals name="notification_active">
         <item quantity="other">%1$d kɛ se · %2$s</item>

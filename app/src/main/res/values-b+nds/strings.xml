@@ -150,7 +150,7 @@
     <string name="channel_tracking">kopphörer-protokollering</string>
     <string name="channel_tracking_description">wisst, während ylih wacht for dröppt kopphörer un avspeel. android delivert dröppt-toevallen neet an apps, de neet leavend zijn.</string>
     <string name="notification_title">protokollering kopphörer-tiet</string>
-    <string name="notification_starting">startend...</string>
+    <string name="notification_starting">startend…</string>
     <string name="notification_idle">wartend for kopphörer</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d verbunnen · %2$s</item>

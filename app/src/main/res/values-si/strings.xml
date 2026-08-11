@@ -93,7 +93,7 @@
     <string name="pair_rename_title">යුගල නැවත නම් කරන්න</string>
     <string name="pair_rename_label">නම</string>
     <string name="pair_retire_title">එම යුගල විශ්‍රාම දෙන්න</string>
-    <string name="pair_retire_label">හේතුව (මරණ, විකිණි, අහිමි...)</string>
+    <string name="pair_retire_label">හේතුව (මරණ, විකිණි, අහිමි…)</string>
     <string name="pair_retire_confirm">විශ්‍රාම</string>
     <string name="pair_retire_supporting">එකතුව එখানට මුතුයි. ඒ උපකරණ නැවතත් සිවිල්, තබයි දිගු යුගල ශුන්යයෙන්ම ගිණුම ගිණුම.</string>
     <string name="pair_price_title">මිල ගුණුවෙන්</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">ශ්‍රවණ උපකරණ ලුහුබැඳීම</string>
     <string name="channel_tracking_description">ylih පෙන ශ්‍රවණ උපකරණ සිතුම් සහ ධ්‍වනි ප්‍රශස්තිකරණ සිටින ගිණුම. android පෙන සිවිල් වෙතට යෙදුම ගිණුම ගසයි නොවේ.</string>
     <string name="notification_title">ශ්‍රවණ උපකරණ කාල ලුහුබැඳීම</string>
-    <string name="notification_starting">ආරම්භ කිරීම...</string>
+    <string name="notification_starting">ආරම්භ කිරීම…</string>
     <string name="notification_idle">ශ්‍රවණ උපකරණ සිතුම්</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d සිවිල් · %2$s</item>

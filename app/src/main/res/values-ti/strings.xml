@@ -150,7 +150,7 @@
     <string name="channel_tracking">ሔዱ ምስጅ</string>
     <string name="channel_tracking_description">ylih ሽብሩ ሔዱ ወ ምስጅ ሰዓት ይምስጅ</string>
     <string name="notification_title">ሔዱ ሰዓት ምስጅ</string>
-    <string name="notification_starting">ጀምር...</string>
+    <string name="notification_starting">ጀምር…</string>
     <string name="notification_idle">ሔዱ ጸላሂ</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d ሪኖ · %2$s</item>

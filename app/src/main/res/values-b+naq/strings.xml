@@ -93,7 +93,7 @@
     <string name="pair_rename_title">ǂao ǃares tsi</string>
     <string name="pair_rename_label">tsi</string>
     <string name="pair_retire_title">ǃaba ǃares di</string>
-    <string name="pair_retire_label">hara (ǃoa, guba, ǃaba...)</string>
+    <string name="pair_retire_label">hara (ǃoa, guba, ǃaba…)</string>
     <string name="pair_retire_confirm">ǃaba</string>
     <string name="pair_retire_supporting">total hara gidi hee. ǂoha ǂoe ǃares ǂou ǃau kaone.</string>
     <string name="pair_price_title">duma gara</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">ǃaudi hara</string>
     <string name="channel_tracking_description">ǃ\'ou ylih ǃaoi ǃaudi o ǃara tsi. android ǃaoi ǂoe app.</string>
     <string name="notification_title">ǃaudi hora hara</string>
-    <string name="notification_starting">ǃuma...</string>
+    <string name="notification_starting">ǃuma…</string>
     <string name="notification_idle">ǃaudi tsi</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d ǃoa · %2$s</item>

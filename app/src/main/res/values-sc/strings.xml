@@ -93,7 +93,7 @@
     <string name="pair_rename_title">bennomine para</string>
     <string name="pair_rename_label">nòmine</string>
     <string name="pair_retire_title">pensiona custa para</string>
-    <string name="pair_retire_label">motivu (morta, bendida, perida...)</string>
+    <string name="pair_retire_label">motivu (morta, bendida, perida…)</string>
     <string name="pair_retire_confirm">pensiona</string>
     <string name="pair_retire_supporting">is totales si gelant lì. si si connet de nou su dispositivu matessi, si incumintza una para freska a zero.</string>
     <string name="pair_price_title">pretzu pagadu</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">tracciadura de cuffias</string>
     <string name="channel_tracking_description">ammustrada mentre ylih est guardande pro cuffias cun filu e riprodutzione. android no entat acontziiments de plugu cun filu a is apa chi no sunt funzionade.</string>
     <string name="notification_title">tracciadura de tempada de cuffias</string>
-    <string name="notification_starting">incumintza...</string>
+    <string name="notification_starting">incumintza…</string>
     <string name="notification_idle">aspettande cuffias</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d connetidu · %2$s</item>

@@ -93,7 +93,7 @@
     <string name="pair_rename_title">preimenovati par</string>
     <string name="pair_rename_label">ime</string>
     <string name="pair_retire_title">penzionisati ovaj par</string>
-    <string name="pair_retire_label">razlog (umro, prodato, izgubljeno...)</string>
+    <string name="pair_retire_label">razlog (umro, prodato, izgubljeno…)</string>
     <string name="pair_retire_confirm">penzionisati</string>
     <string name="pair_retire_supporting">ukupan rezultat se zamrzava ovde. ponovno povezivanje istog uredaja pocinje novi par sa nulom.</string>
     <string name="pair_price_title">cena placena</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">pracenje slusalica</string>
     <string name="channel_tracking_description">prikazano dok ylih prati zicane slusalice i reproduciranje. android ne dostavlja zicane dogadjaje aplikacijama koje se ne pokrecu.</string>
     <string name="notification_title">pracenje vremena slusalica</string>
-    <string name="notification_starting">pokretanje...</string>
+    <string name="notification_starting">pokretanje…</string>
     <string name="notification_idle">cekanje na slusalice</string>
     <plurals name="notification_active">
         <item quantity="other">%1$d povezanih · %2$s</item>

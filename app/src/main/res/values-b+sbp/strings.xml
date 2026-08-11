@@ -93,7 +93,7 @@
     <string name="pair_rename_title">jua nena-ni amagabwa</string>
     <string name="pair_rename_label">nena</string>
     <string name="pair_retire_title">kushangalia amagabwa agaale</string>
-    <string name="pair_retire_label">sababu (akufa, akuuzwa, akupoteza...)</string>
+    <string name="pair_retire_label">sababu (akufa, akuuzwa, akupoteza…)</string>
     <string name="pair_retire_confirm">kushangalia</string>
     <string name="pair_retire_supporting">amakw\'ingusi agasimama hapo. agasumbana nene, amagabwa mapya yajua mwanzo nene.</string>
     <string name="pair_price_title">bei kulingana</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">amagabwa kusava</string>
     <string name="channel_tracking_description">ylih amaleni nandu amakoya igana. android amaleni ndiiyambayi app ifupi kusambaza.</string>
     <string name="notification_title">amagabwa masaa kusava</string>
-    <string name="notification_starting">jua jua...</string>
+    <string name="notification_starting">jua jua…</string>
     <string name="notification_idle">amagabwa oottia</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d agasumbana · %2$s</item>

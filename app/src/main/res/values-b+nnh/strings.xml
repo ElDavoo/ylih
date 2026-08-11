@@ -150,7 +150,7 @@
     <string name="channel_tracking">kopɛfoŋ a shyɔ</string>
     <string name="channel_tracking_description">gə a ghə ylih a wə a kɔ̀ kə kopɛfoŋ hə a shɛ. android khɛ̌ ye a kɔ̀ kə tɔsə ghə app khɛ̌ lɛŋ nka.</string>
     <string name="notification_title">kopɛfoŋ tɛ a shyɔ</string>
-    <string name="notification_starting">tə ghɛ...</string>
+    <string name="notification_starting">tə ghɛ…</string>
     <string name="notification_idle">wə kopɛfoŋ</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d ŋkəlɛ · %2$s</item>

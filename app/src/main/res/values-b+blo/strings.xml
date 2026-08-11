@@ -93,7 +93,7 @@
     <string name="pair_rename_title">a bi ta ka ta</string>
     <string name="pair_rename_label">a bi</string>
     <string name="pair_retire_title">a yo di a bi yi</string>
-    <string name="pair_retire_label">a ko (a wo, a se, a bu...)</string>
+    <string name="pair_retire_label">a ko (a wo, a se, a bu…)</string>
     <string name="pair_retire_confirm">a yo</string>
     <string name="pair_retire_supporting">a mma ya ka ta ti yi. a ko di na mba kuke wo yi a yu ta a se a bi ta ka yi a wu</string>
     <string name="pair_price_title">a bo ka</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">na mba kuke a ka ti</string>
     <string name="channel_tracking_description">a yi ta wo ylih a ma na i ti na mba kuke di a na. android a ma ti i ti a ko na a ka a app wu a ma ka</string>
     <string name="notification_title">a ka ti na mba kuke sa</string>
-    <string name="notification_starting">a ko ta...</string>
+    <string name="notification_starting">a ko ta…</string>
     <string name="notification_idle">a ka na na mba kuke</string>
     <plurals name="notification_active">
         <item quantity="zero">%1$d a ko di · %2$s</item>

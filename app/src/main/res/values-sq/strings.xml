@@ -93,7 +93,7 @@
     <string name="pair_rename_title">riemëro palën</string>
     <string name="pair_rename_label">emri</string>
     <string name="pair_retire_title">pensionojeni këtë palë</string>
-    <string name="pair_retire_label">arsye (vdiq, u shit, u humb...)</string>
+    <string name="pair_retire_label">arsye (vdiq, u shit, u humb…)</string>
     <string name="pair_retire_confirm">pensionohu</string>
     <string name="pair_retire_supporting">totalet ngryset këtu. rilidhja e të njëjtit pajisje fillon një palë të re në zero.</string>
     <string name="pair_price_title">çmimi i paguar</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">gjurmim kufjesh</string>
     <string name="channel_tracking_description">shfaqet ndërsa ylih po ndjek kufjet me tela dhe riprodhimin. android nuk ka ngjarje me tela të lidhur me aplikacionet që nuk punojnë.</string>
     <string name="notification_title">gjurmimi i kohës së kufjeve</string>
-    <string name="notification_starting">po fillonte...</string>
+    <string name="notification_starting">po fillonte…</string>
     <string name="notification_idle">në pritje të kufjeve</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d e lidhur · %2$s</item>

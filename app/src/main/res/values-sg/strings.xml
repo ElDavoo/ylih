@@ -93,7 +93,7 @@
     <string name="pair_rename_title">kobo mo famene sânda</string>
     <string name="pair_rename_label">famene</string>
     <string name="pair_retire_title">kobo mo kü</string>
-    <string name="pair_retire_label">nzambi (kü, bili, lala...)</string>
+    <string name="pair_retire_label">nzambi (kü, bili, lala…)</string>
     <string name="pair_retire_confirm">kü</string>
     <string name="pair_retire_supporting">sûa mo za dé lokö. ndâ mo tî ko sândi, kobo kula gua mo dé.</string>
     <string name="pair_price_title">kô tî ko</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">aûzo gbalá</string>
     <string name="channel_tracking_description">ylih tî gbalá fîlo nda timá. android broacast tî sô gbalá app tî sô.</string>
     <string name="notification_title">aûzo ngö gbalá</string>
-    <string name="notification_starting">tandá...</string>
+    <string name="notification_starting">tandá…</string>
     <string name="notification_idle">aûzo nda jabu</string>
     <plurals name="notification_active">
         <item quantity="other">%1$d tangâ · %2$s</item>

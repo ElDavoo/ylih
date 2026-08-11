@@ -93,7 +93,7 @@
     <string name="pair_rename_title">maajje-nimá pair</string>
     <string name="pair_rename_label">nimá</string>
     <string name="pair_retire_title">maahta tánná pair</string>
-    <string name="pair_retire_label">siivu (kuolin, muađil, pajul...)</string>
+    <string name="pair_retire_label">siivu (kuolin, muađil, pajul…)</string>
     <string name="pair_retire_confirm">maahta</string>
     <string name="pair_retire_supporting">sumá čeakcu tánná. majeehâ čulhkan samá laittá alggá jällen fresh pair nuolla.</string>
     <string name="pair_price_title">osmahtu</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">hearas sieđemužžan</string>
     <string name="channel_tracking_description">nähtam siiná ylih jáhta sáhppat hearas já kuullamin. android jus ejä vijdá wired plug-eventta appii mainna ejä luo siirvun.</string>
     <string name="notification_title">sieđemužžan hearas aiges</string>
-    <string name="notification_starting">alggá...</string>
+    <string name="notification_starting">alggá…</string>
     <string name="notification_idle">maajje hearas</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d čulhkan · %2$s</item>

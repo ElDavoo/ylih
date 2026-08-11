@@ -93,7 +93,7 @@
     <string name="pair_rename_title">labida gaarka</string>
     <string name="pair_rename_label">magaca</string>
     <string name="pair_retire_title">iska bax gaarka</string>
-    <string name="pair_retire_label">sababka (dhinto, lagu iibiyay, lumay...)</string>
+    <string name="pair_retire_label">sababka (dhinto, lagu iibiyay, lumay…)</string>
     <string name="pair_retire_confirm">iska bax</string>
     <string name="pair_retire_supporting">tirada waxaa jooga halkan. xidhka qalabka kalay bilowga gaarka cusub zero.</string>
     <string name="pair_price_title">qiimaha lagu bixiyay</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">suuraalinta dhegga</string>
     <string name="channel_tracking_description">muujiyay ylih ay suuraalin dhegga xadka iyo ciyaarta. android oo keliya waxba laguma sheegaa xadka plug ay app aan shaqeyn.</string>
     <string name="notification_title">suuraalinta saacadaha dhegga</string>
-    <string name="notification_starting">bilaabaa...</string>
+    <string name="notification_starting">bilaabaa…</string>
     <string name="notification_idle">raacda dhegga</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d xidhka · %2$s</item>

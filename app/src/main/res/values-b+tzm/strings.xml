@@ -150,7 +150,7 @@
     <string name="channel_tracking">asgra n tmaza</string>
     <string name="channel_tracking_description">ylih asgra slawen u awick</string>
     <string name="notification_title">asgra n waqt n tmaza</string>
-    <string name="notification_starting">senker...</string>
+    <string name="notification_starting">senker…</string>
     <string name="notification_idle">aregna n tmaza</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d yttuskel · %2$s</item>

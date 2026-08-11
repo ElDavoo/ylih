@@ -93,7 +93,7 @@
     <string name="pair_rename_title">dit pear omneame</string>
     <string name="pair_rename_label">namme</string>
     <string name="pair_retire_title">dit pear ôfskied</string>
-    <string name="pair_retire_label">reden (dea, ferrûn, ferlern...)</string>
+    <string name="pair_retire_label">reden (dea, ferrûn, ferlern…)</string>
     <string name="pair_retire_confirm">ôfskied</string>
     <string name="pair_retire_supporting">totalen frie hjir. op \'e taal it dieselde apparaat wer ferbint, begjint in fersk pear by nul.</string>
     <string name="pair_price_title">priis betelle</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">tskofhâlderskes spanning</string>
     <string name="channel_tracking_description">werjaan wylst ylih foar bedraad tskofhâlderskes en ôfspeel sjocht. android meldt gjin bedraad-plugin-eveneminten oan apps dy\'t net lûpe.</string>
     <string name="notification_title">tracking tskofhâlderskes tiid</string>
-    <string name="notification_starting">begjinnend...</string>
+    <string name="notification_starting">begjinnend…</string>
     <string name="notification_idle">wachtsje op tskofhâlderskes</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d ferbûn · %2$s</item>

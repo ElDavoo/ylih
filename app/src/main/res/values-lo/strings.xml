@@ -150,7 +150,7 @@
     <string name="channel_tracking">ບັນທຶກຫູຟັງ</string>
     <string name="channel_tracking_description">ສະແດງໃນຂະນະ ylih ຕິດຕາມສາຍ ແລະ playback.</string>
     <string name="notification_title">ບັນທຶກຫູຟັງ</string>
-    <string name="notification_starting">ເລີ່ມ...</string>
+    <string name="notification_starting">ເລີ່ມ…</string>
     <string name="notification_idle">ລໍຖ້າຫູຟັງ</string>
     <plurals name="notification_active">
         <item quantity="other">%1$d connected · %2$s</item>

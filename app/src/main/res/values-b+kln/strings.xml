@@ -93,7 +93,7 @@
     <string name="pair_rename_title">korengo emwusis</string>
     <string name="pair_rename_label">kiit</string>
     <string name="pair_retire_title">kosimiyek emwusis</string>
-    <string name="pair_retire_label">kitiit (komaak, kipwoy, kolosik...)</string>
+    <string name="pair_retire_label">kitiit (komaak, kipwoy, kolosik…)</string>
     <string name="pair_retire_confirm">kosimiyek</string>
     <string name="pair_retire_supporting">bonyet kosiyek kuche hapa. ikicha emwusis mot kosiyek taata, emwusis kot koimo koraninet.</string>
     <string name="pair_price_title">tabu kosiyek</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">emwusis kotagit</string>
     <string name="channel_tracking_description">entaap emwusis kogo kotagit. android entaap korogeta aap mibisitin immiksumut.</string>
     <string name="notification_title">emwusis saina kotagit</string>
-    <string name="notification_starting">koimo...</string>
+    <string name="notification_starting">koimo…</string>
     <string name="notification_idle">emwusis kigut</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d kosiyek · %2$s</item>

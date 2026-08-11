@@ -93,7 +93,7 @@
     <string name="pair_rename_title">जोड़ी का नाम बदलें</string>
     <string name="pair_rename_label">नाम</string>
     <string name="pair_retire_title">इस जोड़ी को सेवानिवृत्त करें</string>
-    <string name="pair_retire_label">कारण (मर गया, बेचा, खो गया...)</string>
+    <string name="pair_retire_label">कारण (मर गया, बेचा, खो गया…)</string>
     <string name="pair_retire_confirm">सेवानिवृत्त</string>
     <string name="pair_retire_supporting">कुल यहां जम जाते हैं। एक ही डिवाइस को फिर से कनेक्ट करने से शून्य पर एक ताजी जोड़ी शुरू होती है।</string>
     <string name="pair_price_title">दी गई कीमत</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">हेडफोन ट्रैकिंग</string>
     <string name="channel_tracking_description">दिखाया गया जब ylih तार वाले हेडफोन और प्लेबैक के लिए देख रहा है। एंड्रॉयड तार वाली प्लग ईवेंट को उन ऐप्स में नहीं देता जो नहीं चल रहे हैं।</string>
     <string name="notification_title">हेडफोन समय ट्रैकिंग</string>
-    <string name="notification_starting">शुरू हो रहा है...</string>
+    <string name="notification_starting">शुरू हो रहा है…</string>
     <string name="notification_idle">हेडफोन की प्रतीक्षा</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d कनेक्ट किया गया · %2$s</item>

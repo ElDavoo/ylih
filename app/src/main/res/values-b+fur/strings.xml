@@ -93,7 +93,7 @@
     <string name="pair_rename_title">ribate non a cheste cuglia</string>
     <string name="pair_rename_label">non</string>
     <string name="pair_retire_title">pensionâ cheste cuglia</string>
-    <string name="pair_retire_label">motif (murts, vendudis, pierdudis...)</string>
+    <string name="pair_retire_label">motif (murts, vendudis, pierdudis…)</string>
     <string name="pair_retire_confirm">pensionâ</string>
     <string name="pair_retire_supporting">i totâls si figjin chi. se la medeme classe di dispozitif si conete di nuê, si tache une cuglia gnove da zerç.</string>
     <string name="pair_price_title">prezi pagjat</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">seguiment lis cuffiis</string>
     <string name="channel_tracking_description">visualizat intant che ylih al cjate lis cuffiis con cjabe e la riproduzion. android non comuniche i events dai cjabis a lis aplacazions che no funzionin.</string>
     <string name="notification_title">seguiment dal timp lis cuffiis</string>
-    <string name="notification_starting">iniziâ...</string>
+    <string name="notification_starting">iniziâ…</string>
     <string name="notification_idle">che si spacj lis cuffiis</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d conete · %2$s</item>

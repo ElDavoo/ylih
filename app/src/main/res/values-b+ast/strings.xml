@@ -26,7 +26,7 @@
     <string name="welcome_point_auto_title">conecta y escuéyate</string>
     <string name="welcome_point_auto_body">los auriculares bluetooth se graben solos, dende’l momentu en que se conecten. nun hai d’axar nada corriendo.</string>
     <string name="welcome_point_lifetime_title">una par, una vida</string>
-    <string name="welcome_point_lifetime_body">cuando una par se muere, xubildala: \'l total s\'azota equí y\'l siguiente par d\'esos mesmos auriculares empieza de nuevu dende cero.</string>
+    <string name="welcome_point_lifetime_body">cuando una par se muere, xubildala: ’l total s’azota equí y’l siguiente par d’esos mesmos auriculares empieza de nuevu dende cero.</string>
     <string name="welcome_point_detailed_title">cableáu y reproducción</string>
     <string name="welcome_point_detailed_body">el rastrexu detallau, nos axustes, añade auriculares cableáu y mide cuántu d’esi tiempu yera reproducción de verdá.</string>
     <string name="welcome_privacy">tou permanez nesti teléfonu. nun hai cuentes, ni l’app tien permisu d’internet.</string>
@@ -46,7 +46,7 @@
     <string name="hibernation_body">android detién les aplicaciones que llevan ensin abrise dellos meses y retira-yos los permisos, lo que dexaría a ylih ensin rexistrar nada hasta que la vuelvas abrir. que te escaezas d’ella ye exactamente pa lo que ta pensada esta app, asina que val la pena desactivar eso agora.</string>
     <string name="action_not_now">agora non</string>
 
-    <!-- Llista d\'auriculares -->
+    <!-- Llista d’auriculares -->
     <string name="devices_in_use">n’usu</string>
     <string name="devices_retired">xubildaos</string>
     <string name="devices_empty_title">sin auriculares entá</string>

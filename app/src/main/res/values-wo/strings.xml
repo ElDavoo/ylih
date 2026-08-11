@@ -93,7 +93,7 @@
     <string name="pair_rename_title">sikasiit bi may ci seriñ</string>
     <string name="pair_rename_label">seriñ</string>
     <string name="pair_retire_title">sikasiit bi sikasiit jëm</string>
-    <string name="pair_retire_label">ndax (nagal, gis, koto...)</string>
+    <string name="pair_retire_label">ndax (nagal, gis, koto…)</string>
     <string name="pair_retire_confirm">sikasiit jëm</string>
     <string name="pair_retire_supporting">jëm jëm daal ñu. ngir ndax sikasiit gu xoolale, sikasiit bu bees gu jëm.</string>
     <string name="pair_price_title">ndax yem</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">jotul sikasiit</string>
     <string name="channel_tracking_description">mel bi jaanga joñ sikasiit ak rekk. android buuji xooliante joñ tëj app gu mel.</string>
     <string name="notification_title">jotul jàngal sikasiit</string>
-    <string name="notification_starting">jotul...</string>
+    <string name="notification_starting">jotul…</string>
     <string name="notification_idle">sikasiit ji dammu</string>
     <plurals name="notification_active">
         <item quantity="other">%1$d jëm · %2$s</item>

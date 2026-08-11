@@ -93,7 +93,7 @@
     <string name="pair_rename_title">premenovať pár</string>
     <string name="pair_rename_label">meno</string>
     <string name="pair_retire_title">vyradiť tento pár</string>
-    <string name="pair_retire_label">dôvod (zlomené, predané, stratené...)</string>
+    <string name="pair_retire_label">dôvod (zlomené, predané, stratené…)</string>
     <string name="pair_retire_confirm">vyradiť</string>
     <string name="pair_retire_supporting">celkový čas sa tu zmrazí. opätovné pripojenie toho istého zariadenia spustí svežý pár od nuly.</string>
     <string name="pair_price_title">zaplatená cena</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">sledovanie slúchadiel</string>
     <string name="channel_tracking_description">zobrazené počas sledovania ylih drôtených slúchadiel a prehrávania. android nedoručuje udalosti drôtov do aplikácií, ktoré nie sú spustené.</string>
     <string name="notification_title">sledovanie času slúchadiel</string>
-    <string name="notification_starting">spúšťanie...</string>
+    <string name="notification_starting">spúšťanie…</string>
     <string name="notification_idle">čakajúce na slúchadlá</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d pripojené · %2$s</item>

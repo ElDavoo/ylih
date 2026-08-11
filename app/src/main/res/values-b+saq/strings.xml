@@ -93,7 +93,7 @@
     <string name="pair_rename_title">e-karata atin e-muoma</string>
     <string name="pair_rename_label">atin</string>
     <string name="pair_retire_title">a-buri e-muoma</string>
-    <string name="pair_retire_label">o-karatai (a-maa, a-li-bea, a-li-baa...)</string>
+    <string name="pair_retire_label">o-karatai (a-maa, a-li-bea, a-li-baa…)</string>
     <string name="pair_retire_confirm">a-buri</string>
     <string name="pair_retire_supporting">a-karata a-buri. a-muoma-kinyanya e-sano kopikopi sifuri.</string>
     <string name="pair_price_title">a-li-pea i-bei</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">a-muoma a-karata</string>
     <string name="channel_tracking_description">ylih a-muoma-ole-siaai a-karata-muuma bahtaa. android a-muoma-ole-siaai a-si app a-karata.</string>
     <string name="notification_title">a-muoma a-saati a-karata</string>
-    <string name="notification_starting">a-kamatai...</string>
+    <string name="notification_starting">a-kamatai…</string>
     <string name="notification_idle">a-muoma o-karata</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d e-sano · %2$s</item>

@@ -93,7 +93,7 @@
     <string name="pair_rename_title">jufтni nomi ozgartirish</string>
     <string name="pair_rename_label">nom</string>
     <string name="pair_retire_title">bu jufтni rahmetdan qaydir-ish</string>
-    <string name="pair_retire_label">sabab (uldi, sotildi, yoqoldi...)</string>
+    <string name="pair_retire_label">sabab (uldi, sotildi, yoqoldi…)</string>
     <string name="pair_retire_confirm">rahmetdan qaydir-ish</string>
     <string name="pair_retire_supporting">jamisi shunda uz turadilan. qayta ulanish yangi jufт nol dan boshlanadi.</string>
     <string name="pair_price_title">tulangan narx</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">audiotosmа qonun</string>
     <string name="channel_tracking_description">ylih simli audiotosmа va choyon quetishni kozlayaптgan vaqtda koratiladi.</string>
     <string name="notification_title">audiotosmа vaqtini qonun</string>
-    <string name="notification_starting">boshlanяpti...</string>
+    <string name="notification_starting">boshlanяpti…</string>
     <string name="notification_idle">audiotos-maga kutimоqda</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d ulangan · %2$s</item>

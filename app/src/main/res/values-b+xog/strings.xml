@@ -93,7 +93,7 @@
     <string name="pair_rename_title">gamba ensawo ngeri</string>
     <string name="pair_rename_label">erinnya</string>
     <string name="pair_retire_title">giriko ensawo eno</string>
-    <string name="pair_retire_label">kifo (gikufa, ggusuubire, ggunsudde...)</string>
+    <string name="pair_retire_label">kifo (gikufa, ggusuubire, ggunsudde…)</string>
     <string name="pair_retire_confirm">giriko</string>
     <string name="pair_retire_supporting">ssente zakyo z\'omalako wano. buli kiseera ekyuma ky\'eragulidde eyigeza, ensawo empya etandika okuva zeero.</string>
     <string name="pair_price_title">ssente z\'okugula</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">okukomekawo kwa minwa</string>
     <string name="channel_tracking_description">kyisazibwa ylih okukomekawo enkwali ne okukubaganya. android etegeka enkwali events singa pulogiramu ekolebwa.</string>
     <string name="notification_title">okukomekawo saawa z\'minwa</string>
-    <string name="notification_starting">okunayukira...</string>
+    <string name="notification_starting">okunayukira…</string>
     <string name="notification_idle">okakira minwa</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d eyesozi · %2$s</item>

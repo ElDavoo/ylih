@@ -150,7 +150,7 @@
     <string name="channel_tracking">a tem a ab ne</string>
     <string name="channel_tracking_description">a súk kóm ylih a súk abe be taa na muak a tem. android kóm a kóm a wired plug events a app a súk o.</string>
     <string name="notification_title">a súk a tem a ab ne</string>
-    <string name="notification_starting">a búe...</string>
+    <string name="notification_starting">a búe…</string>
     <string name="notification_idle">a súk a ab ne</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d a súk · %2$s</item>

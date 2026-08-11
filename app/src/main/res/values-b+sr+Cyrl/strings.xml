@@ -93,7 +93,7 @@
     <string name="pair_rename_title">преименуј пар</string>
     <string name="pair_rename_label">назив</string>
     <string name="pair_retire_title">пензионирај овај пар</string>
-    <string name="pair_retire_label">разлог (отпало, продано, изгубљено...)</string>
+    <string name="pair_retire_label">разлог (отпало, продано, изгубљено…)</string>
     <string name="pair_retire_confirm">пензионирај</string>
     <string name="pair_retire_supporting">укупна вредност се замрзава овде. поновна повезивање истог уређаја почиње свежи пар од нуле.</string>
     <string name="pair_price_title">уплаћена цена</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">праћење слушалица</string>
     <string name="channel_tracking_description">приказано док ylih гледа жичане слушалице и плејбек. android не испоручује жичане догодаје повезивања апликацијама које не раде.</string>
     <string name="notification_title">праћење времена слушалица</string>
-    <string name="notification_starting">почињем...</string>
+    <string name="notification_starting">почињем…</string>
     <string name="notification_idle">чека слушалице</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d повезане · %2$s</item>

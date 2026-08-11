@@ -93,7 +93,7 @@
     <string name="pair_rename_title">allagua ataanigaleruk</string>
     <string name="pair_rename_label">ataa</string>
     <string name="pair_retire_title">allagua ikinngussallaleruk</string>
-    <string name="pair_retire_label">pillugu (nutaa, pileq, tupik...)</string>
+    <string name="pair_retire_label">pillugu (nutaa, pileq, tupik…)</string>
     <string name="pair_retire_confirm">ikinngussallaleruk</string>
     <string name="pair_retire_supporting">malilisui-suminut pinngortarpoq. allagua nukappiaaq tamaassanik tapatikka sappaaq allagua nutaa nuliani.</string>
     <string name="pair_price_title">sagssup tamaasa</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">nukappiaaq ilortariassutaq</string>
     <string name="channel_tracking_description">misile nukappiaaq atorni ilortariassutaq. android misile-inut qitirneq app imaq immiksumut assinasutaq.</string>
     <string name="notification_title">nukappiaaq sapaaq ilortariassutaq</string>
-    <string name="notification_starting">ajoqiliq...</string>
+    <string name="notification_starting">ajoqiliq…</string>
     <string name="notification_idle">nukappiaaq kigut</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d tapatik · %2$s</item>

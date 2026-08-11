@@ -150,7 +150,7 @@
     <string name="channel_tracking">हेडफोन ट्र्याकिङ</string>
     <string name="channel_tracking_description">देखाइएको जबकि ylih तारबद्ध हेडफोन र प्लेब्याक को लागि हेर्दैछ। android तारबद्ध प्लग घटनाहरू अनुप्रयोगहरूलाई वितरण गर्दैन जो चलिरहेका छैनन्।</string>
     <string name="notification_title">हेडफोन समय ट्र्याकिङ</string>
-    <string name="notification_starting">सुरु गर्दैछ...</string>
+    <string name="notification_starting">सुरु गर्दैछ…</string>
     <string name="notification_idle">हेडफोन को लागि प्रतीक्षा गर्दैछ</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d जोडिएको · %2$s</item>

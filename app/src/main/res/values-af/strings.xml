@@ -22,11 +22,11 @@
 
     <!-- Eerste keer -->
     <string name="welcome_title">welkom by ylih</string>
-    <string name="welcome_intro">ylih neem aan hoe lank elke koptelefoonpaar gekonnekteer bly, sodat jy jare later nog steeds die enigste belangrike vraag oor \'n paar kan beantwoord: hoeveel uur het hulle gelees?</string>
+    <string name="welcome_intro">ylih neem aan hoe lank elke koptelefoonpaar gekonnekteer bly, sodat jy jare later nog steeds die enigste belangrike vraag oor ’n paar kan beantwoord: hoeveel uur het hulle gelees?</string>
     <string name="welcome_point_auto_title">konnekteer en vergeet</string>
     <string name="welcome_point_auto_body">bluetooth-koptelefone word self opgeneem, vanaf die oomblik wat hulle konnekteer. niks hoef aanlêend te wees nie.</string>
     <string name="welcome_point_lifetime_title">een paar, een lewe</string>
-    <string name="welcome_point_lifetime_body">wanneer \'n paar sterf, pensioneer dit: sy totaal bevries daar en die volgende paar van dieselfde koptelefone begin weer van nul af.</string>
+    <string name="welcome_point_lifetime_body">wanneer ’n paar sterf, pensioneer dit: sy totaal bevries daar en die volgende paar van dieselfde koptelefone begin weer van nul af.</string>
     <string name="welcome_point_detailed_title">bedraad en afspeel</string>
     <string name="welcome_point_detailed_body">gedetailleerde opvolging, in instellings, voeg bedraad koptelefone by en meet hoeveel van die tyd werklik afspeel was.</string>
     <string name="welcome_privacy">alles bly op hierdie foon. daar is geen rekening nie, en die program het geen internettoestemming nie.</string>
@@ -35,22 +35,22 @@
     <string name="welcome_allow">laat toe</string>
     <string name="welcome_step">stap %1$d van %2$d</string>
     <string name="welcome_bluetooth_title">bluetooth-toegang</string>
-    <string name="welcome_bluetooth_why">android vertel \'n program net watter bluetooth-toestel gekoppel het, en wat dit heet, as die program bluetooth-toegang het. so onderskei ylih \'n kopstuk van \'n motorradio, en die een paar van die ander.</string>
+    <string name="welcome_bluetooth_why">android vertel ’n program net watter bluetooth-toestel gekoppel het, en wat dit heet, as die program bluetooth-toegang het. so onderskei ylih ’n kopstuk van ’n motorradio, en die een paar van die ander.</string>
     <string name="welcome_bluetooth_with">met toegang: elke paar word opgeteken van die oomblik af wat dit koppel, sonder dat iets moet aanhou loop en sonder om te onthou om iets te druk.</string>
     <string name="welcome_bluetooth_without">sonder toegang: geen bluetooth-kopstukke word opgeteken nie. die res van die program werk steeds, en jy kan dit later in android se programinstellings toestaan.</string>
     <string name="welcome_notifications_title">kennisgewings</string>
-    <string name="welcome_notifications_why">gedetailleerde dophou laat \'n klein agtergronddiens loop, en android vereis van enige program wat dit doen om \'n kennisgewing sigbaar te hou.</string>
+    <string name="welcome_notifications_why">gedetailleerde dophou laat ’n klein agtergronddiens loop, en android vereis van enige program wat dit doen om ’n kennisgewing sigbaar te hou.</string>
     <string name="welcome_notifications_with">met toestemming: die kennisgewing wys wat op die oomblik opgeteken word, die enigste teken dat gedetailleerde dophou lewe.</string>
     <string name="welcome_notifications_without">sonder toestemming: gedetailleerde dophou loop en teken steeds op. android wys net nie sy kennisgewing nie.</string>
     <string name="hibernation_title">hou tel terwyl jy dit vergeet</string>
-    <string name="hibernation_body">android laat programme wat \'n paar maande lank nie oopgemaak word nie pouseer en neem hul toestemmings terug, wat ylih niks sou laat opneem tot jy dit weer oopmaak nie. om vergeet te word is presies waarvoor hierdie program is, so dit is die moeite werd om dit nou af te skakel.</string>
+    <string name="hibernation_body">android laat programme wat ’n paar maande lank nie oopgemaak word nie pouseer en neem hul toestemmings terug, wat ylih niks sou laat opneem tot jy dit weer oopmaak nie. om vergeet te word is presies waarvoor hierdie program is, so dit is die moeite werd om dit nou af te skakel.</string>
     <string name="action_not_now">nie nou nie</string>
 
     <!-- Koptelefone lys -->
     <string name="devices_in_use">in gebruik</string>
     <string name="devices_retired">afgetree</string>
     <string name="devices_empty_title">nog geen koptelefone nie</string>
-    <string name="devices_empty_body">konnekteer \'n paar bluetooth-koptelefone en hulle sal hier verskyn. bedraad koptelefone benodig gedetailleerde opvolging, in instellings.</string>
+    <string name="devices_empty_body">konnekteer ’n paar bluetooth-koptelefone en hulle sal hier verskyn. bedraad koptelefone benodig gedetailleerde opvolging, in instellings.</string>
     <string name="devices_generation">paar #%1$d</string>
     <string name="devices_retired_on">afgetree %1$s</string>
     <string name="devices_connected_for">gekonnekteer %1$s</string>
@@ -101,7 +101,7 @@
     <string name="pair_retire_title">pensioneer hierdie paar</string>
     <string name="pair_retire_label">rede (stukkend, verkoop, verloor…)</string>
     <string name="pair_retire_confirm">pensioneer</string>
-    <string name="pair_retire_supporting">totale bevries hier. wanneer dieselfde toestel weer gekonnekteer word, begin \'n nuwe paar op nul.</string>
+    <string name="pair_retire_supporting">totale bevries hier. wanneer dieselfde toestel weer gekonnekteer word, begin ’n nuwe paar op nul.</string>
     <string name="pair_price_title">betaalde prys</string>
     <string name="pair_price_label">bedrag (heeleenhede)</string>
     <string name="pair_price_supporting">gebruik vir koste per uur.</string>
@@ -117,8 +117,8 @@
     <!-- Instellings -->
     <string name="settings_tracking">opvolging</string>
     <string name="settings_detailed_title">gedetailleerde opvolging</string>
-    <string name="settings_detailed_body">voeg bedraad koptelefone en afspeeltyd by. android deel bedradestekkergebeure slegs met lopende toepassings, dus sal dit \'n stille kennisgeving in die skyf hou. bluetooth word in beide gevalle opgevolg.</string>
-    <string name="settings_detailed_unavailable">onbeskikbaar totdat bluetooth-toegang verleen word: hierdie bou verklaar slegs die connectedDevice-dienstipe, wat android 14+ aan \'n bluetooth-toestemming bind.</string>
+    <string name="settings_detailed_body">voeg bedraad koptelefone en afspeeltyd by. android deel bedradestekkergebeure slegs met lopende toepassings, dus sal dit ’n stille kennisgeving in die skyf hou. bluetooth word in beide gevalle opgevolg.</string>
+    <string name="settings_detailed_unavailable">onbeskikbaar totdat bluetooth-toegang verleen word: hierdie bou verklaar slegs die connectedDevice-dienstipe, wat android 14+ aan ’n bluetooth-toestemming bind.</string>
     <string name="settings_playback_only_title">tel net terugspeel</string>
     <string name="settings_playback_only_body">statistieke tel die tyd wat klank werklik gespeel het, nie die tyd gekoppel nie. net sessies wat met gedetailleerde opvolging aan opgeneem is, het terugspeel gemeet; die res word weggelaat.</string>
     <string name="settings_language">taal</string>
@@ -131,10 +131,10 @@
     <string name="settings_import">voer in</string>
     <string name="settings_import_warning">invoer vervang alles wat tans gestoor is.</string>
     <string name="settings_troubleshooting">probleemoplossing</string>
-    <string name="settings_battery_body">as sessies nie meer opgeneem word, kontroleer dat ylih van batterybesparing uitgesluit is — \'n toepassing wat geforseer gestop is, sal geen konneksieuitsendings meer ontvang totdat dit geoopend word nie.</string>
+    <string name="settings_battery_body">as sessies nie meer opgeneem word, kontroleer dat ylih van batterybesparing uitgesluit is — ’n toepassing wat geforseer gestop is, sal geen konneksieuitsendings meer ontvang totdat dit geoopend word nie.</string>
     <string name="settings_battery_button">battery-instellings</string>
     <string name="settings_battery_path">instellings → toepassings → ylih → battery → onbeperkt.</string>
-    <string name="settings_hibernation_body">as ylih \'n paar maande lank nie oopgemaak word nie, laat android dit pouseer en neem sy toestemmings terug, en niks word weer opgeneem tot jy dit oopmaak nie. om dit af te skakel is wat \'n paar laat aanhou tel deur \'n seisoen waarin jy nooit aan die program dink nie.</string>
+    <string name="settings_hibernation_body">as ylih ’n paar maande lank nie oopgemaak word nie, laat android dit pouseer en neem sy toestemmings terug, en niks word weer opgeneem tot jy dit oopmaak nie. om dit af te skakel is wat ’n paar laat aanhou tel deur ’n seisoen waarin jy nooit aan die program dink nie.</string>
     <string name="settings_hibernation_on">android mag ylih laat pouseer.</string>
     <string name="settings_hibernation_off">ylih is vrygestel en hou aan opneem.</string>
     <string name="settings_hibernation_button">instellings vir ongebruikte programme</string>
@@ -143,7 +143,7 @@
     <string name="settings_import_confirm_title">vervang alle data?</string>
     <string name="settings_import_confirm_body">invoer van hierdie rugsteun wis elke toestel, paar en sessie wat nou gestoor is, uit.</string>
     <string name="widget_lifetime_label">ylih · leeftyd</string>
-    <string name="widget_lifetime_description">ure per paar, met \'n lewendige tydteller op dié wat gekoppel is</string>
+    <string name="widget_lifetime_description">ure per paar, met ’n lewendige tydteller op dié wat gekoppel is</string>
     <string name="widget_activity_label">ylih · aktiwiteit</string>
     <string name="widget_activity_description">elke paar se ure saam, plus vandag, 7 dae en 30 dae</string>
     <string name="widget_chart_label">ylih · 30 dae</string>

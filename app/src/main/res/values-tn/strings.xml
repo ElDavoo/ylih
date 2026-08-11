@@ -150,7 +150,7 @@
     <string name="channel_tracking">rekodiso ya kopong</string>
     <string name="channel_tracking_description">ylih e rekoda kopang go kopong</string>
     <string name="notification_title">rekodiso ya nako ya kopong</string>
-    <string name="notification_starting">go simolola...</string>
+    <string name="notification_starting">go simolola…</string>
     <string name="notification_idle">go letela kopong</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d o kopantswe · %2$s</item>

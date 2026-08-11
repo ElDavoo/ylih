@@ -150,7 +150,7 @@
     <string name="channel_tracking">hovudtelefon registrering</string>
     <string name="channel_tracking_description">vises medan ylih er på utkikk etter trådd hovudtelefon og avspeling. android leverer ikkje trådd plugg hendingane til appane som ikkje køyrer.</string>
     <string name="notification_title">registrering hovudtelefon tid</string>
-    <string name="notification_starting">startar...</string>
+    <string name="notification_starting">startar…</string>
     <string name="notification_idle">venter på hovudtelefon</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d kopla til · %2$s</item>

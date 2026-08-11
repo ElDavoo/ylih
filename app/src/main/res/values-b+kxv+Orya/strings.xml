@@ -93,7 +93,7 @@
     <string name="pair_rename_title">ಜೋಡಿ ಪುನರನಾಮಿತ</string>
     <string name="pair_rename_label">ಹೆಸರು</string>
     <string name="pair_retire_title">ಈ ಜೋಡಿ ನಿವೃತ್ತ</string>
-    <string name="pair_retire_label">ಕಾರಣ (ಸತ್ತ, ಮಾರಿದ, ಕಳೆದ...)</string>
+    <string name="pair_retire_label">ಕಾರಣ (ಸತ್ತ, ಮಾರಿದ, ಕಳೆದ…)</string>
     <string name="pair_retire_confirm">ನಿವೃತ್ತ</string>
     <string name="pair_retire_supporting">ಒಟ್ಟು ಗಲ್ಪಿ ಭವನೆ. ಅದೇ ಸಾಧನ ಪುನಃ ಸಂಪರ್ಕ ಕೊಡುವ, ತಾರೀ ತಾರೀ ಶೂನ್ಯ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ.</string>
     <string name="pair_price_title">ಖರೀದಿ ಖರೀದಿ</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">ಹೆಡ್ಫೋನ್ ಟ್ರ್ಯಾಕಿಂಗ್</string>
     <string name="channel_tracking_description">ತಂತ್ರದ ಹೆಡ್ಫೋನ್ ಮತ್ತು ಪ್ಲೇಬ್ಯಾಕ್ ವೀಕ್ಷಿಸುತ್ತ ಹಾಗೆ ತೋರಿಸಲ. android ತಂತ್ರದ ಪ್ಲಗ್ ಘೋಷಿತ ಸಾಧನ ಅಪ್ಲಿಕೇಶನ ರೂನಾಗಿದ ಸಂವೇದನೆ ಮಾಡಬೇಕೆ.</string>
     <string name="notification_title">ಹೆಡ್ಫೋನ್ ಸಮಯ ಸೂಚಕಾಂಕ</string>
-    <string name="notification_starting">ಪ್ರಾರಂಭ...</string>
+    <string name="notification_starting">ಪ್ರಾರಂಭ…</string>
     <string name="notification_idle">ಹೆಡ್ಫೋನ್ಗಳು ಕಾಯುತ್ತಿರುವ</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d ಸಂಪರ್ಕ · %2$s</item>

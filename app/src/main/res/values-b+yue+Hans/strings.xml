@@ -93,7 +93,7 @@
     <string name="pair_rename_title">重命名耳机对</string>
     <string name="pair_rename_label">名称</string>
     <string name="pair_retire_title">退休这副耳机</string>
-    <string name="pair_retire_label">原因（坏了、卖出、丢失...）</string>
+    <string name="pair_retire_label">原因（坏了、卖出、丢失…）</string>
     <string name="pair_retire_confirm">退休</string>
     <string name="pair_retire_supporting">总时间在这里冻结。重新连接同一设备会从零开始新的一代。</string>
     <string name="pair_price_title">支付价格</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">耳机追踪</string>
     <string name="channel_tracking_description">在 ylih 监视有线耳机和播放时显示。安卓不会将有线插头事件传递给未运行的应用。</string>
     <string name="notification_title">正在追踪耳机时间</string>
-    <string name="notification_starting">启动中...</string>
+    <string name="notification_starting">启动中…</string>
     <string name="notification_idle">等待耳机</string>
     <plurals name="notification_active">
         <item quantity="other">%1$d 已连接 · %2$s</item>

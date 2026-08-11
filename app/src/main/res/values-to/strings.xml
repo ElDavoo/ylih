@@ -150,7 +150,7 @@
     <string name="channel_tracking">kakato sipi</string>
     <string name="channel_tracking_description">ylih kakato konga sipi</string>
     <string name="notification_title">kakato e taimi sipi</string>
-    <string name="notification_starting">kamata...</string>
+    <string name="notification_starting">kamata…</string>
     <string name="notification_idle">fakatali e sipi</string>
     <plurals name="notification_active">
         <item quantity="other">%1$d fakafili · %2$s</item>

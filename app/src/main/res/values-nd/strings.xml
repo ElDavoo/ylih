@@ -93,7 +93,7 @@
     <string name="pair_rename_title">ubuyisele igama lemsulwa</string>
     <string name="pair_rename_label">igama</string>
     <string name="pair_retire_title">umekhele lemsulwa omusha</string>
-    <string name="pair_retire_label">isizathu (kwafile, kuthengiswe, kwalihlisiwe...)</string>
+    <string name="pair_retire_label">isizathu (kwafile, kuthengiswe, kwalihlisiwe…)</string>
     <string name="pair_retire_confirm">umekhele</string>
     <string name="pair_retire_supporting">okuhlu okufakwe kugcina lapha. ubuyisele idivayisi elihle omusha uqalisa kusukela eziro.</string>
     <string name="pair_price_title">intengo eyabhalwe</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">ukubalela kwamakwelo</string>
     <string name="channel_tracking_description">ibonakala ngesikhathi i-ylih ilindele amakwelo enenthalathalathi nokusonsela. i-android ayiphikingi amakwelo e-plug ezinkosikaszweni ezingasebenzile.</string>
     <string name="notification_title">ukubalela isikhathi samakwelo</string>
-    <string name="notification_starting">kuqalisa...</string>
+    <string name="notification_starting">kuqalisa…</string>
     <string name="notification_idle">ilindela amakwelo</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d ushume · %2$s</item>

@@ -93,7 +93,7 @@
     <string name="pair_rename_title">rinomina la para</string>
     <string name="pair_rename_label">nome</string>
     <string name="pair_retire_title">manda sto para in pensione</string>
-    <string name="pair_retire_label">motivo (morta, vendua, persa...)</string>
+    <string name="pair_retire_label">motivo (morta, vendua, persa…)</string>
     <string name="pair_retire_confirm">manda in pensione</string>
     <string name="pair_retire_supporting">i totali se congela qui. coleghento encore el stesso disositivo xe comensa una nova para da zero.</string>
     <string name="pair_price_title">prezzo pagao</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">tracciamento de orecute</string>
     <string name="channel_tracking_description">mostrao mentre che ylih xe guardando ai orecute con filo e la riprodussione. android no consegna i eventi de presa de la spina ai programi che no xe in rota.</string>
     <string name="notification_title">tracciamento del tempo d\'orecute</string>
-    <string name="notification_starting">comensando...</string>
+    <string name="notification_starting">comensando…</string>
     <string name="notification_idle">spettando orecute</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d colegao · %2$s</item>

@@ -150,7 +150,7 @@
     <string name="channel_tracking">ہیڈ فون ٹریکنگ</string>
     <string name="channel_tracking_description">ylih تار والے ہیڈ فونز ٹریک کرتا ہے</string>
     <string name="notification_title">ہیڈ فون کے وقت کو ٹریک کرنا</string>
-    <string name="notification_starting">شروع ہو رہا ہے...</string>
+    <string name="notification_starting">شروع ہو رہا ہے…</string>
     <string name="notification_idle">ہیڈ فونز کا انتظار کر رہے ہیں</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d منسلک · %2$s</item>

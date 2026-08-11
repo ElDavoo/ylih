@@ -93,7 +93,7 @@
     <string name="pair_rename_title">preimenuj par</string>
     <string name="pair_rename_label">ime</string>
     <string name="pair_retire_title">upokoji ta par</string>
-    <string name="pair_retire_label">razlog (slab, prodan, izgubljen...)</string>
+    <string name="pair_retire_label">razlog (slab, prodan, izgubljen…)</string>
     <string name="pair_retire_confirm">upokoji</string>
     <string name="pair_retire_supporting">skupni čas se tu zmrzne. ponovno povezovanje iste naprave začne svež par pri nič.</string>
     <string name="pair_price_title">plačana cena</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">sledenje slušalk</string>
     <string name="channel_tracking_description">prikazano medtem ko ylih nadzira žične slušalke in predvajanje. android ne pošilja dogodkov žičnih priključkov aplikacijam, ki niso zagnjane.</string>
     <string name="notification_title">sledenje času slušalk</string>
-    <string name="notification_starting">zagon...</string>
+    <string name="notification_starting">zagon…</string>
     <string name="notification_idle">čakanje na slušalke</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d povezane · %2$s</item>

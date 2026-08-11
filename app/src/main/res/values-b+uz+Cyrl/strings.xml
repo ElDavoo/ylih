@@ -93,7 +93,7 @@
     <string name="pair_rename_title">жуфтни номи ўзгартириш</string>
     <string name="pair_rename_label">ном</string>
     <string name="pair_retire_title">бу жуфтни рахметдан қайдириш</string>
-    <string name="pair_retire_label">сабаб (ўлди, сотилди, йўқолди...)</string>
+    <string name="pair_retire_label">сабаб (ўлди, сотилди, йўқолди…)</string>
     <string name="pair_retire_confirm">рахметдан қайдириш</string>
     <string name="pair_retire_supporting">жамисі шўнда ўз турадилан. қайта уланиш янги жуфт нол дан бошланади.</string>
     <string name="pair_price_title">тўланган нарх</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">аудиотосма қўнун</string>
     <string name="channel_tracking_description">ylih симли аудиотосма ва чоён қўетишни кўзлаяптиган вақтда кўрсатилади.</string>
     <string name="notification_title">аудиотосма вақтини қўнун</string>
-    <string name="notification_starting">бошланяпти...</string>
+    <string name="notification_starting">бошланяпти…</string>
     <string name="notification_idle">аудиотосмага кутимоқда</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d уланган · %2$s</item>

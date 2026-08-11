@@ -93,7 +93,7 @@
     <string name="pair_rename_title">koydameeyan tuma sanda</string>
     <string name="pair_rename_label">tuma</string>
     <string name="pair_retire_title">koydameeyan ni kafa</string>
-    <string name="pair_retire_label">kabaari (woro, sanda, bay...)</string>
+    <string name="pair_retire_label">kabaari (woro, sanda, bay…)</string>
     <string name="pair_retire_confirm">kafa</string>
     <string name="pair_retire_supporting">jigara ra kafa di ni. dijis gaa jokere tun koydameeyan kula gaa a jina kul ka.</string>
     <string name="pair_price_title">bire ay</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">dagara timide</string>
     <string name="channel_tracking_description">ylih ra telefonu feere nda se karti taara ga. android broacast bay timide app bay.</string>
     <string name="notification_title">dagara demiya timide</string>
-    <string name="notification_starting">faala...</string>
+    <string name="notification_starting">faala…</string>
     <string name="notification_idle">dagara nda jabu</string>
     <plurals name="notification_active">
         <item quantity="other">%1$d jokere · %2$s</item>

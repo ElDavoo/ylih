@@ -93,7 +93,7 @@
     <string name="pair_rename_title">تغییر نام جفت</string>
     <string name="pair_rename_label">نام</string>
     <string name="pair_retire_title">بازنشست این جفت</string>
-    <string name="pair_retire_label">دلیل (مرده، فروخته شد، گم شد...)</string>
+    <string name="pair_retire_label">دلیل (مرده، فروخته شد، گم شد…)</string>
     <string name="pair_retire_confirm">بازنشست</string>
     <string name="pair_retire_supporting">کل در اینجا جمد می شود. اتصال مجدد همان دستگاه جفت تازه ای از صفر شروع می کند.</string>
     <string name="pair_price_title">قیمت پرداخت شده</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">پیگیری هدفون</string>
     <string name="channel_tracking_description">نمایش داده می شود در حالی که ylih برای هدفون های سیمی و پخش تماشا می کند. android رویدادهای سیمی را به برنامه های غیر متصل گزارش نمی کند.</string>
     <string name="notification_title">پیگیری وقت هدفون</string>
-    <string name="notification_starting">شروع شدن...</string>
+    <string name="notification_starting">شروع شدن…</string>
     <string name="notification_idle">منتظر هدفون</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d متصل · %2$s</item>

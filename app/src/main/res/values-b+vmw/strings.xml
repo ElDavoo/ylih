@@ -93,7 +93,7 @@
     <string name="pair_rename_title">kusintha dzina la ayiriyo</string>
     <string name="pair_rename_label">dzina</string>
     <string name="pair_retire_title">kupitilizira ayiriyo iyi</string>
-    <string name="pair_retire_label">mfundo (imufa, igulitsidwa, iyodalira...)</string>
+    <string name="pair_retire_label">mfundo (imufa, igulitsidwa, iyodalira…)</string>
     <string name="pair_retire_confirm">kupitilizira</string>
     <string name="pair_retire_supporting">chiwerengero chikuziletsa pano. kulumikira ndi chipango chomwecho chimayamba kachiwiri kuchokera pa zero.</string>
     <string name="pair_price_title">galimoto yomwe idagula</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">kudzambira kwa auriyo</string>
     <string name="channel_tracking_description">lowonetsedwa pomwe ylih ikunkhani pa auriyo ine wailesi ndi kusakala. android simapereka events ya wailesi kwa mapulogalamu omwe siakudze.</string>
     <string name="notification_title">kudzambira nthawi ya auriyo</string>
-    <string name="notification_starting">kuyambira...</string>
+    <string name="notification_starting">kuyambira…</string>
     <string name="notification_idle">kusunga auriyo</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d alumpikira · %2$s</item>

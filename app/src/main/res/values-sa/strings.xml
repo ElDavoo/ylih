@@ -93,7 +93,7 @@
     <string name="pair_rename_title">yugma-dvayah puna-nama kartvi</string>
     <string name="pair_rename_label">nama</string>
     <string name="pair_retire_title">etad yugma-dvayah nivartti kartvi</string>
-    <string name="pair_retire_label">kara-na (mrita, bita, hrta...)</string>
+    <string name="pair_retire_label">kara-na (mrita, bita, hrta…)</string>
     <string name="pair_retire_confirm">nivartti</string>
     <string name="pair_retire_supporting">yogi-ankah tatah sthira bhavati. puna-samyojane nava-yugma shunya-matra arambha bhavati.</string>
     <string name="pair_price_title">mulya bhugta</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">sravana-yantra-adhyayana</string>
     <string name="channel_tracking_description">ylih-dvarah sutra-yojita sravana-yantra-yugma cha avadhih-gita-kala-yogga-kathyam-chalita-sthita. android-asya sutra-yojita samyojana-samchara-karyakrama-vah-dvarah suchana-dvayah na prapta.</string>
     <string name="notification_title">sravana-yantra-hora-adhyayana-karoti</string>
-    <string name="notification_starting">arambha-karoti...</string>
+    <string name="notification_starting">arambha-karoti…</string>
     <string name="notification_idle">sravana-yantra-yugma-dvayah pratiksha</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d samyojita · %2$s</item>

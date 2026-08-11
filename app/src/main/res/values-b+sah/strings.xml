@@ -93,7 +93,7 @@
     <string name="pair_rename_title">yumukchit bohoo aat tulaghy</string>
     <string name="pair_rename_label">aat</string>
     <string name="pair_retire_title">yumukchit bohoo sallat</string>
-    <string name="pair_retire_label">sebep (khuuy, satyllaa, aar...)</string>
+    <string name="pair_retire_label">sebep (khuuy, satyllaa, aar…)</string>
     <string name="pair_retire_confirm">sallat</string>
     <string name="pair_retire_supporting">aaba sannattyy tyuustyy tatyy. aha sanaha kelle hannyy kelle hannyy.</string>
     <string name="pair_price_title">tuluu satylaa</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">yumukchit treksing</string>
     <string name="channel_tracking_description">ylih tithe yumukchit taas aajy utalbyt bahtaa yaaskan. android-ta tithe toguruu annyy kylla sannattyy.</string>
     <string name="notification_title">yumukchit caasqa treksing</string>
-    <string name="notification_starting">kynsaa...</string>
+    <string name="notification_starting">kynsaa…</string>
     <string name="notification_idle">yumukchit bohoo oittiot</string>
     <plurals name="notification_active">
         <item quantity="other">%1$d toguruu · %2$s</item>

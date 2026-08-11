@@ -93,7 +93,7 @@
     <string name="pair_rename_title">mainna bohccu</string>
     <string name="pair_rename_label">namma</string>
     <string name="pair_retire_title">maiddáhttugovva dát bohccu</string>
-    <string name="pair_retire_label">seatnán (gidda, oastume, vahca...)</string>
+    <string name="pair_retire_label">seatnán (gidda, oastume, vahca…)</string>
     <string name="pair_retire_confirm">maiddáhttugovva</string>
     <string name="pair_retire_supporting">oktasalat maiddáhttojuvvojit dás. seamma reaidu cealkage maŋŋel, maŋŋebargga bohccu maŋŋebargga nulli.</string>
     <string name="pair_price_title">maiddáhttan maŋŋebargga</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">beakcu maiddáhttugoahti</string>
     <string name="channel_tracking_description">maiddáhtet go ylih veadjá viđa beakcu ja maiddáhttamearri. android ii maiddáhtte viđa cealkage dieđuhemiela app:i maŋŋel.</string>
     <string name="notification_title">beakcu vahkka maiddáhttugoahti</string>
-    <string name="notification_starting">maŋŋebargga...</string>
+    <string name="notification_starting">maŋŋebargga…</string>
     <string name="notification_idle">beakcu geažes</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d cealkame · %2$s</item>

@@ -93,7 +93,7 @@
     <string name="pair_rename_title">pair နောက်ဆုံးအဖြစ်အသုံးခွင့်</string>
     <string name="pair_rename_label">အစည်း</string>
     <string name="pair_retire_title">ယင်း pair အငြိမ်း</string>
-    <string name="pair_retire_label">အကြောင်းအရာ (သုံးကုန်၊ မြည်စခုံ၊ ဆုံးရှုံး...)</string>
+    <string name="pair_retire_label">အကြောင်းအရာ (သုံးကုန်၊ မြည်စခုံ၊ ဆုံးရှုံး…)</string>
     <string name="pair_retire_confirm">အငြိမ်း</string>
     <string name="pair_retire_supporting">စုစုပေါ်အလုပ်များဤတွင်တည်ဆိုသည်။ တစ်ခုအလုံးအရုံးအသုံးပြုခြင်းသည်သုည နှင်းမှစ၍သစ်ဆက်မြည့်တည်ဆိုသည်။</string>
     <string name="pair_price_title">ငွေပေးချေငွေ</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">ခေါင်းတည်းဆိုင်စာရင်းပြုလုပ်</string>
     <string name="channel_tracking_description">ylih အီ wired ခေါင်းတည်းဆိုင်နှင့်အသံချက်ချက်ကိုစောင့်ကြည့်ခြင်းအည်ပြည့်ဆည်း။ android မည်သည့်အခါအီ wired plug အခြင်းအရောင်းများအီ running မဟုတ်သည့်အက်ပ်များအားမည်သည့်အခါ။</string>
     <string name="notification_title">ခေါင်းတည်းဆိုင်အချိန်စာရင်းပြုလုပ်</string>
-    <string name="notification_starting">စတင်...</string>
+    <string name="notification_starting">စတင်…</string>
     <string name="notification_idle">ခေါင်းတည်းဆိုင်အားစောင့်ခံ</string>
     <plurals name="notification_active">
         <item quantity="other">%1$d ချိတ်ဆက်ထားရှိ · %2$s</item>
