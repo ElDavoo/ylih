@@ -60,6 +60,36 @@ class AppLocaleTest {
         assertTrue(tags.containsAll(listOf("it", "ja", "pt-BR", "az-Cyrl", "iw")))
     }
 
+    /**
+     * Chinese is one language and two scripts, and the translations live in `values-b+zh+Hans`
+     * and `values-b+zh+Hant`. They also existed as `values-zh-rCN` and `values-zh-rTW`, holding a
+     * second, different translation — so China and Taiwan were served wording that no other
+     * Chinese region got, and the Traditional file carried mainland vocabulary. Nothing in the
+     * build reports a locale translated twice, so this pins the shape that replaced it: one
+     * folder per script, each actually reachable.
+     */
+    @Test
+    fun `both chinese scripts are offered and reach their own translation`() {
+        val tags = AppLocale.supportedTags(app)
+        assertTrue(
+            "expected one entry per script, got ${tags.filter { it.startsWith("zh") }}",
+            tags.containsAll(listOf("zh-Hans", "zh-Hant")),
+        )
+
+        val simplified = stringIn("zh-Hans", R.string.nav_settings)
+        val traditional = stringIn("zh-Hant", R.string.nav_settings)
+
+        // Falling back to values/ is what a folder no request can name looks like from here.
+        assertNotEquals("values-b+zh+Hans is not being reached", "settings", simplified)
+        assertNotEquals("values-b+zh+Hant is not being reached", "settings", traditional)
+        assertNotEquals("both scripts resolved to the same file", simplified, traditional)
+    }
+
+    private fun stringIn(tag: String, resId: Int): String {
+        runBlocking { settings.setLanguage(tag) }
+        return AppLocale.wrap(app).getString(resId)
+    }
+
     @Test
     fun `the list is ordered by the name each language gives itself`() {
         val names = AppLocale.pickerTags(app).map { AppLocale.displayName(it) }

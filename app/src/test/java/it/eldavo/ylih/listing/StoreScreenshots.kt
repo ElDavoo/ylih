@@ -388,7 +388,9 @@ class VietnameseStoreScreenshots : StoreScreenshots(Locale.forLanguageTag("vi-VN
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
 @Config(
     sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE],
-    qualifiers = "zh-rCN-w360dp-h640dp-xxhdpi",
+    // The translation lives in values-b+zh+Hans, which serves every Simplified locale rather
+    // than China alone; naming the script here does not depend on zh-CN implying Hans.
+    qualifiers = "b+zh+Hans-w360dp-h640dp-xxhdpi",
 )
 class SimplifiedChineseStoreScreenshots : StoreScreenshots(Locale.forLanguageTag("zh-CN"), "zh-CN")
 
@@ -396,6 +398,6 @@ class SimplifiedChineseStoreScreenshots : StoreScreenshots(Locale.forLanguageTag
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
 @Config(
     sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE],
-    qualifiers = "zh-rTW-w360dp-h640dp-xxhdpi",
+    qualifiers = "b+zh+Hant-w360dp-h640dp-xxhdpi",
 )
 class TraditionalChineseStoreScreenshots : StoreScreenshots(Locale.forLanguageTag("zh-TW"), "zh-TW")
