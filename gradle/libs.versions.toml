@@ -6,16 +6,16 @@ agp = "9.3.1"
 # so they must stay equal to each other: KSP has no release for Kotlin 2.4.x yet, which is
 # what pins Kotlin here rather than at the newest release.
 kotlin = "2.4.10"
-ksp = "2.3.10"
+ksp = "2.3.11"
 coreKtx = "1.19.0"
 lifecycle = "2.11.0"
 activityCompose = "1.13.0"
-composeBom = "2026.06.01"
+composeBom = "2026.08.00"
 # Ahead of the BOM on purpose: Material 3 Expressive's components (ShortNavigationBar,
 # ButtonGroup, MaterialShapes, LoadingIndicator) land in 1.5.0-alpha, while the BOM still pins
 # the 1.4.0 stable that carries only the Expressive theme. This drags compose runtime/foundation/
 # ui to 1.12.0-beta01 for the whole app — the one pre-release risk in the build, taken knowingly.
-material3 = "1.5.0-alpha25"
+material3 = "1.5.0-alpha26"
 navigationCompose = "2.9.8"
 room = "2.8.4"
 work = "2.11.2"
@@ -35,7 +35,7 @@ androidxTestJunit = "1.3.0"
 androidxTestRunner = "1.7.0"
 # Renders the real Compose UI on the JVM through Robolectric's native graphics, which is how the
 # Play listing screenshots are generated without an emulator anywhere in the toolchain.
-roborazzi = "1.70.0"
+roborazzi = "1.72.0"
 desugarJdkLibs = "2.1.5"
 # Drives android.testCoverage.jacocoVersion; AGP's bundled default predates JDK 21 class files.
 jacoco = "0.8.13"
