@@ -1,0 +1,42 @@
+{
+  "name": "ylih (Nix dev shell)",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  // Root, not vscode: the Determinate installer runs with --init none (no systemd
+  // to supervise nix-daemon), so nothing starts the daemon at container boot. A
+  // non-root user then has no daemon to talk to and no permission to touch the
+  // store directly, which is the "Permission denied" on db/big-lock. Root can
+  // access the store without going through a daemon at all, so it sidesteps the
+  // problem rather than needing a daemon-supervision script.
+  "remoteUser": "root",
+  "containerEnv": {
+    "NIX_CONFIG": "experimental-features = nix-command flakes"
+  },
+  // KVM is required for connectedAndroidTest / the emulator; it only works if the
+  // host actually exposes /dev/kvm (Linux hosts, or Codespaces machine types that
+  // enable nested virtualization). Missing the device just disables that one thing.
+  "runArgs": ["--device=/dev/kvm"],
+  // Pulls every package flake.nix declares (JDK, Gradle, the Android SDK, gplay, glab)
+  // into the Nix store once, so the first `nix develop` a person runs is instant.
+  "updateContentCommand": "nix develop --command true",
+  // direnv + `.envrc`'s `use flake` is what the repo already relies on outside the
+  // container (see CLAUDE.md: "nix develop  # or: direnv allow"); wiring it into
+  // .bashrc here is what makes every new integrated-terminal tab open already inside
+  // the dev shell, instead of everyone having to type `nix develop` by hand.
+  "postCreateCommand": "nix profile install nixpkgs#direnv && echo 'eval \"$(direnv hook bash)\"' >> ~/.bashrc && direnv allow /workspace && nix develop --command ./gradlew --version",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "fwcd.kotlin",
+        "vscjava.vscode-gradle",
+        "jnoortheen.nix-ide"
+      ],
+      "settings": {
+        "kotlin.languageServer.enabled": true
+      }
+    }
+  }
+}

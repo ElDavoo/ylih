@@ -19,11 +19,11 @@
     <string name="kind_unknown">ndiikire</string>
 
     <string name="welcome_title">mukunga ku-ylih</string>
-    <string name="welcome_intro">ylih ikasava ngani amagabwa agaale amakw\'ingusi amee, kwa kusu amiaka mibila mnene mungi ntiti ungie kwisa - amagabwa agaale akagumikire saa ngani?</string>
+    <string name="welcome_intro">ylih ikasava ngani amagabwa agaale amakw’ingusi amee, kwa kusu amiaka mibila mnene mungi ntiti ungie kwisa - amagabwa agaale akagumikire saa ngani?</string>
     <string name="welcome_point_auto_title">kuongesha andu kubililia</string>
     <string name="welcome_point_auto_body">amagabwa ga-bluetooth agakasava mwenyewe, kusukuma agasumbana. ndinapaswa kuacha nono wakati mmofu.</string>
     <string name="welcome_point_lifetime_title">amagabwa agaale moja, igabw moja</string>
-    <string name="welcome_point_lifetime_body">amagabwa agaale akikufa, kushangalia - amakw\'ingusi agasimama hapo andu amagabwa mapya ya-bluetooth nayo yajua mwanzo nene.</string>
+    <string name="welcome_point_lifetime_body">amagabwa agaale akikufa, kushangalia - amakw’ingusi agasimama hapo andu amagabwa mapya ya-bluetooth nayo yajua mwanzo nene.</string>
     <string name="welcome_point_detailed_title">amaleni na amakoya</string>
     <string name="welcome_point_detailed_body">kusava kwa anzia, isuusu-ni, amaleni amagabwa nandu amakoya agakabililia saa ngani ikiaga amakaw.</string>
     <string name="welcome_privacy">kusava kwote kwalwe simu- iyi. hakuna akaunti, andu app haina internet wao.</string>
@@ -95,7 +95,7 @@
     <string name="pair_retire_title">kushangalia amagabwa agaale</string>
     <string name="pair_retire_label">sababu (akufa, akuuzwa, akupoteza…)</string>
     <string name="pair_retire_confirm">kushangalia</string>
-    <string name="pair_retire_supporting">amakw\'ingusi agasimama hapo. agasumbana nene, amagabwa mapya yajua mwanzo nene.</string>
+    <string name="pair_retire_supporting">amakw’ingusi agasimama hapo. agasumbana nene, amagabwa mapya yajua mwanzo nene.</string>
     <string name="pair_price_title">bei kulingana</string>
     <string name="pair_price_label">kamatusi (kulingana)</string>
     <string name="pair_price_supporting">kumkabali kila saa kulingana iyi.</string>

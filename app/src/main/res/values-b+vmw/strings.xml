@@ -32,12 +32,12 @@
     <string name="welcome_allow">lumikire</string>
     <string name="welcome_step">kapena %1$d kwa %2$d</string>
     <string name="welcome_bluetooth_title">kupatsira chilolezo cha bluetooth</string>
-    <string name="welcome_bluetooth_why">android akuuzani pulogalamu yanu kuti chipangizo cha bluetooth chimene chidalumikira ndi chiyani, ngati pulogalamu yanu ili ndi chilolezo cha bluetooth. ndicho chimene ylih chikuyang\'anitsa ayiriyo kuchokera kupipila pa makala.</string>
+    <string name="welcome_bluetooth_why">android akuuzani pulogalamu yanu kuti chipangizo cha bluetooth chimene chidalumikira ndi chiyani, ngati pulogalamu yanu ili ndi chilolezo cha bluetooth. ndicho chimene ylih chikuyang’anitsa ayiriyo kuchokera kupipila pa makala.</string>
     <string name="welcome_bluetooth_with">nalo: ayiriyo yooyipika iyakhaletsedwa kuchokera nthawi yolumikira, osakhala chilichonse chipikiche ndi kusiyikira kusankhanitsa.</string>
     <string name="welcome_bluetooth_without">pasinoona: auriyo ina pa bluetooth siilakhaletsedwa. gawo lina la pulogalamu likudze, ndi inu mudzatha kulipatsira chilolezo mutsogoleri wa android.</string>
     <string name="welcome_notifications_title">chipemphero</string>
-    <string name="welcome_notifications_why">kudzambira kolingalirangalirani kumatha pulogalamu yaying\'anitso ya chuma, ndi android akudindimbitsa pulogalamu iliyonse yomwe ikuwonongeka kuti sangaganitsire chipemphero pomwe ikudze.</string>
-    <string name="welcome_notifications_with">nalo: chipemphero chikasikiriza kung\'anitsa chiyani chikuyambira, chisanachike chomwe chipemphero cha kudzambira kolingalirangalirani chikuwotcha.</string>
+    <string name="welcome_notifications_why">kudzambira kolingalirangalirani kumatha pulogalamu yaying’anitso ya chuma, ndi android akudindimbitsa pulogalamu iliyonse yomwe ikuwonongeka kuti sangaganitsire chipemphero pomwe ikudze.</string>
+    <string name="welcome_notifications_with">nalo: chipemphero chikasikiriza kung’anitsa chiyani chikuyambira, chisanachike chomwe chipemphero cha kudzambira kolingalirangalirani chikuwotcha.</string>
     <string name="welcome_notifications_without">pasinoona: kudzambira kolingalirangalirani kumadze kupitilizira ndi kudzambira. android okha sukulalika chipemphero.</string>
     <string name="hibernation_title">pitiliza kuwerengera pomwe ukusiyana</string>
     <string name="hibernation_body">android amaletsa mapulogalamu omwe siamavulikirira kwa miyezi inayonse ndi kuchira chilolezo, komwe kumabweretsa ylih kusiyikira kudzambira mpaka inu munama otsatira. kusiyikira ndi chomwe pulogalamu iyi inzere, motero kuphaya ndi komaliza.</string>
@@ -112,7 +112,7 @@
     <string name="settings_detailed_body">wonjeza auriyo ine wailesi ndi nthawi ya kusakala. android akuma uzani events ya wailesi okha kwa mapulogalamu omwe akudze, motero izi zamakhalitsa chipemphero cha mu nyumba. bluetooth idzambira mwansi monse.</string>
     <string name="settings_detailed_unavailable">silingathe mpaka chilolezo cha bluetooth chipatsirire: kompila iyi ikulalika mtundu wa ntchito ya connectedDevice okha, omwe android 14+ amasinthira ku chilolezo cha bluetooth.</string>
     <string name="settings_playback_only_title">werengera kusakala okha</string>
-    <string name="settings_playback_only_body">chiwerengero chikuwerengera nthawi yomwe saundi inali ikunyamula m\'malo mwa nthawi yolumikira. nthawi zoonse zakulemba ndi kudzambira kolingalirangalirani kuchinyamulidwe kusakala; zina sizigwiritsidwa.</string>
+    <string name="settings_playback_only_body">chiwerengero chikuwerengera nthawi yomwe saundi inali ikunyamula m’malo mwa nthawi yolumikira. nthawi zoonse zakulemba ndi kudzambira kolingalirangalirani kuchinyamulidwe kusakala; zina sizigwiritsidwa.</string>
     <string name="settings_language">chilankhulo</string>
     <string name="settings_language_system">chilankhulo cha siputala</string>
     <string name="settings_devices">zida</string>
@@ -126,7 +126,7 @@
     <string name="settings_battery_body">ngati nthawi zoyambira zisiyikira kudzambira, sungani kuti ylih ili ndi chilolezo chokha chibatari - pulogalamu yomwe yasiyidwa sutha sizimadalira ntchito zolumikira mpaka inafuikiridwe.</string>
     <string name="settings_battery_button">misonkhano ya betri</string>
     <string name="settings_battery_path">misonkhano - mapulogalamu - ylih - betri - opanda malire.</string>
-    <string name="settings_hibernation_body">ngati ylih siifuikiridwe kwa miyezi inayonse, android imaletsa ndi kuchira chilolezo, ndi chilichonse chisiyikira kudzambira mpaka inu munayifukira. kutohetsa ndi chomwe chimalola ayiriyo kuti ipitilizire kuwerengera m\'maola omwe simukuganiza pulogalamu.</string>
+    <string name="settings_hibernation_body">ngati ylih siifuikiridwe kwa miyezi inayonse, android imaletsa ndi kuchira chilolezo, ndi chilichonse chisiyikira kudzambira mpaka inu munayifukira. kutohetsa ndi chomwe chimalola ayiriyo kuti ipitilizire kuwerengera m’maola omwe simukuganiza pulogalamu.</string>
     <string name="settings_hibernation_on">android ingathe kutsekanitsa ylih.</string>
     <string name="settings_hibernation_off">ylih ili ndi chilolezo ndi kupitilizira kudzambira.</string>
     <string name="settings_hibernation_button">misonkhano ya mapulogalamu osagwiritsidwe</string>

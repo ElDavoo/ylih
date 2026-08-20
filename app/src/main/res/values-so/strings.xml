@@ -19,7 +19,7 @@
     <string name="kind_unknown">laan yaqaannin</string>
 
     <string name="welcome_title">salaam gal u yimaado ylih</string>
-    <string name="welcome_intro">ylih waxay soo shuruqdaa sida gaarka oo dhegga ah iska hadhay iska xiran, si aad mararka hadii kulul oo dhawr sanno ay kaa dambeeyo aad wali jawaab ku siiso su\'aasha keliya oo macashay nololka: dhegga xanuun baxda ay joog dhacdeen?</string>
+    <string name="welcome_intro">ylih waxay soo shuruqdaa sida gaarka oo dhegga ah iska hadhay iska xiran, si aad mararka hadii kulul oo dhawr sanno ay kaa dambeeyo aad wali jawaab ku siiso su’aasha keliya oo macashay nololka: dhegga xanuun baxda ay joog dhacdeen?</string>
     <string name="welcome_point_auto_title">xidhka oo ilaalinka</string>
     <string name="welcome_point_auto_body">dhegga bluetooth waxaa lagula sameeyay naftooda, marka ay xidhaan. waxba lumay inaga lagula joogsiyo.</string>
     <string name="welcome_point_lifetime_title">gaarka mid, nololka mid</string>

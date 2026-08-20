@@ -18,35 +18,35 @@
     <string name="kind_usb">usb</string>
     <string name="kind_unknown">mhux maghruf</string>
 
-    <string name="welcome_title">merħba f\'ylih</string>
-    <string name="welcome_intro">ylih jirrekorda kemm kull par ta\' headphones jibqa\' konness, sabiex snin minn issa tista\' tuġa\' tawwal fil-unika kwistjoni li twattat: kemm sigħat damet?</string>
+    <string name="welcome_title">merħba f’ylih</string>
+    <string name="welcome_intro">ylih jirrekorda kemm kull par ta’ headphones jibqa’ konness, sabiex snin minn issa tista’ tuġa’ tawwal fil-unika kwistjoni li twattat: kemm sigħat damet?</string>
     <string name="welcome_point_auto_title">qabbad u nesa</string>
-    <string name="welcome_point_auto_body">bluetooth headphones huma rrekordjati waħedhom, mill-mument li qabbadu. xejn ma jrid jibqa\' sejjer.</string>
+    <string name="welcome_point_auto_body">bluetooth headphones huma rrekordjati waħedhom, mill-mument li qabbadu. xejn ma jrid jibqa’ sejjer.</string>
     <string name="welcome_point_lifetime_title">par wiehed, ħajja waħda</string>
-    <string name="welcome_point_lifetime_body">meta par jmut, ritirali: it-totali tiegħu jiffriz hemm u l-par li jmiss ta\' l-istess headphones jibda mill-ġdid minn żero.</string>
+    <string name="welcome_point_lifetime_body">meta par jmut, ritirali: it-totali tiegħu jiffriz hemm u l-par li jmiss ta’ l-istess headphones jibda mill-ġdid minn żero.</string>
     <string name="welcome_point_detailed_title">wired u playback</string>
-    <string name="welcome_point_detailed_body">tracking dettaljat, f\'settings, iżżid headphones wired u jmissu kemm tal-ħin kien qed tixgħel verament.</string>
-    <string name="welcome_privacy">kollox jibqa\' fuq il-telefon tiegħek. m\'hemmx account, u l-app m\'għandux permess tal-internet.</string>
+    <string name="welcome_point_detailed_body">tracking dettaljat, f’settings, iżżid headphones wired u jmissu kemm tal-ħin kien qed tixgħel verament.</string>
+    <string name="welcome_privacy">kollox jibqa’ fuq il-telefon tiegħek. m’hemmx account, u l-app m’għandux permess tal-internet.</string>
     <string name="welcome_start">iffetaħ</string>
     <string name="welcome_next">li jmiss</string>
     <string name="welcome_allow">ħalli</string>
-    <string name="welcome_step">pass %1$d ta\' %2$d</string>
+    <string name="welcome_step">pass %1$d ta’ %2$d</string>
     <string name="welcome_bluetooth_title">aċċess bluetooth</string>
-    <string name="welcome_bluetooth_why">android issolwi jgħid app liema bluetooth device qabbad, u kif jismu, jekk l-app ikollok aċċess bluetooth. dan hu kemm ylih jgħid par ta\' headphones minn car stereo, u kif jaf par wiehed minn iehor.</string>
+    <string name="welcome_bluetooth_why">android issolwi jgħid app liema bluetooth device qabbad, u kif jismu, jekk l-app ikollok aċċess bluetooth. dan hu kemm ylih jgħid par ta’ headphones minn car stereo, u kif jaf par wiehed minn iehor.</string>
     <string name="welcome_bluetooth_with">biha: kull par jiġi rrekordjat mill-mument li jqabbad, bl-ebda ħaġa ħamsa u l-ebda ħaġa li tiftakar ti daqq.</string>
-    <string name="welcome_bluetooth_without">bla: ebda bluetooth headphones ma jiġu rrekordjati. il-baki tal-app xorta jaħdem, u tista\' tgħaddiha aktar tard fi settings ta\' android.</string>
+    <string name="welcome_bluetooth_without">bla: ebda bluetooth headphones ma jiġu rrekordjati. il-baki tal-app xorta jaħdem, u tista’ tgħaddiha aktar tard fi settings ta’ android.</string>
     <string name="welcome_notifications_title">notifiki</string>
-    <string name="welcome_notifications_why">tracking dettaljat jaħdem servizz ta\' background żgħir, u android jeħtieġ li kwalunkwe app li jagħmel dan iġodd notifika viżibbli waqt li jagħmel.</string>
+    <string name="welcome_notifications_why">tracking dettaljat jaħdem servizz ta’ background żgħir, u android jeħtieġ li kwalunkwe app li jagħmel dan iġodd notifika viżibbli waqt li jagħmel.</string>
     <string name="welcome_notifications_with">biha: in-notifika turi xiex qed jiġi rrekordjat issa, li hu l-uniku sinjal li tracking dettaljat ħaj.</string>
     <string name="welcome_notifications_without">bla: tracking dettaljat xorta jaħdem u xorta jirrekorda. android sempliċi mhux se juri n-notifika tiegħu.</string>
     <string name="hibernation_title">irkompli tuqgħod tgħodd filwaqt li tansa dwaru</string>
-    <string name="hibernation_body">android jowqaf apps li jgħaddu bla miftuħ għal ftit xhur u jieħdu l-permissions tiegħom lura, li jħalli ylih jirrekorda xejn sal-ewwel darba li tiftaħu. li tkonk insejta hu eżattament dwar x\'hu l-app din, allura jiswa li tlibesx issa.</string>
+    <string name="hibernation_body">android jowqaf apps li jgħaddu bla miftuħ għal ftit xhur u jieħdu l-permissions tiegħom lura, li jħalli ylih jirrekorda xejn sal-ewwel darba li tiftaħu. li tkonk insejta hu eżattament dwar x’hu l-app din, allura jiswa li tlibesx issa.</string>
     <string name="action_not_now">mhux issa</string>
 
     <string name="devices_in_use">qed tintuża</string>
     <string name="devices_retired">ritirta</string>
     <string name="devices_empty_title">ebda headphones għadhom</string>
-    <string name="devices_empty_body">qabbad par ta\' bluetooth headphones u se jidhru hawn. headphones wired għandhom tracking dettaljat, f\'settings.</string>
+    <string name="devices_empty_body">qabbad par ta’ bluetooth headphones u se jidhru hawn. headphones wired għandhom tracking dettaljat, f’settings.</string>
     <string name="devices_generation">par #%1$d</string>
     <string name="devices_retired_on">ritirta %1$s</string>
     <string name="devices_connected_for">qabbda %1$s</string>
@@ -73,7 +73,7 @@
     <string name="pair_back">lura</string>
     <string name="pair_more">iktar</string>
     <string name="pair_menu_rename">isemmi mill-ġdid</string>
-    <string name="pair_menu_purchase">info ta\' xiri</string>
+    <string name="pair_menu_purchase">info ta’ xiri</string>
     <string name="pair_menu_retire">ritira / ibdilha</string>
     <string name="pair_menu_delete">ħassef</string>
     <string name="pair_lifetime">lifetime fuq il-par din</string>
@@ -100,7 +100,7 @@
     <string name="pair_price_label">ammont (unitajiet sħaħ)</string>
     <string name="pair_price_supporting">użat għall-figura tal-ispiża kull siegħa.</string>
     <string name="pair_delete_title">ħassef il-par din?</string>
-    <string name="pair_delete_body">kull session rrekordjata għaliha tiġi mħassfa wkoll. dan ma jista\' jitneħħa.</string>
+    <string name="pair_delete_body">kull session rrekordjata għaliha tiġi mħassfa wkoll. dan ma jista’ jitneħħa.</string>
 
     <string name="session_ongoing">fil-ħabib</string>
     <string name="session_until">sal-ħadd %1$s</string>
@@ -110,9 +110,9 @@
     <string name="settings_tracking">tracking</string>
     <string name="settings_detailed_title">tracking dettaljat</string>
     <string name="settings_detailed_body">iżżid headphones wired u l-ħin tal-playback. android issolwi jgħid wired plug events biss għal app li jaħdem, allura dan iżommu notifka silenziusa fl-ombra. bluetooth jiġi tracked xantier.</string>
-    <string name="settings_detailed_unavailable">mhux disponibbli sal-ħadd li tintgħata aċċess bluetooth: il-build din issolwi jiddikjara l-type ta\' servizz connectedDevice biss, li android 14+ jgħoqqdu ma\' permission ta\' bluetooth.</string>
+    <string name="settings_detailed_unavailable">mhux disponibbli sal-ħadd li tintgħata aċċess bluetooth: il-build din issolwi jiddikjara l-type ta’ servizz connectedDevice biss, li android 14+ jgħoqqdu ma’ permission ta’ bluetooth.</string>
     <string name="settings_playback_only_title">għodd biss il-playback</string>
-    <string name="settings_playback_only_body">stats tgħodd il-ħin li l-awdjo verament kien sejjer minflok il-ħin li kien qabbad. sessions biss rrekordjati b\'tracking dettaljat fuq imkejjel playback; ir-resto jiġu ħallija.</string>
+    <string name="settings_playback_only_body">stats tgħodd il-ħin li l-awdjo verament kien sejjer minflok il-ħin li kien qabbad. sessions biss rrekordjati b’tracking dettaljat fuq imkejjel playback; ir-resto jiġu ħallija.</string>
     <string name="settings_language">lingwa</string>
     <string name="settings_language_system">lingwa tas-sistema</string>
     <string name="settings_devices">devices</string>
@@ -126,21 +126,21 @@
     <string name="settings_battery_body">jekk sessions jissibu jitwaqqfu li jiġu rrekordjati, iftiex li ylih ikun exempt mill-battery optimisation - app li ġiet force-stopped qatt ma tirċibi broadcastings tal-qbala mill-ġdid sal-ħadd li tiftaħu.</string>
     <string name="settings_battery_button">battery settings</string>
     <string name="settings_battery_path">settings → apps → ylih → battery → unrestricted.</string>
-    <string name="settings_hibernation_body">jekk ylih tmur miftuħa għal ftit xhur, android iwqafha u jieħdu l-permissions tiegħa lura, u xejn ma jirrekorda mill-ġdid sal-ħadd li tiftaħu. it-tlibesx ta\' dan hu li jħalli par tirkompli tuqgħod tgħodd permezz ta\' staġun li inti qatt ma taħsart dwar l-app.</string>
-    <string name="settings_hibernation_on">android jista\' jwqaf ylih.</string>
+    <string name="settings_hibernation_body">jekk ylih tmur miftuħa għal ftit xhur, android iwqafha u jieħdu l-permissions tiegħa lura, u xejn ma jirrekorda mill-ġdid sal-ħadd li tiftaħu. it-tlibesx ta’ dan hu li jħalli par tirkompli tuqgħod tgħodd permezz ta’ staġun li inti qatt ma taħsart dwar l-app.</string>
+    <string name="settings_hibernation_on">android jista’ jwqaf ylih.</string>
     <string name="settings_hibernation_off">ylih exempt u tirkompli tgħodd.</string>
     <string name="settings_hibernation_button">settings tal-app mhux użata</string>
     <string name="settings_about">dwar</string>
-    <string name="settings_about_body">ylih %1$s (%2$s) - sigħat ta\' headphones, maħħuża lokali u għal dejjem.</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - sigħat ta’ headphones, maħħuża lokali u għal dejjem.</string>
     <string name="settings_import_confirm_title">ibdel il-data kollha?</string>
-    <string name="settings_import_confirm_body">l-import ta\' il-backup din tmħassef kull device, par u session maħżun issa.</string>
+    <string name="settings_import_confirm_body">l-import ta’ il-backup din tmħassef kull device, par u session maħżun issa.</string>
 
     <string name="widget_lifetime_label">ylih · lifetime</string>
-    <string name="widget_lifetime_description">sigħat kull par, b\'timer ħaj fuq xi mkejjel qabbad</string>
+    <string name="widget_lifetime_description">sigħat kull par, b’timer ħaj fuq xi mkejjel qabbad</string>
     <string name="widget_activity_label">ylih · activity</string>
-    <string name="widget_activity_description">sigħat ta\' kull par flimkien, plus illum, 7 ġimgħat u 30 ġimgħat</string>
+    <string name="widget_activity_description">sigħat ta’ kull par flimkien, plus illum, 7 ġimgħat u 30 ġimgħat</string>
     <string name="widget_chart_label">ylih · 30 ġimgħat</string>
-    <string name="widget_chart_description">sigħat ta\' stmigħ kuljum fuq l-aħħar 30 ġimgħat</string>
+    <string name="widget_chart_description">sigħat ta’ stmigħ kuljum fuq l-aħħar 30 ġimgħat</string>
 
     <string name="action_save">ħafzin</string>
     <string name="action_cancel">ikkanċella</string>
@@ -167,7 +167,7 @@
         <item quantity="other">%1$d qabbdu · %2$s · sejjer</item>
     </plurals>
 
-    <string name="detailed_needs_bluetooth">il-build din teħtieġ aċċess bluetooth qabel tkun tista\' ttrack headphones wired</string>
+    <string name="detailed_needs_bluetooth">il-build din teħtieġ aċċess bluetooth qabel tkun tista’ ttrack headphones wired</string>
     <string name="export_done">backup exporting</string>
     <string name="export_failed">export naqas</string>
     <string name="import_failed">import naqas</string>

@@ -19,34 +19,34 @@
     <string name="kind_unknown">okutamanya</string>
 
     <string name="welcome_title">kakulukuta mu ylih</string>
-    <string name="welcome_intro">ylih ekokoma ensawo zenjira z\'okugomu buli paale y\'entuufu, so nti mu miaka egyo mu maaso ojja kusobola okukibuza ekibuzo kyo kyokka ekibangirira: sente z\'essaawa zonna enzijira?</string>
-    <string name="welcome_point_auto_title">kwataganya n\'okakasa</string>
-    <string name="welcome_point_auto_body">ntuufu z\'okubluutusi zikoomagana okwekka, okuva essaawa zeyesoose zigololo. tekonna nakyo kinasobola okudala.</string>
+    <string name="welcome_intro">ylih ekokoma ensawo zenjira z’okugomu buli paale y’entuufu, so nti mu miaka egyo mu maaso ojja kusobola okukibuza ekibuzo kyo kyokka ekibangirira: sente z’essaawa zonna enzijira?</string>
+    <string name="welcome_point_auto_title">kwataganya n’okakasa</string>
+    <string name="welcome_point_auto_body">ntuufu z’okubluutusi zikoomagana okwekka, okuva essaawa zeyesoose zigololo. tekonna nakyo kinasobola okudala.</string>
     <string name="welcome_point_lifetime_title">paale kimu, obulamu kimu</string>
-    <string name="welcome_point_lifetime_body">paale bwe kifa, yikire: omuwendo gwo gufuluma wangu agenze waka paale mpya y\'entuufu z\'omu kyama etandika okuva kuzero.</string>
-    <string name="welcome_point_detailed_title">okwesigidde n\'okukubaganya</string>
-    <string name="welcome_point_detailed_body">okukikumbila okuzigazi, mu settings, kwongera mu ntuufu z\'okwesigidde n\'okukubaganya sente ennene y\'omusolo.</string>
-    <string name="welcome_privacy">buli kimu kigigala ku mmobikwano eno. tekuna konti, n\'app terina layini y\'intaneti.</string>
+    <string name="welcome_point_lifetime_body">paale bwe kifa, yikire: omuwendo gwo gufuluma wangu agenze waka paale mpya y’entuufu z’omu kyama etandika okuva kuzero.</string>
+    <string name="welcome_point_detailed_title">okwesigidde n’okukubaganya</string>
+    <string name="welcome_point_detailed_body">okukikumbila okuzigazi, mu settings, kwongera mu ntuufu z’okwesigidde n’okukubaganya sente ennene y’omusolo.</string>
+    <string name="welcome_privacy">buli kimu kigigala ku mmobikwano eno. tekuna konti, n’app terina layini y’intaneti.</string>
     <string name="welcome_start">tandika</string>
     <string name="welcome_next">mulala</string>
     <string name="welcome_allow">kkiriza</string>
     <string name="welcome_step">suupo %1$d wa %2$d</string>
-    <string name="welcome_bluetooth_title">layini y\'okubluutusi</string>
-    <string name="welcome_bluetooth_why">android kyokka ekigamba app ekka nti evayisi ki eyokyesoose, n\'erandikirira ki, singa app eri mu layini y\'okubluutusi. kye kikolela ylih okubala paale y\'entuufu ku makandi mu kuggi, n\'okumanya paale kimu okuva kuva.</string>
-    <string name="welcome_bluetooth_with">n\'eno: buli paale ekikoma okukikumbilwa okuva essaawa zeyesoose okyokwese, mu kifo ekitakira akatikiro n\'ekitekitegeeza.</string>
-    <string name="welcome_bluetooth_without">mu kifo ekikyo: paale z\'okubluutusi tezikomagana namu. kifo kiggyiriza app kyetandika okukolaganya, n\'ojja kusobola okukiwa mu maaso mu okukola okwa android.</string>
+    <string name="welcome_bluetooth_title">layini y’okubluutusi</string>
+    <string name="welcome_bluetooth_why">android kyokka ekigamba app ekka nti evayisi ki eyokyesoose, n’erandikirira ki, singa app eri mu layini y’okubluutusi. kye kikolela ylih okubala paale y’entuufu ku makandi mu kuggi, n’okumanya paale kimu okuva kuva.</string>
+    <string name="welcome_bluetooth_with">n’eno: buli paale ekikoma okukikumbilwa okuva essaawa zeyesoose okyokwese, mu kifo ekitakira akatikiro n’ekitekitegeeza.</string>
+    <string name="welcome_bluetooth_without">mu kifo ekikyo: paale z’okubluutusi tezikomagana namu. kifo kiggyiriza app kyetandika okukolaganya, n’ojja kusobola okukiwa mu maaso mu okukola okwa android.</string>
     <string name="welcome_notifications_title">okukubaganya</string>
-    <string name="welcome_notifications_why">okukikumbila okuzigazi kwannyiga samidde y\'okukola e bbanga likoma, n\'android ekigamba buli app ekikola nkyo okukoma ne likunzo lya okukubaganya.</string>
-    <string name="welcome_notifications_with">n\'eno: likukubaganya likikubaganya nange ki ekikoma okukikumbilwa kati kati, kye kyokka ekikira okukikumbila okuzigazi kwali?</string>
+    <string name="welcome_notifications_why">okukikumbila okuzigazi kwannyiga samidde y’okukola e bbanga likoma, n’android ekigamba buli app ekikola nkyo okukoma ne likunzo lya okukubaganya.</string>
+    <string name="welcome_notifications_with">n’eno: likukubaganya likikubaganya nange ki ekikoma okukikumbilwa kati kati, kye kyokka ekikira okukikumbila okuzigazi kwali?</string>
     <string name="welcome_notifications_without">mu kifo ekikyo: okukikumbila okuzigazi kwekoma okukikolaganya. android kyokka tekigamba okukubaganya kwakyo.</string>
     <string name="hibernation_title">okukoma okukubaganya bwe wamala okukikubaganya</string>
-    <string name="hibernation_body">android kwannyiga apps ezitakubika mu myaka amagazi n\'ewala layini zazo, ekigira ylih terikikumbila kyonna okutuusa ewakati lwe wagida. okukamala okukubaganya kye kyokusobola kwa app eno, so kyandikwata okukiggyoleza kati kati.</string>
+    <string name="hibernation_body">android kwannyiga apps ezitakubika mu myaka amagazi n’ewala layini zazo, ekigira ylih terikikumbila kyonna okutuusa ewakati lwe wagida. okukamala okukubaganya kye kyokusobola kwa app eno, so kyandikwata okukiggyoleza kati kati.</string>
     <string name="action_not_now">ntakati</string>
 
     <string name="devices_in_use">mu kugezi</string>
     <string name="devices_retired">yikidde</string>
     <string name="devices_empty_title">paale nzijira ntakati</string>
-    <string name="devices_empty_body">kwataganya paale y\'entuufu y\'okubluutusi n\'ijja kulagira wano. ntuufu z\'okwesigidde zikyetaaka okukikumbila okuzigazi, mu settings.</string>
+    <string name="devices_empty_body">kwataganya paale y’entuufu y’okubluutusi n’ijja kulagira wano. ntuufu z’okwesigidde zikyetaaka okukikumbila okuzigazi, mu settings.</string>
     <string name="devices_generation">paale #%1$d</string>
     <string name="devices_retired_on">yikidde %1$s</string>
     <string name="devices_connected_for">kwatanganyizibwa %1$s</string>
@@ -63,7 +63,7 @@
     <string name="stats_measured_span">okukubaganya kwa okukubaganya</string>
     <string name="stats_share">okukubaganya okwa okukubaganya</string>
     <string name="stats_playback_only_note">okukubaganya okwa omusolo gwa okukubaganya gyokka</string>
-    <string name="stats_daily_hours_30">essaawa z\'ennaku (ennaku 30)</string>
+    <string name="stats_daily_hours_30">essaawa z’ennaku (ennaku 30)</string>
     <string name="stats_by_pair">buli paale</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
     <string name="stats_pair_row_retired">%1$s · %2$s · yikidde</string>
@@ -89,7 +89,7 @@
     <string name="pair_paid">nkyo</string>
     <string name="pair_per_hour">buli ssaawa</string>
     <string name="pair_bought">okugula</string>
-    <string name="pair_daily_hours_14">essaawa z\'ennaku (ennaku 14)</string>
+    <string name="pair_daily_hours_14">essaawa z’ennaku (ennaku 14)</string>
     <string name="pair_rename_title">andika erinnya mpya eri paale</string>
     <string name="pair_rename_label">erinnya</string>
     <string name="pair_retire_title">yikira paale eno</string>
@@ -98,9 +98,9 @@
     <string name="pair_retire_supporting">omuwendo gufuluma wangu agenze waka. okukwataganya kyaka paale mpya etandika okuva kuzero.</string>
     <string name="pair_price_title">muwendo gwakugula</string>
     <string name="pair_price_label">omuwendo (ebintu bizimu)</string>
-    <string name="pair_price_supporting">kyakozesebwa mu nkwano y\'omuwendo buli ssaawa.</string>
+    <string name="pair_price_supporting">kyakozesebwa mu nkwano y’omuwendo buli ssaawa.</string>
     <string name="pair_delete_title">kannya paale eno?</string>
-    <string name="pair_delete_body">buli mutendera gwakikumbilwa ku yimu mutendera gukanniddwa n\'okyo. tekikakkirizibwa.</string>
+    <string name="pair_delete_body">buli mutendera gwakikumbilwa ku yimu mutendera gukanniddwa n’okyo. tekikakkirizibwa.</string>
 
     <string name="session_ongoing">kino kye kigenda</string>
     <string name="session_until">okutuusa %1$s</string>
@@ -109,14 +109,14 @@
 
     <string name="settings_tracking">okukikumbila</string>
     <string name="settings_detailed_title">okukikumbila okuzigazi</string>
-    <string name="settings_detailed_body">kwongera mu ntuufu z\'okwesigidde n\'omusolo gwa okukubaganya. android kyokka ekigamba app ki okukubaganya okwa plugi y\'okwesigidde ku app ekikola, so eno kwetaaga okukoma ne likukubaganya mu kifo. okubluutusi kikoma okukikumbilwa mu buli nkola.</string>
-    <string name="settings_detailed_unavailable">tekikola okutuusa layini y\'okubluutusi ekirizibwe: okukola oku kwokka ekikubaganya ekka eby\'okukufa okwa connectedDevice, ekya android 14+ yeneeza ku layini y\'okubluutusi.</string>
+    <string name="settings_detailed_body">kwongera mu ntuufu z’okwesigidde n’omusolo gwa okukubaganya. android kyokka ekigamba app ki okukubaganya okwa plugi y’okwesigidde ku app ekikola, so eno kwetaaga okukoma ne likukubaganya mu kifo. okubluutusi kikoma okukikumbilwa mu buli nkola.</string>
+    <string name="settings_detailed_unavailable">tekikola okutuusa layini y’okubluutusi ekirizibwe: okukola oku kwokka ekikubaganya ekka eby’okukufa okwa connectedDevice, ekya android 14+ yeneeza ku layini y’okubluutusi.</string>
     <string name="settings_playback_only_title">kubaganya omusolo gwa okukubaganya gyokka</string>
-    <string name="settings_playback_only_body">data ekubaganya omusolo gwa okukubaganya amakakasa mu kifo ky\'omusolo gwa kwatanganyizibwa. mutendera gyokka ogwe nakikumbilwa okukikumbila okuzigazi okuweddwa okukubaganya omusolo; emizira gyegiriza.</string>
+    <string name="settings_playback_only_body">data ekubaganya omusolo gwa okukubaganya amakakasa mu kifo ky’omusolo gwa kwatanganyizibwa. mutendera gyokka ogwe nakikumbilwa okukikumbila okuzigazi okuweddwa okukubaganya omusolo; emizira gyegiriza.</string>
     <string name="settings_language">olulimi</string>
     <string name="settings_language_system">olulimi lwa sisitimu</string>
     <string name="settings_devices">evayisi</string>
-    <string name="settings_devices_body">kannya emitwe gy\'okuba ntuufu - kuggi oba linnya - okukoma okukikumbila kyo.</string>
+    <string name="settings_devices_body">kannya emitwe gy’okuba ntuufu - kuggi oba linnya - okukoma okukikumbila kyo.</string>
     <string name="settings_device_subtitle">%1$s · kwokikitamu okukira %2$s</string>
     <string name="settings_data">data</string>
     <string name="settings_export">export json</string>
@@ -126,21 +126,21 @@
     <string name="settings_battery_body">mutendera bwe migira okukikumbilwa, kebera okuba ylih ennyigira mu mabakali agapima - app ewedde okukoma tekikoma okutegeeza okukwataganya okutuusa kwe wagida.</string>
     <string name="settings_battery_button">okukola okwa bateri</string>
     <string name="settings_battery_path">okukola → apps → ylih → bateti → okutataama.</string>
-    <string name="settings_hibernation_body">ylih bwe tagenda mu nkola okumala, android kwannyiga kyo n\'ewala layini zazo, n\'ekikoma okukikumbila okutuusa ewakati lwe wagida. okukiggyoleza kye kyokusobola kumala paale okukoma okukubaganya mu season gy\'otakikubaganya app.</string>
+    <string name="settings_hibernation_body">ylih bwe tagenda mu nkola okumala, android kwannyiga kyo n’ewala layini zazo, n’ekikoma okukikumbila okutuusa ewakati lwe wagida. okukiggyoleza kye kyokusobola kumala paale okukoma okukubaganya mu season gy’otakikubaganya app.</string>
     <string name="settings_hibernation_on">android ekyinza okukwannyiga ylih.</string>
-    <string name="settings_hibernation_off">ylih ennyigira n\'ekikoma okukikumbila.</string>
+    <string name="settings_hibernation_off">ylih ennyigira n’ekikoma okukikumbila.</string>
     <string name="settings_hibernation_button">okukola okwa app ewakati</string>
     <string name="settings_about">okukira</string>
-    <string name="settings_about_body">ylih %1$s (%2$s) — essaawa z\'entuufu, zikoma okukole n\'okukola ennya.</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — essaawa z’entuufu, zikoma okukole n’okukola ennya.</string>
     <string name="settings_import_confirm_title">kikika buli data?</string>
-    <string name="settings_import_confirm_body">layikamu backup eno ekikka buli evayisi, paale n\'omutendera gwakikumbilwa kati kati.</string>
+    <string name="settings_import_confirm_body">layikamu backup eno ekikka buli evayisi, paale n’omutendera gwakikumbilwa kati kati.</string>
 
     <string name="widget_lifetime_label">ylih · obulamu</string>
-    <string name="widget_lifetime_description">essaawa buli paale, ne timer y\'amakakasa mu kibyo ekikwataganyizibwa</string>
+    <string name="widget_lifetime_description">essaawa buli paale, ne timer y’amakakasa mu kibyo ekikwataganyizibwa</string>
     <string name="widget_activity_label">ylih · ekigenda</string>
-    <string name="widget_activity_description">essaawa z\'obulamu bwa paale zonna, n\'lero, ennaku 7 n\'ennaku 30</string>
+    <string name="widget_activity_description">essaawa z’obulamu bwa paale zonna, n’lero, ennaku 7 n’ennaku 30</string>
     <string name="widget_chart_label">ylih · ennaku 30</string>
-    <string name="widget_chart_description">essaawa z\'okukubaganya z\'ennaku okukira ennaku 30</string>
+    <string name="widget_chart_description">essaawa z’okukubaganya z’ennaku okukira ennaku 30</string>
 
     <string name="action_save">gwira</string>
     <string name="action_cancel">kakkasa</string>
@@ -148,7 +148,7 @@
     <string name="action_import">layikamu</string>
 
     <string name="channel_tracking">okukikumbila entuufu</string>
-    <string name="channel_tracking_description">likikubaganya e kifo ylih aali okukubaganya ku ntuufu z\'okwesigidde n\'okukubaganya. android tekikubaganya okwa plugi y\'okwesigidde ku apps ezitakikola.</string>
+    <string name="channel_tracking_description">likikubaganya e kifo ylih aali okukubaganya ku ntuufu z’okwesigidde n’okukubaganya. android tekikubaganya okwa plugi y’okwesigidde ku apps ezitakikola.</string>
     <string name="notification_title">okukikumbila omusolo gwa entuufu</string>
     <string name="notification_starting">okutandika…</string>
     <string name="notification_idle">okulindirira entuufu</string>
@@ -161,7 +161,7 @@
         <item quantity="other">%1$d kwatanganyizibwa · %2$s · okukubaganya</item>
     </plurals>
 
-    <string name="detailed_needs_bluetooth">okukola oku kyetaaka layini y\'okubluutusi okuva wakati okukikumbila ntuufu z\'okwesigidde</string>
+    <string name="detailed_needs_bluetooth">okukola oku kyetaaka layini y’okubluutusi okuva wakati okukikumbila ntuufu z’okwesigidde</string>
     <string name="export_done">backup yeyookeddwa</string>
     <string name="export_failed">export yafa</string>
     <string name="import_failed">layikamu yafa</string>
