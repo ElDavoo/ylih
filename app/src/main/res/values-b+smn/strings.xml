@@ -32,15 +32,15 @@
     <string name="welcome_allow">maannak</string>
     <string name="welcome_step">viesu %1$d %2$d:stá</string>
     <string name="welcome_bluetooth_title">bluetooth turvva</string>
-    <string name="welcome_bluetooth_why">android kääva app\'le kuá bluetooth-laittá čulhkan já kuá se kuddim, jos app\'al vejá bluetooth turvva. taat on kuá ylih erommahtá pair headphones auto-stereo:stá, já kuá se tajja okta pair mainna seakke.</string>
+    <string name="welcome_bluetooth_why">android kääva app’le kuá bluetooth-laittá čulhkan já kuá se kuddim, jos app’al vejá bluetooth turvva. taat on kuá ylih erommahtá pair headphones auto-stereo:stá, já kuá se tajja okta pair mainna seakke.</string>
     <string name="welcome_bluetooth_with">siinan: juohke pair pándooštaš čulhkan siimdá, midá ejä tahta jáhtta siirvun já midä ejä tahta muštit painat.</string>
     <string name="welcome_bluetooth_without">ilman: bluetooth hearas ejä pándooštaš ollohkta. aplikaacen seakke oza siirvua, já vahtta maannak tah majeehist android app-sieđetiin.</string>
     <string name="welcome_notifications_title">kuulmahuhtivážža</string>
-    <string name="welcome_notifications_why">detaljálâš sieđemužžan siirvua pieni taagga-seavvi, já android vahtta midä app\'a taam jáhtat kuulmahuhtivážža näkkin siinan.</string>
+    <string name="welcome_notifications_why">detaljálâš sieđemužžan siirvua pieni taagga-seavvi, já android vahtta midä app’a taam jáhtat kuulmahuhtivážža näkkin siinan.</string>
     <string name="welcome_notifications_with">siinan: kuulmahuhtivážža näättá kuá pándooštaš juo, mainna on okta merkke detaljálâš sieđemužžan elo.</string>
     <string name="welcome_notifications_without">ilman: detaljálâš sieđemužžan siirvua já pándooštaš. android jus ejä näätá sen kuulmahuhtivážža.</string>
     <string name="hibernation_title">jáhta luoigat siiná já maahtat</string>
-    <string name="hibernation_body">android peatá app\'a mainna ejä av kuulmahuhti monda kuavvi já majja niiden turvva joallu, mainna juohtta ylih pándooštaš midä ellei vahtta aav taam jällen. maahtat taan on juohke tánná app\'a vuođe, nai se vejá kalaá taam jällen.</string>
+    <string name="hibernation_body">android peatá app’a mainna ejä av kuulmahuhti monda kuavvi já majja niiden turvva joallu, mainna juohtta ylih pándooštaš midä ellei vahtta aav taam jällen. maahtat taan on juohke tánná app’a vuođe, nai se vejá kalaá taam jällen.</string>
     <string name="action_not_now">jus majeehâ</string>
 
     <string name="devices_in_use">sieđemužžan</string>

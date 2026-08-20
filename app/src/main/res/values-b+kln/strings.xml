@@ -19,28 +19,28 @@
     <string name="kind_unknown">mibisitin</string>
 
     <string name="welcome_title">karibu kwa ylih</string>
-    <string name="welcome_intro">ylih ibokisyek indet ya emwusis koktit, ikicha kokwei kolaaki wechi - kobo ng\'a eosek kwa pongeta mot: kobo kotagit?</string>
+    <string name="welcome_intro">ylih ibokisyek indet ya emwusis koktit, ikicha kokwei kolaaki wechi - kobo ng’a eosek kwa pongeta mot: kobo kotagit?</string>
     <string name="welcome_point_auto_title">inyokosyek ari botiset</string>
     <string name="welcome_point_auto_body">emwusis bluetooth botiyek osae keny ne kokiminik. iten mibisitin ko botek.</string>
     <string name="welcome_point_lifetime_title">emwusis aiot, ubweni aiot</string>
     <string name="welcome_point_lifetime_body">emwusis ki kimatik, titiek: koney kosiyek kuche, ari emwusis kopiisyek emwusis mot tapweny.</string>
     <string name="welcome_point_detailed_title">entaap ari kogo</string>
-    <string name="welcome_point_detailed_body">sitaatistik mabunyin, kwa saitinsi, ibotik entaap emwusis ari korekta ng\'a sekisyek.</string>
+    <string name="welcome_point_detailed_body">sitaatistik mabunyin, kwa saitinsi, ibotik entaap emwusis ari korekta ng’a sekisyek.</string>
     <string name="welcome_privacy">saita iten simu inye. mibisitin koniitet, ari ylih mibisitin simu intainet.</string>
     <string name="welcome_start">koimo</string>
     <string name="welcome_next">taata</string>
     <string name="welcome_allow">chepkitit</string>
-    <string name="welcome_step">saina %1$d ng\'a %2$d</string>
+    <string name="welcome_step">saina %1$d ng’a %2$d</string>
     <string name="welcome_bluetooth_title">bluetooth chosindet</string>
-    <string name="welcome_bluetooth_why">android ibichok kwa aap koni bluetooth simu kosiyek, ari eng\'a sitit, ikicha aap itekik bluetooth chosindet. se cha ylih imben emwusis koni stereo ng\'a moget, ari se apmit ibenindet.</string>
+    <string name="welcome_bluetooth_why">android ibichok kwa aap koni bluetooth simu kosiyek, ari eng’a sitit, ikicha aap itekik bluetooth chosindet. se cha ylih imben emwusis koni stereo ng’a moget, ari se apmit ibenindet.</string>
     <string name="welcome_bluetooth_with">kiwot: emwusis kosiyek osae ne botik miten, iten mibisitin kotek, ari mibisitin kotenget chopiyek.</string>
     <string name="welcome_bluetooth_without">ari mibisitin: emwusis bluetooth mibisitin botiek. ylih taata ikitek, ari ne igosubok later kwa android simu aap saitinsi.</string>
     <string name="welcome_notifications_title">korogeta</string>
     <string name="welcome_notifications_why">sitaatistik mabunyin ibotiyek simu nyini backend, ari android chopiyek aap kotik korogeta rotiyek intabes ne osae.</string>
-    <string name="welcome_notifications_with">kiwot: korogeta ibochok eng\'a kotok ara, eng\'a sitit kobo sitaatistik mabunyin osae.</string>
+    <string name="welcome_notifications_with">kiwot: korogeta ibochok eng’a kotok ara, eng’a sitit kobo sitaatistik mabunyin osae.</string>
     <string name="welcome_notifications_without">ari mibisitin: sitaatistik mabunyin ikitek ari kotik. android mibisitin ibochok korogeta.</string>
     <string name="hibernation_title">kotenget kotenget ne botiset</string>
-    <string name="hibernation_body">android ibochepak aap ne mibisitin ikimuet ng\'a lacha, ari kotik chosindet, ylih mibisitin botiek intabes ne imiot. kobotweny se cha aap se cha, ikicha ko weng\'ito ariki.</string>
+    <string name="hibernation_body">android ibochepak aap ne mibisitin ikimuet ng’a lacha, ari kotik chosindet, ylih mibisitin botiek intabes ne imiot. kobotweny se cha aap se cha, ikicha ko weng’ito ariki.</string>
     <string name="action_not_now">mibisitin ara</string>
 
     <string name="devices_in_use">kotik ara</string>
@@ -116,7 +116,7 @@
     <string name="settings_language">lasa</string>
     <string name="settings_language_system">lasa system</string>
     <string name="settings_devices">simu</string>
-    <string name="settings_devices_body">kibotik eng\'a mibisitin emwusis - stereo moget akilak - kotagit kibotik.</string>
+    <string name="settings_devices_body">kibotik eng’a mibisitin emwusis - stereo moget akilak - kotagit kibotik.</string>
     <string name="settings_device_subtitle">%1$s · kosiyek taata %2$s</string>
     <string name="settings_data">tamaglareeq</string>
     <string name="settings_export">export json</string>

@@ -19,34 +19,34 @@
     <string name="kind_unknown">sconossuo</string>
 
     <string name="welcome_title">benvenuo a ylih</string>
-    <string name="welcome_intro">ylih registra quanto tempo ogni para d\'orecute restano colegade, cussì che doppo anni te podrai encore risponder la sola domanda che importa: quante ore che duro?</string>
+    <string name="welcome_intro">ylih registra quanto tempo ogni para d’orecute restano colegade, cussì che doppo anni te podrai encore risponder la sola domanda che importa: quante ore che duro?</string>
     <string name="welcome_point_auto_title">coleghe e dismentega</string>
     <string name="welcome_point_auto_body">le orecute bluetooth se registre de per sè, dal momento che se coleghe. nisun debe restar in rota.</string>
     <string name="welcome_point_lifetime_title">una para, una vita</string>
     <string name="welcome_point_lifetime_body">quando una para muore, manda la in pensione: el suo totale se congela li e la prossima para de le stesse orecute comencia da zero.</string>
     <string name="welcome_point_detailed_title">con filo e riprodussione</string>
-    <string name="welcome_point_detailed_body">el tracciamento detajado, inte le inipostassioni, zontie orecute con filo e misura quant\'è che la volta xe stada veramente in riprodussione.</string>
-    <string name="welcome_privacy">tuto te resta sul telefoneto. no xe conti, e l\'aplichassione no g\'ha i permessi de internet.</string>
+    <string name="welcome_point_detailed_body">el tracciamento detajado, inte le inipostassioni, zontie orecute con filo e misura quant’è che la volta xe stada veramente in riprodussione.</string>
+    <string name="welcome_privacy">tuto te resta sul telefoneto. no xe conti, e l’aplichassione no g’ha i permessi de internet.</string>
     <string name="welcome_start">comenza</string>
     <string name="welcome_next">prossimo</string>
     <string name="welcome_allow">premeti</string>
     <string name="welcome_step">passo %1$d di %2$d</string>
     <string name="welcome_bluetooth_title">acesso bluetooth</string>
-    <string name="welcome_bluetooth_why">android solamante dixe a un\'aplichassione quale dispositivo bluetooth xe stado colegao, e come che xe ciamao, se l\'aplichassione g\'ha i permessi de bluetooth. cussi ylih tira ad discernir una para d\'orecute da un stereo de la machina.</string>
+    <string name="welcome_bluetooth_why">android solamante dixe a un’aplichassione quale dispositivo bluetooth xe stado colegao, e come che xe ciamao, se l’aplichassione g’ha i permessi de bluetooth. cussi ylih tira ad discernir una para d’orecute da un stereo de la machina.</string>
     <string name="welcome_bluetooth_with">con lui: ogni para xe registrada dal momento che se coleghe, sensa niente che ìa stà in rota e niente da ricordar de stringir.</string>
-    <string name="welcome_bluetooth_without">sensa lui: nisun orecute bluetooth no xe registrà. il resto de l\'aplichassione ancora funziona, e te podi dargheli dopo inte le inipostassioni de android.</string>
+    <string name="welcome_bluetooth_without">sensa lui: nisun orecute bluetooth no xe registrà. il resto de l’aplichassione ancora funziona, e te podi dargheli dopo inte le inipostassioni de android.</string>
     <string name="welcome_notifications_title">notifiche</string>
     <string name="welcome_notifications_why">il tracciamento detajao lansa un pichol servissio de fondo, e android domanda a ogni aplichassione che fa cussì de tignir una notifica visibile mentre che la fa.</string>
     <string name="welcome_notifications_with">con lui: la notifica mostra cosa che xe stado registrao in sto momento, che xe il solo segno che il tracciamento detajao xe vivo.</string>
     <string name="welcome_notifications_without">sensa lui: il tracciamento detajao ancora lansa e ancora registra. android solamante no mostrarà la notifica.</string>
     <string name="hibernation_title">continua a contar mentre che te scorda</string>
-    <string name="hibernation_body">android sospendi i programi che no se apri per qualche mese e tolte i loro permessi, che lassarave ylih registrando niente fintant che te no l\'apri ancora. esser scordai xe propri quello che sto programeta xe pensao per, cussì vale la pena de spegnerlo adesso.</string>
+    <string name="hibernation_body">android sospendi i programi che no se apri per qualche mese e tolte i loro permessi, che lassarave ylih registrando niente fintant che te no l’apri ancora. esser scordai xe propri quello che sto programeta xe pensao per, cussì vale la pena de spegnerlo adesso.</string>
     <string name="action_not_now">no mo</string>
 
     <string name="devices_in_use">in uzo</string>
     <string name="devices_retired">mandate in pensione</string>
     <string name="devices_empty_title">ancora nisun orecute</string>
-    <string name="devices_empty_body">coleghete una para d\'orecute bluetooth e le xe mostrà qui. i orecute con filo g\'ha bisogno del tracciamento detajao, inte le inipostassioni.</string>
+    <string name="devices_empty_body">coleghete una para d’orecute bluetooth e le xe mostrà qui. i orecute con filo g’ha bisogno del tracciamento detajao, inte le inipostassioni.</string>
     <string name="devices_generation">para #%1$d</string>
     <string name="devices_retired_on">manda in pensione %1$s</string>
     <string name="devices_connected_for">colegaa %1$s</string>
@@ -73,7 +73,7 @@
     <string name="pair_back">indrio</string>
     <string name="pair_more">piu</string>
     <string name="pair_menu_rename">rinomina</string>
-    <string name="pair_menu_purchase">informassioni d\'aquisto</string>
+    <string name="pair_menu_purchase">informassioni d’aquisto</string>
     <string name="pair_menu_retire">manda in pensione / sustituio</string>
     <string name="pair_menu_delete">scancela</string>
     <string name="pair_lifetime">vita su sta para</string>
@@ -109,10 +109,10 @@
 
     <string name="settings_tracking">tracciamento</string>
     <string name="settings_detailed_title">tracciamento detajao</string>
-    <string name="settings_detailed_body">zontie orecute con filo e tempo de riprodussione. android solamante dixe i eventi di presa de la spina ai programi che xe in rota, cussì sto mantegne una notifica silenziosa inte l\'ombra. il bluetooth xe tracciato in ogni manera.</string>
+    <string name="settings_detailed_body">zontie orecute con filo e tempo de riprodussione. android solamante dixe i eventi di presa de la spina ai programi che xe in rota, cussì sto mantegne una notifica silenziosa inte l’ombra. il bluetooth xe tracciato in ogni manera.</string>
     <string name="settings_detailed_unavailable">no ye disponibile fintant che i permessi de bluetooth no xe dadi: sto compilo solamante dichiara il tipo de servissio connectedDevice, che android 14+ collega a un permesso de bluetooth.</string>
     <string name="settings_playback_only_title">conta solamante la riprodussione</string>
-    <string name="settings_playback_only_body">le statistiche contano il tempo che l\'audio xe stado veramente in riprodussione invesse del tempo colegao. solamante le sessioni registrade con el tracciamento detajao ativo midassion la riprodussione; i altri no xe contai.</string>
+    <string name="settings_playback_only_body">le statistiche contano il tempo che l’audio xe stado veramente in riprodussione invesse del tempo colegao. solamante le sessioni registrade con el tracciamento detajao ativo midassion la riprodussione; i altri no xe contai.</string>
     <string name="settings_language">lengua</string>
     <string name="settings_language_system">lengua del sistema</string>
     <string name="settings_devices">dispositivi</string>
@@ -126,12 +126,12 @@
     <string name="settings_battery_body">se le sessioni smeti de esser registrade, controla che ylih sì essento dal assottigliamento de bateria - un programeta che xe stao ferma non ricevi piu le trasmissioni de conessione fintant che no xe aperto.</string>
     <string name="settings_battery_button">inipostassioni de bateria</string>
     <string name="settings_battery_path">inipostassioni - programi - ylih - bateria - sensa limitassioni.</string>
-    <string name="settings_hibernation_body">se ylih no xe aperto per qualche mese, android lo sospendi e tolte i suoi permessi, e niente xe registrao encore fintant che te no l\'apri. spegnerlo xe quello che permeti a una para de continuar a contar attraverso una stagione in cui no te pensi al programeta.</string>
+    <string name="settings_hibernation_body">se ylih no xe aperto per qualche mese, android lo sospendi e tolte i suoi permessi, e niente xe registrao encore fintant che te no l’apri. spegnerlo xe quello che permeti a una para de continuar a contar attraverso una stagione in cui no te pensi al programeta.</string>
     <string name="settings_hibernation_on">android puedarà sospender ylih.</string>
     <string name="settings_hibernation_off">ylih xe essento e continua a registrar.</string>
     <string name="settings_hibernation_button">inipostassioni dei programi no uzai</string>
     <string name="settings_about">intorno a</string>
-    <string name="settings_about_body">ylih %1$s (%2$s) - ore d\'orecute, tenute localmenti e per sempre.</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) - ore d’orecute, tenute localmenti e per sempre.</string>
     <string name="settings_import_confirm_title">rimpiassa tuti i dati?</string>
     <string name="settings_import_confirm_body">importar sto backup scancela ogni dispositivo, para e sessione archiviada mo.</string>
 
@@ -140,7 +140,7 @@
     <string name="widget_activity_label">ylih · ativita</string>
     <string name="widget_activity_description">ore de ogni para insieme, piu sto giorno, 7 giorni e 30 giorni</string>
     <string name="widget_chart_label">ylih · 30 giorni</string>
-    <string name="widget_chart_description">ore d\'ascolto giornaliero sopra i ultimi 30 giorni</string>
+    <string name="widget_chart_description">ore d’ascolto giornaliero sopra i ultimi 30 giorni</string>
 
     <string name="action_save">archivia</string>
     <string name="action_cancel">scancela</string>
@@ -149,7 +149,7 @@
 
     <string name="channel_tracking">tracciamento de orecute</string>
     <string name="channel_tracking_description">mostrao mentre che ylih xe guardando ai orecute con filo e la riprodussione. android no consegna i eventi de presa de la spina ai programi che no xe in rota.</string>
-    <string name="notification_title">tracciamento del tempo d\'orecute</string>
+    <string name="notification_title">tracciamento del tempo d’orecute</string>
     <string name="notification_starting">comensando…</string>
     <string name="notification_idle">spettando orecute</string>
     <plurals name="notification_active">
@@ -163,11 +163,11 @@
         <item quantity="other">%1$d colegai · %2$s · riprodussione</item>
     </plurals>
 
-    <string name="detailed_needs_bluetooth">sto compilo g\'ha bisogno dei permessi de bluetooth prima che puedarà traciar i orecute con filo</string>
+    <string name="detailed_needs_bluetooth">sto compilo g’ha bisogno dei permessi de bluetooth prima che puedarà traciar i orecute con filo</string>
     <string name="export_done">backup esportao</string>
     <string name="export_failed">esportassione fallita</string>
     <string name="import_failed">importassione fallita</string>
-    <string name="edit_failed">no g\'ha poduo archivar quelo cambiamento</string>
+    <string name="edit_failed">no g’ha poduo archivar quelo cambiamento</string>
     <string name="error_could_not_open">no poduo abrir %1$s</string>
     <plurals name="import_done">
         <item quantity="one">importao %d sessione</item>

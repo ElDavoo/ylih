@@ -6,7 +6,7 @@
   translate. So is `value_none`, which is an em dash.
 -->
 <resources>
-    <string name="app_title">ylih - a nkúm abe m\'ab ne</string>
+    <string name="app_title">ylih - a nkúm abe m’ab ne</string>
 
     <string name="nav_headphones">ab ne</string>
     <string name="nav_stats">ndé na mbu</string>

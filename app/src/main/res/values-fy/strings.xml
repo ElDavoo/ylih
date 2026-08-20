@@ -19,7 +19,7 @@
     <string name="kind_unknown">ûnbekend</string>
 
     <string name="welcome_title">wolkom by ylih</string>
-    <string name="welcome_intro">ylih registrearret hoe lang elk pear tskofhâlderskes ferbûn bliuwt, sodat dy jierren fierder kin du still beäntwurdzje de ienige fraach dy\'t saken docht: hoefolle oeren hawwe dy duere?</string>
+    <string name="welcome_intro">ylih registrearret hoe lang elk pear tskofhâlderskes ferbûn bliuwt, sodat dy jierren fierder kin du still beäntwurdzje de ienige fraach dy’t saken docht: hoefolle oeren hawwe dy duere?</string>
     <string name="welcome_point_auto_title">ferbine en ferjitte</string>
     <string name="welcome_point_auto_body">bluetooth tskofhâlderskes wurde registrearre op har eigen, fan it momint dat sy ferbine. der hoecht neat omheech te stean.</string>
     <string name="welcome_point_lifetime_title">ien pear, ien leawensdier</string>
@@ -40,7 +40,7 @@
     <string name="welcome_notifications_with">dêrmei: de melding toant wat no registrearre wurde, dat is it ienige teken dat detaillearre spanning libben is.</string>
     <string name="welcome_notifications_without">sonein: detaillearre spanning fieret der noch of en registrearet noch. android sil allinne syn melding net werjaan.</string>
     <string name="hibernation_title">tellen trochsette wylst do it ferjitst</string>
-    <string name="hibernation_body">android pauseret apps dy\'t in pear moannen iepene nimme en nimt har berjochting werom, wat ylih soe litten registrearje oant do dy nochris iepene. ferjitting wêze is presys wat dit app is foar, dus it is wurdich om dat no út te setten.</string>
+    <string name="hibernation_body">android pauseret apps dy’t in pear moannen iepene nimme en nimt har berjochting werom, wat ylih soe litten registrearje oant do dy nochris iepene. ferjitting wêze is presys wat dit app is foar, dus it is wurdich om dat no út te setten.</string>
     <string name="action_not_now">net no</string>
 
     <string name="devices_in_use">yn brûk</string>
@@ -95,7 +95,7 @@
     <string name="pair_retire_title">dit pear ôfskied</string>
     <string name="pair_retire_label">reden (dea, ferrûn, ferlern…)</string>
     <string name="pair_retire_confirm">ôfskied</string>
-    <string name="pair_retire_supporting">totalen frie hjir. op \'e taal it dieselde apparaat wer ferbint, begjint in fersk pear by nul.</string>
+    <string name="pair_retire_supporting">totalen frie hjir. op ’e taal it dieselde apparaat wer ferbint, begjint in fersk pear by nul.</string>
     <string name="pair_price_title">priis betelle</string>
     <string name="pair_price_label">bedrach (heule ienheden)</string>
     <string name="pair_price_supporting">brûkt foar de koste-per-oere figuer.</string>
@@ -123,10 +123,10 @@
     <string name="settings_import">ymport</string>
     <string name="settings_import_warning">ymport fersangje alles wat no op opslagene.</string>
     <string name="settings_troubleshooting">problemen oplosse</string>
-    <string name="settings_battery_body">as sesjes ophâlde mei registrearjen, tsjinsjech dat ylih frij is fan batterij-optimisaasje - in app dy\'t dwong stopt ûntfangt gjin ferbining-broadcast nochris oant it iepene wurde.</string>
+    <string name="settings_battery_body">as sesjes ophâlde mei registrearjen, tsjinsjech dat ylih frij is fan batterij-optimisaasje - in app dy’t dwong stopt ûntfangt gjin ferbining-broadcast nochris oant it iepene wurde.</string>
     <string name="settings_battery_button">batterij-ynstellingen</string>
     <string name="settings_battery_path">ynstellingen → apps → ylih → batterij → unbeheind.</string>
-    <string name="settings_hibernation_body">as ylih moannen iepene net wurden, android pauseret it en nimt syn berjochting werom, en neat wurde registrearre oant do dy iepene. it út sette is wat in pear trochsette telle kin troch in seizoen dy\'t do noait oan it app tinkst.</string>
+    <string name="settings_hibernation_body">as ylih moannen iepene net wurden, android pauseret it en nimt syn berjochting werom, en neat wurde registrearre oant do dy iepene. it út sette is wat in pear trochsette telle kin troch in seizoen dy’t do noait oan it app tinkst.</string>
     <string name="settings_hibernation_on">android kin ylih paussearje.</string>
     <string name="settings_hibernation_off">ylih is frij en hâldt registrearjen.</string>
     <string name="settings_hibernation_button">unbrûkte app-ynstellingen</string>
@@ -140,7 +140,7 @@
     <string name="widget_activity_label">ylih · aktiviteit</string>
     <string name="widget_activity_description">alle pear syn oeren tegearre, plus vandag, 7 dagen en 30 dagen</string>
     <string name="widget_chart_label">ylih · 30 dagen</string>
-    <string name="widget_chart_description">deistige oeren yn \'e lêste 30 dagen</string>
+    <string name="widget_chart_description">deistige oeren yn ’e lêste 30 dagen</string>
 
     <string name="action_save">bewarje</string>
     <string name="action_cancel">annulearje</string>
@@ -148,7 +148,7 @@
     <string name="action_import">ymport</string>
 
     <string name="channel_tracking">tskofhâlderskes spanning</string>
-    <string name="channel_tracking_description">werjaan wylst ylih foar bedraad tskofhâlderskes en ôfspeel sjocht. android meldt gjin bedraad-plugin-eveneminten oan apps dy\'t net lûpe.</string>
+    <string name="channel_tracking_description">werjaan wylst ylih foar bedraad tskofhâlderskes en ôfspeel sjocht. android meldt gjin bedraad-plugin-eveneminten oan apps dy’t net lûpe.</string>
     <string name="notification_title">tracking tskofhâlderskes tiid</string>
     <string name="notification_starting">begjinnend…</string>
     <string name="notification_idle">wachtsje op tskofhâlderskes</string>

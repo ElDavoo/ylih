@@ -21,11 +21,11 @@
     <string name="welcome_title">uvuyeni mu ylih</string>
     <string name="welcome_intro">ylih imusava kambuzi ka nthawi yayethu pa makedzeni, ndipo chacha zimezi mudzakhoza kupindura puzo lokhalo lina chikani: maola angati anatengela?</string>
     <string name="welcome_point_auto_title">vankha ndi kusiyika</string>
-    <string name="welcome_point_auto_body">matako a bluetooth amunyanyulidza mwachibvinjikiro, kuyambira nthawi iyo anavankha. palibe chomwe chikuyang\'anitsa kukhala kunyambulika.</string>
+    <string name="welcome_point_auto_body">matako a bluetooth amunyanyulidza mwachibvinjikiro, kuyambira nthawi iyo anavankha. palibe chomwe chikuyang’anitsa kukhala kunyambulika.</string>
     <string name="welcome_point_lifetime_title">makedzeni amodzi, moyo umodzi</string>
     <string name="welcome_point_lifetime_body">makedzeni amodzi akufa, amusisire: kabuzi kake kakhala kumayimiliki ndipo makedzeni otsatira a matako omweomwe akhala kuyambira ziro.</string>
     <string name="welcome_point_detailed_title">wonamuko wumadzi ndi kumdandalira</string>
-    <string name="welcome_point_detailed_body">kumva mwambiri, mu mapangidzo, kumapumiritsa matako onamuko wumadzi ndi kukayang\'anira ngati nthawi yawo inali yosambira.</string>
+    <string name="welcome_point_detailed_body">kumva mwambiri, mu mapangidzo, kumapumiritsa matako onamuko wumadzi ndi kukayang’anira ngati nthawi yawo inali yosambira.</string>
     <string name="welcome_privacy">zonse zimakhalira pa foni yino. palibe akaunti, ndi app ilibe chiloleza cha intanete.</string>
     <string name="welcome_start">thani</string>
     <string name="welcome_next">chulengedwe</string>
@@ -36,7 +36,7 @@
     <string name="welcome_bluetooth_with">ndi ichi: makedzeni aliwonse amunyanyulidza kuyambira nthawi iyo avankha, popanda chinachake kukhala kunyambulika ndi chinachake kusuza.</string>
     <string name="welcome_bluetooth_without">popanda ichi: matako a bluetooth sulinyanyulidza konse. kuchulukorera kwa app kukhalilobe kumagwira, ndi kuti mukhoza kuchikuloleza pambuyo mu mapangidzo a android.</string>
     <string name="welcome_notifications_title">zonetsa</string>
-    <string name="welcome_notifications_why">kumva mwambiri kumagwira ntchito yaching\'amba, ndipo android ikudikira app iliyonse ikuchita ichi kusunga zonetsa zikuwoneka.</string>
+    <string name="welcome_notifications_why">kumva mwambiri kumagwira ntchito yaching’amba, ndipo android ikudikira app iliyonse ikuchita ichi kusunga zonetsa zikuwoneka.</string>
     <string name="welcome_notifications_with">ndi ichi: zonetsa zikuonetsera zomwe zapakini pano, chimene chimodzi ndi chikumbukiro chakuti kumva mwambiri kuli moyo.</string>
     <string name="welcome_notifications_without">popanda ichi: kumva mwambiri kumagwira ndi kunapakini. android sudzakuwonetsera zonetsa zake.</string>
     <string name="hibernation_title">patulira kuwerengetsa pamene mukusiyika</string>
@@ -60,7 +60,7 @@
     <string name="stats_average_session">gawo lokati</string>
     <string name="stats_longest_session">gawo lotalika</string>
     <string name="stats_playing">mawu akumdandalira</string>
-    <string name="stats_measured_span">kukayang\'anira kwa kumdandalira</string>
+    <string name="stats_measured_span">kukayang’anira kwa kumdandalira</string>
     <string name="stats_share">gawo la kumdandalira</string>
     <string name="stats_playback_only_note">kuwerengetsa nthawi ya kumdandalira yakhazikika</string>
     <string name="stats_daily_hours_30">maola a tsiku (masiku 30)</string>
@@ -85,7 +85,7 @@
     <string name="pair_longest">lotalika</string>
     <string name="pair_since">kuyambira %1$s</string>
     <string name="pair_of_measured">gawo la kumdandalira</string>
-    <string name="pair_measured">kukayang\'anira kwa kumdandalira</string>
+    <string name="pair_measured">kukayang’anira kwa kumdandalira</string>
     <string name="pair_paid">kulipira</string>
     <string name="pair_per_hour">pa hora</string>
     <string name="pair_bought">kogula</string>
@@ -109,10 +109,10 @@
 
     <string name="settings_tracking">kumva</string>
     <string name="settings_detailed_title">kumva mwambiri</string>
-    <string name="settings_detailed_body">kumapumiritsa matako onamuko wumadzi ndi nthawi ya kumdandalira. android imanyamalitsa zonetsa za plug ya wumadzi kutumbuwa yomwe ikudutsa, chifukwa chake ichi kumachitika zonetsa zosemphimpha m\'chinjiro. bluetooth yadziwika.</string>
+    <string name="settings_detailed_body">kumapumiritsa matako onamuko wumadzi ndi nthawi ya kumdandalira. android imanyamalitsa zonetsa za plug ya wumadzi kutumbuwa yomwe ikudutsa, chifukwa chake ichi kumachitika zonetsa zosemphimpha m’chinjiro. bluetooth yadziwika.</string>
     <string name="settings_detailed_unavailable">silidikidwa mpaka bluetooth kulowerengedwa: izi kumbuyo kumanyalitsa kusanthula kwa connectedDevice, iyo android 14+ yalumikitsa ku bluetooth chiloleza.</string>
     <string name="settings_playback_only_title">werengetsa kumdandalira kawiri</string>
-    <string name="settings_playback_only_body">mbalaka iwerengetsa nthawi iyo mawu akumdandalira moyo m\'malo mwa nthawi yovankha. magawo anapakini ndi kumva mwambiri vuto kukayang\'anira kumdandalira; zina zisiyidwa.</string>
+    <string name="settings_playback_only_body">mbalaka iwerengetsa nthawi iyo mawu akumdandalira moyo m’malo mwa nthawi yovankha. magawo anapakini ndi kumva mwambiri vuto kukayang’anira kumdandalira; zina zisiyidwa.</string>
     <string name="settings_language">chilankhulo</string>
     <string name="settings_language_system">chilankhulo cha dongosolo</string>
     <string name="settings_devices">mapangaliro</string>
@@ -123,7 +123,7 @@
     <string name="settings_import">kutonya</string>
     <string name="settings_import_warning">kutonya kusintha zonse zosumudzigwidwitsa.</string>
     <string name="settings_troubleshooting">kukonzekera mavuto</string>
-    <string name="settings_battery_body">ngati magawo sangapakini, sankhani kuti ylih ili ndi kusankha kwa bettery - mappu okhomiridwa sikupeza ndi kunt\'hauzili kwa nthawi yotsatira mpaka iyokwuke.</string>
+    <string name="settings_battery_body">ngati magawo sangapakini, sankhani kuti ylih ili ndi kusankha kwa bettery - mappu okhomiridwa sikupeza ndi kunt’hauzili kwa nthawi yotsatira mpaka iyokwuke.</string>
     <string name="settings_battery_button">mapangidzo a bettery</string>
     <string name="settings_battery_path">mapangidzo → mappu → ylih → bettery → mosadandaula.</string>
     <string name="settings_hibernation_body">ngati ylih sanasungulwe kwa miyezi ingapo, android imayimitsitsa ndi imatola chiloleza, ndi palibe napakini mpaka mukasungulira. kuigona ndo njira iyo makedzeni amadutsa kuwerengetsa munthawi yomwe sindikuganiza za mappu.</string>

@@ -19,34 +19,34 @@
     <string name="kind_unknown">desconegut</string>
 
     <string name="welcome_title">benvengut a ylih</string>
-    <string name="welcome_intro">ylih enregistra cuant de temps cada parelha d\'auriculars demora connectada, doncas d\'aqui fins a l\'eternitat podretz respòndre l\'unica question qu\'importa sus una parelha: quanats d\'oras ont durada?</string>
+    <string name="welcome_intro">ylih enregistra cuant de temps cada parelha d’auriculars demora connectada, doncas d’aqui fins a l’eternitat podretz respòndre l’unica question qu’importa sus una parelha: quanats d’oras ont durada?</string>
     <string name="welcome_point_auto_title">connectar e oblidar</string>
-    <string name="welcome_point_auto_body">los auriculars bluetooth s\'enregistran suls per s\'eles, a partir del moment que se connectan. res es necessari de laissar en funcionament.</string>
+    <string name="welcome_point_auto_body">los auriculars bluetooth s’enregistran suls per s’eles, a partir del moment que se connectan. res es necessari de laissar en funcionament.</string>
     <string name="welcome_point_lifetime_title">una parelha, una duracion</string>
     <string name="welcome_point_lifetime_body">quand una parelha mor, retirar-la: lo total se gela e la proxima parelha de los meteixes auriculars recomença a zéro.</string>
     <string name="welcome_point_detailed_title">filaire e lectura</string>
-    <string name="welcome_point_detailed_body">l\'enregistrament detalhat, dins los parametres, ajouta los auriculars filaires e mesura quant de temps se legiguava realment.</string>
-    <string name="welcome_privacy">tot demora sus lo vòstre telefòn. existis pas de compte, e l\'aplicacion n\'a pas de permission internet.</string>
+    <string name="welcome_point_detailed_body">l’enregistrament detalhat, dins los parametres, ajouta los auriculars filaires e mesura quant de temps se legiguava realment.</string>
+    <string name="welcome_privacy">tot demora sus lo vòstre telefòn. existis pas de compte, e l’aplicacion n’a pas de permission internet.</string>
     <string name="welcome_start">comença</string>
     <string name="welcome_next">sieguent</string>
     <string name="welcome_allow">autorizar</string>
     <string name="welcome_step">estapa %1$d de %2$d</string>
     <string name="welcome_bluetooth_title">accés bluetooth</string>
-    <string name="welcome_bluetooth_why">android ditz a una aplicacion qual aparelh bluetooth s\'es connectat, e calsament s\'apela, se l\'aplicacion tina l\'accés bluetooth. es coma ylih pòt diferenciar una parelha d\'auriculars d\'una estereo d\'auto, e coma sap d\'una parelha a l\'autra.</string>
-    <string name="welcome_bluetooth_with">en accepant-la: cada parelha s\'enregistra a partir del moment que se connecta, sensa res que demora en funcionament e sensa res a remembrar.</string>
-    <string name="welcome_bluetooth_without">sens acceptar-la: cap d\'auriculars bluetooth s\'enregistran pas. lo rest de l\'aplicacion fonciona tóstjorn, e poiretz la concedir pus tard dins los parametres de l\'aplicacion d\'android.</string>
+    <string name="welcome_bluetooth_why">android ditz a una aplicacion qual aparelh bluetooth s’es connectat, e calsament s’apela, se l’aplicacion tina l’accés bluetooth. es coma ylih pòt diferenciar una parelha d’auriculars d’una estereo d’auto, e coma sap d’una parelha a l’autra.</string>
+    <string name="welcome_bluetooth_with">en accepant-la: cada parelha s’enregistra a partir del moment que se connecta, sensa res que demora en funcionament e sensa res a remembrar.</string>
+    <string name="welcome_bluetooth_without">sens acceptar-la: cap d’auriculars bluetooth s’enregistran pas. lo rest de l’aplicacion fonciona tóstjorn, e poiretz la concedir pus tard dins los parametres de l’aplicacion d’android.</string>
     <string name="welcome_notifications_title">notificacions</string>
-    <string name="welcome_notifications_why">l\'enregistrament detalhat fonciona un servici de repartiment, e android demanda a tota aplicacion de mantenir una notificacion visible.</string>
-    <string name="welcome_notifications_with">en accepant-la: la notificacion mustra quoi s\'enregistra ara meteis, que\'s l\'unic senhal que l\'enregistrament detalhat es viu.</string>
-    <string name="welcome_notifications_without">sens acceptar-la: l\'enregistrament detalhat fonciona tóstjorn e enregistra tóstjorn. android simplament mostrava pas sa notificacion.</string>
+    <string name="welcome_notifications_why">l’enregistrament detalhat fonciona un servici de repartiment, e android demanda a tota aplicacion de mantenir una notificacion visible.</string>
+    <string name="welcome_notifications_with">en accepant-la: la notificacion mustra quoi s’enregistra ara meteis, que’s l’unic senhal que l’enregistrament detalhat es viu.</string>
+    <string name="welcome_notifications_without">sens acceptar-la: l’enregistrament detalhat fonciona tóstjorn e enregistra tóstjorn. android simplament mostrava pas sa notificacion.</string>
     <string name="hibernation_title">contessiá de comptar mentre vos oblidad</string>
-    <string name="hibernation_body">android pausarà los aplicacions que demoran sens usage un bon moment e lor retira los permissions, que fasè ylih enregistrar pas res fins qu\'a l\'ajornada que l\'aperratz. l\'escait d\'èsser oblidad es exactament per quin causa aquesta aplicacion, doncas val la pena desactivar aquo ara.</string>
+    <string name="hibernation_body">android pausarà los aplicacions que demoran sens usage un bon moment e lor retira los permissions, que fasè ylih enregistrar pas res fins qu’a l’ajornada que l’aperratz. l’escait d’èsser oblidad es exactament per quin causa aquesta aplicacion, doncas val la pena desactivar aquo ara.</string>
     <string name="action_not_now">pas ara</string>
 
     <string name="devices_in_use">en usatge</string>
     <string name="devices_retired">retirat</string>
     <string name="devices_empty_title">cap auriculars per ara</string>
-    <string name="devices_empty_body">connectar una parelha d\'auriculars bluetooth e apareisson aicí. los auriculars filaires necessitan enregistrament detalhat, dins los parametres.</string>
+    <string name="devices_empty_body">connectar una parelha d’auriculars bluetooth e apareisson aicí. los auriculars filaires necessitan enregistrament detalhat, dins los parametres.</string>
     <string name="devices_generation">parelha #%1$d</string>
     <string name="devices_retired_on">retirat %1$s</string>
     <string name="devices_connected_for">connectat %1$s</string>
@@ -116,7 +116,7 @@
     <string name="settings_language">language</string>
     <string name="settings_language_system">system language</string>
     <string name="settings_devices">devices</string>
-    <string name="settings_devices_body">uncheck anything that isn\'t headphones — a car stereo or a speaker — to stop recording it.</string>
+    <string name="settings_devices_body">uncheck anything that isn’t headphones — a car stereo or a speaker — to stop recording it.</string>
     <string name="settings_device_subtitle">%1$s · first seen %2$s</string>
     <string name="settings_data">data</string>
     <string name="settings_export">export json</string>
@@ -138,7 +138,7 @@
     <string name="widget_lifetime_label">ylih · lifetime</string>
     <string name="widget_lifetime_description">hours per pair, with a live timer on whatever is connected</string>
     <string name="widget_activity_label">ylih · activity</string>
-    <string name="widget_activity_description">every pair\'s hours together, plus today, 7 days and 30 days</string>
+    <string name="widget_activity_description">every pair’s hours together, plus today, 7 days and 30 days</string>
     <string name="widget_chart_label">ylih · 30 days</string>
     <string name="widget_chart_description">daily listening hours over the last 30 days</string>
 
