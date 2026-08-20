@@ -34,7 +34,7 @@
     <string name="welcome_bluetooth_title">bluetooth access</string>
     <string name="welcome_bluetooth_why">android na tell one app which bluetooth device connect, and wetin dem call am, if the app get bluetooth access. na how ylih go know one pair of headphones from car stereo, and how am know one pair from another.</string>
     <string name="welcome_bluetooth_with">with am: every pair go record from the moment dem connect, with nothing running and nothing to remember to press.</string>
-    <string name="welcome_bluetooth_without">without am: no bluetooth headphones go record at all. the rest of the app still work, and you fit grant am later for android\'s app settings.</string>
+    <string name="welcome_bluetooth_without">without am: no bluetooth headphones go record at all. the rest of the app still work, and you fit grant am later for android’s app settings.</string>
     <string name="welcome_notifications_title">notifications</string>
     <string name="welcome_notifications_why">detailed tracking run small background service, and android require any app wey do that to keep notification visible.</string>
     <string name="welcome_notifications_with">with am: the notification go show wetin recording right now, which na the only sign detailed tracking dey alive.</string>
@@ -116,7 +116,7 @@
     <string name="settings_language">language</string>
     <string name="settings_language_system">system language</string>
     <string name="settings_devices">devices</string>
-    <string name="settings_devices_body">uncheck anything that isn\'t headphones — a car stereo or a speaker — to stop recording it.</string>
+    <string name="settings_devices_body">uncheck anything that isn’t headphones — a car stereo or a speaker — to stop recording it.</string>
     <string name="settings_device_subtitle">%1$s · first seen %2$s</string>
     <string name="settings_data">data</string>
     <string name="settings_export">export json</string>
@@ -138,7 +138,7 @@
     <string name="widget_lifetime_label">ylih · lifetime</string>
     <string name="widget_lifetime_description">hours per pair, with a live timer on whatever is connected</string>
     <string name="widget_activity_label">ylih · activity</string>
-    <string name="widget_activity_description">every pair\'s hours together, plus today, 7 days and 30 days</string>
+    <string name="widget_activity_description">every pair’s hours together, plus today, 7 days and 30 days</string>
     <string name="widget_chart_label">ylih · 30 days</string>
     <string name="widget_chart_description">daily listening hours over the last 30 days</string>
 

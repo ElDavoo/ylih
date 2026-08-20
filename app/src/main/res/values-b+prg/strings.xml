@@ -34,7 +34,7 @@
     <string name="welcome_bluetooth_title">bluetooth access</string>
     <string name="welcome_bluetooth_why">android tik saky app kuri bluetooth device konnektay, ir kā tis skaitun, kai app tūri bluetooth access. tis kaigi ylih skayty ausas pāra iš auto stereo, ir kaigi it žiny viens ausas pāra iš antras.</string>
     <string name="welcome_bluetooth_with">su tuo: katra ausas pāra sēmaytons nūn it konnektay, su nikas nai rutunti ir nikas musti primienti tu paspausti.</string>
-    <string name="welcome_bluetooth_without">be tuo: nai bluetooth ausai sēmaytons vis. likti app darbay, ir tu gali duoti jis vēliau in android\'s app konfigūras.</string>
+    <string name="welcome_bluetooth_without">be tuo: nai bluetooth ausai sēmaytons vis. likti app darbay, ir tu gali duoti jis vēliau in android’s app konfigūras.</string>
     <string name="welcome_notifications_title">notifikacijas</string>
     <string name="welcome_notifications_why">detalize skaitunas dirba mazu fona servisa, ir android prasa kai app darunti tā tūri notifikaciją vidēti kol tis darba.</string>
     <string name="welcome_notifications_with">su tuo: notifikacija parydy kā sēmaytnā jūrin, kuri tis vienā ženkls detalize skaitunas gīva.</string>

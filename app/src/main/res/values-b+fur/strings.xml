@@ -19,7 +19,7 @@
     <string name="kind_unknown">no cognossit</string>
 
     <string name="welcome_title">benvignût a ylih</string>
-    <string name="welcome_intro">ylih al regjistre tant lonc che o cuglia di cuffiis la reste conetes, cojal che dopo un po\' di agns ti puedis cjara rispondile a la sola domande che importe: cuante oris le an durât?</string>
+    <string name="welcome_intro">ylih al regjistre tant lonc che o cuglia di cuffiis la reste conetes, cojal che dopo un po’ di agns ti puedis cjara rispondile a la sola domande che importe: cuante oris le an durât?</string>
     <string name="welcome_point_auto_title">conete e scjace</string>
     <string name="welcome_point_auto_body">lis cuffiis bluetooth a vegnin registradis di par lor, dal moment che si conetes. non ven a mancjâ lassâ nuje chi furisi.</string>
     <string name="welcome_point_lifetime_title">une cuglia, une vite</string>
@@ -32,15 +32,15 @@
     <string name="welcome_allow">acete</string>
     <string name="welcome_step">spost %1$d di %2$d</string>
     <string name="welcome_bluetooth_title">acès bluetooth</string>
-    <string name="welcome_bluetooth_why">android al disial a une app sa doi un dispositif bluetooth si conete, e cose si clame, se l\'app à l\'acès bluetooth. e cemdi ylih al sas une cuglia di cuffiis da un stereo di machine, e cemdi al sas une cuglia di l\'altre.</string>
+    <string name="welcome_bluetooth_why">android al disial a une app sa doi un dispositif bluetooth si conete, e cose si clame, se l’app à l’acès bluetooth. e cemdi ylih al sas une cuglia di cuffiis da un stereo di machine, e cemdi al sas une cuglia di l’altre.</string>
     <string name="welcome_bluetooth_with">cu li: ogni cuglia e ven registrade dal moment che si conete, cence lassâ nuje chi furisi e cence rivuardi di schjacie.</string>
-    <string name="welcome_bluetooth_without">cence li: nisune cuffiis bluetooth no vein registradis. il rest dal app al tache a funzionâ, e tu puedis jê l\'acès dopo tes impostazions di android.</string>
+    <string name="welcome_bluetooth_without">cence li: nisune cuffiis bluetooth no vein registradis. il rest dal app al tache a funzionâ, e tu puedis jê l’acès dopo tes impostazions di android.</string>
     <string name="welcome_notifications_title">notifichis</string>
     <string name="welcome_notifications_why">il seguiment detaiât al fascia girâ un servicj par dri, e android al domande a ogni app che o fâs di lassâ une notifia visibil intant che al funzion.</string>
-    <string name="welcome_notifications_with">cu li: la notifia e visualize ce che si sta registrant ara, ce che al è l\'unicj segnâl che il seguiment detaiât al è vif.</string>
+    <string name="welcome_notifications_with">cu li: la notifia e visualize ce che si sta registrant ara, ce che al è l’unicj segnâl che il seguiment detaiât al è vif.</string>
     <string name="welcome_notifications_without">cence li: il seguiment detaiât al tache a girâ e a registrâ. android al visualize la notifia.</string>
     <string name="hibernation_title">cjape a contâ cuant che tu scjacis di dut</string>
-    <string name="hibernation_body">android al pausa lis aplacazions che a vegnin no doparadis par un po\' di mês e al jove indri lis lasses, ce che al à lassât ylih registrant nule fintant che tu no lo viertas. jessi dimentidis al è propri ce che sto app, cojal che al valç la piene di disativâ sar ara.</string>
+    <string name="hibernation_body">android al pausa lis aplacazions che a vegnin no doparadis par un po’ di mês e al jove indri lis lasses, ce che al à lassât ylih registrant nule fintant che tu no lo viertas. jessi dimentidis al è propri ce che sto app, cojal che al valç la piene di disativâ sar ara.</string>
     <string name="action_not_now">no ara</string>
 
     <string name="devices_in_use">in doprâ</string>
@@ -110,9 +110,9 @@
     <string name="settings_tracking">seguiment</string>
     <string name="settings_detailed_title">seguiment detaiât</string>
     <string name="settings_detailed_body">al zonte lis cuffiis con cjabe e il timp di riproduzion. android al comuniche i events dai cjabis dome a une app che al funzion, cojal che sto al lasse une notifia silensie tes sombris. bluetooth al ven seguît in ogni cas.</string>
-    <string name="settings_detailed_unavailable">no disponibil fintant che l\'acès bluetooth no ven jât: cheste build e declare dome il servicj connectedDevice, ce che android 14+ al coleghe a une lasse bluetooth.</string>
+    <string name="settings_detailed_unavailable">no disponibil fintant che l’acès bluetooth no ven jât: cheste build e declare dome il servicj connectedDevice, ce che android 14+ al coleghe a une lasse bluetooth.</string>
     <string name="settings_playback_only_title">conte dome la riproduzion</string>
-    <string name="settings_playback_only_body">lis statistichis a contin il timp che l\'audio al stuvave riprodot inveze dal timp contat. dome lis sessions registradis cu il seguiment detaiât ative a mesurin la riproduzion; i restons a vegnin scjelts.</string>
+    <string name="settings_playback_only_body">lis statistichis a contin il timp che l’audio al stuvave riprodot inveze dal timp contat. dome lis sessions registradis cu il seguiment detaiât ative a mesurin la riproduzion; i restons a vegnin scjelts.</string>
     <string name="settings_language">lenghe</string>
     <string name="settings_language_system">lenghe dal sisteme</string>
     <string name="settings_devices">dispozitifs</string>
@@ -123,10 +123,10 @@
     <string name="settings_import">impuarte</string>
     <string name="settings_import_warning">impuartâ al sostituìs dut ce che a ven registrât ara.</string>
     <string name="settings_troubleshooting">risoluzion dai problemis</string>
-    <string name="settings_battery_body">se lis sessions a piessin di jessi registradis, controle che ylih al sedi esent da l\'optimizazion dal batarie - une app che e ven fermade a fûr di vore non al ric mai i broadcasts di conession fintant che tu no lo viertas.</string>
+    <string name="settings_battery_body">se lis sessions a piessin di jessi registradis, controle che ylih al sedi esent da l’optimizazion dal batarie - une app che e ven fermade a fûr di vore non al ric mai i broadcasts di conession fintant che tu no lo viertas.</string>
     <string name="settings_battery_button">impostazions dal batarie</string>
     <string name="settings_battery_path">impostazions → aplacazions → ylih → batarie → no limitât.</string>
-    <string name="settings_hibernation_body">se ylih al reste no viert par un po\' di mês, android al pausa e al jove indri lis lasses, i nule ven registradis fintant che tu no lo viertas. disativâ sto al è ce che permot a une cuglia di contâ par une stagjion che tu no pensacjis mai al app.</string>
+    <string name="settings_hibernation_body">se ylih al reste no viert par un po’ di mês, android al pausa e al jove indri lis lasses, i nule ven registradis fintant che tu no lo viertas. disativâ sto al è ce che permot a une cuglia di contâ par une stagjion che tu no pensacjis mai al app.</string>
     <string name="settings_hibernation_on">android al podarà pausâ ylih.</string>
     <string name="settings_hibernation_off">ylih al è esent i al tache a registrâ.</string>
     <string name="settings_hibernation_button">impostazions des aplacazions no doparadis</string>
@@ -161,7 +161,7 @@
         <item quantity="other">%1$d conetes · %2$s · in riproduzion</item>
     </plurals>
 
-    <string name="detailed_needs_bluetooth">cheste build e domande l\'acès bluetooth par che podidis seguî lis cuffiis con cjabe</string>
+    <string name="detailed_needs_bluetooth">cheste build e domande l’acès bluetooth par che podidis seguî lis cuffiis con cjabe</string>
     <string name="export_done">backup esportat</string>
     <string name="export_failed">esportazion falide</string>
     <string name="import_failed">impuartazion falide</string>

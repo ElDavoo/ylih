@@ -26,15 +26,15 @@
     <string name="welcome_point_lifetime_body">cando una para murit, pensionala: sa totale si gela lì e sa prochima para de is matessi cuffias incumintza dae zero.</string>
     <string name="welcome_point_detailed_title">cun filu e riprodutzione</string>
     <string name="welcome_point_detailed_body">sa tracciadura detallada, in is cunfiguratzionis, adigit is cuffias cun filu e mesurat quantas oras estava in riprodutzione.</string>
-    <string name="welcome_privacy">tottu rimant in custu telèfonu. nono b\'at contu, e s\'apa nono at permissu de internet.</string>
+    <string name="welcome_privacy">tottu rimant in custu telèfonu. nono b’at contu, e s’apa nono at permissu de internet.</string>
     <string name="welcome_start">incumintza</string>
     <string name="welcome_next">prossima</string>
     <string name="welcome_allow">permiti</string>
     <string name="welcome_step">pasu %1$d de %2$d</string>
     <string name="welcome_bluetooth_title">accèssu bluetooth</string>
-    <string name="welcome_bluetooth_why">android narat a s\'apa su dispositivu bluetooth connetidu, e su nòmine su at, si s\'apa tenit accèssu bluetooth. custu est sa modu ca ylih distint una para de cuffias dae una caravana, e sa modu ca sait una para dae sa otra.</string>
+    <string name="welcome_bluetooth_why">android narat a s’apa su dispositivu bluetooth connetidu, e su nòmine su at, si s’apa tenit accèssu bluetooth. custu est sa modu ca ylih distint una para de cuffias dae una caravana, e sa modu ca sait una para dae sa otra.</string>
     <string name="welcome_bluetooth_with">cun issa: kada para est registrata dae sa momentu ca si connete, cun nulla lassadu funzionade e nulla de reminni de premere.</string>
-    <string name="welcome_bluetooth_without">senza issa: nulla cuffias bluetooth sunt registratas. sa residu de s\'apa funzionat ancora, e podeis permítilu dae in is cunfiguratzionis de android.</string>
+    <string name="welcome_bluetooth_without">senza issa: nulla cuffias bluetooth sunt registratas. sa residu de s’apa funzionat ancora, e podeis permítilu dae in is cunfiguratzionis de android.</string>
     <string name="welcome_notifications_title">notìficas</string>
     <string name="welcome_notifications_why">sa tracciadura detallada est que servidu de fundu, e android cunticat chi kala apa ca faet custu depet mantene una notìfica bìsìbile mentre o faet.</string>
     <string name="welcome_notifications_with">cun issa: sa notìfica ammustra sa sa est reghistradu in custu momentu, chi est sa ùnica sinna ca sa tracciadura detallada est biva.</string>
@@ -109,10 +109,10 @@
 
     <string name="settings_tracking">tracciadura</string>
     <string name="settings_detailed_title">tracciadura detallada</string>
-    <string name="settings_detailed_body">adigit is cuffias cun filu e sa tempada de riprodutzione. android narat sa acontziiments de plugu cun filu a s\'apa ca est funzionade, cusì custu mantenet una notìfica silentiosa in su tónu. bluetooth est tracciadu comunque.</string>
-    <string name="settings_detailed_unavailable">no bìsìbile fintzas ca s\'accèssu bluetooth no est permisu: custu build narat nara su tipu de servidu connectedDevice, chi android 14+ ligat a un permissu bluetooth.</string>
+    <string name="settings_detailed_body">adigit is cuffias cun filu e sa tempada de riprodutzione. android narat sa acontziiments de plugu cun filu a s’apa ca est funzionade, cusì custu mantenet una notìfica silentiosa in su tónu. bluetooth est tracciadu comunque.</string>
+    <string name="settings_detailed_unavailable">no bìsìbile fintzas ca s’accèssu bluetooth no est permisu: custu build narat nara su tipu de servidu connectedDevice, chi android 14+ ligat a un permissu bluetooth.</string>
     <string name="settings_playback_only_title">conta nara sa riprodutzione</string>
-    <string name="settings_playback_only_body">is statisticas contant sa tempada ca s\'audio estava in riprodutzione in logu de sa tempada connetida. sa sessiones registradas cun tracciadura detallada acta misurant riprodutzione; is residas sunt lassadas fora.</string>
+    <string name="settings_playback_only_body">is statisticas contant sa tempada ca s’audio estava in riprodutzione in logu de sa tempada connetida. sa sessiones registradas cun tracciadura detallada acta misurant riprodutzione; is residas sunt lassadas fora.</string>
     <string name="settings_language">lìngua</string>
     <string name="settings_language_system">lìngua de su sistema</string>
     <string name="settings_devices">dispositivus</string>
@@ -123,10 +123,10 @@
     <string name="settings_import">importa</string>
     <string name="settings_import_warning">importare cambiat totu sa cosa sa est archiviada in custu momentu.</string>
     <string name="settings_troubleshooting">risoluzione de problemas</string>
-    <string name="settings_battery_body">si is sessiones istopant de essida registratas, controlat chi ylih est dispensada dae optimizatzione de baterìa - un\'apa ca est istada detzada a forza no recbet més de custu momentu fintzas ca no est abelada.</string>
+    <string name="settings_battery_body">si is sessiones istopant de essida registratas, controlat chi ylih est dispensada dae optimizatzione de baterìa - un’apa ca est istada detzada a forza no recbet més de custu momentu fintzas ca no est abelada.</string>
     <string name="settings_battery_button">cunfiguratzionis de baterìa</string>
     <string name="settings_battery_path">cunfiguratzionis → apa → ylih → baterìa → ilimitadu.</string>
-    <string name="settings_hibernation_body">si ylih at istadu non abelta pro pausas meses, android a pasat e a tollit is permissus bake, e nulla est reghistradu de nou fintzas ca no ti abeltas. girare isse off est sa modu ca deascieit una para abanti contande per sa stagione chi ti no pensas de s\'apa.</string>
+    <string name="settings_hibernation_body">si ylih at istadu non abelta pro pausas meses, android a pasat e a tollit is permissus bake, e nulla est reghistradu de nou fintzas ca no ti abeltas. girare isse off est sa modu ca deascieit una para abanti contande per sa stagione chi ti no pensas de s’apa.</string>
     <string name="settings_hibernation_on">android podada pausare ylih.</string>
     <string name="settings_hibernation_off">ylih est dispensadu e abanti a reghistrare.</string>
     <string name="settings_hibernation_button">cunfiguratzionis de apa no impreadda</string>

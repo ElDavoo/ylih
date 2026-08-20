@@ -21,13 +21,13 @@
     <string name="welcome_title">sulpayki ylih</string>
     <string name="welcome_intro">ylih ima sumaq auqui pares rimaywan maskachka, quhanaq watakuna ari camariy imaymanata llapan: phaña oras durawan?</string>
     <string name="welcome_point_auto_title">kuskunchay ama apachiy</string>
-    <string name="welcome_point_auto_body">bluetooth auqui kimsa rimachkan, kuskunchaywan hamut\'aptin. ama imayna rimaychu.</string>
+    <string name="welcome_point_auto_body">bluetooth auqui kimsa rimachkan, kuskunchaywan hamut’aptin. ama imayna rimaychu.</string>
     <string name="welcome_point_lifetime_title">huklla pares, huklla bida</string>
-    <string name="welcome_point_lifetime_body">pares wanuyachun, retirayki: llaqui yupaykunaq wañunun chaypitaq llaqui pares alpamanta hamut\'an.</string>
+    <string name="welcome_point_lifetime_body">pares wanuyachun, retirayki: llaqui yupaykunaq wañunun chaypitaq llaqui pares alpamanta hamut’an.</string>
     <string name="welcome_point_detailed_title">wayqiña rikuqwan</string>
     <string name="welcome_point_detailed_body">detalle rikuq, allinchakupi, wayqiña rikuq llamkachkan rikuq oras.</string>
     <string name="welcome_privacy">llapan kay telefonupi sakirisun. ama cuentachu, ama internet permisyuchu.</string>
-    <string name="welcome_start">hamut\'a</string>
+    <string name="welcome_start">hamut’a</string>
     <string name="welcome_next">sapai</string>
     <string name="welcome_allow">ama rikichiychu</string>
     <string name="welcome_step">pacha %1$d %2$d</string>
@@ -95,7 +95,7 @@
     <string name="pair_retire_title">kay pares retira</string>
     <string name="pair_retire_label">imarayki (wanuy, ranti, maskay…)</string>
     <string name="pair_retire_confirm">retira</string>
-    <string name="pair_retire_supporting">llaqui yupaykunaq wañun kay. haytaq kuskunchay alpamanta hamut\'an.</string>
+    <string name="pair_retire_supporting">llaqui yupaykunaq wañun kay. haytaq kuskunchay alpamanta hamut’an.</string>
     <string name="pair_price_title">rantiy hatun</string>
     <string name="pair_price_label">hatun (sapai)</string>
     <string name="pair_price_supporting">oras cost sapai yupaywan.</string>
@@ -117,7 +117,7 @@
     <string name="settings_language_system">sistema rimay</string>
     <string name="settings_devices">llamkaykunak</string>
     <string name="settings_devices_body">ama auquikunachu - radyo maychu speaker - ama yupaychu.</string>
-    <string name="settings_device_subtitle">%1$s · hamut\'atin rimaypi %2$s</string>
+    <string name="settings_device_subtitle">%1$s · hamut’atin rimaypi %2$s</string>
     <string name="settings_data">rimaykunak</string>
     <string name="settings_export">exportar json</string>
     <string name="settings_import">importar</string>
@@ -150,7 +150,7 @@
     <string name="channel_tracking">auqui rikuq</string>
     <string name="channel_tracking_description">paryarisqa ylih wayqiña rikuq. android wayqiña rimay ama.</string>
     <string name="notification_title">auqui oras rikuq</string>
-    <string name="notification_starting">hamut\'a…</string>
+    <string name="notification_starting">hamut’a…</string>
     <string name="notification_idle">auqui maskan</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d kuskunchay · %2$s</item>
