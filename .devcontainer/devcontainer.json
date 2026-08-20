@@ -5,7 +5,13 @@
   },
   "workspaceFolder": "/workspace",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
-  "remoteUser": "vscode",
+  // Root, not vscode: the Determinate installer runs with --init none (no systemd
+  // to supervise nix-daemon), so nothing starts the daemon at container boot. A
+  // non-root user then has no daemon to talk to and no permission to touch the
+  // store directly, which is the "Permission denied" on db/big-lock. Root can
+  // access the store without going through a daemon at all, so it sidesteps the
+  // problem rather than needing a daemon-supervision script.
+  "remoteUser": "root",
   "containerEnv": {
     "NIX_CONFIG": "experimental-features = nix-command flakes"
   },
