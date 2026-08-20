@@ -1,8 +1,11 @@
 {
   "name": "ylih (Nix dev shell)",
-  "image": "nixos/nix:2.35.2",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "workspaceFolder": "/workspace",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "remoteUser": "vscode",
   "containerEnv": {
     "NIX_CONFIG": "experimental-features = nix-command flakes"
   },
@@ -17,7 +20,7 @@
   // container (see CLAUDE.md: "nix develop  # or: direnv allow"); wiring it into
   // .bashrc here is what makes every new integrated-terminal tab open already inside
   // the dev shell, instead of everyone having to type `nix develop` by hand.
-  "postCreateCommand": "nix profile install nixpkgs#direnv && echo 'eval \"$(direnv hook bash)\"' >> /root/.bashrc && direnv allow /workspace && nix develop --command ./gradlew --version",
+  "postCreateCommand": "nix profile install nixpkgs#direnv && echo 'eval \"$(direnv hook bash)\"' >> ~/.bashrc && direnv allow /workspace && nix develop --command ./gradlew --version",
   "customizations": {
     "vscode": {
       "extensions": [
