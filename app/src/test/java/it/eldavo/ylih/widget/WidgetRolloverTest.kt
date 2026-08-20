@@ -158,9 +158,13 @@ class WidgetRolloverTest {
         // the last run, so however late this one was delivered would be added to every day after
         // it. UPDATE is the one policy that re-times work without cancelling the run calling it.
         val next = checkNotNull(scheduled()) { "the chain ended with this run" }.nextScheduleTimeMillis
+        // systemDefault(), not `zone`: doWork() re-arms through scheduleWidgetRollover with no zone
+        // argument, so it is the JVM default it actually reschedules against. Comparing against the
+        // fixed Rome zone the other tests use made this flake for the daily window between Rome's
+        // local midnight and the default zone's, where the two "next midnight"s invert.
         assertTrue(
             "$next is not the coming midnight",
-            next > nextLocalMidnight(app.container.clock.now(), zone),
+            next > nextLocalMidnight(app.container.clock.now(), ZoneId.systemDefault()),
         )
     }
 
