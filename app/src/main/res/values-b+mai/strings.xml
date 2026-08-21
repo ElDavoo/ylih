@@ -54,7 +54,7 @@
 
     <string name="stats_title">सभ हेडफोन</string>
     <string name="stats_sessions_since">%2$s सँ %1$s</string>
-    <string name="stats_today">आइ</string>
+    <string name="stats_today">आजुक दिन</string>
     <string name="stats_yesterday">काल्हिक दिन</string>
     <string name="stats_last_7">पछिला ७ दिन</string>
     <string name="stats_last_30">पछिला ३० दिन</string>

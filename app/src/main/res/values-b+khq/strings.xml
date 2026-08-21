@@ -54,7 +54,7 @@
 
     <string name="stats_title">ceeci bize</string>
     <string name="stats_sessions_since">%1$s kaata %2$s</string>
-    <string name="stats_today">zaani</string>
+    <string name="stats_today">hõo</string>
     <string name="stats_yesterday">bi</string>
     <string name="stats_last_7">zaani 7 hala</string>
     <string name="stats_last_30">zaani 30 hala</string>

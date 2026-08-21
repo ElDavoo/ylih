@@ -59,7 +59,7 @@
     <!-- Stats -->
     <string name="stats_title">masikilizaji yote</string>
     <string name="stats_sessions_since">%1$s tangu %2$s</string>
-    <string name="stats_today">leo</string>
+    <string name="stats_today">idime</string>
     <string name="stats_yesterday">iguo</string>
     <string name="stats_last_7">siku 7 zilizopita</string>
     <string name="stats_last_30">siku 30 zilizopita</string>

@@ -54,7 +54,7 @@
 
     <string name="stats_title">kopong otlhe</string>
     <string name="stats_sessions_since">%1$s go tloga %2$s</string>
-    <string name="stats_today">lebakabaka</string>
+    <string name="stats_today">gompieno</string>
     <string name="stats_yesterday">maabane</string>
     <string name="stats_last_7">matsatsi a 7 a fetileng</string>
     <string name="stats_last_30">matsatsi a 30 a fetileng</string>
