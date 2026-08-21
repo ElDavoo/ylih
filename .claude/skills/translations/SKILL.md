@@ -36,6 +36,8 @@ tree's string resources have broken the build:
 | `placeholders %2$s != source %1$s` | `StringFormatMatches` — a renumbered arg is a runtime crash |
 | `UnusedResources` | a new string nothing references — **lint error in this project** |
 | `folder values-xx/ has no strings.xml` | an *empty* locale folder. Invisible to `git status`; lint reads folder names and reports every string missing for it. Cost 113 errors once |
+| `script: the file is written in X` | a locale written in the wrong script — romanised Sanskrit, Kannada under `values-b+kxv+Latn`. Every other check passes: the strings are present, translated and unreadable to the people who asked for that language. The expected script comes from `Intl.Locale().maximize()`, so the table cannot drift from CLDR |
+| `near-duplicate locales` | one bulk run copied into two folders and then edited. Not byte-identical, so the duplicate check below cannot see it; `sat` held Samburu, 99% of its words shared with `saq` |
 
 Pass `--no-usage` to skip the reference scan. It reads every file under `app/src/main/java` for
 `R.string.<name>`, and `AndroidManifest.xml` plus the non-`values` resource XML for `@string/<name>`
@@ -202,6 +204,14 @@ ar         values-ar              113 keys  plurals: zero,one,two,few,many,other
   deliberately — the extra category is only an `UnusedQuantity` **warning** and
   `warningsAsErrors = false`, whereas guessing short breaks the build. Verified in both directions:
   lint also accepts `fix-plurals` *removing* `many` from `iw` and `one` from `bm`/`bo`/`dz`.
+- **The script check is per locale, not per string.** It reads the letters of the whole file and
+  compares the dominant script with the one CLDR expects for the tag, so a few Latin tokens —
+  `bluetooth`, `usb`, the app's own name — do not trip it, and a wholly romanised file cannot hide.
+  Fixing one is usually mechanical: when the text really is the language, only in the wrong
+  alphabet, transliterate it and check the result against words CLDR already writes in both scripts
+  (its month and weekday names, and its relative-day fields). That is how `values-b+az+Cyrl`,
+  `values-b+ff+Adlm`, `values-b+zgh` and `values-b+csw` were converted — and how the converters were
+  proved right before anything was written.
 - **`values-night/` is not a locale.** Android's short qualifier keywords (`car`, `tv`, `land`) are
   shaped exactly like language codes; the driver filters on a denylist plus the presence of
   `strings.xml`. Don't hand-roll a `ls values-*` loop.

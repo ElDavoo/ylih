@@ -402,6 +402,50 @@ cmds['fix-plurals'] = () => {
  * Everything the build can reject, checked in ~200ms instead of a two-minute lint run. Run this
  * after every bulk edit; a clean result here has matched `lint` on every failure seen so far.
  */
+
+/**
+ * The script a locale is supposed to be written in, asked of CLDR rather than listed by hand:
+ * Intl.Locale().maximize() reads the same likely-subtags data Android resolves a locale with.
+ */
+const SCRIPT_NAMES = {
+  Latn: 'Latin', Cyrl: 'Cyrillic', Deva: 'Devanagari', Arab: 'Arabic', Beng: 'Bengali',
+  Guru: 'Gurmukhi', Gujr: 'Gujarati', Orya: 'Oriya', Taml: 'Tamil', Telu: 'Telugu',
+  Knda: 'Kannada', Mlym: 'Malayalam', Sinh: 'Sinhala', Thai: 'Thai', Laoo: 'Lao',
+  Mymr: 'Myanmar', Khmr: 'Khmer', Hans: 'Han', Hant: 'Han', Jpan: 'Han', Kore: 'Hangul',
+  Ethi: 'Ethiopic', Armn: 'Armenian', Geor: 'Georgian', Hebr: 'Hebrew', Tibt: 'Tibetan',
+  Cher: 'Cherokee', Cans: 'Canadian_Aboriginal', Adlm: 'Adlam', Nkoo: 'Nko', Olck: 'Ol_Chiki',
+  Syrc: 'Syriac', Tfng: 'Tifinagh', Thaa: 'Thaana', Vaii: 'Vai', Mtei: 'Meetei_Mayek',
+  Yiii: 'Yi', Osge: 'Osage', Grek: 'Greek',
+}
+const SCRIPT_TESTS = Object.entries(SCRIPT_NAMES)
+  .map(([code, name]) => [name, new RegExp('\\p{Script=' + name + '}', 'u')])
+
+export function expectedScript(tag) {
+  try {
+    return SCRIPT_NAMES[new Intl.Locale(tag).maximize().script] ?? null
+  } catch {
+    return null
+  }
+}
+
+/** The script most of a locale's letters are in. The app's own name is not evidence either way. */
+export function dominantScript(values) {
+  const text = values.join(' ').replace(/ylih/gi, '').replace(/[^\p{L}]/gu, '')
+  const counts = new Map()
+  for (const ch of text) {
+    for (const [name, re] of SCRIPT_TESTS) {
+      if (re.test(ch)) { counts.set(name, (counts.get(name) ?? 0) + 1); break }
+    }
+  }
+  let best = null
+  for (const [name, n] of counts) if (!best || n > counts.get(best)) best = name
+  return best
+}
+
+/** A locale's vocabulary as a set, for comparing two locales against each other. */
+const wordsOf = (v) => (v ?? '').toLowerCase().normalize('NFD').replace(/\p{M}+/gu, '')
+  .split(/[^\p{L}\p{N}]+/u).filter((w) => w.length > 2 && w !== 'ylih')
+
 cmds.check = (argv) => {
   const s = source()
   const want = new Set(s.translatable.keys())
@@ -419,6 +463,7 @@ cmds.check = (argv) => {
   // Latin letters someone reaches for to make English look like an African orthography. Folding
   // them is what lets the untranslated check below see through the disguise.
   const FOLD = { ɔ: 'o', ɛ: 'e', ŋ: 'n', ə: 'e', ǝ: 'e', ʉ: 'u', ɨ: 'i', ʃ: 's', ɑ: 'a' }
+  const bags = new Map()
   const words = (v) => (v ?? '').toLowerCase().replace(/[ɔɛŋəǝʉɨʃɑ]/g, (c) => FOLD[c])
     .normalize('NFD').replace(/\p{M}+/gu, '')
 
@@ -468,6 +513,16 @@ cmds.check = (argv) => {
     }
 
     bodies.set(l.tag, longKeys.map((k) => f.keys.get(k)?.value ?? '').join(' '))
+    bags.set(l.tag, new Set(longKeys.flatMap((k) => wordsOf(f.keys.get(k)?.value))))
+
+    // A locale in the wrong script is invisible to every check above — the strings are all present,
+    // translated and well-formed, and unreadable to the only people who asked for that language.
+    // Eleven locales here held romanised text for languages nobody romanises.
+    const script = expectedScript(l.tag)
+    const written = dominantScript([...f.keys.values()]
+      .flatMap((e) => (e.kind === 'string' ? [e.value] : [...e.items.values()])))
+    if (script && written && script !== written)
+      add(l.tag, `script: the file is written in ${written}, but ${l.tag} is a ${script} language`)
 
     // Scaffolding a generator wrote and nobody filled in. It reaches users verbatim: seven locales
     // shipped "[lv] save" on a button.
@@ -498,6 +553,25 @@ cmds.check = (argv) => {
   for (const group of bySig.values())
     if (group.length > 1)
       add(group[0], `duplicate locales: ${group.join(' ')} hold identical text — at most one can be right`)
+
+  // The same bulk output copied with a word changed here and there is not byte-identical and hides
+  // from the check above: values-b+sat held Samburu, sharing 99% of its words with saq. The
+  // threshold is high on purpose — genuinely close languages reach 0.9 legitimately (rn and rw sit
+  // there, pt and pt-BR at 0.62), and a check that cries about those is one nobody reads.
+  const tags = [...bags.keys()]
+  for (let i = 0; i < tags.length; i++) {
+    for (let j = i + 1; j < tags.length; j++) {
+      const a = bags.get(tags[i]), b = bags.get(tags[j])
+      if (a.size < 20 || b.size < 20) continue
+      // An exact copy is the check above's to report, not this one's.
+      if (bodies.get(tags[i]) === bodies.get(tags[j])) continue
+      let shared = 0
+      for (const w of a) if (b.has(w)) shared++
+      const overlap = shared / (a.size + b.size - shared)
+      if (overlap >= 0.95)
+        add(tags[i], `near-duplicate locales: ${tags[i]} and ${tags[j]} share ${Math.round(overlap * 100)}% of their words — one is a copy of the other`)
+    }
+  }
   // An empty values-<lang>/ folder is invisible to git status but lint reads folder names and
   // reports every string as untranslated for it. This has broken the build once already.
   for (const d of readdirSync(RES)) {

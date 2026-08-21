@@ -6,185 +6,185 @@
   translate. So is `value_none`, which is an em dash.
 -->
 <resources>
-    <string name="app_title">aylih - jinde maa e kaalangal</string>
+    <string name="app_title">ylih - 𞤶𞤭𞤲𞤣𞤫 𞤥𞤢𞥄 𞤫 𞤳𞤢𞥄𞤤𞤢𞤲𞤺𞤢𞤤</string>
 
     <!-- navigasyon -->
-    <string name="nav_headphones">kaalangal</string>
-    <string name="nav_stats">jannginol</string>
-    <string name="nav_settings">teelirminol</string>
+    <string name="nav_headphones">𞤳𞤢𞥄𞤤𞤢𞤲𞤺𞤢𞤤</string>
+    <string name="nav_stats">𞤶𞤢𞤲𞤺𞤭𞤲𞤮𞤤</string>
+    <string name="nav_settings">𞤼𞤫𞥅𞤤𞤭𞤪𞤥𞤭𞤲𞤮𞤤</string>
 
     <!-- nde taruuji -->
     <string name="kind_bluetooth">bluetooth</string>
-    <string name="kind_ble">le audio</string>
-    <string name="kind_wired">jeeɗgal</string>
+    <string name="kind_ble">𞤤𞤫 𞤢𞤵𞤣𞤭𞤮</string>
+    <string name="kind_wired">𞤶𞤫𞥅𞤯𞤺𞤢𞤤</string>
     <string name="kind_usb">usb</string>
-    <string name="kind_unknown">taɗngal</string>
+    <string name="kind_unknown">𞤼𞤢𞤯𞤲𞤺𞤢𞤤</string>
 
     <!-- hay'i hollito -->
-    <string name="welcome_title">salam maa aylih</string>
-    <string name="welcome_intro">aylih jannginaa jinde kaalangal maa seŋal, haa ko ɓalɓe kaɗa, aɗa waawi deŋel gilla golle ɗum ko jogooɗi e kaalangal: saaji maa ɗum njiyaa?</string>
-    <string name="welcome_point_auto_title">seŋal e jillin</string>
-    <string name="welcome_point_auto_body">kaalangal bluetooth jannginaaɗo ɗiɗe, haa seŋal, baakol to uum fuɗɗugol.</string>
-    <string name="welcome_point_lifetime_title">jeeɓe goɗɗe, kaal goɗɗe</string>
-    <string name="welcome_point_lifetime_body">yiɓɓe jeeɓe hoti, deftugol: jannginol ɗum naati ndee, kaalangal kaɓɓe nde taruuji oo fuɗɗugol haa jemaaku.</string>
-    <string name="welcome_point_detailed_title">jeeɗgal e huulnde</string>
-    <string name="welcome_point_detailed_body">jannginol carminore, e teelirminol, baynu kaalangal jeeɗgal e jannginaa jinde huulnde maa.</string>
-    <string name="welcome_privacy">juulem foti e telefon maa. alal baakɗo, kala aylih heewu internet.</string>
-    <string name="welcome_start">fuɗɗo</string>
+    <string name="welcome_title">𞤧𞤢𞤤𞤢𞤥 𞤥𞤢𞥄 ylih</string>
+    <string name="welcome_intro">ylih 𞤶𞤢𞤲𞤺𞤭𞤲𞤢𞥄 𞤶𞤭𞤲𞤣𞤫 𞤳𞤢𞥄𞤤𞤢𞤲𞤺𞤢𞤤 𞤥𞤢𞥄 𞤧𞤫𞤽𞤢𞤤, 𞤸𞤢𞥄 𞤳𞤮 𞤩𞤢𞤤𞤩𞤫 𞤳𞤢𞤯𞤢, 𞤢𞤯𞤢 𞤱𞤢𞥄𞤱𞤭 𞤣𞤫𞤽𞤫𞤤 𞤺𞤭𞤤𞥆𞤢 𞤺𞤮𞤤𞥆𞤫 𞤯𞤵𞤥 𞤳𞤮 𞤶𞤮𞤺𞤮𞥅𞤯𞤭 𞤫 𞤳𞤢𞥄𞤤𞤢𞤲𞤺𞤢𞤤: 𞤧𞤢𞥄𞤶𞤭 𞤥𞤢𞥄 𞤯𞤵𞤥 𞤲𞤶𞤭𞤴𞤢𞥄?</string>
+    <string name="welcome_point_auto_title">𞤧𞤫𞤽𞤢𞤤 𞤫 𞤶𞤭𞤤𞥆𞤭𞤲</string>
+    <string name="welcome_point_auto_body">𞤳𞤢𞥄𞤤𞤢𞤲𞤺𞤢𞤤 bluetooth 𞤶𞤢𞤲𞤺𞤭𞤲𞤢𞥄𞤯𞤮 𞤯𞤭𞤯𞤫, 𞤸𞤢𞥄 𞤧𞤫𞤽𞤢𞤤, 𞤦𞤢𞥄𞤳𞤮𞤤 𞤼𞤮 𞤵𞥅𞤥 𞤬𞤵𞤯𞥆𞤵𞤺𞤮𞤤.</string>
+    <string name="welcome_point_lifetime_title">𞤶𞤫𞥅𞤩𞤫 𞤺𞤮𞤯𞥆𞤫, 𞤳𞤢𞥄𞤤 𞤺𞤮𞤯𞥆𞤫</string>
+    <string name="welcome_point_lifetime_body">𞤴𞤭𞤩𞥆𞤫 𞤶𞤫𞥅𞤩𞤫 𞤸𞤮𞤼𞤭, 𞤣𞤫𞤬𞤼𞤵𞤺𞤮𞤤: 𞤶𞤢𞤲𞤺𞤭𞤲𞤮𞤤 𞤯𞤵𞤥 𞤲𞤢𞥄𞤼𞤭 𞤲𞤣𞤫𞥅, 𞤳𞤢𞥄𞤤𞤢𞤲𞤺𞤢𞤤 𞤳𞤢𞤩𞥆𞤫 𞤲𞤣𞤫 𞤼𞤢𞤪𞤵𞥅𞤶𞤭 𞤮𞥅 𞤬𞤵𞤯𞥆𞤵𞤺𞤮𞤤 𞤸𞤢𞥄 𞤶𞤫𞤥𞤢𞥄𞤳𞤵.</string>
+    <string name="welcome_point_detailed_title">𞤶𞤫𞥅𞤯𞤺𞤢𞤤 𞤫 𞤸𞤵𞥅𞤤𞤲𞤣𞤫</string>
+    <string name="welcome_point_detailed_body">𞤶𞤢𞤲𞤺𞤭𞤲𞤮𞤤 𞤷𞤢𞤪𞤥𞤭𞤲𞤮𞤪𞤫, 𞤫 𞤼𞤫𞥅𞤤𞤭𞤪𞤥𞤭𞤲𞤮𞤤, 𞤦𞤢𞤴𞤲𞤵 𞤳𞤢𞥄𞤤𞤢𞤲𞤺𞤢𞤤 𞤶𞤫𞥅𞤯𞤺𞤢𞤤 𞤫 𞤶𞤢𞤲𞤺𞤭𞤲𞤢𞥄 𞤶𞤭𞤲𞤣𞤫 𞤸𞤵𞥅𞤤𞤲𞤣𞤫 𞤥𞤢𞥄.</string>
+    <string name="welcome_privacy">𞤶𞤵𞥅𞤤𞤫𞤥 𞤬𞤮𞤼𞤭 𞤫 𞤼𞤫𞤤𞤫𞤬𞤮𞤲 𞤥𞤢𞥄. 𞤢𞤤𞤢𞤤 𞤦𞤢𞥄𞤳𞤯𞤮, 𞤳𞤢𞤤𞤢 ylih 𞤸𞤫𞥅𞤱𞤵 𞤭𞤲𞤼𞤫𞤪𞤲𞤫𞤼.</string>
+    <string name="welcome_start">𞤬𞤵𞤯𞥆𞤮</string>
     <string name="welcome_next">𞤴𞤫𞥅𞤧𞤮</string>
     <string name="welcome_allow">𞤴𞤢𞤥𞤭𞤪</string>
     <string name="welcome_step">𞤼𞤮𞤤𞤲𞤮 %1$d 𞤫 %2$d</string>
-    <string name="welcome_bluetooth_title">𞤶𞤫𞤼𞤼𞤵𞤺𞤮𞤤 𞤄𞤤𞤵𞤼𞤵𞥅𞤧</string>
-    <string name="welcome_bluetooth_why">𞤀𞤲𞤣𞤪𞤮𞥅𞤣 𞤱𞤭𞤴𞤢𞤼 𞤶𞤢𞥄𞤩𞤲𞤭𞤪𞤺𞤢𞤤 𞤳𞤮 𞤸𞤮𞤲𞥆𞤣𞤫 𞤳𞤢𞥄𞤩𞤭𞤪𞤺𞤢𞤤 𞤄𞤤𞤵𞤼𞤵𞥅𞤧 𞤧𞤫𞤺𞤭𞥅, 𞤫 𞤳𞤮 𞤦𞤫 𞤭𞤲𞤲𞤫𞤼𞤫𞥅, 𞤧𞤮 𞤼𞤢𞤲 𞤶𞤢𞥄𞤩𞤲𞤭𞤪𞤺𞤢𞤤 𞤲𞤺𞤢𞤤 𞤶𞤮𞤺𞤭𞥅 𞤶𞤫𞤼𞤼𞤵𞤺𞤮𞤤 𞤄𞤤𞤵𞤼𞤵𞥅𞤧.</string>
+    <string name="welcome_bluetooth_title">𞤶𞤫𞤼𞤼𞤵𞤺𞤮𞤤 𞤦𞤤𞤵𞤼𞤵𞥅𞤧</string>
+    <string name="welcome_bluetooth_why">𞤢𞤲𞤣𞤪𞤮𞥅𞤣 𞤱𞤭𞤴𞤢𞤼 𞤶𞤢𞥄𞤩𞤲𞤭𞤪𞤺𞤢𞤤 𞤳𞤮 𞤸𞤮𞤲𞥆𞤣𞤫 𞤳𞤢𞥄𞤩𞤭𞤪𞤺𞤢𞤤 𞤦𞤤𞤵𞤼𞤵𞥅𞤧 𞤧𞤫𞤺𞤭𞥅, 𞤫 𞤳𞤮 𞤦𞤫 𞤭𞤲𞤲𞤫𞤼𞤫𞥅, 𞤧𞤮 𞤼𞤢𞤲 𞤶𞤢𞥄𞤩𞤲𞤭𞤪𞤺𞤢𞤤 𞤲𞤺𞤢𞤤 𞤶𞤮𞤺𞤭𞥅 𞤶𞤫𞤼𞤼𞤵𞤺𞤮𞤤 𞤦𞤤𞤵𞤼𞤵𞥅𞤧.</string>
     <string name="welcome_bluetooth_with">𞤫 𞤶𞤫𞤼𞤼𞤵𞤺𞤮𞤤: 𞤳𞤢𞤤𞤢 𞤶𞤮𞤱𞤪𞤫 𞤱𞤭𞤲𞥆𞤣𞤫𞤼𞤫𞥅 𞤺𞤭𞤤𞤢 𞤫 𞤧𞤢𞥄𞤲𞤺𞤢 𞤥𞤮 𞤲𞤣𞤫 𞤧𞤫𞤺𞤭𞥅, 𞤸𞤢𞤴 𞤸𞤵𞥅𞤲𞤣𞤫 𞤱𞤢𞥄𞤧𞤢 𞤸𞤫𞤯𞥆𞤢𞥄𞤣𞤫 𞤫 𞤺𞤮𞤤𞥆𞤫.</string>
-    <string name="welcome_bluetooth_without">𞤳𞤮 𞤢𞤤𞤣𞤢𞥄 𞤫 𞤶𞤫𞤼𞤼𞤵𞤺𞤮𞤤: 𞤲𞤢𞤲𞤭𞤪𞤯𞤫 𞤄𞤤𞤵𞤼𞤵𞥅𞤧 𞤱𞤮𞥅𞤣𞤢𞥄 𞤱𞤭𞤲𞥆𞤣𞤫𞤼𞤫𞥅𞤯𞤫. 𞤳𞤫𞤣𞥆𞤭𞥅𞤯𞤭 𞤶𞤢𞥄𞤩𞤲𞤭𞤪𞤺𞤢𞤤 𞤲𞤺𞤢𞤤 𞤭𞤲𞤢 𞤺𞤮𞤤𞥆𞤮𞥅, 𞤳𞤢𞤣𞤭 𞤢 𞤱𞤢𞤱𞤭 𞤴𞤢𞤥𞤭𞤪𞤣𞤫 𞤯𞤵𞤥 𞤩𞤢𞥄𞤱𞤮 𞤫 𞤼𞤫𞥅𞤤𞤼𞤫 𞤶𞤢𞥄𞤩𞤲𞤭𞤪𞤯𞤫 𞤀𞤲𞤣𞤪𞤮𞥅𞤣.</string>
+    <string name="welcome_bluetooth_without">𞤳𞤮 𞤢𞤤𞤣𞤢𞥄 𞤫 𞤶𞤫𞤼𞤼𞤵𞤺𞤮𞤤: 𞤲𞤢𞤲𞤭𞤪𞤯𞤫 𞤦𞤤𞤵𞤼𞤵𞥅𞤧 𞤱𞤮𞥅𞤣𞤢𞥄 𞤱𞤭𞤲𞥆𞤣𞤫𞤼𞤫𞥅𞤯𞤫. 𞤳𞤫𞤣𞥆𞤭𞥅𞤯𞤭 𞤶𞤢𞥄𞤩𞤲𞤭𞤪𞤺𞤢𞤤 𞤲𞤺𞤢𞤤 𞤭𞤲𞤢 𞤺𞤮𞤤𞥆𞤮𞥅, 𞤳𞤢𞤣𞤭 𞤢 𞤱𞤢𞤱𞤭 𞤴𞤢𞤥𞤭𞤪𞤣𞤫 𞤯𞤵𞤥 𞤩𞤢𞥄𞤱𞤮 𞤫 𞤼𞤫𞥅𞤤𞤼𞤫 𞤶𞤢𞥄𞤩𞤲𞤭𞤪𞤯𞤫 𞤢𞤲𞤣𞤪𞤮𞥅𞤣.</string>
     <string name="welcome_notifications_title">𞤼𞤭𞤲𞤼𞤭𞤲𞤫</string>
-    <string name="welcome_notifications_why">𞤲𞤣𞤢𞥄𞤪𞤯𞤫 𞤩𞤵𞤳𞥆𞤵𞤯𞤫 𞤭𞤲𞤢 𞤣𞤮𞤺𞤲𞤢 𞤺𞤮𞤤𞤤𞤫 𞤨𞤢𞤥𞤢𞤪𞤫 𞤪𞤫𞤩𞤢, 𞤳𞤢𞤣𞤭 𞤀𞤲𞤣𞤪𞤮𞥅𞤣 𞤭𞤲𞤢 𞤲𞤢𞥄𞤥𞤲𞤮𞥅 𞤳𞤢𞤤𞤢 𞤶𞤢𞥄𞤩𞤲𞤭𞤪𞤺𞤢𞤤 𞤱𞤢𞤯𞤢𞤴𞤲𞤺𞤢𞤤 𞤯𞤵𞤥 𞤴𞤮 𞤱𞤢𞤯 𞤼𞤭𞤲𞤼𞤭𞤲𞤢𞤤 𞤴𞤭𞤴𞤮𞤴𞤼𞤫𞥅.</string>
+    <string name="welcome_notifications_why">𞤲𞤣𞤢𞥄𞤪𞤯𞤫 𞤩𞤵𞤳𞥆𞤵𞤯𞤫 𞤭𞤲𞤢 𞤣𞤮𞤺𞤲𞤢 𞤺𞤮𞤤𞤤𞤫 𞤨𞤢𞤥𞤢𞤪𞤫 𞤪𞤫𞤩𞤢, 𞤳𞤢𞤣𞤭 𞤢𞤲𞤣𞤪𞤮𞥅𞤣 𞤭𞤲𞤢 𞤲𞤢𞥄𞤥𞤲𞤮𞥅 𞤳𞤢𞤤𞤢 𞤶𞤢𞥄𞤩𞤲𞤭𞤪𞤺𞤢𞤤 𞤱𞤢𞤯𞤢𞤴𞤲𞤺𞤢𞤤 𞤯𞤵𞤥 𞤴𞤮 𞤱𞤢𞤯 𞤼𞤭𞤲𞤼𞤭𞤲𞤢𞤤 𞤴𞤭𞤴𞤮𞤴𞤼𞤫𞥅.</string>
     <string name="welcome_notifications_with">𞤫 𞤴𞤢𞤥𞤭𞤪𞤮𞥅𞤶𞤫: 𞤼𞤭𞤲𞤼𞤭𞤲𞤢𞤤 𞤲𞤺𞤢𞤤 𞤸𞤮𞤤𞥆𞤢𞤼 𞤳𞤮 𞤱𞤭𞤲𞥆𞤣𞤫𞤼𞤫𞥅 𞤶𞤮𞥅𞤲𞤭, 𞤳𞤮 𞤯𞤵𞤥 𞤼𞤢𞤲 𞤱𞤮𞤲𞤭 𞤥𞤢𞥄𞤲𞤣𞤫 𞤱𞤮𞤲𞤣𞤫 𞤲𞤣𞤢𞥄𞤪𞤯𞤫 𞤩𞤵𞤳𞥆𞤵𞤯𞤫 𞤭𞤲𞤢 𞤱𞤵𞥅𞤪𞤭.</string>
-    <string name="welcome_notifications_without">𞤳𞤮 𞤢𞤤𞤣𞤢𞥄 𞤫 𞤴𞤢𞤥𞤭𞤪𞤮𞥅𞤶𞤫: 𞤲𞤣𞤢𞥄𞤪𞤯𞤫 𞤩𞤵𞤳𞥆𞤵𞤯𞤫 𞤭𞤲𞤢 𞤣𞤮𞤺𞥆𞤢 𞤳𞤢𞤣𞤭 𞤭𞤲𞤢 𞤱𞤭𞤲𞤣𞤢. 𞤀𞤲𞤣𞤪𞤮𞥅𞤣 𞤼𞤢𞤲 𞤸𞤮𞤤𞥆𞤢𞤼𞤢𞥄 𞤼𞤭𞤲𞤼𞤭𞤲𞤢𞤤 𞤥𞤢𞤺𞥆𞤢𞤤.</string>
-    <string name="hibernation_title">jokku limougol hay so yejjitaa</string>
-    <string name="hibernation_body">android hippay application ɗe seeɗtaaki yoga lewbi, nanngira jamirooje mum en, ɗum waawi wontude ylih hisataa hay huunde haa aan udditu ɗum kadi. yejjitegol ko ɗum tigi woni faandaare application ɗii, ɗum waɗi jogagol hippude ɗum jooni ina himmi.</string>
-    <string name="action_not_now">wonaa jooni</string>
+    <string name="welcome_notifications_without">𞤳𞤮 𞤢𞤤𞤣𞤢𞥄 𞤫 𞤴𞤢𞤥𞤭𞤪𞤮𞥅𞤶𞤫: 𞤲𞤣𞤢𞥄𞤪𞤯𞤫 𞤩𞤵𞤳𞥆𞤵𞤯𞤫 𞤭𞤲𞤢 𞤣𞤮𞤺𞥆𞤢 𞤳𞤢𞤣𞤭 𞤭𞤲𞤢 𞤱𞤭𞤲𞤣𞤢. 𞤢𞤲𞤣𞤪𞤮𞥅𞤣 𞤼𞤢𞤲 𞤸𞤮𞤤𞥆𞤢𞤼𞤢𞥄 𞤼𞤭𞤲𞤼𞤭𞤲𞤢𞤤 𞤥𞤢𞤺𞥆𞤢𞤤.</string>
+    <string name="hibernation_title">𞤶𞤮𞤳𞥆𞤵 𞤤𞤭𞤥𞤮𞤵𞤺𞤮𞤤 𞤸𞤢𞤴 𞤧𞤮 𞤴𞤫𞤶𞥆𞤭𞤼𞤢𞥄</string>
+    <string name="hibernation_body">𞤢𞤲𞤣𞤪𞤮𞤭𞤣 𞤸𞤭𞤨𞥆𞤢𞤴 𞤢𞤨𞤤𞤭𞤷𞤢𞤼𞤭𞤮𞤲 𞤯𞤫 𞤧𞤫𞥅𞤯𞤼𞤢𞥄𞤳𞤭 𞤴𞤮𞤺𞤢 𞤤𞤫𞤱𞤦𞤭, 𞤲𞤢𞤲𞤺𞤭𞤪𞤢 𞤶𞤢𞤥𞤭𞤪𞤮𞥅𞤶𞤫 𞤥𞤵𞤥 𞤫𞤲, 𞤯𞤵𞤥 𞤱𞤢𞥄𞤱𞤭 𞤱𞤮𞤲𞤼𞤵𞤣𞤫 ylih 𞤸𞤭𞤧𞤢𞤼𞤢𞥄 𞤸𞤢𞤴 𞤸𞤵𞥅𞤲𞤣𞤫 𞤸𞤢𞥄 𞤢𞥄𞤲 𞤵𞤣𞥆𞤭𞤼𞤵 𞤯𞤵𞤥 𞤳𞤢𞤣𞤭. 𞤴𞤫𞤶𞥆𞤭𞤼𞤫𞤺𞤮𞤤 𞤳𞤮 𞤯𞤵𞤥 𞤼𞤭𞤺𞤭 𞤱𞤮𞤲𞤭 𞤬𞤢𞥄𞤲𞤣𞤢𞥄𞤪𞤫 𞤢𞤨𞤤𞤭𞤷𞤢𞤼𞤭𞤮𞤲 𞤯𞤭𞥅, 𞤯𞤵𞤥 𞤱𞤢𞤯𞤭 𞤶𞤮𞤺𞤢𞤺𞤮𞤤 𞤸𞤭𞤨𞥆𞤵𞤣𞤫 𞤯𞤵𞤥 𞤶𞤮𞥅𞤲𞤭 𞤭𞤲𞤢 𞤸𞤭𞤥𞥆𞤭.</string>
+    <string name="action_not_now">𞤱𞤮𞤲𞤢𞥄 𞤶𞤮𞥅𞤲𞤭</string>
 
     <!-- ndee kaalangal -->
-    <string name="devices_in_use">waɗinitaade</string>
-    <string name="devices_retired">deftuje</string>
-    <string name="devices_empty_title">kaalangal foti baakɗo</string>
-    <string name="devices_empty_body">seŋal kaalangal bluetooth, ɗum waɗi ndee. kaalangal jeeɗgal heewu jannginol carminore, e teelirminol.</string>
-    <string name="devices_generation">jeeɓe #%1$d</string>
-    <string name="devices_retired_on">deftuje %1$s</string>
-    <string name="devices_connected_for">seŋaaɗe %1$s</string>
-    <string name="devices_recent">%1$s / 7ñ</string>
+    <string name="devices_in_use">𞤱𞤢𞤯𞤭𞤲𞤭𞤼𞤢𞥄𞤣𞤫</string>
+    <string name="devices_retired">𞤣𞤫𞤬𞤼𞤵𞤶𞤫</string>
+    <string name="devices_empty_title">𞤳𞤢𞥄𞤤𞤢𞤲𞤺𞤢𞤤 𞤬𞤮𞤼𞤭 𞤦𞤢𞥄𞤳𞤯𞤮</string>
+    <string name="devices_empty_body">𞤧𞤫𞤽𞤢𞤤 𞤳𞤢𞥄𞤤𞤢𞤲𞤺𞤢𞤤 bluetooth, 𞤯𞤵𞤥 𞤱𞤢𞤯𞤭 𞤲𞤣𞤫𞥅. 𞤳𞤢𞥄𞤤𞤢𞤲𞤺𞤢𞤤 𞤶𞤫𞥅𞤯𞤺𞤢𞤤 𞤸𞤫𞥅𞤱𞤵 𞤶𞤢𞤲𞤺𞤭𞤲𞤮𞤤 𞤷𞤢𞤪𞤥𞤭𞤲𞤮𞤪𞤫, 𞤫 𞤼𞤫𞥅𞤤𞤭𞤪𞤥𞤭𞤲𞤮𞤤.</string>
+    <string name="devices_generation">𞤶𞤫𞥅𞤩𞤫 #%1$d</string>
+    <string name="devices_retired_on">𞤣𞤫𞤬𞤼𞤵𞤶𞤫 %1$s</string>
+    <string name="devices_connected_for">𞤧𞤫𞤽𞤢𞥄𞤯𞤫 %1$s</string>
+    <string name="devices_recent">%1$s / 7𞤻</string>
 
     <!-- jannginol -->
-    <string name="stats_title">kaalangal juulem</string>
-    <string name="stats_sessions_since">%1$s haa %2$s</string>
-    <string name="stats_today">hannde</string>
+    <string name="stats_title">𞤳𞤢𞥄𞤤𞤢𞤲𞤺𞤢𞤤 𞤶𞤵𞥅𞤤𞤫𞤥</string>
+    <string name="stats_sessions_since">%1$s 𞤸𞤢𞥄 %2$s</string>
+    <string name="stats_today">𞤸𞤢𞤲𞤣𞤫</string>
     <string name="stats_yesterday">𞤸𞤢𞤲𞤳𞤭</string>
-    <string name="stats_last_7">liggere 7 ɓalɓacce</string>
-    <string name="stats_last_30">liggere 30 ɓalɓacce</string>
-    <string name="stats_average_session">dhaali jokkol</string>
-    <string name="stats_longest_session">jokkol ɓurngol juutde</string>
-    <string name="stats_playing">huulnde</string>
-    <string name="stats_measured_span">betaango ngam huulnde</string>
-    <string name="stats_share">geɓal huulnde</string>
-    <string name="stats_playback_only_note">limtude tan sahaa huulnde</string>
-    <string name="stats_daily_hours_30">saaji ɓalɓaccere (30 ɓalɓacce)</string>
-    <string name="stats_by_pair">jeeɓere-jeeɓere</string>
+    <string name="stats_last_7">𞤤𞤭𞤺𞥆𞤫𞤪𞤫 7 𞤩𞤢𞤤𞤩𞤢𞤷𞥆𞤫</string>
+    <string name="stats_last_30">𞤤𞤭𞤺𞥆𞤫𞤪𞤫 30 𞤩𞤢𞤤𞤩𞤢𞤷𞥆𞤫</string>
+    <string name="stats_average_session">𞤣𞤸𞤢𞥄𞤤𞤭 𞤶𞤮𞤳𞥆𞤮𞤤</string>
+    <string name="stats_longest_session">𞤶𞤮𞤳𞥆𞤮𞤤 𞤩𞤵𞤪𞤲𞤺𞤮𞤤 𞤶𞤵𞥅𞤼𞤣𞤫</string>
+    <string name="stats_playing">𞤸𞤵𞥅𞤤𞤲𞤣𞤫</string>
+    <string name="stats_measured_span">𞤦𞤫𞤼𞤢𞥄𞤲𞤺𞤮 𞤲𞤺𞤢𞤥 𞤸𞤵𞥅𞤤𞤲𞤣𞤫</string>
+    <string name="stats_share">𞤺𞤫𞤩𞤢𞤤 𞤸𞤵𞥅𞤤𞤲𞤣𞤫</string>
+    <string name="stats_playback_only_note">𞤤𞤭𞤥𞤼𞤵𞤣𞤫 𞤼𞤢𞤲 𞤧𞤢𞤸𞤢𞥄 𞤸𞤵𞥅𞤤𞤲𞤣𞤫</string>
+    <string name="stats_daily_hours_30">𞤧𞤢𞥄𞤶𞤭 𞤩𞤢𞤤𞤩𞤢𞤷𞥆𞤫𞤪𞤫 (30 𞤩𞤢𞤤𞤩𞤢𞤷𞥆𞤫)</string>
+    <string name="stats_by_pair">𞤶𞤫𞥅𞤩𞤫𞤪𞤫-𞤶𞤫𞥅𞤩𞤫𞤪𞤫</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
-    <string name="stats_pair_row_retired">%1$s · %2$s · deftuje</string>
-    <string name="chart_max">%1$s maaksiimum</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · 𞤣𞤫𞤬𞤼𞤵𞤶𞤫</string>
+    <string name="chart_max">%1$s 𞤥𞤢𞥄𞤳𞤧𞤭𞥅𞤥𞤵𞤥</string>
 
     <!-- panno jeeɓe -->
-    <string name="pair_fallback_title">jeeɓe</string>
-    <string name="pair_back">duum</string>
-    <string name="pair_more">humpay</string>
-    <string name="pair_menu_rename">jooɗin maɓɓe</string>
-    <string name="pair_menu_purchase">hargal garanaa</string>
-    <string name="pair_menu_retire">deftugu / sooɗugo</string>
-    <string name="pair_menu_delete">deleeteeri</string>
-    <string name="pair_lifetime">jinde kaal jeeɓe maa</string>
-    <string name="pair_retired_on">deftuje %1$s</string>
-    <string name="pair_retired_with_reason">deftuje %1$s · %2$s</string>
-    <string name="pair_connected_now">seŋaaɗe jooni · %1$s</string>
-    <string name="pair_sessions">jokkol</string>
-    <string name="pair_average">dhaali</string>
-    <string name="pair_longest">mahdi</string>
-    <string name="pair_since">gila %1$s</string>
-    <string name="pair_of_measured">geɓal huulnde</string>
-    <string name="pair_measured">betaango ngam huulnde</string>
-    <string name="pair_paid">dilooritaa</string>
-    <string name="pair_per_hour">sa saaji</string>
-    <string name="pair_bought">garanaa</string>
-    <string name="pair_daily_hours_14">saaji ɓalɓaccere (14 ɓalɓacce)</string>
-    <string name="pair_rename_title">jooɗin jeeɓe maa</string>
-    <string name="pair_rename_label">maɓɓe</string>
-    <string name="pair_retire_title">deftugu jeeɓe maa</string>
-    <string name="pair_retire_label">bibe (mujjum, resol, ɓaccu…)</string>
-    <string name="pair_retire_confirm">deftugu</string>
-    <string name="pair_retire_supporting">jannginol huumaare ndee. seŋal kaɓɓe nde taruuji oo waɗi jeeɓe harfo haa jemaaku.</string>
-    <string name="pair_price_title">goɗɗi garanaa</string>
-    <string name="pair_price_label">jumlaa (bijjatol juulem)</string>
-    <string name="pair_price_supporting">waɗ-waɗit suudu sa saaji.</string>
-    <string name="pair_delete_title">deleeteeru jeeɓe maa?</string>
-    <string name="pair_delete_body">jokkol juulem jannginaa ɗum deleete. njukka to ndi.</string>
+    <string name="pair_fallback_title">𞤶𞤫𞥅𞤩𞤫</string>
+    <string name="pair_back">𞤣𞤵𞥅𞤥</string>
+    <string name="pair_more">𞤸𞤵𞤥𞤨𞤢𞤴</string>
+    <string name="pair_menu_rename">𞤶𞤮𞥅𞤯𞤭𞤲 𞤥𞤢𞤩𞥆𞤫</string>
+    <string name="pair_menu_purchase">𞤸𞤢𞤪𞤺𞤢𞤤 𞤺𞤢𞤪𞤢𞤲𞤢𞥄</string>
+    <string name="pair_menu_retire">𞤣𞤫𞤬𞤼𞤵𞤺𞤵 / 𞤧𞤮𞥅𞤯𞤵𞤺𞤮</string>
+    <string name="pair_menu_delete">𞤣𞤫𞤤𞤫𞥅𞤼𞤫𞥅𞤪𞤭</string>
+    <string name="pair_lifetime">𞤶𞤭𞤲𞤣𞤫 𞤳𞤢𞥄𞤤 𞤶𞤫𞥅𞤩𞤫 𞤥𞤢𞥄</string>
+    <string name="pair_retired_on">𞤣𞤫𞤬𞤼𞤵𞤶𞤫 %1$s</string>
+    <string name="pair_retired_with_reason">𞤣𞤫𞤬𞤼𞤵𞤶𞤫 %1$s · %2$s</string>
+    <string name="pair_connected_now">𞤧𞤫𞤽𞤢𞥄𞤯𞤫 𞤶𞤮𞥅𞤲𞤭 · %1$s</string>
+    <string name="pair_sessions">𞤶𞤮𞤳𞥆𞤮𞤤</string>
+    <string name="pair_average">𞤣𞤸𞤢𞥄𞤤𞤭</string>
+    <string name="pair_longest">𞤥𞤢𞤸𞤣𞤭</string>
+    <string name="pair_since">𞤺𞤭𞤤𞤢 %1$s</string>
+    <string name="pair_of_measured">𞤺𞤫𞤩𞤢𞤤 𞤸𞤵𞥅𞤤𞤲𞤣𞤫</string>
+    <string name="pair_measured">𞤦𞤫𞤼𞤢𞥄𞤲𞤺𞤮 𞤲𞤺𞤢𞤥 𞤸𞤵𞥅𞤤𞤲𞤣𞤫</string>
+    <string name="pair_paid">𞤣𞤭𞤤𞤮𞥅𞤪𞤭𞤼𞤢𞥄</string>
+    <string name="pair_per_hour">𞤧𞤢 𞤧𞤢𞥄𞤶𞤭</string>
+    <string name="pair_bought">𞤺𞤢𞤪𞤢𞤲𞤢𞥄</string>
+    <string name="pair_daily_hours_14">𞤧𞤢𞥄𞤶𞤭 𞤩𞤢𞤤𞤩𞤢𞤷𞥆𞤫𞤪𞤫 (14 𞤩𞤢𞤤𞤩𞤢𞤷𞥆𞤫)</string>
+    <string name="pair_rename_title">𞤶𞤮𞥅𞤯𞤭𞤲 𞤶𞤫𞥅𞤩𞤫 𞤥𞤢𞥄</string>
+    <string name="pair_rename_label">𞤥𞤢𞤩𞥆𞤫</string>
+    <string name="pair_retire_title">𞤣𞤫𞤬𞤼𞤵𞤺𞤵 𞤶𞤫𞥅𞤩𞤫 𞤥𞤢𞥄</string>
+    <string name="pair_retire_label">𞤦𞤭𞤦𞤫 (𞤥𞤵𞤶𞥆𞤵𞤥, 𞤪𞤫𞤧𞤮𞤤, 𞤩𞤢𞤷𞥆𞤵…)</string>
+    <string name="pair_retire_confirm">𞤣𞤫𞤬𞤼𞤵𞤺𞤵</string>
+    <string name="pair_retire_supporting">𞤶𞤢𞤲𞤺𞤭𞤲𞤮𞤤 𞤸𞤵𞥅𞤥𞤢𞥄𞤪𞤫 𞤲𞤣𞤫𞥅. 𞤧𞤫𞤽𞤢𞤤 𞤳𞤢𞤩𞥆𞤫 𞤲𞤣𞤫 𞤼𞤢𞤪𞤵𞥅𞤶𞤭 𞤮𞥅 𞤱𞤢𞤯𞤭 𞤶𞤫𞥅𞤩𞤫 𞤸𞤢𞤪𞤬𞤮 𞤸𞤢𞥄 𞤶𞤫𞤥𞤢𞥄𞤳𞤵.</string>
+    <string name="pair_price_title">𞤺𞤮𞤯𞥆𞤭 𞤺𞤢𞤪𞤢𞤲𞤢𞥄</string>
+    <string name="pair_price_label">𞤶𞤵𞤥𞤤𞤢𞥄 (𞤦𞤭𞤶𞥆𞤢𞤼𞤮𞤤 𞤶𞤵𞥅𞤤𞤫𞤥)</string>
+    <string name="pair_price_supporting">𞤱𞤢𞤯-𞤱𞤢𞤯𞤭𞤼 𞤧𞤵𞥅𞤣𞤵 𞤧𞤢 𞤧𞤢𞥄𞤶𞤭.</string>
+    <string name="pair_delete_title">𞤣𞤫𞤤𞤫𞥅𞤼𞤫𞥅𞤪𞤵 𞤶𞤫𞥅𞤩𞤫 𞤥𞤢𞥄?</string>
+    <string name="pair_delete_body">𞤶𞤮𞤳𞥆𞤮𞤤 𞤶𞤵𞥅𞤤𞤫𞤥 𞤶𞤢𞤲𞤺𞤭𞤲𞤢𞥄 𞤯𞤵𞤥 𞤣𞤫𞤤𞤫𞥅𞤼𞤫. 𞤲𞤶𞤵𞤳𞥆𞤢 𞤼𞤮 𞤲𞤣𞤭.</string>
 
     <!-- ndee jokkol -->
-    <string name="session_ongoing">ngella jooki</string>
-    <string name="session_until">redu %1$s</string>
-    <string name="session_playing">%1$s huulnde</string>
-    <string name="session_recovered">leerɗi</string>
+    <string name="session_ongoing">𞤲𞤺𞤫𞤤𞥆𞤢 𞤶𞤮𞥅𞤳𞤭</string>
+    <string name="session_until">𞤪𞤫𞤣𞤵 %1$s</string>
+    <string name="session_playing">%1$s 𞤸𞤵𞥅𞤤𞤲𞤣𞤫</string>
+    <string name="session_recovered">𞤤𞤫𞥅𞤪𞤯𞤭</string>
 
     <!-- teelirminol -->
-    <string name="settings_tracking">jannginol</string>
-    <string name="settings_detailed_title">jannginol carminore</string>
-    <string name="settings_detailed_body">baynu kaalangal jeeɗgal e jinnde huulnde. android gaɗa seeɗ jeeɗgal njuŋŋu ɗiɗi njuŋŋitere, haa ko ndee teli baɓɓ e teñ. bluetooth jannginaaɗo juulem.</string>
-    <string name="settings_detailed_unavailable">ndilta redu bluetooth heewɗo: taruuji maa seelitoo nde connectedDevice duman, android 14+ gootoo e bluetooth jumnitoore.</string>
-    <string name="settings_playback_only_title">limtu tan huulnde</string>
-    <string name="settings_playback_only_body">limlimte ɗe limta sahaa mo hito ngo huuli goonga, wanaa sahaa jokkondiral. kojolli ɗi winndaa e jannginol carminore uddaa tan ɗi betii huulnde; keddiiɗi ina acce.</string>
+    <string name="settings_tracking">𞤶𞤢𞤲𞤺𞤭𞤲𞤮𞤤</string>
+    <string name="settings_detailed_title">𞤶𞤢𞤲𞤺𞤭𞤲𞤮𞤤 𞤷𞤢𞤪𞤥𞤭𞤲𞤮𞤪𞤫</string>
+    <string name="settings_detailed_body">𞤦𞤢𞤴𞤲𞤵 𞤳𞤢𞥄𞤤𞤢𞤲𞤺𞤢𞤤 𞤶𞤫𞥅𞤯𞤺𞤢𞤤 𞤫 𞤶𞤭𞤲𞤣𞤫 𞤸𞤵𞥅𞤤𞤲𞤣𞤫. 𞤢𞤲𞤣𞤪𞤮𞤭𞤣 𞤺𞤢𞤯𞤢 𞤧𞤫𞥅𞤯 𞤶𞤫𞥅𞤯𞤺𞤢𞤤 𞤲𞤶𞤵𞤽𞥆𞤵 𞤯𞤭𞤯𞤭 𞤲𞤶𞤵𞤽𞥆𞤭𞤼𞤫𞤪𞤫, 𞤸𞤢𞥄 𞤳𞤮 𞤲𞤣𞤫𞥅 𞤼𞤫𞤤𞤭 𞤦𞤢𞤩 𞤫 𞤼𞤫𞤻. bluetooth 𞤶𞤢𞤲𞤺𞤭𞤲𞤢𞥄𞤯𞤮 𞤶𞤵𞥅𞤤𞤫𞤥.</string>
+    <string name="settings_detailed_unavailable">𞤲𞤣𞤭𞤤𞤼𞤢 𞤪𞤫𞤣𞤵 bluetooth 𞤸𞤫𞥅𞤱𞤯𞤮: 𞤼𞤢𞤪𞤵𞥅𞤶𞤭 𞤥𞤢𞥄 𞤧𞤫𞥅𞤤𞤭𞤼𞤮𞥅 𞤲𞤣𞤫 𞤷𞤮𞤲𞥆𞤫𞤷𞤼𞤫𞤣𞥆𞤫𞤾𞤭𞤷𞤫 𞤣𞤵𞤥𞤢𞤲, 𞤢𞤲𞤣𞤪𞤮𞤭𞤣 14+ 𞤺𞤮𞥅𞤼𞤮𞥅 𞤫 bluetooth 𞤶𞤵𞤥𞤲𞤭𞤼𞤮𞥅𞤪𞤫.</string>
+    <string name="settings_playback_only_title">𞤤𞤭𞤥𞤼𞤵 𞤼𞤢𞤲 𞤸𞤵𞥅𞤤𞤲𞤣𞤫</string>
+    <string name="settings_playback_only_body">𞤤𞤭𞤥𞤤𞤭𞤥𞤼𞤫 𞤯𞤫 𞤤𞤭𞤥𞤼𞤢 𞤧𞤢𞤸𞤢𞥄 𞤥𞤮 𞤸𞤭𞤼𞤮 𞤲𞤺𞤮 𞤸𞤵𞥅𞤤𞤭 𞤺𞤮𞥅𞤲𞤺𞤢, 𞤱𞤢𞤲𞤢𞥄 𞤧𞤢𞤸𞤢𞥄 𞤶𞤮𞤳𞥆𞤮𞤲𞤣𞤭𞤪𞤢𞤤. 𞤳𞤮𞤶𞤮𞤤𞥆𞤭 𞤯𞤭 𞤱𞤭𞤲𞤣𞤢𞥄 𞤫 𞤶𞤢𞤲𞤺𞤭𞤲𞤮𞤤 𞤷𞤢𞤪𞤥𞤭𞤲𞤮𞤪𞤫 𞤵𞤣𞥆𞤢𞥄 𞤼𞤢𞤲 𞤯𞤭 𞤦𞤫𞤼𞤭𞥅 𞤸𞤵𞥅𞤤𞤲𞤣𞤫; 𞤳𞤫𞤣𞥆𞤭𞥅𞤯𞤭 𞤭𞤲𞤢 𞤢𞤷𞥆𞤫.</string>
     <string name="settings_language">𞤸𞤢𞥄𞤤𞤢</string>
     <string name="settings_language_system">𞤸𞤢𞥄𞤤𞤢 𞤧𞤭𞤧𞤼𞤫𞤥</string>
-    <string name="settings_devices">taruuji</string>
-    <string name="settings_devices_body">deleete teegno taruuji hakkunde kaalangal baakɗo - oto tummuki wala ɓelɓel - haa ko dum jannginoa baakɗo.</string>
-    <string name="settings_device_subtitle">%1$s · hay’i hollito %2$s</string>
-    <string name="settings_data">baytal</string>
-    <string name="settings_export">golluki json</string>
-    <string name="settings_import">gaŋŋa</string>
-    <string name="settings_import_warning">gaŋŋa sooɗɗu juulem baytal jooni.</string>
-    <string name="settings_troubleshooting">jannginol ceffal-cofal</string>
-    <string name="settings_battery_body">yiɓɓe jokkol jannginoa baakɗo, teegno ko aylih njuŋŋo baakɗo e batiri suudu - aylih fuɗɗugo to njuŋŋi seŋal njuŋŋu redu dum moofaa.</string>
-    <string name="settings_battery_button">teelirminol batiri</string>
-    <string name="settings_battery_path">teelirminol → apps → ylih → batiri → ndilta-walla.</string>
-    <string name="settings_hibernation_body">so ylih seeɗtaaki yoga lewbi, android hippay ɗum, nanngira jamirooje mum, hay huunde hisataa kadi haa aan udditu ɗum. hippude ɗum ko ɗum waawnata gootel jokku limougol e nder yontere aan miijitaaki application nden fes.</string>
-    <string name="settings_hibernation_on">android waawi hippude ylih.</string>
-    <string name="settings_hibernation_off">ylih daɗndaama, ina heddii hisude.</string>
-    <string name="settings_hibernation_button">teelde application ɗe huutoraaka</string>
-    <string name="settings_about">baɓɓe aylih</string>
-    <string name="settings_about_body">aylih %1$s (%2$s) — saaji kaalangal, goɗo jeeɗngal e reyde walla.</string>
-    <string name="settings_import_confirm_title">sooɗɗu baytal juulem?</string>
-    <string name="settings_import_confirm_body">gaŋŋa moofal maa deleete taruuji juulem, jeeɓe, e jokkol goɗngol jooni.</string>
-    <string name="widget_lifetime_label">ylih · jinde</string>
-    <string name="widget_lifetime_description">waktuuji e kala jeeɓe, e waktu wuurɗo e ko seŋaaɗe</string>
-    <string name="widget_activity_label">ylih · golle</string>
-    <string name="widget_activity_description">waktuuji jeeɓe fof e denndaangal, e hannde, 7 ɓalɓacce e 30 ɓalɓacce</string>
-    <string name="widget_chart_label">ylih · 30 ɓalɓacce</string>
-    <string name="widget_chart_description">waktuuji heɗagol ɓalɓaccere e nder liggere 30 ɓalɓacce</string>
+    <string name="settings_devices">𞤼𞤢𞤪𞤵𞥅𞤶𞤭</string>
+    <string name="settings_devices_body">𞤣𞤫𞤤𞤫𞥅𞤼𞤫 𞤼𞤫𞥅𞤺𞤲𞤮 𞤼𞤢𞤪𞤵𞥅𞤶𞤭 𞤸𞤢𞤳𞥆𞤵𞤲𞤣𞤫 𞤳𞤢𞥄𞤤𞤢𞤲𞤺𞤢𞤤 𞤦𞤢𞥄𞤳𞤯𞤮 - 𞤮𞤼𞤮 𞤼𞤵𞤥𞥆𞤵𞤳𞤭 𞤱𞤢𞤤𞤢 𞤩𞤫𞤤𞤩𞤫𞤤 - 𞤸𞤢𞥄 𞤳𞤮 𞤣𞤵𞤥 𞤶𞤢𞤲𞤺𞤭𞤲𞤮𞤢 𞤦𞤢𞥄𞤳𞤯𞤮.</string>
+    <string name="settings_device_subtitle">%1$s · 𞤸𞤢𞤴’𞤭 𞤸𞤮𞤤𞥆𞤭𞤼𞤮 %2$s</string>
+    <string name="settings_data">𞤦𞤢𞤴𞤼𞤢𞤤</string>
+    <string name="settings_export">𞤺𞤮𞤤𞥆𞤵𞤳𞤭 𞤶𞤧𞤮𞤲</string>
+    <string name="settings_import">𞤺𞤢𞤽𞥆𞤢</string>
+    <string name="settings_import_warning">𞤺𞤢𞤽𞥆𞤢 𞤧𞤮𞥅𞤯𞥆𞤵 𞤶𞤵𞥅𞤤𞤫𞤥 𞤦𞤢𞤴𞤼𞤢𞤤 𞤶𞤮𞥅𞤲𞤭.</string>
+    <string name="settings_troubleshooting">𞤶𞤢𞤲𞤺𞤭𞤲𞤮𞤤 𞤷𞤫𞤬𞥆𞤢𞤤-𞤷𞤮𞤬𞤢𞤤</string>
+    <string name="settings_battery_body">𞤴𞤭𞤩𞥆𞤫 𞤶𞤮𞤳𞥆𞤮𞤤 𞤶𞤢𞤲𞤺𞤭𞤲𞤮𞤢 𞤦𞤢𞥄𞤳𞤯𞤮, 𞤼𞤫𞥅𞤺𞤲𞤮 𞤳𞤮 ylih 𞤲𞤶𞤵𞤽𞥆𞤮 𞤦𞤢𞥄𞤳𞤯𞤮 𞤫 𞤦𞤢𞤼𞤭𞤪𞤭 𞤧𞤵𞥅𞤣𞤵 - ylih 𞤬𞤵𞤯𞥆𞤵𞤺𞤮 𞤼𞤮 𞤲𞤶𞤵𞤽𞥆𞤭 𞤧𞤫𞤽𞤢𞤤 𞤲𞤶𞤵𞤽𞥆𞤵 𞤪𞤫𞤣𞤵 𞤣𞤵𞤥 𞤥𞤮𞥅𞤬𞤢𞥄.</string>
+    <string name="settings_battery_button">𞤼𞤫𞥅𞤤𞤭𞤪𞤥𞤭𞤲𞤮𞤤 𞤦𞤢𞤼𞤭𞤪𞤭</string>
+    <string name="settings_battery_path">𞤼𞤫𞥅𞤤𞤭𞤪𞤥𞤭𞤲𞤮𞤤 → 𞤢𞤨𞤧 → ylih → 𞤦𞤢𞤼𞤭𞤪𞤭 → 𞤲𞤣𞤭𞤤𞤼𞤢-𞤱𞤢𞤤𞥆𞤢.</string>
+    <string name="settings_hibernation_body">𞤧𞤮 ylih 𞤧𞤫𞥅𞤯𞤼𞤢𞥄𞤳𞤭 𞤴𞤮𞤺𞤢 𞤤𞤫𞤱𞤦𞤭, 𞤢𞤲𞤣𞤪𞤮𞤭𞤣 𞤸𞤭𞤨𞥆𞤢𞤴 𞤯𞤵𞤥, 𞤲𞤢𞤲𞤺𞤭𞤪𞤢 𞤶𞤢𞤥𞤭𞤪𞤮𞥅𞤶𞤫 𞤥𞤵𞤥, 𞤸𞤢𞤴 𞤸𞤵𞥅𞤲𞤣𞤫 𞤸𞤭𞤧𞤢𞤼𞤢𞥄 𞤳𞤢𞤣𞤭 𞤸𞤢𞥄 𞤢𞥄𞤲 𞤵𞤣𞥆𞤭𞤼𞤵 𞤯𞤵𞤥. 𞤸𞤭𞤨𞥆𞤵𞤣𞤫 𞤯𞤵𞤥 𞤳𞤮 𞤯𞤵𞤥 𞤱𞤢𞥄𞤱𞤲𞤢𞤼𞤢 𞤺𞤮𞥅𞤼𞤫𞤤 𞤶𞤮𞤳𞥆𞤵 𞤤𞤭𞤥𞤮𞤵𞤺𞤮𞤤 𞤫 𞤲𞤣𞤫𞤪 𞤴𞤮𞤲𞤼𞤫𞤪𞤫 𞤢𞥄𞤲 𞤥𞤭𞥅𞤶𞤭𞤼𞤢𞥄𞤳𞤭 𞤢𞤨𞤤𞤭𞤷𞤢𞤼𞤭𞤮𞤲 𞤲𞤣𞤫𞤲 𞤬𞤫𞤧.</string>
+    <string name="settings_hibernation_on">𞤢𞤲𞤣𞤪𞤮𞤭𞤣 𞤱𞤢𞥄𞤱𞤭 𞤸𞤭𞤨𞥆𞤵𞤣𞤫 ylih.</string>
+    <string name="settings_hibernation_off">ylih 𞤣𞤢𞤯𞤲𞤣𞤢𞥄𞤥𞤢, 𞤭𞤲𞤢 𞤸𞤫𞤣𞥆𞤭𞥅 𞤸𞤭𞤧𞤵𞤣𞤫.</string>
+    <string name="settings_hibernation_button">𞤼𞤫𞥅𞤤𞤣𞤫 𞤢𞤨𞤤𞤭𞤷𞤢𞤼𞤭𞤮𞤲 𞤯𞤫 𞤸𞤵𞥅𞤼𞤮𞤪𞤢𞥄𞤳𞤢</string>
+    <string name="settings_about">𞤦𞤢𞤩𞥆𞤫 ylih</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — 𞤧𞤢𞥄𞤶𞤭 𞤳𞤢𞥄𞤤𞤢𞤲𞤺𞤢𞤤, 𞤺𞤮𞤯𞤮 𞤶𞤫𞥅𞤯𞤲𞤺𞤢𞤤 𞤫 𞤪𞤫𞤴𞤣𞤫 𞤱𞤢𞤤𞥆𞤢.</string>
+    <string name="settings_import_confirm_title">𞤧𞤮𞥅𞤯𞥆𞤵 𞤦𞤢𞤴𞤼𞤢𞤤 𞤶𞤵𞥅𞤤𞤫𞤥?</string>
+    <string name="settings_import_confirm_body">𞤺𞤢𞤽𞥆𞤢 𞤥𞤮𞥅𞤬𞤢𞤤 𞤥𞤢𞥄 𞤣𞤫𞤤𞤫𞥅𞤼𞤫 𞤼𞤢𞤪𞤵𞥅𞤶𞤭 𞤶𞤵𞥅𞤤𞤫𞤥, 𞤶𞤫𞥅𞤩𞤫, 𞤫 𞤶𞤮𞤳𞥆𞤮𞤤 𞤺𞤮𞤯𞤲𞤺𞤮𞤤 𞤶𞤮𞥅𞤲𞤭.</string>
+    <string name="widget_lifetime_label">ylih · 𞤶𞤭𞤲𞤣𞤫</string>
+    <string name="widget_lifetime_description">𞤱𞤢𞤳𞤼𞤵𞥅𞤶𞤭 𞤫 𞤳𞤢𞤤𞤢 𞤶𞤫𞥅𞤩𞤫, 𞤫 𞤱𞤢𞤳𞤼𞤵 𞤱𞤵𞥅𞤪𞤯𞤮 𞤫 𞤳𞤮 𞤧𞤫𞤽𞤢𞥄𞤯𞤫</string>
+    <string name="widget_activity_label">ylih · 𞤺𞤮𞤤𞥆𞤫</string>
+    <string name="widget_activity_description">𞤱𞤢𞤳𞤼𞤵𞥅𞤶𞤭 𞤶𞤫𞥅𞤩𞤫 𞤬𞤮𞤬 𞤫 𞤣𞤫𞤲𞤣𞤢𞥄𞤲𞤺𞤢𞤤, 𞤫 𞤸𞤢𞤲𞤣𞤫, 7 𞤩𞤢𞤤𞤩𞤢𞤷𞥆𞤫 𞤫 30 𞤩𞤢𞤤𞤩𞤢𞤷𞥆𞤫</string>
+    <string name="widget_chart_label">ylih · 30 𞤩𞤢𞤤𞤩𞤢𞤷𞥆𞤫</string>
+    <string name="widget_chart_description">𞤱𞤢𞤳𞤼𞤵𞥅𞤶𞤭 𞤸𞤫𞤯𞤢𞤺𞤮𞤤 𞤩𞤢𞤤𞤩𞤢𞤷𞥆𞤫𞤪𞤫 𞤫 𞤲𞤣𞤫𞤪 𞤤𞤭𞤺𞥆𞤫𞤪𞤫 30 𞤩𞤢𞤤𞤩𞤢𞤷𞥆𞤫</string>
 
     <!-- akaasɓe ngonngal -->
-    <string name="action_save">dilo</string>
-    <string name="action_cancel">duum</string>
-    <string name="action_delete">deleeteeri</string>
-    <string name="action_import">gaŋŋa</string>
+    <string name="action_save">𞤣𞤭𞤤𞤮</string>
+    <string name="action_cancel">𞤣𞤵𞥅𞤥</string>
+    <string name="action_delete">𞤣𞤫𞤤𞤫𞥅𞤼𞤫𞥅𞤪𞤭</string>
+    <string name="action_import">𞤺𞤢𞤽𞥆𞤢</string>
 
     <!-- njuŋŋu -->
-    <string name="channel_tracking">jannginol kaalangal</string>
-    <string name="channel_tracking_description">yeewtina yiɓɓe aylih jannginaa kaalangal jeeɗgal e huulnde. android gaɗa seeɗ jeeɗgal njuŋŋu ɗiɗi njuŋŋitere.</string>
-    <string name="notification_title">jannginol jinde kaalangal</string>
-    <string name="notification_starting">fuɗɗo…</string>
-    <string name="notification_idle">jaŋngal kaalangal</string>
+    <string name="channel_tracking">𞤶𞤢𞤲𞤺𞤭𞤲𞤮𞤤 𞤳𞤢𞥄𞤤𞤢𞤲𞤺𞤢𞤤</string>
+    <string name="channel_tracking_description">𞤴𞤫𞥅𞤱𞤼𞤭𞤲𞤢 𞤴𞤭𞤩𞥆𞤫 ylih 𞤶𞤢𞤲𞤺𞤭𞤲𞤢𞥄 𞤳𞤢𞥄𞤤𞤢𞤲𞤺𞤢𞤤 𞤶𞤫𞥅𞤯𞤺𞤢𞤤 𞤫 𞤸𞤵𞥅𞤤𞤲𞤣𞤫. 𞤢𞤲𞤣𞤪𞤮𞤭𞤣 𞤺𞤢𞤯𞤢 𞤧𞤫𞥅𞤯 𞤶𞤫𞥅𞤯𞤺𞤢𞤤 𞤲𞤶𞤵𞤽𞥆𞤵 𞤯𞤭𞤯𞤭 𞤲𞤶𞤵𞤽𞥆𞤭𞤼𞤫𞤪𞤫.</string>
+    <string name="notification_title">𞤶𞤢𞤲𞤺𞤭𞤲𞤮𞤤 𞤶𞤭𞤲𞤣𞤫 𞤳𞤢𞥄𞤤𞤢𞤲𞤺𞤢𞤤</string>
+    <string name="notification_starting">𞤬𞤵𞤯𞥆𞤮…</string>
+    <string name="notification_idle">𞤶𞤢𞤽𞤲𞤺𞤢𞤤 𞤳𞤢𞥄𞤤𞤢𞤲𞤺𞤢𞤤</string>
     <plurals name="notification_active">
-        <item quantity="one">%1$d seŋaaɗe · %2$s</item>
-        <item quantity="other">%1$d seŋaaɗe · %2$s</item>
+        <item quantity="one">%1$d 𞤧𞤫𞤽𞤢𞥄𞤯𞤫 · %2$s</item>
+        <item quantity="other">%1$d 𞤧𞤫𞤽𞤢𞥄𞤯𞤫 · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
-        <item quantity="one">%1$d seŋaaɗe · %2$s · huulnde</item>
-        <item quantity="other">%1$d seŋaaɗe · %2$s · huulnde</item>
+        <item quantity="one">%1$d 𞤧𞤫𞤽𞤢𞥄𞤯𞤫 · %2$s · 𞤸𞤵𞥅𞤤𞤲𞤣𞤫</item>
+        <item quantity="other">%1$d 𞤧𞤫𞤽𞤢𞥄𞤯𞤫 · %2$s · 𞤸𞤵𞥅𞤤𞤲𞤣𞤫</item>
     </plurals>
 
     <!-- baɓɓe teli -->
-    <string name="detailed_needs_bluetooth">taruuji maa heewu bluetooth jumnitoore haa ko kaalangal jeeɗgal jannginaa</string>
-    <string name="export_done">moofal gollugo</string>
-    <string name="export_failed">gollugo ceffal</string>
-    <string name="import_failed">gaŋŋa ceffal</string>
+    <string name="detailed_needs_bluetooth">𞤼𞤢𞤪𞤵𞥅𞤶𞤭 𞤥𞤢𞥄 𞤸𞤫𞥅𞤱𞤵 bluetooth 𞤶𞤵𞤥𞤲𞤭𞤼𞤮𞥅𞤪𞤫 𞤸𞤢𞥄 𞤳𞤮 𞤳𞤢𞥄𞤤𞤢𞤲𞤺𞤢𞤤 𞤶𞤫𞥅𞤯𞤺𞤢𞤤 𞤶𞤢𞤲𞤺𞤭𞤲𞤢𞥄</string>
+    <string name="export_done">𞤥𞤮𞥅𞤬𞤢𞤤 𞤺𞤮𞤤𞥆𞤵𞤺𞤮</string>
+    <string name="export_failed">𞤺𞤮𞤤𞥆𞤵𞤺𞤮 𞤷𞤫𞤬𞥆𞤢𞤤</string>
+    <string name="import_failed">𞤺𞤢𞤽𞥆𞤢 𞤷𞤫𞤬𞥆𞤢𞤤</string>
     <string name="edit_failed">𞤦𞤵𞤪𞤼𞤮𞤤 𞤥𞤢𞥄 𞤥𞤢𞤪𞤢</string>
-    <string name="error_could_not_open">njuŋŋu baakŋu buɗɗa %1$s</string>
+    <string name="error_could_not_open">𞤲𞤶𞤵𞤽𞥆𞤵 𞤦𞤢𞥄𞤳𞤽𞤵 𞤦𞤵𞤯𞥆𞤢 %1$s</string>
     <plurals name="import_done">
-        <item quantity="one">gaŋŋo %d jokkol</item>
-        <item quantity="other">gaŋŋo %d jokkol</item>
+        <item quantity="one">𞤺𞤢𞤽𞥆𞤮 %d 𞤶𞤮𞤳𞥆𞤮𞤤</item>
+        <item quantity="other">𞤺𞤢𞤽𞥆𞤮 %d 𞤶𞤮𞤳𞥆𞤮𞤤</item>
     </plurals>
 
     <plurals name="session_count">
-        <item quantity="one">%d jokkol</item>
-        <item quantity="other">%d jokkol</item>
+        <item quantity="one">%d 𞤶𞤮𞤳𞥆𞤮𞤤</item>
+        <item quantity="other">%d 𞤶𞤮𞤳𞥆𞤮𞤤</item>
     </plurals>
 </resources>

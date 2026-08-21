@@ -6,181 +6,181 @@
   translate. So is `value_none`, which is an em dash.
 -->
 <resources>
-    <string name="app_title">ylih — сизин һәм дәстә куллану өмірі</string>
+    <string name="app_title">ylih — сизин һәјатыныз гулаглыгларда</string>
 
     <!-- Навигация -->
-    <string name="nav_headphones">наўсыбырлыршы</string>
+    <string name="nav_headphones">гулаглыглар</string>
     <string name="nav_stats">статистика</string>
-    <string name="nav_settings">әйланмәләр</string>
+    <string name="nav_settings">тәнзимләмәләр</string>
 
     <!-- Қосылыш түрләрі -->
     <string name="kind_bluetooth">bluetooth</string>
-    <string name="kind_ble">le audio</string>
-    <string name="kind_wired">сызыңлы</string>
+    <string name="kind_ble">ле аудио</string>
+    <string name="kind_wired">симлә</string>
     <string name="kind_usb">usb</string>
-    <string name="kind_unknown">белгісіз</string>
+    <string name="kind_unknown">билинмир</string>
 
     <!-- Бастапқы іс-әрекет -->
-    <string name="welcome_title">ylih-ә хош келдіңіз</string>
-    <string name="welcome_intro">ylih әр дәстә наўсыбырлыныњ қанше уақыт қосылғалы тұрғанын есептейді, сондықтан келесі жылдардан сіз бір дәстә тура осындай ғана маңызды сұраққа жауап бере аласыз: олар қанше сағат іскерлік істеген?</string>
-    <string name="welcome_point_auto_title">қосы қойға мен ұмыт</string>
-    <string name="welcome_point_auto_body">bluetooth наўсыбырлысы өз-өзінен есептеледі, қосылыс сәттінің өзінен. ешнәрсе жүргіксіз істеу қажет емес.</string>
-    <string name="welcome_point_lifetime_title">бір дәстә, бір өмір</string>
-    <string name="welcome_point_lifetime_body">дәстә ісслі болса, оны зақрытия: оның жиынты бұл жерде тоқталады және сол наўсыбырлыныњ келесі дәстәсі нөлден сәтіліке барлай бастайды.</string>
-    <string name="welcome_point_detailed_title">сызыңлы және ойнау</string>
-    <string name="welcome_point_detailed_body">толық іс-әрекет, әйланмәләрде, сызыңлы наўсыбырлысын қосады және оның қанше уақыты хақылап ойналғанын өлшейді.</string>
-    <string name="welcome_privacy">барлығы осы телефонда қалды. ешқандай есептік емес, және қосынша интернет рұқсаты жоқ.</string>
-    <string name="welcome_start">бастау</string>
+    <string name="welcome_title">ylih-ә хош ҝәлдиниз</string>
+    <string name="welcome_intro">ylih һәр бир гулаглыг ҹүтлүјүнүн гошулу галдығы мүддәти гејд едир ки, илләрдән сонра сиз ҹүтлүк һаггында јеҝанә мүһүм суала ҹаваб верә биләрсиниз: нечә саат хидмәт етдиләр?</string>
+    <string name="welcome_point_auto_title">гошун вә унут</string>
+    <string name="welcome_point_auto_body">bluetooth гулаглыглары автоматик гејд олунур, гошулма анындан башлајараг. һеч нәси ишләмәјә бәһс сахламаға еһтијаҹ јохдур.</string>
+    <string name="welcome_point_lifetime_title">бир ҹүтлүк, бир өмүр</string>
+    <string name="welcome_point_lifetime_body">ҹүтлүк гопмаса, ону арадан галдырын: онун ҹәми орада дондурулур вә ејни гулаглығын сонракы ҹүтлүјү сыфырдан башлајыр.</string>
+    <string name="welcome_point_detailed_title">симлә вә ојнатма</string>
+    <string name="welcome_point_detailed_body">тәнзимләмәләрдә әтрафлы изләмә симлә гулаглыглар әлавә едир вә вахтын нә гәдәринин һәгигәтән ојнатылдығыны өлчүр.</string>
+    <string name="welcome_privacy">һәр шеј бу телефонда галыр. һеч бир һесаб јохдур вә тәтбигин интернет иҹазәси јохдур.</string>
+    <string name="welcome_start">башлајын</string>
     <string name="welcome_next">нөвбәти</string>
     <string name="welcome_allow">иҹазә вер</string>
     <string name="welcome_step">аддым %1$d / %2$d</string>
-    <string name="welcome_bluetooth_title">блуетоотһ ҝиришi</string>
-    <string name="welcome_bluetooth_why">android тәтбигә һансы блуетоотһ ҹиһазынын гошулдуғуну вә адынын нә олдуғуну јалныз тәтбигин блуетоотһ ҝириши варса билдирир. ylih гулаглығы автомобил магнитофонундан, бир ҹүтү диҝәриндән белә ајырыр.</string>
+    <string name="welcome_bluetooth_title">bluetooth ҝириши</string>
+    <string name="welcome_bluetooth_why">андроид тәтбигә һансы bluetooth ҹиһазынын гошулдуғуну вә адынын нә олдуғуну јалныз тәтбигин bluetooth ҝириши варса билдирир. ylih гулаглығы автомобил магнитофонундан, бир ҹүтү диҝәриндән белә ајырыр.</string>
     <string name="welcome_bluetooth_with">ҝириш варса: һәр ҹүт гошулдуғу андан гејд олунур, һеч нәји ишләк сахламаға вә нәјисә басмағы јадда сахламаға еһтијаҹ јохдур.</string>
-    <string name="welcome_bluetooth_without">ҝириш јохдурса: һеч бир блуетоотһ гулаглығы гејд олунмур. тәтбигин галан һиссәси ишләјир вә иҹазәни сонра android-ин тәтбиг ајарларындан верә биләрсиниз.</string>
+    <string name="welcome_bluetooth_without">ҝириш јохдурса: һеч бир bluetooth гулаглығы гејд олунмур. тәтбигин галан һиссәси ишләјир вә иҹазәни сонра андроид-ин тәтбиг ајарларындан верә биләрсиниз.</string>
     <string name="welcome_notifications_title">билдиришләр</string>
-    <string name="welcome_notifications_why">әтрафлы изләмә кичик бир арха фон хидмәти ишләдир вә android буну едән һәр тәтбигдән билдириши ҝөрүнән сахламағы тәләб едир.</string>
+    <string name="welcome_notifications_why">әтрафлы изләмә кичик бир арха фон хидмәти ишләдир вә андроид буну едән һәр тәтбигдән билдириши ҝөрүнән сахламағы тәләб едир.</string>
     <string name="welcome_notifications_with">иҹазә варса: билдириш инди нәјин гејд олундуғуну ҝөстәрир, әтрафлы изләмәнин ишләдијинин јеҝанә әламәти будур.</string>
-    <string name="welcome_notifications_without">иҹазә јохдурса: әтрафлы изләмә јенә ишләјир вә јенә гејд едир. садәҹә android онун билдиришини ҝөстәрмәјәҹәк.</string>
-    <string name="hibernation_title">унутсан да саймаға давам ет</string>
-    <string name="hibernation_body">android бир нечә ай ачылмайан тәтбигләри дайандырыр вә иҹазәләрини ҝери алыр ки, бу да ylih-и сән ону йенидән ачана гәдәр һеч нә гейд етмәйән вәзиййәтә салар. унудулмаг бу тәтбигин вар олмаг сәбәбидир, она ҝөрә дә инди буну деактив етмәйә дәйәр.</string>
-    <string name="action_not_now">инди йох</string>
+    <string name="welcome_notifications_without">иҹазә јохдурса: әтрафлы изләмә јенә ишләјир вә јенә гејд едир. садәҹә андроид онун билдиришини ҝөстәрмәјәҹәк.</string>
+    <string name="hibernation_title">унутсан да сајмаға давам ет</string>
+    <string name="hibernation_body">андроид бир нечә ај ачылмајан тәтбигләри дајандырыр вә иҹазәләрини ҝери алыр ки, бу да ylih-и сән ону јенидән ачана гәдәр һеч нә гејд етмәјән вәзијјәтә салар. унудулмаг бу тәтбигин вар олмаг сәбәбидир, она ҝөрә дә инди буну деактив етмәјә дәјәр.</string>
+    <string name="action_not_now">инди јох</string>
 
     <!-- Наўсыбырлыс тізімі -->
-    <string name="devices_in_use">пайдаланыста</string>
-    <string name="devices_retired">зақрытия</string>
-    <string name="devices_empty_title">әлі наўсыбырлыс жоқ</string>
-    <string name="devices_empty_body">bluetooth наўсыбырлысын қосыңыз және олар мұнда көрінеді. сызыңлы наўсыбырлысы әйланмәләрде толық іс-әрекет қажет.</string>
-    <string name="devices_generation">дәстә №%1$d</string>
-    <string name="devices_retired_on">зақрытия %1$s</string>
-    <string name="devices_connected_for">қосылыс %1$s</string>
-    <string name="devices_recent">%1$s / 7к</string>
+    <string name="devices_in_use">истифадәдә</string>
+    <string name="devices_retired">арадан галдырылды</string>
+    <string name="devices_empty_title">һәлә гулаглыг јохдур</string>
+    <string name="devices_empty_body">bluetooth гулаглыг ҹүтлүјүнү гошун вә бурада ҝөрүнәҹәкләр. симлә гулаглыглар тәнзимләмәләрдә әтрафлы изләмәни тәләб едир.</string>
+    <string name="devices_generation">ҹүтлүк #%1$d</string>
+    <string name="devices_retired_on">арадан галдырылды %1$s</string>
+    <string name="devices_connected_for">гошулу %1$s</string>
+    <string name="devices_recent">%1$s / 7ҝ</string>
 
     <!-- Статистика -->
-    <string name="stats_title">барлық наўсыбырлыс</string>
-    <string name="stats_sessions_since">%1$s %2$s-тан</string>
+    <string name="stats_title">бүтүн гулаглыглар</string>
+    <string name="stats_sessions_since">%1$s %2$s-дән етибарән</string>
     <string name="stats_today">бу ҝүн</string>
     <string name="stats_yesterday">дүнән</string>
-    <string name="stats_last_7">соңғы 7 күн</string>
-    <string name="stats_last_30">соңғы 30 күн</string>
-    <string name="stats_average_session">орташа сеанс</string>
+    <string name="stats_last_7">сон 7 ҝүн</string>
+    <string name="stats_last_30">сон 30 ҝүн</string>
+    <string name="stats_average_session">орта сеанс</string>
     <string name="stats_longest_session">ән узун сеанс</string>
     <string name="stats_playing">сәс охунур</string>
     <string name="stats_measured_span">охутма үчүн өлчүлүб</string>
-    <string name="stats_share">охутма пайы</string>
-    <string name="stats_playback_only_note">тәкҹә охутма вахты сајылыр</string>
-    <string name="stats_daily_hours_30">күндік сағат (30 күн)</string>
-    <string name="stats_by_pair">дәстә бойынша</string>
+    <string name="stats_share">охутма пајы</string>
+    <string name="stats_playback_only_note">јалныз охутма вахты сајылыр</string>
+    <string name="stats_daily_hours_30">ҝүнлүк саатлар (30 ҝүн)</string>
+    <string name="stats_by_pair">ҹүтлүјә ҝөрә</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
-    <string name="stats_pair_row_retired">%1$s · %2$s · зақрытия</string>
-    <string name="chart_max">макс %1$s</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · арадан галдырылды</string>
+    <string name="chart_max">макс. %1$s</string>
 
     <!-- Дәстә ішінді -->
-    <string name="pair_fallback_title">дәстә</string>
-    <string name="pair_back">артқа</string>
-    <string name="pair_more">тағы</string>
-    <string name="pair_menu_rename">қайта аталау</string>
-    <string name="pair_menu_purchase">сатып алу ақпараты</string>
-    <string name="pair_menu_retire">зақрытия / ауыстырты</string>
-    <string name="pair_menu_delete">өшіру</string>
-    <string name="pair_lifetime">бұл дәстәнің өмірі</string>
-    <string name="pair_retired_on">зақрытия %1$s</string>
-    <string name="pair_retired_with_reason">зақрытия %1$s · %2$s</string>
-    <string name="pair_connected_now">қазі қосылған · %1$s</string>
-    <string name="pair_sessions">сеанстар</string>
-    <string name="pair_average">орташа</string>
-    <string name="pair_longest">ең ұзақ</string>
+    <string name="pair_fallback_title">ҹүтлүк</string>
+    <string name="pair_back">ҝери</string>
+    <string name="pair_more">даһа чох</string>
+    <string name="pair_menu_rename">адыны дәјиш</string>
+    <string name="pair_menu_purchase">сатын алма мәлуматы</string>
+    <string name="pair_menu_retire">арадан галдыр / дәјишдирилди</string>
+    <string name="pair_menu_delete">сил</string>
+    <string name="pair_lifetime">бу ҹүтлүјүн өмрү</string>
+    <string name="pair_retired_on">арадан галдырылды %1$s</string>
+    <string name="pair_retired_with_reason">арадан галдырылды %1$s · %2$s</string>
+    <string name="pair_connected_now">инди гошулу · %1$s</string>
+    <string name="pair_sessions">сеанслар</string>
+    <string name="pair_average">орта</string>
+    <string name="pair_longest">ән узун</string>
     <string name="pair_since">%1$s-дән бәри</string>
-    <string name="pair_of_measured">охутма пайы</string>
+    <string name="pair_of_measured">охутма пајы</string>
     <string name="pair_measured">охутма үчүн өлчүлүб</string>
-    <string name="pair_paid">төленді</string>
-    <string name="pair_per_hour">сағатына</string>
-    <string name="pair_bought">сатып алынды</string>
-    <string name="pair_daily_hours_14">күндік сағат (14 күн)</string>
-    <string name="pair_rename_title">дәстәнің атын қайта аталау</string>
-    <string name="pair_rename_label">ата</string>
-    <string name="pair_retire_title">бұл дәстәнің зақрытия</string>
-    <string name="pair_retire_label">себебі (сынды, сатты, жоғалтты…)</string>
-    <string name="pair_retire_confirm">зақрытия</string>
-    <string name="pair_retire_supporting">жиынты мұнда тоқталады. сол құрылғыны қайта қосу нөлінен жаңа дәстә бастайды.</string>
-    <string name="pair_price_title">төленген баға</string>
-    <string name="pair_price_label">сома (бүтін бірліктер)</string>
-    <string name="pair_price_supporting">сағатына құны есептеу үшін пайдаланылады.</string>
-    <string name="pair_delete_title">бұл дәстәнің өшіру?</string>
-    <string name="pair_delete_body">оның барлық есептелген сеанстары да өшіріледі. бұнь қайтарылмайтын.</string>
+    <string name="pair_paid">өдәнилди</string>
+    <string name="pair_per_hour">саат башына</string>
+    <string name="pair_bought">сатын алынды</string>
+    <string name="pair_daily_hours_14">ҝүнлүк саатлар (14 ҝүн)</string>
+    <string name="pair_rename_title">ҹүтлүјү адландыр</string>
+    <string name="pair_rename_label">ад</string>
+    <string name="pair_retire_title">бу ҹүтлүјү арадан галдыр</string>
+    <string name="pair_retire_label">сәбәб (гопмады, сатылды, итилди…)</string>
+    <string name="pair_retire_confirm">арадан галдыр</string>
+    <string name="pair_retire_supporting">ҹәмләр бурада дондурулур. ејни ҹиһазын јенидән гошулмасы сыфырдан јени бир ҹүтлүк башлајыр.</string>
+    <string name="pair_price_title">өдәнилән гијмәт</string>
+    <string name="pair_price_label">мәбләғ (там ваһидләр)</string>
+    <string name="pair_price_supporting">саат башына хәрҹ һесабланмасы үчүн истифадә олунур.</string>
+    <string name="pair_delete_title">бу ҹүтлүјү силмәк истәјирсиниз?</string>
+    <string name="pair_delete_body">онун үчүн гејд едилмиш бүтүн сеанслар да силинир. бу ҝери алына билинмәз.</string>
 
     <!-- Сеанс қатарлары -->
-    <string name="session_ongoing">ағымды</string>
-    <string name="session_until">%1$s-ге дейін</string>
-    <string name="session_playing">%1$s ойнау</string>
-    <string name="session_recovered">қалпына келтірілді</string>
+    <string name="session_ongoing">давам едир</string>
+    <string name="session_until">%1$s-ә гәдәр</string>
+    <string name="session_playing">%1$s ојнатылыб</string>
+    <string name="session_recovered">бәрпа едилди</string>
 
     <!-- Әйланмәләр -->
-    <string name="settings_tracking">іс-әрекет</string>
-    <string name="settings_detailed_title">толық іс-әрекет</string>
-    <string name="settings_detailed_body">сызыңлы наўсыбырлысын және ойнау уақытын қосады. android сызыңлы қосылу оқиғаларын тек ұстағы қосынша құлға хабарлайды, сондықтан қіл сілтеме құсында құлайды. bluetooth кез келген жағдайда іс-әрекет.</string>
-    <string name="settings_detailed_unavailable">bluetooth қосынша берілгенге дейін қолжетімсіз: бұл құрылым connectedDevice қызмет түрін ғана жариялайды, android 14+ оны bluetooth рұқсатына байланыстырады.</string>
-    <string name="settings_playback_only_title">тәкҹә охутманы сај</string>
-    <string name="settings_playback_only_body">статистика гошулма вахты јеринә сәсин һәгигәтән охундуғу вахты сајыр. тәкҹә әтрафлы изләмә ачыг икән гејдә алынан сессијалар охутманы өлчүб; галанлары чыхарылыр.</string>
+    <string name="settings_tracking">изләмә</string>
+    <string name="settings_detailed_title">әтрафлы изләмә</string>
+    <string name="settings_detailed_body">симлә гулаглыглар вә ојнатма вахтыны әлавә едир. андроид симлә гошулма һадисәләрини јалныз ишләјән бир тәтбигә билдирәр, буна ҝөрә дә билдиришләр шкалатосу сакит галыр. bluetooth һәр һалда изләнир.</string>
+    <string name="settings_detailed_unavailable">bluetooth иҹазәси вериләнә гәдәр мөвҹуд дејил: бу гурғу јалныз ҹоннеҹтедДевиҹе хидмәт типини елан едир, андроид 14+ буну bluetooth иҹазәсинә бағлајыр.</string>
+    <string name="settings_playback_only_title">јалныз охутманы сај</string>
+    <string name="settings_playback_only_body">статистика гошулма вахты әвәзинә сәсин һәгигәтән охундуғу вахты сајыр. јалныз әтрафлы изләмә ачыг икән гејдә алынан сессијалар охутманы өлчүб; галанлары чыхарылыр.</string>
     <string name="settings_language">дил</string>
     <string name="settings_language_system">систем дили</string>
-    <string name="settings_devices">құрылғылар</string>
-    <string name="settings_devices_body">наўсыбырлыс емес нәрселерді - автомобиль немесе динамик - құсылып есептеуін тоқтату үшін табында орнатпау.</string>
-    <string name="settings_device_subtitle">%1$s · бірінші рет көрінді %2$s</string>
-    <string name="settings_data">деректер</string>
-    <string name="settings_export">экспорт json</string>
-    <string name="settings_import">импорт</string>
-    <string name="settings_import_warning">импорт қазі сақталғанның барлығын ауысырады.</string>
-    <string name="settings_troubleshooting">жараққа шешу</string>
-    <string name="settings_battery_body">сеанстар есептелінуді тоқтатса, ylih батарея оңайтығынан босатылғанын қараңыз — әлеуметті тоқтатылған құсынша оны ашқанша қосылу оқиғаларын ала алмайды.</string>
-    <string name="settings_battery_button">батарея әйланмәләрі</string>
-    <string name="settings_battery_path">әйланмәләр → құсыншалар → ylih → батарея → шектеулегі емес.</string>
-    <string name="settings_hibernation_body">ylih бир нечә ай ачылмадан галарса, android ону дайандырыр вә иҹазәләрини ҝери алыр, сән ачана гәдәр һеч нә йенидән гейд олунмур. буну деактив етмәк ҹүтлүйүн тәтбиг һаггында дүшүнмәдийин бир мөвсүм бойу саймаға давам етмәсинә имкан верир.</string>
-    <string name="settings_hibernation_on">android ylih-и дайандыра биләр.</string>
-    <string name="settings_hibernation_off">ylih истисна едилиб вә гейдә алмаға давам едир.</string>
-    <string name="settings_hibernation_button">истифадә едилмәйән тәтбиг айарлары</string>
-    <string name="settings_about">туралы</string>
-    <string name="settings_about_body">ylih %1$s (%2$s) — наўсыбырлыс сағаттары, ішінде сақталды және әрқашан.</string>
-    <string name="settings_import_confirm_title">барлық деректерді ауысыру?</string>
-    <string name="settings_import_confirm_body">бұл дайындыктың импорты қазі сақталған әрбір құрылғыны, дәстәнің және сеансты өшіреді.</string>
+    <string name="settings_devices">ҹиһазлар</string>
+    <string name="settings_devices_body">гулаглыг олмајан һеч нә — автомобил стереосистеми вә ја акустик — гејд етмәји дајандырмаг үчүн ишарәсини чыхарын.</string>
+    <string name="settings_device_subtitle">%1$s · илк ҝөрүлмә %2$s</string>
+    <string name="settings_data">мәлуматлар</string>
+    <string name="settings_export">жсон-ә ихраҹ ет</string>
+    <string name="settings_import">идхал ет</string>
+    <string name="settings_import_warning">идхал һазырда сахланылан һәр шеји әвәз едир.</string>
+    <string name="settings_troubleshooting">проbleмин арадан галдырылмасы</string>
+    <string name="settings_battery_body">сеанслар гејд олунмағы дајандырса, ylih-ин батареја оптималлашдырмасындан истисна едилдијинә әмин олун — мәҹбури олараг дајандырылмыш тәтбиг ачылана гәдәр гошулма һадисәләрини алмыр.</string>
+    <string name="settings_battery_button">батареја тәнзимләмәләри</string>
+    <string name="settings_battery_path">тәнзимләмәләр → тәтбигләр → ylih → батареја → сынырламадан азад.</string>
+    <string name="settings_hibernation_body">ylih бир нечә ај ачылмадан галарса, андроид ону дајандырыр вә иҹазәләрини ҝери алыр, сән ачана гәдәр һеч нә јенидән гејд олунмур. буну деактив етмәк ҹүтлүјүн тәтбиг һаггында дүшүнмәдијин бир мөвсүм боју сајмаға давам етмәсинә имкан верир.</string>
+    <string name="settings_hibernation_on">андроид ylih-и дајандыра биләр.</string>
+    <string name="settings_hibernation_off">ylih истисна едилиб вә гејдә алмаға давам едир.</string>
+    <string name="settings_hibernation_button">истифадә едилмәјән тәтбиг ајарлары</string>
+    <string name="settings_about">һаггында</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — гулаглыгда саатлар, мәркәзи шәкилдә вә әбәди сахланылыр.</string>
+    <string name="settings_import_confirm_title">бүтүн мәлуматлары әвәз етмәк истәјирсиниз?</string>
+    <string name="settings_import_confirm_body">бу еһтијат нүсхәсини идхал етмәк һазырда сахланылан һәр бир ҹиһазы, ҹүтлүјү вә сеансу силир.</string>
     <string name="widget_lifetime_label">ylih · өмүр</string>
-    <string name="widget_lifetime_description">һәр дәст үчүн саатлар, гошулу олана ҹанлы сајғаҹ</string>
+    <string name="widget_lifetime_description">һәр ҹүт үчүн саатлар, гошулу олана ҹанлы сајғаҹ</string>
     <string name="widget_activity_label">ylih · фәалијјәт</string>
-    <string name="widget_activity_description">бүтүн дәстләрин саатлары бирликдә, бу ҝүн, 7 күн вә 30 күн</string>
-    <string name="widget_chart_label">ylih · 30 күн</string>
-    <string name="widget_chart_description">соңғы 30 күн әрзиндә ҝүндәлик динләмә саатлары</string>
+    <string name="widget_activity_description">бүтүн ҹүтләрин саатлары бирликдә, үстәҝәл бу ҝүн, 7 ҝүн вә 30 ҝүн</string>
+    <string name="widget_chart_label">ylih · 30 ҝүн</string>
+    <string name="widget_chart_description">сон 30 ҝүн әрзиндә ҝүндәлик динләмә саатлары</string>
 
     <!-- Ортақ әрекеттер -->
-    <string name="action_save">сақтау</string>
-    <string name="action_cancel">болдыру</string>
-    <string name="action_delete">өшіру</string>
-    <string name="action_import">импорт</string>
+    <string name="action_save">сахла</string>
+    <string name="action_cancel">ләғв ет</string>
+    <string name="action_delete">сил</string>
+    <string name="action_import">идхал ет</string>
 
     <!-- Сілтеме -->
-    <string name="channel_tracking">наўсыбырлыс іс-әрекеті</string>
-    <string name="channel_tracking_description">ylih сызыңлы наўсыбырлысы және ойнауды бақылағанда көрсетіледі. android сызыңлы қосылу оқиғаларын іскеленбеген құсыншалыға хабарламайды.</string>
-    <string name="notification_title">наўсыбырлыс уақытын іс-әрекет</string>
-    <string name="notification_starting">бастау…</string>
-    <string name="notification_idle">наўсыбырлысты күте</string>
+    <string name="channel_tracking">гулаглыг изләмәси</string>
+    <string name="channel_tracking_description">ylih симлә гулаглыглары вә ојнатмајы изләјәркән ҝөстәрилир. андроид симлә гошулма һадисәләрини ишләмәјән тәтбигә билдирмир.</string>
+    <string name="notification_title">гулаглыг вахтыны изләмә</string>
+    <string name="notification_starting">башладылыр…</string>
+    <string name="notification_idle">гулаглыглар үчүн ҝөзләмә</string>
     <plurals name="notification_active">
-        <item quantity="one">%1$d қосылды · %2$s</item>
-        <item quantity="other">%1$d қосылды · %2$s</item>
+        <item quantity="one">%1$d гошулу · %2$s</item>
+        <item quantity="other">%1$d гошулу · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
-        <item quantity="one">%1$d қосылды · %2$s · ойнау</item>
-        <item quantity="other">%1$d қосылды · %2$s · ойнау</item>
+        <item quantity="one">%1$d гошулу · %2$s · ојнатма</item>
+        <item quantity="other">%1$d гошулу · %2$s · ојнатма</item>
     </plurals>
 
     <!-- Сообщәстер -->
-    <string name="detailed_needs_bluetooth">бұл құрылым сызыңлы наўсыбырлысын іс-әрекет істету үшін bluetooth қосынша қажет</string>
-    <string name="export_done">дайындық экспорттала</string>
-    <string name="export_failed">экспорт сәтсіз болды</string>
-    <string name="import_failed">импорт сәтсіз болды</string>
+    <string name="detailed_needs_bluetooth">бу гурғу симлә гулаглыглары изләмәси үчүн bluetooth иҹазәсинә еһтијаҹ дујур</string>
+    <string name="export_done">еһтијат нүсхә ихраҹ едилди</string>
+    <string name="export_failed">ихраҹ уғурсуз олду</string>
+    <string name="import_failed">идхал уғурсуз олду</string>
     <string name="edit_failed">дәјишиклик сахланылмады</string>
-    <string name="error_could_not_open">ашу мүмкін емес %1$s</string>
+    <string name="error_could_not_open">%1$s ачыла билмәди</string>
     <plurals name="import_done">
-        <item quantity="one">импорттала %d сеанс</item>
-        <item quantity="other">импорттала %d сеанс</item>
+        <item quantity="one">%d сеанс идхал едилди</item>
+        <item quantity="other">%d сеанс идхал едилди</item>
     </plurals>
 
     <plurals name="session_count">
