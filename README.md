@@ -2,7 +2,7 @@
 
 An Android app that records how long your headphones stay connected, so that months later you
 can answer the only question that matters about a pair of headphones: **how many hours did they
-last before they died?**
+last before they broke?**
 
 Every connection is stored forever, locally. Nothing leaves the phone.
 
