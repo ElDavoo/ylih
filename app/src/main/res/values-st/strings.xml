@@ -6,7 +6,7 @@
   translate. So is `value_none`, which is an em dash.
 -->
 <resources>
-    <string name="app_title">ylih - bophelo ba hao ka har\'a lihlooho tsa molumo</string>
+    <string name="app_title">ylih - bophelo ba hao ka har’a lihlooho tsa molumo</string>
 
     <string name="nav_headphones">lihlooho tsa molumo</string>
     <string name="nav_stats">lipalopalo</string>
@@ -19,34 +19,34 @@
     <string name="kind_unknown">ha e tsejoe</string>
 
     <string name="welcome_title">rea u amohela ho ylih</string>
-    <string name="welcome_intro">ylih e ngola hore na para e \'ngoe le e \'ngoe ea lihlooho tsa molumo e lula e hokahane nako e kae, hore lilemo tse tlang u ntse u khona ho araba potso e le \'ngoe ea bohlokoa ka para: e phelile lihora tse kae?</string>
+    <string name="welcome_intro">ylih e ngola hore na para e ’ngoe le e ’ngoe ea lihlooho tsa molumo e lula e hokahane nako e kae, hore lilemo tse tlang u ntse u khona ho araba potso e le ’ngoe ea bohlokoa ka para: e phelile lihora tse kae?</string>
     <string name="welcome_point_auto_title">hokahanya ebe ua lebala</string>
     <string name="welcome_point_auto_body">lihlooho tsa molumo tsa bluetooth li ngoloa ka botsona, ho tloha motsotsong oo li hokahanang. ha ho letho le lokelang ho siuoa le sebetsa.</string>
-    <string name="welcome_point_lifetime_title">para e le \'ngoe, bophelo bo le bong</string>
-    <string name="welcome_point_lifetime_body">ha para e senyeha, e behe phomolong: kakaretso ea eona e ema moo \'me para e latelang ea lihlooho tse tšoanang e qala hape ho tloha ho zero.</string>
+    <string name="welcome_point_lifetime_title">para e le ’ngoe, bophelo bo le bong</string>
+    <string name="welcome_point_lifetime_body">ha para e senyeha, e behe phomolong: kakaretso ea eona e ema moo ’me para e latelang ea lihlooho tse tšoanang e qala hape ho tloha ho zero.</string>
     <string name="welcome_point_detailed_title">terata le ho bapala</string>
-    <string name="welcome_point_detailed_body">ho latela ka botlalo, litlhophisong, ho eketsa lihlooho tsa terata \'me ho lekanya hore na nako eo e bapetse hakae hantle.</string>
-    <string name="welcome_privacy">ntho e \'ngoe le e \'ngoe e lula fonong ena. ha ho na akhaonto, \'me app ha e na tumello ea inthanete.</string>
+    <string name="welcome_point_detailed_body">ho latela ka botlalo, litlhophisong, ho eketsa lihlooho tsa terata ’me ho lekanya hore na nako eo e bapetse hakae hantle.</string>
+    <string name="welcome_privacy">ntho e ’ngoe le e ’ngoe e lula fonong ena. ha ho na akhaonto, ’me app ha e na tumello ea inthanete.</string>
     <string name="welcome_start">qala</string>
     <string name="welcome_next">e latelang</string>
     <string name="welcome_allow">lumella</string>
     <string name="welcome_step">mohato oa %1$d ho %2$d</string>
     <string name="welcome_bluetooth_title">phihlello ea bluetooth</string>
-    <string name="welcome_bluetooth_why">android e bolella app hore na ke sesebelisoa sefe sa bluetooth se hokahaneng, le hore na se bitsoa\'ng, feela haeba app e na le phihlello ea bluetooth. ke kamoo ylih e khethollang para ea lihlooho ho radio ea koloi, le kamoo e tsebang para e \'ngoe ho e \'ngoe.</string>
-    <string name="welcome_bluetooth_with">ka eona: para e \'ngoe le e \'ngoe e ngoloa ho tloha motsotsong oo e hokahanang, ho se letho le siuoang le sebetsa le ho se letho leo u lokelang ho le hopola ho le tobetsa.</string>
-    <string name="welcome_bluetooth_without">ntle le eona: ha ho lihlooho tsa bluetooth tse ngoloang. karolo e \'ngoe ea app e ntse e sebetsa, \'me u ka e fana hamorao litlhophisong tsa li-app tsa android.</string>
+    <string name="welcome_bluetooth_why">android e bolella app hore na ke sesebelisoa sefe sa bluetooth se hokahaneng, le hore na se bitsoa’ng, feela haeba app e na le phihlello ea bluetooth. ke kamoo ylih e khethollang para ea lihlooho ho radio ea koloi, le kamoo e tsebang para e ’ngoe ho e ’ngoe.</string>
+    <string name="welcome_bluetooth_with">ka eona: para e ’ngoe le e ’ngoe e ngoloa ho tloha motsotsong oo e hokahanang, ho se letho le siuoang le sebetsa le ho se letho leo u lokelang ho le hopola ho le tobetsa.</string>
+    <string name="welcome_bluetooth_without">ntle le eona: ha ho lihlooho tsa bluetooth tse ngoloang. karolo e ’ngoe ea app e ntse e sebetsa, ’me u ka e fana hamorao litlhophisong tsa li-app tsa android.</string>
     <string name="welcome_notifications_title">litsebiso</string>
-    <string name="welcome_notifications_why">ho latela ka botlalo ho tsamaisa tšebeletso e nyenyane ea ka morao, \'me android e hloka hore app efe kapa efe e etsang joalo e boloke tsebiso e bonahalang nakong eo.</string>
+    <string name="welcome_notifications_why">ho latela ka botlalo ho tsamaisa tšebeletso e nyenyane ea ka morao, ’me android e hloka hore app efe kapa efe e etsang joalo e boloke tsebiso e bonahalang nakong eo.</string>
     <string name="welcome_notifications_with">ka tsona: tsebiso e bontša se ngoloang hona joale, e leng letšoao le le leng feela la hore ho latela ka botlalo hoa phela.</string>
     <string name="welcome_notifications_without">ntle le tsona: ho latela ka botlalo ho ntse ho sebetsa ebile ho ntse ho ngola. android feela e ke ke ea bontša tsebiso ea eona.</string>
     <string name="hibernation_title">e tsoela pele ho bala ha u ntse u lebetse</string>
-    <string name="hibernation_body">android e emisa li-app tse sa buloang ka likhoeli tse \'maloa \'me e nka litumello tsa tsona, se ka siang ylih e sa ngole letho ho fihlela u e bula hape. ho lebaloa ke sona sepheo sa app ena, kahoo hoa loka ho tima seo hona joale.</string>
+    <string name="hibernation_body">android e emisa li-app tse sa buloang ka likhoeli tse ’maloa ’me e nka litumello tsa tsona, se ka siang ylih e sa ngole letho ho fihlela u e bula hape. ho lebaloa ke sona sepheo sa app ena, kahoo hoa loka ho tima seo hona joale.</string>
     <string name="action_not_now">eseng hona joale</string>
 
     <string name="devices_in_use">li sebelisoa</string>
     <string name="devices_retired">li behiloe phomolong</string>
     <string name="devices_empty_title">ha ho lihlooho tsa molumo</string>
-    <string name="devices_empty_body">hokahanya para ea lihlooho tsa bluetooth \'me li tla hlaha mona. lihlooho tsa terata li hloka ho latela ka botlalo, litlhophisong.</string>
+    <string name="devices_empty_body">hokahanya para ea lihlooho tsa bluetooth ’me li tla hlaha mona. lihlooho tsa terata li hloka ho latela ka botlalo, litlhophisong.</string>
     <string name="devices_generation">para #%1$d</string>
     <string name="devices_retired_on">e behiloe phomolong %1$s</string>
     <string name="devices_connected_for">e hokahane %1$s</string>
@@ -126,9 +126,9 @@
     <string name="settings_battery_body">haeba liboka li khaotsa ho ngoloa, hlahloba hore na ylih e lokolotsoe ho ntlafatso ea betri — app e qobelletsoeng ho ema ha e sa amohela likhaso tsa khokahano ho fihlela e buloa.</string>
     <string name="settings_battery_button">litlhophiso tsa betri</string>
     <string name="settings_battery_path">litlhophiso → li-app → ylih → betri → ha e thibeloe.</string>
-    <string name="settings_hibernation_body">haeba ylih e sa buloe ka likhoeli tse \'maloa, android e emisa \'me e nka litumello tsa eona, \'me ha ho letho le ngoloang hape ho fihlela u e bula. ho tima seo ke sona se lumellang para ho tsoela pele ho bala nakong eohle eo u sa nahaneng ka app.</string>
+    <string name="settings_hibernation_body">haeba ylih e sa buloe ka likhoeli tse ’maloa, android e emisa ’me e nka litumello tsa eona, ’me ha ho letho le ngoloang hape ho fihlela u e bula. ho tima seo ke sona se lumellang para ho tsoela pele ho bala nakong eohle eo u sa nahaneng ka app.</string>
     <string name="settings_hibernation_on">android e ka emisa ylih.</string>
-    <string name="settings_hibernation_off">ylih e lokolotsoe \'me e tsoela pele ho ngola.</string>
+    <string name="settings_hibernation_off">ylih e lokolotsoe ’me e tsoela pele ho ngola.</string>
     <string name="settings_hibernation_button">litlhophiso tsa li-app tse sa sebelisoeng</string>
     <string name="settings_about">mabapi le</string>
     <string name="settings_about_body">ylih %1$s (%2$s) — lihora tsa lihlooho tsa molumo, li bolokiloe mona le ka ho sa feleng.</string>
