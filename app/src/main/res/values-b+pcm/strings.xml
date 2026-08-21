@@ -14,9 +14,9 @@
 
     <string name="kind_bluetooth">bluetooth</string>
     <string name="kind_ble">le audio</string>
-    <string name="kind_wired">wired</string>
+    <string name="kind_wired">wey get wire</string>
     <string name="kind_usb">usb</string>
-    <string name="kind_unknown">unknown</string>
+    <string name="kind_unknown">we no sabi</string>
 
     <string name="welcome_title">welcome to ylih</string>
     <string name="welcome_intro">ylih na keep track how long each pair of headphones stay connect, so after years you still go fit answer the only question wey matter about one pair: how many hours dem last?</string>
@@ -27,7 +27,7 @@
     <string name="welcome_point_detailed_title">wire and playback</string>
     <string name="welcome_point_detailed_body">detailed tracking, for settings, add wired headphones and measure how much time wey actually play.</string>
     <string name="welcome_privacy">everything stay for this phone. no account, and the app no get internet permission.</string>
-    <string name="welcome_start">get started</string>
+    <string name="welcome_start">make we start</string>
     <string name="welcome_next">next</string>
     <string name="welcome_allow">allow</string>
     <string name="welcome_step">step %1$d for %2$d</string>
@@ -41,18 +41,18 @@
     <string name="welcome_notifications_without">without am: detailed tracking still run and still record. android just no go show the notification.</string>
     <string name="hibernation_title">keep counting while you forget about am</string>
     <string name="hibernation_body">android go pause app wey no open for some months and take back their permissions, which go make ylih record nothing until you open am again. being forgot na exactly wetin this app for, so na good thing to turn that off now.</string>
-    <string name="action_not_now">not now</string>
+    <string name="action_not_now">no be now</string>
 
-    <string name="devices_in_use">in use</string>
-    <string name="devices_retired">retired</string>
+    <string name="devices_in_use">dey use am</string>
+    <string name="devices_retired">don retire</string>
     <string name="devices_empty_title">no headphone yet</string>
     <string name="devices_empty_body">connect one pair of bluetooth headphones and dem go show up here. wired headphones need detailed tracking, for settings.</string>
     <string name="devices_generation">pair #%1$d</string>
-    <string name="devices_retired_on">retired %1$s</string>
-    <string name="devices_connected_for">connected %1$s</string>
+    <string name="devices_retired_on">retire %1$s</string>
+    <string name="devices_connected_for">connect %1$s</string>
     <string name="devices_recent">%1$s / 7d</string>
 
-    <string name="stats_title">all headphones</string>
+    <string name="stats_title">all di headphones</string>
     <string name="stats_sessions_since">%1$s since %2$s</string>
     <string name="stats_today">today</string>
     <string name="stats_yesterday">yẹ́stadè</string>
@@ -60,62 +60,62 @@
     <string name="stats_last_30">last 30 days</string>
     <string name="stats_average_session">average session</string>
     <string name="stats_longest_session">longest session</string>
-    <string name="stats_playing">audio playing</string>
+    <string name="stats_playing">audio dey play</string>
     <string name="stats_measured_span">dem measure am for playback</string>
-    <string name="stats_share">playing share</string>
+    <string name="stats_share">how much e play</string>
     <string name="stats_playback_only_note">e dey count playback time only</string>
     <string name="stats_daily_hours_30">hours every day (30 days)</string>
-    <string name="stats_by_pair">by pair</string>
+    <string name="stats_by_pair">as pair</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
     <string name="stats_pair_row_retired">%1$s · %2$s · retire</string>
     <string name="chart_max">%1$s max</string>
 
     <string name="pair_fallback_title">pair</string>
-    <string name="pair_back">back</string>
+    <string name="pair_back">go back</string>
     <string name="pair_more">more</string>
     <string name="pair_menu_rename">rename</string>
-    <string name="pair_menu_purchase">purchase info</string>
+    <string name="pair_menu_purchase">buying info</string>
     <string name="pair_menu_retire">retire / don change am</string>
     <string name="pair_menu_delete">delete</string>
     <string name="pair_lifetime">how long dis pair don last</string>
-    <string name="pair_retired_on">retired %1$s</string>
+    <string name="pair_retired_on">retire %1$s</string>
     <string name="pair_retired_with_reason">retire %1$s · %2$s</string>
     <string name="pair_connected_now">connect now · %1$s</string>
     <string name="pair_sessions">sessions</string>
     <string name="pair_average">average</string>
     <string name="pair_longest">longest</string>
     <string name="pair_since">since %1$s</string>
-    <string name="pair_of_measured">playing share</string>
+    <string name="pair_of_measured">how much e play</string>
     <string name="pair_measured">dem measure am for playback</string>
-    <string name="pair_paid">paid</string>
+    <string name="pair_paid">wetin you pay</string>
     <string name="pair_per_hour">per hour</string>
-    <string name="pair_bought">bought</string>
+    <string name="pair_bought">when you buy am</string>
     <string name="pair_daily_hours_14">hours every day (14 days)</string>
-    <string name="pair_rename_title">rename pair</string>
+    <string name="pair_rename_title">change di pair name</string>
     <string name="pair_rename_label">name</string>
     <string name="pair_retire_title">retire dis pair</string>
     <string name="pair_retire_label">wetin happen (e spoil, dem sell am, e lost…)</string>
     <string name="pair_retire_confirm">retire</string>
     <string name="pair_retire_supporting">di total go stop here. if you connect di same device again, new pair go start from zero.</string>
-    <string name="pair_price_title">price paid</string>
+    <string name="pair_price_title">price wey you pay</string>
     <string name="pair_price_label">amount (full units)</string>
     <string name="pair_price_supporting">dem dey use am take find cost for each hour.</string>
     <string name="pair_delete_title">comot dis pair?</string>
     <string name="pair_delete_body">every session wey dem record for am go comot too. you no fit undo dis one.</string>
 
-    <string name="session_ongoing">ongoing</string>
-    <string name="session_until">until %1$s</string>
-    <string name="session_playing">%1$s playing</string>
-    <string name="session_recovered">recovered</string>
+    <string name="session_ongoing">e still dey go</string>
+    <string name="session_until">till %1$s</string>
+    <string name="session_playing">%1$s dey play</string>
+    <string name="session_recovered">dem recover am</string>
 
     <string name="settings_tracking">tracking</string>
     <string name="settings_detailed_title">detailed tracking</string>
     <string name="settings_detailed_body">e dey add wired headphone and playback time. android dey tell only app wey dey run about wire plug, so dis one dey keep quiet notification for di shade. bluetooth dey track anyhow.</string>
     <string name="settings_detailed_unavailable">e no dey available until you give bluetooth access: dis build only dey declare connectedDevice service type, wey android 14+ tie to bluetooth permission.</string>
-    <string name="settings_playback_only_title">count only playback</string>
+    <string name="settings_playback_only_title">count only wetin play</string>
     <string name="settings_playback_only_body">stats dey count di time wey audio really dey play instead of di time wey e connect. na only session wey dem record wen detailed tracking dey on measure playback; di rest dem leave am out.</string>
     <string name="settings_language">language</string>
-    <string name="settings_language_system">system language</string>
+    <string name="settings_language_system">di system language</string>
     <string name="settings_devices">devices</string>
     <string name="settings_devices_body">remove tick from anything wey no be headphone — car stereo abi speaker — make e stop to record am.</string>
     <string name="settings_device_subtitle">%1$s · first see am %2$s</string>
@@ -123,7 +123,7 @@
     <string name="settings_export">export json</string>
     <string name="settings_import">import</string>
     <string name="settings_import_warning">to import go replace everything wey dey save now.</string>
-    <string name="settings_troubleshooting">troubleshooting</string>
+    <string name="settings_troubleshooting">how to fix wahala</string>
     <string name="settings_battery_body">if session stop to dey record, check whether ylih dey exempt from battery optimisation — app wey dem force stop no dey collect connection tori again until you open am.</string>
     <string name="settings_battery_button">battery settings</string>
     <string name="settings_battery_path">settings → apps → ylih → battery → no restriction.</string>
@@ -138,7 +138,7 @@
 
     <string name="widget_lifetime_label">ylih · lifetime</string>
     <string name="widget_lifetime_description">hours for each pair, with timer wey dey run for wetin connect</string>
-    <string name="widget_activity_label">ylih · activity</string>
+    <string name="widget_activity_label">ylih · wetin dey happen</string>
     <string name="widget_activity_description">all di pair hours together, plus today, 7 days and 30 days</string>
     <string name="widget_chart_label">ylih · 30 days</string>
     <string name="widget_chart_description">hours wey you listen every day for di last 30 days</string>
@@ -151,26 +151,26 @@
     <string name="channel_tracking">headphone tracking</string>
     <string name="channel_tracking_description">e dey show wen ylih dey look out for wired headphone and playback. android no dey send wire plug tori give app wey no dey run.</string>
     <string name="notification_title">dey track headphone time</string>
-    <string name="notification_starting">starting…</string>
+    <string name="notification_starting">e dey start…</string>
     <string name="notification_idle">dey wait for headphone</string>
     <plurals name="notification_active">
-        <item quantity="one">%1$d connected · %2$s</item>
-        <item quantity="other">%1$d connected · %2$s</item>
+        <item quantity="one">%1$d connect · %2$s</item>
+        <item quantity="other">%1$d connect · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
-        <item quantity="one">%1$d connected · %2$s · playing</item>
-        <item quantity="other">%1$d connected · %2$s · playing</item>
+        <item quantity="one">%1$d connect · %2$s · dey play</item>
+        <item quantity="other">%1$d connect · %2$s · dey play</item>
     </plurals>
 
     <string name="detailed_needs_bluetooth">dis build need bluetooth access before e fit track wired headphone</string>
-    <string name="export_done">backup exported</string>
-    <string name="export_failed">export failed</string>
-    <string name="import_failed">import failed</string>
+    <string name="export_done">backup don comot</string>
+    <string name="export_failed">export no work</string>
+    <string name="import_failed">import no work</string>
     <string name="edit_failed">e no fit save dat change</string>
     <string name="error_could_not_open">e no fit open %1$s</string>
     <plurals name="import_done">
-        <item quantity="one">imported %d session</item>
-        <item quantity="other">imported %d sessions</item>
+        <item quantity="one">%d session don enter</item>
+        <item quantity="other">%d session don enter</item>
     </plurals>
 
     <plurals name="session_count">

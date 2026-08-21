@@ -24,8 +24,8 @@
     <string name="welcome_point_auto_body">ຫູຟັງ bluetooth ຖືກບັນທຶກເອງ ທັນທີທີ່ເຊື່ອມຕໍ່. ບໍ່ມີຫຍັງຕ້ອງວາງໄວ້.</string>
     <string name="welcome_point_lifetime_title">ຫູຟັງຄູ່ຫນຶ່ງ ອາຍຸການໃຊ້ຄູ່ຫນຶ່ງ</string>
     <string name="welcome_point_lifetime_body">ເມື່ອຫູຟັງລົ້ມເລວ ໃຫ້ປະຕິເສດມັນ: ລວມກະໂຫຼກຢູ່ບ່ອນນັ້ນ ແລະຄູ່ຕໍ່ໄປເລີ່ມໃຫມ່ຈາກສູນ.</string>
-    <string name="welcome_point_detailed_title">ສາຍແລະ playback</string>
-    <string name="welcome_point_detailed_body">ການຕິດຕາມລາຍລະອຽດ ໃນການຕັ້ງຄ່າ ເພີ່ມຫູຟັງສາຍແລະວັດແທກເວລາ playback.</string>
+    <string name="welcome_point_detailed_title">ສາຍ ແລະ ການຫຼິ້ນ</string>
+    <string name="welcome_point_detailed_body">ການຕິດຕາມລາຍລະອຽດ ໃນການຕັ້ງຄ່າ ເພີ່ມຫູຟັງແບບສາຍ ແລະ ວັດແທກວ່າມີການຫຼິ້ນຈິງເທົ່າໃດ.</string>
     <string name="welcome_privacy">ທຸກຢ່າງຢູ່ໃນໂທລະສັບນີ້. ບໍ່ມີບັນຊີ ແລະບໍ່ມີສິດອະນຸຍາດອິນເທີເນັດ.</string>
     <string name="welcome_start">ເລີ່ມຕົ້ນ</string>
     <string name="welcome_next">ຕໍ່ໄປ</string>
@@ -40,7 +40,7 @@
     <string name="welcome_notifications_with">ກັບມັນ: ສະແດງສິ່ງທີ່ບັນທຶກ ເປັນສັນຍານວ່າການຕິດຕາມກຳລັງເຮັດວຽກ.</string>
     <string name="welcome_notifications_without">ໂດຍບໍ່ມີມັນ: ການຕິດຕາມຍັງເຮັດວຽກ. android ພຽງບໍ່ສະແດງການແຈ້ງ.</string>
     <string name="hibernation_title">ໃຫ້ນັບຕໍ່ໄປເມື່ອລືມ</string>
-    <string name="hibernation_body">android ຢຸດ apps ຫລາຍເດືອນ ແລະເອົາສິດກັບຄືນ. ylih ຈະບໍ່ບັນທຶກ ຈົນກ່ວາເປີດ. ປິດສະ ເພື່ອໃຫ້ຕໍ່ໄປນັບ.</string>
+    <string name="hibernation_body">android ຢຸດແອັບທີ່ບໍ່ໄດ້ເປີດເປັນເວລາຫຼາຍເດືອນ ແລະ ຍຶດສິດຄືນ, ເຮັດໃຫ້ ylih ບໍ່ບັນທຶກຫຍັງຈົນກວ່າທ່ານຈະເປີດມັນອີກ. ການຖືກລືມນັ້ນແມ່ນສິ່ງທີ່ແອັບນີ້ມີໄວ້ເພື່ອ, ສະນັ້ນຄວນປິດມັນດຽວນີ້.</string>
     <string name="action_not_now">ບໍ່ແມ່ນຕອນນີ້</string>
 
     <string name="devices_in_use">ກໍາລັງໃຊ້</string>
@@ -61,14 +61,14 @@
     <string name="stats_average_session">ສະເລ່ຍ</string>
     <string name="stats_longest_session">ທີ່ຍາວທີ່ສຸດ</string>
     <string name="stats_playing">ເຄື່ອງສຽងຫຼິ້ນ</string>
-    <string name="stats_measured_span">ວັດແທກ playback</string>
-    <string name="stats_share">ສ່ວນ playback</string>
-    <string name="stats_playback_only_note">ນັບ playback ເທົ່ານັ້ນ</string>
+    <string name="stats_measured_span">ວັດແທກການຫຼິ້ນ</string>
+    <string name="stats_share">ສ່ວນການຫຼິ້ນ</string>
+    <string name="stats_playback_only_note">ນັບສະເພາະເວລາຫຼິ້ນ</string>
     <string name="stats_daily_hours_30">ຊົ່ວໂມງ 30 ວັນ</string>
     <string name="stats_by_pair">ຕາມຄູ່</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
     <string name="stats_pair_row_retired">%1$s · %2$s · ອອກມາຈາກ</string>
-    <string name="chart_max">%1$s max</string>
+    <string name="chart_max">%1$s ສູງສຸດ</string>
 
     <string name="pair_fallback_title">ຄູ່</string>
     <string name="pair_back">ກັບຄືນ</string>
@@ -85,8 +85,8 @@
     <string name="pair_average">ສະເລ່ຍ</string>
     <string name="pair_longest">ຍາວ</string>
     <string name="pair_since">ນັບຕັ້ງແຕ່ %1$s</string>
-    <string name="pair_of_measured">ສ່ວນ playback</string>
-    <string name="pair_measured">ວັດແທກ playback</string>
+    <string name="pair_of_measured">ສ່ວນການຫຼິ້ນ</string>
+    <string name="pair_measured">ວັດແທກການຫຼິ້ນ</string>
     <string name="pair_paid">ຈ່າຍ</string>
     <string name="pair_per_hour">ຕໍ່ຊົ່ວໂມງ</string>
     <string name="pair_bought">ຊື້</string>
@@ -110,10 +110,10 @@
 
     <string name="settings_tracking">ການຕິດຕາມ</string>
     <string name="settings_detailed_title">ລາຍລະອຽດ</string>
-    <string name="settings_detailed_body">ເພີ່ມສາຍ ແລະ playback. android ສົ່ງສາຍທີ່ app ເຮັດວຽກ. bluetooth ທັກສະ ທຸກກັບ.</string>
+    <string name="settings_detailed_body">ເພີ່ມຫູຟັງແບບສາຍ ແລະ ເວລາຫຼິ້ນ. android ສົ່ງເຫດການສຽບສາຍໃຫ້ແອັບທີ່ກຳລັງເຮັດວຽກເທົ່ານັ້ນ, ສະນັ້ນສິ່ງນີ້ຈຶ່ງເກັບການແຈ້ງເຕືອນແບບງຽບໄວ້. bluetooth ຖືກຕິດຕາມທັງສອງແບບ.</string>
     <string name="settings_detailed_unavailable">ບໍ່ສາມາດຈົນ bluetooth ຮັບອະນຸຍາດ.</string>
-    <string name="settings_playback_only_title">ນັບ playback</string>
-    <string name="settings_playback_only_body">ນັບເວລາ playback ແທນເວລາເຊື່ອມ. ຊັ່ວໂມງລາຍລະອຽດເທົ່ານັ້ນ.</string>
+    <string name="settings_playback_only_title">ນັບສະເພາະການຫຼິ້ນ</string>
+    <string name="settings_playback_only_body">ສະຖິຕິຈະນັບເວລາທີ່ສຽງກຳລັງຫຼິ້ນຈິງ ແທນເວລາທີ່ເຊື່ອມຕໍ່. ມີແຕ່ເຊດຊັນທີ່ບັນທຶກດ້ວຍການຕິດຕາມລາຍລະອຽດເທົ່ານັ້ນທີ່ວັດແທກການຫຼິ້ນ; ສ່ວນທີ່ເຫຼືອຈະບໍ່ຖືກນັບ.</string>
     <string name="settings_language">ພາສາ</string>
     <string name="settings_language_system">ພາສາລະບົບ</string>
     <string name="settings_devices">ອຸປະກອນ</string>
@@ -124,21 +124,21 @@
     <string name="settings_import">ນໍາເຂົ້າ</string>
     <string name="settings_import_warning">ທົ່ວທັງການເກັບໄວ້.</string>
     <string name="settings_troubleshooting">ແກ້ໄຂ</string>
-    <string name="settings_battery_body">ຖ້າຢຸດບໍລິການ, ກວດ ylih ຢູ່ຕໍ່ສະກໍາ. app ບັງຄັບຢຸດບໍ່ໄດ້ຮັບເຊື່ອມຕໍ່.</string>
+    <string name="settings_battery_body">ຖ້າເຊດຊັນຢຸດການບັນທຶກ, ໃຫ້ກວດວ່າ ylih ໄດ້ຮັບການຍົກເວັ້ນຈາກການປະຢັດແບັດເຕີຣີ — ແອັບທີ່ຖືກບັງຄັບໃຫ້ຢຸດຈະບໍ່ໄດ້ຮັບການແຈ້ງການເຊື່ອມຕໍ່ອີກຈົນກວ່າຈະເປີດມັນ.</string>
     <string name="settings_battery_button">ຕັ້ງຄ່າແບັດ</string>
-    <string name="settings_battery_path">ຕັ້ງຄ່າ → apps → ylih → battery → unrestricted.</string>
+    <string name="settings_battery_path">ຕັ້ງຄ່າ → ແອັບ → ylih → ແບັດເຕີຣີ → ບໍ່ຈຳກັດ.</string>
     <string name="settings_hibernation_body">ຖ້າບໍ່ເປີດຫຼາຍເດືອນ, android ຢຸດ ແລະເອົາສິດກັບຄືນ. ປິດເພື່ອນັບຕໍ່.</string>
-    <string name="settings_hibernation_on">android ອາດຢຸດ ylih.</string>
+    <string name="settings_hibernation_on">android ອາດຢຸດ ylih ຊົ່ວຄາວ.</string>
     <string name="settings_hibernation_off">ylih ບໍ່ຢຸດ ແລະບັນທຶກ.</string>
-    <string name="settings_hibernation_button">app ຍັງບໍ່ໃຊ້</string>
+    <string name="settings_hibernation_button">ການຕັ້ງຄ່າແອັບທີ່ບໍ່ໄດ້ໃຊ້</string>
     <string name="settings_about">ກ່ຽວກັບ</string>
     <string name="settings_about_body">ylih %1$s (%2$s) - ຊົ່ວໂມງ ເກັບນະ.</string>
     <string name="settings_import_confirm_title">ແທນທີ່?</string>
     <string name="settings_import_confirm_body">ລົບອຸປະກອນ ຄູ່ ແລະຊັ່ວໂມງ.</string>
 
-    <string name="widget_lifetime_label">ylih · lifetime</string>
+    <string name="widget_lifetime_label">ylih · ອາຍຸການໃຊ້ງານ</string>
     <string name="widget_lifetime_description">ຊົ່ວໂມງຕໍ່ຄູ່</string>
-    <string name="widget_activity_label">ylih · activity</string>
+    <string name="widget_activity_label">ylih · ກິດຈະກຳ</string>
     <string name="widget_activity_description">ຊົ່ວໂມງທັງໝົດ</string>
     <string name="widget_chart_label">ylih · 30 ວັນ</string>
     <string name="widget_chart_description">ຊົ່ວໂມງ 30 ວັນ</string>
@@ -149,15 +149,15 @@
     <string name="action_import">ນໍາເຂົ້າ</string>
 
     <string name="channel_tracking">ບັນທຶກຫູຟັງ</string>
-    <string name="channel_tracking_description">ສະແດງໃນຂະນະ ylih ຕິດຕາມສາຍ ແລະ playback.</string>
+    <string name="channel_tracking_description">ສະແດງໃນຂະນະທີ່ ylih ເຝົ້າເບິ່ງຫູຟັງແບບສາຍ ແລະ ການຫຼິ້ນ. android ບໍ່ສົ່ງເຫດການສຽບສາຍໃຫ້ແອັບທີ່ບໍ່ໄດ້ເຮັດວຽກ.</string>
     <string name="notification_title">ບັນທຶກຫູຟັງ</string>
     <string name="notification_starting">ເລີ່ມ…</string>
     <string name="notification_idle">ລໍຖ້າຫູຟັງ</string>
     <plurals name="notification_active">
-        <item quantity="other">%1$d connected · %2$s</item>
+        <item quantity="other">%1$d ເຊື່ອມຕໍ່ · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
-        <item quantity="other">%1$d connected · %2$s · playing</item>
+        <item quantity="other">%1$d ເຊື່ອມຕໍ່ · %2$s · ກຳລັງຫຼິ້ນ</item>
     </plurals>
 
     <string name="detailed_needs_bluetooth">ຕ້ອງການ bluetooth ກ່ອນສາຍ.</string>
@@ -167,10 +167,10 @@
     <string name="edit_failed">ບໍ່ສາມາດບັນທຶກ</string>
     <string name="error_could_not_open">ບໍ່ສາມາດເປີດ %1$s</string>
     <plurals name="import_done">
-        <item quantity="other">imported %d sessions</item>
+        <item quantity="other">ນຳເຂົ້າ %d ເຊດຊັນ</item>
     </plurals>
 
     <plurals name="session_count">
-        <item quantity="other">%d sessions</item>
+        <item quantity="other">%d ເຊດຊັນ</item>
     </plurals>
 </resources>

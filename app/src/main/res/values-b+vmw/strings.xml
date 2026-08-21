@@ -118,7 +118,7 @@
     <string name="settings_language_system">chilankhulo cha siputala</string>
     <string name="settings_devices">zida</string>
     <string name="settings_devices_body">siyani checbox zabinthu zomwe sizingauriyo - pipila ya makala kapena msano - kuti musiyikire kudzambira izo.</string>
-    <string name="settings_device_subtitle">%1$s · first seen %2$s</string>
+    <string name="settings_device_subtitle">%1$s · adaonedwa koyamba %2$s</string>
     <string name="settings_data">zambiri</string>
     <string name="settings_export">kuchulutsa json</string>
     <string name="settings_import">kuyingira</string>

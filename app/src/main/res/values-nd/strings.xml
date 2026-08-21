@@ -35,10 +35,10 @@
     <string name="welcome_bluetooth_why">android kulungile lapha owonke siphakamiselele i-bluetooth esebenzayo sifikela eyakho ofike lapha umuntu wamakwelo owodwa wangamathothele umuntu.</string>
     <string name="welcome_bluetooth_with">ngaphansi: konke umsulwa uleqwe kusukela ekushumekeni kwakho, akunikeze isatshala futhi angenzuza.</string>
     <string name="welcome_bluetooth_without">kungekhona: amakwelo e-bluetooth akukho okulalelwa. inkosikazi yodwa eyamkhona kwakungo futhi ungawonika kamuva ku-android izigebezo.</string>
-    <string name="welcome_notifications_title">notifications</string>
-    <string name="welcome_notifications_why">detailed tracking runs a small background service, and android requires any app doing that to keep a notification visible while it does.</string>
-    <string name="welcome_notifications_with">with it: the notification shows what is being recorded right now, which is the only sign detailed tracking is alive.</string>
-    <string name="welcome_notifications_without">without it: detailed tracking still runs and still records. android just will not show its notification.</string>
+    <string name="welcome_notifications_title">izaziso</string>
+    <string name="welcome_notifications_why">ukulandelela okugcweleyo kusebenzisa insiza encane engemuva, njalo i-android ifuna ukuthi loba yiluphi uhlelo olwenza lokho lugcine isaziso sibonakala.</string>
+    <string name="welcome_notifications_with">ngaso: isaziso sitshengisa okulotshwayo khathesi, njalo yikho kuphela okutshengisa ukuthi ukulandelela okugcweleyo kuyasebenza.</string>
+    <string name="welcome_notifications_without">ngaphandle kwaso: ukulandelela okugcweleyo kuyaqhubeka kusebenza njalo kuyalobo. i-android nje kayisoze itshengise isaziso saso.</string>
     <string name="hibernation_title">qhubeka ubala ngesikhathi oyewusubale</string>
     <string name="hibernation_body">android ihoxisa izinhlelo ezivulwe kwengezinsuku ezimbalwa ufake izintando zayo kamuva, okwenza ylih ingena lutho kufinyelile umdlalili wokonakala. wusugwebe ngalilokhu okusebenza ngaleli lize ngamanzi, ngakho nakuze kuvale.</string>
     <string name="action_not_now">ayileyo</string>

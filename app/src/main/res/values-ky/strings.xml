@@ -36,7 +36,7 @@
     <string name="welcome_bluetooth_with">аны менен: ар бир жуба туташкан учурдан баштап жазылат жана эч нерсе иштетип туруунун кажети жок.</string>
     <string name="welcome_bluetooth_without">аны менен эмес: bluetooth наушниктери такыр жазылбайт. колдонмонун калган бөлүгү дээрлик иштеп жатат, жана сиз аны Android колдонмосунун параметрлеринде кийинче бере алаксыз.</string>
     <string name="welcome_notifications_title">ушунулар</string>
-    <string name="welcome_notifications_why">詳細 FollowHelper кичинекей фондук кызмат иштетет, жана Android аны кылып жаткан эч кандай колдонмо аны кыла турган убакыт билдирүүнү чагылдырып туруу талап кылат.</string>
+    <string name="welcome_notifications_why">толук көзөмөл кичинекей фондук кызматты иштетет, ал эми android ушундай кылган ар кандай колдонмодон ал иштеп жатканда билдирменин көрүнүп турушун талап кылат.</string>
     <string name="welcome_notifications_with">аны менен: билдирүү ушул учурда чынында жазылып жатканын көрсөтөт, бул詳細 следжүнүң жашоодо экенинин бирдик белгиси.</string>
     <string name="welcome_notifications_without">аны менен эмес:詳細 жүргүн жазылып жатат. Android анын ушунусун чагылдырбайт.</string>
     <string name="hibernation_title">сиз унутуп калган убакытта эсептөөнү улантыңыз</string>

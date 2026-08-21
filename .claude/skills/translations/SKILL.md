@@ -38,6 +38,7 @@ tree's string resources have broken the build:
 | `folder values-xx/ has no strings.xml` | an *empty* locale folder. Invisible to `git status`; lint reads folder names and reports every string missing for it. Cost 113 errors once |
 | `script: the file is written in X` | a locale written in the wrong script — romanised Sanskrit, Kannada under `values-b+kxv+Latn`. Every other check passes: the strings are present, translated and unreadable to the people who asked for that language. The expected script comes from `Intl.Locale().maximize()`, so the table cannot drift from CLDR |
 | `near-duplicate locales` | one bulk run copied into two folders and then edited. Not byte-identical, so the duplicate check below cannot see it; `sat` held Samburu, 99% of its words shared with `saq` |
+| `<key>: still in English` | one value left untranslated inside a locale that is otherwise in its own script. The file-level checks all pass — `values-or` was 90% Odia and still handed "average session" and "playing share" to its readers. Only for non-Latin locales, and only where the file's script is otherwise right, since a wholly romanised file is the `script:` line's business |
 
 Pass `--no-usage` to skip the reference scan. It reads every file under `app/src/main/java` for
 `R.string.<name>`, and `AndroidManifest.xml` plus the non-`values` resource XML for `@string/<name>`

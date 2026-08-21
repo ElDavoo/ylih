@@ -9,9 +9,9 @@
     <string name="app_title">ylih — ang iyong buhay sa headphones</string>
 
     <!-- Pag-navigate -->
-    <string name="nav_headphones">headphones</string>
-    <string name="nav_stats">stats</string>
-    <string name="nav_settings">settings</string>
+    <string name="nav_headphones">mga headphone</string>
+    <string name="nav_stats">estadistika</string>
+    <string name="nav_settings">mga setting</string>
 
     <!-- Mga uri ng device -->
     <string name="kind_bluetooth">bluetooth</string>
@@ -88,7 +88,7 @@
     <string name="pair_retired_with_reason">inilahad %1$s · %2$s</string>
     <string name="pair_connected_now">konektado ngayon · %1$s</string>
     <string name="pair_sessions">mga session</string>
-    <string name="pair_average">average</string>
+    <string name="pair_average">karaniwan</string>
     <string name="pair_longest">pinakamatagal</string>
     <string name="pair_since">mula %1$s</string>
     <string name="pair_of_measured">bahagi ng pagtugtog</string>
@@ -127,14 +127,14 @@
     <string name="settings_devices">mga device</string>
     <string name="settings_devices_body">i-uncheck ang anumang hindi headphones — car stereo o speaker — upang ihinto ang pag-record nito.</string>
     <string name="settings_device_subtitle">%1$s · unang nakita %2$s</string>
-    <string name="settings_data">data</string>
+    <string name="settings_data">datos</string>
     <string name="settings_export">i-export ang json</string>
     <string name="settings_import">i-import</string>
     <string name="settings_import_warning">ang pag-import ay papalitan ang lahat ng kasalukuyang naka-store.</string>
     <string name="settings_troubleshooting">paglutas ng problema</string>
     <string name="settings_battery_body">kung huminto ang pag-record ng mga session, suriin na ang ylih ay exempt sa battery optimisation — ang app na force-stopped ay hindi na makakatanggap ng connection broadcasts hanggang ito ay buksan.</string>
-    <string name="settings_battery_button">battery settings</string>
-    <string name="settings_battery_path">settings → apps → ylih → battery → unrestricted.</string>
+    <string name="settings_battery_button">mga setting ng baterya</string>
+    <string name="settings_battery_path">mga setting → apps → ylih → baterya → walang restriksyon.</string>
     <string name="settings_hibernation_body">kung hindi mabuksan ang ylih sa loob ng ilang buwan, ihihinto ito ng android at babawiin ang mga pahintulot nito, at wala nang irerecord hanggang sa buksan mo ito. ang pagpatay dito ang nagpapahintulot sa isang pares na magpatuloy sa pagbibilang sa buong panahon na hindi mo man lang naiisip ang app.</string>
     <string name="settings_hibernation_on">maaaring ihinto ng android ang ylih.</string>
     <string name="settings_hibernation_off">exempted ang ylih at patuloy na nagre-record.</string>
@@ -157,7 +157,7 @@
     <string name="action_import">i-import</string>
 
     <!-- Notification -->
-    <string name="channel_tracking">headphone tracking</string>
+    <string name="channel_tracking">pagsubaybay ng headphone</string>
     <string name="channel_tracking_description">ipinapakita habang ang ylih ay naghihintay ng naka-wire na headphones at playback. ang android ay hindi nag-deliver ng wired plug events sa mga app na hindi tumatakbo.</string>
     <string name="notification_title">sinusubaybayan ang oras ng headphone</string>
     <string name="notification_starting">nagsisimula…</string>
@@ -185,6 +185,6 @@
 
     <plurals name="session_count">
         <item quantity="one">%d session</item>
-        <item quantity="other">%d sessions</item>
+        <item quantity="other">%d na session</item>
     </plurals>
 </resources>

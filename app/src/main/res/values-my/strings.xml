@@ -6,9 +6,9 @@
   translate. So is `value_none`, which is an em dash.
 -->
 <resources>
-    <string name="app_title">ylih - သင်၏ ခေါင်းတည်းဆိုင်</string>
+    <string name="app_title">ylih - သင်၏ နားကြပ်</string>
 
-    <string name="nav_headphones">ခေါင်းတည်းဆိုင်</string>
+    <string name="nav_headphones">နားကြပ်</string>
     <string name="nav_stats">စာရင်းအင်း</string>
     <string name="nav_settings">ဆက်တင်</string>
 
@@ -19,13 +19,13 @@
     <string name="kind_unknown">မသိ</string>
 
     <string name="welcome_title">ylih သို့ကြိုဆိုပါသည်</string>
-    <string name="welcome_intro">ylih သည်ခေါင်းတည်းဆိုင်မတူ တစ်ခုစီကိုဆက်သွယ်ထားရှိသည့်အချိန်အလျောက်စာရင်းပြုလုပ်သည်၊ လယ်စက်နှစ်များကျောင်းလည်း သင်သည်အကြွင်းမဲ့မေးခွန်းခွက်ကိုဖြေဆိုနိုင်သည်- သူတို့မည်မျှနာရီကြာခဲ့သနည်း။</string>
+    <string name="welcome_intro">ylih သည်နားကြပ်မတူ တစ်ခုစီကိုဆက်သွယ်ထားရှိသည့်အချိန်အလျောက်စာရင်းပြုလုပ်သည်၊ လယ်စက်နှစ်များကျောင်းလည်း သင်သည်အကြွင်းမဲ့မေးခွန်းခွက်ကိုဖြေဆိုနိုင်သည်- သူတို့မည်မျှနာရီကြာခဲ့သနည်း။</string>
     <string name="welcome_point_auto_title">ချိတ်ဆက်ပြီးမေ့လျော်သည်</string>
-    <string name="welcome_point_auto_body">ဘလူးတုသ်ခေါင်းတည်းဆိုင်များကိုသူတို့ချိတ်ဆက်သည့်အခါမှစ၍အလိုအလျောက်စာရင်းပြုလုပ်သည်။ တစ်ခုမျှဆက်လက်အလုပ်လုပ်စရာမရှိ။</string>
-    <string name="welcome_point_lifetime_title">တစ်ခု pair လည်းအသက်တစ်အီ</string>
-    <string name="welcome_point_lifetime_body">pair အားမည်သည့်အခါအထိမသုံးနိုင်နတ်စင်း၎င်းပယ်ဆီးထားလျှင်- ၎င်း၏စုစုပေါင်းအလုပ်နှင့်ခြင်းဖုံးဆက်တွယ်ပြီးတစ်ခုအလွန်တူသည့်ခေါင်းတည်းဆိုင်သည်ပြန်လည်စနစ်မှစ၍ငါးကျ။</string>
+    <string name="welcome_point_auto_body">ဘလူးတုသ်နားကြပ်များကိုသူတို့ချိတ်ဆက်သည့်အခါမှစ၍အလိုအလျောက်စာရင်းပြုလုပ်သည်။ တစ်ခုမျှဆက်လက်အလုပ်လုပ်စရာမရှိ။</string>
+    <string name="welcome_point_lifetime_title">အတွဲတစ်ခု၊ သက်တမ်းတစ်ခု</string>
+    <string name="welcome_point_lifetime_body">အတွဲတစ်ခု ပျက်သွားပါက ၎င်းကို အနားပေးလိုက်ပါ — စုစုပေါင်းချိန်သည် ထိုနေရာတွင် ရပ်တန့်ပြီး၊ တူညီသော နားကြပ်၏ နောက်အတွဲသည် သုညမှ ပြန်စတင်ပါသည်။</string>
     <string name="welcome_point_detailed_title">အင်္ကြိုင်နှင့်ဖွင့်ကွင်း</string>
-    <string name="welcome_point_detailed_body">အစီအကြီးချစာရင်းစာချုပ်များသည်ဆက်တင်ရှိသည်သည်အင်္ကြိုင်ခေါင်းတည်းဆိုင်ပေါင်းထည့်ပြီးအချိန်လုံးလုံးအသံဖွင့်အခါမည်သည့်အချိန်ကို်တင်စချုပ်။</string>
+    <string name="welcome_point_detailed_body">အစီအကြီးချစာရင်းစာချုပ်များသည်ဆက်တင်ရှိသည်သည်အင်္ကြိုင်နားကြပ်ပေါင်းထည့်ပြီးအချိန်လုံးလုံးအသံဖွင့်အခါမည်သည့်အချိန်ကို်တင်စချုပ်။</string>
     <string name="welcome_privacy">အရာအားလုံးသည်ဤဖုန်းတွင်ရှိသည်။ အကောင့်မရှိကြ၊ အက်ပ်အားအင်္တာနက်ခွင့်မြင်တွင်မြင်မေလ။</string>
     <string name="welcome_start">စတင်ခွင့်</string>
     <string name="welcome_next">နောက်တစ်ခု</string>
@@ -33,8 +33,8 @@
     <string name="welcome_step">%2$d အပြင် %1$d ခြင်း</string>
     <string name="welcome_bluetooth_title">ဘလူးတုသ်အဝင်</string>
     <string name="welcome_bluetooth_why">android သည်ယင်းခွင့်မြင်နှင့်ဘလူးတုသ်ဒီဗိုင်းထည့်သွင်းလျှင်လည်းသုံးစုံဘလူးတုသ်ဒီဗိုင်းထည့်သွင်းတွင်တစ်ခုက်ကန်းဆုံးမည်သည့်အခါမည်သည့်အခါမည်သည့်အခါမည်သည့်အခါမည်သည့်အခါမည်သည့်အခါမည်သည့်အခါမည်သည့်အခါကစုံမြည።</string>
-    <string name="welcome_bluetooth_with">နှင့်အတူ- အားလုံးအီpair သည်ချိတ်ဆက်သည့်အခါမှစ၍စာရင်းပြုလုပ်သည်၊ မည်သည့်တစ်ခုမျှကျန်ခြင်းမရှိပြီးတစ်ခုအားလုံးအားအလုံးအရုံးသိရှိရန်မဖြစ်နိုင်။</string>
-    <string name="welcome_bluetooth_without">ဆန့်ကျင်- ဘလူးတုသ်ခေါင်းတည်းဆိုင်များထုံးစံမျှအင်္ကြိုင်သည်နည်းည။ အက်ပ်တစ်ခွင်စနစ်အလုပ်လုပ်ပြီးတစ်ခုအားလုံးအားနောက်ပိုင်းတွင်android ဆက်တင်တွင်အားမြင်နိုင်။</string>
+    <string name="welcome_bluetooth_with">၎င်းဖြင့် — အတွဲတိုင်းကို ချိတ်ဆက်သည့် အချိန်မှစ၍ မှတ်တမ်းတင်ပါသည်၊ ဘာမှ ဆက်လက်လည်ပတ်စရာ မလိုသလို မှတ်ထားစရာလည်း မလိုပါ။</string>
+    <string name="welcome_bluetooth_without">ဆန့်ကျင်- ဘလူးတုသ်နားကြပ်များထုံးစံမျှအင်္ကြိုင်သည်နည်းည။ အက်ပ်တစ်ခွင်စနစ်အလုပ်လုပ်ပြီးတစ်ခုအားလုံးအားနောက်ပိုင်းတွင်android ဆက်တင်တွင်အားမြင်နိုင်။</string>
     <string name="welcome_notifications_title">အကြေးငြင်းများ</string>
     <string name="welcome_notifications_why">အစီအကြီးချစာရင်းစာချုပ်သည်နိမ့်သည့်နောက်ခံဆာဝိုင်စ်မုံတွင်လည်းျန် android သည်အခွင့်အလမ်းမည်သည့်အက်ပ်ကိုထုံးစံတည်ရှိခွင့်အကြေးငြင်းများထည့်သွင်းရန်လိုအပ်။</string>
     <string name="welcome_notifications_with">နှင့်အတူ- အကြေးငြင်းများအားလုံးအားယခုအခါစာရင်းပြုလုပ်ခြင်းကိုပြသသည်၊ ယင်းသည်အစီအကြီးချစာရင်းစာချုပ်သည်တည်ရှိသည့်တစ်ခုသာ။</string>
@@ -45,14 +45,14 @@
 
     <string name="devices_in_use">အသုံးတွင်ရှိ</string>
     <string name="devices_retired">အငြိမ်း</string>
-    <string name="devices_empty_title">ခေါင်းတည်းဆိုင်မရှိသေးပါ</string>
-    <string name="devices_empty_body">ဘလူးတုသ်ခေါင်းတည်းဆိုင်မတူအချိတ်ဆက်ခြင်းကအီhereတွင်ပြသသည်။ အင်္ကြိုင်ခေါင်းတည်းဆိုင်သည်အစီအကြီးချစာရင်းစာချုပ်ကိုလိုအပ်သည်။</string>
-    <string name="devices_generation">pair #%1$d</string>
+    <string name="devices_empty_title">နားကြပ်မရှိသေးပါ</string>
+    <string name="devices_empty_body">bluetooth နားကြပ်အတွဲကို ချိတ်ဆက်လိုက်ပါ၊ ဤနေရာတွင် ပေါ်လာပါမည်။ ကြိုးတပ် နားကြပ်များအတွက် ဆက်တင်ထဲရှိ အသေးစိတ် မှတ်တမ်းတင်ခြင်း လိုအပ်ပါသည်။</string>
+    <string name="devices_generation">အတွဲ #%1$d</string>
     <string name="devices_retired_on">အငြိမ်း %1$s</string>
     <string name="devices_connected_for">ချိတ်ဆက်ထားရှိ %1$s</string>
     <string name="devices_recent">%1$s / 7d</string>
 
-    <string name="stats_title">အားလုံးခေါင်းတည်းဆိုင်</string>
+    <string name="stats_title">အားလုံးနားကြပ်</string>
     <string name="stats_sessions_since">%1$s အစ %2$s</string>
     <string name="stats_today">ယနေ့</string>
     <string name="stats_yesterday">မနေ့က</string>
@@ -62,22 +62,22 @@
     <string name="stats_longest_session">အကျယ်ဆုံးအခွင်းအရောင်</string>
     <string name="stats_playing">အသံသွားခြင်း</string>
     <string name="stats_measured_span">အသံချက်ချက်ပြုလုပ်</string>
-    <string name="stats_share">အသံသွားခြင်း share</string>
+    <string name="stats_share">အသံဖွင့်သည့် အချိုး</string>
     <string name="stats_playback_only_note">အသံချက်ချက်ကိုရေတွက်ခြင်းသည်တစ်ခုသာ</string>
     <string name="stats_daily_hours_30">နေ့စဉ်နာရီ (30 ရက်)</string>
-    <string name="stats_by_pair">pair အားဖြင့်</string>
+    <string name="stats_by_pair">အတွဲအလိုက်</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
     <string name="stats_pair_row_retired">%1$s · %2$s · အငြိမ်း</string>
     <string name="chart_max">%1$s အများဆုံး</string>
 
-    <string name="pair_fallback_title">pair</string>
+    <string name="pair_fallback_title">အတွဲ</string>
     <string name="pair_back">နောက်ကျ</string>
     <string name="pair_more">အများ</string>
     <string name="pair_menu_rename">နောက်ဆုံးအဖြစ်အသုံးခွင့်</string>
-    <string name="pair_menu_purchase">အီ information</string>
+    <string name="pair_menu_purchase">ဝယ်ယူမှု အချက်အလက်</string>
     <string name="pair_menu_retire">အငြိမ်း / အားလည်းအလုံး</string>
     <string name="pair_menu_delete">ဖျက်ရှင်း</string>
-    <string name="pair_lifetime">ယင်း pair အပေါ်အသက်</string>
+    <string name="pair_lifetime">ဤအတွဲ၏ သက်တမ်း</string>
     <string name="pair_retired_on">အငြိမ်း %1$s</string>
     <string name="pair_retired_with_reason">အငြိမ်း %1$s · %2$s</string>
     <string name="pair_connected_now">ယခုချိတ်ဆက်ထားရှိ · %1$s</string>
@@ -85,22 +85,22 @@
     <string name="pair_average">ပျမ်းမျှ</string>
     <string name="pair_longest">အကျယ်ဆုံး</string>
     <string name="pair_since">%1$s ကနေ</string>
-    <string name="pair_of_measured">အသံချက်ချက်ပြုလုပ်ခြင်း share</string>
+    <string name="pair_of_measured">အသံဖွင့်သည့် အချိုး</string>
     <string name="pair_measured">အသံချက်ချက်ပြုလုပ်</string>
     <string name="pair_paid">ငွေပေးချေ</string>
     <string name="pair_per_hour">တစ်နာရီလျှင်</string>
     <string name="pair_bought">ဆိုင်းဖြုတ်</string>
     <string name="pair_daily_hours_14">နေ့စဉ်နာရီ (14 ရက်)</string>
-    <string name="pair_rename_title">pair နောက်ဆုံးအဖြစ်အသုံးခွင့်</string>
+    <string name="pair_rename_title">အတွဲကို အမည်ပြောင်းရန်</string>
     <string name="pair_rename_label">အစည်း</string>
-    <string name="pair_retire_title">ယင်း pair အငြိမ်း</string>
+    <string name="pair_retire_title">ဤအတွဲကို အနားပေးရန်</string>
     <string name="pair_retire_label">အကြောင်းအရာ (သုံးကုန်၊ မြည်စခုံ၊ ဆုံးရှုံး…)</string>
     <string name="pair_retire_confirm">အငြိမ်း</string>
     <string name="pair_retire_supporting">စုစုပေါ်အလုပ်များဤတွင်တည်ဆိုသည်။ တစ်ခုအလုံးအရုံးအသုံးပြုခြင်းသည်သုည နှင်းမှစ၍သစ်ဆက်မြည့်တည်ဆိုသည်။</string>
     <string name="pair_price_title">ငွေပေးချေငွေ</string>
     <string name="pair_price_label">ပမာណ (တစ်ခုအလုံးအရုံးယူနစ်)</string>
     <string name="pair_price_supporting">တစ်နာရီပမာဏကိုအသုံးပြုခြင်း။</string>
-    <string name="pair_delete_title">ယင်း pair ဖျက်ရှင်း?</string>
+    <string name="pair_delete_title">ဤအတွဲကို ဖျက်မလား?</string>
     <string name="pair_delete_body">အာ€အခွင်းအရောင်များအားလုံးအားထုံးစံဖျက်ရှင်းခြင်းကိုလည်းခွင့်ပြု။ ယင်းအားအလုံးအရုံးပြန်လည်နိုင်။</string>
 
     <string name="session_ongoing">ဆက်လက်</string>
@@ -110,49 +110,49 @@
 
     <string name="settings_tracking">စာရင်းပြုလုပ်</string>
     <string name="settings_detailed_title">အစီအကြီးချစာရင်းစာချုပ်</string>
-    <string name="settings_detailed_body">အင်္ကြိုင်ခေါင်းတည်းဆိုင်နှင့်အသံချက်ချက်ဝေဖန်ပြုလုပ်မှုအချိန်ကိုမြည့်ပါ။ android သည်အင်္ကြိုင်ထည့်သွင်းအခြင်းအရောင်းများအားလုံးအသုံးပြုလုပ်ကျွမ်းကျင်အက်ပ်ကိုကိုယ်တိုင်အီ notification အသုံးပြုခြင်းကိုအီ notification ပြည့်ဆည်းသည်။ ဘလူးတုသ်သည်သုံးချင်း။</string>
-    <string name="settings_detailed_unavailable">ဘလူးတုသ်အဝင်ခွင့်မြင်အီ available မခွင့်ပြုမည်မဟုတ်ပါ။ ယင်း build သည်ချိတ်ဆက်ဒီဗိုင်းအီ service အုပ်စုသည်သုံးခွင့်ပြုမည်သည်။ android 14+ အမြင်အီ Bluetooth အီ permission နှင့်ချိတ်ဆက်သည်။</string>
+    <string name="settings_detailed_body">ကြိုးတပ် နားကြပ်များနှင့် အသံဖွင့်ချိန်ကို ထည့်သွင်းပါသည်။ android သည် ကြိုးထိုးသည့် အချက်ပြများကို လည်ပတ်နေသော အက်ပ်သို့သာ ပေးပို့သဖြင့် ဤအရာက အသံတိတ် အကြောင်းကြားချက်တစ်ခုကို ထားရှိပါသည်။ bluetooth ကိုမူ နှစ်မျိုးလုံးတွင် မှတ်တမ်းတင်ပါသည်။</string>
+    <string name="settings_detailed_unavailable">bluetooth ခွင့်ပြုချက် မရမချင်း အသုံးပြု၍ မရပါ — ဤ build သည် connectedDevice ဝန်ဆောင်မှုအမျိုးအစားကိုသာ ကြေညာပြီး၊ android 14+ က ၎င်းကို bluetooth ခွင့်ပြုချက်နှင့် ချိတ်ဆက်ထားပါသည်။</string>
     <string name="settings_playback_only_title">အသံချက်ချက်သည်တစ်ခုသာရေတွက်</string>
     <string name="settings_playback_only_body">စာရင်းအင်းတစ်ခုအားချိတ်ဆက်သည့်အချိန်အသံချက်ချက်အလုပ်လုပ်ခွင့်အတူတည်ဆိုသည့်အခွင်းအရောင်များသည်အသံချက်ချက်ရုံ အမှတ်တရစာရင်းပြုလုပ်သည်။ အများအားဖြင့်တည်ဆိုလုံးပြည့်ထည့်သွင်းမြည့်မည်။</string>
     <string name="settings_language">ဘာသာစကား</string>
     <string name="settings_language_system">စနစ်ဘာသာစကား</string>
     <string name="settings_devices">ဒီဗိုင်းများ</string>
-    <string name="settings_devices_body">ခေါင်းတည်းဆိုင်မဟုတ်သည့်တစ်ခုအားလုံး - အီ stereo သို့မဟုတ်အီ speaker - စာရင်းမြည့်ခြင်းအားထုံးစံ။</string>
+    <string name="settings_devices_body">နားကြပ် မဟုတ်သည့်အရာ — ကားအသံစက် သို့မဟုတ် စပီကာ — ကို အမှတ်ခြစ် ဖြုတ်လိုက်ပါ၊ ထိုအခါ မှတ်တမ်း မတင်တော့ပါ။</string>
     <string name="settings_device_subtitle">%1$s · ပထမဆုံးခေါင်းအီ %2$s</string>
-    <string name="settings_data">data</string>
-    <string name="settings_export">export json</string>
-    <string name="settings_import">import</string>
-    <string name="settings_import_warning">import ယခုအခါအုံးတွင်ရှိသည့်အားလုံးအားလည်းအီ အကျယ်ထည့်သွင်း။</string>
-    <string name="settings_troubleshooting">အီ troubleshooting</string>
-    <string name="settings_battery_body">အခွင်းအရောင်များအီ recorded ခြင်းအားထုံးစံအကျ၏ အီ battery အီ optimization အားအီ exclude ယင်း app သည်အီ force-stopped အားမည်သည့်အခါအီ connected အီ broadcasts ကိုအီ receive မည်မဟုတ်ပါ။</string>
-    <string name="settings_battery_button">battery ဆက်တင်</string>
-    <string name="settings_battery_path">ဆက်တင် → အက်ပ်များ → ylih → battery → သုံးခွင့်မည်။</string>
-    <string name="settings_hibernation_body">ylih သည်သုံးလအနည်းအကျခွင့်မြင်မဟုတ်ခြင်း၊ android အုံးထုံးစံခွင့်မြင်ယူလက်ခြင်းသည်မည်သည့်အခါအီ open မည်မသည့်အခါ။ အကျော်ဆုံးအါခွင့်ပြုခြင်းသည်တစ်ခုအလုံးအရုံးအီ season အီ app သည်အုံးတွင်ရေတွက်ခြင်းကိုအီ pair ခွင့်ပြုသည်။</string>
+    <string name="settings_data">ဒေတာ</string>
+    <string name="settings_export">json ထုတ်ယူရန်</string>
+    <string name="settings_import">သွင်းယူရန်</string>
+    <string name="settings_import_warning">သွင်းယူခြင်းသည် ယခု သိမ်းဆည်းထားသမျှကို အစားထိုးပါသည်။</string>
+    <string name="settings_troubleshooting">ပြဿနာ ဖြေရှင်းခြင်း</string>
+    <string name="settings_battery_body">ဆက်ရှင်များ မှတ်တမ်းမတင်တော့ပါက ylih သည် ဘက်ထရီ ချွေတာမှုမှ ကင်းလွတ်မှု ရှိမရှိ စစ်ဆေးပါ — အတင်းရပ်တန့်ခံထားရသော အက်ပ်သည် ပြန်မဖွင့်မချင်း ချိတ်ဆက်မှု အချက်ပြများကို လက်ခံရရှိမည် မဟုတ်ပါ။</string>
+    <string name="settings_battery_button">ဘက်ထရီ ဆက်တင်</string>
+    <string name="settings_battery_path">ဆက်တင် → အက်ပ်များ → ylih → ဘက်ထရီ → ကန့်သတ်မထားပါ။</string>
+    <string name="settings_hibernation_body">ylih ကို လအနည်းငယ် မဖွင့်ဘဲထားပါက android က ၎င်းကို ရပ်တန့်စေပြီး ခွင့်ပြုချက်များကို ပြန်သိမ်းသဖြင့်၊ သင်ပြန်ဖွင့်သည်အထိ မည်သည့်အရာမျှ မှတ်တမ်းမတင်ပါ။ ၎င်းကို ပိတ်ထားခြင်းက အက်ပ်အကြောင်း လုံးဝမစဉ်းစားမိသည့် ရာသီတစ်ခုလုံးတွင်ပင် အတွဲကို ဆက်လက် ရေတွက်နေစေပါသည်။</string>
     <string name="settings_hibernation_on">android အုံးထုံးစံ ylih အားခွင့်မည်။</string>
-    <string name="settings_hibernation_off">ylih အီ exclude နှင့်ရေတွက်ခြင်းကိုဆက်လက်။</string>
-    <string name="settings_hibernation_button">အီ unused အက်ပ်ဆက်တင်</string>
-    <string name="settings_about">အီ about</string>
-    <string name="settings_about_body">ylih %1$s (%2$s) — ခေါင်းတည်းဆိုင်နာရီ၊ ကိုယ်ပိုင်နည်းနဲ့အီ forever သိမ်းဆည်း။</string>
-    <string name="settings_import_confirm_title">အားလုံး data အီ replace?</string>
-    <string name="settings_import_confirm_body">import ယင်း backup အုံးတွင်ရှိသည့်အားလုံးအီ device၊ pair နှင့်အခွင်းအရောင်များဖျက်ရှင်း။</string>
+    <string name="settings_hibernation_off">ylih သည် ကင်းလွတ်ခွင့်ရပြီး ဆက်လက် မှတ်တမ်းတင်နေပါသည်။</string>
+    <string name="settings_hibernation_button">မသုံးသော အက်ပ် ဆက်တင်များ</string>
+    <string name="settings_about">အကြောင်း</string>
+    <string name="settings_about_body">ylih %1$s (%2$s) — နားကြပ် နာရီများ၊ ဤစက်ထဲတွင်သာ ထာဝစဉ် သိမ်းဆည်းထားသည်။</string>
+    <string name="settings_import_confirm_title">ဒေတာအားလုံး အစားထိုးမလား?</string>
+    <string name="settings_import_confirm_body">ဤ backup ကို သွင်းယူပါက ယခု သိမ်းဆည်းထားသော စက်ပစ္စည်း၊ အတွဲနှင့် ဆက်ရှင် အားလုံး ပျက်သွားပါမည်။</string>
 
-    <string name="widget_lifetime_label">ylih · lifetime</string>
-    <string name="widget_lifetime_description">pair တစ်ခုလျှင်နာရီများ၊ ချိတ်ဆက်သည့်အများအားဖြင့် live timer အီ</string>
-    <string name="widget_activity_label">ylih · activity</string>
-    <string name="widget_activity_description">အီ pair အားလုံးနာရီများ၊ အီ plus ယနေ့၊ 7 ရက်နှင့် 30 ရက်</string>
+    <string name="widget_lifetime_label">ylih · သက်တမ်း</string>
+    <string name="widget_lifetime_description">အတွဲအလိုက် နာရီများ၊ ချိတ်ဆက်ထားသည့်အရာအတွက် တိုက်ရိုက် အချိန်တိုင်းကိရိယာနှင့်</string>
+    <string name="widget_activity_label">ylih · လှုပ်ရှားမှု</string>
+    <string name="widget_activity_description">အတွဲအားလုံး၏ နာရီများ စုစုပေါင်း၊ ထို့အပြင် ယနေ့၊ 7 ရက်နှင့် 30 ရက်</string>
     <string name="widget_chart_label">ylih · 30 ရက်</string>
     <string name="widget_chart_description">နေ့စဉ်နားထိုင်နာရီများကို 30 ရက်တွင်</string>
 
     <string name="action_save">သိမ်းဆည်း</string>
     <string name="action_cancel">ယခုအခါမဟုတ်</string>
     <string name="action_delete">ဖျက်ရှင်း</string>
-    <string name="action_import">import</string>
+    <string name="action_import">သွင်းယူရန်</string>
 
-    <string name="channel_tracking">ခေါင်းတည်းဆိုင်စာရင်းပြုလုပ်</string>
-    <string name="channel_tracking_description">ylih အီ wired ခေါင်းတည်းဆိုင်နှင့်အသံချက်ချက်ကိုစောင့်ကြည့်ခြင်းအည်ပြည့်ဆည်း။ android မည်သည့်အခါအီ wired plug အခြင်းအရောင်းများအီ running မဟုတ်သည့်အက်ပ်များအားမည်သည့်အခါ။</string>
-    <string name="notification_title">ခေါင်းတည်းဆိုင်အချိန်စာရင်းပြုလုပ်</string>
+    <string name="channel_tracking">နားကြပ်စာရင်းပြုလုပ်</string>
+    <string name="channel_tracking_description">ylih က ကြိုးတပ် နားကြပ်နှင့် အသံဖွင့်ခြင်းကို စောင့်ကြည့်နေစဉ် ပြသပါသည်။ android သည် ကြိုးထိုးသည့် အချက်ပြများကို မလည်ပတ်သော အက်ပ်များထံ ပေးပို့ခြင်း မရှိပါ။</string>
+    <string name="notification_title">နားကြပ်အချိန်စာရင်းပြုလုပ်</string>
     <string name="notification_starting">စတင်…</string>
-    <string name="notification_idle">ခေါင်းတည်းဆိုင်အားစောင့်ခံ</string>
+    <string name="notification_idle">နားကြပ်အားစောင့်ခံ</string>
     <plurals name="notification_active">
         <item quantity="other">%1$d ချိတ်ဆက်ထားရှိ · %2$s</item>
     </plurals>
@@ -160,14 +160,14 @@
         <item quantity="other">%1$d ချိတ်ဆက်ထားရှိ · %2$s · အသံသွား</item>
     </plurals>
 
-    <string name="detailed_needs_bluetooth">ယင်း build သည် အင်္ကြိုင်ခေါင်းတည်းဆိုင်စာရင်းပြုလုပ်မည်အီ ဘလူးတုသ်အဝင်ခွင့်မြင်လိုအပ်</string>
-    <string name="export_done">backup အီ exported</string>
-    <string name="export_failed">export အီ failed</string>
-    <string name="import_failed">import အီ failed</string>
-    <string name="edit_failed">ယင်းအီ change သိမ်းဆည်းမည်မဟုတ်နိုင်</string>
-    <string name="error_could_not_open">%1$s အီ open မည်မဟုတ်နိုင်</string>
+    <string name="detailed_needs_bluetooth">ဤ build သည် ကြိုးတပ် နားကြပ်များကို မှတ်တမ်းတင်ရန် bluetooth ခွင့်ပြုချက် လိုအပ်ပါသည်</string>
+    <string name="export_done">အရန်ဖိုင် ထုတ်ယူပြီး</string>
+    <string name="export_failed">ထုတ်ယူမှု မအောင်မြင်ပါ</string>
+    <string name="import_failed">သွင်းယူမှု မအောင်မြင်ပါ</string>
+    <string name="edit_failed">ထိုပြောင်းလဲမှုကို သိမ်းဆည်း၍ မရပါ</string>
+    <string name="error_could_not_open">%1$s ကို ဖွင့်၍ မရပါ</string>
     <plurals name="import_done">
-        <item quantity="other">imported %d အခွင်းအရောင်များ</item>
+        <item quantity="other">ဆက်ရှင် %d ခု သွင်းယူပြီး</item>
     </plurals>
 
     <plurals name="session_count">

@@ -124,7 +124,7 @@
     <string name="settings_import">درواړ</string>
     <string name="settings_import_warning">درواړ هرچې اوس ذخیره شوي بدل کوي.</string>
     <string name="settings_troubleshooting">د مسایلو حل</string>
-    <string name="settings_battery_body">که جلسې ثبت شمار کول بند شي، چک کړئ چې ylih د بیٹري بهتري له وسیلې نه وي - هغه غوښتنې کوم force-stop شوي نه شي ګټوتي متصل ترانسمیشن ترلاسه کولای تر هغه وخت چې پرانستل شي.</string>
+    <string name="settings_battery_body">که د غونډو ثبتول ودرېږي، وګورئ چې ylih د بیټرۍ اصلاح څخه معاف دی — هغه اپلیکېشن چې په زوره ودرول شوی وي، تر هغه پورې د نښلولو خبرتیاوې نه ترلاسه کوي چې بیا پرانیستل نشي.</string>
     <string name="settings_battery_button">بیٹري ترتیبات</string>
     <string name="settings_battery_path">ترتیبات → غوښتنې → ylih → بیٹري → بې محدود.</string>
     <string name="settings_hibernation_body">که ylih ماهيانه بند وي، اندروید سست کوي او د اجازتونو پریږدي، او هیچ شی تر هغه وخت شمار نه شو چې تاسو پرانستل شي. د دې خاموشي کول د ګټې د فصل له پیل دنده سره جوړو ته اجازت ورکوي.</string>
@@ -134,7 +134,7 @@
     <string name="settings_about">په اړه</string>
     <string name="settings_about_body">ylih %1$s (%2$s) - هیڈفون ساعتونه، په مقامي او ابدي ذخیره شوي.</string>
     <string name="settings_import_confirm_title">ټول ډاټا بدل کړی؟</string>
-    <string name="settings_import_confirm_body">د دې backup درواړ هر وسیله، جوړه او جلسه اوس ذخیره شوي حذف کوي.</string>
+    <string name="settings_import_confirm_body">د دې زېرمې راوړل به هره هغه وسیله، جوړه او غونډه چې اوس زېرمه شوې ده، ړنګه کړي.</string>
 
     <string name="widget_lifetime_label">ylih · ژوند</string>
     <string name="widget_lifetime_description">ساعتونه د جوړې، د زندو ټایمر سره متصل کم وخت</string>
@@ -163,7 +163,7 @@
     </plurals>
 
     <string name="detailed_needs_bluetooth">دا جوړه بلوټوث رسائی ضرورت دي کول یا سیم شوی هیڈفون تعقیب</string>
-    <string name="export_done">backup نمایندګی شوی</string>
+    <string name="export_done">زېرمه صادره شوه</string>
     <string name="export_failed">نمایندګی ناکام</string>
     <string name="import_failed">درواړ ناکام</string>
     <string name="edit_failed">د دې تبدیلۍ ذخیره کولای نشو</string>

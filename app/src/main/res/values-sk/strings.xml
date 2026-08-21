@@ -39,7 +39,7 @@
     <string name="welcome_notifications_why">podrobné sledovanie spúšťa malú službu na pozadí a android vyžaduje, aby každá aplikácia to robiaca, udržiavala viditeľné oznámenie.</string>
     <string name="welcome_notifications_with">s ním: oznámenie ukazuje, čo sa práve zaznamenáva, čo je jediný znak, že podrobné sledovanie je aktívne.</string>
     <string name="welcome_notifications_without">bez neho: podrobné sledovanie stále beží a stále zaznamenáva. android jednoducho neukazuje jeho oznámenie.</string>
-    <string name="hibernation_title">keep counting while you forget about it</string>
+    <string name="hibernation_title">nech počíta ďalej, aj keď naň zabudneš</string>
     <string name="hibernation_body">android pozastavuje aplikácie, ktoré nie sú otvorené niekoľko mesiacov a odoberie im oprávnenia, čo by nechálo ylih bez zaznamenávania, kým ho opäť neotvoríte. byť zabudnutý je presne to, na čo je táto aplikácia, takže je to stojí vypnúť teraz.</string>
     <string name="action_not_now">nie teraz</string>
 
@@ -68,7 +68,7 @@
     <string name="stats_by_pair">podľa páru</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
     <string name="stats_pair_row_retired">%1$s · %2$s · vyradené</string>
-    <string name="chart_max">%1$s max</string>
+    <string name="chart_max">%1$s max.</string>
 
     <string name="pair_fallback_title">pár</string>
     <string name="pair_back">späť</string>

@@ -31,7 +31,7 @@
     <string name="welcome_next">հաջորդ</string>
     <string name="welcome_allow">թույլատրել</string>
     <string name="welcome_step">քայլ %1$d / %2$d-ից</string>
-    <string name="welcome_bluetooth_title">bluetooth միացում</string>
+    <string name="welcome_bluetooth_title">bluetooth հասանելիություն</string>
     <string name="welcome_bluetooth_why">android-ը հավելվածին ասում է միայն, թե որ bluetooth սարքն է միացված և ինչպես է կոչվում, եթե հավելվածը ունի bluetooth թույլտվություն: հենց այս կերպ ylih-ը տարբերում է ականջակցերը ավտոմոբիլային ստերեոյից և մեկ զույգը մյուսից</string>
     <string name="welcome_bluetooth_with">դրանով. յուրաքանչյուր զույգ գրանցվում է միացման պահից՝ առանց ծրագիր բաց թողելու և մեկ ընտրություն կատարելու</string>
     <string name="welcome_bluetooth_without">առանց դրա. bluetooth ականջակցերը ընդամենը չեն գրանցվի: հավելվածի մնացած մասը հետ շարունակում է աշխատել, և դուք կարող եք այն թույլատրել ավելի ուշ Android-ի կարգավորումներում</string>
@@ -128,7 +128,7 @@
     <string name="settings_battery_button">մարտկոցի կարգավորումներ</string>
     <string name="settings_battery_path">կարգավորումներ → հավելվածներ → ylih → մարտկոց → անսահմանափակ</string>
     <string name="settings_hibernation_body">եթե ylih-ը մի քանի ամիս չբացվեր, android-ը միջժամկետական փուլ կա և վերցնում է թույլտվությունները, և ոչինչ չէ հաշվել, մինչ բացեք: դրա անջատումն այն է, որ մի պատ շարունակել պահել մի սեզոնի ընթացքում, երբ չեք մտածում հավելվածի մասին</string>
-    <string name="settings_hibernation_on">android-ը կարող է durationhus ylih</string>
+    <string name="settings_hibernation_on">android-ը կարող է դադարեցնել ylih-ը։</string>
     <string name="settings_hibernation_off">ylih-ը բացառված է և շարունակում է գրանցել</string>
     <string name="settings_hibernation_button">չօգտագործված հավելվածի կարգավորումներ</string>
     <string name="settings_about">մեր մասին</string>

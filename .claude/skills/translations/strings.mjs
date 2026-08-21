@@ -524,6 +524,26 @@ cmds.check = (argv) => {
     if (script && written && script !== written)
       add(l.tag, `script: the file is written in ${written}, but ${l.tag} is a ${script} language`)
 
+    // A single value left in English inside a locale that does not use the alphabet. The script
+    // check above sees only the file as a whole, so a locale can be 90% translated and still hand
+    // "average session" and "playing share" to a reader of Odia — which is what it did. Tech words
+    // every locale keeps are stripped first, and five letters is the floor so that "max" and "app"
+    // do not fill the report with things nobody would translate.
+    // Only where the file is otherwise in the right script: when it is not, the line above has
+    // already said so, and repeating it once per string buries every other locale in the report.
+    if (script && script !== 'Latin' && written === script) {
+      for (const [name, e] of f.keys) {
+        for (const v of (e.kind === 'string' ? [e.value] : [...e.items.values()])) {
+          const bare = v.replace(/%\d*\$?[a-zA-Z]/g, ' ')
+            .replace(/\b(ylih|usb|bluetooth|ble|le|audio|json|android|connectedDevice|https?)\b/gi, ' ')
+          const letters = bare.replace(/[^\p{L}]/gu, '')
+          const latin = (letters.match(/\p{Script=Latin}/gu) ?? []).length
+          if (latin >= 5 && latin > letters.length / 2)
+            add(l.tag, `${name}: still in English ("${v.slice(0, 40)}")`)
+        }
+      }
+    }
+
     // Scaffolding a generator wrote and nobody filled in. It reaches users verbatim: seven locales
     // shipped "[lv] save" on a button.
     const stubs = [...f.keys].filter(([, e]) => e.kind === 'string' && /^\[[A-Za-z+-]{2,12}\]\s/.test(e.value))

@@ -73,7 +73,7 @@
     <string name="stats_by_pair">bawat pares</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
     <string name="stats_pair_row_retired">%1$s · %2$s · na-retire</string>
-    <string name="chart_max">%1$s max</string>
+    <string name="chart_max">%1$s labing taas</string>
 
     <!-- Detalye ng pares -->
     <string name="pair_fallback_title">pares</string>
@@ -88,7 +88,7 @@
     <string name="pair_retired_with_reason">na-retire %1$s · %2$s</string>
     <string name="pair_connected_now">konektado ngayon · %1$s</string>
     <string name="pair_sessions">mga session</string>
-    <string name="pair_average">average</string>
+    <string name="pair_average">kasagaran</string>
     <string name="pair_longest">pinakamahaba</string>
     <string name="pair_since">sukad %1$s</string>
     <string name="pair_of_measured">bahin nga nagpatugtog</string>
@@ -127,14 +127,14 @@
     <string name="settings_devices">mga device</string>
     <string name="settings_devices_body">aalis-alisan ang mga hindi ito headphones — isang car stereo o isang speaker — upang tumigil sa pag-record nito.</string>
     <string name="settings_device_subtitle">%1$s · una nakita %2$s</string>
-    <string name="settings_data">data</string>
+    <string name="settings_data">datos</string>
     <string name="settings_export">i-export ang json</string>
     <string name="settings_import">mag-import</string>
     <string name="settings_import_warning">ang pag-import ay papalit ng lahat ng kasalukuyang nakatala.</string>
     <string name="settings_troubleshooting">paglutas ng mga problema</string>
     <string name="settings_battery_body">kung hindi na nakatala ang mga session, tingnan kung ang ylih ay exempt mula sa battery optimization — isang app na na-force stop ay hindi na makakatanggap ng connection broadcasts hanggang sa muling buksan ito.</string>
-    <string name="settings_battery_button">battery settings</string>
-    <string name="settings_battery_path">settings → apps → ylih → battery → unrestricted.</string>
+    <string name="settings_battery_button">mga setting sa baterya</string>
+    <string name="settings_battery_path">mga setting → apps → ylih → baterya → walay pagpugong.</string>
     <string name="settings_hibernation_body">kung ang ylih dili maablihan sa pipila ka bulan, gipahunong kini sa android ug gikuha ang mga pagtugot niini, ug walay marekord pag-usab hangtod nga imong ablihan kini. ang pag-off niini mao ang nagpahimo sa usa ka parisan sa padayon nga pag-ihap bisan sa panahon nga wala gyud nimo hunahunaa ang app.</string>
     <string name="settings_hibernation_on">mahimong pahunongon sa android ang ylih.</string>
     <string name="settings_hibernation_off">gawasnon ang ylih ug padayon nga nagrekord.</string>
@@ -184,7 +184,7 @@
     </plurals>
 
     <plurals name="session_count">
-        <item quantity="one">%d session</item>
-        <item quantity="other">%d sessions</item>
+        <item quantity="one">%d ka session</item>
+        <item quantity="other">%d ka session</item>
     </plurals>
 </resources>

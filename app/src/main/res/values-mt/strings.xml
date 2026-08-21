@@ -8,13 +8,13 @@
 <resources>
     <string name="app_title">ylih - ħajjtek fil-headphones</string>
 
-    <string name="nav_headphones">headphones</string>
+    <string name="nav_headphones">awrikolari</string>
     <string name="nav_stats">statistiki</string>
-    <string name="nav_settings">settings</string>
+    <string name="nav_settings">issettjar</string>
 
     <string name="kind_bluetooth">bluetooth</string>
     <string name="kind_ble">le audio</string>
-    <string name="kind_wired">wired</string>
+    <string name="kind_wired">bil-wajer</string>
     <string name="kind_usb">usb</string>
     <string name="kind_unknown">mhux maghruf</string>
 
@@ -68,7 +68,7 @@
     <string name="stats_by_pair">skond il-par</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
     <string name="stats_pair_row_retired">%1$s · %2$s · ritirta</string>
-    <string name="chart_max">%1$s max</string>
+    <string name="chart_max">%1$s massimu</string>
 
     <string name="pair_fallback_title">par</string>
     <string name="pair_back">lura</string>
@@ -81,7 +81,7 @@
     <string name="pair_retired_on">ritirta %1$s</string>
     <string name="pair_retired_with_reason">ritirta %1$s · %2$s</string>
     <string name="pair_connected_now">qabbda issa · %1$s</string>
-    <string name="pair_sessions">sessions</string>
+    <string name="pair_sessions">sessjonijiet</string>
     <string name="pair_average">medja</string>
     <string name="pair_longest">l-aktar twila</string>
     <string name="pair_since">minn %1$s</string>
@@ -108,7 +108,7 @@
     <string name="session_playing">%1$s sejjer</string>
     <string name="session_recovered">rkuprata</string>
 
-    <string name="settings_tracking">tracking</string>
+    <string name="settings_tracking">traċċar</string>
     <string name="settings_detailed_title">tracking dettaljat</string>
     <string name="settings_detailed_body">iżżid headphones wired u l-ħin tal-playback. android issolwi jgħid wired plug events biss għal app li jaħdem, allura dan iżommu notifka silenziusa fl-ombra. bluetooth jiġi tracked xantier.</string>
     <string name="settings_detailed_unavailable">mhux disponibbli sal-ħadd li tintgħata aċċess bluetooth: il-build din issolwi jiddikjara l-type ta’ servizz connectedDevice biss, li android 14+ jgħoqqdu ma’ permission ta’ bluetooth.</string>
@@ -116,17 +116,17 @@
     <string name="settings_playback_only_body">stats tgħodd il-ħin li l-awdjo verament kien sejjer minflok il-ħin li kien qabbad. sessions biss rrekordjati b’tracking dettaljat fuq imkejjel playback; ir-resto jiġu ħallija.</string>
     <string name="settings_language">lingwa</string>
     <string name="settings_language_system">lingwa tas-sistema</string>
-    <string name="settings_devices">devices</string>
+    <string name="settings_devices">apparati</string>
     <string name="settings_devices_body">waħħal kwalunkwe ħaġa li mhix headphones - car stereo jew speaker - biex twaqqaf tgħodd.</string>
     <string name="settings_device_subtitle">%1$s · l-ewwel ra %2$s</string>
-    <string name="settings_data">data</string>
-    <string name="settings_export">export json</string>
-    <string name="settings_import">import</string>
+    <string name="settings_data">dejta</string>
+    <string name="settings_export">esporta json</string>
+    <string name="settings_import">importa</string>
     <string name="settings_import_warning">l-import ibdel kollox li ġia maħżun.</string>
-    <string name="settings_troubleshooting">troubleshooting</string>
+    <string name="settings_troubleshooting">soluzzjoni ta’ problemi</string>
     <string name="settings_battery_body">jekk sessions jissibu jitwaqqfu li jiġu rrekordjati, iftiex li ylih ikun exempt mill-battery optimisation - app li ġiet force-stopped qatt ma tirċibi broadcastings tal-qbala mill-ġdid sal-ħadd li tiftaħu.</string>
-    <string name="settings_battery_button">battery settings</string>
-    <string name="settings_battery_path">settings → apps → ylih → battery → unrestricted.</string>
+    <string name="settings_battery_button">issettjar tal-batterija</string>
+    <string name="settings_battery_path">issettjar → apps → ylih → batterija → mingħajr restrizzjoni.</string>
     <string name="settings_hibernation_body">jekk ylih tmur miftuħa għal ftit xhur, android iwqafha u jieħdu l-permissions tiegħa lura, u xejn ma jirrekorda mill-ġdid sal-ħadd li tiftaħu. it-tlibesx ta’ dan hu li jħalli par tirkompli tuqgħod tgħodd permezz ta’ staġun li inti qatt ma taħsart dwar l-app.</string>
     <string name="settings_hibernation_on">android jista’ jwqaf ylih.</string>
     <string name="settings_hibernation_off">ylih exempt u tirkompli tgħodd.</string>
@@ -136,9 +136,9 @@
     <string name="settings_import_confirm_title">ibdel il-data kollha?</string>
     <string name="settings_import_confirm_body">l-import ta’ il-backup din tmħassef kull device, par u session maħżun issa.</string>
 
-    <string name="widget_lifetime_label">ylih · lifetime</string>
+    <string name="widget_lifetime_label">ylih · tul il-ħajja</string>
     <string name="widget_lifetime_description">sigħat kull par, b’timer ħaj fuq xi mkejjel qabbad</string>
-    <string name="widget_activity_label">ylih · activity</string>
+    <string name="widget_activity_label">ylih · attività</string>
     <string name="widget_activity_description">sigħat ta’ kull par flimkien, plus illum, 7 ġimgħat u 30 ġimgħat</string>
     <string name="widget_chart_label">ylih · 30 ġimgħat</string>
     <string name="widget_chart_description">sigħat ta’ stmigħ kuljum fuq l-aħħar 30 ġimgħat</string>

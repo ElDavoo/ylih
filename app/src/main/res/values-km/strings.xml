@@ -31,7 +31,7 @@
     <string name="welcome_next">បន្ទាប់</string>
     <string name="welcome_allow">អនុញ្ញាត</string>
     <string name="welcome_step">ជំហាន %1$d នៃ %2$d</string>
-    <string name="welcome_bluetooth_title">ការទទួលបាន bluetooth</string>
+    <string name="welcome_bluetooth_title">ការចូលប្រើ bluetooth</string>
     <string name="welcome_bluetooth_why">android គ្រាន់តែប្រាប់ให្ថ្មប់ថាឧបករណ៍ bluetooth មួយដែលបានភ្ជាប់ និងតម្លៃរបស់វា ប្រសិនបើ្ថ្មប់មានលិខិត។ វាជាមធ្យោបាយ ylih ដែលផ្តល់ឱ្យឯកសារលោហៈ ពីឧបករណ៍សាលីយោ ហើយវាដឹងឯកសារមួយ ពីមួយផ្សេងទៀត។</string>
     <string name="welcome_bluetooth_with">ដោយគាត់ ឯកសារនីមួយៗក្លាយជាកត់ត្រា ចាប់ផ្តើមពីពេលដែលវាភ្ជាប់ មិនមាននរណាម្នាក់ដែលចាំបាច់ធ្វើឱ្យដំណើរការទេ ហើយគ្មានអ្វីដែលត្រូវចងចាំ។</string>
     <string name="welcome_bluetooth_without">ដោយគ្មាន៖ គ្មានឯកសារលោហៈ bluetooth ឡើយ។ ផ្នែកផ្សេងទៀតនៃ្ថ្មប់ដែលនៅដំណើរការ ហើយអ្នកអាចផ្តល់ជូនវាក្រោយក្នុងកម្មវិធីកំណត់របស់ android ។</string>
@@ -68,7 +68,7 @@
     <string name="stats_by_pair">ដោយឯកសារ</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
     <string name="stats_pair_row_retired">%1$s · %2$s · ដកចេញ</string>
-    <string name="chart_max">%1$s max</string>
+    <string name="chart_max">%1$s អតិបរមា</string>
 
     <string name="pair_fallback_title">ឯកសារ</string>
     <string name="pair_back">ត្រឡប់ក្រោយ</string>
@@ -128,7 +128,7 @@
     <string name="settings_battery_button">ការកំណត់ថាមពល</string>
     <string name="settings_battery_path">ការកំណត់ → កម្មវិធី → ylih → ថាមពល → មិនរឹង។</string>
     <string name="settings_hibernation_body">ប្រសិនបើ ylih មិនបានបើក ក្នុងរយៈពេលច្រើនខែ android ផ្អាក ហើយយកលិខិតរបស់វា វិច គ្មាននរណាម្នាក់ត្រូវបានកត់ត្រា រហូតដល់ពេលដែលអ្នកបើក។ ការបង្វែលវាលាក់ អាចឱ្យឯកសាររាប់ក្នុងរយៈពេលដែលអ្នកមិនគិតអំពី្ថ្មប់។</string>
-    <string name="settings_hibernation_on">android អាចផ្អាក ylih ។</string>
+    <string name="settings_hibernation_on">android អាចផ្អាក ylih បាន។</string>
     <string name="settings_hibernation_off">ylih គឺឥតគិតថ្លៃ ហើយបង្វែលទៅលេង។</string>
     <string name="settings_hibernation_button">ការកំណត់ក្រុមបង្កើត មិនប្រើប្រាស់</string>
     <string name="settings_about">ពី</string>
@@ -154,10 +154,10 @@
     <string name="notification_starting">ចាប់ផ្តើម…</string>
     <string name="notification_idle">រង់ចាំឯកសារលោហៈ</string>
     <plurals name="notification_active">
-        <item quantity="other">%1$d connected · %2$s</item>
+        <item quantity="other">%1$d បានភ្ជាប់ · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
-        <item quantity="other">%1$d connected · %2$s · playing</item>
+        <item quantity="other">%1$d បានភ្ជាប់ · %2$s · កំពុងចាក់</item>
     </plurals>
 
     <string name="detailed_needs_bluetooth">ក្រុមបង្កើត លិខិត bluetooth ឧបករណ៍ខ្សែផ្តល់ឱ្យ</string>
@@ -167,10 +167,10 @@
     <string name="edit_failed">មិនបានរក្សាទុក ផ្លាស់ប្តូរ</string>
     <string name="error_could_not_open">មិនបានបើក %1$s</string>
     <plurals name="import_done">
-        <item quantity="other">imported %d sessions</item>
+        <item quantity="other">នាំចូល %d សម័យ</item>
     </plurals>
 
     <plurals name="session_count">
-        <item quantity="other">%d sessions</item>
+        <item quantity="other">%d សម័យ</item>
     </plurals>
 </resources>

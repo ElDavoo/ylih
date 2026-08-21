@@ -120,7 +120,7 @@
     <string name="settings_devices_body">ಏನೂ ಹೆಡ್ಫೋನ್ - ಕಾರು ಸ್ಟೀರಿಯೊ ಅಥವಾ ಸ್ಪೀಕರ್ - ಇದಿದೆ ಟ್ರ್ಯಾಕಿಂಗ್ ನಿಲ್ಲಿಸಲು ಅನ್ಚೆಕ್.</string>
     <string name="settings_device_subtitle">%1$s · ಮೊದಲ ತಿದೆ %2$s</string>
     <string name="settings_data">ಡೇಟಾ</string>
-    <string name="settings_export">ರಫ್ತು json</string>
+    <string name="settings_export">json ರಫ್ತು</string>
     <string name="settings_import">ಆಮದು</string>
     <string name="settings_import_warning">ಆಮದು ಎಲ್ಲ ಪ್ರಸ್ತುತ ಸಂಗ್ರಹಿತ ಮೇಲೆ ಇದೆ.</string>
     <string name="settings_troubleshooting">ಸಮಸ್ಯೆ ಸಮಾಧಾನ</string>
@@ -128,7 +128,7 @@
     <string name="settings_battery_button">ಬ್ಯಾಟರಿ ಸೆಟ್ಟಿಂಗ್</string>
     <string name="settings_battery_path">ಸೆಟ್ಟಿಂಗ್ → ಸಾಧನ → ylih → ಬ್ಯಾಟರಿ → ಅನಿರ್ಬಂಧಿತ.</string>
     <string name="settings_hibernation_body">ylih ಕೆಲವು ತೆರೆಯಿಸಿ ನಿಜ ಮಾಸ ನಾಮಧೇಯ ಆ ಅನುಮತಿ ವಾಪಸ್, ಮತ್ತು ನಿಜ ಟ್ರ್ಯಾಕ ನೀವು ತೆರೆಯುವ ತನಕ. ಸೂಕ್ಷ್ಮ ನಿವೃತ್ತ ಜೋಡಿ ಕಳೆದ ವಿನಾ ಒಂದು ಸೆಷನ್ ನೀವೊ ಭಾಗ ಮೂಲಕ ಎಣಿಸುತ್ತ.</string>
-    <string name="settings_hibernation_on">android ylih ಬೆಚಿರಿದೆ.</string>
+    <string name="settings_hibernation_on">android ylih ಅನ್ನು ವಿರಾಮಗೊಳಿಸಬಹುದು.</string>
     <string name="settings_hibernation_off">ylih ಮುಕ್ತ ಮತ್ತು ಟ್ರ್ಯಾಕಿಂಗ್.</string>
     <string name="settings_hibernation_button">ಅಪ್ಲಿಕೇಶನ ಅನಧಿಕೃತ ಸೆಟ್ಟಿಂಗ್</string>
     <string name="settings_about">ವಿಷಯದ</string>

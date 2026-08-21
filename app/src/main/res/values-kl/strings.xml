@@ -35,10 +35,10 @@
     <string name="welcome_bluetooth_why">android qitirneq app-imut anersaasut bluetooth-inut immikkut, ikinnik ataanilinnut, app-am bluetooth ikkinnguttaq ataanilugujoq. siullerni ylih nukappiaaq qallaligunilaq qanuja-stereotunik, ikinnik allagua nukappiaaq misigissuni.</string>
     <string name="welcome_bluetooth_with">tamannalu: allagua nukappiaaq immiksut atorta, tamassumalu angijorniq, pium akutukkunnissutaqaaq.</string>
     <string name="welcome_bluetooth_without">tamannaalaq: bluetooth nukappiaaq ilortariaqartuq ataallaq. ylih-imi ataatsimut atorpoq, ikinnik android-imi app-imi pinngutat-imi ajaanngineq.</string>
-    <string name="welcome_notifications_title">notifications</string>
-    <string name="welcome_notifications_why">detailed tracking runs a small background service, and android requires any app doing that to keep a notification visible while it does.</string>
-    <string name="welcome_notifications_with">with it: the notification shows what is being recorded right now, which is the only sign detailed tracking is alive.</string>
-    <string name="welcome_notifications_without">without it: detailed tracking still runs and still records. android just will not show its notification.</string>
+    <string name="welcome_notifications_title">nalunaarutit</string>
+    <string name="welcome_notifications_why">misissuineq annertooq sullissivimmik mikisumik ingerlatsivoq, android-ilu taamaaliortunut nalunaarut takussaatinneqartuassasoq piumasaqaataavoq.</string>
+    <string name="welcome_notifications_with">taanna atorlugu: nalunaarut takutippaa suna maanna nalunaarsorneqarnersoq, taannalu kisiat takutitsisuuvoq misissuineq annertooq ingerlanersoq.</string>
+    <string name="welcome_notifications_without">taanna atorneqanngippat: misissuineq annertooq suli ingerlavoq nalunaarsorlunilu. android-i kisianni nalunaarutaa takutissanngilaa.</string>
     <string name="hibernation_title">kigut ippumuk aqviliorsugut</string>
     <string name="hibernation_body">android app-ik tunngasugut qessutsimut tupikkasoq sappaaq taassumagit ikkinnguttat, ylih ilortariaqarpoq pium ajoqilinnilaq. taassumagit aqviliorsunngillat taannalu ilaa app-ima, tamannalu unangasilinnaleq.</string>
     <string name="action_not_now">imaq anneq</string>

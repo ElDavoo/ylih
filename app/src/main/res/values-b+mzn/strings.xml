@@ -136,9 +136,9 @@
     <string name="settings_import_confirm_title">تمام داده ها را جایگزین کنید؟</string>
     <string name="settings_import_confirm_body">واردکردن این پشتیبان تمام دستگاه ها، جفت ها و جلسات ذخیره شده را حذف می کند.</string>
 
-    <string name="widget_lifetime_label">ylih · lifetime</string>
+    <string name="widget_lifetime_label">ylih · عمر</string>
     <string name="widget_lifetime_description">ساعات در هر جفت با تایمر زنده برای هرچه متصل است</string>
-    <string name="widget_activity_label">ylih · activity</string>
+    <string name="widget_activity_label">ylih · فعالیت</string>
     <string name="widget_activity_description">ساعات هر جفت به طور کل، علاوه بر امروز، 7 روز و 30 روز</string>
     <string name="widget_chart_label">ylih · 30 روز</string>
     <string name="widget_chart_description">ساعات شنیداری روزانه در 30 روز گذشته</string>

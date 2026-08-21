@@ -31,7 +31,7 @@
     <string name="welcome_next">кейинги</string>
     <string name="welcome_allow">рухсат беринг</string>
     <string name="welcome_step">%1$d / %2$d қадамда</string>
-    <string name="welcome_bluetooth_title">bluetooth уланиш</string>
+    <string name="welcome_bluetooth_title">bluetooth рухсати</string>
     <string name="welcome_bluetooth_why">android фақат дастур bluetooth уланишнинг рухсатига эга болса, қайси bluetooth қурилма уланганлигини аёлатади. ушбу ylih аудиотосмаларни машина мўзикасидан ажратади.</string>
     <string name="welcome_bluetooth_with">рухсат берилса: ҳар бир аудиотосма уланиш дан сўнг қайд этилади.</string>
     <string name="welcome_bluetooth_without">рухсат берилмаса: bluetooth аудиотосмалари қайд этилмайди. қолган дастур ишлайди.</string>
@@ -111,7 +111,7 @@
     <string name="settings_tracking">қўнун</string>
     <string name="settings_detailed_title">батафсил қўнун</string>
     <string name="settings_detailed_body">симли аудиотосмалар ва чоён вақти қўш қилади. android фақат ишлаб турган дастурга сим туташ воқалириби аттирғули йиберади. bluetooth ҳар қанда қўнун қилинади.</string>
-    <string name="settings_detailed_unavailable">bluetooth рухсати берилмаса онергана йўқ. ушбу қуруллма faqat connectedDevice хизматини эълон қилади.</string>
+    <string name="settings_detailed_unavailable">bluetooth рухсати берилмагунча ишламайди: ушбу қурилма фақат connectedDevice хизмат турини эълон қилади, android 14+ эса уни bluetooth рухсати билан боғлайди.</string>
     <string name="settings_playback_only_title">фақат чоён вақтини саноқлаш</string>
     <string name="settings_playback_only_body">статистика уланиш вақти ўрнига фақат чоён вақтини саноқлайди. батафсил қўнун билан қайд этилган сеансле фақат.</string>
     <string name="settings_language">тил</string>
