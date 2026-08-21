@@ -55,6 +55,7 @@
     <string name="stats_title">chluichyn chlappeagh ooilley</string>
     <string name="stats_sessions_since">%1$s veih %2$s</string>
     <string name="stats_today">jiu</string>
+    <string name="stats_yesterday">jea</string>
     <string name="stats_last_7">ny 7 laa shoh shoh</string>
     <string name="stats_last_30">ny 30 laa shoh shoh</string>
     <string name="stats_average_session">mean fondagh</string>

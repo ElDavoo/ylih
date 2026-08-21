@@ -55,6 +55,7 @@
     <string name="stats_title">kra tmaza</string>
     <string name="stats_sessions_since">%1$s seg %2$s</string>
     <string name="stats_today">assa</string>
+    <string name="stats_yesterday">assenaṭ</string>
     <string name="stats_last_7">ayyur 7 izrin</string>
     <string name="stats_last_30">ayyur 30 izrin</string>
     <string name="stats_average_session">amezdaz n tasrtiut</string>

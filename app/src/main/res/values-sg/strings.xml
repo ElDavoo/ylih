@@ -55,6 +55,7 @@
     <string name="stats_title">aûzo kûê</string>
     <string name="stats_sessions_since">%1$s dé %2$s</string>
     <string name="stats_today">doni</string>
+    <string name="stats_yesterday">bîrï</string>
     <string name="stats_last_7">zêni 7 tî kera</string>
     <string name="stats_last_30">zêni 30 tî kera</string>
     <string name="stats_average_session">gbalá senti</string>

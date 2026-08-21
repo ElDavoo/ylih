@@ -55,6 +55,7 @@
     <string name="stats_title">nā hoʻolohe leo a pau</string>
     <string name="stats_sessions_since">%1$s mai %2$s</string>
     <string name="stats_today">i kēia lā</string>
+    <string name="stats_yesterday">i nehinei</string>
     <string name="stats_last_7">nā lā 7 i hala</string>
     <string name="stats_last_30">nā lā 30 i hala</string>
     <string name="stats_average_session">ka awelika hoʻomaka</string>

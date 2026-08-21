@@ -55,6 +55,7 @@
     <string name="stats_title">sābhī hedāfon</string>
     <string name="stats_sessions_since">%1$s sāl %2$s sē</string>
     <string name="stats_today">āj</string>
+    <string name="stats_yesterday">kal</string>
     <string name="stats_last_7">pichhle 7 din</string>
     <string name="stats_last_30">pichhle 30 din</string>
     <string name="stats_average_session">avasar samvet</string>

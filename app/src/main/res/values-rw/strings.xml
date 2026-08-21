@@ -55,6 +55,7 @@
     <string name="stats_title">kopesi zose</string>
     <string name="stats_sessions_since">%1$s kuva %2$s</string>
     <string name="stats_today">uyumunsi</string>
+    <string name="stats_yesterday">ejo</string>
     <string name="stats_last_7">iminsi 7 yiswe</string>
     <string name="stats_last_30">iminsi 30 yiswe</string>
     <string name="stats_average_session">isiganiro ry’imigezi</string>

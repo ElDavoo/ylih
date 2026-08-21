@@ -60,6 +60,7 @@
     <string name="stats_title">усе наушніки</string>
     <string name="stats_sessions_since">%1$s з %2$s</string>
     <string name="stats_today">сёння</string>
+    <string name="stats_yesterday">учора</string>
     <string name="stats_last_7">апошнія 7 дзён</string>
     <string name="stats_last_30">апошнія 30 дзён</string>
     <string name="stats_average_session">средняя сесія</string>

@@ -55,6 +55,7 @@
     <string name="stats_title">kikalangishi kinzoto</string>
     <string name="stats_sessions_since">%1$s kusambuka %2$s</string>
     <string name="stats_today">lelu</string>
+    <string name="stats_yesterday">makelela</string>
     <string name="stats_last_7">masawu 7</string>
     <string name="stats_last_30">masawu 30</string>
     <string name="stats_average_session">musala yakabuakana</string>

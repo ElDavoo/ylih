@@ -55,6 +55,7 @@
     <string name="stats_title">بارلىق ئاۋاز بولۇمى</string>
     <string name="stats_sessions_since">%1$s - %2$s</string>
     <string name="stats_today">بۈگۈن</string>
+    <string name="stats_yesterday">تۈنۈگۈن</string>
     <string name="stats_last_7">ئاخىرقى 7 كۈن</string>
     <string name="stats_last_30">ئاخىرقى 30 كۈن</string>
     <string name="stats_average_session">ئورتىچە سەئاي</string>

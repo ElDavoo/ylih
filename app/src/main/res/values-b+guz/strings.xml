@@ -55,6 +55,7 @@
     <string name="stats_title">bisuma bya omwori</string>
     <string name="stats_sessions_since">%1$s kumbi %2$s</string>
     <string name="stats_today">komu</string>
+    <string name="stats_yesterday">igoro</string>
     <string name="stats_last_7">amin ayo maabiri 7</string>
     <string name="stats_last_30">amin ayo maabiri 30</string>
     <string name="stats_average_session">orichambire rikaabiri</string>

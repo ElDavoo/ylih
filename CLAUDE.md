@@ -189,6 +189,23 @@ deliberately decoupled from Room so the maths runs as a plain JVM test. Day buck
 The UI is Compose with a single `YlihViewModel` (`ui/YlihViewModel.kt`) exposing `StateFlow`s and
 a `Channel` of snackbar messages, and a three-tab `YlihNavHost`.
 
+The stats screen's thirty-day chart is followed by the same window as a list, one row per day
+with the figure the bar can only be a proportion of. Three things about it:
+
+- **It has no section header of its own.** `stats_daily_hours_30` titles the chart *and* the rows
+  under it — they are one section, and that Text carries `heading()` for the screen reader, the
+  way the `by pair` header below it does.
+- **Only the leading run of empty days is dropped** (`dailyBreakdown`). A fortnight-old install
+  would otherwise open on sixteen rows of nothing, which reads as history that was lost; a zero
+  between two days that were listened to, or a zero today, is a real answer and stays.
+- **"yesterday" is a resource; the weekday beside the older rows is not.** `formatWeekday` asks
+  CLDR through an `EEE` pattern, so no language needs it translated. `stats_yesterday` could have
+  come from ICU's `RelativeDateTimeFormatter` the same way — it did not, because CLDR has no
+  relative-day field for 22 of the locales here and hands back the English word for them, which is
+  exactly what `check`'s untranslated rule exists to catch. Those 22 are written out by hand in
+  the resource instead; the other 223 values *are* CLDR's, harvested once rather than read at
+  runtime.
+
 **The three tabs are one destination, not three.** They are pages of a `HorizontalPager` under the
 single `tabs` route, so they can be swiped between: pages are laid out side by side and the screen
 follows the finger, which is a thing a NavHost swapping its content on a click cannot do at all —

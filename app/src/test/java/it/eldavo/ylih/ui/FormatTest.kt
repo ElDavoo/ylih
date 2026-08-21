@@ -121,6 +121,24 @@ class FormatTest {
         assertEquals("and no year in any of them", "05/20", formatDayLabel(day))
     }
 
+    /**
+     * The day list names its older rows by weekday, and that name comes out of CLDR rather than
+     * out of a resource — so it is the one piece of the row nobody has to translate, and the one
+     * that cannot go stale when a language is added.
+     */
+    @Test
+    fun `the weekday comes from the locale, not from an English abbreviation`() {
+        val saturday = LocalDate.of(2026, 3, 28)
+
+        assertEquals("Sat", formatWeekday(saturday))
+
+        Locale.setDefault(Locale.ITALY)
+        assertEquals("sab", formatWeekday(saturday))
+
+        Locale.setDefault(Locale.JAPAN)
+        assertEquals("土", formatWeekday(saturday))
+    }
+
     @Test
     fun `money keeps two decimals and cost per hour keeps three`() {
         assertEquals("349.00", formatMoney(34_900))

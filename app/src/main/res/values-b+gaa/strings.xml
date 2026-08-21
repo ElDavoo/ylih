@@ -55,6 +55,7 @@
     <string name="stats_title">kuŋ mɔ</string>
     <string name="stats_sessions_since">%1$s pu %2$s</string>
     <string name="stats_today">i pele nii</string>
+    <string name="stats_yesterday">nyɛ</string>
     <string name="stats_last_7">muon 7 da sɔŋ</string>
     <string name="stats_last_30">muon 30 da sɔŋ</string>
     <string name="stats_average_session">pele siyaa</string>

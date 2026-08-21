@@ -61,6 +61,7 @@
     <string name="stats_title">所有耳机</string>
     <string name="stats_sessions_since">自 %2$s 起 %1$s</string>
     <string name="stats_today">今天</string>
+    <string name="stats_yesterday">昨天</string>
     <string name="stats_last_7">最近7天</string>
     <string name="stats_last_30">最近30天</string>
     <string name="stats_average_session">平均单次时长</string>

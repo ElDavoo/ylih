@@ -55,6 +55,7 @@
     <string name="stats_title">सभी हेडफोन</string>
     <string name="stats_sessions_since">%1$s के बाद से %2$s</string>
     <string name="stats_today">आज</string>
+    <string name="stats_yesterday">कल</string>
     <string name="stats_last_7">पिछले 7 दिन</string>
     <string name="stats_last_30">पिछले 30 दिन</string>
     <string name="stats_average_session">औसत सेशन</string>

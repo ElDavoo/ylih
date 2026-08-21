@@ -55,6 +55,7 @@
     <string name="stats_title">sikasiit gu meggul</string>
     <string name="stats_sessions_since">%1$s dale %2$s</string>
     <string name="stats_today">jeen</string>
+    <string name="stats_yesterday">démb</string>
     <string name="stats_last_7">7 sukkandé yu bees</string>
     <string name="stats_last_30">30 sukkandé yu bees</string>
     <string name="stats_average_session">sikasiit ay jëm</string>

@@ -98,6 +98,13 @@ private class Formatters(val locale: Locale) {
         .withLocale(locale)
 
     /**
+     * The abbreviated day of the week, out of CLDR — the same reason the units go through ICU. An
+     * `EEE` pattern resolves against the locale's own data, so there is no English "Mon" leaking into
+     * every other language, and nothing here for anyone to translate.
+     */
+    val weekday: DateTimeFormatter = DateTimeFormatter.ofPattern("EEE", locale)
+
+    /**
      * The chart's axis labels: the locale's own short date with the year taken out.
      *
      * It used to be a hardcoded `d/M`, which put the day first in all 77 languages — wrong for
@@ -175,6 +182,9 @@ fun formatDate(epochMs: Long, zone: ZoneId = ZoneId.systemDefault()): String =
     formatters().date.format(Instant.ofEpochMilli(epochMs).atZone(zone))
 
 fun formatDayLabel(date: LocalDate): String = formatters().dayLabel.format(date)
+
+/** "Mon", "lun.", "月" — see [Formatters.weekday]. */
+fun formatWeekday(date: LocalDate): String = formatters().weekday.format(date)
 
 /** A fraction as the locale writes a percentage — see `percent`. */
 fun formatPercent(fraction: Double): String = formatters().percent.format(fraction)

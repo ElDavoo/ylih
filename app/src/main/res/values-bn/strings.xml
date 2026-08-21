@@ -60,6 +60,7 @@
     <string name="stats_title">সমস্ত হেডফোন</string>
     <string name="stats_sessions_since">%2$s থেকে %1$s</string>
     <string name="stats_today">আজ</string>
+    <string name="stats_yesterday">গতকাল</string>
     <string name="stats_last_7">গত ৭ দিন</string>
     <string name="stats_last_30">গত ৩০ দিন</string>
     <string name="stats_average_session">গড় সেশন</string>

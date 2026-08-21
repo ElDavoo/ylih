@@ -55,6 +55,7 @@
     <string name="stats_title">nkiyiaa pooki</string>
     <string name="stats_sessions_since">%1$s te %2$s</string>
     <string name="stats_today">taata</string>
+    <string name="stats_yesterday">ŋolé</string>
     <string name="stats_last_7">nkolongi 7 naipirta</string>
     <string name="stats_last_30">nkolongi 30 naipirta</string>
     <string name="stats_average_session">enkata e hakari</string>

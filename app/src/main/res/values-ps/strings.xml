@@ -55,6 +55,7 @@
     <string name="stats_title">ټول هیڈفونونه</string>
     <string name="stats_sessions_since">%1$s د %2$s تجي</string>
     <string name="stats_today">نن</string>
+    <string name="stats_yesterday">پرون</string>
     <string name="stats_last_7">ډیر وخت 7 ورځې</string>
     <string name="stats_last_30">ډیر وخت 30 ورځې</string>
     <string name="stats_average_session">متوسط جلسه</string>

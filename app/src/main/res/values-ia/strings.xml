@@ -55,6 +55,7 @@
     <string name="stats_title">tote le cuffias</string>
     <string name="stats_sessions_since">%1$s ex post %2$s</string>
     <string name="stats_today">hodie</string>
+    <string name="stats_yesterday">heri</string>
     <string name="stats_last_7">ultim 7 dies</string>
     <string name="stats_last_30">ultim 30 dies</string>
     <string name="stats_average_session">sessione medie</string>

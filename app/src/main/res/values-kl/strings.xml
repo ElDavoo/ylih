@@ -55,6 +55,7 @@
     <string name="stats_title">nukappiaaq tamassumalu</string>
     <string name="stats_sessions_since">%1$s %2$s inugujoq-tunut</string>
     <string name="stats_today">tassaappok</string>
+    <string name="stats_yesterday">ippassaq</string>
     <string name="stats_last_7">ulloq 7 taakuppoq</string>
     <string name="stats_last_30">ulloq 30 taakuppoq</string>
     <string name="stats_average_session">ilortariaq arvinngooraq</string>

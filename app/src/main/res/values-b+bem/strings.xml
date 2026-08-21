@@ -60,6 +60,7 @@
     <string name="stats_title">ifu ifyonse</string>
     <string name="stats_sessions_since">%1$s pakali %2$s</string>
     <string name="stats_today">lelo</string>
+    <string name="stats_yesterday">mailo</string>
     <string name="stats_last_7">inshuba 7 inafikila</string>
     <string name="stats_last_30">inshuba 30 inafikila</string>
     <string name="stats_average_session">inshuba ya kusekesa</string>

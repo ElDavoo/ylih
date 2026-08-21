@@ -63,6 +63,7 @@
     <!-- %1$s is an already-pluralised session count, %2$s a date. -->
     <string name="stats_sessions_since">%2$s から %1$s</string>
     <string name="stats_today">今日</string>
+    <string name="stats_yesterday">昨日</string>
     <string name="stats_last_7">過去7日間</string>
     <string name="stats_last_30">過去30日間</string>
     <string name="stats_average_session">平均セッション</string>

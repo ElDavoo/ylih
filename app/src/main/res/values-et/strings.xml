@@ -60,6 +60,7 @@
     <string name="stats_title">kõik kõrvaklapid</string>
     <string name="stats_sessions_since">%1$s alates %2$s</string>
     <string name="stats_today">täna</string>
+    <string name="stats_yesterday">eile</string>
     <string name="stats_last_7">viimased 7 päeva</string>
     <string name="stats_last_30">viimased 30 päeva</string>
     <string name="stats_average_session">keskmine seanss</string>

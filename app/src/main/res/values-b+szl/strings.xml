@@ -55,6 +55,7 @@
     <string name="stats_title">wszyske suchawki</string>
     <string name="stats_sessions_since">%1$s ôd %2$s</string>
     <string name="stats_today">dzisiej</string>
+    <string name="stats_yesterday">wczora</string>
     <string name="stats_last_7">ôstatnie 7 dni</string>
     <string name="stats_last_30">ôstatnie 30 dni</string>
     <string name="stats_average_session">postrzednio sesyjo</string>

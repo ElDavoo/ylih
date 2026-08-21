@@ -55,6 +55,7 @@
     <string name="stats_title">barjy yumukchit</string>
     <string name="stats_sessions_since">%1$s %2$s songor</string>
     <string name="stats_today">kunu kyun</string>
+    <string name="stats_yesterday">бэҕэһээ</string>
     <string name="stats_last_7">songor 7 kyun</string>
     <string name="stats_last_30">songor 30 kyun</string>
     <string name="stats_average_session">ortdo session</string>

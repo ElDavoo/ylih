@@ -55,6 +55,7 @@
     <string name="stats_title">gach fhuaimeanna</string>
     <string name="stats_sessions_since">%1$s ó %2$s</string>
     <string name="stats_today">inniu</string>
+    <string name="stats_yesterday">inné</string>
     <string name="stats_last_7">na 7 lá dheireanach</string>
     <string name="stats_last_30">na 30 lá dheireanach</string>
     <string name="stats_average_session">seisiún meánach</string>

@@ -55,6 +55,7 @@
     <string name="stats_title">kaik hearas</string>
     <string name="stats_sessions_since">%1$s siimdá %2$s</string>
     <string name="stats_today">juohke</string>
+    <string name="stats_yesterday">ikkid</string>
     <string name="stats_last_7">majeehâ 7 pájvvá</string>
     <string name="stats_last_30">majeehâ 30 pájvvá</string>
     <string name="stats_average_session">keskes session</string>

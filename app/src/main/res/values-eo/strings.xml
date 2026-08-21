@@ -60,6 +60,7 @@
     <string name="stats_title">ĉiuj altkuraj aŭdiloj</string>
     <string name="stats_sessions_since">%1$s de %2$s</string>
     <string name="stats_today">hodiaŭ</string>
+    <string name="stats_yesterday">hieraŭ</string>
     <string name="stats_last_7">lasta 7 tagoj</string>
     <string name="stats_last_30">lasta 30 tagoj</string>
     <string name="stats_average_session">averaĝa seanco</string>

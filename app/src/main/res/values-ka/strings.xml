@@ -55,6 +55,7 @@
     <string name="stats_title">ყველა ყურსასმენი</string>
     <string name="stats_sessions_since">%1$s %2$s-დან</string>
     <string name="stats_today">დღეს</string>
+    <string name="stats_yesterday">გუშინ</string>
     <string name="stats_last_7">გასული 7 დღე</string>
     <string name="stats_last_30">გასული 30 დღე</string>
     <string name="stats_average_session">საშუალო სესია</string>

@@ -60,6 +60,7 @@
     <string name="stats_title">bütün qulaqlıqlar</string>
     <string name="stats_sessions_since">%1$s %2$s-dən etibarən</string>
     <string name="stats_today">bu gün</string>
+    <string name="stats_yesterday">dünən</string>
     <string name="stats_last_7">son 7 gün</string>
     <string name="stats_last_30">son 30 gün</string>
     <string name="stats_average_session">orta seans</string>

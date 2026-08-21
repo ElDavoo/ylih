@@ -55,6 +55,7 @@
     <string name="stats_title">ndungz caev</string>
     <string name="stats_sessions_since">%1$s doengx %2$s</string>
     <string name="stats_today">ndieq</string>
+    <string name="stats_yesterday">ngoenzlwenz</string>
     <string name="stats_last_7">ndieq 7 doengx</string>
     <string name="stats_last_30">ndieq 30 doengx</string>
     <string name="stats_average_session">seih caeuq</string>

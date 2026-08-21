@@ -55,6 +55,7 @@
     <string name="stats_title">nalme-na pu yok</string>
     <string name="stats_sessions_since">%1$s %2$s tal</string>
     <string name="stats_today">tanniya kun</string>
+    <string name="stats_yesterday">ӗнер</string>
     <string name="stats_last_7">pir 7 kun-a tal</string>
     <string name="stats_last_30">pir 30 kun-a tal</string>
     <string name="stats_average_session">videsh tunne tap</string>

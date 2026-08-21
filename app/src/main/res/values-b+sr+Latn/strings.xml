@@ -55,6 +55,7 @@
     <string name="stats_title">sve slušalice</string>
     <string name="stats_sessions_since">%1$s od %2$s</string>
     <string name="stats_today">danas</string>
+    <string name="stats_yesterday">juče</string>
     <string name="stats_last_7">poslednjih 7 dana</string>
     <string name="stats_last_30">poslednjih 30 dana</string>
     <string name="stats_average_session">prosečna sesija</string>

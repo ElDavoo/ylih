@@ -60,6 +60,7 @@
     <string name="stats_title">semua headphone</string>
     <string name="stats_sessions_since">%1$s sejak %2$s</string>
     <string name="stats_today">hari ini</string>
+    <string name="stats_yesterday">kemarin</string>
     <string name="stats_last_7">7 hari terakhir</string>
     <string name="stats_last_30">30 hari terakhir</string>
     <string name="stats_average_session">rata-rata sesi</string>

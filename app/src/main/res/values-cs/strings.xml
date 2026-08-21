@@ -60,6 +60,7 @@
     <string name="stats_title">všechna sluchátka</string>
     <string name="stats_sessions_since">%1$s od %2$s</string>
     <string name="stats_today">dnes</string>
+    <string name="stats_yesterday">včera</string>
     <string name="stats_last_7">posledních 7 dní</string>
     <string name="stats_last_30">posledních 30 dní</string>
     <string name="stats_average_session">průměrná relace</string>

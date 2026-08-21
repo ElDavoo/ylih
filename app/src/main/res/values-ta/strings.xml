@@ -55,6 +55,7 @@
     <string name="stats_title">அனைத்து ஹெட்ஃபோன்கள்</string>
     <string name="stats_sessions_since">%2$s முதல் %1$s</string>
     <string name="stats_today">இன்று</string>
+    <string name="stats_yesterday">நேற்று</string>
     <string name="stats_last_7">கடந்த 7 நாட்கள்</string>
     <string name="stats_last_30">கடந்த 30 நாட்கள்</string>
     <string name="stats_average_session">சராசரி அமர்வு</string>

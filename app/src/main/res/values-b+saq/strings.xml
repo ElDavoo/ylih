@@ -55,6 +55,7 @@
     <string name="stats_title">a-muoma o-karatai</string>
     <string name="stats_sessions_since">%1$s ata %2$s</string>
     <string name="stats_today">n-toga</string>
+    <string name="stats_yesterday">ng’ole</string>
     <string name="stats_last_7">n-toga 7 i-kitoni</string>
     <string name="stats_last_30">n-toga 30 i-kitoni</string>
     <string name="stats_average_session">i-karata e-katikati</string>

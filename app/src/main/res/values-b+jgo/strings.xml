@@ -55,6 +55,7 @@
     <string name="stats_title">ntsɔ́ʼ tú ntám</string>
     <string name="stats_sessions_since">%1$s mə́ %2$s</string>
     <string name="stats_today">ncháʼ</string>
+    <string name="stats_yesterday">ŋwɔ́ŋ yɛ́ ntsə́</string>
     <string name="stats_last_7">ŋwɔ́ŋ 7 yɛ́ ntsə́</string>
     <string name="stats_last_30">ŋwɔ́ŋ 30 yɛ́ ntsə́</string>
     <string name="stats_average_session">ntám yɛ́ vári</string>

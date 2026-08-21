@@ -60,6 +60,7 @@
     <string name="stats_title">lahat ng headphones</string>
     <string name="stats_sessions_since">%1$s mula %2$s</string>
     <string name="stats_today">ngayon</string>
+    <string name="stats_yesterday">kahapon</string>
     <string name="stats_last_7">huling 7 araw</string>
     <string name="stats_last_30">huling 30 araw</string>
     <string name="stats_average_session">average na session</string>

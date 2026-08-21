@@ -60,6 +60,7 @@
     <string name="stats_title">ndap bí bùŋ</string>
     <string name="stats_sessions_since">%1$s zú %2$s</string>
     <string name="stats_today">nɛ</string>
+    <string name="stats_yesterday">ā zūɛɛ</string>
     <string name="stats_last_7">búŋ 7 yál</string>
     <string name="stats_last_30">búŋ 30 yál</string>
     <string name="stats_average_session">à bùl à kàm</string>

@@ -55,6 +55,7 @@
     <string name="stats_title">барлық құлақ аспалары</string>
     <string name="stats_sessions_since">%1$s %2$s-ден бастап</string>
     <string name="stats_today">бүгін</string>
+    <string name="stats_yesterday">кеше</string>
     <string name="stats_last_7">соңғы 7 күн</string>
     <string name="stats_last_30">соңғы 30 күн</string>
     <string name="stats_average_session">орташа сеанс</string>

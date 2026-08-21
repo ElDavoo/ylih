@@ -63,6 +63,7 @@
     <!-- %1$s पहले से बहुवचन किया गया सत्र-गणना है, %2$s एक तारीख है। -->
     <string name="stats_sessions_since">%2$s से %1$s</string>
     <string name="stats_today">आज</string>
+    <string name="stats_yesterday">कल</string>
     <string name="stats_last_7">पिछले 7 दिन</string>
     <string name="stats_last_30">पिछले 30 दिन</string>
     <string name="stats_average_session">औसत सत्र</string>

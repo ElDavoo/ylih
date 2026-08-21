@@ -61,6 +61,7 @@
     <!-- %1$s는 이미 복수 처리된 세션 수, %2$s는 날짜입니다. -->
     <string name="stats_sessions_since">%2$s부터 %1$s</string>
     <string name="stats_today">오늘</string>
+    <string name="stats_yesterday">어제</string>
     <string name="stats_last_7">최근 7일</string>
     <string name="stats_last_30">최근 30일</string>
     <string name="stats_average_session">평균 세션</string>

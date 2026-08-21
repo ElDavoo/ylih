@@ -55,6 +55,7 @@
     <string name="stats_title">ឯកសារលោហៈទាំងអស់</string>
     <string name="stats_sessions_since">%1$s ចាប់ពី %2$s</string>
     <string name="stats_today">ថ្ងៃនេះ</string>
+    <string name="stats_yesterday">ម្សិលមិញ</string>
     <string name="stats_last_7">7 ថ្ងៃចុងក្រោយ</string>
     <string name="stats_last_30">30 ថ្ងៃចុងក្រោយ</string>
     <string name="stats_average_session">សម័យ មធ្យម</string>

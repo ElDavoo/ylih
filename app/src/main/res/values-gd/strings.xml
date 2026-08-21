@@ -55,6 +55,7 @@
     <string name="stats_title">gach fhuaimeanan</string>
     <string name="stats_sessions_since">%1$s o chionn %2$s</string>
     <string name="stats_today">an-diugh</string>
+    <string name="stats_yesterday">an-dè</string>
     <string name="stats_last_7">an 7 latha mu dheireadh</string>
     <string name="stats_last_30">an 30 latha mu dheireadh</string>
     <string name="stats_average_session">seisean cuibheasach</string>

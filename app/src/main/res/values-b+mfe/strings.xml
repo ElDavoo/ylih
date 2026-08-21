@@ -55,6 +55,7 @@
     <string name="stats_title">tou lekoutèr</string>
     <string name="stats_sessions_since">%1$s depi %2$s</string>
     <string name="stats_today">zordi</string>
+    <string name="stats_yesterday">yer</string>
     <string name="stats_last_7">7 dernie zour</string>
     <string name="stats_last_30">30 dernie zour</string>
     <string name="stats_average_session">sesion moyen</string>

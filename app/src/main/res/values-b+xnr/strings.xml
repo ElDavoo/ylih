@@ -55,6 +55,7 @@
     <string name="stats_title">sab mimiñ kānd</string>
     <string name="stats_sessions_since">%1$s baad %2$s</string>
     <string name="stats_today">aj</string>
+    <string name="stats_yesterday">पिछला कल</string>
     <string name="stats_last_7">gat 7 din</string>
     <string name="stats_last_30">gat 30 din</string>
     <string name="stats_average_session">avgat samay</string>

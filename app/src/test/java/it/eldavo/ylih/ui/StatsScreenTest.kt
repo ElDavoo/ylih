@@ -16,6 +16,8 @@ import it.eldavo.ylih.data.DeviceKind
 import it.eldavo.ylih.data.PairEntity
 import it.eldavo.ylih.data.SessionEntity
 import it.eldavo.ylih.ui.theme.YlihTheme
+import java.time.LocalDate
+import java.time.ZoneId
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Assert.assertEquals
@@ -143,6 +145,26 @@ class StatsScreenTest {
         compose.onNodeWithText(inUse).assertExists()
         scrollTo(retired)
         compose.onNodeWithText(retired).assertExists()
+    }
+
+    /**
+     * The chart can only ever show a shape. The list under it is where "how much did I listen
+     * yesterday" is actually answered, and the day it answers for has to be named — a reader
+     * counting bars backwards from the right-hand edge is the work this exists to remove.
+     */
+    @Test
+    fun `the day list names yesterday and reaches back to the first day recorded`() {
+        show(totalHeadline = formatHours(5 * hour))
+
+        val yesterday = text(R.string.stats_yesterday)
+        scrollTo(yesterday)
+        compose.onNodeWithText(yesterday).assertExists()
+        // The seeded sessions are two days old, so the list is three rows deep and stops there
+        // rather than running out the whole thirty-day window on empty days.
+        val oldest = LocalDate.now(ZoneId.systemDefault()).minusDays(2)
+        val label = "${formatWeekday(oldest)} · ${formatDayLabel(oldest)}"
+        scrollTo(label)
+        compose.onNodeWithText(label).assertExists()
     }
 
     @Test

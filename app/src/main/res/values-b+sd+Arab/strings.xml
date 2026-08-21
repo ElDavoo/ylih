@@ -55,6 +55,7 @@
     <string name="stats_title">سڀ هيڊ فون</string>
     <string name="stats_sessions_since">%1$s کان %2$s</string>
     <string name="stats_today">اڄ</string>
+    <string name="stats_yesterday">ڪل</string>
     <string name="stats_last_7">پوئين 7 ڏينهن</string>
     <string name="stats_last_30">پوئين 30 ڏينهن</string>
     <string name="stats_average_session">اوسط سيشن</string>

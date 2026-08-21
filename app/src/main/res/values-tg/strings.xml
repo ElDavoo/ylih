@@ -55,6 +55,7 @@
     <string name="stats_title">ҳамаи гӯшмонакҳо</string>
     <string name="stats_sessions_since">%1$s аз %2$s</string>
     <string name="stats_today">имрӯз</string>
+    <string name="stats_yesterday">дирӯз</string>
     <string name="stats_last_7">7 рӯзи охир</string>
     <string name="stats_last_30">30 рӯзи охир</string>
     <string name="stats_average_session">ҷаласаи миёна</string>

@@ -17,6 +17,8 @@ Every connection is stored forever, locally. Nothing leaves the phone.
   app count that instead of connected time; sessions recorded before detailed tracking was on never
   measured playback, so they are left out rather than counted as zero.
 - **Cost per hour**, if you enter what you paid.
+- **Every day of the last month**, listed under the chart with the hours it came to — today and
+  yesterday by name, everything older by weekday and date.
 
 ## The two tracking modes
 

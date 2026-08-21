@@ -55,6 +55,7 @@
     <string name="stats_title">mataa iraa hunduu</string>
     <string name="stats_sessions_since">%1$s jalqabee %2$s</string>
     <string name="stats_today">harʼa</string>
+    <string name="stats_yesterday">kaleessa</string>
     <string name="stats_last_7">guyyaa 7 duraa</string>
     <string name="stats_last_30">guyyaa 30 duraa</string>
     <string name="stats_average_session">average session</string>

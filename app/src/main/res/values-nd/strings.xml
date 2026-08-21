@@ -55,6 +55,7 @@
     <string name="stats_title">konke amakwelo</string>
     <string name="stats_sessions_since">%1$s kusukela %2$s</string>
     <string name="stats_today">namhla</string>
+    <string name="stats_yesterday">izolo</string>
     <string name="stats_last_7">amalanga angama-7 edlule</string>
     <string name="stats_last_30">amalanga angama-30 edlule</string>
     <string name="stats_average_session">umsebenzi omakhulukhulu</string>

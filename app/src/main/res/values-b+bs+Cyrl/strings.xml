@@ -60,6 +60,7 @@
     <string name="stats_title">све слушалице</string>
     <string name="stats_sessions_since">%1$s од %2$s</string>
     <string name="stats_today">данас</string>
+    <string name="stats_yesterday">јуче</string>
     <string name="stats_last_7">последњих 7 дана</string>
     <string name="stats_last_30">последњих 30 дана</string>
     <string name="stats_average_session">просечна сесија</string>

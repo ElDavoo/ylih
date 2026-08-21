@@ -55,6 +55,7 @@
     <string name="stats_title">buohkka beakcu</string>
     <string name="stats_sessions_since">%1$s maŋŋel %2$s</string>
     <string name="stats_today">dát beaivi</string>
+    <string name="stats_yesterday">ikte</string>
     <string name="stats_last_7">maŋŋel vahkka 7</string>
     <string name="stats_last_30">maŋŋel vahkka 30</string>
     <string name="stats_average_session">gaskem vahkka</string>

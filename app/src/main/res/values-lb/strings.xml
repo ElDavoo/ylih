@@ -55,6 +55,7 @@
     <string name="stats_title">all kappelen</string>
     <string name="stats_sessions_since">%1$s zënter %2$s</string>
     <string name="stats_today">haut</string>
+    <string name="stats_yesterday">gëschter</string>
     <string name="stats_last_7">lescht 7 deeg</string>
     <string name="stats_last_30">lescht 30 deeg</string>
     <string name="stats_average_session">duerchschnëttlech session</string>

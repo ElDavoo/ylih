@@ -60,6 +60,7 @@
     <string name="stats_title">массала наухьанар</string>
     <string name="stats_sessions_since">%1$s %2$s хӏара</string>
     <string name="stats_today">тахана</string>
+    <string name="stats_yesterday">селхана</string>
     <string name="stats_last_7">охьалойн 7ДӀа</string>
     <string name="stats_last_30">охьалойн 30 ДӀа</string>
     <string name="stats_average_session">дӏахалойн сессия</string>

@@ -55,6 +55,7 @@
     <string name="stats_title">alalade gbogbo</string>
     <string name="stats_sessions_since">%1$s lati %2$s</string>
     <string name="stats_today">loni</string>
+    <string name="stats_yesterday">àná</string>
     <string name="stats_last_7">ojo mẹje to kẹhin</string>
     <string name="stats_last_30">ojo ogoji to kẹhin</string>
     <string name="stats_average_session">ise akọkọ</string>

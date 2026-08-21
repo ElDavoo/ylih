@@ -55,6 +55,7 @@
     <string name="stats_title">tota scufìa</string>
     <string name="stats_sessions_since">%1$s de %2$s</string>
     <string name="stats_today">adess</string>
+    <string name="stats_yesterday">ier</string>
     <string name="stats_last_7">ültimm 7 dì</string>
     <string name="stats_last_30">ültimm 30 dì</string>
     <string name="stats_average_session">sessiun media</string>

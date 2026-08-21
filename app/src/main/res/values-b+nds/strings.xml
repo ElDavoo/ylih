@@ -55,6 +55,7 @@
     <string name="stats_title">alle kopphörer</string>
     <string name="stats_sessions_since">%1$s siet %2$s</string>
     <string name="stats_today">vandaag</string>
+    <string name="stats_yesterday">güstern</string>
     <string name="stats_last_7">nagest 7 daag</string>
     <string name="stats_last_30">nagest 30 daag</string>
     <string name="stats_average_session">dürksnets-sitzung</string>

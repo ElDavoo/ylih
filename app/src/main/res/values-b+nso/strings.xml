@@ -55,6 +55,7 @@
     <string name="stats_title">earphones ka mong</string>
     <string name="stats_sessions_since">%1$s go simologa %2$s</string>
     <string name="stats_today">gotsi</string>
+    <string name="stats_yesterday">maabane</string>
     <string name="stats_last_7">matšatši a 7 a fitileng</string>
     <string name="stats_last_30">matšatši a 30 a fitileng</string>
     <string name="stats_average_session">average session</string>

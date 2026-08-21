@@ -55,6 +55,7 @@
     <string name="stats_title">kutulunan tutus</string>
     <string name="stats_sessions_since">%1$s dizdiki %2$s</string>
     <string name="stats_today">hoji</string>
+    <string name="stats_yesterday">onti</string>
     <string name="stats_last_7">últimu 7 dias</string>
     <string name="stats_last_30">últimu 30 dias</string>
     <string name="stats_average_session">sésõ médu</string>

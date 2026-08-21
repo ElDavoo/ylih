@@ -55,6 +55,7 @@
     <string name="stats_title">të gjitha kufjet</string>
     <string name="stats_sessions_since">%1$s që kur %2$s</string>
     <string name="stats_today">sot</string>
+    <string name="stats_yesterday">dje</string>
     <string name="stats_last_7">7 ditët e fundit</string>
     <string name="stats_last_30">30 ditët e fundit</string>
     <string name="stats_average_session">seanca mesatare</string>

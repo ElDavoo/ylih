@@ -60,6 +60,7 @@
     <string name="stats_title">todos os fones</string>
     <string name="stats_sessions_since">%1$s desde %2$s</string>
     <string name="stats_today">hoje</string>
+    <string name="stats_yesterday">ontem</string>
     <string name="stats_last_7">últimos 7 dias</string>
     <string name="stats_last_30">últimos 30 dias</string>
     <string name="stats_average_session">sessão média</string>

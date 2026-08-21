@@ -55,6 +55,7 @@
     <string name="stats_title">բոլոր ականջակցերը</string>
     <string name="stats_sessions_since">%1$s %2$s-ից</string>
     <string name="stats_today">այսօր</string>
+    <string name="stats_yesterday">երեկ</string>
     <string name="stats_last_7">վերջին 7 օր</string>
     <string name="stats_last_30">վերջին 30 օր</string>
     <string name="stats_average_session">միջին սեսիա</string>

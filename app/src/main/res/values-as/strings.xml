@@ -60,6 +60,7 @@
     <string name="stats_title">সকল শিৰোফোন</string>
     <string name="stats_sessions_since">%1$s %2$s ৰ পৰা</string>
     <string name="stats_today">আজি</string>
+    <string name="stats_yesterday">কালি</string>
     <string name="stats_last_7">গত 7 দিন</string>
     <string name="stats_last_30">গত 30 দিন</string>
     <string name="stats_average_session">গড় সেশন</string>

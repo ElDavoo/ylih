@@ -55,6 +55,7 @@
     <string name="stats_title">llapan auqui</string>
     <string name="stats_sessions_since">%1$s %2$s mañakun</string>
     <string name="stats_today">kuna</string>
+    <string name="stats_yesterday">qayna punchaw</string>
     <string name="stats_last_7">panta 7 oras</string>
     <string name="stats_last_30">panta 30 oras</string>
     <string name="stats_average_session">chiqap rimay</string>

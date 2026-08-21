@@ -55,6 +55,7 @@
     <string name="stats_title">yonke imilambo</string>
     <string name="stats_sessions_since">%1$s ukusukela %2$s</string>
     <string name="stats_today">namhla</string>
+    <string name="stats_yesterday">izolo</string>
     <string name="stats_last_7">ezinhlanu amaxesha</string>
     <string name="stats_last_30">amashumi-osi emali</string>
     <string name="stats_average_session">umuntu owomeleleyo</string>

@@ -20,6 +20,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import it.eldavo.ylih.R
@@ -50,6 +52,9 @@ fun StatsScreen(
     val ranking = remember(summaries, now, counting) {
         summaries.sortedByDescending { it.countedMs(now, counting) }
     }
+    val breakdown = remember(series) { dailyBreakdown(series) }
+    // The list and the chart are drawn to one scale, so a day is the same size in both.
+    val chartMax = remember(series) { chartMaxMs(series) }
 
     LazyColumn(
         state = listState,
@@ -119,10 +124,30 @@ fun StatsScreen(
                 }
                 Spacer(Modifier.height(24.dp))
                 val chartLabel = stringResource(R.string.stats_daily_hours_30)
-                Text(chartLabel, style = MaterialTheme.typography.titleSmallEmphasized)
+                // A heading rather than a caption, because it now titles the day list below the
+                // chart as well: it is what a screen reader jumps to, the way it does the
+                // `SectionHeader` under it.
+                Text(
+                    chartLabel,
+                    style = MaterialTheme.typography.titleSmallEmphasized,
+                    modifier = Modifier.semantics { heading() },
+                )
                 Spacer(Modifier.height(8.dp))
                 DailyBarChart(series = series, label = chartLabel)
                 Spacer(Modifier.height(16.dp))
+            }
+        }
+        // The days themselves, under the chart of them and inside the same heading: no section of
+        // their own, because "daily hours (30 days)" is what both of them are.
+        //
+        // Newest first with only the old end trimmed, so the head of the list is the series' own
+        // last day — today, without a second reading of a clock the series has already read.
+        breakdown.firstOrNull()?.first?.let { today ->
+            // Keyed by the date as text, not as an epoch day: the pair rows below are keyed by a
+            // database id and a lazy list holds one namespace, in which 20,000-and-something would
+            // eventually be both.
+            items(breakdown, key = { "day:${it.first}" }) { (date, ms) ->
+                DailyBreakdownRow(date = date, ms = ms, maxMs = chartMax, today = today)
             }
         }
         item { SectionHeader(stringResource(R.string.stats_by_pair)) }

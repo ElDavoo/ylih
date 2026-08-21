@@ -63,6 +63,7 @@
     <!-- %1$s er et allerede flertallsbøyd øktantall, %2$s en dato. -->
     <string name="stats_sessions_since">%1$s siden %2$s</string>
     <string name="stats_today">i dag</string>
+    <string name="stats_yesterday">i går</string>
     <string name="stats_last_7">siste 7 dager</string>
     <string name="stats_last_30">siste 30 dager</string>
     <string name="stats_average_session">gjennomsnittlig økt</string>

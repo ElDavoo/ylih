@@ -55,6 +55,7 @@
     <string name="stats_title">എല്ലാ ഹെഡ്‌ഫോണും</string>
     <string name="stats_sessions_since">%2$s മുതൽ %1$s</string>
     <string name="stats_today">ഇന്ന്</string>
+    <string name="stats_yesterday">ഇന്നലെ</string>
     <string name="stats_last_7">കഴിഞ്ഞ 7 ദിവസം</string>
     <string name="stats_last_30">കഴിഞ്ഞ 30 ദിവസം</string>
     <string name="stats_average_session">ശരാശരി സെഷൻ</string>

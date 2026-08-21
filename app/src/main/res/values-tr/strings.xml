@@ -61,6 +61,7 @@
     <!-- %1$s is an already-pluralised session count, %2$s a date. -->
     <string name="stats_sessions_since">%2$s’den beri %1$s</string>
     <string name="stats_today">bugün</string>
+    <string name="stats_yesterday">dün</string>
     <string name="stats_last_7">son 7 gün</string>
     <string name="stats_last_30">son 30 gün</string>
     <string name="stats_average_session">ortalama oturum</string>

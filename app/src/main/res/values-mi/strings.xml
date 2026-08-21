@@ -55,6 +55,7 @@
     <string name="stats_title">ngā taringa whakarongo katoa</string>
     <string name="stats_sessions_since">%1$s mai i %2$s</string>
     <string name="stats_today">i tēnei rā</string>
+    <string name="stats_yesterday">inanahi</string>
     <string name="stats_last_7">7 rā kua hipa</string>
     <string name="stats_last_30">30 rā kua hipa</string>
     <string name="stats_average_session">wātū toharite</string>

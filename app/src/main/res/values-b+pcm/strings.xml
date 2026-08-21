@@ -55,6 +55,7 @@
     <string name="stats_title">all headphones</string>
     <string name="stats_sessions_since">%1$s since %2$s</string>
     <string name="stats_today">today</string>
+    <string name="stats_yesterday">yẹ́stadè</string>
     <string name="stats_last_7">last 7 days</string>
     <string name="stats_last_30">last 30 days</string>
     <string name="stats_average_session">average session</string>

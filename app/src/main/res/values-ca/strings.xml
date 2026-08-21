@@ -59,6 +59,7 @@
     <string name="stats_title">tots els auriculars</string>
     <string name="stats_sessions_since">%1$s des de %2$s</string>
     <string name="stats_today">avui</string>
+    <string name="stats_yesterday">ahir</string>
     <string name="stats_last_7">últims 7 dies</string>
     <string name="stats_last_30">últims 30 dies</string>
     <string name="stats_average_session">sessió mitjana</string>

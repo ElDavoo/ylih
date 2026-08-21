@@ -60,6 +60,7 @@
     <string name="stats_title">सभी हेडफोन</string>
     <string name="stats_sessions_since">%1$s %2$s से</string>
     <string name="stats_today">अज्ज</string>
+    <string name="stats_yesterday">जंदा कल</string>
     <string name="stats_last_7">पिछले 7 दिन</string>
     <string name="stats_last_30">पिछले 30 दिन</string>
     <string name="stats_average_session">औसत सत्र</string>

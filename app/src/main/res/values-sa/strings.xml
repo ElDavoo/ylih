@@ -55,6 +55,7 @@
     <string name="stats_title">sarva sravana-yantra-yugma</string>
     <string name="stats_sessions_since">%1$s yatra %2$s</string>
     <string name="stats_today">adhye</string>
+    <string name="stats_yesterday">गतदिनम्</string>
     <string name="stats_last_7">pura-sapta-divas</string>
     <string name="stats_last_30">pura-trimshat-divas</string>
     <string name="stats_average_session">madhya-adhyayana-gana</string>

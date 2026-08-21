@@ -60,6 +60,7 @@
     <string name="stats_title">ndúmu ndúmu elongo</string>
     <string name="stats_sessions_since">%1$s sike %2$s</string>
     <string name="stats_today">wɛ́ŋgɛ̄</string>
+    <string name="stats_yesterday">kíɛlɛ nítómb́í</string>
     <string name="stats_last_7">mílu 7 imakuti</string>
     <string name="stats_last_30">mílu 30 imakuti</string>
     <string name="stats_average_session">isela moyombé</string>

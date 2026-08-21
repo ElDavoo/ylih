@@ -60,6 +60,7 @@
     <string name="stats_title">tonelloù a-bezh</string>
     <string name="stats_sessions_since">%1$s abaoe %2$s</string>
     <string name="stats_today">hiziv</string>
+    <string name="stats_yesterday">decʼh</string>
     <string name="stats_last_7">ar 7 devezhioù diwezhañ</string>
     <string name="stats_last_30">ar 30 devezhioù diwezhañ</string>
     <string name="stats_average_session">kurmediañ an daolenn</string>

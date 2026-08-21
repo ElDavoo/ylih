@@ -55,6 +55,7 @@
     <string name="stats_title">ҳар бирибул аудиотосмалар</string>
     <string name="stats_sessions_since">%1$s %2$s нинг кейин</string>
     <string name="stats_today">бугун</string>
+    <string name="stats_yesterday">кеча</string>
     <string name="stats_last_7">охирги 7 куни</string>
     <string name="stats_last_30">охирги 30 куни</string>
     <string name="stats_average_session">ўртача сеанс</string>

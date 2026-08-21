@@ -60,6 +60,7 @@
     <string name="stats_title">kul hima</string>
     <string name="stats_sessions_since">%1$s sanda %2$s</string>
     <string name="stats_today">hunkuna</string>
+    <string name="stats_yesterday">bi</string>
     <string name="stats_last_7">waja 7 jema</string>
     <string name="stats_last_30">waja 30 jema</string>
     <string name="stats_average_session">gasa ganda hima</string>

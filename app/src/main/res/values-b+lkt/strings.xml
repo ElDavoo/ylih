@@ -55,6 +55,7 @@
     <string name="stats_title">naptewictakpe ówaŋkʻa</string>
     <string name="stats_sessions_since">%1$s hecʼó %2$s</string>
     <string name="stats_today">lé aŋpétu</string>
+    <string name="stats_yesterday">ȟtálehaŋ</string>
     <string name="stats_last_7">aŋpétu šápʼa ištʼámakȟa</string>
     <string name="stats_last_30">aŋpétu wičʼóžaža ištʼámakȟa</string>
     <string name="stats_average_session">owótakhta wahóŋpi</string>

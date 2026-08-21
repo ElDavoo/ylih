@@ -55,6 +55,7 @@
     <string name="stats_title">ሓሙሽተ ሔዱ</string>
     <string name="stats_sessions_since">%1$s ካብ %2$s</string>
     <string name="stats_today">ሕጂ ሞያ</string>
+    <string name="stats_yesterday">ትማሊ</string>
     <string name="stats_last_7">ሓምሳ 7 ሞያ</string>
     <string name="stats_last_30">ሓምሳ 30 ሞያ</string>
     <string name="stats_average_session">ምሕታይ ምስጅ</string>

@@ -55,6 +55,7 @@
     <string name="stats_title">makɔ́ŋ aloku</string>
     <string name="stats_sessions_since">%1$s tí %2$s</string>
     <string name="stats_today">zaːnì</string>
+    <string name="stats_yesterday">kwey</string>
     <string name="stats_last_7">sɛn 7 wəŋ</string>
     <string name="stats_last_30">sɛn 30 wəŋ</string>
     <string name="stats_average_session">ŋɡa kè</string>

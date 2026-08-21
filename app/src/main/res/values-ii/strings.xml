@@ -55,6 +55,7 @@
     <string name="stats_title">hxa tsu nuo nuo</string>
     <string name="stats_sessions_since">%1$s ap %2$s</string>
     <string name="stats_today">taa</string>
+    <string name="stats_yesterday">ꀋꅔꉇ</string>
     <string name="stats_last_7">jie 7 ma</string>
     <string name="stats_last_30">jie 30 ma</string>
     <string name="stats_average_session">yv ho guo</string>

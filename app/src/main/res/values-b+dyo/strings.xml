@@ -60,6 +60,7 @@
     <string name="stats_title">koosan yontoo bu yidi</string>
     <string name="stats_sessions_since">%1$s jabe %2$s</string>
     <string name="stats_today">kabaka</string>
+    <string name="stats_yesterday">fucen</string>
     <string name="stats_last_7">taasu 7 bu dima</string>
     <string name="stats_last_30">taasu 30 bu dima</string>
     <string name="stats_average_session">diñun bulkaw</string>

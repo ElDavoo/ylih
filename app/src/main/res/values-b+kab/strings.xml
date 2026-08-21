@@ -55,6 +55,7 @@
     <string name="stats_title">akk taqcicin</string>
     <string name="stats_sessions_since">%1$s seg %2$s</string>
     <string name="stats_today">ass-a</string>
+    <string name="stats_yesterday">iḍelli</string>
     <string name="stats_last_7">7 n wussan iḍerrun</string>
     <string name="stats_last_30">30 n wussan iḍerrun</string>
     <string name="stats_average_session">akuraz azaḥar</string>

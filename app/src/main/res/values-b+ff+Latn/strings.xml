@@ -60,6 +60,7 @@
     <string name="stats_title">hiirde foofe</string>
     <string name="stats_sessions_since">%1$s haa %2$s</string>
     <string name="stats_today">hannde</string>
+    <string name="stats_yesterday">haŋki</string>
     <string name="stats_last_7">joomuuji 7 sannde</string>
     <string name="stats_last_30">joomuuji 30 sannde</string>
     <string name="stats_average_session">sekii hakkilinaa</string>

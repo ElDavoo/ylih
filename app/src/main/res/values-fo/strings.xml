@@ -60,6 +60,7 @@
     <string name="stats_title">öll heyrnirtól</string>
     <string name="stats_sessions_since">%1$s síðan %2$s</string>
     <string name="stats_today">í dag</string>
+    <string name="stats_yesterday">í gjár</string>
     <string name="stats_last_7">síðstu 7 dagar</string>
     <string name="stats_last_30">síðstu 30 dagar</string>
     <string name="stats_average_session">miðalstuðul seta</string>

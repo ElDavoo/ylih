@@ -55,6 +55,7 @@
     <string name="stats_title">ntuufu zonna</string>
     <string name="stats_sessions_since">%1$s okuva %2$s</string>
     <string name="stats_today">lero</string>
+    <string name="stats_yesterday">ggulo</string>
     <string name="stats_last_7">ennaku 7 ezivudde</string>
     <string name="stats_last_30">ennaku 30 ezivudde</string>
     <string name="stats_average_session">mutendera gwa munnafu</string>

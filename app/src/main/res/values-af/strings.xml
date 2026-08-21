@@ -60,6 +60,7 @@
     <string name="stats_title">alle koptelefone</string>
     <string name="stats_sessions_since">%1$s sedert %2$s</string>
     <string name="stats_today">vandag</string>
+    <string name="stats_yesterday">gister</string>
     <string name="stats_last_7">laaste 7 dae</string>
     <string name="stats_last_30">laaste 30 dae</string>
     <string name="stats_average_session">gemiddelde sessie</string>

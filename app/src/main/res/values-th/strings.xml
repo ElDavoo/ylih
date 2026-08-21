@@ -61,6 +61,7 @@
     <string name="stats_title">หูฟังทั้งหมด</string>
     <string name="stats_sessions_since">%1$s ตั้งแต่ %2$s</string>
     <string name="stats_today">วันนี้</string>
+    <string name="stats_yesterday">เมื่อวาน</string>
     <string name="stats_last_7">7 วันล่าสุด</string>
     <string name="stats_last_30">30 วันล่าสุด</string>
     <string name="stats_average_session">ช่วงใช้งานเฉลี่ย</string>

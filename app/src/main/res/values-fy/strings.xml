@@ -55,6 +55,7 @@
     <string name="stats_title">alle tskofhâlderskes</string>
     <string name="stats_sessions_since">%1$s sûnt %2$s</string>
     <string name="stats_today">vandag</string>
+    <string name="stats_yesterday">gisteren</string>
     <string name="stats_last_7">lêste 7 dagen</string>
     <string name="stats_last_30">lêste 30 dagen</string>
     <string name="stats_average_session">gemiddelde sesje</string>

@@ -60,6 +60,7 @@
     <string name="stats_title">mahoya mothe</string>
     <string name="stats_sessions_since">%1$s kuuma %2$s</string>
     <string name="stats_today">ũmũnthĩ</string>
+    <string name="stats_yesterday">ĩgoro</string>
     <string name="stats_last_7">mahinda 7 makĩrĩngĩra</string>
     <string name="stats_last_30">mahinda 30 makĩrĩngĩra</string>
     <string name="stats_average_session">mahinda ma gũkĩngĩra</string>

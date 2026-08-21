@@ -61,6 +61,7 @@
     <!-- %1$s már pluralizált munkamenetszám, %2$s egy dátum. -->
     <string name="stats_sessions_since">%1$s, %2$s óta</string>
     <string name="stats_today">ma</string>
+    <string name="stats_yesterday">tegnap</string>
     <string name="stats_last_7">utolsó 7 nap</string>
     <string name="stats_last_30">utolsó 30 nap</string>
     <string name="stats_average_session">átlagos munkamenet</string>

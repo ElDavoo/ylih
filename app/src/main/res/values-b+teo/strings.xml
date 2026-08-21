@@ -55,6 +55,7 @@
     <string name="stats_title">isukulen kere</string>
     <string name="stats_sessions_since">%1$s kanuka %2$s</string>
     <string name="stats_today">lolo</string>
+    <string name="stats_yesterday">jaan</string>
     <string name="stats_last_7">iparasia 7 luapotu</string>
     <string name="stats_last_30">iparasia 30 luapotu</string>
     <string name="stats_average_session">apak naka akiyar</string>

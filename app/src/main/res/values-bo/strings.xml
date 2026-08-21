@@ -60,6 +60,7 @@
     <string name="stats_title">གོ་སྒྲིག་ཆ་ཚང་</string>
     <string name="stats_sessions_since">%1$s ལ་%2$s ནས་</string>
     <string name="stats_today">དེ་རིང་</string>
+    <string name="stats_yesterday">ཁས་ས་</string>
     <string name="stats_last_7">ཉིན་མོ་བདུན་ལ་</string>
     <string name="stats_last_30">ཉིན་མོ་སུམ་ཅུ་ལ་</string>
     <string name="stats_average_session">དང་ལ་རིས་མཐུན་</string>

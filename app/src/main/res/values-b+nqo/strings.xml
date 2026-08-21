@@ -55,6 +55,7 @@
     <string name="stats_title">sɔ̀rɔ wɛrɛ</string>
     <string name="stats_sessions_since">%1$s, %2$s sɔn</string>
     <string name="stats_today">don nɔ</string>
+    <string name="stats_yesterday">ߞߎߣߎ߲߬</string>
     <string name="stats_last_7">don 7 na</string>
     <string name="stats_last_30">don 30 na</string>
     <string name="stats_average_session">baara gara du</string>

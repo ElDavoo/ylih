@@ -55,6 +55,7 @@
     <string name="stats_title">сите слушалки</string>
     <string name="stats_sessions_since">%1$s од %2$s</string>
     <string name="stats_today">денес</string>
+    <string name="stats_yesterday">вчера</string>
     <string name="stats_last_7">последни 7 дена</string>
     <string name="stats_last_30">последни 30 дена</string>
     <string name="stats_average_session">просечна сесија</string>

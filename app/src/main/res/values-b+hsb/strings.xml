@@ -55,6 +55,7 @@
     <string name="stats_title">wšě słuchawki</string>
     <string name="stats_sessions_since">%1$s wot %2$s</string>
     <string name="stats_today">dnjeska</string>
+    <string name="stats_yesterday">wčera</string>
     <string name="stats_last_7">za ostatnich 7 dnjow</string>
     <string name="stats_last_30">za ostatnich 30 dnjow</string>
     <string name="stats_average_session">přerězna sesija</string>

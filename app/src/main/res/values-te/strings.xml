@@ -55,6 +55,7 @@
     <string name="stats_title">అన్ని హెడ్‌ఫోన్‌లు</string>
     <string name="stats_sessions_since">%2$s నుండి %1$s</string>
     <string name="stats_today">ఈరోజు</string>
+    <string name="stats_yesterday">నిన్న</string>
     <string name="stats_last_7">గత 7 రోజులు</string>
     <string name="stats_last_30">గత 30 రోజులు</string>
     <string name="stats_average_session">సగటు సెషన్</string>

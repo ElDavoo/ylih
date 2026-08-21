@@ -55,6 +55,7 @@
     <string name="stats_title">masinete ose</string>
     <string name="stats_sessions_since">%1$s kubvira %2$s</string>
     <string name="stats_today">nhasi</string>
+    <string name="stats_yesterday">nezuro</string>
     <string name="stats_last_7">mazuva apfumbamwe apfira</string>
     <string name="stats_last_30">mazuva makumi matatu apfira</string>
     <string name="stats_average_session">mipikiso yepakati</string>

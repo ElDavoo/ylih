@@ -55,6 +55,7 @@
     <string name="stats_title">kutulunan tud</string>
     <string name="stats_sessions_since">%1$s dedu %2$s</string>
     <string name="stats_today">jágó</string>
+    <string name="stats_yesterday">rãketá</string>
     <string name="stats_last_7">7 dia sẽg</string>
     <string name="stats_last_30">30 dia sẽg</string>
     <string name="stats_average_session">mea té</string>

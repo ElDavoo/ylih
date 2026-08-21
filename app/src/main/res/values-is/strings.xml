@@ -55,6 +55,7 @@
     <string name="stats_title">allir heyrnartólar</string>
     <string name="stats_sessions_since">%1$s frá %2$s</string>
     <string name="stats_today">í dag</string>
+    <string name="stats_yesterday">í gær</string>
     <string name="stats_last_7">síðustu 7 daga</string>
     <string name="stats_last_30">síðustu 30 daga</string>
     <string name="stats_average_session">meðaltalskjörun</string>

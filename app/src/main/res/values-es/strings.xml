@@ -61,6 +61,7 @@
     <!-- %1$s ya es un recuento de sesiones pluralizado, %2$s una fecha. -->
     <string name="stats_sessions_since">%1$s desde %2$s</string>
     <string name="stats_today">hoy</string>
+    <string name="stats_yesterday">ayer</string>
     <string name="stats_last_7">últimos 7 días</string>
     <string name="stats_last_30">últimos 30 días</string>
     <string name="stats_average_session">sesión media</string>

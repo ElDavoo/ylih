@@ -55,6 +55,7 @@
     <string name="stats_title">sarv headphon</string>
     <string name="stats_sessions_since">%1$s %2$s pasun</string>
     <string name="stats_today">aaj</string>
+    <string name="stats_yesterday">kal</string>
     <string name="stats_last_7">gelya 7 divs</string>
     <string name="stats_last_30">gelya 30 divs</string>
     <string name="stats_average_session">sarasan seshan</string>

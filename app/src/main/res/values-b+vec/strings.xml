@@ -55,6 +55,7 @@
     <string name="stats_title">tuti i orecute</string>
     <string name="stats_sessions_since">%1$s dal %2$s</string>
     <string name="stats_today">sto giorno</string>
+    <string name="stats_yesterday">jeri</string>
     <string name="stats_last_7">ultimi 7 giorni</string>
     <string name="stats_last_30">ultimi 30 giorni</string>
     <string name="stats_average_session">sessione media</string>

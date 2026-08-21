@@ -55,6 +55,7 @@
     <string name="stats_title">totte scuffie</string>
     <string name="stats_sessions_since">%1$s da %2$s</string>
     <string name="stats_today">ancheu</string>
+    <string name="stats_yesterday">vêi</string>
     <string name="stats_last_7">ultimi 7 giorni</string>
     <string name="stats_last_30">ultimi 30 giorni</string>
     <string name="stats_average_session">sessioun media</string>

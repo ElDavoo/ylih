@@ -55,6 +55,7 @@
     <string name="stats_title">akk weggur</string>
     <string name="stats_sessions_since">%1$s seg %2$s</string>
     <string name="stats_today">azlide</string>
+    <string name="stats_yesterday">ⵉⴹⵍⵍⵉ</string>
     <string name="stats_last_7">yiseggasen 7 ineggura</string>
     <string name="stats_last_30">yiseggasen 30 ineggura</string>
     <string name="stats_average_session">seggasen askudan</string>

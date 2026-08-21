@@ -55,6 +55,7 @@
     <string name="stats_title">hedfon duto</string>
     <string name="stats_sessions_since">%1$s chakre %2$s</string>
     <string name="stats_today">kawuono</string>
+    <string name="stats_yesterday">nyoro</string>
     <string name="stats_last_7">ndalo 7 mokalo</string>
     <string name="stats_last_30">ndalo 30 mokalo</string>
     <string name="stats_average_session">kinde madirom</string>

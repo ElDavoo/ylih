@@ -55,6 +55,7 @@
     <string name="stats_title">হেদফোন পুম্নমক</string>
     <string name="stats_sessions_since">%2$s দগী %1$s</string>
     <string name="stats_today">ঙসি</string>
+    <string name="stats_yesterday">ঙরাং</string>
     <string name="stats_last_7">হৌখিবা নুমিৎ ৭</string>
     <string name="stats_last_30">হৌখিবা নুমিৎ ৩০</string>
     <string name="stats_average_session">চাংচৎ সেসন</string>

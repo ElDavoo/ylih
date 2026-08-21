@@ -55,6 +55,7 @@
     <string name="stats_title">emwusis kotagit</string>
     <string name="stats_sessions_since">%1$s osae %2$s</string>
     <string name="stats_today">ara</string>
+    <string name="stats_yesterday">amut</string>
     <string name="stats_last_7">saina 7 kotagit</string>
     <string name="stats_last_30">saina 30 kotagit</string>
     <string name="stats_average_session">osae kotagit</string>

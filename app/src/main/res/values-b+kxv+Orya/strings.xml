@@ -55,6 +55,7 @@
     <string name="stats_title">ಎಲ್ಲ ಹೆಡ್ಫೋನ್ಗಳು</string>
     <string name="stats_sessions_since">%1$s ರಿಂದ %2$s</string>
     <string name="stats_today">ಇಂದು</string>
+    <string name="stats_yesterday">ରାଆଲା</string>
     <string name="stats_last_7">ಕಳೆದ 7 ದಿನ</string>
     <string name="stats_last_30">ಕಳೆದ 30 ದಿನ</string>
     <string name="stats_average_session">ಸರಾಸರಿ ಸೆಶನ್</string>

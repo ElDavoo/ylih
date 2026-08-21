@@ -60,6 +60,7 @@
     <string name="stats_title">wšykne naušniki</string>
     <string name="stats_sessions_since">%1$s wót %2$s</string>
     <string name="stats_today">źinsa</string>
+    <string name="stats_yesterday">cora</string>
     <string name="stats_last_7">póslednich 7 dnjow</string>
     <string name="stats_last_30">póslednich 30 dnjow</string>
     <string name="stats_average_session">pśemerna sejada</string>

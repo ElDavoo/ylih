@@ -55,6 +55,7 @@
     <string name="stats_title">бүх чихэвч</string>
     <string name="stats_sessions_since">%2$s-аас хойш %1$s</string>
     <string name="stats_today">өнөөдөр</string>
+    <string name="stats_yesterday">өчигдөр</string>
     <string name="stats_last_7">сүүлийн 7 хоног</string>
     <string name="stats_last_30">сүүлийн 30 хоног</string>
     <string name="stats_average_session">дундаж хуралдаан</string>

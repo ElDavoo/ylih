@@ -55,6 +55,7 @@
     <string name="stats_title">ekigazi kyona</string>
     <string name="stats_sessions_since">%1$s gukira %2$s</string>
     <string name="stats_today">leero</string>
+    <string name="stats_yesterday">nyomwabazyo</string>
     <string name="stats_last_7">enaku 7 eziragira</string>
     <string name="stats_last_30">enaku 30 eziragira</string>
     <string name="stats_average_session">average session</string>

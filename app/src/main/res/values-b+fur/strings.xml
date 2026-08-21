@@ -55,6 +55,7 @@
     <string name="stats_title">dutis lis cuffiis</string>
     <string name="stats_sessions_since">%1$s dal %2$s</string>
     <string name="stats_today">vuê</string>
+    <string name="stats_yesterday">îr</string>
     <string name="stats_last_7">ultim 7 dis</string>
     <string name="stats_last_30">ultims 30 dis</string>
     <string name="stats_average_session">session in medie</string>

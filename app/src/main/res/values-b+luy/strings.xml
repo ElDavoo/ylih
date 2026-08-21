@@ -55,6 +55,7 @@
     <string name="stats_title">bindu bio khuulira bioosi</string>
     <string name="stats_sessions_since">%1$s okhurula %2$s</string>
     <string name="stats_today">lelo</string>
+    <string name="stats_yesterday">mgorova</string>
     <string name="stats_last_7">tsinyanga 7 tsiabura</string>
     <string name="stats_last_30">tsinyanga 30 tsiabura</string>
     <string name="stats_average_session">ebise bie hakari</string>

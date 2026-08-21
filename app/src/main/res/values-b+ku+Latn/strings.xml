@@ -55,6 +55,7 @@
     <string name="stats_title">hemû gasnav</string>
     <string name="stats_sessions_since">%1$s dema %2$s</string>
     <string name="stats_today">îro</string>
+    <string name="stats_yesterday">duh</string>
     <string name="stats_last_7">7 rojan demborî</string>
     <string name="stats_last_30">30 rojan demborî</string>
     <string name="stats_average_session">damezrandî navîn</string>

@@ -55,6 +55,7 @@
     <string name="stats_title">aurikilara rehetra</string>
     <string name="stats_sessions_since">%1$s hatramin’ny %2$s</string>
     <string name="stats_today">androany</string>
+    <string name="stats_yesterday">omaly</string>
     <string name="stats_last_7">7 andro lasa</string>
     <string name="stats_last_30">30 andro lasa</string>
     <string name="stats_average_session">fotoana antonony</string>

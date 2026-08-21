@@ -55,6 +55,7 @@
     <string name="stats_title">تمام ہیڈ فونز</string>
     <string name="stats_sessions_since">%1$s سے %2$s تک</string>
     <string name="stats_today">آج</string>
+    <string name="stats_yesterday">گزشتہ کل</string>
     <string name="stats_last_7">آخری 7 دن</string>
     <string name="stats_last_30">آخری 30 دن</string>
     <string name="stats_average_session">اوسط سیشن</string>

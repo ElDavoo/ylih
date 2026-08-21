@@ -55,6 +55,7 @@
     <string name="stats_title">အားလုံးခေါင်းတည်းဆိုင်</string>
     <string name="stats_sessions_since">%1$s အစ %2$s</string>
     <string name="stats_today">ယနေ့</string>
+    <string name="stats_yesterday">မနေ့က</string>
     <string name="stats_last_7">ကနေ 7 ရက်</string>
     <string name="stats_last_30">အခန်း 30 ရက်</string>
     <string name="stats_average_session">ပျမ်းမျှအခွင်းအရောင်</string>

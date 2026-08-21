@@ -55,6 +55,7 @@
     <string name="stats_title">kabéh headphone</string>
     <string name="stats_sessions_since">%1$s ti %2$s</string>
     <string name="stats_today">poé ieu</string>
+    <string name="stats_yesterday">kamari</string>
     <string name="stats_last_7">7 poé ka tukang</string>
     <string name="stats_last_30">30 poé ka tukang</string>
     <string name="stats_average_session">sési rata-rata</string>

@@ -55,6 +55,7 @@
     <string name="stats_title">auriyo yooyipika</string>
     <string name="stats_sessions_since">%1$s kuchokera %2$s</string>
     <string name="stats_today">lero</string>
+    <string name="stats_yesterday">meelo</string>
     <string name="stats_last_7">masiku 7 opitilizira</string>
     <string name="stats_last_30">masiku 30 opitilizira</string>
     <string name="stats_average_session">nthawi yomwe ingachite</string>
