@@ -408,6 +408,15 @@ cmds.check = (argv) => {
   const problems = []
   const add = (tag, msg) => problems.push(`${tag}\t${msg}`)
 
+  // The checks above this line are all things lint would also catch, only faster. The three below
+  // are things lint *cannot* catch, because a wrong translation is still a well-formed one: the
+  // strings are present, the placeholders line up, the plurals are complete. Only comparing a
+  // locale against the source — or against the other locales — sees them.
+  const longKeys = [...s.translatable]
+    .filter(([, v]) => v.kind === 'string' && v.value.split(/\s+/).length >= 4)
+    .map(([k]) => k)
+  const bodies = new Map()
+
   for (const l of locales()) {
     let f
     try {
@@ -452,7 +461,34 @@ cmds.check = (argv) => {
       if (/\btools:/.test(f.lines[e.from]) && !f.lines.some((x) => x.includes('xmlns:tools')))
         add(l.tag, `${name}: uses tools: but the file has no xmlns:tools declaration`)
     }
+
+    bodies.set(l.tag, longKeys.map((k) => f.keys.get(k)?.value ?? '').join(' '))
+
+    // Scaffolding a generator wrote and nobody filled in. It reaches users verbatim: seven locales
+    // shipped "[lv] save" on a button.
+    const stubs = [...f.keys].filter(([, e]) => e.kind === 'string' && /^\[[A-Za-z+-]{2,12}\]\s/.test(e.value))
+    if (stubs.length) add(l.tag, `placeholder stubs: ${stubs.length} strings still read "[tag] english"`)
+
+    // A locale still holding the English source advertises a language through generateLocaleConfig
+    // and then answers in English, which is worse than not offering it. Judged on the long strings
+    // only — "bluetooth", "usb" and "%1$s · %2$s" match the source in every locale, legitimately.
+    const same = longKeys.filter((k) => f.keys.get(k)?.value === s.translatable.get(k).value)
+    if (same.length > longKeys.length / 2)
+      add(l.tag, `untranslated: ${same.length}/${longKeys.length} long strings are still the English source`)
   }
+
+  // One bulk run writing its output into several folders is invisible one file at a time — each
+  // locale looks translated. Only lining them up shows it: nine locales here held the same Serbian
+  // text, among them Tamil, Telugu and Swahili, which do not even share a script.
+  const bySig = new Map()
+  for (const [tag, sig] of bodies) {
+    if (!sig.replaceAll(' ', '')) continue
+    if (!bySig.has(sig)) bySig.set(sig, [])
+    bySig.get(sig).push(tag)
+  }
+  for (const group of bySig.values())
+    if (group.length > 1)
+      add(group[0], `duplicate locales: ${group.join(' ')} hold identical text — at most one can be right`)
   // An empty values-<lang>/ folder is invisible to git status but lint reads folder names and
   // reports every string as untranslated for it. This has broken the build once already.
   for (const d of readdirSync(RES)) {
