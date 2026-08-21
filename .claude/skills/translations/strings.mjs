@@ -416,6 +416,11 @@ cmds.check = (argv) => {
     .filter(([, v]) => v.kind === 'string' && v.value.split(/\s+/).length >= 4)
     .map(([k]) => k)
   const bodies = new Map()
+  // Latin letters someone reaches for to make English look like an African orthography. Folding
+  // them is what lets the untranslated check below see through the disguise.
+  const FOLD = { ɔ: 'o', ɛ: 'e', ŋ: 'n', ə: 'e', ǝ: 'e', ʉ: 'u', ɨ: 'i', ʃ: 's', ɑ: 'a' }
+  const words = (v) => (v ?? '').toLowerCase().replace(/[ɔɛŋəǝʉɨʃɑ]/g, (c) => FOLD[c])
+    .normalize('NFD').replace(/\p{M}+/gu, '')
 
   for (const l of locales()) {
     let f
@@ -472,7 +477,11 @@ cmds.check = (argv) => {
     // A locale still holding the English source advertises a language through generateLocaleConfig
     // and then answers in English, which is worse than not offering it. Judged on the long strings
     // only — "bluetooth", "usb" and "%1$s · %2$s" match the source in every locale, legitimately.
-    const same = longKeys.filter((k) => f.keys.get(k)?.value === s.translatable.get(k).value)
+    //
+    // Compared on words rather than bytes, because values-b+jgo hid from a byte comparison for a
+    // whole release: it is English with every o rewritten as ɔ ("everything stays ɔn this phɔne"),
+    // which differs from the source in almost every character and is not a translation at all.
+    const same = longKeys.filter((k) => words(f.keys.get(k)?.value) === words(s.translatable.get(k).value))
     if (same.length > longKeys.length / 2)
       add(l.tag, `untranslated: ${same.length}/${longKeys.length} long strings are still the English source`)
   }
