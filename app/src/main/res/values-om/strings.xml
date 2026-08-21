@@ -21,40 +21,40 @@
     <string name="welcome_title">akka ylih wajjin gara</string>
     <string name="welcome_intro">ylih yeroo mataa iraa tokko tokko walitti hidhamiinsa jidhaa, kanaafuu wagga dhufaa keessatti gaaffi beek qabu jedhu ajajaa: saaa meeqa turan?</string>
     <string name="welcome_point_auto_title">hidhaa fi dhiiseeffadhu</string>
-    <string name="welcome_point_auto_body">mataa iraa bluetooth ofuma hidhaa ta’u, yeroo walitti hidu jalqabee. wanti kamuu hidhaa keessatti hataalluu.</string>
+    <string name="welcome_point_auto_body">mataa iraa bluetooth ofuma hidhaa taʼu, yeroo walitti hidu jalqabee. wanti kamuu hidhaa keessatti hataalluu.</string>
     <string name="welcome_point_lifetime_title">mataa iraa tokko, umrii tokko</string>
-    <string name="welcome_point_lifetime_body">mataa iraa tokko duʼu, of ilaallaa: baay’ina isaa cufa jalqaba mataa iraa biro yeroo hunda jalqaba zeero irraa.</string>
+    <string name="welcome_point_lifetime_body">mataa iraa tokko duʼu, of ilaallaa: baayʼina isaa cufa jalqaba mataa iraa biro yeroo hunda jalqaba zeero irraa.</string>
     <string name="welcome_point_detailed_title">wired fi dheggarsa</string>
-    <string name="welcome_point_detailed_body">hidhaa bal’aa, qabiyyee keessatti, mataa iraa wired dabalee seensa yeroo haala dhugoo ta’etti jidhaa.</string>
+    <string name="welcome_point_detailed_body">hidhaa balʼaa, qabiyyee keessatti, mataa iraa wired dabalee seensa yeroo haala dhugoo taʼetti jidhaa.</string>
     <string name="welcome_privacy">wanti hundi foon kee irra hafa. herrega hinqabu, app internet licenseesi hinqabu.</string>
     <string name="welcome_start">jalqaba</string>
     <string name="welcome_next">ittaanu</string>
     <string name="welcome_allow">hayyuu</string>
     <string name="welcome_step">tarkaanfi %1$d %2$d keessatti</string>
     <string name="welcome_bluetooth_title">bluetooth licenseesi</string>
-    <string name="welcome_bluetooth_why">android application gafii device bluetooth maal jedhamu sana, akkuma akka jedhamu ta’uu dha device bluetooth hidhaa yoo qabate. akka ylih mataa iraa tokko fi tuulo yeroo gara gara beekuu, akkasumas mataa iraa tokko biraa.</string>
+    <string name="welcome_bluetooth_why">android application gafii device bluetooth maal jedhamu sana, akkuma akka jedhamu taʼuu dha device bluetooth hidhaa yoo qabate. akka ylih mataa iraa tokko fi tuulo yeroo gara gara beekuu, akkasumas mataa iraa tokko biraa.</string>
     <string name="welcome_bluetooth_with">waliin: mataa iraa tokko tokko yeroo hidhamu jalqabee, wanti kamuu hidhaa keessatti hataalluu fi wanti kamuu yaadachuu hin barbaadu.</string>
-    <string name="welcome_bluetooth_without">akkasiin utuu: mataa iraa bluetooth hidhaa hin ta’u. app keenyaa hunda ho hojjeta, akkasumas akka booda android app qabiyyee keessatti hayyuu dandeessa.</string>
+    <string name="welcome_bluetooth_without">akkasiin utuu: mataa iraa bluetooth hidhaa hin taʼu. app keenyaa hunda ho hojjeta, akkasumas akka booda android app qabiyyee keessatti hayyuu dandeessa.</string>
     <string name="welcome_notifications_title">notifications</string>
-    <string name="welcome_notifications_why">hidhaa bal’aa tajaajila duubura xixinnaa taasisa, android app kamuu yeroo isii wanta sana taasisu kanaafuu notification ijaarsa.</string>
-    <string name="welcome_notifications_with">waliin: notification amma hidhaa ta’u kam ta’etti argisisa, kunis hidhaa bal’aa jira jedhu malaa tokko.</string>
-    <string name="welcome_notifications_without">akkasiin utuu: hidhaa bal’aa taasisa keessa taasisa. android sana notification itti hin bongesu.</string>
+    <string name="welcome_notifications_why">hidhaa balʼaa tajaajila duubura xixinnaa taasisa, android app kamuu yeroo isii wanta sana taasisu kanaafuu notification ijaarsa.</string>
+    <string name="welcome_notifications_with">waliin: notification amma hidhaa taʼu kam taʼetti argisisa, kunis hidhaa balʼaa jira jedhu malaa tokko.</string>
+    <string name="welcome_notifications_without">akkasiin utuu: hidhaa balʼaa taasisa keessa taasisa. android sana notification itti hin bongesu.</string>
     <string name="hibernation_title">jidhaa lakkaa yoo ilaalatte keessatti</string>
-    <string name="hibernation_body">android applications yeroo fogaasaa hidhaa hin ta’an kaasisa license isaa deddeebii, kunis ylih wanti kamuu hidhaa hin ta’uu hanga yeroo dandeessite jalqaba. ilaalatta isii hanqina akka app kana ta’a, kanaafuu amma galchuu jetta.</string>
+    <string name="hibernation_body">android applications yeroo fogaasaa hidhaa hin taʼan kaasisa license isaa deddeebii, kunis ylih wanti kamuu hidhaa hin taʼuu hanga yeroo dandeessite jalqaba. ilaalatta isii hanqina akka app kana taʼa, kanaafuu amma galchuu jetta.</string>
     <string name="action_not_now">yeroo ammaa hin</string>
 
     <string name="devices_in_use">hojiirra</string>
-    <string name="devices_retired">ga’ee</string>
+    <string name="devices_retired">gaʼee</string>
     <string name="devices_empty_title">mataa iraa illee hinqabu</string>
-    <string name="devices_empty_body">mataa iraa bluetooth waajjin hidhaa jalqaba isaan itti argita. mataa iraa wired hidhaa bal’aa qaba, qabiyyee keessatti.</string>
+    <string name="devices_empty_body">mataa iraa bluetooth waajjin hidhaa jalqaba isaan itti argita. mataa iraa wired hidhaa balʼaa qaba, qabiyyee keessatti.</string>
     <string name="devices_generation">mataa iraa #%1$d</string>
-    <string name="devices_retired_on">ga’ee %1$s</string>
+    <string name="devices_retired_on">gaʼee %1$s</string>
     <string name="devices_connected_for">walitti hidhaa %1$s</string>
     <string name="devices_recent">%1$s / 7d</string>
 
     <string name="stats_title">mataa iraa hunduu</string>
     <string name="stats_sessions_since">%1$s jalqabee %2$s</string>
-    <string name="stats_today">har’a</string>
+    <string name="stats_today">harʼa</string>
     <string name="stats_last_7">guyyaa 7 duraa</string>
     <string name="stats_last_30">guyyaa 30 duraa</string>
     <string name="stats_average_session">average session</string>
@@ -66,7 +66,7 @@
     <string name="stats_daily_hours_30">daily hours (30 days)</string>
     <string name="stats_by_pair">by pair</string>
     <string name="stats_pair_row">%1$s · %2$s</string>
-    <string name="stats_pair_row_retired">%1$s · %2$s · ga’ee</string>
+    <string name="stats_pair_row_retired">%1$s · %2$s · gaʼee</string>
     <string name="chart_max">%1$s max</string>
 
     <string name="pair_fallback_title">mataa iraa</string>
@@ -116,7 +116,7 @@
     <string name="settings_language">language</string>
     <string name="settings_language_system">system language</string>
     <string name="settings_devices">devices</string>
-    <string name="settings_devices_body">uncheck anything that isn’t headphones — a car stereo or a speaker — to stop recording it.</string>
+    <string name="settings_devices_body">uncheck anything that isnʼt headphones — a car stereo or a speaker — to stop recording it.</string>
     <string name="settings_device_subtitle">%1$s · first seen %2$s</string>
     <string name="settings_data">data</string>
     <string name="settings_export">export json</string>
@@ -138,14 +138,14 @@
     <string name="widget_lifetime_label">ylih · lifetime</string>
     <string name="widget_lifetime_description">hours per pair, with a live timer on whatever is connected</string>
     <string name="widget_activity_label">ylih · activity</string>
-    <string name="widget_activity_description">every pair’s hours together, plus today, 7 days and 30 days</string>
+    <string name="widget_activity_description">every pairʼs hours together, plus today, 7 days and 30 days</string>
     <string name="widget_chart_label">ylih · 30 days</string>
     <string name="widget_chart_description">daily listening hours over the last 30 days</string>
 
     <string name="action_save">kuula</string>
-    <string name="action_cancel">hir’isu</string>
+    <string name="action_cancel">hirʼisu</string>
     <string name="action_delete">haqi</string>
-    <string name="action_import">ga’chuu</string>
+    <string name="action_import">gaʼchuu</string>
 
     <string name="channel_tracking">headphone tracking</string>
     <string name="channel_tracking_description">shown while ylih is watching for wired headphones and playback. android does not deliver wired plug events to apps that are not running.</string>

@@ -18,7 +18,7 @@
     <string name="kind_usb">usb</string>
     <string name="kind_unknown">номаълум</string>
 
-    <string name="welcome_title">ylih’га хуш келибсиз</string>
+    <string name="welcome_title">ylihʼга хуш келибсиз</string>
     <string name="welcome_intro">ylih ҳар бир аудиотосма нечадан туя қўлилганлигини ҳисобловчи дастур. бир нечаёл кейин, сизнинг аудиотосмалари қанча соат давом этганлигини сўрашингиз мумкин болади.</string>
     <string name="welcome_point_auto_title">улаш ва унутиш</string>
     <string name="welcome_point_auto_body">bluetooth аудиотосмалари ўзи қайд этилади. ҳеч нарса ишлаб турсин.</string>
@@ -40,7 +40,7 @@
     <string name="welcome_notifications_with">рухсат берилса: билдирги қайси аудиотосма қайд этилаётганлигини кўрсатади.</string>
     <string name="welcome_notifications_without">рухсат берилмаса: батафсил қўнун ишлайди лекин android билдирги кўрсатмайди.</string>
     <string name="hibernation_title">унутингиз булса ҳам хисоблаб туринг</string>
-    <string name="hibernation_body">android бир нечаёл ичида ўзи фасли дастурларни тўхтатади ва уларнинг рухсатларини олади. android’нинг ушбу хусусиятини ўчиринг.</string>
+    <string name="hibernation_body">android бир нечаёл ичида ўзи фасли дастурларни тўхтатади ва уларнинг рухсатларини олади. androidʼнинг ушбу хусусиятини ўчиринг.</string>
     <string name="action_not_now">ҳозирда йўқ</string>
 
     <string name="devices_in_use">ишлатилмоқда</string>
@@ -127,7 +127,7 @@
     <string name="settings_battery_button">батарея созламалари</string>
     <string name="settings_battery_path">созламалар - дастурлар - ylih - батарея - чеклашмаган.</string>
     <string name="settings_hibernation_body">ylih бир нечаёл ичида ўчилмаса, android унинг рухсатларини олади ва қайд этилмайди. бу қўллик ўчирииш юмур.</string>
-    <string name="settings_hibernation_on">android ylih’ни тўхтатиши мумкин.</string>
+    <string name="settings_hibernation_on">android ylihʼни тўхтатиши мумкин.</string>
     <string name="settings_hibernation_off">ylih озод ва қайд этибди.</string>
     <string name="settings_hibernation_button">ишлатилмаган дастур созламалари</string>
     <string name="settings_about">маъқул</string>

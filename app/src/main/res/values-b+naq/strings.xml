@@ -26,7 +26,7 @@
     <string name="welcome_point_lifetime_body">ǂo ǃares ba ǃoa, ǃaba ǃo: ǃu total ti gidi hee e ǃares ǂoe di hara hob ǃau kaone.</string>
     <string name="welcome_point_detailed_title">ǃaoi o ǃara ǃui</string>
     <string name="welcome_point_detailed_body">hara ti ǃuma, ti settings, ǃoa ǃaoi ǃaudi o hara gara ǃares ǃui ba.</string>
-    <string name="welcome_privacy">hara di hamga ti tsi ǃ’o. matje account o app ǃaba internet.</string>
+    <string name="welcome_privacy">hara di hamga ti tsi ǃʼo. matje account o app ǃaba internet.</string>
     <string name="welcome_start">ǃuma</string>
     <string name="welcome_next">ǂone</string>
     <string name="welcome_allow">duma</string>
@@ -37,16 +37,16 @@
     <string name="welcome_bluetooth_without">ǂaba ne: bluetooth ǃaudi ǃaba hara ǃau. app di ǂone hara tsi o ǂoa android settings.</string>
     <string name="welcome_notifications_title">ǃuma ǃara</string>
     <string name="welcome_notifications_why">hara ti ǃuma hara tsi ǂkhoebe o android hara ǃumu ǃum ǃara ǃuma.</string>
-    <string name="welcome_notifications_with">ǂoa ne: ǃuma ǃara hara ǂo tsi ǃau, e ǃ’ou ylih.</string>
+    <string name="welcome_notifications_with">ǂoa ne: ǃuma ǃara hara ǂo tsi ǃau, e ǃʼou ylih.</string>
     <string name="welcome_notifications_without">ǂaba ne: hara ti ǃuma hara tsi o hara ǃau. android ǃaba ǃuma ǃara.</string>
     <string name="hibernation_title">tsi ǃumu ǂoa ǃaba</string>
-    <string name="hibernation_body">android app ǃaba ǃua ǂo gara o ǃaba ǃou e ylih ǃaba hara. ǃaba ti hamga ǂoa app ǃ’ou, e tsi ǂoa ǃuma.</string>
+    <string name="hibernation_body">android app ǃaba ǃua ǂo gara o ǃaba ǃou e ylih ǃaba hara. ǃaba ti hamga ǂoa app ǃʼou, e tsi ǂoa ǃuma.</string>
     <string name="action_not_now">ǃaba hee</string>
 
     <string name="devices_in_use">tsi hara</string>
     <string name="devices_retired">ǃaba hara</string>
     <string name="devices_empty_title">ǃaudi ǃaba</string>
-    <string name="devices_empty_body">bluetooth ǃaudi ǃoa o ǃ’ou hee. ǃaoi ǃaudi hara ǃuma.</string>
+    <string name="devices_empty_body">bluetooth ǃaudi ǃoa o ǃʼou hee. ǃaoi ǃaudi hara ǃuma.</string>
     <string name="devices_generation">ǃares #%1$d</string>
     <string name="devices_retired_on">ǃaba hara %1$s</string>
     <string name="devices_connected_for">ǃoa %1$s</string>
@@ -100,7 +100,7 @@
     <string name="pair_price_label">ǃu (hara di)</string>
     <string name="pair_price_supporting">tsi ǃu hora by.</string>
     <string name="pair_delete_title">ǃo ǃares di?</string>
-    <string name="pair_delete_body">ǃares ǃ’ou ǃo. ǃaba ǃou.</string>
+    <string name="pair_delete_body">ǃares ǃʼou ǃo. ǃaba ǃou.</string>
 
     <string name="session_ongoing">tsi hara</string>
     <string name="session_until">sal %1$s</string>
@@ -148,7 +148,7 @@
     <string name="action_import">import</string>
 
     <string name="channel_tracking">ǃaudi hara</string>
-    <string name="channel_tracking_description">ǃ’ou ylih ǃaoi ǃaudi o ǃara tsi. android ǃaoi ǂoe app.</string>
+    <string name="channel_tracking_description">ǃʼou ylih ǃaoi ǃaudi o ǃara tsi. android ǃaoi ǂoe app.</string>
     <string name="notification_title">ǃaudi hora hara</string>
     <string name="notification_starting">ǃuma…</string>
     <string name="notification_idle">ǃaudi tsi</string>

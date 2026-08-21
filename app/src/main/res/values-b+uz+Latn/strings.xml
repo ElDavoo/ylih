@@ -18,7 +18,7 @@
     <string name="kind_usb">usb</string>
     <string name="kind_unknown">nomalum</string>
 
-    <string name="welcome_title">ylih’ga xush kelibsiz</string>
+    <string name="welcome_title">ylihʼga xush kelibsiz</string>
     <string name="welcome_intro">ylih har bir audiotosmа nechadan tuya qullilganligini hisoblovchi dasturdur. bir necha yol keyin, sizning audiotosmalaringiz qancha soat davom etganligini surishingiz mumkin boladi.</string>
     <string name="welcome_point_auto_title">ulash va unutish</string>
     <string name="welcome_point_auto_body">bluetooth audiotosmalar ozi qayd etiladi. hech narsa ishlabtursin.</string>
@@ -40,7 +40,7 @@
     <string name="welcome_notifications_with">ruhsat berilsa: bildirgi qaysi audiotosmа qayd etilayotganligini koratadi.</string>
     <string name="welcome_notifications_without">ruhsat berilmasa: batafsil qonun ishlaydi lekin android bildirgi koratmaydi.</string>
     <string name="hibernation_title">untingiviz bulsa ham hisoблabturring</string>
-    <string name="hibernation_body">android bir necha yol ichida ozi fasli dastururlarni tuhtatadi va ularning ruhsatlarini oladi. android’ning ushbu xususiyatini ochirring.</string>
+    <string name="hibernation_body">android bir necha yol ichida ozi fasli dastururlarni tuhtatadi va ularning ruhsatlarini oladi. androidʼning ushbu xususiyatini ochirring.</string>
     <string name="action_not_now">hoziردа yoq</string>
 
     <string name="devices_in_use">ishlatilmоqda</string>
@@ -127,7 +127,7 @@
     <string name="settings_battery_button">batareyа sozlamalari</string>
     <string name="settings_battery_path">sozlamalar - dastururlar - ylih - batareya - cheklashmagan.</string>
     <string name="settings_hibernation_body">ylih bir necha yol ichida ochilmasa, android unıng ruhsatlarini oladi va qayd etilmaydi. bu qullик ochirish yumur.</string>
-    <string name="settings_hibernation_on">android ylih’ni tuhtatishi mumkın.</string>
+    <string name="settings_hibernation_on">android ylihʼni tuhtatishi mumkın.</string>
     <string name="settings_hibernation_off">ylih ozod va qayd etib-di.</string>
     <string name="settings_hibernation_button">ishlatilmagan dasturdur sozlamalari</string>
     <string name="settings_about">maqbul</string>

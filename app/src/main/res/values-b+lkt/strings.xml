@@ -55,8 +55,8 @@
     <string name="stats_title">naptewictakpe ówaŋkʻa</string>
     <string name="stats_sessions_since">%1$s hecʼó %2$s</string>
     <string name="stats_today">lé aŋpétu</string>
-    <string name="stats_last_7">aŋpétu šápʼa išt’ámakȟa</string>
-    <string name="stats_last_30">aŋpétu wičʼóžaža išt’ámakȟa</string>
+    <string name="stats_last_7">aŋpétu šápʼa ištʼámakȟa</string>
+    <string name="stats_last_30">aŋpétu wičʼóžaža ištʼámakȟa</string>
     <string name="stats_average_session">owótakhta wahóŋpi</string>
     <string name="stats_longest_session">owótakhta kitʼáŋ</string>
     <string name="stats_playing">niyowápi oyáŋste</string>
@@ -140,7 +140,7 @@
     <string name="widget_activity_label">ylih · yawaŋkʻa</string>
     <string name="widget_activity_description">napé ówaŋkʻa opáwhte, lé aŋpétu, aŋpétu šápʼa qa aŋpétu wičʼóžaža</string>
     <string name="widget_chart_label">ylih · aŋpétu wičʼóžaža</string>
-    <string name="widget_chart_description">aŋpétu niyowápi opáwhte aŋpétu wičʼóžaža išt’ámakȟa</string>
+    <string name="widget_chart_description">aŋpétu niyowápi opáwhte aŋpétu wičʼóžaža ištʼámakȟa</string>
 
     <string name="action_save">yuza</string>
     <string name="action_cancel">amniyeya</string>
@@ -151,7 +151,7 @@
     <string name="channel_tracking_description">ylih psín oyuspéya qa niyowápi ayúž kiŋ. android psín oyuspéya event oyáte napʻi yešte tutktéya.</string>
     <string name="notification_title">naptewictakpe owaŋkó oyáŋste</string>
     <string name="notification_starting">ozúya…</string>
-    <string name="notification_idle">naptewictakpe inák’u</string>
+    <string name="notification_idle">naptewictakpe inákʼu</string>
     <plurals name="notification_active">
         <item quantity="other">%1$d ozúyapi · %2$s</item>
     </plurals>
