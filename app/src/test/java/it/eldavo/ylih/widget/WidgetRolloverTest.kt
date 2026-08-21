@@ -12,8 +12,12 @@ import androidx.work.WorkInfo
 import androidx.work.WorkManager
 import androidx.work.testing.TestListenableWorkerBuilder
 import androidx.work.testing.WorkManagerTestInitHelper
+import io.mockk.coEvery
+import io.mockk.mockkStatic
+import io.mockk.unmockkStatic
 import it.eldavo.ylih.YlihApp
 import kotlinx.coroutines.test.runTest
+import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Before
@@ -166,6 +170,27 @@ class WidgetRolloverTest {
             "$next is not the coming midnight",
             next > nextLocalMidnight(app.container.clock.now(), ZoneId.systemDefault()),
         )
+    }
+
+    @Test
+    fun `a scheduling failure is retried rather than left unscheduled`() = runTest {
+        place(ActivityWidgetReceiver::class.java)
+        // scheduleWidgetRollover's own failures are the ones doWork()'s catch block exists for —
+        // see HeartbeatWorker for the same shape — but nothing reaches it from outside WorkManager's
+        // internals: closing WorkManagerTestInitHelper's database does not propagate synchronously,
+        // so the top-level function is mocked to throw in its place.
+        mockkStatic(::scheduleWidgetRollover)
+        coEvery { scheduleWidgetRollover(any(), ExistingPeriodicWorkPolicy.UPDATE, any()) } throws
+            IllegalStateException("Room reports a transaction it could not start")
+
+        val result = TestListenableWorkerBuilder<WidgetRolloverWorker>(app).build().doWork()
+
+        assertEquals(ListenableWorker.Result.retry(), result)
+    }
+
+    @After
+    fun tearDown() {
+        unmockkStatic(::scheduleWidgetRollover)
     }
 
     @Test

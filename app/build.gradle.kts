@@ -361,6 +361,11 @@ dependencies {
 
     testImplementation(libs.junit)
     testImplementation(libs.robolectric)
+    // The one place a Room-backed WorkManager operation failing synchronously cannot be produced
+    // any other way: WidgetRolloverWorkerTest mocks the top-level scheduleWidgetRollover to throw,
+    // since closing WorkManagerTestInitHelper's own database does not propagate the failure back
+    // to the calling coroutine.
+    testImplementation(libs.mockk)
     testImplementation(libs.androidx.test.core)
     testImplementation(libs.androidx.room.runtime)
     testImplementation(libs.kotlinx.coroutines.test)
