@@ -23,6 +23,7 @@ import it.eldavo.ylih.R
 import it.eldavo.ylih.YlihApp
 import it.eldavo.ylih.data.AppContainer
 import it.eldavo.ylih.data.DeviceIdentity
+import it.eldavo.ylih.data.DeviceKind
 import it.eldavo.ylih.data.SessionEntity
 import it.eldavo.ylih.data.trackedKinds
 import it.eldavo.ylih.ui.formatDurationShort
@@ -33,6 +34,8 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 
 /**
  * Runs only in "detailed tracking" mode. Wired plug events are never delivered to a manifest
@@ -68,6 +71,20 @@ class TrackingService : LifecycleService() {
     private val playbackTargets = mutableListOf<String>()
     private val playbackTargetKey: String? get() = playbackTargets.lastOrNull()
     private var playbackWatcher: PlaybackWatcher? = null
+
+    /**
+     * Applies the audio callbacks in the order they arrived.
+     *
+     * Each callback launched its own coroutine and every one of them suspends on the database, so
+     * a connect and the disconnect right behind it interleaved: the disconnect dropped the pair
+     * from [playbackTargets] and closed its session while the connect was still suspended inside
+     * `onConnected`, and the connect then appended that pair again on its way out. The unplugged
+     * pair stayed the playback target, and a slice is credited to whatever session that pair has
+     * *open* — none — so every later slice was dropped. Nothing surfaced it: the session stayed
+     * open and the notification still read "playing" while the pair that really was connected
+     * quietly stopped accruing, until some later plug event happened to move the target off it.
+     */
+    private val deviceEvents = Mutex()
 
     /**
      * What the notification already reads, so text that has not changed is not posted again.
@@ -163,38 +180,46 @@ class TrackingService : LifecycleService() {
         if (identities.isEmpty()) return
         val kinds = trackedKinds(detailedTracking = true)
         lifecycleScope.launch {
-            val now = container.clock.now()
-            for (identity in identities.filter { it.kind in kinds }) {
-                if (connected) {
-                    // Banked before the target moves, while [playbackTargetKey] still names the
-                    // pair the audio was actually played on. Swapping headphones mid-song used to
-                    // `rebase` here, which dropped that time rather than crediting it. The same
-                    // call starts the clock where audio is already running — a service start, or
-                    // that same swap — rather than leaving it to the first tick.
-                    creditAccrued(playbackWatcher?.refresh(now) ?: 0L)
-                    // Only a device that got a session becomes the target: `onConnected` returns
-                    // null for one the user has ignored, and there is nothing to credit those.
-                    if (container.repository.onConnected(identity, now, measurePlayback = true) != null) {
-                        playbackTargets.remove(identity.key)
-                        playbackTargets += identity.key
-                    }
-                } else {
-                    if (playbackTargetKey == identity.key) {
-                        // Before the close, and waited for: playback is credited to whatever
-                        // session the pair has *open*, so a slice banked after the disconnect finds
-                        // nothing to write to. That silently cost every session its last part-minute.
-                        creditAccrued(playbackWatcher?.refresh(now) ?: 0L)
-                    }
-                    // Dropped rather than cleared, so whatever else is still connected takes over.
-                    playbackTargets.remove(identity.key)
-                    container.repository.onDisconnected(identity.key, now)
-                }
-            }
-            refreshNotification()
-            // Wired plug events reach nothing but this service, so this is the only place that can
-            // tell the home screen a session just opened or closed.
-            container.trackingController.onSessionsChanged()
+            deviceEvents.withLock { applyDeviceChange(identities, kinds, connected) }
         }
+    }
+
+    private suspend fun applyDeviceChange(
+        identities: List<DeviceIdentity>,
+        kinds: Set<DeviceKind>,
+        connected: Boolean,
+    ) {
+        val now = container.clock.now()
+        for (identity in identities.filter { it.kind in kinds }) {
+            if (connected) {
+                // Banked before the target moves, while [playbackTargetKey] still names the
+                // pair the audio was actually played on. Swapping headphones mid-song used to
+                // `rebase` here, which dropped that time rather than crediting it. The same
+                // call starts the clock where audio is already running — a service start, or
+                // that same swap — rather than leaving it to the first tick.
+                creditAccrued(playbackWatcher?.refresh(now) ?: 0L)
+                // Only a device that got a session becomes the target: `onConnected` returns
+                // null for one the user has ignored, and there is nothing to credit those.
+                if (container.repository.onConnected(identity, now, measurePlayback = true) != null) {
+                    playbackTargets.remove(identity.key)
+                    playbackTargets += identity.key
+                }
+            } else {
+                if (playbackTargetKey == identity.key) {
+                    // Before the close, and waited for: playback is credited to whatever
+                    // session the pair has *open*, so a slice banked after the disconnect finds
+                    // nothing to write to. That silently cost every session its last part-minute.
+                    creditAccrued(playbackWatcher?.refresh(now) ?: 0L)
+                }
+                // Dropped rather than cleared, so whatever else is still connected takes over.
+                playbackTargets.remove(identity.key)
+                container.repository.onDisconnected(identity.key, now)
+            }
+        }
+        refreshNotification()
+        // Wired plug events reach nothing but this service, so this is the only place that can
+        // tell the home screen a session just opened or closed.
+        container.trackingController.onSessionsChanged()
     }
 
     private suspend fun tick() {
