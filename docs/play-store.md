@@ -29,6 +29,7 @@ keystore at all, and unsigned is the output that leaves it something clean to si
 | `it-IT/01-devices.png` … `it-IT/05-devices-dark.png` | 1080×1920 | Phone screenshots, Italian listing |
 | `icon-512.png` | 512×512 | App icon (all languages) |
 | `feature-graphic-1024x500.png` | 1024×500 | Feature graphic (all languages) |
+| `social-preview-1280x640.png` | 1280×640 | Not a Play field — GitHub's social preview, see below |
 
 They are produced on the JVM by `app/src/test/java/it/eldavo/ylih/listing/`, using Roborazzi over
 Robolectric's native graphics — there is no emulator anywhere in this project's toolchain, and a
@@ -37,6 +38,11 @@ store screenshot is not worth introducing one.
 - `DemoData.kt` seeds a plausible year of listening, anchored to the moment of recording, so the
   screenshots never show stale dates. It writes through the DAOs rather than `SessionRepository`,
   because the repository exists precisely to refuse backdated history.
+- `StoreGraphics.kt` also writes `social-preview-1280x640.png`, which no store asks for: it is the
+  card GitHub unfurls into Google, Slack and Mastodon. GitHub has no API for it — the upload lives
+  only in *Settings → General → Social preview* — so the committed copy at
+  `docs/img/social-preview.png` is what a human attaches there, and re-recording is only half the
+  job until that upload happens.
 - `StoreScreenshots.kt` captures the four screens plus a dark-mode shot at 1080×1920 — Play's 9:16
   phone ratio. A Pixel-shaped 1080×2400 is taller than 9:16, which is why the qualifier sets the
   size by hand. The class is abstract with one subclass per listing language, each setting a

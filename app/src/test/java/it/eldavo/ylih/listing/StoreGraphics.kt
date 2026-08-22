@@ -95,6 +95,60 @@ class StoreGraphics {
     }
 
     /**
+     * GitHub's social preview — the card link unfurls show on Google, Twitter/X, Slack and
+     * Mastodon. GitHub recommends 1280x640 and crops anything else, so the size is exact rather
+     * than a scaled feature graphic.
+     *
+     * It cannot be set from the API: the upload lives only in the repository settings page, so
+     * this writes a file for a human to attach. The committed copy is `docs/img/social-preview.png`.
+     */
+    @Test
+    @Config(qualifiers = "en-rUS-w1280dp-h640dp-land-mdpi")
+    fun `social preview`() {
+        compose.setContent {
+            Column(
+                modifier = Modifier.fillMaxSize().background(BRAND).padding(horizontal = 112.dp),
+                verticalArrangement = Arrangement.Center,
+                // Every surface that shows this card crops it slightly differently, so the lockup
+                // is centred rather than set against the left edge — as the feature graphic is.
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(48.dp),
+                ) {
+                    // As in the feature graphic: the surrounding colour is already the icon's
+                    // background layer, so drawing it again would box the artwork in.
+                    LauncherArt(Modifier.size(200.dp), withBackground = false)
+                    Column {
+                        Text(
+                            text = "ylih",
+                            color = Color.White,
+                            fontSize = 104.sp,
+                            fontWeight = FontWeight.Bold,
+                        )
+                        Text(
+                            text = "your life in headphones",
+                            color = Color.White.copy(alpha = 0.82f),
+                            fontSize = 36.sp,
+                        )
+                    }
+                }
+                Text(
+                    // The card is read as a search result, so it repeats what the app does in
+                    // words rather than repeating the name in a tagline.
+                    text = "Track how many hours each pair of headphones lasts.\n" +
+                        "Offline, forever, private.",
+                    color = Color.White.copy(alpha = 0.82f),
+                    fontSize = 34.sp,
+                    modifier = Modifier.padding(top = 56.dp),
+                )
+            }
+        }
+        compose.onRoot().captureRoboImage("social-preview-1280x640.png")
+    }
+
+    /**
      * Draws the adaptive icon's own layers instead of the drawable itself. Drawing the
      * `AdaptiveIconDrawable` would apply the platform's circular mask, and Play expects a full
      * square it can round off in its own way.
