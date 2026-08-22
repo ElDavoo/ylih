@@ -41,8 +41,15 @@ store screenshot is not worth introducing one.
 - `StoreGraphics.kt` also writes `social-preview-1280x640.png`, which no store asks for: it is the
   card GitHub unfurls into Google, Slack and Mastodon. GitHub has no API for it — the upload lives
   only in *Settings → General → Social preview* — so the committed copy at
-  `docs/img/social-preview.png` is what a human attaches there, and re-recording is only half the
-  job until that upload happens.
+  `docs/img/social-preview.jpg` is what a human attaches there, and re-recording is only half the
+  job until that upload happens. It is committed as JPEG rather than as the PNG the record task
+  writes because GitHub's uploader showed the PNG as a blank card — the file itself is a valid,
+  fully opaque 1280x640, so convert rather than redraw:
+
+  ```sh
+  magick app/build/outputs/play-listing/classicReleaseTest/social-preview-1280x640.png \
+      -alpha remove -alpha off -quality 92 -sampling-factor 4:4:4 docs/img/social-preview.jpg
+  ```
 - `StoreScreenshots.kt` captures the four screens plus a dark-mode shot at 1080×1920 — Play's 9:16
   phone ratio. A Pixel-shaped 1080×2400 is taller than 9:16, which is why the qualifier sets the
   size by hand. The class is abstract with one subclass per listing language, each setting a
