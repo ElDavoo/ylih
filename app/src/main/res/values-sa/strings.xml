@@ -155,10 +155,12 @@
     <string name="notification_idle">कर्णयन्त्राणां प्रतीक्षा</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d संयुक्तम् · %2$s</item>
+        <item quantity="many">%1$d संयुक्तानि · %2$s</item>
         <item quantity="other">%1$d संयुक्तानि · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">%1$d संयुक्तम् · %2$s · वादनम्</item>
+        <item quantity="many">%1$d संयुक्तानि · %2$s · वादनम्</item>
         <item quantity="other">%1$d संयुक्तानि · %2$s · वादनम्</item>
     </plurals>
 
@@ -170,11 +172,13 @@
     <string name="error_could_not_open">%1$s उद्घाटयितुं न शक्तम्</string>
     <plurals name="import_done">
         <item quantity="one">%d सत्रम् आयातितम्</item>
+        <item quantity="many">%d सत्राणि आयातितानि</item>
         <item quantity="other">%d सत्राणि आयातितानि</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">%d सत्रम्</item>
+        <item quantity="many">%d सत्राणि</item>
         <item quantity="other">%d सत्राणि</item>
     </plurals>
 </resources>

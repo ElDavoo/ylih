@@ -155,10 +155,12 @@
     <string name="notification_idle">ହେଦ୍ଫୋନ-କି ତୋଡ଼ା ମାଣ୍ଡ଼େନୁ</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d ଜୁଡ଼ି · %2$s</item>
+        <item quantity="many">%1$d ଜୁଡ଼ି · %2$s</item>
         <item quantity="other">%1$d ଜୁଡ଼ି · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">%1$d ଜୁଡ଼ି · %2$s · ବାଜା</item>
+        <item quantity="many">%1$d ଜୁଡ଼ି · %2$s · ବାଜା</item>
         <item quantity="other">%1$d ଜୁଡ଼ି · %2$s · ବାଜା</item>
     </plurals>
 
@@ -170,11 +172,13 @@
     <string name="error_could_not_open">%1$s ଉଡ଼ି ଆ ସିଲି</string>
     <plurals name="import_done">
         <item quantity="one">%d ସେସାନ ଭିତାରା ଆତେ</item>
+        <item quantity="many">%d ସେସାନ ଭିତାରା ଆତେ</item>
         <item quantity="other">%d ସେସାନ ଭିତାରା ଆତେ</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">%d ସେସାନ</item>
+        <item quantity="many">%d ସେସାନ</item>
         <item quantity="other">%d ସେସାନ</item>
     </plurals>
 </resources>

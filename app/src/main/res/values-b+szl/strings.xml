@@ -155,10 +155,12 @@
     <string name="notification_idle">czako na suchawki</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d połōnczōne · %2$s</item>
+        <item quantity="many">%1$d połōnczōnych · %2$s</item>
         <item quantity="other">%1$d połōnczōnych · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">%1$d połōnczōne · %2$s · gro</item>
+        <item quantity="many">%1$d połōnczōnych · %2$s · gro</item>
         <item quantity="other">%1$d połōnczōnych · %2$s · gro</item>
     </plurals>
 
@@ -170,11 +172,13 @@
     <string name="error_could_not_open">niy szło ôtworzić %1$s</string>
     <plurals name="import_done">
         <item quantity="one">zaimportowano %d sesyjo</item>
+        <item quantity="many">zaimportowano %d sesyji</item>
         <item quantity="other">zaimportowano %d sesyji</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">%d sesyjo</item>
+        <item quantity="many">%d sesyji</item>
         <item quantity="other">%d sesyji</item>
     </plurals>
 </resources>

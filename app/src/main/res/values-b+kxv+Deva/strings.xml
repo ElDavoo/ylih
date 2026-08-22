@@ -155,10 +155,12 @@
     <string name="notification_idle">हेद्फोन-कि तोडा माण्डेनु</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d जुडि · %2$s</item>
+        <item quantity="many">%1$d जुडि · %2$s</item>
         <item quantity="other">%1$d जुडि · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">%1$d जुडि · %2$s · बाजा</item>
+        <item quantity="many">%1$d जुडि · %2$s · बाजा</item>
         <item quantity="other">%1$d जुडि · %2$s · बाजा</item>
     </plurals>
 
@@ -169,11 +171,13 @@
     <string name="error_could_not_open">%1$s उडि आ सिलि</string>
     <plurals name="import_done">
         <item quantity="one">%d सेसान भितारा आते</item>
+        <item quantity="many">%d सेसान भितारा आते</item>
         <item quantity="other">%d सेसान भितारा आते</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">%d सेसान</item>
+        <item quantity="many">%d सेसान</item>
         <item quantity="other">%d सेसान</item>
     </plurals>
     <string name="edit_failed">आ बादाला साम्भाळा आ सिलि</string>

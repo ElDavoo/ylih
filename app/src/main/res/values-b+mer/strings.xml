@@ -155,10 +155,12 @@
     <string name="notification_idle">nĩkweterera iria bia gũthikĩria</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d kĩunganĩte · %2$s</item>
+        <item quantity="many">%1$d ciunganĩte · %2$s</item>
         <item quantity="other">%1$d ciunganĩte · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">%1$d kĩunganĩte · %2$s · nĩkĩkũina</item>
+        <item quantity="many">%1$d ciunganĩte · %2$s · nĩikũina</item>
         <item quantity="other">%1$d ciunganĩte · %2$s · nĩikũina</item>
     </plurals>
 
@@ -170,11 +172,13 @@
     <string name="error_could_not_open">gũtiahotekire kũhingũra %1$s</string>
     <plurals name="import_done">
         <item quantity="one">ĩgita %d rĩekĩrĩtwo</item>
+        <item quantity="many">magita %d mekĩrĩtwo</item>
         <item quantity="other">magita %d mekĩrĩtwo</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">ĩgita %d</item>
+        <item quantity="many">magita %d</item>
         <item quantity="other">magita %d</item>
     </plurals>
 </resources>

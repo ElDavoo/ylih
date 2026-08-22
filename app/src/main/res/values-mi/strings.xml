@@ -155,10 +155,12 @@
     <string name="notification_idle">e tatari ana mō ngā taringa whakarongo</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d kua hono · %2$s</item>
+        <item quantity="many">%1$d kua hono · %2$s</item>
         <item quantity="other">%1$d kua hono · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">%1$d kua hono · %2$s · e tangi ana</item>
+        <item quantity="many">%1$d kua hono · %2$s · e tangi ana</item>
         <item quantity="other">%1$d kua hono · %2$s · e tangi ana</item>
     </plurals>
 
@@ -170,11 +172,13 @@
     <string name="error_could_not_open">kāore i taea te whakatuwhera i %1$s</string>
     <plurals name="import_done">
         <item quantity="one">kua kawemai %d wātū</item>
+        <item quantity="many">kua kawemai %d wātū</item>
         <item quantity="other">kua kawemai %d wātū</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">%d wātū</item>
+        <item quantity="many">%d wātū</item>
         <item quantity="other">%d wātū</item>
     </plurals>
 </resources>

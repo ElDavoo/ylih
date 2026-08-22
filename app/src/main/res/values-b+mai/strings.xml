@@ -155,10 +155,12 @@
     <string name="notification_idle">हेडफोनक बाट देखि रहल</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d जुड़ल · %2$s</item>
+        <item quantity="many">%1$d जुड़ल · %2$s</item>
         <item quantity="other">%1$d जुड़ल · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">%1$d जुड़ल · %2$s · बाजि रहल</item>
+        <item quantity="many">%1$d जुड़ल · %2$s · बाजि रहल</item>
         <item quantity="other">%1$d जुड़ल · %2$s · बाजि रहल</item>
     </plurals>
 
@@ -170,11 +172,13 @@
     <string name="error_could_not_open">%1$s खोलल नहि जा सकल</string>
     <plurals name="import_done">
         <item quantity="one">%d सत्र आयात भेल</item>
+        <item quantity="many">%d सत्र आयात भेल</item>
         <item quantity="other">%d सत्र आयात भेल</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">%d सत्र</item>
+        <item quantity="many">%d सत्र</item>
         <item quantity="other">%d सत्र</item>
     </plurals>
 </resources>

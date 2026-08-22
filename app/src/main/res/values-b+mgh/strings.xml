@@ -155,10 +155,12 @@
     <string name="notification_idle">onneheera ifone sa maru</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d elattaniwe · %2$s</item>
+        <item quantity="many">%1$d silattaniwe · %2$s</item>
         <item quantity="other">%1$d silattaniwe · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">%1$d elattaniwe · %2$s · onnivara</item>
+        <item quantity="many">%1$d silattaniwe · %2$s · sinnivara</item>
         <item quantity="other">%1$d silattaniwe · %2$s · sinnivara</item>
     </plurals>
 
@@ -170,11 +172,13 @@
     <string name="error_could_not_open">khiyaawerya ohula %1$s</string>
     <plurals name="import_done">
         <item quantity="one">okathi %d wavahiwa</item>
+        <item quantity="many">ikathi %d savahiwa</item>
         <item quantity="other">ikathi %d savahiwa</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">okathi %d</item>
+        <item quantity="many">ikathi %d</item>
         <item quantity="other">ikathi %d</item>
     </plurals>
 </resources>

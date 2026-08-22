@@ -155,10 +155,12 @@
     <string name="notification_idle">shilindanga bindu bio khuulira</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d shikwatane · %2$s</item>
+        <item quantity="many">%1$d bikwatane · %2$s</item>
         <item quantity="other">%1$d bikwatane · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">%1$d shikwatane · %2$s · shimba</item>
+        <item quantity="many">%1$d bikwatane · %2$s · bimba</item>
         <item quantity="other">%1$d bikwatane · %2$s · bimba</item>
     </plurals>
 
@@ -170,11 +172,13 @@
     <string name="error_could_not_open">shinyala okhukalila %1$s tawe</string>
     <plurals name="import_done">
         <item quantity="one">ebise %d byinjisibwa</item>
+        <item quantity="many">ebise %d byinjisibwa</item>
         <item quantity="other">ebise %d byinjisibwa</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">ebise %d</item>
+        <item quantity="many">ebise %d</item>
         <item quantity="other">ebise %d</item>
     </plurals>
 </resources>

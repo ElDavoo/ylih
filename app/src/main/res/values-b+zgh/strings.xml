@@ -155,10 +155,12 @@
     <string name="notification_idle">ⴰⵍⴰⵢⵊ ⵏ ⵡⴳⴳⵓⵔ</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d ⵙⴽⵛⴰⵍ · %2$s</item>
+        <item quantity="many">%1$d ⵙⴽⵛⴰⵍ · %2$s</item>
         <item quantity="other">%1$d ⵙⴽⵛⴰⵍ · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">%1$d ⵙⴽⵛⴰⵍ · %2$s · ⵓⵙⴳⴳⴰⵙ</item>
+        <item quantity="many">%1$d ⵙⴽⵛⴰⵍ · %2$s · ⵓⵙⴳⴳⴰⵙ</item>
         <item quantity="other">%1$d ⵙⴽⵛⴰⵍ · %2$s · ⵓⵙⴳⴳⴰⵙ</item>
     </plurals>
 
@@ -170,11 +172,13 @@
     <string name="error_could_not_open">ⵓⵔ ⴽⴽⴰⵏ ⴰⵔⴰ ⴰⴷ ⴷ-ⴰⵙⴳⴳⵍ %1$s</string>
     <plurals name="import_done">
         <item quantity="one">ⵙⴽⵛⴰⵍ %d ⵙⴳⴳⴰⵙⵏ</item>
+        <item quantity="many">ⵙⴽⵛⴰⵍ %d ⵙⴳⴳⴰⵙⵏ</item>
         <item quantity="other">ⵙⴽⵛⴰⵍ %d ⵙⴳⴳⴰⵙⵏ</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">%d ⵙⴳⴳⴰⵙⵏ</item>
+        <item quantity="many">%d ⵙⴳⴳⴰⵙⵏ</item>
         <item quantity="other">%d ⵙⴳⴳⴰⵙⵏ</item>
     </plurals>
 </resources>

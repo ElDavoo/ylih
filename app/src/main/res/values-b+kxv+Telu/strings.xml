@@ -155,10 +155,12 @@
     <string name="notification_idle">హేద్ఫోన-కి తోడా మాణ్డేను</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d జుడి · %2$s</item>
+        <item quantity="many">%1$d జుడి · %2$s</item>
         <item quantity="other">%1$d జుడి · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">%1$d జుడి · %2$s · బాజా</item>
+        <item quantity="many">%1$d జుడి · %2$s · బాజా</item>
         <item quantity="other">%1$d జుడి · %2$s · బాజా</item>
     </plurals>
 
@@ -169,11 +171,13 @@
     <string name="error_could_not_open">%1$s ఉడి ఆ సిలి</string>
     <plurals name="import_done">
         <item quantity="one">%d సేసాన భితారా ఆతే</item>
+        <item quantity="many">%d సేసాన భితారా ఆతే</item>
         <item quantity="other">%d సేసాన భితారా ఆతే</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">%d సేసాన</item>
+        <item quantity="many">%d సేసాన</item>
         <item quantity="other">%d సేసాన</item>
     </plurals>
     <string name="edit_failed">ఆ బాదాలా సామ్భాళా ఆ సిలి</string>

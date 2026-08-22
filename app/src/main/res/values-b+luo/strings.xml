@@ -155,10 +155,12 @@
     <string name="notification_idle">rito hedfon</string>
     <plurals name="notification_active">
         <item quantity="one">%1$d otwe · %2$s</item>
+        <item quantity="many">%1$d otwe · %2$s</item>
         <item quantity="other">%1$d otwe · %2$s</item>
     </plurals>
     <plurals name="notification_active_playing">
         <item quantity="one">%1$d otwe · %2$s · wuok</item>
+        <item quantity="many">%1$d otwe · %2$s · wuok</item>
         <item quantity="other">%1$d otwe · %2$s · wuok</item>
     </plurals>
 
@@ -170,11 +172,13 @@
     <string name="error_could_not_open">ok nyal yawo %1$s</string>
     <plurals name="import_done">
         <item quantity="one">okel kinde %d</item>
+        <item quantity="many">okel kinde %d</item>
         <item quantity="other">okel kinde %d</item>
     </plurals>
 
     <plurals name="session_count">
         <item quantity="one">kinde %d</item>
+        <item quantity="many">kinde %d</item>
         <item quantity="other">kinde %d</item>
     </plurals>
 </resources>
