@@ -1,0 +1,6 @@
+• ylih spricht jetzt 220 Sprachen statt 76.
+• Die Statistiken listen die letzten dreißig Tage als Zahlen auf, nicht nur als Balken.
+• Wiedergabe- und Sitzungszeiten werden genauer gemessen.
+• Diagramme und Verlauf laden schneller.
+• Android kann deine Daten bei der Deinstallation behalten.
+• Bessere Unterstützung für Screenreader.

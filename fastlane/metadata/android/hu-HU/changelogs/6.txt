@@ -1,0 +1,6 @@
+• A ylih már 220 nyelven beszél a korábbi 76 helyett.
+• A statisztikák képernyő az elmúlt harminc napot számokban is felsorolja, nem csak oszlopokban.
+• A lejátszási és munkamenetidők mérése pontosabb.
+• A diagramok és az előzmények gyorsabban töltődnek be.
+• Az Android megőrizheti az adataidat az alkalmazás eltávolításakor.
+• Jobb képernyőolvasó-támogatás.

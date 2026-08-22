@@ -1,0 +1,6 @@
+• ylih kini berbicara 220 bahasa, naik dari 76.
+• Layar statistik menampilkan tiga puluh hari terakhir sebagai angka, bukan hanya batang.
+• Waktu pemutaran dan sesi diukur lebih akurat.
+• Grafik dan riwayat dimuat lebih cepat.
+• Android dapat menyimpan data Anda saat aplikasi dicopot.
+• Dukungan pembaca layar yang lebih baik.

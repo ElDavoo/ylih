@@ -1,0 +1,6 @@
+• ylih parle maintenant 220 langues, contre 76 auparavant.
+• L’écran des stats liste les trente derniers jours en chiffres, pas seulement en barres.
+• Les temps de lecture et de session sont mesurés plus précisément.
+• Les graphiques et l’historique se chargent plus vite.
+• Android peut conserver vos données à la désinstallation.
+• Meilleure prise en charge des lecteurs d’écran.

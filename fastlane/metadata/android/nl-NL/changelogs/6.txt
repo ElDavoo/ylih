@@ -1,0 +1,6 @@
+• ylih spreekt nu 220 talen, voorheen 76.
+• Het statistiekenscherm toont de laatste dertig dagen als cijfers, niet alleen als balken.
+• Afspeel- en sessietijden worden nauwkeuriger gemeten.
+• Grafieken en geschiedenis laden sneller.
+• Android kan je gegevens bewaren als de app wordt verwijderd.
+• Betere ondersteuning voor schermlezers.

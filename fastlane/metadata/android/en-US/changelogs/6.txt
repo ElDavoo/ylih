@@ -1,0 +1,6 @@
+• ylih now speaks 220 languages, up from 76.
+• The stats screen lists the last thirty days as figures, not only bars.
+• Playback and session times are measured more accurately.
+• Charts and history load faster.
+• Android can keep your data when the app is uninstalled.
+• Better screen reader support.

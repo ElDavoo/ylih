@@ -1,0 +1,6 @@
+• ylih taler nu 220 sprog mod 76 før.
+• Statistikskærmen viser de sidste tredive dage som tal, ikke kun som søjler.
+• Afspilnings- og sessionstider måles mere præcist.
+• Diagrammer og historik indlæses hurtigere.
+• Android kan beholde dine data, når appen afinstalleres.
+• Bedre understøttelse af skærmlæsere.

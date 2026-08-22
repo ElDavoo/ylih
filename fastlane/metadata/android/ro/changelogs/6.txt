@@ -1,0 +1,6 @@
+• ylih vorbește acum 220 de limbi, față de 76.
+• Ecranul de statistici afișează ultimele treizeci de zile ca cifre, nu doar ca bare.
+• Timpii de redare și de sesiune sunt măsurați mai precis.
+• Graficele și istoricul se încarcă mai repede.
+• Android poate păstra datele tale la dezinstalarea aplicației.
+• Suport mai bun pentru cititoarele de ecran.

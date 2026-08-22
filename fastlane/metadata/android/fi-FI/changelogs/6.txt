@@ -1,0 +1,6 @@
+• ylih puhuu nyt 220 kieltä, aiemmin 76.
+• Tilastonäkymä listaa viimeiset kolmekymmentä päivää lukuina, ei pelkkinä palkkeina.
+• Toisto- ja istuntoajat mitataan tarkemmin.
+• Kaaviot ja historia latautuvat nopeammin.
+• Android voi säilyttää tietosi, kun sovellus poistetaan.
+• Parempi tuki ruudunlukijoille.

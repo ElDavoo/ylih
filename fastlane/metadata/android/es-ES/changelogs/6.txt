@@ -1,0 +1,6 @@
+• ylih ya habla 220 idiomas, frente a 76.
+• La pantalla de estadísticas muestra los últimos treinta días como cifras, no solo como barras.
+• Los tiempos de reproducción y de sesión se miden con más precisión.
+• Los gráficos y el historial cargan más rápido.
+• Android puede conservar tus datos al desinstalar la aplicación.
+• Mejor compatibilidad con lectores de pantalla.

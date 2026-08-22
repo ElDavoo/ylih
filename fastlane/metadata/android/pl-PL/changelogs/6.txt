@@ -1,0 +1,6 @@
+• ylih mówi teraz w 220 językach zamiast 76.
+• Ekran statystyk pokazuje ostatnie trzydzieści dni jako liczby, nie tylko jako słupki.
+• Czasy odtwarzania i sesji są mierzone dokładniej.
+• Wykresy i historia wczytują się szybciej.
+• Android może zachować twoje dane po odinstalowaniu aplikacji.
+• Lepsza obsługa czytników ekranu.

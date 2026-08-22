@@ -1,0 +1,6 @@
+• ylih artık 76 yerine 220 dil konuşuyor.
+• İstatistik ekranı son otuz günü yalnızca çubuk olarak değil, sayı olarak da listeliyor.
+• Çalma ve oturum süreleri daha doğru ölçülüyor.
+• Grafikler ve geçmiş daha hızlı yükleniyor.
+• Android, uygulama kaldırıldığında verilerinizi saklayabilir.
+• Ekran okuyucu desteği iyileştirildi.
