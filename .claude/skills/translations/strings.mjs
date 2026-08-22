@@ -464,6 +464,21 @@ cmds.check = (argv) => {
   // them is what lets the untranslated check below see through the disguise.
   const FOLD = { ɔ: 'o', ɛ: 'e', ŋ: 'n', ə: 'e', ǝ: 'e', ʉ: 'u', ɨ: 'i', ʃ: 's', ɑ: 'a' }
   const bags = new Map()
+  // The lingua francas this tree has actually been mistranslated through, each with the
+  // commonest grammatical words of the language itself. Thresholds are calibrated against the
+  // whole tree rather than guessed: on these lists the ten locales holding Swahili score 47-80%
+  // and the next locale down, Sangu, scores 27%; Chichewa separates 57% from 7%. 0.4 sits in
+  // both gaps. `except` is the set that may legitimately match — the language itself, plus any
+  // relative close enough to share this much grammar. Sena is the one that has come up: it
+  // shares zonse, palibe, ndi, kuti and ngati with Chichewa as a Zone N neighbour and scores
+  // 71%, but its own file is only 11.6% of a word-bag match with the Chichewa one that was
+  // deleted, and CLDR gives Sena Lero for today, which is what values-b+seh says.
+  const LINGUA_FRANCA = [
+    { name: 'Swahili', except: new Set(['sw']),
+      words: 'katika kwenye hii huu hili yako hakuna kitu ndani zote hizi hiyo ambayo cha wako'.split(' ') },
+    { name: 'Chichewa', except: new Set(['ny', 'seh']),
+      words: 'zonse palibe kuti ngati kapena komwe chilichonse pamene ndipo chomwe zake kwambiri ali izi'.split(' ') },
+  ]
   const words = (v) => (v ?? '').toLowerCase().replace(/[ɔɛŋəǝʉɨʃɑ]/g, (c) => FOLD[c])
     .normalize('NFD').replace(/\p{M}+/gu, '')
 
@@ -559,6 +574,23 @@ cmds.check = (argv) => {
     const same = longKeys.filter((k) => words(f.keys.get(k)?.value) === words(s.translatable.get(k).value))
     if (same.length > longKeys.length / 2)
       add(l.tag, `untranslated: ${same.length}/${longKeys.length} long strings are still the English source`)
+
+    // A locale holding the regional lingua franca rather than the language it claims. This is the
+    // shape of a translation done through the language of the nearest city: four Chagga locales
+    // here held one Swahili translation between them, and values-b+vmw held Chichewa under a
+    // Makhuwa name. Nothing above sees it. The strings are present, the script is right, the text
+    // is not English, and the language it actually holds is usually not in the tree to be compared
+    // against — Chichewa is not, which is how vmw survived every other rule here.
+    //
+    // Grammatical words only. The Arabic-derived vocabulary Swahili is best known for — kila,
+    // bila, wakati, baada, sababu, akaunti — is exactly what a neighbouring language borrows
+    // legitimately, so a fingerprint built from it flags the whole coast.
+    for (const lf of LINGUA_FRANCA) {
+      if (lf.except.has(l.tag.split('-')[0])) continue
+      const hit = lf.words.filter((w) => bags.get(l.tag).has(w)).length
+      if (hit / lf.words.length >= 0.4)
+        add(l.tag, `lingua franca: ${hit}/${lf.words.length} of ${lf.name}’s commonest grammatical words are in this file — it is probably ${lf.name}, not ${l.tag}`)
+    }
   }
 
   // One bulk run writing its output into several folders is invisible one file at a time — each
