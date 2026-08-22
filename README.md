@@ -1,5 +1,8 @@
 # ylih - your life in headphones
 
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="70">](https://f-droid.org/packages/it.eldavo.ylih/)
+[<img src="docs/img/badge-obtainium.png" alt="Obtain it on Obtainium" height="70">](https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/ElDavoo/ylih)
+
 An Android app that records how long your headphones stay connected, so that months later you
 can answer the only question that matters about a pair of headphones: **how many hours did they
 last before they broke?**
