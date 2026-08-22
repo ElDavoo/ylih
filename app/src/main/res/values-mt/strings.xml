@@ -148,7 +148,7 @@
     <string name="action_delete">ħassef</string>
     <string name="action_import">import</string>
 
-    <string name="channel_tracking">headphone tracking</string>
+    <string name="channel_tracking">tracking tal-awrikolari</string>
     <string name="channel_tracking_description">murija filwaqt li ylih tħares għal wired headphones u playback. android ma tderġix wired plug events għal apps li mhux sejra.</string>
     <string name="notification_title">tracking tal-ħin tal-headphones</string>
     <string name="notification_starting">tibda…</string>

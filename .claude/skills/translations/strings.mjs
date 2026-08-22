@@ -559,6 +559,34 @@ cmds.check = (argv) => {
       }
     }
 
+    // The same thing in a locale that does use the alphabet, where the check above cannot see it:
+    // the value is not merely English-looking, it is the source string itself. Twenty-one locales
+    // were caught this way once; five more kept one contiguous block of it — average session,
+    // longest session, playing share, by pair — because a bulk pass skipped the block and every
+    // file-level rule still passed, the file being otherwise translated.
+    //
+    // Placeholders come out before the comparison, not after, and two words is the floor. That is
+    // what separates a string nobody translated from one nobody had to: "%1$s · %2$s" is identical
+    // in all 230 locales legitimately, "%1$s / 7d" in 113 and "%1$s max" in 36, and every one of
+    // those reduces to fewer than two words of English once the placeholder is gone.
+    // An English-lexifier creole is the exception, and it is not a small one: values-b+pcm keeps
+    // "save", "today", "last 7 days" and "welcome to ylih" because that is what Nigerian Pidgin
+    // says, in a file whose own sentences read "everything stay for this phone. no account, and
+    // the app no get internet permission". A third of its strings match the source legitimately.
+    const LEXIFIED_BY_ENGLISH = new Set(['pcm'])
+    for (const [name, e] of LEXIFIED_BY_ENGLISH.has(l.tag.split('-')[0]) ? [] : f.keys) {
+      const srcE = s.translatable.get(name)
+      if (!srcE || srcE.kind !== 'string' || e.kind !== 'string') continue
+      const bare = (v) => v.toLowerCase().replace(/%\d*\$?[a-zA-Z]/g, ' ')
+        .split(/[^\p{L}\p{N}]+/u)
+        .filter((w) => w && !/^(ylih|usb|bluetooth|ble|le|audio|json|android|connectedDevice|https?|\d+)$/i.test(w))
+      const want = bare(srcE.value)
+      if (want.length < 2) continue
+      const got = bare(e.value)
+      if (got.length && got.join(' ') === want.join(' '))
+        add(l.tag, `${name}: still the English source ("${srcE.value.slice(0, 40)}")`)
+    }
+
     // Scaffolding a generator wrote and nobody filled in. It reaches users verbatim: seven locales
     // shipped "[lv] save" on a button.
     const stubs = [...f.keys].filter(([, e]) => e.kind === 'string' && /^\[[A-Za-z+-]{2,12}\]\s/.test(e.value))
