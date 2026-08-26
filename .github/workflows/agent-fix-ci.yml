@@ -18,6 +18,11 @@ permissions:
   actions: read
   issues: write
   pull-requests: write
+  # Needed here even though nothing in this file runs the action: a called workflow cannot
+  # request a permission its caller lacks, and agent-fix.yml needs id-token for the OIDC token.
+  # Getting this wrong does not fail a job -- it fails the run at startup, with no jobs, no
+  # logs and no annotation to read.
+  id-token: write
 
 jobs:
   context:
