@@ -1,0 +1,166 @@
+name: Dependabot verification metadata
+
+# Every download the build makes is pinned by a SHA-256 in gradle/verification-metadata.xml, and
+# Dependabot bumps versions in libs.versions.toml without touching it — so every weekly gradle PR
+# fails with "Dependency verification failed ... checksums are missing" before it compiles a line.
+# See dependabot/feedback#908 for the open request; until it lands, this workflow is the answer.
+#
+# It regenerates the metadata on the PR branch and pushes it back, which turns a PR that always
+# fails into one that Android CI can actually judge — and that dependabot-auto-merge.yml can then
+# merge on its own.
+#
+# Two things about it are load-bearing:
+#
+#   * It must push with something other than GITHUB_TOKEN. A push made with GITHUB_TOKEN creates
+#     no new workflow runs, so the metadata commit would land on the PR, move the head SHA, and
+#     leave that SHA with no checks at all — which auto-merge waits on forever. The token below
+#     has to belong to a GitHub App or a user, and it has to be stored as a **Dependabot** secret
+#     (Settings -> Secrets and variables -> Dependabot), not an Actions one: a workflow run
+#     triggered by Dependabot sees only that store, and its GITHUB_TOKEN is read-only whatever the
+#     permissions block says. Contents: write on this repository is all it needs.
+#
+#   * The regeneration happens here rather than in a nix dev shell on someone's machine, and that
+#     is an improvement rather than a compromise. flake.nix points aapt2FromMavenOverride at the
+#     SDK's own binary, so a local run never resolves com.android.tools.build:aapt2 and writes a
+#     file that is complete on NixOS and two artifacts short everywhere else. The F-Droid
+#     buildserver found that the hard way. A runner has no override, so what it records is what an
+#     ordinary build needs.
+
+on:
+  pull_request:
+    paths:
+      - gradle/libs.versions.toml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  regenerate:
+    # Also what stops this running twice. The push below arrives as a `synchronize` event whose
+    # actor is the token's owner rather than Dependabot, so the second run is skipped before it
+    # costs anything — and a later Dependabot rebase, which drops our commit, is an actor match
+    # again and regenerates.
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check the push token exists
+        env:
+          TOKEN: ${{ secrets.DEPENDABOT_PUSH_TOKEN }}
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "::error::DEPENDABOT_PUSH_TOKEN is not set as a Dependabot secret." \
+                 "Without it the regenerated metadata cannot be pushed in a way that re-runs CI;" \
+                 "see the comment at the top of this workflow."
+            exit 1
+          fi
+
+      - name: Checkout the PR branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          # The head branch itself, not the merge commit: this job commits to it.
+          ref: ${{ github.event.pull_request.head.ref }}
+          # The build below resolves and executes code from versions nobody has reviewed yet.
+          # Leaving no credential in .git/config keeps the push token out of its reach until the
+          # one step that needs it.
+          persist-credentials: false
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@40fd30fb8d7440372e1316f5d1809ec01dcd3699 # v4
+
+      - name: Cache Android SDK components
+        id: sdk-cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        with:
+          path: |
+            ${{ env.ANDROID_SDK_ROOT }}/platforms/android-37.0
+            ${{ env.ANDROID_SDK_ROOT }}/build-tools/37.0.0
+          key: android-sdk-${{ runner.os }}-platform37.0-buildtools37.0.0
+
+      - name: Install Android SDK components
+        if: steps.sdk-cache.outputs.cache-hit != 'true'
+        run: sdkmanager "platform-tools" "platforms;android-37.0" "build-tools;37.0.0"
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
+        with:
+          cache-read-only: true
+
+      # Over the whole CI task set, both flavors, because a configuration that is never resolved
+      # contributes no checksums — the first hand-written pass here missed the androidTest ones.
+      # And --refresh-dependencies is not optional: an artifact already in the local cache is not
+      # re-resolved and would be silently left out.
+      #
+      # continue-on-error on purpose. A bump that breaks the build — a Kotlin deprecation under
+      # allWarningsAsErrors is the usual one — still resolved everything it needed to before it
+      # failed, so the metadata it wrote is correct and worth pushing. Android CI on the new
+      # commit is what reports the real failure, and it reports it as the deprecation rather than
+      # as "checksums are missing".
+      - name: Regenerate the verification metadata
+        id: regenerate
+        continue-on-error: true
+        run: >
+          ./gradlew --no-daemon --stacktrace
+          --write-verification-metadata sha256 --refresh-dependencies
+          lintClassicReleaseTest createClassicReleaseTestUnitTestCoverageReport
+          testClassicDebugUnitTest assembleClassicDebug assembleClassicRelease
+          assembleClassicReleaseTestAndroidTest
+          lintPlayReleaseTest createPlayReleaseTestUnitTestCoverageReport
+          testPlayDebugUnitTest assemblePlayDebug assemblePlayRelease
+          assemblePlayReleaseTestAndroidTest
+
+      # Nothing proves the file here, deliberately: generation and verification are different code
+      # paths, and the thing that walks the second one is the Android CI run this push triggers.
+      - name: Commit and push the regenerated metadata
+        env:
+          TOKEN: ${{ secrets.DEPENDABOT_PUSH_TOKEN }}
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+          TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet -- gradle/verification-metadata.xml; then
+            echo "The metadata already matches the bumped versions; nothing to push."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add gradle/verification-metadata.xml
+
+          # The title is quoted through printf rather than interpolated into the heredoc: it
+          # carries a dependency name, which nobody here writes.
+          { cat <<'EOF'
+          Record the checksums for the artifacts this bump introduces
+
+          Dependabot moves versions in libs.versions.toml and leaves
+          gradle/verification-metadata.xml alone, so the build refuses the new
+          artifacts as unverified before it compiles anything. Regenerated over the
+          whole CI task set with --refresh-dependencies, on a runner rather than
+          under the dev shell's aapt2 override, so the aapt2 artifacts are in it.
+
+          EOF
+            printf 'For: %s\n' "$TITLE"
+          } | git commit --file -
+
+          git push "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
+              "HEAD:${BRANCH}"
+
+      # Only after the file is safely pushed, so a broken bump still gets its metadata.
+      - name: Fail if the build itself failed
+        if: steps.regenerate.outcome == 'failure'
+        run: |
+          echo "::notice::The metadata was regenerated and pushed, but the build under the new" \
+               "versions failed. Android CI on the pushed commit reports why."
+          exit 1

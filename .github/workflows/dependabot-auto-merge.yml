@@ -3,6 +3,11 @@ name: Dependabot auto-merge
 # Turns on GitHub's own auto-merge for Dependabot PRs. Nothing is merged here and now: the
 # merge only happens once every required check on the PR is green, which is what makes this
 # safe — the Android CI matrix is the gate, not this workflow.
+#
+# A gradle PR cannot go green on its own: Dependabot bumps libs.versions.toml and leaves
+# gradle/verification-metadata.xml alone, so the build refuses the new artifacts as unverified.
+# `dependabot-verification-metadata.yml` is what pushes the regenerated checksums onto the branch;
+# that push re-runs Android CI, and this auto-merge is then waiting for a run that can pass.
 on: pull_request_target
 
 permissions:

@@ -476,11 +476,26 @@ These are easy to break and the failures are confusing:
   metadata alone, so every weekly gradle PR fails with "Dependency verification failed …
   checksums are missing" until the metadata is regenerated —
   [dependabot-core#1996](https://github.com/dependabot/feedback/issues/908) is the open request
-  for this. Regenerating it by hand is the current answer; regenerating it in CI is a fine
-  alternative and the maintainer is happy with either. The tradeoff to know before automating it
-  is only that a CI regeneration records whatever was downloaded at that moment, so it moves the
-  trust from the checksum to whoever reviews the resulting diff — which for a Dependabot bump is
-  the same person either way.
+  for this. `.github/workflows/dependabot-verification-metadata.yml` closes it: on a Dependabot PR
+  that touches `libs.versions.toml` it regenerates the file and pushes the result back onto the PR
+  branch, so the PR is one Android CI can actually judge and `dependabot-auto-merge.yml` can then
+  merge unattended. The tradeoff is the one any CI regeneration has: it records whatever was
+  downloaded at that moment, moving the trust from the checksum to whoever reviews the resulting
+  diff — which for a Dependabot bump is the same person either way.
+
+  Three things about that workflow are load-bearing, and its header comment says so at length. It
+  pushes with `secrets.DEPENDABOT_PUSH_TOKEN`, which must be a GitHub App or user token stored as
+  a **Dependabot** secret rather than an Actions one — a run triggered by Dependabot sees only
+  that store, and a push made with `GITHUB_TOKEN` triggers no workflow runs, so the metadata
+  commit would move the head SHA to one with no checks on it and auto-merge would wait forever.
+  It gates on `github.actor == 'dependabot[bot]'`, which is also what stops it running twice: the
+  push arrives as a `synchronize` whose actor is the token's owner. And the build step is
+  `continue-on-error`, because a bump that breaks compilation still resolved what it needed first
+  — the metadata it wrote is correct and worth pushing, and CI on the new commit then reports the
+  real failure instead of "checksums are missing".
+
+  Regenerating by hand is still the answer for anything Dependabot did not raise — a manual
+  version bump, or a Gradle upgrade.
 
   Regenerate over the whole CI task set, not a subset — a configuration that was not resolved
   contributes no checksums, and `--refresh-dependencies` is not optional, because an artifact
@@ -495,7 +510,9 @@ These are easy to break and the failures are confusing:
   written here is complete for this machine and short two artifacts everywhere else. The F-Droid
   buildserver found it, one task into the build: `2 artifacts failed verification`, the `linux`
   jar and its POM. Nothing local can catch that, since every local build is under the override —
-  the only proof is a run without it, which is what the command below is:
+  the only proof is a run without it, which is what the command below is — and which is the other
+  half of why the workflow above regenerates on a runner: a runner sets no override, so what it
+  records is what an ordinary build needs.
 
   ```sh
   GRADLE_OPTS= ./gradlew --write-verification-metadata sha256 --refresh-dependencies \
