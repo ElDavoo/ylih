@@ -97,7 +97,7 @@ jobs:
               device-identity keying on the last two octets; day bucketing by ZoneId);
             - a gate weakened rather than satisfied — a lowered coverage floor, a new lint.xml
               suppression, a lint baseline, a deleted or defanged assertion;
-            - a user-visible string added without all 77 translations;
+            - a user-visible string added to `values/` but not to every translated locale;
             - a schema change without a migration;
             - work that does not actually implement the issue, or that quietly does more than
               the issue asked;

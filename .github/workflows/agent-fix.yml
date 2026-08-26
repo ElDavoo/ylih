@@ -159,7 +159,7 @@ jobs:
             Read CLAUDE.md first — most CI failures in this repository are a documented gate
             rather than a bug, and the file says what each one wants:
             - a lint warning is a build failure (warningsAsErrors, no baseline);
-            - a missing translation out of 77 is a build failure;
+            - a missing translation in any of the 220 locales is a build failure;
             - the coverage gate has floors on instruction, line and branch;
             - r8-keep-check.py guards what R8 may rename;
             - an instrumented failure on the minified leg but not the debug leg means R8, and
@@ -168,7 +168,7 @@ jobs:
             Diagnose the failure before you change anything. Then make the smallest change that
             fixes the cause, and re-run the cheap gates:
 
-                python3 .github/scripts/check-translations.py
+                node .claude/skills/translations/strings.mjs check
                 ./gradlew --no-daemon lintClassicReleaseTest
                 ./gradlew --no-daemon testClassicReleaseTestUnitTest
 
@@ -179,7 +179,7 @@ jobs:
             Do not commit or push. Leave your work in the working tree.
           claude_args: >-
             --max-turns 120
-            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(./gradlew:*),Bash(python3 .github/scripts/check-translations.py),Bash(python3 .github/scripts/coverage-summary.py),Bash(git diff:*),Bash(git status:*),Bash(git log:*),Bash(git show:*)"
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(./gradlew:*),Bash(node .claude/skills/translations/strings.mjs:*),Bash(python3 .github/scripts/check-translations.py),Bash(python3 .github/scripts/coverage-summary.py),Bash(git diff:*),Bash(git status:*),Bash(git log:*),Bash(git show:*)"
 
       # Round 9. Handed the whole history rather than the latest failure, told the approach is
       # not working, and allowed to revert -- because the way these loops actually fail is an
@@ -215,7 +215,7 @@ jobs:
 
             Then implement the different approach and run the cheap gates:
 
-                python3 .github/scripts/check-translations.py
+                node .claude/skills/translations/strings.mjs check
                 ./gradlew --no-daemon lintClassicReleaseTest
                 ./gradlew --no-daemon testClassicReleaseTestUnitTest
 
@@ -227,7 +227,7 @@ jobs:
             Do not commit or push. Leave your work in the working tree.
           claude_args: >-
             --max-turns 200
-            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(./gradlew:*),Bash(python3 .github/scripts/check-translations.py),Bash(python3 .github/scripts/coverage-summary.py),Bash(git diff:*),Bash(git status:*),Bash(git log:*),Bash(git show:*),Bash(git revert:*),Bash(git checkout:*),Bash(git restore:*)"
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(./gradlew:*),Bash(node .claude/skills/translations/strings.mjs:*),Bash(python3 .github/scripts/check-translations.py),Bash(python3 .github/scripts/coverage-summary.py),Bash(git diff:*),Bash(git status:*),Bash(git log:*),Bash(git show:*),Bash(git revert:*),Bash(git checkout:*),Bash(git restore:*)"
 
       # Exactly one of the two fix steps runs; the other is skipped, and a skipped step's
       # outcome is 'skipped', never 'failure'. So testing for 'failure' on both is the whole

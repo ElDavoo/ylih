@@ -134,13 +134,20 @@ jobs:
               data/SessionRepository.kt).
             - Comments explain *why* — a platform quirk, a race actually observed — never what
               the code does.
-            - Every user-visible string is a resource and needs all 77 translations. If the plan
+            - Every user-visible string is a resource and must exist in every translated locale (220 of them at last count, so never hand-edit them). If the plan
               said no string was being added, do not add one.
+
+            If you are adding, renaming or removing a string, use the `translations` skill in
+            .claude/skills/translations/. Do not hand-edit the locale files: the skill's driver
+            does every locale in one command, and editing them individually is both far slower
+            than your turn budget allows and how this build has actually been broken before.
+
+                node .claude/skills/translations/strings.mjs check
 
             Before you finish, these must pass. Run them, read the failures, and fix them —
             they are the same gates CI will apply and they are much cheaper here:
 
-                python3 .github/scripts/check-translations.py
+                node .claude/skills/translations/strings.mjs check
                 ./gradlew --no-daemon lintClassicReleaseTest
                 ./gradlew --no-daemon testClassicReleaseTestUnitTest
 
@@ -152,8 +159,8 @@ jobs:
             Do not commit, push, or touch git. Leave your work in the working tree; the
             workflow commits it.
           claude_args: >-
-            --max-turns 120
-            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(./gradlew:*),Bash(python3 .github/scripts/check-translations.py),Bash(git diff:*),Bash(git status:*)"
+            --max-turns 150
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(./gradlew:*),Bash(node .claude/skills/translations/strings.mjs:*),Bash(python3 .github/scripts/check-translations.py),Bash(git diff:*),Bash(git status:*)"
 
       - name: Record a stall
         if: steps.implement.outcome != 'success' || steps.implement.outputs.conclusion != 'success'

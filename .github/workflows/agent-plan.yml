@@ -140,8 +140,8 @@ jobs:
             - the goal, in one or two sentences;
             - every file you expect to touch;
             - which invariants in CLAUDE.md are near the work and how you will not break them;
-            - whether any user-visible string is added (if so: it needs all 77 translations, and
-              the `translations` skill workflow — say so explicitly in the plan);
+            - whether any user-visible string is added (if so it must be added to every translated
+              locale — there are 220 — via the `translations` skill's driver; say so in the plan);
             - the test that will prove it works, and where it goes;
             - what is explicitly out of scope.
 
