@@ -21,6 +21,9 @@ import it.eldavo.ylih.data.EndReason
 import it.eldavo.ylih.data.PairEntity
 import it.eldavo.ylih.data.SessionEntity
 import it.eldavo.ylih.ui.theme.YlihTheme
+import java.time.Instant
+import java.time.LocalDate
+import java.time.ZoneId
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Assert.assertEquals
@@ -375,5 +378,93 @@ class PairDetailScreenTest {
 
         compose.onNodeWithText(text(R.string.pair_fallback_title)).assertExists()
         compose.onNodeWithText(text(R.string.pair_lifetime), substring = true).assertExists()
+    }
+
+    /**
+     * The chart can only show a shape; the list under it is where "how much did I listen
+     * yesterday, on this pair" is actually answered, mirroring `StatsScreenTest`'s equivalent
+     * assertion for the all-pairs chart.
+     */
+    @Test
+    fun `the daily breakdown names yesterday and reaches back to the first day recorded`() {
+        val pairId = seedPair()
+
+        show(pairId)
+
+        val yesterday = text(R.string.stats_yesterday)
+        scrollTo(yesterday)
+        compose.onNodeWithText(yesterday).assertExists()
+        // seedPair()'s oldest session is three days back, so the list stops there rather than
+        // running out the whole fourteen-day window on empty days.
+        val oldest = dayLabel(now - 3 * day)
+        scrollTo(oldest)
+        compose.onNodeWithText(oldest).assertExists()
+    }
+
+    /**
+     * Unlike the stats screen's own chart, this one must not fold in every other pair's history.
+     * A second pair's session lands on the same calendar day as one of this pair's own, and that
+     * day's row has to keep showing this pair's hour alone — the sum of the two is exactly what a
+     * `spansByPair` lookup gone wrong (reading every pair's spans instead of just this one's)
+     * would produce, and nothing else on the page would catch that.
+     */
+    @Test
+    fun `the daily breakdown is scoped to this pair, not every pair`() {
+        val pairId = seedPair()
+        val zone = ZoneId.systemDefault()
+        // Anchored to local noon on a day of its own, five days back, rather than to a fixed
+        // offset from `now` the way `seedPair()`'s own sessions are: a session an hour long can
+        // straddle midnight and split across two days depending on what time of day the suite
+        // happens to run, which would make the exact-hour assertion below flaky.
+        val fifthDayNoon = LocalDate.now(zone).minusDays(5).atTime(12, 0)
+            .atZone(zone).toInstant().toEpochMilli()
+        runBlocking {
+            db.sessionDao().insert(
+                SessionEntity(
+                    pairId = pairId,
+                    connectedAt = fifthDayNoon,
+                    disconnectedAt = fifthDayNoon + hour,
+                    heartbeatAt = fifthDayNoon + hour,
+                    endReason = EndReason.DISCONNECTED,
+                ),
+            )
+            val otherDeviceId = db.deviceDao().insert(
+                DeviceEntity(
+                    deviceKey = "bt:9F:00",
+                    kind = DeviceKind.BLUETOOTH,
+                    defaultName = "Other pair",
+                    firstSeenAt = now - 30 * day,
+                ),
+            )
+            val otherPairId = db.pairDao().insert(
+                PairEntity(
+                    deviceId = otherDeviceId,
+                    label = "Other pair",
+                    generation = 1,
+                    startedAt = now - 30 * day,
+                ),
+            )
+            db.sessionDao().insert(
+                SessionEntity(
+                    pairId = otherPairId,
+                    connectedAt = fifthDayNoon + hour,
+                    disconnectedAt = fifthDayNoon + hour + 5 * hour,
+                    heartbeatAt = fifthDayNoon + hour + 5 * hour,
+                ),
+            )
+        }
+
+        show(pairId)
+
+        // This pair's own session on that day is one hour long; a leak that merged the other
+        // pair's five hours in would read six instead.
+        val sharedDay = dayLabel(fifthDayNoon)
+        scrollTo(sharedDay)
+        compose.onNodeWithContentDescription("$sharedDay: ${formatHours(hour)}").assertExists()
+    }
+
+    private fun dayLabel(epochMs: Long): String {
+        val date = Instant.ofEpochMilli(epochMs).atZone(ZoneId.systemDefault()).toLocalDate()
+        return "${formatWeekday(date)} · ${formatDayLabel(date)}"
     }
 }

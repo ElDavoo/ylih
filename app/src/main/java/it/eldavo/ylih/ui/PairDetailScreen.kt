@@ -90,6 +90,11 @@ fun PairDetailScreen(
     val series = remember(spans, now, counting, zone) {
         Stats.dailySeries(spans, zone, now, days = WINDOW_DAYS, counting = counting)
     }
+    // The same 14-day tail the chart draws, not the 30-day series it's cut from — so the list
+    // below the chart and the chart itself agree on both which days appear and what scale they're
+    // drawn to, the way StatsScreen's chart and list agree over the full 30 days.
+    val breakdown = remember(series) { dailyBreakdown(series.takeLast(PAIR_CHART_DAYS)) }
+    val chartMax = remember(series) { chartMaxMs(series.takeLast(PAIR_CHART_DAYS)) }
 
     Scaffold(
         modifier = Modifier.padding(bottom = contentPadding.calculateBottomPadding()),
@@ -245,6 +250,13 @@ fun PairDetailScreen(
                         series = series.takeLast(PAIR_CHART_DAYS),
                         label = chartLabel,
                     )
+                }
+            }
+            // The days themselves, under the chart of them and inside the same heading — the
+            // pattern StatsScreen.kt uses for its own chart and list.
+            breakdown.firstOrNull()?.first?.let { today ->
+                items(breakdown, key = { "day:${it.first}" }) { (date, ms) ->
+                    DailyBreakdownRow(date = date, ms = ms, maxMs = chartMax, today = today)
                 }
             }
             item { SectionHeader(stringResource(R.string.pair_sessions)) }
