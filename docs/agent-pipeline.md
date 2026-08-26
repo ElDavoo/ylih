@@ -33,7 +33,9 @@ re-dispatched from the Actions tab without paying for the ones before it.
 
 ## Setup
 
-None of this works until all six are done.
+None of this works until all six are done. All six are done on `ElDavoo/ylih` as of
+2026-08-26; what follows is the record of what was set and why, for the next repository or the
+next time one of them is quietly turned off.
 
 **1. A pull-request token.** Create a fine-grained PAT scoped to this repository only, with
 *Contents: read and write*, *Pull requests: read and write*, *Issues: read and write* and
@@ -80,11 +82,32 @@ gh label create 'agent:working' --color fbca04 --description "Being implemented"
 gh label create 'agent:declined' --color ededed --description "Not work an agent should take unattended"
 ```
 
-**6. Branch protection on `main`.** Require the Android CI checks (`listing`, `build (classic)`,
-`build (play)`, and the `instrumented` legs) and **1 approving review**.
+**6. The `main protection` ruleset.** A *ruleset*, not legacy branch protection — the
+`/branches/main/protection` endpoint 404s on this repository, which is expected and not a sign
+anything is missing. Read it with:
 
-Note this also starts gating your own pushes to `main`, which is a change to how the repository
-works today, not just a setting the pipeline needs.
+```sh
+gh api repos/ElDavoo/ylih/rulesets/19763281
+```
+
+It must carry both of these, and the second is the one easy to leave out:
+
+- `required_status_checks` over every Android CI context, spelled exactly as the jobs report
+  them — the matrix legs are `build (classic, Classic)` and `build (play, Play)`, not
+  `build (classic)`, and there are three `instrumented` legs. `listing` matters more than it
+  looks: it is where actionlint runs, so it is the check that catches a broken agent workflow.
+- a `pull_request` rule with `required_approving_review_count: 1`.
+
+**Without the approval rule the review stage is decorative.** Auto-merge waits for whatever the
+ruleset requires and nothing else, so a pull request would merge on green CI alone and the
+reviewer's verdict would never be consulted. The repository was in exactly that state when this
+pipeline was first set up.
+
+`dismiss_stale_reviews_on_push` is on, so an approval does not carry across a later fix round —
+the review stage re-runs on every `synchronize` and re-approves, which is what makes that safe.
+
+The admin bypass actor stays: it is what keeps this from gating your own direct pushes to
+`main`.
 
 ## The two identities, and why there are two
 
