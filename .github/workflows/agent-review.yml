@@ -20,6 +20,9 @@ on:
 
 permissions:
   contents: read
+  # The action fetches a GitHub OIDC token on every run, including the OAuth path, and
+  # fails after three retries without this. claude.yml has carried it since day one.
+  id-token: write
   issues: read
   pull-requests: write
 
@@ -37,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     outputs:
-      approved: ${{ fromJSON(steps.verdict.outputs.structured_output).approved }}
+      approved: ${{ steps.unpack.outputs.approved }}
       findings: ${{ steps.findings.outputs.text }}
       issue: ${{ steps.ctx.outputs.issue }}
       author: ${{ steps.ctx.outputs.author }}
@@ -130,18 +133,31 @@ jobs:
         if: steps.verdict.outcome != 'success' || steps.verdict.outputs.conclusion != 'success'
         run: exit 1
 
+      # jq rather than fromJSON() in an `if:` — see the note in agent-plan.yml. fromJSON on
+      # the empty string a stalled run leaves behind fails template evaluation instead of
+      # evaluating false, and takes every later step with it.
+      - name: Unpack the verdict
+        id: unpack
+        env:
+          OUT: ${{ steps.verdict.outputs.structured_output }}
+        run: |
+          set -euo pipefail
+          jq -r '.summary'     <<<"$OUT" > /tmp/summary.txt
+          jq -r '.final_title' <<<"$OUT" > /tmp/final-title.txt
+          jq -r '.final_body'  <<<"$OUT" > /tmp/final-body.txt
+          echo "approved=$(jq -r '.approved | tostring' <<<"$OUT")" >> "$GITHUB_OUTPUT"
+
       - name: Capture the findings for the fix stage
         id: findings
-        if: ${{ !fromJSON(steps.verdict.outputs.structured_output).approved }}
+        if: steps.unpack.outputs.approved != 'true'
         env:
-          SUMMARY: ${{ fromJSON(steps.verdict.outputs.structured_output).summary }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR: ${{ github.event.pull_request.number }}
         run: |
           set -euo pipefail
           {
             echo 'text<<REVIEW_EOF'
-            printf '%s\n\n' "$SUMMARY"
+            cat /tmp/summary.txt ; printf '\n'
             echo 'Inline comments left on the pull request:'
             gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR}/comments" \
               --jq '.[] | "- \(.path):\(.line // .original_line) — \(.body)"' | tail -c 20000
@@ -154,30 +170,26 @@ jobs:
       # eight fix rounds may have left the original describing an approach that was abandoned.
       # The scratch marker and everything under it goes: it is gate reporting, not history.
       - name: Approve
-        if: fromJSON(steps.verdict.outputs.structured_output).approved
+        if: steps.unpack.outputs.approved == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR: ${{ github.event.pull_request.number }}
           ISSUE: ${{ steps.ctx.outputs.issue }}
-          TITLE: ${{ fromJSON(steps.verdict.outputs.structured_output).final_title }}
-          BODY: ${{ fromJSON(steps.verdict.outputs.structured_output).final_body }}
-          SUMMARY: ${{ fromJSON(steps.verdict.outputs.structured_output).summary }}
         run: |
           set -euo pipefail
           {
-            printf '%s\n\n' "$BODY"
-            printf 'Closes #%s.\n' "$ISSUE"
-          } > /tmp/final-body.md
-          gh pr edit "$PR" --title "$TITLE" --body-file /tmp/final-body.md
-          gh pr review "$PR" --approve --body "$SUMMARY"
+            cat /tmp/final-body.txt
+            printf '\nCloses #%s.\n' "$ISSUE"
+          } > /tmp/pr-final.md
+          gh pr edit "$PR" --title "$(cat /tmp/final-title.txt)" --body-file /tmp/pr-final.md
+          gh pr review "$PR" --approve --body-file /tmp/summary.txt
 
       - name: Request changes
-        if: ${{ !fromJSON(steps.verdict.outputs.structured_output).approved }}
+        if: steps.unpack.outputs.approved != 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR: ${{ github.event.pull_request.number }}
-          SUMMARY: ${{ fromJSON(steps.verdict.outputs.structured_output).summary }}
-        run: gh pr review "$PR" --request-changes --body "$SUMMARY"
+        run: gh pr review "$PR" --request-changes --body-file /tmp/summary.txt
 
   fix:
     needs: [review]

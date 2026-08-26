@@ -35,6 +35,9 @@ on:
 
 permissions:
   contents: read
+  # The action fetches a GitHub OIDC token on every run, including the OAuth path, and
+  # fails after three retries without this. claude.yml has carried it since day one.
+  id-token: write
   issues: write
   pull-requests: write
 

@@ -17,6 +17,9 @@ on:
 
 permissions:
   contents: read
+  # The action fetches a GitHub OIDC token on every run, including the OAuth path, and
+  # fails after three retries without this. claude.yml has carried it since day one.
+  id-token: write
   issues: write
 
 # Per issue, never cancelling. Two events for one issue should serialise rather than race, and
@@ -168,63 +171,82 @@ jobs:
         if: steps.plan.outcome != 'success' || steps.plan.outputs.conclusion != 'success'
         run: exit 1
 
+      # The verdict is unpacked here, in jq, rather than with fromJSON() inside each `if:`.
+      # fromJSON on an empty string does not evaluate to false — it fails template evaluation
+      # outright, with "Error reading JToken from JsonReader", and it does so even when the
+      # step would have been skipped anyway. So a stalled Claude run took every step below it
+      # down with a parse error rather than skipping cleanly. Plain string outputs cannot do
+      # that.
+      - name: Unpack the verdict
+        id: verdict
+        env:
+          OUT: ${{ steps.plan.outputs.structured_output }}
+        run: |
+          set -euo pipefail
+          jq -r '.implementable | tostring' <<<"$OUT" > /tmp/implementable
+          jq -r '.plan'     <<<"$OUT" > /tmp/plan-body.md
+          jq -r '.reason'   <<<"$OUT" > /tmp/reason.txt
+          jq -r '.pr_title' <<<"$OUT" > /tmp/pr-title.txt
+          jq -r '.pr_body'  <<<"$OUT" > /tmp/pr-body.txt
+          echo "implementable=$(cat /tmp/implementable)" >> "$GITHUB_OUTPUT"
+          echo "verdict: $(cat /tmp/implementable)"
+
       # The issue body is replaced by the plan, with the text as filed preserved verbatim
       # underneath it. Overwriting outright would lose the provenance of the request -- on an
       # outside issue that is the very text you approved against, and a later reader could not
       # tell what was asked from what the agent decided it meant.
       - name: Rewrite the issue as the plan
-        if: fromJSON(steps.plan.outputs.structured_output).implementable
+        if: steps.verdict.outputs.implementable == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE: ${{ github.event.issue.number }}
           AUTHOR: ${{ github.event.issue.user.login }}
           ORIGINAL_BODY: ${{ github.event.issue.body }}
-          PLAN: ${{ fromJSON(steps.plan.outputs.structured_output).plan }}
         run: |
           set -euo pipefail
 
-          # Everything untrusted moves through the environment, never through the script text:
-          # an issue body containing shell metacharacters is ordinary, and interpolating one
-          # into a `run:` block is how that becomes arbitrary code on a runner holding a token.
+          # Everything untrusted moves through the environment or a file, never through the
+          # script text: an issue body containing shell metacharacters is ordinary, and
+          # interpolating one into a `run:` block is how that becomes arbitrary code on a
+          # runner holding a token.
           {
-            printf '%s\n\n' "$PLAN"
+            cat /tmp/plan-body.md
+            printf '\n'
             printf -- '---\n\n'
             printf '<details><summary>Original issue as filed by @%s</summary>\n\n' "$AUTHOR"
             printf '%s\n' "$ORIGINAL_BODY" | sed 's/^/> /'
             printf '\n</details>\n'
-          } > /tmp/plan.md
+          } > /tmp/issue-body.md
 
-          gh issue edit "$ISSUE" --body-file /tmp/plan.md
+          gh issue edit "$ISSUE" --body-file /tmp/issue-body.md
           gh issue edit "$ISSUE" --add-label 'agent:planned'
 
       - name: Hand over to the implement stage
-        if: fromJSON(steps.plan.outputs.structured_output).implementable
+        if: steps.verdict.outputs.implementable == 'true'
         env:
           # The PAT, not GITHUB_TOKEN: a workflow dispatched with GITHUB_TOKEN does not run at
           # all. Same family of trap as the push token in dependabot-verification-metadata.yml.
           GH_TOKEN: ${{ secrets.AGENT_PUSH_TOKEN }}
           ISSUE: ${{ github.event.issue.number }}
           AUTHOR: ${{ github.event.issue.user.login }}
-          PR_TITLE: ${{ fromJSON(steps.plan.outputs.structured_output).pr_title }}
-          PR_BODY: ${{ fromJSON(steps.plan.outputs.structured_output).pr_body }}
         run: |
           set -euo pipefail
           gh workflow run agent-implement.yml \
             -f issue="$ISSUE" \
             -f author="$AUTHOR" \
-            -f pr_title="$PR_TITLE" \
-            -f pr_body="$PR_BODY"
+            -f pr_title="$(cat /tmp/pr-title.txt)" \
+            -f pr_body="$(cat /tmp/pr-body.txt)"
 
       - name: Decline, with the reason
-        if: ${{ !fromJSON(steps.plan.outputs.structured_output).implementable }}
+        if: steps.verdict.outputs.implementable != 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE: ${{ github.event.issue.number }}
-          REASON: ${{ fromJSON(steps.plan.outputs.structured_output).reason }}
         run: |
           set -euo pipefail
-          printf '%s\n\n%s\n' \
-            "Not taking this one automatically:" \
-            "$REASON" > /tmp/decline.md
+          {
+            printf 'Not taking this one automatically:\n\n'
+            cat /tmp/reason.txt
+          } > /tmp/decline.md
           gh issue comment "$ISSUE" --body-file /tmp/decline.md
           gh issue edit "$ISSUE" --add-label 'agent:declined'
