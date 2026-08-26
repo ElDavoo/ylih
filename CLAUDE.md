@@ -526,9 +526,12 @@ These are easy to break and the failures are confusing:
   GRADLE_OPTS= ./gradlew --refresh-dependencies assembleClassicRelease
   ```
 
-  A Gradle upgrade is the other half and is not Dependabot's either: nothing bumps
-  `distributionUrl`, so the sum only goes stale by hand, and Gradle refuses to run rather than
-  continuing quietly when it does.
+  The wrapper is the one half Dependabot handles by itself. It bumps `distributionUrl` *and*
+  `distributionSha256Sum` together — PR #14 moved Gradle 9.7.0 to 9.7.1 with the new sum written
+  in — so nothing here has to. What it still cannot do is the artifact metadata beside it, which
+  is what the workflow above exists for; the two halves of a wrapper-plus-dependency bump land
+  from different places and both have to be right before the build starts. Gradle refuses to run
+  rather than continuing quietly when the sum is stale, which is the behaviour worth having.
 
 - **R8 runs on release builds** via AGP 9.3's `optimization { enable = true }`, which turns on
   code *and* resource shrinking and supplies the platform keep rules — so there is no
