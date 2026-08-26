@@ -14,22 +14,26 @@ permissions:
   contents: write
   pull-requests: write
 
+# Every Dependabot PR, with no exception for major bumps, and that is a deliberate reversal.
+# The exception used to read `update-type != 'version-update:semver-major'`, on the reasoning that
+# Compose, AGP and material3 are pinned against each other and a major is worth a changelog. What
+# it actually did was skip every nix PR forever: dependabot/fetch-metadata is handed two git
+# commit hashes for a flake.lock bump — `e5bdc4a` to `ffb3c9b7…` — cannot read either as semver,
+# and falls back to reporting semver-major. PR #15 sat green and unmerged for that reason, with
+# the job reporting success because the step it was meant to run had simply been skipped.
+#
+# A guard that cannot tell a nixpkgs hash from an AGP 10 is not a guard, and there is no version
+# string in a flake.lock for a better one to read. So the gate is CI and only CI — which here
+# means lint as a hard error, a coverage floor, R8 keep invariants and the instrumented suite on
+# three emulators. Bringing the exception back means restoring the two steps below this comment
+# from git history, and would want a per-ecosystem condition rather than the bare one.
 jobs:
   auto-merge:
     if: github.actor == 'dependabot[bot]'
     runs-on: ubuntu-latest
 
     steps:
-      - name: Fetch Dependabot metadata
-        id: metadata
-        uses: dependabot/fetch-metadata@25dd0e34f4fe68f24cc83900b1fe3fe149efef98 # v3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      # A major bump is the one case worth reading the changelog for — Compose, AGP and
-      # material3 are pinned against each other, so those land by hand.
       - name: Enable auto-merge
-        if: steps.metadata.outputs.update-type != 'version-update:semver-major'
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
