@@ -21,6 +21,9 @@ issues: opened
                   agent-fix.yml ◄────────────────────────┘   (workflow_call)
                         │ push
                         └──► re-triggers both  ⟲   until green + approved → merge
+
+any stage dying mid-run ──► agent:stalled ──► agent-retry.yml (every 5 h) ──► re-runs it
+agent:stop on issue or PR ──► agent-stop.yml ──► cancels runs, drafts the PR
 ```
 
 Nothing in it is a loop. Every file reacts to one event and returns; the cycle exists because a
@@ -87,6 +90,7 @@ describe what actually landed rather than what was originally planned.
 **5. Labels.**
 
 ```sh
+gh label create 'agent:stalled' --color d4c5f9 --description "A stage stopped before finishing — agent-retry.yml will re-run it"
 gh label create no-agent        --color ededed --description "Do not let the agent pipeline touch this"
 gh label create 'agent:stop'    --color b60205 --description "Halt the pipeline for this issue or PR"
 gh label create 'agent:stuck'   --color d93f0b --description "Gave up after 10 fix rounds — needs a human"
@@ -145,7 +149,8 @@ and leave everything else as it is.
 |---|---|---|
 | never let it touch this issue | file with the **Note to self** template (`no-agent`) | at creation only |
 | stop it now | label the issue or PR `agent:stop` | any time |
-| it gave up | it labels `agent:stuck` and drafts the PR | after 10 rounds |
+| a stage died mid-run | it labels `agent:stalled`; `agent-retry.yml` re-runs it | within 5 hours |
+| it gave up | it labels `agent:stuck` and drafts the PR | after 10 rounds, or 3 stalls |
 | pick a stuck one back up | remove the label, re-run **Agent · implement** | any time |
 
 `no-agent` only works applied at creation, because `agent-plan.yml` fires on `issues: opened` and
@@ -175,6 +180,52 @@ must not be able to spend the budget of a branch that was fine.
 
 Drafting is not cosmetic — it disarms auto-merge, which is precisely what you want at the moment
 the loop admits it is lost.
+
+## When a stage stops before it finishes
+
+A Claude run can end without finishing — a usage limit is the common one, a cancelled runner or
+a GitHub incident the rest. Left alone this is the worst failure the pipeline has, and not
+because anything breaks.
+
+Nothing corrupt ever reaches the branch: the commit and push steps come *after* the Claude step
+in every stage, so a run that dies leaves the working tree in the runner and the branch exactly
+as it was. The problem is the opposite. The pipeline advances on events, and a stage that never
+pushed emits none — so no CI run follows, no review follows, and nothing calls the fix stage
+again. The round counter does not move either, deliberately: it counts pushes, so a run that
+pushed nothing spends nothing, and the branch therefore never reaches round 10 and never gets
+drafted or labelled `agent:stuck`. It would simply go quiet, with auto-merge still armed and a
+red X in a tab nobody is watching — which is the one place this pipeline exists so you do not
+have to look.
+
+Two halves close it, and they are separate because a workflow cannot wake itself up.
+
+**Detection, inside the stage.** Every Claude step is `continue-on-error`, so a failed run
+becomes a value rather than a dead job. `.github/actions/agent-stall` then labels the issue and
+pull request `agent:stalled` and comments with a machine-readable marker naming the run, and the
+step after it exits non-zero so everything downstream is skipped by the implicit `success()`.
+
+The condition tests `steps.<id>.outcome`, not `.conclusion`: `continue-on-error` rewrites
+`conclusion` to `success`, and `outcome` is what actually happened. It also checks the action's
+*own* `conclusion` output, which is a different thing that happens to share the name.
+
+`continue-on-error` is what makes the guard necessary. Without the `exit 1` the commit and push
+steps would run after a half-finished Claude run and push whatever was left on disk — so the
+guard is not tidiness, it is the thing that preserves the property in the first paragraph.
+
+**Retry, from outside.** `agent-retry.yml` runs on a schedule, finds `agent:stalled`, and
+re-runs the recorded run. Re-running the run rather than dispatching the stage afresh is the
+only handle that works for all four stages: the plan stage runs against `main` with no branch to
+find it by, and the fix stage is a reusable workflow that cannot be dispatched at all.
+
+It sweeps **every five hours**, matching the window a usage limit resets on. Hourly would spend
+a stage's worth of tokens four times over discovering the limit is still in force. After three
+stalls — about fifteen hours — it stops calling it a usage window and hands the branch over as
+`agent:stuck`, because past that point retrying forever hides a real failure behind a label that
+looks like it is being handled.
+
+The `session_id` output is worth knowing about here and is not yet used: a retry could
+`--resume` the stalled session rather than re-deriving the diagnosis. Worth adding if stalls
+turn out to be common.
 
 ## What the plan stage refuses
 

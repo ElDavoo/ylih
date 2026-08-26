@@ -93,6 +93,12 @@ jobs:
 
       - name: Plan the work
         id: plan
+        # A run that does not finish must be recorded rather than crash the job, so the stall
+        # step below can turn it into a label and a comment. The steps after that one are
+        # skipped for free: it exits non-zero, and every later step is `if: success()` by
+        # default. `outcome` is checked rather than `conclusion` because continue-on-error
+        # rewrites `conclusion` to success — outcome is what actually happened.
+        continue-on-error: true
         uses: anthropics/claude-code-action@1f291e1cfe0f5fc21db2aef19af844591600ade7 # v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
@@ -148,6 +154,18 @@ jobs:
           claude_args: >-
             --allowedTools "Read,Glob,Grep,Bash(git log:*),Bash(git show:*)"
             --json-schema '{"type":"object","properties":{"implementable":{"type":"boolean","description":"Whether an agent can carry this to a merged PR unattended"},"reason":{"type":"string","description":"If not implementable, the reason, addressed to the issue author"},"pr_title":{"type":"string","description":"Lowercase plain-language subject line for the eventual squash commit"},"pr_body":{"type":"string","description":"Body for the eventual squash commit: reasoning and evidence"},"plan":{"type":"string","description":"The plan, as markdown, to become the issue body"}},"required":["implementable","reason","pr_title","pr_body","plan"]}'
+
+      - name: Record a stall
+        if: steps.plan.outcome != 'success' || steps.plan.outputs.conclusion != 'success'
+        uses: ./.github/actions/agent-stall
+        with:
+          issue: ${{ github.event.issue.number }}
+          stage: plan
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Stop here
+        if: steps.plan.outcome != 'success' || steps.plan.outputs.conclusion != 'success'
+        run: exit 1
 
       # The issue body is replaced by the plan, with the text as filed preserved verbatim
       # underneath it. Overwriting outright would lose the provenance of the request -- on an

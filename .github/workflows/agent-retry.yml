@@ -1,0 +1,112 @@
+name: Agent · retry
+
+# Picks up stages that stopped before they finished, and re-runs them.
+#
+# A workflow cannot wake itself up, which is why this is scheduled and not something the stalled
+# stage arranges for itself. GitHub has no delay primitive, and sleeping inside the stalled job
+# would hold a runner for the whole wait.
+#
+# Every five hours rather than hourly, because the failure this mostly exists for is a Claude
+# usage limit, and those reset on a window of about that length. Retrying sooner would spend a
+# stage's worth of tokens discovering the limit is still in force, and each discovery costs a
+# runner and a queue slot.
+#
+# It re-runs the recorded run rather than dispatching a stage afresh. That is the only handle
+# that works for all four: the plan stage runs against main with no branch to find it by, and
+# the fix stage is a reusable workflow that cannot be dispatched at all. The run id travels in
+# the marker that .github/actions/agent-stall writes into its comment.
+
+on:
+  schedule:
+    - cron: '0 */5 * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: agent-retry
+  cancel-in-progress: false
+
+jobs:
+  retry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Re-run what stalled
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          # Three retries is fifteen hours of trying. Past that the cause is not a usage window,
+          # and continuing to re-run it forever would hide a real failure behind a label that
+          # looks like it is being handled.
+          MAX_RETRIES: '3'
+        run: |
+          set -euo pipefail
+
+          stalled=$(gh issue list --state open --label 'agent:stalled' --json number --jq '.[].number')
+          if [ -z "$stalled" ]; then
+            echo "nothing stalled"
+            exit 0
+          fi
+
+          for issue in $stalled; do
+            echo "::group::issue $issue"
+
+            labels=$(gh issue view "$issue" --json labels --jq '[.labels[].name] | join(",")')
+            case ",$labels," in
+              *,agent:stop,*|*,agent:stuck,*)
+                echo "stopped or already given up on — leaving alone"
+                echo "::endgroup::" ; continue ;;
+            esac
+
+            comments=$(gh issue view "$issue" --json comments --jq '[.comments[].body]')
+            attempts=$(jq -r '[.[] | select(test("<!-- agent-stall run="))] | length' <<<"$comments")
+            run_id=$(jq -r '[.[] | capture("<!-- agent-stall run=(?<id>[0-9]+) -->").id] | last // empty' <<<"$comments")
+
+            pr=$(gh pr list --head "agent/issue-${issue}" --state open --json number --jq '.[0].number // empty')
+
+            if [ -z "$run_id" ]; then
+              echo "labelled agent:stalled but no stall marker — a human labelled it, leaving alone"
+              echo "::endgroup::" ; continue
+            fi
+
+            if [ "$attempts" -gt "$MAX_RETRIES" ]; then
+              echo "$attempts stalls — giving up"
+              {
+                printf 'Stalled %s times over about %s hours. That is no longer a usage window, ' \
+                  "$attempts" "$(( attempts * 5 ))"
+                printf 'so this is being handed over rather than retried again.\n\n'
+                tick='`'
+                printf 'Remove the %sagent:stuck%s label to let the pipeline pick it up.\n' "$tick" "$tick"
+              } > /tmp/giveup.md
+              gh issue comment "$issue" --body-file /tmp/giveup.md
+              gh issue edit "$issue" --add-label 'agent:stuck' --remove-label 'agent:stalled'
+              if [ -n "$pr" ]; then
+                gh pr edit "$pr" --add-label 'agent:stuck' --remove-label 'agent:stalled'
+                gh pr ready --undo "$pr" || true
+              fi
+              echo "::endgroup::" ; continue
+            fi
+
+            # Cleared before the re-run, not after: if the retry stalls too, the stall action
+            # adds the label back and writes a fresh marker, and that is what the count above
+            # reads next time.
+            gh issue edit "$issue" --remove-label 'agent:stalled'
+            [ -n "$pr" ] && gh pr edit "$pr" --remove-label 'agent:stalled'
+
+            echo "re-running run $run_id (attempt $attempts)"
+            if ! gh run rerun "$run_id" --failed 2>&1; then
+              # A run older than GitHub's re-run window, or one whose branch has gone. Nothing
+              # here can recover that, and saying so is better than a label that implies a
+              # retry is coming.
+              gh issue edit "$issue" --add-label 'agent:stuck'
+              gh issue comment "$issue" --body "Could not re-run the stalled run ($run_id) — it is likely outside GitHub's re-run window. Re-dispatch the stage by hand from the Actions tab."
+            fi
+
+            echo "::endgroup::"
+          done

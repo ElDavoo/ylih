@@ -75,6 +75,10 @@ jobs:
       # value the workflow can branch on, not prose someone has to parse.
       - name: Verdict
         id: verdict
+        # See agent-plan.yml. A stalled verdict is the quietest failure in the pipeline: CI goes
+        # green, auto-merge stays armed, and nothing ever approves — so the pull request sits
+        # looking finished. The `fix` job below is skipped automatically once this job fails.
+        continue-on-error: true
         uses: anthropics/claude-code-action@1f291e1cfe0f5fc21db2aef19af844591600ade7 # v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
@@ -111,6 +115,19 @@ jobs:
           claude_args: >-
             --allowedTools "Read,Glob,Grep,Bash(git diff:*),Bash(git log:*),Bash(git show:*)"
             --json-schema '{"type":"object","properties":{"approved":{"type":"boolean","description":"True to approve and let this merge"},"blocking":{"type":"integer","description":"Number of blocking findings"},"summary":{"type":"string","description":"One paragraph: what this does and why it is or is not mergeable"},"final_title":{"type":"string","description":"Squash commit subject, lowercase, house style"},"final_body":{"type":"string","description":"Squash commit body: reasoning and evidence"}},"required":["approved","blocking","summary","final_title","final_body"]}'
+
+      - name: Record a stall
+        if: steps.verdict.outcome != 'success' || steps.verdict.outputs.conclusion != 'success'
+        uses: ./.github/actions/agent-stall
+        with:
+          issue: ${{ steps.ctx.outputs.issue }}
+          pr: ${{ github.event.pull_request.number }}
+          stage: review
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Stop here
+        if: steps.verdict.outcome != 'success' || steps.verdict.outputs.conclusion != 'success'
+        run: exit 1
 
       - name: Capture the findings for the fix stage
         id: findings
