@@ -72,6 +72,8 @@ jobs:
       - name: Enter dev shell
         if: steps.flake.outputs.changed == 'true'
         run: |
+          # The quoting is the point: $ANDROID_HOME must expand inside the dev shell, not here.
+          # shellcheck disable=SC2016
           nix develop --command bash -c '
             set -euo pipefail
             java -version

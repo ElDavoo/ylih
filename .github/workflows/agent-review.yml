@@ -1,0 +1,174 @@
+name: Agent · review
+
+# The review leg of the loop, and the merge gate. Runs on every push to an agent branch, in
+# parallel with Android CI rather than after it: the two are independent judgements, and
+# serialising them would add a full CI round-trip to every review cycle. Auto-merge waits for
+# both regardless, so parallel costs nothing in correctness.
+#
+# The approving review is submitted with GITHUB_TOKEN, so it lands as github-actions[bot] --
+# a different identity from the pull request's author, which is what keeps GitHub's
+# self-approval block from firing. It requires Settings -> Actions -> "Allow GitHub Actions to
+# create and approve pull requests"; see docs/agent-pipeline.md.
+#
+# There is no human downstream of this stage. The prompt says so, deliberately: a reviewer that
+# believes someone will catch its misses drifts one way, and one that believes it is the last
+# gate drifts the other, and the second drift is the one this pipeline can afford.
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: write
+
+concurrency:
+  group: agent-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    if: >-
+      startsWith(github.head_ref, 'agent/issue-')
+      && !github.event.pull_request.draft
+      && !contains(github.event.pull_request.labels.*.name, 'agent:stop')
+      && !contains(github.event.pull_request.labels.*.name, 'agent:stuck')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      approved: ${{ fromJSON(steps.verdict.outputs.structured_output).approved }}
+      findings: ${{ steps.findings.outputs.text }}
+      issue: ${{ steps.ctx.outputs.issue }}
+      author: ${{ steps.ctx.outputs.author }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+
+      - name: Identify the issue behind the branch
+        id: ctx
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ github.head_ref }}
+        run: |
+          set -euo pipefail
+          issue=${BRANCH#agent/issue-}
+          echo "issue=$issue" >> "$GITHUB_OUTPUT"
+          echo "author=$(gh issue view "$issue" --json author --jq .author.login)" >> "$GITHUB_OUTPUT"
+
+      # Pass one: the inline findings, using the same plugin invocation the repository already
+      # used for human-authored pull requests.
+      - name: Inline review
+        continue-on-error: true
+        uses: anthropics/claude-code-action@1f291e1cfe0f5fc21db2aef19af844591600ade7 # v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          plugin_marketplaces: 'https://github.com/anthropics/claude-code.git'
+          plugins: 'code-review@claude-code-plugins'
+          prompt: '/code-review:code-review --comment ${{ github.repository }}/pull/${{ github.event.pull_request.number }}'
+          claude_args: '--allowedTools "mcp__github_inline_comment__create_inline_comment"'
+
+      # Pass two: the verdict, as data. Separate from pass one because a merge gate must be a
+      # value the workflow can branch on, not prose someone has to parse.
+      - name: Verdict
+        id: verdict
+        uses: anthropics/claude-code-action@1f291e1cfe0f5fc21db2aef19af844591600ade7 # v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            You are the merge gate for pull request #${{ github.event.pull_request.number }},
+            which implements issue #${{ steps.ctx.outputs.issue }}. It was written by an agent.
+            The branch is checked out; `git diff origin/main...HEAD` is the change.
+
+            There is no human reviewer after you. If you approve, this merges to main once CI is
+            green. Read CLAUDE.md — it documents the invariants that lint and the tests will not
+            catch a change breaking, and it is the standard you are holding this to.
+
+            Block on, and only on:
+            - a correctness bug, including a broken invariant CLAUDE.md names (SessionRepository's
+              idempotence and its no-counting-across-a-boot rule; the widget composed-tree shape;
+              device-identity keying on the last two octets; day bucketing by ZoneId);
+            - a gate weakened rather than satisfied — a lowered coverage floor, a new lint.xml
+              suppression, a lint baseline, a deleted or defanged assertion;
+            - a user-visible string added without all 77 translations;
+            - a schema change without a migration;
+            - work that does not actually implement the issue, or that quietly does more than
+              the issue asked;
+            - a missing test for behaviour the repository would normally pin.
+
+            Do not block on style, naming, or preference. Those are non-blocking comments, and
+            you have already left them inline. A change that is correct and tested but that you
+            would have written differently is an approval.
+
+            Return the verdict. If you approve, also return the final squash commit message:
+            the title and body this should merge under, in house style — lowercase plain-language
+            subject, body explaining the reasoning and the evidence, not restating the diff. If
+            the approach changed while the branch was being fixed, describe what actually
+            landed, not what was originally planned.
+          claude_args: >-
+            --allowedTools "Read,Glob,Grep,Bash(git diff:*),Bash(git log:*),Bash(git show:*)"
+            --json-schema '{"type":"object","properties":{"approved":{"type":"boolean","description":"True to approve and let this merge"},"blocking":{"type":"integer","description":"Number of blocking findings"},"summary":{"type":"string","description":"One paragraph: what this does and why it is or is not mergeable"},"final_title":{"type":"string","description":"Squash commit subject, lowercase, house style"},"final_body":{"type":"string","description":"Squash commit body: reasoning and evidence"}},"required":["approved","blocking","summary","final_title","final_body"]}'
+
+      - name: Capture the findings for the fix stage
+        id: findings
+        if: ${{ !fromJSON(steps.verdict.outputs.structured_output).approved }}
+        env:
+          SUMMARY: ${{ fromJSON(steps.verdict.outputs.structured_output).summary }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          {
+            echo 'text<<REVIEW_EOF'
+            printf '%s\n\n' "$SUMMARY"
+            echo 'Inline comments left on the pull request:'
+            gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR}/comments" \
+              --jq '.[] | "- \(.path):\(.line // .original_line) — \(.body)"' | tail -c 20000
+            echo ''
+            echo 'REVIEW_EOF'
+          } >> "$GITHUB_OUTPUT"
+
+      # Approving rewrites the title and body, because they are the squash commit message
+      # verbatim (the repository's squash default is "pull request title and description") and
+      # eight fix rounds may have left the original describing an approach that was abandoned.
+      # The scratch marker and everything under it goes: it is gate reporting, not history.
+      - name: Approve
+        if: fromJSON(steps.verdict.outputs.structured_output).approved
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+          ISSUE: ${{ steps.ctx.outputs.issue }}
+          TITLE: ${{ fromJSON(steps.verdict.outputs.structured_output).final_title }}
+          BODY: ${{ fromJSON(steps.verdict.outputs.structured_output).final_body }}
+          SUMMARY: ${{ fromJSON(steps.verdict.outputs.structured_output).summary }}
+        run: |
+          set -euo pipefail
+          {
+            printf '%s\n\n' "$BODY"
+            printf 'Closes #%s.\n' "$ISSUE"
+          } > /tmp/final-body.md
+          gh pr edit "$PR" --title "$TITLE" --body-file /tmp/final-body.md
+          gh pr review "$PR" --approve --body "$SUMMARY"
+
+      - name: Request changes
+        if: ${{ !fromJSON(steps.verdict.outputs.structured_output).approved }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+          SUMMARY: ${{ fromJSON(steps.verdict.outputs.structured_output).summary }}
+        run: gh pr review "$PR" --request-changes --body "$SUMMARY"
+
+  fix:
+    needs: [review]
+    if: needs.review.outputs.approved == 'false'
+    uses: ./.github/workflows/agent-fix.yml
+    secrets: inherit
+    with:
+      pr: ${{ github.event.pull_request.number }}
+      issue: ${{ needs.review.outputs.issue }}
+      author: ${{ needs.review.outputs.author }}
+      reason: review
+      payload: ${{ needs.review.outputs.findings }}

@@ -42,6 +42,26 @@ jobs:
       - name: Check the SDK versions agree everywhere
         run: python3 .github/scripts/sdk-version-check.py
 
+      # The agent pipeline is six workflow files whose only test is running them, and a mistake
+      # in one is discovered by an issue quietly doing nothing. actionlint is the closest thing
+      # to a compiler they have: it type-checks every ${{ }} expression against the event
+      # payload, and runs shellcheck over each `run:` block — which is how the truncation an
+      # unquoted ` #` causes in a plain YAML scalar was caught here rather than at 2am.
+      #
+      # Downloaded rather than taken from an action, and pinned by checksum, for the reason
+      # CLAUDE.md gives for the Gradle distribution and the dependency metadata: an unverified
+      # download is an unverified input.
+      - name: Check the workflows
+        env:
+          ACTIONLINT_SHA256: 8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8
+        run: |
+          set -euo pipefail
+          curl -fsSL -o /tmp/actionlint.tar.gz \
+            https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_linux_amd64.tar.gz
+          echo "${ACTIONLINT_SHA256}  /tmp/actionlint.tar.gz" | sha256sum -c -
+          tar -xzf /tmp/actionlint.tar.gz -C /tmp actionlint
+          /tmp/actionlint -color
+
   build:
     runs-on: ubuntu-latest
 

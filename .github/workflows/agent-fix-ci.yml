@@ -1,0 +1,101 @@
+name: Agent · fix CI
+
+# The red-CI leg of the loop. Android CI finished failing on an agent branch, so gather what
+# failed and hand it to the shared fix stage. See docs/agent-pipeline.md.
+#
+# `workflow_run` rather than a check on the pull request, because this needs the logs, and the
+# logs only exist once the run has finished. It runs in the context of the default branch, which
+# is also what makes it safe to give it secrets: the version of this file that executes is the
+# one on main, never the one on the branch being fixed.
+
+on:
+  workflow_run:
+    workflows: ["Android CI"]
+    types: [completed]
+
+permissions:
+  contents: read
+  actions: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  context:
+    if: >-
+      github.event.workflow_run.conclusion == 'failure'
+      && startsWith(github.event.workflow_run.head_branch, 'agent/issue-')
+    runs-on: ubuntu-latest
+    outputs:
+      pr: ${{ steps.find.outputs.pr }}
+      issue: ${{ steps.find.outputs.issue }}
+      author: ${{ steps.find.outputs.author }}
+      logs: ${{ steps.logs.outputs.text }}
+      go: ${{ steps.find.outputs.go }}
+
+    steps:
+      - name: Find the pull request and the issue behind it
+        id: find
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          BRANCH: ${{ github.event.workflow_run.head_branch }}
+        run: |
+          set -euo pipefail
+          issue=${BRANCH#agent/issue-}
+          pr=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number // empty')
+          if [ -z "$pr" ]; then
+            echo "::notice::No open pull request for $BRANCH — nothing to fix."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # A stuck or stopped branch is left alone, and so is a draft: drafting is how the
+          # pipeline hands a branch to a human, and picking it back up would undo that.
+          state=$(gh pr view "$pr" --json isDraft,labels --jq '[(.isDraft|tostring)] + [.labels[].name] | join(",")')
+          case ",$state," in
+            *,true,*|*,agent:stop,*|*,agent:stuck,*)
+              echo "::notice::PR #$pr is draft or stopped — leaving it alone."
+              echo "go=false" >> "$GITHUB_OUTPUT"
+              exit 0 ;;
+          esac
+          author=$(gh issue view "$issue" --json author --jq .author.login)
+          {
+            echo "pr=$pr"
+            echo "issue=$issue"
+            echo "author=$author"
+            echo "go=true"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Collect the failed job logs
+        id: logs
+        if: steps.find.outputs.go == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+        run: |
+          set -euo pipefail
+          # Truncated to the tail, and hard: a workflow_call input is a string on the event
+          # payload, and a full Gradle log is far larger than that can carry. The tail is where
+          # the failure is; the head is SDK downloads.
+          gh run view "$RUN_ID" --log-failed 2>/dev/null | tail -c 30000 > /tmp/failed.log || true
+          if [ ! -s /tmp/failed.log ]; then
+            printf 'Could not download the failed job logs. Run: %s\n' "$RUN_URL" > /tmp/failed.log
+          fi
+          {
+            printf 'text<<CI_LOG_EOF\n'
+            cat /tmp/failed.log
+            printf '\nCI_LOG_EOF\n'
+          } >> "$GITHUB_OUTPUT"
+
+  fix:
+    needs: [context]
+    if: needs.context.outputs.go == 'true'
+    uses: ./.github/workflows/agent-fix.yml
+    secrets: inherit
+    with:
+      pr: ${{ needs.context.outputs.pr }}
+      issue: ${{ needs.context.outputs.issue }}
+      author: ${{ needs.context.outputs.author }}
+      reason: ci
+      payload: ${{ needs.context.outputs.logs }}

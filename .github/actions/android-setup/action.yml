@@ -1,0 +1,49 @@
+name: Android build setup
+description: >
+  JDK, SDK, Gradle and the Robolectric jar cache, at the same pinned versions android-ci.yml
+  uses. Factored out because the agent pipeline needs it in three jobs and a fourth copy of
+  the block is a fourth place for the SDK pins to drift. android-ci.yml deliberately still
+  carries its own copy: it is the file a reader goes to to find out what CI does, and a
+  build that fails because a composite action changed underneath it is a worse trade than
+  one duplicated block.
+
+runs:
+  using: composite
+  steps:
+    - name: Set up JDK 21
+      uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
+      with:
+        distribution: temurin
+        java-version: "21"
+
+    - name: Set up Android SDK
+      uses: android-actions/setup-android@40fd30fb8d7440372e1316f5d1809ec01dcd3699 # v4
+
+    - name: Cache Android SDK components
+      id: sdk-cache
+      uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+      with:
+        path: |
+          ${{ env.ANDROID_SDK_ROOT }}/platforms/android-37.0
+          ${{ env.ANDROID_SDK_ROOT }}/build-tools/37.0.0
+        key: android-sdk-${{ runner.os }}-platform37.0-buildtools37.0.0
+
+    - name: Install Android SDK components
+      if: steps.sdk-cache.outputs.cache-hit != 'true'
+      shell: bash
+      run: sdkmanager "platform-tools" "platforms;android-37.0" "build-tools;37.0.0"
+
+    - name: Set up Gradle
+      uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
+      with:
+        # Read-only for the same reason android-ci.yml sets it: an agent branch must not be
+        # able to write the shared build cache that main's builds then read.
+        cache-read-only: true
+
+    - name: Cache Robolectric android-all jars
+      uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+      with:
+        path: ~/.m2/repository/org/robolectric
+        key: robolectric-${{ runner.os }}-${{ hashFiles('gradle/libs.versions.toml') }}
+        restore-keys: |
+          robolectric-${{ runner.os }}-
