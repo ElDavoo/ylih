@@ -1,6 +1,6 @@
 [versions]
 # Keep buildTools/compileSdk in sync with flake.nix and .github/workflows/*.yml
-agp = "9.3.1"
+agp = "9.3.2"
 # AGP 9 compiles Kotlin itself and rejects the standalone kotlin-android plugin. The Kotlin
 # Gradle plugin these two pull onto the buildscript classpath overrides the one AGP bundles,
 # so they must stay equal to each other: KSP has no release for Kotlin 2.4.x yet, which is
@@ -19,7 +19,7 @@ composeBom = "2026.08.00"
 # material3-ripple-android, which raises minSdk to 24 and fails the manifest merge against this
 # app's minSdk 23 floor. Advance this only once the ripple artifact's minSdk drops back, or with
 # the floor raised deliberately (it is not, per the Robolectric API-23/*LegacyTest coverage).
-material3 = "1.5.0-alpha25"
+material3 = "1.5.0-alpha26"
 navigationCompose = "2.9.8"
 room = "2.8.4"
 work = "2.11.2"
@@ -33,7 +33,7 @@ coroutines = "1.11.0"
 serialization = "1.11.0"
 junit = "4.13.2"
 robolectric = "4.16.1"
-mockk = "1.14.3"
+mockk = "1.14.11"
 androidxTestCore = "1.7.0"
 # The instrumented suite, which exists only to run the R8-minified build on a device.
 androidxTestJunit = "1.3.0"
