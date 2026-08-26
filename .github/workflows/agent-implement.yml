@@ -160,7 +160,8 @@ jobs:
             workflow commits it.
           claude_args: >-
             --max-turns 150
-            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(./gradlew:*),Bash(node .claude/skills/translations/strings.mjs:*),Bash(python3 .github/scripts/check-translations.py),Bash(git diff:*),Bash(git status:*)"
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash"
+            --disallowedTools "Bash(gh:*),Bash(curl:*),Bash(wget:*),Bash(nc:*),Bash(ssh:*),Bash(scp:*),Bash(git push:*),Bash(git remote:*),Bash(git config:*),WebFetch,WebSearch"
 
       - name: Record a stall
         if: steps.implement.outcome != 'success' || steps.implement.outputs.conclusion != 'success'

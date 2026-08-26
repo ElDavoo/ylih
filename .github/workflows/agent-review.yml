@@ -113,7 +113,8 @@ jobs:
             the approach changed while the branch was being fixed, describe what actually
             landed, not what was originally planned.
           claude_args: >-
-            --allowedTools "Read,Glob,Grep,Bash(git diff:*),Bash(git log:*),Bash(git show:*)"
+            --allowedTools "Read,Glob,Grep,Bash(rg:*),Bash(jq:*),Bash(find:*),Bash(ls:*),Bash(cat:*),Bash(head:*),Bash(tail:*),Bash(wc:*),Bash(sort:*),Bash(uniq:*),Bash(diff:*),Bash(git log:*),Bash(git show:*),Bash(git diff:*),Bash(git status:*)"
+            --disallowedTools "Write,Edit,Bash(gh:*),Bash(curl:*),Bash(wget:*),Bash(nc:*),Bash(ssh:*),Bash(scp:*),Bash(git push:*),Bash(git remote:*),Bash(git config:*),WebFetch,WebSearch"
             --json-schema '{"type":"object","properties":{"approved":{"type":"boolean","description":"True to approve and let this merge"},"blocking":{"type":"integer","description":"Number of blocking findings"},"summary":{"type":"string","description":"One paragraph: what this does and why it is or is not mergeable"},"final_title":{"type":"string","description":"Squash commit subject, lowercase, house style"},"final_body":{"type":"string","description":"Squash commit body: reasoning and evidence"}},"required":["approved","blocking","summary","final_title","final_body"]}'
 
       - name: Record a stall

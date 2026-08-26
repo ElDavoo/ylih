@@ -179,7 +179,8 @@ jobs:
             Do not commit or push. Leave your work in the working tree.
           claude_args: >-
             --max-turns 120
-            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(./gradlew:*),Bash(node .claude/skills/translations/strings.mjs:*),Bash(python3 .github/scripts/check-translations.py),Bash(python3 .github/scripts/coverage-summary.py),Bash(git diff:*),Bash(git status:*),Bash(git log:*),Bash(git show:*)"
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash"
+            --disallowedTools "Bash(gh:*),Bash(curl:*),Bash(wget:*),Bash(nc:*),Bash(ssh:*),Bash(scp:*),Bash(git push:*),Bash(git remote:*),Bash(git config:*),WebFetch,WebSearch"
 
       # Round 9. Handed the whole history rather than the latest failure, told the approach is
       # not working, and allowed to revert -- because the way these loops actually fail is an
@@ -227,7 +228,8 @@ jobs:
             Do not commit or push. Leave your work in the working tree.
           claude_args: >-
             --max-turns 200
-            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(./gradlew:*),Bash(node .claude/skills/translations/strings.mjs:*),Bash(python3 .github/scripts/check-translations.py),Bash(python3 .github/scripts/coverage-summary.py),Bash(git diff:*),Bash(git status:*),Bash(git log:*),Bash(git show:*),Bash(git revert:*),Bash(git checkout:*),Bash(git restore:*)"
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash"
+            --disallowedTools "Bash(gh:*),Bash(curl:*),Bash(wget:*),Bash(nc:*),Bash(ssh:*),Bash(scp:*),Bash(git push:*),Bash(git remote:*),Bash(git config:*),WebFetch,WebSearch"
 
       # Exactly one of the two fix steps runs; the other is skipped, and a skipped step's
       # outcome is 'skipped', never 'failure'. So testing for 'failure' on both is the whole

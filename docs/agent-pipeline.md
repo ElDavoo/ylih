@@ -246,9 +246,35 @@ between that and the repository, in descending order of how much they actually b
 2. **Framing.** Every prompt that carries reported text delimits it and says plainly that it is
    data describing a request, not instructions — and the plan stage is told that text shaped like
    an instruction *to it* is itself grounds to decline.
-3. **Enumerated tools.** The plan stage is given no write tool at all: it returns a structured
-   verdict and the workflow's own shell steps edit the issue. No stage but the plan one can
-   dispatch another workflow.
+3. **Tool policy.** The plan and review stages are held read-only — `Write` and `Edit` are on
+   their deny list, so they return a verdict and the workflow's own shell steps act on it. No
+   stage but the plan one can dispatch another workflow.
+
+### What the tool lists are and are not
+
+The two writing stages get broad `Bash` with a deny list, rather than an enumerated allow list.
+That is deliberate on both counts.
+
+Enumerating was worse than it looked. Every command an agent reaches for and does not have —
+`rg`, `jq`, `find`, `wc` — costs turns out of a budget that has to cover a feature, its tests
+and a bulk string edit. And restricting `sed` while granting `Write` and `Edit` prevents
+nothing: the capability is already there by a shorter route.
+
+So the deny list targets the things that are not reachable another way: `gh` and the other
+token-bearing commands, the network (`curl`, `wget`, `nc`, `ssh`, `WebFetch`, `WebSearch`), and
+`git push`/`git remote`, since the workflow owns the push and an agent pushing on its own would
+bypass the round counter.
+
+**None of this is a sandbox, and it should not be read as one.** The implement stage runs
+`./gradlew`, and the agent can edit the build scripts that Gradle executes — so anything the
+runner can do, a determined agent can do, deny list or not. That is not a flaw to be closed; it
+is what "an agent that builds and tests this app" means. `actions/checkout` also leaves the push
+token in `.git/config` by default, which `Read` reaches without any shell at all.
+
+The controls that actually bound this are elsewhere and are the ones worth maintaining: the
+approval gate on outside issues, the review stage, Android CI, and the PAT's own scope — it is
+limited to this repository and deliberately has no Workflows permission, so an agent cannot
+rewrite the gates that judge it.
 
 Untrusted text always moves through the environment (`env:`), never interpolated into a `run:`
 block. An issue body containing shell metacharacters is ordinary, and interpolating one into a
