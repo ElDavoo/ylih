@@ -19,6 +19,8 @@ composeBom = "2026.08.00"
 # material3-ripple-android, which raises minSdk to 24 and fails the manifest merge against this
 # app's minSdk 23 floor. Advance this only once the ripple artifact's minSdk drops back, or with
 # the floor raised deliberately (it is not, per the Robolectric API-23/*LegacyTest coverage).
+# `.github/dependabot.yml` ignores this module for the same reason — otherwise the weekly
+# grouped PR reintroduces alpha26 and cannot merge, taking every other bump in it down too.
 material3 = "1.5.0-alpha25"
 navigationCompose = "2.9.8"
 room = "2.8.4"
