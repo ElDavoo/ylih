@@ -16,14 +16,21 @@ name: Agent · review
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    # `reopened` is here so a review can be re-triggered by closing and reopening the pull
+    # request. Re-running the workflow run itself is not equivalent: a re-run replays the
+    # workflow file as it was, so it cannot pick up a fix to this file.
+    types: [opened, synchronize, reopened]
 
 permissions:
   contents: read
   # The action fetches a GitHub OIDC token on every run, including the OAuth path, and
   # fails after three retries without this. claude.yml has carried it since day one.
   id-token: write
-  issues: read
+  # write, not read, for two reasons that both bite: this workflow calls agent-fix.yml, and a
+  # called workflow cannot hold a permission its caller lacks -- with `read` here the whole run
+  # fails at startup, no jobs and no logs. And the stall path labels the issue, so `read` could
+  # never have recorded a stalled review either.
+  issues: write
   pull-requests: write
 
 concurrency:
