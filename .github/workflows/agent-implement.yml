@@ -105,6 +105,10 @@ jobs:
           set -euo pipefail
           git config user.name  'ylih agent'
           git config user.email 'dpfuturehacker@gmail.com'
+          # Fetch first: the checkout is pinned to whatever main was when this run was
+          # dispatched, and the plan stage that dispatched it ran before that. Branching from a
+          # stale main is what makes the push below fail — see the note there.
+          git fetch --quiet origin main
           git checkout -B "agent/issue-${ISSUE}" origin/main
 
       - name: Set up the Android toolchain
@@ -220,6 +224,19 @@ jobs:
           # under its title and body, so this text never reaches main. It is read by the
           # escalation round as attempt history, and by nothing else.
           git commit -m "${SUBJECT:-implement issue #$ISSUE}" -m "Implements #${ISSUE}."
+
+          # Rebase onto main as it is *now*, immediately before pushing. This is not about
+          # merge conflicts; it is what keeps the push legal. GitHub refuses a push from a
+          # Personal Access Token without `workflow` scope when the pushed ref's workflow files
+          # differ from the default branch's — and creating a branch from a main that has since
+          # moved is enough to count as "differ", even though this commit touches no workflow
+          # file at all. Observed on issue 19: a workflow fix landed on main during the run, and
+          # the push was rejected naming a file the agent had never seen.
+          #
+          # Deliberately not solved by giving the token `workflow` scope. That would let an
+          # agent rewrite the review and CI gates that judge it, and then merge the rewrite.
+          git fetch --quiet origin main
+          git rebase origin/main
           git push --force-with-lease origin "agent/issue-${ISSUE}"
 
       - name: Open the pull request

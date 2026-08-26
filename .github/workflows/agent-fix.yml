@@ -277,4 +277,12 @@ jobs:
           # Scratch history: the pull request squash-merges under its own title and body, so
           # none of these subjects reach main.
           git commit -m "fix round ${ROUND} (${REASON})"
-          git push origin "HEAD:agent/issue-${ISSUE}"
+
+          # Rebase onto current main before pushing, for the reason spelled out in
+          # agent-implement.yml: a branch whose workflow files differ from the default branch
+          # cannot be pushed by a token without `workflow` scope, and main moving during a run
+          # is enough to cause that. Rebasing also keeps the round counter honest, since it
+          # counts commits in origin/main..HEAD.
+          git fetch --quiet origin main
+          git rebase origin/main
+          git push --force-with-lease origin "HEAD:agent/issue-${ISSUE}"
