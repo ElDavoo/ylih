@@ -55,8 +55,21 @@ Any job carrying `environment: agent-approval` now queues instead of running, an
 The queue happens **before the job's first step** — no checkout, no prompt, no token — which is
 the entire security argument for letting a public issue tracker drive this at all.
 
-If you also move `AGENT_PUSH_TOKEN` into that environment rather than leaving it on the
-repository, an unapproved job cannot read it even if a bug lets it run. Worth doing.
+**`AGENT_PUSH_TOKEN` must be a repository secret, not a secret on this environment.** The
+tempting hardening — scope the token to `agent-approval` so an unapproved job cannot read it —
+does not work here, and fails silently rather than loudly. An environment secret is readable
+only by a job that declares that environment, and the job that declares it is the *gate*, which
+does nothing but wait. The jobs that use the token carry no `environment:` key, by design: that
+is what lets your own issues skip the wait. So a token stored on the environment resolves to an
+empty string in every job that needs it, and the pipeline fails at `actions/checkout` for
+everybody.
+
+This was the state the repository was actually in on the first day, and it is worth knowing that
+the failure looks nothing like a permissions problem.
+
+Nothing is lost by keeping it at repository level. The security property that matters is
+ordering — no runner starts before you approve — and that comes from the gate job, not from
+where the secret lives.
 
 **3. Let Actions approve.** Settings → Actions → General → tick *Allow GitHub Actions to create
 and approve pull requests*. The review stage submits its approval with `GITHUB_TOKEN`, which is
