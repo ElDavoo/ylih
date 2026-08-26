@@ -34,7 +34,27 @@ jobs:
 
     steps:
       - name: Enable auto-merge
-        run: gh pr merge --auto --squash "$PR_URL"
+        run: |
+          set -euo pipefail
+
+          # GitHub refuses enablePullRequestAutoMerge on a PR that is already mergeable with every
+          # required check green -- "Pull request is in clean status" -- because there is nothing
+          # left to wait for. A run that lands after CI has finished hits that, and PR #15 hit it
+          # from the other direction: two days green, and the one command that would have merged
+          # it could no longer be asked for. Merging outright is the same outcome auto-merge would
+          # have reached a moment earlier.
+          #
+          # Matched on the message rather than falling back on any failure, deliberately. A bare
+          # `|| gh pr merge` would turn every other reason auto-merge can be refused -- a
+          # permission, a protection rule -- into an immediate merge of a PR whose checks nobody
+          # waited for, which is the one thing this workflow must never do.
+          if ! error=$(gh pr merge --auto --squash "$PR_URL" 2>&1); then
+            printf '%s\n' "$error"
+            case "$error" in
+              *"clean status"*) gh pr merge --squash "$PR_URL" ;;
+              *) exit 1 ;;
+            esac
+          fi
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
