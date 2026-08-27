@@ -65,8 +65,16 @@ jobs:
             esac
 
             comments=$(gh issue view "$issue" --json comments --jq '[.comments[].body]')
-            attempts=$(jq -r '[.[] | select(test("<!-- agent-stall run="))] | length' <<<"$comments")
-            run_id=$(jq -r '[.[] | capture("<!-- agent-stall run=(?<id>[0-9]+) -->").id] | last // empty' <<<"$comments")
+            # capture emits nothing for a comment with no marker, so this is the list of stalls
+            # in order. The last one is what to re-run; the count is of that stage's stalls only,
+            # because every stage writes here and a flat count of the pile measures how eventful
+            # the issue was rather than whether anything is repeating. `stage` is optional in the
+            # pattern so markers written before it existed still parse -- they group together as
+            # the empty stage, which is the old behaviour for the old markers and nothing else.
+            markers=$(jq -c '[.[] | capture("<!-- agent-stall run=(?<id>[0-9]+)(?: stage=(?<stage>[a-z-]+))? -->")]' <<<"$comments")
+            run_id=$(jq -r 'last.id // empty' <<<"$markers")
+            stage=$(jq -r 'last.stage // ""' <<<"$markers")
+            attempts=$(jq -r --arg s "$stage" '[.[] | select((.stage // "") == $s)] | length' <<<"$markers")
 
             pr=$(gh pr list --head "agent/issue-${issue}" --state open --json number --jq '.[0].number // empty')
 
@@ -78,8 +86,8 @@ jobs:
             if [ "$attempts" -gt "$MAX_RETRIES" ]; then
               echo "$attempts stalls — giving up"
               {
-                printf 'Stalled %s times over about %s hours. That is no longer a usage window, ' \
-                  "$attempts" "$(( attempts * 5 ))"
+                printf 'The %s stage stalled %s times over about %s hours. That is no longer a usage window, ' \
+                  "${stage:-unnamed}" "$attempts" "$(( attempts * 5 ))"
                 printf 'so this is being handed over rather than retried again.\n\n'
                 tick='`'
                 printf 'Remove the %sagent:stuck%s label to let the pipeline pick it up.\n' "$tick" "$tick"
@@ -99,7 +107,7 @@ jobs:
             gh issue edit "$issue" --remove-label 'agent:stalled'
             [ -n "$pr" ] && gh pr edit "$pr" --remove-label 'agent:stalled'
 
-            echo "re-running run $run_id (attempt $attempts)"
+            echo "re-running run $run_id — ${stage:-unnamed} stage, stall $attempts of $MAX_RETRIES"
             if ! gh run rerun "$run_id" --failed 2>&1; then
               # A run older than GitHub's re-run window, or one whose branch has gone. Nothing
               # here can recover that, and saying so is better than a label that implies a
