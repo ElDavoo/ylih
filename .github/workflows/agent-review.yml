@@ -79,7 +79,15 @@ jobs:
           plugin_marketplaces: 'https://github.com/anthropics/claude-code.git'
           plugins: 'code-review@claude-code-plugins'
           prompt: '/code-review:code-review --comment ${{ github.repository }}/pull/${{ github.event.pull_request.number }}'
-          claude_args: '--allowedTools "mcp__github_inline_comment__create_inline_comment"'
+          # --allowedTools is an allowlist, not an addition to a default. Naming only the
+          # comment tool gave the reviewer permission to write findings and no permission to
+          # read the diff it was meant to find them in: observed on run 33022803884 as 24 turns,
+          # ten permission denials and zero comments posted. It needs the read tools spelled out
+          # alongside it.
+          claude_args: >-
+            --model claude-opus-5
+            --allowedTools "mcp__github_inline_comment__create_inline_comment,Read,Glob,Grep,Bash(git:*),Bash(rg:*),Bash(jq:*),Bash(find:*),Bash(ls:*),Bash(cat:*),Bash(head:*),Bash(tail:*),Bash(wc:*),Bash(sort:*),Bash(uniq:*),Bash(diff:*)"
+            --disallowedTools "Write,Edit,Bash(gh:*),Bash(curl:*),Bash(wget:*),Bash(nc:*),Bash(ssh:*),Bash(scp:*),Bash(git push:*),Bash(git remote:*),Bash(git config:*),WebFetch,WebSearch"
 
       # Pass two: the verdict, as data. Separate from pass one because a merge gate must be a
       # value the workflow can branch on, not prose someone has to parse.
@@ -122,8 +130,13 @@ jobs:
             subject, body explaining the reasoning and the evidence, not restating the diff. If
             the approach changed while the branch was being fixed, describe what actually
             landed, not what was originally planned.
+          # Bash(git:*) rather than four enumerated git prefixes. This is the merge gate and the
+          # user asked for Opus on it, so a denial that costs a turn is expensive; the mutating
+          # git verbs are named in --disallowedTools below, and deny beats allow, so widening
+          # the allowlist here removes a class of stalls without widening what it can do.
           claude_args: >-
-            --allowedTools "Read,Glob,Grep,Bash(rg:*),Bash(jq:*),Bash(find:*),Bash(ls:*),Bash(cat:*),Bash(head:*),Bash(tail:*),Bash(wc:*),Bash(sort:*),Bash(uniq:*),Bash(diff:*),Bash(git log:*),Bash(git show:*),Bash(git diff:*),Bash(git status:*)"
+            --model claude-opus-5
+            --allowedTools "Read,Glob,Grep,Bash(git:*),Bash(rg:*),Bash(jq:*),Bash(find:*),Bash(ls:*),Bash(cat:*),Bash(head:*),Bash(tail:*),Bash(wc:*),Bash(sort:*),Bash(uniq:*),Bash(diff:*)"
             --disallowedTools "Write,Edit,Bash(gh:*),Bash(curl:*),Bash(wget:*),Bash(nc:*),Bash(ssh:*),Bash(scp:*),Bash(git push:*),Bash(git remote:*),Bash(git config:*),WebFetch,WebSearch"
             --json-schema '{"type":"object","properties":{"approved":{"type":"boolean","description":"True to approve and let this merge"},"blocking":{"type":"integer","description":"Number of blocking findings"},"summary":{"type":"string","description":"One paragraph: what this does and why it is or is not mergeable"},"final_title":{"type":"string","description":"Squash commit subject, lowercase, house style"},"final_body":{"type":"string","description":"Squash commit body: reasoning and evidence"}},"required":["approved","blocking","summary","final_title","final_body"]}'
 

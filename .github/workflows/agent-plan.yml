@@ -155,7 +155,7 @@ jobs:
 
             Do not write any code. Do not edit any file. Return the structured verdict only.
           claude_args: >-
-            --allowedTools "Read,Glob,Grep,Bash(rg:*),Bash(jq:*),Bash(find:*),Bash(ls:*),Bash(cat:*),Bash(head:*),Bash(tail:*),Bash(wc:*),Bash(sort:*),Bash(uniq:*),Bash(diff:*),Bash(git log:*),Bash(git show:*),Bash(git diff:*),Bash(git status:*)"
+            --allowedTools "Read,Glob,Grep,Bash(git:*),Bash(rg:*),Bash(jq:*),Bash(find:*),Bash(ls:*),Bash(cat:*),Bash(head:*),Bash(tail:*),Bash(wc:*),Bash(sort:*),Bash(uniq:*),Bash(diff:*)"
             --disallowedTools "Write,Edit,Bash(gh:*),Bash(curl:*),Bash(wget:*),Bash(nc:*),Bash(ssh:*),Bash(scp:*),Bash(git push:*),Bash(git remote:*),Bash(git config:*),WebFetch,WebSearch"
             --json-schema '{"type":"object","properties":{"implementable":{"type":"boolean","description":"Whether an agent can carry this to a merged PR unattended"},"reason":{"type":"string","description":"If not implementable, the reason, addressed to the issue author"},"pr_title":{"type":"string","description":"Lowercase plain-language subject line for the eventual squash commit"},"pr_body":{"type":"string","description":"Body for the eventual squash commit: reasoning and evidence"},"plan":{"type":"string","description":"The plan, as markdown, to become the issue body"}},"required":["implementable","reason","pr_title","pr_body","plan"]}'
 

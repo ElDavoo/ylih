@@ -48,8 +48,12 @@ runs:
           printf '### the %s stage stopped before it finished\n\n' "$STAGE"
           printf 'Claude did not complete this run. Nothing was pushed, so the branch is '
           printf 'exactly as it was; no fix round was spent.\n\n'
-          printf 'The usual cause is a usage limit, which resets on its own. agent-retry.yml '
-          printf 'sweeps every five hours and will re-run this. Nothing needs doing by hand.\n\n'
+          printf 'agent-retry.yml sweeps every five hours and will re-run this up to three '
+          printf 'times. That recovers a usage limit, which resets on its own, and nothing '
+          printf 'else: a permission denial or a bad prompt fails identically every time and '
+          printf 'costs fifteen hours before it says so. If the run below ends in a '
+          printf '`permission_denials_count` above zero, or in an `is_error` with the stage '
+          printf 'having spent turns, read it now rather than waiting for the sweep.\n\n'
           printf 'Run: %s\n\n' "$RUN_URL"
           printf '<!-- agent-stall run=%s -->\n' "$RUN_ID"
         } > /tmp/stall.md
