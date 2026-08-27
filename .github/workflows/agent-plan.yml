@@ -137,6 +137,10 @@ jobs:
               device-identity keying in tracking/AudioDevices.kt — these are the app's reason to
               exist and want a human;
             - touches signing, release, or the dependency verification metadata;
+            - would change anything in `.github/workflows/` or `.github/actions/` — the token
+              this pipeline pushes with deliberately has no `workflow` scope, so the change
+              could be written but never pushed, and the branch would fail at the very end
+              rather than at the start;
             - is too vague to have an obvious acceptance test.
 
             Otherwise write the plan. It must name:
