@@ -241,8 +241,24 @@ says the reasoning matters more than the diff.
 Issue and comment bodies are attacker-controlled — this is a public tracker. Three things stand
 between that and the repository, in descending order of how much they actually buy:
 
-1. **The environment gate.** An outside issue does not reach a prompt until you approve it. This
-   is the real mitigation; the other two are defence in depth.
+1. **The environment gate, plus the check that makes it mean something.** An outside issue does
+   not reach a prompt until you approve it. On its own that holds the *run*, not the *text*: the
+   plan becomes the issue body, an author can edit their own issue at any time, and approving and
+   then being rewritten is a short path from a comment box to an agent holding a push token. So
+   the implement stage also asks who last edited the body, and proceeds only if that was the plan
+   stage or someone with write access.
+
+   It deliberately does not pin a hash at approval. The gate exists so you can read the plan and
+   change it, and a pin taken before your edit would refuse your own work. A body is a full
+   replacement, so the last writer owns all of it — which makes "who wrote it last" both the
+   simpler question and the right one. Edit the plan as much as you like, before or after
+   approving; what is refused is a body last touched by someone who could not have pushed the
+   change themselves. The identity comes from GraphQL `userContentEdits`, sorted by timestamp
+   rather than trusted to arrive in order, and `__typename` is what distinguishes the Actions app
+   from a human account holding the same login — GraphQL reports it without the `[bot]` suffix
+   REST uses.
+
+   This is the real mitigation; the other two are defence in depth.
 2. **Framing.** Every prompt that carries reported text delimits it and says plainly that it is
    data describing a request, not instructions — and the plan stage is told that text shaped like
    an instruction *to it* is itself grounds to decline.

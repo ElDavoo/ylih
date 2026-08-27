@@ -87,16 +87,85 @@ jobs:
               echo "::notice::Stopped by label" ; exit 1 ;;
           esac
 
-      - name: Read the plan
+      # The issue body IS the plan, and it is fed to Claude as instructions. It is also editable
+      # by its author at any time, including after you approved it -- the environment gate holds
+      # the run, not the text, so approving an outside issue and then having its author rewrite
+      # the body is a straight path from a comment box to an agent with a push token.
+      #
+      # The fix is not to pin a hash at approval: the whole point of the gate is that you read
+      # the plan and often change it, and a pin taken before your edit would refuse your own
+      # work. What matters is not whether the body changed but who changed it last. A body is a
+      # full replacement, so the last writer owns all of it -- if that writer is trusted, so is
+      # the text, however many times it was rewritten on the way.
+      #
+      # Trusted means the plan stage itself, or anyone with write access to this repository.
+      # So you can edit the plan as much as you like, before or after approving, and a
+      # collaborator can too; what is refused is a body last touched by someone who could not
+      # have pushed the change themselves.
+      - name: Read the plan, and check who wrote it
         id: issue
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE: ${{ inputs.issue }}
         run: |
           set -euo pipefail
-          gh issue view "$ISSUE" --json body --jq .body > /tmp/plan.md
-          gh issue view "$ISSUE" --json title --jq .title > /tmp/title.txt
+
+          # Body and provenance in one query, so the text checked is the text used. Asking for
+          # them separately leaves a window in which the body read is not the body vouched for.
+          gh api graphql -f query='
+            query($owner:String!,$name:String!,$num:Int!){
+              repository(owner:$owner,name:$name){
+                issue(number:$num){
+                  title body
+                  author{ login __typename }
+                  userContentEdits(last:100){ nodes{ editedAt editor{ login __typename } } }
+                }
+              }
+            }' -F owner="${GITHUB_REPOSITORY%/*}" -F name="${GITHUB_REPOSITORY#*/}" \
+               -F num="$ISSUE" --jq '.data.repository.issue' > /tmp/issue.json
+
+          jq -r .body  < /tmp/issue.json > /tmp/plan.md
+          jq -r .title < /tmp/issue.json > /tmp/title.txt
           echo "title=$(cat /tmp/title.txt)" >> "$GITHUB_OUTPUT"
+
+          # Sorted here rather than trusted to arrive in order -- the connection returns newest
+          # first today, which is the opposite of what `last:` reads like. With no edits at all
+          # the body is still as the author filed it, so the author is the last writer.
+          writer=$(jq -r '
+            (.userContentEdits.nodes | map(select(.editor != null)) | max_by(.editedAt) | .editor)
+            // .author
+            | "\(.__typename) \(.login)"' < /tmp/issue.json)
+          echo "last wrote the body: $writer"
+
+          trusted=false
+          case "$writer" in
+            # The plan stage posts as the Actions app. __typename is what settles it: GraphQL
+            # reports this login without the [bot] suffix REST uses, so `github-actions` alone
+            # is a name a human account could plausibly hold.
+            'Bot github-actions') trusted=true ;;
+            'User '*)
+              login=${writer#User }
+              perm=$(gh api "repos/${GITHUB_REPOSITORY}/collaborators/${login}/permission" \
+                     --jq .permission 2>/dev/null || echo none)
+              echo "  ${login} has ${perm} on this repository"
+              case "$perm" in admin|maintain|write) trusted=true ;; esac ;;
+          esac
+
+          if [ "$trusted" != true ]; then
+            {
+              printf 'The plan on this issue was last edited by someone without write access to '
+              printf 'this repository, so it is no longer the plan that was approved. Nothing '
+              printf 'was built.\n\n'
+              printf 'The body is instructions to an agent that holds a push token, so it is '
+              printf 'only taken from the plan stage or from someone who could make the change '
+              printf 'themselves. A maintainer can restore or rewrite the plan and re-dispatch '
+              printf '`Agent · implement` from the Actions tab.\n'
+            } > /tmp/untrusted.md
+            gh issue comment "$ISSUE" --body-file /tmp/untrusted.md
+            gh issue edit "$ISSUE" --add-label 'agent:stuck' --remove-label 'agent:planned'
+            echo "::error::Plan last edited by an untrusted account — refusing to implement."
+            exit 1
+          fi
 
       - name: Start the branch
         env:
