@@ -304,3 +304,33 @@ jobs:
           path: |
             app/build/reports/androidTests/**
             app/build/outputs/androidTest-results/**
+
+  # One stable check for this whole workflow to hang the branch ruleset off.
+  #
+  # The ruleset required six of these contexts by name -- `build (classic, Classic)`,
+  # `instrumented (minified, minSdk)` and the rest -- all of which are matrix `include` entries.
+  # That drifts silently in both directions: drop a variant and every PR waits forever on a
+  # context nothing reports any more, indistinguishable from CI being slow; add one and it is
+  # not required, so a PR failing only the new variant still merges. `needs` follows the matrix
+  # on its own, so this name is the only thing the ruleset has to know.
+  #
+  # `devshell` stays separately required: it lives in nix.yml and `needs` cannot cross
+  # workflows. It is a single job with a fixed name and no matrix, so it cannot drift.
+  #
+  # `if: always()` is load-bearing. Without it this job is skipped whenever anything it needs
+  # fails, and GitHub reads a skipped required check as satisfied -- turning the gate into a
+  # no-op exactly when it is supposed to bite.
+  all-green:
+    if: always()
+    needs: [listing, build, instrumented]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check CI results
+        run: |
+          echo "listing=${{ needs.listing.result }}"
+          echo "build=${{ needs.build.result }}"
+          echo "instrumented=${{ needs.instrumented.result }}"
+          [ "${{ needs.listing.result }}" = success ] \
+            && [ "${{ needs.build.result }}" = success ] \
+            && [ "${{ needs.instrumented.result }}" = success ]
