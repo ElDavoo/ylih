@@ -8,7 +8,11 @@ name: Dependabot auto-merge
 # gradle/verification-metadata.xml alone, so the build refuses the new artifacts as unverified.
 # `dependabot-verification-metadata.yml` is what pushes the regenerated checksums onto the branch;
 # that push re-runs Android CI, and this auto-merge is then waiting for a run that can pass.
-on:
+# pull_request_target is required, not incidental: Dependabot's own pull_request events hand the
+# job a read-only token, so it could not arm anything. What makes the trigger dangerous elsewhere
+# is checking out and running the PR's code with a write token -- this workflow never checks the
+# PR out at all, and runs nothing from it.
+on:  # zizmor: ignore[dangerous-triggers]
   pull_request_target:
   # GitHub turns auto-merge back off by itself when the base branch moves under a PR, and the
   # pull_request_target run that armed it finished long before that -- leaving the PR green,
@@ -44,7 +48,7 @@ concurrency:
 # from git history, and would want a per-ecosystem condition rather than the bare one.
 jobs:
   auto-merge:
-    if: github.event_name == 'push' || github.actor == 'dependabot[bot]'
+    if: github.event_name == 'push' || github.event.pull_request.user.login == 'dependabot[bot]'
     runs-on: ubuntu-latest
 
     steps:
