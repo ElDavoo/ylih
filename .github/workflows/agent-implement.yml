@@ -112,6 +112,8 @@ jobs:
 
           # Body and provenance in one query, so the text checked is the text used. Asking for
           # them separately leaves a window in which the body read is not the body vouched for.
+          # shellcheck disable=SC2016  # $owner/$name/$num are GraphQL variables and have to
+          # reach the server unexpanded; double quotes here would substitute them away.
           gh api graphql -f query='
             query($owner:String!,$name:String!,$num:Int!){
               repository(owner:$owner,name:$name){
@@ -159,6 +161,8 @@ jobs:
               printf 'The body is instructions to an agent that holds a push token, so it is '
               printf 'only taken from the plan stage or from someone who could make the change '
               printf 'themselves. A maintainer can restore or rewrite the plan and re-dispatch '
+              # shellcheck disable=SC2016  # the backticks are Markdown for the comment body,
+              # and single quotes are what stop the shell reading them as substitution.
               printf '`Agent · implement` from the Actions tab.\n'
             } > /tmp/untrusted.md
             gh issue comment "$ISSUE" --body-file /tmp/untrusted.md
