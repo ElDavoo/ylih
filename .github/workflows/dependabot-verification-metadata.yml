@@ -44,7 +44,9 @@ jobs:
     # actor is the token's owner rather than Dependabot, so the second run is skipped before it
     # costs anything — and a later Dependabot rebase, which drops our commit, is an actor match
     # again and regenerates.
-    if: github.actor == 'dependabot[bot]'
+    # actor is load-bearing here, not a stand-in for the PR
+    # author: the comment above turns on it being the token's owner on our own second run.
+    if: github.actor == 'dependabot[bot]'  # zizmor: ignore[bot-conditions]
     runs-on: ubuntu-latest
 
     steps:
@@ -60,7 +62,8 @@ jobs:
           fi
 
       - name: Checkout the PR branch
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        # this job commits to the head branch, so the token has to persist.
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7  # zizmor: ignore[artipacked]
         with:
           # The head branch itself, not the merge commit: this job commits to it.
           ref: ${{ github.event.pull_request.head.ref }}

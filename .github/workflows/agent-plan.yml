@@ -15,12 +15,10 @@ on:
   issues:
     types: [opened]
 
-permissions:
-  contents: read
-  # The action fetches a GitHub OIDC token on every run, including the OAuth path, and
-  # fails after three retries without this. claude.yml has carried it since day one.
-  id-token: write
-  issues: write
+# Granted per job rather than here: a workflow-level block hands the same token to the gate
+# as to the stage that runs the agent, and the gate exists precisely to decide whether the
+# agent should run at all.
+permissions: {}
 
 # Per issue, never cancelling. Two events for one issue should serialise rather than race, and
 # a cancelled stage that had already edited the body would leave a half-planned issue behind.
@@ -35,6 +33,8 @@ jobs:
   # a prompt. That ordering is the entire security argument for the pipeline; see
   # docs/agent-pipeline.md.
   gate:
+    permissions:
+      contents: read
     if: >-
       github.event.issue.user.login != 'ElDavoo'
       && !contains(github.event.issue.labels.*.name, 'no-agent')
@@ -49,6 +49,10 @@ jobs:
         run: echo "Approved by $APPROVER for issue $ISSUE"
 
   plan:
+    permissions:
+      contents: read
+      id-token: write
+      issues: write
     needs: [gate]
     # `always()` is load-bearing and not decoration: without it a *skipped* gate skips this job
     # too, and skipped is exactly the path your own issues take. A rejected deployment fails the
@@ -66,6 +70,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
 
       # A cap on work in flight, not on work queued. Three open agent PRs is already more diff
       # than one person reviews in an evening, and the failure mode this exists for is a bad

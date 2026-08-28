@@ -33,6 +33,13 @@ on:
         required: true
         type: string
 
+    # Named rather than inherited, so a caller hands over these two and nothing else.
+    secrets:
+      AGENT_PUSH_TOKEN:
+        required: true
+      CLAUDE_CODE_OAUTH_TOKEN:
+        required: true
+
 permissions:
   contents: read
   # The action fetches a GitHub OIDC token on every run, including the OAuth path, and
@@ -68,7 +75,8 @@ jobs:
 
     steps:
       - name: Checkout the agent branch
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        # the PAT below is what pushes this branch, so it has to persist.
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7  # zizmor: ignore[artipacked]
         with:
           token: ${{ secrets.AGENT_PUSH_TOKEN }}
           ref: agent/issue-${{ inputs.issue }}

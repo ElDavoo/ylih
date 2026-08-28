@@ -8,24 +8,25 @@ name: Agent · fix CI
 # is also what makes it safe to give it secrets: the version of this file that executes is the
 # one on main, never the one on the branch being fixed.
 
-on:
+# workflow_run is the trigger this needs, not a convenience: the job reads the failed run's
+# logs, which a check on the pull request cannot reach. It runs the workflow file from main
+# rather than the branch under test -- see the comment above -- so the branch cannot rewrite
+# what executes here.
+on:  # zizmor: ignore[dangerous-triggers]
   workflow_run:
     workflows: ["Android CI"]
     types: [completed]
 
-permissions:
-  contents: read
-  actions: read
-  issues: write
-  pull-requests: write
-  # Needed here even though nothing in this file runs the action: a called workflow cannot
-  # request a permission its caller lacks, and agent-fix.yml needs id-token for the OIDC token.
-  # Getting this wrong does not fail a job -- it fails the run at startup, with no jobs, no
-  # logs and no annotation to read.
-  id-token: write
+# Granted per job rather than here: a workflow-level block hands the same token to the gate
+# as to the stage that runs the agent, and the gate exists precisely to decide whether the
+# agent should run at all.
+permissions: {}
 
 jobs:
   context:
+    permissions:
+      contents: read
+      actions: read
     if: >-
       github.event.workflow_run.conclusion == 'failure'
       && startsWith(github.event.workflow_run.head_branch, 'agent/issue-')
@@ -94,10 +95,17 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
   fix:
+    permissions:
+      contents: read
+      id-token: write
+      issues: write
+      pull-requests: write
     needs: [context]
     if: needs.context.outputs.go == 'true'
     uses: ./.github/workflows/agent-fix.yml
-    secrets: inherit
+    secrets:
+      AGENT_PUSH_TOKEN: ${{ secrets.AGENT_PUSH_TOKEN }}
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
     with:
       pr: ${{ needs.context.outputs.pr }}
       issue: ${{ needs.context.outputs.issue }}

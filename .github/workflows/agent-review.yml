@@ -21,17 +21,10 @@ on:
     # workflow file as it was, so it cannot pick up a fix to this file.
     types: [opened, synchronize, reopened]
 
-permissions:
-  contents: read
-  # The action fetches a GitHub OIDC token on every run, including the OAuth path, and
-  # fails after three retries without this. claude.yml has carried it since day one.
-  id-token: write
-  # write, not read, for two reasons that both bite: this workflow calls agent-fix.yml, and a
-  # called workflow cannot hold a permission its caller lacks -- with `read` here the whole run
-  # fails at startup, no jobs and no logs. And the stall path labels the issue, so `read` could
-  # never have recorded a stalled review either.
-  issues: write
-  pull-requests: write
+# Granted per job rather than here: a workflow-level block hands the same token to the gate
+# as to the stage that runs the agent, and the gate exists precisely to decide whether the
+# agent should run at all.
+permissions: {}
 
 concurrency:
   group: agent-review-${{ github.event.pull_request.number }}
@@ -39,6 +32,11 @@ concurrency:
 
 jobs:
   review:
+    permissions:
+      contents: read
+      id-token: write
+      issues: write
+      pull-requests: write
     if: >-
       startsWith(github.head_ref, 'agent/issue-')
       && !github.event.pull_request.draft
@@ -56,6 +54,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
+          persist-credentials: false
           fetch-depth: 0
 
       - name: Identify the issue behind the branch
@@ -234,10 +233,17 @@ jobs:
         run: gh pr review "$PR" --request-changes --body-file /tmp/summary.txt
 
   fix:
+    permissions:
+      contents: read
+      id-token: write
+      issues: write
+      pull-requests: write
     needs: [review]
     if: needs.review.outputs.approved == 'false'
     uses: ./.github/workflows/agent-fix.yml
-    secrets: inherit
+    secrets:
+      AGENT_PUSH_TOKEN: ${{ secrets.AGENT_PUSH_TOKEN }}
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
     with:
       pr: ${{ github.event.pull_request.number }}
       issue: ${{ needs.review.outputs.issue }}
