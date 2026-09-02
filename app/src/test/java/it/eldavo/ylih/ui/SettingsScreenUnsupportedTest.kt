@@ -5,6 +5,7 @@ import android.os.Build
 import android.os.Looper
 import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.ui.test.assertIsEnabled
 import androidx.compose.ui.test.assertIsNotEnabled
 import androidx.compose.ui.test.assertIsOff
 import androidx.compose.ui.test.hasText
@@ -13,11 +14,14 @@ import androidx.compose.ui.test.junit4.v2.createAndroidComposeRule
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.test.core.app.ApplicationProvider
 import androidx.work.testing.WorkManagerTestInitHelper
+import it.eldavo.ylih.Distribution
 import it.eldavo.ylih.R
 import it.eldavo.ylih.YlihApp
 import it.eldavo.ylih.ui.theme.YlihTheme
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
+import org.junit.Assume.assumeFalse
+import org.junit.Assume.assumeTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -27,20 +31,24 @@ import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
 
 /**
- * Settings as the minSdk floor sees it. Detailed tracking needs a notification channel, which
- * arrived in Android 8, so an API 23 install can never have it — and unlike the revoked-Bluetooth
- * route (which only the Play build can reach) this is the same on both flavors.
+ * Settings on a build that cannot run the foreground service at all.
+ *
+ * There is one route left to that state: on Android 14+ the `connectedDevice` service type
+ * requires a Bluetooth permission, and the Play flavor declares no `specialUse` type to fall back
+ * on — so a denied `BLUETOOTH_CONNECT` withholds detailed tracking there and nowhere else. The
+ * classic build declares both types and is never blocked, which is why every assertion here is
+ * guarded by [Distribution.HAS_SPECIAL_USE_FGS] rather than written twice.
  *
  * The screen must say so rather than offer a switch that would silently do nothing, and the
  * playback choice has to disappear with it: nothing here can measure playback, so offering to
  * count it would trade real hours for a column of zeroes.
  *
  * Its own class because Robolectric puts one sandbox behind an SDK level, and the sibling class
- * runs on 34.
+ * runs with the permission granted.
  */
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [Build.VERSION_CODES.M])
-class SettingsScreenLegacyTest {
+@Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
+class SettingsScreenUnsupportedTest {
 
     @get:Rule
     val compose = createAndroidComposeRule<ComponentActivity>()
@@ -51,9 +59,11 @@ class SettingsScreenLegacyTest {
     @Before
     fun setUp() = runBlocking {
         WorkManagerTestInitHelper.initializeTestWorkManager(app)
-        // Granted so the assertions can only be about the platform version — on the Play build a
-        // denied permission would withhold detailed tracking for the other reason.
-        shadowOf(app).grantPermissions(Manifest.permission.BLUETOOTH_CONNECT)
+        // Denied, which is the one route left to the unavailable state: on Android 14+ the
+        // connectedDevice service type requires a Bluetooth permission, and the play flavor
+        // declares no specialUse type to fall back on. The classic build is never blocked,
+        // which is what the assumption in each test is about.
+        shadowOf(app).denyPermissions(Manifest.permission.BLUETOOTH_CONNECT)
         app.container.database.deviceDao().deleteAll()
         settings.setDetailedTracking(false)
         settings.setPlaybackOnly(false)
@@ -90,11 +100,10 @@ class SettingsScreenLegacyTest {
         compose.onAllNodesWithText(value).fetchSemanticsNodes().size
 
     @Test
-    fun `without notification channels the screen says so instead of offering a dead switch`() {
+    fun `without bluetooth access the screen says so instead of offering a dead switch`() {
+        assumeFalse("only the play build can be blocked here", Distribution.HAS_SPECIAL_USE_FGS)
         show()
 
-        // The note itself is worded for the Android 14 Bluetooth case, which is the only way the
-        // Play build can get here; on this floor the reason is the platform version instead.
         assertEquals(1, nodeCount(text(R.string.settings_detailed_unavailable)))
         compose.onNode(
             isToggleable() and hasText(text(R.string.settings_detailed_title)),
@@ -103,8 +112,20 @@ class SettingsScreenLegacyTest {
 
     @Test
     fun `and the playback choice is not offered at all`() {
+        assumeFalse("only the play build can be blocked here", Distribution.HAS_SPECIAL_USE_FGS)
         show()
 
         assertEquals(0, nodeCount(text(R.string.settings_playback_only_title)))
+    }
+
+    @Test
+    fun `a build with the special-use type is never blocked by a denied permission`() {
+        assumeTrue("classic declares specialUse", Distribution.HAS_SPECIAL_USE_FGS)
+        show()
+
+        assertEquals(0, nodeCount(text(R.string.settings_detailed_unavailable)))
+        compose.onNode(
+            isToggleable() and hasText(text(R.string.settings_detailed_title)),
+        ).assertIsEnabled()
     }
 }

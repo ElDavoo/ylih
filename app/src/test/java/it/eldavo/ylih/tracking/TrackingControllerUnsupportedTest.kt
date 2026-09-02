@@ -14,6 +14,7 @@ import androidx.work.WorkerFactory
 import androidx.work.WorkerParameters
 import androidx.work.Worker
 import androidx.work.testing.WorkManagerTestInitHelper
+import it.eldavo.ylih.Distribution
 import it.eldavo.ylih.data.DeviceKind
 import it.eldavo.ylih.data.SessionRepository
 import it.eldavo.ylih.data.SettingsStore
@@ -24,6 +25,7 @@ import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
+import org.junit.Assume.assumeFalse
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -32,18 +34,20 @@ import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
 
 /**
- * The minSdk floor, where detailed tracking cannot run at all. Notification channels arrived in
- * Android 8 and the foreground service's whole point is its persistent notification, so every
- * install below that gets Bluetooth-only tracking no matter what the setting says — on both
- * flavors, unlike the revoked-Bluetooth route, which only the Play build can reach.
+ * A build where detailed tracking cannot run at all, which since the floor moved to Android 8 is
+ * one route only: the Play flavor on Android 14+ with `BLUETOOTH_CONNECT` denied. The
+ * `connectedDevice` service type requires a Bluetooth permission there and the flavor declares no
+ * `specialUse` type to fall back on, so the install gets Bluetooth-only tracking no matter what
+ * the setting says. The classic flavor declares both and is never blocked, which is why the tests
+ * that need the unavailable state assume their way past it there.
  *
  * Separate from [TrackingControllerTest] for the reason [TrackingControllerForegroundStartTest]
  * gives: one SDK level per class, or two Robolectric sandboxes end up behind methods that share
  * a WorkManager singleton.
  */
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [Build.VERSION_CODES.M])
-class TrackingControllerLegacyTest {
+@Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
+class TrackingControllerUnsupportedTest {
 
     private val context: Application = ApplicationProvider.getApplicationContext()
     private val audioManager = context.getSystemService(AudioManager::class.java)
@@ -70,9 +74,11 @@ class TrackingControllerLegacyTest {
         // The DataStore behind this is a process singleton, so a setting written by another
         // class in the same JVM is still there.
         settings.setDetailedTracking(false)
-        // Granted so the assertions below can only be about the platform version: on the Play
-        // build a denied permission would refuse detailed tracking for the other reason.
-        shadowOf(context).grantPermissions(Manifest.permission.BLUETOOTH_CONNECT)
+        // Denied, which is the one route left to the unavailable state: on Android 14+ the
+        // connectedDevice service type requires a Bluetooth permission, and the play flavor
+        // declares no specialUse type to fall back on. The classic build is never blocked,
+        // which is what the assumption in each test is about.
+        shadowOf(context).denyPermissions(Manifest.permission.BLUETOOTH_CONNECT)
     }
 
     @After
@@ -88,12 +94,16 @@ class TrackingControllerLegacyTest {
         outputDevice(AudioDeviceInfo.TYPE_WIRED_HEADPHONES, productName = "Plugged in")
 
     @Test
-    fun `without notification channels there is no service to offer`() {
+    fun `without bluetooth access there is no service to offer`() {
+        assumeFalse("only the play build can be blocked here", Distribution.HAS_SPECIAL_USE_FGS)
+
         assertFalse(controller.detailedTrackingSupported())
     }
 
     @Test
     fun `asking for detailed tracking here is refused rather than half-applied`() = runTest {
+        assumeFalse("only the play build can be blocked here", Distribution.HAS_SPECIAL_USE_FGS)
+
         assertFalse(controller.setDetailedTracking(enabled = true))
 
         assertFalse("nothing was written", settings.detailedTrackingNow())
@@ -103,6 +113,7 @@ class TrackingControllerLegacyTest {
     @Test
     fun `a setting that arrived from a newer phone falls back instead of counting forever`() =
         runTest {
+            assumeFalse("only the play build can be blocked here", Distribution.HAS_SPECIAL_USE_FGS)
             // Preferences are restored across devices by Android's own backup, so the flag can
             // outlive the install that could act on it. Nothing here can observe a wired plug,
             // and an open wired session nobody is watching would count until the end of time.
@@ -130,7 +141,7 @@ class TrackingControllerLegacyTest {
         }
 
     @Test
-    fun `bluetooth-only tracking still works down here`() = runTest {
+    fun `bluetooth-only tracking still works without the permission`() = runTest {
         connect(outputDevice(AudioDeviceInfo.TYPE_BLUETOOTH_A2DP, productName = "ACCENTUM Plus"))
 
         controller.syncWithSystem()

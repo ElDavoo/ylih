@@ -67,18 +67,6 @@ class FormatTest {
         assertEquals("45s", formatDurationShort(45_000L))
     }
 
-    /**
-     * Android 6 has no `android.icu`, and still has to print something. It gets the format every
-     * language used to get, zero padding and all — this branch is the old code, unchanged.
-     */
-    @Test
-    @Config(sdk = [Build.VERSION_CODES.M])
-    fun `below android 7 the units fall back to the ones every language used to get`() {
-        assertEquals("3h 07m", formatDurationShort(3 * 3_600_000L + 7 * 60_000L))
-        assertEquals("12m", formatDurationShort(12 * 60_000L))
-        assertEquals("1,240.5 h", formatHours(1_240_500 * 3_600L))
-    }
-
     @Test
     fun `a clock that jumped backwards never prints a negative duration`() {
         assertEquals("0s", formatDurationShort(-5_000))

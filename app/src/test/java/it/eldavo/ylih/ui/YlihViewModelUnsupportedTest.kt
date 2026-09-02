@@ -4,6 +4,7 @@ import android.Manifest
 import android.os.Build
 import androidx.test.core.app.ApplicationProvider
 import androidx.work.testing.WorkManagerTestInitHelper
+import it.eldavo.ylih.Distribution
 import it.eldavo.ylih.R
 import it.eldavo.ylih.YlihApp
 import kotlinx.coroutines.Dispatchers
@@ -16,6 +17,7 @@ import kotlinx.coroutines.test.setMain
 import org.junit.After
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertEquals
+import org.junit.Assume.assumeFalse
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -24,18 +26,21 @@ import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
 
 /**
- * The view model at the minSdk floor, where no build can run the foreground service because
- * notification channels do not exist yet. Turning detailed tracking on has to be refused *and*
- * said out loud: a switch that springs back with no explanation reads as a bug in the app rather
- * than a limit of the phone.
+ * The view model on a build that cannot run the foreground service: the play flavor on Android
+ * 14+ with `BLUETOOTH_CONNECT` denied, which is the one route left to that state now the floor is
+ * Android 8. Turning detailed tracking on has to be refused *and* said out loud: a switch that
+ * springs back with no explanation reads as a bug in the app rather than a limit of the phone.
+ *
+ * The classic flavor declares `specialUse` and is never blocked, so the test assumes its way past
+ * there — [SettingsScreenUnsupportedTest] is where that half is asserted.
  *
  * Its own class rather than a method on [YlihViewModelTest] because Robolectric puts one sandbox
- * behind an SDK level, and that one runs on 34.
+ * behind an SDK level, and this one needs the permission denied for the whole class.
  */
 @OptIn(ExperimentalCoroutinesApi::class)
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [Build.VERSION_CODES.M])
-class YlihViewModelLegacyTest {
+@Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
+class YlihViewModelUnsupportedTest {
 
     private val app: YlihApp = ApplicationProvider.getApplicationContext()
 
@@ -47,8 +52,10 @@ class YlihViewModelLegacyTest {
         // initialises through the main dispatcher and never completes on a test one.
         WorkManagerTestInitHelper.initializeTestWorkManager(app)
         Dispatchers.setMain(UnconfinedTestDispatcher())
-        // Granted so the refusal below can only be about the platform version.
-        shadowOf(app).grantPermissions(Manifest.permission.BLUETOOTH_CONNECT)
+        // Denied, which is the one route left to the unavailable state: on Android 14+ the
+        // connectedDevice service type requires a Bluetooth permission, and the play flavor
+        // declares no specialUse type to fall back on.
+        shadowOf(app).denyPermissions(Manifest.permission.BLUETOOTH_CONNECT)
         viewModel = YlihViewModel(app)
     }
 
@@ -58,7 +65,8 @@ class YlihViewModelLegacyTest {
     }
 
     @Test
-    fun `a phone too old for the service is told so rather than left guessing`() = runTest {
+    fun `a build that cannot run the service says so rather than leaving the user guessing`() = runTest {
+        assumeFalse("only the play build can be blocked here", Distribution.HAS_SPECIAL_USE_FGS)
         app.container.settings.setDetailedTracking(false)
 
         viewModel.setDetailedTracking(true).join()
