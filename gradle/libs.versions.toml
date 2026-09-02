@@ -43,7 +43,6 @@ androidxTestRunner = "1.7.0"
 # Renders the real Compose UI on the JVM through Robolectric's native graphics, which is how the
 # Play listing screenshots are generated without an emulator anywhere in the toolchain.
 roborazzi = "1.72.0"
-desugarJdkLibs = "2.1.5"
 # Drives android.testCoverage.jacocoVersion; AGP's bundled default predates JDK 21 class files.
 jacoco = "0.8.13"
 
@@ -90,7 +89,6 @@ androidx-test-rules = { module = "androidx.test:rules", version.ref = "androidxT
 roborazzi = { module = "io.github.takahirom.roborazzi:roborazzi", version.ref = "roborazzi" }
 roborazzi-compose = { module = "io.github.takahirom.roborazzi:roborazzi-compose", version.ref = "roborazzi" }
 roborazzi-junit-rule = { module = "io.github.takahirom.roborazzi:roborazzi-junit-rule", version.ref = "roborazzi" }
-android-desugar-jdk-libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugarJdkLibs" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
