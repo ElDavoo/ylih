@@ -106,8 +106,8 @@ object AppLocale {
         Locale.setDefault(locale)
         if (tag == SYSTEM) return base
         val config = Configuration(base.resources.configuration)
-        // setLocale, not setLocales: it is the form that exists at the API 23 floor, and from
-        // API 24 it stores a one-element locale list anyway.
+        // setLocale, not setLocales: from API 24 it stores a one-element locale list anyway,
+        // and one locale is all this sets.
         config.setLocale(locale)
         return base.createConfigurationContext(config)
     }

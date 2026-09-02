@@ -6,8 +6,6 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.os.Build
-import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import it.eldavo.ylih.MainActivity
 import it.eldavo.ylih.R
@@ -17,7 +15,7 @@ object Notifications {
     const val ID_TRACKING = 1
 
     /**
-     * Creates the tracking channel at process start, where the platform has channels at all.
+     * Creates the tracking channel at process start.
      *
      * This belongs to `YlihApp.onCreate` and nowhere else, which is a change from where it used
      * to live — [TrackingService.onCreate], on the line above the `startForeground` that needs
@@ -33,10 +31,9 @@ object Notifications {
      * notification is *visible*, not about whether tracking works.
      */
     fun ensureChannelAtStartup(context: Context) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) ensureChannel(context)
+        ensureChannel(context)
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     private fun ensureChannel(context: Context) {
         val manager = context.getSystemService(NotificationManager::class.java)
         if (manager.getNotificationChannel(CHANNEL_TRACKING) != null) return

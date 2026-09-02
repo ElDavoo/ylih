@@ -31,7 +31,7 @@ object Restrictions {
 
     /**
      * Asks whether unused-app restrictions are switched on for us. The answer arrives through a
-     * future because on Android 6–10 it comes from a service in the Play services backport rather
+     * future because on Android 8–10 it comes from a service in the Play services backport rather
      * than from the platform.
      */
     suspend fun hibernation(context: Context): Hibernation {

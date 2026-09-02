@@ -3,9 +3,7 @@ package it.eldavo.ylih.tracking
 import android.media.AudioAttributes
 import android.media.AudioManager
 import android.media.AudioPlaybackConfiguration
-import android.os.Build
 import android.os.Handler
-import androidx.annotation.RequiresApi
 import it.eldavo.ylih.data.Clock
 
 /**
@@ -16,10 +14,8 @@ import it.eldavo.ylih.data.Clock
  * for apps without MODIFY_AUDIO_ROUTING. [AudioManager.isMusicActive] is polled on every tick
  * as a safety net in case a player never shows up in that list.
  *
- * Only ever constructed from [TrackingService], which [TrackingController.detailedTrackingSupported]
- * keeps off below Android 8 (API 26) — that's where [AudioManager.AudioPlaybackCallback] starts.
+ * Only ever constructed from [TrackingService].
  */
-@RequiresApi(Build.VERSION_CODES.O)
 class PlaybackWatcher(
     private val audioManager: AudioManager,
     /**

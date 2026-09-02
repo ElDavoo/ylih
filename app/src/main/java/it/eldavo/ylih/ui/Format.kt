@@ -3,8 +3,6 @@ package it.eldavo.ylih.ui
 import android.icu.text.MeasureFormat
 import android.icu.util.Measure
 import android.icu.util.MeasureUnit
-import android.os.Build
-import androidx.annotation.RequiresApi
 import java.math.BigDecimal
 import java.math.RoundingMode
 import java.time.Instant
@@ -60,36 +58,12 @@ private class Formatters(val locale: Locale) {
 
     val percent: NumberFormat = NumberFormat.getPercentInstance(locale)
 
-    /** Null on Android 6, the one release this ships to without `android.icu`. */
-    private val icu: IcuUnits? =
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) IcuUnits(locale) else null
+    private val icu: IcuUnits = IcuUnits(locale)
 
-    // The `SDK_INT` test rather than a null check on [icu], which is the same question asked the
-    // same way once already: lint reads the version comparison and nothing else as a guard, and it
-    // is right to, since a null here would otherwise be free to mean something new later.
     fun duration(hours: Long, minutes: Long, seconds: Long): String =
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && icu != null) {
-            icu.duration(hours, minutes, seconds)
-        } else {
-            legacy(hours, minutes, seconds)
-        }
+        icu.duration(hours, minutes, seconds)
 
-    fun hours(value: Double): String =
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && icu != null) {
-            icu.hours(value)
-        } else {
-            String.format(locale, "%,.1f h", value)
-        }
-
-    /**
-     * What every language used to get. There is no CLDR to ask below API 24, and one platform
-     * version is not worth carrying a translated copy of the unit names for.
-     */
-    private fun legacy(hours: Long, minutes: Long, seconds: Long): String = when {
-        hours > 0 -> String.format(locale, "%dh %02dm", hours, minutes)
-        minutes > 0 -> String.format(locale, "%dm", minutes)
-        else -> String.format(locale, "%ds", seconds)
-    }
+    fun hours(value: Double): String = icu.hours(value)
 
     val dateTime: DateTimeFormatter =
         DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM, FormatStyle.SHORT)
@@ -127,17 +101,17 @@ private class Formatters(val locale: Locale) {
 private val YEAR_FIELD = Regex("[^\\p{L}]*[yu]+[^\\p{L}]*")
 
 /**
- * Every `android.icu` type in this file, behind one API check.
+ * Every `android.icu` type in this file, in one place.
  *
- * A class rather than a few guarded calls so that the version gate is the single act of building
- * it: nothing outside can name a `MeasureUnit`, so there is nowhere left to reach API 24 from a
- * path that has not checked. `Formatters` holds one or null and falls back on the null.
+ * It was a class because building it was the version gate: `android.icu` arrived in API 24 and
+ * `Formatters` held one or null below it. The floor is Android 8 now, so nothing is gated — what
+ * the class still buys is that nothing outside can name a `MeasureUnit`, and that the two
+ * `MeasureFormat`s are built once per locale beside the formatters that use them.
  *
  * NARROW rather than SHORT because these sit in chips, cards and a headline where "3h 7m" belongs
  * and "3 hrs, 7 mins" does not. Two formats because the whole-unit durations want no decimals and
  * the lifetime headline wants exactly one.
  */
-@RequiresApi(Build.VERSION_CODES.N)
 private class IcuUnits(locale: Locale) {
 
     private val whole = measures(locale, fractionDigits = 0)
