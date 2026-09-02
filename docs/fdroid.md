@@ -37,12 +37,6 @@ repositories — and every one of them declares Apache-2.0 except three:
   protobuf-javalite, repackaged by AndroidX under `androidx.datastore.preferences.protobuf`, and it
   arrives because DataStore serialises preferences as protobuf. BSD-3-Clause is DFSG-free,
   OSI-approved and GPL-compatible.
-- **`com.android.tools:desugar_jdk_libs`** is **GPL-2.0 with the Classpath Exception**, being
-  derived from OpenJDK. It ships in the APK — `coreLibraryDesugaring` dexes the `java.time` backport
-  into it, which is what lets `stats/Stats.kt` use `ZoneId` down at minSdk 23. The Classpath
-  Exception exists precisely to permit linking into a work under other terms, so it does not
-  reach the app's own MIT licence, and `License: MIT` in the recipe stays correct.
-
 The build-time-only graph is the same story: Room's KSP processor pulls in AutoValue, Error Prone,
 Guava, JavaPoet, commons-codec and `sqlite-jdbc`, and every cached POM among them declares
 Apache-2.0.

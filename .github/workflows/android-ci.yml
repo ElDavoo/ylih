@@ -226,14 +226,12 @@ jobs:
             variant: Debug
             apiLevel: 34
             label: unminified
-          # And once at the minSdk floor. Everything java.time in Stats.kt and Format.kt is
-          # backported there by core library desugaring rather than being the platform's, which is
-          # what the L8 pinning further down app/build.gradle.kts exists for — and nothing else in
-          # CI ever runs that code on a runtime that desugars it. The unit tests cannot: Robolectric
-          # runs against the compile SDK, which is why lint.xml exempts src/test from NewApi.
+          # And once at the minSdk floor, which is the only place the app's own API-26 branches
+          # run on a device: the unit tests cannot, because Robolectric runs against the compile
+          # SDK, which is why lint.xml exempts src/test from NewApi.
           - buildType: releaseTest
             variant: ReleaseTest
-            apiLevel: 23
+            apiLevel: 26
             label: minified, minSdk
 
     steps:
