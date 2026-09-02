@@ -40,7 +40,6 @@ import kotlinx.coroutines.sync.withLock
  * Runs only in "detailed tracking" mode. Wired plug events are never delivered to a manifest
  * receiver, so observing them at all requires a live process — that is the entire reason this
  * service (and its notification) exists. While it is up it also measures playback time.
- *
  */
 class TrackingService : LifecycleService() {
 

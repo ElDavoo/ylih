@@ -103,10 +103,8 @@ private val YEAR_FIELD = Regex("[^\\p{L}]*[yu]+[^\\p{L}]*")
 /**
  * Every `android.icu` type in this file, in one place.
  *
- * It was a class because building it was the version gate: `android.icu` arrived in API 24 and
- * `Formatters` held one or null below it. The floor is Android 8 now, so nothing is gated — what
- * the class still buys is that nothing outside can name a `MeasureUnit`, and that the two
- * `MeasureFormat`s are built once per locale beside the formatters that use them.
+ * A class rather than a few free functions so that nothing outside can name a `MeasureUnit`, and
+ * so the two `MeasureFormat`s are built once per locale beside the formatters that use them.
  *
  * NARROW rather than SHORT because these sit in chips, cards and a headline where "3h 7m" belongs
  * and "3 hrs, 7 mins" does not. Two formats because the whole-unit durations want no decimals and

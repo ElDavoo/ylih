@@ -14,7 +14,9 @@ import it.eldavo.ylih.data.Clock
  * for apps without MODIFY_AUDIO_ROUTING. [AudioManager.isMusicActive] is polled on every tick
  * as a safety net in case a player never shows up in that list.
  *
- * Only ever constructed from [TrackingService].
+ * Constructed only by [TrackingService], so it is alive only while detailed tracking is. Nothing
+ * else measures playback, which is why a session's `playingMs` is null wherever the service never
+ * ran rather than zero — the two mean different things to the stats.
  */
 class PlaybackWatcher(
     private val audioManager: AudioManager,
