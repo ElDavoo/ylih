@@ -119,9 +119,12 @@ build left that cannot start the foreground service on its own — that used to 
 without the flavor split, at the API 23 floor, but the floor moved past it. The route that
 survives is flavor-gated on purpose: the `play` flavor on Android 14+ with `BLUETOOTH_CONNECT`
 denied, which is the one place detailed tracking is still refused. Prefer a non-split path where
-one exists; where it does not, as here, the split is what CI runs both flavors for. The
-`*UnsupportedTest` classes (renamed from `*LegacyTest`, since their subject is no longer an old
-API level but a denied permission) are where it lives.
+one exists; where it does not, as here, the split is what CI runs both flavors for.
+`TrackingControllerTest`, `SettingsScreenTest`, `YlihViewModelTest` and `DistributionTest` cover
+it by asserting `Distribution.HAS_SPECIAL_USE_FGS` itself, or branching on it, rather than
+skipping on the flavor that cannot reach the denied state — a skipped test reads as coverage in
+the report while asserting nothing, so both flavors assert on every run and neither leaves a
+hole.
 
 ## Architecture
 
