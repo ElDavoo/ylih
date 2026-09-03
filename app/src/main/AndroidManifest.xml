@@ -22,7 +22,7 @@
 
     <!--
       hasFragileUserData puts a "keep app data" checkbox in the system's uninstall dialog (API 29+,
-      hence the targetApi — minSdk is 23 and lint would otherwise call the attribute unused). It is
+      hence the targetApi — minSdk is 26 and lint would otherwise call the attribute unused). It is
       the one way history survives a deliberate uninstall and reinstall on the same phone: cloud
       backup covers a new phone and only where the user has it enabled, and the JSON export is a
       thing someone has to remember to do first.
@@ -58,8 +58,7 @@
         <service
             android:name=".tracking.TrackingService"
             android:exported="false"
-            android:foregroundServiceType="connectedDevice"
-            tools:targetApi="26" />
+            android:foregroundServiceType="connectedDevice" />
 
         <!--
           ACL_CONNECTED/ACL_DISCONNECTED are on the implicit-broadcast exception list, so this

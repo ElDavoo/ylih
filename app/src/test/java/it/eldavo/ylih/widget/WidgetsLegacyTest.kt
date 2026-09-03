@@ -24,14 +24,14 @@ import java.time.LocalDate
  * The widgets below the API 31 floor, which is most of the range this app supports.
  *
  * `GlanceTheme` reads the platform's dynamic palette, and that palette does not exist before
- * Android 12 — so on everything from the minSdk 23 floor up to 11 the widgets fall back to the
+ * Android 12 — so on everything from the Android 8 floor up to 11 the widgets fall back to the
  * app's own colours instead. That is a branch no amount of testing at API 34 reaches, and getting
  * it wrong is not a crash: it is a widget rendered in Material's default purple on most of the
  * installed base, which nobody testing on a recent phone would ever see.
  */
 @RunWith(RobolectricTestRunner::class)
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
-@Config(sdk = [Build.VERSION_CODES.M])
+@Config(sdk = [Build.VERSION_CODES.O])
 class WidgetsLegacyTest {
 
     private val context: Context = ApplicationProvider.getApplicationContext()

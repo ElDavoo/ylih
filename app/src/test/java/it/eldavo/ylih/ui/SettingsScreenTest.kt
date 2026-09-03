@@ -7,6 +7,8 @@ import android.os.Build
 import android.os.Looper
 import android.provider.Settings
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.ui.test.assertIsEnabled
+import androidx.compose.ui.test.assertIsNotEnabled
 import androidx.compose.ui.test.assertIsOff
 import androidx.compose.ui.test.hasAnyAncestor
 import androidx.compose.ui.test.hasText
@@ -282,6 +284,14 @@ class SettingsScreenTest {
             if (Distribution.HAS_SPECIAL_USE_FGS) 0 else 1,
             nodeCount(text(R.string.settings_detailed_unavailable)),
         )
+        // Saying so is only half of it. A switch left live beside the note would spring back on
+        // every tap, which reads as a bug in the app rather than a limit of the build.
+        val switch = toggleBesides(text(R.string.settings_detailed_title))
+        if (Distribution.HAS_SPECIAL_USE_FGS) {
+            switch.assertIsEnabled()
+        } else {
+            switch.assertIsOff().assertIsNotEnabled()
+        }
     }
 
     @Test

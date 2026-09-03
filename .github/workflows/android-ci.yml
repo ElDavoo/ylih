@@ -162,12 +162,14 @@ jobs:
           python3 .github/scripts/r8-keep-check.py
           app/build/outputs/mapping/${{ matrix.flavor }}Release
 
-      # Also the gate. Instruction and line sit just under where the suite actually is — 96.4 and
-      # 99.6 — so they catch a regression without tracking noise. Branch is held further back, at
-      # 70 against an actual 75.7, deliberately: the Compose compiler emits a $changed bitmask
-      # branch for every composable parameter and no test drives those, so the number moves when
-      # a composable gains an argument rather than when testing gets worse. A floor that close to
-      # the line would report that as a coverage failure. See the script's docstring.
+      # Also the gate. Instruction sits just under where the suite actually is — classic measures
+      # 96.0 — so it catches a regression without tracking noise. Line is one number for both
+      # flavors and so has to clear the lower of them: classic measures 98.9 against play's 99.1,
+      # for the minSdk 26 reason CLAUDE.md sets out. Branch is held further back still, at 70
+      # against an actual 77.0, deliberately: the Compose compiler emits a $changed bitmask branch
+      # for every composable parameter and no test drives those, so the number moves when a
+      # composable gains an argument rather than when testing gets worse, and a floor set just
+      # under it would report that as a coverage failure. See the script's docstring.
       - name: Report coverage (${{ matrix.flavor }})
         if: always()
         run: >
@@ -175,7 +177,7 @@ jobs:
           app/build/reports/coverage/test/${{ matrix.flavor }}/releaseTest/report.xml
           ${{ matrix.flavor }}
           --min-instruction=95
-          --min-line=99
+          --min-line=98
           --min-branch=70
 
       - name: Build Play bundle
@@ -226,14 +228,12 @@ jobs:
             variant: Debug
             apiLevel: 34
             label: unminified
-          # And once at the minSdk floor. Everything java.time in Stats.kt and Format.kt is
-          # backported there by core library desugaring rather than being the platform's, which is
-          # what the L8 pinning further down app/build.gradle.kts exists for — and nothing else in
-          # CI ever runs that code on a runtime that desugars it. The unit tests cannot: Robolectric
-          # runs against the compile SDK, which is why lint.xml exempts src/test from NewApi.
+          # And once at the minSdk floor, which is the only place the app's own API-26 branches
+          # run on a device: the unit tests cannot, because Robolectric runs against the compile
+          # SDK, which is why lint.xml exempts src/test from NewApi.
           - buildType: releaseTest
             variant: ReleaseTest
-            apiLevel: 23
+            apiLevel: 26
             label: minified, minSdk
 
     steps:

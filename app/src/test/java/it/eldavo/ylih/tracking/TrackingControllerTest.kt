@@ -249,7 +249,45 @@ class TrackingControllerTest {
 
         assertEquals(Distribution.HAS_SPECIAL_USE_FGS, accepted)
         assertEquals(Distribution.HAS_SPECIAL_USE_FGS, settings.detailedTrackingNow())
+        // Refusing has to be all or nothing: a service started behind a setting that was never
+        // written would go on running with nothing on screen admitting it.
+        assertEquals(Distribution.HAS_SPECIAL_USE_FGS, startedService() != null)
     }
+
+    @Test
+    fun `a detailed-tracking setting restored from another phone is honoured or given up`() =
+        runTest {
+            // Preferences come back from Android's own backup, so the flag can land on a build
+            // that cannot act on it — no permission was ever granted here. An open wired session
+            // that nothing is watching would count until the end of time.
+            shadowOf(context).denyPermissions(Manifest.permission.BLUETOOTH_CONNECT)
+            connect(wired())
+            repository.onConnected(
+                AudioDevices.identityOf(wired())!!,
+                at = clockNow,
+                measurePlayback = true,
+            )
+            settings.setDetailedTracking(true)
+            val lastProof = clockNow
+
+            // Nothing ran across the hour that follows: no service, no heartbeat, no process even.
+            advance(hour)
+            controller.syncWithSystem()
+
+            val session = db.sessionDao().getAll().single()
+            if (Distribution.HAS_SPECIAL_USE_FGS) {
+                assertNull("specialUse means the service can take it over", session.disconnectedAt)
+                assertNotNull("so the setting is acted on", startedService())
+            } else {
+                assertEquals(
+                    "closed where we last had proof, not stretched over the gap",
+                    lastProof,
+                    session.disconnectedAt,
+                )
+                assertNull("the service was never asked for", startedService())
+            }
+            settings.setDetailedTracking(false)
+        }
 
     @Test
     fun `losing bluetooth access mid-flight retires the wired sessions rather than stretching them`() =

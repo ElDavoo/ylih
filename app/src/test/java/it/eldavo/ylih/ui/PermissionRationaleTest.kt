@@ -46,12 +46,12 @@ class PermissionRationaleTest {
     }
 
     /**
-     * The API 23 floor and the last release before the permission existed. Neither can be asked,
+     * The Android 8 floor and the last release before the permission existed. Neither can be asked,
      * and on both the platform reports it as held, so a caller that tested "granted" rather than
      * "is there anything to ask" would reach the same answer for the wrong reason.
      */
     @Test
-    @Config(sdk = [Build.VERSION_CODES.M, Build.VERSION_CODES.S_V2])
+    @Config(sdk = [Build.VERSION_CODES.O, Build.VERSION_CODES.S_V2])
     fun `below android 13 there is no notification permission to ask for`() {
         assertNull(notificationPermissionToAsk(context))
     }

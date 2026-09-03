@@ -18,7 +18,7 @@ answers happen to be the shortest part of this document:
 | Requirement | ylih |
 |---|---|
 | FLOSS licence, public source | MIT, `LICENSE`, GitHub |
-| No proprietary dependencies | no Play Services, no Firebase, no analytics; every artifact on the shipped classpath is Apache-2.0 but for three, all FLOSS — see below |
+| No proprietary dependencies | no Play Services, no Firebase, no analytics; every artifact on the shipped classpath is Apache-2.0 but for two, both FLOSS — see below |
 | Builds with a FLOSS toolchain | Gradle, AGP, KSP and the Android SDK; OpenJDK, never Oracle's |
 | No embedded API keys, no downloaded executables | there is no `INTERNET` permission, so neither is possible |
 
@@ -26,7 +26,7 @@ The dependency answer is worth stating from the resolved graph rather than from
 `libs.versions.toml`, because the declared list and the shipped list are not the same thing.
 `./gradlew :app:dependencies --configuration classicReleaseRuntimeClasspath` resolves to ~230
 artifacts, all from `google()` and `mavenCentral()` — both on F-Droid's allowlist of trusted Maven
-repositories — and every one of them declares Apache-2.0 except three:
+repositories — and every one of them declares Apache-2.0 except two:
 
 - **`com.google.guava:listenablefuture:1.0`** declares no licence at all. Its POM has no
   `<licenses>` block, which is a metadata gap rather than a licensing one: the jar holds exactly
@@ -37,11 +37,6 @@ repositories — and every one of them declares Apache-2.0 except three:
   protobuf-javalite, repackaged by AndroidX under `androidx.datastore.preferences.protobuf`, and it
   arrives because DataStore serialises preferences as protobuf. BSD-3-Clause is DFSG-free,
   OSI-approved and GPL-compatible.
-- **`com.android.tools:desugar_jdk_libs`** is **GPL-2.0 with the Classpath Exception**, being
-  derived from OpenJDK. It ships in the APK — `coreLibraryDesugaring` dexes the `java.time` backport
-  into it, which is what lets `stats/Stats.kt` use `ZoneId` down at minSdk 23. The Classpath
-  Exception exists precisely to permit linking into a work under other terms, so it does not
-  reach the app's own MIT licence, and `License: MIT` in the recipe stays correct.
 
 The build-time-only graph is the same story: Room's KSP processor pulls in AutoValue, Error Prone,
 Guava, JavaPoet, commons-codec and `sqlite-jdbc`, and every cached POM among them declares

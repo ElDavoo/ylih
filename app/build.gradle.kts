@@ -1,6 +1,5 @@
 @file:OptIn(com.github.takahirom.roborazzi.ExperimentalRoborazziApi::class)
 
-import com.android.build.gradle.internal.tasks.L8DexDesugarLibTask
 import org.gradle.testing.jacoco.plugins.JacocoTaskExtension
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -20,7 +19,7 @@ android {
 
     defaultConfig {
         applicationId = "it.eldavo.ylih"
-        minSdk = 23
+        minSdk = 26
         targetSdk = 37
         versionCode = 6
         versionName = "1.3.0"
@@ -172,9 +171,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
-        // java.time (ZoneId etc., used throughout stats/Stats.kt) is only native from API 26;
-        // desugaring backports it to the API 23 floor instead of rewriting that arithmetic.
-        isCoreLibraryDesugaringEnabled = true
     }
 
     testOptions {
@@ -295,27 +291,6 @@ tasks.matching { it.name.matches(Regex("test(Classic|Play)ReleaseUnitTest")) }.c
     enabled = false
 }
 
-// The desugared library (`j$.**`, what backports java.time to the minSdk 23 floor) is dexed by
-// its own L8 run per variant, and AGP tells L8 to leave names alone only when that variant is
-// unminified. releaseTest and the androidTest APK beside it are both minified, so each L8 run
-// shrank and renamed the library independently and the two APKs ended up defining 472 of the
-// same class names as different classes. Instrumentation loads both dexes into one classloader,
-// so the app's own code then resolves j$.util.stream.a to whichever copy came first:
-//
-//   java.lang.VerifyError: Verifier rejected class j$.util.concurrent.ThreadLocalRandom:
-//     'this' argument 'Uninitialized Reference: j$.util.stream.w0'
-//     not instance of 'Reference: j$.util.stream.a'
-//
-// Pinning both runs to the unshrunk, unrenamed library makes the two copies identical, which is
-// what every unminified build has always relied on. Matched by task name so it reaches only the
-// build type the tests install: l8DexDesugarLibClassicRelease and its play twin keep AGP's
-// default, and the shipped APKs are untouched.
-tasks.withType<L8DexDesugarLibTask>().configureEach {
-    if (name.contains("ReleaseTest")) {
-        keepRulesConfigurations.addAll("-dontshrink", "-dontobfuscate", "-dontoptimize")
-    }
-}
-
 // F-Droid's review bot reads `gradle/verification-metadata.xml` and flagged
 // `io.opencensus:opencensus-api` and `opencensus-proto` as trackers. They are not the app's:
 // `com.google.testing.platform:core` declares them, which is AGP's Unified Test Platform — the
@@ -356,8 +331,6 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
-
-    coreLibraryDesugaring(libs.android.desugar.jdk.libs)
 
     testImplementation(libs.junit)
     testImplementation(libs.robolectric)
