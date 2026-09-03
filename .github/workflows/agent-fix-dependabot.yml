@@ -33,7 +33,10 @@ jobs:
       pr: ${{ steps.find.outputs.pr }}
       branch: ${{ steps.find.outputs.branch }}
       logs: ${{ steps.logs.outputs.text }}
-      go: ${{ steps.find.outputs.go }}
+      # The logs step gets the last word: it is the only place that can tell the
+      # checksum race below apart from a real failure. Empty when it was skipped,
+      # which falls back to the find step's own verdict.
+      go: ${{ steps.logs.outputs.go || steps.find.outputs.go }}
 
     steps:
       - name: Find the pull request
@@ -95,6 +98,31 @@ jobs:
           if [ ! -s /tmp/failed.log ]; then
             printf 'Could not download the failed job logs. Run: %s\n' "$RUN_URL" > /tmp/failed.log
           fi
+
+          # Every gradle Dependabot PR fails its first Android CI run this way, by design:
+          # Dependabot bumps libs.versions.toml and leaves gradle/verification-metadata.xml
+          # alone, so the build refuses the new artifacts as unverified. That failure already has
+          # an owner -- dependabot-verification-metadata.yml regenerates the checksums and pushes
+          # them onto the branch, and that push starts a CI run that can actually pass.
+          #
+          # The ordering is the whole reason this check exists, and it is tight. Measured on
+          # dependabot/gradle/android-dependencies-7420ff79c5: Android CI went red at 06:23:09 and
+          # the checksum commit landed at 06:24:03 -- 54 seconds later. This workflow fires inside
+          # that window, on a failure that is already being repaired. Without the skip the agent is
+          # handed a phantom log, correctly declines to touch verification-metadata.xml because the
+          # prompt forbids it, changes nothing, and hits the empty-tree branch -- which is terminal:
+          # comment, `agent:stuck`, auto-merge disarmed. The metadata push then arrives and its CI
+          # run is skipped by the label the agent just set, so the most common Dependabot PR in the
+          # repository goes from self-healing in three minutes to dead until a human intervenes,
+          # having burnt a 60-minute agent job and a full CI matrix to get there.
+          if grep -q 'Dependency verification failed' /tmp/failed.log \
+             && grep -q 'checksums are missing' /tmp/failed.log; then
+            echo "::notice::Android CI failed on missing dependency checksums. dependabot-verification-metadata.yml owns that failure and its push will re-trigger CI — nothing to fix here."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "go=true" >> "$GITHUB_OUTPUT"
           {
             printf 'text<<CI_LOG_EOF\n'
             cat /tmp/failed.log
@@ -249,12 +277,14 @@ jobs:
           always() && needs.context.outputs.go == 'true'
           && (steps.round.outputs.stuck == 'true'
               || steps.fix.outcome == 'failure'
+              || steps.push.outcome == 'failure'
               || steps.push.outputs.empty == 'true')
         env:
           GH_TOKEN: ${{ secrets.AGENT_PUSH_TOKEN }}
           PR: ${{ needs.context.outputs.pr }}
           ROUND: ${{ steps.round.outputs.round }}
           STALLED: ${{ steps.fix.outcome == 'failure' }}
+          REJECTED: ${{ steps.push.outcome == 'failure' }}
           PAYLOAD: ${{ needs.context.outputs.logs }}
         run: |
           set -euo pipefail
@@ -268,6 +298,14 @@ jobs:
               printf 'Unlike the issue pipeline there is no five-hourly retry here: take the '
               printf '%sagent:stuck%s label off to let the next CI failure pick it up again, '  "$tick" "$tick"
               printf 'or just close this pull request and let Dependabot raise it next Monday.\n\n'
+            elif [ "$REJECTED" = true ]; then
+              printf '## the fix was written but could not be pushed\n\n'
+              printf 'Round %s produced a change and %sgit push --force-with-lease%s was '  "$ROUND" "$tick" "$tick"
+              printf 'refused, so this branch is exactly as it was and the work is gone with '
+              printf 'the runner. Two things do this: Dependabot rebased the branch mid-round '
+              printf 'and the lease no longer holds, or the push token lacks the %sworkflow%s '  "$tick" "$tick"
+              printf 'scope and this branch was cut before the current workflow files landed on '
+              printf 'main — the same refusal agent-implement.yml hit on issue 19.\n\n'
             elif [ "$ROUND" -gt 3 ]; then
               printf '## stuck after 3 fix rounds\n\n'
             else
@@ -285,4 +323,8 @@ jobs:
           } > /tmp/stuck.md
           gh pr comment "$PR" --body-file /tmp/stuck.md
           gh pr edit "$PR" --add-label 'agent:stuck'
-          gh pr merge --disable-auto "$PR"
+          # Tolerated, under set -e, because auto-merge may never have been armed: the arm loop in
+          # dependabot-auto-merge.yml skips a PR that needs a rebase, and gh exits non-zero when
+          # asked to disarm what is not armed. Failing here reddens the run after the comment and
+          # the label have already landed, which loses the one thing this step is for.
+          gh pr merge --disable-auto "$PR" || echo "::notice::auto-merge was not armed on #$PR."
