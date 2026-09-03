@@ -1,6 +1,6 @@
 [versions]
 # Keep buildTools/compileSdk in sync with flake.nix and .github/workflows/*.yml
-agp = "9.3.2"
+agp = "9.4.0"
 # AGP 9 compiles Kotlin itself and rejects the standalone kotlin-android plugin. The Kotlin
 # Gradle plugin these two pull onto the buildscript classpath overrides the one AGP bundles,
 # so they must stay equal to each other: KSP has no release for Kotlin 2.4.x yet, which is
@@ -25,7 +25,7 @@ composeBom = "2026.08.00"
 # together: leave the ignore in place while the pin stands, or the weekly grouped PR reintroduces
 # alpha26 and takes every other bump in it down with it.
 material3 = "1.5.0-alpha25"
-navigationCompose = "2.9.8"
+navigationCompose = "2.10.0"
 room = "2.8.4"
 work = "2.11.2"
 # The home-screen widgets. Stable on purpose, and two years older than everything around it:
@@ -45,7 +45,7 @@ androidxTestJunit = "1.3.0"
 androidxTestRunner = "1.7.0"
 # Renders the real Compose UI on the JVM through Robolectric's native graphics, which is how the
 # Play listing screenshots are generated without an emulator anywhere in the toolchain.
-roborazzi = "1.72.0"
+roborazzi = "1.73.0"
 # Drives android.testCoverage.jacocoVersion; AGP's bundled default predates JDK 21 class files.
 jacoco = "0.8.13"
 
