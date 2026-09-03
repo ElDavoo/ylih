@@ -46,26 +46,69 @@ jobs:
 
           # The branch, not github.event.workflow_run.pull_requests: that array is empty in
           # several documented cases, and a Dependabot branch is always in this repository.
-          pr=$(gh pr list --head "$BRANCH" --state open \
-                 --json number,author --jq '.[0] | select(.author.login == "app/dependabot") | .number')
-          if [ -z "$pr" ]; then
+          pr_json=$(gh pr list --head "$BRANCH" --state open --json number,author,labels \
+                      --jq '.[0] | select(.author.login == "app/dependabot")')
+          if [ -z "$pr_json" ]; then
             echo "::notice::No open Dependabot pull request for $BRANCH."
             exit 0
           fi
+          pr=$(printf '%s' "$pr_json" | jq -r '.number')
+
+          # The same kill switch agent-fix-dependabot.yml and dependabot-auto-merge.yml honour.
+          # An approval outlives the label that stopped everything else: approve a PR the agent
+          # gave up on and it merges the instant a human clears `agent:stuck` -- which is the
+          # moment the human is still reading why it was set.
+          if printf '%s' "$pr_json" | jq -e '[.labels[].name] | index("agent:stuck")' > /dev/null; then
+            echo "::notice::PR #$pr carries agent:stuck; leaving it for a human."
+            exit 0
+          fi
+
+          # These names must match the `main protection` ruleset's required_status_checks.
+          #
+          # They are read out of the rollup by name because `gh pr checks --required` cannot see
+          # the one that matters. It exits 8 for a check that exists and is pending, but
+          # `all-green` is `needs: [listing, build, instrumented]`, so no check run for it exists
+          # until the whole Android CI matrix has finished -- it is *absent* from the rollup, not
+          # pending in it, and `gh pr checks --required` then exits 0 on the surviving `devshell`
+          # alone. Confirmed live: mid-run on PR #26 it listed only `devshell` and exited 0 while
+          # the build jobs were still going.
+          #
+          # Timed on dependabot/gradle/android-dependencies-7420ff79c5: PR opened 06:21:02,
+          # `devshell` green at 06:21:12, this workflow woken by that run at ~06:21:15, Android CI
+          # red at 06:23:09. Trusting the exit code approved the PR ten seconds after it opened
+          # and two minutes before CI failed. So: present *and* successful, or no approval.
+          required=(all-green devshell)
 
           # Read the whole rollup rather than trusting the run that woke us. This is what makes
           # "two workflows, either order" correct: the first to finish sees the other still
-          # pending and does nothing; the last sees everything green.
-          #
-          # All three exit codes matter and none may be collapsed. 0 is every required check
-          # passed, 8 is at least one still pending, 1 is one failed -- so a bare `if !` would
-          # read "still running" as "failed", and anything that treats a non-zero as "approve"
-          # would approve a pull request whose checks nobody waited for.
-          status=0
-          gh pr checks "$pr" --required > /tmp/checks.txt 2>&1 || status=$?
-          cat /tmp/checks.txt
-          if [ "$status" -ne 0 ]; then
-            echo "::notice::PR #$pr is not green yet (gh pr checks exited $status)."
+          # missing or pending and does nothing; the last sees everything green.
+          rollup=$(gh pr view "$pr" --json statusCheckRollup --jq '.statusCheckRollup')
+
+          # A check run reports `conclusion` once it finishes and `status` before that; a commit
+          # status reports `state` under `context` instead. Anything that is not an outright
+          # SUCCESS -- absent, queued, skipped, failed -- is a reason not to approve.
+          verdict_of() {
+            printf '%s' "$rollup" | jq -r --arg n "$1" '
+              def verdict:
+                if (.conclusion // "") != "" then .conclusion
+                elif (.state // "") != "" then .state
+                elif (.status // "") != "" then .status
+                else "PENDING" end | ascii_upcase;
+              [.[] | select((.name // .context) == $n) | verdict] as $v
+              | if ($v | length) == 0 then "ABSENT"
+                elif ($v | all(. == "SUCCESS")) then "SUCCESS"
+                else ($v | map(select(. != "SUCCESS")) | first)
+                end'
+          }
+
+          blocked=""
+          for name in "${required[@]}"; do
+            state=$(verdict_of "$name")
+            echo "$name = $state"
+            [ "$state" = SUCCESS ] || blocked="$blocked $name=$state"
+          done
+          if [ -n "$blocked" ]; then
+            echo "::notice::PR #$pr is not green yet:$blocked."
             exit 0
           fi
 
@@ -81,3 +124,16 @@ jobs:
 
           gh pr review "$pr" --approve \
             --body 'Every required check is green. Approved automatically: for a dependency bump, CI is the review.'
+
+          # The one way this can still stall in silence. The ruleset carries
+          # require_extra_approval_for_unattributed_changes, and every gradle Dependabot PR carries
+          # a github-actions[bot] checksum commit from dependabot-verification-metadata.yml. If
+          # that flag demands a second approval, the idempotency check above guarantees this
+          # workflow never supplies one, and the PR sits green, approved and unmerged -- which is
+          # indistinguishable from success, and is the exact failure this design exists to remove.
+          # A warning and not a failure: the approval did land, and reviewDecision can trail the
+          # review it was just given.
+          decision=$(gh pr view "$pr" --json reviewDecision --jq '.reviewDecision')
+          if [ "$decision" != APPROVED ]; then
+            echo "::warning::PR #$pr still reads reviewDecision=$decision after being approved. Most likely the main protection ruleset's require_extra_approval_for_unattributed_changes, which the github-actions[bot] checksum commit trips; it will not merge without a human approval."
+          fi
