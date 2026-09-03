@@ -73,6 +73,16 @@ jobs:
             [ -n "$pr" ] || continue
             echo "::group::$pr"
 
+            # agent-fix-dependabot.yml labels a pull request it has given up on and disarms
+            # auto-merge. This loop re-arms every open Dependabot PR on every push to main, so
+            # without this check the give-up would be undone by the next merge.
+            if gh pr view "$pr" --json labels --jq '[.labels[].name] | join(",")' \
+                 | grep -q 'agent:stuck'; then
+              echo "skipping: labelled agent:stuck"
+              echo "::endgroup::"
+              continue
+            fi
+
             # GitHub refuses enablePullRequestAutoMerge on a PR that is already mergeable with every
             # required check green -- "Pull request is in clean status" -- because there is nothing
             # left to wait for. A run that lands after CI has finished hits that, and PR #15 hit it

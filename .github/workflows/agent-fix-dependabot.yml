@@ -1,0 +1,330 @@
+name: Agent · fix Dependabot
+
+# Android CI finished failing on a Dependabot branch. Gather what failed and let the agent try to
+# repair the bump. See docs/agent-pipeline.md for the issue-driven sibling of this file.
+#
+# Deliberately not a caller of agent-fix.yml. That workflow is built around an issue: it checks
+# out agent/issue-N, counts rounds as `git rev-list --count origin/main..HEAD`, requires an
+# `issue` number for its labels and stuck comment, and budgets 10 rounds with an escalation at 9.
+# All four are wrong here.
+
+# workflow_run is the trigger this needs, not a convenience: the job reads the failed run's logs,
+# which a check on the pull request cannot reach. It runs the workflow file from main rather than
+# the branch under test, so the branch cannot rewrite what executes here.
+on:  # zizmor: ignore[dangerous-triggers]
+  workflow_run:
+    workflows: ["Android CI"]
+    types: [completed]
+
+# Granted per job: the context job needs only to read, and the job that runs the agent is the one
+# holding a push token.
+permissions: {}
+
+jobs:
+  context:
+    permissions:
+      contents: read
+      actions: read
+    if: >-
+      github.event.workflow_run.conclusion == 'failure'
+      && startsWith(github.event.workflow_run.head_branch, 'dependabot/')
+    runs-on: ubuntu-latest
+    outputs:
+      pr: ${{ steps.find.outputs.pr }}
+      branch: ${{ steps.find.outputs.branch }}
+      logs: ${{ steps.logs.outputs.text }}
+      # The logs step gets the last word: it is the only place that can tell the
+      # checksum race below apart from a real failure. Empty when it was skipped,
+      # which falls back to the find step's own verdict.
+      go: ${{ steps.logs.outputs.go || steps.find.outputs.go }}
+
+    steps:
+      - name: Find the pull request
+        id: find
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          BRANCH: ${{ github.event.workflow_run.head_branch }}
+        run: |
+          set -euo pipefail
+          pr=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number // empty')
+          if [ -z "$pr" ]; then
+            echo "::notice::No open pull request for $BRANCH — nothing to fix."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # A stopped or given-up branch is left alone, and so is a draft.
+          state=$(gh pr view "$pr" --json isDraft,labels --jq '[(.isDraft|tostring)] + [.labels[].name] | join(",")')
+          case ",$state," in
+            *,true,*|*,agent:stop,*|*,agent:stuck,*)
+              echo "::notice::PR #$pr is draft or stopped — leaving it alone."
+              echo "go=false" >> "$GITHUB_OUTPUT"
+              exit 0 ;;
+          esac
+          # The startsWith() check above only tests the branch name in the event payload, which an
+          # outside contributor can spoof by naming a fork branch dependabot/anything. What the
+          # fix job actually trusts is a checkout it runs ./gradlew against while holding a push
+          # token, so the branch it checks out has to come from a PR proven to be Dependabot's own
+          # -- opened by the real bot account, and not from a fork, since headRefName on a
+          # cross-repository PR names a branch this repository does not own and cannot push to
+          # anyway. Fail closed: an empty or unexpected field is treated as untrusted.
+          info=$(gh pr view "$pr" --json author,headRefName,isCrossRepository \
+            --jq '[.author.login, .headRefName, (.isCrossRepository|tostring)] | join("|")')
+          IFS='|' read -r author head_ref cross <<< "$info"
+          if [ "$author" != "app/dependabot" ] || [ "$cross" != "false" ] || [ -z "$head_ref" ]; then
+            echo "::notice::PR #$pr is not a same-repo Dependabot pull request — leaving it alone."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          {
+            echo "pr=$pr"
+            echo "branch=$head_ref"
+            echo "go=true"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Collect the failed job logs
+        id: logs
+        if: steps.find.outputs.go == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+        run: |
+          set -euo pipefail
+          # Truncated to the tail, hard: the whole thing has to fit in an environment variable,
+          # and the tail is where the failure is. The head is SDK downloads.
+          gh run view "$RUN_ID" --log-failed 2>/dev/null | tail -c 30000 > /tmp/failed.log || true
+          if [ ! -s /tmp/failed.log ]; then
+            printf 'Could not download the failed job logs. Run: %s\n' "$RUN_URL" > /tmp/failed.log
+          fi
+
+          # Every gradle Dependabot PR fails its first Android CI run this way, by design:
+          # Dependabot bumps libs.versions.toml and leaves gradle/verification-metadata.xml
+          # alone, so the build refuses the new artifacts as unverified. That failure already has
+          # an owner -- dependabot-verification-metadata.yml regenerates the checksums and pushes
+          # them onto the branch, and that push starts a CI run that can actually pass.
+          #
+          # The ordering is the whole reason this check exists, and it is tight. Measured on
+          # dependabot/gradle/android-dependencies-7420ff79c5: Android CI went red at 06:23:09 and
+          # the checksum commit landed at 06:24:03 -- 54 seconds later. This workflow fires inside
+          # that window, on a failure that is already being repaired. Without the skip the agent is
+          # handed a phantom log, correctly declines to touch verification-metadata.xml because the
+          # prompt forbids it, changes nothing, and hits the empty-tree branch -- which is terminal:
+          # comment, `agent:stuck`, auto-merge disarmed. The metadata push then arrives and its CI
+          # run is skipped by the label the agent just set, so the most common Dependabot PR in the
+          # repository goes from self-healing in three minutes to dead until a human intervenes,
+          # having burnt a 60-minute agent job and a full CI matrix to get there.
+          if grep -q 'Dependency verification failed' /tmp/failed.log \
+             && grep -q 'checksums are missing' /tmp/failed.log; then
+            echo "::notice::Android CI failed on missing dependency checksums. dependabot-verification-metadata.yml owns that failure and its push will re-trigger CI — nothing to fix here."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "go=true" >> "$GITHUB_OUTPUT"
+          {
+            printf 'text<<CI_LOG_EOF\n'
+            cat /tmp/failed.log
+            printf '\nCI_LOG_EOF\n'
+          } >> "$GITHUB_OUTPUT"
+
+  fix:
+    needs: [context]
+    if: needs.context.outputs.go == 'true'
+    permissions:
+      contents: read
+      # The action fetches a GitHub OIDC token on every run, including the OAuth path, and fails
+      # after three retries without this.
+      id-token: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    concurrency:
+      group: agent-fix-dependabot-${{ needs.context.outputs.pr }}
+      cancel-in-progress: false
+
+    steps:
+      # The ref comes from the context job's output, never from github.event.workflow_run.head_branch
+      # directly -- that field is a string an outside contributor can set to anything by naming a
+      # fork branch dependabot/whatever, and this job runs ./gradlew against the checked-out tree
+      # (here and again inside the agent's own turn) while holding a push token. context.outputs.branch
+      # is the same string, but only after a step has confirmed the PR carrying it was opened by the
+      # real Dependabot bot and is not a fork's head. Do not "simplify" this back to the event field.
+      - name: Checkout the Dependabot branch
+        # the PAT below is what pushes this branch, so it has to persist.
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7  # zizmor: ignore[artipacked]
+        with:
+          token: ${{ secrets.AGENT_PUSH_TOKEN }}
+          ref: ${{ needs.context.outputs.branch }}
+          fetch-depth: 0
+
+      # Rounds are counted in commits this agent has already written on the branch, read fresh
+      # every run rather than stored. Dependabot force-pushes over its own branch when it rebases
+      # and discards those commits; that is self-healing, but a stored counter would outlive the
+      # work it was counting.
+      #
+      # Three, not ten. A bump either compiles against the new version or it does not, and the
+      # failures that need ten rounds are the ones this stage is told not to attempt at all.
+      - name: Count the round
+        id: round
+        run: |
+          set -euo pipefail
+          done_rounds=$(git log --author='ylih agent' --oneline origin/main..HEAD | wc -l)
+          round=$(( done_rounds + 1 ))
+          echo "round=$round" >> "$GITHUB_OUTPUT"
+          if [ "$round" -gt 3 ]; then echo "stuck=true"  >> "$GITHUB_OUTPUT"
+          else                        echo "stuck=false" >> "$GITHUB_OUTPUT"; fi
+          echo "fix round $round of 3"
+
+      - name: Set up the Android toolchain
+        if: steps.round.outputs.stuck != 'true'
+        uses: ./.github/actions/android-setup
+
+      - name: Write the context out
+        if: steps.round.outputs.stuck != 'true'
+        env:
+          PAYLOAD: ${{ needs.context.outputs.logs }}
+        run: printf '%s\n' "$PAYLOAD" > /tmp/failure.txt
+
+      - name: Fix
+        id: fix
+        if: steps.round.outputs.stuck != 'true'
+        continue-on-error: true
+        uses: anthropics/claude-code-action@a874e9ecd7bb36efdad65429c6b35815f5a08f10 # v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            This is fix round ${{ steps.round.outputs.round }} of 3 on pull request
+            #${{ needs.context.outputs.pr }}, a Dependabot dependency bump. The branch is
+            checked out. Android CI failed; the failed jobs' logs are in /tmp/failure.txt.
+
+            Read CLAUDE.md first. Most CI failures in this repository are a documented gate
+            rather than a bug, and the file says what each one wants: a lint warning is a build
+            failure, a Kotlin deprecation is a build failure, a missing translation is a build
+            failure, the coverage gate has floors on instruction, line and branch, and
+            r8-keep-check.py guards what R8 may rename.
+
+            Your remit here is narrower than it would be on a feature branch.
+
+            IN SCOPE — the app no longer builds against the new version of a dependency:
+            a renamed or moved API, a changed signature, a deprecation that allWarningsAsErrors
+            turned into an error, a Roborazzi capture or a Compose test that needs re-recording
+            because a library changed what it draws. Fix the app code.
+
+            OUT OF SCOPE — the new version conflicts with a constraint this repository holds on
+            purpose. A minSdk floor, a version pinned by hand with a comment saying why, an
+            entry in .github/dependabot.yml's ignore list. The manifest-merger error
+            "uses-sdk:minSdkVersion N cannot be smaller than version M declared in library" is
+            the clearest example. Those are decisions about what the app supports, and they
+            belong to a human. Do not pin, unpin, or edit an ignore list to get past one.
+            Write a short comment saying exactly which constraint was hit and why the bump
+            cannot land without changing it, change nothing else, and stop.
+
+            NEVER edit gradle/verification-metadata.xml. dependabot-verification-metadata.yml
+            owns that file and a second writer would race it.
+
+            NEVER weaken a gate to pass it. Lowering a coverage floor, adding a lint baseline,
+            disabling a check in app/lint.xml, or deleting a failing assertion is not a fix.
+
+            Diagnose before you change anything, then make the smallest change that fixes the
+            cause and re-run the cheap gates:
+
+                node .claude/skills/translations/strings.mjs check
+                ./gradlew --no-daemon lintClassicReleaseTest
+                ./gradlew --no-daemon testClassicReleaseTestUnitTest
+
+            Do not commit or push. Leave your work in the working tree.
+          claude_args: >-
+            --max-turns 120
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash"
+            --disallowedTools "Bash(gh:*),Bash(curl:*),Bash(wget:*),Bash(nc:*),Bash(ssh:*),Bash(scp:*),Bash(git push:*),Bash(git remote:*),Bash(git config:*),WebFetch,WebSearch"
+
+      # Deliberately not .github/actions/agent-stall, and not agent-retry.yml. That pair
+      # recovers a usage limit by re-running the stalled run five hours later, and it cannot
+      # reach a pull request: agent-retry.yml sweeps with `gh issue list`, which excludes pull
+      # requests entirely, finds the branch with a hardcoded `--head agent/issue-N`, and only
+      # re-runs workflows on a five-name allowlist. Three edits to a security-sensitive sweep,
+      # for a case whose recovery is a human taking a label off. So a stalled run here takes the
+      # same visible exit as a failed one: commented, labelled, disarmed. Silence is the one
+      # outcome worth engineering against, and this is not silent.
+      - name: Commit and push
+        id: push
+        if: steps.round.outputs.stuck != 'true' && steps.fix.outcome == 'success'
+        env:
+          ROUND: ${{ steps.round.outputs.round }}
+          BRANCH: ${{ needs.context.outputs.branch }}
+        run: |
+          set -euo pipefail
+          git config user.name  'ylih agent'
+          git config user.email 'dpfuturehacker@gmail.com'
+          git add -A
+          if git diff --cached --quiet; then
+            # Terminal, unlike the issue pipeline's equivalent. An empty round here is the
+            # expected shape of the out-of-scope case: an agent that correctly identifies a
+            # deliberate constraint and declines to patch around it leaves the tree clean, and
+            # that is the signal to stop rather than to spend two more rounds rediscovering it.
+            echo "empty=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "empty=false" >> "$GITHUB_OUTPUT"
+          git commit -m "fix round ${ROUND}: repair the bump against the app"
+          # force-with-lease because Dependabot may have rebased under us.
+          git push --force-with-lease origin "HEAD:${BRANCH}"
+
+      - name: Give up
+        if: >-
+          always() && needs.context.outputs.go == 'true'
+          && (steps.round.outputs.stuck == 'true'
+              || steps.fix.outcome == 'failure'
+              || steps.push.outcome == 'failure'
+              || steps.push.outputs.empty == 'true')
+        env:
+          GH_TOKEN: ${{ secrets.AGENT_PUSH_TOKEN }}
+          PR: ${{ needs.context.outputs.pr }}
+          ROUND: ${{ steps.round.outputs.round }}
+          STALLED: ${{ steps.fix.outcome == 'failure' }}
+          REJECTED: ${{ steps.push.outcome == 'failure' }}
+          PAYLOAD: ${{ needs.context.outputs.logs }}
+        run: |
+          set -euo pipefail
+          tick='`'
+          fence='~~~'
+          {
+            if [ "$STALLED" = true ]; then
+              printf '## the fix stage stopped before it finished\n\n'
+              printf 'Claude did not complete round %s — a usage limit is the usual cause. '  "$ROUND"
+              printf 'Nothing was pushed, so this branch is exactly as it was.\n\n'
+              printf 'Unlike the issue pipeline there is no five-hourly retry here: take the '
+              printf '%sagent:stuck%s label off to let the next CI failure pick it up again, '  "$tick" "$tick"
+              printf 'or just close this pull request and let Dependabot raise it next Monday.\n\n'
+            elif [ "$REJECTED" = true ]; then
+              printf '## the fix was written but could not be pushed\n\n'
+              printf 'Round %s produced a change and %sgit push --force-with-lease%s was '  "$ROUND" "$tick" "$tick"
+              printf 'refused, so this branch is exactly as it was and the work is gone with '
+              printf 'the runner. Two things do this: Dependabot rebased the branch mid-round '
+              printf 'and the lease no longer holds, or the push token lacks the %sworkflow%s '  "$tick" "$tick"
+              printf 'scope and this branch was cut before the current workflow files landed on '
+              printf 'main — the same refusal agent-implement.yml hit on issue 19.\n\n'
+            elif [ "$ROUND" -gt 3 ]; then
+              printf '## stuck after 3 fix rounds\n\n'
+            else
+              printf '## stopping: this needs a decision, not a patch\n\n'
+              printf 'Round %s changed nothing, which is how this stage reports a bump blocked '  "$ROUND"
+              printf 'by a constraint held on purpose — a minSdk floor, a hand-held pin, an '
+              printf 'ignore list entry. See the comment above this one.\n\n'
+            fi
+            printf 'Auto-merge is disarmed. Nothing automated will touch this pull request '
+            printf 'again until the %sagent:stuck%s label comes off.\n\n' "$tick" "$tick"
+            printf '### the failure it could not get past\n\n'
+            printf '%s\n' "$fence"
+            printf '%s\n' "$PAYLOAD" | tail -n 80
+            printf '%s\n' "$fence"
+          } > /tmp/stuck.md
+          gh pr comment "$PR" --body-file /tmp/stuck.md
+          gh pr edit "$PR" --add-label 'agent:stuck'
+          # Tolerated, under set -e, because auto-merge may never have been armed: the arm loop in
+          # dependabot-auto-merge.yml skips a PR that needs a rebase, and gh exits non-zero when
+          # asked to disarm what is not armed. Failing here reddens the run after the comment and
+          # the label have already landed, which loses the one thing this step is for.
+          gh pr merge --disable-auto "$PR" || echo "::notice::auto-merge was not armed on #$PR."
