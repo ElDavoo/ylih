@@ -175,7 +175,7 @@ jobs:
           app/build/reports/coverage/test/${{ matrix.flavor }}/releaseTest/report.xml
           ${{ matrix.flavor }}
           --min-instruction=95
-          --min-line=99
+          --min-line=98
           --min-branch=70
 
       - name: Build Play bundle

@@ -76,12 +76,20 @@ see Testing — gives AGP a `create<Variant>UnitTestCoverageReport` task; the re
 `app/build/reports/coverage/test/<flavor>/releaseTest/` and CI uploads it with the other reports
 and prints the summary table into the job summary.
 
-**It is a gate, not just a report.** CI passes `--min-instruction=95 --min-line=99
---min-branch=70` and the job fails below any of them. Instruction and line sit just under where
-the suite actually is (96.3 and 99.1 on classic), so they catch a regression rather than track
-noise; the failure message prints the miss budget, not just the percentage.
+**It is a gate, not just a report.** CI passes `--min-instruction=95 --min-line=98
+--min-branch=70` and the job fails below any of them; the failure message prints the miss budget,
+not just the percentage. Line used to sit at 99 until minSdk 26 made it uncollectable there: on
+`classic`, `Distribution.HAS_SPECIAL_USE_FGS` is compile-time true, so
+`TrackingController.detailedTrackingSupported()` short-circuits before its Bluetooth-permission
+check and `SettingsScreen`'s "detailed tracking unavailable" notice is unreachable — that path
+only exists for `play`, where API 34+ needs the permission because the flavor declares no
+`specialUse` foreground-service type. Below API 26 an install without the foreground service used
+to reach the same lines a different way; raising the floor deleted that route for good, so this is
+dead code on one flavor rather than a testing gap. The shared floor is one number for both
+flavors, so it costs something on the flavor that didn't lose lines: `play` runs at 99.1 but is
+only held to 98, and a real regression there down to that line would pass unnoticed.
 
-Branch is gated differently and is worth understanding before moving it. The suite is at 77.1 and
+Branch is gated differently and is worth understanding before moving it. The suite is at 77.0 and
 the floor is 70 — deliberately loose, because the counter does not measure what the other two do.
 For the reason two paragraphs down, it moves when a composable gains a parameter rather than when
 testing gets worse, so a floor set just under it would fail ordinary UI work as a coverage
