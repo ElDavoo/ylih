@@ -31,6 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       pr: ${{ steps.find.outputs.pr }}
+      branch: ${{ steps.find.outputs.branch }}
       logs: ${{ steps.logs.outputs.text }}
       go: ${{ steps.find.outputs.go }}
 
@@ -57,8 +58,24 @@ jobs:
               echo "go=false" >> "$GITHUB_OUTPUT"
               exit 0 ;;
           esac
+          # The startsWith() check above only tests the branch name in the event payload, which an
+          # outside contributor can spoof by naming a fork branch dependabot/anything. What the
+          # fix job actually trusts is a checkout it runs ./gradlew against while holding a push
+          # token, so the branch it checks out has to come from a PR proven to be Dependabot's own
+          # -- opened by the real bot account, and not from a fork, since headRefName on a
+          # cross-repository PR names a branch this repository does not own and cannot push to
+          # anyway. Fail closed: an empty or unexpected field is treated as untrusted.
+          info=$(gh pr view "$pr" --json author,headRefName,isCrossRepository \
+            --jq '[.author.login, .headRefName, (.isCrossRepository|tostring)] | join("|")')
+          IFS='|' read -r author head_ref cross <<< "$info"
+          if [ "$author" != "app/dependabot" ] || [ "$cross" != "false" ] || [ -z "$head_ref" ]; then
+            echo "::notice::PR #$pr is not a same-repo Dependabot pull request — leaving it alone."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           {
             echo "pr=$pr"
+            echo "branch=$head_ref"
             echo "go=true"
           } >> "$GITHUB_OUTPUT"
 
@@ -100,12 +117,18 @@ jobs:
       cancel-in-progress: false
 
     steps:
+      # The ref comes from the context job's output, never from github.event.workflow_run.head_branch
+      # directly -- that field is a string an outside contributor can set to anything by naming a
+      # fork branch dependabot/whatever, and this job runs ./gradlew against the checked-out tree
+      # (here and again inside the agent's own turn) while holding a push token. context.outputs.branch
+      # is the same string, but only after a step has confirmed the PR carrying it was opened by the
+      # real Dependabot bot and is not a fork's head. Do not "simplify" this back to the event field.
       - name: Checkout the Dependabot branch
         # the PAT below is what pushes this branch, so it has to persist.
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7  # zizmor: ignore[artipacked]
         with:
           token: ${{ secrets.AGENT_PUSH_TOKEN }}
-          ref: ${{ github.event.workflow_run.head_branch }}
+          ref: ${{ needs.context.outputs.branch }}
           fetch-depth: 0
 
       # Rounds are counted in commits this agent has already written on the branch, read fresh
@@ -202,7 +225,7 @@ jobs:
         if: steps.round.outputs.stuck != 'true' && steps.fix.outcome == 'success'
         env:
           ROUND: ${{ steps.round.outputs.round }}
-          BRANCH: ${{ github.event.workflow_run.head_branch }}
+          BRANCH: ${{ needs.context.outputs.branch }}
         run: |
           set -euo pipefail
           git config user.name  'ylih agent'
