@@ -13,12 +13,13 @@ updates:
         patterns:
           - "*"
     ignore:
-      # Held at 1.5.0-alpha25 by hand, for the reason libs.versions.toml states at the pin:
-      # every release after it carries a material3-ripple-android with minSdk 24, which fails
-      # the manifest merge against this app's minSdk 23 floor. Dependabot cannot read that
-      # comment, so it raised the same unmergeable PR every Monday and dragged three healthy
-      # bumps down with it -- a grouped PR is one merge or none. Advancing this is a decision
-      # about the floor, not a version bump, so it stays a human one.
+      # Held at 1.5.0-alpha25 by hand, for the reason libs.versions.toml states at the pin.
+      # The original objection -- every release after it carries a material3-ripple-android with
+      # minSdk 24, which failed the manifest merge against a minSdk 23 floor -- no longer holds:
+      # the floor is 26. What keeps the ignore here is that lifting the pin also means
+      # regenerating gradle/verification-metadata.xml, which Dependabot cannot do, so the weekly
+      # grouped PR would still be unmergeable and would drag three healthy bumps down with it --
+      # a grouped PR is one merge or none. Remove this entry in the same change that unpins.
       - dependency-name: "androidx.compose.material3:material3"
 
   # flake.lock only — the nixpkgs/flake-utils inputs. The pinned build-tools and

@@ -15,11 +15,13 @@ quietly left out; AGP's coverage task has no exclusion setting, so the full repo
 has everything.
 
 `--min-<metric>=N` turns the summary into a gate: the run fails if that counter, over the authored
-code, falls below N percent. CI sets instruction 95 and line 99, each a little under where the
-suite actually sits, so the gate catches a regression rather than tracking noise.
+code, falls below N percent. CI sets instruction 95 and line 98, each a little under where the
+suite actually sits, so the gate catches a regression rather than tracking noise. Line is one
+number for both flavors and so has to clear the lower of them: `classic` measures 98.9 against
+`play`'s 99.1, for the minSdk 26 reason CLAUDE.md sets out at the coverage gate.
 
 Branch is set differently and is the one to understand before touching these numbers. It sits at
-75.7 but is gated at 70, a deliberately loose floor, because the counter does not measure what
+77.0 but is gated at 70, a deliberately loose floor, because the counter does not measure what
 the other two do: the Compose compiler emits a `$changed`/default-argument bitmask branch for
 every composable parameter and no test drives those, which is where about two thirds of the
 missed branches are. The number therefore moves when a composable gains an argument, not when

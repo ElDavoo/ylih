@@ -3,7 +3,7 @@
   targetCellWidth/Height, description, previewLayout and maxResizeWidth/Height all arrived in
   API 31. Older platforms ignore them and fall back to minWidth/minHeight and previewImage, which
   is why both sets are here — but lint's UnusedAttribute is a warning, and a warning fails this
-  build, so the element carries tools:targetApi the way the manifest's TrackingService does.
+  build, so the element carries tools:targetApi.
 
   updatePeriodMillis is 0 on purpose: nothing polls. Every write path pokes the widgets the moment
   it lands, the 15-minute heartbeat calls syncWithSystem() while a session is open, and the

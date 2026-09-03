@@ -47,7 +47,7 @@ internal fun granted(context: Context, permission: String) =
  * `POST_NOTIFICATIONS` if this install could still usefully be asked for it, and null otherwise.
  *
  * Returning the permission name rather than a boolean keeps every mention of an API-33 constant
- * behind the one SDK check on a minSdk-23 build, which is also the only shape lint accepts for it.
+ * behind the one SDK check on a minSdk-26 build, which is also the only shape lint accepts for it.
  */
 internal fun notificationPermissionToAsk(context: Context): String? =
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&

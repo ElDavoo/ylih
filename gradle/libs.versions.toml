@@ -15,12 +15,15 @@ composeBom = "2026.08.00"
 # ButtonGroup, MaterialShapes, LoadingIndicator) land in 1.5.0-alpha, while the BOM still pins
 # the 1.4.0 stable that carries only the Expressive theme. This drags compose runtime/foundation/
 # ui to 1.12.0-beta01 for the whole app — the one pre-release risk in the build, taken knowingly.
-# Held below the latest alpha (1.5.0-alpha26) on purpose: alpha26 pulls in
-# material3-ripple-android, which raises minSdk to 24 and fails the manifest merge against this
-# app's minSdk 23 floor. Advance this only once the ripple artifact's minSdk drops back, or with
-# the floor raised deliberately (it is not, per the Robolectric API-23/*LegacyTest coverage).
-# `.github/dependabot.yml` ignores this module for the same reason — otherwise the weekly
-# grouped PR reintroduces alpha26 and cannot merge, taking every other bump in it down too.
+# Held below the latest alpha (1.5.0-alpha26) by hand, and the reason it was pinned has expired:
+# alpha26 pulls in material3-ripple-android with minSdk 24, which used to fail the manifest merge
+# against this app's minSdk 23 floor. The floor is 26 now, so that objection is gone and nothing
+# is known to block the bump. It is still pinned only because unpinning is a change worth making
+# on its own — advancing it also means regenerating gradle/verification-metadata.xml, which
+# Dependabot cannot do — and that follow-up has been deferred deliberately.
+# `.github/dependabot.yml` ignores this module for the same reason, and the two must be lifted
+# together: leave the ignore in place while the pin stands, or the weekly grouped PR reintroduces
+# alpha26 and takes every other bump in it down with it.
 material3 = "1.5.0-alpha25"
 navigationCompose = "2.9.8"
 room = "2.8.4"
