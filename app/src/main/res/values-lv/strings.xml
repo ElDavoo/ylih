@@ -91,6 +91,12 @@
     <string name="pair_per_hour">stundā</string>
     <string name="pair_bought">nopirkts</string>
     <string name="pair_daily_hours_14">stundas dienā (14 dienas)</string>
+    <string name="pair_charge_cycles">uzlādes cikli</string>
+    <string name="pair_per_charge">uz vienu uzlādi</string>
+    <string name="pair_cycles">cikli</string>
+    <string name="pair_charge_watched">novērots</string>
+    <string name="pair_vs_new">salīdzinot ar jaunām</string>
+    <string name="pair_cycle_number">%1$d. cikls</string>
     <string name="pair_rename_title">pārdēvēt pāri</string>
     <string name="pair_rename_label">nosaukums</string>
     <string name="pair_retire_title">nodot šo pāri pensijā</string>

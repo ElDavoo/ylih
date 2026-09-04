@@ -1,6 +1,7 @@
 package it.eldavo.ylih.export
 
 import androidx.room.withTransaction
+import it.eldavo.ylih.data.BatterySampleEntity
 import it.eldavo.ylih.data.DeviceEntity
 import it.eldavo.ylih.data.DeviceKind
 import it.eldavo.ylih.data.EndReason
@@ -44,6 +45,8 @@ object JsonBackup {
          * behaviour every backup had until now.
          */
         val settings: List<Setting> = emptyList(),
+        /** Defaulted for the same reason [settings] is: an older file simply has no readings. */
+        val batterySamples: List<BatterySample> = emptyList(),
     )
 
     @Serializable
@@ -73,6 +76,15 @@ object JsonBackup {
     )
 
     @Serializable
+    data class BatterySample(
+        val id: Long,
+        val sessionId: Long,
+        val pairId: Long,
+        val at: Long,
+        val level: Int,
+    )
+
+    @Serializable
     data class Session(
         val id: Long,
         val pairId: Long,
@@ -94,6 +106,7 @@ object JsonBackup {
         val devices = db.deviceDao().getAll()
         val pairs = db.pairDao().getAll()
         val sessions = db.sessionDao().getAll()
+        val batterySamples = db.batterySampleDao().getAll()
         val settings = db.settingsDao().getAll()
         json.encodeToString(
             Backup(
@@ -113,6 +126,9 @@ object JsonBackup {
                         it.id, it.pairId, it.connectedAt, it.disconnectedAt,
                         it.playingMs, it.heartbeatAt, it.endReason?.name,
                     )
+                },
+                batterySamples = batterySamples.map {
+                    BatterySample(it.id, it.sessionId, it.pairId, it.at, it.level)
                 },
             ),
         )
@@ -167,6 +183,20 @@ object JsonBackup {
                         playingMs = it.playingMs,
                         heartbeatAt = it.heartbeatAt,
                         endReason = EndReason.parse(it.endReason),
+                    ),
+                )
+            }
+            // After the sessions, and not before: every reading names the session it was taken in
+            // and the foreign key is checked as each row lands.
+            val batterySamples = db.batterySampleDao()
+            backup.batterySamples.forEach {
+                batterySamples.insert(
+                    BatterySampleEntity(
+                        id = it.id,
+                        sessionId = it.sessionId,
+                        pairId = it.pairId,
+                        at = it.at,
+                        level = it.level,
                     ),
                 )
             }

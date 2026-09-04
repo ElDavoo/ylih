@@ -91,6 +91,12 @@
     <string name="pair_per_hour">kwa saina</string>
     <string name="pair_bought">kitiit ye</string>
     <string name="pair_daily_hours_14">saina kotagit (14 kotagit)</string>
+    <string name="pair_charge_cycles">kolutik che kimnotin</string>
+    <string name="pair_per_charge">kwa kimnotet akenge</string>
+    <string name="pair_cycles">kolutik</string>
+    <string name="pair_charge_watched">kigeere</string>
+    <string name="pair_vs_new">kotugul ak lelach</string>
+    <string name="pair_cycle_number">koluto %1$d</string>
     <string name="pair_rename_title">korengo emwusis</string>
     <string name="pair_rename_label">kiit</string>
     <string name="pair_retire_title">kosimiyek emwusis</string>

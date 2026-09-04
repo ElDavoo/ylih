@@ -99,6 +99,12 @@
     <string name="pair_per_hour">في الساعة</string>
     <string name="pair_bought">الشراء</string>
     <string name="pair_daily_hours_14">الساعات اليومية (14 يومًا)</string>
+    <string name="pair_charge_cycles">دورات الشحن</string>
+    <string name="pair_per_charge">لكل شحنة</string>
+    <string name="pair_cycles">دورات</string>
+    <string name="pair_charge_watched">مرصود</string>
+    <string name="pair_vs_new">مقارنة بالجديد</string>
+    <string name="pair_cycle_number">الدورة %1$d</string>
     <string name="pair_rename_title">إعادة تسمية الزوج</string>
     <string name="pair_rename_label">الاسم</string>
     <string name="pair_retire_title">إحالة هذا الزوج إلى التقاعد</string>

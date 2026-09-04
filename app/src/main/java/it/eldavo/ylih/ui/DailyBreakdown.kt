@@ -59,24 +59,55 @@ fun DailyBreakdownRow(
     maxMs: Long,
     today: LocalDate,
     modifier: Modifier = Modifier,
+) = BreakdownRow(
+    title = dayName(date, today),
+    subtitle = null,
+    ms = ms,
+    maxMs = maxMs,
+    modifier = modifier,
+)
+
+/**
+ * One labelled figure with a bar under it, drawn against the scale the chart above uses.
+ *
+ * Shared with the pair page's charge cycles, which are the same shape of thing read the same way —
+ * a figure, and how it compares with the largest on screen. What differs between the two is only
+ * what the row is *called*, which is why that is all this takes.
+ */
+@Composable
+internal fun BreakdownRow(
+    title: String,
+    subtitle: String?,
+    ms: Long,
+    maxMs: Long,
+    modifier: Modifier = Modifier,
 ) {
-    val name = dayName(date, today)
     val value = formatHours(ms)
     Column(
         modifier
             .fillMaxWidth()
-            // Merged, and read day-first, for the reason `StatTile` is: the two texts are one
+            // Merged, and read title-first, for the reason `StatTile` is: the texts are one
             // figure, and unmerged they arrive as "3.4 h" and then the day it belongs to.
-            .semantics(mergeDescendants = true) { contentDescription = "$name: $value" }
+            .semantics(mergeDescendants = true) {
+                val name = listOfNotNull(title, subtitle).joinToString(" · ")
+                contentDescription = "$name: $value"
+            }
             .padding(horizontal = 16.dp, vertical = 8.dp),
     ) {
         Row(Modifier.fillMaxWidth()) {
             Text(
-                text = name,
+                text = title,
                 style = MaterialTheme.typography.bodyMedium,
                 modifier = Modifier.weight(1f),
             )
             Text(text = value, style = MaterialTheme.typography.bodyMedium)
+        }
+        subtitle?.let {
+            Text(
+                text = it,
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
         }
         Spacer(Modifier.height(6.dp))
         Box(

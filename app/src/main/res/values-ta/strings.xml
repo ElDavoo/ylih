@@ -91,6 +91,12 @@
     <string name="pair_per_hour">மணிக்கு</string>
     <string name="pair_bought">வாங்கியது</string>
     <string name="pair_daily_hours_14">தினசரி மணிநேரம் (14 நாட்கள்)</string>
+    <string name="pair_charge_cycles">சார்ஜ் சுழற்சிகள்</string>
+    <string name="pair_per_charge">ஒரு சார்ஜுக்கு</string>
+    <string name="pair_cycles">சுழற்சிகள்</string>
+    <string name="pair_charge_watched">கவனிக்கப்பட்டது</string>
+    <string name="pair_vs_new">புதிதாக இருந்தபோதுடன்</string>
+    <string name="pair_cycle_number">சுழற்சி %1$d</string>
     <string name="pair_rename_title">ஜோடியின் பெயரை மாற்று</string>
     <string name="pair_rename_label">பெயர்</string>
     <string name="pair_retire_title">இந்த ஜோடியை ஓய்வுபெறச் செய்</string>

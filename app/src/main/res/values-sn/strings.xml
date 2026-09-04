@@ -91,6 +91,12 @@
     <string name="pair_per_hour">panhema</string>
     <string name="pair_bought">kutenga</string>
     <string name="pair_daily_hours_14">mahora pazuva (14 mazuva)</string>
+    <string name="pair_charge_cycles">matenderero esimba</string>
+    <string name="pair_per_charge">pasimba rimwe</string>
+    <string name="pair_cycles">matenderero</string>
+    <string name="pair_charge_watched">zvakaonekwa</string>
+    <string name="pair_vs_new">kuenzanisa nemitsva</string>
+    <string name="pair_cycle_number">tenderero %1$d</string>
     <string name="pair_rename_title">zvirudziro sora</string>
     <string name="pair_rename_label">zita</string>
     <string name="pair_retire_title">bvisa sora iyi</string>

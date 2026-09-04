@@ -100,6 +100,12 @@
     <string name="pair_per_hour">per time</string>
     <string name="pair_bought">kjøpt</string>
     <string name="pair_daily_hours_14">timer per dag (14 dager)</string>
+    <string name="pair_charge_cycles">ladesykluser</string>
+    <string name="pair_per_charge">per lading</string>
+    <string name="pair_cycles">sykluser</string>
+    <string name="pair_charge_watched">observert</string>
+    <string name="pair_vs_new">mot da de var nye</string>
+    <string name="pair_cycle_number">syklus %1$d</string>
     <string name="pair_rename_title">gi paret nytt navn</string>
     <string name="pair_rename_label">navn</string>
     <string name="pair_retire_title">pensjonér dette paret</string>

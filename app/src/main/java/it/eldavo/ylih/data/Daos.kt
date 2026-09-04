@@ -238,6 +238,34 @@ interface SessionDao {
 }
 
 @Dao
+interface BatterySampleDao {
+    /**
+     * The newest reading of a session, which is the only one a fresh one has to be compared
+     * against: an unchanged level is not a new observation and must not become a row.
+     */
+    @Query("SELECT * FROM battery_samples WHERE sessionId = :sessionId ORDER BY at DESC LIMIT 1")
+    suspend fun lastFor(sessionId: Long): BatterySampleEntity?
+
+    @Insert
+    suspend fun insert(sample: BatterySampleEntity): Long
+
+    /**
+     * Every reading a pair has ever produced, oldest first — the pair page's charge cycles are a
+     * lifetime figure, so unlike the charts there is no window to bound this to.
+     *
+     * Off `battery_samples` alone, never joined to `sessions`, which is why [BatterySampleEntity]
+     * carries `pairId` at all: a Room flow observes every table its query names, and the heartbeat
+     * writes to `sessions` once a minute. `index_battery_samples_pairId_at` covers both the filter
+     * and the order, so there is no temp B-tree either.
+     */
+    @Query("SELECT * FROM battery_samples WHERE pairId = :pairId ORDER BY at")
+    fun observeForPair(pairId: Long): Flow<List<BatterySampleEntity>>
+
+    @Query("SELECT * FROM battery_samples ORDER BY at")
+    suspend fun getAll(): List<BatterySampleEntity>
+}
+
+@Dao
 interface SettingsDao {
     /**
      * The whole table at once, never one setting at a time, and that is a correctness requirement

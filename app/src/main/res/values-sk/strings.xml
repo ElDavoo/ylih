@@ -91,6 +91,12 @@
     <string name="pair_per_hour">za hodinu</string>
     <string name="pair_bought">kúpené</string>
     <string name="pair_daily_hours_14">denné hodiny (14 dní)</string>
+    <string name="pair_charge_cycles">nabíjacie cykly</string>
+    <string name="pair_per_charge">na nabitie</string>
+    <string name="pair_cycles">cykly</string>
+    <string name="pair_charge_watched">sledované</string>
+    <string name="pair_vs_new">oproti novým</string>
+    <string name="pair_cycle_number">cyklus %1$d</string>
     <string name="pair_rename_title">premenovať pár</string>
     <string name="pair_rename_label">meno</string>
     <string name="pair_retire_title">vyradiť tento pár</string>

@@ -91,6 +91,12 @@
     <string name="pair_per_hour">jahka</string>
     <string name="pair_bought">ostetam</string>
     <string name="pair_daily_hours_14">juohke-aige jahkaj (14 pájvvá)</string>
+    <string name="pair_charge_cycles">luâđâmsyklusah</string>
+    <string name="pair_per_charge">ohtâ luâđâm</string>
+    <string name="pair_cycles">syklusah</string>
+    <string name="pair_charge_watched">táárum</string>
+    <string name="pair_vs_new">ođđâsij verdo</string>
+    <string name="pair_cycle_number">syklus %1$d</string>
     <string name="pair_rename_title">maajje-nimá pair</string>
     <string name="pair_rename_label">nimá</string>
     <string name="pair_retire_title">maahta tánná pair</string>

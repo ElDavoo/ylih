@@ -91,6 +91,12 @@
     <string name="pair_per_hour">ma kēlā hola</string>
     <string name="pair_bought">hōʻili ʻia</string>
     <string name="pair_daily_hours_14">nā hola o kēlā me kēia lā (14 lā)</string>
+    <string name="pair_charge_cycles">nā pōʻai hoʻopiha</string>
+    <string name="pair_per_charge">i kēlā hoʻopiha</string>
+    <string name="pair_cycles">nā pōʻai</string>
+    <string name="pair_charge_watched">nānā ʻia</string>
+    <string name="pair_vs_new">i ka wā hou</string>
+    <string name="pair_cycle_number">pōʻai %1$d</string>
     <string name="pair_rename_title">hoʻololi i ka inoa o ka hoʻolohe leo</string>
     <string name="pair_rename_label">inoa</string>
     <string name="pair_retire_title">hoʻopau i kēia hoʻolohe leo</string>

@@ -97,6 +97,12 @@
     <string name="pair_per_hour">по сату</string>
     <string name="pair_bought">куплене</string>
     <string name="pair_daily_hours_14">дневни сати (14 дана)</string>
+    <string name="pair_charge_cycles">циклуси пуњења</string>
+    <string name="pair_per_charge">по пуњењу</string>
+    <string name="pair_cycles">циклуси</string>
+    <string name="pair_charge_watched">посматрано</string>
+    <string name="pair_vs_new">у односу на нове</string>
+    <string name="pair_cycle_number">циклус %1$d</string>
     <string name="pair_rename_title">преименуј пар</string>
     <string name="pair_rename_label">назив</string>
     <string name="pair_retire_title">повучи овај пар</string>

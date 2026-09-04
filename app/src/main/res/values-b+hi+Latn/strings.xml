@@ -91,6 +91,12 @@
     <string name="pair_per_hour">ek ghnte mein</string>
     <string name="pair_bought">kharīdā</string>
     <string name="pair_daily_hours_14">roz ke ghnten (14 din)</string>
+    <string name="pair_charge_cycles">chārj chakra</string>
+    <string name="pair_per_charge">prati chārj</string>
+    <string name="pair_cycles">chakra</string>
+    <string name="pair_charge_watched">dekhā gayā</string>
+    <string name="pair_vs_new">naye kī tulnā mẽ</string>
+    <string name="pair_cycle_number">chakra %1$d</string>
     <string name="pair_rename_title">zyda kā nām badlein</string>
     <string name="pair_rename_label">nām</string>
     <string name="pair_retire_title">is zyda ko sannyas den</string>

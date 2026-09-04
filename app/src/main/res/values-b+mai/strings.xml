@@ -91,6 +91,12 @@
     <string name="pair_per_hour">प्रति घंटा</string>
     <string name="pair_bought">कीनल</string>
     <string name="pair_daily_hours_14">रोजक घंटा (१४ दिन)</string>
+    <string name="pair_charge_cycles">चार्ज चक्र</string>
+    <string name="pair_per_charge">प्रति चार्ज</string>
+    <string name="pair_cycles">चक्र</string>
+    <string name="pair_charge_watched">देखल गेल</string>
+    <string name="pair_vs_new">नव सँ तुलना मे</string>
+    <string name="pair_cycle_number">चक्र %1$d</string>
     <string name="pair_rename_title">जोड़ीक नाम बदलू</string>
     <string name="pair_rename_label">नाम</string>
     <string name="pair_retire_title">एहि जोड़ीकेँ सेवानिवृत्त करू</string>

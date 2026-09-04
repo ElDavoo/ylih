@@ -166,6 +166,48 @@ class YlihDatabaseMigrationTest {
     }
 
     /**
+     * The newest migration's table, written to rather than merely validated.
+     *
+     * Room's identity check compares columns and indices; it says nothing about whether the foreign
+     * key really cascades, and the cascade is what keeps a deleted session from leaving readings
+     * behind that the next pair's charge cycles would subtract across.
+     */
+    @Test
+    fun `an upgraded install can record a battery level`() {
+        writeVersion1Database {
+            execSQL(
+                "INSERT INTO devices (id, deviceKey, kind, defaultName, firstSeenAt, ignored) " +
+                    "VALUES (1, '5E:C2', 'BLUETOOTH', 'WH-1000XM4', 1000, 0)",
+            )
+            execSQL(
+                "INSERT INTO pairs (id, deviceId, label, generation, startedAt) " +
+                    "VALUES (1, 1, 'the good ones', 1, 1000)",
+            )
+            execSQL(
+                "INSERT INTO sessions (id, pairId, connectedAt, heartbeatAt) " +
+                    "VALUES (1, 1, 1000, 1000)",
+            )
+        }
+
+        val db = openMigrated()
+        try {
+            runBlocking {
+                SessionRepository(db) { 4000L }.recordBatteryLevel("5E:C2", level = 80)
+
+                assertEquals(80, db.batterySampleDao().getAll().single().level)
+
+                db.sessionDao().delete(1)
+                assertTrue(
+                    "readings do not outlive the session they were taken in",
+                    db.batterySampleDao().getAll().isEmpty(),
+                )
+            }
+        } finally {
+            db.close()
+        }
+    }
+
+    /**
      * The guard on the guard: the fixture below is written by hand, and a hand-written fixture is
      * a thing that can quietly stop resembling what version 1 shipped. Checked against the
      * committed `1.json` rather than against itself, because a fixture that agrees only with its
@@ -212,9 +254,10 @@ class YlihDatabaseMigrationTest {
                 assertTrue(it.moveToFirst())
                 assertEquals(VERSION_1_IDENTITY_HASH, it.getString(0))
             }
-            // The table the migration adds must not be there yet, or nothing above is a migration.
+            // The tables the migrations add must not be there yet, or nothing above is a migration.
             db.rawQuery(
-                "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'settings'",
+                "SELECT name FROM sqlite_master WHERE type = 'table' " +
+                    "AND name IN ('settings', 'battery_samples')",
                 null,
             ).use { assertEquals(0, it.count) }
         }

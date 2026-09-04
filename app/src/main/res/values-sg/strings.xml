@@ -91,6 +91,12 @@
     <string name="pair_per_hour">na ngö mo</string>
     <string name="pair_bought">bili</string>
     <string name="pair_daily_hours_14">ngö kûê (zêni 14)</string>
+    <string name="pair_charge_cycles">angoro ti sarze</string>
+    <string name="pair_per_charge">na sarze oko</string>
+    <string name="pair_cycles">angoro</string>
+    <string name="pair_charge_watched">abâ</string>
+    <string name="pair_vs_new">na fini</string>
+    <string name="pair_cycle_number">ngoro %1$d</string>
     <string name="pair_rename_title">kobo mo famene sânda</string>
     <string name="pair_rename_label">famene</string>
     <string name="pair_retire_title">kobo mo kü</string>

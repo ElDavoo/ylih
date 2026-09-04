@@ -91,6 +91,12 @@
     <string name="pair_per_hour">par ler</string>
     <string name="pair_bought">aste</string>
     <string name="pair_daily_hours_14">ler par zour (14 zour)</string>
+    <string name="pair_charge_cycles">sik sarz</string>
+    <string name="pair_per_charge">par sarz</string>
+    <string name="pair_cycles">sik</string>
+    <string name="pair_charge_watched">obzerve</string>
+    <string name="pair_vs_new">konpare ar nef</string>
+    <string name="pair_cycle_number">sik %1$d</string>
     <string name="pair_rename_title">sanz nom per</string>
     <string name="pair_rename_label">nom</string>
     <string name="pair_retire_title">met sa per la dan retret</string>

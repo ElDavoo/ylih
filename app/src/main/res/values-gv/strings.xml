@@ -91,6 +91,12 @@
     <string name="pair_per_hour">son oor</string>
     <string name="pair_bought">cheannit</string>
     <string name="pair_daily_hours_14">oor jiu (14 laa)</string>
+    <string name="pair_charge_cycles">cruinnaghyn chargal</string>
+    <string name="pair_per_charge">y chargey</string>
+    <string name="pair_cycles">cruinnaghyn</string>
+    <string name="pair_charge_watched">jeeaghit</string>
+    <string name="pair_vs_new">noi rish noa</string>
+    <string name="pair_cycle_number">cruinnagh %1$d</string>
     <string name="pair_rename_title">cur ennym noa paart</string>
     <string name="pair_rename_label">ennym</string>
     <string name="pair_retire_title">shoh kiart er paart shoh</string>

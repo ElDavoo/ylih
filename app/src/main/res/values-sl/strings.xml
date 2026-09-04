@@ -91,6 +91,12 @@
     <string name="pair_per_hour">na uro</string>
     <string name="pair_bought">kupljeno</string>
     <string name="pair_daily_hours_14">dnevne ure (14 dni)</string>
+    <string name="pair_charge_cycles">cikli polnjenja</string>
+    <string name="pair_per_charge">na polnjenje</string>
+    <string name="pair_cycles">cikli</string>
+    <string name="pair_charge_watched">opazovano</string>
+    <string name="pair_vs_new">glede na nove</string>
+    <string name="pair_cycle_number">cikel %1$d</string>
     <string name="pair_rename_title">preimenuj par</string>
     <string name="pair_rename_label">ime</string>
     <string name="pair_retire_title">upokoji ta par</string>

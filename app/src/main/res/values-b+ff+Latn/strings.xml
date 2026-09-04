@@ -97,6 +97,12 @@
     <string name="pair_per_hour">to waktuu duuɗe</string>
     <string name="pair_bought">kaye</string>
     <string name="pair_daily_hours_14">waktuuji baŋko (joomuuji 14)</string>
+    <string name="pair_charge_cycles">sikuli karja</string>
+    <string name="pair_per_charge">go karja</string>
+    <string name="pair_cycles">sikuli</string>
+    <string name="pair_charge_watched">yiiyaango</string>
+    <string name="pair_vs_new">e nder kesum</string>
+    <string name="pair_cycle_number">sikul %1$d</string>
     <string name="pair_rename_title">mare peere maa</string>
     <string name="pair_rename_label">ɗowol</string>
     <string name="pair_retire_title">binde peere ngii</string>

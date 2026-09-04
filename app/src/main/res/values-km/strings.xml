@@ -91,6 +91,12 @@
     <string name="pair_per_hour">ក្នុងមួយម៉ោង</string>
     <string name="pair_bought">ទិញ</string>
     <string name="pair_daily_hours_14">ម៉ោងប្រចាំថ្ងៃ (14 ថ្ងៃ)</string>
+    <string name="pair_charge_cycles">វដ្តសាក</string>
+    <string name="pair_per_charge">ក្នុងមួយការសាក</string>
+    <string name="pair_cycles">វដ្ត</string>
+    <string name="pair_charge_watched">បានសង្កេត</string>
+    <string name="pair_vs_new">ធៀបនឹងពេលថ្មី</string>
+    <string name="pair_cycle_number">វដ្ត %1$d</string>
     <string name="pair_rename_title">ប្តូរឈ្មោះឯកសារ</string>
     <string name="pair_rename_label">ឈ្មោះ</string>
     <string name="pair_retire_title">ដកចេញឯកសារនេះ</string>

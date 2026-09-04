@@ -91,6 +91,12 @@
     <string name="pair_per_hour">na godzina</string>
     <string name="pair_bought">kupiōne</string>
     <string name="pair_daily_hours_14">godziny na dziyń (14 dni)</string>
+    <string name="pair_charge_cycles">cykle ladowanio</string>
+    <string name="pair_per_charge">na ladowanie</string>
+    <string name="pair_cycles">cykle</string>
+    <string name="pair_charge_watched">ôbserwowane</string>
+    <string name="pair_vs_new">w porōwnaniu z nowymi</string>
+    <string name="pair_cycle_number">cykel %1$d</string>
     <string name="pair_rename_title">przemianuj pora</string>
     <string name="pair_rename_label">miano</string>
     <string name="pair_retire_title">dej pynzyjo tymu pora</string>

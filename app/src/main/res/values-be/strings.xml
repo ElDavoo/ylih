@@ -97,6 +97,12 @@
     <string name="pair_per_hour">за гадзіну</string>
     <string name="pair_bought">куплены</string>
     <string name="pair_daily_hours_14">гадзіны па днях (14 дзён)</string>
+    <string name="pair_charge_cycles">цыклы зарадкі</string>
+    <string name="pair_per_charge">на адзін зарад</string>
+    <string name="pair_cycles">цыклы</string>
+    <string name="pair_charge_watched">адсочана</string>
+    <string name="pair_vs_new">у параўнанні з новымі</string>
+    <string name="pair_cycle_number">цыкл %1$d</string>
     <string name="pair_rename_title">перайменаваць пару</string>
     <string name="pair_rename_label">імя</string>
     <string name="pair_retire_title">выключыце гэту пару</string>

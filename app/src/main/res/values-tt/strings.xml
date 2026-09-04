@@ -91,6 +91,12 @@
     <string name="pair_per_hour">сәгать өче</string>
     <string name="pair_bought">сатып алынды</string>
     <string name="pair_daily_hours_14">көннәрбәш сәгать (14 көннәр)</string>
+    <string name="pair_charge_cycles">корылма циклы</string>
+    <string name="pair_per_charge">бер корылмага</string>
+    <string name="pair_cycles">циклар</string>
+    <string name="pair_charge_watched">күзәтелгән</string>
+    <string name="pair_vs_new">яңа чагы белән чагыштырганда</string>
+    <string name="pair_cycle_number">цикл %1$d</string>
     <string name="pair_rename_title">зәмегнеңнең исеме үзгәрәрләрен</string>
     <string name="pair_rename_label">исеме</string>
     <string name="pair_retire_title">бу зәмегне пенсияләшмәк</string>

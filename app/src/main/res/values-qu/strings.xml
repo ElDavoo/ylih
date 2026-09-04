@@ -91,6 +91,12 @@
     <string name="pair_per_hour">horawta</string>
     <string name="pair_bought">rantisqa</string>
     <string name="pair_daily_hours_14">punchau oras (14 oras)</string>
+    <string name="pair_charge_cycles">hunt’achiy muyuykuna</string>
+    <string name="pair_per_charge">sapa hunt’achiypi</string>
+    <string name="pair_cycles">muyuykuna</string>
+    <string name="pair_charge_watched">qhawasqa</string>
+    <string name="pair_vs_new">musuq kaptin tupachisqa</string>
+    <string name="pair_cycle_number">muyuy %1$d</string>
     <string name="pair_rename_title">pares sutiyamuy</string>
     <string name="pair_rename_label">suti</string>
     <string name="pair_retire_title">kay pares retira</string>

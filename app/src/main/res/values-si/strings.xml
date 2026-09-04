@@ -91,6 +91,12 @@
     <string name="pair_per_hour">පැයි බැගින්</string>
     <string name="pair_bought">ගිණුම කරන්න</string>
     <string name="pair_daily_hours_14">දෛනික පැයි (දින 14)</string>
+    <string name="pair_charge_cycles">ආරෝපණ චක්‍ර</string>
+    <string name="pair_per_charge">ආරෝපණයකට</string>
+    <string name="pair_cycles">චක්‍ර</string>
+    <string name="pair_charge_watched">නිරීක්ෂණය කළ</string>
+    <string name="pair_vs_new">අලුත් කාලයට සාපේක්ෂව</string>
+    <string name="pair_cycle_number">චක්‍රය %1$d</string>
     <string name="pair_rename_title">යුගල නැවත නම් කරන්න</string>
     <string name="pair_rename_label">නම</string>
     <string name="pair_retire_title">එම යුගල විශ්‍රාම දෙන්න</string>

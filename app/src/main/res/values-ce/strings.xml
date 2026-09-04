@@ -97,6 +97,12 @@
     <string name="pair_per_hour">соьатан яьлча</string>
     <string name="pair_bought">кӏанӏах</string>
     <string name="pair_daily_hours_14">сак соьатаяр (14 ДӀа)</string>
+    <string name="pair_charge_cycles">зарядан циклаш</string>
+    <string name="pair_per_charge">цхьана зарядна</string>
+    <string name="pair_cycles">циклаш</string>
+    <string name="pair_charge_watched">хьовсина</string>
+    <string name="pair_vs_new">керлачарца юсттина</string>
+    <string name="pair_cycle_number">цикл %1$d</string>
     <string name="pair_rename_title">пара чӏаргӏалча</string>
     <string name="pair_rename_label">йиза</string>
     <string name="pair_retire_title">мындара пара дӏаяьллча</string>

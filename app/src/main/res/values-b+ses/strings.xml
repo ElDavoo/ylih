@@ -91,6 +91,12 @@
     <string name="pair_per_hour">demiya koy</string>
     <string name="pair_bought">jara</string>
     <string name="pair_daily_hours_14">jiyaaru demiya jiyaaru 14 ga</string>
+    <string name="pair_charge_cycles">gaabu windiyaŋ</string>
+    <string name="pair_per_charge">gaabu fooda ga</string>
+    <string name="pair_cycles">windiyaŋ</string>
+    <string name="pair_charge_watched">i guna</string>
+    <string name="pair_vs_new">taasi nda tajji</string>
+    <string name="pair_cycle_number">windi %1$d</string>
     <string name="pair_rename_title">koydameeyan tuma sanda</string>
     <string name="pair_rename_label">tuma</string>
     <string name="pair_retire_title">koydameeyan ni kafa</string>

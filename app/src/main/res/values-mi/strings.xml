@@ -91,6 +91,12 @@
     <string name="pair_per_hour">ia hāora</string>
     <string name="pair_bought">i hokona</string>
     <string name="pair_daily_hours_14">hāora ia rā (14 rā)</string>
+    <string name="pair_charge_cycles">ngā hurihanga whakakī</string>
+    <string name="pair_per_charge">ia whakakī</string>
+    <string name="pair_cycles">hurihanga</string>
+    <string name="pair_charge_watched">i mātakitakihia</string>
+    <string name="pair_vs_new">ki te whakatauritenga hou</string>
+    <string name="pair_cycle_number">hurihanga %1$d</string>
     <string name="pair_rename_title">whakaingoa anō i te takirua</string>
     <string name="pair_rename_label">ingoa</string>
     <string name="pair_retire_title">whakatā i tēnei takirua</string>

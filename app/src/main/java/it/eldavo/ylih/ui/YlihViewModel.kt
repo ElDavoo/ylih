@@ -11,15 +11,20 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import it.eldavo.ylih.R
 import it.eldavo.ylih.YlihApp
+import it.eldavo.ylih.data.BatterySampleEntity
 import it.eldavo.ylih.data.DeviceEntity
 import it.eldavo.ylih.data.PairSummary
 import it.eldavo.ylih.data.SessionEntity
 import it.eldavo.ylih.export.JsonBackup
 import it.eldavo.ylih.runCatchingCancellable
+import it.eldavo.ylih.stats.Charge
+import it.eldavo.ylih.stats.ChargeSummary
 import it.eldavo.ylih.stats.Counting
+import it.eldavo.ylih.stats.Reading
 import it.eldavo.ylih.stats.Span
 import it.eldavo.ylih.stats.Summary
 import it.eldavo.ylih.widget.refreshWidgets
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
@@ -28,7 +33,10 @@ import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.shareIn
@@ -141,6 +149,31 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
 
     fun sessions(pairId: Long): Flow<List<SessionEntity>> =
         container.repository.observeSessionsFor(pairId)
+
+    /**
+     * This pair's charge cycles, worked out off the main thread.
+     *
+     * The readings themselves are unwindowed, unlike [recentSessions], because charge cycles are a
+     * lifetime figure: the question is what a charge bought when the pair was new against what it
+     * buys now, and a thirty-day window cannot ask it. That makes the walk over them the one piece
+     * of arithmetic in this app whose cost grows without bound — measured at 173 ms for a million
+     * readings — so it belongs here rather than in a `remember` on the pair page, where it used to
+     * sit keyed on the minute clock and so re-ran on the main thread every sixty seconds.
+     *
+     * The sessions are reduced to their spans *before* [distinctUntilChanged], which is what keeps
+     * the heartbeat out of this: it writes to `sessions` once a minute and moves nothing this
+     * summary reads, so the spans compare equal and nothing recomputes.
+     */
+    fun chargeSummary(pairId: Long): Flow<ChargeSummary> {
+        val spans = container.repository.observeSessionsFor(pairId)
+            .map { sessions -> sessions.associate { it.id to it.toSpan() } }
+            .distinctUntilChanged()
+        val readings = container.repository.observeBatterySamples(pairId)
+            .map { samples -> samples.map { it.toReading() } }
+        return combine(readings, spans, counting) { byTime, bySession, mode ->
+            Charge.summarize(byTime, bySession, container.clock.now(), mode)
+        }.flowOn(Dispatchers.Default)
+    }
 
     /**
      * False on the Play build until Bluetooth access is granted — see `Distribution`.
@@ -299,6 +332,8 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
 }
 
 fun SessionEntity.toSpan(): Span = Span(connectedAt, disconnectedAt, playingMs)
+
+fun BatterySampleEntity.toReading(): Reading = Reading(sessionId, at, level)
 
 /**
  * The lifetime figure a pair's card and the ranking show, straight off the aggregate rather than

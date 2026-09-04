@@ -91,6 +91,12 @@
     <string name="pair_per_hour">per hor</string>
     <string name="pair_bought">achatat</string>
     <string name="pair_daily_hours_14">quotidian hor (14 dies)</string>
+    <string name="pair_charge_cycles">cicles de charga</string>
+    <string name="pair_per_charge">per charga</string>
+    <string name="pair_cycles">cicles</string>
+    <string name="pair_charge_watched">observat</string>
+    <string name="pair_vs_new">comparat a nov</string>
+    <string name="pair_cycle_number">cicle %1$d</string>
     <string name="pair_rename_title">renoma par</string>
     <string name="pair_rename_label">nom</string>
     <string name="pair_retire_title">retire ti par</string>

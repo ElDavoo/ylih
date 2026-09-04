@@ -96,6 +96,12 @@
     <string name="pair_per_hour">በሰዓት</string>
     <string name="pair_bought">ገዛ</string>
     <string name="pair_daily_hours_14">ዕለታዊ ሰዓታት (14 ቀናት)</string>
+    <string name="pair_charge_cycles">የኃይል ሙሌት ዑደቶች</string>
+    <string name="pair_per_charge">በአንድ ሙሌት</string>
+    <string name="pair_cycles">ዑደቶች</string>
+    <string name="pair_charge_watched">የተመለከተ</string>
+    <string name="pair_vs_new">ከአዲስ ጋር</string>
+    <string name="pair_cycle_number">ዑደት %1$d</string>
     <string name="pair_rename_title">ጥንድ እንደገና ሰይም</string>
     <string name="pair_rename_label">ስም</string>
     <string name="pair_retire_title">ይህን ጥንድ ከስራ ተወቅ</string>

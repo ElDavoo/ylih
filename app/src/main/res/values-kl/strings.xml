@@ -91,6 +91,12 @@
     <string name="pair_per_hour">tamaasa sapaaq</string>
     <string name="pair_bought">pilerpok</string>
     <string name="pair_daily_hours_14">ulloqatigiit tamaasa (14 ulloq)</string>
+    <string name="pair_charge_cycles">tunivissat kaajallattut</string>
+    <string name="pair_per_charge">tunivissamut</string>
+    <string name="pair_cycles">kaajallattut</string>
+    <string name="pair_charge_watched">nakkutigineqartoq</string>
+    <string name="pair_vs_new">nutaanerani naleqqiullugu</string>
+    <string name="pair_cycle_number">kaajallanneq %1$d</string>
     <string name="pair_rename_title">allagua ataanigaleruk</string>
     <string name="pair_rename_label">ataa</string>
     <string name="pair_retire_title">allagua ikinngussallaleruk</string>

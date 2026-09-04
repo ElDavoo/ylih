@@ -97,6 +97,12 @@
     <string name="pair_per_hour">yr awr</string>
     <string name="pair_bought">prynu</string>
     <string name="pair_daily_hours_14">oriau bob dydd (14 diwrnod)</string>
+    <string name="pair_charge_cycles">cylchoedd gwefru</string>
+    <string name="pair_per_charge">y gwefriad</string>
+    <string name="pair_cycles">cylchoedd</string>
+    <string name="pair_charge_watched">wedi’i wylio</string>
+    <string name="pair_vs_new">o’i gymharu â newydd</string>
+    <string name="pair_cycle_number">cylch %1$d</string>
     <string name="pair_rename_title">ailenwi pâr</string>
     <string name="pair_rename_label">enw</string>
     <string name="pair_retire_title">tynnu’r pâr hwn ymaith</string>

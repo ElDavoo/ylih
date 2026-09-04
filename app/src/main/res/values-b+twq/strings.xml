@@ -91,6 +91,12 @@
     <string name="pair_per_hour">guuru ka</string>
     <string name="pair_bought">sanda goy</string>
     <string name="pair_daily_hours_14">guuru gida (caxe 14)</string>
+    <string name="pair_charge_cycles">gaabu windiyaŋ</string>
+    <string name="pair_per_charge">gaabu fooda ga</string>
+    <string name="pair_cycles">windiyaŋ</string>
+    <string name="pair_charge_watched">i guna</string>
+    <string name="pair_vs_new">taasi nda tajji</string>
+    <string name="pair_cycle_number">windi %1$d</string>
     <string name="pair_rename_title">gara maa sinda</string>
     <string name="pair_rename_label">maa</string>
     <string name="pair_retire_title">gara fay gonda</string>

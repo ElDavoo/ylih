@@ -98,6 +98,12 @@
     <string name="pair_per_hour">saat başına</string>
     <string name="pair_bought">satın alındı</string>
     <string name="pair_daily_hours_14">günlük saat (14 gün)</string>
+    <string name="pair_charge_cycles">şarj döngüleri</string>
+    <string name="pair_per_charge">şarj başına</string>
+    <string name="pair_cycles">döngüler</string>
+    <string name="pair_charge_watched">gözlenen</string>
+    <string name="pair_vs_new">yeniyken hâline göre</string>
+    <string name="pair_cycle_number">döngü %1$d</string>
     <string name="pair_rename_title">çifti yeniden adlandır</string>
     <string name="pair_rename_label">ad</string>
     <string name="pair_retire_title">bu çifti emekliye ayır</string>

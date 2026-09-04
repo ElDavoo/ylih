@@ -190,6 +190,16 @@ fun parsePriceCents(text: String): Long? {
     }.getOrNull()?.takeIf { it >= 0 }
 }
 
+/**
+ * Charge cycles, to a tenth.
+ *
+ * One decimal because that is what the underlying readings support: a headset reporting over HFP
+ * moves in twenty-five-point steps, so a hundredth of a cycle would be precision the number does
+ * not have. Whole cycles would be worse still — the figure would sit at "1" for months.
+ */
+fun formatCycles(value: Double): String =
+    String.format(Locale.getDefault(), "%.1f", value.coerceAtLeast(0.0))
+
 /** Cost per listening hour; three decimals because the number gets small fast. */
 fun formatPerHour(value: Double): String =
     String.format(Locale.getDefault(), "%.3f", value)

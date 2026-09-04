@@ -91,6 +91,12 @@
     <string name="pair_per_hour">koum cha masaa</string>
     <string name="pair_bought">igomire</string>
     <string name="pair_daily_hours_14">amasaa go omwori (amin ayo 14)</string>
+    <string name="pair_charge_cycles">chibetero chia amanga</string>
+    <string name="pair_per_charge">ase amanga amo</string>
+    <string name="pair_cycles">chibetero</string>
+    <string name="pair_charge_watched">chiaroretwe</string>
+    <string name="pair_vs_new">kobwatania na ebiyia</string>
+    <string name="pair_cycle_number">ekebetero %1$d</string>
     <string name="pair_rename_title">tigira yite omurango</string>
     <string name="pair_rename_label">yite</string>
     <string name="pair_retire_title">igoiguare omurango oyu</string>

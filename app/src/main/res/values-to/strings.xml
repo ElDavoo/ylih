@@ -91,6 +91,12 @@
     <string name="pair_per_hour">mo e hola</string>
     <string name="pair_bought">kuo faʻi</string>
     <string name="pair_daily_hours_14">hola ʻaho (aho 14)</string>
+    <string name="pair_charge_cycles">ngaahi taʻu fakafonu</string>
+    <string name="pair_per_charge">ki he fakafonu taha</string>
+    <string name="pair_cycles">ngaahi taʻu</string>
+    <string name="pair_charge_watched">naʻe sioʻi</string>
+    <string name="pair_vs_new">fakafehoanaki ki he foʻou</string>
+    <string name="pair_cycle_number">taʻu %1$d</string>
     <string name="pair_rename_title">toe hingoa e sipi</string>
     <string name="pair_rename_label">hingoa</string>
     <string name="pair_retire_title">ʻave e sipi ni</string>

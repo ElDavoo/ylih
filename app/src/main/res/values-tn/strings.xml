@@ -91,6 +91,12 @@
     <string name="pair_per_hour">ka hora</string>
     <string name="pair_bought">o isiwe</string>
     <string name="pair_daily_hours_14">dithuta tsa letsatsi (matsatsi a 14)</string>
+    <string name="pair_charge_cycles">dipotologo tsa go tjhaja</string>
+    <string name="pair_per_charge">ka tjhaja nngwe</string>
+    <string name="pair_cycles">dipotologo</string>
+    <string name="pair_charge_watched">go lebeletswe</string>
+    <string name="pair_vs_new">fa e bapisiwa le tse dintjha</string>
+    <string name="pair_cycle_number">potologo %1$d</string>
     <string name="pair_rename_title">go lesa leina la pabetsa</string>
     <string name="pair_rename_label">leina</string>
     <string name="pair_retire_title">go iketla pabetsa ye</string>

@@ -97,6 +97,12 @@
     <string name="pair_per_hour">ku saati</string>
     <string name="pair_bought">agakurirwe</string>
     <string name="pair_daily_hours_14">saati ku musi (14 amasigara)</string>
+    <string name="pair_charge_cycles">emizunguko y’amaani</string>
+    <string name="pair_per_charge">aha maani gamwe</string>
+    <string name="pair_cycles">emizunguko</string>
+    <string name="pair_charge_watched">ekireeberwe</string>
+    <string name="pair_vs_new">kugyerangaho n’ebisya</string>
+    <string name="pair_cycle_number">omuzunguko %1$d</string>
     <string name="pair_rename_title">tyoma ikina lya enandi</string>
     <string name="pair_rename_label">ikina</string>
     <string name="pair_retire_title">zikira enandi ayo</string>

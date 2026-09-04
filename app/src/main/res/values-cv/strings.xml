@@ -91,6 +91,12 @@
     <string name="pair_per_hour">сехетре</string>
     <string name="pair_bought">туяннӑ</string>
     <string name="pair_daily_hours_14">кулленхи сехетсем (14 кун)</string>
+    <string name="pair_charge_cycles">заряд циклӗсем</string>
+    <string name="pair_per_charge">пӗр заряда</string>
+    <string name="pair_cycles">циклсем</string>
+    <string name="pair_charge_watched">сӑнанӑ</string>
+    <string name="pair_vs_new">ҫӗннипе танлаштарсан</string>
+    <string name="pair_cycle_number">цикл %1$d</string>
     <string name="pair_rename_title">мӑшӑр ятне улӑштар</string>
     <string name="pair_rename_label">ят</string>
     <string name="pair_retire_title">ҫак мӑшӑра усӑран кӑлар</string>

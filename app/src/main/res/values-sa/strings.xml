@@ -91,6 +91,12 @@
     <string name="pair_per_hour">प्रतिहोरम्</string>
     <string name="pair_bought">क्रीतम्</string>
     <string name="pair_daily_hours_14">दैनिकाः होराः (14 दिनानि)</string>
+    <string name="pair_charge_cycles">आवेशचक्राणि</string>
+    <string name="pair_per_charge">प्रत्यावेशम्</string>
+    <string name="pair_cycles">चक्राणि</string>
+    <string name="pair_charge_watched">अवलोकितम्</string>
+    <string name="pair_vs_new">नवीनतुलनायाम्</string>
+    <string name="pair_cycle_number">चक्रम् %1$d</string>
     <string name="pair_rename_title">युग्मस्य नाम परिवर्तयतु</string>
     <string name="pair_rename_label">नाम</string>
     <string name="pair_retire_title">इदं युग्मं निवर्तयतु</string>

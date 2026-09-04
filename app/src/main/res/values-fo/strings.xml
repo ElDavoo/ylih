@@ -97,6 +97,12 @@
     <string name="pair_per_hour">um tíman</string>
     <string name="pair_bought">keypt</string>
     <string name="pair_daily_hours_14">daglig tímar (14 dagar)</string>
+    <string name="pair_charge_cycles">løðingarsyklusar</string>
+    <string name="pair_per_charge">pr. løðing</string>
+    <string name="pair_cycles">syklusar</string>
+    <string name="pair_charge_watched">eftirhugt</string>
+    <string name="pair_vs_new">mót nýggjum</string>
+    <string name="pair_cycle_number">syklus %1$d</string>
     <string name="pair_rename_title">endurnefna pair</string>
     <string name="pair_rename_label">navn</string>
     <string name="pair_retire_title">útfasa hesa pair</string>

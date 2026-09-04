@@ -91,6 +91,12 @@
     <string name="pair_per_hour">per ora</string>
     <string name="pair_bought">compratô</string>
     <string name="pair_daily_hours_14">ore de giurni (14 giorni)</string>
+    <string name="pair_charge_cycles">cicli de caregamento</string>
+    <string name="pair_per_charge">pe caregamento</string>
+    <string name="pair_cycles">cicli</string>
+    <string name="pair_charge_watched">osservou</string>
+    <string name="pair_vs_new">rispetto a neuve</string>
+    <string name="pair_cycle_number">ciclo %1$d</string>
     <string name="pair_rename_title">cambya nome a-a pâriggia</string>
     <string name="pair_rename_label">nome</string>
     <string name="pair_retire_title">ritira tia pâriggia</string>

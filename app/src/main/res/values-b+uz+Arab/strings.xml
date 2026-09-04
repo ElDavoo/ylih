@@ -91,6 +91,12 @@
     <string name="pair_per_hour">سائات اۋقاتى</string>
     <string name="pair_bought">سیتیۋالغان</string>
     <string name="pair_daily_hours_14">کونلیك سائات (14 کون)</string>
+    <string name="pair_charge_cycles">قوۋۋت سیکللری</string>
+    <string name="pair_per_charge">ھر قوۋۋتگه</string>
+    <string name="pair_cycles">سیکللر</string>
+    <string name="pair_charge_watched">کوزتیلگن</string>
+    <string name="pair_vs_new">یانگی ھولیگه نیسبتن</string>
+    <string name="pair_cycle_number">سیکل %1$d</string>
     <string name="pair_rename_title">جوپنىڭ نامى ۆزگارت</string>
     <string name="pair_rename_label">نام</string>
     <string name="pair_retire_title">بو جوپنى پنسیودالاستو</string>

@@ -97,6 +97,12 @@
     <string name="pair_per_hour">waray yontoo</string>
     <string name="pair_bought">kañante</string>
     <string name="pair_daily_hours_14">waray ba dima (14 bu taasu)</string>
+    <string name="pair_charge_cycles">sikili su kaarj</string>
+    <string name="pair_per_charge">kaarj yaakon</string>
+    <string name="pair_cycles">sikili</string>
+    <string name="pair_charge_watched">bujuk</string>
+    <string name="pair_vs_new">ni bukoolen</string>
+    <string name="pair_cycle_number">sikili %1$d</string>
     <string name="pair_rename_title">yontoo caani yindoo</string>
     <string name="pair_rename_label">caani</string>
     <string name="pair_retire_title">yontoo yi cif</string>

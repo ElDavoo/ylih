@@ -97,6 +97,12 @@
     <string name="pair_per_hour">саат башына</string>
     <string name="pair_bought">сатын алынды</string>
     <string name="pair_daily_hours_14">ҝүнлүк саатлар (14 ҝүн)</string>
+    <string name="pair_charge_cycles">долдурма дөврләри</string>
+    <string name="pair_per_charge">һәр долдурмаја</string>
+    <string name="pair_cycles">дөврләр</string>
+    <string name="pair_charge_watched">мүшаһидә олунуб</string>
+    <string name="pair_vs_new">јени олдуғу вахтла</string>
+    <string name="pair_cycle_number">дөвр %1$d</string>
     <string name="pair_rename_title">ҹүтлүјү адландыр</string>
     <string name="pair_rename_label">ад</string>
     <string name="pair_retire_title">бу ҹүтлүјү арадан галдыр</string>

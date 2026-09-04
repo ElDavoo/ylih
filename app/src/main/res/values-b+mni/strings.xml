@@ -91,6 +91,12 @@
     <string name="pair_per_hour">পুং অমগী</string>
     <string name="pair_bought">লৈখ্রে</string>
     <string name="pair_daily_hours_14">নুমিৎ খুদিংগী পুং (নুমিৎ ১৪)</string>
+    <string name="pair_charge_cycles">ꯆꯥꯔꯖ ꯆꯛꯔ</string>
+    <string name="pair_per_charge">ꯆꯥꯔꯖ ꯑꯃꯗ</string>
+    <string name="pair_cycles">ꯆꯛꯔ</string>
+    <string name="pair_charge_watched">ꯌꯦꯡꯈꯤꯕ</string>
+    <string name="pair_vs_new">ꯑꯅꯧꯕ ꯑꯗꯨꯒ ꯆꯥꯡꯗꯝꯅꯕꯗ</string>
+    <string name="pair_cycle_number">ꯆꯛꯔ %1$d</string>
     <string name="pair_rename_title">হেদফোনগী মিং হোংদোকপা</string>
     <string name="pair_rename_label">মিং</string>
     <string name="pair_retire_title">হেদফোন অসি লোয়শিনবা</string>

@@ -167,6 +167,8 @@ call as often as you like. It is invoked from `BootReceiver`, `MainActivity.onSt
   wired plug events are only delivered to a live process; while up it also runs `PlaybackWatcher`
   and heartbeats every minute.
 
+- **Battery, for charge cycles** — `BtBatteryReceiver`, a second manifest receiver. See below.
+
 `data/AppContainer.kt` is a hand-rolled container reached via `(context.applicationContext as
 YlihApp).container`. `YlihApp.onCreate` deliberately does almost no work — it runs on every broadcast-
 woken process start. Its one exception is `Notifications.ensureChannelAtStartup`, and that is
@@ -182,9 +184,9 @@ logic is testable.
 ### Data model
 
 `devices` (an identity as Android reports it) → `pairs` (one physical pair, the lifetime unit,
-with `generation`) → `sessions`. Retiring a pair freezes its totals; the next connection of the
-same device opens generation + 1. This is also how wired headphones work at all, since Android
-cannot tell two wired pairs apart.
+with `generation`) → `sessions` → `battery_samples`. Retiring a pair freezes its totals; the next
+connection of the same device opens generation + 1. This is also how wired headphones work at all,
+since Android cannot tell two wired pairs apart.
 
 Two gotchas in `data/Daos.kt`: `observeSummaries()` and `observeSummary(pairId)` are the same
 large aggregate query duplicated with a `WHERE` clause — change both. And `PairSummary.closedMs`
@@ -195,6 +197,97 @@ platform views of one headset report different addresses — `AudioDeviceInfo.ge
 the leading octets while the ACL broadcast gives the full MAC — so keys use the last two octets,
 which is all both APIs disclose. Getting this wrong splits one pair's hours across two rows;
 `AudioDevicesTest` pins the observed addresses.
+
+### Charge cycles
+
+`ylih · lifetime` answers "how long did these last". Charge cycles answer "how long does a charge
+last, and how has that changed" — the battery-degradation curve issue #30 asked for. A cycle is
+**a hundred percentage points used**, however many part-charges that took.
+
+Three things here are load-bearing and none of them is obvious.
+
+**Both Bluetooth receivers must be `exported="true"`, and this was found on a phone.** The Bluetooth
+stack is a separate app (uid 1002), and an implicit broadcast from another app no longer resolves a
+non-exported component of ours — AMS drops it in `SaferIntentUtils.filterNonExportedComponents`,
+*before* the `BroadcastRecord` exists, so it does not even show as a skipped receiver in `dumpsys
+activity broadcasts`. Measured on a Mi 10T running Android 16: with `exported="false"`,
+`BtConnectionReceiver` saw nothing across five Bluetooth off/on cycles while another app's exported
+receiver logged every one; flipping the attribute alone made both receivers fire on the next cycle.
+That attribute is the whole of Bluetooth-only tracking, so it was a live bug in the shipped app and
+not only a charge-cycles concern. Exporting costs nothing because these are protected broadcasts.
+
+**The broadcast is `@SystemApi` and that is fine — for reasons, not by luck.** Android has no public
+API for a headset's battery. `tracking/BatteryBroadcast.kt` writes out
+`android.bluetooth.device.action.BATTERY_LEVEL_CHANGED` and its extra, and its KDoc records the
+three facts checked against AOSP that make depending on them safe rather than hopeful:
+`RemoteDevices.sendBatteryLevelChangedBroadcast` sends it with **`BLUETOOTH_CONNECT`** as the
+receiver permission — one this app already holds, not `BLUETOOTH_PRIVILEGED`; it carries
+`FLAG_RECEIVER_INCLUDE_BACKGROUND`, which is the flag `BroadcastSkipPolicy.disallowBackgroundStart`
+reads, so it reaches a manifest receiver in a process that is not running exactly as the ACL
+broadcasts do (the stack sets identical delivery flags on both); and it is a
+`<protected-broadcast>`, so no other app can write a battery level into the database. What is *not*
+guaranteed is that a given headset produces one at all, which is why the feature is invisible until
+it does rather than being promised anywhere.
+
+**Only drain we watched is counted.** A drop counts only between two readings taken inside *one
+session* — which is why `battery_samples` is keyed on `sessionId` rather than on `pairId`, making
+the rule a property of the schema instead of a check someone can forget. Then the points drained and
+the listening credited cover the same stretches of time and the ratio between them means something.
+Counting a drop across a gap would break that twice: there is no listening to attach to it, and a
+headset charged partway through the gap reports a level that makes the drain look smaller than it
+was with nothing to say so. `stats/Charge.kt` is the whole calculation, pure and Room-free the way
+`Stats.kt` is, so `ChargeTest` is a plain JVM test; it apportions playback across a segment with the
+same even spread `Stats.dailyMs` uses across midnight, and drops a session that never measured
+playback from **both** sides of the ratio, as `Stats.counted` does.
+
+**The first reading of a session arrives before the session does.** Measured on the same phone:
+ACL_CONNECTED at 08:20:52.721, the battery broadcast at 08:20:53.131, and `BtConnectionReceiver`'s
+own row at 08:20:53.199 — 68 ms too late, so the reading was dropped. The two receivers race by
+construction, since the connect one reads the tracking mode before it writes and both hand their
+work to the same scope. `recordBatteryLevel` therefore returns whether it found an open session, and
+`BtBatteryReceiver` retries once after two seconds. This is not a rare case to tidy up later: many
+headsets report their battery only at connect, so without the retry those pairs record nothing at
+all. `SessionRepositoryTest` pins it through `BtBatteryReceiver.recordWithRetry`, whose `settleMs`
+is a parameter for exactly that — `runTest` makes the delay virtual, and the same test written
+against the real two seconds was flaky under a loaded suite.
+
+**The receiver announces nothing.** `BtBatteryReceiver` deliberately calls neither
+`onSessionsChanged` nor `onFiguresChanged`: a reading changes no figure any widget shows, and the
+heartbeat exists to bound a missed disconnect rather than to follow the battery. Three refusals in
+`SessionRepository.recordBatteryLevel` are each worth their line — a level outside 0..100 (the stack
+broadcasts -1 for "unknown" on *every* disconnect, which at face value is a drop of the whole
+battery into nothing), no open session, and an unchanged level (re-announced when a headset
+reconnects, and a zero-drain segment in the middle of a discharge if stored).
+
+The UI is one section on the pair page and nowhere else, absent until `pointsDrained > 0`.
+`ui/BarChart.kt`'s geometry was split into a keyless `drawBars` so `CycleBarChart` draws the same
+bars against an ordinal axis; `drawDailyBars` and the widget's bitmap path go through it unchanged.
+
+**Everything here is bounded except the readings themselves, and that took three goes to get
+right.** Charge cycles are the one figure in the app with no window — a thirty-day view cannot ask
+what a charge bought when the pair was new — so a decade of them is the case to design for, and each
+of these was measured rather than guessed:
+
+- **The read must not name `sessions`.** A Room flow observes every table its query mentions, and
+  the heartbeat writes to `sessions` once a minute. Joined, the read of 400,000 readings took 3.5 s
+  and re-ran every minute for as long as the pair page was open. `BatterySampleEntity` therefore
+  carries a redundant `pairId`, which makes the same read a covering scan of
+  `(pairId, at)` — 1.5 s, and only when a reading actually lands. This is the trap
+  `observeRecentSessions` and `summarizeLifetime` already exist to avoid, walked into again.
+- **The summary belongs off the main thread.** `Charge.summarize` is 173 ms over a million
+  readings, and it used to sit in a `remember` keyed on the minute clock. It is now
+  `YlihViewModel.chargeSummary`, on `Dispatchers.Default`, with the sessions reduced to spans
+  *before* `distinctUntilChanged` — a heartbeat moves nothing a span holds, so nothing recomputes.
+- **The list and the chart are capped.** Three thousand cycles is three thousand rows between the
+  chart and the sessions below it, and three thousand sub-pixel bars redrawn every frame. The rows
+  stop at `PAIR_CYCLE_ROWS`, keeping their absolute numbering; the chart averages runs of cycles
+  into at most `MAX_CYCLE_BARS` (`bucketedBars`) so the whole lifetime still fits a screen width.
+  The tiles above stay exact, because they are counted rather than drawn.
+
+What is still linear is loading the readings at all: they are the pair's whole history by design.
+At a percent per step and a cycle a day that is ~36,500 rows a year, so a decade is a second or so
+on a background thread when a reading lands. If that ever stops being acceptable the answer is a
+rolled-up `cycles` table, not a window.
 
 ### Stats and UI
 

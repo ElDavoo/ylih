@@ -97,6 +97,12 @@
     <string name="pair_per_hour">mu kwé</string>
     <string name="pair_bought">gɛ́</string>
     <string name="pair_daily_hours_14">kwé/ñen (14 ñen)</string>
+    <string name="pair_charge_cycles">masikèl ma ŋgu</string>
+    <string name="pair_per_charge">inyu ŋgu yada</string>
+    <string name="pair_cycles">masikèl</string>
+    <string name="pair_charge_watched">ba tehe</string>
+    <string name="pair_vs_new">ni mondo</string>
+    <string name="pair_cycle_number">sikèl %1$d</string>
     <string name="pair_rename_title">sɔŋ nà kuɓ</string>
     <string name="pair_rename_label">cam</string>
     <string name="pair_retire_title">nyɔ kuɓ</string>

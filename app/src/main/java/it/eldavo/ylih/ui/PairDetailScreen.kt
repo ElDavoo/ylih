@@ -32,17 +32,33 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import it.eldavo.ylih.R
 import it.eldavo.ylih.data.EndReason
 import it.eldavo.ylih.data.SessionEntity
+import it.eldavo.ylih.stats.ChargeSummary
 import it.eldavo.ylih.stats.Counting
+import it.eldavo.ylih.stats.Cycle
 import it.eldavo.ylih.stats.Stats
 import java.time.ZoneId
 
 /** Two weeks reads better on a single pair than a month of mostly-empty bars. */
 private const val PAIR_CHART_DAYS = 14
+
+/**
+ * How many charge cycles are listed under the chart of them.
+ *
+ * A cap rather than the lot, and for a reason the day list does not have: the days are already
+ * bounded by their window, while cycles accumulate for the life of the pair. Listing every one
+ * would put an unbounded scroll between the chart and the sessions below it.
+ */
+private const val PAIR_CYCLE_ROWS = 12
+
+/** Bars the cycle chart draws at most; beyond this, runs of cycles are averaged together. */
+private const val MAX_CYCLE_BARS = 40
 
 @Composable
 fun PairDetailScreen(
@@ -58,8 +74,10 @@ fun PairDetailScreen(
     // that moves the summary. MainActivity's `openPairFlow` records the same trap.
     val summaryFlow = remember(pairId) { viewModel.summary(pairId) }
     val sessionsFlow = remember(pairId) { viewModel.sessions(pairId) }
+    val chargeFlow = remember(pairId) { viewModel.chargeSummary(pairId) }
     val summary by summaryFlow.collectAsStateWithLifecycle(initialValue = null)
     val sessions by sessionsFlow.collectAsStateWithLifecycle(initialValue = emptyList())
+    val charge by chargeFlow.collectAsStateWithLifecycle(initialValue = null)
     val spansByPair by viewModel.spansByPair.collectAsStateWithLifecycle()
     // Two clocks: [liveNow] drives the "connected for …" line and the open session's row, which
     // are the only things here meant to move every second. Everything else is derived from this
@@ -95,6 +113,15 @@ fun PairDetailScreen(
     // drawn to, the way StatsScreen's chart and list agree over the full 30 days.
     val breakdown = remember(series) { dailyBreakdown(series.takeLast(PAIR_CHART_DAYS)) }
     val chartMax = remember(series) { chartMaxMs(series.takeLast(PAIR_CHART_DAYS)) }
+    // Newest first, like the day list, and numbered from the oldest so that a run of them reads as
+    // the history it is — cycle 137 stays cycle 137 however few of them are listed. Only the most
+    // recent are: a pair worn daily for a decade has some three thousand cycles, and a list of
+    // those would bury the session list under it and never end. The chart carries the whole
+    // lifetime, which is where the shape is read anyway.
+    val cycleRows = remember(charge) {
+        charge?.cycles.orEmpty().withIndex().reversed().take(PAIR_CYCLE_ROWS)
+    }
+    val cycleMax = remember(cycleRows) { barMaxMs(cycleRows.map { it.value.countedMs }) }
 
     Scaffold(
         modifier = Modifier.padding(bottom = contentPadding.calculateBottomPadding()),
@@ -242,7 +269,13 @@ fun PairDetailScreen(
 
                     Spacer(Modifier.height(24.dp))
                     val chartLabel = stringResource(R.string.pair_daily_hours_14)
-                    Text(chartLabel, style = MaterialTheme.typography.titleSmallEmphasized)
+                    // A heading, because it titles the day list below the chart as well as the
+                    // chart itself — the same one section StatsScreen makes of its own pair.
+                    Text(
+                        chartLabel,
+                        style = MaterialTheme.typography.titleSmallEmphasized,
+                        modifier = Modifier.semantics { heading() },
+                    )
                     Spacer(Modifier.height(8.dp))
                     DailyBarChart(
                         // The tail of the series already built above, rather than a second walk
@@ -257,6 +290,21 @@ fun PairDetailScreen(
             breakdown.firstOrNull()?.first?.let { today ->
                 items(breakdown, key = { "day:${it.first}" }) { (date, ms) ->
                     DailyBreakdownRow(date = date, ms = ms, maxMs = chartMax, today = today)
+                }
+            }
+            // Absent until the headphones have actually reported their battery. Plenty never do —
+            // the level reaches Android over HFP, Apple's vendor command or BLE's battery service,
+            // and a headset that speaks none of them can say nothing here. An empty section
+            // explaining that would be a permanent apology on every pair that has one.
+            charge?.takeIf { it.hasData }?.let { cycles ->
+                item { ChargeCyclesHeader(cycles) }
+                items(cycleRows, key = { "cycle:${it.index}" }) { (index, cycle) ->
+                    BreakdownRow(
+                        title = stringResource(R.string.pair_cycle_number, index + 1),
+                        subtitle = cycleDates(cycle),
+                        ms = cycle.countedMs,
+                        maxMs = cycleMax,
+                    )
                 }
             }
             item { SectionHeader(stringResource(R.string.pair_sessions)) }
@@ -336,6 +384,64 @@ fun PairDetailScreen(
         )
     }
 }
+
+/**
+ * The charge-cycle block: what a charge is currently worth, and the chart of what it used to be.
+ *
+ * The heading titles the chart *and* the cycles listed under it — they are one section, the way the
+ * day list under the chart above is — so there is no `SectionHeader` between them.
+ */
+@Composable
+private fun ChargeCyclesHeader(charge: ChargeSummary) {
+    Column(Modifier.padding(horizontal = 16.dp)) {
+        Spacer(Modifier.height(24.dp))
+        val label = stringResource(R.string.pair_charge_cycles)
+        Text(
+            label,
+            style = MaterialTheme.typography.titleSmallEmphasized,
+            modifier = Modifier.semantics { heading() },
+        )
+        Spacer(Modifier.height(8.dp))
+        val versusNew = charge.versusNew
+        val tiles = listOfNotNull(
+            stringResource(R.string.pair_per_charge) to formatHours(charge.msPerCycle),
+            versusNew?.let { stringResource(R.string.pair_vs_new) to formatPercent(it) },
+            stringResource(R.string.pair_cycles) to formatCycles(charge.cyclesFraction),
+            stringResource(R.string.pair_charge_watched) to formatHours(charge.countedMs),
+        )
+        // Two rows of two once the comparison has something to say, rather than four tiles crushed
+        // into one row — "vs when new" is a long label and the figures beside it are not short.
+        // Until then it is the three-tile row every other block on this screen uses.
+        if (tiles.size == 4) {
+            StatRow(tiles.take(2))
+            Spacer(Modifier.height(8.dp))
+            StatRow(tiles.drop(2))
+        } else {
+            StatRow(tiles)
+        }
+        // Only once there is more than one bar to compare. A single cycle drawn full height says
+        // "this is the tallest one" about a series of one, which is the reading it is least able
+        // to support — the figures above already report it.
+        if (charge.cycles.size > 1) {
+            Spacer(Modifier.height(16.dp))
+            // Every cycle the pair has ever been through, averaged into at most [MAX_CYCLE_BARS]
+            // bars so that a decade of them still draws — and still reads — in one screen width.
+            val bars = remember(charge) {
+                bucketedBars(charge.cycles.map { it.countedMs }, MAX_CYCLE_BARS)
+            }
+            CycleBarChart(
+                values = bars,
+                label = label,
+                firstLabel = stringResource(R.string.pair_cycle_number, 1),
+                lastLabel = stringResource(R.string.pair_cycle_number, charge.cycles.size),
+            )
+        }
+    }
+}
+
+/** When a cycle ran, for the line under its name. Two dates the locale writes for itself. */
+private fun cycleDates(cycle: Cycle): String =
+    "${formatDate(cycle.startAt)} – ${formatDate(cycle.endAt)}"
 
 @Composable
 private fun SessionRow(session: SessionEntity, now: Long) {

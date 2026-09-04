@@ -99,6 +99,12 @@
     <string name="pair_per_hour">每小時</string>
     <string name="pair_bought">購買於</string>
     <string name="pair_daily_hours_14">每日小時數（14 天）</string>
+    <string name="pair_charge_cycles">充電循環</string>
+    <string name="pair_per_charge">每次充電</string>
+    <string name="pair_cycles">循環</string>
+    <string name="pair_charge_watched">觀察時長</string>
+    <string name="pair_vs_new">相比全新時</string>
+    <string name="pair_cycle_number">第 %1$d 次循環</string>
     <string name="pair_rename_title">重新命名耳機</string>
     <string name="pair_rename_label">名稱</string>
     <string name="pair_retire_title">將此耳機退役</string>

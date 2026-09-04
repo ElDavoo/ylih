@@ -97,6 +97,12 @@
     <string name="pair_per_hour">kada oras</string>
     <string name="pair_bought">binili</string>
     <string name="pair_daily_hours_14">pang-araw-araw na oras (14 araw)</string>
+    <string name="pair_charge_cycles">mga siklo sa charge</string>
+    <string name="pair_per_charge">matag charge</string>
+    <string name="pair_cycles">mga siklo</string>
+    <string name="pair_charge_watched">naobserbahan</string>
+    <string name="pair_vs_new">kumpara sa bag-o</string>
+    <string name="pair_cycle_number">siklo %1$d</string>
     <string name="pair_rename_title">baguhin ang pangalan ng pares</string>
     <string name="pair_rename_label">pangalan</string>
     <string name="pair_retire_title">iwan ang pares na ito</string>

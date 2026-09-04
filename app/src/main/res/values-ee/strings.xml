@@ -97,6 +97,12 @@
     <string name="pair_per_hour">gaƒoƒo ƒe</string>
     <string name="pair_bought">ƒu</string>
     <string name="pair_daily_hours_14">gaƒoƒo ŋkeke ƒe (ŋkeke 14)</string>
+    <string name="pair_charge_cycles">ŋusẽdodo ƒe tɔtrɔwo</string>
+    <string name="pair_per_charge">ŋusẽdodo ɖeka</string>
+    <string name="pair_cycles">tɔtrɔwo</string>
+    <string name="pair_charge_watched">wolé ŋku ɖe eŋu</string>
+    <string name="pair_vs_new">tsɔ sɔ kple yeye</string>
+    <string name="pair_cycle_number">tɔtrɔ %1$d</string>
     <string name="pair_rename_title">ɖokuɖo ŋkɔ tsɔ</string>
     <string name="pair_rename_label">ŋkɔ</string>
     <string name="pair_retire_title">ɖokuɖo sia ɖa</string>

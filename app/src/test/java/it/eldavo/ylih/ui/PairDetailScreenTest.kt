@@ -15,6 +15,7 @@ import androidx.compose.ui.test.performTextReplacement
 import androidx.test.core.app.ApplicationProvider
 import it.eldavo.ylih.R
 import it.eldavo.ylih.YlihApp
+import it.eldavo.ylih.data.BatterySampleEntity
 import it.eldavo.ylih.data.DeviceEntity
 import it.eldavo.ylih.data.DeviceKind
 import it.eldavo.ylih.data.EndReason
@@ -29,6 +30,7 @@ import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -169,7 +171,153 @@ class PairDetailScreenTest {
             .performScrollToNode(hasText(value, substring = true))
     }
 
+    /** [scrollTo] where a substring would be ambiguous — "cycle 1" against "cycle 19". */
+    private fun scrollToExact(value: String) {
+        compose.onNode(hasScrollToNodeAction()).performScrollToNode(hasText(value))
+    }
+
     private fun pair(pairId: Long) = runBlocking { db.pairDao().byId(pairId) }
+
+    /**
+     * The row naming cycle [number], reporting [ms].
+     *
+     * Matched on its text rather than on its description, which is what tells it apart from the
+     * chart above it: the chart describes its own axis as "cycle 1 – cycle 2 · 5.0h max" — so it
+     * answers to the same names — but its labels are cleared from the semantics tree and it has no
+     * text at all.
+     */
+    private fun assertCycleRow(number: Int, ms: Long) {
+        val name = text(R.string.pair_cycle_number, number)
+        // The rows are listed newest first, so the oldest cycle is the furthest down the list.
+        scrollTo(name)
+        compose.onNode(
+            hasText(name, substring = true).and(hasText(formatHours(ms), substring = true)),
+        ).assertExists()
+    }
+
+    /**
+     * Two full cycles over the three sessions [seedPair] writes: sixty points in the first four
+     * hours, forty in the next one — which completes the first hundred — and a hundred more in the
+     * last hour. Six hours of listening for two cycles, so a charge is worth three.
+     */
+    private fun seedBatteryReadings() = runBlocking {
+        val sessions = db.sessionDao().getAll()
+        val pairId = db.pairDao().getAll().single().id
+        fun reading(sessionId: Long, at: Long, level: Int) = runBlocking {
+            db.batterySampleDao().insert(
+                BatterySampleEntity(sessionId = sessionId, pairId = pairId, at = at, level = level),
+            )
+        }
+        reading(sessions[0].id, now - 3 * day, 100)
+        reading(sessions[0].id, now - 3 * day + 4 * hour, 40)
+        reading(sessions[1].id, now - 2 * day, 100)
+        reading(sessions[1].id, now - 2 * day + hour, 60)
+        reading(sessions[2].id, now - hour, 100)
+        reading(sessions[2].id, now, 0)
+    }
+
+    /**
+     * Battery is the one thing here the headphones have to volunteer — it reaches Android over
+     * HFP, Apple's vendor command or BLE's battery service, and plenty of headsets speak none of
+     * them. A pair that has never reported one gets no section rather than an empty one.
+     *
+     * Asserted by scrolling rather than by counting nodes: the list composes what is on screen, so
+     * "no node with this text" is true of every section below the fold and would pass whatever the
+     * screen did.
+     */
+    @Test
+    fun `a pair whose headphones never report their battery has no charge section`() {
+        val pairId = seedPair()
+
+        show(pairId)
+
+        assertTrue(
+            "the whole list was searched and there is no charge section in it",
+            runCatching { scrollTo(text(R.string.pair_charge_cycles)) }.isFailure,
+        )
+    }
+
+    /** One session per cycle, a hundred points each, so [count] cycles complete. */
+    private fun seedManyCycles(pairId: Long, count: Int) = runBlocking {
+        repeat(count) { i ->
+            val at = now - (count - i) * day
+            val sessionId = db.sessionDao().insert(
+                SessionEntity(
+                    pairId = pairId,
+                    connectedAt = at,
+                    disconnectedAt = at + 5 * hour,
+                    heartbeatAt = at + 5 * hour,
+                    endReason = EndReason.DISCONNECTED,
+                ),
+            )
+            db.batterySampleDao()
+                .insert(BatterySampleEntity(sessionId = sessionId, pairId = pairId, at = at, level = 100))
+            db.batterySampleDao().insert(
+                BatterySampleEntity(sessionId = sessionId, pairId = pairId, at = at + 5 * hour, level = 0),
+            )
+        }
+    }
+
+    /**
+     * Cycles accumulate for the life of the pair — daily use for a decade is some three thousand —
+     * and the day list above them is bounded by its window while these are not. Listing every one
+     * would put an unbounded scroll between the chart and the sessions underneath it.
+     */
+    @Test
+    fun `only the most recent charge cycles are listed, however many there are`() {
+        val pairId = seedPair()
+        seedManyCycles(pairId, count = 30)
+
+        show(pairId)
+        compose.waitUntil(timeoutMillis = 10_000) {
+            runCatching { scrollTo(text(R.string.pair_charge_cycles)) }.isSuccess
+        }
+
+        // The newest is listed and the oldest is not, and the sessions below stay reachable.
+        // Exactly, not by substring: "cycle 1" is a substring of "cycle 19", which *is* listed.
+        scrollToExact(text(R.string.pair_cycle_number, 30))
+        assertTrue(
+            "the whole list was searched and cycle 1 is not in it",
+            runCatching { scrollToExact(text(R.string.pair_cycle_number, 1)) }.isFailure,
+        )
+        scrollTo(text(R.string.session_ongoing))
+    }
+
+    @Test
+    fun `charge cycles report what a charge is worth and what each one bought`() {
+        val pairId = seedPair()
+        seedBatteryReadings()
+
+        show(pairId)
+        // The readings arrive from Room a frame or more after the summary does, so the section
+        // may not be in the list yet on the first attempt.
+        compose.waitUntil(timeoutMillis = 10_000) {
+            runCatching { scrollTo(text(R.string.pair_charge_cycles)) }.isSuccess
+        }
+
+        // Two hundred points over six hours, so a hundred of them is three. The three tiles are in
+        // the same list item as the heading just scrolled to.
+        compose.onNodeWithContentDescription(
+            "${text(R.string.pair_per_charge)}: ${formatHours(3 * hour)}",
+        ).assertExists()
+        compose.onNodeWithContentDescription(
+            "${text(R.string.pair_cycles)}: ${formatCycles(2.0)}",
+        ).assertExists()
+        compose.onNodeWithContentDescription(
+            "${text(R.string.pair_charge_watched)}: ${formatHours(6 * hour)}",
+        ).assertExists()
+        // Five hours for the first cycle and one for the second: a fifth of what it managed new.
+        // With two cycles the window is one, so this really is the last against the first.
+        compose.onNodeWithContentDescription(
+            "${text(R.string.pair_vs_new)}: ${formatPercent(0.2)}",
+        ).assertExists()
+
+        // One row per completed cycle, and the shape of the two is the whole point of the section:
+        // five of the six hours went to the first, one to the second — the same battery buying
+        // less than it used to.
+        assertCycleRow(number = 1, ms = 5 * hour)
+        assertCycleRow(number = 2, ms = hour)
+    }
 
     @Test
     fun `the page reports lifetime, playback, cost and every session`() {

@@ -98,6 +98,12 @@
     <string name="pair_per_hour">시간당</string>
     <string name="pair_bought">구매일</string>
     <string name="pair_daily_hours_14">일별 시간 (14일)</string>
+    <string name="pair_charge_cycles">충전 주기</string>
+    <string name="pair_per_charge">충전 1회당</string>
+    <string name="pair_cycles">주기</string>
+    <string name="pair_charge_watched">관측 시간</string>
+    <string name="pair_vs_new">새 제품 대비</string>
+    <string name="pair_cycle_number">%1$d번째 주기</string>
     <string name="pair_rename_title">쌍 이름 바꾸기</string>
     <string name="pair_rename_label">이름</string>
     <string name="pair_retire_title">이 쌍 은퇴시키기</string>

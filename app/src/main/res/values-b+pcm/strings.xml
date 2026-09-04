@@ -91,6 +91,12 @@
     <string name="pair_per_hour">per hour</string>
     <string name="pair_bought">when you buy am</string>
     <string name="pair_daily_hours_14">hours every day (14 days)</string>
+    <string name="pair_charge_cycles">charge cycle dem</string>
+    <string name="pair_per_charge">for one charge</string>
+    <string name="pair_cycles">cycle dem</string>
+    <string name="pair_charge_watched">wetin we see</string>
+    <string name="pair_vs_new">compare to wen e new</string>
+    <string name="pair_cycle_number">cycle %1$d</string>
     <string name="pair_rename_title">change di pair name</string>
     <string name="pair_rename_label">name</string>
     <string name="pair_retire_title">retire dis pair</string>

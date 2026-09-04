@@ -100,6 +100,12 @@
     <string name="pair_per_hour">1時間あたり</string>
     <string name="pair_bought">購入日</string>
     <string name="pair_daily_hours_14">1日あたりの時間（14日間）</string>
+    <string name="pair_charge_cycles">充電サイクル</string>
+    <string name="pair_per_charge">1回の充電あたり</string>
+    <string name="pair_cycles">サイクル</string>
+    <string name="pair_charge_watched">観測時間</string>
+    <string name="pair_vs_new">新品時との比</string>
+    <string name="pair_cycle_number">サイクル %1$d</string>
     <string name="pair_rename_title">ペアの名前を変更</string>
     <string name="pair_rename_label">名前</string>
     <string name="pair_retire_title">このペアを引退させる</string>

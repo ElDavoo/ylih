@@ -91,6 +91,12 @@
     <string name="pair_per_hour">për orë</string>
     <string name="pair_bought">blerë</string>
     <string name="pair_daily_hours_14">orë ditore (14 ditë)</string>
+    <string name="pair_charge_cycles">cikle karikimi</string>
+    <string name="pair_per_charge">për karikim</string>
+    <string name="pair_cycles">cikle</string>
+    <string name="pair_charge_watched">vëzhguar</string>
+    <string name="pair_vs_new">krahasuar me të reja</string>
+    <string name="pair_cycle_number">cikli %1$d</string>
     <string name="pair_rename_title">riemëro palën</string>
     <string name="pair_rename_label">emri</string>
     <string name="pair_retire_title">pensionojeni këtë palë</string>

@@ -91,6 +91,12 @@
     <string name="pair_per_hour">buli saawa</string>
     <string name="pair_bought">guli</string>
     <string name="pair_daily_hours_14">saawa z’enday (ennaku 14)</string>
+    <string name="pair_charge_cycles">enkyukakyuka z’amaani</string>
+    <string name="pair_per_charge">ku maani agamu</string>
+    <string name="pair_cycles">enkyukakyuka</string>
+    <string name="pair_charge_watched">ebyalabwa</string>
+    <string name="pair_vs_new">nga bigeraageranyizibwa n’empya</string>
+    <string name="pair_cycle_number">enkyukakyuka %1$d</string>
     <string name="pair_rename_title">gamba ensawo ngeri</string>
     <string name="pair_rename_label">erinnya</string>
     <string name="pair_retire_title">giriko ensawo eno</string>

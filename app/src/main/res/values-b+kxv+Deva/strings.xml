@@ -91,6 +91,12 @@
     <string name="pair_per_hour">प्राति घान्ता</string>
     <string name="pair_bought">किना आते</string>
     <string name="pair_daily_hours_14">प्राति दिना घान्ता (14 दिना)</string>
+    <string name="pair_charge_cycles">चार्ज चक्र</string>
+    <string name="pair_per_charge">एक चार्ज मुदे</string>
+    <string name="pair_cycles">चक्र</string>
+    <string name="pair_charge_watched">देखते</string>
+    <string name="pair_vs_new">नवा बेल्ते</string>
+    <string name="pair_cycle_number">चक्र %1$d</string>
     <string name="pair_rename_title">जोडि-ना नौ बादाला किडु</string>
     <string name="pair_rename_label">नौ</string>
     <string name="pair_retire_title">ई जोडि छेडा किडु</string>

@@ -91,6 +91,12 @@
     <string name="pair_per_hour">per ura</string>
     <string name="pair_bought">cumpra</string>
     <string name="pair_daily_hours_14">uras giurnodas (14 dis)</string>
+    <string name="pair_charge_cycles">ciclus da chargia</string>
+    <string name="pair_per_charge">per chargia</string>
+    <string name="pair_cycles">ciclus</string>
+    <string name="pair_charge_watched">observà</string>
+    <string name="pair_vs_new">en congual cun nov</string>
+    <string name="pair_cycle_number">ciclus %1$d</string>
     <string name="pair_rename_title">renumner pair</string>
     <string name="pair_rename_label">num</string>
     <string name="pair_retire_title">pensiunar questa pair</string>

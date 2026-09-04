@@ -91,6 +91,12 @@
     <string name="pair_per_hour">kul tigira</string>
     <string name="pair_bought">ẓra</string>
     <string name="pair_daily_hours_14">tiɣratin i yal ass (14 n wussan)</string>
+    <string name="pair_charge_cycles">tiwinas n uccetki</string>
+    <string name="pair_per_charge">i yal accetki</string>
+    <string name="pair_cycles">tiwinas</string>
+    <string name="pair_charge_watched">yettwaɛassen</string>
+    <string name="pair_vs_new">ɣef wamek llan d imaynuten</string>
+    <string name="pair_cycle_number">tawinest %1$d</string>
     <string name="pair_rename_title">bddel isem talli</string>
     <string name="pair_rename_label">isem</string>
     <string name="pair_retire_title">ḥbes talli-a</string>

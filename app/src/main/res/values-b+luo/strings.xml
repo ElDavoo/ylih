@@ -91,6 +91,12 @@
     <string name="pair_per_hour">e saa achiel</string>
     <string name="pair_bought">nongiew</string>
     <string name="pair_daily_hours_14">saa mag odiechieng (ndalo 14)</string>
+    <string name="pair_charge_cycles">lwenje mag teko</string>
+    <string name="pair_per_charge">kuom teko achiel</string>
+    <string name="pair_cycles">lwenje</string>
+    <string name="pair_charge_watched">mane one</string>
+    <string name="pair_vs_new">kipimo gi manyien</string>
+    <string name="pair_cycle_number">lweny %1$d</string>
     <string name="pair_rename_title">lok nying hedfon</string>
     <string name="pair_rename_label">nying</string>
     <string name="pair_retire_title">gol tich hedfon ni</string>

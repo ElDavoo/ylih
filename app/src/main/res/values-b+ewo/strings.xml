@@ -97,6 +97,12 @@
     <string name="pair_per_hour">ti kuε bot</string>
     <string name="pair_bought">bekum</string>
     <string name="pair_daily_hours_14">kuε ye zepot (zitom ye 14)</string>
+    <string name="pair_charge_cycles">misikèl mi ngul</string>
+    <string name="pair_per_charge">ngul fɔ́</string>
+    <string name="pair_cycles">misikèl</string>
+    <string name="pair_charge_watched">bé yén</string>
+    <string name="pair_vs_new">ai mfefé</string>
+    <string name="pair_cycle_number">sikèl %1$d</string>
     <string name="pair_rename_title">basa eve bikule bot</string>
     <string name="pair_rename_label">zina</string>
     <string name="pair_retire_title">azinga bikule bot ane</string>

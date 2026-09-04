@@ -97,6 +97,12 @@
     <string name="pair_per_hour">tunni kohta</string>
     <string name="pair_bought">ostetud</string>
     <string name="pair_daily_hours_14">tunni päevas (14 päeva)</string>
+    <string name="pair_charge_cycles">laadimistsüklid</string>
+    <string name="pair_per_charge">laadimise kohta</string>
+    <string name="pair_cycles">tsüklid</string>
+    <string name="pair_charge_watched">jälgitud</string>
+    <string name="pair_vs_new">võrreldes uuega</string>
+    <string name="pair_cycle_number">tsükkel %1$d</string>
     <string name="pair_rename_title">nimeta paar ümber</string>
     <string name="pair_rename_label">nimi</string>
     <string name="pair_retire_title">pensioneeri see paar</string>

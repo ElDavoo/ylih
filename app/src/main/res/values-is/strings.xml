@@ -91,6 +91,12 @@
     <string name="pair_per_hour">á klukkustund</string>
     <string name="pair_bought">keypt</string>
     <string name="pair_daily_hours_14">daglegar stundir (14 dagar)</string>
+    <string name="pair_charge_cycles">hleðslulotur</string>
+    <string name="pair_per_charge">á hleðslu</string>
+    <string name="pair_cycles">lotur</string>
+    <string name="pair_charge_watched">fylgst með</string>
+    <string name="pair_vs_new">miðað við ný</string>
+    <string name="pair_cycle_number">lota %1$d</string>
     <string name="pair_rename_title">endurnefna par</string>
     <string name="pair_rename_label">nafn</string>
     <string name="pair_retire_title">starfslok fyrir þetta par</string>

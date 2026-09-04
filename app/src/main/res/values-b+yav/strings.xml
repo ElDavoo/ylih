@@ -91,6 +91,12 @@
     <string name="pair_per_hour">a tem muanda</string>
     <string name="pair_bought">a búe</string>
     <string name="pair_daily_hours_14">tem muanda (14 níe)</string>
+    <string name="pair_charge_cycles">sikɛl mʉ́ ndáá</string>
+    <string name="pair_per_charge">ndáá yímɔ́</string>
+    <string name="pair_cycles">sikɛl</string>
+    <string name="pair_charge_watched">bá ɛ́ɛn</string>
+    <string name="pair_vs_new">nɛ́ mʉ́ndúm</string>
+    <string name="pair_cycle_number">sikɛl %1$d</string>
     <string name="pair_rename_title">súk a kóm a ab ne</string>
     <string name="pair_rename_label">kóm</string>
     <string name="pair_retire_title">níe a ab ne ánda</string>

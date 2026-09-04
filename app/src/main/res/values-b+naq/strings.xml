@@ -91,6 +91,12 @@
     <string name="pair_per_hour">hora by</string>
     <string name="pair_bought">guba</string>
     <string name="pair_daily_hours_14">ǂo-hora tsi (14 ǁau)</string>
+    <string name="pair_charge_cycles">ǀgâuǃnâdi</string>
+    <string name="pair_per_charge">mâ ǀgâub hoab ai</string>
+    <string name="pair_cycles">ǃnâdi</string>
+    <string name="pair_charge_watched">kōhes ge</string>
+    <string name="pair_vs_new">ǀasan ge i</string>
+    <string name="pair_cycle_number">ǃnâ %1$d</string>
     <string name="pair_rename_title">ǂao ǃares tsi</string>
     <string name="pair_rename_label">tsi</string>
     <string name="pair_retire_title">ǃaba ǃares di</string>

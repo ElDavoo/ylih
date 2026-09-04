@@ -91,6 +91,12 @@
     <string name="pair_per_hour">每小时</string>
     <string name="pair_bought">购买</string>
     <string name="pair_daily_hours_14">每日小时数（14 日）</string>
+    <string name="pair_charge_cycles">充电周期</string>
+    <string name="pair_per_charge">每次充电</string>
+    <string name="pair_cycles">周期</string>
+    <string name="pair_charge_watched">观察时长</string>
+    <string name="pair_vs_new">同全新时比</string>
+    <string name="pair_cycle_number">周期 %1$d</string>
     <string name="pair_rename_title">重新命名耳机对</string>
     <string name="pair_rename_label">名称</string>
     <string name="pair_retire_title">退休呢副耳机</string>

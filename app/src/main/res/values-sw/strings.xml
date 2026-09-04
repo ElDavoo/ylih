@@ -91,6 +91,12 @@
     <string name="pair_per_hour">kwa saa</string>
     <string name="pair_bought">kilinunuliwa</string>
     <string name="pair_daily_hours_14">saa za kila siku (siku 14)</string>
+    <string name="pair_charge_cycles">mizunguko ya chaji</string>
+    <string name="pair_per_charge">kwa kila chaji</string>
+    <string name="pair_cycles">mizunguko</string>
+    <string name="pair_charge_watched">iliyotazamwa</string>
+    <string name="pair_vs_new">ikilinganishwa na mpya</string>
+    <string name="pair_cycle_number">mzunguko %1$d</string>
     <string name="pair_rename_title">badilisha jina la jozi</string>
     <string name="pair_rename_label">jina</string>
     <string name="pair_retire_title">staafisha jozi hii</string>

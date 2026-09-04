@@ -19,6 +19,7 @@ class SessionRepository(
     private val devices = db.deviceDao()
     private val pairs = db.pairDao()
     private val sessions = db.sessionDao()
+    private val batterySamples = db.batterySampleDao()
 
     /**
      * Serialises writes from receivers, the service and the worker, which race freely.
@@ -106,6 +107,49 @@ class SessionRepository(
             }
         }
     }
+
+    /**
+     * Files the headset's own battery level against whatever session [key] has open.
+     *
+     * Three refusals, and each of them is the difference between a charge-cycle figure and a
+     * fiction:
+     *
+     * - a level outside 0..100 is not a reading. The stack broadcasts -1 for "unknown" and -100
+     *   for "Bluetooth is off", and it sends the first of those on *every* disconnect — taken at
+     *   face value that is a 40-point drop into nothing;
+     * - with no open session there is nothing to file against, and a reading that outlived its
+     *   session would let two of them be subtracted across a gap nothing watched;
+     * - an unchanged level is not a new observation. The stack re-announces the current level when
+     *   a headset reconnects and whenever another source of it appears, and storing that would put
+     *   a zero-drain segment in the middle of a discharge.
+     *
+     * @return whether the pair had an open session to file against — false meaning "ask again",
+     *   which is a real case and not a rare one. See [it.eldavo.ylih.tracking.BtBatteryReceiver].
+     */
+    suspend fun recordBatteryLevel(key: String, level: Int, at: Long = clock.now()): Boolean =
+        mutex.withLock {
+            if (level !in 0..100) return@withLock false
+            db.withTransaction {
+                val device = devices.findByKey(key) ?: return@withTransaction false
+                val pair = pairs.activeFor(device.id) ?: return@withTransaction false
+                val open = sessions.openFor(pair.id) ?: return@withTransaction false
+                if (batterySamples.lastFor(open.id)?.level != level) {
+                    batterySamples.insert(
+                        BatterySampleEntity(
+                            sessionId = open.id,
+                            pairId = pair.id,
+                            at = at,
+                            level = level,
+                        ),
+                    )
+                }
+                true
+            }
+        }
+
+    /** Every reading a pair has produced, oldest first. A read, so no mutex. */
+    fun observeBatterySamples(pairId: Long): Flow<List<BatterySampleEntity>> =
+        batterySamples.observeForPair(pairId)
 
     suspend fun openSessionIdFor(key: String): Long? = mutex.withLock {
         val device = devices.findByKey(key) ?: return@withLock null
