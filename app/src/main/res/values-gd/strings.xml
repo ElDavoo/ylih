@@ -91,6 +91,11 @@
     <string name="pair_per_hour">gach uair a thìde</string>
     <string name="pair_bought">a cheannaich</string>
     <string name="pair_daily_hours_14">uairean laitheil (14 latha)</string>
+    <string name="pair_charge_cycles">cuairtean teairrsidh</string>
+    <string name="pair_per_charge">gach teairrseadh</string>
+    <string name="pair_cycles">cuairtean</string>
+    <string name="pair_charge_watched">fo shùil</string>
+    <string name="pair_cycle_number">cuairt %1$d</string>
     <string name="pair_rename_title">ath-ainm paidhir</string>
     <string name="pair_rename_label">ainm</string>
     <string name="pair_retire_title">air falbh an paidhir seo</string>

@@ -91,6 +91,11 @@
     <string name="pair_per_hour">per time</string>
     <string name="pair_bought">kjøpt</string>
     <string name="pair_daily_hours_14">dagleg timar (14 dagar)</string>
+    <string name="pair_charge_cycles">ladesyklusar</string>
+    <string name="pair_per_charge">per lading</string>
+    <string name="pair_cycles">syklusar</string>
+    <string name="pair_charge_watched">observert</string>
+    <string name="pair_cycle_number">syklus %1$d</string>
     <string name="pair_rename_title">endr namn på par</string>
     <string name="pair_rename_label">namn</string>
     <string name="pair_retire_title">pensjonere dette paret</string>

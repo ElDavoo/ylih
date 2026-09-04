@@ -91,6 +91,11 @@
     <string name="pair_per_hour">മണിക്കൂറിന്</string>
     <string name="pair_bought">വാങ്ങിയത്</string>
     <string name="pair_daily_hours_14">ദിവസേനയുള്ള മണിക്കൂർ (14 ദിവസം)</string>
+    <string name="pair_charge_cycles">ചാർജ് ചക്രങ്ങൾ</string>
+    <string name="pair_per_charge">ഓരോ ചാർജിനും</string>
+    <string name="pair_cycles">ചക്രങ്ങൾ</string>
+    <string name="pair_charge_watched">നിരീക്ഷിച്ചത്</string>
+    <string name="pair_cycle_number">ചക്രം %1$d</string>
     <string name="pair_rename_title">ജോടിയുടെ പേര് മാറ്റുക</string>
     <string name="pair_rename_label">പേര്</string>
     <string name="pair_retire_title">ഈ ജോടി വിരമിപ്പിക്കുക</string>

@@ -91,6 +91,11 @@
     <string name="pair_per_hour">khu ehora</string>
     <string name="pair_bought">wathumiwa</string>
     <string name="pair_daily_hours_14">mahora a nihiku (mahiku 14)</string>
+    <string name="pair_charge_cycles">mazungulusho a inguvu</string>
+    <string name="pair_per_charge">ni inguvu imosa</string>
+    <string name="pair_cycles">mazungulusho</string>
+    <string name="pair_charge_watched">yoonihiwa</string>
+    <string name="pair_cycle_number">nzungulusho %1$d</string>
     <string name="pair_rename_title">olukiha nsina na ifone</string>
     <string name="pair_rename_label">nsina</string>
     <string name="pair_retire_title">muhiyeke ifone ela</string>

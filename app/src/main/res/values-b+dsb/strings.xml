@@ -97,6 +97,11 @@
     <string name="pair_per_hour">za hodinu</string>
     <string name="pair_bought">kupjeny</string>
     <string name="pair_daily_hours_14">hodinow na źeń (14 dnjow)</string>
+    <string name="pair_charge_cycles">nabijańske cykluse</string>
+    <string name="pair_per_charge">na nabiśe</string>
+    <string name="pair_cycles">cykluse</string>
+    <string name="pair_charge_watched">wobglědowane</string>
+    <string name="pair_cycle_number">cyklus %1$d</string>
     <string name="pair_rename_title">pśemjeniś paru</string>
     <string name="pair_rename_label">mě</string>
     <string name="pair_retire_title">toś tu paru pensioniriś</string>

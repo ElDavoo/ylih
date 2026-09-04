@@ -98,6 +98,11 @@
     <string name="pair_per_hour">orduko</string>
     <string name="pair_bought">erosita</string>
     <string name="pair_daily_hours_14">orduak egunero (14 eguna)</string>
+    <string name="pair_charge_cycles">karga-zikloak</string>
+    <string name="pair_per_charge">karga bakoitzeko</string>
+    <string name="pair_cycles">zikloak</string>
+    <string name="pair_charge_watched">behatuta</string>
+    <string name="pair_cycle_number">%1$d. zikloa</string>
     <string name="pair_rename_title">pareza berrizendatu</string>
     <string name="pair_rename_label">izena</string>
     <string name="pair_retire_title">pare hau jubilatu</string>

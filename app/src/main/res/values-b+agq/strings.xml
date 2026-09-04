@@ -97,6 +97,11 @@
     <string name="pair_per_hour">nábè kà</string>
     <string name="pair_bought">à wùm</string>
     <string name="pair_daily_hours_14">nábè à yál (14 yál)</string>
+    <string name="pair_charge_cycles">sìkəl tsə̀ tsàŋ</string>
+    <string name="pair_per_charge">à tsàŋ</string>
+    <string name="pair_cycles">sìkəl</string>
+    <string name="pair_charge_watched">à yìì</string>
+    <string name="pair_cycle_number">sìkəl %1$d</string>
     <string name="pair_rename_title">gó kó îsàm ndap</string>
     <string name="pair_rename_label">îsàm</string>
     <string name="pair_retire_title">gó yi ndap ìyà</string>

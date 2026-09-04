@@ -91,6 +91,11 @@
     <string name="pair_per_hour">sejam</string>
     <string name="pair_bought">dibeli</string>
     <string name="pair_daily_hours_14">jam harian (14 hari)</string>
+    <string name="pair_charge_cycles">kitaran cas</string>
+    <string name="pair_per_charge">setiap cas</string>
+    <string name="pair_cycles">kitaran</string>
+    <string name="pair_charge_watched">diperhati</string>
+    <string name="pair_cycle_number">kitaran %1$d</string>
     <string name="pair_rename_title">namakan semula pasangan</string>
     <string name="pair_rename_label">nama</string>
     <string name="pair_retire_title">bersarakan pasangan ini</string>

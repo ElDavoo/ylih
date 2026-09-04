@@ -91,6 +91,11 @@
     <string name="pair_per_hour">o mahoya mā ho</string>
     <string name="pair_bought">rĩndĩ</string>
     <string name="pair_daily_hours_14">mahoya ma mũthenya (matukũ 14)</string>
+    <string name="pair_charge_cycles">mithiũrũrũko ya hinya</string>
+    <string name="pair_per_charge">kwa hinya ũmwe</string>
+    <string name="pair_cycles">mithiũrũrũko</string>
+    <string name="pair_charge_watched">kũrorwo</string>
+    <string name="pair_cycle_number">mũthiũrũrũko %1$d</string>
     <string name="pair_rename_title">rekaania mahoya</string>
     <string name="pair_rename_label">ĩkwa</string>
     <string name="pair_retire_title">kwenyithia mahoya aya</string>

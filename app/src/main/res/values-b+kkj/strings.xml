@@ -91,6 +91,11 @@
     <string name="pair_per_hour">sàŋ fə</string>
     <string name="pair_bought">bìː</string>
     <string name="pair_daily_hours_14">sɛn ŋɡə (14 sɛn)</string>
+    <string name="pair_charge_cycles">sikɛl mɛ ngbala</string>
+    <string name="pair_per_charge">ngbala wu</string>
+    <string name="pair_cycles">sikɛl</string>
+    <string name="pair_charge_watched">bo jɛ</string>
+    <string name="pair_cycle_number">sikɛl %1$d</string>
     <string name="pair_rename_title">makɔ́ŋ ŋtɔ́n mbɔ</string>
     <string name="pair_rename_label">ŋtɔ́n</string>
     <string name="pair_retire_title">makɔ́ŋ tuŋ́</string>

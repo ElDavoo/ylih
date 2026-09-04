@@ -91,6 +91,11 @@
     <string name="pair_per_hour">سائات ۈچۈن</string>
     <string name="pair_bought">سېتىۋالغان</string>
     <string name="pair_daily_hours_14">كۈندىلىك سائات (14 كۈن)</string>
+    <string name="pair_charge_cycles">توك قاچىلاش دەۋرىيلىكى</string>
+    <string name="pair_per_charge">ھەر قېتىم توك قاچىلاشقا</string>
+    <string name="pair_cycles">دەۋرىيلىك</string>
+    <string name="pair_charge_watched">كۆزىتىلگەن</string>
+    <string name="pair_cycle_number">دەۋرىيلىك %1$d</string>
     <string name="pair_rename_title">جۈپنىڭ ئاتىنى ئۆزگىرت</string>
     <string name="pair_rename_label">ئات</string>
     <string name="pair_retire_title">بۇ جۈپنى پېنسىيىلاشتۇرۇش</string>

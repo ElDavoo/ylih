@@ -97,6 +97,11 @@
     <string name="pair_per_hour">প্রতি ঘণ্টায়</string>
     <string name="pair_bought">ক্রয় কৰা</string>
     <string name="pair_daily_hours_14">দৈনিক ঘণ্টা (14 দিন)</string>
+    <string name="pair_charge_cycles">চাৰ্জ চক্ৰ</string>
+    <string name="pair_per_charge">প্ৰতি চাৰ্জ</string>
+    <string name="pair_cycles">চক্ৰ</string>
+    <string name="pair_charge_watched">লক্ষ্য কৰা</string>
+    <string name="pair_cycle_number">চক্ৰ %1$d</string>
     <string name="pair_rename_title">যোৰক পুনৰনাম দিন</string>
     <string name="pair_rename_label">নাম</string>
     <string name="pair_retire_title">এই যোৰক অবসৰ দিন</string>

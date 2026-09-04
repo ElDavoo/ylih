@@ -91,6 +91,11 @@
     <string name="pair_per_hour">ਪ੍ਰਤੀ ਘੰਟਾ</string>
     <string name="pair_bought">ਖਰੀਦਿਆ</string>
     <string name="pair_daily_hours_14">ਰੋਜ਼ਾਨਾ ਘੰਟੇ (14 ਦਿਨ)</string>
+    <string name="pair_charge_cycles">ਚਾਰਜ ਚੱਕਰ</string>
+    <string name="pair_per_charge">ਹਰ ਚਾਰਜ ਤੇ</string>
+    <string name="pair_cycles">ਚੱਕਰ</string>
+    <string name="pair_charge_watched">ਵੇਖਿਆ</string>
+    <string name="pair_cycle_number">ਚੱਕਰ %1$d</string>
     <string name="pair_rename_title">ਜੋੜੀ ਦਾ ਨਾਂ ਬਦਲੋ</string>
     <string name="pair_rename_label">ਨਾਂ</string>
     <string name="pair_retire_title">ਇਹ ਜੋੜਾ ਸੇਵਾਮੁਕਤ ਕਰੋ</string>

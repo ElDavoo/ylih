@@ -91,6 +91,11 @@
     <string name="pair_per_hour">a sa wu</string>
     <string name="pair_bought">a bo yi</string>
     <string name="pair_daily_hours_14">a yi sa (14 yi)</string>
+    <string name="pair_charge_cycles">sikili tɛ</string>
+    <string name="pair_per_charge">sikili kuɖo</string>
+    <string name="pair_cycles">sikili</string>
+    <string name="pair_charge_watched">a mɔ</string>
+    <string name="pair_cycle_number">sikili %1$d</string>
     <string name="pair_rename_title">a bi ta ka ta</string>
     <string name="pair_rename_label">a bi</string>
     <string name="pair_retire_title">a yo di a bi yi</string>

@@ -91,6 +91,11 @@
     <string name="pair_per_hour">ଘଣ୍ଟା ପିଛା</string>
     <string name="pair_bought">କିଣାଯାଇଛି</string>
     <string name="pair_daily_hours_14">ଦୈନିକ ଘଣ୍ଟା (୧୪ ଦିନ)</string>
+    <string name="pair_charge_cycles">ଚାର୍ଜ ଚକ୍ର</string>
+    <string name="pair_per_charge">ପ୍ରତି ଚାର୍ଜରେ</string>
+    <string name="pair_cycles">ଚକ୍ର</string>
+    <string name="pair_charge_watched">ପର୍ଯ୍ୟବେକ୍ଷିତ</string>
+    <string name="pair_cycle_number">ଚକ୍ର %1$d</string>
     <string name="pair_rename_title">ଯୋଡ଼ିର ନାମ ବଦଳାନ୍ତୁ</string>
     <string name="pair_rename_label">ନାମ</string>
     <string name="pair_retire_title">ଏହି ଯୋଡ଼ିକୁ ଅବସର ଦିଅନ୍ତୁ</string>

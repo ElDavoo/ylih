@@ -91,6 +91,11 @@
     <string name="pair_per_hour">فی گھنٹہ</string>
     <string name="pair_bought">خریدیا</string>
     <string name="pair_daily_hours_14">روزانہ گھنٹے (14 دن)</string>
+    <string name="pair_charge_cycles">چارج چکر</string>
+    <string name="pair_per_charge">ہر چارج تے</string>
+    <string name="pair_cycles">چکر</string>
+    <string name="pair_charge_watched">ویکھیا</string>
+    <string name="pair_cycle_number">چکر %1$d</string>
     <string name="pair_rename_title">جوڑی دا ناں بدلو</string>
     <string name="pair_rename_label">ناں</string>
     <string name="pair_retire_title">ایہ جوڑا ریٹائر کرو</string>

@@ -91,6 +91,11 @@
     <string name="pair_per_hour">te saa</string>
     <string name="pair_bought">keiroro</string>
     <string name="pair_daily_hours_14">isaai e nkolong (nkolongi 14)</string>
+    <string name="pair_charge_cycles">inkishuita e nkijape</string>
+    <string name="pair_per_charge">te nkijape nabo</string>
+    <string name="pair_cycles">inkishuita</string>
+    <string name="pair_charge_watched">eitodolikinoto</string>
+    <string name="pair_cycle_number">enkishui %1$d</string>
     <string name="pair_rename_title">itayu enkarna e nkiyiaa</string>
     <string name="pair_rename_label">enkarna</string>
     <string name="pair_retire_title">itoroshi nkiyiaa ena</string>

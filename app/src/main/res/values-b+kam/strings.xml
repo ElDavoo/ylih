@@ -91,6 +91,11 @@
     <string name="pair_per_hour">kwa misaa</string>
     <string name="pair_bought">kuthenganiwe</string>
     <string name="pair_daily_hours_14">misaani ya siku (siku 14)</string>
+    <string name="pair_charge_cycles">mithyũlũko ya vinya</string>
+    <string name="pair_per_charge">kwa vinya wimwe</string>
+    <string name="pair_cycles">mithyũlũko</string>
+    <string name="pair_charge_watched">kwoneka</string>
+    <string name="pair_cycle_number">mũthyũlũko %1$d</string>
     <string name="pair_rename_title">mayua linyo lya ikilongi</string>
     <string name="pair_rename_label">linyo</string>
     <string name="pair_retire_title">thiimu ikilongi iino</string>

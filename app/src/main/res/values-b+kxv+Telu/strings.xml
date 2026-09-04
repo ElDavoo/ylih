@@ -91,6 +91,11 @@
     <string name="pair_per_hour">ప్రాతి ఘాన్తా</string>
     <string name="pair_bought">కినా ఆతే</string>
     <string name="pair_daily_hours_14">ప్రాతి దినా ఘాన్తా (14 దినా)</string>
+    <string name="pair_charge_cycles">చార్జ్ చక్ర</string>
+    <string name="pair_per_charge">ఏక్ చార్జ్ ముదె</string>
+    <string name="pair_cycles">చక్ర</string>
+    <string name="pair_charge_watched">దెఖ్‌తె</string>
+    <string name="pair_cycle_number">చక్ర %1$d</string>
     <string name="pair_rename_title">జోడి-నా నౌ బాదాలా కిడు</string>
     <string name="pair_rename_label">నౌ</string>
     <string name="pair_retire_title">ఈ జోడి ఛేడా కిడు</string>

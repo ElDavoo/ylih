@@ -91,6 +91,11 @@
     <string name="pair_per_hour">ܠܫܥܬܐ</string>
     <string name="pair_bought">ܙܒܝܢܐ</string>
     <string name="pair_daily_hours_14">ܫܥܐ ܕܟܠܝܘܡ (14 ܝܘܡܐ)</string>
+    <string name="pair_charge_cycles">ܟܪ̈ܘܟܝܐ ܕܡܠܝܬܐ</string>
+    <string name="pair_per_charge">ܠܟܠ ܡܠܝܬܐ</string>
+    <string name="pair_cycles">ܟܪ̈ܘܟܝܐ</string>
+    <string name="pair_charge_watched">ܡܬܚܙܝܢܐ</string>
+    <string name="pair_cycle_number">ܟܪܘܟܝܐ %1$d</string>
     <string name="pair_rename_title">ܫܚܠܦ ܫܡܐ ܕܙܘܓܐ</string>
     <string name="pair_rename_label">ܫܡܐ</string>
     <string name="pair_retire_title">ܐܢܝܚ ܗܢܐ ܙܘܓܐ</string>

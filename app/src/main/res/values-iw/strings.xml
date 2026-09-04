@@ -99,6 +99,11 @@
     <string name="pair_per_hour">לשעה</string>
     <string name="pair_bought">נקנה</string>
     <string name="pair_daily_hours_14">שעות יומיות (14 ימים)</string>
+    <string name="pair_charge_cycles">מחזורי טעינה</string>
+    <string name="pair_per_charge">לכל טעינה</string>
+    <string name="pair_cycles">מחזורים</string>
+    <string name="pair_charge_watched">נמדד</string>
+    <string name="pair_cycle_number">מחזור %1$d</string>
     <string name="pair_rename_title">שינוי שם הזוג</string>
     <string name="pair_rename_label">שם</string>
     <string name="pair_retire_title">להוציא את הזוג הזה לגמלאות</string>

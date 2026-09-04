@@ -91,6 +91,11 @@
     <string name="pair_per_hour">kwa ithaa</string>
     <string name="pair_bought">nĩkĩagũrirwo</string>
     <string name="pair_daily_hours_14">mathaa ma o mũthenya (thiku 14)</string>
+    <string name="pair_charge_cycles">mithiuruko ya inya</string>
+    <string name="pair_per_charge">kwa inya imwe</string>
+    <string name="pair_cycles">mithiuruko</string>
+    <string name="pair_charge_watched">gwitirwa</string>
+    <string name="pair_cycle_number">muthiuruko %1$d</string>
     <string name="pair_rename_title">garũra rĩĩtwa rĩa kĩrĩndĩ</string>
     <string name="pair_rename_label">rĩĩtwa</string>
     <string name="pair_retire_title">thiria kĩrĩndĩ gĩkĩ wĩra</string>

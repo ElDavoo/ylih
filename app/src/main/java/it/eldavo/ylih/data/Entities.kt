@@ -135,6 +135,45 @@ data class SessionEntity(
 )
 
 /**
+ * One battery level, as the headset reported it partway through a session.
+ *
+ * Keyed on the *session* rather than on the pair, which is what makes "only drain we actually
+ * watched" a property of the schema instead of a rule someone has to remember: two readings can
+ * only be subtracted when they belong to the same row here, and a gap in which the headphones were
+ * charged is indistinguishable from one in which they were not. The cascade is the other half —
+ * deleting a session, retiring a pair or importing over the lot takes the readings with it.
+ *
+ * How often a row lands is entirely up to the headphones, and the answer is usually "often". Most
+ * report through HFP 1.7's battery-level HF indicator, `AT+BIEV=2,<0-100>`, which carries a real
+ * percentage — observed on an ACCENTUM Plus as `EVENT_TYPE_BIEV valInt=2, valInt2=50`. BLE's
+ * battery service is the same resolution and Apple's `AT+IPHONEACCEV` moves in tens.
+ *
+ * The five-step `+CIND` indicator the stack widens to 0 / 13 / 38 / 63 / 88 / 100 is *not* this
+ * path: `batteryChargeIndicatorToPercentage` is reached only from `onAgBatteryLevelChanged`, the
+ * HFP **client** role, where the phone is the headset rather than the audio gateway. No pair of
+ * headphones takes it.
+ */
+@Entity(
+    tableName = "battery_samples",
+    foreignKeys = [
+        ForeignKey(
+            entity = SessionEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["sessionId"],
+            onDelete = ForeignKey.CASCADE,
+        ),
+    ],
+    indices = [Index(value = ["sessionId", "at"])],
+)
+data class BatterySampleEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val sessionId: Long,
+    val at: Long,
+    /** Percent remaining, 0..100, exactly as the platform reported it. */
+    val level: Int,
+)
+
+/**
  * One user setting, stored as text and parsed by [SettingsStore].
  *
  * A key/value table rather than a one-row table with a column per setting: adding a setting is

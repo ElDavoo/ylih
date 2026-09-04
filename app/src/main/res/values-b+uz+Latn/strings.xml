@@ -91,6 +91,11 @@
     <string name="pair_per_hour">soат usha</string>
     <string name="pair_bought">sotindi</string>
     <string name="pair_daily_hours_14">har kunning surlari (14 kuni)</string>
+    <string name="pair_charge_cycles">quvvatlash sikllari</string>
+    <string name="pair_per_charge">har quvvatlashga</string>
+    <string name="pair_cycles">sikllar</string>
+    <string name="pair_charge_watched">kuzatilgan</string>
+    <string name="pair_cycle_number">sikl %1$d</string>
     <string name="pair_rename_title">jufтni nomi ozgartirish</string>
     <string name="pair_rename_label">nom</string>
     <string name="pair_retire_title">bu jufтni rahmetdan qaydir-ish</string>

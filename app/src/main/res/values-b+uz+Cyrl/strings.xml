@@ -91,6 +91,11 @@
     <string name="pair_per_hour">соат ўша</string>
     <string name="pair_bought">сотинди</string>
     <string name="pair_daily_hours_14">ҳар куннинг сўлари (14 куни)</string>
+    <string name="pair_charge_cycles">қувватлаш цикллари</string>
+    <string name="pair_per_charge">ҳар қувватлашга</string>
+    <string name="pair_cycles">цикллар</string>
+    <string name="pair_charge_watched">кузатилган</string>
+    <string name="pair_cycle_number">цикл %1$d</string>
     <string name="pair_rename_title">жуфтни номи ўзгартириш</string>
     <string name="pair_rename_label">ном</string>
     <string name="pair_retire_title">бу жуфтни рахметдан қайдириш</string>

@@ -91,6 +91,11 @@
     <string name="pair_per_hour">yaskuari akanhẽ rupí</string>
     <string name="pair_bought">umumtima</string>
     <string name="pair_daily_hours_14">yaskuari irũma (14 ãwé-itá)</string>
+    <string name="pair_charge_cycles">sikuru karrega</string>
+    <string name="pair_per_charge">karrega yepé</string>
+    <string name="pair_cycles">sikuru</string>
+    <string name="pair_charge_watched">usemaã</string>
+    <string name="pair_cycle_number">sikuru %1$d</string>
     <string name="pair_rename_title">tamba retama umusuka</string>
     <string name="pair_rename_label">tamba</string>
     <string name="pair_retire_title">remá umusuka pite</string>

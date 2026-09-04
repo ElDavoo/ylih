@@ -24,6 +24,10 @@ down when. That is the whole idea — and it happens by itself, forever, on your
 - **Listening time, not just connected time** (optional), so headphones worn around your neck
   don't count as listening.
 - **Cost per hour**, if you tell it what you paid. It goes down every time you wear them.
+- **Hours per charge**, if your headphones report their battery — and how that figure has changed
+  since they were new, which is the closest thing there is to watching a battery wear out. A charge
+  cycle here is 100% of battery used, however many part-charges that took. Not every pair reports
+  its battery to Android; the ones that don't simply have no such section.
 - **The last thirty days** as a chart, with every day listed underneath.
 - **Home-screen widgets** — lifetime hours, today's total, or the thirty-day chart.
 

@@ -91,6 +91,11 @@
     <string name="pair_per_hour">buli ssaawa</string>
     <string name="pair_bought">okugula</string>
     <string name="pair_daily_hours_14">essaawa z’ennaku (ennaku 14)</string>
+    <string name="pair_charge_cycles">enkyukakyuka z’amaanyi</string>
+    <string name="pair_per_charge">buli maanyi</string>
+    <string name="pair_cycles">enkyukakyuka</string>
+    <string name="pair_charge_watched">ekyalabiddwa</string>
+    <string name="pair_cycle_number">enkyukakyuka %1$d</string>
     <string name="pair_rename_title">andika erinnya mpya eri paale</string>
     <string name="pair_rename_label">erinnya</string>
     <string name="pair_retire_title">yikira paale eno</string>

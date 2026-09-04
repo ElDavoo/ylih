@@ -97,6 +97,11 @@
     <string name="pair_per_hour">প্রতি ঘন্টায়</string>
     <string name="pair_bought">ক্রয় করা হয়েছে</string>
     <string name="pair_daily_hours_14">দৈনিক ঘন্টা (১৪ দিন)</string>
+    <string name="pair_charge_cycles">চার্জ চক্র</string>
+    <string name="pair_per_charge">প্রতি চার্জে</string>
+    <string name="pair_cycles">চক্র</string>
+    <string name="pair_charge_watched">পর্যবেক্ষিত</string>
+    <string name="pair_cycle_number">চক্র %1$d</string>
     <string name="pair_rename_title">জোড়ার নাম পরিবর্তন করুন</string>
     <string name="pair_rename_label">নাম</string>
     <string name="pair_retire_title">এই জোড়া অবসর নিন</string>

@@ -91,6 +91,11 @@
     <string name="pair_per_hour">هر ساعت</string>
     <string name="pair_bought">خریدل شوی</string>
     <string name="pair_daily_hours_14">روزمره ساعتونه (14 ورځې)</string>
+    <string name="pair_charge_cycles">د چارج دورې</string>
+    <string name="pair_per_charge">په هر چارج</string>
+    <string name="pair_cycles">دورې</string>
+    <string name="pair_charge_watched">کتل شوی</string>
+    <string name="pair_cycle_number">دوره %1$d</string>
     <string name="pair_rename_title">جوړه نوم بدل کړئ</string>
     <string name="pair_rename_label">نوم</string>
     <string name="pair_retire_title">دا جوړه لرې کړئ</string>

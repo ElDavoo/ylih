@@ -91,6 +91,11 @@
     <string name="pair_per_hour">par ora</string>
     <string name="pair_bought">comprada</string>
     <string name="pair_daily_hours_14">òre di dì (14 dì)</string>
+    <string name="pair_charge_cycles">cicli de carega</string>
+    <string name="pair_per_charge">per carega</string>
+    <string name="pair_cycles">cicli</string>
+    <string name="pair_charge_watched">osservaa</string>
+    <string name="pair_cycle_number">cicl %1$d</string>
     <string name="pair_rename_title">cambia nòm a la parea</string>
     <string name="pair_rename_label">nòm</string>
     <string name="pair_retire_title">messa via taa parea</string>

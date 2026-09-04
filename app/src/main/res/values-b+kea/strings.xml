@@ -91,6 +91,11 @@
     <string name="pair_per_hour">pur ura</string>
     <string name="pair_bought">kumprádu</string>
     <string name="pair_daily_hours_14">uras dia-a-dia (14 dias)</string>
+    <string name="pair_charge_cycles">siklus di karga</string>
+    <string name="pair_per_charge">pur karga</string>
+    <string name="pair_cycles">siklus</string>
+    <string name="pair_charge_watched">observadu</string>
+    <string name="pair_cycle_number">siklu %1$d</string>
     <string name="pair_rename_title">muda nomi par</string>
     <string name="pair_rename_label">nomi</string>
     <string name="pair_retire_title">aposentá esta par</string>

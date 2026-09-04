@@ -91,6 +91,11 @@
     <string name="pair_per_hour">ger tsrat</string>
     <string name="pair_bought">yuwsan</string>
     <string name="pair_daily_hours_14">tisrat n unebdu (ayyur 14)</string>
+    <string name="pair_charge_cycles">tiwinas n uccenṭi</string>
+    <string name="pair_per_charge">i yal accenṭi</string>
+    <string name="pair_cycles">tiwinas</string>
+    <string name="pair_charge_watched">ittwaẓer</string>
+    <string name="pair_cycle_number">tawinest %1$d</string>
     <string name="pair_rename_title">asgg izem n tmaza</string>
     <string name="pair_rename_label">izem</string>
     <string name="pair_retire_title">tutwi tmaza</string>

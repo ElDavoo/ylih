@@ -91,6 +91,11 @@
     <string name="pair_per_hour">дар як соат</string>
     <string name="pair_bought">харида шуда</string>
     <string name="pair_daily_hours_14">соатҳои ҳаррӯза (14 рӯз)</string>
+    <string name="pair_charge_cycles">давраҳои заряд</string>
+    <string name="pair_per_charge">ба як заряд</string>
+    <string name="pair_cycles">давраҳо</string>
+    <string name="pair_charge_watched">мушоҳидашуда</string>
+    <string name="pair_cycle_number">давра %1$d</string>
     <string name="pair_rename_title">номи ҷуфтро иваз кунед</string>
     <string name="pair_rename_label">ном</string>
     <string name="pair_retire_title">ин ҷуфтро ба нафақа бароред</string>

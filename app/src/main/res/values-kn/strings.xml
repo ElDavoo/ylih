@@ -91,6 +91,11 @@
     <string name="pair_per_hour">ಗಂಟೆಗೆ</string>
     <string name="pair_bought">ಖರೀದಿ ಮಾಡಿದರು</string>
     <string name="pair_daily_hours_14">ದೈನಿಕ ಗಂಟೆ (14 ದಿನ)</string>
+    <string name="pair_charge_cycles">ಚಾರ್ಜ್ ಚಕ್ರಗಳು</string>
+    <string name="pair_per_charge">ಪ್ರತಿ ಚಾರ್ಜ್‌ಗೆ</string>
+    <string name="pair_cycles">ಚಕ್ರಗಳು</string>
+    <string name="pair_charge_watched">ಗಮನಿಸಲಾಗಿದೆ</string>
+    <string name="pair_cycle_number">ಚಕ್ರ %1$d</string>
     <string name="pair_rename_title">ಜೋಡಿ ಪುನರನಾಮಿತ</string>
     <string name="pair_rename_label">ಹೆಸರು</string>
     <string name="pair_retire_title">ಈ ಜೋಡಿ ನಿವೃತ್ತ</string>

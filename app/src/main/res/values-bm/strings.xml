@@ -97,6 +97,11 @@
     <string name="pair_per_hour">kɔrɔ kɔ</string>
     <string name="pair_bought">satɛ kɛ</string>
     <string name="pair_daily_hours_14">kɔrɔ-juman (gɛrɛ 14)</string>
+    <string name="pair_charge_cycles">fanga siklo</string>
+    <string name="pair_per_charge">fanga kelen na</string>
+    <string name="pair_cycles">siklo</string>
+    <string name="pair_charge_watched">a filɛra</string>
+    <string name="pair_cycle_number">siklo %1$d</string>
     <string name="pair_rename_title">kopila tɔgɔ sɛbɛ</string>
     <string name="pair_rename_label">tɔgɔ</string>
     <string name="pair_retire_title">kopila yen sorɔ</string>

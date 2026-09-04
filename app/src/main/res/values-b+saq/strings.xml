@@ -91,6 +91,11 @@
     <string name="pair_per_hour">a-saati i-moji</string>
     <string name="pair_bought">a-li-nunua</string>
     <string name="pair_daily_hours_14">n-toga a-saati (14 i-kitoni)</string>
+    <string name="pair_charge_cycles">nkilikilyata e nkere</string>
+    <string name="pair_per_charge">te nkere naapo</string>
+    <string name="pair_cycles">nkilikilyata</string>
+    <string name="pair_charge_watched">keitodoliki</string>
+    <string name="pair_cycle_number">nkilikilya %1$d</string>
     <string name="pair_rename_title">e-karata atin e-muoma</string>
     <string name="pair_rename_label">atin</string>
     <string name="pair_retire_title">a-buri e-muoma</string>

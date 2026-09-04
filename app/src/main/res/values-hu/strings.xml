@@ -98,6 +98,11 @@
     <string name="pair_per_hour">óránként</string>
     <string name="pair_bought">vásárolva</string>
     <string name="pair_daily_hours_14">napi órák (14 nap)</string>
+    <string name="pair_charge_cycles">töltési ciklusok</string>
+    <string name="pair_per_charge">töltésenként</string>
+    <string name="pair_cycles">ciklusok</string>
+    <string name="pair_charge_watched">megfigyelve</string>
+    <string name="pair_cycle_number">%1$d. ciklus</string>
     <string name="pair_rename_title">pár átnevezése</string>
     <string name="pair_rename_label">név</string>
     <string name="pair_retire_title">pár kivonása</string>

@@ -91,6 +91,11 @@
     <string name="pair_per_hour">сахатмӕ</string>
     <string name="pair_bought">балхӕд</string>
     <string name="pair_daily_hours_14">боны сахӕттӕ (14 боны)</string>
+    <string name="pair_charge_cycles">зарядкæйы циклтæ</string>
+    <string name="pair_per_charge">иу зарядыл</string>
+    <string name="pair_cycles">циклтæ</string>
+    <string name="pair_charge_watched">цæст дарынц</string>
+    <string name="pair_cycle_number">цикл %1$d</string>
     <string name="pair_rename_title">парӕйӕн ном ивын</string>
     <string name="pair_rename_label">ном</string>
     <string name="pair_retire_title">ацы парӕ ныууадз</string>

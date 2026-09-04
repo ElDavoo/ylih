@@ -91,6 +91,11 @@
     <string name="pair_per_hour">цагт</string>
     <string name="pair_bought">худалдаж авсан</string>
     <string name="pair_daily_hours_14">өдрийн цаг (14 хоног)</string>
+    <string name="pair_charge_cycles">цэнэглэх мөчлөг</string>
+    <string name="pair_per_charge">нэг цэнэгт</string>
+    <string name="pair_cycles">мөчлөг</string>
+    <string name="pair_charge_watched">ажигласан</string>
+    <string name="pair_cycle_number">мөчлөг %1$d</string>
     <string name="pair_rename_title">хосын нэрийг солих</string>
     <string name="pair_rename_label">нэр</string>
     <string name="pair_retire_title">энэ хосыг тэтгэвэрт гаргах</string>

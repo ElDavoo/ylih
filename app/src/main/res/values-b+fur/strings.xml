@@ -91,6 +91,11 @@
     <string name="pair_per_hour">par ore</string>
     <string name="pair_bought">compratis</string>
     <string name="pair_daily_hours_14">oris al dì (14 dis)</string>
+    <string name="pair_charge_cycles">ciclis di ricjarie</string>
+    <string name="pair_per_charge">par ricjarie</string>
+    <string name="pair_cycles">ciclis</string>
+    <string name="pair_charge_watched">osservât</string>
+    <string name="pair_cycle_number">cicli %1$d</string>
     <string name="pair_rename_title">ribate non a cheste cuglia</string>
     <string name="pair_rename_label">non</string>
     <string name="pair_retire_title">pensionâ cheste cuglia</string>

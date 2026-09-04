@@ -91,6 +91,11 @@
     <string name="pair_per_hour">pep eur</string>
     <string name="pair_bought">prennys</string>
     <string name="pair_daily_hours_14">eur pep dydh (14 seythen)</string>
+    <string name="pair_charge_cycles">kylghow charjya</string>
+    <string name="pair_per_charge">pub charj</string>
+    <string name="pair_cycles">kylghow</string>
+    <string name="pair_charge_watched">mires</string>
+    <string name="pair_cycle_number">kylgh %1$d</string>
     <string name="pair_rename_title">adnevra par</string>
     <string name="pair_rename_label">anow</string>
     <string name="pair_retire_title">kas-hevel par na</string>

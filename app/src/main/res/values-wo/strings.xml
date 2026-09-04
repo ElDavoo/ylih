@@ -91,6 +91,11 @@
     <string name="pair_per_hour">jàngal bu</string>
     <string name="pair_bought">aget</string>
     <string name="pair_daily_hours_14">jàngal bu sum (14 sukkandé)</string>
+    <string name="pair_charge_cycles">wërndalu sarse</string>
+    <string name="pair_per_charge">ci sarse bu nekk</string>
+    <string name="pair_cycles">wërndal</string>
+    <string name="pair_charge_watched">gis nañu ko</string>
+    <string name="pair_cycle_number">wërndal %1$d</string>
     <string name="pair_rename_title">sikasiit bi may ci seriñ</string>
     <string name="pair_rename_label">seriñ</string>
     <string name="pair_retire_title">sikasiit bi sikasiit jëm</string>

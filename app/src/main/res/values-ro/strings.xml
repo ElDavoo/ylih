@@ -98,6 +98,11 @@
     <string name="pair_per_hour">pe oră</string>
     <string name="pair_bought">cumpărată</string>
     <string name="pair_daily_hours_14">ore pe zi (14 zile)</string>
+    <string name="pair_charge_cycles">cicluri de încărcare</string>
+    <string name="pair_per_charge">pe încărcare</string>
+    <string name="pair_cycles">cicluri</string>
+    <string name="pair_charge_watched">observat</string>
+    <string name="pair_cycle_number">ciclul %1$d</string>
     <string name="pair_rename_title">redenumește perechea</string>
     <string name="pair_rename_label">nume</string>
     <string name="pair_retire_title">retrage această pereche</string>

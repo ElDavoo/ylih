@@ -91,6 +91,11 @@
     <string name="pair_per_hour">sanda foo borey</string>
     <string name="pair_bought">kaynte</string>
     <string name="pair_daily_hours_14">zaani sanda (14 zaani)</string>
+    <string name="pair_charge_cycles">gaabu windiyaŋ</string>
+    <string name="pair_per_charge">gaabu foo ga</string>
+    <string name="pair_cycles">windiyaŋ</string>
+    <string name="pair_charge_watched">i guna</string>
+    <string name="pair_cycle_number">windi %1$d</string>
     <string name="pair_rename_title">ceeci tonton taaga</string>
     <string name="pair_rename_label">tonton</string>
     <string name="pair_retire_title">ceeci ga fusu</string>

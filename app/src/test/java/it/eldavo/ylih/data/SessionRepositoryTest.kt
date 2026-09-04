@@ -2,6 +2,12 @@ package it.eldavo.ylih.data
 
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
+import it.eldavo.ylih.tracking.BtBatteryReceiver
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.test.advanceTimeBy
+import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
 import org.junit.After
 import org.junit.Assert.assertEquals
@@ -417,5 +423,182 @@ class SessionRepositoryTest {
         assertEquals(1, db.deviceDao().getAll().size)
         assertEquals("WH-1000XM5", db.deviceDao().findByKey(buds.key)!!.defaultName)
         assertEquals(1, db.pairDao().getAll().size)
+    }
+
+    private suspend fun batterySamples() = db.batterySampleDao().getAll()
+
+    @Test
+    fun `a battery reading is filed against the session that was open when it arrived`() = runTest {
+        repository.onConnected(buds, at = clockNow)
+        repository.recordBatteryLevel(buds.key, level = 80, at = clockNow + hour)
+
+        val sample = batterySamples().single()
+        assertEquals(sessions().single().id, sample.sessionId)
+        assertEquals(80, sample.level)
+        assertEquals(clockNow + hour, sample.at)
+    }
+
+    /**
+     * With no session there is nothing to file against, and a reading that outlived its session
+     * would let two of them be subtracted across a gap nothing watched.
+     */
+    /**
+     * The `false` is the contract the receiver's retry is built on: it means "ask again", because
+     * the first reading of a session routinely arrives before the session itself does.
+     */
+    @Test
+    fun `a battery reading with no session open is refused and says so`() = runTest {
+        assertEquals(
+            "no device at all",
+            false,
+            repository.recordBatteryLevel(buds.key, level = 80, at = clockNow),
+        )
+        assertTrue("nothing to attach it to", batterySamples().isEmpty())
+
+        repository.onConnected(buds, at = clockNow)
+        repository.onDisconnected(buds.key, at = clockNow + hour)
+        assertEquals(
+            "a closed session is not one to file against either",
+            false,
+            repository.recordBatteryLevel(buds.key, level = 60, at = clockNow + 2 * hour),
+        )
+
+        assertTrue(batterySamples().isEmpty())
+    }
+
+    /**
+     * The stack re-announces the level it already reported when another source of it appears. A
+     * second row would put a segment of no drain in the middle of a discharge.
+     */
+    @Test
+    fun `the same level reported twice is recorded once`() = runTest {
+        repository.onConnected(buds, at = clockNow)
+        repository.recordBatteryLevel(buds.key, level = 80, at = clockNow + hour)
+        assertEquals(
+            "a duplicate is still an answer, so the caller must not ask again",
+            true,
+            repository.recordBatteryLevel(buds.key, level = 80, at = clockNow + 2 * hour),
+        )
+
+        assertEquals(1, batterySamples().size)
+
+        repository.recordBatteryLevel(buds.key, level = 70, at = clockNow + 3 * hour)
+        repository.recordBatteryLevel(buds.key, level = 80, at = clockNow + 4 * hour)
+
+        assertEquals(
+            "but a level that comes back after changing is a real reading",
+            listOf(80, 70, 80),
+            batterySamples().map { it.level },
+        )
+    }
+
+    /**
+     * -1 is "unknown" and -100 is "Bluetooth is off", and the first of those is broadcast on every
+     * disconnect. Stored at face value that is a drop of the whole battery into nothing.
+     */
+    @Test
+    fun `a level outside a percentage is not a reading`() = runTest {
+        repository.onConnected(buds, at = clockNow)
+        repository.recordBatteryLevel(buds.key, level = -1, at = clockNow + hour)
+        repository.recordBatteryLevel(buds.key, level = -100, at = clockNow + 2 * hour)
+        repository.recordBatteryLevel(buds.key, level = 101, at = clockNow + 3 * hour)
+
+        assertTrue(batterySamples().isEmpty())
+
+        repository.recordBatteryLevel(buds.key, level = 0, at = clockNow + 4 * hour)
+        repository.recordBatteryLevel(buds.key, level = 100, at = clockNow + 5 * hour)
+
+        assertEquals("but both ends of the range are", listOf(0, 100), batterySamples().map { it.level })
+    }
+
+    @Test
+    fun `a reading for a device the user ignores is dropped with its session`() = runTest {
+        repository.onConnected(buds, at = clockNow)
+        val deviceId = db.deviceDao().findByKey(buds.key)!!.id
+        repository.recordBatteryLevel(buds.key, level = 80, at = clockNow + hour)
+
+        repository.setDeviceIgnored(deviceId, ignored = true)
+        repository.recordBatteryLevel(buds.key, level = 70, at = clockNow + 2 * hour)
+
+        assertEquals("ignoring closes the session, so nothing takes the next reading", 1, batterySamples().size)
+    }
+
+    @Test
+    fun `deleting a session takes its readings with it`() = runTest {
+        repository.onConnected(buds, at = clockNow)
+        repository.recordBatteryLevel(buds.key, level = 80, at = clockNow + hour)
+        val sessionId = sessions().single().id
+
+        repository.deleteSession(sessionId)
+
+        assertTrue(batterySamples().isEmpty())
+    }
+
+    @Test
+    fun `deleting a pair takes its readings with it`() = runTest {
+        repository.onConnected(buds, at = clockNow)
+        repository.recordBatteryLevel(buds.key, level = 80, at = clockNow + hour)
+
+        repository.deletePair(db.pairDao().getAll().single().id)
+
+        assertTrue(batterySamples().isEmpty())
+    }
+
+    /**
+     * The retry [BtBatteryReceiver] wraps every reading in, driven in virtual time.
+     *
+     * On a phone this is the ordinary case rather than a rare one: the battery broadcast arrives
+     * about 400 ms after ACL_CONNECTED and beat the app's own session row by 68 ms when it was
+     * measured. Many headsets report their battery only at connect, so a reading dropped here is
+     * that pair's charge cycles gone entirely.
+     *
+     * `runTest` makes `delay` virtual, so this pins the behaviour rather than the wall clock — the
+     * same test written against the real two seconds was flaky under a loaded suite. Driving that
+     * clock by hand is what needs the opt-in.
+     */
+    @OptIn(ExperimentalCoroutinesApi::class)
+    @Test
+    fun `a reading that arrives before its session is retried and lands`() = runTest {
+        val job = launch {
+            BtBatteryReceiver.recordWithRetry(repository, buds.key, level = 70, at = clockNow)
+        }
+
+        advanceTimeBy(1_000)
+        runCurrent()
+        assertTrue("still waiting for the connect to be written", batterySamples().isEmpty())
+
+        repository.onConnected(buds, at = clockNow)
+        advanceTimeBy(2_000)
+        runCurrent()
+        job.join()
+
+        assertEquals(listOf(70), batterySamples().map { it.level })
+        assertEquals(sessions().single().id, batterySamples().single().sessionId)
+    }
+
+    @Test
+    fun `a reading with no session even after the retry is dropped`() = runTest {
+        BtBatteryReceiver.recordWithRetry(repository, buds.key, level = 70, at = clockNow)
+
+        assertTrue("nothing ever connected, so there is nothing to file it against", batterySamples().isEmpty())
+    }
+
+    @Test
+    fun `a pair's readings are observed across every session it has had`() = runTest {
+        repository.onConnected(buds, at = clockNow)
+        repository.recordBatteryLevel(buds.key, level = 90, at = clockNow + hour)
+        repository.onDisconnected(buds.key, at = clockNow + 2 * hour)
+        repository.onConnected(buds, at = clockNow + 3 * hour)
+        repository.recordBatteryLevel(buds.key, level = 60, at = clockNow + 4 * hour)
+
+        // A second pair's readings must not leak into the first one's charge cycles.
+        repository.onConnected(wired, at = clockNow)
+        repository.recordBatteryLevel(wired.key, level = 50, at = clockNow + hour)
+
+        val pairId = db.pairDao().activeFor(db.deviceDao().findByKey(buds.key)!!.id)!!.id
+        assertEquals(
+            listOf(90, 60),
+            repository.observeBatterySamples(pairId).first().map { it.level },
+        )
     }
 }

@@ -85,6 +85,16 @@ class ReceiversTest {
         shadowOf(Looper.getMainLooper()).idle()
     }
 
+    /** The battery broadcast, whose extra the SDK cannot name — see [BatteryBroadcast]. */
+    private fun broadcastBattery(level: Int, device: BluetoothDevice = headset()) {
+        app.sendBroadcast(
+            Intent(BatteryBroadcast.ACTION_BATTERY_LEVEL_CHANGED)
+                .putExtra(BluetoothDevice.EXTRA_DEVICE, device)
+                .putExtra(BatteryBroadcast.EXTRA_BATTERY_LEVEL, level),
+        )
+        shadowOf(Looper.getMainLooper()).idle()
+    }
+
     /**
      * `goAsync()` borrows the process from Android and hands back a token; returning it in a
      * `finally` is the only reason a receiver that failed is a lost session rather than a
@@ -95,6 +105,10 @@ class ReceiversTest {
     private fun broadcastAndAwaitFinish(action: String, device: BluetoothDevice? = null) {
         val intent = Intent(action)
         device?.let { intent.putExtra(BluetoothDevice.EXTRA_DEVICE, it) }
+        sendOrderedAndAwaitFinish(intent)
+    }
+
+    private fun sendOrderedAndAwaitFinish(intent: Intent) {
         val finished = AtomicBoolean(false)
         app.sendOrderedBroadcast(
             intent,
@@ -306,5 +320,74 @@ class ReceiversTest {
             "a missed disconnect costs one interval, not forever",
             runBlocking { db.sessionDao().getAll().single { it.id == sessionId }.disconnectedAt },
         )
+    }
+
+    private fun batterySamples() = runBlocking { db.batterySampleDao().getAll() }
+
+    /**
+     * The battery broadcast is `@SystemApi` and so is named by its string here as it is in the
+     * app — dispatched through the real manifest filter, because a receiver the merged manifest
+     * does not carry is a feature that works in a test and nowhere else.
+     */
+    @Test
+    fun `battery levels reported during a session become charge-cycle readings`() {
+        listHeadsetAsConnected()
+        broadcast(BluetoothDevice.ACTION_ACL_CONNECTED, headset())
+        settle("the session to open") { sessions().isNotEmpty() }
+
+        broadcastBattery(90)
+        settle("the first reading to land") { batterySamples().isNotEmpty() }
+        broadcastBattery(80)
+        settle("the second reading to land") { batterySamples().size == 2 }
+
+        assertEquals(listOf(90, 80), batterySamples().map { it.level })
+        assertEquals(sessions().single().id, batterySamples().first().sessionId)
+    }
+
+    @Test
+    fun `the level a disconnect announces is not a reading`() {
+        listHeadsetAsConnected()
+        broadcast(BluetoothDevice.ACTION_ACL_CONNECTED, headset())
+        settle("the session to open") { sessions().isNotEmpty() }
+
+        // -1 is BATTERY_LEVEL_UNKNOWN, which the stack broadcasts for every device on every
+        // disconnect; -100 is BATTERY_LEVEL_BLUETOOTH_OFF. Taken at face value the first is a
+        // drop of the whole battery into nothing.
+        broadcastBattery(-1)
+        broadcastBattery(-100)
+        broadcastBattery(70)
+
+        settle("the real reading to land") { batterySamples().isNotEmpty() }
+        assertEquals(listOf(70), batterySamples().map { it.level })
+    }
+
+    @Test
+    fun `a battery broadcast the receiver cannot use is dropped, not crashed`() {
+        // Every one of these returns before goAsync(), so nothing is left pending either way.
+        BtBatteryReceiver().onReceive(app, Intent(Intent.ACTION_POWER_CONNECTED))
+        BtBatteryReceiver().onReceive(app, Intent(BatteryBroadcast.ACTION_BATTERY_LEVEL_CHANGED))
+        // A car stereo reports its battery like anything else on the link, and nobody wears one.
+        BtBatteryReceiver().onReceive(
+            app,
+            Intent(BatteryBroadcast.ACTION_BATTERY_LEVEL_CHANGED)
+                .putExtra(BluetoothDevice.EXTRA_DEVICE, carStereo())
+                .putExtra(BatteryBroadcast.EXTRA_BATTERY_LEVEL, 80),
+        )
+        shadowOf(Looper.getMainLooper()).idle()
+
+        assertTrue(batterySamples().isEmpty())
+    }
+
+    @Test
+    fun `a battery reading the database cannot record costs the reading, not the process`() {
+        db.close()
+
+        sendOrderedAndAwaitFinish(
+            Intent(BatteryBroadcast.ACTION_BATTERY_LEVEL_CHANGED)
+                .putExtra(BluetoothDevice.EXTRA_DEVICE, headset())
+                .putExtra(BatteryBroadcast.EXTRA_BATTERY_LEVEL, 80),
+        )
+
+        assertFailureWasLoggedBy("BtBatteryReceiver")
     }
 }

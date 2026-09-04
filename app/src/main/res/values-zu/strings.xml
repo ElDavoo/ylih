@@ -91,6 +91,11 @@
     <string name="pair_per_hour">ngehora</string>
     <string name="pair_bought">kuthengiwe</string>
     <string name="pair_daily_hours_14">amahora ansuku zonke (izinsuku ezingu-14)</string>
+    <string name="pair_charge_cycles">imijikelezo yokushaja</string>
+    <string name="pair_per_charge">ngokushaja okukodwa</string>
+    <string name="pair_cycles">imijikelezo</string>
+    <string name="pair_charge_watched">okubukiwe</string>
+    <string name="pair_cycle_number">umjikelezo %1$d</string>
     <string name="pair_rename_title">qamba kabusha ipheya</string>
     <string name="pair_rename_label">igama</string>
     <string name="pair_retire_title">thatha umhlalaphansi kuleli pheya</string>

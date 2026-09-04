@@ -91,6 +91,11 @@
     <string name="pair_per_hour">sagat başyna</string>
     <string name="pair_bought">satyn alyndy</string>
     <string name="pair_daily_hours_14">gündelik sagat (14 gün)</string>
+    <string name="pair_charge_cycles">zarýad aýlawlary</string>
+    <string name="pair_per_charge">her zarýada</string>
+    <string name="pair_cycles">aýlawlar</string>
+    <string name="pair_charge_watched">synlanan</string>
+    <string name="pair_cycle_number">aýlaw %1$d</string>
     <string name="pair_rename_title">juplanyş ady üýtget</string>
     <string name="pair_rename_label">ady</string>
     <string name="pair_retire_title">bu juplanyşy pensiýa çykar</string>

@@ -91,6 +91,11 @@
     <string name="pair_per_hour">prati ghanta</string>
     <string name="pair_bought">kina aate</string>
     <string name="pair_daily_hours_14">prati dina ghanta (14 dina)</string>
+    <string name="pair_charge_cycles">charj chakra</string>
+    <string name="pair_per_charge">ek charj mude</string>
+    <string name="pair_cycles">chakra</string>
+    <string name="pair_charge_watched">dekhte</string>
+    <string name="pair_cycle_number">chakra %1$d</string>
     <string name="pair_rename_title">joḍi-na nau badala kiḍu</string>
     <string name="pair_rename_label">nau</string>
     <string name="pair_retire_title">ii joḍi cheḍa kiḍu</string>

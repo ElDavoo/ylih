@@ -91,6 +91,11 @@
     <string name="pair_per_hour">vahkka maŋŋel</string>
     <string name="pair_bought">oastume</string>
     <string name="pair_daily_hours_14">beaivemearri (vahkka 14)</string>
+    <string name="pair_charge_cycles">láddensyklusat</string>
+    <string name="pair_per_charge">ládden nammii</string>
+    <string name="pair_cycles">syklusat</string>
+    <string name="pair_charge_watched">goziduvvon</string>
+    <string name="pair_cycle_number">syklus %1$d</string>
     <string name="pair_rename_title">mainna bohccu</string>
     <string name="pair_rename_label">namma</string>
     <string name="pair_retire_title">maiddáhttugovva dát bohccu</string>

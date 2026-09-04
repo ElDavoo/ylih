@@ -97,6 +97,11 @@
     <string name="pair_per_hour">mbe mota wa mabe</string>
     <string name="pair_bought">osombé</string>
     <string name="pair_daily_hours_14">mabe wa mílu (mílu 14)</string>
+    <string name="pair_charge_cycles">masikèl ma ngiña</string>
+    <string name="pair_per_charge">o ngiña wɔ́</string>
+    <string name="pair_cycles">masikèl</string>
+    <string name="pair_charge_watched">ba enè</string>
+    <string name="pair_cycle_number">sikèl %1$d</string>
     <string name="pair_rename_title">sombela likúmu wa ndúmu</string>
     <string name="pair_rename_label">likúmu</string>
     <string name="pair_retire_title">kona ye ndúmu mota</string>

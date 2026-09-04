@@ -91,6 +91,11 @@
     <string name="pair_per_hour">saacad kasta</string>
     <string name="pair_bought">iibiay</string>
     <string name="pair_daily_hours_14">saacadaha maalinlaha (14 maalinta)</string>
+    <string name="pair_charge_cycles">wareegyada dallacaadda</string>
+    <string name="pair_per_charge">dallacaad kasta</string>
+    <string name="pair_cycles">wareegyo</string>
+    <string name="pair_charge_watched">la ilaaliyay</string>
+    <string name="pair_cycle_number">wareeg %1$d</string>
     <string name="pair_rename_title">labida gaarka</string>
     <string name="pair_rename_label">magaca</string>
     <string name="pair_retire_title">iska bax gaarka</string>

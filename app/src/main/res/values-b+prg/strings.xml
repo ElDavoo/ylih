@@ -91,6 +91,11 @@
     <string name="pair_per_hour">per valandą</string>
     <string name="pair_bought">pirmas</string>
     <string name="pair_daily_hours_14">dienavandinės (14 dienų)</string>
+    <string name="pair_charge_cycles">ladīsnas cikla</string>
+    <string name="pair_per_charge">per ladīsnan</string>
+    <string name="pair_cycles">cikla</string>
+    <string name="pair_charge_watched">endirīts</string>
+    <string name="pair_cycle_number">ciklas %1$d</string>
     <string name="pair_rename_title">pervadinti pāra</string>
     <string name="pair_rename_label">vardas</string>
     <string name="pair_retire_title">pensėti tī pāra</string>

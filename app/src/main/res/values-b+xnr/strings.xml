@@ -91,6 +91,11 @@
     <string name="pair_per_hour">प्रति घंटा</string>
     <string name="pair_bought">खरीदी</string>
     <string name="pair_daily_hours_14">रोज़ दे घंटे (14 दिन)</string>
+    <string name="pair_charge_cycles">चार्ज चक्कर</string>
+    <string name="pair_per_charge">हर चार्ज पर</string>
+    <string name="pair_cycles">चक्कर</string>
+    <string name="pair_charge_watched">दिक्खेया</string>
+    <string name="pair_cycle_number">चक्कर %1$d</string>
     <string name="pair_rename_title">जोड़ी दा नां बदलो</string>
     <string name="pair_rename_label">नां</string>
     <string name="pair_retire_title">इसा जोड़ी गी रिटायर करो</string>

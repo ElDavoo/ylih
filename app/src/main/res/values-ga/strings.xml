@@ -91,6 +91,11 @@
     <string name="pair_per_hour">in aghaidh an uaire</string>
     <string name="pair_bought">ceannaithe</string>
     <string name="pair_daily_hours_14">uaireanta laethúla (14 lá)</string>
+    <string name="pair_charge_cycles">timthriallta luchtaithe</string>
+    <string name="pair_per_charge">in aghaidh an luchtaithe</string>
+    <string name="pair_cycles">timthriallta</string>
+    <string name="pair_charge_watched">faoi bhreathnú</string>
+    <string name="pair_cycle_number">timthriall %1$d</string>
     <string name="pair_rename_title">athainmnigh péire</string>
     <string name="pair_rename_label">ainm</string>
     <string name="pair_retire_title">scoir an péire seo</string>

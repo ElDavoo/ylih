@@ -11,12 +11,14 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import it.eldavo.ylih.R
 import it.eldavo.ylih.YlihApp
+import it.eldavo.ylih.data.BatterySampleEntity
 import it.eldavo.ylih.data.DeviceEntity
 import it.eldavo.ylih.data.PairSummary
 import it.eldavo.ylih.data.SessionEntity
 import it.eldavo.ylih.export.JsonBackup
 import it.eldavo.ylih.runCatchingCancellable
 import it.eldavo.ylih.stats.Counting
+import it.eldavo.ylih.stats.Reading
 import it.eldavo.ylih.stats.Span
 import it.eldavo.ylih.stats.Summary
 import it.eldavo.ylih.widget.refreshWidgets
@@ -141,6 +143,18 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
 
     fun sessions(pairId: Long): Flow<List<SessionEntity>> =
         container.repository.observeSessionsFor(pairId)
+
+    /**
+     * Every battery level this pair ever reported, oldest first.
+     *
+     * Unwindowed, unlike [recentSessions], because charge cycles are a lifetime figure — the
+     * question is what a charge bought when the pair was new against what it buys now, and a
+     * thirty-day window cannot ask it. The table only grows when the headphones say something new,
+     * so this is bounded by how talkative they are rather than by how long the app has run.
+     */
+    fun batteryReadings(pairId: Long): Flow<List<Reading>> =
+        container.repository.observeBatterySamples(pairId)
+            .map { samples -> samples.map { it.toReading() } }
 
     /**
      * False on the Play build until Bluetooth access is granted — see `Distribution`.
@@ -299,6 +313,8 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
 }
 
 fun SessionEntity.toSpan(): Span = Span(connectedAt, disconnectedAt, playingMs)
+
+fun BatterySampleEntity.toReading(): Reading = Reading(sessionId, at, level)
 
 /**
  * The lifetime figure a pair's card and the ranking show, straight off the aggregate rather than

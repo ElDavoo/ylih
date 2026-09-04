@@ -91,6 +91,11 @@
     <string name="pair_per_hour">ka hora</string>
     <string name="pair_bought">e rekiloe</string>
     <string name="pair_daily_hours_14">lihora tsa letsatsi le letsatsi (matsatsi a 14)</string>
+    <string name="pair_charge_cycles">dipotoloho tsa ho tjhaja</string>
+    <string name="pair_per_charge">ka tjhaja e le nngwe</string>
+    <string name="pair_cycles">dipotoloho</string>
+    <string name="pair_charge_watched">ho shebilwe</string>
+    <string name="pair_cycle_number">potoloho %1$d</string>
     <string name="pair_rename_title">reha para lebitso le lecha</string>
     <string name="pair_rename_label">lebitso</string>
     <string name="pair_retire_title">beha para ena phomolong</string>

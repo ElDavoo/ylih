@@ -97,6 +97,11 @@
     <string name="pair_per_hour">در ساعت</string>
     <string name="pair_bought">خریداری شده</string>
     <string name="pair_daily_hours_14">ساعات روزانه (14 روز)</string>
+    <string name="pair_charge_cycles">چرخه‌های شارژ</string>
+    <string name="pair_per_charge">در هر شارژ</string>
+    <string name="pair_cycles">چرخه‌ها</string>
+    <string name="pair_charge_watched">رصدشده</string>
+    <string name="pair_cycle_number">چرخه %1$d</string>
     <string name="pair_rename_title">تغییر نام جفت</string>
     <string name="pair_rename_label">نام</string>
     <string name="pair_retire_title">بازنشسته کردن این جفت</string>

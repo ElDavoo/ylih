@@ -91,6 +91,11 @@
     <string name="pair_per_hour">kwa awa</string>
     <string name="pair_bought">zụrụ</string>
     <string name="pair_daily_hours_14">ọrọ kwa ụbọchị (ụbọchị 14)</string>
+    <string name="pair_charge_cycles">okirikiri ijupụta</string>
+    <string name="pair_per_charge">kwa ijupụta</string>
+    <string name="pair_cycles">okirikiri</string>
+    <string name="pair_charge_watched">elere anya</string>
+    <string name="pair_cycle_number">okirikiri %1$d</string>
     <string name="pair_rename_title">gbanwee aha peeà</string>
     <string name="pair_rename_label">aha</string>
     <string name="pair_retire_title">gbado peeà a</string>

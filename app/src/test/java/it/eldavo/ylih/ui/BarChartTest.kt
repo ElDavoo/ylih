@@ -93,6 +93,44 @@ class BarChartTest {
         ).assertExists()
     }
 
+    private fun showCycles(values: List<Long>) {
+        compose.setContent {
+            YlihTheme {
+                CycleBarChart(
+                    values = values,
+                    label = "charge cycles",
+                    firstLabel = "cycle 1",
+                    lastLabel = "cycle ${values.size}",
+                )
+            }
+        }
+        compose.onRoot().captureToImage()
+    }
+
+    /**
+     * The cycle chart draws the same bars against a different axis — an ordinal rather than a date
+     * — because the only thing it is read for is whether the bars get shorter.
+     */
+    @Test
+    fun `the cycle chart is labelled with its span and its best cycle`() {
+        showCycles(listOf(10 * hour, 8 * hour, 6 * hour))
+
+        compose.onNodeWithText("cycle 1", useUnmergedTree = true).assertExists()
+        compose.onNodeWithText("cycle 3", useUnmergedTree = true).assertExists()
+        compose.onNodeWithText(
+            app.getString(R.string.chart_max, formatHours(10 * hour)),
+            useUnmergedTree = true,
+        ).assertExists()
+    }
+
+    @Test
+    fun `the cycle chart tells a screen reader what it is a chart of`() {
+        showCycles(listOf(10 * hour, 6 * hour))
+
+        compose.onNodeWithContentDescription("charge cycles", substring = true).assertExists()
+        compose.onNodeWithContentDescription("cycle 1 – cycle 2", substring = true).assertExists()
+    }
+
     @Test
     fun `an empty series draws an empty chart rather than crashing`() {
         show(emptyList())

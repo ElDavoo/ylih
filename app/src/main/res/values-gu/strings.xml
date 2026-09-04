@@ -91,6 +91,11 @@
     <string name="pair_per_hour">પ્રતિ કલાક</string>
     <string name="pair_bought">ખરીદ્યું</string>
     <string name="pair_daily_hours_14">દૈનિક કલાક (14 દિવસ)</string>
+    <string name="pair_charge_cycles">ચાર્જ ચક્રો</string>
+    <string name="pair_per_charge">દર ચાર્જે</string>
+    <string name="pair_cycles">ચક્રો</string>
+    <string name="pair_charge_watched">અવલોકન કરેલ</string>
+    <string name="pair_cycle_number">ચક્ર %1$d</string>
     <string name="pair_rename_title">જોડીનું નામ બદલો</string>
     <string name="pair_rename_label">નામ</string>
     <string name="pair_retire_title">આ જોડીને સેવાનિવૃત્ત કરો</string>

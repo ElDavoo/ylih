@@ -97,6 +97,11 @@
     <string name="pair_per_hour">za godzinę</string>
     <string name="pair_bought">kupiono</string>
     <string name="pair_daily_hours_14">godziny dziennie (14 dni)</string>
+    <string name="pair_charge_cycles">cykle ładowania</string>
+    <string name="pair_per_charge">na ładowanie</string>
+    <string name="pair_cycles">cykle</string>
+    <string name="pair_charge_watched">zaobserwowano</string>
+    <string name="pair_cycle_number">cykl %1$d</string>
     <string name="pair_rename_title">zmień nazwę pary</string>
     <string name="pair_rename_label">nazwa</string>
     <string name="pair_retire_title">wycofaj tę parę</string>

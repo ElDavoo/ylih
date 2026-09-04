@@ -14,9 +14,10 @@ import androidx.sqlite.execSQL
         DeviceEntity::class,
         PairEntity::class,
         SessionEntity::class,
+        BatterySampleEntity::class,
         SettingEntity::class,
     ],
-    version = 3,
+    version = 4,
     exportSchema = true,
 )
 @TypeConverters(Converters::class)
@@ -26,6 +27,8 @@ abstract class YlihDatabase : RoomDatabase() {
     abstract fun pairDao(): PairDao
 
     abstract fun sessionDao(): SessionDao
+
+    abstract fun batterySampleDao(): BatterySampleDao
 
     abstract fun settingsDao(): SettingsDao
 
@@ -61,6 +64,33 @@ abstract class YlihDatabase : RoomDatabase() {
         }
 
         /**
+         * Adds `battery_samples` — see [BatterySampleEntity]. A new table, so no existing row is
+         * touched and nothing can be lost; every install that predates it simply has no readings
+         * and so shows no charge cycles until its headphones report one.
+         *
+         * The SQL is Room's own, down to the index name and the `ON UPDATE NO ACTION` the foreign
+         * key carries: Room compares the migrated database against the identity hash compiled into
+         * this class, and a table created even slightly differently here fails every open
+         * afterwards rather than at the moment the migration ran.
+         */
+        internal val MIGRATION_3_4 = object : Migration(3, 4) {
+            override fun migrate(connection: SQLiteConnection) {
+                connection.execSQL(
+                    "CREATE TABLE IF NOT EXISTS `battery_samples` (" +
+                        "`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                        "`sessionId` INTEGER NOT NULL, `at` INTEGER NOT NULL, " +
+                        "`level` INTEGER NOT NULL, " +
+                        "FOREIGN KEY(`sessionId`) REFERENCES `sessions`(`id`) " +
+                        "ON UPDATE NO ACTION ON DELETE CASCADE )",
+                )
+                connection.execSQL(
+                    "CREATE INDEX IF NOT EXISTS `index_battery_samples_sessionId_at` " +
+                        "ON `battery_samples` (`sessionId`, `at`)",
+                )
+            }
+        }
+
+        /**
          * The [name] is a parameter only so `YlihDatabaseMigrationTest` can replay an old schema
          * through this exact function rather than through a builder of its own — a migration
          * registered somewhere else is a migration the app does not have. Nothing in the app ever
@@ -71,7 +101,7 @@ abstract class YlihDatabase : RoomDatabase() {
                 context.applicationContext,
                 YlihDatabase::class.java,
                 name,
-            ).addMigrations(MIGRATION_1_2, MIGRATION_2_3).build()
+            ).addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4).build()
     }
 }
 

@@ -97,6 +97,11 @@
     <string name="pair_per_hour">за час</string>
     <string name="pair_bought">закупени</string>
     <string name="pair_daily_hours_14">часове по дни (14 дни)</string>
+    <string name="pair_charge_cycles">цикли на зареждане</string>
+    <string name="pair_per_charge">на зареждане</string>
+    <string name="pair_cycles">цикли</string>
+    <string name="pair_charge_watched">наблюдавано</string>
+    <string name="pair_cycle_number">цикъл %1$d</string>
     <string name="pair_rename_title">преименуване на двойка</string>
     <string name="pair_rename_label">име</string>
     <string name="pair_retire_title">пенсионирайте тази двойка</string>

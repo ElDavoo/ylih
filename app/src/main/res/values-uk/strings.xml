@@ -98,6 +98,11 @@
     <string name="pair_per_hour">за годину</string>
     <string name="pair_bought">куплено</string>
     <string name="pair_daily_hours_14">години на день (14 днів)</string>
+    <string name="pair_charge_cycles">цикли заряджання</string>
+    <string name="pair_per_charge">на один заряд</string>
+    <string name="pair_cycles">цикли</string>
+    <string name="pair_charge_watched">під наглядом</string>
+    <string name="pair_cycle_number">цикл %1$d</string>
     <string name="pair_rename_title">перейменувати пару</string>
     <string name="pair_rename_label">назва</string>
     <string name="pair_retire_title">списати цю пару</string>

@@ -97,6 +97,11 @@
     <string name="pair_per_hour">a manim baako so</string>
     <string name="pair_bought">agu</string>
     <string name="pair_daily_hours_14">manim bere nna (nnɔnnum 14)</string>
+    <string name="pair_charge_cycles">ahoɔden nsakraeɛ</string>
+    <string name="pair_per_charge">ahoɔden baako</string>
+    <string name="pair_cycles">nsakraeɛ</string>
+    <string name="pair_charge_watched">wɔahwɛ</string>
+    <string name="pair_cycle_number">nsakraeɛ %1$d</string>
     <string name="pair_rename_title">sesa sua din</string>
     <string name="pair_rename_label">din</string>
     <string name="pair_retire_title">twali sua yi so</string>

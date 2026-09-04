@@ -97,6 +97,11 @@
     <string name="pair_per_hour">pakati ya mahola</string>
     <string name="pair_bought">ikombilwe</string>
     <string name="pair_daily_hours_14">amahola pa inshuba (14 inshuba)</string>
+    <string name="pair_charge_cycles">ifipimo fya maka</string>
+    <string name="pair_per_charge">pa maka yamo</string>
+    <string name="pair_cycles">ifipimo</string>
+    <string name="pair_charge_watched">ifyamonwa</string>
+    <string name="pair_cycle_number">icipimo %1$d</string>
     <string name="pair_rename_title">lifumine ilina ilingi ya ifipela</string>
     <string name="pair_rename_label">ilina</string>
     <string name="pair_retire_title">lefuze ifipela fino</string>

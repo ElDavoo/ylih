@@ -91,6 +91,11 @@
     <string name="pair_per_hour">per oere</string>
     <string name="pair_bought">keapte</string>
     <string name="pair_daily_hours_14">deistige oeren (14 dagen)</string>
+    <string name="pair_charge_cycles">laadsyklussen</string>
+    <string name="pair_per_charge">de laadbeurt</string>
+    <string name="pair_cycles">syklussen</string>
+    <string name="pair_charge_watched">waarnommen</string>
+    <string name="pair_cycle_number">syklus %1$d</string>
     <string name="pair_rename_title">dit pear omneame</string>
     <string name="pair_rename_label">namme</string>
     <string name="pair_retire_title">dit pear ôfskied</string>

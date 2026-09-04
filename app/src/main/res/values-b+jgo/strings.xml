@@ -91,6 +91,11 @@
     <string name="pair_per_hour">nə́ ŋgáŋ</string>
     <string name="pair_bought">ndzú</string>
     <string name="pair_daily_hours_14">ŋgáŋ yɛ́ ŋwɔ́ŋ (ŋwɔ́ŋ 14)</string>
+    <string name="pair_charge_cycles">sikǝl mǝ ntsɛ́</string>
+    <string name="pair_per_charge">ntsɛ́ pɔ́</string>
+    <string name="pair_cycles">sikǝl</string>
+    <string name="pair_charge_watched">pʉ́ə́ yə</string>
+    <string name="pair_cycle_number">sikǝl %1$d</string>
     <string name="pair_rename_title">tsə́ ndzɨ́ŋ yɛ́ ntsɔ́ʼ</string>
     <string name="pair_rename_label">ndzɨ́ŋ</string>
     <string name="pair_retire_title">tsɔ́ŋ ntsɔ́ʼ zə́</string>

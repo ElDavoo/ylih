@@ -97,6 +97,11 @@
     <string name="pair_per_hour">ᐁᑐ ᒪᕽᐅᕽ</string>
     <string name="pair_bought">ᑭ ᐊᑕᔨᒃ</string>
     <string name="pair_daily_hours_14">ᒪᕽᐅᕽᐊᓇ ᐊᔨᓯᔨᓂᐤ (14 ᐅᓴᑉ)</string>
+    <string name="pair_charge_cycles">ᐊᔅᑭᐦᐁᐧᐃᐣ ᐋᔭᐦᑭᐧᐃᓇ</string>
+    <string name="pair_per_charge">ᐯᔭᐠ ᐊᔅᑭᐦᐁᐧᐃᐣ</string>
+    <string name="pair_cycles">ᐋᔭᐦᑭᐧᐃᓇ</string>
+    <string name="pair_charge_watched">ᑭᑭᓇᐋᐧᐸᐦᑕᒼ</string>
+    <string name="pair_cycle_number">ᐋᔭᐦᑭᐧᐃᐣ %1$d</string>
     <string name="pair_rename_title">ᐊᑕᔨᑲᓱᐤ ᐅᑎᓯᓇᕽ</string>
     <string name="pair_rename_label">ᐊᑕᔭ</string>
     <string name="pair_retire_title">ᐘᑲᕀ ᐁᓱ ᐅᑎᓯᓇᕽ</string>

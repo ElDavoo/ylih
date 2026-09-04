@@ -97,6 +97,11 @@
     <string name="pair_per_hour">ཆུ་ཙོ་ཡིས་རེ།</string>
     <string name="pair_bought">ཁོར་ལེན་ཞིང་།</string>
     <string name="pair_daily_hours_14">ཉིན་རེའི་ཆུ་ཙོ་ (༧དགུ་བཞི་ ཉིན་)</string>
+    <string name="pair_charge_cycles">གློག་བཙུགས་སྐོར་རིམ།</string>
+    <string name="pair_per_charge">གློག་བཙུགས་རེར།</string>
+    <string name="pair_cycles">སྐོར་རིམ།</string>
+    <string name="pair_charge_watched">བལྟ་ཡོདཔ།</string>
+    <string name="pair_cycle_number">སྐོར་རིམ་ %1$d</string>
     <string name="pair_rename_title">ཕོ་ཉའི་མིང་གི་བསྒྲུབ་པ།</string>
     <string name="pair_rename_label">མིང་།</string>
     <string name="pair_retire_title">འདི་ཕོ་ཉ་རིས་བསྐུར་ཞུ།</string>

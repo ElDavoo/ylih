@@ -96,6 +96,11 @@
     <string name="pair_per_hour">per hora</string>
     <string name="pair_bought">comprat</string>
     <string name="pair_daily_hours_14">hores diàries (14 dies)</string>
+    <string name="pair_charge_cycles">cicles de càrrega</string>
+    <string name="pair_per_charge">per càrrega</string>
+    <string name="pair_cycles">cicles</string>
+    <string name="pair_charge_watched">observat</string>
+    <string name="pair_cycle_number">cicle %1$d</string>
     <string name="pair_rename_title">canviar nom del parell</string>
     <string name="pair_rename_label">nom</string>
     <string name="pair_retire_title">jubilar aquest parell</string>

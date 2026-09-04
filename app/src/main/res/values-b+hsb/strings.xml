@@ -91,6 +91,11 @@
     <string name="pair_per_hour">na hodźinu</string>
     <string name="pair_bought">nakupjena</string>
     <string name="pair_daily_hours_14">každodennje hodźiny (14 dnjow)</string>
+    <string name="pair_charge_cycles">nabiwanske cykle</string>
+    <string name="pair_per_charge">na nabiće</string>
+    <string name="pair_cycles">cykle</string>
+    <string name="pair_charge_watched">wobkedźbowane</string>
+    <string name="pair_cycle_number">cyklus %1$d</string>
     <string name="pair_rename_title">paru přemjenować</string>
     <string name="pair_rename_label">mjeno</string>
     <string name="pair_retire_title">tutu paru zažywić</string>

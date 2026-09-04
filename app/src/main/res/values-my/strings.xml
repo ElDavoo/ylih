@@ -91,6 +91,11 @@
     <string name="pair_per_hour">တစ်နာရီလျှင်</string>
     <string name="pair_bought">ဆိုင်းဖြုတ်</string>
     <string name="pair_daily_hours_14">နေ့စဉ်နာရီ (14 ရက်)</string>
+    <string name="pair_charge_cycles">အားသွင်းသံသရာ</string>
+    <string name="pair_per_charge">တစ်ကြိမ်အားသွင်းလျှင်</string>
+    <string name="pair_cycles">သံသရာ</string>
+    <string name="pair_charge_watched">စောင့်ကြည့်ခဲ့</string>
+    <string name="pair_cycle_number">သံသရာ %1$d</string>
     <string name="pair_rename_title">အတွဲကို အမည်ပြောင်းရန်</string>
     <string name="pair_rename_label">အစည်း</string>
     <string name="pair_retire_title">ဤအတွဲကို အနားပေးရန်</string>

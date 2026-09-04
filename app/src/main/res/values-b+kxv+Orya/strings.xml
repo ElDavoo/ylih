@@ -91,6 +91,11 @@
     <string name="pair_per_hour">ପ୍ରାତି ଘାନ୍ତା</string>
     <string name="pair_bought">କିନା ଆତେ</string>
     <string name="pair_daily_hours_14">ପ୍ରାତି ଦିନା ଘାନ୍ତା (14 ଦିନା)</string>
+    <string name="pair_charge_cycles">ଚାର୍ଜ ଚକ୍ର</string>
+    <string name="pair_per_charge">ଏକ ଚାର୍ଜ ମୁଦେ</string>
+    <string name="pair_cycles">ଚକ୍ର</string>
+    <string name="pair_charge_watched">ଦେଖ୍‌ତେ</string>
+    <string name="pair_cycle_number">ଚକ୍ର %1$d</string>
     <string name="pair_rename_title">ଜୋଡ଼ି-ନା ନୌ ବାଦାଲା କିଡ଼ୁ</string>
     <string name="pair_rename_label">ନୌ</string>
     <string name="pair_retire_title">ଈ ଜୋଡ଼ି ଛେଡ଼ା କିଡ଼ୁ</string>

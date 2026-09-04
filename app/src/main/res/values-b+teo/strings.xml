@@ -91,6 +91,11 @@
     <string name="pair_per_hour">kanuka esawa</string>
     <string name="pair_bought">ikwenit</string>
     <string name="pair_daily_hours_14">isawan luka aparan (iparasia 14)</string>
+    <string name="pair_charge_cycles">aikalikalak nu apedor</string>
+    <string name="pair_per_charge">kwa apedor adiope</string>
+    <string name="pair_cycles">aikalikalak</string>
+    <string name="pair_charge_watched">eitodolikinos</string>
+    <string name="pair_cycle_number">aikalikal %1$d</string>
     <string name="pair_rename_title">ilokikin ekiror loka apesur</string>
     <string name="pair_rename_label">ekiror</string>
     <string name="pair_retire_title">itodoli apesur na</string>

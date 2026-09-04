@@ -91,6 +91,11 @@
     <string name="pair_per_hour">isan’ora</string>
     <string name="pair_bought">novidiana</string>
     <string name="pair_daily_hours_14">ora isan’andro (14 andro)</string>
+    <string name="pair_charge_cycles">tsingerin’ny fameno</string>
+    <string name="pair_per_charge">isaky ny fameno</string>
+    <string name="pair_cycles">tsingerina</string>
+    <string name="pair_charge_watched">voamarika</string>
+    <string name="pair_cycle_number">tsingerina %1$d</string>
     <string name="pair_rename_title">ovay ny anaran’ny aurikilara</string>
     <string name="pair_rename_label">anarana</string>
     <string name="pair_retire_title">esory ity aurikilara ity</string>

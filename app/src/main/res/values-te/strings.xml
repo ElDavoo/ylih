@@ -91,6 +91,11 @@
     <string name="pair_per_hour">గంటకు</string>
     <string name="pair_bought">కొన్నది</string>
     <string name="pair_daily_hours_14">రోజువారీ గంటలు (14 రోజులు)</string>
+    <string name="pair_charge_cycles">ఛార్జ్ చక్రాలు</string>
+    <string name="pair_per_charge">ఒక్కో ఛార్జ్‌కు</string>
+    <string name="pair_cycles">చక్రాలు</string>
+    <string name="pair_charge_watched">గమనించినది</string>
+    <string name="pair_cycle_number">చక్రం %1$d</string>
     <string name="pair_rename_title">జత పేరు మార్చు</string>
     <string name="pair_rename_label">పేరు</string>
     <string name="pair_retire_title">ఈ జతను విరమింపజేయి</string>

@@ -48,4 +48,19 @@
         <ignore regexp="src/test/" />
     </issue>
 
+    <!-- ReceiversTest dispatches the battery broadcast through the real manifest filter, because a
+         receiver the merged manifest does not carry is a feature that works in a test and nowhere
+         else. Lint sees an implicit intent matching a non-exported component of ours and says to
+         make it explicit — which is right for an intent an app really sends, and would defeat the
+         only thing this test is for.
+
+         The neighbouring ACL_CONNECTED tests do exactly the same and are not flagged: lint exempts
+         broadcasts it knows the system protects, and it does not know this one because the constant
+         is @SystemApi. It *is* a <protected-broadcast>, so the premise of the check does not hold
+         here either. Scoped to the one file, since an implicit intent anywhere else is still worth
+         being told about. See tracking/BatteryBroadcast.kt. -->
+    <issue id="UnsafeImplicitIntentLaunch">
+        <ignore regexp="src/test/java/it/eldavo/ylih/tracking/ReceiversTest.kt" />
+    </issue>
+
 </lint>

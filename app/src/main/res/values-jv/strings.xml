@@ -91,6 +91,11 @@
     <string name="pair_per_hour">per jam</string>
     <string name="pair_bought">tuku</string>
     <string name="pair_daily_hours_14">jam saben dina (14 hari)</string>
+    <string name="pair_charge_cycles">siklus ngisi daya</string>
+    <string name="pair_per_charge">saben ngisi daya</string>
+    <string name="pair_cycles">siklus</string>
+    <string name="pair_charge_watched">diamati</string>
+    <string name="pair_cycle_number">siklus %1$d</string>
     <string name="pair_rename_title">ganti jeneng rong</string>
     <string name="pair_rename_label">jeneng</string>
     <string name="pair_retire_title">tarik rong iki</string>

@@ -91,6 +91,11 @@
     <string name="pair_per_hour">prati taas</string>
     <string name="pair_bought">kharedi kem</string>
     <string name="pair_daily_hours_14">dainik taas (14 divs)</string>
+    <string name="pair_charge_cycles">charj chakram</string>
+    <string name="pair_per_charge">dar charjak</string>
+    <string name="pair_cycles">chakram</string>
+    <string name="pair_charge_watched">pollem</string>
+    <string name="pair_cycle_number">chakra %1$d</string>
     <string name="pair_rename_title">jodihe punn nav de</string>
     <string name="pair_rename_label">nav</string>
     <string name="pair_retire_title">hya jodihe nivrut kra</string>

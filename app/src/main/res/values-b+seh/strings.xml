@@ -91,6 +91,11 @@
     <string name="pair_per_hour">pa hora</string>
     <string name="pair_bought">kogula</string>
     <string name="pair_daily_hours_14">maola a tsiku (masiku 14)</string>
+    <string name="pair_charge_cycles">mazungulusso a mphambvu</string>
+    <string name="pair_per_charge">pa mphambvu ibodzi</string>
+    <string name="pair_cycles">mazungulusso</string>
+    <string name="pair_charge_watched">asaoniwa</string>
+    <string name="pair_cycle_number">zungulusso %1$d</string>
     <string name="pair_rename_title">sinthani dzina la makedzeni</string>
     <string name="pair_rename_label">dzina</string>
     <string name="pair_retire_title">asintha makedzeni ano</string>

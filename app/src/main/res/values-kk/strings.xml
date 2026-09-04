@@ -91,6 +91,11 @@
     <string name="pair_per_hour">сағатына</string>
     <string name="pair_bought">сатып алынған</string>
     <string name="pair_daily_hours_14">күндік сағаттар (14 күн)</string>
+    <string name="pair_charge_cycles">зарядтау циклдері</string>
+    <string name="pair_per_charge">бір зарядқа</string>
+    <string name="pair_cycles">циклдер</string>
+    <string name="pair_charge_watched">бақыланған</string>
+    <string name="pair_cycle_number">цикл %1$d</string>
     <string name="pair_rename_title">жұпты қайта атау</string>
     <string name="pair_rename_label">аты</string>
     <string name="pair_retire_title">бұл жұпты пенсиялық</string>

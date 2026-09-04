@@ -91,6 +91,11 @@
     <string name="pair_per_hour">في ڪلاڪ</string>
     <string name="pair_bought">خريدو</string>
     <string name="pair_daily_hours_14">روزانہ ڪلاڪ (14 ڏينهن)</string>
+    <string name="pair_charge_cycles">چارج چڪر</string>
+    <string name="pair_per_charge">في چارج</string>
+    <string name="pair_cycles">چڪر</string>
+    <string name="pair_charge_watched">ڏٺو ويو</string>
+    <string name="pair_cycle_number">چڪر %1$d</string>
     <string name="pair_rename_title">جوڙي کو نام دوبارہ ڏيو</string>
     <string name="pair_rename_label">نام</string>
     <string name="pair_retire_title">هن جوڙي کو ريٽائر ڪريو</string>

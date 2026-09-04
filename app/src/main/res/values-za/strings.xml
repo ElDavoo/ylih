@@ -91,6 +91,11 @@
     <string name="pair_per_hour">gunz by haeq</string>
     <string name="pair_bought">gvuq</string>
     <string name="pair_daily_hours_14">gunz ndieq (14 ndieq)</string>
+    <string name="pair_charge_cycles">cungdenh couhgeiz</string>
+    <string name="pair_per_charge">moix baez cungdenh</string>
+    <string name="pair_cycles">couhgeiz</string>
+    <string name="pair_charge_watched">gozcaz gvaq</string>
+    <string name="pair_cycle_number">couhgeiz %1$d</string>
     <string name="pair_rename_title">seungj haeq ndungz</string>
     <string name="pair_rename_label">haeq</string>
     <string name="pair_retire_title">youq ndungz yien</string>

@@ -91,6 +91,11 @@
     <string name="pair_per_hour">bo otu</string>
     <string name="pair_bought">i-nu</string>
     <string name="pair_daily_hours_14">otu kilo miezi (miezi 14)</string>
+    <string name="pair_charge_cycles">sikɛl yé ndáá</string>
+    <string name="pair_per_charge">ndáá yɔ́mɔ́</string>
+    <string name="pair_cycles">sikɛl</string>
+    <string name="pair_charge_watched">bá bɛ́n</string>
+    <string name="pair_cycle_number">sikɛl %1$d</string>
     <string name="pair_rename_title">su nam ba bu-yak</string>
     <string name="pair_rename_label">nam</string>
     <string name="pair_retire_title">puga bu-yak yi</string>

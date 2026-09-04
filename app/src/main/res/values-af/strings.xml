@@ -97,6 +97,11 @@
     <string name="pair_per_hour">per uur</string>
     <string name="pair_bought">gekoop</string>
     <string name="pair_daily_hours_14">daaglikse ure (14 dae)</string>
+    <string name="pair_charge_cycles">laaisiklusse</string>
+    <string name="pair_per_charge">per laai</string>
+    <string name="pair_cycles">siklusse</string>
+    <string name="pair_charge_watched">waargeneem</string>
+    <string name="pair_cycle_number">siklus %1$d</string>
     <string name="pair_rename_title">hernoem paar</string>
     <string name="pair_rename_label">naam</string>
     <string name="pair_retire_title">pensioneer hierdie paar</string>

@@ -91,6 +91,11 @@
     <string name="pair_per_hour">kwa saati</string>
     <string name="pair_bought">kanuntie</string>
     <string name="pair_daily_hours_14">saatisi za masawu</string>
+    <string name="pair_charge_cycles">mizungu ya bukome</string>
+    <string name="pair_per_charge">ku bukome bumo</string>
+    <string name="pair_cycles">mizungu</string>
+    <string name="pair_charge_watched">kutalwa</string>
+    <string name="pair_cycle_number">muzungu %1$d</string>
     <string name="pair_rename_title">kabuakile zina kikalangishi</string>
     <string name="pair_rename_label">zina</string>
     <string name="pair_retire_title">leta mu busemi kikalangishi</string>

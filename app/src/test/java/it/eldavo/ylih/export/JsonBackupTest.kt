@@ -3,6 +3,7 @@ package it.eldavo.ylih.export
 import android.os.Build
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
+import it.eldavo.ylih.data.BatterySampleEntity
 import it.eldavo.ylih.data.DeviceEntity
 import it.eldavo.ylih.data.DeviceKind
 import it.eldavo.ylih.data.EndReason
@@ -95,7 +96,7 @@ class JsonBackupTest {
             ),
         )
         // Still open, never measured — the two nullable columns that a lossy format would drop.
-        target.sessionDao().insert(
+        val openId = target.sessionDao().insert(
             SessionEntity(
                 pairId = pairId,
                 connectedAt = now - hour,
@@ -104,6 +105,14 @@ class JsonBackupTest {
                 heartbeatAt = now,
                 endReason = null,
             ),
+        )
+        // Charge cycles are worked out from these and from nothing else, so a backup that drops
+        // them restores a pair whose battery history starts again from today.
+        target.batterySampleDao().insert(
+            BatterySampleEntity(sessionId = openId, at = now - hour, level = 90),
+        )
+        target.batterySampleDao().insert(
+            BatterySampleEntity(sessionId = openId, at = now, level = 80),
         )
     }
 
@@ -155,6 +164,12 @@ class JsonBackupTest {
         assertEquals(listOf("DISCONNECTED", null), backup.sessions.map { it.endReason })
         assertEquals(listOf(90 * 60_000L, null), backup.sessions.map { it.playingMs })
         assertEquals(listOf(now - 28 * hour, null), backup.sessions.map { it.disconnectedAt })
+        assertEquals(listOf(90, 80), backup.batterySamples.map { it.level })
+        assertEquals(
+            "a reading names the session it was taken in, and that is the whole rule it obeys",
+            listOf(backup.sessions.last().id, backup.sessions.last().id),
+            backup.batterySamples.map { it.sessionId },
+        )
     }
 
     @Test
@@ -169,6 +184,30 @@ class JsonBackupTest {
             assertEquals(db.deviceDao().getAll(), restored.deviceDao().getAll())
             assertEquals(db.pairDao().getAll(), restored.pairDao().getAll())
             assertEquals(db.sessionDao().getAll(), restored.sessionDao().getAll())
+            assertEquals(db.batterySampleDao().getAll(), restored.batterySampleDao().getAll())
+        } finally {
+            restored.close()
+        }
+    }
+
+    /**
+     * The field arrived with a default rather than a format bump, exactly as `settings` did, so a
+     * file written by the build before charge cycles existed still restores its history — it simply
+     * has no readings in it.
+     */
+    @Test
+    fun `a backup written before battery readings existed still imports`() = runTest {
+        seed(db)
+        val payload = JsonBackup.export(db, now)
+        val withoutReadings = json.decodeFromString<JsonBackup.Backup>(payload)
+            .let { Json.encodeToString(it.copy(batterySamples = emptyList())) }
+
+        val restored = newDatabase()
+        try {
+            assertEquals(2, JsonBackup.import(restored, withoutReadings))
+
+            assertEquals(db.sessionDao().getAll(), restored.sessionDao().getAll())
+            assertTrue(restored.batterySampleDao().getAll().isEmpty())
         } finally {
             restored.close()
         }

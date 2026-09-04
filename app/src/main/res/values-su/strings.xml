@@ -91,6 +91,11 @@
     <string name="pair_per_hour">per jam</string>
     <string name="pair_bought">dibeuli</string>
     <string name="pair_daily_hours_14">jam sapopoé (14 poé)</string>
+    <string name="pair_charge_cycles">siklus ngecas</string>
+    <string name="pair_per_charge">unggal ngecas</string>
+    <string name="pair_cycles">siklus</string>
+    <string name="pair_charge_watched">katalungtik</string>
+    <string name="pair_cycle_number">siklus %1$d</string>
     <string name="pair_rename_title">ganti ngaran pasangan</string>
     <string name="pair_rename_label">ngaran</string>
     <string name="pair_retire_title">pangsiunkeun pasangan ieu</string>

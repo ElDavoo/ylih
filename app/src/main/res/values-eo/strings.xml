@@ -97,6 +97,11 @@
     <string name="pair_per_hour">po horo</string>
     <string name="pair_bought">aĉetita</string>
     <string name="pair_daily_hours_14">horoj po tago (14 tagoj)</string>
+    <string name="pair_charge_cycles">ŝargociklaj</string>
+    <string name="pair_per_charge">po ŝargo</string>
+    <string name="pair_cycles">cikloj</string>
+    <string name="pair_charge_watched">observita</string>
+    <string name="pair_cycle_number">ciklo %1$d</string>
     <string name="pair_rename_title">renomi paron</string>
     <string name="pair_rename_label">nomo</string>
     <string name="pair_retire_title">pensigu ĉi tiun paron</string>

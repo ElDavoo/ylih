@@ -91,6 +91,11 @@
     <string name="pair_per_hour">pro myele</string>
     <string name="pair_bought">kulaki</string>
     <string name="pair_daily_hours_14">myele ya mokolo (mikolo 14)</string>
+    <string name="pair_charge_cycles">bazínga ya kotondisa</string>
+    <string name="pair_per_charge">na kotondisa mokó</string>
+    <string name="pair_cycles">bazínga</string>
+    <string name="pair_charge_watched">etálámákí</string>
+    <string name="pair_cycle_number">zínga %1$d</string>
     <string name="pair_rename_title">sunga nkombo ya makambo</string>
     <string name="pair_rename_label">nkombo</string>
     <string name="pair_retire_title">elekidi makambo oyo</string>

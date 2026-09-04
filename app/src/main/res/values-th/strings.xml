@@ -98,6 +98,11 @@
     <string name="pair_per_hour">ต่อชั่วโมง</string>
     <string name="pair_bought">ซื้อเมื่อ</string>
     <string name="pair_daily_hours_14">ชั่วโมงต่อวัน (14 วัน)</string>
+    <string name="pair_charge_cycles">รอบการชาร์จ</string>
+    <string name="pair_per_charge">ต่อการชาร์จ</string>
+    <string name="pair_cycles">รอบ</string>
+    <string name="pair_charge_watched">ที่สังเกตได้</string>
+    <string name="pair_cycle_number">รอบที่ %1$d</string>
     <string name="pair_rename_title">เปลี่ยนชื่อคู่หูฟัง</string>
     <string name="pair_rename_label">ชื่อ</string>
     <string name="pair_retire_title">เลิกใช้คู่นี้</string>

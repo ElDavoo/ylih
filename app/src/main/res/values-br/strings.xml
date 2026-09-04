@@ -97,6 +97,11 @@
     <string name="pair_per_hour">dre eurvezh</string>
     <string name="pair_bought">prenet</string>
     <string name="pair_daily_hours_14">eurvezhioù dre deiz (14 devezhioù)</string>
+    <string name="pair_charge_cycles">kelc’hiadoù kargañ</string>
+    <string name="pair_per_charge">dre gargad</string>
+    <string name="pair_cycles">kelc’hiadoù</string>
+    <string name="pair_charge_watched">evezhiet</string>
+    <string name="pair_cycle_number">kelc’hiad %1$d</string>
     <string name="pair_rename_title">adenvel ur parol</string>
     <string name="pair_rename_label">anv</string>
     <string name="pair_retire_title">digemer ar parol-mañ</string>

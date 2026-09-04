@@ -97,6 +97,11 @@
     <string name="pair_per_hour">ανά ώρα</string>
     <string name="pair_bought">αγοράστηκε</string>
     <string name="pair_daily_hours_14">ώρες ανά ημέρα (14 ημέρες)</string>
+    <string name="pair_charge_cycles">κύκλοι φόρτισης</string>
+    <string name="pair_per_charge">ανά φόρτιση</string>
+    <string name="pair_cycles">κύκλοι</string>
+    <string name="pair_charge_watched">παρακολουθήθηκε</string>
+    <string name="pair_cycle_number">κύκλος %1$d</string>
     <string name="pair_rename_title">μετονομασία ζευγαριού</string>
     <string name="pair_rename_label">όνομα</string>
     <string name="pair_retire_title">απόσυρση αυτού του ζευγαριού</string>

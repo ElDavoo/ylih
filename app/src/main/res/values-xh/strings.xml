@@ -91,6 +91,11 @@
     <string name="pair_per_hour">nge-yure</string>
     <string name="pair_bought">kwathengwa</string>
     <string name="pair_daily_hours_14">iiyure zosuku (amashumi-amathandathu emali)</string>
+    <string name="pair_charge_cycles">imijikelo yokutshaja</string>
+    <string name="pair_per_charge">ngokutshaja okunye</string>
+    <string name="pair_cycles">imijikelo</string>
+    <string name="pair_charge_watched">okubonwayo</string>
+    <string name="pair_cycle_number">umjikelo %1$d</string>
     <string name="pair_rename_title">biza le milambo kwakhona</string>
     <string name="pair_rename_label">igama</string>
     <string name="pair_retire_title">igqitshile ezi milambo</string>

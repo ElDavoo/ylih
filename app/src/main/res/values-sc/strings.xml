@@ -91,6 +91,11 @@
     <string name="pair_per_hour">pro ora</string>
     <string name="pair_bought">cumpradu</string>
     <string name="pair_daily_hours_14">oras giurnadas (14 dies)</string>
+    <string name="pair_charge_cycles">tzìclos de càrriga</string>
+    <string name="pair_per_charge">pro càrriga</string>
+    <string name="pair_cycles">tzìclos</string>
+    <string name="pair_charge_watched">osservadu</string>
+    <string name="pair_cycle_number">tzìclu %1$d</string>
     <string name="pair_rename_title">bennomine para</string>
     <string name="pair_rename_label">nòmine</string>
     <string name="pair_retire_title">pensiona custa para</string>

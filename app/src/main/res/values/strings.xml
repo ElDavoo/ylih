@@ -105,6 +105,15 @@
     <string name="pair_per_hour">per hour</string>
     <string name="pair_bought">bought</string>
     <string name="pair_daily_hours_14">daily hours (14 days)</string>
+    <!-- Titles the charge-cycle chart and the cycles listed under it. A cycle is 100% of battery
+         used, however many part-charges that took. -->
+    <string name="pair_charge_cycles">charge cycles</string>
+    <string name="pair_per_charge">per charge</string>
+    <string name="pair_cycles">cycles</string>
+    <!-- The listening time the "per charge" figure is worked out from. -->
+    <string name="pair_charge_watched">watched</string>
+    <!-- Names one cycle in the list and on the chart's axis: "cycle 1", "cycle 12". -->
+    <string name="pair_cycle_number">cycle %1$d</string>
     <string name="pair_rename_title">rename pair</string>
     <string name="pair_rename_label">name</string>
     <string name="pair_retire_title">retire this pair</string>

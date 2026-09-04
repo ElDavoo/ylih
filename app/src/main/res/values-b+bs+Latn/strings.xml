@@ -97,6 +97,11 @@
     <string name="pair_per_hour">po satu</string>
     <string name="pair_bought">kupljene</string>
     <string name="pair_daily_hours_14">dnevni sati (14 dana)</string>
+    <string name="pair_charge_cycles">ciklusi punjenja</string>
+    <string name="pair_per_charge">po punjenju</string>
+    <string name="pair_cycles">ciklusi</string>
+    <string name="pair_charge_watched">posmatrano</string>
+    <string name="pair_cycle_number">ciklus %1$d</string>
     <string name="pair_rename_title">preimenovaj paru</string>
     <string name="pair_rename_label">ime</string>
     <string name="pair_retire_title">povuci ovu paru u penziju</string>

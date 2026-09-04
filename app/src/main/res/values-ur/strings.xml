@@ -91,6 +91,11 @@
     <string name="pair_per_hour">فی گھنٹہ</string>
     <string name="pair_bought">خریدی گئی</string>
     <string name="pair_daily_hours_14">روزانہ کے گھنٹے (14 دن)</string>
+    <string name="pair_charge_cycles">چارج سائیکل</string>
+    <string name="pair_per_charge">فی چارج</string>
+    <string name="pair_cycles">سائیکل</string>
+    <string name="pair_charge_watched">مشاہدہ شدہ</string>
+    <string name="pair_cycle_number">سائیکل %1$d</string>
     <string name="pair_rename_title">جوڑی کا نام تبدیل کریں</string>
     <string name="pair_rename_label">نام</string>
     <string name="pair_retire_title">اس جوڑی کو ریٹائر کریں</string>
