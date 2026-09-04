@@ -263,6 +263,32 @@ The UI is one section on the pair page and nowhere else, absent until `pointsDra
 `ui/BarChart.kt`'s geometry was split into a keyless `drawBars` so `CycleBarChart` draws the same
 bars against an ordinal axis; `drawDailyBars` and the widget's bitmap path go through it unchanged.
 
+**Everything here is bounded except the readings themselves, and that took three goes to get
+right.** Charge cycles are the one figure in the app with no window — a thirty-day view cannot ask
+what a charge bought when the pair was new — so a decade of them is the case to design for, and each
+of these was measured rather than guessed:
+
+- **The read must not name `sessions`.** A Room flow observes every table its query mentions, and
+  the heartbeat writes to `sessions` once a minute. Joined, the read of 400,000 readings took 3.5 s
+  and re-ran every minute for as long as the pair page was open. `BatterySampleEntity` therefore
+  carries a redundant `pairId`, which makes the same read a covering scan of
+  `(pairId, at)` — 1.5 s, and only when a reading actually lands. This is the trap
+  `observeRecentSessions` and `summarizeLifetime` already exist to avoid, walked into again.
+- **The summary belongs off the main thread.** `Charge.summarize` is 173 ms over a million
+  readings, and it used to sit in a `remember` keyed on the minute clock. It is now
+  `YlihViewModel.chargeSummary`, on `Dispatchers.Default`, with the sessions reduced to spans
+  *before* `distinctUntilChanged` — a heartbeat moves nothing a span holds, so nothing recomputes.
+- **The list and the chart are capped.** Three thousand cycles is three thousand rows between the
+  chart and the sessions below it, and three thousand sub-pixel bars redrawn every frame. The rows
+  stop at `PAIR_CYCLE_ROWS`, keeping their absolute numbering; the chart averages runs of cycles
+  into at most `MAX_CYCLE_BARS` (`bucketedBars`) so the whole lifetime still fits a screen width.
+  The tiles above stay exact, because they are counted rather than drawn.
+
+What is still linear is loading the readings at all: they are the pair's whole history by design.
+At a percent per step and a cycle a day that is ~36,500 rows a year, so a decade is a second or so
+on a background thread when a reading lands. If that ever stops being acceptable the answer is a
+rolled-up `cycles` table, not a window.
+
 ### Stats and UI
 
 `stats/Stats.kt` is pure functions over `Span` (start, optional end, optional playing ms),

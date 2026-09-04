@@ -78,14 +78,18 @@ abstract class YlihDatabase : RoomDatabase() {
                 connection.execSQL(
                     "CREATE TABLE IF NOT EXISTS `battery_samples` (" +
                         "`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
-                        "`sessionId` INTEGER NOT NULL, `at` INTEGER NOT NULL, " +
-                        "`level` INTEGER NOT NULL, " +
+                        "`sessionId` INTEGER NOT NULL, `pairId` INTEGER NOT NULL, " +
+                        "`at` INTEGER NOT NULL, `level` INTEGER NOT NULL, " +
                         "FOREIGN KEY(`sessionId`) REFERENCES `sessions`(`id`) " +
                         "ON UPDATE NO ACTION ON DELETE CASCADE )",
                 )
                 connection.execSQL(
                     "CREATE INDEX IF NOT EXISTS `index_battery_samples_sessionId_at` " +
                         "ON `battery_samples` (`sessionId`, `at`)",
+                )
+                connection.execSQL(
+                    "CREATE INDEX IF NOT EXISTS `index_battery_samples_pairId_at` " +
+                        "ON `battery_samples` (`pairId`, `at`)",
                 )
             }
         }

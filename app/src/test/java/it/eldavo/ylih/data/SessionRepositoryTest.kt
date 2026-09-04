@@ -600,5 +600,14 @@ class SessionRepositoryTest {
             listOf(90, 60),
             repository.observeBatterySamples(pairId).first().map { it.level },
         )
+        // `pairId` is carried on the reading as well as reachable through its session, so that the
+        // read above never joins `sessions` — see BatterySampleEntity. The two must agree.
+        for (sample in batterySamples()) {
+            assertEquals(
+                "a reading's pair must be its session's pair",
+                db.sessionDao().getAll().single { it.id == sample.sessionId }.pairId,
+                sample.pairId,
+            )
+        }
     }
 }

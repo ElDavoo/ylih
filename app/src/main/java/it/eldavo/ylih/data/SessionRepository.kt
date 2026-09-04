@@ -135,7 +135,12 @@ class SessionRepository(
                 val open = sessions.openFor(pair.id) ?: return@withTransaction false
                 if (batterySamples.lastFor(open.id)?.level != level) {
                     batterySamples.insert(
-                        BatterySampleEntity(sessionId = open.id, at = at, level = level),
+                        BatterySampleEntity(
+                            sessionId = open.id,
+                            pairId = pair.id,
+                            at = at,
+                            level = level,
+                        ),
                     )
                 }
                 true

@@ -155,6 +155,24 @@ internal fun barMaxMs(values: List<Long>): Long =
     values.maxOrNull()?.coerceAtLeast(1L) ?: 1L
 
 /**
+ * At most [max] bars, by averaging runs of consecutive values when there are more.
+ *
+ * A pair used daily for a decade is some three thousand charge cycles, and three thousand bars on a
+ * phone is a bar narrower than a pixel drawn three thousand times a frame — the chart stops being
+ * readable long before it stops being drawable. Averaging keeps the shape, which is the only thing
+ * this chart is read for: whether the bars are getting shorter. The figures above it stay exact,
+ * because they are counted rather than drawn.
+ */
+internal fun bucketedBars(values: List<Long>, max: Int): List<Long> {
+    require(max > 0) { "max must be positive" }
+    if (values.size <= max) return values
+    // Rounded up, so the result can never exceed [max]; the last bucket may be short and is still
+    // an average of what is in it.
+    val size = (values.size + max - 1) / max
+    return values.chunked(size) { run -> run.sum() / run.size }
+}
+
+/**
  * The bars themselves, in whatever [DrawScope] is handed to them.
  *
  * Pulled out of the Canvas above so the home-screen chart widget can draw the same geometry into

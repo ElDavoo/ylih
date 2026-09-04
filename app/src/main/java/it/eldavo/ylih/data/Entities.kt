@@ -163,11 +163,22 @@ data class SessionEntity(
             onDelete = ForeignKey.CASCADE,
         ),
     ],
-    indices = [Index(value = ["sessionId", "at"])],
+    indices = [Index(value = ["sessionId", "at"]), Index(value = ["pairId", "at"])],
 )
 data class BatterySampleEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val sessionId: Long,
+    /**
+     * The pair the session belongs to, carried here as well.
+     *
+     * Redundant — it is `sessions.pairId` for [sessionId], and a session never changes pair — and
+     * worth it for one reason: reading a pair's history through a join makes Room's flow observe
+     * `sessions` too, and the heartbeat writes to that table once a minute. Measured over 400,000
+     * readings, that re-ran a 3.5-second query every minute for as long as the pair page was open.
+     * Off this column the same read is an index scan of `(pairId, at)` with no join and no sort,
+     * and it re-runs only when a reading actually lands.
+     */
+    val pairId: Long,
     val at: Long,
     /** Percent remaining, 0..100, exactly as the platform reported it. */
     val level: Int,

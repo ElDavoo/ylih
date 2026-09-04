@@ -79,6 +79,7 @@ object JsonBackup {
     data class BatterySample(
         val id: Long,
         val sessionId: Long,
+        val pairId: Long,
         val at: Long,
         val level: Int,
     )
@@ -127,7 +128,7 @@ object JsonBackup {
                     )
                 },
                 batterySamples = batterySamples.map {
-                    BatterySample(it.id, it.sessionId, it.at, it.level)
+                    BatterySample(it.id, it.sessionId, it.pairId, it.at, it.level)
                 },
             ),
         )
@@ -193,6 +194,7 @@ object JsonBackup {
                     BatterySampleEntity(
                         id = it.id,
                         sessionId = it.sessionId,
+                        pairId = it.pairId,
                         at = it.at,
                         level = it.level,
                     ),

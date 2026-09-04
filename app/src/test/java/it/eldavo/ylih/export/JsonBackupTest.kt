@@ -109,10 +109,10 @@ class JsonBackupTest {
         // Charge cycles are worked out from these and from nothing else, so a backup that drops
         // them restores a pair whose battery history starts again from today.
         target.batterySampleDao().insert(
-            BatterySampleEntity(sessionId = openId, at = now - hour, level = 90),
+            BatterySampleEntity(sessionId = openId, pairId = pairId, at = now - hour, level = 90),
         )
         target.batterySampleDao().insert(
-            BatterySampleEntity(sessionId = openId, at = now, level = 80),
+            BatterySampleEntity(sessionId = openId, pairId = pairId, at = now, level = 80),
         )
     }
 

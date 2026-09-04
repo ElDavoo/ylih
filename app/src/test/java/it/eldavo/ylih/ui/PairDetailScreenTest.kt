@@ -171,6 +171,11 @@ class PairDetailScreenTest {
             .performScrollToNode(hasText(value, substring = true))
     }
 
+    /** [scrollTo] where a substring would be ambiguous — "cycle 1" against "cycle 19". */
+    private fun scrollToExact(value: String) {
+        compose.onNode(hasScrollToNodeAction()).performScrollToNode(hasText(value))
+    }
+
     private fun pair(pairId: Long) = runBlocking { db.pairDao().byId(pairId) }
 
     /**
@@ -197,8 +202,11 @@ class PairDetailScreenTest {
      */
     private fun seedBatteryReadings() = runBlocking {
         val sessions = db.sessionDao().getAll()
+        val pairId = db.pairDao().getAll().single().id
         fun reading(sessionId: Long, at: Long, level: Int) = runBlocking {
-            db.batterySampleDao().insert(BatterySampleEntity(sessionId = sessionId, at = at, level = level))
+            db.batterySampleDao().insert(
+                BatterySampleEntity(sessionId = sessionId, pairId = pairId, at = at, level = level),
+            )
         }
         reading(sessions[0].id, now - 3 * day, 100)
         reading(sessions[0].id, now - 3 * day + 4 * hour, 40)
@@ -227,6 +235,52 @@ class PairDetailScreenTest {
             "the whole list was searched and there is no charge section in it",
             runCatching { scrollTo(text(R.string.pair_charge_cycles)) }.isFailure,
         )
+    }
+
+    /** One session per cycle, a hundred points each, so [count] cycles complete. */
+    private fun seedManyCycles(pairId: Long, count: Int) = runBlocking {
+        repeat(count) { i ->
+            val at = now - (count - i) * day
+            val sessionId = db.sessionDao().insert(
+                SessionEntity(
+                    pairId = pairId,
+                    connectedAt = at,
+                    disconnectedAt = at + 5 * hour,
+                    heartbeatAt = at + 5 * hour,
+                    endReason = EndReason.DISCONNECTED,
+                ),
+            )
+            db.batterySampleDao()
+                .insert(BatterySampleEntity(sessionId = sessionId, pairId = pairId, at = at, level = 100))
+            db.batterySampleDao().insert(
+                BatterySampleEntity(sessionId = sessionId, pairId = pairId, at = at + 5 * hour, level = 0),
+            )
+        }
+    }
+
+    /**
+     * Cycles accumulate for the life of the pair — daily use for a decade is some three thousand —
+     * and the day list above them is bounded by its window while these are not. Listing every one
+     * would put an unbounded scroll between the chart and the sessions underneath it.
+     */
+    @Test
+    fun `only the most recent charge cycles are listed, however many there are`() {
+        val pairId = seedPair()
+        seedManyCycles(pairId, count = 30)
+
+        show(pairId)
+        compose.waitUntil(timeoutMillis = 10_000) {
+            runCatching { scrollTo(text(R.string.pair_charge_cycles)) }.isSuccess
+        }
+
+        // The newest is listed and the oldest is not, and the sessions below stay reachable.
+        // Exactly, not by substring: "cycle 1" is a substring of "cycle 19", which *is* listed.
+        scrollToExact(text(R.string.pair_cycle_number, 30))
+        assertTrue(
+            "the whole list was searched and cycle 1 is not in it",
+            runCatching { scrollToExact(text(R.string.pair_cycle_number, 1)) }.isFailure,
+        )
+        scrollTo(text(R.string.session_ongoing))
     }
 
     @Test

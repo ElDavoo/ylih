@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 4,
-    "identityHash": "7eca32f0e93c68d52c8811edb53af3c5",
+    "identityHash": "d7081a596d0acb5ea560761e50436f06",
     "entities": [
       {
         "tableName": "devices",
@@ -246,7 +246,7 @@
       },
       {
         "tableName": "battery_samples",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `sessionId` INTEGER NOT NULL, `at` INTEGER NOT NULL, `level` INTEGER NOT NULL, FOREIGN KEY(`sessionId`) REFERENCES `sessions`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `sessionId` INTEGER NOT NULL, `pairId` INTEGER NOT NULL, `at` INTEGER NOT NULL, `level` INTEGER NOT NULL, FOREIGN KEY(`sessionId`) REFERENCES `sessions`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "id",
@@ -257,6 +257,12 @@
           {
             "fieldPath": "sessionId",
             "columnName": "sessionId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pairId",
+            "columnName": "pairId",
             "affinity": "INTEGER",
             "notNull": true
           },
@@ -289,6 +295,16 @@
             ],
             "orders": [],
             "createSql": "CREATE INDEX IF NOT EXISTS `index_battery_samples_sessionId_at` ON `${TABLE_NAME}` (`sessionId`, `at`)"
+          },
+          {
+            "name": "index_battery_samples_pairId_at",
+            "unique": false,
+            "columnNames": [
+              "pairId",
+              "at"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_battery_samples_pairId_at` ON `${TABLE_NAME}` (`pairId`, `at`)"
           }
         ],
         "foreignKeys": [
@@ -332,7 +348,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7eca32f0e93c68d52c8811edb53af3c5')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd7081a596d0acb5ea560761e50436f06')"
     ]
   }
 }

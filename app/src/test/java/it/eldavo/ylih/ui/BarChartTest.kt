@@ -131,6 +131,28 @@ class BarChartTest {
         compose.onNodeWithContentDescription("cycle 1 – cycle 2", substring = true).assertExists()
     }
 
+    /**
+     * A pair worn daily for a decade is some three thousand charge cycles, and three thousand bars
+     * on a phone is a bar narrower than a pixel drawn three thousand times a frame. Averaging runs
+     * of them keeps the only thing the chart is read for — whether the bars are getting shorter.
+     */
+    @Test
+    fun `more cycles than there are bars are averaged into the bars there are`() {
+        assertEquals(listOf(1L, 2L, 3L), bucketedBars(listOf(1L, 2L, 3L), max = 4))
+        assertEquals(listOf(1L, 2L, 3L), bucketedBars(listOf(1L, 2L, 3L), max = 3))
+
+        // Six into four does not divide, so runs of two make three buckets rather than five.
+        assertEquals(listOf(15L, 35L, 55L), bucketedBars(listOf(10L, 20L, 30L, 40L, 50L, 60L), 4))
+
+        // The last run may be short and is still the average of what is in it.
+        assertEquals(listOf(15L, 30L), bucketedBars(listOf(10L, 20L, 30L), max = 2))
+
+        val many = (1..3_000).map { it.toLong() }
+        val bars = bucketedBars(many, max = 40)
+        assertTrue("never more bars than asked for: ${bars.size}", bars.size <= 40)
+        assertTrue("and the shape survives", bars.first() < bars.last())
+    }
+
     @Test
     fun `an empty series draws an empty chart rather than crashing`() {
         show(emptyList())

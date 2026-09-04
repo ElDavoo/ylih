@@ -39,7 +39,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import it.eldavo.ylih.R
 import it.eldavo.ylih.data.EndReason
 import it.eldavo.ylih.data.SessionEntity
-import it.eldavo.ylih.stats.Charge
 import it.eldavo.ylih.stats.ChargeSummary
 import it.eldavo.ylih.stats.Counting
 import it.eldavo.ylih.stats.Cycle
@@ -48,6 +47,18 @@ import java.time.ZoneId
 
 /** Two weeks reads better on a single pair than a month of mostly-empty bars. */
 private const val PAIR_CHART_DAYS = 14
+
+/**
+ * How many charge cycles are listed under the chart of them.
+ *
+ * A cap rather than the lot, and for a reason the day list does not have: the days are already
+ * bounded by their window, while cycles accumulate for the life of the pair. Listing every one
+ * would put an unbounded scroll between the chart and the sessions below it.
+ */
+private const val PAIR_CYCLE_ROWS = 12
+
+/** Bars the cycle chart draws at most; beyond this, runs of cycles are averaged together. */
+private const val MAX_CYCLE_BARS = 40
 
 @Composable
 fun PairDetailScreen(
@@ -63,10 +74,10 @@ fun PairDetailScreen(
     // that moves the summary. MainActivity's `openPairFlow` records the same trap.
     val summaryFlow = remember(pairId) { viewModel.summary(pairId) }
     val sessionsFlow = remember(pairId) { viewModel.sessions(pairId) }
-    val readingsFlow = remember(pairId) { viewModel.batteryReadings(pairId) }
+    val chargeFlow = remember(pairId) { viewModel.chargeSummary(pairId) }
     val summary by summaryFlow.collectAsStateWithLifecycle(initialValue = null)
     val sessions by sessionsFlow.collectAsStateWithLifecycle(initialValue = emptyList())
-    val readings by readingsFlow.collectAsStateWithLifecycle(initialValue = emptyList())
+    val charge by chargeFlow.collectAsStateWithLifecycle(initialValue = null)
     val spansByPair by viewModel.spansByPair.collectAsStateWithLifecycle()
     // Two clocks: [liveNow] drives the "connected for …" line and the open session's row, which
     // are the only things here meant to move every second. Everything else is derived from this
@@ -102,18 +113,15 @@ fun PairDetailScreen(
     // drawn to, the way StatsScreen's chart and list agree over the full 30 days.
     val breakdown = remember(series) { dailyBreakdown(series.takeLast(PAIR_CHART_DAYS)) }
     val chartMax = remember(series) { chartMaxMs(series.takeLast(PAIR_CHART_DAYS)) }
-    // The one figure here that is not derived from a window: charge cycles are a lifetime record,
-    // out of this pair's whole session list and every battery level it has ever reported. `now`
-    // is in the key only because an open session's playback share depends on how long it has been
-    // running; nothing else about a cycle moves with the clock.
-    val charge = remember(readings, sessions, now, counting) {
-        Charge.summarize(readings, sessions.associate { it.id to it.toSpan() }, now, counting)
-    }
     // Newest first, like the day list, and numbered from the oldest so that a run of them reads as
-    // the history it is. The chart above them stays oldest-first: a battery getting worse is a line
-    // going down, which is only true left to right.
-    val cycleRows = remember(charge) { charge.cycles.withIndex().reversed() }
-    val cycleMax = remember(charge) { barMaxMs(charge.cycles.map { it.countedMs }) }
+    // the history it is — cycle 137 stays cycle 137 however few of them are listed. Only the most
+    // recent are: a pair worn daily for a decade has some three thousand cycles, and a list of
+    // those would bury the session list under it and never end. The chart carries the whole
+    // lifetime, which is where the shape is read anyway.
+    val cycleRows = remember(charge) {
+        charge?.cycles.orEmpty().withIndex().reversed().take(PAIR_CYCLE_ROWS)
+    }
+    val cycleMax = remember(cycleRows) { barMaxMs(cycleRows.map { it.value.countedMs }) }
 
     Scaffold(
         modifier = Modifier.padding(bottom = contentPadding.calculateBottomPadding()),
@@ -288,8 +296,8 @@ fun PairDetailScreen(
             // the level reaches Android over HFP, Apple's vendor command or BLE's battery service,
             // and a headset that speaks none of them can say nothing here. An empty section
             // explaining that would be a permanent apology on every pair that has one.
-            if (charge.hasData) {
-                item { ChargeCyclesHeader(charge) }
+            charge?.takeIf { it.hasData }?.let { cycles ->
+                item { ChargeCyclesHeader(cycles) }
                 items(cycleRows, key = { "cycle:${it.index}" }) { (index, cycle) ->
                     BreakdownRow(
                         title = stringResource(R.string.pair_cycle_number, index + 1),
@@ -406,8 +414,13 @@ private fun ChargeCyclesHeader(charge: ChargeSummary) {
         // to support — the figures above already report it.
         if (charge.cycles.size > 1) {
             Spacer(Modifier.height(16.dp))
+            // Every cycle the pair has ever been through, averaged into at most [MAX_CYCLE_BARS]
+            // bars so that a decade of them still draws — and still reads — in one screen width.
+            val bars = remember(charge) {
+                bucketedBars(charge.cycles.map { it.countedMs }, MAX_CYCLE_BARS)
+            }
             CycleBarChart(
-                values = charge.cycles.map { it.countedMs },
+                values = bars,
                 label = label,
                 firstLabel = stringResource(R.string.pair_cycle_number, 1),
                 lastLabel = stringResource(R.string.pair_cycle_number, charge.cycles.size),
