@@ -101,6 +101,7 @@
     <string name="pair_per_charge">𞤺𞤮 𞤳𞤢𞤪𞤶𞤢</string>
     <string name="pair_cycles">𞤧𞤭𞤳𞤵𞤤𞤭</string>
     <string name="pair_charge_watched">𞤴𞤭𞥅𞤴𞤢𞥄𞤲𞤺𞤮</string>
+    <string name="pair_vs_new">𞤦𞤫 𞤳𞤫𞤧𞤵𞤥</string>
     <string name="pair_cycle_number">𞤧𞤭𞤳𞤵𞤤 %1$d</string>
     <string name="pair_rename_title">𞤶𞤮𞥅𞤯𞤭𞤲 𞤶𞤫𞥅𞤩𞤫 𞤥𞤢𞥄</string>
     <string name="pair_rename_label">𞤥𞤢𞤩𞥆𞤫</string>

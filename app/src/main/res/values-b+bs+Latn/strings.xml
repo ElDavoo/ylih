@@ -101,6 +101,7 @@
     <string name="pair_per_charge">po punjenju</string>
     <string name="pair_cycles">ciklusi</string>
     <string name="pair_charge_watched">posmatrano</string>
+    <string name="pair_vs_new">u odnosu na nove</string>
     <string name="pair_cycle_number">ciklus %1$d</string>
     <string name="pair_rename_title">preimenovaj paru</string>
     <string name="pair_rename_label">ime</string>

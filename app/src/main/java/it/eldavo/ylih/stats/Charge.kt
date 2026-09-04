@@ -35,7 +35,41 @@ data class ChargeSummary(
         get() = if (pointsDrained <= 0) 0L else countedMs * POINTS_PER_CYCLE / pointsDrained
 
     val cyclesFraction: Double get() = pointsDrained.toDouble() / POINTS_PER_CYCLE
+
+    /**
+     * What a charge buys now against what it bought when the pair was new, as a fraction — 0.53
+     * meaning "a bit over half of what it managed then". Null until two cycles have completed,
+     * which is the same point the chart appears.
+     *
+     * Deliberately not the literal last cycle over the literal first. A single cycle is one
+     * fortnight of however the headphones happened to be used, and on coarse readings — a headset
+     * that reports in twenty-five point steps gives four segments to a discharge — one unlucky
+     * pair of cycles moves this figure further than a year of real wear does. Both ends are
+     * averaged over [comparisonWindow] instead, which is the same arithmetic with the noise taken
+     * out, and which reduces to exactly "last against first" when that is all there is.
+     */
+    val versusNew: Double?
+        get() {
+            if (cycles.size < 2) return null
+            val window = comparisonWindow
+            val first = cycles.take(window).sumOf { it.countedMs } / window
+            val last = cycles.takeLast(window).sumOf { it.countedMs } / window
+            return if (first <= 0L) null else last.toDouble() / first
+        }
+
+    /**
+     * Cycles averaged at each end for [versusNew]: a quarter of them, and never more than five.
+     *
+     * A quarter rather than a fixed number so that a young pair is not asked for history it has
+     * not got — at four cycles this is 1, and the comparison is the plain one. The two ends can
+     * never overlap, since twice a quarter is half.
+     */
+    val comparisonWindow: Int
+        get() = (cycles.size / 4).coerceIn(1, MAX_COMPARISON_CYCLES)
 }
+
+/** The most cycles [ChargeSummary.versusNew] averages at each end. */
+const val MAX_COMPARISON_CYCLES = 5
 
 /** A hundred points used. */
 const val POINTS_PER_CYCLE = 100

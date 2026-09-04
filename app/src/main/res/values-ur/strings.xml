@@ -95,6 +95,7 @@
     <string name="pair_per_charge">فی چارج</string>
     <string name="pair_cycles">سائیکل</string>
     <string name="pair_charge_watched">مشاہدہ شدہ</string>
+    <string name="pair_vs_new">نئے کے مقابلے میں</string>
     <string name="pair_cycle_number">سائیکل %1$d</string>
     <string name="pair_rename_title">جوڑی کا نام تبدیل کریں</string>
     <string name="pair_rename_label">نام</string>

@@ -95,6 +95,7 @@
     <string name="pair_per_charge">ngokugcwalisa okukodwa</string>
     <string name="pair_cycles">izigaba</string>
     <string name="pair_charge_watched">okubonwe</string>
+    <string name="pair_vs_new">uma kuqathaniswa lokutsha</string>
     <string name="pair_cycle_number">isigaba %1$d</string>
     <string name="pair_rename_title">ubuyisele igama lemsulwa</string>
     <string name="pair_rename_label">igama</string>

@@ -95,6 +95,7 @@
     <string name="pair_per_charge">प्रत्यावेशम्</string>
     <string name="pair_cycles">चक्राणि</string>
     <string name="pair_charge_watched">अवलोकितम्</string>
+    <string name="pair_vs_new">नवीनतुलनायाम्</string>
     <string name="pair_cycle_number">चक्रम् %1$d</string>
     <string name="pair_rename_title">युग्मस्य नाम परिवर्तयतु</string>
     <string name="pair_rename_label">नाम</string>

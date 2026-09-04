@@ -101,6 +101,7 @@
     <string name="pair_per_charge">প্ৰতি চাৰ্জ</string>
     <string name="pair_cycles">চক্ৰ</string>
     <string name="pair_charge_watched">লক্ষ্য কৰা</string>
+    <string name="pair_vs_new">নতুনৰ তুলনাত</string>
     <string name="pair_cycle_number">চক্ৰ %1$d</string>
     <string name="pair_rename_title">যোৰক পুনৰনাম দিন</string>
     <string name="pair_rename_label">নাম</string>

@@ -95,6 +95,7 @@
     <string name="pair_per_charge">ھەر قېتىم توك قاچىلاشقا</string>
     <string name="pair_cycles">دەۋرىيلىك</string>
     <string name="pair_charge_watched">كۆزىتىلگەن</string>
+    <string name="pair_vs_new">يېڭى چېغىغا سېلىشتۇرغاندا</string>
     <string name="pair_cycle_number">دەۋرىيلىك %1$d</string>
     <string name="pair_rename_title">جۈپنىڭ ئاتىنى ئۆزگىرت</string>
     <string name="pair_rename_label">ئات</string>

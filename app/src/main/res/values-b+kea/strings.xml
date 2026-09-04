@@ -95,6 +95,7 @@
     <string name="pair_per_charge">pur karga</string>
     <string name="pair_cycles">siklus</string>
     <string name="pair_charge_watched">observadu</string>
+    <string name="pair_vs_new">kompará ku nobu</string>
     <string name="pair_cycle_number">siklu %1$d</string>
     <string name="pair_rename_title">muda nomi par</string>
     <string name="pair_rename_label">nomi</string>

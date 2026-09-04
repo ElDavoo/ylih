@@ -95,6 +95,7 @@
     <string name="pair_per_charge">kwa inya imwe</string>
     <string name="pair_cycles">mithiuruko</string>
     <string name="pair_charge_watched">gwitirwa</string>
+    <string name="pair_vs_new">kũringithania na njeru</string>
     <string name="pair_cycle_number">muthiuruko %1$d</string>
     <string name="pair_rename_title">garũra rĩĩtwa rĩa kĩrĩndĩ</string>
     <string name="pair_rename_label">rĩĩtwa</string>

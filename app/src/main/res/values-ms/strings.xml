@@ -95,6 +95,7 @@
     <string name="pair_per_charge">setiap cas</string>
     <string name="pair_cycles">kitaran</string>
     <string name="pair_charge_watched">diperhati</string>
+    <string name="pair_vs_new">berbanding semasa baharu</string>
     <string name="pair_cycle_number">kitaran %1$d</string>
     <string name="pair_rename_title">namakan semula pasangan</string>
     <string name="pair_rename_label">nama</string>

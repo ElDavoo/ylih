@@ -95,6 +95,7 @@
     <string name="pair_per_charge">ہر چارج تے</string>
     <string name="pair_cycles">چکر</string>
     <string name="pair_charge_watched">ویکھیا</string>
+    <string name="pair_vs_new">نویں دے مقابلے</string>
     <string name="pair_cycle_number">چکر %1$d</string>
     <string name="pair_rename_title">جوڑی دا ناں بدلو</string>
     <string name="pair_rename_label">ناں</string>

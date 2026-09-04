@@ -95,6 +95,7 @@
     <string name="pair_per_charge">uz vienu uzlādi</string>
     <string name="pair_cycles">cikli</string>
     <string name="pair_charge_watched">novērots</string>
+    <string name="pair_vs_new">salīdzinot ar jaunām</string>
     <string name="pair_cycle_number">%1$d. cikls</string>
     <string name="pair_rename_title">pārdēvēt pāri</string>
     <string name="pair_rename_label">nosaukums</string>

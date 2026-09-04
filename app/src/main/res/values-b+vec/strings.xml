@@ -95,6 +95,7 @@
     <string name="pair_per_charge">par carga</string>
     <string name="pair_cycles">cicli</string>
     <string name="pair_charge_watched">osservà</string>
+    <string name="pair_vs_new">rispeto a nove</string>
     <string name="pair_cycle_number">ciclo %1$d</string>
     <string name="pair_rename_title">rinomina la para</string>
     <string name="pair_rename_label">nome</string>

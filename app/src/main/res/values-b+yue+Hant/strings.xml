@@ -95,6 +95,7 @@
     <string name="pair_per_charge">每次充電</string>
     <string name="pair_cycles">週期</string>
     <string name="pair_charge_watched">觀察時長</string>
+    <string name="pair_vs_new">同全新時比</string>
     <string name="pair_cycle_number">週期 %1$d</string>
     <string name="pair_rename_title">重新命名耳機對</string>
     <string name="pair_rename_label">名稱</string>

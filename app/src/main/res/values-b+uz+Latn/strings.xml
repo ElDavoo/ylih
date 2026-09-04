@@ -95,6 +95,7 @@
     <string name="pair_per_charge">har quvvatlashga</string>
     <string name="pair_cycles">sikllar</string>
     <string name="pair_charge_watched">kuzatilgan</string>
+    <string name="pair_vs_new">yangi holiga nisbatan</string>
     <string name="pair_cycle_number">sikl %1$d</string>
     <string name="pair_rename_title">jufтni nomi ozgartirish</string>
     <string name="pair_rename_label">nom</string>

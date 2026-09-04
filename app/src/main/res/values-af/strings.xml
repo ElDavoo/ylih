@@ -101,6 +101,7 @@
     <string name="pair_per_charge">per laai</string>
     <string name="pair_cycles">siklusse</string>
     <string name="pair_charge_watched">waargeneem</string>
+    <string name="pair_vs_new">teenoor nuut</string>
     <string name="pair_cycle_number">siklus %1$d</string>
     <string name="pair_rename_title">hernoem paar</string>
     <string name="pair_rename_label">naam</string>

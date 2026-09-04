@@ -101,6 +101,7 @@
     <string name="pair_per_charge">প্রতি চার্জে</string>
     <string name="pair_cycles">চক্র</string>
     <string name="pair_charge_watched">পর্যবেক্ষিত</string>
+    <string name="pair_vs_new">নতুনের তুলনায়</string>
     <string name="pair_cycle_number">চক্র %1$d</string>
     <string name="pair_rename_title">জোড়ার নাম পরিবর্তন করুন</string>
     <string name="pair_rename_label">নাম</string>

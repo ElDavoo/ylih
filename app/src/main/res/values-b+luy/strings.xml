@@ -95,6 +95,7 @@
     <string name="pair_per_charge">khu maani kalala</string>
     <string name="pair_cycles">tsingira</string>
     <string name="pair_charge_watched">tsyalolwa</string>
+    <string name="pair_vs_new">khuparana nende tsiyakha</string>
     <string name="pair_cycle_number">ingira %1$d</string>
     <string name="pair_rename_title">kalushia elira lie bindu</string>
     <string name="pair_rename_label">elira</string>

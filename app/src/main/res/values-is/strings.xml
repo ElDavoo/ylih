@@ -95,6 +95,7 @@
     <string name="pair_per_charge">á hleðslu</string>
     <string name="pair_cycles">lotur</string>
     <string name="pair_charge_watched">fylgst með</string>
+    <string name="pair_vs_new">miðað við ný</string>
     <string name="pair_cycle_number">lota %1$d</string>
     <string name="pair_rename_title">endurnefna par</string>
     <string name="pair_rename_label">nafn</string>

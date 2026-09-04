@@ -103,6 +103,7 @@
     <string name="pair_per_charge">لكل شحنة</string>
     <string name="pair_cycles">دورات</string>
     <string name="pair_charge_watched">مرصود</string>
+    <string name="pair_vs_new">مقارنة بالجديد</string>
     <string name="pair_cycle_number">الدورة %1$d</string>
     <string name="pair_rename_title">إعادة تسمية الزوج</string>
     <string name="pair_rename_label">الاسم</string>

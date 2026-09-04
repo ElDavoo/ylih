@@ -102,6 +102,7 @@
     <string name="pair_per_charge">latausta kohti</string>
     <string name="pair_cycles">syklit</string>
     <string name="pair_charge_watched">seurattu</string>
+    <string name="pair_vs_new">uutena verrattuna</string>
     <string name="pair_cycle_number">sykli %1$d</string>
     <string name="pair_rename_title">nimeä pari uudelleen</string>
     <string name="pair_rename_label">nimi</string>

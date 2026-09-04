@@ -102,6 +102,7 @@
     <string name="pair_per_charge">par charge</string>
     <string name="pair_cycles">cycles</string>
     <string name="pair_charge_watched">observé</string>
+    <string name="pair_vs_new">par rapport au neuf</string>
     <string name="pair_cycle_number">cycle %1$d</string>
     <string name="pair_rename_title">renommer la paire</string>
     <string name="pair_rename_label">nom</string>

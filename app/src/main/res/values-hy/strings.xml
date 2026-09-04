@@ -95,6 +95,7 @@
     <string name="pair_per_charge">մեկ լիցքով</string>
     <string name="pair_cycles">ցիկլեր</string>
     <string name="pair_charge_watched">դիտարկված</string>
+    <string name="pair_vs_new">նորի համեմատ</string>
     <string name="pair_cycle_number">ցիկլ %1$d</string>
     <string name="pair_rename_title">զույգը վերանվանել</string>
     <string name="pair_rename_label">անուն</string>

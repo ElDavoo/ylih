@@ -103,6 +103,7 @@
     <string name="pair_per_charge">לכל טעינה</string>
     <string name="pair_cycles">מחזורים</string>
     <string name="pair_charge_watched">נמדד</string>
+    <string name="pair_vs_new">לעומת חדשות</string>
     <string name="pair_cycle_number">מחזור %1$d</string>
     <string name="pair_rename_title">שינוי שם הזוג</string>
     <string name="pair_rename_label">שם</string>

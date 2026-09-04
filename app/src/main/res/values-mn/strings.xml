@@ -95,6 +95,7 @@
     <string name="pair_per_charge">нэг цэнэгт</string>
     <string name="pair_cycles">мөчлөг</string>
     <string name="pair_charge_watched">ажигласан</string>
+    <string name="pair_vs_new">шинэ байхтай харьцуулбал</string>
     <string name="pair_cycle_number">мөчлөг %1$d</string>
     <string name="pair_rename_title">хосын нэрийг солих</string>
     <string name="pair_rename_label">нэр</string>

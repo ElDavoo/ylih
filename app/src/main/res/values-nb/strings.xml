@@ -104,6 +104,7 @@
     <string name="pair_per_charge">per lading</string>
     <string name="pair_cycles">sykluser</string>
     <string name="pair_charge_watched">observert</string>
+    <string name="pair_vs_new">mot da de var nye</string>
     <string name="pair_cycle_number">syklus %1$d</string>
     <string name="pair_rename_title">gi paret nytt navn</string>
     <string name="pair_rename_label">navn</string>

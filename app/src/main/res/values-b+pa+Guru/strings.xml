@@ -95,6 +95,7 @@
     <string name="pair_per_charge">ਹਰ ਚਾਰਜ ਤੇ</string>
     <string name="pair_cycles">ਚੱਕਰ</string>
     <string name="pair_charge_watched">ਵੇਖਿਆ</string>
+    <string name="pair_vs_new">ਨਵੇਂ ਦੇ ਮੁਕਾਬਲੇ</string>
     <string name="pair_cycle_number">ਚੱਕਰ %1$d</string>
     <string name="pair_rename_title">ਜੋੜੀ ਦਾ ਨਾਂ ਬਦਲੋ</string>
     <string name="pair_rename_label">ਨਾਂ</string>

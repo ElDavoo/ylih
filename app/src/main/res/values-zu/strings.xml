@@ -95,6 +95,7 @@
     <string name="pair_per_charge">ngokushaja okukodwa</string>
     <string name="pair_cycles">imijikelezo</string>
     <string name="pair_charge_watched">okubukiwe</string>
+    <string name="pair_vs_new">uma kuqhathaniswa nezintsha</string>
     <string name="pair_cycle_number">umjikelezo %1$d</string>
     <string name="pair_rename_title">qamba kabusha ipheya</string>
     <string name="pair_rename_label">igama</string>

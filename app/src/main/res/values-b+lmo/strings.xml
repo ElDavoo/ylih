@@ -95,6 +95,7 @@
     <string name="pair_per_charge">per carega</string>
     <string name="pair_cycles">cicli</string>
     <string name="pair_charge_watched">osservaa</string>
+    <string name="pair_vs_new">respett a noeuv</string>
     <string name="pair_cycle_number">cicl %1$d</string>
     <string name="pair_rename_title">cambia nòm a la parea</string>
     <string name="pair_rename_label">nòm</string>

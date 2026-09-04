@@ -306,6 +306,11 @@ class PairDetailScreenTest {
         compose.onNodeWithContentDescription(
             "${text(R.string.pair_charge_watched)}: ${formatHours(6 * hour)}",
         ).assertExists()
+        // Five hours for the first cycle and one for the second: a fifth of what it managed new.
+        // With two cycles the window is one, so this really is the last against the first.
+        compose.onNodeWithContentDescription(
+            "${text(R.string.pair_vs_new)}: ${formatPercent(0.2)}",
+        ).assertExists()
 
         // One row per completed cycle, and the shape of the two is the whole point of the section:
         // five of the six hours went to the first, one to the second — the same battery buying

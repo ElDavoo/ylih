@@ -95,6 +95,7 @@
     <string name="pair_per_charge">për karikim</string>
     <string name="pair_cycles">cikle</string>
     <string name="pair_charge_watched">vëzhguar</string>
+    <string name="pair_vs_new">krahasuar me të reja</string>
     <string name="pair_cycle_number">cikli %1$d</string>
     <string name="pair_rename_title">riemëro palën</string>
     <string name="pair_rename_label">emri</string>

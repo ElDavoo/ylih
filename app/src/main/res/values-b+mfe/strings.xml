@@ -95,6 +95,7 @@
     <string name="pair_per_charge">par sarz</string>
     <string name="pair_cycles">sik</string>
     <string name="pair_charge_watched">obzerve</string>
+    <string name="pair_vs_new">konpare ar nef</string>
     <string name="pair_cycle_number">sik %1$d</string>
     <string name="pair_rename_title">sanz nom per</string>
     <string name="pair_rename_label">nom</string>

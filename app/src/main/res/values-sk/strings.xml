@@ -95,6 +95,7 @@
     <string name="pair_per_charge">na nabitie</string>
     <string name="pair_cycles">cykly</string>
     <string name="pair_charge_watched">sledované</string>
+    <string name="pair_vs_new">oproti novým</string>
     <string name="pair_cycle_number">cyklus %1$d</string>
     <string name="pair_rename_title">premenovať pár</string>
     <string name="pair_rename_label">meno</string>

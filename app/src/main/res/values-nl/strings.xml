@@ -102,6 +102,7 @@
     <string name="pair_per_charge">per lading</string>
     <string name="pair_cycles">cycli</string>
     <string name="pair_charge_watched">waargenomen</string>
+    <string name="pair_vs_new">ten opzichte van nieuw</string>
     <string name="pair_cycle_number">cyclus %1$d</string>
     <string name="pair_rename_title">koptelefoon hernoemen</string>
     <string name="pair_rename_label">naam</string>

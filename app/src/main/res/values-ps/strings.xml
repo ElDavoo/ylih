@@ -95,6 +95,7 @@
     <string name="pair_per_charge">په هر چارج</string>
     <string name="pair_cycles">دورې</string>
     <string name="pair_charge_watched">کتل شوی</string>
+    <string name="pair_vs_new">د نوي په پرتله</string>
     <string name="pair_cycle_number">دوره %1$d</string>
     <string name="pair_rename_title">جوړه نوم بدل کړئ</string>
     <string name="pair_rename_label">نوم</string>

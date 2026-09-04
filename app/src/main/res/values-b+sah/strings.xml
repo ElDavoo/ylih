@@ -95,6 +95,7 @@
     <string name="pair_per_charge">биир уоскулатыыга</string>
     <string name="pair_cycles">эргиирдэр</string>
     <string name="pair_charge_watched">көрүллүбүт</string>
+    <string name="pair_vs_new">саҥа эрдэҕинээҕи</string>
     <string name="pair_cycle_number">эргиир %1$d</string>
     <string name="pair_rename_title">пара аатын уларыт</string>
     <string name="pair_rename_label">аат</string>

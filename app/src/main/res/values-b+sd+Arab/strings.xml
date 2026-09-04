@@ -95,6 +95,7 @@
     <string name="pair_per_charge">في چارج</string>
     <string name="pair_cycles">چڪر</string>
     <string name="pair_charge_watched">ڏٺو ويو</string>
+    <string name="pair_vs_new">نئين جي مقابلي ۾</string>
     <string name="pair_cycle_number">چڪر %1$d</string>
     <string name="pair_rename_title">جوڙي کو نام دوبارہ ڏيو</string>
     <string name="pair_rename_label">نام</string>

@@ -101,6 +101,7 @@
     <string name="pair_per_charge">laadimise kohta</string>
     <string name="pair_cycles">tsüklid</string>
     <string name="pair_charge_watched">jälgitud</string>
+    <string name="pair_vs_new">võrreldes uuega</string>
     <string name="pair_cycle_number">tsükkel %1$d</string>
     <string name="pair_rename_title">nimeta paar ümber</string>
     <string name="pair_rename_label">nimi</string>

@@ -95,6 +95,7 @@
     <string name="pair_per_charge">दर चार्जाक</string>
     <string name="pair_cycles">चक्रां</string>
     <string name="pair_charge_watched">पळयलें</string>
+    <string name="pair_vs_new">नव्या वेळार</string>
     <string name="pair_cycle_number">चक्र %1$d</string>
     <string name="pair_rename_title">जोडीला पुनः नाव द्या</string>
     <string name="pair_rename_label">नाव</string>

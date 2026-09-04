@@ -95,6 +95,7 @@
     <string name="pair_per_charge">per chargia</string>
     <string name="pair_cycles">ciclus</string>
     <string name="pair_charge_watched">observà</string>
+    <string name="pair_vs_new">en congual cun nov</string>
     <string name="pair_cycle_number">ciclus %1$d</string>
     <string name="pair_rename_title">renumner pair</string>
     <string name="pair_rename_label">num</string>

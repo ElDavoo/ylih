@@ -102,6 +102,7 @@
     <string name="pair_per_charge">töltésenként</string>
     <string name="pair_cycles">ciklusok</string>
     <string name="pair_charge_watched">megfigyelve</string>
+    <string name="pair_vs_new">az újhoz képest</string>
     <string name="pair_cycle_number">%1$d. ciklus</string>
     <string name="pair_rename_title">pár átnevezése</string>
     <string name="pair_rename_label">név</string>

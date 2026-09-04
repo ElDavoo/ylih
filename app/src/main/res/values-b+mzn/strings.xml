@@ -95,6 +95,7 @@
     <string name="pair_per_charge">هر شارژ ره</string>
     <string name="pair_cycles">چرخه‌ئون</string>
     <string name="pair_charge_watched">دیه بیه</string>
+    <string name="pair_vs_new">نو وقت ره نسبت</string>
     <string name="pair_cycle_number">چرخه %1$d</string>
     <string name="pair_rename_title">تغییر نام جفت</string>
     <string name="pair_rename_label">نام</string>

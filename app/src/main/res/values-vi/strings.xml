@@ -102,6 +102,7 @@
     <string name="pair_per_charge">mỗi lần sạc</string>
     <string name="pair_cycles">chu kỳ</string>
     <string name="pair_charge_watched">đã quan sát</string>
+    <string name="pair_vs_new">so với lúc mới</string>
     <string name="pair_cycle_number">chu kỳ %1$d</string>
     <string name="pair_rename_title">đổi tên đôi tai nghe</string>
     <string name="pair_rename_label">tên</string>

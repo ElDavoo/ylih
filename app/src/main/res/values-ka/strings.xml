@@ -95,6 +95,7 @@
     <string name="pair_per_charge">ერთ დატენვაზე</string>
     <string name="pair_cycles">ციკლები</string>
     <string name="pair_charge_watched">დაკვირვებული</string>
+    <string name="pair_vs_new">ახალთან შედარებით</string>
     <string name="pair_cycle_number">ციკლი %1$d</string>
     <string name="pair_rename_title">წყვილის სახელის გადარქმევა</string>
     <string name="pair_rename_label">სახელი</string>

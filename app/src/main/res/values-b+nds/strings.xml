@@ -95,6 +95,7 @@
     <string name="pair_per_charge">pro laden</string>
     <string name="pair_cycles">zyklen</string>
     <string name="pair_charge_watched">beobacht</string>
+    <string name="pair_vs_new">gegen nieg</string>
     <string name="pair_cycle_number">zyklus %1$d</string>
     <string name="pair_rename_title">paar ander nomen geven</string>
     <string name="pair_rename_label">nomen</string>

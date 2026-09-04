@@ -95,6 +95,7 @@
     <string name="pair_per_charge">ຕໍ່ການສາກ</string>
     <string name="pair_cycles">ຮອບ</string>
     <string name="pair_charge_watched">ສັງເກດໄດ້</string>
+    <string name="pair_vs_new">ທຽບກັບຕອນໃໝ່</string>
     <string name="pair_cycle_number">ຮອບ %1$d</string>
     <string name="pair_rename_title">ປ່ຽນຊື່ຄູ່</string>
     <string name="pair_rename_label">ຊື່</string>

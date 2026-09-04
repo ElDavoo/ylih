@@ -95,6 +95,7 @@
     <string name="pair_per_charge">gach teairrseadh</string>
     <string name="pair_cycles">cuairtean</string>
     <string name="pair_charge_watched">fo shùil</string>
+    <string name="pair_vs_new">an coimeas ri ùr</string>
     <string name="pair_cycle_number">cuairt %1$d</string>
     <string name="pair_rename_title">ath-ainm paidhir</string>
     <string name="pair_rename_label">ainm</string>

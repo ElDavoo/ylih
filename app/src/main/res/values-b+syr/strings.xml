@@ -95,6 +95,7 @@
     <string name="pair_per_charge">ܠܟܠ ܡܠܝܬܐ</string>
     <string name="pair_cycles">ܟܪ̈ܘܟܝܐ</string>
     <string name="pair_charge_watched">ܡܬܚܙܝܢܐ</string>
+    <string name="pair_vs_new">ܥܡ ܚܕ̈ܬܐ</string>
     <string name="pair_cycle_number">ܟܪܘܟܝܐ %1$d</string>
     <string name="pair_rename_title">ܫܚܠܦ ܫܡܐ ܕܙܘܓܐ</string>
     <string name="pair_rename_label">ܫܡܐ</string>

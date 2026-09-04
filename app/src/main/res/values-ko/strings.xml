@@ -102,6 +102,7 @@
     <string name="pair_per_charge">충전 1회당</string>
     <string name="pair_cycles">주기</string>
     <string name="pair_charge_watched">관측 시간</string>
+    <string name="pair_vs_new">새 제품 대비</string>
     <string name="pair_cycle_number">%1$d번째 주기</string>
     <string name="pair_rename_title">쌍 이름 바꾸기</string>
     <string name="pair_rename_label">이름</string>

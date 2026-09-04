@@ -101,6 +101,7 @@
     <string name="pair_per_charge">һәр долдурмаја</string>
     <string name="pair_cycles">дөврләр</string>
     <string name="pair_charge_watched">мүшаһидә олунуб</string>
+    <string name="pair_vs_new">јени олдуғу вахтла</string>
     <string name="pair_cycle_number">дөвр %1$d</string>
     <string name="pair_rename_title">ҹүтлүјү адландыр</string>
     <string name="pair_rename_label">ад</string>

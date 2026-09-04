@@ -101,6 +101,7 @@
     <string name="pair_per_charge">на зареждане</string>
     <string name="pair_cycles">цикли</string>
     <string name="pair_charge_watched">наблюдавано</string>
+    <string name="pair_vs_new">спрямо нови</string>
     <string name="pair_cycle_number">цикъл %1$d</string>
     <string name="pair_rename_title">преименуване на двойка</string>
     <string name="pair_rename_label">име</string>

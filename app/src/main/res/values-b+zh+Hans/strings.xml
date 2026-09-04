@@ -102,6 +102,7 @@
     <string name="pair_per_charge">每次充电</string>
     <string name="pair_cycles">循环</string>
     <string name="pair_charge_watched">观察时长</string>
+    <string name="pair_vs_new">相比全新时</string>
     <string name="pair_cycle_number">第 %1$d 次循环</string>
     <string name="pair_rename_title">重命名耳机</string>
     <string name="pair_rename_label">名称</string>

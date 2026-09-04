@@ -95,6 +95,7 @@
     <string name="pair_per_charge">vienam įkrovimui</string>
     <string name="pair_cycles">ciklai</string>
     <string name="pair_charge_watched">stebėta</string>
+    <string name="pair_vs_new">palyginti su naujomis</string>
     <string name="pair_cycle_number">ciklas %1$d</string>
     <string name="pair_rename_title">pervadinti pora</string>
     <string name="pair_rename_label">vardas</string>

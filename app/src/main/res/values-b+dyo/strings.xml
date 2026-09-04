@@ -101,6 +101,7 @@
     <string name="pair_per_charge">kaarj yaakon</string>
     <string name="pair_cycles">sikili</string>
     <string name="pair_charge_watched">bujuk</string>
+    <string name="pair_vs_new">ni bukoolen</string>
     <string name="pair_cycle_number">sikili %1$d</string>
     <string name="pair_rename_title">yontoo caani yindoo</string>
     <string name="pair_rename_label">caani</string>

@@ -95,6 +95,7 @@
     <string name="pair_per_charge">हर चार्ज पर</string>
     <string name="pair_cycles">चक्कर</string>
     <string name="pair_charge_watched">दिक्खेया</string>
+    <string name="pair_vs_new">नै दे मुकाबले</string>
     <string name="pair_cycle_number">चक्कर %1$d</string>
     <string name="pair_rename_title">जोड़ी दा नां बदलो</string>
     <string name="pair_rename_label">नां</string>

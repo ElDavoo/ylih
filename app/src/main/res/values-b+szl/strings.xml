@@ -95,6 +95,7 @@
     <string name="pair_per_charge">na ladowanie</string>
     <string name="pair_cycles">cykle</string>
     <string name="pair_charge_watched">ôbserwowane</string>
+    <string name="pair_vs_new">w porōwnaniu z nowymi</string>
     <string name="pair_cycle_number">cykel %1$d</string>
     <string name="pair_rename_title">przemianuj pora</string>
     <string name="pair_rename_label">miano</string>

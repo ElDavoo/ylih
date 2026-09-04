@@ -95,6 +95,7 @@
     <string name="pair_per_charge">प्रति चार्ज</string>
     <string name="pair_cycles">चक्रे</string>
     <string name="pair_charge_watched">निरीक्षण केलेले</string>
+    <string name="pair_vs_new">नवीन असतानाच्या तुलनेत</string>
     <string name="pair_cycle_number">चक्र %1$d</string>
     <string name="pair_rename_title">जोडीचं नाव बदला</string>
     <string name="pair_rename_label">नाव</string>

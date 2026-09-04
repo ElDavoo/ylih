@@ -95,6 +95,7 @@
     <string name="pair_per_charge">бер корылмага</string>
     <string name="pair_cycles">циклар</string>
     <string name="pair_charge_watched">күзәтелгән</string>
+    <string name="pair_vs_new">яңа чагы белән чагыштырганда</string>
     <string name="pair_cycle_number">цикл %1$d</string>
     <string name="pair_rename_title">зәмегнеңнең исеме үзгәрәрләрен</string>
     <string name="pair_rename_label">исеме</string>

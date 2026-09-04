@@ -102,6 +102,7 @@
     <string name="pair_per_charge">на один заряд</string>
     <string name="pair_cycles">цикли</string>
     <string name="pair_charge_watched">під наглядом</string>
+    <string name="pair_vs_new">порівняно з новими</string>
     <string name="pair_cycle_number">цикл %1$d</string>
     <string name="pair_rename_title">перейменувати пару</string>
     <string name="pair_rename_label">назва</string>

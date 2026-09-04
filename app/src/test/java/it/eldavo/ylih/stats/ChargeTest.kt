@@ -2,6 +2,7 @@ package it.eldavo.ylih.stats
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -241,6 +242,69 @@ class ChargeTest {
 
         assertEquals(listOf(10 * hour, 6 * hour), summary.cycles.map { it.countedMs })
         assertEquals(8 * hour, summary.msPerCycle)
+    }
+
+    /** [hours] one per cycle, each drained in a session of its own. */
+    private fun cyclesOf(vararg hours: Double): ChargeSummary {
+        val readings = mutableListOf<Reading>()
+        val spans = mutableMapOf<Long, Span>()
+        var at = start
+        hours.forEachIndexed { i, h ->
+            val id = (i + 1).toLong()
+            val length = (h * hour).toLong()
+            spans[id] = Span(at, at + length, null)
+            readings += Reading(id, at, 100)
+            readings += Reading(id, at + length, 0)
+            at += length + 24 * hour
+        }
+        return Charge.summarize(readings, spans, now = at)
+    }
+
+    @Test
+    fun `a battery that has halved reports half of what it managed when new`() {
+        val summary = cyclesOf(10.0, 5.0)
+
+        assertEquals(2, summary.cycles.size)
+        assertEquals(1, summary.comparisonWindow)
+        assertEquals(0.5, summary.versusNew!!, 0.0001)
+    }
+
+    /**
+     * The reason this is not the literal last cycle over the literal first: one unlucky pair of
+     * cycles would say the battery had collapsed, when averaging both ends says it has barely
+     * moved. Eight cycles average two at each end.
+     */
+    @Test
+    fun `both ends are averaged, so one odd cycle does not decide the figure`() {
+        val steady = cyclesOf(10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 4.0)
+
+        assertEquals(2, steady.comparisonWindow)
+        // (10 + 4) / 2 against (10 + 10) / 2 — not 4 against 10.
+        assertEquals(0.7, steady.versusNew!!, 0.0001)
+    }
+
+    @Test
+    fun `the window grows with the history but stops at five`() {
+        assertEquals(1, cyclesOf(*DoubleArray(4) { 8.0 }).comparisonWindow)
+        assertEquals(2, cyclesOf(*DoubleArray(8) { 8.0 }).comparisonWindow)
+        assertEquals(5, cyclesOf(*DoubleArray(20) { 8.0 }).comparisonWindow)
+        assertEquals(
+            "and never so far that the two ends could overlap",
+            MAX_COMPARISON_CYCLES,
+            cyclesOf(*DoubleArray(60) { 8.0 }).comparisonWindow,
+        )
+    }
+
+    @Test
+    fun `one cycle cannot be compared with anything`() {
+        assertNull(cyclesOf(9.0).versusNew)
+        assertNull(summarize(emptyList()).versusNew)
+    }
+
+    @Test
+    fun `a battery that got better than new says so rather than clamping`() {
+        // Ordinary noise on a young pair, and pretending otherwise would be inventing a figure.
+        assertEquals(1.2, cyclesOf(5.0, 6.0).versusNew!!, 0.0001)
     }
 
     @Test

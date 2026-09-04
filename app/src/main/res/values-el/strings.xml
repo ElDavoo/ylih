@@ -101,6 +101,7 @@
     <string name="pair_per_charge">ανά φόρτιση</string>
     <string name="pair_cycles">κύκλοι</string>
     <string name="pair_charge_watched">παρακολουθήθηκε</string>
+    <string name="pair_vs_new">έναντι καινούριων</string>
     <string name="pair_cycle_number">κύκλος %1$d</string>
     <string name="pair_rename_title">μετονομασία ζευγαριού</string>
     <string name="pair_rename_label">όνομα</string>

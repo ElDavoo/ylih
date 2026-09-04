@@ -95,6 +95,7 @@
     <string name="pair_per_charge">i kēlā hoʻopiha</string>
     <string name="pair_cycles">nā pōʻai</string>
     <string name="pair_charge_watched">nānā ʻia</string>
+    <string name="pair_vs_new">i ka wā hou</string>
     <string name="pair_cycle_number">pōʻai %1$d</string>
     <string name="pair_rename_title">hoʻololi i ka inoa o ka hoʻolohe leo</string>
     <string name="pair_rename_label">inoa</string>

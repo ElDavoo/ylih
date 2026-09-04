@@ -102,6 +102,7 @@
     <string name="pair_per_charge">karga bakoitzeko</string>
     <string name="pair_cycles">zikloak</string>
     <string name="pair_charge_watched">behatuta</string>
+    <string name="pair_vs_new">berri zirenekoaren aldean</string>
     <string name="pair_cycle_number">%1$d. zikloa</string>
     <string name="pair_rename_title">pareza berrizendatu</string>
     <string name="pair_rename_label">izena</string>

@@ -102,6 +102,7 @@
     <string name="pair_per_charge">per laddning</string>
     <string name="pair_cycles">cykler</string>
     <string name="pair_charge_watched">observerat</string>
+    <string name="pair_vs_new">mot när de var nya</string>
     <string name="pair_cycle_number">cykel %1$d</string>
     <string name="pair_rename_title">byt namn på par</string>
     <string name="pair_rename_label">namn</string>

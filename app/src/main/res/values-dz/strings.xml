@@ -101,6 +101,7 @@
     <string name="pair_per_charge">གློག་བཙུགས་རེར།</string>
     <string name="pair_cycles">སྐོར་རིམ།</string>
     <string name="pair_charge_watched">བལྟ་ཡོདཔ།</string>
+    <string name="pair_vs_new">གསརཔ་དང་བསྡུར་བ།</string>
     <string name="pair_cycle_number">སྐོར་རིམ་ %1$d</string>
     <string name="pair_rename_title">ཕོ་ཉའི་མིང་གི་བསྒྲུབ་པ།</string>
     <string name="pair_rename_label">མིང་།</string>

@@ -95,6 +95,7 @@
     <string name="pair_per_charge">በብ ምምላእ</string>
     <string name="pair_cycles">ዑደታት</string>
     <string name="pair_charge_watched">ዝተዓዘብናዮ</string>
+    <string name="pair_vs_new">ምስ ሓድሽ ብምንጽጻር</string>
     <string name="pair_cycle_number">ዑደት %1$d</string>
     <string name="pair_rename_title">ሔዱ ስም ዓይነ</string>
     <string name="pair_rename_label">ስም</string>

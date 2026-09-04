@@ -95,6 +95,7 @@
     <string name="pair_per_charge">ପ୍ରତି ଚାର୍ଜରେ</string>
     <string name="pair_cycles">ଚକ୍ର</string>
     <string name="pair_charge_watched">ପର୍ଯ୍ୟବେକ୍ଷିତ</string>
+    <string name="pair_vs_new">ନୂଆ ଥିବା ସମୟ ତୁଳନାରେ</string>
     <string name="pair_cycle_number">ଚକ୍ର %1$d</string>
     <string name="pair_rename_title">ଯୋଡ଼ିର ନାମ ବଦଳାନ୍ତୁ</string>
     <string name="pair_rename_label">ନାମ</string>

@@ -102,6 +102,7 @@
     <string name="pair_per_charge">pr. opladning</string>
     <string name="pair_cycles">cyklusser</string>
     <string name="pair_charge_watched">observeret</string>
+    <string name="pair_vs_new">mod da de var nye</string>
     <string name="pair_cycle_number">cyklus %1$d</string>
     <string name="pair_rename_title">omdøb par</string>
     <string name="pair_rename_label">navn</string>

@@ -101,6 +101,7 @@
     <string name="pair_per_charge">hər doldurmaya</string>
     <string name="pair_cycles">dövrlər</string>
     <string name="pair_charge_watched">müşahidə olunub</string>
+    <string name="pair_vs_new">yeni olduğu vaxtla</string>
     <string name="pair_cycle_number">dövr %1$d</string>
     <string name="pair_rename_title">cütlüyü adlandır</string>
     <string name="pair_rename_label">ad</string>

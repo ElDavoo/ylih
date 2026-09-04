@@ -95,6 +95,7 @@
     <string name="pair_per_charge">ládden nammii</string>
     <string name="pair_cycles">syklusat</string>
     <string name="pair_charge_watched">goziduvvon</string>
+    <string name="pair_vs_new">ođđasiid ektui</string>
     <string name="pair_cycle_number">syklus %1$d</string>
     <string name="pair_rename_title">mainna bohccu</string>
     <string name="pair_rename_label">namma</string>

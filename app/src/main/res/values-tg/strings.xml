@@ -95,6 +95,7 @@
     <string name="pair_per_charge">ба як заряд</string>
     <string name="pair_cycles">давраҳо</string>
     <string name="pair_charge_watched">мушоҳидашуда</string>
+    <string name="pair_vs_new">нисбат ба нав</string>
     <string name="pair_cycle_number">давра %1$d</string>
     <string name="pair_rename_title">номи ҷуфтро иваз кунед</string>
     <string name="pair_rename_label">ном</string>

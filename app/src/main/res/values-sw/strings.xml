@@ -95,6 +95,7 @@
     <string name="pair_per_charge">kwa kila chaji</string>
     <string name="pair_cycles">mizunguko</string>
     <string name="pair_charge_watched">iliyotazamwa</string>
+    <string name="pair_vs_new">ikilinganishwa na mpya</string>
     <string name="pair_cycle_number">mzunguko %1$d</string>
     <string name="pair_rename_title">badilisha jina la jozi</string>
     <string name="pair_rename_label">jina</string>

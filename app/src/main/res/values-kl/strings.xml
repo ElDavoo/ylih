@@ -95,6 +95,7 @@
     <string name="pair_per_charge">tunivissamut</string>
     <string name="pair_cycles">kaajallattut</string>
     <string name="pair_charge_watched">nakkutigineqartoq</string>
+    <string name="pair_vs_new">nutaanerani naleqqiullugu</string>
     <string name="pair_cycle_number">kaajallanneq %1$d</string>
     <string name="pair_rename_title">allagua ataanigaleruk</string>
     <string name="pair_rename_label">ataa</string>

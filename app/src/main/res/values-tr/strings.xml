@@ -102,6 +102,7 @@
     <string name="pair_per_charge">şarj başına</string>
     <string name="pair_cycles">döngüler</string>
     <string name="pair_charge_watched">gözlenen</string>
+    <string name="pair_vs_new">yeniyken hâline göre</string>
     <string name="pair_cycle_number">döngü %1$d</string>
     <string name="pair_rename_title">çifti yeniden adlandır</string>
     <string name="pair_rename_label">ad</string>

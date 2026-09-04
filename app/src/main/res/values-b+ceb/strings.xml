@@ -101,6 +101,7 @@
     <string name="pair_per_charge">matag charge</string>
     <string name="pair_cycles">mga siklo</string>
     <string name="pair_charge_watched">naobserbahan</string>
+    <string name="pair_vs_new">kumpara sa bag-o</string>
     <string name="pair_cycle_number">siklo %1$d</string>
     <string name="pair_rename_title">baguhin ang pangalan ng pares</string>
     <string name="pair_rename_label">pangalan</string>

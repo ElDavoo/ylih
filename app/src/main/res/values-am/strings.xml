@@ -100,6 +100,7 @@
     <string name="pair_per_charge">በአንድ ሙሌት</string>
     <string name="pair_cycles">ዑደቶች</string>
     <string name="pair_charge_watched">የተመለከተ</string>
+    <string name="pair_vs_new">ከአዲስ ጋር</string>
     <string name="pair_cycle_number">ዑደት %1$d</string>
     <string name="pair_rename_title">ጥንድ እንደገና ሰይም</string>
     <string name="pair_rename_label">ስም</string>

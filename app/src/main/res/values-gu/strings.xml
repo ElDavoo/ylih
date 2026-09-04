@@ -95,6 +95,7 @@
     <string name="pair_per_charge">દર ચાર્જે</string>
     <string name="pair_cycles">ચક્રો</string>
     <string name="pair_charge_watched">અવલોકન કરેલ</string>
+    <string name="pair_vs_new">નવા હતા ત્યારની સરખામણીએ</string>
     <string name="pair_cycle_number">ચક્ર %1$d</string>
     <string name="pair_rename_title">જોડીનું નામ બદલો</string>
     <string name="pair_rename_label">નામ</string>

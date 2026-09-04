@@ -101,6 +101,7 @@
     <string name="pair_per_charge">per pengisian</string>
     <string name="pair_cycles">siklus</string>
     <string name="pair_charge_watched">teramati</string>
+    <string name="pair_vs_new">dibanding saat baru</string>
     <string name="pair_cycle_number">siklus %1$d</string>
     <string name="pair_rename_title">ganti nama pasangan</string>
     <string name="pair_rename_label">nama</string>

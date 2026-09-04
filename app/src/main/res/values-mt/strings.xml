@@ -95,6 +95,7 @@
     <string name="pair_per_charge">kull ċarġ</string>
     <string name="pair_cycles">ċikli</string>
     <string name="pair_charge_watched">osservat</string>
+    <string name="pair_vs_new">imqabbla ma’ ġodda</string>
     <string name="pair_cycle_number">ċiklu %1$d</string>
     <string name="pair_rename_title">isemmi l-par mill-ġdid</string>
     <string name="pair_rename_label">isem</string>

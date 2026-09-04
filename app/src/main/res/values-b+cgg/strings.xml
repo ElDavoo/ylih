@@ -101,6 +101,7 @@
     <string name="pair_per_charge">aha maani gamwe</string>
     <string name="pair_cycles">emizunguko</string>
     <string name="pair_charge_watched">ekireeberwe</string>
+    <string name="pair_vs_new">kugyerangaho n’ebisya</string>
     <string name="pair_cycle_number">omuzunguko %1$d</string>
     <string name="pair_rename_title">tyoma ikina lya enandi</string>
     <string name="pair_rename_label">ikina</string>

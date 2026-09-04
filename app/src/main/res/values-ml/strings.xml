@@ -95,6 +95,7 @@
     <string name="pair_per_charge">ഓരോ ചാർജിനും</string>
     <string name="pair_cycles">ചക്രങ്ങൾ</string>
     <string name="pair_charge_watched">നിരീക്ഷിച്ചത്</string>
+    <string name="pair_vs_new">പുതിയതിനെ അപേക്ഷിച്ച്</string>
     <string name="pair_cycle_number">ചക്രം %1$d</string>
     <string name="pair_rename_title">ജോടിയുടെ പേര് മാറ്റുക</string>
     <string name="pair_rename_label">പേര്</string>

@@ -95,6 +95,7 @@
     <string name="pair_per_charge">တစ်ကြိမ်အားသွင်းလျှင်</string>
     <string name="pair_cycles">သံသရာ</string>
     <string name="pair_charge_watched">စောင့်ကြည့်ခဲ့</string>
+    <string name="pair_vs_new">အသစ်နှင့်နှိုင်းယှဉ်</string>
     <string name="pair_cycle_number">သံသရာ %1$d</string>
     <string name="pair_rename_title">အတွဲကို အမည်ပြောင်းရန်</string>
     <string name="pair_rename_label">အစည်း</string>

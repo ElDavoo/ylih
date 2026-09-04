@@ -101,6 +101,7 @@
     <string name="pair_per_charge">на адзін зарад</string>
     <string name="pair_cycles">цыклы</string>
     <string name="pair_charge_watched">адсочана</string>
+    <string name="pair_vs_new">у параўнанні з новымі</string>
     <string name="pair_cycle_number">цыкл %1$d</string>
     <string name="pair_rename_title">перайменаваць пару</string>
     <string name="pair_rename_label">імя</string>

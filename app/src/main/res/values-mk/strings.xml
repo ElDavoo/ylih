@@ -95,6 +95,7 @@
     <string name="pair_per_charge">по полнење</string>
     <string name="pair_cycles">циклуси</string>
     <string name="pair_charge_watched">набљудувано</string>
+    <string name="pair_vs_new">во однос на нови</string>
     <string name="pair_cycle_number">циклус %1$d</string>
     <string name="pair_rename_title">преименувај пар</string>
     <string name="pair_rename_label">име</string>

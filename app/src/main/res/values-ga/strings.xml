@@ -95,6 +95,7 @@
     <string name="pair_per_charge">in aghaidh an luchtaithe</string>
     <string name="pair_cycles">timthriallta</string>
     <string name="pair_charge_watched">faoi bhreathnú</string>
+    <string name="pair_vs_new">i gcomparáid le nua</string>
     <string name="pair_cycle_number">timthriall %1$d</string>
     <string name="pair_rename_title">athainmnigh péire</string>
     <string name="pair_rename_label">ainm</string>

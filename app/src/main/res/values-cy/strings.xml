@@ -101,6 +101,7 @@
     <string name="pair_per_charge">y gwefriad</string>
     <string name="pair_cycles">cylchoedd</string>
     <string name="pair_charge_watched">wedi’i wylio</string>
+    <string name="pair_vs_new">o’i gymharu â newydd</string>
     <string name="pair_cycle_number">cylch %1$d</string>
     <string name="pair_rename_title">ailenwi pâr</string>
     <string name="pair_rename_label">enw</string>

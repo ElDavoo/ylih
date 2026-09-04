@@ -95,6 +95,7 @@
     <string name="pair_per_charge">ka tjhaja nngwe</string>
     <string name="pair_cycles">dipotologo</string>
     <string name="pair_charge_watched">go lebeletswe</string>
+    <string name="pair_vs_new">fa e bapisiwa le tse dintjha</string>
     <string name="pair_cycle_number">potologo %1$d</string>
     <string name="pair_rename_title">go lesa leina la pabetsa</string>
     <string name="pair_rename_label">leina</string>

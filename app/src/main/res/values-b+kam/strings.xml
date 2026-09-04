@@ -95,6 +95,7 @@
     <string name="pair_per_charge">kwa vinya wimwe</string>
     <string name="pair_cycles">mithyũlũko</string>
     <string name="pair_charge_watched">kwoneka</string>
+    <string name="pair_vs_new">kwa kwelekany’a na mweu</string>
     <string name="pair_cycle_number">mũthyũlũko %1$d</string>
     <string name="pair_rename_title">mayua linyo lya ikilongi</string>
     <string name="pair_rename_label">linyo</string>

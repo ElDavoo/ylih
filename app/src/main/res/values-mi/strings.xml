@@ -95,6 +95,7 @@
     <string name="pair_per_charge">ia whakakī</string>
     <string name="pair_cycles">hurihanga</string>
     <string name="pair_charge_watched">i mātakitakihia</string>
+    <string name="pair_vs_new">ki te whakatauritenga hou</string>
     <string name="pair_cycle_number">hurihanga %1$d</string>
     <string name="pair_rename_title">whakaingoa anō i te takirua</string>
     <string name="pair_rename_label">ingoa</string>

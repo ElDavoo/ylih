@@ -95,6 +95,7 @@
     <string name="pair_per_charge">pasimba rimwe</string>
     <string name="pair_cycles">matenderero</string>
     <string name="pair_charge_watched">zvakaonekwa</string>
+    <string name="pair_vs_new">kuenzanisa nemitsva</string>
     <string name="pair_cycle_number">tenderero %1$d</string>
     <string name="pair_rename_title">zvirudziro sora</string>
     <string name="pair_rename_label">zita</string>

@@ -95,6 +95,7 @@
     <string name="pair_per_charge">saben ngisi daya</string>
     <string name="pair_cycles">siklus</string>
     <string name="pair_charge_watched">diamati</string>
+    <string name="pair_vs_new">dibandhingake anyar</string>
     <string name="pair_cycle_number">siklus %1$d</string>
     <string name="pair_rename_title">ganti jeneng rong</string>
     <string name="pair_rename_label">jeneng</string>

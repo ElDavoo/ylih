@@ -402,13 +402,23 @@ private fun ChargeCyclesHeader(charge: ChargeSummary) {
             modifier = Modifier.semantics { heading() },
         )
         Spacer(Modifier.height(8.dp))
-        StatRow(
-            listOf(
-                stringResource(R.string.pair_per_charge) to formatHours(charge.msPerCycle),
-                stringResource(R.string.pair_cycles) to formatCycles(charge.cyclesFraction),
-                stringResource(R.string.pair_charge_watched) to formatHours(charge.countedMs),
-            ),
+        val versusNew = charge.versusNew
+        val tiles = listOfNotNull(
+            stringResource(R.string.pair_per_charge) to formatHours(charge.msPerCycle),
+            versusNew?.let { stringResource(R.string.pair_vs_new) to formatPercent(it) },
+            stringResource(R.string.pair_cycles) to formatCycles(charge.cyclesFraction),
+            stringResource(R.string.pair_charge_watched) to formatHours(charge.countedMs),
         )
+        // Two rows of two once the comparison has something to say, rather than four tiles crushed
+        // into one row — "vs when new" is a long label and the figures beside it are not short.
+        // Until then it is the three-tile row every other block on this screen uses.
+        if (tiles.size == 4) {
+            StatRow(tiles.take(2))
+            Spacer(Modifier.height(8.dp))
+            StatRow(tiles.drop(2))
+        } else {
+            StatRow(tiles)
+        }
         // Only once there is more than one bar to compare. A single cycle drawn full height says
         // "this is the tallest one" about a series of one, which is the reading it is least able
         // to support — the figures above already report it.

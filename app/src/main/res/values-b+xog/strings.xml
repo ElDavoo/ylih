@@ -95,6 +95,7 @@
     <string name="pair_per_charge">ku maani agamu</string>
     <string name="pair_cycles">enkyukakyuka</string>
     <string name="pair_charge_watched">ebyalabwa</string>
+    <string name="pair_vs_new">nga bigeraageranyizibwa n’empya</string>
     <string name="pair_cycle_number">enkyukakyuka %1$d</string>
     <string name="pair_rename_title">gamba ensawo ngeri</string>
     <string name="pair_rename_label">erinnya</string>

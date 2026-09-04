@@ -95,6 +95,7 @@
     <string name="pair_per_charge">y chargey</string>
     <string name="pair_cycles">cruinnaghyn</string>
     <string name="pair_charge_watched">jeeaghit</string>
+    <string name="pair_vs_new">noi rish noa</string>
     <string name="pair_cycle_number">cruinnagh %1$d</string>
     <string name="pair_rename_title">cur ennym noa paart</string>
     <string name="pair_rename_label">ennym</string>
