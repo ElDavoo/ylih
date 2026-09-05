@@ -16,6 +16,14 @@ on:  # zizmor: ignore[dangerous-triggers]
   workflow_run:
     workflows: ["Android CI"]
     types: [completed]
+    # Filtered at the trigger and not only in the `context` job's `if:`, because this workflow
+    # now holds the pipeline-wide concurrency group from its first job. A run whose jobs all skip
+    # still queues for that group, and the group holds exactly one pending run -- so an Android
+    # CI run on main, of which there is one per push, could displace a genuinely pending Agent ·
+    # review and leave auto-merge waiting on a check that never reports. Filtered here, no run is
+    # created at all. The `if:` below still has work to do: this cannot filter on conclusion, so
+    # a *green* CI run on an agent branch still arrives and still skips.
+    branches: ['agent/issue-*']
 
 # Granted per job rather than here: a workflow-level block hands the same token to the gate
 # as to the stage that runs the agent, and the gate exists precisely to decide whether the
