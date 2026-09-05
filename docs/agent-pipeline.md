@@ -78,6 +78,18 @@ minutes apart avoids it entirely. When it does happen:
 - the **plan** stage is not. A plan that never ran leaves nothing behind to sweep for, so a
   displaced one has to be re-run from the Actions tab.
 
+**A run whose jobs would all skip still queues for the group**, which is the second thing that
+crowds that one pending slot and the one that showed up first. `agent-fix-ci.yml` holds the group
+from its first job — it has to, because the stage it calls is a reusable workflow and so runs
+inside this run — and `workflow_run` fires it for every Android CI run, including the one per
+push to `main`. The run queued before anything evaluated its jobs' conditions, and only then did
+`context` skip. Observed as run 33992872153: queued behind the implement stage, `head_branch`
+`main`, nothing to do. Long enough in that slot to displace a pending `Agent · review`, whose
+check would then never report. It now filters on `branches: ['agent/issue-*']` at the trigger, so
+no run is created at all; the trigger cannot filter on conclusion, so a *green* CI run on an
+agent branch still arrives and still skips, which is rare and only while the branch is being
+worked on anyway.
+
 `Claude Code Review` joined the group too, and stopped running on agent branches at the same
 time. Agent pull requests are opened with `AGENT_PUSH_TOKEN`, so their author is you, so that
 workflow used to fire on every one of them alongside `Agent · review` — two Claude reviewers on
