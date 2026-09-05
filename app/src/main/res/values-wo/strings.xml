@@ -126,6 +126,8 @@
     <string name="settings_devices_body">aar joom sikasiit buuji — botis ko speaker — ko yaar jotul ci.</string>
     <string name="settings_device_subtitle">%1$s · suubare %2$s</string>
     <string name="settings_data">datos</string>
+    <string name="settings_agent_title">jotaayu dimbalikat</string>
+    <string name="settings_agent_body">may dimbalikat bi nekk ci telefon bii mu jàng ñaata waxtu nga déggloo</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">mel ci</string>
     <string name="settings_import_warning">mel ci mel gu meggul bu jotul jara.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">wepụ ihe onweghi isi obia - stereo ụgbọ maọbụ ụkasi - iji kuziri ịde ndekọ ya.</string>
     <string name="settings_device_subtitle">%1$s · hụrụ mbụ %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">ohere onye enyemaka</string>
+    <string name="settings_agent_body">kwe ka onye enyemaka nọ na ekwentị a gụọ ogologo oge i gere ntị</string>
     <string name="settings_export">bupụta json</string>
     <string name="settings_import">kwa</string>
     <string name="settings_import_warning">ịkwa na-agbanwe ihe niile a burul ugbu a.</string>

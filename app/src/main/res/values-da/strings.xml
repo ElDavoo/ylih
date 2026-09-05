@@ -135,6 +135,8 @@
     <string name="settings_devices_body">fjern fluebenet ved alt, der ikke er høretelefoner — et bilstereoanlæg eller en højttaler — for at holde op med at registrere det.</string>
     <string name="settings_device_subtitle">%1$s · først set %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">assistentadgang</string>
+    <string name="settings_agent_body">lad en assistent på denne telefon læse, hvor længe du har lyttet</string>
     <string name="settings_export">eksportér json</string>
     <string name="settings_import">importér</string>
     <string name="settings_import_warning">import erstatter alt, der er gemt nu.</string>

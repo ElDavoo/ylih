@@ -126,6 +126,8 @@
     <string name="settings_devices_body">kontrolloni asgjë që nuk është kufje - një stereo makine ose një relator - për të ndalur regjistrimin e tij.</string>
     <string name="settings_device_subtitle">%1$s · parë për herë %2$s</string>
     <string name="settings_data">të dhënat</string>
+    <string name="settings_agent_title">qasja e asistentit</string>
+    <string name="settings_agent_body">lejo një asistent në këtë telefon të lexojë sa gjatë ke dëgjuar</string>
     <string name="settings_export">eksporto json</string>
     <string name="settings_import">importo</string>
     <string name="settings_import_warning">importimi zëvendëson gjithçka të ruajtur aktualisht.</string>

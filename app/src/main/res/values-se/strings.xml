@@ -126,6 +126,8 @@
     <string name="settings_devices_body">loktedahtti mii ii leat beakcu - auttu radiosta vaj oktasalat - maŋŋebargga maiddáhttugoahta.</string>
     <string name="settings_device_subtitle">%1$s · maŋŋel vahkka %2$s</string>
     <string name="settings_data">dieđut</string>
+    <string name="settings_agent_title">veahki beassan</string>
+    <string name="settings_agent_body">divtte veahki dán telefovnnas lohkat man guhká leat guldalan</string>
     <string name="settings_export">maiddáhtte json</string>
     <string name="settings_import">maŋŋebargga</string>
     <string name="settings_import_warning">maŋŋebargga maiddáhtte buohkka dás maiddáhttan.</string>

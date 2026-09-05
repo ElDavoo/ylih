@@ -126,6 +126,8 @@
     <string name="settings_devices_body">nepazymeti nieko kas nera ausinu automobilio garso</string>
     <string name="settings_device_subtitle">%1$s · pirma karta matyti %2$s</string>
     <string name="settings_data">duomenys</string>
+    <string name="settings_agent_title">asistento prieiga</string>
+    <string name="settings_agent_body">leisk šio telefono asistentui perskaityti, kiek laiko klausei</string>
     <string name="settings_export">eksportuoti json</string>
     <string name="settings_import">importuoti</string>
     <string name="settings_import_warning">importavimas pakeis visa dabar saugoma</string>

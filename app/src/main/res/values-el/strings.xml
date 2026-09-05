@@ -134,6 +134,8 @@
     <string name="settings_devices_body">αποεπίλεξε ό,τι δεν είναι ακουστικά — ένα ηχοσύστημα αυτοκινήτου ή ένα ηχείο — για να σταματήσει η καταγραφή του.</string>
     <string name="settings_device_subtitle">%1$s · πρώτη εμφάνιση %2$s</string>
     <string name="settings_data">δεδομένα</string>
+    <string name="settings_agent_title">πρόσβαση βοηθού</string>
+    <string name="settings_agent_body">άσε έναν βοηθό σε αυτό το τηλέφωνο να διαβάσει πόση ώρα άκουσες</string>
     <string name="settings_export">εξαγωγή json</string>
     <string name="settings_import">εισαγωγή</string>
     <string name="settings_import_warning">η εισαγωγή αντικαθιστά όλα όσα είναι αποθηκευμένα αυτή τη στιγμή.</string>

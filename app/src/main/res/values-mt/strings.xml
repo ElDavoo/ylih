@@ -126,6 +126,8 @@
     <string name="settings_devices_body">waħħal kwalunkwe ħaġa li mhix headphones - car stereo jew speaker - biex twaqqaf tgħodd.</string>
     <string name="settings_device_subtitle">%1$s · l-ewwel ra %2$s</string>
     <string name="settings_data">dejta</string>
+    <string name="settings_agent_title">aċċess tal-assistent</string>
+    <string name="settings_agent_body">ħalli assistent fuq dan it-telefon jaqra kemm ilek tisma’</string>
     <string name="settings_export">esporta json</string>
     <string name="settings_import">importa</string>
     <string name="settings_import_warning">l-import ibdel kollox li ġia maħżun.</string>

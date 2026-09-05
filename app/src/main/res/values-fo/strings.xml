@@ -134,6 +134,8 @@
     <string name="settings_devices_body">avhaka hvat, ið ikki er heyrnirtól — bilvágd ella talari — til at standa av at skráseta hani.</string>
     <string name="settings_device_subtitle">%1$s · fyrst sæt %2$s</string>
     <string name="settings_data">dátir</string>
+    <string name="settings_agent_title">atgongd hjá hjálparanum</string>
+    <string name="settings_agent_body">lat ein hjálpara á hesari telefon lesa, hvussu leingi tú hevur lurtað</string>
     <string name="settings_export">útflyt json</string>
     <string name="settings_import">innflyt</string>
     <string name="settings_import_warning">innflyt ynskar alt, sum nú er goymt.</string>

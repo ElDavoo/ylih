@@ -1,0 +1,13 @@
+# Keep rules for the shipped APK, same job as glance-widgets.keep beside it: a class this app
+# reaches by name rather than by symbol.
+#
+# YlihAppFunctionService is written by KSP from agent/YlihAppFunctions.kt and nothing in the
+# source tree ever names it except the <service> element in the manifest. AAPT2 does generate a
+# keep rule for a manifest component, so in principle this is insurance rather than a fix — but
+# the component only exists once KSP has run, which is one more link in the chain than any other
+# component in this manifest has, and the failure it protects against is invisible: a renamed
+# service still installs, and the OS simply never binds it. The app functions would then be
+# advertised and uncallable, which reads as an agent that ignores the app.
+#
+# .github/scripts/r8-keep-check.py asserts it survives under this name on every push.
+-keep class it.eldavo.ylih.agent.YlihAppFunctionService

@@ -134,6 +134,8 @@
     <string name="settings_devices_body">nofandi yindoo anaa koosan: yindoo ji mobil u be, wulo u be, - sibti a tayoy.</string>
     <string name="settings_device_subtitle">%1$s · wambakandoo %2$s</string>
     <string name="settings_data">kalam</string>
+    <string name="settings_agent_title">kasumay ka arambaŋ</string>
+    <string name="settings_agent_body">kaan arambaŋ ba phone yi la ajaŋ nan bu kaanuŋ nabuŋ</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">import</string>
     <string name="settings_import_warning">import yi ma sibti kalam bu yidi jintangu yi.</string>

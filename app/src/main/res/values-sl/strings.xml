@@ -126,6 +126,8 @@
     <string name="settings_devices_body">odznačite vse, kar niso slušalke - avtomobilski stereo ali zvočniki - preneha jih beležiti.</string>
     <string name="settings_device_subtitle">%1$s · prvič videno %2$s</string>
     <string name="settings_data">podatki</string>
+    <string name="settings_agent_title">dostop pomočnika</string>
+    <string name="settings_agent_body">dovoli pomočniku v tem telefonu, da prebere, kako dolgo si poslušal</string>
     <string name="settings_export">izvezi json</string>
     <string name="settings_import">uvozi</string>
     <string name="settings_import_warning">uvoz nadomesti vse trenutno shranjeno.</string>

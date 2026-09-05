@@ -126,6 +126,8 @@
     <string name="settings_devices_body">naptewictakpe šte wópʼe - kʻókhta oyáŋste ičʼó - oyáŋste yešte.</string>
     <string name="settings_device_subtitle">%1$s · ékhó wanyág %2$s</string>
     <string name="settings_data">ówaŋkʻa</string>
+    <string name="settings_agent_title">ówaŋkʻu kiŋ ókiye</string>
+    <string name="settings_agent_body">lé wóglaka kiŋ él ókiye kiŋ tóhaŋyaŋ nanáǧopta kiŋ yawá nuŋwé</string>
     <string name="settings_export">json yúta</string>
     <string name="settings_import">kupi</string>
     <string name="settings_import_warning">kupi ówaŋkʻa ówaŋkʻa oyáŋste lékhé.</string>

@@ -134,6 +134,8 @@
     <string name="settings_devices_body">যা কিছু হেডফোন নয় তা আনচেক করুন — একটি গাড়ির স্টেরিও বা একটি স্পিকার — এটি রেকর্ড করা বন্ধ করতে।</string>
     <string name="settings_device_subtitle">%1$s · প্রথম দেখা %2$s</string>
     <string name="settings_data">ডেটা</string>
+    <string name="settings_agent_title">সহকারীর অ্যাক্সেস</string>
+    <string name="settings_agent_body">এই ফোনের সহকারীকে আপনি কত সময় শুনেছেন তা পড়তে দিন</string>
     <string name="settings_export">json এক্সপোর্ট করুন</string>
     <string name="settings_import">আমদানি করুন</string>
     <string name="settings_import_warning">আমদানি বর্তমানে সংরক্ষিত সবকিছু প্রতিস্থাপন করে।</string>

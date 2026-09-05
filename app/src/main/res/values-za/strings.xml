@@ -126,6 +126,8 @@
     <string name="settings_devices_body">souj ndungz bun o — seuj sae na boq — kboq souj seih.</string>
     <string name="settings_device_subtitle">%1$s · seih youq %2$s</string>
     <string name="settings_data">gunz</string>
+    <string name="settings_agent_title">bangbouj yinh</string>
+    <string name="settings_agent_body">hawj bangbouj youq gwnz densonhgih neix doeg mwngz dingqnyi geijlai nanz</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">youq</string>
     <string name="settings_import_warning">youq youq caev gunz youq.</string>

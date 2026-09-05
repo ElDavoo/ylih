@@ -126,6 +126,8 @@
     <string name="settings_devices_body">makɔ́ŋ ŋka kɛn - kaa stereo wàŋ spiker - ndə fə daa.</string>
     <string name="settings_device_subtitle">%1$s · dùː wé %2$s</string>
     <string name="settings_data">aloku</string>
+    <string name="settings_agent_title">aloku fɔ́n a ndá</string>
+    <string name="settings_agent_body">ŋgɛ́ ndá fɔ́n a wɔ́ jə́ŋɡa ndé wo yúʼ</string>
     <string name="settings_export">json ndə fə</string>
     <string name="settings_import">kə wa</string>
     <string name="settings_import_warning">kə wa wé aloku taaga.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">muhiyeke etthu yookhala ehiri ifone sa maru — radio ya ekaaro walaa ekolomwe — wira ehilepiwe.</string>
     <string name="settings_device_subtitle">%1$s · yoonihiwe woopacerya %2$s</string>
     <string name="settings_data">matthaya</string>
+    <string name="settings_agent_title">ohela wa mukhaviheri</string>
+    <string name="settings_agent_body">mmuruhe mukhaviheri ori mu telefone ela asome elukuluku yowiriyana anyu</string>
     <string name="settings_export">okuxa json</string>
     <string name="settings_import">ovaha</string>
     <string name="settings_import_warning">ovaha onnilukiha sotheene sihiiwe vano.</string>

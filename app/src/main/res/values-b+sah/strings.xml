@@ -126,6 +126,8 @@
     <string name="settings_devices_body">наушник буолбатаҕын — массыына динамигын эбэтэр колонканы — бэлиэттэн ыл, онно кини суруллубат.</string>
     <string name="settings_device_subtitle">%1$s · бастаан %2$s</string>
     <string name="settings_data">дааннайдар</string>
+    <string name="settings_agent_title">көмөлөһөөччү киирии</string>
+    <string name="settings_agent_body">бу телефоҥҥа көмөлөһөөччүгэ хас чаас истибиккин ааҕарга көҥүллээ</string>
     <string name="settings_export">json таһаарыы</string>
     <string name="settings_import">киллэрии</string>
     <string name="settings_import_warning">киллэрии билигин уурулла сылдьар барытын уларытар.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ڪجهه به غير منتخب ڪريو جيڪو هيڊ فون نہ آهي - هڪ گاڏي اسٹيريو يا هڪ اسپيڪر - اهو ريکارڈ ڪرڻ بند ڪرڻ لاء.</string>
     <string name="settings_device_subtitle">%1$s · پهلو ڏٺو %2$s</string>
     <string name="settings_data">ڊيٽا</string>
+    <string name="settings_agent_title">مددگار جي رسائي</string>
+    <string name="settings_agent_body">هن فون تي مددگار کي پڙهڻ ڏيو ته توهان ڪيترو وقت ٻڌو</string>
     <string name="settings_export">برآمد json</string>
     <string name="settings_import">درآمد</string>
     <string name="settings_import_warning">درآمد موجودہ طور تي محفوظ کل شيء کو تبديل ڪري ٿو.</string>

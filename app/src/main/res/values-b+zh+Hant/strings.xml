@@ -136,6 +136,8 @@
     <string name="settings_devices_body">取消勾選不是耳機的項目——例如車用喇叭或藍牙音箱——即可停止記錄它。</string>
     <string name="settings_device_subtitle">%1$s · 首次出現於 %2$s</string>
     <string name="settings_data">資料</string>
+    <string name="settings_agent_title">助手存取</string>
+    <string name="settings_agent_body">允許這台手機上的助手讀取你聽了多久</string>
     <string name="settings_export">匯出 json</string>
     <string name="settings_import">匯入</string>
     <string name="settings_import_warning">匯入會取代目前儲存的所有資料。</string>

@@ -34,6 +34,7 @@ class SettingsStoreTest {
         settings.setHibernationAsked(false)
         settings.setDetailedTracking(true)
         settings.setPlaybackOnly(false)
+        settings.setAgentAccess(true)
         settings.setLanguage("pt-BR")
 
         val seen = mutableMapOf<String, Any?>()
@@ -42,15 +43,17 @@ class SettingsStoreTest {
             launch { settings.hibernationAsked.collect { seen["hibernation"] = it } },
             launch { settings.detailedTracking.collect { seen["detailed"] = it } },
             launch { settings.playbackOnly.collect { seen["playback"] = it } },
+            launch { settings.agentAccess.collect { seen["agent"] = it } },
             launch { settings.language.collect { seen["language"] = it } },
         )
-        while (seen.size < 5) delay(10)
+        while (seen.size < 6) delay(10)
         collectors.forEach { it.cancel() }
 
         assertEquals(true, seen["onboarding"])
         assertEquals(false, seen["hibernation"])
         assertEquals(true, seen["detailed"])
         assertEquals(false, seen["playback"])
+        assertEquals(true, seen["agent"])
         assertEquals("pt-BR", seen["language"])
     }
 
@@ -61,11 +64,13 @@ class SettingsStoreTest {
         settings.setHibernationAsked(false)
         settings.setDetailedTracking(true)
         settings.setPlaybackOnly(false)
+        settings.setAgentAccess(true)
         settings.setLanguage("pt-BR")
 
         assertEquals(true, settings.onboardingDoneNow())
         assertEquals(true, settings.detailedTrackingNow())
         assertEquals(false, settings.playbackOnlyNow())
+        assertEquals(true, settings.agentAccessNow())
         assertEquals("pt-BR", settings.languageNow())
     }
 
@@ -73,6 +78,9 @@ class SettingsStoreTest {
     @Test
     fun `a setting never written falls back to its default`() = runBlocking {
         assertEquals(false, settings.onboardingDoneNow())
+        // The one that has to be false unwritten: the app functions ship disabled, and a stored
+        // row that read `true` on a fresh install would be a promise the OS index never made.
+        assertEquals(false, settings.agentAccessNow())
         assertEquals("", settings.languageNow())
     }
 }

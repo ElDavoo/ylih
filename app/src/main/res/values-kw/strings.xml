@@ -126,6 +126,8 @@
     <string name="settings_devices_body">uncheck neppyth na yw klewva — stereo awtomobil po sprecher — dhe stopio reorda eth.</string>
     <string name="settings_device_subtitle">%1$s · a-vostelna gelwys %2$s</string>
     <string name="settings_data">danvac</string>
+    <string name="settings_agent_title">hedhas an gweresor</string>
+    <string name="settings_agent_body">gas gweresor war an pellgowser ma dhe redya pes hir y’th eus goslowes</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">importa</string>
     <string name="settings_import_warning">importa a veu dalvesow peworth nyssynnys a veu sterys.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">यत् कर्णयन्त्रं नास्ति — यानध्वनियन्त्रं वा ध्वनिवर्धको वा — तत् अचिह्नितं करोतु, येन तत् न लिख्यते।</string>
     <string name="settings_device_subtitle">%1$s · प्रथमदर्शनम् %2$s</string>
     <string name="settings_data">दत्तांशः</string>
+    <string name="settings_agent_title">सहायकस्य प्रवेशः</string>
+    <string name="settings_agent_body">अस्मिन् दूरभाषे सहायकः भवान् कियत्कालं शृणोत् इति पठतु</string>
     <string name="settings_export">json निर्यातः</string>
     <string name="settings_import">आयातः</string>
     <string name="settings_import_warning">आयातः इदानीं संगृहीतं सर्वं प्रतिस्थापयति।</string>

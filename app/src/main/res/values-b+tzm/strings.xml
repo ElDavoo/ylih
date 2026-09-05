@@ -126,6 +126,8 @@
     <string name="settings_devices_body">fren tmaza</string>
     <string name="settings_device_subtitle">%1$s · azeklan %2$s</string>
     <string name="settings_data">tallit</string>
+    <string name="settings_agent_title">anekcum n umallal</string>
+    <string name="settings_agent_body">ejj amallal n utilifun ad iɣer mennaw n wakud i tesslid</string>
     <string name="settings_export">sffed json</string>
     <string name="settings_import">sluq</string>
     <string name="settings_import_warning">sluq tallit fofon</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ບໍ່ກວດອື່ນ - ລຳໂພງ, ລໍ້ - ເພື່ອຢຸດບັນທຶກ.</string>
     <string name="settings_device_subtitle">%1$s · ມອງຫາ %2$s</string>
     <string name="settings_data">ຂໍ້ມູນ</string>
+    <string name="settings_agent_title">ການເຂົ້າເຖິງຂອງຜູ້ຊ່ວຍ</string>
+    <string name="settings_agent_body">ອະນຸຍາດໃຫ້ຜູ້ຊ່ວຍໃນໂທລະສັບນີ້ອ່ານວ່າທ່ານຟັງດົນປານໃດ</string>
     <string name="settings_export">ສົ່ງອອກ json</string>
     <string name="settings_import">ນໍາເຂົ້າ</string>
     <string name="settings_import_warning">ທົ່ວທັງການເກັບໄວ້.</string>

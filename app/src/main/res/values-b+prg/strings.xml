@@ -126,6 +126,8 @@
     <string name="settings_devices_body">nečekinti kas nai ausai - auto stereo ar kalbėtojas - tūrėti skaityti jis.</string>
     <string name="settings_device_subtitle">%1$s · pirmasis matyta %2$s</string>
     <string name="settings_data">duomenys</string>
+    <string name="settings_agent_title">pagalbenika laiby</string>
+    <string name="settings_agent_body">dāis pagalbenikan en stan telefonan skaitītwei kāigi ilgai tū klausīlai</string>
     <string name="settings_export">eksporty json</string>
     <string name="settings_import">importy</string>
     <string name="settings_import_warning">importy keičia viską dabar saugota.</string>

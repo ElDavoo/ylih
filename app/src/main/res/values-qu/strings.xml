@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ama auquikunachu - radyo maychu speaker - ama yupaychu.</string>
     <string name="settings_device_subtitle">%1$s · hamutʼatin rimaypi %2$s</string>
     <string name="settings_data">rimaykunak</string>
+    <string name="settings_agent_title">yanapaqpa yaykuynin</string>
+    <string name="settings_agent_body">kay celularpi yanapaq imay pachakama uyarisqaykita ñawinchachun</string>
     <string name="settings_export">exportar json</string>
     <string name="settings_import">importar</string>
     <string name="settings_import_warning">importar rimaykunayta ruwariq.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">હેડફોન ન હોય તેવું કંઈ પણ અનચેક કરો — એક કાર સ્ટીરિયો અથવા વક્તા — તેનું રેકોર્ડીંગ બંધ કરવા માટે.</string>
     <string name="settings_device_subtitle">%1$s · પ્રથમ દર્શન %2$s</string>
     <string name="settings_data">ડેટા</string>
+    <string name="settings_agent_title">સહાયકની ઍક્સેસ</string>
+    <string name="settings_agent_body">આ ફોન પરના સહાયકને તમે કેટલો સમય સાંભળ્યું તે વાંચવા દો</string>
     <string name="settings_export">json નિકાસ કરો</string>
     <string name="settings_import">આયાત કરો</string>
     <string name="settings_import_warning">આયાત કરવું વર્તમાનમાં સંગ્રહીત બધું બદલે છે.</string>

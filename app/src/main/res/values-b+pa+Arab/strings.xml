@@ -126,6 +126,8 @@
     <string name="settings_devices_body">جیہڑا وی ہیڈفون نہیں اے — کار دا سٹیریو یا سپیکر — اوہنوں درج ہون توں روکن لئی نشان ہٹاؤ۔</string>
     <string name="settings_device_subtitle">%1$s · پہلی وار ویکھیا %2$s</string>
     <string name="settings_data">ڈیٹا</string>
+    <string name="settings_agent_title">مددگار دی رسائی</string>
+    <string name="settings_agent_body">ایس فون تے مددگار نوں پڑھن دیو جو تسیں کِنّا چِر سنیا</string>
     <string name="settings_export">json برآمد</string>
     <string name="settings_import">درآمد</string>
     <string name="settings_import_warning">درآمد کرن نال ہُن سنبھالیا سب کجھ بدل جاندا اے۔</string>

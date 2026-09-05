@@ -126,6 +126,8 @@
     <string name="settings_devices_body">bak chi ndap bu-makinanzi — simu ya-car o chezeana — kwa ku-ku ka-tracking.</string>
     <string name="settings_device_subtitle">%1$s · kwanza gbin %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">ka-nkeen ka-mvolan</string>
+    <string name="settings_agent_body">kaa mvolan a nkoo telefon i a laŋ ngeda i o wokii</string>
     <string name="settings_export">chu json</string>
     <string name="settings_import">ku-ku</string>
     <string name="settings_import_warning">ku-ku i-su ba-data ba-yak.</string>

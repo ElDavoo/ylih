@@ -126,6 +126,8 @@
     <string name="settings_devices_body">todoli ibore aŋai na mam erai isukulen — eredio loka emotoka arai espika — kotoma icodi agirakin.</string>
     <string name="settings_device_subtitle">%1$s · iŋolikinit sodi %2$s</string>
     <string name="settings_data">aijenun</string>
+    <string name="settings_agent_title">adumun ka ekicanakinan</string>
+    <string name="settings_agent_body">kotupokin ekicanakinan lo esimu lo asiom apak na kiningito</string>
     <string name="settings_export">sula json</string>
     <string name="settings_import">yaun</string>
     <string name="settings_import_warning">aiyaun elokikini iboro kere lu ejaasi kolo.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">nukappiaaq misigissunngillat imaq - qanuja-stereo akilak amasuunngillat - ilortariassutaq paatileruk.</string>
     <string name="settings_device_subtitle">%1$s · taakuppa %2$s-mi</string>
     <string name="settings_data">tamaglareeq</string>
+    <string name="settings_agent_title">ikiortip isersinnaanera</string>
+    <string name="settings_agent_body">una oqarasuaammi ikiorti qanoq sivisutigisumik tusarnaarsimanerit atuartikkiuk</string>
     <string name="settings_export">json sanngertarneq</string>
     <string name="settings_import">siulerneq</string>
     <string name="settings_import_warning">siulerneq tamassumalu tamaglareeq tamaassanik paatileq.</string>

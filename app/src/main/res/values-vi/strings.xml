@@ -135,6 +135,8 @@
     <string name="settings_devices_body">bỏ chọn bất cứ thứ gì không phải tai nghe — như loa xe hơi hay loa ngoài — để ngừng ghi lại nó.</string>
     <string name="settings_device_subtitle">%1$s · lần đầu thấy %2$s</string>
     <string name="settings_data">dữ liệu</string>
+    <string name="settings_agent_title">quyền truy cập của trợ lý</string>
+    <string name="settings_agent_body">cho phép trợ lý trên điện thoại này đọc bạn đã nghe bao lâu</string>
     <string name="settings_export">xuất json</string>
     <string name="settings_import">nhập</string>
     <string name="settings_import_warning">nhập dữ liệu sẽ thay thế toàn bộ dữ liệu hiện có.</string>

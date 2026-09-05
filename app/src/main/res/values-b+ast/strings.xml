@@ -134,6 +134,8 @@
     <string name="settings_devices_body">desclinca too lo que nun seya auriculares — un sistema d’auto o un altavoz — pa dexa de grabalo.</string>
     <string name="settings_device_subtitle">%1$s · primera vegada visto %2$s</string>
     <string name="settings_data">datos</string>
+    <string name="settings_agent_title">accesu del asistente</string>
+    <string name="settings_agent_body">dexa qu’un asistente d’esti teléfonu llea cuánto tiempu escuchesti</string>
     <string name="settings_export">esportar json</string>
     <string name="settings_import">importar</string>
     <string name="settings_import_warning">importar reemplaza too lo qu’agora tá guardáu.</string>

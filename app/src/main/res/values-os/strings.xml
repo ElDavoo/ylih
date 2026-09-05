@@ -126,6 +126,8 @@
     <string name="settings_devices_body">наушниктӕ чи нӕу — машинӕйы динамик кӕнӕ колонкӕ — уый нысанӕй раппар, цӕмӕй ӕй ма фысса.</string>
     <string name="settings_device_subtitle">%1$s · фыццаг хатт %2$s</string>
     <string name="settings_data">бӕрӕггӕнӕнтӕ</string>
+    <string name="settings_agent_title">æххуысгæнæджы бахизæн</string>
+    <string name="settings_agent_body">бауадз ацы телефоны æххуысгæнæгæн бакæсын, цас хъуыстай</string>
     <string name="settings_export">json экспорт</string>
     <string name="settings_import">импорт</string>
     <string name="settings_import_warning">импорт ныр ӕвӕрд алцыдӕр ивы.</string>

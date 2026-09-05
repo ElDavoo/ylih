@@ -126,6 +126,8 @@
     <string name="settings_devices_body">noņem atzīmi visam, kas nav austiņas — automašīnas radio vai skaļrunim — lai pārtrauktu to pierakstīt.</string>
     <string name="settings_device_subtitle">%1$s · pirmoreiz redzēts %2$s</string>
     <string name="settings_data">dati</string>
+    <string name="settings_agent_title">asistenta piekļuve</string>
+    <string name="settings_agent_body">ļauj šī tālruņa asistentam nolasīt, cik ilgi esi klausījies</string>
     <string name="settings_export">eksportēt json</string>
     <string name="settings_import">importēt</string>
     <string name="settings_import_warning">importēšana aizstāj visu, kas pašlaik saglabāts.</string>

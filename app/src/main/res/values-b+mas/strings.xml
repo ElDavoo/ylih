@@ -126,6 +126,8 @@
     <string name="settings_devices_body">itoroshi entoki pooki naitu nkiyiaa — redio e motoka ama spika — amu meigilu.</string>
     <string name="settings_device_subtitle">%1$s · keidol te nkitayu %2$s</string>
     <string name="settings_data">inkitejo</string>
+    <string name="settings_agent_title">ewuo o lchoreta</string>
+    <string name="settings_agent_body">iyieu lchoreta ote simu ena naa aisiom eng’ata naa iningo</string>
     <string name="settings_export">itoroshi json</string>
     <string name="settings_import">iwuo</string>
     <string name="settings_import_warning">enkiwuot keitayu kulie ntokitin naatii taata.</string>

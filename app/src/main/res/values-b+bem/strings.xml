@@ -134,6 +134,8 @@
     <string name="settings_devices_body">kwezepo ifyonse ifisena ifu — akanji akwa, amipale — ili kusiya inshumu yonse.</string>
     <string name="settings_device_subtitle">%1$s · inatonwilwe pakali %2$s</string>
     <string name="settings_data">amakamu</string>
+    <string name="settings_agent_title">ukwingila kwa kaafwilisha</string>
+    <string name="settings_agent_body">leka kaafwilisha pali iyi foni abelenge inshita iyo waumfwa</string>
     <string name="settings_export">kutumbulula json</string>
     <string name="settings_import">kufitika</string>
     <string name="settings_import_warning">kufitika kulimina fyonse icakala pakali.</string>

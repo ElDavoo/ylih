@@ -126,6 +126,8 @@
     <string name="settings_devices_body">gol ranyisi kuom gimoro amora ma ok hedfon — redio mar mtoka kata spika — mondo owe ndike.</string>
     <string name="settings_device_subtitle">%1$s · nonene mokwongo %2$s</string>
     <string name="settings_data">weche</string>
+    <string name="settings_agent_title">donjo mar jakony</string>
+    <string name="settings_agent_body">we jakony man e simboni somo kinde ma isebedo ka ichiko iti</string>
     <string name="settings_export">gol json</string>
     <string name="settings_import">kel</string>
     <string name="settings_import_warning">kelo loko gik moko duto mokan sani.</string>

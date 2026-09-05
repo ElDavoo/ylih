@@ -126,6 +126,8 @@
     <string name="settings_devices_body">deaktivera alles, wo nit chopfhörer sind — i auto oder i speaker — zum auf z’höre sie z’registriera.</string>
     <string name="settings_device_subtitle">%1$s · erscht gsa %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">zuegang für e helfer</string>
+    <string name="settings_agent_body">lass e helfer uf dim telefon läse, wie lang du zueghört hesch</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">importera</string>
     <string name="settings_import_warning">importera ersetzt alles, wo grad gspeicharet isch.</string>

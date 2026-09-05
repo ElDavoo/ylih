@@ -126,6 +126,8 @@
     <string name="settings_devices_body">gusubirira echire che marake bisuma — radio ya kare oba omwanyu — kusiga gutambira chace.</string>
     <string name="settings_device_subtitle">%1$s · ingiremire rikaigara %2$s</string>
     <string name="settings_data">risigi</string>
+    <string name="settings_agent_title">okwinjira kw’omokonyi</string>
+    <string name="settings_agent_body">reka omokonyi one ase esimu eye asome obwire bwaya wagoke</string>
     <string name="settings_export">garura json</string>
     <string name="settings_import">kugera</string>
     <string name="settings_import_warning">kugera kuriya gusiga risigi yose iyigara komu.</string>

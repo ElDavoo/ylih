@@ -126,6 +126,8 @@
     <string name="settings_devices_body">jamba waxa ay dhegga oo kaliya - stereo gaadiidka ama cod - joojinta qorida.</string>
     <string name="settings_device_subtitle">%1$s · markaa hore looga arkay %2$s</string>
     <string name="settings_data">xogta</string>
+    <string name="settings_agent_title">gelitaanka kaaliyaha</string>
+    <string name="settings_agent_body">u ogolow kaaliye taleefankan inuu akhriyo intee in le’eg oo aad dhegeysatay</string>
     <string name="settings_export">soo saara json</string>
     <string name="settings_import">gal</string>
     <string name="settings_import_warning">galkoolihaaxxa qof kaloo xogta jooga oo hadda kaydka.</string>

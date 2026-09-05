@@ -126,6 +126,8 @@
     <string name="settings_devices_body">a súk kóm a kóm a ab ne o — a car stereo na a speaker — kóm a súk a rek a o.</string>
     <string name="settings_device_subtitle">%1$s · a búe a súk %2$s</string>
     <string name="settings_data">a mbu</string>
+    <string name="settings_agent_title">nkúm a mvɔ́lɔ́n</string>
+    <string name="settings_agent_body">yá mvɔ́lɔ́n a súk a fúu nkú a lɛ́ŋ nkúm ú yúʼ</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">a búe</string>
     <string name="settings_import_warning">a búe a níe kóm muanda a súk muanda.</string>

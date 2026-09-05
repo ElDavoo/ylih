@@ -134,6 +134,8 @@
     <string name="settings_devices_body">nullañ nemet tra n’eo ket tonelloù — ur garantell pe ur ganer — da staoañ e enrollañ.</string>
     <string name="settings_device_subtitle">%1$s · gwelet evit ar wechañ %2$s</string>
     <string name="settings_data">roadennoù</string>
+    <string name="settings_agent_title">haeziñ ar skoazeller</string>
+    <string name="settings_agent_body">aotreañ ur skoazeller war ar pellgomzer-mañ da lenn pegeit hoc’h eus selaouet</string>
     <string name="settings_export">ezporzhañ json</string>
     <string name="settings_import">enderzhañ</string>
     <string name="settings_import_warning">enderzhañ a c’hellac’h holl tra zo bet gwarchañ bremañ.</string>

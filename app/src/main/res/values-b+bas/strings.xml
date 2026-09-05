@@ -134,6 +134,8 @@
     <string name="settings_devices_body">tɔ́p nàŋ ku nà ŋgɛ — bìn mɛ speaker — so ku ka sɔŋ.</string>
     <string name="settings_device_subtitle">%1$s · kénsé %2$s</string>
     <string name="settings_data">dàta</string>
+    <string name="settings_agent_title">nkoñ nu mut-nsaŋal</string>
+    <string name="settings_agent_body">kal mut-nsaŋal nu telefon i nu a añ ngeda i nu u nɔgɔl</string>
     <string name="settings_export">gí json</string>
     <string name="settings_import">sɔŋ ku</string>
     <string name="settings_import_warning">sɔŋ ku ba tóp kuɓ ba.</string>

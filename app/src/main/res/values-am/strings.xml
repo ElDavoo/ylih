@@ -133,6 +133,8 @@
     <string name="settings_devices_body">ዋቅ ያልሆነ ነገር ማብራት — ሙዞ ወይም ዘወዝ — ሪኮርዲንግ ሊቀር።</string>
     <string name="settings_device_subtitle">%1$s · በመጀመሪያ ታየ %2$s</string>
     <string name="settings_data">ውሂብ</string>
+    <string name="settings_agent_title">የረዳት መዳረሻ</string>
+    <string name="settings_agent_body">በዚህ ስልክ ላይ ያለ ረዳት ምን ያህል ጊዜ እንዳዳመጡ እንዲያነብ ይፍቀዱ</string>
     <string name="settings_export">json ወደ ውጪ ላክ</string>
     <string name="settings_import">ወደ ውስጥ አምጡ</string>
     <string name="settings_import_warning">ወደ ውስጥ አምጡ ሁሉ ነገር አሁን ያለ ነገር ተተክላል።</string>

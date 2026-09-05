@@ -126,6 +126,8 @@
     <string name="settings_devices_body">аудиотосма эмаслар - машинанинг мўзикаси ёки спикер - ўчириб қўйинг.</string>
     <string name="settings_device_subtitle">%1$s · биринчи қўлилди %2$s</string>
     <string name="settings_data">маълумот</string>
+    <string name="settings_agent_title">ёрдамчи рухсати</string>
+    <string name="settings_agent_body">бу телефондаги ёрдамчига қанча вақт тинглаганингизни ўқишга рухсат беринг</string>
     <string name="settings_export">json экспорти</string>
     <string name="settings_import">импорт</string>
     <string name="settings_import_warning">импорт ҳозир ҳаммасинин ўзгартирибди.</string>

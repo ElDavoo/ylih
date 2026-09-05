@@ -126,6 +126,8 @@
     <string name="settings_devices_body">कुनै पनि कुरा जो हेडफोन छैन - एक कार स्टेरियो वा एक वक्ता - यसलाई रेकर्ड गर्न बन्द गर्न अचेक गर्नुहोस्।</string>
     <string name="settings_device_subtitle">%1$s · पहिलो पटक देखिएको %2$s</string>
     <string name="settings_data">डेटा</string>
+    <string name="settings_agent_title">सहायकको पहुँच</string>
+    <string name="settings_agent_body">यो फोनको सहायकलाई तपाईंले कति बेर सुन्नुभयो भनेर पढ्न दिनुहोस्</string>
     <string name="settings_export">json निर्यात गर्नुहोस्</string>
     <string name="settings_import">आयात गर्नुहोस्</string>
     <string name="settings_import_warning">आयातले वर्तमान मा सबै कुरा प्रतिस्थापन गर्छ।</string>

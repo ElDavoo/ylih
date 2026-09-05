@@ -126,6 +126,8 @@
     <string name="settings_devices_body">gara lasal</string>
     <string name="settings_device_subtitle">%1$s · hantum %2$s</string>
     <string name="settings_data">kilandi</string>
+    <string name="settings_agent_title">gaakasinay furoyan</string>
+    <string name="settings_agent_body">naŋ gaakasinay kaŋ go telefon woo ga ma alwaati kaŋ ni hangan caw</string>
     <string name="settings_export">json tondi</string>
     <string name="settings_import">jebere</string>
     <string name="settings_import_warning">jebere kilandi koyne</string>

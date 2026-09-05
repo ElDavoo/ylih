@@ -134,6 +134,8 @@
     <string name="settings_devices_body">teken alles uit wat nie koptelefone is nie — motorstereo’s of sprekers — om dit nie op te neem nie.</string>
     <string name="settings_device_subtitle">%1$s · eerste keer gesien %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">assistenttoegang</string>
+    <string name="settings_agent_body">laat ’n assistent op hierdie foon lees hoe lank jy geluister het</string>
     <string name="settings_export">voer json uit</string>
     <string name="settings_import">voer in</string>
     <string name="settings_import_warning">invoer vervang alles wat tans gestoor is.</string>

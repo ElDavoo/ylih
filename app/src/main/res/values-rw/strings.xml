@@ -126,6 +126,8 @@
     <string name="settings_devices_body">sumurika ikintu kitajuje kopesi - umwanya umugambi cyangwa serikali - kubigira beteta.</string>
     <string name="settings_device_subtitle">%1$s · yambaye %2$s</string>
     <string name="settings_data">amakuru</string>
+    <string name="settings_agent_title">uburenganzira bw’umufasha</string>
+    <string name="settings_agent_body">emerera umufasha kuri iyi telefone gusoma igihe umaze wumva</string>
     <string name="settings_export">kubusha json</string>
     <string name="settings_import">kwinjiza</string>
     <string name="settings_import_warning">kwinjiza bikunashyiramo ikintu cyose kimenyeshwa.</string>

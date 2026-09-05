@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ye khɛ̌ kə ghə kopɛfoŋ khɛ̌ - melò or a sə - ghə shyɔ khɛ̌ kə.</string>
     <string name="settings_device_subtitle">%1$s · ghə kɔ %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">ŋkwɛ́t mbǒ nkwǎ</string>
+    <string name="settings_agent_body">hǎ nkwǎ ǒ tɔfɔn nka nɛ́ ŋwàʼ ntsɔ̀ʼ ó lɛ́ yúʼ</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">import</string>
     <string name="settings_import_warning">import ŋ ye ghə wɛt a ghə nka.</string>

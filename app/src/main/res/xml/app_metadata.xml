@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  What an agent is told about this app before it looks at any single function, named from the
+  `android.app.appfunctions.app_metadata` property in the manifest.
+
+  `description` is guidance for the model rather than copy for a person, so it is English by
+  construction — the same reason the KDoc in agent/YlihAppFunctions.kt is not a resource.
+  `displayDescription` is the user-visible half, so it is a string resource and shares the
+  settings row's sentence: the promise made in the switch and the one shown by whatever asks for
+  it have to be the same promise.
+-->
+<AppFunctionAppMetadata xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:description="ylih records how long each pair of headphones stays connected, locally and forever. Its functions are read-only: they report lifetime hours per pair and listening totals for today, the last seven days and the last thirty. They cannot change or delete anything. Every figure is in hours and covers headphone use only."
+    app:displayDescription="@string/settings_agent_body" />

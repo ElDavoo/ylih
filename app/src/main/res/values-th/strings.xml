@@ -135,6 +135,8 @@
     <string name="settings_devices_body">ยกเลิกการเลือกสิ่งที่ไม่ใช่หูฟัง เช่น ลำโพงรถยนต์หรือลำโพง เพื่อหยุดการบันทึก</string>
     <string name="settings_device_subtitle">%1$s · พบครั้งแรก %2$s</string>
     <string name="settings_data">ข้อมูล</string>
+    <string name="settings_agent_title">การเข้าถึงของผู้ช่วย</string>
+    <string name="settings_agent_body">ให้ผู้ช่วยในโทรศัพท์นี้อ่านว่าคุณฟังไปนานเท่าใด</string>
     <string name="settings_export">ส่งออก json</string>
     <string name="settings_import">นำเข้า</string>
     <string name="settings_import_warning">การนำเข้าจะแทนที่ข้อมูลทั้งหมดที่มีอยู่ในขณะนี้</string>

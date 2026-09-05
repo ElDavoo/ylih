@@ -134,6 +134,8 @@
     <string name="settings_devices_body">märgi välja kõik, mis ei ole kõrvaklapid - automagnitofon või kõlari - et lõpetada selle salvestamine.</string>
     <string name="settings_device_subtitle">%1$s · esimest korda nähtud %2$s</string>
     <string name="settings_data">andmed</string>
+    <string name="settings_agent_title">assistendi juurdepääs</string>
+    <string name="settings_agent_body">luba selle telefoni assistendil lugeda, kui kaua oled kuulanud</string>
     <string name="settings_export">ekspordi json</string>
     <string name="settings_import">import</string>
     <string name="settings_import_warning">importimine asendab kõik praegu salvestatud.</string>

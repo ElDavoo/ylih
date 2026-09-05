@@ -126,6 +126,8 @@
     <string name="settings_devices_body">kannya emitwe gy’okuba ntuufu - kuggi oba linnya - okukoma okukikumbila kyo.</string>
     <string name="settings_device_subtitle">%1$s · kwokikitamu okukira %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">okuyingira kw’omuyambi</string>
+    <string name="settings_agent_body">kkiriza omuyambi ali ku ssimu eno asome obudde bw’omaze ng’owuliriza</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">layikamu</string>
     <string name="settings_import_warning">layikamu kikika buli kimu ekikoma okumala.</string>

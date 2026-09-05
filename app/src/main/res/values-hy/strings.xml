@@ -126,6 +126,8 @@
     <string name="settings_devices_body">վերացրեք ամբողջ, որ ականջակցեր չէ — ավտոմոբիլային ստերեո կամ բարձրախոս — դրա գրանցումը դադարեցնել</string>
     <string name="settings_device_subtitle">%1$s · առաջին անգամ տեսել %2$s</string>
     <string name="settings_data">տվյալ</string>
+    <string name="settings_agent_title">օգնականի հասանելիություն</string>
+    <string name="settings_agent_body">թույլ տուր այս հեռախոսի օգնականին կարդալ, թե որքան ես լսել</string>
     <string name="settings_export">json արտահանել</string>
     <string name="settings_import">ներմուծել</string>
     <string name="settings_import_warning">ներմուծումը փոխարինում է ամբողջ պահվածը</string>

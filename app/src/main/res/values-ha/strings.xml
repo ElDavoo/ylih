@@ -126,6 +126,8 @@
     <string name="settings_devices_body">toshe komai da ba kula-kula kaɗai — wuta waja ko maɗakar — don guje riƙa shi.</string>
     <string name="settings_device_subtitle">%1$s · na farko ga’i %2$s</string>
     <string name="settings_data">bayani</string>
+    <string name="settings_agent_title">damar mataimaki</string>
+    <string name="settings_agent_body">bar mataimaki a wannan wayar ya karanta tsawon lokacin da ka saurara</string>
     <string name="settings_export">fita json</string>
     <string name="settings_import">shiga</string>
     <string name="settings_import_warning">shiga ya maye gurbin duk abin da aka riƙa jiya.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ஹெட்ஃபோன் அல்லாத எதையும் — கார் ஸ்டீரியோ அல்லது ஸ்பீக்கர் — பதிவு செய்வதை நிறுத்த தேர்வை நீக்குங்கள்.</string>
     <string name="settings_device_subtitle">%1$s · முதலில் காணப்பட்டது %2$s</string>
     <string name="settings_data">தரவு</string>
+    <string name="settings_agent_title">உதவியாளர் அணுகல்</string>
+    <string name="settings_agent_body">இந்த ஃபோனில் உள்ள உதவியாளர் நீங்கள் எவ்வளவு நேரம் கேட்டீர்கள் என்பதைப் படிக்க அனுமதிக்கவும்</string>
     <string name="settings_export">json ஏற்றுமதி</string>
     <string name="settings_import">இறக்குமதி</string>
     <string name="settings_import_warning">இறக்குமதி செய்தால் இப்போது சேமித்திருப்பது எல்லாம் மாற்றப்படும்.</string>

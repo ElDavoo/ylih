@@ -134,6 +134,8 @@
     <string name="settings_devices_body">togli la spunta a ciò che non sono cuffie — l’impianto dell’auto, una cassa — per smettere di registrarlo.</string>
     <string name="settings_device_subtitle">%1$s · prima volta %2$s</string>
     <string name="settings_data">dati</string>
+    <string name="settings_agent_title">accesso dell’assistente</string>
+    <string name="settings_agent_body">lascia che un assistente su questo telefono legga per quanto hai ascoltato</string>
     <string name="settings_export">esporta json</string>
     <string name="settings_import">importa</string>
     <string name="settings_import_warning">l’importazione sostituisce tutto quello che c’è ora.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">wuplinuj wšitko, što njejsu słuchawki — awtoradio abo spiker — zo by njestej notowaj</string>
     <string name="settings_device_subtitle">%1$s · prěnje widane %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">přistup asistenta</string>
+    <string name="settings_agent_body">dowol asistentej na tutym telefonje čitać, kak dołho sy słuchał</string>
     <string name="settings_export">JSON eksportować</string>
     <string name="settings_import">importować</string>
     <string name="settings_import_warning">importowanje wšitko aktualne nachwowane wuměnja</string>

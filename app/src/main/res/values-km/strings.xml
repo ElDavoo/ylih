@@ -126,6 +126,8 @@
     <string name="settings_devices_body">មិនផ្គត់ផ្គង់អ្វីដែលមិនឯកសារលោហៈ - ឧបករណ៍ឡើយ - ដើម្បីឈប់កត់ត្រារបស់វា។</string>
     <string name="settings_device_subtitle">%1$s · ឃើញលើកដំបូង %2$s</string>
     <string name="settings_data">ប្រវត្តិ</string>
+    <string name="settings_agent_title">ការចូលប្រើរបស់ជំនួយការ</string>
+    <string name="settings_agent_body">អនុញ្ញាតឱ្យជំនួយការនៅលើទូរសព្ទនេះអានរយៈពេលដែលអ្នកបានស្តាប់</string>
     <string name="settings_export">ក្រុមលើច json</string>
     <string name="settings_import">ក្រុមលើច</string>
     <string name="settings_import_warning">ក្រុមលើច ជំនួសវិសមស្របាលដែលកក់ទុក។</string>

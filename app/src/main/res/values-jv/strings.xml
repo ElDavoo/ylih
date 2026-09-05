@@ -126,6 +126,8 @@
     <string name="settings_devices_body">hilangna tandha kabeh sing dudu headphone — speaker mobil utawa speaker — supaya genti nulis.</string>
     <string name="settings_device_subtitle">%1$s · pertama kali katon %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">akses asisten</string>
+    <string name="settings_agent_body">ngidini asisten ing telpon iki maca suwene kowe ngrungokake</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">impor</string>
     <string name="settings_import_warning">impor ganti kabeh sing simpen saiki.</string>

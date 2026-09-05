@@ -134,6 +134,8 @@
     <string name="settings_devices_body">наухьанар магӏа йоьшу йаьхӏаллеш флажок кӏаса — автомобиль радио яккхе валар яьлча шорайтӏе.</string>
     <string name="settings_device_subtitle">%1$s · анхи гӏаллачу %2$s</string>
     <string name="settings_data">ан</string>
+    <string name="settings_agent_title">гӀоьнчунна дӀаваха</string>
+    <string name="settings_agent_body">хӀокху телефон тӀера гӀоьнчунна деша мел хан ахьа ладегӀна</string>
     <string name="settings_export">json-а экспорт</string>
     <string name="settings_import">импорт</string>
     <string name="settings_import_warning">импорт энца сай йоьшу массала сеъна йацира.</string>

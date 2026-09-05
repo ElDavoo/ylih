@@ -134,6 +134,8 @@
     <string name="settings_devices_body">odškrtni cokoli, co nejsou sluchátka — autorádio nebo reproduktor — aby se to přestalo zaznamenávat.</string>
     <string name="settings_device_subtitle">%1$s · poprvé viděno %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">přístup asistenta</string>
+    <string name="settings_agent_body">umožni asistentovi v tomto telefonu číst, jak dlouho jsi poslouchal</string>
     <string name="settings_export">exportovat json</string>
     <string name="settings_import">import</string>
     <string name="settings_import_warning">import nahradí vše, co je teď uložené.</string>

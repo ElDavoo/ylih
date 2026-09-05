@@ -126,6 +126,8 @@
     <string name="settings_devices_body">leungitkeun ceklis naon waé nu lain headphone — stéréo mobil atawa spéker — sangkan eureun dicatet.</string>
     <string name="settings_device_subtitle">%1$s · katingali pangheulana %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">aksés asistén</string>
+    <string name="settings_agent_body">idinan asistén dina télépon ieu maca sabaraha lila anjeun ngadéngékeun</string>
     <string name="settings_export">ékspor json</string>
     <string name="settings_import">impor</string>
     <string name="settings_import_warning">ngimpor ngaganti sagalana nu ayeuna disimpen.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">rusia eshimanyisio khu shindu shioosi shishili bindu bio khuulira tawe — redio ye emotoka nohomba spika — kho shirekhe okhwandikwa.</string>
     <string name="settings_device_subtitle">%1$s · shialolwa okhuranga %2$s</string>
     <string name="settings_data">amakhuwa</string>
+    <string name="settings_agent_title">okhwinjila khw’omukhonyi</string>
+    <string name="settings_agent_body">lekha omukhonyi ali khu simu ino asome ebise ebia wawulila</string>
     <string name="settings_export">rusia json</string>
     <string name="settings_import">injisia</string>
     <string name="settings_import_warning">okhwinjisia khukalushinjia buli eshindu eshibikilwe lelo.</string>

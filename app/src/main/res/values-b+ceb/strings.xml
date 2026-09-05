@@ -134,6 +134,8 @@
     <string name="settings_devices_body">aalis-alisan ang mga hindi ito headphones — isang car stereo o isang speaker — upang tumigil sa pag-record nito.</string>
     <string name="settings_device_subtitle">%1$s · una nakita %2$s</string>
     <string name="settings_data">datos</string>
+    <string name="settings_agent_title">pag-access sa assistant</string>
+    <string name="settings_agent_body">tugoti ang assistant niini nga telepono nga basahon kung unsa ka dugay ka namati</string>
     <string name="settings_export">i-export ang json</string>
     <string name="settings_import">mag-import</string>
     <string name="settings_import_warning">ang pag-import ay papalit ng lahat ng kasalukuyang nakatala.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">a wu yi a ma na mba kuke wu - a ka stereo yi a ma a speaker - ya kpo a ka ti a wu</string>
     <string name="settings_device_subtitle">%1$s · a ti ta %2$s</string>
     <string name="settings_data">a ma yi</string>
+    <string name="settings_agent_title">a ka lɛ asistan</string>
+    <string name="settings_agent_body">a bɛ asistan a fon yi wu ka kanɖe a wu nu ka wu si</string>
     <string name="settings_export">a yu json</string>
     <string name="settings_import">a ko di</string>
     <string name="settings_import_warning">a ko di yi wu di a ma yi a ta na yi a ka ta</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">toghete i checkbox su le cose che no xe orecute - uno stereo de machina o un altoparlante - per evitar de registrare quelle.</string>
     <string name="settings_device_subtitle">%1$s · visto la prima volta %2$s</string>
     <string name="settings_data">dati</string>
+    <string name="settings_agent_title">acesso de l’asistente</string>
+    <string name="settings_agent_body">lassa che un asistente de sto telefono el lesa quanto tenpo ti ga scoltà</string>
     <string name="settings_export">esporta json</string>
     <string name="settings_import">importa</string>
     <string name="settings_import_warning">importare rimpiassa tuto quelo che xe stao archiviato.</string>

@@ -95,6 +95,10 @@ KEEP_BY_NAME = {
         "same route as LifetimeWidget",
     "it.eldavo.ylih.widget.ChartWidget":
         "same route as LifetimeWidget",
+    "it.eldavo.ylih.agent.YlihAppFunctionService":
+        "named in the merged manifest, and it is the only thing that names the KSP-generated app "
+        "function service at all — renamed, it still installs and the OS simply never binds it, "
+        "so the functions are advertised and uncallable",
 }
 
 # Resource -> why nothing in code points at it, so the shrinker's verdict is the only evidence.
@@ -113,6 +117,9 @@ KEEP_RESOURCES = {
         "android:description, named only from res/xml, so the picker has nothing to say about it",
     "string:widget_activity_description": "same, for the activity widget",
     "string:widget_chart_description": "same, for the chart widget",
+    "xml:app_metadata":
+        "the <application>'s android.app.appfunctions.app_metadata property, named nowhere in "
+        "code — shrunk away, an agent gets the functions and nothing about what the app is for",
 }
 
 # A class line in mapping.txt: `<original> -> <obfuscated>:` at column 0. Members are indented,

@@ -134,6 +134,8 @@
     <string name="settings_devices_body">malmarku kion ajn, kio ne estas altkuraj aŭdiloj — aŭton-stéreo aŭ parolilo — por ĉesi ĝin registri.</string>
     <string name="settings_device_subtitle">%1$s · unue vidita %2$s</string>
     <string name="settings_data">datumoj</string>
+    <string name="settings_agent_title">aliro por asistanto</string>
+    <string name="settings_agent_body">permesu al asistanto en ĉi tiu telefono legi kiom longe vi aŭskultis</string>
     <string name="settings_export">elportu json</string>
     <string name="settings_import">enportu</string>
     <string name="settings_import_warning">enporto anstataŭigas ĉion nuntempe konservita.</string>

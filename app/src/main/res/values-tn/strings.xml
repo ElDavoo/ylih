@@ -126,6 +126,8 @@
     <string name="settings_devices_body">tlhopha kopong</string>
     <string name="settings_device_subtitle">%1$s · go qala %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">phitlhelelo ya mothusi</string>
+    <string name="settings_agent_body">letla mothusi mo mogaleng ono go bala gore o reeditse sebaka se se kae</string>
     <string name="settings_export">json go kotula</string>
     <string name="settings_import">go kopanela</string>
     <string name="settings_import_warning">go kopanela go leonatsa otlhe</string>

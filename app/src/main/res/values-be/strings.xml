@@ -134,6 +134,8 @@
     <string name="settings_devices_body">звярніце на тое, што не з’яўляецца наушніком — аўтамагнітола або дынамік, — каб адключыць яго запіс.</string>
     <string name="settings_device_subtitle">%1$s · першы раз замечана %2$s</string>
     <string name="settings_data">дадзеныя</string>
+    <string name="settings_agent_title">доступ памочніка</string>
+    <string name="settings_agent_body">дазволь памочніку на гэтым тэлефоне чытаць, як доўга ты слухаў</string>
     <string name="settings_export">экспорт json</string>
     <string name="settings_import">імпорт</string>
     <string name="settings_import_warning">імпорт замяніць усё, што зараз захавана.</string>

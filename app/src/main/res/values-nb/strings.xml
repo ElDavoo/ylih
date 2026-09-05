@@ -137,6 +137,8 @@
     <string name="settings_devices_body">fjern haken for alt som ikke er hodetelefoner — et bilstereoanlegg eller en høyttaler — for å slutte å registrere det.</string>
     <string name="settings_device_subtitle">%1$s · først sett %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">assistenttilgang</string>
+    <string name="settings_agent_body">la en assistent på denne telefonen lese hvor lenge du har lyttet</string>
     <string name="settings_export">eksportér json</string>
     <string name="settings_import">importér</string>
     <string name="settings_import_warning">import erstatter alt som er lagret nå.</string>

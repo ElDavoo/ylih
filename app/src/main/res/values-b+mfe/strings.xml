@@ -126,6 +126,8 @@
     <string name="settings_devices_body">dekose tou seki pa lekoutèr — radio loto ouswa enn ampli — pou aret anrezistre li.</string>
     <string name="settings_device_subtitle">%1$s · trouve premie fwa %2$s</string>
     <string name="settings_data">done</string>
+    <string name="settings_agent_title">akse asistan</string>
+    <string name="settings_agent_body">les enn asistan lor sa telefonn la lir komye letan to finn ekoute</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">inport</string>
     <string name="settings_import_warning">inport ranplas tou seki’nn garde aster.</string>

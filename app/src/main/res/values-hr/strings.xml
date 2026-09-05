@@ -126,6 +126,8 @@
     <string name="settings_devices_body">odznači sve što nije slušalice — auto-stereo ili zvučnik — da prestaneš bilježiti.</string>
     <string name="settings_device_subtitle">%1$s · prvi put vidljen %2$s</string>
     <string name="settings_data">podaci</string>
+    <string name="settings_agent_title">pristup asistentu</string>
+    <string name="settings_agent_body">dopusti asistentu na ovom telefonu da pročita koliko si dugo slušao</string>
     <string name="settings_export">izvezi json</string>
     <string name="settings_import">uvezi</string>
     <string name="settings_import_warning">uvoz zamjenjuje sve što je trenutno pohranjeno.</string>

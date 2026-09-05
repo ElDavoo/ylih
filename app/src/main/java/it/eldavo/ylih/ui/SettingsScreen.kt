@@ -70,6 +70,7 @@ fun SettingsScreen(
     val counting by viewModel.counting.collectAsStateWithLifecycle()
     val devices by viewModel.devices.collectAsStateWithLifecycle()
     val language by viewModel.language.collectAsStateWithLifecycle()
+    val agentAccess by viewModel.agentAccess.collectAsStateWithLifecycle()
     var confirmImport by remember { mutableStateOf<android.net.Uri?>(null) }
     var pickingLanguage by remember { mutableStateOf(false) }
     var pendingLanguage by remember { mutableStateOf<String?>(null) }
@@ -250,6 +251,34 @@ fun SettingsScreen(
         }
 
         SectionHeader(stringResource(R.string.settings_data))
+        // In the data section rather than beside the tracking modes: this changes nothing about
+        // what is recorded, only who else may read it. Off until it is turned on, and off is the
+        // state the app functions actually ship in — see `agent/YlihAppFunctions.kt`.
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .toggleable(
+                    value = agentAccess,
+                    role = Role.Switch,
+                    onValueChange = viewModel::setAgentAccess,
+                )
+                .padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Column(Modifier.weight(1f)) {
+                Text(
+                    stringResource(R.string.settings_agent_title),
+                    style = MaterialTheme.typography.bodyLarge,
+                )
+                Text(
+                    stringResource(R.string.settings_agent_body),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+            Spacer(Modifier.width(12.dp))
+            Switch(checked = agentAccess, onCheckedChange = null)
+        }
         // ButtonGroupScope is not a composable scope, so the labels are resolved out here.
         val exportLabel = stringResource(R.string.settings_export)
         val importLabel = stringResource(R.string.settings_import)

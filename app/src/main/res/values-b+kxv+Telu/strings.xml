@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ఇఏ హేద్ఫోన సిలి — గాడి స్పికార బా ఆరా స్పికార — ఆ-నా చిన్హా వేట్టా ఇడు, ఆటేనే ఆ లేఖా ఆ సిలి.</string>
     <string name="settings_device_subtitle">%1$s · మోదాలా %2$s</string>
     <string name="settings_data">డాటా</string>
+    <string name="settings_agent_title">సహాయక-కి ప్రవేశ</string>
+    <string name="settings_agent_body">ఈ ఫోన-టేనే మాణ్డి సహాయక ని మీరు కేత్రా వెల్లా విణ్డితేరి ఆని వాచుంక హిని</string>
     <string name="settings_export">json బాహారా</string>
     <string name="settings_import">భితారా</string>
     <string name="settings_import_warning">భితారా ఇడా ఇప్పా మాణ్డా సాబు బాదాలేను.</string>

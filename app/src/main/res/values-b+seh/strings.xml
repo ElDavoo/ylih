@@ -126,6 +126,8 @@
     <string name="settings_devices_body">kankhani chilichondi chomwe si matako - chirikiti cha magalimoto kapena msiska - kuima kunapakini.</string>
     <string name="settings_device_subtitle">%1$s · choyamba kuwoneka %2$s</string>
     <string name="settings_data">deta</string>
+    <string name="settings_agent_title">kupfika kwa nyakuthandiza</string>
+    <string name="settings_agent_body">lekani nyakuthandiza pa foni ino aleri nthawe yakuti mwabvesera</string>
     <string name="settings_export">kutulutsa json</string>
     <string name="settings_import">kutonya</string>
     <string name="settings_import_warning">kutonya kusintha zonse zosumudzigwidwitsa.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ܐܥܒܪ ܢܝܫܐ ܡܢ ܟܠ ܡܕܡ ܕܠܐ ܗܘܐ ܡܫܡܥܢܝܬܐ — ܪܕܝܘ ܕܪܕܝܬܐ ܐܘ ܡܙܥܩܢܐ — ܕܢܬܒܛܠ ܟܬܒܗ.</string>
     <string name="settings_device_subtitle">%1$s · ܐܬܚܙܝ ܩܕܡܝܐܝܬ %2$s</string>
     <string name="settings_data">ܝܕܥܬܐ</string>
+    <string name="settings_agent_title">ܡܥܠܢܘܬܐ ܕܡܥܕܪܢܐ</string>
+    <string name="settings_agent_body">ܫܒܘܩ ܠܡܥܕܪܢܐ ܥܠ ܗܢܐ ܛܠܝܦܘܢ ܕܢܩܪܐ ܟܡܐ ܙܒܢܐ ܫܡܥܬ</string>
     <string name="settings_export">ܐܦܩ json</string>
     <string name="settings_import">ܐܥܠ</string>
     <string name="settings_import_warning">ܡܥܠܢܘܬܐ ܡܚܠܦܐ ܟܠ ܡܕܡ ܕܐܝܬ ܗܫܐ.</string>

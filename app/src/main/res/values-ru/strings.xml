@@ -134,6 +134,8 @@
     <string name="settings_devices_body">снимите отметку с того, что не является наушниками — автомагнитолы или колонки, — чтобы прекратить их запись.</string>
     <string name="settings_device_subtitle">%1$s · впервые замечено %2$s</string>
     <string name="settings_data">данные</string>
+    <string name="settings_agent_title">доступ помощника</string>
+    <string name="settings_agent_body">разреши помощнику на этом телефоне читать, сколько ты слушал</string>
     <string name="settings_export">экспорт json</string>
     <string name="settings_import">импорт</string>
     <string name="settings_import_warning">импорт заменит всё, что сейчас сохранено.</string>

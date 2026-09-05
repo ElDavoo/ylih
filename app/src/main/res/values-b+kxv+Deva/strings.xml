@@ -126,6 +126,8 @@
     <string name="settings_devices_body">इए हेद्फोन सिलि — गाडि स्पिकार बा आरा स्पिकार — आ-ना चिन्हा वेट्टा इडु, आटेने आ लेखा आ सिलि.</string>
     <string name="settings_device_subtitle">%1$s · मोदाला %2$s</string>
     <string name="settings_data">डाटा</string>
+    <string name="settings_agent_title">सहायक-कि प्रवेश</string>
+    <string name="settings_agent_body">ई फोन-टेने माण्डि सहायक नि मीरु केत्रा वेल्ला विण्डितेरि आनि वाचुंक हिनि</string>
     <string name="settings_export">json बाहारा</string>
     <string name="settings_import">भितारा</string>
     <string name="settings_import_warning">भितारा इडा इप्पा माण्डा साबु बादालेनु.</string>

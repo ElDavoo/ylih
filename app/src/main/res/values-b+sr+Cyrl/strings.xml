@@ -126,6 +126,8 @@
     <string name="settings_devices_body">одзначи било шта што није слушалице - аутомобилски стереo или звучник - да спречиш снимање.</string>
     <string name="settings_device_subtitle">%1$s · први пут виђено %2$s</string>
     <string name="settings_data">подаци</string>
+    <string name="settings_agent_title">приступ асистенту</string>
+    <string name="settings_agent_body">дозволи асистенту на овом телефону да прочита колико дуго си слушао</string>
     <string name="settings_export">извези json</string>
     <string name="settings_import">увези</string>
     <string name="settings_import_warning">увоз замењује све тренутно сачувано.</string>

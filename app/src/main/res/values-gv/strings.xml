@@ -126,6 +126,8 @@
     <string name="settings_devices_body">unch dy chooilley red ta gyn chluichyn chlappeagh — stereo kaart ny gleashtagh — dy stadey cur shoh.</string>
     <string name="settings_device_subtitle">%1$s · fir shoh shoh %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">roshtyn yn chooneyder</string>
+    <string name="settings_agent_body">lhig da cooneyder er y phone shoh lhaih cre cha foddey t’ou er chlashtyn</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">jiouse</string>
     <string name="settings_import_warning">ta jiouse cur rish dy chooilley tra ta feme.</string>

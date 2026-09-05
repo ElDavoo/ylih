@@ -135,6 +135,8 @@
     <string name="settings_devices_body">desmarca lo que no sean auriculares — un equipo de coche o un altavoz — para dejar de registrarlo.</string>
     <string name="settings_device_subtitle">%1$s · primera vez %2$s</string>
     <string name="settings_data">datos</string>
+    <string name="settings_agent_title">acceso del asistente</string>
+    <string name="settings_agent_body">deja que un asistente de este teléfono lea cuánto tiempo has escuchado</string>
     <string name="settings_export">exportar json</string>
     <string name="settings_import">importar</string>
     <string name="settings_import_warning">importar reemplaza todo lo almacenado actualmente.</string>

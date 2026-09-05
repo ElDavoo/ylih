@@ -126,6 +126,8 @@
     <string name="settings_devices_body">uncheck alles dat net kappelen ass — een auto stereo oder lautsprecher — fir et ze stoppen.</string>
     <string name="settings_device_subtitle">%1$s · éischt gese %2$s</string>
     <string name="settings_data">donnéeën</string>
+    <string name="settings_agent_title">assistent-zougang</string>
+    <string name="settings_agent_body">looss en assistent op dësem telefon liesen, wéi laang s du nogelauschtert hues</string>
     <string name="settings_export">exportéier json</string>
     <string name="settings_import">importéieren</string>
     <string name="settings_import_warning">importéieren ersat alles elo gespäichert.</string>

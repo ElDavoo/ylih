@@ -58,6 +58,12 @@ file you can keep; Import puts it back. Android's own backup is switched on, so 
 survive a new phone — that is the system copying the file, not the app sending it anywhere. And
 uninstalling offers to keep the data, in case you change your mind.
 
+**Assistants, only if you ask.** Android 17 lets an app offer read-only questions to an on-device
+assistant. ylih offers two — lifetime hours per pair, and today / 7-day / 30-day totals — and they
+ship switched off in the build rather than merely ignored: until you turn on Settings → assistant
+access, the system does not list them at all. Neither can change or delete anything, and turning
+the switch back off disables them with the system, not just inside the app.
+
 The full policy is in [PRIVACY.md](PRIVACY.md).
 
 ## Which download?

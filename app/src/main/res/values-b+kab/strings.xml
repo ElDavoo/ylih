@@ -126,6 +126,8 @@
     <string name="settings_devices_body">salis ayen ur d-iseḥḥil taqcict — tazzwart neɣ talalit — akken ad n-ḥbis anebdad-is.</string>
     <string name="settings_device_subtitle">%1$s · tizi tella wiyaḍ %2$s</string>
     <string name="settings_data">isefka</string>
+    <string name="settings_agent_title">anekcum n umɛiwen</string>
+    <string name="settings_agent_body">eǧǧ amɛiwen n utilifun-a ad iɣer acḥal n wakud i tesliḍ</string>
     <string name="settings_export">ffeɣ json</string>
     <string name="settings_import">kcem</string>
     <string name="settings_import_warning">akcem ay-d-bddel akk isefka ay-ttwafeɣ tura.</string>

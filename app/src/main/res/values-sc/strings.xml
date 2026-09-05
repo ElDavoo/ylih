@@ -126,6 +126,8 @@
     <string name="settings_devices_body">tollit sa marca dae cudda cosa chi no est cuffias - un caravana o un altoparlante - pro istopada de reghistrare issa.</string>
     <string name="settings_device_subtitle">%1$s · prima bida %2$s</string>
     <string name="settings_data">datos</string>
+    <string name="settings_agent_title">atzessu de s’assistente</string>
+    <string name="settings_agent_body">lassa chi un’assistente de custu telefonu leggat cantu tempus as ascurtadu</string>
     <string name="settings_export">exporta json</string>
     <string name="settings_import">importa</string>
     <string name="settings_import_warning">importare cambiat totu sa cosa sa est archiviada in custu momentu.</string>

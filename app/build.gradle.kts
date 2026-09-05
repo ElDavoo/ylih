@@ -325,12 +325,19 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.material3.adaptive)
     implementation(libs.androidx.compose.material.icons.core)
     debugImplementation(libs.androidx.compose.ui.tooling)
 
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
+
+    // The second KSP processor. It reads agent/YlihAppFunctions.kt and writes the concrete
+    // service the manifest names plus the schema XML that goes in assets/; the lint->ksp wiring
+    // at the bottom of this file already matches every ksp*Kotlin task, so it needs no edit.
+    implementation(libs.androidx.appfunctions)
+    ksp(libs.androidx.appfunctions.compiler)
 
     testImplementation(libs.junit)
     testImplementation(libs.robolectric)

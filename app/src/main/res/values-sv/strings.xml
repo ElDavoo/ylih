@@ -135,6 +135,8 @@
     <string name="settings_devices_body">avmarkera allt som inte är hörlurar — en bilstereo eller en högtalare — för att sluta registrera det.</string>
     <string name="settings_device_subtitle">%1$s · sågs först %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">assistentåtkomst</string>
+    <string name="settings_agent_body">låt en assistent i den här telefonen läsa hur länge du har lyssnat</string>
     <string name="settings_export">exportera json</string>
     <string name="settings_import">importera</string>
     <string name="settings_import_warning">import ersätter allt som lagras just nu.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">remove tick from anything wey no be headphone — car stereo abi speaker — make e stop to record am.</string>
     <string name="settings_device_subtitle">%1$s · first see am %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">assistant access</string>
+    <string name="settings_agent_body">make assistant wey dey dis phone read how long you don dey listen</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">import</string>
     <string name="settings_import_warning">to import go replace everything wey dey save now.</string>

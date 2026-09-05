@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ଇଏ ହେଦ୍ଫୋନ ସିଲି — ଗାଡ଼ି ସ୍ପିକାର ବା ଆରା ସ୍ପିକାର — ଆ-ନା ଚିନ୍ହା ୱେଟ୍ଟା ଇଡ଼ୁ, ଆଟେନେ ଆ ଲେଖା ଆ ସିଲି.</string>
     <string name="settings_device_subtitle">%1$s · ମୋଦାଲା %2$s</string>
     <string name="settings_data">ଡ଼ାଟା</string>
+    <string name="settings_agent_title">ସହାୟକ-କି ପ୍ରବେଶ</string>
+    <string name="settings_agent_body">ଈ ଫୋନ-ଟେନେ ମାଣ୍ଡ଼ି ସହାୟକ ନି ମୀରୁ କେତ୍ରା ୱେଲ୍ଲା ୱିଣ୍ଡିତେରି ଆନି ୱାଚୁଙ୍କ ହିନି</string>
     <string name="settings_export">json ବାହାରା</string>
     <string name="settings_import">ଭିତାରା</string>
     <string name="settings_import_warning">ଭିତାରା ଇଡ଼ା ଇପ୍ପା ମାଣ୍ଡ଼ା ସାବୁ ବାଦାଲେନୁ.</string>

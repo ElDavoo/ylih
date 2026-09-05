@@ -126,6 +126,8 @@
     <string name="settings_devices_body">هر چیزی را که هدفون نیست - استریو ماشین یا بلندگو - برای جلوگیری از ضبط آن بی انتخاب کنید.</string>
     <string name="settings_device_subtitle">%1$s · برای اولین بار دیده شد %2$s</string>
     <string name="settings_data">داده ها</string>
+    <string name="settings_agent_title">دسترسی دستیار</string>
+    <string name="settings_agent_body">بلین این تلفون سر دستیار بخوندنه که چقدر گوش هدائی</string>
     <string name="settings_export">json صادر کنید</string>
     <string name="settings_import">وارد کنید</string>
     <string name="settings_import_warning">وارد کردن همه چیز ذخیره شده را جایگزین می کند.</string>

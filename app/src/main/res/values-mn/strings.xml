@@ -126,6 +126,8 @@
     <string name="settings_devices_body">чихэвч биш аливаа зүйлийн — машины радио эсвэл чанга яригч — тэмдгийг авч, бүртгэхийг зогсоо.</string>
     <string name="settings_device_subtitle">%1$s · анх харагдсан %2$s</string>
     <string name="settings_data">өгөгдөл</string>
+    <string name="settings_agent_title">туслахын хандалт</string>
+    <string name="settings_agent_body">энэ утасны туслахад хэр удаан сонссоныг чинь уншихыг зөвшөөр</string>
     <string name="settings_export">json гаргах</string>
     <string name="settings_import">оруулах</string>
     <string name="settings_import_warning">оруулах нь одоо хадгалагдсан бүхнийг солино.</string>

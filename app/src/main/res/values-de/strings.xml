@@ -137,6 +137,8 @@
     <string name="settings_devices_body">entferne das Häkchen bei allem, was keine Kopfhörer sind — eine Autoanlage oder ein Lautsprecher —, damit es nicht mehr erfasst wird.</string>
     <string name="settings_device_subtitle">%1$s · erstmals gesehen %2$s</string>
     <string name="settings_data">Daten</string>
+    <string name="settings_agent_title">assistenzzugriff</string>
+    <string name="settings_agent_body">einem assistenten auf diesem telefon erlauben zu lesen, wie lange du gehört hast</string>
     <string name="settings_export">json exportieren</string>
     <string name="settings_import">importieren</string>
     <string name="settings_import_warning">beim Importieren wird alles ersetzt, was derzeit gespeichert ist.</string>

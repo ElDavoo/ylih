@@ -134,6 +134,8 @@
     <string name="settings_devices_body">гулаглыг олмајан һеч нә — автомобил стереосистеми вә ја акустик — гејд етмәји дајандырмаг үчүн ишарәсини чыхарын.</string>
     <string name="settings_device_subtitle">%1$s · илк ҝөрүлмә %2$s</string>
     <string name="settings_data">мәлуматлар</string>
+    <string name="settings_agent_title">ассистент ҝириши</string>
+    <string name="settings_agent_body">бу телефондакы ассистентә нә гәдәр гулаг асдығынызы охумаға иҹазә верин</string>
     <string name="settings_export">жсон-ә ихраҹ ет</string>
     <string name="settings_import">идхал ет</string>
     <string name="settings_import_warning">идхал һазырда сахланылан һәр шеји әвәз едир.</string>

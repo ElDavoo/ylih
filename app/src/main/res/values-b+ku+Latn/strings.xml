@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ji hemû dê nabe gasnav — radioya mobîl an guharîn — jêbirin da ku rû nave bike.</string>
     <string name="settings_device_subtitle">%1$s · pêşîn dît %2$s</string>
     <string name="settings_data">danekin</string>
+    <string name="settings_agent_title">gihîştina alîkar</string>
+    <string name="settings_agent_body">bihêle alîkarek li ser vê telefonê bixwîne te çiqas guhdarî kiriye</string>
     <string name="settings_export">json derve bike</string>
     <string name="settings_import">derve bike</string>
     <string name="settings_import_warning">derve kirina vî hemû tişt ku ni-ve bike.</string>

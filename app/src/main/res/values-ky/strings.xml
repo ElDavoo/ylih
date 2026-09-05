@@ -126,6 +126,8 @@
     <string name="settings_devices_body">наушниктер болбогон нерселерди текшерүүнүн-ишээлүүнүн ордуна - авто стерео же спикер - аны жазып алуудан токтотуу.</string>
     <string name="settings_device_subtitle">%1$s · биринчи жолу %2$s</string>
     <string name="settings_data">маалымат</string>
+    <string name="settings_agent_title">жардамчынын мүмкүнчүлүгү</string>
+    <string name="settings_agent_body">бул телефондогу жардамчыга канча убакыт уккануңду окууга уруксат бер</string>
     <string name="settings_export">json экспорт кылуу</string>
     <string name="settings_import">импорт</string>
     <string name="settings_import_warning">импорт азыр сакталган баарын алмаштырат.</string>

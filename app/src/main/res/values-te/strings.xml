@@ -126,6 +126,8 @@
     <string name="settings_devices_body">హెడ్‌ఫోన్‌లు కానిదేదైనా — కారు స్టీరియో లేదా స్పీకర్ — నమోదు ఆపడానికి ఎంపిక తీసేయండి.</string>
     <string name="settings_device_subtitle">%1$s · మొదట కనిపించింది %2$s</string>
     <string name="settings_data">డేటా</string>
+    <string name="settings_agent_title">సహాయకుని యాక్సెస్</string>
+    <string name="settings_agent_body">ఈ ఫోన్‌లోని సహాయకుడు మీరు ఎంతసేపు విన్నారో చదవడానికి అనుమతించండి</string>
     <string name="settings_export">json ఎగుమతి</string>
     <string name="settings_import">దిగుమతి</string>
     <string name="settings_import_warning">దిగుమతి చేస్తే ఇప్పుడు నిల్వ ఉన్నదంతా మారిపోతుంది.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">هر چيز چې هیڈفون نه وي - موټر اسپیکر یا اسپیکر - شمار کولو بند کړئ.</string>
     <string name="settings_device_subtitle">%1$s · لومړي ځل لیدل شو %2$s</string>
     <string name="settings_data">ډاټا</string>
+    <string name="settings_agent_title">د مرستيال لاسرسی</string>
+    <string name="settings_agent_body">پدې تلیفون کې مرستیال ته اجازه ورکړئ چې ولولي تاسو څومره وخت اورېدلي</string>
     <string name="settings_export">json نمایندګی</string>
     <string name="settings_import">درواړ</string>
     <string name="settings_import_warning">درواړ هرچې اوس ذخیره شوي بدل کوي.</string>

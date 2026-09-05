@@ -134,6 +134,8 @@
     <string name="settings_devices_body">tynnu’r tic oddi wrth unrhyw beth nad yw’n glustffonau — radio ceir neu siaradwr — i roi’r gorau i’w gofnodi.</string>
     <string name="settings_device_subtitle">%1$s · gweld yn gyntaf %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">mynediad cynorthwyydd</string>
+    <string name="settings_agent_body">gadael i gynorthwyydd ar y ffôn hwn ddarllen pa mor hir rwyt ti wedi gwrando</string>
     <string name="settings_export">allforio json</string>
     <string name="settings_import">mewnforio</string>
     <string name="settings_import_warning">mae mewnforio yn disodli popeth sy’n cael ei storio ar hyn o bryd.</string>

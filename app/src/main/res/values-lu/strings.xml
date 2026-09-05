@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ka ipile kinzoto</string>
     <string name="settings_device_subtitle">%1$s · kusobanula %2$s</string>
     <string name="settings_data">malanga</string>
+    <string name="settings_agent_title">kwinga kwa mukwashi</string>
+    <string name="settings_agent_body">leka mukwashi udi pa telefone yino atange kitatyi kyowaivwene</string>
     <string name="settings_export">kuleta kinzoto</string>
     <string name="settings_import">kuwambila</string>
     <string name="settings_import_warning">kuwambila kamikilile</string>

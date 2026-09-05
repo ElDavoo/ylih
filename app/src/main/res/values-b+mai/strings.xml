@@ -126,6 +126,8 @@
     <string name="settings_devices_body">जे किछु हेडफोन नहि अछि — गाड़ीक रेडियो वा स्पीकर — ओकर निशान हटा दिअ जाहिसँ ओ अभिलेखित नहि हो।</string>
     <string name="settings_device_subtitle">%1$s · पहिल बेर देखल %2$s</string>
     <string name="settings_data">डाटा</string>
+    <string name="settings_agent_title">सहायकक पहुँच</string>
+    <string name="settings_agent_body">एहि फोनक सहायक केँ पढ़ऽ दियौक जे अहाँ कतेक काल सुनलहुँ</string>
     <string name="settings_export">json निर्यात</string>
     <string name="settings_import">आयात</string>
     <string name="settings_import_warning">आयात कएलासँ एखन जे किछु राखल अछि सभ बदलि जाएत।</string>

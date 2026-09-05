@@ -137,6 +137,8 @@
     <string name="settings_devices_body">जो हेडफ़ोन नहीं है — जैसे कार स्टीरियो या स्पीकर — उसे अनचेक करें ताकि उसकी रिकॉर्डिंग रुक जाए।</string>
     <string name="settings_device_subtitle">%1$s · पहली बार %2$s को दिखी</string>
     <string name="settings_data">डेटा</string>
+    <string name="settings_agent_title">सहायक की पहुँच</string>
+    <string name="settings_agent_body">इस फ़ोन के सहायक को पढ़ने दें कि आपने कितनी देर सुना</string>
     <string name="settings_export">json निर्यात करें</string>
     <string name="settings_import">आयात करें</string>
     <string name="settings_import_warning">आयात करने से अभी संग्रहीत सब कुछ बदल जाएगा।</string>

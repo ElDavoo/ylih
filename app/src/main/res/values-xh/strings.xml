@@ -126,6 +126,8 @@
     <string name="settings_devices_body">aar konke akufani nesimilambo — umotori okanye incwadi — uyazivala ukuniphakamisa.</string>
     <string name="settings_device_subtitle">%1$s · ibona kuqala %2$s</string>
     <string name="settings_data">idata</string>
+    <string name="settings_agent_title">ufikelelo lomncedisi</string>
+    <string name="settings_agent_body">vumela umncedisi kule fowuni afunde ukuba uphulaphule ixesha elingakanani</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">ngena</string>
     <string name="settings_import_warning">ukungena kutshintshe yonke into eyafakwa ngoku.</string>
