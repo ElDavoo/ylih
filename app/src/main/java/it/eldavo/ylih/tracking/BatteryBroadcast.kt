@@ -12,13 +12,13 @@ package it.eldavo.ylih.tracking
  *   `sendBroadcast(intent, BLUETOOTH_CONNECT, …)`. The receiver permission is one this app already
  *   holds for the ACL broadcasts; it is not `BLUETOOTH_PRIVILEGED`, which is what would put it out
  *   of reach.
- * - **A manifest receiver is enough, provided it is exported.** It carries
- *   `FLAG_RECEIVER_INCLUDE_BACKGROUND`, the flag `BroadcastSkipPolicy.disallowBackgroundStart`
- *   reads — the same mechanism that lets [BtConnectionReceiver] run with nothing of this app
- *   resident. The stack sets identical delivery flags on the ACL broadcast and on this one, so the
- *   two arrive on the same terms, `android:exported` included: the sender is another app, and a
- *   non-exported component of ours is dropped from an implicit broadcast before the
- *   `BroadcastRecord` is even built. The manifest carries the measurement.
+ * - **A manifest receiver is enough.** It carries `FLAG_RECEIVER_INCLUDE_BACKGROUND`, the flag
+ *   `BroadcastSkipPolicy.disallowBackgroundStart` reads — the same mechanism that lets
+ *   [BtConnectionReceiver] run with nothing of this app resident. The stack sets identical
+ *   delivery flags and the same receiver permission on the ACL broadcast and on this one, so it
+ *   very probably reaches a non-exported receiver too; that has not been checked on a device the
+ *   way the ACL case has, which is why the manifest still declares this one `exported="true"`
+ *   rather than assume it.
  * - **Nobody can forge it.** It is declared `<protected-broadcast>` in the framework's own manifest,
  *   so only the system may send it and no other app can write a battery level into our database —
  *   which is also what makes exporting the receiver free of consequence.

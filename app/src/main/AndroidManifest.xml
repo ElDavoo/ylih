@@ -61,27 +61,13 @@
             android:foregroundServiceType="connectedDevice" />
 
         <!--
-          ACL_CONNECTED/ACL_DISCONNECTED carry FLAG_RECEIVER_INCLUDE_BACKGROUND, so this manifest
-          receiver still runs on Android 8+ with nothing of ours resident.
-
-          exported="true", and it has to be. This used to read "false" with a comment saying the
-          system delivers protected broadcasts to non-exported receivers — which was true when it
-          was written and is not any more. The Bluetooth stack is a separate app (uid 1002), and an
-          implicit broadcast from another app no longer resolves a non-exported component of ours:
-          AMS drops it in SaferIntentUtils.filterNonExportedComponents, before the BroadcastRecord
-          exists, so it does not even appear as a skipped receiver in `dumpsys activity broadcasts`.
-
-          Measured on a Mi 10T running Android 16: with exported="false" this receiver saw nothing
-          across five Bluetooth off/on cycles while another app's *exported* receiver logged every
-          one of them; flipping this attribute alone made it fire on the next cycle. That is the
-          whole of Bluetooth-only tracking, so with it false the default mode records nothing.
-
-          Exporting costs nothing here: both actions are <protected-broadcast>, so only the system
-          may send them and no other app can forge a connection.
+          ACL_CONNECTED/ACL_DISCONNECTED are protected broadcasts carrying
+          FLAG_RECEIVER_INCLUDE_BACKGROUND, so this manifest receiver still runs on Android 8+ with
+          nothing of ours resident, non-exported.
         -->
         <receiver
             android:name=".tracking.BtConnectionReceiver"
-            android:exported="true">
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.bluetooth.device.action.ACL_CONNECTED" />
                 <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED" />
@@ -92,9 +78,11 @@
           The headset's own battery level, for charge cycles. The action is @SystemApi and so cannot
           be named from the SDK, but it is a protected broadcast sent with BLUETOOTH_CONNECT as its
           receiver permission and the same FLAG_RECEIVER_INCLUDE_BACKGROUND the ACL broadcasts
-          carry — so it reaches a manifest receiver with nothing of ours resident, exactly as they
-          do, and exported for exactly the same reason theirs is. tracking/BatteryBroadcast.kt has
-          the whole reasoning.
+          carry — so it very probably reaches a non-exported receiver with nothing of ours resident,
+          exactly as they do. That has not been checked on a device the way BtConnectionReceiver's
+          delivery has (see CLAUDE.md), so this stays exported="true" for now rather than assume it:
+          a receiver whose only filter is a protected broadcast loses nothing by being exported.
+          tracking/BatteryBroadcast.kt has the whole reasoning.
         -->
         <receiver
             android:name=".tracking.BtBatteryReceiver"

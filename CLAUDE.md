@@ -206,15 +206,22 @@ last, and how has that changed" — the battery-degradation curve issue #30 aske
 
 Three things here are load-bearing and none of them is obvious.
 
-**Both Bluetooth receivers must be `exported="true"`, and this was found on a phone.** The Bluetooth
-stack is a separate app (uid 1002), and an implicit broadcast from another app no longer resolves a
-non-exported component of ours — AMS drops it in `SaferIntentUtils.filterNonExportedComponents`,
-*before* the `BroadcastRecord` exists, so it does not even show as a skipped receiver in `dumpsys
-activity broadcasts`. Measured on a Mi 10T running Android 16: with `exported="false"`,
-`BtConnectionReceiver` saw nothing across five Bluetooth off/on cycles while another app's exported
-receiver logged every one; flipping the attribute alone made both receivers fire on the next cycle.
-That attribute is the whole of Bluetooth-only tracking, so it was a live bug in the shipped app and
-not only a charge-cycles concern. Exporting costs nothing because these are protected broadcasts.
+**`BtConnectionReceiver` is `exported="false"`, and a claim that it had to be `"true"` was checked
+on a phone and found wrong.** #31 measured a Mi 10T on Android 16 and concluded a non-exported
+manifest receiver no longer resolves an implicit broadcast from another app — the Bluetooth stack
+is a separate app (uid 1002) — and shipped both Bluetooth receivers exported. #33 went back to the
+same phone with the *released* build, still `exported="false"`, and found it working: an open
+session, a scheduled `HeartbeatWorker`, and no path to either except `BtConnectionReceiver` having
+received `ACL_CONNECTED` sixteen hours after the last time `MainActivity` ran and with no reboot in
+between. The original A/B was run against a `.debug` install that had been installed, launched,
+force-stopped and `pm clear`ed repeatedly that evening, and every flip of the attribute came with a
+reinstall; a package in the *stopped* state receives no broadcasts until something launches it, so
+"the attribute" and "the reinstall that lifted the stopped state" were never actually separated.
+`BtBatteryReceiver` is left `exported="true"` regardless — `BATTERY_LEVEL_CHANGED` shares the same
+permission and delivery flags as the ACL broadcasts, so it very probably works non-exported too,
+but that has not been observed on a device the way the ACL case now has, and exporting a receiver
+whose only filter is a protected broadcast costs nothing. Don't re-derive the old conclusion from
+the same `dumpsys` output: check whether the app under test was ever in the stopped state first.
 
 **The broadcast is `@SystemApi` and that is fine — for reasons, not by luck.** Android has no public
 API for a headset's battery. `tracking/BatteryBroadcast.kt` writes out
