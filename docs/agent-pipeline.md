@@ -23,6 +23,7 @@ issues: opened
                         └──► re-triggers both  ⟲   until green + approved → merge
 
 any stage dying mid-run ──► agent:stalled ──► agent-retry.yml (every 5 h) ──► re-runs it
+a queued turn displaced ──► agent:planned, no PR ──► agent-retry.yml ──► dispatches implement
 agent:stop on issue or PR ──► agent-stop.yml ──► cancels runs, drafts the PR
 ```
 
@@ -33,6 +34,58 @@ the round counter in `agent-fix.yml`, not a condition anyone waits on.
 The stages are separate workflow runs rather than jobs in one run for two reasons: the approval
 gate for an outside issue has to sit on each stage independently, and a stage that fails can be
 re-dispatched from the Actions tab without paying for the ones before it.
+
+## One agent at a time
+
+Every stage that runs Claude names the same concurrency group, `agent-pipeline`, and none of them
+cancels in progress. So the pipeline is a single file: plan, implement, review and both fix
+stages queue behind one another across issues as much as within one, and two agents never run at
+once no matter how many issues are open.
+
+**This is a token budget, not a correctness rule.** The subscription window is about five hours.
+Three agent runs sharing one window spend it three times as fast without any of them getting
+further, and what that looked like here was every stage stopping at its turn limit at the same
+moment — a window that bought several half-finished branches instead of one merged pull request.
+Serialised, the same window pays for runs that finish. The turn limits were doubled at the same
+time (implement 300, fix 240, escalation 400, Dependabot fix 240) and every stage pinned to
+`--model opus --effort medium`, which only makes sense once the window is not being split.
+
+Job timeouts moved with the turn limits — 60 minutes to 120 wherever the budget doubled — and
+that pairing is load-bearing rather than housekeeping. A job the timeout kills skips every
+remaining step, *including* the stall record, so the retry sweep never learns the stage stopped
+and the issue sits looking planned and idle. A turn limit reached is the failure that gets
+retried; a wall-clock timeout is the one that does not.
+
+Two consequences worth knowing:
+
+**`agent-fix.yml` is deliberately not in the group.** It is a reusable workflow, so it runs
+inside its caller's run — and the caller already holds `agent-pipeline`. Asking for the same
+group from a job inside that run queues it behind a slot its own parent is holding and will not
+release, which deadlocks until the run times out. Serialising the fix stage against the rest of
+the pipeline is the caller's job; the per-issue group it keeps only has to hold its two callers
+off each other. `agent-fix-ci.yml` therefore declares the group at *workflow* level, not on the
+job that calls the fix stage.
+
+**GitHub's queue depth for a group is one.** A group holds one run in flight and exactly one
+pending; a *third* arrival cancels the pending one rather than lining up behind it, and does so
+before that run's first step, so nothing it would have written gets written. Filing issues a few
+minutes apart avoids it entirely. When it does happen:
+
+- the **implement** stage is recovered. It swaps `agent:planned` for `agent:working` only once
+  its pull request exists, so an open issue still labelled `agent:planned` with no branch of its
+  own is exactly the signature of a turn that never came — which is what `agent-retry.yml`'s
+  second sweep looks for, and what turns the group from a serial drop into a serial queue.
+- the **plan** stage is not. A plan that never ran leaves nothing behind to sweep for, so a
+  displaced one has to be re-run from the Actions tab.
+
+`Claude Code Review` joined the group too, and stopped running on agent branches at the same
+time. Agent pull requests are opened with `AGENT_PUSH_TOKEN`, so their author is you, so that
+workflow used to fire on every one of them alongside `Agent · review` — two Claude reviewers on
+the same diff for one verdict, and `Agent · review` runs the same plugin as its first pass, so
+nothing was lost by dropping the second copy. Under a serial group it also cost more than tokens:
+two arrivals per push meant the waiting one was routinely displaced, and half the time the one
+displaced was the merge gate, whose check then never reports and leaves auto-merge waiting on it
+forever.
 
 ## Setup
 
@@ -149,8 +202,10 @@ and leave everything else as it is.
 | never let it touch this issue | file with the **Note to self** template (`no-agent`) | at creation only |
 | stop it now | label the issue or PR `agent:stop` | any time |
 | a stage died mid-run | it labels `agent:stalled`; `agent-retry.yml` re-runs it | within 5 hours |
+| a stage never got its turn | `agent-retry.yml` starts it once the queue is idle | within 5 hours |
 | it gave up | it labels `agent:stuck` and drafts the PR | after 10 rounds, or 3 stalls |
 | pick a stuck one back up | remove the label, re-run **Agent · implement** | any time |
+| jump the queue | run **Agent · retry** by hand from the Actions tab | when nothing is running |
 
 `no-agent` only works applied at creation, because `agent-plan.yml` fires on `issues: opened` and
 a label added a second later loses the race. That is what the issue template is for, and it is
@@ -159,7 +214,9 @@ starting and cancels what is already running.
 
 There is a cap of **3 open agent pull requests**. Past that the plan stage declines with a
 comment rather than queueing, because the failure mode worth designing against is an evening of
-issue filing turning into twelve branches and twelve CI matrices.
+issue filing turning into twelve branches and twelve CI matrices. It is a cap on work in flight,
+not on work in progress — the concurrency group above already means only one of those three is
+ever being worked on.
 
 ## The rounds
 
@@ -225,6 +282,25 @@ looks like it is being handled.
 The `session_id` output is worth knowing about here and is not yet used: a retry could
 `--resume` the stalled session rather than re-deriving the diagnosis. Worth adding if stalls
 turn out to be common.
+
+**The same workflow drains the queue.** A run displaced out of the concurrency group is a
+different failure from a stalled one and needs a different handle: it was cancelled before its
+first step, so there is no stall marker to find and nothing to re-run. `agent-retry.yml`'s second
+sweep recognises the shape it leaves behind instead — an open issue still labelled
+`agent:planned`, with none of the kill-switch labels and no open `agent/issue-N` pull request —
+and dispatches **Agent · implement** for the oldest one. One issue per sweep, and only when no
+pipeline run is in flight, since starting two would undo the thing the group exists for.
+
+Re-dispatching is safe by construction rather than by luck: the implement stage resets its branch
+from `main` before it writes anything, and it re-reads the plan from the issue body rather than
+from the dispatch inputs, so the sweep does not have to carry a title or body and cannot land the
+wrong plan or half of one. A redundant dispatch costs a run and rebuilds the same branch.
+
+The sweep names the six workflows in the group explicitly when it asks whether anything is
+running, because the API does not report which concurrency group a run holds. `Agent · fix` is
+absent from that list on purpose — a reusable workflow has no runs of its own, and its caller's
+name is what appears. Getting the list wrong is wasteful rather than dangerous: a missed name
+starts a run that then queues behind the one already going.
 
 ## What the plan stage does with an awkward issue
 

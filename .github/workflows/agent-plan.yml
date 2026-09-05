@@ -21,10 +21,26 @@ on:
 # agent should run at all.
 permissions: {}
 
-# Per issue, never cancelling. Two events for one issue should serialise rather than race, and
-# a cancelled stage that had already edited the body would leave a half-planned issue behind.
+# One group for the whole pipeline rather than one per issue, and never cancelling. Every stage
+# that runs Claude names this same group, so at most one of them is ever in flight -- plan,
+# implement, review and both fix stages queue behind each other across issues as much as within
+# one. This comment is the canonical copy; the other stages point back at it.
+#
+# It is a token budget rather than a correctness rule. The subscription window is about five
+# hours, and three agent runs sharing one spend it three times as fast without any of them
+# getting further: what that looked like here was every stage stopping at its turn limit at
+# once, so a window bought several half-finished branches instead of one merged pull request.
+# Serialised, the same window pays for runs that finish.
+#
+# The cost is GitHub's queue depth, which is one. A group holds one run in flight and exactly one
+# pending, and a *third* arrival cancels the pending one rather than lining up behind it -- before
+# its first step, so nothing it would have written gets written. For the implement stage that
+# loss is recovered: it leaves the issue labelled `agent:planned` with no pull request, which is
+# the signature agent-retry.yml's second sweep looks for. For this stage it is not, because a
+# plan that never ran leaves nothing behind to sweep for, and a displaced run has to be re-run
+# from the Actions tab. Filing issues a few minutes apart rather than in a batch avoids it.
 concurrency:
-  group: agent-issue-${{ github.event.issue.number }}
+  group: agent-pipeline
   cancel-in-progress: false
 
 jobs:
@@ -164,6 +180,8 @@ jobs:
 
             Do not write any code. Do not edit any file. Return the structured output only.
           claude_args: >-
+            --model opus
+            --effort medium
             --allowedTools "Read,Glob,Grep,Bash(git:*),Bash(rg:*),Bash(jq:*),Bash(find:*),Bash(ls:*),Bash(cat:*),Bash(head:*),Bash(tail:*),Bash(wc:*),Bash(sort:*),Bash(uniq:*),Bash(diff:*)"
             --disallowedTools "Write,Edit,Bash(gh:*),Bash(curl:*),Bash(wget:*),Bash(nc:*),Bash(ssh:*),Bash(scp:*),Bash(git push:*),Bash(git remote:*),Bash(git config:*),WebFetch,WebSearch"
             --json-schema '{"type":"object","properties":{"pr_title":{"type":"string","description":"Lowercase plain-language subject line for the eventual squash commit"},"pr_body":{"type":"string","description":"Body for the eventual squash commit: reasoning and evidence"},"plan":{"type":"string","description":"The plan, as markdown, to become the issue body"}},"required":["pr_title","pr_body","plan"]}'

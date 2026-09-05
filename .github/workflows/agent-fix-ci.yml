@@ -22,6 +22,15 @@ on:  # zizmor: ignore[dangerous-triggers]
 # agent should run at all.
 permissions: {}
 
+# The pipeline-wide serial group; agent-plan.yml carries the reasoning. It sits at workflow level
+# rather than on the `fix` job because the shared stage this calls is a reusable workflow, which
+# runs inside this run -- so the slot has to be held by the run, and agent-fix.yml itself must not
+# ask for the same group again. Holding it from the `context` job onwards costs a minute of queue
+# on a log-gathering step and keeps the reservation in one place.
+concurrency:
+  group: agent-pipeline
+  cancel-in-progress: false
+
 jobs:
   context:
     permissions:

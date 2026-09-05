@@ -1,6 +1,7 @@
 name: Agent · retry
 
-# Picks up stages that stopped before they finished, and re-runs them.
+# Picks up work the pipeline dropped, in two sweeps: stages that stopped before they finished,
+# and stages whose turn in the queue never came.
 #
 # A workflow cannot wake itself up, which is why this is scheduled and not something the stalled
 # stage arranges for itself. GitHub has no delay primitive, and sleeping inside the stalled job
@@ -11,10 +12,17 @@ name: Agent · retry
 # stage's worth of tokens discovering the limit is still in force, and each discovery costs a
 # runner and a queue slot.
 #
-# It re-runs the recorded run rather than dispatching a stage afresh. That is the only handle
-# that works for all four: the plan stage runs against main with no branch to find it by, and
-# the fix stage is a reusable workflow that cannot be dispatched at all. The run id travels in
-# the marker that .github/actions/agent-stall writes into its comment.
+# The first sweep re-runs the recorded run rather than dispatching a stage afresh. That is the
+# only handle that works for all four: the plan stage runs against main with no branch to find it
+# by, and the fix stage is a reusable workflow that cannot be dispatched at all. The run id
+# travels in the marker that .github/actions/agent-stall writes into its comment.
+#
+# The second sweep exists because the pipeline now runs one stage at a time -- see the
+# `agent-pipeline` concurrency group in agent-plan.yml -- and GitHub's queue for a group holds
+# exactly one pending run. A third arrival cancels the second rather than lining up behind it,
+# and it does so before that run's first step, so there is no stall marker for the first sweep to
+# find. This one recognises the shape such a run leaves behind instead, and is what turns the
+# group from a serial drop into a serial queue.
 
 on:
   schedule:
@@ -153,3 +161,81 @@ jobs:
 
             echo "::endgroup::"
           done
+
+      # The queue draining. An issue displaced out of the concurrency group leaves no marker, so
+      # this looks for its signature instead: the implement stage swaps `agent:planned` for
+      # `agent:working` only once its pull request exists, so an open issue still labelled
+      # `agent:planned` with no branch of its own is one whose turn never came.
+      #
+      # Re-dispatching is safe by construction rather than by luck. The stage resets its branch
+      # from main before it writes anything, and it re-reads the plan from the issue body rather
+      # than from the dispatch inputs -- which is why the two optional inputs are left off here
+      # and the stage falls back to the issue title. So a redundant dispatch costs a run and
+      # rebuilds the same branch; it cannot land the wrong plan or half of one.
+      #
+      # One issue per sweep, and only when nothing else is running. Starting two would undo the
+      # thing this exists to serve, and the same five-hour cadence that suits a usage window
+      # suits a queue whose items take the better part of an hour.
+      - name: Start the next issue whose turn never came
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          # The PAT, not GITHUB_TOKEN: a workflow dispatched with GITHUB_TOKEN does not run at
+          # all. Same trap as agent-plan.yml's hand-over step, and the reason this sweep would
+          # otherwise look like it worked while nothing started.
+          DISPATCH_TOKEN: ${{ secrets.AGENT_PUSH_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          # Every workflow in the `agent-pipeline` group, named rather than pattern-matched: the
+          # API does not report which group a run holds, and `Agent · fix` never appears here at
+          # all because a reusable workflow has no runs of its own -- its caller's name is what
+          # shows. Getting this list wrong is not dangerous, only wasteful: a missed name starts
+          # a run that then queues behind the one already going.
+          #
+          # 200 rather than a page, because this reads the recent list and filters it client-side
+          # rather than asking for a status the API can filter on -- gh takes one --status at a
+          # time and there are three that are not "completed", counting the `waiting` a run sits
+          # in while an approval gate holds it. An implement stage now has a two-hour timeout,
+          # and Android CI can easily push it past the first sixty entries in that time.
+          # shellcheck disable=SC2016  # $w is a jq variable and has to reach jq unexpanded;
+          # double quotes here would substitute it away before jq ever saw it.
+          busy=$(gh run list --limit 200 --json workflowName,status --jq '
+            [ .[] | select(.status != "completed")
+                  | select(.workflowName as $w
+                           | ["Agent · plan","Agent · implement","Agent · review",
+                              "Agent · fix CI","Agent · fix Dependabot","Claude Code Review"]
+                           | index($w)) ] | length')
+          if [ "$busy" -gt 0 ]; then
+            echo "$busy pipeline run(s) still in flight — the queue is not idle, leaving it"
+            exit 0
+          fi
+
+          # Oldest first, so a displaced issue is not overtaken by every issue filed after it.
+          # The label filters are the same kill switches every other stage honours, plus
+          # agent:stalled, which belongs to the sweep above rather than to this one.
+          waiting=$(gh issue list --state open --label 'agent:planned' --limit 100 \
+                      --json number,labels --jq '
+                      [ .[] | select([.labels[].name]
+                                     | any(IN("agent:stop","no-agent","agent:stuck",
+                                              "agent:stalled","agent:working"))
+                                     | not)
+                            | .number ] | sort | first // empty')
+          if [ -z "$waiting" ]; then
+            echo "nothing waiting"
+            exit 0
+          fi
+
+          # Belt and braces on the label. A pull request already open for the branch means the
+          # stage did reach the end and the label is simply stale, which is not this sweep's to
+          # fix and definitely not its to force-push over.
+          pr=$(gh pr list --head "agent/issue-${waiting}" --state open --json number --jq '.[0].number // empty')
+          if [ -n "$pr" ]; then
+            echo "issue $waiting already has PR #$pr — stale label, leaving alone"
+            exit 0
+          fi
+
+          author=$(gh issue view "$waiting" --json author --jq .author.login)
+          echo "pipeline idle — starting issue $waiting (filed by $author)"
+          GH_TOKEN="$DISPATCH_TOKEN" gh workflow run agent-implement.yml \
+            -f issue="$waiting" -f author="$author"

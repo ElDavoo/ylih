@@ -64,11 +64,20 @@ jobs:
     needs: [gate]
     if: always() && needs.gate.result != 'failure' && needs.gate.result != 'cancelled'
     runs-on: ubuntu-latest
-    timeout-minutes: 60
-    # Both callers can fire for the same branch at once -- a red CI run and a review that
-    # requested changes are independent events and routinely arrive together. Without this they
-    # race, and the second push is rejected as a non-fast-forward. Queued rather than cancelled,
-    # because a fix cancelled mid-push leaves the branch half-written.
+    # Raised with the turn budgets below. See agent-implement.yml: a job the timeout kills skips
+    # its stall record, and the retry sweep only ever sees stages that got to write one.
+    timeout-minutes: 120
+    # Per issue, and deliberately *not* the pipeline-wide `agent-pipeline` group the other stages
+    # took. This is a reusable workflow, so it runs inside its caller's run -- and the caller
+    # already holds `agent-pipeline`. Asking for the same group here would queue this job behind
+    # a slot its own parent is holding and never let go of, which is a deadlock until the run
+    # times out. Serialising against the rest of the pipeline is the caller's job; this group
+    # only has to keep the two callers off each other.
+    #
+    # Both can fire for the same branch at once -- a red CI run and a review that requested
+    # changes are independent events and routinely arrive together. Without this they race, and
+    # the second push is rejected as a non-fast-forward. Queued rather than cancelled, because a
+    # fix cancelled mid-push leaves the branch half-written.
     concurrency:
       group: agent-fix-${{ inputs.issue }}
       cancel-in-progress: false
@@ -189,7 +198,9 @@ jobs:
 
             Do not commit or push. Leave your work in the working tree.
           claude_args: >-
-            --max-turns 120
+            --model opus
+            --effort medium
+            --max-turns 240
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash"
             --disallowedTools "Bash(gh:*),Bash(curl:*),Bash(wget:*),Bash(nc:*),Bash(ssh:*),Bash(scp:*),Bash(git push:*),Bash(git remote:*),Bash(git config:*),WebFetch,WebSearch"
 
@@ -238,7 +249,9 @@ jobs:
 
             Do not commit or push. Leave your work in the working tree.
           claude_args: >-
-            --max-turns 200
+            --model opus
+            --effort medium
+            --max-turns 400
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash"
             --disallowedTools "Bash(gh:*),Bash(curl:*),Bash(wget:*),Bash(nc:*),Bash(ssh:*),Bash(scp:*),Bash(git push:*),Bash(git remote:*),Bash(git config:*),WebFetch,WebSearch"
 

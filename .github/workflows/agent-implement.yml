@@ -37,8 +37,11 @@ on:
 # agent should run at all.
 permissions: {}
 
+# The pipeline-wide serial group. agent-plan.yml carries the reasoning, including what happens
+# to a run displaced out of the queue -- for this stage that is the `agent:planned` issue with no
+# pull request that agent-retry.yml's second sweep restarts.
 concurrency:
-  group: agent-issue-${{ inputs.issue }}
+  group: agent-pipeline
   cancel-in-progress: false
 
 jobs:
@@ -64,7 +67,11 @@ jobs:
     needs: [gate]
     if: always() && needs.gate.result != 'failure' && needs.gate.result != 'cancelled'
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    # Raised with the turn budget below, and it has to move with it: a job killed by this timeout
+    # takes every later step down with it, including the stall record -- so the retry sweep never
+    # learns the stage stopped, and the issue sits there looking planned and idle. A turn limit
+    # reached is the failure that gets retried; a timeout is the one that does not.
+    timeout-minutes: 120
 
     steps:
       - name: Checkout
@@ -268,7 +275,9 @@ jobs:
             Do not commit, push, or touch git. Leave your work in the working tree; the
             workflow commits it.
           claude_args: >-
-            --max-turns 150
+            --model opus
+            --effort medium
+            --max-turns 300
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash"
             --disallowedTools "Bash(gh:*),Bash(curl:*),Bash(wget:*),Bash(nc:*),Bash(ssh:*),Bash(scp:*),Bash(git push:*),Bash(git remote:*),Bash(git config:*),WebFetch,WebSearch"
 

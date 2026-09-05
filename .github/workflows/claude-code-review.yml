@@ -1,5 +1,17 @@
 name: Claude Code Review
 
+# The reviewer for pull requests you write yourself. Agent branches are excluded, and that is
+# load-bearing rather than tidiness: agent PRs are opened with AGENT_PUSH_TOKEN, so their author
+# is you, so this used to fire on every one of them alongside Agent · review -- two Claude
+# reviewers on the same diff, spending the same five-hour window twice for one verdict. Agent ·
+# review is the merge gate and runs this same plugin as its first pass, so what was lost by
+# dropping the second copy is nothing.
+#
+# It also cost more than tokens once the pipeline became serial. Both reviewers queue in the
+# `agent-pipeline` group, and that group holds one pending run: two arrivals per push meant the
+# waiting one was routinely displaced, and half the time the one displaced was the merge gate --
+# whose check then never reports, so auto-merge waits on it forever.
+
 on:
   pull_request:
     types: [opened, synchronize, ready_for_review, reopened]
@@ -10,9 +22,17 @@ on:
     #   - "src/**/*.js"
     #   - "src/**/*.jsx"
 
+# The pipeline-wide serial group; agent-plan.yml carries the reasoning. A review of your own pull
+# request is not a pipeline stage, but it spends the window the group exists to ration.
+concurrency:
+  group: agent-pipeline
+  cancel-in-progress: false
+
 jobs:
   claude-review:
-    if: github.event.pull_request.user.login == 'ElDavoo'
+    if: >-
+      github.event.pull_request.user.login == 'ElDavoo'
+      && !startsWith(github.head_ref, 'agent/issue-')
 
     runs-on: ubuntu-latest
     permissions:

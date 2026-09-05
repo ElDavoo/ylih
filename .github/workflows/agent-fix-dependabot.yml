@@ -139,9 +139,15 @@ jobs:
       id-token: write
       pull-requests: write
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    # Raised with the turn budget below. See agent-implement.yml for why the two move together.
+    timeout-minutes: 120
+    # The pipeline-wide serial group; agent-plan.yml carries the reasoning. A Dependabot bump is
+    # not an issue of yours, but it spends the same five-hour window as one, which is the whole
+    # point of the group -- so it queues with the rest rather than beside it. Job level is safe
+    # here, unlike in agent-fix.yml: this stage runs its own agent rather than calling the
+    # reusable one, so no parent run is already holding the slot.
     concurrency:
-      group: agent-fix-dependabot-${{ needs.context.outputs.pr }}
+      group: agent-pipeline
       cancel-in-progress: false
 
     steps:
@@ -236,7 +242,9 @@ jobs:
 
             Do not commit or push. Leave your work in the working tree.
           claude_args: >-
-            --max-turns 120
+            --model opus
+            --effort medium
+            --max-turns 240
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash"
             --disallowedTools "Bash(gh:*),Bash(curl:*),Bash(wget:*),Bash(nc:*),Bash(ssh:*),Bash(scp:*),Bash(git push:*),Bash(git remote:*),Bash(git config:*),WebFetch,WebSearch"
 
