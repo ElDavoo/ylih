@@ -229,6 +229,30 @@ jobs:
 
                 node .claude/skills/translations/strings.mjs check
 
+            If your change adds or bumps a dependency in gradle/libs.versions.toml, regenerate
+            gradle/verification-metadata.xml before anything else — every artifact the build
+            downloads is pinned there by SHA-256, and an unrecorded one is refused before a
+            line compiles. Do not hand-edit the file, and do not narrow the task list: a
+            configuration that is never resolved contributes no checksums, and
+            --refresh-dependencies is not optional, because an artifact already in the runner's
+            cache is not re-resolved and would be silently left out. Both mistakes have been
+            made here.
+
+                ./gradlew --no-daemon --write-verification-metadata sha256 \
+                    --refresh-dependencies \
+                    lintClassicReleaseTest createClassicReleaseTestUnitTestCoverageReport \
+                    testClassicDebugUnitTest assembleClassicDebug assembleClassicRelease \
+                    assembleClassicReleaseTestAndroidTest \
+                    lintPlayReleaseTest createPlayReleaseTestUnitTestCoverageReport \
+                    testPlayDebugUnitTest assemblePlayDebug assemblePlayRelease \
+                    assemblePlayReleaseTestAndroidTest
+
+            Do not clear GRADLE_OPTS or set aapt2FromMavenOverride. That override exists only
+            in the maintainer's nix dev shell, where AGP's own aapt2 will not run; a run under
+            it never resolves com.android.tools.build:aapt2 and writes a file that is two
+            artifacts short everywhere else. This runner sets no override, which is what makes
+            what it records correct for an ordinary build.
+
             Before you finish, these must pass. Run them, read the failures, and fix them —
             they are the same gates CI will apply and they are much cheaper here:
 

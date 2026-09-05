@@ -234,11 +234,17 @@ implement — an issue you relabel or reopen is not silently dropped, which is w
 reading, with the reading stated; a part that cannot be done unattended is written into the
 plan's "out of scope" section with the reason, rather than sinking the whole issue with it.
 
-Two limits are still routed around rather than attempted, because they are mechanical and the
-branch would fail at the very end instead of at the start: `.github/workflows/` and
-`.github/actions/` cannot be pushed by a token without `workflow` scope, and
-`gradle/verification-metadata.xml` cannot be regenerated on the runner, so a plan that adds a
-dependency waits on a human for that one step.
+One limit is still routed around rather than attempted, because it is mechanical and the branch
+would fail at the very end instead of at the start: `.github/workflows/` and `.github/actions/`
+cannot be pushed by a token without `workflow` scope.
+
+Adding a dependency is planned for rather than refused. Every artifact the build downloads is
+pinned by a SHA-256 in `gradle/verification-metadata.xml`, so a new one is rejected before
+anything compiles — the implement stage regenerates it, over the whole task set and with
+`--refresh-dependencies`, the same way `dependabot-verification-metadata.yml` does. A runner is
+the right place for that and not a compromise: it sets none of the dev shell's
+`aapt2FromMavenOverride`, so it resolves `com.android.tools.build:aapt2` and records the two
+artifacts a local regeneration silently leaves out.
 
 What used to be a decline is now a plan you can read and edit before implement gets to it — the
 areas `CLAUDE.md` says want a human (a Room migration, a new locale, signing and release, the

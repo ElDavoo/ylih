@@ -135,16 +135,18 @@ jobs:
             you took and what you left out; where part of it cannot be done unattended, plan
             the rest and put that part under "out of scope" with the reason.
 
-            Two constraints are mechanical rather than editorial, so route around them rather
-            than planning into them:
+            One constraint is mechanical rather than editorial, so route around it rather than
+            planning into it: `.github/workflows/` and `.github/actions/` cannot be pushed —
+            the pipeline's token has no `workflow` scope, so a branch touching them fails at
+            the very end rather than at the start. Leave them out of scope and say so.
 
-            - `.github/workflows/` and `.github/actions/` cannot be pushed — the pipeline's
-              token has no `workflow` scope, so a branch touching them fails at the very end.
-              Leave them out of scope and say so.
-            - `gradle/verification-metadata.xml` cannot be regenerated on this runner, so a
-              plan that adds a dependency stalls the build. Prefer a plan that adds none; if
-              the work genuinely needs one, plan it anyway and name the metadata regeneration
-              as the human step it waits on.
+            A plan that adds or bumps a dependency must say so explicitly, and must name
+            regenerating `gradle/verification-metadata.xml` as a step of its own. Every
+            artifact the build downloads is pinned by a SHA-256 there, so an unrecorded one is
+            refused before anything compiles. The implement stage can do it — a runner is in
+            fact the right place, since it sets none of the dev shell's `aapt2` override — but
+            it is a long `--refresh-dependencies` pass over both flavors and it has to be
+            planned for rather than discovered at the gates.
 
             The plan must name:
             - the goal, in one or two sentences;
