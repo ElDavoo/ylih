@@ -96,7 +96,6 @@ gh label create 'agent:stop'    --color b60205 --description "Halt the pipeline 
 gh label create 'agent:stuck'   --color d93f0b --description "Gave up after 10 fix rounds — needs a human"
 gh label create 'agent:planned' --color 0e8a16 --description "Planned, waiting to be implemented"
 gh label create 'agent:working' --color fbca04 --description "Being implemented"
-gh label create 'agent:declined' --color ededed --description "Not work an agent should take unattended"
 ```
 
 **6. The `main protection` ruleset.** A *ruleset*, not legacy branch protection — the
@@ -227,14 +226,24 @@ The `session_id` output is worth knowing about here and is not yet used: a retry
 `--resume` the stalled session rather than re-deriving the diagnosis. Worth adding if stalls
 turn out to be common.
 
-## What the plan stage refuses
+## What the plan stage does with an awkward issue
 
-`implementable: false` is a normal outcome, not a failure. The plan stage declines a question, a
-bug report with no reproduction, anything needing a Room migration or a new locale, anything
-touching signing, release or the dependency verification metadata, anything that would move the
-tracking accuracy rules or `SessionRepository`'s invariants or the device-identity keying, and
-anything too vague to have an obvious acceptance test. Those are the areas where `CLAUDE.md`
-says the reasoning matters more than the diff.
+There is no refusal verdict. Every issue that reaches the plan stage is planned and handed to
+implement — an issue you relabel or reopen is not silently dropped, which is what the earlier
+`implementable: false` answer made possible. A vague request is planned at its narrowest useful
+reading, with the reading stated; a part that cannot be done unattended is written into the
+plan's "out of scope" section with the reason, rather than sinking the whole issue with it.
+
+Two limits are still routed around rather than attempted, because they are mechanical and the
+branch would fail at the very end instead of at the start: `.github/workflows/` and
+`.github/actions/` cannot be pushed by a token without `workflow` scope, and
+`gradle/verification-metadata.xml` cannot be regenerated on the runner, so a plan that adds a
+dependency waits on a human for that one step.
+
+What used to be a decline is now a plan you can read and edit before implement gets to it — the
+areas `CLAUDE.md` says want a human (a Room migration, a new locale, signing and release, the
+tracking accuracy rules, `SessionRepository`'s invariants, the device-identity keying) are still
+areas to read the plan carefully on, and the review stage and CI are what stand behind it.
 
 ## Prompt injection
 
