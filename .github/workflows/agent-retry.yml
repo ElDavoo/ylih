@@ -184,6 +184,10 @@ jobs:
           # all. Same trap as agent-plan.yml's hand-over step, and the reason this sweep would
           # otherwise look like it worked while nothing started.
           DISPATCH_TOKEN: ${{ secrets.AGENT_PUSH_TOKEN }}
+          # Three starts from the queue, the same budget the stall loop gets and for the same
+          # reason. Declared again here rather than hoisted to the job: the two counts are
+          # independent, and one of them moving because the other was retuned is not wanted.
+          MAX_RETRIES: '3'
         run: |
           set -euo pipefail
 
@@ -235,7 +239,31 @@ jobs:
             exit 0
           fi
 
+          # Bounded, for the same reason the stall loop above is. `agent:planned` with no pull
+          # request is not only what a displaced run leaves behind -- it is also what a run that
+          # got all the way to "nothing was changed, no pull request to open" leaves behind, and
+          # that one will leave it again on every sweep. Unbounded, this would restart such an
+          # issue every five hours forever, which is the failure the stall loop's MAX_RETRIES
+          # exists to stop and would be worse here: a stall costs a stopped run, this costs a
+          # whole one. Same authorship filter as above, and for the same reason -- the marker is
+          # an instruction to this workflow and an issue comment is world-writable.
+          started=$(gh api --paginate "repos/${GITHUB_REPOSITORY}/issues/${waiting}/comments" \
+                      --jq '[.[] | select(.user.login == "github-actions[bot]" and .user.type == "Bot")
+                                 | .body | select(test("<!-- agent-queued -->"))] | length')
+          if [ "$started" -ge "$MAX_RETRIES" ]; then
+            echo "started $started times from the queue already — giving up"
+            gh issue comment "$waiting" --body "This issue has been started $started times from the queue and has never reached a pull request, so it is being handed over rather than started again. Remove the \`agent:stuck\` label to let the pipeline pick it up."
+            gh issue edit "$waiting" --add-label 'agent:stuck'
+            exit 0
+          fi
+
           author=$(gh issue view "$waiting" --json author --jq .author.login)
           echo "pipeline idle — starting issue $waiting (filed by $author)"
+
+          # The marker goes down before the dispatch, not after. A dispatch that succeeds and a
+          # run that then fails to record anything is the case this is counting; recording it
+          # afterwards would miss exactly that, and a `gh workflow run` that fails is visible in
+          # this job's own log anyway.
+          gh issue comment "$waiting" --body "Starting this now — the pipeline runs one agent at a time and this one's turn had not come. <!-- agent-queued -->"
           GH_TOKEN="$DISPATCH_TOKEN" gh workflow run agent-implement.yml \
             -f issue="$waiting" -f author="$author"

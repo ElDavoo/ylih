@@ -296,6 +296,14 @@ from `main` before it writes anything, and it re-reads the plan from the issue b
 from the dispatch inputs, so the sweep does not have to carry a title or body and cannot land the
 wrong plan or half of one. A redundant dispatch costs a run and rebuilds the same branch.
 
+It is bounded at three starts, the same budget the stall loop gets, and counted the same way —
+`<!-- agent-queued -->` in a `github-actions[bot]` comment, authorship-filtered because an issue
+comment is world-writable. The bound matters because `agent:planned` with no pull request is not
+*only* what a displaced run leaves behind: a run that reached "nothing was changed, no pull
+request to open" leaves exactly the same trace, and will leave it again on every sweep. Unbounded
+that is a whole run spent every five hours forever, which is worse than the case `MAX_RETRIES`
+already guards, since a stall costs a stopped run and this costs a complete one.
+
 The sweep names the six workflows in the group explicitly when it asks whether anything is
 running, because the API does not report which concurrency group a run holds. `Agent · fix` is
 absent from that list on purpose — a reusable workflow has no runs of its own, and its caller's
