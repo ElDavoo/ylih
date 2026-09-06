@@ -206,22 +206,42 @@ last, and how has that changed" — the battery-degradation curve issue #30 aske
 
 Three things here are load-bearing and none of them is obvious.
 
-**`BtConnectionReceiver` is `exported="false"`, and a claim that it had to be `"true"` was checked
-on a phone and found wrong.** #31 measured a Mi 10T on Android 16 and concluded a non-exported
-manifest receiver no longer resolves an implicit broadcast from another app — the Bluetooth stack
-is a separate app (uid 1002) — and shipped both Bluetooth receivers exported. #33 went back to the
-same phone with the *released* build, still `exported="false"`, and found it working: an open
-session, a scheduled `HeartbeatWorker`, and no path to either except `BtConnectionReceiver` having
-received `ACL_CONNECTED` sixteen hours after the last time `MainActivity` ran and with no reboot in
-between. The original A/B was run against a `.debug` install that had been installed, launched,
-force-stopped and `pm clear`ed repeatedly that evening, and every flip of the attribute came with a
-reinstall; a package in the *stopped* state receives no broadcasts until something launches it, so
-"the attribute" and "the reinstall that lifted the stopped state" were never actually separated.
-`BtBatteryReceiver` is left `exported="true"` regardless — `BATTERY_LEVEL_CHANGED` shares the same
-permission and delivery flags as the ACL broadcasts, so it very probably works non-exported too,
-but that has not been observed on a device the way the ACL case now has, and exporting a receiver
-whose only filter is a protected broadcast costs nothing. Don't re-derive the old conclusion from
-the same `dumpsys` output: check whether the app under test was ever in the stopped state first.
+**Both Bluetooth receivers must be `exported="true"`, and this was found on a phone.** The Bluetooth
+stack is a separate app (uid 1002), and an implicit broadcast from another app no longer resolves a
+non-exported component of ours — AMS drops it in `SaferIntentUtils.filterNonExportedComponents`,
+*before* the `BroadcastRecord` exists, so it does not even show as a skipped receiver in `dumpsys
+activity broadcasts`. Measured on a Mi 10T running Android 16: with `exported="false"`,
+`BtConnectionReceiver` saw nothing across five Bluetooth off/on cycles while another app's exported
+receiver logged every one; flipping the attribute alone made both receivers fire on the next cycle.
+That attribute is the whole of Bluetooth-only tracking, so it was a live bug in the shipped app and
+not only a charge-cycles concern. Exporting costs nothing because these are protected broadcasts.
+
+#34 reverted the connection receiver to `"false"`, reading #31's A/B as confounded by the stopped
+state, and shipped that. It was wrong, and re-measuring on the same phone on Android 17 settled it
+by reading the *receiver lists* out of `dumpsys activity broadcasts` rather than inferring from the
+app's own state. Toggling Bluetooth forces a real reconnect, and the detailed history names every
+receiver each broadcast resolved to, its `exported` flag, and DELIVERED vs SKIPPED:
+
+- With the shipped build — connection receiver non-exported, battery receiver exported — one real
+  broadcast reached `BtBatteryReceiver` and, in the same process and the same second, did not list
+  `BtConnectionReceiver` at all. Not skipped with a reason: never a candidate, exactly as
+  `filterNonExportedComponents` predicts.
+- With a build carrying the two flags inverted, the verdicts inverted with them.
+
+#33's evidence had another explanation all along: with detailed tracking on,
+`TrackingService.syncWithSystem()` reconciles against the `AudioManager` list every minute and
+opens exactly the open session and scheduled `HeartbeatWorker` that were taken as proof the
+receiver had fired. That was watched happening while the receiver received nothing — and it is why
+the bug survived a release, since the mode most people leave on hides it.
+
+Two traps if this is ever re-checked. **`am broadcast` cannot test the attribute**: it sets
+`FLAG_RECEIVER_FROM_SHELL`, and a shell-sent broadcast reaches a non-exported receiver happily — it
+cold-started one here — so it proves the opposite of what the real stack does. And **the sender's
+uid is the whole question**, not the flags or the permission, which are identical across the three
+actions: system_server (uid 1000) is exempt, which is why `BootReceiver` may stay `exported="false"`
+and still get `BOOT_COMPLETED` — 139 such deliveries to non-exported receivers were counted on this
+device in one sitting — while uid 1002 is not. `ReceiverExportTest` pins the two attributes so the
+question cannot be reopened by a third flip.
 
 **The broadcast is `@SystemApi` and that is fine — for reasons, not by luck.** Android has no public
 API for a headset's battery. `tracking/BatteryBroadcast.kt` writes out
