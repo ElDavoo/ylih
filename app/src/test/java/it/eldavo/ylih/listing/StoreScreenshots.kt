@@ -4,10 +4,13 @@ import android.Manifest
 import android.app.Application
 import android.os.Build
 import androidx.compose.ui.test.junit4.v2.createComposeRule
+import androidx.compose.ui.test.hasScrollAction
+import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performScrollToNode
 import androidx.test.core.app.ApplicationProvider
 import com.github.takahirom.roborazzi.captureRoboImage
 import it.eldavo.ylih.R
@@ -124,6 +127,22 @@ abstract class StoreScreenshots(
         showApp()
         awaitAnchor()
         capture("05-devices-dark.png")
+    }
+
+    @Test
+    fun `06 charge cycles`() {
+        showApp()
+        awaitAnchor()
+        compose.onAllNodesWithText(ANCHOR)[0].performClick()
+        awaitText(string(R.string.pair_lifetime))
+        // The section is below the daily chart and the sessions, so the unscrolled pair shot
+        // cannot show it — and it is the one thing on that page a battery-stats screen has no
+        // answer for, so it gets a frame of its own.
+        // The page is a LazyColumn, so the section is not in the semantics tree at all until it is
+        // scrolled to — waiting for its text would time out rather than find it.
+        compose.onAllNodes(hasScrollAction())[0]
+            .performScrollToNode(hasText(string(R.string.pair_charge_cycles)))
+        capture("06-charge-cycles.png")
     }
 
     private fun showApp() {
