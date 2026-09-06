@@ -401,8 +401,9 @@ with the figure the bar can only be a proportion of. Three things about it:
 single `tabs` route, so they can be swiped between: pages are laid out side by side and the screen
 follows the finger, which is a thing a NavHost swapping its content on a click cannot do at all —
 the most it could offer was a slide animation. What is left in the back stack is the pair page,
-which is a genuine push over whichever tab was showing and still crossfades, in step with the app
-bar `AnimatedVisibility` that reads the same `NAV_FADE`. Three consequences worth knowing:
+which is a genuine push over whichever tab was showing and runs `ui/NavMotion.kt`'s spec, in step
+with the app bar `AnimatedVisibility` that reads the fade half of it. Three consequences worth
+knowing:
 
 - The pager state is hoisted above the `NavHost`, because the tabs leave the composition while
   the pair page is open and a state remembered down there would hand back the first tab on the
@@ -412,6 +413,15 @@ bar `AnimatedVisibility` that reads the same `NAV_FADE`. Three consequences wort
   tab. It is disabled on the pair page: the `NavHost` registers its handler after this one and so
   wins, but only while it has something to pop.
 - Nothing needs doing for RTL — a horizontal pager reverses itself, as the nav bar does.
+
+That spec is one file rather than four lambdas' worth of constants because the bar is not a
+destination and is faded by hand, so the two only stay in step if they read the same thing. Each
+transition is a fade *and* a scale on one 700 ms tween, and the pop is the mirror of the push — the
+page compresses back the way it grew. The fade on the pop is the load-bearing half: predictive back
+seeks our own `popExitTransition` rather than supplying one, so a scale without it is a page still
+fully drawn at the end of the animation and then simply gone, which is what #38 reported. The bar
+stays fade-only: it has to hold its height for the whole exit, which is what stops the list under it
+jerking, and a scale would give that back.
 
 `YlihNavHostTest` drives the swipe by finding the one node on screen with a horizontal scroll
 range, the tabs' own lists all being vertical.
