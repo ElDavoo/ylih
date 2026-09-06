@@ -126,6 +126,8 @@
     <string name="settings_devices_body">headphon naslelem kaheebhee ancchek kra — kar stereo ki speaker — he record karnem thambv.</string>
     <string name="settings_device_subtitle">%1$s · prahthum pehlem %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">sahaykachi pravesh</string>
+    <string name="settings_agent_body">hya fonantlya sahaykak tumi kitlo vell aikla te vachunk di</string>
     <string name="settings_export">json niryyat kra</string>
     <string name="settings_import">aayat kra</string>
     <string name="settings_import_warning">aayat karnem vartaman sangrahit sarvkaheebhee badlem.</string>

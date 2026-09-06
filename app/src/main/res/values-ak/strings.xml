@@ -134,6 +134,8 @@
     <string name="settings_devices_body">too bibiara a ɛnyɛ headphones — motika stereo anaa speaker — na ɛnyina korabɛ no.</string>
     <string name="settings_device_subtitle">%1$s · huu aseɛ %2$s</string>
     <string name="settings_data">din</string>
+    <string name="settings_agent_title">ɔboafoɔ kwan</string>
+    <string name="settings_agent_body">ma ɔboafoɔ a ɔwɔ simu yi so nkenkan berɛ dodoɔ a woatie</string>
     <string name="settings_export">dan json</string>
     <string name="settings_import">fa ba</string>
     <string name="settings_import_warning">sɛ ɔfa ba a, ɛbɛsesa biribiri a ɛdan hɔ.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ഹെഡ്‌ഫോൺ അല്ലാത്തതെന്തും — കാർ സ്റ്റീരിയോ അല്ലെങ്കിൽ സ്പീക്കർ — രേഖപ്പെടുത്തുന്നത് നിർത്താൻ അടയാളം മാറ്റുക.</string>
     <string name="settings_device_subtitle">%1$s · ആദ്യം കണ്ടത് %2$s</string>
     <string name="settings_data">ഡാറ്റ</string>
+    <string name="settings_agent_title">അസിസ്റ്റന്റ് ആക്‌സസ്</string>
+    <string name="settings_agent_body">ഈ ഫോണിലെ അസിസ്റ്റന്റിന് നിങ്ങൾ എത്ര നേരം കേട്ടു എന്ന് വായിക്കാൻ അനുവദിക്കുക</string>
     <string name="settings_export">json കയറ്റുമതി</string>
     <string name="settings_import">ഇറക്കുമതി</string>
     <string name="settings_import_warning">ഇറക്കുമതി ചെയ്താൽ ഇപ്പോൾ സൂക്ഷിച്ചിരിക്കുന്നതെല്ലാം മാറ്റപ്പെടും.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">deselezionn tota cosa che no ghè scuffie - un stereo de machina ò un altarlante - per smette de registrâa.</string>
     <string name="settings_device_subtitle">%1$s · vediu per prima volta %2$s</string>
     <string name="settings_data">dâte</string>
+    <string name="settings_agent_title">acesso do assistente</string>
+    <string name="settings_agent_body">lascia che un assistente de sto telefono o lêze quanto tempo t’æ ascotòu</string>
     <string name="settings_export">esporta json</string>
     <string name="settings_import">importa</string>
     <string name="settings_import_warning">importâ a rimpiassa tott quell che ghe ghè scrivû adesso.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ceeci aloku bize duusu hinna no - stereo foo wala ceeci - dunsee daa borey.</string>
     <string name="settings_device_subtitle">%1$s · foofoo %2$s</string>
     <string name="settings_data">aloku</string>
+    <string name="settings_agent_title">faabakaw furoyan</string>
+    <string name="settings_agent_body">naŋ faabakaw kaŋ go telefon woo ga ma waati kaŋ ni hangan caw</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">import</string>
     <string name="settings_import_warning">import ga aloku bize taaga borey.</string>

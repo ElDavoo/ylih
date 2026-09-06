@@ -126,6 +126,8 @@
     <string name="settings_devices_body">disanganidza zvose zvisingaziva masinete - mota stereo kana mutsara - kutsiva kurangarira.</string>
     <string name="settings_device_subtitle">%1$s · kumakaonekwa %2$s</string>
     <string name="settings_data">ruzivo</string>
+    <string name="settings_agent_title">mvumo yemubatsiri</string>
+    <string name="settings_agent_body">bvumira mubatsiri parunhare urwu kuverenga kuti wateerera kwenguva yakareba sei</string>
     <string name="settings_export">bubwire json</string>
     <string name="settings_import">kwaita</string>
     <string name="settings_import_warning">kuita kunotsivanira zvose zvine zviri kumajikidze ikozvino.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ruta kĩndũ kĩu kĩtaguo mahoya — kambuni wĩ gũthaaga — kũtaarũ kĩndũ rũĩruta.</string>
     <string name="settings_device_subtitle">%1$s · ĩrĩa ĩrarũthaga %2$s</string>
     <string name="settings_data">ũrĩa wa</string>
+    <string name="settings_agent_title">gũtoonya kwa mũteithia</string>
+    <string name="settings_agent_body">reke mũteithia ũrĩ thimũ ĩno athome ihinda rĩrĩa ũthikĩrĩirie</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">import</string>
     <string name="settings_import_warning">import nĩguo kwaria kĩndũ kĩa gũthaaga kĩu kĩu.</string>

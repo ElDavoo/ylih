@@ -126,6 +126,8 @@
     <string name="settings_devices_body">deselecziunescha tut tge che betg es auscultaders - ina sa da voitura u in speaker - per betg registrar ella.</string>
     <string name="settings_device_subtitle">%1$s · emprendaz stos %2$s</string>
     <string name="settings_data">datas</string>
+    <string name="settings_agent_title">access da l’assistent</string>
+    <string name="settings_agent_body">lascha ch’in assistent sin quest telefon legia quant ditg che ti has tadlà</string>
     <string name="settings_export">exportar json</string>
     <string name="settings_import">importar</string>
     <string name="settings_import_warning">l’importaziun substituesa tut tge che vegn actualmain memorisà.</string>

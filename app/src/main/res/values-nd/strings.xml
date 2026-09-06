@@ -126,6 +126,8 @@
     <string name="settings_devices_body">susa okungamakwelo - stereo yofinyelela noma umsithi - ukuvimela inkumbulo yayo.</string>
     <string name="settings_device_subtitle">%1$s · okokuqala okubonakali %2$s</string>
     <string name="settings_data">imininingwane</string>
+    <string name="settings_agent_title">ukungena komsizi</string>
+    <string name="settings_agent_body">vumela umsizi kule ifoni afunde ukuthi ulalele isikhathi esingakanani</string>
     <string name="settings_export">yenisa json</string>
     <string name="settings_import">uyingena</string>
     <string name="settings_import_warning">ukuingena kutshintsha konke okugcina okwamanje.</string>

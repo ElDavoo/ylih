@@ -126,6 +126,8 @@
     <string name="settings_devices_body">deaktiviere alles, das keine kopfhörer sind — ein autoradio oder einen lautsprecher — um dessen aufzeichnung zu stoppen.</string>
     <string name="settings_device_subtitle">%1$s · zuerst gesehen %2$s</string>
     <string name="settings_data">daten</string>
+    <string name="settings_agent_title">assistänt-zuegang</string>
+    <string name="settings_agent_body">e assistänt uf däm telefon la läse, wie lang du ghört hesch</string>
     <string name="settings_export">json exportieren</string>
     <string name="settings_import">importieren</string>
     <string name="settings_import_warning">importieren ersetzt alles, was derzeit gespeichert ist.</string>

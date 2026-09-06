@@ -126,6 +126,8 @@
     <string name="settings_devices_body">နားကြပ် မဟုတ်သည့်အရာ — ကားအသံစက် သို့မဟုတ် စပီကာ — ကို အမှတ်ခြစ် ဖြုတ်လိုက်ပါ၊ ထိုအခါ မှတ်တမ်း မတင်တော့ပါ။</string>
     <string name="settings_device_subtitle">%1$s · ပထမဆုံးခေါင်းအီ %2$s</string>
     <string name="settings_data">ဒေတာ</string>
+    <string name="settings_agent_title">အကူအညီပေးသူ ဝင်ရောက်ခွင့်</string>
+    <string name="settings_agent_body">ဤဖုန်းရှိ အကူအညီပေးသူကို သင် ဘယ်လောက်ကြာ နားထောင်ခဲ့သည်ကို ဖတ်ခွင့်ပြုပါ</string>
     <string name="settings_export">json ထုတ်ယူရန်</string>
     <string name="settings_import">သွင်းယူရန်</string>
     <string name="settings_import_warning">သွင်းယူခြင်းသည် ယခု သိမ်းဆည်းထားသမျှကို အစားထိုးပါသည်။</string>

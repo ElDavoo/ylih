@@ -134,6 +134,8 @@
     <string name="settings_devices_body">wulašćiš, co njesu naušniki — awtomagnatole abo głośniki — aby ji měł staś nanjesywaś.</string>
     <string name="settings_device_subtitle">%1$s · prwy raz wiźity %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">pśistup asistenta</string>
+    <string name="settings_agent_body">dowól asistentoju na toś tom telefonje cytaś, kak dłujko sy słuchał</string>
     <string name="settings_export">eksport json</string>
     <string name="settings_import">import</string>
     <string name="settings_import_warning">import wšykno, co se njepšichowujo, wěnšujaš.</string>

@@ -149,6 +149,8 @@
     <string name="settings_devices_body">uncheck anything that isn’t headphones — a car stereo or a speaker — to stop recording it.</string>
     <string name="settings_device_subtitle">%1$s · first seen %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">assistant access</string>
+    <string name="settings_agent_body">let an assistant on this phone read how long you have listened</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">import</string>
     <string name="settings_import_warning">importing replaces everything currently stored.</string>

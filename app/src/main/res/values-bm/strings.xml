@@ -134,6 +134,8 @@
     <string name="settings_devices_body">aparatigi jɔ tɛ kopila kɔ - gara ni korobo - a sigida kɛrɛ dɔn ka jiginna duuma kɛrɛ dɔn.</string>
     <string name="settings_device_subtitle">%1$s · a jɔ maɲininkɔ %2$s</string>
     <string name="settings_data">kuma</string>
+    <string name="settings_agent_title">dɛmɛbaga ka sɔrɔli</string>
+    <string name="settings_agent_body">a to dɛmɛbaga min bɛ telefɔni in kan ka waati kalan i ye lamɛnni kɛ min na</string>
     <string name="settings_export">json sira</string>
     <string name="settings_import">kɛ jigɛn</string>
     <string name="settings_import_warning">kɛ jigɛn bi ma kuma bɛ bɛ jɔli jɔ sisan.</string>

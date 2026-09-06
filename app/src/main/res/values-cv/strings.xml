@@ -126,6 +126,8 @@
     <string name="settings_devices_body">наушник мар япалана — машина динамикне е колонкӑна — паллӑран кӑлар, вара ӑна ҫырмӗҫ.</string>
     <string name="settings_device_subtitle">%1$s · пӗрремӗш хут %2$s</string>
     <string name="settings_data">даннӑйсем</string>
+    <string name="settings_agent_title">пулӑшуҫӑ курма пултарни</string>
+    <string name="settings_agent_body">ҫак телефонри пулӑшуҫа эсӗ мӗн чухлӗ итленине вулама ирӗк пар</string>
     <string name="settings_export">json экспорчӗ</string>
     <string name="settings_import">импорт</string>
     <string name="settings_import_warning">импорт халӗ упранакан пуринех улӑштарать.</string>

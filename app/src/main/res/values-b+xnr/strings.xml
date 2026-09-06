@@ -126,6 +126,8 @@
     <string name="settings_devices_body">जेह्ड़ा हैडफोन नीं ऐ — गड्डी दा स्पीकर जां कोई होर स्पीकर — उसदा निशान हटाई दिया, तां जे ओह नीं लिखेया जाए।</string>
     <string name="settings_device_subtitle">%1$s · पैहली बरी %2$s गी दिक्खेया</string>
     <string name="settings_data">डाटा</string>
+    <string name="settings_agent_title">सहायका दी पौंच</string>
+    <string name="settings_agent_body">इस फोना पर सहायका गी पढ़न देओ जे तुसें कितनी देर सुणेया</string>
     <string name="settings_export">json निर्यात</string>
     <string name="settings_import">आयात</string>
     <string name="settings_import_warning">आयात करने पर हुण जो कुछ रक्खेया ऐ ओह सब बदली जाग।</string>

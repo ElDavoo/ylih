@@ -126,6 +126,8 @@
     <string name="settings_devices_body">marka off kwálker ki nó é kutulunan — som di kár ou falanti — pa stopa rrijistrándu.</string>
     <string name="settings_device_subtitle">%1$s · primeru vistu %2$s</string>
     <string name="settings_data">dádus</string>
+    <string name="settings_agent_title">asesu di asistenti</string>
+    <string name="settings_agent_body">dexa un asistenti na kel telefoni li lê kantu tenpu ki bu obi</string>
     <string name="settings_export">eksportá json</string>
     <string name="settings_import">importá</string>
     <string name="settings_import_warning">importá ta troka tud ki ta tha armázenádu agora.</string>

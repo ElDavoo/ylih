@@ -126,6 +126,8 @@
     <string name="settings_devices_body">akustika telefonlary saýlaň</string>
     <string name="settings_device_subtitle">%1$s · ilkinji gezek %2$s</string>
     <string name="settings_data">maglumatlar</string>
+    <string name="settings_agent_title">kömekçi rugsady</string>
+    <string name="settings_agent_body">bu telefondaky kömekçä näçe wagt diňländigiňi okamaga rugsat ber</string>
     <string name="settings_export">json çykar</string>
     <string name="settings_import">gir</string>
     <string name="settings_import_warning">import ähli maglumatly üýtget</string>

@@ -5,6 +5,7 @@ import android.os.Build
 import androidx.activity.OnBackPressedDispatcher
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
 import androidx.annotation.StringRes
+import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.semantics.SemanticsProperties
 import androidx.compose.ui.test.SemanticsMatcher
 import androidx.compose.ui.test.TouchInjectionScope
@@ -30,6 +31,7 @@ import it.eldavo.ylih.data.SessionEntity
 import it.eldavo.ylih.ui.theme.YlihTheme
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -113,6 +115,11 @@ class YlihNavHostTest {
         compose.onNode(SemanticsMatcher.keyIsDefined(SemanticsProperties.HorizontalScrollAxisRange))
             .performTouchInput(direction)
     }
+
+    /** Where the three tab labels are drawn, in the order the nav puts them. */
+    private fun tabBounds(): List<Rect> =
+        listOf(R.string.nav_headphones, R.string.nav_stats, R.string.nav_settings)
+            .map { compose.onNodeWithText(text(it)).fetchSemanticsNode().boundsInRoot }
 
     private fun seedPair(label: String): Long = runBlocking {
         val deviceId = db.deviceDao().insert(
@@ -231,6 +238,42 @@ class YlihNavHostTest {
 
         assertEquals("and no half-drawn pair page is left behind", 0, nodeCount(text(R.string.pair_fallback_title)))
         compose.onNodeWithText(text(R.string.app_title)).assertExists()
+    }
+
+    @Test
+    fun `on a phone the tabs run along the bottom`() {
+        // The other half of the assertion below, and the one every other test in this class is
+        // written against: at the default qualifiers there is no rail and the bar is the nav.
+        show()
+
+        val bounds = tabBounds()
+        assertTrue(
+            "one row: same top, increasing left",
+            bounds.zipWithNext().all { (a, b) -> a.top == b.top && a.left < b.left },
+        )
+    }
+
+    @Test
+    @Config(qualifiers = "w840dp-h1024dp")
+    fun `a wide window moves the tabs to a rail down the side`() {
+        // At targetSdk 37 the platform stops honouring orientation and resizability limits above
+        // 600dp, so a tablet gets this layout whether or not it was designed for. A bottom bar an
+        // arm's reach from the content is what that looks like undesigned; the rail is the fix,
+        // and its geometry is the only thing that tells the two apart — the bar and the rail draw
+        // the same three labels.
+        show()
+
+        val bounds = tabBounds()
+        assertTrue(
+            "one column: same left, increasing top",
+            bounds.zipWithNext().all { (a, b) -> a.left == b.left && a.top < b.top },
+        )
+        assertTrue("and down the side rather than across it", bounds.all { it.left < 200f })
+
+        // Still the same control: it reads the same destinations and the same click.
+        tap(R.string.nav_stats)
+        awaitTab(R.string.stats_title)
+        assertEquals("and moving between tabs is still not a navigation", TABS_ROUTE, route())
     }
 
     @Test

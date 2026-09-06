@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ଯାହା ହେଡଫୋନ ନୁହେଁ — କାର ଷ୍ଟିରିଓ କିମ୍ବା ସ୍ପିକର — ତାହା ରେକର୍ଡ ହେବା ବନ୍ଦ କରିବାକୁ ଚିହ୍ନ ହଟାନ୍ତୁ।</string>
     <string name="settings_device_subtitle">%1$s · ପ୍ରଥମେ ଦେଖାଗଲା %2$s</string>
     <string name="settings_data">ଡାଟା</string>
+    <string name="settings_agent_title">ସହାୟକଙ୍କ ପ୍ରବେଶ</string>
+    <string name="settings_agent_body">ଏହି ଫୋନର ସହାୟକଙ୍କୁ ଆପଣ କେତେ ସମୟ ଶୁଣିଛନ୍ତି ପଢ଼ିବାକୁ ଦିଅନ୍ତୁ</string>
     <string name="settings_export">json ରପ୍ତାନି</string>
     <string name="settings_import">ଆମଦାନି</string>
     <string name="settings_import_warning">ଆମଦାନୀ କଲେ ବର୍ତ୍ତମାନ ସଞ୍ଚିତ ସବୁକିଛି ବଦଳିଯାଏ।</string>

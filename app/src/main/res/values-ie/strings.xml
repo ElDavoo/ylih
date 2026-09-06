@@ -126,6 +126,8 @@
     <string name="settings_devices_body">unchecke quallibet quem ne es auricula — un auto-stereo u un speiker — pro cessar recordat it</string>
     <string name="settings_device_subtitle">%1$s · prim vidit %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">acces del assistent</string>
+    <string name="settings_agent_body">permisse un assistent sur ti-ci telefon leer quant long tu ha auscultat</string>
     <string name="settings_export">exporta json</string>
     <string name="settings_import">importa</string>
     <string name="settings_import_warning">importation remplace tot currentmen storat</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">esory ny marika amin’izay tsy aurikilara — radio fiara na haino-aman-jery — mba hijanonana tsy handrakitra azy.</string>
     <string name="settings_device_subtitle">%1$s · hita voalohany %2$s</string>
     <string name="settings_data">angona</string>
+    <string name="settings_agent_title">fidiran’ny mpanampy</string>
+    <string name="settings_agent_body">avelao ny mpanampy amin’ity finday ity hamaky hoe hafiriana ianao no nihaino</string>
     <string name="settings_export">avoahy json</string>
     <string name="settings_import">ampidiro</string>
     <string name="settings_import_warning">manolo izay rehetra voatahiry izao ny fampidirana.</string>

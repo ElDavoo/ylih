@@ -126,6 +126,8 @@
     <string name="settings_devices_body">unchecked a bith nach bhfuil fhuaimeanna — stereo carr nó spréachaire — a stad taifeadadh.</string>
     <string name="settings_device_subtitle">%1$s · ar dtús feicthe %2$s</string>
     <string name="settings_data">sonraí</string>
+    <string name="settings_agent_title">rochtain an chúntóra</string>
+    <string name="settings_agent_body">lig do chúntóir ar an bhfón seo a léamh cé chomh fada is a d’éist tú</string>
     <string name="settings_export">onnmhairtí json</string>
     <string name="settings_import">iompórtáil</string>
     <string name="settings_import_warning">iompórtáil ionadaíonn gach rud atá stóráilte faoi láthair.</string>

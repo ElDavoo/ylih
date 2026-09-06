@@ -134,6 +134,8 @@
     <string name="settings_devices_body">koone sifa alaa hiirde — stereo otoomobil walla speaker — haŋka sumuji notere.</string>
     <string name="settings_device_subtitle">%1$s · yehe fuɗɗo %2$s</string>
     <string name="settings_data">joɓinol</string>
+    <string name="settings_agent_title">naatirde ballo</string>
+    <string name="settings_agent_body">yamir ballo e oo telefol jangude no juuti heɗi-ɗaa</string>
     <string name="settings_export">soxra json</string>
     <string name="settings_import">seeɗ</string>
     <string name="settings_import_warning">seeɗ ko miiɗ ɓunde notere haŋ-tii.</string>

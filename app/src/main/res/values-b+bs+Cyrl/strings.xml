@@ -134,6 +134,8 @@
     <string name="settings_devices_body">одзначи било шта што није слушалица — аутомобилски стерео или звучник — да прекинеш јој бележење.</string>
     <string name="settings_device_subtitle">%1$s · први пут виђено %2$s</string>
     <string name="settings_data">подаци</string>
+    <string name="settings_agent_title">приступ асистенту</string>
+    <string name="settings_agent_body">допусти асистенту на овом телефону да прочита колико дуго си слушао</string>
     <string name="settings_export">извези json</string>
     <string name="settings_import">увези</string>
     <string name="settings_import_warning">увозом се замењује све што је тренутно сачувано.</string>

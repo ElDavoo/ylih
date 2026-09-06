@@ -126,6 +126,8 @@
     <string name="settings_devices_body">mayua kila isyaa ikilongi ki kuutwika — simu ya gadi au sauti — kwama kithakanya.</string>
     <string name="settings_device_subtitle">%1$s · kwikwa kwa ulundi %2$s</string>
     <string name="settings_data">malilile</string>
+    <string name="settings_agent_title">kũthi kwa mũtethya</string>
+    <string name="settings_agent_body">eka mũtethya ũla wĩ simu ĩno amanye ĩvinda yĩla wathukĩĩe</string>
     <string name="settings_export">kwiya json</string>
     <string name="settings_import">kunama</string>
     <string name="settings_import_warning">kunama kwambika kiisya kino kunthakaniwe sasa.</string>

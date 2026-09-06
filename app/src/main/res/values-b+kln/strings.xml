@@ -126,6 +126,8 @@
     <string name="settings_devices_body">kibotik engʼa mibisitin emwusis - stereo moget akilak - kotagit kibotik.</string>
     <string name="settings_device_subtitle">%1$s · kosiyek taata %2$s</string>
     <string name="settings_data">tamaglareeq</string>
+    <string name="settings_agent_title">kanyony ne toretin</string>
+    <string name="settings_agent_body">iyai toretin ne mi simu ni koger boisiet ne kikiyai</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">import</string>
     <string name="settings_import_warning">import kibotiyek tamaglareeq ara kotagit.</string>

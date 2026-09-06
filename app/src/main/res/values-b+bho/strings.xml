@@ -134,6 +134,8 @@
     <string name="settings_devices_body">जे कुछु ईयरफोन न होय — कार स्टीरियो या स्पीकर — उदा बंद कर दे रिकॉर्डिंग बंद करे के लिये।</string>
     <string name="settings_device_subtitle">%1$s · पहिले देखल %2$s</string>
     <string name="settings_data">डेटा</string>
+    <string name="settings_agent_title">सहायक के पहुँच</string>
+    <string name="settings_agent_body">ई फोन के सहायक के पढ़े दीं कि रउआ केतना देर सुननी</string>
     <string name="settings_export">json निर्यात कर</string>
     <string name="settings_import">आयात कर</string>
     <string name="settings_import_warning">आयात से अभे सब कुछु बदल जाब।</string>

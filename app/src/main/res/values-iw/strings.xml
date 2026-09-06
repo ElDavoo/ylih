@@ -136,6 +136,8 @@
     <string name="settings_devices_body">בטלו את הסימון של כל מה שאינו אוזניות — מערכת שמע ברכב או רמקול — כדי להפסיק לרשום אותו.</string>
     <string name="settings_device_subtitle">%1$s · נראה לראשונה %2$s</string>
     <string name="settings_data">נתונים</string>
+    <string name="settings_agent_title">גישת העוזר</string>
+    <string name="settings_agent_body">לאפשר לעוזר בטלפון הזה לקרוא כמה זמן האזנת</string>
     <string name="settings_export">ייצוא json</string>
     <string name="settings_import">ייבוא</string>
     <string name="settings_import_warning">ייבוא מחליף את כל מה ששמור עכשיו.</string>

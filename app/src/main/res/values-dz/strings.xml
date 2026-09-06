@@ -134,6 +134,8 @@
     <string name="settings_devices_body">གོ་སང་ཕོ་ཉ་མིན་པའི་ཅ་གལ་ཞིག་ (མཐུད་མེ་དང་ངོས་འདེགས་འདེགས་མེ་) ཁོང་གི་དེ་མི་ཟིན་ཞིག་ལ་རེས་མ་བྱུང་།</string>
     <string name="settings_device_subtitle">%1$s · དང་པོའི་གཏན་ལ་ཕབ། %2$s</string>
     <string name="settings_data">གླེང་སྲེ།</string>
+    <string name="settings_agent_title">གྲོགས་རམ་པའི་འཛུལ་སྤྱོད།</string>
+    <string name="settings_agent_body">ཁ་པར་འདི་ནང་གི་གྲོགས་རམ་པ་གིས་ཁྱོད་ཀྱིས་ག་དེམ་ཅིག་ཉན་ཡི་ག་ལྷག་བཅུག</string>
     <string name="settings_export">json བསྐྱོད་པ།</string>
     <string name="settings_import">ཞུགས་འདྲེན།</string>
     <string name="settings_import_warning">ཞུགས་འདྲེན་བྱེད་ན་ད་ལྟ་གནས་ཡོད་པའི་ཚང་མ་ལ་སྒྱུར་བར་འགྱུར།</string>

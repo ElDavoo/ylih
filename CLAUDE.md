@@ -296,6 +296,61 @@ At a percent per step and a cycle a day that is ~36,500 rows a year, so a decade
 on a background thread when a reading lands. If that ever stops being acceptable the answer is a
 rolled-up `cycles` table, not a window.
 
+### App functions, the agent surface
+
+`agent/YlihAppFunctions.kt` is an abstract `AppFunctionService` from which
+`androidx.appfunctions`'s KSP processor writes the concrete `YlihAppFunctionService` and a schema
+XML into `assets/`. Android 17's app functions are the on-device MCP equivalent: an annotated
+method becomes a tool an assistant can discover and call.
+
+Five things here are load-bearing.
+
+**Query-only, and it stays that way.** Nothing an agent calls reaches a write, so
+`SessionRepository` — the one funnel every other source goes through — is not one of them. The
+figures come from `widget/WidgetData.kt`'s `widgetDataFlow`, because a widget is the same problem
+(a caller that cannot see the UI and needs only the numbers) and that code is already windowed,
+Glance-free and pinned by `WidgetDataTest`. A third query path onto the same figures would be a
+third place for them to disagree; `loadWidgetData` is *not* the entry point to use, since it is
+`@VisibleForTesting` and lint says so.
+
+**The KDoc is the API.** `isDescribedByKDoc = true` means the comment on each function and on each
+`@AppFunctionSerializable` property is literally what the agent reads, so it is written for a
+caller who cannot see the code. It costs no translations — it is not a resource and is English by
+construction, like `res/xml/app_metadata.xml`'s `description`. The one user-visible string there,
+`displayDescription`, is the settings row's own `@string/settings_agent_body`, so the promise the
+switch makes and the promise the system shows are one promise. On a serializable the KDoc has to be
+**inline on each property**; class-level `@param`/`@property` tags are not extracted.
+
+**`isEnabled = false` is the opt-in, and it is a compile-time default.** It is baked into the
+generated schema as `<enabledByDefault>false</enabledByDefault>`, which is why the functions are
+genuinely absent from the OS index rather than merely ignored. Shipped enabled they would be
+callable in the window between install and the user first opening settings, and disabling them at
+first run would be a race against an agent that had already indexed the app. `SettingsStore
+.setAgentAccess` writes the row *and* pushes the state through `AppFunctionManager
+.setAppFunctionEnabled`, in one place, for the same reason `setLanguage` mirrors its value: the row
+is the source of truth and the OS state is a projection, and a projection only some callers update
+is one that drifts. Below Android 17 `pushAgentAccess` no-ops.
+
+**The `<service>` is `android:enabled="@bool/enablePlatformAppFunctionService"`.** That boolean is
+the library's own, false in `values` and true in `values-v36`. The generated service extends a
+class that only exists on Android 17, so without it an older OS with the appfunctions *extension*
+library would bind a class it cannot load. It also means `PackageManager` needs
+`MATCH_DISABLED_COMPONENTS` to see the component in a test.
+
+**The schema is a java resource, not an Android asset.** KSP writes it to a path beginning
+`assets/`, which is what lands it under `assets/` in the packaged APK and in front of the platform's
+asset manager on a device — but Robolectric's asset manager reads the merged `src/main/assets`
+tree, which the file never passes through. `YlihAppFunctionsTest` reads it off the classloader
+instead. That test is where the surface is pinned: the functions cannot be *called* from a unit
+test at all (the service's superclass is not in the framework the suite runs against), so what it
+asserts is everything the OS reads before binding anything — the two ids, the descriptions the KDoc
+produced, `enabledByDefault`, the `<service>` element and the app metadata.
+
+`app/src/main/keepRules/app-functions.keep` holds the generated service to its own name and
+`.github/scripts/r8-keep-check.py` asserts it, for the reason `glance-widgets.keep` exists: the
+manifest is the only thing that names it, and renamed it still installs while the OS simply never
+binds it.
+
 ### Stats and UI
 
 `stats/Stats.kt` is pure functions over `Span` (start, optional end, optional playing ms),
@@ -340,6 +395,33 @@ bar `AnimatedVisibility` that reads the same `NAV_FADE`. Three consequences wort
 
 `YlihNavHostTest` drives the swipe by finding the one node on screen with a horizontal scroll
 range, the tabs' own lists all being vertical.
+
+**Above 600dp the nav moves to the side and the content stops stretching.** At `targetSdk 37` the
+platform ignores orientation, resizability and aspect-ratio restrictions on any display wider than
+that, and the Android 16 opt-out is gone — so a tablet gets this layout whether or not anything was
+done for it. Three things about the answer:
+
+- The width question is asked once, through `currentWindowAdaptiveInfoV2()` and
+  `WindowSizeClass.WIDTH_DP_MEDIUM_LOWER_BOUND`, which is the whole reason
+  `androidx.compose.material3.adaptive:adaptive` is a dependency. It is the **V2** call
+  deliberately: `currentWindowAdaptiveInfo()` is deprecated in 1.3.0 and a deprecation fails this
+  build. `LocalConfiguration.current.screenWidthDp`, the obvious no-dependency answer, is
+  deprecated too.
+- The `WideNavigationRail` sits in a `Row` **beside** the `Scaffold`, not in a slot of it —
+  `Scaffold` has no side slot, and a rail inside the content lambda would leave the Scaffold
+  computing insets and bottom-bar padding for the full window. That is also why the Scaffold's
+  `contentWindowInsets` drops the start side when the rail is up: `enableEdgeToEdge()` is on and
+  the rail has already consumed it. The rail and the `ShortNavigationBar` share one `selectTab`
+  and one `tabSelected`, because they are one control drawn twice.
+- `ContentWidth` caps every screen at `CONTENT_MAX_WIDTH`, wrapped around the pager's page lambda
+  and the `PAIR_ROUTE` composable — the two places all four screens flow through. The cap is above
+  every phone width there is, so it cannot change the phone layout, and none of the four screens
+  knows it exists.
+
+`YlihNavHostTest` covers both branches by *geometry* rather than by presence, because the rail and
+the bar draw the same three labels: one row (same top, increasing left) at the default qualifiers,
+one column (same left, increasing top) at `w840dp-h1024dp`. Two tests rather than one, so the
+`wide` branch is not on the coverage gate's miss budget.
 
 **Every user-visible string is a resource.** `res/values/strings.xml` is the whole vocabulary and
 there are 77 `res/values-<lang>/strings.xml` translations beside it; lint runs with
@@ -568,6 +650,13 @@ else would ever catch it.
 
 These are easy to break and the failures are confusing:
 
+- **There are two KSP processors**, Room's and `androidx.appfunctions`'s. Both inherit the same
+  wiring generically — `android.disallowKotlinSourceSets=false` and the `lint`→`ksp` `dependsOn`
+  at the bottom of `app/build.gradle.kts`, which matches every `ksp*Kotlin` task — so adding the
+  second needed no build change beyond the dependency. `androidx.appfunctions` is pinned by hand
+  and **ignored in `.github/dependabot.yml`**, the same bargain `material3` gets: the line churns
+  in ways that are code changes rather than version bumps (`@AppFunction` moved package between
+  alpha10 and alpha11), and a grouped weekly PR is one merge or none.
 - **AGP 9 compiles Kotlin itself.** The standalone `kotlin-android` plugin is absent on purpose
   and AGP rejects it. The `kotlin` and `ksp` versions in `gradle/libs.versions.toml` must stay
   equal to each other and aligned with the Kotlin Gradle plugin AGP bundles; KSP's release
@@ -689,6 +778,16 @@ Almost everything is a unit test run under Robolectric (`@Config(sdk = [...])`).
 database and drives `MainActivity` to RESUMED. Repository tests use an in-memory database with an
 injected clock (`SessionRepository(db) { clockNow }`), so time is moved by assignment rather than
 by sleeping.
+
+**The unit test JVM asks for `maxHeapSize = "1g"`, and the number is not decoration.** Gradle's
+own default is 512m, and the suite grew past what that leaves comfortable: every one of the ~570
+tests runs in the one JVM, each Robolectric test holding a simulated framework and a parsed
+resource table, and the widget tests real bitmaps besides. Below it the failure never names
+memory. Measured here: 320m fails with an `OutOfMemoryError` attributed to whichever test was
+running, and 448m *passes* 570 of 571 while taking 9m14s instead of 2m45s — the heap is full
+rather than exhausted, the run is spent collecting, and the one casualty is an arbitrary test
+timing out inside `runTest`. That is what a CI machine reports on a suite sized to 512m: a single
+unrelated failure that reproduces nowhere and moves every run.
 
 **`src/androidTest` lives on the `releaseTest` build type.** That is `testBuildType`, and it is
 set for its sake: R8 only runs for a release build, so the only way to test what R8 produced is to

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">filifili e sipi</string>
     <string name="settings_device_subtitle">%1$s · toe fai %2$s</string>
     <string name="settings_data">tuʻu</string>
+    <string name="settings_agent_title">hū ki he tokoni</string>
+    <string name="settings_agent_body">tuku ha tokoni ʻi he telefoni ni ke ne lau ʻa e lōloa ʻo hoʻo fanongo</string>
     <string name="settings_export">json ʻo heʻu</string>
     <string name="settings_import">teʻeki</string>
     <string name="settings_import_warning">teʻeki ʻa e tuʻu kotoa</string>

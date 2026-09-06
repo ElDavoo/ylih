@@ -126,6 +126,8 @@
     <string name="settings_devices_body">eheria rũũri kuuma kĩndũ o gĩothe gĩtarĩ iria bia gũthikĩria — redio ya ngari kana kĩgambia — nĩgetha gĩtige kwandĩkwo.</string>
     <string name="settings_device_subtitle">%1$s · kĩoneka mbere %2$s</string>
     <string name="settings_data">ũhoro</string>
+    <string name="settings_agent_title">gũtonya kwa mũtethia</string>
+    <string name="settings_agent_body">reka mũtethia ũrĩ thimũ ĩno athome ĩgita rĩrĩa wathikĩrĩirie</string>
     <string name="settings_export">ruta json</string>
     <string name="settings_import">ĩkĩra</string>
     <string name="settings_import_warning">kwĩkĩra kũgarũraga indo ciothe iria irĩ ho rĩu.</string>

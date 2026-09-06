@@ -135,6 +135,8 @@
     <string name="settings_devices_body">kendu markak gauzak ez direnak entzuleak — auto estereo edo bozgorailuak — grabatzea gelditzeko.</string>
     <string name="settings_device_subtitle">%1$s · lehenengo aldiz ikusia %2$s</string>
     <string name="settings_data">datuak</string>
+    <string name="settings_agent_title">laguntzailearen sarbidea</string>
+    <string name="settings_agent_body">utzi telefono honetako laguntzaile bati zenbat denbora entzun duzun irakurtzen</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">importatu</string>
     <string name="settings_import_warning">inportazioak gaur egun gordeta dagoen guztia ordezkatzen du.</string>

@@ -134,6 +134,8 @@
     <string name="settings_devices_body">sumbela masolo ilinga ndúmu ndúmu — masolo moto isela mfane — njiba lemba isela isoki.</string>
     <string name="settings_device_subtitle">%1$s · osombé mbuá %2$s</string>
     <string name="settings_data">iso</string>
+    <string name="settings_agent_title">jongwane la mujongwedi</string>
+    <string name="settings_agent_body">sɔ mujongwedi mo telefon nde a langa poso ni o senga</string>
     <string name="settings_export">kaba json</string>
     <string name="settings_import">masolo</string>
     <string name="settings_import_warning">masolo e nja tundu elongo osambé.</string>

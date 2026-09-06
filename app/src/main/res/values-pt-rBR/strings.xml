@@ -134,6 +134,8 @@
     <string name="settings_devices_body">desmarque tudo que não for fone de ouvido — um som do carro ou uma caixa de som — para parar de registrá-lo.</string>
     <string name="settings_device_subtitle">%1$s · visto pela primeira vez em %2$s</string>
     <string name="settings_data">dados</string>
+    <string name="settings_agent_title">acesso do assistente</string>
+    <string name="settings_agent_body">deixe um assistente deste celular ler quanto tempo você ouviu</string>
     <string name="settings_export">exportar json</string>
     <string name="settings_import">importar</string>
     <string name="settings_import_warning">importar substitui tudo o que está armazenado agora.</string>

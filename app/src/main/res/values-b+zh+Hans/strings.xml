@@ -135,6 +135,8 @@
     <string name="settings_devices_body">取消勾选不是耳机的设备——比如车载音响或音箱——即可停止记录它。</string>
     <string name="settings_device_subtitle">%1$s · 首次出现于 %2$s</string>
     <string name="settings_data">数据</string>
+    <string name="settings_agent_title">助手访问</string>
+    <string name="settings_agent_body">允许这台手机上的助手读取你听了多久</string>
     <string name="settings_export">导出 json</string>
     <string name="settings_import">导入</string>
     <string name="settings_import_warning">导入会替换当前存储的所有数据。</string>

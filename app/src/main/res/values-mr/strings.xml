@@ -126,6 +126,8 @@
     <string name="settings_devices_body">हेडफोन नसलेलं काहीही — कारचा स्टिरिओ किंवा स्पीकर — त्याची नोंद थांबवण्यासाठी खूण काढून टाका.</string>
     <string name="settings_device_subtitle">%1$s · पहिल्यांदा दिसलं %2$s</string>
     <string name="settings_data">डेटा</string>
+    <string name="settings_agent_title">सहायकाचा प्रवेश</string>
+    <string name="settings_agent_body">या फोनवरील सहायकाला तुम्ही किती वेळ ऐकले हे वाचू द्या</string>
     <string name="settings_export">json निर्यात करा</string>
     <string name="settings_import">आयात करा</string>
     <string name="settings_import_warning">आयात केल्यास आत्ता साठवलेलं सर्व काही बदललं जातं.</string>

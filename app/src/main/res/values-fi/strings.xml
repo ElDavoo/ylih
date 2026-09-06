@@ -135,6 +135,8 @@
     <string name="settings_devices_body">poista valinta kaikesta, mikä ei ole kuulokkeita — auton stereot tai kaiutin — jotta niitä ei enää tallenneta.</string>
     <string name="settings_device_subtitle">%1$s · ensi kerta havaittu %2$s</string>
     <string name="settings_data">tiedot</string>
+    <string name="settings_agent_title">avustajan käyttöoikeus</string>
+    <string name="settings_agent_body">anna tämän puhelimen avustajan lukea, kuinka kauan olet kuunnellut</string>
     <string name="settings_export">vie json</string>
     <string name="settings_import">tuo</string>
     <string name="settings_import_warning">tuonti korvaa kaiken tällä hetkellä tallennetun.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">nach-sgrùdadh a h-uile a-nis nach eil innealan — stereo carbad no gleus-fuaim — a stad clàradh.</string>
     <string name="settings_device_subtitle">%1$s · an toiseach fhacinn %2$s</string>
     <string name="settings_data">dàta</string>
+    <string name="settings_agent_title">inntrigeadh a’ chuidiche</string>
+    <string name="settings_agent_body">leig le cuidiche air a’ fòn seo a leughadh dè cho fada ’s a dh’èist thu</string>
     <string name="settings_export">às-phortadh json</string>
     <string name="settings_import">ion-phortadh</string>
     <string name="settings_import_warning">ion-phortadh air a chuir an àite gach rud a chuireadh an-dràsta.</string>

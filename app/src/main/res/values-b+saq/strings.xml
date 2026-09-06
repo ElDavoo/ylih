@@ -126,6 +126,8 @@
     <string name="settings_devices_body">o-karata kyy a-muoma - a-muoma-gari stereo ahe - a-karata kyya.</string>
     <string name="settings_device_subtitle">%1$s · a-karata %2$s</string>
     <string name="settings_data">a-karata</string>
+    <string name="settings_agent_title">o-karatai le lchoreta</string>
+    <string name="settings_agent_body">sujo lchoreta ote simu ena naa aisiom ng’ata naa ining’o</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">import</string>
     <string name="settings_import_warning">import a-karata o-karatai o-karata.</string>

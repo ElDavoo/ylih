@@ -126,6 +126,8 @@
     <string name="settings_devices_body">kusambaza amagabwa - stereo ya gari ahe - kusava kyya.</string>
     <string name="settings_device_subtitle">%1$s · kamatusi %2$s</string>
     <string name="settings_data">kilingana</string>
+    <string name="settings_agent_title">ukwingila kwa nkonjaji</string>
+    <string name="settings_agent_body">leka nkonjaji jwa simu ijino asome unsikha ghwe upulishiche</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">kuleta</string>
     <string name="settings_import_warning">kuleta agabuye nkamwa ndiikagana kilingana.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">取消选中唔系耳机嘅任何嘢——汽车音响或扬声器——以停止记录佢。</string>
     <string name="settings_device_subtitle">%1$s · 首次见到 %2$s</string>
     <string name="settings_data">数据</string>
+    <string name="settings_agent_title">助手权限</string>
+    <string name="settings_agent_body">畀呢部电话嘅助手睇你听咗几耐</string>
     <string name="settings_export">汇出 json</string>
     <string name="settings_import">汇入</string>
     <string name="settings_import_warning">汇入会更换依家存储嘅所有内容。</string>

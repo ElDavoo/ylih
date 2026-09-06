@@ -126,6 +126,8 @@
     <string name="settings_devices_body">lɔ́ kə́ zɨ́ yi kə́ nə ŋgáŋ atú — redíyo zɨ mɔ́tɔ kə́ ŋgáʼ — mə tsɔ́ ŋwáʼ.</string>
     <string name="settings_device_subtitle">%1$s · zɨ́ ntsə́ʼ %2$s</string>
     <string name="settings_data">ntsə́ʼ</string>
+    <string name="settings_agent_title">ntsə́ʼ ǝ mbɔ̀ʼ</string>
+    <string name="settings_agent_body">fə́ mbɔ̀ʼ zə nə telefɔ́n zə ŋwáʼ ntsə́ nə ò zɨ́ yúʼ</string>
     <string name="settings_export">fáʼ json</string>
     <string name="settings_import">tsə́ʼ</string>
     <string name="settings_import_warning">tsə́ʼ nə tsə́ kə́ zɨ́ yi nə tsə́ nɔ́.</string>

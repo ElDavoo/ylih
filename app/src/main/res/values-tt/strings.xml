@@ -126,6 +126,8 @@
     <string name="settings_devices_body">кулакберүләрне сайлану</string>
     <string name="settings_device_subtitle">%1$s · беренчелә әйләнә %2$s</string>
     <string name="settings_data">мәгълүмат</string>
+    <string name="settings_agent_title">ярдәмче керүе</string>
+    <string name="settings_agent_body">бу телефондагы ярдәмчегә күпме тыңлаганыңны укырга рөхсәт ит</string>
     <string name="settings_export">json чыгару</string>
     <string name="settings_import">кереч</string>
     <string name="settings_import_warning">мәгълүматны орнына куллану</string>

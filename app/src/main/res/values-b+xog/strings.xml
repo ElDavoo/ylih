@@ -126,6 +126,8 @@
     <string name="settings_devices_body">siba buli kintu tekya minwa — motoka oba sipiki — okukoma okubala.</string>
     <string name="settings_device_subtitle">%1$s · yenjigira okukubaganya %2$s</string>
     <string name="settings_data">amawulire</string>
+    <string name="settings_agent_title">okuyingira kw’omuyambi</string>
+    <string name="settings_agent_body">leka omuyambi ali ku simu eno asome ebiseera by’omazeeko ng’owuliriza</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">kwataganya</string>
     <string name="settings_import_warning">okukwataganya kuggusuubira birina byonna.</string>

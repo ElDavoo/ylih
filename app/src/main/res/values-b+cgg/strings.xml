@@ -134,6 +134,8 @@
     <string name="settings_devices_body">tangura ekyuma ekitali mahembe — emotoka oba espeekeri — kwonka okukumaniza okuwandika.</string>
     <string name="settings_device_subtitle">%1$s · okwambuka okukora %2$s</string>
     <string name="settings_data">amakumbi</string>
+    <string name="settings_agent_title">okutwara kw’omuhwezi</string>
+    <string name="settings_agent_body">reka omuhwezi ari aha simu egi ashome obwire obu waahurikiize</string>
     <string name="settings_export">kukyata json</string>
     <string name="settings_import">okushyira</string>
     <string name="settings_import_warning">okushyira kubabyiza byona ekakumaniza nkano.</string>

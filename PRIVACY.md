@@ -1,6 +1,6 @@
 # Privacy policy for ylih
 
-Last updated: 25 July 2026
+Last updated: 5 September 2026
 
 ## The short version
 
@@ -48,6 +48,18 @@ No account is required, and there is nothing to sign in to.
   ever uploaded, there is no copy anywhere else for us to delete.
 - **Backup.** Android's own backup system is enabled, so your history can be restored to a new
   phone. That transfer is handled by Android and your Google account settings, not by ylih.
+
+## Assistants (Android 17 and later)
+
+Android 17 lets an app publish read-only functions that an on-device assistant can call. ylih
+publishes two: lifetime hours per pair, and listening totals for today, the last seven days and the
+last thirty. Both ship **disabled** — that is recorded in the app's own function schema, so the
+system does not offer them to anything until you switch "assistant access" on in Settings, and
+switching it off disables them with the system rather than only inside ylih.
+
+Neither function can change or delete anything, and neither exposes anything beyond the hours
+described above. What an assistant does with figures you have given it is governed by that
+assistant and not by ylih, which is why this is off unless you ask for it.
 
 ## Children
 

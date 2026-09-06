@@ -126,6 +126,8 @@
     <string name="settings_devices_body">dijis gey - dagara bay - dele kul kade. stereo dijis wala karti bay.</string>
     <string name="settings_device_subtitle">%1$s · baaba %2$s</string>
     <string name="settings_data">alama</string>
+    <string name="settings_agent_title">gaakasinaw furoyan</string>
+    <string name="settings_agent_body">naŋ gaakasinaw kaŋ go telefon woo ga ma alwaati kaŋ ni hanga caw</string>
     <string name="settings_export">json sanda</string>
     <string name="settings_import">jara</string>
     <string name="settings_import_warning">jara ra alama kulu dele.</string>

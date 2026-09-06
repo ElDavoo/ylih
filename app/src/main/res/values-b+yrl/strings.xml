@@ -126,6 +126,8 @@
     <string name="settings_devices_body">se nẽ muña umusuka — igwe kariõ taba — kumé nẽ i pukapika rembá.</string>
     <string name="settings_device_subtitle">%1$s · iñe ihé %2$s</string>
     <string name="settings_data">retapihaka</string>
+    <string name="settings_agent_title">puraki-sasá mira-piripana</string>
+    <string name="settings_agent_body">remuxari mira-piripana ã telefone rupí umupukapika mayé ariré reasenduri</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">i wó</string>
     <string name="settings_import_warning">i wó panhẽ retama nuzé putári.</string>

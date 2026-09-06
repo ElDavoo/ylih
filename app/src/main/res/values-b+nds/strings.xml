@@ -126,6 +126,8 @@
     <string name="settings_devices_body">uncheck wat neet kopphörer is - en autoradio of en spreker - to dat neet mehr protokolliert warrn.</string>
     <string name="settings_device_subtitle">%1$s · eerst sehn %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">assistent-togang</string>
+    <string name="settings_agent_body">laat en assistent op dit telefoon lesen, wo lang du tohöört hest</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">import</string>
     <string name="settings_import_warning">import ersetst alles, nu opslaan.</string>

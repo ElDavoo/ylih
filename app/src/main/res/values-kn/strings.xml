@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ಏನೂ ಹೆಡ್ಫೋನ್ - ಕಾರು ಸ್ಟೀರಿಯೊ ಅಥವಾ ಸ್ಪೀಕರ್ - ಇದಿದೆ ಟ್ರ್ಯಾಕಿಂಗ್ ನಿಲ್ಲಿಸಲು ಅನ್ಚೆಕ್.</string>
     <string name="settings_device_subtitle">%1$s · ಮೊದಲ ತಿದೆ %2$s</string>
     <string name="settings_data">ಡೇಟಾ</string>
+    <string name="settings_agent_title">ಸಹಾಯಕರ ಪ್ರವೇಶ</string>
+    <string name="settings_agent_body">ಈ ಫೋನ್‌ನ ಸಹಾಯಕರಿಗೆ ನೀವು ಎಷ್ಟು ಸಮಯ ಕೇಳಿದ್ದೀರಿ ಎಂದು ಓದಲು ಅನುಮತಿಸಿ</string>
     <string name="settings_export">json ರಫ್ತು</string>
     <string name="settings_import">ಆಮದು</string>
     <string name="settings_import_warning">ಆಮದು ಎಲ್ಲ ಪ್ರಸ್ತುತ ಸಂಗ್ರಹಿತ ಮೇಲೆ ಇದೆ.</string>

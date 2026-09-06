@@ -126,6 +126,8 @@
     <string name="settings_devices_body">nĩ ty ki ty kutulunan — som carro au falanti — pa pa tukré.</string>
     <string name="settings_device_subtitle">%1$s · kwé-fy %2$s</string>
     <string name="settings_data">dádu</string>
+    <string name="settings_agent_title">kanhkã tỹ mũ jé</string>
+    <string name="settings_agent_body">kanhkã tỹ telefon ki nĩ tóg ẽ mỹ hã mũ jé ã ẽ ke mũ</string>
     <string name="settings_export">ékspor json</string>
     <string name="settings_import">imporá</string>
     <string name="settings_import_warning">imporá ta trok tud ki ta rê agora.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">afhakaðu allt sem er ekki heyrnartólar - bíllestri eða hátalari - til að stöðva skráningu þess.</string>
     <string name="settings_device_subtitle">%1$s · fyrst séð %2$s</string>
     <string name="settings_data">gögn</string>
+    <string name="settings_agent_title">aðgangur aðstoðarmanns</string>
+    <string name="settings_agent_body">leyfðu aðstoðarmanni í þessum síma að lesa hversu lengi þú hefur hlustað</string>
     <string name="settings_export">flytja út json</string>
     <string name="settings_import">flytja inn</string>
     <string name="settings_import_warning">innflutningur kemur í stað alls sem er sem stendur geymt.</string>

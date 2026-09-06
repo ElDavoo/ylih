@@ -126,6 +126,8 @@
     <string name="settings_devices_body">tlosa letšoao ho ntho leha e le efe eo e seng lihlooho tsa molumo — radio ea koloi kapa sebui — hore e khaotse ho ngoloa.</string>
     <string name="settings_device_subtitle">%1$s · e bonoe ka lekhetlo la pele %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">phihlello ya mothusi</string>
+    <string name="settings_agent_body">dumella mothusi mohaleng ona hore a bale hore o mametse nako e kae</string>
     <string name="settings_export">romela json</string>
     <string name="settings_import">kenya</string>
     <string name="settings_import_warning">ho kenya ho nkela sebaka sa tsohle tse bolokiloeng hona joale.</string>

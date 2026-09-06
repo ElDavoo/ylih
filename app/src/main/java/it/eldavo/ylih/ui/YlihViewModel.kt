@@ -86,6 +86,10 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
         .map { if (it) Counting.PLAYBACK else Counting.CONNECTED }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), Counting.CONNECTED)
 
+    /** Whether an on-device assistant may read these figures — see `agent/YlihAppFunctions.kt`. */
+    val agentAccess: StateFlow<Boolean> = container.settings.agentAccess
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), false)
+
     /** Null until the stored answer arrives, so the welcome does not flash on every later launch. */
     val onboardingDone: StateFlow<Boolean?> = container.settings.onboardingDone
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
@@ -222,6 +226,17 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
 
     fun setPlaybackOnly(enabled: Boolean) = mutate {
         container.settings.setPlaybackOnly(enabled)
+    }
+
+    /**
+     * Not a [mutate]: this moves no figure any widget shows. It is reported the same way, though,
+     * because the write reaches the platform as well as the table — see
+     * `SettingsStore.setAgentAccess` — and a refusal there must say so rather than leave the switch
+     * looking like it took.
+     */
+    fun setAgentAccess(enabled: Boolean) = viewModelScope.launch {
+        runCatchingCancellable { container.settings.setAgentAccess(enabled) }
+            .onFailure { messageChannel.send(it.message ?: string(RES_EDIT_FAILED)) }
     }
 
     fun setLanguage(tag: String) = viewModelScope.launch {

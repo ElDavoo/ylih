@@ -126,6 +126,8 @@
     <string name="settings_devices_body">jáhta midä ejä luo hearas - auto stereó vaj kuulga - luoigat pándooštamast.</string>
     <string name="settings_device_subtitle">%1$s · vuođel nähtam %2$s</string>
     <string name="settings_data">dieđo</string>
+    <string name="settings_agent_title">ravvejeijee peesâm</string>
+    <string name="settings_agent_body">adde tän telefoon ravvejeijee lohâđ mon kuhháá lah kuldâlâm</string>
     <string name="settings_export">vijdá json</string>
     <string name="settings_import">maajje</string>
     <string name="settings_import_warning">maajje väliheivá juohke dieđo mainna juo sieđetaš.</string>

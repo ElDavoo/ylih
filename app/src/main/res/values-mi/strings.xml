@@ -126,6 +126,8 @@
     <string name="settings_devices_body">wetekina ngā mea ehara i te taringa whakarongo — he reo irirangi motukā, he pūoro rānei — kia mutu ai te tuhi.</string>
     <string name="settings_device_subtitle">%1$s · i kitea tuatahi %2$s</string>
     <string name="settings_data">raraunga</string>
+    <string name="settings_agent_title">urunga kaiāwhina</string>
+    <string name="settings_agent_body">tukua he kaiāwhina i tēnei waea ki te pānui i te roa o tō whakarongo</string>
     <string name="settings_export">kaweake json</string>
     <string name="settings_import">kawemai</string>
     <string name="settings_import_warning">ka whakakapi te kawemai i ngā mea katoa kua rongoatia ināianei.</string>

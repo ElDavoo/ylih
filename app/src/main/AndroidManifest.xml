@@ -61,6 +61,39 @@
             android:foregroundServiceType="connectedDevice" />
 
         <!--
+          What an on-device agent may ask this app, and how much of it. Nothing here differs
+          between the classic and play builds, so it stays in the main manifest rather than
+          becoming a fourth thing `Distribution` has to know about.
+
+          The class is written by KSP from agent/YlihAppFunctions.kt and reached only by this
+          name, which is what app-functions.keep exists for. Exported and bound with
+          BIND_APP_FUNCTION_SERVICE because the caller is the system, and enabled through the
+          library's own boolean: it extends a class that only exists on Android 17, so on anything
+          older the resource resolves to false and the service is simply absent rather than bound
+          and immediately fatal. Every function inside it still ships disabled — see the KDoc.
+        -->
+        <service
+            android:name=".agent.YlihAppFunctionService"
+            android:enabled="@bool/enablePlatformAppFunctionService"
+            android:exported="true"
+            android:permission="android.permission.BIND_APP_FUNCTION_SERVICE"
+            tools:targetApi="36">
+            <property
+                android:name="android.app.appfunctions.schema"
+                android:value="app_functions_schema.xsd" />
+            <property
+                android:name="android.app.appfunctions.v2"
+                android:value="ylih_app_functions.xml" />
+            <intent-filter>
+                <action android:name="android.app.appfunctions.AppFunctionService" />
+            </intent-filter>
+        </service>
+
+        <property
+            android:name="android.app.appfunctions.app_metadata"
+            android:resource="@xml/app_metadata" />
+
+        <!--
           ACL_CONNECTED/ACL_DISCONNECTED are protected broadcasts carrying
           FLAG_RECEIVER_INCLUDE_BACKGROUND, so this manifest receiver still runs on Android 8+ with
           nothing of ours resident, non-exported.

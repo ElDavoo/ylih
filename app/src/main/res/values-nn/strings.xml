@@ -126,6 +126,8 @@
     <string name="settings_devices_body">avkryssa alt som ikkje er hovudtelefon - ein bilystereo eller ein høgtalare - for å sluta å registrera det.</string>
     <string name="settings_device_subtitle">%1$s · først sett %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">assistenttilgang</string>
+    <string name="settings_agent_body">lat ein assistent på denne telefonen lesa kor lenge du har lytta</string>
     <string name="settings_export">eksport json</string>
     <string name="settings_import">import</string>
     <string name="settings_import_warning">import erstattar alt som er lagra no.</string>

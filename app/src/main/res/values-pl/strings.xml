@@ -134,6 +134,8 @@
     <string name="settings_devices_body">odznacz wszystko, co nie jest słuchawkami — np. radio samochodowe lub głośnik — aby przestać to rejestrować.</string>
     <string name="settings_device_subtitle">%1$s · pierwszy raz %2$s</string>
     <string name="settings_data">dane</string>
+    <string name="settings_agent_title">dostęp asystenta</string>
+    <string name="settings_agent_body">pozwól asystentowi w tym telefonie odczytać, jak długo słuchasz</string>
     <string name="settings_export">eksportuj json</string>
     <string name="settings_import">importuj</string>
     <string name="settings_import_warning">import zastępuje wszystko, co jest obecnie zapisane.</string>

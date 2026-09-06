@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ශ්‍රවණ උපකරණ නොවන දෙයක්ට ඔබ සිසිල්වීමට ඇතිකර - තුම්බුරු ස්ටීරියෝ ස්පීකරය - ගිණුම එය වීමට නවතින්න.</string>
     <string name="settings_device_subtitle">%1$s · ඉතිරිවිය %2$s</string>
     <string name="settings_data">ගිණුම</string>
+    <string name="settings_agent_title">සහායකයාගේ ප්‍රවේශය</string>
+    <string name="settings_agent_body">මෙම දුරකථනයේ සහායකයාට ඔබ කොපමණ වේලාවක් සවන් දුන්නාද යන්න කියවීමට ඉඩ දෙන්න</string>
     <string name="settings_export">json අපනයන</string>
     <string name="settings_import">ඇතුල්කරන්න</string>
     <string name="settings_import_warning">ඇතුල් කිරීම දැනට ගබඩා එකතුවම ප්‍රතිස්ථාපනය කරයි.</string>

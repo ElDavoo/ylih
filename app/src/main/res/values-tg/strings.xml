@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ҳар чизеро, ки гӯшмонак нест — радиои мошин ё баландгӯяк — аз қайд бардоред, то сабташ қатъ шавад.</string>
     <string name="settings_device_subtitle">%1$s · бори аввал дида шуд %2$s</string>
     <string name="settings_data">маълумот</string>
+    <string name="settings_agent_title">дастрасии ёрдамчӣ</string>
+    <string name="settings_agent_body">ба ёрдамчии ин телефон иҷозат деҳ, ки чӣ қадар гӯш карданатро хонад</string>
     <string name="settings_export">содироти json</string>
     <string name="settings_import">воридот</string>
     <string name="settings_import_warning">воридот ҳама чизи ҳозира захирашударо иваз мекунад.</string>

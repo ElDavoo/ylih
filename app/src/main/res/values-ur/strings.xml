@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ہیڈ فونز کو منتخب کریں</string>
     <string name="settings_device_subtitle">%1$s · پہلا دیکھا %2$s</string>
     <string name="settings_data">ڈیٹا</string>
+    <string name="settings_agent_title">معاون کی رسائی</string>
+    <string name="settings_agent_body">اس فون پر موجود معاون کو پڑھنے دیں کہ آپ نے کتنی دیر سنا</string>
     <string name="settings_export">json برآمد کریں</string>
     <string name="settings_import">درآمد</string>
     <string name="settings_import_warning">درآمد موجودہ سب کچھ بدل دیتا ہے</string>

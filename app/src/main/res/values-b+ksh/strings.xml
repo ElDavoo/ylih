@@ -126,6 +126,8 @@
     <string name="settings_devices_body">häk alles ov, wat keij kopfhörer es — en autoradio odder sprecher — öm et nit opzenämme.</string>
     <string name="settings_device_subtitle">%1$s · erscht jesähne %2$s</string>
     <string name="settings_data">daten</string>
+    <string name="settings_agent_title">zohjang för der hellefer</string>
+    <string name="settings_agent_body">loss ene hellefer op däm telefoon lesse, wie lang de zohjehoot häs</string>
     <string name="settings_export">json exportere</string>
     <string name="settings_import">importere</string>
     <string name="settings_import_warning">importere ersätz alles, wat jrad jespeichert es.</string>

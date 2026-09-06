@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ie hedphon sili — gaaḍi spikar ba aara spikar — aa-na cinha veṭṭa iḍu, aaṭene aa lekha aa sili.</string>
     <string name="settings_device_subtitle">%1$s · modala %2$s</string>
     <string name="settings_data">ḍaṭa</string>
+    <string name="settings_agent_title">sahaayak-ki pravesh</string>
+    <string name="settings_agent_body">ii phon-ṭene manḍi sahaayak ni miiru ketra vella vinḍiteri aani vaacunk hini</string>
     <string name="settings_export">json bahaara</string>
     <string name="settings_import">bhitara</string>
     <string name="settings_import_warning">bhitara iḍa ippa manḍa sabu badalenu.</string>

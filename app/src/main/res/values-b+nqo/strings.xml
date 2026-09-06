@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ߛߐ߬ߙߐ ߡߊ ߞߊ ߗߍ - ߛߌߦߊߙߊ ߞߎߡߊ ߥߍ ߛߎߙߎ߲ - ߊ ߞߐ ߓߊߊߙߊ ߥߊߙߊ߲.</string>
     <string name="settings_device_subtitle">%1$s · ߝߊߙߊ %2$s</string>
     <string name="settings_data">ߓߊߊߙߊ</string>
+    <string name="settings_agent_title">ߘߍ߬ߡߍ߲߬ߠߊ ߟߊ߬ߘߏ߲߬ߠߌ߲</string>
+    <string name="settings_agent_body">ߌ ߦߋ߫ ߘߍ߬ߡߍ߲߬ߠߊ ߕߏ߫ ߕߋߟߋߝߐ߲ ߣߌ߲߬ ߞߊ߲߬ ߞߊ߬ ߕߎߡߊ ߘߐߞߊ߬ߙߊ߲߬ ߌ ߟߊ߫ ߟߊߡߍ߲ߠߌ߲ ߠߊ߫</string>
     <string name="settings_export">json ߕߊ ߛߐ</string>
     <string name="settings_import">ߞߍ</string>
     <string name="settings_import_warning">ߞߍ ߓߋ ߓߊߊߙߊ ߥߍߙߍ ߦߋ.</string>

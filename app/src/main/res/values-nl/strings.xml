@@ -135,6 +135,8 @@
     <string name="settings_devices_body">vink alles uit wat geen koptelefoon is — een autoradio of een luidspreker — om te stoppen met registreren.</string>
     <string name="settings_device_subtitle">%1$s · eerst gezien %2$s</string>
     <string name="settings_data">gegevens</string>
+    <string name="settings_agent_title">assistenttoegang</string>
+    <string name="settings_agent_body">laat een assistent op deze telefoon lezen hoelang je hebt geluisterd</string>
     <string name="settings_export">json exporteren</string>
     <string name="settings_import">importeren</string>
     <string name="settings_import_warning">importeren vervangt alles wat nu is opgeslagen.</string>

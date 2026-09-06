@@ -126,6 +126,8 @@
     <string name="settings_devices_body">nyahtanda apa-apa yang bukan fon kepala — stereo kereta atau pembesar suara — untuk berhenti merekodnya.</string>
     <string name="settings_device_subtitle">%1$s · pertama dilihat %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">akses pembantu</string>
+    <string name="settings_agent_body">benarkan pembantu pada telefon ini membaca berapa lama anda mendengar</string>
     <string name="settings_export">eksport json</string>
     <string name="settings_import">import</string>
     <string name="settings_import_warning">mengimport menggantikan semua yang tersimpan sekarang.</string>

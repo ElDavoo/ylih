@@ -136,6 +136,8 @@
     <string name="settings_devices_body">ألغِ تحديد أي شيء ليس سماعات — مثل نظام صوت السيارة أو مكبر صوت — لإيقاف تسجيله.</string>
     <string name="settings_device_subtitle">%1$s · أول ظهور %2$s</string>
     <string name="settings_data">البيانات</string>
+    <string name="settings_agent_title">وصول المساعد</string>
+    <string name="settings_agent_body">اسمح لمساعد على هذا الهاتف بقراءة المدة التي استمعت فيها</string>
     <string name="settings_export">تصدير json</string>
     <string name="settings_import">استيراد</string>
     <string name="settings_import_warning">الاستيراد يستبدل كل ما هو مخزَّن حاليًا.</string>

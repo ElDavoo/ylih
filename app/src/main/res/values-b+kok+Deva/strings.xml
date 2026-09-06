@@ -126,6 +126,8 @@
     <string name="settings_devices_body">हेडफोन नसलेले काहीही अनचेक करा — कार स्टीरिओ किंवा स्पीकर — हे रेकॉर्ड करणे थांबवा.</string>
     <string name="settings_device_subtitle">%1$s · प्रथम पहिले %2$s</string>
     <string name="settings_data">डेटा</string>
+    <string name="settings_agent_title">सहायकाचो प्रवेश</string>
+    <string name="settings_agent_body">ह्या फोनांतल्या सहायकाक तुमी कितलो वेळ आयकलां तें वाचूंक दिया</string>
     <string name="settings_export">json निर्यात करा</string>
     <string name="settings_import">आयात करा</string>
     <string name="settings_import_warning">आयात करणे वर्तमानी संग्रहित सर्वकाही बदलते.</string>

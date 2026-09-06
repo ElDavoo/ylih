@@ -7,7 +7,12 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.gestures.ScrollableState
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.only
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
@@ -22,12 +27,16 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.MediumFlexibleTopAppBar
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.ScaffoldDefaults
 import androidx.compose.material3.ShortNavigationBar
 import androidx.compose.material3.ShortNavigationBarItem
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.WideNavigationRail
+import androidx.compose.material3.WideNavigationRailItem
+import androidx.compose.material3.adaptive.currentWindowAdaptiveInfoV2
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.derivedStateOf
@@ -43,7 +52,9 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.window.core.layout.WindowSizeClass
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.flowWithLifecycle
@@ -92,6 +103,29 @@ private const val PAIR_ROUTE = "pair/{pairId}"
 // change under us in a dependency bump.
 private val NAV_FADE = tween<Float>(durationMillis = 700)
 
+/**
+ * How wide a screen's content is ever allowed to get.
+ *
+ * At `targetSdk 37` the platform ignores orientation and resizability restrictions on anything
+ * wider than 600dp, so a tablet gets the phone layout stretched across it — lists of a dozen words
+ * on a line, which nobody reads twice. This is a ceiling and not a size: it is above every phone
+ * width there is, so the phone layout cannot be changed by it.
+ */
+private val CONTENT_MAX_WIDTH = 640.dp
+
+/**
+ * Centres a screen and stops it stretching, at the one place all four of them flow through.
+ *
+ * Each screen still takes its own `contentPadding` and scroll state; none of them knows this
+ * exists, which is why it is here rather than four times over.
+ */
+@Composable
+private fun ContentWidth(content: @Composable () -> Unit) {
+    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.TopCenter) {
+        Box(Modifier.widthIn(max = CONTENT_MAX_WIDTH)) { content() }
+    }
+}
+
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun YlihNavHost(
@@ -126,6 +160,27 @@ fun YlihNavHost(
     // down there would hand the user back the first tab on the way out.
     val pagerState = rememberPagerState(pageCount = { destinations.size })
     val scope = rememberCoroutineScope()
+
+    // A tablet or an unfolded foldable, at Material's own medium-width breakpoint. Read through
+    // currentWindowAdaptiveInfoV2 rather than currentWindowAdaptiveInfo: the latter is deprecated
+    // in this version of the adaptive library — it cannot see the large and extra-large classes —
+    // and a deprecation fails the build here.
+    val wide = currentWindowAdaptiveInfoV2().windowSizeClass
+        .isWidthAtLeastBreakpoint(WindowSizeClass.WIDTH_DP_MEDIUM_LOWER_BOUND)
+
+    // One lambda for both the bar and the rail: they are the same control drawn twice, and a
+    // second copy of "come back to the tabs and show me this one" is a second thing to get wrong.
+    val selectTab: (Int) -> Unit = { page ->
+        // The bar is still there on the pair page, where a tap means both things at once. A no-op
+        // on the tabs themselves, which is where the tap usually comes from.
+        navController.popBackStack(TABS_ROUTE, inclusive = false)
+        scope.launch { pagerState.animateScrollToPage(page) }
+    }
+    val tabSelected: (Int) -> Boolean = { page ->
+        // Nothing is selected while the pair page is up, as when each tab was a route of its own
+        // and none of them was the current one.
+        currentRoute == TABS_ROUTE && pagerState.currentPage == page
+    }
 
     // `currentPage` rather than `settledPage`: it flips at the halfway point of a drag, which is
     // the moment the screen the question is about becomes the one in front of the user.
@@ -189,128 +244,157 @@ fun YlihNavHost(
         }
     }
 
-    Scaffold(
-        // Nested scroll on the Scaffold is enough: the LazyColumns inside each screen dispatch
-        // their scroll up to it.
-        modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-        snackbarHost = { SnackbarHost(snackbarHostState) },
-        topBar = {
-            // Pair detail brings its own app bar with a back arrow, so the app-level one is only
-            // for the three tabs.
-            //
-            // Fading rather than swapping it: the route flips the moment navigate() is called, so
-            // dropping the bar on `currentRoute` alone made it vanish a beat before the screen it
-            // belongs to had finished crossfading — and took its height with it, jerking the list
-            // underneath upwards mid-animation. AnimatedVisibility holds the height for the whole
-            // exit and hands it back at the start of the enter, so the two bars trade places in
-            // step with the destinations behind them. Tab-to-tab keeps the bar untouched, which is
-            // the point of hoisting it here.
-            AnimatedVisibility(
-                visible = currentRoute != PAIR_ROUTE,
-                enter = fadeIn(NAV_FADE),
-                exit = fadeOut(NAV_FADE),
-            ) {
-                MediumFlexibleTopAppBar(
-                    title = {
-                        Text(
-                            text = stringResource(R.string.app_title),
-                            maxLines = 1,
-                            // The name fits one line at the size the bar would give it in no
-                            // language — 30 characters in English, 40 in Cebuano — so it is
-                            // shrunk until it does, rather than wrapped onto a second line or
-                            // ellipsised to "ylih - your life in…".
-                            //
-                            // The ceiling is whatever style the bar provided rather than a
-                            // number of our own: the flexible bar interpolates that as it
-                            // collapses, so binding to it keeps the collapse animation driving
-                            // the size and leaves this only ever taking away. 14sp is a floor
-                            // and not a size anything is expected to reach — English and
-                            // Polish, the longest of the languages the store screenshots cover,
-                            // both settle near the ceiling — so that a language nobody here
-                            // reads gets a smaller title instead of a clipped one.
-                            autoSize = TextAutoSize.StepBased(
-                                minFontSize = 14.sp,
-                                maxFontSize = LocalTextStyle.current.fontSize,
-                            ),
-                        )
-                    },
-                    scrollBehavior = scrollBehavior,
-                )
-            }
-        },
-        bottomBar = {
-            // Expressive's shorter bar: the active item gets a filled pill that springs into
-            // place rather than the old static indicator.
-            ShortNavigationBar {
+    // The rail sits beside the Scaffold rather than inside it: Scaffold has no side slot, and a
+    // rail put in the content lambda would leave the Scaffold computing its insets and its
+    // bottom-bar padding for the full window rather than for the width the content actually gets.
+    Row(Modifier.fillMaxSize()) {
+        if (wide) {
+            WideNavigationRail {
                 destinations.forEachIndexed { page, destination ->
-                    ShortNavigationBarItem(
-                        // Nothing is selected while the pair page is up, as when each tab was a
-                        // route of its own and none of them was the current one.
-                        selected = currentRoute == TABS_ROUTE && pagerState.currentPage == page,
-                        onClick = {
-                            // The bar is still there on the pair page, where a tap means "come
-                            // back to the tabs and show me this one". A no-op on the tabs
-                            // themselves, which is where the tap usually comes from.
-                            navController.popBackStack(TABS_ROUTE, inclusive = false)
-                            scope.launch { pagerState.animateScrollToPage(page) }
-                        },
+                    WideNavigationRailItem(
+                        selected = tabSelected(page),
+                        onClick = { selectTab(page) },
                         icon = { Icon(destination.icon, contentDescription = null) },
                         label = { Text(stringResource(destination.label)) },
+                        // Collapsed: three destinations with one-word labels do not need the
+                        // expanded rail's width, and expanding it is a control of its own.
+                        railExpanded = false,
                     )
                 }
             }
-        },
-    ) { padding ->
-        NavHost(
-            navController = navController,
-            startDestination = TABS_ROUTE,
-            enterTransition = { fadeIn(NAV_FADE) },
-            exitTransition = { fadeOut(NAV_FADE) },
-            popEnterTransition = { fadeIn(NAV_FADE) },
-            popExitTransition = { fadeOut(NAV_FADE) },
-        ) {
-            composable(TABS_ROUTE) {
-                HorizontalPager(
-                    state = pagerState,
-                    modifier = Modifier.fillMaxSize(),
-                    // A page is a whole screen and lays itself out from the top; the default
-                    // centres one that does not fill the height, which the settings column does
-                    // not until it has enough rows in it.
-                    verticalAlignment = Alignment.Top,
-                ) { page ->
-                    when (page) {
-                        TAB_DEVICES -> DevicesScreen(
-                            viewModel = viewModel,
-                            contentPadding = padding,
-                            onOpenPair = { navController.navigate("pair/$it") },
-                            listState = devicesListState,
-                        )
-                        TAB_STATS -> StatsScreen(
-                            viewModel = viewModel,
-                            contentPadding = padding,
-                            listState = statsListState,
-                        )
-                        else -> SettingsScreen(
-                            viewModel = viewModel,
-                            contentPadding = padding,
-                            scrollState = settingsScrollState,
-                        )
+        }
+        Scaffold(
+            // Nested scroll on the Scaffold is enough: the LazyColumns inside each screen dispatch
+            // their scroll up to it.
+            modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
+            // enableEdgeToEdge is on, and the rail consumes the start and vertical bars itself.
+            // Left at the default the Scaffold would consume the start inset a second time and pad
+            // the content away from a rail that had already made room for it.
+            contentWindowInsets = if (wide) {
+                ScaffoldDefaults.contentWindowInsets
+                    .only(WindowInsetsSides.End + WindowInsetsSides.Vertical)
+            } else {
+                ScaffoldDefaults.contentWindowInsets
+            },
+            snackbarHost = { SnackbarHost(snackbarHostState) },
+            topBar = {
+                // Pair detail brings its own app bar with a back arrow, so the app-level one is
+                // only for the three tabs.
+                //
+                // Fading rather than swapping it: the route flips the moment navigate() is called,
+                // so dropping the bar on `currentRoute` alone made it vanish a beat before the
+                // screen it belongs to had finished crossfading — and took its height with it,
+                // jerking the list underneath upwards mid-animation. AnimatedVisibility holds the
+                // height for the whole exit and hands it back at the start of the enter, so the two
+                // bars trade places in step with the destinations behind them. Tab-to-tab keeps the
+                // bar untouched, which is the point of hoisting it here.
+                AnimatedVisibility(
+                    visible = currentRoute != PAIR_ROUTE,
+                    enter = fadeIn(NAV_FADE),
+                    exit = fadeOut(NAV_FADE),
+                ) {
+                    MediumFlexibleTopAppBar(
+                        title = {
+                            Text(
+                                text = stringResource(R.string.app_title),
+                                maxLines = 1,
+                                // The name fits one line at the size the bar would give it in no
+                                // language — 30 characters in English, 40 in Cebuano — so it is
+                                // shrunk until it does, rather than wrapped onto a second line or
+                                // ellipsised to "ylih - your life in…".
+                                //
+                                // The ceiling is whatever style the bar provided rather than a
+                                // number of our own: the flexible bar interpolates that as it
+                                // collapses, so binding to it keeps the collapse animation driving
+                                // the size and leaves this only ever taking away. 14sp is a floor
+                                // and not a size anything is expected to reach — English and
+                                // Polish, the longest of the languages the store screenshots cover,
+                                // both settle near the ceiling — so that a language nobody here
+                                // reads gets a smaller title instead of a clipped one.
+                                autoSize = TextAutoSize.StepBased(
+                                    minFontSize = 14.sp,
+                                    maxFontSize = LocalTextStyle.current.fontSize,
+                                ),
+                            )
+                        },
+                        scrollBehavior = scrollBehavior,
+                    )
+                }
+            },
+            bottomBar = {
+                // Nothing at all when the rail is up: the same three destinations down both edges
+                // of the screen would be one control drawn twice.
+                if (!wide) {
+                    // Expressive's shorter bar: the active item gets a filled pill that springs
+                    // into place rather than the old static indicator.
+                    ShortNavigationBar {
+                        destinations.forEachIndexed { page, destination ->
+                            ShortNavigationBarItem(
+                                selected = tabSelected(page),
+                                onClick = { selectTab(page) },
+                                icon = { Icon(destination.icon, contentDescription = null) },
+                                label = { Text(stringResource(destination.label)) },
+                            )
+                        }
                     }
                 }
-            }
-            composable(PAIR_ROUTE) { entry ->
-                val pairId = entry.arguments?.getString("pairId")?.toLongOrNull()
-                if (pairId == null) {
-                    // In an effect, not in the composition body: popping the back stack while it
-                    // is being composed is a side effect on the thing doing the composing.
-                    LaunchedEffect(entry) { navController.popBackStack() }
-                } else {
-                    PairDetailScreen(
-                        viewModel = viewModel,
-                        pairId = pairId,
-                        contentPadding = padding,
-                        onBack = { navController.popBackStack() },
-                    )
+            },
+        ) { padding ->
+            NavHost(
+                navController = navController,
+                startDestination = TABS_ROUTE,
+                enterTransition = { fadeIn(NAV_FADE) },
+                exitTransition = { fadeOut(NAV_FADE) },
+                popEnterTransition = { fadeIn(NAV_FADE) },
+                popExitTransition = { fadeOut(NAV_FADE) },
+            ) {
+                composable(TABS_ROUTE) {
+                    HorizontalPager(
+                        state = pagerState,
+                        modifier = Modifier.fillMaxSize(),
+                        // A page is a whole screen and lays itself out from the top; the default
+                        // centres one that does not fill the height, which the settings column does
+                        // not until it has enough rows in it.
+                        verticalAlignment = Alignment.Top,
+                    ) { page ->
+                        ContentWidth {
+                            when (page) {
+                                TAB_DEVICES -> DevicesScreen(
+                                    viewModel = viewModel,
+                                    contentPadding = padding,
+                                    onOpenPair = { navController.navigate("pair/$it") },
+                                    listState = devicesListState,
+                                )
+                                TAB_STATS -> StatsScreen(
+                                    viewModel = viewModel,
+                                    contentPadding = padding,
+                                    listState = statsListState,
+                                )
+                                else -> SettingsScreen(
+                                    viewModel = viewModel,
+                                    contentPadding = padding,
+                                    scrollState = settingsScrollState,
+                                )
+                            }
+                        }
+                    }
+                }
+                composable(PAIR_ROUTE) { entry ->
+                    val pairId = entry.arguments?.getString("pairId")?.toLongOrNull()
+                    if (pairId == null) {
+                        // In an effect, not in the composition body: popping the back stack while
+                        // it is being composed is a side effect on the thing doing the composing.
+                        LaunchedEffect(entry) { navController.popBackStack() }
+                    } else {
+                        ContentWidth {
+                            PairDetailScreen(
+                                viewModel = viewModel,
+                                pairId = pairId,
+                                contentPadding = padding,
+                                onBack = { navController.popBackStack() },
+                            )
+                        }
+                    }
                 }
             }
         }

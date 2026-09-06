@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ሔዱ ሸምታ ምክንያት ሓገዘ</string>
     <string name="settings_device_subtitle">%1$s · ሕጂ ተዘውተረ %2$s</string>
     <string name="settings_data">ሓበሬታ</string>
+    <string name="settings_agent_title">መእተዊ ሓጋዚ</string>
+    <string name="settings_agent_body">ኣብዚ ስልኪ ዘሎ ሓጋዚ ክንደይ ግዜ ከም ዝሰማዕካ ከንብብ ፍቐድ</string>
     <string name="settings_export">ሓገዝ json</string>
     <string name="settings_import">ወድቂ</string>
     <string name="settings_import_warning">ወድቂ ሓሙሽተ ሓበሬታ ተሸጠ</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ਜੋ ਵੀ ਹੈੱਡਫ਼ੋਨ ਨਹੀਂ ਹੈ — ਕਾਰ ਦਾ ਸਟੀਰੀਓ ਜਾਂ ਸਪੀਕਰ — ਉਸ ਨੂੰ ਦਰਜ ਹੋਣੋਂ ਰੋਕਣ ਲਈ ਨਿਸ਼ਾਨ ਹਟਾਓ।</string>
     <string name="settings_device_subtitle">%1$s · ਪਹਿਲੀ ਵਾਰ ਵੇਖਿਆ %2$s</string>
     <string name="settings_data">ਡਾਟਾ</string>
+    <string name="settings_agent_title">ਸਹਾਇਕ ਦੀ ਪਹੁੰਚ</string>
+    <string name="settings_agent_body">ਇਸ ਫ਼ੋਨ ਦੇ ਸਹਾਇਕ ਨੂੰ ਪੜ੍ਹਨ ਦਿਓ ਕਿ ਤੁਸੀਂ ਕਿੰਨਾ ਚਿਰ ਸੁਣਿਆ</string>
     <string name="settings_export">json ਐਕਸਪੋਰਟ</string>
     <string name="settings_import">ਇੰਪੋਰਟ</string>
     <string name="settings_import_warning">ਦਰਾਮਦ ਕਰਨ ਨਾਲ ਹੁਣ ਸਾਂਭਿਆ ਸਭ ਕੁਝ ਬਦਲ ਜਾਂਦਾ ਹੈ।</string>

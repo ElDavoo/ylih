@@ -126,6 +126,8 @@
     <string name="settings_devices_body">құлақ аспалары емес ештеңе белгісін өшіріңіз — автомобиль стереосы немесе спикер — оны жазбай тәтеуді тоқтатсын.</string>
     <string name="settings_device_subtitle">%1$s · бірінші көрінді %2$s</string>
     <string name="settings_data">деректер</string>
+    <string name="settings_agent_title">көмекші қатынасы</string>
+    <string name="settings_agent_body">осы телефондағы көмекшіге қанша уақыт тыңдағаныңды оқуға рұқсат бер</string>
     <string name="settings_export">json экспорты</string>
     <string name="settings_import">импорт</string>
     <string name="settings_import_warning">импорт қазір сақталған ештеңеге ауыстырады.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">unchecja dutis lis robis che no sedin cuffiis - un stereo di machine o un speaker - par pesterâ dal registrâje.</string>
     <string name="settings_device_subtitle">%1$s · vistu la prime vole %2$s</string>
     <string name="settings_data">dâts</string>
+    <string name="settings_agent_title">acès dal assistent</string>
+    <string name="settings_agent_body">lasse che un assistent di chest telefon al lei par cuant timp tu âs scoltât</string>
     <string name="settings_export">esporte json</string>
     <string name="settings_import">impuarte</string>
     <string name="settings_import_warning">impuartâ al sostituìs dut ce che a ven registrât ara.</string>

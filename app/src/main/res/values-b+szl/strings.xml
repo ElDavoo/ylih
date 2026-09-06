@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ôdznocz wszysko, co niy je suchawkami — radio we aucie abo gośnik — coby przestać to zapisować.</string>
     <string name="settings_device_subtitle">%1$s · piyrszy roz widziane %2$s</string>
     <string name="settings_data">dane</string>
+    <string name="settings_agent_title">dostymp asystynta</string>
+    <string name="settings_agent_body">dozwól asystyntowi we tym telefōnie przeczytać, jak dugo żeś suchoł</string>
     <string name="settings_export">eksportuj json</string>
     <string name="settings_import">importuj</string>
     <string name="settings_import_warning">import zastympuje wszysko, co je terozki zapisane.</string>

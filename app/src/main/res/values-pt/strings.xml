@@ -126,6 +126,8 @@
     <string name="settings_devices_body">desmarque qualquer coisa que não seja fones - um som de carro ou um alto-falante - para parar de gravá-lo.</string>
     <string name="settings_device_subtitle">%1$s · visto pela primeira vez %2$s</string>
     <string name="settings_data">dados</string>
+    <string name="settings_agent_title">acesso do assistente</string>
+    <string name="settings_agent_body">deixa um assistente deste telemóvel ler quanto tempo ouviste</string>
     <string name="settings_export">exportar json</string>
     <string name="settings_import">importar</string>
     <string name="settings_import_warning">importar substitui tudo o que está atualmente armazenado.</string>

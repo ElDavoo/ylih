@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ھوسیلاسى تاللا</string>
     <string name="settings_device_subtitle">%1$s · بىرىنچى جاھاندى %2$s</string>
     <string name="settings_data">ماعلوماتى</string>
+    <string name="settings_agent_title">یاردامچی رخصتی</string>
+    <string name="settings_agent_body">بو تېلېفوندهگی یاردامچیگه قنچه وقت تینگلگنینگیزنی اوقیشگه رخصت بېرینگ</string>
     <string name="settings_export">json چىقار</string>
     <string name="settings_import">کىرگۈز</string>
     <string name="settings_import_warning">کىرگۈز بارلىق ماعلوماتنى الماشتورادو</string>

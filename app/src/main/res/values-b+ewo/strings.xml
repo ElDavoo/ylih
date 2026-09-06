@@ -134,6 +134,8 @@
     <string name="settings_devices_body">bɔkɔ abem ye a kɔ bikule — toŋkɔ ye nyuŋ pu speaker — a ka nka tiyo ye e.</string>
     <string name="settings_device_subtitle">%1$s · mbouma ye mɔ %2$s</string>
     <string name="settings_data">tiyo</string>
+    <string name="settings_agent_title">avulan ya mvolan</string>
+    <string name="settings_agent_body">kuluku mvolan a ne telefon ji a lañ ntɔ́ɔ́ wa vɔ́gɔ́</string>
     <string name="settings_export">ekpɔ json</string>
     <string name="settings_import">kula</string>
     <string name="settings_import_warning">kula ye a vul tiyo abam ye a tamɛ ne.</string>

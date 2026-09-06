@@ -126,6 +126,8 @@
     <string name="settings_devices_body">dijis gî tî sô - aûzo tî sô - dele. stereo dijis wala karti tî sô.</string>
     <string name="settings_device_subtitle">%1$s · kera %2$s</string>
     <string name="settings_data">alama</string>
+    <string name="settings_agent_title">lingbi ti mbeni wamungo maboko</string>
+    <string name="settings_agent_body">zia mbeni wamungo maboko na terefone so adiko ngoi so mo mä</string>
     <string name="settings_export">json sânda</string>
     <string name="settings_import">jara</string>
     <string name="settings_import_warning">jara ro alama kûê dele.</string>

@@ -135,6 +135,8 @@
     <string name="settings_devices_body">debifează ce nu sunt căști — un sistem auto sau o boxă — ca să nu mai fie înregistrat.</string>
     <string name="settings_device_subtitle">%1$s · văzut prima dată %2$s</string>
     <string name="settings_data">date</string>
+    <string name="settings_agent_title">acces pentru asistent</string>
+    <string name="settings_agent_body">lasă un asistent de pe acest telefon să citească cât timp ai ascultat</string>
     <string name="settings_export">exportă json</string>
     <string name="settings_import">importă</string>
     <string name="settings_import_warning">importul înlocuiește tot ce este stocat acum.</string>

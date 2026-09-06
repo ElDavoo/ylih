@@ -126,6 +126,8 @@
     <string name="settings_devices_body">მოხსნა რათა რომელი არ არის ყურსასმენი — მანქანის სტერეო ან დინამიკი — რომ გაჩერდეს რეგისტრაცია.</string>
     <string name="settings_device_subtitle">%1$s · პირველად ნანახი %2$s</string>
     <string name="settings_data">მონაცემები</string>
+    <string name="settings_agent_title">ასისტენტის წვდომა</string>
+    <string name="settings_agent_body">მიეცი ამ ტელეფონის ასისტენტს უფლება, წაიკითხოს რამდენ ხანს უსმენდი</string>
     <string name="settings_export">json გატანა</string>
     <string name="settings_import">აქვს</string>
     <string name="settings_import_warning">აქვს შემცვლელი ყველაფერი ახლა შენახული.</string>

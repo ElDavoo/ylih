@@ -134,6 +134,8 @@
     <string name="settings_devices_body">যিটো শিৰোফোন নহয় — এটা গাড়ি স্টেৰিও বা এটা স্পিকাৰ — তাৰ পৰা টিক চিন আঁতৰাই তাৰ লিপিবদ্ধ বন্ধ কৰক।</string>
     <string name="settings_device_subtitle">%1$s · %2$s ত প্ৰথমে দেখা</string>
     <string name="settings_data">ডেটা</string>
+    <string name="settings_agent_title">সহায়কৰ অভিগম</string>
+    <string name="settings_agent_body">এই ফোনৰ সহায়কক আপুনি কিমান সময় শুনিলে সেয়া পঢ়িবলৈ দিয়ক</string>
     <string name="settings_export">json ৰপ্তানি</string>
     <string name="settings_import">আমদানি</string>
     <string name="settings_import_warning">আমদানি বৰ্তমানে সংৰক্ষিত সবকিছু প্রতিস্থাপন কৰে।</string>

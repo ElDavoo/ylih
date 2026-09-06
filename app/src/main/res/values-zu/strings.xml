@@ -126,6 +126,8 @@
     <string name="settings_devices_body">susa uphawu kunoma yini engewona amahedfoni — umsakazo wemoto noma isipikha — ukuze kuyekwe ukuqopha.</string>
     <string name="settings_device_subtitle">%1$s · kubonwe okokuqala %2$s</string>
     <string name="settings_data">idatha</string>
+    <string name="settings_agent_title">ukufinyelela komsizi</string>
+    <string name="settings_agent_body">vumela umsizi kule foni afunde ukuthi ulalele isikhathi esingakanani</string>
     <string name="settings_export">thumela i-json</string>
     <string name="settings_import">ngenisa</string>
     <string name="settings_import_warning">ukungenisa kushintsha konke okugcinwe manje.</string>

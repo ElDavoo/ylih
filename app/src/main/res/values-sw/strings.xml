@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ondoa alama kwenye chochote kisicho vipokea sauti — redio ya gari au spika — ili kuacha kukirekodi.</string>
     <string name="settings_device_subtitle">%1$s · kilionekana kwa mara ya kwanza %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">ufikiaji wa msaidizi</string>
+    <string name="settings_agent_body">ruhusu msaidizi kwenye simu hii asome muda uliosikiliza</string>
     <string name="settings_export">hamisha json</string>
     <string name="settings_import">leta</string>
     <string name="settings_import_warning">kuleta hubadilisha kila kitu kilichohifadhiwa sasa.</string>

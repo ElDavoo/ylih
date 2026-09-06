@@ -126,6 +126,8 @@
     <string name="settings_devices_body">отштиклирај сè што не се слушалки — автомобилско радио или звучник — за да престане да се запишува.</string>
     <string name="settings_device_subtitle">%1$s · првпат видено %2$s</string>
     <string name="settings_data">податоци</string>
+    <string name="settings_agent_title">пристап на асистентот</string>
+    <string name="settings_agent_body">дозволи асистент на овој телефон да прочита колку долго си слушал</string>
     <string name="settings_export">извези json</string>
     <string name="settings_import">увези</string>
     <string name="settings_import_warning">увезувањето го заменува сè што е зачувано во моментот.</string>

@@ -126,6 +126,8 @@
     <string name="settings_devices_body">yi adari kii alalade — ọkunrin kariọkọ tabi aparo — ki o to jija ara wọn.</string>
     <string name="settings_device_subtitle">%1$s · ikini ri %2$s</string>
     <string name="settings_data">alaye</string>
+    <string name="settings_agent_title">ìwọlé olùrànlọ́wọ́</string>
+    <string name="settings_agent_body">jẹ́ kí olùrànlọ́wọ́ lórí fóònù yìí kà bí o ṣe fetísílẹ̀ tó</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">wó gbá</string>
     <string name="settings_import_warning">gbigbe yin paja ohun ti a ti tọ silẹ loni.</string>

@@ -134,6 +134,8 @@
     <string name="settings_devices_body">gó sú yí ŋ dúm ndap — ká sténo ò sìkò — zú à gó tàten.</string>
     <string name="settings_device_subtitle">%1$s · à gá wíã %2$s</string>
     <string name="settings_data">ìkí</string>
+    <string name="settings_agent_title">kwɛ̀ŋ à nsáŋ</string>
+    <string name="settings_agent_body">bí nsáŋ yí fon ìyà à ŋwàʼ ntsùŋ yì wò yúʼ</string>
     <string name="settings_export">gó json</string>
     <string name="settings_import">gó ì</string>
     <string name="settings_import_warning">gó ì gó sú bí à kó tàn.</string>

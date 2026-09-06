@@ -134,6 +134,8 @@
     <string name="settings_devices_body">thamba kĩndũ kĩa mahoya - kĩruta kĩa ndũ kana gĩ gĩa mahoya - nĩguo kana mĩmenyithio ĩrĩ na ruo.</string>
     <string name="settings_device_subtitle">%1$s · rĩrĩa ĩkooyitwo %2$s</string>
     <string name="settings_data">ũmenyithia</string>
+    <string name="settings_agent_title">gũtoonya kwa mũteithia</string>
+    <string name="settings_agent_body">reka mũteithia ũrĩ thimũ ĩno athome ĩhinda rĩrĩa wathikĩrĩirie</string>
     <string name="settings_export">thaara nja json</string>
     <string name="settings_import">ruta mwarũngu</string>
     <string name="settings_import_warning">ruta mwarũngu rĩgĩthamba gĩothe kĩa haarũ.</string>

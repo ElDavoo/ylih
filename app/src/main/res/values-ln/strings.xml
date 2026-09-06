@@ -126,6 +126,8 @@
     <string name="settings_devices_body">longola bililingi te oyo te makelele te - stereo ya motuka te lokokoli - bonzela kosama te.</string>
     <string name="settings_device_subtitle">%1$s · makanga eyebi %2$s</string>
     <string name="settings_data">bililingi</string>
+    <string name="settings_agent_title">nzela ya mosungi</string>
+    <string name="settings_agent_body">tika mosungi na telefone oyo atanga ntango boni oyoki</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">import</string>
     <string name="settings_import_warning">import ezali kobanda bililingi nyonso oyo kino.</string>

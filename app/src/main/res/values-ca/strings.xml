@@ -133,6 +133,8 @@
     <string name="settings_devices_body">desmarca tot el que no sigui auriculars — un sistema estèreo d’un cotxe o un altaveu — per deixar de gravar-lo.</string>
     <string name="settings_device_subtitle">%1$s · primer cop vist %2$s</string>
     <string name="settings_data">dades</string>
+    <string name="settings_agent_title">accés de l’assistent</string>
+    <string name="settings_agent_body">deixa que un assistent d’aquest telèfon llegeixi quant de temps has escoltat</string>
     <string name="settings_export">exportar json</string>
     <string name="settings_import">importar</string>
     <string name="settings_import_warning">importar reemplaça tot el que està guardat actualment.</string>

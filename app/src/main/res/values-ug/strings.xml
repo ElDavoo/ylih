@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ئاۋاز بولۇمىنى تاللا</string>
     <string name="settings_device_subtitle">%1$s · بىرىنچى جېھەت %2$s</string>
     <string name="settings_data">سانلىق مەلۇمات</string>
+    <string name="settings_agent_title">ياردەمچى زىيارىتى</string>
+    <string name="settings_agent_body">بۇ تېلېفوندىكى ياردەمچىنىڭ قانچىلىك ۋاقىت ئاڭلىغىنىڭىزنى ئوقۇشىغا رۇخسەت قىلىڭ</string>
     <string name="settings_export">json چىقار</string>
     <string name="settings_import">كىرگۈز</string>
     <string name="settings_import_warning">كىرگۈزۈش بارلىق سانلىق مەلۇماتنى ئالماشتۇرىدۇ</string>

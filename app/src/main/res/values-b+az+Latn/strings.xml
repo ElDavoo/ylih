@@ -134,6 +134,8 @@
     <string name="settings_devices_body">qulaqlıq olmayan heç nə — avtomobil stereosistemi və ya akustik — qeyd etməyi dayandırmaq üçün işarəsini çıxarın.</string>
     <string name="settings_device_subtitle">%1$s · ilk görülmə %2$s</string>
     <string name="settings_data">məlumatlar</string>
+    <string name="settings_agent_title">assistent girişi</string>
+    <string name="settings_agent_body">bu telefondakı assistentə nə qədər qulaq asdığınızı oxumağa icazə verin</string>
     <string name="settings_export">json-ə ixrac et</string>
     <string name="settings_import">idxal et</string>
     <string name="settings_import_warning">idxal hazırda saxlanılan hər şeyi əvəz edir.</string>

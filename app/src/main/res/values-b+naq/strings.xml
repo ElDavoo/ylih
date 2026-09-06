@@ -126,6 +126,8 @@
     <string name="settings_devices_body">ǃaba ǃaudi, stereo o speaker, ǃo hara.</string>
     <string name="settings_device_subtitle">%1$s · ǂkhou %2$s</string>
     <string name="settings_data">hara</string>
+    <string name="settings_agent_title">hui-aob di ǃgû-ǂgâs</string>
+    <string name="settings_agent_body">mā hui-aoba nē telefonni ai khomai mâtikō gaxuse sats ge ǁnâu ǃkhaisa</string>
     <string name="settings_export">export json</string>
     <string name="settings_import">import</string>
     <string name="settings_import_warning">import ǃao hara di hamga.</string>

@@ -135,6 +135,8 @@
     <string name="settings_devices_body">décochez ce qui n’est pas des casques — une autoradio, une enceinte — pour arrêter de l’enregistrer.</string>
     <string name="settings_device_subtitle">%1$s · vu pour la première fois le %2$s</string>
     <string name="settings_data">données</string>
+    <string name="settings_agent_title">accès de l’assistant</string>
+    <string name="settings_agent_body">laisser un assistant de ce téléphone lire combien de temps vous avez écouté</string>
     <string name="settings_export">exporter en json</string>
     <string name="settings_import">importer</string>
     <string name="settings_import_warning">l’importation remplace tout ce qui est actuellement stocké.</string>

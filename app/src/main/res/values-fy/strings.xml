@@ -126,6 +126,8 @@
     <string name="settings_devices_body">uncheck alles dat net tskofhâlderskes is - in auto-stereo of in spreker - om it registrearjen te stopjen.</string>
     <string name="settings_device_subtitle">%1$s · earst sjoen %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">assistint-tagong</string>
+    <string name="settings_agent_body">lit in assistint op dizze telefoan lêze hoe lang ast harke hast</string>
     <string name="settings_export">eksport json</string>
     <string name="settings_import">ymport</string>
     <string name="settings_import_warning">ymport fersangje alles wat no op opslagene.</string>

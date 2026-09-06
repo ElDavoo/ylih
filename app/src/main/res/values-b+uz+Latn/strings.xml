@@ -126,6 +126,8 @@
     <string name="settings_devices_body">audiotosmа emaslar - mashinaning muzikаsi yoki spiker - ochirib quyinг.</string>
     <string name="settings_device_subtitle">%1$s · birinchi quldi %2$s</string>
     <string name="settings_data">mаlumot</string>
+    <string name="settings_agent_title">yordamchi ruxsati</string>
+    <string name="settings_agent_body">bu telefondagi yordamchiga qancha vaqt tinglaganingizni o’qishga ruxsat bering</string>
     <string name="settings_export">json eksporti</string>
     <string name="settings_import">import</string>
     <string name="settings_import_warning">import hozir hammasinin ozgartiribi.</string>

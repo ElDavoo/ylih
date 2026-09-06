@@ -126,6 +126,8 @@
     <string name="settings_devices_body">koi bhī cheez jo hedāfon nā ho ūn-check karein — ek kār stereo yā speaker — isko rekord karnā band karẽ.</string>
     <string name="settings_device_subtitle">%1$s · pehle dekhhā %2$s</string>
     <string name="settings_data">dāta</string>
+    <string name="settings_agent_title">sahayak ki pahunch</string>
+    <string name="settings_agent_body">is phone ke sahayak ko padhne dein ki aapne kitni der suna</string>
     <string name="settings_export">json niryāt</string>
     <string name="settings_import">āyāt</string>
     <string name="settings_import_warning">āyāt āyāt sab kuch badal detā hai jo abhi sañchit hai.</string>

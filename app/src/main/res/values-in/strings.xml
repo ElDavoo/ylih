@@ -134,6 +134,8 @@
     <string name="settings_devices_body">hilangkan centang pada apa pun yang bukan headphone — sistem audio mobil atau speaker — untuk berhenti mencatatnya.</string>
     <string name="settings_device_subtitle">%1$s · pertama terlihat %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">akses asisten</string>
+    <string name="settings_agent_body">izinkan asisten di ponsel ini membaca berapa lama kamu mendengarkan</string>
     <string name="settings_export">ekspor json</string>
     <string name="settings_import">impor</string>
     <string name="settings_import_warning">mengimpor akan menggantikan semua yang tersimpan saat ini.</string>

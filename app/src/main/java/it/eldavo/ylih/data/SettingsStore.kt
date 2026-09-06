@@ -3,6 +3,7 @@ package it.eldavo.ylih.data
 import android.content.Context
 import androidx.core.content.edit
 import it.eldavo.ylih.YlihApp
+import it.eldavo.ylih.agent.pushAgentAccess
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
@@ -12,14 +13,14 @@ import kotlinx.coroutines.flow.map
  * wired and playback tracking require the foreground service.
  *
  * Backed by a table in the app's own Room database rather than by DataStore, which is not a
- * storage decision — either would do for five flags — but a dependency one. DataStore ships a
+ * storage decision — either would do for six flags — but a dependency one. DataStore ships a
  * prebuilt `libdatastore_shared_counter.so` per ABI, and that file is the only thing in this app
  * whose bytes depend on whether the machine that built it had an NDK to strip with; it is why
  * `app/build.gradle.kts` had to pin `keepDebugSymbols`. Room was already here.
  */
 class SettingsStore(
     private val dao: SettingsDao,
-    /** Only for the language mirror — see [setLanguage] and [cachedLanguage]. */
+    /** For the language mirror and the app-function push — see [setLanguage], [setAgentAccess]. */
     private val appContext: Context,
 ) {
 
@@ -37,8 +38,9 @@ class SettingsStore(
     )
 
     /**
-     * Every setting, re-read whenever any of them changes. The table holds five rows, so reading
-     * all of them costs nothing next to the reason it has to be one query — see [SettingsDao.observeAll].
+     * Every setting, re-read whenever any of them changes. The table holds six rows, so reading
+     * all of them costs nothing next to the reason it has to be one query — see
+     * [SettingsDao.observeAll].
      */
     private val all: Flow<Map<String, String>> =
         dao.observeAll().map { rows -> rows.associate { it.key to it.value } }
@@ -63,6 +65,15 @@ class SettingsStore(
     val playbackOnly: Flow<Boolean> = boolean(PLAYBACK_ONLY)
 
     /**
+     * Whether an on-device assistant may call this app's app functions — see
+     * `agent/YlihAppFunctions.kt`.
+     *
+     * A new row in a key/value table, so no schema version and no migration: `SettingEntity` is
+     * what makes a new setting cost nothing.
+     */
+    val agentAccess: Flow<Boolean> = boolean(AGENT_ACCESS)
+
+    /**
      * A BCP 47 tag, or `AppLocale.SYSTEM` for the system language. Only ever written below
      * Android 13, where the platform has no per-app language setting of its own — see `AppLocale`.
      */
@@ -74,11 +85,26 @@ class SettingsStore(
 
     suspend fun playbackOnlyNow(): Boolean = booleanNow(PLAYBACK_ONLY)
 
+    suspend fun agentAccessNow(): Boolean = booleanNow(AGENT_ACCESS)
+
     suspend fun languageNow(): String = textNow(LANGUAGE) ?: ""
 
     suspend fun setDetailedTracking(enabled: Boolean) = put(DETAILED_TRACKING, enabled.toString())
 
     suspend fun setPlaybackOnly(enabled: Boolean) = put(PLAYBACK_ONLY, enabled.toString())
+
+    /**
+     * Writes the row *and* the platform state it stands for.
+     *
+     * The two together rather than the row alone, for the same reason [setLanguage] mirrors its
+     * value: the stored answer is the source of truth and the OS index is a projection of it, and
+     * a projection that only some callers remember to update is one that drifts. `false` here has
+     * to reach the OS — an app function left enabled is callable whatever this table says.
+     */
+    suspend fun setAgentAccess(enabled: Boolean) {
+        put(AGENT_ACCESS, enabled.toString())
+        pushAgentAccess(appContext, enabled)
+    }
 
     suspend fun setOnboardingDone(done: Boolean) = put(ONBOARDING_DONE, done.toString())
 
@@ -134,6 +160,7 @@ class SettingsStore(
         const val ONBOARDING_DONE = "onboarding_done"
         const val HIBERNATION_ASKED = "hibernation_asked"
         const val PLAYBACK_ONLY = "playback_only_stats"
+        const val AGENT_ACCESS = "agent_access"
         const val LANGUAGE = "language"
     }
 }

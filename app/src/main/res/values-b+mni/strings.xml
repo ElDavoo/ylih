@@ -126,6 +126,8 @@
     <string name="settings_devices_body">হেদফোন নত্তবা করিগুম্বা অমা — গাড়িগী স্টিরিও নত্ত্রগা স্পিকর — ইশিনবা লেপ্নবা মদুগী চেক লৌথোকখো.</string>
     <string name="settings_device_subtitle">%1$s · অহানবদা উবা %2$s</string>
     <string name="settings_data">ডাটা</string>
+    <string name="settings_agent_title">ꯃꯇꯦꯡ ꯄꯥꯡꯕꯒꯤ ꯑꯦꯛꯁꯦꯁ</string>
+    <string name="settings_agent_body">ꯐꯣꯟ ꯑꯁꯤꯗ ꯂꯩꯕ ꯃꯇꯦꯡ ꯄꯥꯡꯕꯗꯨ ꯅꯍꯥꯛꯅ ꯀꯌꯥ ꯃꯇꯝ ꯇꯥꯈꯤ ꯍꯥꯏꯕꯗꯨ ꯄꯥꯕ ꯌꯥꯍꯅꯕꯤꯌꯨ</string>
     <string name="settings_export">json থাদোকপা</string>
     <string name="settings_import">পুশিল্লকপা</string>
     <string name="settings_import_warning">পুশিল্লকপনা হৌজিক থমখিবা পুম্নমক হোংদোকই.</string>

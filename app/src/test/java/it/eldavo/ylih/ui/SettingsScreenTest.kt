@@ -73,6 +73,7 @@ class SettingsScreenTest {
         db.deviceDao().deleteAll()
         settings.setDetailedTracking(false)
         settings.setPlaybackOnly(false)
+        settings.setAgentAccess(false)
         // Left over, this would compose the whole screen in whichever language the last test
         // picked — see the note on awaitDetailedTracking about why it is put back from here.
         settings.setLanguage(AppLocale.SYSTEM)
@@ -142,6 +143,12 @@ class SettingsScreenTest {
     private fun awaitPlaybackOnly(on: Boolean) {
         settle("playback-only stats to be $on") {
             runBlocking { settings.playbackOnlyNow() } == on
+        }
+    }
+
+    private fun awaitAgentAccess(on: Boolean) {
+        settle("agent access to be $on") {
+            runBlocking { settings.agentAccessNow() } == on
         }
     }
 
@@ -307,6 +314,27 @@ class SettingsScreenTest {
 
         switch.performClick()
         awaitPlaybackOnly(on = false)
+        awaitToggleBesides(label, on = false)
+    }
+
+    @Test
+    fun `the assistant switch writes the setting through, both ways`() {
+        // Both directions, because they are not the same code path: turning it off is the one
+        // that has to reach the OS, since an app function left enabled is callable whatever this
+        // app's own table says.
+        show()
+
+        val label = text(R.string.settings_agent_title)
+        scrollTo(label)
+        val switch = toggleBesides(label)
+        // The default the app ships with, and the one the generated schema ships with too.
+        switch.assertIsOff()
+        switch.performClick()
+        awaitAgentAccess(on = true)
+        awaitToggleBesides(label, on = true)
+
+        switch.performClick()
+        awaitAgentAccess(on = false)
         awaitToggleBesides(label, on = false)
     }
 

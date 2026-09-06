@@ -126,6 +126,8 @@
     <string name="settings_devices_body">desmarca alique que non es cuffias — un stereo de auto o un loce — pro cessar registrar lo</string>
     <string name="settings_device_subtitle">%1$s · primo viste %2$s</string>
     <string name="settings_data">datos</string>
+    <string name="settings_agent_title">accesso del assistente</string>
+    <string name="settings_agent_body">permitte a un assistente in iste telephono leger quanto tempore tu ha ascoltate</string>
     <string name="settings_export">exporta json</string>
     <string name="settings_import">importa</string>
     <string name="settings_import_warning">importation remplace toto currentmente armazenate</string>

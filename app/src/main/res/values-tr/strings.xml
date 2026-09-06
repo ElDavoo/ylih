@@ -135,6 +135,8 @@
     <string name="settings_devices_body">kulaklık olmayanların işaretini kaldır — bir araba stereosu ya da hoparlör gibi — kaydedilmesin.</string>
     <string name="settings_device_subtitle">%1$s · ilk görülme %2$s</string>
     <string name="settings_data">veri</string>
+    <string name="settings_agent_title">asistan erişimi</string>
+    <string name="settings_agent_body">bu telefondaki bir asistanın ne kadar süre dinlediğini okumasına izin ver</string>
     <string name="settings_export">json dışa aktar</string>
     <string name="settings_import">içe aktar</string>
     <string name="settings_import_warning">içe aktarma şu anda saklanan her şeyin yerini alır.</string>

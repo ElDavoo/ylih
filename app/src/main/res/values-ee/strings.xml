@@ -134,6 +134,8 @@
     <string name="settings_devices_body">ɖe nyawo si nye heaphones mele o — agbalẽ dze alo ŋu xevi — vo go.</string>
     <string name="settings_device_subtitle">%1$s · ŋkeke blibo si %2$s</string>
     <string name="settings_data">data</string>
+    <string name="settings_agent_title">kpekpeɖeŋutɔ ƒe mɔɖeɖe</string>
+    <string name="settings_agent_body">na kpekpeɖeŋutɔ si le fon sia dzi naxlẽ ɣeyiɣi si nèsee</string>
     <string name="settings_export">json lo</string>
     <string name="settings_import">lo ɖe me</string>
     <string name="settings_import_warning">lo ɖe me la, wɔ nu siwo le ŋu ko.</string>

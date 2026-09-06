@@ -135,6 +135,8 @@
     <string name="settings_devices_body">헤드폰이 아닌 것 — 차량 오디오나 스피커 — 은 체크를 해제해 기록을 멈추세요.</string>
     <string name="settings_device_subtitle">%1$s · 처음 발견 %2$s</string>
     <string name="settings_data">데이터</string>
+    <string name="settings_agent_title">어시스턴트 접근</string>
+    <string name="settings_agent_body">이 휴대전화의 어시스턴트가 얼마나 오래 들었는지 읽도록 허용</string>
     <string name="settings_export">json으로 내보내기</string>
     <string name="settings_import">가져오기</string>
     <string name="settings_import_warning">가져오기를 하면 현재 저장된 모든 데이터가 대체됩니다.</string>

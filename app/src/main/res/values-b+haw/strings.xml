@@ -126,6 +126,8 @@
     <string name="settings_devices_body">hoʻokipa ʻaʻole he hoʻolohe leo — ka kaʻa mele a ʻāina — e hoʻokipa ʻaʻohe helu ia.</string>
     <string name="settings_device_subtitle">%1$s · ʻike ʻia i ka wā ʻo %2$s</string>
     <string name="settings_data">ka ʻike</string>
+    <string name="settings_agent_title">komo kōkua</string>
+    <string name="settings_agent_body">e ʻae i kekahi kōkua ma kēia kelepona e heluhelu i ka lōʻihi o kāu hoʻolohe ʻana</string>
     <string name="settings_export">hoʻouka json</string>
     <string name="settings_import">hōʻili ʻia</string>
     <string name="settings_import_warning">ʻo ka hoʻohala ʻana e hoʻololi i nā mea a pau i ʻatikina i kēia manawa.</string>

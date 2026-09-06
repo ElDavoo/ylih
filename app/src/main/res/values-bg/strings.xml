@@ -134,6 +134,8 @@
     <string name="settings_devices_body">отметнете всичко, което не е слушалки — автомобилен стерео или говорител, — за да спрете записването му.</string>
     <string name="settings_device_subtitle">%1$s · първо видяно %2$s</string>
     <string name="settings_data">данни</string>
+    <string name="settings_agent_title">достъп на асистента</string>
+    <string name="settings_agent_body">позволи на асистент на този телефон да чете колко дълго си слушал</string>
     <string name="settings_export">експорт json</string>
     <string name="settings_import">импорт</string>
     <string name="settings_import_warning">импортирането замества всичко текущо запазено.</string>
