@@ -211,6 +211,40 @@ class YlihNavHostTest {
     }
 
     @Test
+    fun `the pair page shrinks on its way out rather than only fading`() {
+        // The reported failure was the pop being a scale with no fade, which ends with the page
+        // still fully drawn and then simply gone. Asserted by geometry rather than by the spec, the
+        // way the rail and the bar are told apart: the spec is a constant, this is the animation
+        // actually running on the page.
+        val label = "ACCENTUM Plus"
+        seedPair(label)
+        show()
+
+        compose.waitUntil(timeoutMillis = 10_000) { nodeCount(label) > 0 }
+        compose.onNodeWithText(label).performClick()
+        compose.waitUntil(timeoutMillis = 10_000) { route() == PAIR_ROUTE }
+        compose.waitForIdle()
+
+        // boundsInRoot rather than the unclipped Dp bounds: those are the node's own layout size,
+        // which a graphics layer does not touch. These go through localToRoot, so the scale the
+        // transition is running is in them.
+        val backArrow = { compose.onNodeWithContentDescription(text(R.string.pair_back)) }
+        val atRest = backArrow().fetchSemanticsNode().boundsInRoot
+
+        // Hand-driven from here: a pop watched at its own pace is only ever seen finished.
+        compose.mainClock.autoAdvance = false
+        backArrow().performClick()
+        compose.mainClock.advanceTimeBy(NAV_MOTION_MS / 2L)
+
+        val midPop = backArrow().fetchSemanticsNode().boundsInRoot
+        assertTrue(
+            "the pair page is still on screen halfway through its exit, and smaller: " +
+                "$midPop against $atRest at rest",
+            midPop.width < atRest.width && midPop.height < atRest.height,
+        )
+    }
+
+    @Test
     fun `a tab tapped from the pair page comes back to the tabs and shows that one`() {
         // The nav bar is drawn on the pair page too, where a tab means both things at once: leave
         // the page, and land on that tab rather than on whichever one it was opened from.
