@@ -121,6 +121,32 @@ class SettingsScreenTest {
         throw AssertionError("timed out waiting for $what")
     }
 
+    /**
+     * The picker intent, once the shadow has actually recorded the launch.
+     *
+     * The `onClick` calls `launcher.launch(…)` outright, so this is not a coroutine waiting to be
+     * resumed — but `performClick()` returning is still not a guarantee that the resulting work has
+     * been drained off Robolectric's main looper, which is paused and idled explicitly here. Read
+     * on the line after the click, `nextStartedActivityForResult` is therefore intermittently null,
+     * and the failure arrives as a bare `NullPointerException` on whichever line dereferences it,
+     * saying nothing about timing. It took the `play` job down twice in one day while `classic`
+     * passed the same commit, and it does not reproduce locally.
+     *
+     * [settle] is the fix because it idles that looper and lets real time pass, which is what the
+     * rest of this file already does for every other wait on this screen.
+     *
+     * `nextStartedActivityForResult` removes what it returns, so it is safe to poll: null until the
+     * launch lands, then the value exactly once.
+     */
+    private fun awaitStartedForResult(what: String): Intent {
+        var launched: Intent? = null
+        settle(what) {
+            launched = shadowOf(compose.activity).nextStartedActivityForResult?.intent
+            launched != null
+        }
+        return launched!!
+    }
+
     private fun text(id: Int, vararg args: Any): String = app.getString(id, *args)
 
     private fun nodeCount(value: String, substring: Boolean = false): Int =
@@ -394,9 +420,9 @@ class SettingsScreenTest {
         scrollTo(text(R.string.settings_export))
         compose.onNodeWithText(text(R.string.settings_export)).performClick()
 
-        val started = shadowOf(compose.activity).nextStartedActivityForResult
-        assertNotNull("nothing is written without the user picking a destination", started)
-        assertEquals(Intent.ACTION_CREATE_DOCUMENT, started.intent.action)
+        // Nothing is written without the user picking a destination, so the launch is the assertion.
+        val started = awaitStartedForResult("the export picker to be launched")
+        assertEquals(Intent.ACTION_CREATE_DOCUMENT, started.action)
     }
 
     @Test
@@ -405,12 +431,12 @@ class SettingsScreenTest {
 
         scrollTo(text(R.string.settings_import))
         compose.onNodeWithText(text(R.string.settings_import)).performClick()
-        val started = shadowOf(compose.activity).nextStartedActivityForResult
-        assertEquals(Intent.ACTION_OPEN_DOCUMENT, started.intent.action)
+        val started = awaitStartedForResult("the import picker to be launched")
+        assertEquals(Intent.ACTION_OPEN_DOCUMENT, started.action)
 
         // Picking a file is not the same as agreeing to overwrite everything.
         shadowOf(compose.activity).receiveResult(
-            started.intent,
+            started,
             Activity.RESULT_OK,
             Intent().setData("content://test/backup.json".toUri()),
         )
@@ -431,9 +457,9 @@ class SettingsScreenTest {
 
         scrollTo(text(R.string.settings_import))
         compose.onNodeWithText(text(R.string.settings_import)).performClick()
-        val started = shadowOf(compose.activity).nextStartedActivityForResult
+        val started = awaitStartedForResult("the import picker to be launched")
         shadowOf(compose.activity).receiveResult(
-            started.intent,
+            started,
             Activity.RESULT_OK,
             Intent().setData("content://test/missing.json".toUri()),
         )
