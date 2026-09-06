@@ -4,13 +4,15 @@ name: Claude Code Review
 # load-bearing rather than tidiness: agent PRs are opened with AGENT_PUSH_TOKEN, so their author
 # is you, so this used to fire on every one of them alongside Agent · review -- two Claude
 # reviewers on the same diff, spending the same five-hour window twice for one verdict. Agent ·
-# review is the merge gate and runs this same plugin as its first pass, so what was lost by
-# dropping the second copy is nothing.
+# review is the merge gate and runs this same plugin itself, so what was lost by dropping the
+# second copy is nothing.
 #
 # It also cost more than tokens once the pipeline became serial. Both reviewers queue in the
 # `agent-pipeline` group, and that group holds one pending run: two arrivals per push meant the
 # waiting one was routinely displaced, and half the time the one displaced was the merge gate --
-# whose check then never reports, so auto-merge waits on it forever.
+# whose check then never reports, so auto-merge waits on it forever. Excluding agent branches in
+# the `if:` below did not by itself fix that half of it, which is what the note on the job's
+# concurrency block is about.
 
 on:
   pull_request:
@@ -22,17 +24,28 @@ on:
     #   - "src/**/*.js"
     #   - "src/**/*.jsx"
 
-# The pipeline-wide serial group; agent-plan.yml carries the reasoning. A review of your own pull
-# request is not a pipeline stage, but it spends the window the group exists to ration.
-concurrency:
-  group: agent-pipeline
-  cancel-in-progress: false
-
 jobs:
   claude-review:
     if: >-
       github.event.pull_request.user.login == 'ElDavoo'
       && !startsWith(github.head_ref, 'agent/issue-')
+
+    # The pipeline-wide serial group; agent-plan.yml carries the reasoning. A review of your own
+    # pull request is not a pipeline stage, but it spends the window the group exists to ration.
+    #
+    # On the job rather than on the workflow, which is the opposite of agent-fix-ci.yml and for
+    # the same underlying reason. A run joins a workflow-level group before any job `if:` is
+    # evaluated, so with it up there every push to an agent branch still created a run that
+    # queued, took the group's single pending slot and was then displaced -- runs 33997122850 and
+    # 34009431987 ended `cancelled` rather than `skipped`, which is that signature, while the same
+    # workflow on a Dependabot branch skipped in five seconds. The trigger filter agent-fix-ci.yml
+    # uses is not available here: `pull_request`'s `branches:` matches the *base* branch, and
+    # every agent pull request targets main. A job skipped by its `if:` never asks for the group
+    # at all, so putting it here is the filter. That works only because this workflow calls no
+    # reusable workflow -- needing one is what pins the group at workflow level over there.
+    concurrency:
+      group: agent-pipeline
+      cancel-in-progress: false
 
     runs-on: ubuntu-latest
     permissions:

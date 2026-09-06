@@ -93,11 +93,31 @@ worked on anyway.
 `Claude Code Review` joined the group too, and stopped running on agent branches at the same
 time. Agent pull requests are opened with `AGENT_PUSH_TOKEN`, so their author is you, so that
 workflow used to fire on every one of them alongside `Agent · review` — two Claude reviewers on
-the same diff for one verdict, and `Agent · review` runs the same plugin as its first pass, so
-nothing was lost by dropping the second copy. Under a serial group it also cost more than tokens:
-two arrivals per push meant the waiting one was routinely displaced, and half the time the one
+the same diff for one verdict, and `Agent · review` runs the same plugin itself, so nothing was
+lost by dropping the second copy. Under a serial group it also cost more than tokens: two
+arrivals per push meant the waiting one was routinely displaced, and half the time the one
 displaced was the merge gate, whose check then never reports and leaves auto-merge waiting on it
 forever.
+
+**Excluding it in the job's `if:` did not stop it queueing** — the same trap as above, found the
+same way. Runs 33997122850 and 34009431987, both on `agent/issue-32`, ended `cancelled` rather
+than `skipped`; the same workflow on a Dependabot branch skipped in five seconds, because it
+reached a free slot instead of a pending one. `agent-fix-ci.yml`'s answer does not transfer:
+`pull_request`'s `branches:` filter matches the **base** branch, and every agent pull request
+targets `main`, so there is no head-branch filter to write. What works instead is moving
+`concurrency:` off the workflow and onto the job, because a job skipped by its `if:` never asks
+for the group at all. That is only available to a workflow that calls no reusable workflow —
+which is exactly the constraint that pins the group at workflow level in `agent-fix-ci.yml`, so
+the two files now sit on opposite sides of it for one reason. **A run that ends `cancelled` where
+you expected `skipped` is this.**
+
+**The review's verdict pass runs before its inline pass**, and the order is the point. The two are
+independent — the verdict re-reads the diff rather than the comments — but the verdict is the one
+that fails the run, and a failed run discards what the inline pass already spent. Run
+33997123035 is the case: 6m43s on the inline pass, which posted nothing, then the verdict lost in
+ten seconds, and the retry re-ran both from the top. In the current order a stall costs ten
+seconds of the window. `Capture the findings for the fix stage` reads the inline comments back
+from the API and runs after both, so it is indifferent to which came first.
 
 ## Setup
 
