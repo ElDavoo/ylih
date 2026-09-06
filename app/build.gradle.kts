@@ -178,6 +178,20 @@ android {
             isIncludeAndroidResources = true
 
             all {
+                // Gradle's own default for a Test task is -Xmx512m, and this suite outgrew it:
+                // 571 tests in one JVM, almost all Robolectric, each holding a simulated
+                // framework, a parsed resource table and — in the widget tests — real bitmaps.
+                // The failure that costs is not the clean one. At 320m it is an
+                // OutOfMemoryError naming the test that happened to be running; a little above
+                // that the heap is merely *full*, the JVM spends the run collecting rather than
+                // failing, and what surfaces is one arbitrary test timing out — measured here at
+                // 448m, where the suite still passed 570 of 571 but took 9m14s instead of 2m45s.
+                // That is what a CI machine with slightly less to spare produces from the same
+                // 512m this used to run on: a different test each time, none of them broken.
+                // 1g is roughly double the observed peak, and the two unit test tasks run one
+                // after the other, so it is one gigabyte and not two.
+                it.maxHeapSize = "1g"
+
                 // Robolectric loads the classes under test through its own sandbox classloader,
                 // so they arrive at the JaCoCo agent with no code-source location and are dropped
                 // unless this is set. Without it the report shows ~2% — only stats/Stats.kt, the

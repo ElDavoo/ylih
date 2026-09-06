@@ -779,6 +779,16 @@ database and drives `MainActivity` to RESUMED. Repository tests use an in-memory
 injected clock (`SessionRepository(db) { clockNow }`), so time is moved by assignment rather than
 by sleeping.
 
+**The unit test JVM asks for `maxHeapSize = "1g"`, and the number is not decoration.** Gradle's
+own default is 512m, and the suite grew past what that leaves comfortable: every one of the ~570
+tests runs in the one JVM, each Robolectric test holding a simulated framework and a parsed
+resource table, and the widget tests real bitmaps besides. Below it the failure never names
+memory. Measured here: 320m fails with an `OutOfMemoryError` attributed to whichever test was
+running, and 448m *passes* 570 of 571 while taking 9m14s instead of 2m45s — the heap is full
+rather than exhausted, the run is spent collecting, and the one casualty is an arbitrary test
+timing out inside `runTest`. That is what a CI machine reports on a suite sized to 512m: a single
+unrelated failure that reproduces nowhere and moves every run.
+
 **`src/androidTest` lives on the `releaseTest` build type.** That is `testBuildType`, and it is
 set for its sake: R8 only runs for a release build, so the only way to test what R8 produced is to
 point androidTest at a minified one.
