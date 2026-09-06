@@ -1,0 +1,5 @@
+• Suivez l'état de la batterie de votre casque au fil du temps
+• Un assistant sur l'appareil peut demander vos chiffres, une fois que vous l'autorisez dans les paramètres
+• Vue tablette
+• Le suivi non détaillé ne fonctionnait pas. Oups
+• Android 6 et 7, c'est fini, désolé

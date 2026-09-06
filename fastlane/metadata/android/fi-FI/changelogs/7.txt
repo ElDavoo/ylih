@@ -1,0 +1,5 @@
+• Seuraa kuulokkeidesi akun kuntoa ajan mittaan
+• Laitteessa toimiva avustaja voi kysyä lukujasi, kun sallit sen asetuksissa
+• Tablettinäkymä
+• Ei-yksityiskohtainen seuranta ei toiminut. Hupsis
+• Android 6 ja 7 heippa, sori

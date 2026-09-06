@@ -1,0 +1,5 @@
+• Track your headset's battery health over time
+• An on-device assistant can be asked for your figures, once you allow it in settings
+• Tablet view
+• Non-detailed tracking was not working. Whoopsie
+• Android 6 7 are bye bye, sorry
