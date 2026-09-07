@@ -185,4 +185,5 @@
         <item quantity="one">%d mipikiso</item>
         <item quantity="other">%d mipikiso</item>
     </plurals>
+    <string name="pair_charge_calibrating">rambai muchiteerera kuti muone kuti simba rinochinja sei</string>
 </resources>

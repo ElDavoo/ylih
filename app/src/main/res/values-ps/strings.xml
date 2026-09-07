@@ -185,4 +185,5 @@
         <item quantity="one">%d جلسه</item>
         <item quantity="other">%d جلسې</item>
     </plurals>
+    <string name="pair_charge_calibrating">اورېدلو ته دوام ورکړه چې وګورې چارج څنګه بدلېږي</string>
 </resources>

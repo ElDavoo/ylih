@@ -194,4 +194,5 @@
         <item quantity="one">%d ስብሰባ</item>
         <item quantity="other">%d ስብሰባ</item>
     </plurals>
+    <string name="pair_charge_calibrating">ማዳመጥዎን ይቀጥሉ፣ አንድ ሙሌት እንዴት እንደሚለወጥ ያያሉ</string>
 </resources>

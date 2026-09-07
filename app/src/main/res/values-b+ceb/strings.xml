@@ -195,4 +195,5 @@
         <item quantity="one">%d ka session</item>
         <item quantity="other">%d ka session</item>
     </plurals>
+    <string name="pair_charge_calibrating">padayon sa pagpaminaw aron makita kon giunsa pagbag-o sa usa ka charge</string>
 </resources>

@@ -185,4 +185,5 @@
         <item quantity="one">%d bilakisi</item>
         <item quantity="other">%d bilakisi</item>
     </plurals>
+    <string name="pair_charge_calibrating">kobanda koyoka lisusu mpo omona ndenge kotondisa ebongwanaka</string>
 </resources>

@@ -195,4 +195,5 @@
         <item quantity="one">%d nusẽ</item>
         <item quantity="other">%d nusẽ wo</item>
     </plurals>
+    <string name="pair_charge_calibrating">yi edzi nàse eye nàkpɔ ale si ŋusẽdodo trɔna</string>
 </resources>

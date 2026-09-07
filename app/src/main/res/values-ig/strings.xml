@@ -181,4 +181,5 @@
         <item quantity="other">%d oge omume</item>
     </plurals>
     <string name="edit_failed">enweghị ike ịchekwa mgbanwe ahụ</string>
+    <string name="pair_charge_calibrating">gaa n’ihu na-ege ntị ka ị hụ ka ijupụta si agbanwe</string>
 </resources>

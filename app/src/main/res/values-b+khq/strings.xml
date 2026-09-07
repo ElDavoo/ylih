@@ -189,4 +189,5 @@
         <item quantity="other">%d dunsee</item>
     </plurals>
     <string name="edit_failed">barmayyan mana gani</string>
+    <string name="pair_charge_calibrating">ma hangan koyne ka di gaabu ga bare mate</string>
 </resources>

@@ -195,4 +195,5 @@
         <item quantity="one">%d seans</item>
         <item quantity="other">%d seans</item>
     </plurals>
+    <string name="pair_charge_calibrating">dinləməyə davam et ki, bir enerji yığımının necə dəyişdiyini görəsən</string>
 </resources>

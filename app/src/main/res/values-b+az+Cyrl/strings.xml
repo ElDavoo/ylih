@@ -195,4 +195,5 @@
         <item quantity="one">%d сеанс</item>
         <item quantity="other">%d сеанс</item>
     </plurals>
+    <string name="pair_charge_calibrating">динләмәјә давам ет ки, бир енержи јығымынын неҹә дәјишдијини ҝөрәсән</string>
 </resources>

@@ -97,6 +97,7 @@
     <string name="pair_charge_watched">opazovano</string>
     <string name="pair_vs_new">glede na nove</string>
     <string name="pair_cycle_number">cikel %1$d</string>
+    <string name="pair_charge_calibrating">poslušaj naprej in videl boš, kako se polnjenje spreminja</string>
     <string name="pair_rename_title">preimenuj par</string>
     <string name="pair_rename_label">ime</string>
     <string name="pair_retire_title">upokoji ta par</string>

@@ -189,4 +189,5 @@
         <item quantity="many">%d apigara</item>
         <item quantity="other">%d apigara</item>
     </plurals>
+    <string name="pair_charge_calibrating">reasenduri ne yuiri, remaã taá sikuru karrega umukameẽ</string>
 </resources>

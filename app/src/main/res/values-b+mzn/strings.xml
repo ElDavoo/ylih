@@ -189,4 +189,5 @@
         <item quantity="many">%d جلسات</item>
         <item quantity="other">%d جلسات</item>
     </plurals>
+    <string name="pair_charge_calibrating">گوش هاکردن ره ادامه هاده تا بوینی شارژ چتی عوض وونه</string>
 </resources>

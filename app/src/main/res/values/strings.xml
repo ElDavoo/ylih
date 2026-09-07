@@ -116,6 +116,9 @@
     <string name="pair_vs_new">vs when new</string>
     <!-- Names one cycle in the list and on the chart's axis: "cycle 1", "cycle 12". -->
     <string name="pair_cycle_number">cycle %1$d</string>
+    <!-- Stands where the charge-cycle chart will stand, until two cycles have completed and there
+         is something to compare. "a charge" is one full hundred points of battery. -->
+    <string name="pair_charge_calibrating">keep listening to see how a charge changes</string>
     <string name="pair_rename_title">rename pair</string>
     <string name="pair_rename_label">name</string>
     <string name="pair_retire_title">retire this pair</string>

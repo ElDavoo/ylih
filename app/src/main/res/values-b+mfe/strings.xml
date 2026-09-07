@@ -189,4 +189,5 @@
         <item quantity="many">%d sesion</item>
         <item quantity="other">%d sesion</item>
     </plurals>
+    <string name="pair_charge_calibrating">kontign ekoute pou to trouv kouma enn sarz sanze</string>
 </resources>

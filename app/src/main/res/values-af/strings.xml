@@ -103,6 +103,7 @@
     <string name="pair_charge_watched">waargeneem</string>
     <string name="pair_vs_new">teenoor nuut</string>
     <string name="pair_cycle_number">siklus %1$d</string>
+    <string name="pair_charge_calibrating">luister verder om te sien hoe ’n lading verander</string>
     <string name="pair_rename_title">hernoem paar</string>
     <string name="pair_rename_label">naam</string>
     <string name="pair_retire_title">pensioneer hierdie paar</string>

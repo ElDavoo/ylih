@@ -189,4 +189,5 @@
         <item quantity="many">kinde %d</item>
         <item quantity="other">kinde %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">dhi nyime winjo mondo ine kaka teko lokore</string>
 </resources>

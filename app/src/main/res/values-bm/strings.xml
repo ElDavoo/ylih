@@ -191,4 +191,5 @@
     <plurals name="session_count">
         <item quantity="other">jiginna sutu %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">tila ka lamɛnni kɛ walasa ka fanga siklo yɛlɛmani ye</string>
 </resources>

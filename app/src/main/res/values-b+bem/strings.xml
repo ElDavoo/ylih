@@ -195,4 +195,5 @@
         <item quantity="one">%d fikapililo</item>
         <item quantity="other">%d ifikapililo</item>
     </plurals>
+    <string name="pair_charge_calibrating">twalilileni ukumfwa pa kuti mumone ifyo amaka yaaluka</string>
 </resources>

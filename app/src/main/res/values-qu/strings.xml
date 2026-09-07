@@ -189,4 +189,5 @@
         <item quantity="many">%d rimay</item>
         <item quantity="other">%d rimay</item>
     </plurals>
+    <string name="pair_charge_calibrating">uyarispa kachkay, hunt’achiy imayna tikrakusqanta rikunaykipaq</string>
 </resources>

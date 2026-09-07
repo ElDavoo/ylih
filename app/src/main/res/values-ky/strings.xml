@@ -185,4 +185,5 @@
         <item quantity="other">%d сеанс</item>
     </plurals>
     <string name="edit_failed">өзгөртүү сакталган жок</string>
+    <string name="pair_charge_calibrating">уга бериңиз, бир заряд кантип өзгөрөрүн көрөсүз</string>
 </resources>

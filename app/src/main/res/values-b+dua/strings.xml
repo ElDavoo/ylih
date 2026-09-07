@@ -199,4 +199,5 @@
         <item quantity="many">%d isela</item>
         <item quantity="other">%d isela</item>
     </plurals>
+    <string name="pair_charge_calibrating">tatane senga, o me je lambe ne masikèl ma ngiña ma mabelane</string>
 </resources>

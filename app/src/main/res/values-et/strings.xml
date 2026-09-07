@@ -103,6 +103,7 @@
     <string name="pair_charge_watched">jälgitud</string>
     <string name="pair_vs_new">võrreldes uuega</string>
     <string name="pair_cycle_number">tsükkel %1$d</string>
+    <string name="pair_charge_calibrating">kuula edasi, et näha, kuidas laeng muutub</string>
     <string name="pair_rename_title">nimeta paar ümber</string>
     <string name="pair_rename_label">nimi</string>
     <string name="pair_retire_title">pensioneeri see paar</string>

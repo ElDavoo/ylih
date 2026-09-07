@@ -185,4 +185,5 @@
         <item quantity="one">%d gawo</item>
         <item quantity="other">%d magawo</item>
     </plurals>
+    <string name="pair_charge_calibrating">pitirizani kubvesera toera muone kuti mphambvu isacinja tani</string>
 </resources>

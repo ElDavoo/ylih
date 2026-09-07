@@ -189,4 +189,5 @@
         <item quantity="many">%d сессия</item>
         <item quantity="other">%d сессия</item>
     </plurals>
+    <string name="pair_charge_calibrating">тыңлавыгызны дәвам итегез, зарядның ничек үзгәрүен күрерсез</string>
 </resources>

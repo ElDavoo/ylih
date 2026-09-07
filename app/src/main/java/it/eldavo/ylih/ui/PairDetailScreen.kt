@@ -435,6 +435,16 @@ private fun ChargeCyclesHeader(charge: ChargeSummary) {
                 firstLabel = stringResource(R.string.pair_cycle_number, 1),
                 lastLabel = stringResource(R.string.pair_cycle_number, charge.cycles.size),
             )
+        } else {
+            // Bound to the chart's own condition rather than to `versusNew == null`, which today
+            // is the same case: this line stands where the chart will stand, so what it promises
+            // has to arrive at the moment the chart does, whatever else changes about the tiles.
+            Spacer(Modifier.height(8.dp))
+            Text(
+                stringResource(R.string.pair_charge_calibrating),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
         }
     }
 }

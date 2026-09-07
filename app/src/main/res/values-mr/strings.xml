@@ -185,4 +185,5 @@
         <item quantity="one">%d सत्र</item>
         <item quantity="other">%d सत्रं</item>
     </plurals>
+    <string name="pair_charge_calibrating">ऐकत राहा आणि पाहा एक चार्ज कसा बदलतो</string>
 </resources>

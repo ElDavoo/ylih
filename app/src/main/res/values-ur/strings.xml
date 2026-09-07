@@ -185,4 +185,5 @@
         <item quantity="one">%d سیشن</item>
         <item quantity="other">%d سیشنز</item>
     </plurals>
+    <string name="pair_charge_calibrating">سنتے رہیں تاکہ دیکھ سکیں کہ ایک چارج کیسے بدلتا ہے</string>
 </resources>

@@ -185,4 +185,5 @@
         <item quantity="other">%d seshan</item>
     </plurals>
     <string name="edit_failed">badal jatan korunk zalo na</string>
+    <string name="pair_charge_calibrating">aikot ravat ani polloi ek charge koso bodolta</string>
 </resources>

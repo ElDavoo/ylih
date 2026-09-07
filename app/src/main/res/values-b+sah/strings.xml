@@ -181,4 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">%d сессия</item>
     </plurals>
+    <string name="pair_charge_calibrating">истэ туруҥ, биир зарядка хайдах уларыйарын көрүөҥ</string>
 </resources>

@@ -199,4 +199,5 @@
         <item quantity="many">%d sɔŋ</item>
         <item quantity="other">%d sɔŋ</item>
     </plurals>
+    <string name="pair_charge_calibrating">ke nɔgɔl, u ga tehe lelaa masikèl ma ŋgu ma nkeenge</string>
 </resources>

@@ -181,4 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">%d ເຊດຊັນ</item>
     </plurals>
+    <string name="pair_charge_calibrating">ຟັງຕໍ່ໄປເພື່ອເບິ່ງວ່າການສາກໜຶ່ງເທື່ອປ່ຽນແປງແນວໃດ</string>
 </resources>

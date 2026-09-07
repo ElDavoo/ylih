@@ -185,4 +185,5 @@
         <item quantity="one">%d سەئاي</item>
         <item quantity="other">%d سەئاي</item>
     </plurals>
+    <string name="pair_charge_calibrating">ئاڭلاشنى داۋاملاشتۇرۇڭ، بىر قۇۋۋەتنىڭ قانداق ئۆزگىرىدىغانلىقىنى كۆرىسىز</string>
 </resources>

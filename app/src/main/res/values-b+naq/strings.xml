@@ -189,4 +189,5 @@
         <item quantity="two">%d ǃares</item>
         <item quantity="other">%d ǃares</item>
     </plurals>
+    <string name="pair_charge_calibrating">ǃaruǀî ǁnâu re, ǀgâuǃnâb mâti ra ǀkharaǀkharasen ǃkhaisa mû</string>
 </resources>

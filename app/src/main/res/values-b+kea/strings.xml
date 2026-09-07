@@ -181,4 +181,5 @@
         <item quantity="other">%d sésõ</item>
     </plurals>
     <string name="edit_failed">ka konsigi salva mudansa</string>
+    <string name="pair_charge_calibrating">kontinua ta obi pa bu odja modi un karga ta muda</string>
 </resources>

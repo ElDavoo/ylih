@@ -181,4 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">%d ߓߊߊߙߊ</item>
     </plurals>
+    <string name="pair_charge_calibrating">ߌ ߦߋ߫ ߕߏ߫ ߟߊߡߍ߲ߠߌ߲ ߠߊ߫ ߞߊ߬ ߦߋ߫ ߝߊ߲߬ߞߊ ߦߋ߫ ߦߟߍ߬ߡߊ߲߬ ߠߊ߫ ߢߊ ߡߍ߲</string>
 </resources>

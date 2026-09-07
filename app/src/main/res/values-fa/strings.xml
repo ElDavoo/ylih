@@ -195,4 +195,5 @@
         <item quantity="one">%d جلسه</item>
         <item quantity="other">%d جلسه</item>
     </plurals>
+    <string name="pair_charge_calibrating">به شنیدن ادامه بده تا ببینی یک شارژ چطور تغییر می‌کند</string>
 </resources>

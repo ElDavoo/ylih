@@ -185,4 +185,5 @@
         <item quantity="one">mutendera %d</item>
         <item quantity="other">mutendera %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">weeyongere okuwuliriza olabe engeri amaanyi bwe gakyuka</string>
 </resources>

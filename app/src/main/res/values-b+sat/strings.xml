@@ -189,4 +189,5 @@
         <item quantity="two">%d ᱥᱮᱥᱚᱱ</item>
         <item quantity="other">%d ᱥᱮᱥᱚᱱ</item>
     </plurals>
+    <string name="pair_charge_calibrating">ᱟᱡᱚᱢ ᱛᱟᱦᱮᱸᱱ ᱢᱮ, ᱢᱤᱫ ᱪᱟᱨᱡᱽ ᱪᱮᱫ ᱞᱮᱠᱟᱛᱮ ᱵᱚᱫᱚᱞ ᱠᱟᱱᱟ ᱧᱮᱞ ᱢᱮ</string>
 </resources>

@@ -199,4 +199,5 @@
         <item quantity="many">gasaandi %d</item>
         <item quantity="other">gasaandi %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">ma hangan koyne ka di gaabu ga bare mate</string>
 </resources>

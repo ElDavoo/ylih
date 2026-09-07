@@ -181,4 +181,5 @@
         <item quantity="other">%d sesi</item>
     </plurals>
     <string name="edit_failed">owahan ora bisa disimpen</string>
+    <string name="pair_charge_calibrating">terusna ngrungokake kanggo ndeleng owahé siji isi daya</string>
 </resources>

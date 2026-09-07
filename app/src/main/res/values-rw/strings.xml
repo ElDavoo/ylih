@@ -189,4 +189,5 @@
         <item quantity="many">%d isiganiro</item>
         <item quantity="other">%d isiganiro</item>
     </plurals>
+    <string name="pair_charge_calibrating">komeza kumva kugira ngo urebe uko ingufu zihinduka</string>
 </resources>

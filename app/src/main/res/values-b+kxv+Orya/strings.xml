@@ -189,4 +189,5 @@
         <item quantity="many">%d ସେସାନ</item>
         <item quantity="other">%d ସେସାନ</item>
     </plurals>
+    <string name="pair_charge_calibrating">ୱିଣ୍ଡିତେ ମଣ୍ଡୁ, ଚାର୍ଜ ଚକ୍ର କେତ୍ଲା ମରୁତେରି ହିନି ଉଡ଼ା</string>
 </resources>

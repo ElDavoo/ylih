@@ -192,4 +192,5 @@
     <plurals name="session_count">
         <item quantity="other">%d phiên</item>
     </plurals>
+    <string name="pair_charge_calibrating">hãy nghe tiếp để thấy một lần sạc thay đổi thế nào</string>
 </resources>

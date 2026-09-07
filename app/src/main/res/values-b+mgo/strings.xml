@@ -185,4 +185,5 @@
         <item quantity="one">nzə́ŋ %d</item>
         <item quantity="other">nzə́ŋ %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">yúʼ nə́ ntsə̀ʼ, ò zɨ́ yə̌n mbɛ́n sikəl mə ntsə mə nzə</string>
 </resources>

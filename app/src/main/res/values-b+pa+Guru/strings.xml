@@ -185,4 +185,5 @@
         <item quantity="one">%d ਸੈਸ਼ਨ</item>
         <item quantity="other">%d ਸੈਸ਼ਨ</item>
     </plurals>
+    <string name="pair_charge_calibrating">ਸੁਣਦੇ ਰਹੋ ਅਤੇ ਵੇਖੋ ਕਿ ਇੱਕ ਚਾਰਜ ਕਿਵੇਂ ਬਦਲਦਾ ਹੈ</string>
 </resources>

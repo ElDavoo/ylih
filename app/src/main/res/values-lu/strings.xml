@@ -189,4 +189,5 @@
         <item quantity="many">%d musala</item>
         <item quantity="other">%d musala</item>
     </plurals>
+    <string name="pair_charge_calibrating">tungunuka kuteleja bwa kumona mushindu bukome budi bushintuluka</string>
 </resources>

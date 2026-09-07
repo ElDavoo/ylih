@@ -199,4 +199,5 @@
         <item quantity="many">búŋ %d</item>
         <item quantity="other">búŋ %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">yúʼ ntsùŋ, wò ke yeŋ ǹdzə̀ sìkəl tsə̀ tsàŋ tsə̀ kaʼ</string>
 </resources>

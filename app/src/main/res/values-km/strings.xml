@@ -181,4 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">%d សម័យ</item>
     </plurals>
+    <string name="pair_charge_calibrating">បន្តស្តាប់ ដើម្បីមើលថាថ្មមួយសាកប្រែប្រួលយ៉ាងណា</string>
 </resources>

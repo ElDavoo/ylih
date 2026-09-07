@@ -195,4 +195,5 @@
         <item quantity="one">%d сессия</item>
         <item quantity="other">%d сессияр</item>
     </plurals>
+    <string name="pair_charge_calibrating">ладогӀа тӀаьхьа а, заряд муха хийцало гуш</string>
 </resources>

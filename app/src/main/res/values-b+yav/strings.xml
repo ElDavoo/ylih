@@ -189,4 +189,5 @@
         <item quantity="many">%d muanda</item>
         <item quantity="other">%d muanda</item>
     </plurals>
+    <string name="pair_charge_calibrating">wókii nyɔ́ɔ, u yén lɛ́ sikɛl mʉ́ ndáá mʉ́ mbaŋ</string>
 </resources>

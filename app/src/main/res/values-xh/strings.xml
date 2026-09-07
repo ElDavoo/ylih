@@ -185,4 +185,5 @@
         <item quantity="one">%d session</item>
         <item quantity="other">%d session</item>
     </plurals>
+    <string name="pair_charge_calibrating">qhubeka umamele ukuze ubone ukuba ukutshaja kutshintsha njani</string>
 </resources>

@@ -185,4 +185,5 @@
         <item quantity="one">%d ܡܘܬܒܐ</item>
         <item quantity="other">%d ܡܘܬܒܐ</item>
     </plurals>
+    <string name="pair_charge_calibrating">ܗܘܝ ܫܡܥ ܬܘܒ ܕܬܚܙܐ ܐܝܟܢܐ ܡܫܬܚܠܦܐ ܡܠܝܬܐ</string>
 </resources>

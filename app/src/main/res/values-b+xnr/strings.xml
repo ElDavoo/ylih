@@ -189,4 +189,5 @@
         <item quantity="many">%d सत्र</item>
         <item quantity="other">%d सत्र</item>
     </plurals>
+    <string name="pair_charge_calibrating">सुणदे रैओ ते दिक्खो जे इक चार्ज किञा बदलदा ऐ</string>
 </resources>

@@ -181,4 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">%d timide</item>
     </plurals>
+    <string name="pair_charge_calibrating">ma hanga koyne ka di gaabu ga bare mate</string>
 </resources>

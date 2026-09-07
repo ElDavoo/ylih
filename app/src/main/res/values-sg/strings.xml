@@ -181,4 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">%d gbalá</item>
     </plurals>
+    <string name="pair_charge_calibrating">ngbâa ti mä ti bâ tongana nyen sarze ayeke gbian</string>
 </resources>

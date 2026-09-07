@@ -185,4 +185,5 @@
         <item quantity="one">%d хуралдаан</item>
         <item quantity="other">%d хуралдаан</item>
     </plurals>
+    <string name="pair_charge_calibrating">сонсоод байгаарай, нэг цэнэг хэрхэн өөрчлөгдөхийг харна</string>
 </resources>

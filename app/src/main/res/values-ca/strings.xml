@@ -102,6 +102,7 @@
     <string name="pair_charge_watched">observat</string>
     <string name="pair_vs_new">respecte a nous</string>
     <string name="pair_cycle_number">cicle %1$d</string>
+    <string name="pair_charge_calibrating">continua escoltant per veure com canvia una càrrega</string>
     <string name="pair_rename_title">canviar nom del parell</string>
     <string name="pair_rename_label">nom</string>
     <string name="pair_retire_title">jubilar aquest parell</string>

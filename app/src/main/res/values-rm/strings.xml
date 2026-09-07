@@ -97,6 +97,7 @@
     <string name="pair_charge_watched">observà</string>
     <string name="pair_vs_new">en congual cun nov</string>
     <string name="pair_cycle_number">ciclus %1$d</string>
+    <string name="pair_charge_calibrating">tadla ad ascultar per vesair co ch’ina chargia sa mida</string>
     <string name="pair_rename_title">renumner pair</string>
     <string name="pair_rename_label">num</string>
     <string name="pair_retire_title">pensiunar questa pair</string>

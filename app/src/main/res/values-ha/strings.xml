@@ -185,4 +185,5 @@
         <item quantity="other">zaman %d</item>
     </plurals>
     <string name="edit_failed">ba a iya ajiye canjin ba</string>
+    <string name="pair_charge_calibrating">ci gaba da sauraro don ganin yadda caji ke canjawa</string>
 </resources>

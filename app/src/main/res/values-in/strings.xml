@@ -192,4 +192,5 @@
     <plurals name="session_count">
         <item quantity="other">%d sesi</item>
     </plurals>
+    <string name="pair_charge_calibrating">terus dengarkan untuk melihat bagaimana satu pengisian berubah</string>
 </resources>

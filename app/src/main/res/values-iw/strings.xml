@@ -201,4 +201,5 @@
         <item quantity="two">%d מפגשים</item>
         <item quantity="other">%d מפגשים</item>
     </plurals>
+    <string name="pair_charge_calibrating">המשיכו להאזין כדי לראות איך טעינה משתנה</string>
 </resources>

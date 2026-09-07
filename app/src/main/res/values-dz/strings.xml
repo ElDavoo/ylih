@@ -194,4 +194,5 @@
     <plurals name="session_count">
         <item quantity="other">གླེང་སྟེགས་ %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">ཉན་བཞིན་སྡོད་གནང་། ཆརཇ་ཅིག་ག་དེ་སྦེ་འགྱུར་བ་མཐོང་འོང་</string>
 </resources>

@@ -195,4 +195,5 @@
         <item quantity="one">%d session</item>
         <item quantity="other">%d na session</item>
     </plurals>
+    <string name="pair_charge_calibrating">magpatuloy sa pakikinig para makita kung paano nagbabago ang isang charge</string>
 </resources>
