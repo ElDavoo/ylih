@@ -96,7 +96,9 @@ private const val PAIR_ROUTE = "pair/{pairId}"
 // NavMotion.kt, which says why it is one spec and why the bar reads the fade half of it alone. The
 // NavHost gets its four transitions passed explicitly rather than inheriting navigation-compose's
 // defaults — an inherited default is a shape and a number that can change under us in a dependency
-// bump, and the bar has no way to follow it.
+// bump, and the bar has no way to follow it. The bar's own fade is keyed on the route, which flips
+// only when a pop commits, so it plays after a back gesture rather than during it — the destinations
+// are the half a held gesture seeks, which is why the alpha there is front-loaded.
 
 /**
  * How wide a screen's content is ever allowed to get.
@@ -280,8 +282,9 @@ fun YlihNavHost(
                 // so dropping the bar on `currentRoute` alone made it vanish a beat before the
                 // screen it belongs to had finished crossfading — and took its height with it,
                 // jerking the list underneath upwards mid-animation. AnimatedVisibility holds the
-                // height for the whole exit and hands it back at the start of the enter, so the two
-                // bars trade places in step with the destinations behind them. Tab-to-tab keeps the
+                // height until its own exit ends — which the shared spec puts at the moment the
+                // screen underneath has finished fading — and hands it back at the start of the
+                // enter, so the two bars trade places in step. Tab-to-tab keeps the
                 // bar untouched, which is the point of hoisting it here.
                 AnimatedVisibility(
                     visible = currentRoute != PAIR_ROUTE,
