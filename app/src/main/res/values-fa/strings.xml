@@ -97,7 +97,7 @@
     <string name="pair_per_hour">در ساعت</string>
     <string name="pair_bought">خریداری شده</string>
     <string name="pair_daily_hours_14">ساعات روزانه (14 روز)</string>
-    <string name="pair_charge_cycles">چرخه‌های شارژ</string>
+    <string name="pair_charge_cycles">عمر باتری</string>
     <string name="pair_per_charge">در هر شارژ</string>
     <string name="pair_cycles">چرخه‌ها</string>
     <string name="pair_charge_watched">رصدشده</string>
@@ -195,5 +195,5 @@
         <item quantity="one">%d جلسه</item>
         <item quantity="other">%d جلسه</item>
     </plurals>
-    <string name="pair_charge_calibrating">به شنیدن ادامه بده تا ببینی یک شارژ چطور تغییر می‌کند</string>
+    <string name="pair_charge_calibrating">به شنیدن ادامه بده تا ببینی عمر باتری چطور تغییر می‌کند</string>
 </resources>

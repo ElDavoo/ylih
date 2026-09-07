@@ -91,7 +91,7 @@
     <string name="pair_per_hour">panhema</string>
     <string name="pair_bought">kutenga</string>
     <string name="pair_daily_hours_14">mahora pazuva (14 mazuva)</string>
-    <string name="pair_charge_cycles">matenderero esimba</string>
+    <string name="pair_charge_cycles">upenyu hwebattery</string>
     <string name="pair_per_charge">pasimba rimwe</string>
     <string name="pair_cycles">matenderero</string>
     <string name="pair_charge_watched">zvakaonekwa</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d mipikiso</item>
         <item quantity="other">%d mipikiso</item>
     </plurals>
-    <string name="pair_charge_calibrating">rambai muchiteerera kuti muone kuti simba rinochinja sei</string>
+    <string name="pair_charge_calibrating">rambai muchiteerera kuti muone kuti upenyu hwebattery hunochinja sei</string>
 </resources>

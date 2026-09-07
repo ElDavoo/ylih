@@ -91,7 +91,7 @@
     <string name="pair_per_hour">ਪ੍ਰਤੀ ਘੰਟਾ</string>
     <string name="pair_bought">ਖਰੀਦਿਆ</string>
     <string name="pair_daily_hours_14">ਰੋਜ਼ਾਨਾ ਘੰਟੇ (14 ਦਿਨ)</string>
-    <string name="pair_charge_cycles">ਚਾਰਜ ਚੱਕਰ</string>
+    <string name="pair_charge_cycles">ਬੈਟਰੀ ਦੀ ਉਮਰ</string>
     <string name="pair_per_charge">ਹਰ ਚਾਰਜ ਤੇ</string>
     <string name="pair_cycles">ਚੱਕਰ</string>
     <string name="pair_charge_watched">ਵੇਖਿਆ</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d ਸੈਸ਼ਨ</item>
         <item quantity="other">%d ਸੈਸ਼ਨ</item>
     </plurals>
-    <string name="pair_charge_calibrating">ਸੁਣਦੇ ਰਹੋ ਅਤੇ ਵੇਖੋ ਕਿ ਇੱਕ ਚਾਰਜ ਕਿਵੇਂ ਬਦਲਦਾ ਹੈ</string>
+    <string name="pair_charge_calibrating">ਸੁਣਦੇ ਰਹੋ ਅਤੇ ਵੇਖੋ ਕਿ ਬੈਟਰੀ ਦੀ ਉਮਰ ਕਿਵੇਂ ਬਦਲਦੀ ਹੈ</string>
 </resources>

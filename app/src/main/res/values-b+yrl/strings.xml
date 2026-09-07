@@ -91,7 +91,7 @@
     <string name="pair_per_hour">yaskuari akanhẽ rupí</string>
     <string name="pair_bought">umumtima</string>
     <string name="pair_daily_hours_14">yaskuari irũma (14 ãwé-itá)</string>
-    <string name="pair_charge_cycles">sikuru karrega</string>
+    <string name="pair_charge_cycles">battery sikuiri</string>
     <string name="pair_per_charge">karrega yepé</string>
     <string name="pair_cycles">sikuru</string>
     <string name="pair_charge_watched">usemaã</string>
@@ -189,5 +189,5 @@
         <item quantity="many">%d apigara</item>
         <item quantity="other">%d apigara</item>
     </plurals>
-    <string name="pair_charge_calibrating">reasenduri ne yuiri, remaã taá sikuru karrega umukameẽ</string>
+    <string name="pair_charge_calibrating">reasenduri ne yuiri, remaã taá battery sikuiri umukameẽ</string>
 </resources>

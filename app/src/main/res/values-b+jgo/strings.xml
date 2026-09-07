@@ -91,7 +91,7 @@
     <string name="pair_per_hour">nə́ ŋgáŋ</string>
     <string name="pair_bought">ndzú</string>
     <string name="pair_daily_hours_14">ŋgáŋ yɛ́ ŋwɔ́ŋ (ŋwɔ́ŋ 14)</string>
-    <string name="pair_charge_cycles">sikǝl mǝ ntsɛ́</string>
+    <string name="pair_charge_cycles">ntsɛ́ batéri</string>
     <string name="pair_per_charge">ntsɛ́ pɔ́</string>
     <string name="pair_cycles">sikǝl</string>
     <string name="pair_charge_watched">pʉ́ə́ yə</string>
@@ -185,5 +185,5 @@
         <item quantity="other">ntám %d</item>
     </plurals>
     <string name="edit_failed">kə́ nə́ tsə́ tsə́ʼ wə́</string>
-    <string name="pair_charge_calibrating">yúʼ pɔ́, ó zə́ yə̌n mbɛ́n sikǝl mǝ ntsɛ́ zə́ nzə</string>
+    <string name="pair_charge_calibrating">yúʼ pɔ́, ó zə́ yə̌n mbɛ́n ntsɛ́ batéri zə́ nzə</string>
 </resources>

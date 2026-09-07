@@ -91,7 +91,7 @@
     <string name="pair_per_hour">ܠܫܥܬܐ</string>
     <string name="pair_bought">ܙܒܝܢܐ</string>
     <string name="pair_daily_hours_14">ܫܥܐ ܕܟܠܝܘܡ (14 ܝܘܡܐ)</string>
-    <string name="pair_charge_cycles">ܟܪ̈ܘܟܝܐ ܕܡܠܝܬܐ</string>
+    <string name="pair_charge_cycles">ܚܝ̈ܐ ܕܒܛܪܝܐ</string>
     <string name="pair_per_charge">ܠܟܠ ܡܠܝܬܐ</string>
     <string name="pair_cycles">ܟܪ̈ܘܟܝܐ</string>
     <string name="pair_charge_watched">ܡܬܚܙܝܢܐ</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d ܡܘܬܒܐ</item>
         <item quantity="other">%d ܡܘܬܒܐ</item>
     </plurals>
-    <string name="pair_charge_calibrating">ܗܘܝ ܫܡܥ ܬܘܒ ܕܬܚܙܐ ܐܝܟܢܐ ܡܫܬܚܠܦܐ ܡܠܝܬܐ</string>
+    <string name="pair_charge_calibrating">ܗܘܝ ܫܡܥ ܬܘܒ ܕܬܚܙܐ ܐܝܟܢܐ ܡܫܬܚܠܦܝܢ ܚܝ̈ܐ ܕܒܛܪܝܐ</string>
 </resources>

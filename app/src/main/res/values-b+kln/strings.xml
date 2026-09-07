@@ -91,7 +91,7 @@
     <string name="pair_per_hour">kwa saina</string>
     <string name="pair_bought">kitiit ye</string>
     <string name="pair_daily_hours_14">saina kotagit (14 kotagit)</string>
-    <string name="pair_charge_cycles">kolutik che kimnotin</string>
+    <string name="pair_charge_cycles">sobtai ne battery</string>
     <string name="pair_per_charge">kwa kimnotet akenge</string>
     <string name="pair_cycles">kolutik</string>
     <string name="pair_charge_watched">kigeere</string>
@@ -189,5 +189,5 @@
         <item quantity="many">%d kotagit</item>
         <item quantity="other">%d kotagit</item>
     </plurals>
-    <string name="pair_charge_calibrating">yai kogeer ak kong’et si ige’e kolutik che kimnotin ko wale</string>
+    <string name="pair_charge_calibrating">yai kogeer ak kong’et si ige’e sobtai ne battery ko wale</string>
 </resources>

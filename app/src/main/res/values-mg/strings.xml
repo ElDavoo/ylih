@@ -91,7 +91,7 @@
     <string name="pair_per_hour">isan’ora</string>
     <string name="pair_bought">novidiana</string>
     <string name="pair_daily_hours_14">ora isan’andro (14 andro)</string>
-    <string name="pair_charge_cycles">tsingerin’ny fameno</string>
+    <string name="pair_charge_cycles">faharetan’ny bateria</string>
     <string name="pair_per_charge">isaky ny fameno</string>
     <string name="pair_cycles">tsingerina</string>
     <string name="pair_charge_watched">voamarika</string>
@@ -185,5 +185,5 @@
         <item quantity="one">fotoana %d</item>
         <item quantity="other">fotoana %d</item>
     </plurals>
-    <string name="pair_charge_calibrating">mihainoa hatrany mba hahitanao ny fiovan’ny fameno iray</string>
+    <string name="pair_charge_calibrating">mihainoa hatrany mba hahitanao ny fiovan’ny faharetan’ny bateria</string>
 </resources>

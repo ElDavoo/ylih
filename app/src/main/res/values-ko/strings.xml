@@ -98,7 +98,7 @@
     <string name="pair_per_hour">시간당</string>
     <string name="pair_bought">구매일</string>
     <string name="pair_daily_hours_14">일별 시간 (14일)</string>
-    <string name="pair_charge_cycles">충전 주기</string>
+    <string name="pair_charge_cycles">배터리 수명</string>
     <string name="pair_per_charge">충전 1회당</string>
     <string name="pair_cycles">주기</string>
     <string name="pair_charge_watched">관측 시간</string>
@@ -192,5 +192,5 @@
     <plurals name="session_count">
         <item quantity="other">%d개 세션</item>
     </plurals>
-    <string name="pair_charge_calibrating">계속 들으면 한 번 충전이 어떻게 달라지는지 볼 수 있어요</string>
+    <string name="pair_charge_calibrating">계속 들으면 배터리 수명이 어떻게 달라지는지 볼 수 있어요</string>
 </resources>

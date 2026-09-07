@@ -91,7 +91,7 @@
     <string name="pair_per_hour">فی گھنٹہ</string>
     <string name="pair_bought">خریدی گئی</string>
     <string name="pair_daily_hours_14">روزانہ کے گھنٹے (14 دن)</string>
-    <string name="pair_charge_cycles">چارج سائیکل</string>
+    <string name="pair_charge_cycles">بیٹری کی عمر</string>
     <string name="pair_per_charge">فی چارج</string>
     <string name="pair_cycles">سائیکل</string>
     <string name="pair_charge_watched">مشاہدہ شدہ</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d سیشن</item>
         <item quantity="other">%d سیشنز</item>
     </plurals>
-    <string name="pair_charge_calibrating">سنتے رہیں تاکہ دیکھ سکیں کہ ایک چارج کیسے بدلتا ہے</string>
+    <string name="pair_charge_calibrating">سنتے رہیں تاکہ دیکھ سکیں کہ بیٹری کی عمر کیسے بدلتی ہے</string>
 </resources>

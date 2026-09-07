@@ -100,7 +100,7 @@
     <string name="pair_per_hour">1時間あたり</string>
     <string name="pair_bought">購入日</string>
     <string name="pair_daily_hours_14">1日あたりの時間（14日間）</string>
-    <string name="pair_charge_cycles">充電サイクル</string>
+    <string name="pair_charge_cycles">バッテリーの持ち</string>
     <string name="pair_per_charge">1回の充電あたり</string>
     <string name="pair_cycles">サイクル</string>
     <string name="pair_charge_watched">観測時間</string>
@@ -195,5 +195,5 @@
     <plurals name="session_count">
         <item quantity="other">%dセッション</item>
     </plurals>
-    <string name="pair_charge_calibrating">使い続けると、1回の充電がどう変わるかがわかります</string>
+    <string name="pair_charge_calibrating">使い続けると、バッテリーの持ちの変化がわかります</string>
 </resources>

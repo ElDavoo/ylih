@@ -91,7 +91,7 @@
     <string name="pair_per_hour">ຕໍ່ຊົ່ວໂມງ</string>
     <string name="pair_bought">ຊື້</string>
     <string name="pair_daily_hours_14">ຊົ່ວໂມງ 14 ວັນ</string>
-    <string name="pair_charge_cycles">ຮອບການສາກ</string>
+    <string name="pair_charge_cycles">ອາຍຸແບັດ</string>
     <string name="pair_per_charge">ຕໍ່ການສາກ</string>
     <string name="pair_cycles">ຮອບ</string>
     <string name="pair_charge_watched">ສັງເກດໄດ້</string>
@@ -181,5 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">%d ເຊດຊັນ</item>
     </plurals>
-    <string name="pair_charge_calibrating">ຟັງຕໍ່ໄປເພື່ອເບິ່ງວ່າການສາກໜຶ່ງເທື່ອປ່ຽນແປງແນວໃດ</string>
+    <string name="pair_charge_calibrating">ຟັງຕໍ່ໄປເພື່ອເບິ່ງວ່າອາຍຸແບັດປ່ຽນແປງແນວໃດ</string>
 </resources>

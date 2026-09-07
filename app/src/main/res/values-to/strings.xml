@@ -91,7 +91,7 @@
     <string name="pair_per_hour">mo e hola</string>
     <string name="pair_bought">kuo faʻi</string>
     <string name="pair_daily_hours_14">hola ʻaho (aho 14)</string>
-    <string name="pair_charge_cycles">ngaahi taʻu fakafonu</string>
+    <string name="pair_charge_cycles">moʻui ʻo e paini</string>
     <string name="pair_per_charge">ki he fakafonu taha</string>
     <string name="pair_cycles">ngaahi taʻu</string>
     <string name="pair_charge_watched">naʻe sioʻi</string>
@@ -181,5 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">tukituki %d</item>
     </plurals>
-    <string name="pair_charge_calibrating">hokohoko atu hoʻo fanongo ke ke sio ki he liliu ʻo ha fakafonu</string>
+    <string name="pair_charge_calibrating">hokohoko atu hoʻo fanongo ke ke sio ki he liliu ʻo e moʻui ʻo e paini</string>
 </resources>

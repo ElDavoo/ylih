@@ -91,7 +91,7 @@
     <string name="pair_per_hour">соат ўша</string>
     <string name="pair_bought">сотинди</string>
     <string name="pair_daily_hours_14">ҳар куннинг сўлари (14 куни)</string>
-    <string name="pair_charge_cycles">қувватлаш цикллари</string>
+    <string name="pair_charge_cycles">батарея умри</string>
     <string name="pair_per_charge">ҳар қувватлашга</string>
     <string name="pair_cycles">цикллар</string>
     <string name="pair_charge_watched">кузатилган</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d сеанс</item>
         <item quantity="other">%d сеансле</item>
     </plurals>
-    <string name="pair_charge_calibrating">тинглашда давом этинг, бир заряд қандай ўзгаришини кўрасиз</string>
+    <string name="pair_charge_calibrating">тинглашда давом этинг, батарея умри қандай ўзгаришини кўрасиз</string>
 </resources>

@@ -91,7 +91,7 @@
     <string name="pair_per_hour">opáwhte kiŋ</string>
     <string name="pair_bought">kiŋ</string>
     <string name="pair_daily_hours_14">aŋpétu opáwhte (aŋpétu akʼéšta)</string>
-    <string name="pair_charge_cycles">wóiyokipȟaŋ kiŋ</string>
+    <string name="pair_charge_cycles">okʼóheyaŋ wiconi</string>
     <string name="pair_per_charge">wóiyokipȟaŋ waŋží</string>
     <string name="pair_cycles">wóiyokipȟaŋ</string>
     <string name="pair_charge_watched">wáŋyaŋkapi</string>
@@ -181,5 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">owótakhta %d</item>
     </plurals>
-    <string name="pair_charge_calibrating">nayáȟʼuŋ yo, na wóiyokipȟaŋ kiŋ tókheča kiŋ waŋyáŋka nuŋwé</string>
+    <string name="pair_charge_calibrating">nayáȟʼuŋ yo, na okʼóheyaŋ wiconi kiŋ tókheča kiŋ waŋyáŋka nuŋwé</string>
 </resources>

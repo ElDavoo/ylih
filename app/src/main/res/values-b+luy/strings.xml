@@ -91,7 +91,7 @@
     <string name="pair_per_hour">khu saa</string>
     <string name="pair_bought">shikulilwe</string>
     <string name="pair_daily_hours_14">tsisaa tsia buli inyanga (tsinyanga 14)</string>
-    <string name="pair_charge_cycles">tsingira tsie amaani</string>
+    <string name="pair_charge_cycles">obulamu bwe betri</string>
     <string name="pair_per_charge">khu maani kalala</string>
     <string name="pair_cycles">tsingira</string>
     <string name="pair_charge_watched">tsyalolwa</string>
@@ -189,5 +189,5 @@
         <item quantity="many">ebise %d</item>
         <item quantity="other">ebise %d</item>
     </plurals>
-    <string name="pair_charge_calibrating">yendelela okhuwulila okhole olole shinga amaani kakalukhana</string>
+    <string name="pair_charge_calibrating">yendelela okhuwulila okhole olole shinga obulamu bwe betri bukalukhana</string>
 </resources>

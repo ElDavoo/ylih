@@ -91,7 +91,7 @@
     <string name="pair_per_hour">jàngal bu</string>
     <string name="pair_bought">aget</string>
     <string name="pair_daily_hours_14">jàngal bu sum (14 sukkandé)</string>
-    <string name="pair_charge_cycles">wërndalu sarse</string>
+    <string name="pair_charge_cycles">dundu batere</string>
     <string name="pair_per_charge">ci sarse bu nekk</string>
     <string name="pair_cycles">wërndal</string>
     <string name="pair_charge_watched">gis nañu ko</string>
@@ -181,5 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">%d sikasiit</item>
     </plurals>
-    <string name="pair_charge_calibrating">wéy ci déggloo ngir gis naka la wërndalu sarse di soppiku</string>
+    <string name="pair_charge_calibrating">wéy ci déggloo ngir gis naka la dundu batere di soppiku</string>
 </resources>

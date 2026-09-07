@@ -97,7 +97,7 @@
     <string name="pair_per_hour">a manim baako so</string>
     <string name="pair_bought">agu</string>
     <string name="pair_daily_hours_14">manim bere nna (nnɔnnum 14)</string>
-    <string name="pair_charge_cycles">ahoɔden nsakraeɛ</string>
+    <string name="pair_charge_cycles">aduasa nkwa</string>
     <string name="pair_per_charge">ahoɔden baako</string>
     <string name="pair_cycles">nsakraeɛ</string>
     <string name="pair_charge_watched">wɔahwɛ</string>
@@ -195,5 +195,5 @@
         <item quantity="one">bere %d</item>
         <item quantity="other">bere %d</item>
     </plurals>
-    <string name="pair_charge_calibrating">kɔ so tie na wobɛhunu sɛdeɛ ahoɔden sesa</string>
+    <string name="pair_charge_calibrating">kɔ so tie na wobɛhunu sɛdeɛ aduasa nkwa sesa</string>
 </resources>

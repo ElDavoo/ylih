@@ -97,7 +97,7 @@
     <string name="pair_per_hour">kɔrɔ kɔ</string>
     <string name="pair_bought">satɛ kɛ</string>
     <string name="pair_daily_hours_14">kɔrɔ-juman (gɛrɛ 14)</string>
-    <string name="pair_charge_cycles">fanga siklo</string>
+    <string name="pair_charge_cycles">batiri sii</string>
     <string name="pair_per_charge">fanga kelen na</string>
     <string name="pair_cycles">siklo</string>
     <string name="pair_charge_watched">a filɛra</string>
@@ -191,5 +191,5 @@
     <plurals name="session_count">
         <item quantity="other">jiginna sutu %d</item>
     </plurals>
-    <string name="pair_charge_calibrating">tila ka lamɛnni kɛ walasa ka fanga siklo yɛlɛmani ye</string>
+    <string name="pair_charge_calibrating">tila ka lamɛnni kɛ walasa ka batiri sii yɛlɛmani ye</string>
 </resources>

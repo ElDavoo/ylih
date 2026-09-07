@@ -97,7 +97,7 @@
     <string name="pair_per_hour">gaƒoƒo ƒe</string>
     <string name="pair_bought">ƒu</string>
     <string name="pair_daily_hours_14">gaƒoƒo ŋkeke ƒe (ŋkeke 14)</string>
-    <string name="pair_charge_cycles">ŋusẽdodo ƒe tɔtrɔwo</string>
+    <string name="pair_charge_cycles">battery ƒe agbe</string>
     <string name="pair_per_charge">ŋusẽdodo ɖeka</string>
     <string name="pair_cycles">tɔtrɔwo</string>
     <string name="pair_charge_watched">wolé ŋku ɖe eŋu</string>
@@ -195,5 +195,5 @@
         <item quantity="one">%d nusẽ</item>
         <item quantity="other">%d nusẽ wo</item>
     </plurals>
-    <string name="pair_charge_calibrating">yi edzi nàse eye nàkpɔ ale si ŋusẽdodo trɔna</string>
+    <string name="pair_charge_calibrating">yi edzi nàse eye nàkpɔ ale si battery ƒe agbe trɔna</string>
 </resources>

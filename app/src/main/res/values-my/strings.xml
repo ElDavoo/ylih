@@ -91,7 +91,7 @@
     <string name="pair_per_hour">တစ်နာရီလျှင်</string>
     <string name="pair_bought">ဆိုင်းဖြုတ်</string>
     <string name="pair_daily_hours_14">နေ့စဉ်နာရီ (14 ရက်)</string>
-    <string name="pair_charge_cycles">အားသွင်းသံသရာ</string>
+    <string name="pair_charge_cycles">ဘက်ထရီသက်တမ်း</string>
     <string name="pair_per_charge">တစ်ကြိမ်အားသွင်းလျှင်</string>
     <string name="pair_cycles">သံသရာ</string>
     <string name="pair_charge_watched">စောင့်ကြည့်ခဲ့</string>
@@ -181,5 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">%d အခွင်းအရောင်များ</item>
     </plurals>
-    <string name="pair_charge_calibrating">ဆက်နားထောင်ပါ၊ အားသွင်းတစ်ကြိမ်ဘယ်လိုပြောင်းလဲသလဲ မြင်ရပါမယ်</string>
+    <string name="pair_charge_calibrating">ဆက်နားထောင်ပါ၊ ဘက်ထရီသက်တမ်း ဘယ်လိုပြောင်းလဲသလဲ မြင်ရပါမယ်</string>
 </resources>

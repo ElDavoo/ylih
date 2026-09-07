@@ -91,7 +91,7 @@
     <string name="pair_per_hour">сехетре</string>
     <string name="pair_bought">туяннӑ</string>
     <string name="pair_daily_hours_14">кулленхи сехетсем (14 кун)</string>
-    <string name="pair_charge_cycles">заряд циклӗсем</string>
+    <string name="pair_charge_cycles">батарея пурнӑҫӗ</string>
     <string name="pair_per_charge">пӗр заряда</string>
     <string name="pair_cycles">циклсем</string>
     <string name="pair_charge_watched">сӑнанӑ</string>
@@ -189,5 +189,5 @@
         <item quantity="one">%d сеанс</item>
         <item quantity="other">%d сеанс</item>
     </plurals>
-    <string name="pair_charge_calibrating">малалла итлӗр, зарядлани мӗнле улшӑннине куратӑр</string>
+    <string name="pair_charge_calibrating">малалла итлӗр, батарея пурнӑҫӗ мӗнле улшӑннине куратӑр</string>
 </resources>

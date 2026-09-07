@@ -91,7 +91,7 @@
     <string name="pair_per_hour">در ساعت</string>
     <string name="pair_bought">خریداری</string>
     <string name="pair_daily_hours_14">ساعات روزانه (14 روز)</string>
-    <string name="pair_charge_cycles">شارژ چرخه‌ئون</string>
+    <string name="pair_charge_cycles">باتری عمر</string>
     <string name="pair_per_charge">هر شارژ ره</string>
     <string name="pair_cycles">چرخه‌ئون</string>
     <string name="pair_charge_watched">دیه بیه</string>
@@ -189,5 +189,5 @@
         <item quantity="many">%d جلسات</item>
         <item quantity="other">%d جلسات</item>
     </plurals>
-    <string name="pair_charge_calibrating">گوش هاکردن ره ادامه هاده تا بوینی شارژ چتی عوض وونه</string>
+    <string name="pair_charge_calibrating">گوش هاکردن ره ادامه هاده تا بوینی باتری عمر چتی عوض وونه</string>
 </resources>

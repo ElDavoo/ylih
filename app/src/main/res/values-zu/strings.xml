@@ -91,7 +91,7 @@
     <string name="pair_per_hour">ngehora</string>
     <string name="pair_bought">kuthengiwe</string>
     <string name="pair_daily_hours_14">amahora ansuku zonke (izinsuku ezingu-14)</string>
-    <string name="pair_charge_cycles">imijikelezo yokushaja</string>
+    <string name="pair_charge_cycles">impilo yebhethri</string>
     <string name="pair_per_charge">ngokushaja okukodwa</string>
     <string name="pair_cycles">imijikelezo</string>
     <string name="pair_charge_watched">okubukiwe</string>
@@ -185,5 +185,5 @@
         <item quantity="one">iseshini engu-%d</item>
         <item quantity="other">amaseshini angu-%d</item>
     </plurals>
-    <string name="pair_charge_calibrating">qhubeka ulalele ukuze ubone ukuthi ukushaja kushintsha kanjani</string>
+    <string name="pair_charge_calibrating">qhubeka ulalele ukuze ubone ukuthi impilo yebhethri ishintsha kanjani</string>
 </resources>

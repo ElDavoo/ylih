@@ -91,7 +91,7 @@
     <string name="pair_per_hour">hora by</string>
     <string name="pair_bought">guba</string>
     <string name="pair_daily_hours_14">ǂo-hora tsi (14 ǁau)</string>
-    <string name="pair_charge_cycles">ǀgâuǃnâdi</string>
+    <string name="pair_charge_cycles">battery ûib</string>
     <string name="pair_per_charge">mâ ǀgâub hoab ai</string>
     <string name="pair_cycles">ǃnâdi</string>
     <string name="pair_charge_watched">kōhes ge</string>
@@ -189,5 +189,5 @@
         <item quantity="two">%d ǃares</item>
         <item quantity="other">%d ǃares</item>
     </plurals>
-    <string name="pair_charge_calibrating">ǃaruǀî ǁnâu re, ǀgâuǃnâb mâti ra ǀkharaǀkharasen ǃkhaisa mû</string>
+    <string name="pair_charge_calibrating">ǃaruǀî ǁnâu re, battery ûib mâti ra ǀkharaǀkharasen ǃkhaisa mû</string>
 </resources>

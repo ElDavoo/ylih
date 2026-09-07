@@ -100,7 +100,7 @@
     <string name="pair_per_hour">प्रति घंटा</string>
     <string name="pair_bought">खरीदी</string>
     <string name="pair_daily_hours_14">रोज़ाना घंटे (14 दिन)</string>
-    <string name="pair_charge_cycles">चार्ज चक्र</string>
+    <string name="pair_charge_cycles">बैटरी लाइफ</string>
     <string name="pair_per_charge">प्रति चार्ज</string>
     <string name="pair_cycles">चक्र</string>
     <string name="pair_charge_watched">देखा गया</string>
@@ -198,5 +198,5 @@
         <item quantity="one">%d सत्र</item>
         <item quantity="other">%d सत्र</item>
     </plurals>
-    <string name="pair_charge_calibrating">सुनते रहें और देखें कि एक चार्ज कैसे बदलता है</string>
+    <string name="pair_charge_calibrating">सुनते रहें और देखें कि बैटरी लाइफ कैसे बदलती है</string>
 </resources>

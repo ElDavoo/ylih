@@ -91,7 +91,7 @@
     <string name="pair_per_hour">soат usha</string>
     <string name="pair_bought">sotindi</string>
     <string name="pair_daily_hours_14">har kunning surlari (14 kuni)</string>
-    <string name="pair_charge_cycles">quvvatlash sikllari</string>
+    <string name="pair_charge_cycles">batareya umri</string>
     <string name="pair_per_charge">har quvvatlashga</string>
     <string name="pair_cycles">sikllar</string>
     <string name="pair_charge_watched">kuzatilgan</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d seаns</item>
         <item quantity="other">%d seаnsle</item>
     </plurals>
-    <string name="pair_charge_calibrating">tinglashda davom eting, bir zaryad qanday o’zgarishini ko’rasiz</string>
+    <string name="pair_charge_calibrating">tinglashda davom eting, batareya umri qanday o’zgarishini ko’ring</string>
 </resources>

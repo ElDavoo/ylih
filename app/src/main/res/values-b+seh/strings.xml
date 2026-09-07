@@ -91,7 +91,7 @@
     <string name="pair_per_hour">pa hora</string>
     <string name="pair_bought">kogula</string>
     <string name="pair_daily_hours_14">maola a tsiku (masiku 14)</string>
-    <string name="pair_charge_cycles">mazungulusso a mphambvu</string>
+    <string name="pair_charge_cycles">umoyo wa bettery</string>
     <string name="pair_per_charge">pa mphambvu ibodzi</string>
     <string name="pair_cycles">mazungulusso</string>
     <string name="pair_charge_watched">asaoniwa</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d gawo</item>
         <item quantity="other">%d magawo</item>
     </plurals>
-    <string name="pair_charge_calibrating">pitirizani kubvesera toera muone kuti mphambvu isacinja tani</string>
+    <string name="pair_charge_calibrating">pitirizani kubvesera toera muone kuti umoyo wa bettery usacinja tani</string>
 </resources>

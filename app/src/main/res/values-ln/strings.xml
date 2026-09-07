@@ -91,7 +91,7 @@
     <string name="pair_per_hour">pro myele</string>
     <string name="pair_bought">kulaki</string>
     <string name="pair_daily_hours_14">myele ya mokolo (mikolo 14)</string>
-    <string name="pair_charge_cycles">bazínga ya kotondisa</string>
+    <string name="pair_charge_cycles">bomoi ya moteka</string>
     <string name="pair_per_charge">na kotondisa mokó</string>
     <string name="pair_cycles">bazínga</string>
     <string name="pair_charge_watched">etálámákí</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d bilakisi</item>
         <item quantity="other">%d bilakisi</item>
     </plurals>
-    <string name="pair_charge_calibrating">kobanda koyoka lisusu mpo omona ndenge kotondisa ebongwanaka</string>
+    <string name="pair_charge_calibrating">kobanda koyoka lisusu mpo omona ndenge bomoi ya moteka ebongwanaka</string>
 </resources>

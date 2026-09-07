@@ -97,7 +97,7 @@
     <string name="pair_per_hour">ku saati</string>
     <string name="pair_bought">agakurirwe</string>
     <string name="pair_daily_hours_14">saati ku musi (14 amasigara)</string>
-    <string name="pair_charge_cycles">emizunguko y’amaani</string>
+    <string name="pair_charge_cycles">obwomeezi bwa batireeri</string>
     <string name="pair_per_charge">aha maani gamwe</string>
     <string name="pair_cycles">emizunguko</string>
     <string name="pair_charge_watched">ekireeberwe</string>
@@ -195,5 +195,5 @@
         <item quantity="one">okussozo %d</item>
         <item quantity="other">okussozo %d</item>
     </plurals>
-    <string name="pair_charge_calibrating">gumizamu kuhurikiiza oreebe oku amaani gahindukira</string>
+    <string name="pair_charge_calibrating">gumizamu kuhurikiiza oreebe oku obwomeezi bwa batireeri buhindukira</string>
 </resources>

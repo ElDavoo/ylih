@@ -91,7 +91,7 @@
     <string name="pair_per_hour">sejam</string>
     <string name="pair_bought">dibeli</string>
     <string name="pair_daily_hours_14">jam harian (14 hari)</string>
-    <string name="pair_charge_cycles">kitaran cas</string>
+    <string name="pair_charge_cycles">hayat bateri</string>
     <string name="pair_per_charge">setiap cas</string>
     <string name="pair_cycles">kitaran</string>
     <string name="pair_charge_watched">diperhati</string>
@@ -181,5 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">%d sesi</item>
     </plurals>
-    <string name="pair_charge_calibrating">terus dengar untuk lihat bagaimana satu cas berubah</string>
+    <string name="pair_charge_calibrating">terus dengar untuk lihat bagaimana hayat bateri berubah</string>
 </resources>

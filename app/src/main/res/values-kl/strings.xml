@@ -91,7 +91,7 @@
     <string name="pair_per_hour">tamaasa sapaaq</string>
     <string name="pair_bought">pilerpok</string>
     <string name="pair_daily_hours_14">ulloqatigiit tamaasa (14 ulloq)</string>
-    <string name="pair_charge_cycles">tunivissat kaajallattut</string>
+    <string name="pair_charge_cycles">tamaassap inuunera</string>
     <string name="pair_per_charge">tunivissamut</string>
     <string name="pair_cycles">kaajallattut</string>
     <string name="pair_charge_watched">nakkutigineqartoq</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d ilortariaq</item>
         <item quantity="other">%d ilortariaq</item>
     </plurals>
-    <string name="pair_charge_calibrating">tusarnaajuarit kaajallanneq qanoq allanngortartoq takusinnaaniassagakku</string>
+    <string name="pair_charge_calibrating">tusarnaajuarit tamaassap inuunera qanoq allanngortartoq takusinnaaniassagakku</string>
 </resources>

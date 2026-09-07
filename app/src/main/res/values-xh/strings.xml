@@ -91,7 +91,7 @@
     <string name="pair_per_hour">nge-yure</string>
     <string name="pair_bought">kwathengwa</string>
     <string name="pair_daily_hours_14">iiyure zosuku (amashumi-amathandathu emali)</string>
-    <string name="pair_charge_cycles">imijikelo yokutshaja</string>
+    <string name="pair_charge_cycles">ubomi bebhetri</string>
     <string name="pair_per_charge">ngokutshaja okunye</string>
     <string name="pair_cycles">imijikelo</string>
     <string name="pair_charge_watched">okubonwayo</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d session</item>
         <item quantity="other">%d session</item>
     </plurals>
-    <string name="pair_charge_calibrating">qhubeka umamele ukuze ubone ukuba ukutshaja kutshintsha njani</string>
+    <string name="pair_charge_calibrating">qhubeka umamele ukuze ubone ukuba ubomi bebhetri butshintsha njani</string>
 </resources>

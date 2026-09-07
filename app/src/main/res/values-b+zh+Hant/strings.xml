@@ -99,7 +99,7 @@
     <string name="pair_per_hour">每小時</string>
     <string name="pair_bought">購買於</string>
     <string name="pair_daily_hours_14">每日小時數（14 天）</string>
-    <string name="pair_charge_cycles">充電循環</string>
+    <string name="pair_charge_cycles">電池續航</string>
     <string name="pair_per_charge">每次充電</string>
     <string name="pair_cycles">循環</string>
     <string name="pair_charge_watched">觀察時長</string>
@@ -193,5 +193,5 @@
     <plurals name="session_count">
         <item quantity="other">%d 次連線</item>
     </plurals>
-    <string name="pair_charge_calibrating">繼續使用，就能看到一次充電的變化</string>
+    <string name="pair_charge_calibrating">繼續使用，就能看到電池續航的變化</string>
 </resources>

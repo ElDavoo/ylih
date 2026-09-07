@@ -91,7 +91,7 @@
     <string name="pair_per_hour">prati taas</string>
     <string name="pair_bought">kharedi kem</string>
     <string name="pair_daily_hours_14">dainik taas (14 divs)</string>
-    <string name="pair_charge_cycles">charj chakram</string>
+    <string name="pair_charge_cycles">battery ayushya</string>
     <string name="pair_per_charge">dar charjak</string>
     <string name="pair_cycles">chakram</string>
     <string name="pair_charge_watched">pollem</string>
@@ -185,5 +185,5 @@
         <item quantity="other">%d seshan</item>
     </plurals>
     <string name="edit_failed">badal jatan korunk zalo na</string>
-    <string name="pair_charge_calibrating">aikot ravat ani polloi ek charge koso bodolta</string>
+    <string name="pair_charge_calibrating">aikot ravat ani polloi battery ayushya koxem bodolta</string>
 </resources>

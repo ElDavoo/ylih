@@ -91,7 +91,7 @@
     <string name="pair_per_hour">sagat başyna</string>
     <string name="pair_bought">satyn alyndy</string>
     <string name="pair_daily_hours_14">gündelik sagat (14 gün)</string>
-    <string name="pair_charge_cycles">zarýad aýlawlary</string>
+    <string name="pair_charge_cycles">batareýa ömri</string>
     <string name="pair_per_charge">her zarýada</string>
     <string name="pair_cycles">aýlawlar</string>
     <string name="pair_charge_watched">synlanan</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d session</item>
         <item quantity="other">%d sessions</item>
     </plurals>
-    <string name="pair_charge_calibrating">diňlemegi dowam et, zarýadyň nähili üýtgeýändigini görersiň</string>
+    <string name="pair_charge_calibrating">diňlemegi dowam et, batareýa ömrüniň nähili üýtgeýändigini görersiň</string>
 </resources>

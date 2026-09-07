@@ -91,7 +91,7 @@
     <string name="pair_per_hour">గంటకు</string>
     <string name="pair_bought">కొన్నది</string>
     <string name="pair_daily_hours_14">రోజువారీ గంటలు (14 రోజులు)</string>
-    <string name="pair_charge_cycles">ఛార్జ్ చక్రాలు</string>
+    <string name="pair_charge_cycles">బ్యాటరీ జీవితకాలం</string>
     <string name="pair_per_charge">ఒక్కో ఛార్జ్‌కు</string>
     <string name="pair_cycles">చక్రాలు</string>
     <string name="pair_charge_watched">గమనించినది</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d సెషన్</item>
         <item quantity="other">%d సెషన్‌లు</item>
     </plurals>
-    <string name="pair_charge_calibrating">వినడం కొనసాగించండి, ఒక ఛార్జ్ ఎలా మారుతుందో చూడండి</string>
+    <string name="pair_charge_calibrating">వినడం కొనసాగించండి, బ్యాటరీ జీవితకాలం ఎలా మారుతుందో చూడండి</string>
 </resources>

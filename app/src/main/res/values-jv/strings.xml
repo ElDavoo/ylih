@@ -91,7 +91,7 @@
     <string name="pair_per_hour">per jam</string>
     <string name="pair_bought">tuku</string>
     <string name="pair_daily_hours_14">jam saben dina (14 hari)</string>
-    <string name="pair_charge_cycles">siklus ngisi daya</string>
+    <string name="pair_charge_cycles">umur batrai</string>
     <string name="pair_per_charge">saben ngisi daya</string>
     <string name="pair_cycles">siklus</string>
     <string name="pair_charge_watched">diamati</string>
@@ -181,5 +181,5 @@
         <item quantity="other">%d sesi</item>
     </plurals>
     <string name="edit_failed">owahan ora bisa disimpen</string>
-    <string name="pair_charge_calibrating">terusna ngrungokake kanggo ndeleng owahé siji isi daya</string>
+    <string name="pair_charge_calibrating">terusna ngrungokake kanggo ndeleng owahé umur batrai</string>
 </resources>

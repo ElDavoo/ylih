@@ -97,7 +97,7 @@
     <string name="pair_per_hour">to waktuu duuɗe</string>
     <string name="pair_bought">kaye</string>
     <string name="pair_daily_hours_14">waktuuji baŋko (joomuuji 14)</string>
-    <string name="pair_charge_cycles">sikuli karja</string>
+    <string name="pair_charge_cycles">nguurndam battery</string>
     <string name="pair_per_charge">go karja</string>
     <string name="pair_cycles">sikuli</string>
     <string name="pair_charge_watched">yiiyaango</string>
@@ -195,5 +195,5 @@
         <item quantity="one">%d sekkuu</item>
         <item quantity="other">%d sekkuuji</item>
     </plurals>
-    <string name="pair_charge_calibrating">jokku heɗugol ngam yi’de no sikuli karja waylotoo</string>
+    <string name="pair_charge_calibrating">jokku heɗugol ngam yi’de no nguurndam battery waylotoo</string>
 </resources>

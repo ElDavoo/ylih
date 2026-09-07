@@ -91,7 +91,7 @@
     <string name="pair_per_hour">ka hora</string>
     <string name="pair_bought">o isiwe</string>
     <string name="pair_daily_hours_14">dithuta tsa letsatsi (matsatsi a 14)</string>
-    <string name="pair_charge_cycles">dipotologo tsa go tjhaja</string>
+    <string name="pair_charge_cycles">botshelo jwa bathari</string>
     <string name="pair_per_charge">ka tjhaja nngwe</string>
     <string name="pair_cycles">dipotologo</string>
     <string name="pair_charge_watched">go lebeletswe</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d khutshane</item>
         <item quantity="other">%d dikhutshane</item>
     </plurals>
-    <string name="pair_charge_calibrating">tswelela go reetsa gore o bone kafa go tjhaja go fetogang ka teng</string>
+    <string name="pair_charge_calibrating">tswelela go reetsa gore o bone kafa botshelo jwa bathari bo fetogang ka teng</string>
 </resources>

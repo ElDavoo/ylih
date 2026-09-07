@@ -91,7 +91,7 @@
     <string name="pair_per_hour">jahka</string>
     <string name="pair_bought">ostetam</string>
     <string name="pair_daily_hours_14">juohke-aige jahkaj (14 pájvvá)</string>
-    <string name="pair_charge_cycles">luâđâmsyklusah</string>
+    <string name="pair_charge_cycles">batereja pissomâš</string>
     <string name="pair_per_charge">ohtâ luâđâm</string>
     <string name="pair_cycles">syklusah</string>
     <string name="pair_charge_watched">táárum</string>
@@ -189,5 +189,5 @@
         <item quantity="two">%d sessions</item>
         <item quantity="other">%d sessions</item>
     </plurals>
-    <string name="pair_charge_calibrating">kuldâl viehis, te uáináh maht luâđâm nubástuvá</string>
+    <string name="pair_charge_calibrating">kuldâl viehis, te uáináh maht batereja pissomâš nubástuvá</string>
 </resources>

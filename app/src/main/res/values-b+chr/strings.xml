@@ -97,7 +97,7 @@
     <string name="pair_per_hour">ᎨᎮᎵᏍᎬ ᏍᏍᎦ</string>
     <string name="pair_bought">ᏔᎰᏗ ᏂᏂ</string>
     <string name="pair_daily_hours_14">ᎠᎵᏁᏟᏒ ᏒᏂ ᎨᎮᎵᏍᎬ (14 ᎾᎬᎾᎴ)</string>
-    <string name="pair_charge_cycles">ᏗᏓᏅᏬᏗ ᏗᎦᏔᎾ</string>
+    <string name="pair_charge_cycles">ᎨᎪᎶ ᎡᎯᏍᏗ</string>
     <string name="pair_per_charge">ᏌᏉ ᏗᏓᏅᏬᏗ</string>
     <string name="pair_cycles">ᏗᎦᏔᎾ</string>
     <string name="pair_charge_watched">ᎠᎦᏙᎥᏒᎢ</string>
@@ -195,5 +195,5 @@
         <item quantity="one">%d ᎠᏟᏎᎵᏗ</item>
         <item quantity="other">%d ᎠᏟᏎᎵᏗ</item>
     </plurals>
-    <string name="pair_charge_calibrating">ᏔᎵᏁ ᎯᏛᎬᏍᎨᏍᏗ ᎠᎴ ᎯᎪᏩᏛ ᎢᏳᏍᏗ ᎠᏓᏅᏬᏗ ᎦᏁᏟᏴᏍᎬᎢ</string>
+    <string name="pair_charge_calibrating">ᏔᎵᏁ ᎯᏛᎬᏍᎨᏍᏗ ᎠᎴ ᎯᎪᏩᏛ ᎢᏳᏍᏗ ᎨᎪᎶ ᎡᎯᏍᏗ ᎦᏁᏟᏴᏍᎬᎢ</string>
 </resources>

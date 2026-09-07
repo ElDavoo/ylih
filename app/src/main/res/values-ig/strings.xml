@@ -91,7 +91,7 @@
     <string name="pair_per_hour">kwa awa</string>
     <string name="pair_bought">zụrụ</string>
     <string name="pair_daily_hours_14">ọrọ kwa ụbọchị (ụbọchị 14)</string>
-    <string name="pair_charge_cycles">okirikiri ijupụta</string>
+    <string name="pair_charge_cycles">ndụ batrị</string>
     <string name="pair_per_charge">kwa ijupụta</string>
     <string name="pair_cycles">okirikiri</string>
     <string name="pair_charge_watched">elere anya</string>
@@ -181,5 +181,5 @@
         <item quantity="other">%d oge omume</item>
     </plurals>
     <string name="edit_failed">enweghị ike ịchekwa mgbanwe ahụ</string>
-    <string name="pair_charge_calibrating">gaa n’ihu na-ege ntị ka ị hụ ka ijupụta si agbanwe</string>
+    <string name="pair_charge_calibrating">gaa n’ihu na-ege ntị ka ị hụ ka ndụ batrị si agbanwe</string>
 </resources>

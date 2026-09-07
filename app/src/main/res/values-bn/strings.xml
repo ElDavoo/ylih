@@ -97,7 +97,7 @@
     <string name="pair_per_hour">প্রতি ঘন্টায়</string>
     <string name="pair_bought">ক্রয় করা হয়েছে</string>
     <string name="pair_daily_hours_14">দৈনিক ঘন্টা (১৪ দিন)</string>
-    <string name="pair_charge_cycles">চার্জ চক্র</string>
+    <string name="pair_charge_cycles">ব্যাটারির আয়ু</string>
     <string name="pair_per_charge">প্রতি চার্জে</string>
     <string name="pair_cycles">চক্র</string>
     <string name="pair_charge_watched">পর্যবেক্ষিত</string>
@@ -195,5 +195,5 @@
         <item quantity="one">%d সেশন</item>
         <item quantity="other">%d সেশন</item>
     </plurals>
-    <string name="pair_charge_calibrating">শুনতে থাকুন, দেখুন একটি চার্জ কীভাবে বদলায়</string>
+    <string name="pair_charge_calibrating">শুনতে থাকুন, দেখুন ব্যাটারির আয়ু কীভাবে বদলায়</string>
 </resources>

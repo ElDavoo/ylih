@@ -91,7 +91,7 @@
     <string name="pair_per_hour">في ڪلاڪ</string>
     <string name="pair_bought">خريدو</string>
     <string name="pair_daily_hours_14">روزانہ ڪلاڪ (14 ڏينهن)</string>
-    <string name="pair_charge_cycles">چارج چڪر</string>
+    <string name="pair_charge_cycles">بيٽري جي عمر</string>
     <string name="pair_per_charge">في چارج</string>
     <string name="pair_cycles">چڪر</string>
     <string name="pair_charge_watched">ڏٺو ويو</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d سيشن</item>
         <item quantity="other">%d سيشنز</item>
     </plurals>
-    <string name="pair_charge_calibrating">ٻڌندا رهو ته ڏسو ته هڪ چارج ڪيئن بدلجي ٿو</string>
+    <string name="pair_charge_calibrating">ٻڌندا رهو ته ڏسو ته بيٽري جي عمر ڪيئن بدلجي ٿي</string>
 </resources>

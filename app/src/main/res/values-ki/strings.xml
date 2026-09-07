@@ -91,7 +91,7 @@
     <string name="pair_per_hour">o mahoya mā ho</string>
     <string name="pair_bought">rĩndĩ</string>
     <string name="pair_daily_hours_14">mahoya ma mũthenya (matukũ 14)</string>
-    <string name="pair_charge_cycles">mithiũrũrũko ya hinya</string>
+    <string name="pair_charge_cycles">muoyo wa baterĩ</string>
     <string name="pair_per_charge">kwa hinya ũmwe</string>
     <string name="pair_cycles">mithiũrũrũko</string>
     <string name="pair_charge_watched">kũrorwo</string>
@@ -189,5 +189,5 @@
         <item quantity="other">%d ĩrĩa</item>
     </plurals>
     <string name="edit_failed">kũiga ũgarũrũku gũtiahotekire</string>
-    <string name="pair_charge_calibrating">thikĩrĩria ũrĩ na mbere nĩguo wone ũrĩa hinya ũgarũrũkaga</string>
+    <string name="pair_charge_calibrating">thikĩrĩria ũrĩ na mbere nĩguo wone ũrĩa muoyo wa baterĩ ũgarũrũkaga</string>
 </resources>

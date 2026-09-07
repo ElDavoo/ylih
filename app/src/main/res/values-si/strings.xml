@@ -91,7 +91,7 @@
     <string name="pair_per_hour">පැයි බැගින්</string>
     <string name="pair_bought">ගිණුම කරන්න</string>
     <string name="pair_daily_hours_14">දෛනික පැයි (දින 14)</string>
-    <string name="pair_charge_cycles">ආරෝපණ චක්‍ර</string>
+    <string name="pair_charge_cycles">බැටරි ආයුෂ</string>
     <string name="pair_per_charge">ආරෝපණයකට</string>
     <string name="pair_cycles">චක්‍ර</string>
     <string name="pair_charge_watched">නිරීක්ෂණය කළ</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d සැසිකරණ</item>
         <item quantity="other">%d සැසිකරණ</item>
     </plurals>
-    <string name="pair_charge_calibrating">දිගටම අහන්න, එක් චාජ් එකක් වෙනස් වන ආකාරය බලන්න</string>
+    <string name="pair_charge_calibrating">දිගටම අහන්න, බැටරි ආයුෂ වෙනස් වන ආකාරය බලන්න</string>
 </resources>

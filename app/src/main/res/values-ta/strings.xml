@@ -91,7 +91,7 @@
     <string name="pair_per_hour">மணிக்கு</string>
     <string name="pair_bought">வாங்கியது</string>
     <string name="pair_daily_hours_14">தினசரி மணிநேரம் (14 நாட்கள்)</string>
-    <string name="pair_charge_cycles">சார்ஜ் சுழற்சிகள்</string>
+    <string name="pair_charge_cycles">பேட்டரி ஆயுள்</string>
     <string name="pair_per_charge">ஒரு சார்ஜுக்கு</string>
     <string name="pair_cycles">சுழற்சிகள்</string>
     <string name="pair_charge_watched">கவனிக்கப்பட்டது</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d அமர்வு</item>
         <item quantity="other">%d அமர்வுகள்</item>
     </plurals>
-    <string name="pair_charge_calibrating">தொடர்ந்து கேளுங்கள், ஒரு சார்ஜ் எப்படி மாறுகிறது என்று பாருங்கள்</string>
+    <string name="pair_charge_calibrating">தொடர்ந்து கேளுங்கள், பேட்டரி ஆயுள் எப்படி மாறுகிறது என்று பாருங்கள்</string>
 </resources>

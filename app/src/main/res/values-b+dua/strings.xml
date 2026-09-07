@@ -97,7 +97,7 @@
     <string name="pair_per_hour">mbe mota wa mabe</string>
     <string name="pair_bought">osombé</string>
     <string name="pair_daily_hours_14">mabe wa mílu (mílu 14)</string>
-    <string name="pair_charge_cycles">masikèl ma ngiña</string>
+    <string name="pair_charge_cycles">ngiña battery</string>
     <string name="pair_per_charge">o ngiña wɔ́</string>
     <string name="pair_cycles">masikèl</string>
     <string name="pair_charge_watched">ba enè</string>
@@ -199,5 +199,5 @@
         <item quantity="many">%d isela</item>
         <item quantity="other">%d isela</item>
     </plurals>
-    <string name="pair_charge_calibrating">tatane senga, o me je lambe ne masikèl ma ngiña ma mabelane</string>
+    <string name="pair_charge_calibrating">tatane senga, o me je lambe ne ngiña battery e mabelane</string>
 </resources>

@@ -97,7 +97,7 @@
     <string name="pair_per_hour">kwa mahinda</string>
     <string name="pair_bought">yoothĩtwo</string>
     <string name="pair_daily_hours_14">mahinda ma rua (mahinda 14)</string>
-    <string name="pair_charge_cycles">mĩthiũrũko ya inengi</string>
+    <string name="pair_charge_cycles">muoyo wa kĩruta</string>
     <string name="pair_per_charge">kwa inengi rimwe</string>
     <string name="pair_cycles">mĩthiũrũko</string>
     <string name="pair_charge_watched">gũthuthuria</string>
@@ -199,5 +199,5 @@
         <item quantity="many">mahinda %d</item>
         <item quantity="other">mahinda %d</item>
     </plurals>
-    <string name="pair_charge_calibrating">thĩkĩrĩria ũrĩ na mbere nĩguo wone ũrĩa inengi rĩgarũrũkaga</string>
+    <string name="pair_charge_calibrating">thĩkĩrĩria ũrĩ na mbere nĩguo wone ũrĩa muoyo wa kĩruta ũgarũrũkaga</string>
 </resources>

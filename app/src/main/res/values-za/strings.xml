@@ -91,7 +91,7 @@
     <string name="pair_per_hour">gunz by haeq</string>
     <string name="pair_bought">gvuq</string>
     <string name="pair_daily_hours_14">gunz ndieq (14 ndieq)</string>
-    <string name="pair_charge_cycles">cungdenh couhgeiz</string>
+    <string name="pair_charge_cycles">denhciz souhmingh</string>
     <string name="pair_per_charge">moix baez cungdenh</string>
     <string name="pair_cycles">couhgeiz</string>
     <string name="pair_charge_watched">gozcaz gvaq</string>
@@ -189,5 +189,5 @@
         <item quantity="many">%d seih</item>
         <item quantity="other">%d seih</item>
     </plurals>
-    <string name="pair_charge_calibrating">laebae dingqnyi bae ndaej raen baez cungdenh ndeu bienq baenzlawz</string>
+    <string name="pair_charge_calibrating">laebae dingqnyi bae ndaej raen denhciz souhmingh bienq baenzlawz</string>
 </resources>

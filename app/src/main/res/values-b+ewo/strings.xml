@@ -97,7 +97,7 @@
     <string name="pair_per_hour">ti kuε bot</string>
     <string name="pair_bought">bekum</string>
     <string name="pair_daily_hours_14">kuε ye zepot (zitom ye 14)</string>
-    <string name="pair_charge_cycles">misikèl mi ngul</string>
+    <string name="pair_charge_cycles">ényiŋ bateri</string>
     <string name="pair_per_charge">ngul fɔ́</string>
     <string name="pair_cycles">misikèl</string>
     <string name="pair_charge_watched">bé yén</string>
@@ -199,5 +199,5 @@
         <item quantity="many">dibulu %d</item>
         <item quantity="other">dibulu %d</item>
     </plurals>
-    <string name="pair_charge_calibrating">vɔ́gɔ́ ai mvus, wa yen aval misikèl mi ngul mi kabɔ</string>
+    <string name="pair_charge_calibrating">vɔ́gɔ́ ai mvus, wa yen aval ényiŋ bateri a kabɔ</string>
 </resources>

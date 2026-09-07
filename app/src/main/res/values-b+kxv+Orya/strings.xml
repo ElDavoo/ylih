@@ -91,7 +91,7 @@
     <string name="pair_per_hour">ପ୍ରାତି ଘାନ୍ତା</string>
     <string name="pair_bought">କିନା ଆତେ</string>
     <string name="pair_daily_hours_14">ପ୍ରାତି ଦିନା ଘାନ୍ତା (14 ଦିନା)</string>
-    <string name="pair_charge_cycles">ଚାର୍ଜ ଚକ୍ର</string>
+    <string name="pair_charge_cycles">ବେଟ୍ରି ଜିୱୋନ</string>
     <string name="pair_per_charge">ଏକ ଚାର୍ଜ ମୁଦେ</string>
     <string name="pair_cycles">ଚକ୍ର</string>
     <string name="pair_charge_watched">ଦେଖ୍‌ତେ</string>
@@ -189,5 +189,5 @@
         <item quantity="many">%d ସେସାନ</item>
         <item quantity="other">%d ସେସାନ</item>
     </plurals>
-    <string name="pair_charge_calibrating">ୱିଣ୍ଡିତେ ମଣ୍ଡୁ, ଚାର୍ଜ ଚକ୍ର କେତ୍ଲା ମରୁତେରି ହିନି ଉଡ଼ା</string>
+    <string name="pair_charge_calibrating">ୱିଣ୍ଡିତେ ମଣ୍ଡୁ, ବେଟ୍ରି ଜିୱୋନ କେତ୍ଲା ମରୁତେରି ହିନି ଉଡ଼ା</string>
 </resources>

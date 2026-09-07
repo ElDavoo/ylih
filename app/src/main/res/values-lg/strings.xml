@@ -91,7 +91,7 @@
     <string name="pair_per_hour">buli ssaawa</string>
     <string name="pair_bought">okugula</string>
     <string name="pair_daily_hours_14">essaawa z’ennaku (ennaku 14)</string>
-    <string name="pair_charge_cycles">enkyukakyuka z’amaanyi</string>
+    <string name="pair_charge_cycles">obulamu bwa bateri</string>
     <string name="pair_per_charge">buli maanyi</string>
     <string name="pair_cycles">enkyukakyuka</string>
     <string name="pair_charge_watched">ekyalabiddwa</string>
@@ -185,5 +185,5 @@
         <item quantity="one">mutendera %d</item>
         <item quantity="other">mutendera %d</item>
     </plurals>
-    <string name="pair_charge_calibrating">weeyongere okuwuliriza olabe engeri amaanyi bwe gakyuka</string>
+    <string name="pair_charge_calibrating">weeyongere okuwuliriza olabe engeri obulamu bwa bateri bwe bukyuka</string>
 </resources>

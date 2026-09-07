@@ -91,7 +91,7 @@
     <string name="pair_per_hour">bo otu</string>
     <string name="pair_bought">i-nu</string>
     <string name="pair_daily_hours_14">otu kilo miezi (miezi 14)</string>
-    <string name="pair_charge_cycles">sikɛl yé ndáá</string>
+    <string name="pair_charge_cycles">ndáá battery</string>
     <string name="pair_per_charge">ndáá yɔ́mɔ́</string>
     <string name="pair_cycles">sikɛl</string>
     <string name="pair_charge_watched">bá bɛ́n</string>
@@ -189,5 +189,5 @@
         <item quantity="other">%d nkpoong</item>
     </plurals>
     <string name="edit_failed">á bɛ́ nde sá</string>
-    <string name="pair_charge_calibrating">wókii nyɔ, u yén lɛ́ sikɛl yé ndáá yé mbaŋ</string>
+    <string name="pair_charge_calibrating">wókii nyɔ, u yén lɛ́ ndáá battery yé mbaŋ</string>
 </resources>

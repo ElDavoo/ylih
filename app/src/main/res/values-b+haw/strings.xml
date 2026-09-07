@@ -91,7 +91,7 @@
     <string name="pair_per_hour">ma kēlā hola</string>
     <string name="pair_bought">hōʻili ʻia</string>
     <string name="pair_daily_hours_14">nā hola o kēlā me kēia lā (14 lā)</string>
-    <string name="pair_charge_cycles">nā pōʻai hoʻopiha</string>
+    <string name="pair_charge_cycles">ola o ka pila</string>
     <string name="pair_per_charge">i kēlā hoʻopiha</string>
     <string name="pair_cycles">nā pōʻai</string>
     <string name="pair_charge_watched">nānā ʻia</string>
@@ -185,5 +185,5 @@
         <item quantity="other">nā hoʻomaka %d</item>
     </plurals>
     <string name="edit_failed">hiki ʻole ke mālama i ka hoʻololi</string>
-    <string name="pair_charge_calibrating">e hoʻomau i ka hoʻolohe i ʻike ʻoe i ka loli ʻana o ka hoʻopiha</string>
+    <string name="pair_charge_calibrating">e hoʻomau i ka hoʻolohe i ʻike ʻoe i ka loli ʻana o ke ola o ka pila</string>
 </resources>

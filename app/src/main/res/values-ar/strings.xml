@@ -99,7 +99,7 @@
     <string name="pair_per_hour">في الساعة</string>
     <string name="pair_bought">الشراء</string>
     <string name="pair_daily_hours_14">الساعات اليومية (14 يومًا)</string>
-    <string name="pair_charge_cycles">دورات الشحن</string>
+    <string name="pair_charge_cycles">عمر البطارية</string>
     <string name="pair_per_charge">لكل شحنة</string>
     <string name="pair_cycles">دورات</string>
     <string name="pair_charge_watched">مرصود</string>
@@ -215,5 +215,5 @@
         <item quantity="many">%d جلسة</item>
         <item quantity="other">%d جلسة</item>
     </plurals>
-    <string name="pair_charge_calibrating">واصل الاستماع لترى كيف تتغيّر الشحنة</string>
+    <string name="pair_charge_calibrating">واصل الاستماع لترى كيف يتغيّر عمر البطارية</string>
 </resources>

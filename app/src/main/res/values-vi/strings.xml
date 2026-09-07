@@ -98,7 +98,7 @@
     <string name="pair_per_hour">mỗi giờ</string>
     <string name="pair_bought">đã mua</string>
     <string name="pair_daily_hours_14">số giờ mỗi ngày (14 ngày)</string>
-    <string name="pair_charge_cycles">chu kỳ sạc</string>
+    <string name="pair_charge_cycles">thời lượng pin</string>
     <string name="pair_per_charge">mỗi lần sạc</string>
     <string name="pair_cycles">chu kỳ</string>
     <string name="pair_charge_watched">đã quan sát</string>
@@ -192,5 +192,5 @@
     <plurals name="session_count">
         <item quantity="other">%d phiên</item>
     </plurals>
-    <string name="pair_charge_calibrating">hãy nghe tiếp để thấy một lần sạc thay đổi thế nào</string>
+    <string name="pair_charge_calibrating">hãy nghe tiếp để thấy thời lượng pin thay đổi thế nào</string>
 </resources>

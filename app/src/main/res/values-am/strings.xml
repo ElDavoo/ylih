@@ -96,7 +96,7 @@
     <string name="pair_per_hour">በሰዓት</string>
     <string name="pair_bought">ገዛ</string>
     <string name="pair_daily_hours_14">ዕለታዊ ሰዓታት (14 ቀናት)</string>
-    <string name="pair_charge_cycles">የኃይል ሙሌት ዑደቶች</string>
+    <string name="pair_charge_cycles">የባትሪ ዕድሜ</string>
     <string name="pair_per_charge">በአንድ ሙሌት</string>
     <string name="pair_cycles">ዑደቶች</string>
     <string name="pair_charge_watched">የተመለከተ</string>
@@ -194,5 +194,5 @@
         <item quantity="one">%d ስብሰባ</item>
         <item quantity="other">%d ስብሰባ</item>
     </plurals>
-    <string name="pair_charge_calibrating">ማዳመጥዎን ይቀጥሉ፣ አንድ ሙሌት እንዴት እንደሚለወጥ ያያሉ</string>
+    <string name="pair_charge_calibrating">ማዳመጥዎን ይቀጥሉ፣ የባትሪው ዕድሜ እንዴት እንደሚለወጥ ያያሉ</string>
 </resources>

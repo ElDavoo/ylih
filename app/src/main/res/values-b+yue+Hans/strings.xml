@@ -91,7 +91,7 @@
     <string name="pair_per_hour">每小时</string>
     <string name="pair_bought">购买</string>
     <string name="pair_daily_hours_14">每日小时数（14 日）</string>
-    <string name="pair_charge_cycles">充电周期</string>
+    <string name="pair_charge_cycles">电池续航</string>
     <string name="pair_per_charge">每次充电</string>
     <string name="pair_cycles">周期</string>
     <string name="pair_charge_watched">观察时长</string>
@@ -181,5 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">%d 个节段</item>
     </plurals>
-    <string name="pair_charge_calibrating">继续听落去，就睇到一次充电点样变</string>
+    <string name="pair_charge_calibrating">继续听落去，就睇到电池续航点样变</string>
 </resources>

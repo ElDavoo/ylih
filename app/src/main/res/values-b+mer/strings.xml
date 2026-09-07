@@ -91,7 +91,7 @@
     <string name="pair_per_hour">kwa ithaa</string>
     <string name="pair_bought">nĩkĩagũrirwo</string>
     <string name="pair_daily_hours_14">mathaa ma o mũthenya (thiku 14)</string>
-    <string name="pair_charge_cycles">mithiuruko ya inya</string>
+    <string name="pair_charge_cycles">muoyo jwa betiri</string>
     <string name="pair_per_charge">kwa inya imwe</string>
     <string name="pair_cycles">mithiuruko</string>
     <string name="pair_charge_watched">gwitirwa</string>
@@ -189,5 +189,5 @@
         <item quantity="many">magita %d</item>
         <item quantity="other">magita %d</item>
     </plurals>
-    <string name="pair_charge_calibrating">thikĩrĩria ũrĩ na mbere nĩguo wone ũrĩa inya rĩgarũrũkaga</string>
+    <string name="pair_charge_calibrating">thikĩrĩria ũrĩ na mbere nĩguo wone ũrĩa muoyo jwa betiri jũgarũrũkaga</string>
 </resources>

@@ -91,7 +91,7 @@
     <string name="pair_per_hour">na ngö mo</string>
     <string name="pair_bought">bili</string>
     <string name="pair_daily_hours_14">ngö kûê (zêni 14)</string>
-    <string name="pair_charge_cycles">angoro ti sarze</string>
+    <string name="pair_charge_cycles">fini ti battery</string>
     <string name="pair_per_charge">na sarze oko</string>
     <string name="pair_cycles">angoro</string>
     <string name="pair_charge_watched">abâ</string>
@@ -181,5 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">%d gbalá</item>
     </plurals>
-    <string name="pair_charge_calibrating">ngbâa ti mä ti bâ tongana nyen sarze ayeke gbian</string>
+    <string name="pair_charge_calibrating">ngbâa ti mä ti bâ tongana nyen fini ti battery ayeke gbian</string>
 </resources>

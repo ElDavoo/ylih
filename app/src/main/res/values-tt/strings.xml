@@ -91,7 +91,7 @@
     <string name="pair_per_hour">сәгать өче</string>
     <string name="pair_bought">сатып алынды</string>
     <string name="pair_daily_hours_14">көннәрбәш сәгать (14 көннәр)</string>
-    <string name="pair_charge_cycles">корылма циклы</string>
+    <string name="pair_charge_cycles">батарея ресурсы</string>
     <string name="pair_per_charge">бер корылмага</string>
     <string name="pair_cycles">циклар</string>
     <string name="pair_charge_watched">күзәтелгән</string>
@@ -189,5 +189,5 @@
         <item quantity="many">%d сессия</item>
         <item quantity="other">%d сессия</item>
     </plurals>
-    <string name="pair_charge_calibrating">тыңлавыгызны дәвам итегез, зарядның ничек үзгәрүен күрерсез</string>
+    <string name="pair_charge_calibrating">тыңлавыгызны дәвам итегез, батарея ресурсының ничек үзгәрүен күрерсез</string>
 </resources>

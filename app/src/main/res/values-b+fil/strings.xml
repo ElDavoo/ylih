@@ -97,7 +97,7 @@
     <string name="pair_per_hour">bawat oras</string>
     <string name="pair_bought">binili</string>
     <string name="pair_daily_hours_14">oras bawat araw (14 araw)</string>
-    <string name="pair_charge_cycles">mga cycle ng charge</string>
+    <string name="pair_charge_cycles">tagal ng baterya</string>
     <string name="pair_per_charge">kada charge</string>
     <string name="pair_cycles">mga cycle</string>
     <string name="pair_charge_watched">naobserbahan</string>
@@ -195,5 +195,5 @@
         <item quantity="one">%d session</item>
         <item quantity="other">%d na session</item>
     </plurals>
-    <string name="pair_charge_calibrating">magpatuloy sa pakikinig para makita kung paano nagbabago ang isang charge</string>
+    <string name="pair_charge_calibrating">magpatuloy sa pakikinig para makita kung paano nagbabago ang tagal ng baterya</string>
 </resources>

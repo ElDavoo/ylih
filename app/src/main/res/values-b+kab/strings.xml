@@ -91,7 +91,7 @@
     <string name="pair_per_hour">kul tigira</string>
     <string name="pair_bought">ẓra</string>
     <string name="pair_daily_hours_14">tiɣratin i yal ass (14 n wussan)</string>
-    <string name="pair_charge_cycles">tiwinas n uccetki</string>
+    <string name="pair_charge_cycles">tudert n ubatri</string>
     <string name="pair_per_charge">i yal accetki</string>
     <string name="pair_cycles">tiwinas</string>
     <string name="pair_charge_watched">yettwaɛassen</string>
@@ -185,5 +185,5 @@
         <item quantity="other">%d tirkutin</item>
     </plurals>
     <string name="edit_failed">ur yezmir ara ad isekles asnifel</string>
-    <string name="pair_charge_calibrating">kemmel asmuzget iwakken ad twaliḍ amek tettbeddil tewinest n uccetki</string>
+    <string name="pair_charge_calibrating">kemmel asmuzget iwakken ad twaliḍ amek tettbeddil tudert n ubatri</string>
 </resources>

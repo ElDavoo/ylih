@@ -97,7 +97,7 @@
     <string name="pair_per_hour">ཆུ་ཙམ་རེ་</string>
     <string name="pair_bought">ཕུལ་</string>
     <string name="pair_daily_hours_14">ཉིན་རེར་དུས་ཆུ་ཙམ་ (ཉིན་མོ་བཅུ་བཞི་)</string>
-    <string name="pair_charge_cycles">གློག་བསྐྱོན་སྐོར་རིམ།</string>
+    <string name="pair_charge_cycles">བེ་དུའི་ཚེ་ཚད།</string>
     <string name="pair_per_charge">གློག་བསྐྱོན་རེར།</string>
     <string name="pair_cycles">སྐོར་རིམ།</string>
     <string name="pair_charge_watched">ལྟ་ཞིབ་བྱས་པ།</string>
@@ -191,5 +191,5 @@
     <plurals name="session_count">
         <item quantity="other">%d དུས་དྭངས་</item>
     </plurals>
-    <string name="pair_charge_calibrating">མུ་མཐུད་ནས་ཉོན་ན། གློག་ཚད་གཅིག་ཇི་ལྟར་འགྱུར་བ་མཐོང་ཐུབ</string>
+    <string name="pair_charge_calibrating">མུ་མཐུད་ནས་ཉོན་ན། བེ་དུའི་ཚེ་ཚད་ཇི་ལྟར་འགྱུར་བ་མཐོང་ཐུབ</string>
 </resources>

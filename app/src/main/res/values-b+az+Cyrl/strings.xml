@@ -97,7 +97,7 @@
     <string name="pair_per_hour">саат башына</string>
     <string name="pair_bought">сатын алынды</string>
     <string name="pair_daily_hours_14">ҝүнлүк саатлар (14 ҝүн)</string>
-    <string name="pair_charge_cycles">долдурма дөврләри</string>
+    <string name="pair_charge_cycles">батареја өмрү</string>
     <string name="pair_per_charge">һәр долдурмаја</string>
     <string name="pair_cycles">дөврләр</string>
     <string name="pair_charge_watched">мүшаһидә олунуб</string>
@@ -195,5 +195,5 @@
         <item quantity="one">%d сеанс</item>
         <item quantity="other">%d сеанс</item>
     </plurals>
-    <string name="pair_charge_calibrating">динләмәјә давам ет ки, бир енержи јығымынын неҹә дәјишдијини ҝөрәсән</string>
+    <string name="pair_charge_calibrating">динләмәјә давам ет ки, батареја өмрүнүн неҹә дәјишдијини ҝөрәсән</string>
 </resources>

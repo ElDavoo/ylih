@@ -91,7 +91,7 @@
     <string name="pair_per_hour">পুং অমগী</string>
     <string name="pair_bought">লৈখ্রে</string>
     <string name="pair_daily_hours_14">নুমিৎ খুদিংগী পুং (নুমিৎ ১৪)</string>
-    <string name="pair_charge_cycles">ꯆꯥꯔꯖ ꯆꯛꯔ</string>
+    <string name="pair_charge_cycles">ꯕꯦꯇꯔꯤ ꯄꯨꯟꯁꯤ</string>
     <string name="pair_per_charge">ꯆꯥꯔꯖ ꯑꯃꯗ</string>
     <string name="pair_cycles">ꯆꯛꯔ</string>
     <string name="pair_charge_watched">ꯌꯦꯡꯈꯤꯕ</string>
@@ -189,5 +189,5 @@
         <item quantity="many">সেসন %d</item>
         <item quantity="other">সেসন %d</item>
     </plurals>
-    <string name="pair_charge_calibrating">ꯇꯥꯗꯨꯅꯥ ꯂꯩꯌꯨ ꯑꯃꯁꯨꯡ ꯆꯥꯔꯖ ꯑꯃꯅꯥ ꯀꯔꯝꯅꯥ ꯍꯣꯡꯏ ꯍꯥꯌꯕꯗꯨ ꯌꯦꯡꯉꯨ</string>
+    <string name="pair_charge_calibrating">ꯇꯥꯗꯨꯅꯥ ꯂꯩꯌꯨ ꯑꯃꯁꯨꯡ ꯕꯦꯇꯔꯤ ꯄꯨꯟꯁꯤ ꯀꯔꯝꯅꯥ ꯍꯣꯡꯏ ꯍꯥꯌꯕꯗꯨ ꯌꯦꯡꯉꯨ</string>
 </resources>

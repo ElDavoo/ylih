@@ -91,7 +91,7 @@
     <string name="pair_per_hour">te saa</string>
     <string name="pair_bought">keiroro</string>
     <string name="pair_daily_hours_14">isaai e nkolong (nkolongi 14)</string>
-    <string name="pair_charge_cycles">inkishuita e nkijape</string>
+    <string name="pair_charge_cycles">enkishui e betri</string>
     <string name="pair_per_charge">te nkijape nabo</string>
     <string name="pair_cycles">inkishuita</string>
     <string name="pair_charge_watched">eitodolikinoto</string>
@@ -185,5 +185,5 @@
         <item quantity="one">enkata %d</item>
         <item quantity="other">inkata %d</item>
     </plurals>
-    <string name="pair_charge_calibrating">ining’o aitoki, inyorrayie enkijape aitobirie</string>
+    <string name="pair_charge_calibrating">ining’o aitoki, inyorrayie enkishui e betri aitobirie</string>
 </resources>

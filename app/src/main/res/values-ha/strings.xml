@@ -91,7 +91,7 @@
     <string name="pair_per_hour">a awa</string>
     <string name="pair_bought">sabani</string>
     <string name="pair_daily_hours_14">awannin yau-yau (kwanaki 14)</string>
-    <string name="pair_charge_cycles">zagayen caji</string>
+    <string name="pair_charge_cycles">rayuwar bateri</string>
     <string name="pair_per_charge">kowane caji</string>
     <string name="pair_cycles">zagaye</string>
     <string name="pair_charge_watched">an lura</string>
@@ -185,5 +185,5 @@
         <item quantity="other">zaman %d</item>
     </plurals>
     <string name="edit_failed">ba a iya ajiye canjin ba</string>
-    <string name="pair_charge_calibrating">ci gaba da sauraro don ganin yadda caji ke canjawa</string>
+    <string name="pair_charge_calibrating">ci gaba da sauraro don ganin yadda rayuwar bateri ke canjawa</string>
 </resources>

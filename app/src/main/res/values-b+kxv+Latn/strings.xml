@@ -91,7 +91,7 @@
     <string name="pair_per_hour">prati ghanta</string>
     <string name="pair_bought">kina aate</string>
     <string name="pair_daily_hours_14">prati dina ghanta (14 dina)</string>
-    <string name="pair_charge_cycles">charj chakra</string>
+    <string name="pair_charge_cycles">beṭri jivon</string>
     <string name="pair_per_charge">ek charj mude</string>
     <string name="pair_cycles">chakra</string>
     <string name="pair_charge_watched">dekhte</string>
@@ -189,5 +189,5 @@
         <item quantity="many">%d sesan</item>
         <item quantity="other">%d sesan</item>
     </plurals>
-    <string name="pair_charge_calibrating">vinḍite manḍu, charj chakra ketla maruteri hini uḍa</string>
+    <string name="pair_charge_calibrating">vinḍite manḍu, beṭri jivon ketla maruteri hini uḍa</string>
 </resources>

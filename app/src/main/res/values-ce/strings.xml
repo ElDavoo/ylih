@@ -97,7 +97,7 @@
     <string name="pair_per_hour">соьатан яьлча</string>
     <string name="pair_bought">кӏанӏах</string>
     <string name="pair_daily_hours_14">сак соьатаяр (14 ДӀа)</string>
-    <string name="pair_charge_cycles">зарядан циклаш</string>
+    <string name="pair_charge_cycles">батареян дахар</string>
     <string name="pair_per_charge">цхьана зарядна</string>
     <string name="pair_cycles">циклаш</string>
     <string name="pair_charge_watched">хьовсина</string>
@@ -195,5 +195,5 @@
         <item quantity="one">%d сессия</item>
         <item quantity="other">%d сессияр</item>
     </plurals>
-    <string name="pair_charge_calibrating">ладогӀа тӀаьхьа а, заряд муха хийцало гуш</string>
+    <string name="pair_charge_calibrating">ладогӀа тӀаьхьа а, батареян дахар муха хийцало гуш</string>
 </resources>

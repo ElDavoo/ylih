@@ -91,7 +91,7 @@
     <string name="pair_per_hour">ప్రాతి ఘాన్తా</string>
     <string name="pair_bought">కినా ఆతే</string>
     <string name="pair_daily_hours_14">ప్రాతి దినా ఘాన్తా (14 దినా)</string>
-    <string name="pair_charge_cycles">చార్జ్ చక్ర</string>
+    <string name="pair_charge_cycles">బేట్రి జివోన</string>
     <string name="pair_per_charge">ఏక్ చార్జ్ ముదె</string>
     <string name="pair_cycles">చక్ర</string>
     <string name="pair_charge_watched">దెఖ్‌తె</string>
@@ -189,5 +189,5 @@
         <item quantity="other">%d సేసాన</item>
     </plurals>
     <string name="edit_failed">ఆ బాదాలా సామ్భాళా ఆ సిలి</string>
-    <string name="pair_charge_calibrating">విణ్డితే మణ్డు, చార్జ చక్ర కేత్లా మరుతేరి హిని ఉడా</string>
+    <string name="pair_charge_calibrating">విణ్డితే మణ్డు, బేట్రి జివోన కేత్లా మరుతేరి హిని ఉడా</string>
 </resources>

@@ -91,7 +91,7 @@
     <string name="pair_per_hour">საათზე</string>
     <string name="pair_bought">ნაყიდი</string>
     <string name="pair_daily_hours_14">დღიური საათები (14 დღე)</string>
-    <string name="pair_charge_cycles">დატენვის ციკლები</string>
+    <string name="pair_charge_cycles">ბატარეის რესურსი</string>
     <string name="pair_per_charge">ერთ დატენვაზე</string>
     <string name="pair_cycles">ციკლები</string>
     <string name="pair_charge_watched">დაკვირვებული</string>
@@ -185,5 +185,5 @@
         <item quantity="other">%d სესიები</item>
     </plurals>
     <string name="edit_failed">ცვლილების შენახვა ვერ მოხერხდა</string>
-    <string name="pair_charge_calibrating">განაგრძე მოსმენა, რომ ნახო როგორ იცვლება ერთი დამუხტვა</string>
+    <string name="pair_charge_calibrating">განაგრძე მოსმენა, რომ ნახო როგორ იცვლება ბატარეის რესურსი</string>
 </resources>

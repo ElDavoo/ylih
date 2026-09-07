@@ -91,7 +91,7 @@
     <string name="pair_per_hour">ni logun kan</string>
     <string name="pair_bought">rira</string>
     <string name="pair_daily_hours_14">logun owurọ (14 ojo)</string>
-    <string name="pair_charge_cycles">àyíká gbígbà agbára</string>
+    <string name="pair_charge_cycles">ìwàláàyè bátìrì</string>
     <string name="pair_per_charge">fún gbígbà agbára kan</string>
     <string name="pair_cycles">àyíká</string>
     <string name="pair_charge_watched">tí a wò</string>
@@ -181,5 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">%d isèwa</item>
     </plurals>
-    <string name="pair_charge_calibrating">máa fetísílẹ̀ lọ láti rí bí gbígbà agbára ṣe ń yípadà</string>
+    <string name="pair_charge_calibrating">máa fetísílẹ̀ lọ láti rí bí ìwàláàyè bátìrì ṣe ń yípadà</string>
 </resources>

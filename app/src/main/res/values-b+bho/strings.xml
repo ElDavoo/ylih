@@ -97,7 +97,7 @@
     <string name="pair_per_hour">हर घंटा</string>
     <string name="pair_bought">खरीदल</string>
     <string name="pair_daily_hours_14">रोज के घंटा (14 दिन)</string>
-    <string name="pair_charge_cycles">चार्ज चक्र</string>
+    <string name="pair_charge_cycles">बैटरी के उमिर</string>
     <string name="pair_per_charge">हर चार्ज पर</string>
     <string name="pair_cycles">चक्र</string>
     <string name="pair_charge_watched">देखल गइल</string>
@@ -195,5 +195,5 @@
         <item quantity="one">%d सत्र</item>
         <item quantity="other">%d सत्र</item>
     </plurals>
-    <string name="pair_charge_calibrating">सुनत रहीं आ देखीं कि एगो चार्ज कइसे बदलेला</string>
+    <string name="pair_charge_calibrating">सुनत रहीं आ देखीं कि बैटरी के उमिर कइसे बदलेले</string>
 </resources>

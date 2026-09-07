@@ -98,7 +98,7 @@
     <string name="pair_per_hour">ต่อชั่วโมง</string>
     <string name="pair_bought">ซื้อเมื่อ</string>
     <string name="pair_daily_hours_14">ชั่วโมงต่อวัน (14 วัน)</string>
-    <string name="pair_charge_cycles">รอบการชาร์จ</string>
+    <string name="pair_charge_cycles">อายุแบตเตอรี่</string>
     <string name="pair_per_charge">ต่อการชาร์จ</string>
     <string name="pair_cycles">รอบ</string>
     <string name="pair_charge_watched">ที่สังเกตได้</string>
@@ -193,5 +193,5 @@
     <plurals name="session_count">
         <item quantity="other">%d ช่วงการใช้งาน</item>
     </plurals>
-    <string name="pair_charge_calibrating">ฟังต่อไปเพื่อดูว่าการชาร์จหนึ่งครั้งเปลี่ยนไปอย่างไร</string>
+    <string name="pair_charge_calibrating">ฟังต่อไปเพื่อดูว่าอายุแบตเตอรี่เปลี่ยนไปอย่างไร</string>
 </resources>

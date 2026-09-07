@@ -91,7 +91,7 @@
     <string name="pair_per_hour">a sa wu</string>
     <string name="pair_bought">a bo yi</string>
     <string name="pair_daily_hours_14">a yi sa (14 yi)</string>
-    <string name="pair_charge_cycles">sikili tɛ</string>
+    <string name="pair_charge_cycles">a ta nu</string>
     <string name="pair_per_charge">sikili kuɖo</string>
     <string name="pair_cycles">sikili</string>
     <string name="pair_charge_watched">a mɔ</string>
@@ -189,5 +189,5 @@
         <item quantity="one">%d a ka ti</item>
         <item quantity="other">%d a ka ti</item>
     </plurals>
-    <string name="pair_charge_calibrating">yi si nu, a wu na ka sikili tɛ wu lɛbi</string>
+    <string name="pair_charge_calibrating">yi si nu, a wu na ka a ta nu wu lɛbi</string>
 </resources>

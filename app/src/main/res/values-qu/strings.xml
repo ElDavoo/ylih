@@ -91,7 +91,7 @@
     <string name="pair_per_hour">horawta</string>
     <string name="pair_bought">rantisqa</string>
     <string name="pair_daily_hours_14">punchau oras (14 oras)</string>
-    <string name="pair_charge_cycles">hunt’achiy muyuykuna</string>
+    <string name="pair_charge_cycles">bateria kawsaynin</string>
     <string name="pair_per_charge">sapa hunt’achiypi</string>
     <string name="pair_cycles">muyuykuna</string>
     <string name="pair_charge_watched">qhawasqa</string>
@@ -189,5 +189,5 @@
         <item quantity="many">%d rimay</item>
         <item quantity="other">%d rimay</item>
     </plurals>
-    <string name="pair_charge_calibrating">uyarispa kachkay, hunt’achiy imayna tikrakusqanta rikunaykipaq</string>
+    <string name="pair_charge_calibrating">uyarispa kachkay, bateria kawsaynin imayna tikrakusqanta rikunaykipaq</string>
 </resources>

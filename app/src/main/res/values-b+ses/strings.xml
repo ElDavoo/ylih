@@ -91,7 +91,7 @@
     <string name="pair_per_hour">demiya koy</string>
     <string name="pair_bought">jara</string>
     <string name="pair_daily_hours_14">jiyaaru demiya jiyaaru 14 ga</string>
-    <string name="pair_charge_cycles">gaabu windiyaŋ</string>
+    <string name="pair_charge_cycles">battery fundu</string>
     <string name="pair_per_charge">gaabu fooda ga</string>
     <string name="pair_cycles">windiyaŋ</string>
     <string name="pair_charge_watched">i guna</string>
@@ -181,5 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">%d timide</item>
     </plurals>
-    <string name="pair_charge_calibrating">ma hanga koyne ka di gaabu ga bare mate</string>
+    <string name="pair_charge_calibrating">ma hanga koyne ka di battery fundu ga bare mate</string>
 </resources>

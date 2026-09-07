@@ -91,7 +91,7 @@
     <string name="pair_per_hour">guuru ka</string>
     <string name="pair_bought">sanda goy</string>
     <string name="pair_daily_hours_14">guuru gida (caxe 14)</string>
-    <string name="pair_charge_cycles">gaabu windiyaŋ</string>
+    <string name="pair_charge_cycles">batari fundu</string>
     <string name="pair_per_charge">gaabu fooda ga</string>
     <string name="pair_cycles">windiyaŋ</string>
     <string name="pair_charge_watched">i guna</string>
@@ -189,5 +189,5 @@
         <item quantity="many">%d kaari</item>
         <item quantity="other">%d kaari</item>
     </plurals>
-    <string name="pair_charge_calibrating">ma hangan koyne ka di gaabu ga bare mate</string>
+    <string name="pair_charge_calibrating">ma hangan koyne ka di batari fundu ga bare mate</string>
 </resources>

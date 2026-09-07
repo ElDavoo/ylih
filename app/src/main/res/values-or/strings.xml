@@ -91,7 +91,7 @@
     <string name="pair_per_hour">ଘଣ୍ଟା ପିଛା</string>
     <string name="pair_bought">କିଣାଯାଇଛି</string>
     <string name="pair_daily_hours_14">ଦୈନିକ ଘଣ୍ଟା (୧୪ ଦିନ)</string>
-    <string name="pair_charge_cycles">ଚାର୍ଜ ଚକ୍ର</string>
+    <string name="pair_charge_cycles">ବ୍ୟାଟେରୀ ଆୟୁ</string>
     <string name="pair_per_charge">ପ୍ରତି ଚାର୍ଜରେ</string>
     <string name="pair_cycles">ଚକ୍ର</string>
     <string name="pair_charge_watched">ପର୍ଯ୍ୟବେକ୍ଷିତ</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d ସେସନ</item>
         <item quantity="other">%d ସେସନ</item>
     </plurals>
-    <string name="pair_charge_calibrating">ଶୁଣିବା ଜାରି ରଖନ୍ତୁ ଓ ଦେଖନ୍ତୁ ଗୋଟିଏ ଚାର୍ଜ କିପରି ବଦଳେ</string>
+    <string name="pair_charge_calibrating">ଶୁଣିବା ଜାରି ରଖନ୍ତୁ ଓ ଦେଖନ୍ତୁ ବ୍ୟାଟେରୀ ଆୟୁ କିପରି ବଦଳେ</string>
 </resources>

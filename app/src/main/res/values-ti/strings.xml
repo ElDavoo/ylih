@@ -91,7 +91,7 @@
     <string name="pair_per_hour">ሰዓት ብ</string>
     <string name="pair_bought">ይገዘ</string>
     <string name="pair_daily_hours_14">ሕምሳ ሰዓት (14 ሞያ)</string>
-    <string name="pair_charge_cycles">ዑደታት ምምላእ</string>
+    <string name="pair_charge_cycles">ዕድመ ባትሪ</string>
     <string name="pair_per_charge">በብ ምምላእ</string>
     <string name="pair_cycles">ዑደታት</string>
     <string name="pair_charge_watched">ዝተዓዘብናዮ</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d ምስጅ</item>
         <item quantity="other">%d ምስጃት</item>
     </plurals>
-    <string name="pair_charge_calibrating">ምስማዕ ቀጽል፣ ሓደ ምምላእ ከመይ ከም ዝቕየር ክትርኢ ኢኻ</string>
+    <string name="pair_charge_calibrating">ምስማዕ ቀጽል፣ ዕድመ ባትሪ ከመይ ከም ዝቕየር ክትርኢ ኢኻ</string>
 </resources>

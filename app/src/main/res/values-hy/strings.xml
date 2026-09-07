@@ -91,7 +91,7 @@
     <string name="pair_per_hour">ժամի համար</string>
     <string name="pair_bought">գնված</string>
     <string name="pair_daily_hours_14">ամենօրյա ժամեր (14 օր)</string>
-    <string name="pair_charge_cycles">լիցքավորման ցիկլեր</string>
+    <string name="pair_charge_cycles">մարտկոցի կյանք</string>
     <string name="pair_per_charge">մեկ լիցքով</string>
     <string name="pair_cycles">ցիկլեր</string>
     <string name="pair_charge_watched">դիտարկված</string>
@@ -185,5 +185,5 @@
         <item quantity="other">%d սեսիա</item>
     </plurals>
     <string name="edit_failed">փոփոխությունը չհաջողվեց պահել</string>
-    <string name="pair_charge_calibrating">շարունակիր լսել՝ տեսնելու, թե ինչպես է փոխվում մեկ լիցքը</string>
+    <string name="pair_charge_calibrating">շարունակիր լսել՝ տեսնելու, թե ինչպես է փոխվում մարտկոցի կյանքը</string>
 </resources>

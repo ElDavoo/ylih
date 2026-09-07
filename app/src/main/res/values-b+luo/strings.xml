@@ -91,7 +91,7 @@
     <string name="pair_per_hour">e saa achiel</string>
     <string name="pair_bought">nongiew</string>
     <string name="pair_daily_hours_14">saa mag odiechieng (ndalo 14)</string>
-    <string name="pair_charge_cycles">lwenje mag teko</string>
+    <string name="pair_charge_cycles">ngima mar batri</string>
     <string name="pair_per_charge">kuom teko achiel</string>
     <string name="pair_cycles">lwenje</string>
     <string name="pair_charge_watched">mane one</string>
@@ -189,5 +189,5 @@
         <item quantity="many">kinde %d</item>
         <item quantity="other">kinde %d</item>
     </plurals>
-    <string name="pair_charge_calibrating">dhi nyime winjo mondo ine kaka teko lokore</string>
+    <string name="pair_charge_calibrating">dhi nyime winjo mondo ine kaka ngima mar batri lokore</string>
 </resources>

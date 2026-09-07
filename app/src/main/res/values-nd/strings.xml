@@ -91,7 +91,7 @@
     <string name="pair_per_hour">ngeawu</string>
     <string name="pair_bought">kuthenge</string>
     <string name="pair_daily_hours_14">iawu ngosuku (amalanga angama-14)</string>
-    <string name="pair_charge_cycles">izigaba zokugcwalisa</string>
+    <string name="pair_charge_cycles">impilo ye-battery</string>
     <string name="pair_per_charge">ngokugcwalisa okukodwa</string>
     <string name="pair_cycles">izigaba</string>
     <string name="pair_charge_watched">okubonwe</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d umsebenzi</item>
         <item quantity="other">%d umsebenzi</item>
     </plurals>
-    <string name="pair_charge_calibrating">qhubeka ulalele ubone ukuthi ukugcwalisa kutshintsha njani</string>
+    <string name="pair_charge_calibrating">qhubeka ulalele ubone ukuthi impilo ye-battery itshintsha njani</string>
 </resources>

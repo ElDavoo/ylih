@@ -97,7 +97,7 @@
     <string name="pair_per_hour">প্রতি ঘণ্টায়</string>
     <string name="pair_bought">ক্রয় কৰা</string>
     <string name="pair_daily_hours_14">দৈনিক ঘণ্টা (14 দিন)</string>
-    <string name="pair_charge_cycles">চাৰ্জ চক্ৰ</string>
+    <string name="pair_charge_cycles">ব্যাটাৰীৰ আয়ু</string>
     <string name="pair_per_charge">প্ৰতি চাৰ্জ</string>
     <string name="pair_cycles">চক্ৰ</string>
     <string name="pair_charge_watched">লক্ষ্য কৰা</string>
@@ -195,5 +195,5 @@
         <item quantity="one">%d সেশন</item>
         <item quantity="other">%d সেশন</item>
     </plurals>
-    <string name="pair_charge_calibrating">শুনি থাকক আৰু চাওক এটা চাৰ্জ কেনেকৈ সলনি হয়</string>
+    <string name="pair_charge_calibrating">শুনি থাকক আৰু চাওক ব্যাটাৰীৰ আয়ু কেনেকৈ সলনি হয়</string>
 </resources>

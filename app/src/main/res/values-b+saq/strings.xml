@@ -91,7 +91,7 @@
     <string name="pair_per_hour">a-saati i-moji</string>
     <string name="pair_bought">a-li-nunua</string>
     <string name="pair_daily_hours_14">n-toga a-saati (14 i-kitoni)</string>
-    <string name="pair_charge_cycles">nkilikilyata e nkere</string>
+    <string name="pair_charge_cycles">nkishui e battery</string>
     <string name="pair_per_charge">te nkere naapo</string>
     <string name="pair_cycles">nkilikilyata</string>
     <string name="pair_charge_watched">keitodoliki</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d a-karata</item>
         <item quantity="other">%d a-karata</item>
     </plurals>
-    <string name="pair_charge_calibrating">ining’o aitoki, inyorrayie nkere aitobirie</string>
+    <string name="pair_charge_calibrating">ining’o aitoki, inyorrayie nkishui e battery aitobirie</string>
 </resources>

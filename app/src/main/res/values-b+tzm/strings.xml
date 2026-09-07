@@ -91,7 +91,7 @@
     <string name="pair_per_hour">ger tsrat</string>
     <string name="pair_bought">yuwsan</string>
     <string name="pair_daily_hours_14">tisrat n unebdu (ayyur 14)</string>
-    <string name="pair_charge_cycles">tiwinas n uccenṭi</string>
+    <string name="pair_charge_cycles">tudert n umdu</string>
     <string name="pair_per_charge">i yal accenṭi</string>
     <string name="pair_cycles">tiwinas</string>
     <string name="pair_charge_watched">ittwaẓer</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d tasrtiut</item>
         <item quantity="other">%d tasrtiutin</item>
     </plurals>
-    <string name="pair_charge_calibrating">kemmel ad tsslid akken ad tẓred amek tettbeddil twinest n uccenṭi</string>
+    <string name="pair_charge_calibrating">kemmel ad tsslid akken ad tẓred amek tettbeddil tudert n umdu</string>
 </resources>

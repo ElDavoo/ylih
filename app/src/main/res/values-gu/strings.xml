@@ -91,7 +91,7 @@
     <string name="pair_per_hour">પ્રતિ કલાક</string>
     <string name="pair_bought">ખરીદ્યું</string>
     <string name="pair_daily_hours_14">દૈનિક કલાક (14 દિવસ)</string>
-    <string name="pair_charge_cycles">ચાર્જ ચક્રો</string>
+    <string name="pair_charge_cycles">બેટરી આયુષ્ય</string>
     <string name="pair_per_charge">દર ચાર્જે</string>
     <string name="pair_cycles">ચક્રો</string>
     <string name="pair_charge_watched">અવલોકન કરેલ</string>
@@ -185,5 +185,5 @@
         <item quantity="other">%d સત્રો</item>
     </plurals>
     <string name="edit_failed">ફેરફાર સાચવી શકાયો નથી</string>
-    <string name="pair_charge_calibrating">સાંભળતા રહો અને જુઓ કે એક ચાર્જ કેવી રીતે બદલાય છે</string>
+    <string name="pair_charge_calibrating">સાંભળતા રહો અને જુઓ કે બેટરી આયુષ્ય કેવી રીતે બદલાય છે</string>
 </resources>

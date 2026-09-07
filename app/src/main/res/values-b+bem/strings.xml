@@ -97,7 +97,7 @@
     <string name="pair_per_hour">pakati ya mahola</string>
     <string name="pair_bought">ikombilwe</string>
     <string name="pair_daily_hours_14">amahola pa inshuba (14 inshuba)</string>
-    <string name="pair_charge_cycles">ifipimo fya maka</string>
+    <string name="pair_charge_cycles">ubumi bwa batadi</string>
     <string name="pair_per_charge">pa maka yamo</string>
     <string name="pair_cycles">ifipimo</string>
     <string name="pair_charge_watched">ifyamonwa</string>
@@ -195,5 +195,5 @@
         <item quantity="one">%d fikapililo</item>
         <item quantity="other">%d ifikapililo</item>
     </plurals>
-    <string name="pair_charge_calibrating">twalilileni ukumfwa pa kuti mumone ifyo amaka yaaluka</string>
+    <string name="pair_charge_calibrating">twalilileni ukumfwa pa kuti mumone ifyo ubumi bwa batadi bwaaluka</string>
 </resources>

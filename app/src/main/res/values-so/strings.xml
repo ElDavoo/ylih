@@ -91,7 +91,7 @@
     <string name="pair_per_hour">saacad kasta</string>
     <string name="pair_bought">iibiay</string>
     <string name="pair_daily_hours_14">saacadaha maalinlaha (14 maalinta)</string>
-    <string name="pair_charge_cycles">wareegyada dallacaadda</string>
+    <string name="pair_charge_cycles">cimriga bateriga</string>
     <string name="pair_per_charge">dallacaad kasta</string>
     <string name="pair_cycles">wareegyo</string>
     <string name="pair_charge_watched">la ilaaliyay</string>
@@ -185,5 +185,5 @@
         <item quantity="one">%d socodka</item>
         <item quantity="other">%d socodka</item>
     </plurals>
-    <string name="pair_charge_calibrating">sii wad dhegeysiga si aad u aragto sida dallacaaddu u beddelanto</string>
+    <string name="pair_charge_calibrating">sii wad dhegeysiga si aad u aragto sida cimriga bateriga u beddelmo</string>
 </resources>

@@ -99,7 +99,7 @@
     <string name="pair_per_hour">לשעה</string>
     <string name="pair_bought">נקנה</string>
     <string name="pair_daily_hours_14">שעות יומיות (14 ימים)</string>
-    <string name="pair_charge_cycles">מחזורי טעינה</string>
+    <string name="pair_charge_cycles">חיי הסוללה</string>
     <string name="pair_per_charge">לכל טעינה</string>
     <string name="pair_cycles">מחזורים</string>
     <string name="pair_charge_watched">נמדד</string>
@@ -201,5 +201,5 @@
         <item quantity="two">%d מפגשים</item>
         <item quantity="other">%d מפגשים</item>
     </plurals>
-    <string name="pair_charge_calibrating">המשיכו להאזין כדי לראות איך טעינה משתנה</string>
+    <string name="pair_charge_calibrating">המשיכו להאזין כדי לראות איך חיי הסוללה משתנים</string>
 </resources>

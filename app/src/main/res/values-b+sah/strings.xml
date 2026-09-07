@@ -91,7 +91,7 @@
     <string name="pair_per_hour">чааска</string>
     <string name="pair_bought">атыыласпыт</string>
     <string name="pair_daily_hours_14">күҥҥэ чаастар (14 күн)</string>
-    <string name="pair_charge_cycles">уоскулатыы эргииринэн</string>
+    <string name="pair_charge_cycles">батарея ресурса</string>
     <string name="pair_per_charge">биир уоскулатыыга</string>
     <string name="pair_cycles">эргиирдэр</string>
     <string name="pair_charge_watched">көрүллүбүт</string>
@@ -181,5 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">%d сессия</item>
     </plurals>
-    <string name="pair_charge_calibrating">истэ туруҥ, биир зарядка хайдах уларыйарын көрүөҥ</string>
+    <string name="pair_charge_calibrating">истэ туруҥ, батарея ресурса хайдах уларыйарын көрүөҥ</string>
 </resources>

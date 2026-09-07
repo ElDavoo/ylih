@@ -91,7 +91,7 @@
     <string name="pair_per_hour">per saet</string>
     <string name="pair_bought">kirinê</string>
     <string name="pair_daily_hours_14">saetên rojane (14 rojan)</string>
-    <string name="pair_charge_cycles">çerxên şarjê</string>
+    <string name="pair_charge_cycles">jiyana bateryê</string>
     <string name="pair_per_charge">her şarjek</string>
     <string name="pair_cycles">çerx</string>
     <string name="pair_charge_watched">hate temaşekirin</string>
@@ -185,5 +185,5 @@
         <item quantity="other">%d danefînî</item>
     </plurals>
     <string name="edit_failed">guherîn nehat tomarkirin</string>
-    <string name="pair_charge_calibrating">guhdarî bike da ku bibînî çawa şarjek diguhere</string>
+    <string name="pair_charge_calibrating">guhdarî bike da ku bibînî jiyana bateryê çawa diguhere</string>
 </resources>

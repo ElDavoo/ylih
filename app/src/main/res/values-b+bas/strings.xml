@@ -97,7 +97,7 @@
     <string name="pair_per_hour">mu kwé</string>
     <string name="pair_bought">gɛ́</string>
     <string name="pair_daily_hours_14">kwé/ñen (14 ñen)</string>
-    <string name="pair_charge_cycles">masikèl ma ŋgu</string>
+    <string name="pair_charge_cycles">ŋgu battery</string>
     <string name="pair_per_charge">inyu ŋgu yada</string>
     <string name="pair_cycles">masikèl</string>
     <string name="pair_charge_watched">ba tehe</string>
@@ -199,5 +199,5 @@
         <item quantity="many">%d sɔŋ</item>
         <item quantity="other">%d sɔŋ</item>
     </plurals>
-    <string name="pair_charge_calibrating">ke nɔgɔl, u ga tehe lelaa masikèl ma ŋgu ma nkeenge</string>
+    <string name="pair_charge_calibrating">ke nɔgɔl, u ga tehe lelaa ŋgu battery i nkeenge</string>
 </resources>

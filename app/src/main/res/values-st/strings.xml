@@ -91,7 +91,7 @@
     <string name="pair_per_hour">ka hora</string>
     <string name="pair_bought">e rekiloe</string>
     <string name="pair_daily_hours_14">lihora tsa letsatsi le letsatsi (matsatsi a 14)</string>
-    <string name="pair_charge_cycles">dipotoloho tsa ho tjhaja</string>
+    <string name="pair_charge_cycles">bophelo ba betri</string>
     <string name="pair_per_charge">ka tjhaja e le nngwe</string>
     <string name="pair_cycles">dipotoloho</string>
     <string name="pair_charge_watched">ho shebilwe</string>
@@ -185,5 +185,5 @@
         <item quantity="one">seboka se %d</item>
         <item quantity="other">liboka tse %d</item>
     </plurals>
-    <string name="pair_charge_calibrating">tsoela pele o mamela hore o bone kamoo ho tjhaja ho fetohang</string>
+    <string name="pair_charge_calibrating">tsoela pele o mamela hore o bone kamoo bophelo ba betri bo fetohang</string>
 </resources>

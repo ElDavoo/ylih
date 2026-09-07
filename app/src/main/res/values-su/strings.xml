@@ -91,7 +91,7 @@
     <string name="pair_per_hour">per jam</string>
     <string name="pair_bought">dibeuli</string>
     <string name="pair_daily_hours_14">jam sapopoé (14 poé)</string>
-    <string name="pair_charge_cycles">siklus ngecas</string>
+    <string name="pair_charge_cycles">umur batré</string>
     <string name="pair_per_charge">unggal ngecas</string>
     <string name="pair_cycles">siklus</string>
     <string name="pair_charge_watched">katalungtik</string>
@@ -181,5 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">%d sési</item>
     </plurals>
-    <string name="pair_charge_calibrating">teruskeun ngadangukeun pikeun ningali kumaha hiji eusian robah</string>
+    <string name="pair_charge_calibrating">teruskeun ngadangukeun pikeun ningali kumaha umur batré robah</string>
 </resources>
