@@ -1,8 +1,8 @@
 package it.eldavo.ylih.ui
 
-import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -11,7 +11,15 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.layout.Layout
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
@@ -21,6 +29,7 @@ import it.eldavo.ylih.R
 import it.eldavo.ylih.data.DeviceKind
 import it.eldavo.ylih.stats.Stats
 import java.time.LocalDate
+import kotlin.math.roundToInt
 
 @Composable
 fun SectionHeader(text: String, modifier: Modifier = Modifier) {
@@ -36,10 +45,43 @@ fun SectionHeader(text: String, modifier: Modifier = Modifier) {
     )
 }
 
+/**
+ * Reports a finger arriving on and leaving a pill, so [StatRow] can move the row around it. It is a
+ * `pointerInput` and not a `clickable`, because `clickable` would add a button role and an activate
+ * action: TalkBack would then announce every figure on the stats screen as a button, and
+ * double-tapping one would do nothing. A bare gesture detector adds no semantics at all, so the tile
+ * keeps the one merged description it already has.
+ *
+ * The haptic waits for a *completed* tap, and that is the one decision here that is not cosmetic.
+ * Both screens showing these tiles are `LazyColumn`s, so a scroll that happens to start on a tile
+ * arrives as a press — ticking on touch-down would buzz every time the list was dragged from a
+ * figure, which on the stats screen is most of the screen. `tryAwaitRelease` returns false once the
+ * scroll has taken the gesture over, so the row settles back and says nothing.
+ */
 @Composable
-fun StatTile(label: String, value: String, modifier: Modifier = Modifier) {
+private fun Modifier.pressReporting(onPressed: (Boolean) -> Unit): Modifier {
+    val haptics = LocalHapticFeedback.current
+    return this.pointerInput(onPressed) {
+        detectTapGestures(
+            onPress = {
+                onPressed(true)
+                val tapped = tryAwaitRelease()
+                onPressed(false)
+                if (tapped) haptics.performHapticFeedback(HapticFeedbackType.SegmentTick)
+            },
+        )
+    }
+}
+
+@Composable
+fun StatTile(
+    label: String,
+    value: String,
+    modifier: Modifier = Modifier,
+    onPressed: (Boolean) -> Unit = {},
+) {
     Card(
-        modifier = modifier,
+        modifier = modifier.pressReporting(onPressed),
         // surfaceContainerHigh rather than surfaceVariant: Expressive builds elevation out of the
         // container roles, and surfaceVariant now reads as a flat fill.
         shape = RoundedCornerShape(20.dp),
@@ -68,11 +110,81 @@ fun StatTile(label: String, value: String, modifier: Modifier = Modifier) {
     }
 }
 
+private val PILL_GAP = 8.dp
+
+/** No pill is being held. */
+private const val NO_PILL = -1
+
+// How much of the row the pressed pill takes from the ones beside it. Material's own ButtonGroup
+// uses 0.15, but its items are single-line labels that cannot wrap; these carry a figure over a
+// label, and a two-pill row would hand the whole of it to one neighbour — enough, in some of the 77
+// languages, to wrap a label and jog the row's height for the length of a press.
+private const val PILL_PRESS_EXPANSION = 0.10f
+
+/**
+ * A row of pills, laid out as one group the way a Material 3 Expressive `ButtonGroup` is: the pill
+ * under the finger widens by taking width *from its neighbours* rather than growing over them, so
+ * pressing one figure visibly moves the ones beside it and the row's own width never changes. That
+ * shared width is the whole gesture — a pill on its own has nothing to take from and so does not
+ * move, which is what a `ButtonGroup` of one does too.
+ *
+ * It is a `Layout` rather than a `Row` of animated `weight`s because the shares are read here, in
+ * the measure block: a weight is a composition-phase argument, so animating one would recompose
+ * every pill in the row on every frame of the spring instead of only re-measuring them.
+ */
 @Composable
 fun StatRow(tiles: List<Pair<String, String>>, modifier: Modifier = Modifier) {
-    Row(modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-        tiles.forEach { (label, value) ->
-            StatTile(label = label, value = value, modifier = Modifier.weight(1f))
+    var pressed by remember { mutableIntStateOf(NO_PILL) }
+    val others = (tiles.size - 1).coerceAtLeast(1)
+    val shares = List(tiles.size) { index ->
+        animateFloatAsState(
+            targetValue = when {
+                pressed == NO_PILL -> 1f
+                pressed == index -> 1f + PILL_PRESS_EXPANSION
+                // What the pressed pill took, shared out evenly among the rest.
+                else -> 1f - PILL_PRESS_EXPANSION / others
+            },
+            // A spatial spec, not an effects one: expressive's spatial springs are underdamped and
+            // overshoot, which is what makes this read as a squeeze rather than as a resize. The
+            // effects springs are critically damped and would only slide the edges over and stop.
+            animationSpec = MaterialTheme.motionScheme.fastSpatialSpec(),
+            label = "pillShare",
+        )
+    }
+    Layout(
+        content = {
+            tiles.forEachIndexed { index, (label, value) ->
+                StatTile(
+                    label = label,
+                    value = value,
+                    onPressed = { down -> pressed = if (down) index else NO_PILL },
+                )
+            }
+        },
+        modifier = modifier.fillMaxWidth(),
+    ) { measurables, constraints ->
+        val gap = PILL_GAP.roundToPx()
+        val free = constraints.maxWidth - gap * (measurables.size - 1)
+        val total = shares.sumOf { it.value.toDouble() }
+        var taken = 0
+        val placeables = measurables.mapIndexed { index, measurable ->
+            // The last pill takes whatever the rounding left, so the pills and the gaps add up to
+            // the row exactly and its right edge never breathes during the animation.
+            val width = if (index == measurables.lastIndex) {
+                free - taken
+            } else {
+                (free * shares[index].value / total).roundToInt()
+            }
+            taken += width
+            measurable.measure(constraints.copy(minWidth = width, maxWidth = width))
+        }
+        layout(constraints.maxWidth, placeables.maxOf { it.height }) {
+            var x = 0
+            placeables.forEach {
+                // placeRelative, so the group reverses itself in RTL the way a Row would.
+                it.placeRelative(x, 0)
+                x += it.width + gap
+            }
         }
     }
 }

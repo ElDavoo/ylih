@@ -463,6 +463,49 @@ under it jerking, and a scale would give that back.
 `YlihNavHostTest` drives the swipe by finding the one node on screen with a horizontal scroll
 range, the tabs' own lists all being vertical.
 
+**A row of stat pills is one group, and pressing a figure moves the figures beside it.** `StatRow`
+in `ui/Components.kt` behaves the way a Material 3 Expressive `ButtonGroup` does: the pill under the
+finger widens by taking width *from its neighbours*, so the row visibly rearranges itself and its own
+edges never move. This is the app's only reader of `MaterialTheme.motionScheme` and the only haptic
+anywhere in it. Four things about it are decisions rather than defaults.
+
+**The shared width is the whole gesture, so the row owns the press and the pill only reports it.** A
+pill that scaled itself up under a `graphicsLayer` was the first attempt and it was wrong: it grew
+over its neighbours instead of out of them, which is the half of the Expressive behaviour a user
+notices is missing. `StatTile` therefore takes an `onPressed` callback and holds no press state of
+its own; `StatRow` holds the index. A consequence worth knowing is that a row of one has nothing to
+take from and so does not move at all — as a `ButtonGroup` of one would not. Every row today holds
+two or three.
+
+**`StatRow` is a `Layout` and not a `Row` of animated weights.** A weight is a composition-phase
+argument, so animating one recomposes every pill in the row on every frame of the spring; the
+`Layout`'s measure block reads the `animateFloatAsState` values instead, which re-measures without
+recomposing. It places with `placeRelative` so the group reverses itself in RTL the way a `Row`
+would, and the last pill absorbs the rounding so the pills and the 8dp gaps add up to the row exactly
+and its right edge does not breathe during the animation.
+
+**It is a `pointerInput` and not a `clickable`.** `clickable` is the short way to a press state and
+costs a button role and an activate action on every tile, so a screen reader would announce eight
+buttons on the stats screen, none of which does anything when it is double-tapped. A bare gesture
+detector adds no semantics at all, and the tile keeps the single merged description it already has;
+`ComponentsTest` asserts the absent click action so a later rewrite fails there rather than in
+someone's ears.
+
+**The tick waits for a completed tap** rather than firing on the touch down, where a real button
+would put it. Both screens showing these tiles are `LazyColumn`s, so a scroll begun on a figure
+arrives as a press first — on touch-down that is a buzz every time the list is dragged from a tile,
+which on the stats screen is most of the screen. `tryAwaitRelease` returns false once the scroll has
+taken the gesture over, so the row squares itself up and says nothing. The test that pins this drives
+a real drag and asserts a *neighbour* narrowed before checking that it went quiet, because a gesture
+that never reached the row would also leave it even and silent.
+
+`PILL_PRESS_EXPANSION` is 0.10 where `ButtonGroupDefaults`' own is 0.15, because a ButtonGroup's
+items are single-line labels that cannot wrap. These carry a figure over a label, and a two-pill row
+hands the whole expansion to one neighbour — enough, in some of the 77 languages, to wrap a label and
+jog the row's height for the length of a press. The spec is `fastSpatialSpec` rather than an effects
+one: expressive's spatial springs are underdamped and overshoot, which is what makes this read as a
+squeeze, while the effects springs are critically damped and would only slide the edges over.
+
 **Above 600dp the nav moves to the side and the content stops stretching.** At `targetSdk 37` the
 platform ignores orientation, resizability and aspect-ratio restrictions on any display wider than
 that, and the Android 16 opt-out is gone — so a tablet gets this layout whether or not anything was
