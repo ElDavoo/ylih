@@ -93,12 +93,13 @@ private const val TABS_ROUTE = "tabs"
 private const val PAIR_ROUTE = "pair/{pairId}"
 
 // What is left in the back stack is the pair page, and it both scales and fades: the spec lives in
-// NavMotion.kt, which says why it is one spec and why the bar reads the fade half of it alone. The
-// NavHost gets its four transitions passed explicitly rather than inheriting navigation-compose's
-// defaults — an inherited default is a shape and a number that can change under us in a dependency
-// bump, and the bar has no way to follow it. The bar's own fade is keyed on the route, which flips
-// only when a pop commits, so it plays after a back gesture rather than during it — the destinations
-// are the half a held gesture seeks, which is why the alpha there is front-loaded.
+// NavMotion.kt, which says why it is one spec and why the bar reads the fade of it alone. The
+// NavHost gets all six of its transitions passed explicitly rather than inheriting
+// navigation-compose's defaults — an inherited default is a shape and a number that can change
+// under us in a dependency bump, and the bar has no way to follow it. That is not hypothetical
+// here: the two predictive ones arrived in 2.10 and quietly took the gesture off the pop pair,
+// which is the bug NavMotion.kt describes. The bar's own fade is keyed on the route, which flips
+// only when a pop commits, so it plays once the gesture is released rather than during it.
 
 /**
  * How wide a screen's content is ever allowed to get.
@@ -345,6 +346,12 @@ fun YlihNavHost(
                 exitTransition = { navExit() },
                 popEnterTransition = { navPopEnter() },
                 popExitTransition = { navPopExit() },
+                // A back *gesture* is seeked through these two rather than through the pair above,
+                // and they are only ours if they are named: left out, a NavHost silently takes the
+                // library's, which shrink the page with no fade on it at all. NavMotion.kt has the
+                // long version.
+                predictivePopEnterTransition = { navPredictivePopEnter(it) },
+                predictivePopExitTransition = { navPredictivePopExit(it) },
             ) {
                 composable(TABS_ROUTE) {
                     HorizontalPager(

@@ -428,14 +428,37 @@ knowing:
   wins, but only while it has something to pop.
 - Nothing needs doing for RTL — a horizontal pager reverses itself, as the nav bar does.
 
-That spec is one file rather than four lambdas' worth of constants because the bar is not a
+That spec is one file rather than six lambdas' worth of constants because the bar is not a
 destination and is faded by hand, so the two only stay in step if they read the same thing. Each
-transition is a fade *and* a scale on one 700 ms tween, and the pop is the mirror of the push — the
-page compresses back the way it grew. The fade on the pop is the load-bearing half: predictive back
-seeks our own `popExitTransition` rather than supplying one, so a scale without it is a page still
-fully drawn at the end of the animation and then simply gone, which is what #38 reported. The bar
-stays fade-only: it has to hold its height for the whole exit, which is what stops the list under it
-jerking, and a scale would give that back.
+transition is a fade *and* a scale on **one** 350 ms tween, and the pop is the mirror of the push —
+the page compresses back the way it grew. Both halves of that sentence were arrived at the hard way.
+
+The alpha and the scale share a spec because splitting them leaves a hole. The fade used to be a
+shortened fade-out followed by a delayed fade-in, on the theory that two half-drawn pages read as
+mud; what it produced instead was a stretch in the middle of the animation where neither page was
+drawn at all, which reads as a blink rather than as a transition. Overlapped, the arriving page's
+alpha covers exactly what the leaving one gives up — both are drawn over the same Scaffold surface,
+so there is never a frame of bare background.
+
+**A back gesture does not run `popExitTransition`, and has not since navigation-compose 2.10.** It
+seeks `predictivePopEnterTransition`/`predictivePopExitTransition`, a second pair of callbacks whose
+defaults are `DefaultNavTransitions`' — `scaleOut(targetScale = 0.7f)` with no alpha in it at all,
+and a spring `fadeIn` underneath. A NavHost that names only the first pair silently gets them, so
+the pair page shrank under the finger and stayed fully opaque to the end. That is the report behind
+#38 and #40, and both fixes missed because they rewrote the alpha on `popExit`, which the gesture
+had stopped reading. Ours are the pop itself rather than a gesture-specific variant, because
+releasing the gesture commits it by animating the *rest of the pop* from where the seek left off:
+anything the two do not agree about is a jump at the handover. The swipe edge the callbacks are
+handed is ignored — this is a zoom along the z axis and it looks the same from either edge.
+
+`NavMotionTest` pins that every transition carries a fade as well as a scale and that the predictive
+pair is the pop pair; `YlihNavHostTest` drives a real gesture through
+`OnBackPressedDispatcher.dispatchOnBackStarted` and asserts by geometry that the page held at 0.9 of
+the way through has scaled to *our* factor and not the library's — a transition's alpha is not in
+the semantics tree, but the scale riding beside it is, and 0.92 against 0.7 is not a close call.
+
+The bar stays fade-only: it has to hold its height for the whole exit, which is what stops the list
+under it jerking, and a scale would give that back.
 
 `YlihNavHostTest` drives the swipe by finding the one node on screen with a horizontal scroll
 range, the tabs' own lists all being vertical.

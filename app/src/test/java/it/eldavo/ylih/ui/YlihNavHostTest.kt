@@ -2,6 +2,7 @@ package it.eldavo.ylih.ui
 
 import android.Manifest
 import android.os.Build
+import androidx.activity.BackEventCompat
 import androidx.activity.OnBackPressedDispatcher
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
 import androidx.annotation.StringRes
@@ -212,10 +213,9 @@ class YlihNavHostTest {
 
     @Test
     fun `the pair page shrinks on its way out rather than only fading`() {
-        // The reported failure was the pop being a scale with no fade, which ends with the page
-        // still fully drawn and then simply gone. Asserted by geometry rather than by the spec, the
-        // way the rail and the bar are told apart: the spec is a constant, this is the animation
-        // actually running on the page.
+        // The pop a button press runs. Asserted by geometry rather than by the spec, the way the
+        // rail and the bar are told apart: the spec is a constant, this is the animation actually
+        // running on the page. The gesture is a different animation entirely — see below.
         val label = "ACCENTUM Plus"
         seedPair(label)
         show()
@@ -242,6 +242,54 @@ class YlihNavHostTest {
                 "$midPop against $atRest at rest",
             midPop.width < atRest.width && midPop.height < atRest.height,
         )
+    }
+
+    @Test
+    fun `a back gesture held halfway runs the app's own pop and not the library's`() {
+        // navigation-compose 2.10 seeks a gesture through predictivePopExitTransition rather than
+        // through popExitTransition, so a NavHost that names only the second gets the library's
+        // first: a bare scaleOut(0.7f) with no alpha on it at all. That is what "no fade going
+        // back" meant, and why moving the alpha around on popExit twice never changed it.
+        //
+        // Told apart by geometry, because a transition's alpha is not in the semantics tree but the
+        // scale riding beside it is, and the two scales are far apart: ours never takes the page
+        // below NAV_SCALE_AWAY, and the library's is all but at 0.7 by this point in the drag.
+        // NavMotionTest pins that the transition this proves is wired up carries a fade.
+        val label = "ACCENTUM Plus"
+        seedPair(label)
+        show()
+
+        compose.waitUntil(timeoutMillis = 10_000) { nodeCount(label) > 0 }
+        compose.onNodeWithText(label).performClick()
+        compose.waitUntil(timeoutMillis = 10_000) { route() == PAIR_ROUTE }
+        compose.waitForIdle()
+
+        val backArrow = { compose.onNodeWithContentDescription(text(R.string.pair_back)) }
+        val atRest = backArrow().fetchSemanticsNode().boundsInRoot
+
+        // Nothing hand-driven here, unlike the pop above: a gesture is *seeked* by finger progress
+        // rather than played, so the page holds still at 0.9 of the way through for as long as the
+        // finger does and the composition goes idle with it part-drawn.
+        compose.runOnUiThread {
+            back.dispatchOnBackStarted(BackEventCompat(0f, 0f, 0f, BackEventCompat.EDGE_LEFT))
+            back.dispatchOnBackProgressed(BackEventCompat(0f, 0f, 0.9f, BackEventCompat.EDGE_LEFT))
+        }
+        compose.waitForIdle()
+
+        val held = backArrow().fetchSemanticsNode().boundsInRoot
+        val scale = held.width / atRest.width
+        assertTrue(
+            "the pair page follows the finger back: $held against $atRest at rest",
+            scale < 1f,
+        )
+        assertTrue(
+            "and no further than the pop itself goes — $scale, where the library's own " +
+                "predictive default would be near 0.7 by now",
+            scale > NAV_SCALE_AWAY - 0.02f,
+        )
+
+        // Let go of it, so nothing after this is looking at a half-seeked page.
+        compose.runOnUiThread { back.dispatchOnBackCancelled() }
     }
 
     @Test

@@ -6,6 +6,7 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.scaleIn
 import androidx.compose.animation.scaleOut
+import androidx.navigationevent.NavigationEvent
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -15,9 +16,10 @@ import org.robolectric.annotation.Config
 
 /**
  * The spec every in-app navigation runs on. What is worth pinning is not the numbers themselves —
- * they are a judgement — but the relations that stop the motion looking broken: that the alpha is
- * finished before the scale is, that nothing outlives the motion, and that going back is the mirror
- * of going in.
+ * they are a judgement — but the relations that stop the motion looking broken: that every
+ * transition carries an alpha as well as a scale, that the two run together rather than in turn,
+ * that going back is the mirror of going in, and that a back *gesture* runs the same thing a
+ * released one does.
  *
  * A transition's own fields are internal to the animation library, so the shape is read back the
  * only way a caller can: by rebuilding the transition from a scale recovered out of its `toString`
@@ -29,8 +31,6 @@ import org.robolectric.annotation.Config
 class NavMotionTest {
 
     private val spec = tween<Float>(durationMillis = NAV_MOTION_MS)
-    private val out = tween<Float>(durationMillis = NAV_FADE_MS)
-    private val into = tween<Float>(durationMillis = NAV_FADE_MS, delayMillis = NAV_FADE_DELAY_MS)
 
     /** The scale factor a transition animates through, as it describes itself. */
     private fun scaleOf(transition: Any): Float {
@@ -42,53 +42,39 @@ class NavMotionTest {
 
     @Test
     fun `every navigation transition fades and scales on one spec`() {
-        // The failure this rules out is the one that was reported: a scale with no alpha at all, or
-        // an alpha put back on the full spec, ends with the screen still drawn and then simply gone.
+        // Two failures at once. A scale with no alpha at all ends with the page still fully drawn
+        // and then simply gone, which is what going back looked like. And an alpha given a spec of
+        // its own — a shorter one, or a delayed one — leaves a gap in the middle of the animation
+        // where neither page is drawn, which is what going in looked like. The same tween for both
+        // halves of every transition is the whole of the fix.
         assertEquals(
             "forward enter",
-            fadeIn(into) + scaleIn(spec, initialScale = scaleOf(navEnter())),
+            fadeIn(spec) + scaleIn(spec, initialScale = scaleOf(navEnter())),
             navEnter(),
         )
         assertEquals(
             "forward exit",
-            fadeOut(out) + scaleOut(spec, targetScale = scaleOf(navExit())),
+            fadeOut(spec) + scaleOut(spec, targetScale = scaleOf(navExit())),
             navExit(),
         )
         assertEquals(
             "pop enter",
-            fadeIn(into) + scaleIn(spec, initialScale = scaleOf(navPopEnter())),
+            fadeIn(spec) + scaleIn(spec, initialScale = scaleOf(navPopEnter())),
             navPopEnter(),
         )
         assertEquals(
             "pop exit",
-            fadeOut(out) + scaleOut(spec, targetScale = scaleOf(navPopExit())),
+            fadeOut(spec) + scaleOut(spec, targetScale = scaleOf(navPopExit())),
             navPopExit(),
         )
-    }
-
-    @Test
-    fun `the fade is finished before the scale is`() {
-        // This is the #40 fix. A predictive-back gesture seeks the pop by finger progress instead of
-        // playing it, so an alpha spread over the whole timeline is still most of the way opaque
-        // where a real drag ends and the release has no duration left to fade it in — the page just
-        // vanishes. Front-loaded, it is already transparent by the time the gesture hands over.
-        assertTrue("alpha must end before the motion does", NAV_FADE_MS < NAV_MOTION_MS)
-        assertTrue("and it must still be a fade, not a cut", NAV_FADE_MS > 0)
-    }
-
-    @Test
-    fun `nothing outlives the motion`() {
-        // The arriving page's fade is delayed so the two screens are never both half-drawn over each
-        // other; delay plus fade is the duration exactly, so it stays inside the scale it rides on
-        // and a push and its pop remain the same length.
-        assertEquals(NAV_MOTION_MS, NAV_FADE_DELAY_MS + NAV_FADE_MS)
     }
 
     @Test
     fun `going back is the mirror of going in`() {
         // Whatever the numbers are, the pair page has to leave the way it arrived and the tabs have
         // to come back the way they left; otherwise a push and its pop are two different animations
-        // and a predictive-back gesture, which seeks the pop, shows neither of them properly.
+        // and a back gesture, which is committed by playing the rest of the pop, jumps at the
+        // moment the finger lets go.
         assertEquals("the arriving page compresses back the way it grew",
             scaleOf(navEnter()), scaleOf(navPopExit()), 0f)
         assertEquals("and the page underneath returns from where it went",
@@ -99,12 +85,29 @@ class NavMotionTest {
     }
 
     @Test
+    fun `a held back gesture is given the pop and not the library's own`() {
+        // This is the #40/#41 fix, and the earlier two missed because they moved the alpha on
+        // popExit — which navigation-compose 2.10 stopped seeking. A gesture reads these instead,
+        // and a NavHost that leaves them out gets DefaultNavTransitions.predictivePopExitTransition,
+        // a bare scaleOut(0.7f) with no alpha, however carefully the pop beside it was written.
+        // They have to be the pop and not merely *a* fade, because releasing the gesture hands over
+        // to the pop mid-flight.
+        for (edge in listOf(
+            NavigationEvent.EDGE_LEFT,
+            NavigationEvent.EDGE_RIGHT,
+            NavigationEvent.EDGE_NONE,
+        )) {
+            assertEquals("edge $edge enter", navPopEnter(), navPredictivePopEnter(edge))
+            assertEquals("edge $edge exit", navPopExit(), navPredictivePopExit(edge))
+        }
+    }
+
+    @Test
     fun `the app bar fades on the same duration and does not scale`() {
         // It is outside the NavHost and faded by hand, so this is the only thing keeping it in step
-        // with the destinations — including the front-loaded alpha, or the bar would still be
-        // fading over a page that had finished. It stays scale-free on purpose: it holds its height.
-        assertEquals(fadeIn(into), barEnter())
-        assertEquals(fadeOut(out), barExit())
+        // with the destinations. It stays scale-free on purpose: it holds its height.
+        assertEquals(fadeIn(spec), barEnter())
+        assertEquals(fadeOut(spec), barExit())
     }
 
     private companion object {
