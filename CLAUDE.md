@@ -278,6 +278,20 @@ all. `SessionRepositoryTest` pins it through `BtBatteryReceiver.recordWithRetry`
 is a parameter for exactly that — `runTest` makes the delay virtual, and the same test written
 against the real two seconds was flaky under a loaded suite.
 
+**Virtual time was not enough on its own, and the second attempt is the one worth reading before
+writing another test like it.** Driving the retry by hand — advance a second, write the connect,
+advance past the settle — looks deterministic and is not. `runTest`'s own runner advances the clock
+to whatever task is scheduled next, unconditionally, every time the test body parks on a dispatcher
+that is not the test one — and every Room call parks on Room's transaction executor. Land the
+`delay` inside one of those windows and the runner fires the retry *before* the connect is written:
+both attempts find no session, nothing is recorded, and the assertion reads
+`expected:<[70]> but was:<[]>`. That is how it failed #42's build after hundreds of green runs, and
+injecting a 300 ms stall in that window reproduces it every time. What holds instead is ordering the
+two by the repository's own mutex: it is launched `UNDISPATCHED`, so it holds the mutex before
+`launch` returns, the connect queues behind it, and the retry — which locks again only after its
+delay — queues behind the connect. The clock is then free to run away, because nothing depends on it. The price is that
+**nothing may suspend between the launch and the connect**, which is why the test says so.
+
 **The receiver announces nothing.** `BtBatteryReceiver` deliberately calls neither
 `onSessionsChanged` nor `onFiguresChanged`: a reading changes no figure any widget shows, and the
 heartbeat exists to bound a missed disconnect rather than to follow the battery. Three refusals in

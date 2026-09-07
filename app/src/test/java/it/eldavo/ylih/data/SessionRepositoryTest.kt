@@ -3,11 +3,10 @@ package it.eldavo.ylih.data
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import it.eldavo.ylih.tracking.BtBatteryReceiver
+import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.test.advanceTimeBy
-import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
 import org.junit.After
 import org.junit.Assert.assertEquals
@@ -545,35 +544,47 @@ class SessionRepositoryTest {
     }
 
     /**
-     * The retry [BtBatteryReceiver] wraps every reading in, driven in virtual time.
+     * The retry [BtBatteryReceiver] wraps every reading in, ordered by the repository's own mutex.
      *
      * On a phone this is the ordinary case rather than a rare one: the battery broadcast arrives
      * about 400 ms after ACL_CONNECTED and beat the app's own session row by 68 ms when it was
      * measured. Many headsets report their battery only at connect, so a reading dropped here is
      * that pair's charge cycles gone entirely.
      *
-     * `runTest` makes `delay` virtual, so this pins the behaviour rather than the wall clock — the
-     * same test written against the real two seconds was flaky under a loaded suite. Driving that
-     * clock by hand is what needs the opt-in.
+     * Driving the retry by the clock instead — advance a second, write the connect, advance past
+     * the settle — reads as deterministic and is not. `runTest`'s own runner advances virtual time
+     * to whatever task is scheduled next every time the test body parks on a dispatcher that is not
+     * the test one, and every Room call parks on Room's transaction executor. Land the retry's
+     * `delay` inside one of those windows and the runner fires the second attempt before the connect
+     * below has been written: both attempts find no session, nothing is recorded, and the assertion
+     * reads `expected:<[70]> but was:<[]>`. That is what turned up red on #42, having passed
+     * hundreds of runs first.
+     *
+     * `UNDISPATCHED` is what closes it. The first attempt takes the mutex before `launch` returns —
+     * `Mutex.lock` does not suspend when the mutex is free — so the connect queues behind it, and
+     * the retry, which locks again only after its delay, queues behind the connect. Nothing then
+     * depends on the clock, which is free to run away as far as it likes. The one thing this asks
+     * of the reader is that **nothing may suspend between the launch and the connect**: a yield
+     * there is a window for the retry to fire against a mutex the connect has not reached yet.
      */
     @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun `a reading that arrives before its session is retried and lands`() = runTest {
-        val job = launch {
+        val job = launch(start = CoroutineStart.UNDISPATCHED) {
             BtBatteryReceiver.recordWithRetry(repository, buds.key, level = 70, at = clockNow)
         }
-
-        advanceTimeBy(1_000)
-        runCurrent()
-        assertTrue("still waiting for the connect to be written", batterySamples().isEmpty())
-
         repository.onConnected(buds, at = clockNow)
-        advanceTimeBy(2_000)
-        runCurrent()
         job.join()
 
         assertEquals(listOf(70), batterySamples().map { it.level })
         assertEquals(sessions().single().id, batterySamples().single().sessionId)
+        // The settle is the only thing scheduled on this clock, so having spent it is proof the
+        // first attempt was refused — otherwise the test would pass while pinning nothing.
+        assertEquals(
+            "the reading landed on the retry, not on a first attempt that found the session",
+            BtBatteryReceiver.SESSION_SETTLE_MS,
+            testScheduler.currentTime,
+        )
     }
 
     @Test
