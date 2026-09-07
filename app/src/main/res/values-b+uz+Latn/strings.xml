@@ -185,4 +185,5 @@
         <item quantity="one">%d seаns</item>
         <item quantity="other">%d seаnsle</item>
     </plurals>
+    <string name="pair_charge_calibrating">tinglashda davom eting, bir zaryad qanday o’zgarishini ko’rasiz</string>
 </resources>

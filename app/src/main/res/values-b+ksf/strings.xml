@@ -189,4 +189,5 @@
         <item quantity="other">%d nkpoong</item>
     </plurals>
     <string name="edit_failed">á bɛ́ nde sá</string>
+    <string name="pair_charge_calibrating">wókii nyɔ, u yén lɛ́ sikɛl yé ndáá yé mbaŋ</string>
 </resources>

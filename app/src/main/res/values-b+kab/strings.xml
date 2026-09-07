@@ -185,4 +185,5 @@
         <item quantity="other">%d tirkutin</item>
     </plurals>
     <string name="edit_failed">ur yezmir ara ad isekles asnifel</string>
+    <string name="pair_charge_calibrating">kemmel asmuzget iwakken ad twaliḍ amek tettbeddil tewinest n uccetki</string>
 </resources>

@@ -195,4 +195,5 @@
         <item quantity="one">bere %d</item>
         <item quantity="other">bere %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">kɔ so tie na wobɛhunu sɛdeɛ ahoɔden sesa</string>
 </resources>

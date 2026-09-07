@@ -97,6 +97,7 @@
     <string name="pair_charge_watched">observate</string>
     <string name="pair_vs_new">comparate a nove</string>
     <string name="pair_cycle_number">cyclo %1$d</string>
+    <string name="pair_charge_calibrating">continua a ascoltar pro vider como un carga cambia</string>
     <string name="pair_rename_title">renominar parea</string>
     <string name="pair_rename_label">nomine</string>
     <string name="pair_retire_title">retira iste parea</string>

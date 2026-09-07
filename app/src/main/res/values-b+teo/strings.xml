@@ -185,4 +185,5 @@
         <item quantity="one">apak %d</item>
         <item quantity="other">apakio %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">kitupokinos ainingokin, kanu ijenu ai eyongete apedor</string>
 </resources>

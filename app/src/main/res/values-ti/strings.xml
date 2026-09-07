@@ -185,4 +185,5 @@
         <item quantity="one">%d ምስጅ</item>
         <item quantity="other">%d ምስጃት</item>
     </plurals>
+    <string name="pair_charge_calibrating">ምስማዕ ቀጽል፣ ሓደ ምምላእ ከመይ ከም ዝቕየር ክትርኢ ኢኻ</string>
 </resources>

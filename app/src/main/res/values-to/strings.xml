@@ -181,4 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">tukituki %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">hokohoko atu hoʻo fanongo ke ke sio ki he liliu ʻo ha fakafonu</string>
 </resources>

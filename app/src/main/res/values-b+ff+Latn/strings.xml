@@ -195,4 +195,5 @@
         <item quantity="one">%d sekkuu</item>
         <item quantity="other">%d sekkuuji</item>
     </plurals>
+    <string name="pair_charge_calibrating">jokku heɗugol ngam yi’de no sikuli karja waylotoo</string>
 </resources>

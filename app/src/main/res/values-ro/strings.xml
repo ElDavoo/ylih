@@ -104,6 +104,7 @@
     <string name="pair_charge_watched">observat</string>
     <string name="pair_vs_new">față de noi</string>
     <string name="pair_cycle_number">ciclul %1$d</string>
+    <string name="pair_charge_calibrating">ascultă în continuare ca să vezi cum se schimbă o încărcare</string>
     <string name="pair_rename_title">redenumește perechea</string>
     <string name="pair_rename_label">nume</string>
     <string name="pair_retire_title">retrage această pereche</string>

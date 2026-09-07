@@ -189,4 +189,5 @@
         <item quantity="many">%d wātū</item>
         <item quantity="other">%d wātū</item>
     </plurals>
+    <string name="pair_charge_calibrating">kia mau tonu te whakarongo kia kite koe i te panoni o tētahi whakakī</string>
 </resources>

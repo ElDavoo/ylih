@@ -97,6 +97,7 @@
     <string name="pair_charge_watched">posmatrano</string>
     <string name="pair_vs_new">u odnosu na nove</string>
     <string name="pair_cycle_number">ciklus %1$d</string>
+    <string name="pair_charge_calibrating">slušaj i dalje da vidiš kako se punjenje menja</string>
     <string name="pair_rename_title">preimenuj par</string>
     <string name="pair_rename_label">ime</string>
     <string name="pair_retire_title">penzioniši ovaj par</string>

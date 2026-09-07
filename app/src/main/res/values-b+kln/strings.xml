@@ -189,4 +189,5 @@
         <item quantity="many">%d kotagit</item>
         <item quantity="other">%d kotagit</item>
     </plurals>
+    <string name="pair_charge_calibrating">yai kogeer ak kong’et si ige’e kolutik che kimnotin ko wale</string>
 </resources>

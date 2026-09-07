@@ -103,6 +103,7 @@
     <string name="pair_charge_watched">evezhiet</string>
     <string name="pair_vs_new">e-keñver nevez</string>
     <string name="pair_cycle_number">kelc’hiad %1$d</string>
+    <string name="pair_charge_calibrating">dalc’h da selaou evit gwelet penaos e cheñch ur c’harg</string>
     <string name="pair_rename_title">adenvel ur parol</string>
     <string name="pair_rename_label">anv</string>
     <string name="pair_retire_title">digemer ar parol-mañ</string>

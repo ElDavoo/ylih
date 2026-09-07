@@ -189,4 +189,5 @@
         <item quantity="two">%d vahkka</item>
         <item quantity="other">%d vahkka</item>
     </plurals>
+    <string name="pair_charge_calibrating">guldal viidáseappot vai oainnát mo láddensyklus rievdá</string>
 </resources>

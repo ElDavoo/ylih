@@ -185,4 +185,5 @@
         <item quantity="other">%d સત્રો</item>
     </plurals>
     <string name="edit_failed">ફેરફાર સાચવી શકાયો નથી</string>
+    <string name="pair_charge_calibrating">સાંભળતા રહો અને જુઓ કે એક ચાર્જ કેવી રીતે બદલાય છે</string>
 </resources>

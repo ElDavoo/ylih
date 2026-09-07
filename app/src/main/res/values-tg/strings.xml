@@ -189,4 +189,5 @@
         <item quantity="many">%d ҷаласа</item>
         <item quantity="other">%d ҷаласа</item>
     </plurals>
+    <string name="pair_charge_calibrating">гӯш карданро идома диҳед, то бинед заряд чӣ гуна тағйир меёбад</string>
 </resources>

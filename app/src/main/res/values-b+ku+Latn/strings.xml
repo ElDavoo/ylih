@@ -185,4 +185,5 @@
         <item quantity="other">%d danefînî</item>
     </plurals>
     <string name="edit_failed">guherîn nehat tomarkirin</string>
+    <string name="pair_charge_calibrating">guhdarî bike da ku bibînî çawa şarjek diguhere</string>
 </resources>

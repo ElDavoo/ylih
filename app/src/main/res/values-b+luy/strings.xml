@@ -189,4 +189,5 @@
         <item quantity="many">ebise %d</item>
         <item quantity="other">ebise %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">yendelela okhuwulila okhole olole shinga amaani kakalukhana</string>
 </resources>

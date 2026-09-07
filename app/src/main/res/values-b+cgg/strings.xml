@@ -195,4 +195,5 @@
         <item quantity="one">okussozo %d</item>
         <item quantity="other">okussozo %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">gumizamu kuhurikiiza oreebe oku amaani gahindukira</string>
 </resources>

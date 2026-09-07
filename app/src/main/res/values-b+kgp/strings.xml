@@ -189,4 +189,5 @@
         <item quantity="other">%d té</item>
     </plurals>
     <string name="edit_failed">tũ ki han mũ tũ</string>
+    <string name="pair_charge_calibrating">ẽ ke tugnĩn, jé ã kanhkã kar tỹ ke mũ ver</string>
 </resources>

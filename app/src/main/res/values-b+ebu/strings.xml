@@ -199,4 +199,5 @@
         <item quantity="many">mahinda %d</item>
         <item quantity="other">mahinda %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">thĩkĩrĩria ũrĩ na mbere nĩguo wone ũrĩa inengi rĩgarũrũkaga</string>
 </resources>

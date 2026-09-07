@@ -185,4 +185,5 @@
         <item quantity="one">%d сеанс</item>
         <item quantity="other">%d сеансле</item>
     </plurals>
+    <string name="pair_charge_calibrating">тинглашда давом этинг, бир заряд қандай ўзгаришини кўрасиз</string>
 </resources>

@@ -104,6 +104,7 @@
     <string name="pair_charge_watched">behatuta</string>
     <string name="pair_vs_new">berri zirenekoaren aldean</string>
     <string name="pair_cycle_number">%1$d. zikloa</string>
+    <string name="pair_charge_calibrating">entzuten jarraitu karga baten iraupena nola aldatzen den ikusteko</string>
     <string name="pair_rename_title">pareza berrizendatu</string>
     <string name="pair_rename_label">izena</string>
     <string name="pair_retire_title">pare hau jubilatu</string>

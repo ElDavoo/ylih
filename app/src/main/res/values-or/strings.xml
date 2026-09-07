@@ -185,4 +185,5 @@
         <item quantity="one">%d ସେସନ</item>
         <item quantity="other">%d ସେସନ</item>
     </plurals>
+    <string name="pair_charge_calibrating">ଶୁଣିବା ଜାରି ରଖନ୍ତୁ ଓ ଦେଖନ୍ତୁ ଗୋଟିଏ ଚାର୍ଜ କିପରି ବଦଳେ</string>
 </resources>

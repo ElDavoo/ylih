@@ -185,4 +185,5 @@
         <item quantity="one">%d அமர்வு</item>
         <item quantity="other">%d அமர்வுகள்</item>
     </plurals>
+    <string name="pair_charge_calibrating">தொடர்ந்து கேளுங்கள், ஒரு சார்ஜ் எப்படி மாறுகிறது என்று பாருங்கள்</string>
 </resources>

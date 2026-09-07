@@ -189,4 +189,5 @@
         <item quantity="many">ikathi %d</item>
         <item quantity="other">ikathi %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">ntthikelelaka wiriyana wira mmone moota inguvu sinivirela</string>
 </resources>

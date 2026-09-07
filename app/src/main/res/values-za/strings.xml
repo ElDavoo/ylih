@@ -189,4 +189,5 @@
         <item quantity="many">%d seih</item>
         <item quantity="other">%d seih</item>
     </plurals>
+    <string name="pair_charge_calibrating">laebae dingqnyi bae ndaej raen baez cungdenh ndeu bienq baenzlawz</string>
 </resources>

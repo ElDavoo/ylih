@@ -104,6 +104,7 @@
     <string name="pair_charge_watched">observeret</string>
     <string name="pair_vs_new">mod da de var nye</string>
     <string name="pair_cycle_number">cyklus %1$d</string>
+    <string name="pair_charge_calibrating">lyt videre for at se, hvordan en opladning ændrer sig</string>
     <string name="pair_rename_title">omdøb par</string>
     <string name="pair_rename_label">navn</string>
     <string name="pair_retire_title">udfas dette par</string>

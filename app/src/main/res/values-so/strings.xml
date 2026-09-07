@@ -185,4 +185,5 @@
         <item quantity="one">%d socodka</item>
         <item quantity="other">%d socodka</item>
     </plurals>
+    <string name="pair_charge_calibrating">sii wad dhegeysiga si aad u aragto sida dallacaaddu u beddelanto</string>
 </resources>

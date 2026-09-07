@@ -185,4 +185,5 @@
         <item quantity="one">fotoana %d</item>
         <item quantity="other">fotoana %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">mihainoa hatrany mba hahitanao ny fiovan’ny fameno iray</string>
 </resources>

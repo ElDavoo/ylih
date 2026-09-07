@@ -103,6 +103,7 @@
     <string name="pair_charge_watched">наблюдавано</string>
     <string name="pair_vs_new">спрямо нови</string>
     <string name="pair_cycle_number">цикъл %1$d</string>
+    <string name="pair_charge_calibrating">слушайте още, за да видите как се променя едно зареждане</string>
     <string name="pair_rename_title">преименуване на двойка</string>
     <string name="pair_rename_label">име</string>
     <string name="pair_retire_title">пенсионирайте тази двойка</string>

@@ -181,4 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">%d sési</item>
     </plurals>
+    <string name="pair_charge_calibrating">teruskeun ngadangukeun pikeun ningali kumaha hiji eusian robah</string>
 </resources>

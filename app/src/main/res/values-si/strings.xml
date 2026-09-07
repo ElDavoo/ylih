@@ -185,4 +185,5 @@
         <item quantity="one">%d සැසිකරණ</item>
         <item quantity="other">%d සැසිකරණ</item>
     </plurals>
+    <string name="pair_charge_calibrating">දිගටම අහන්න, එක් චාජ් එකක් වෙනස් වන ආකාරය බලන්න</string>
 </resources>

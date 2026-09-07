@@ -104,6 +104,7 @@
     <string name="pair_charge_watched">під наглядом</string>
     <string name="pair_vs_new">порівняно з новими</string>
     <string name="pair_cycle_number">цикл %1$d</string>
+    <string name="pair_charge_calibrating">слухайте далі, щоб побачити, як змінюється заряд</string>
     <string name="pair_rename_title">перейменувати пару</string>
     <string name="pair_rename_label">назва</string>
     <string name="pair_retire_title">списати цю пару</string>

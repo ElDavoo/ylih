@@ -189,4 +189,5 @@
         <item quantity="many">%d सत्राणि</item>
         <item quantity="other">%d सत्राणि</item>
     </plurals>
+    <string name="pair_charge_calibrating">श्रवणं कुरु, चार्जः कथं परिवर्तते इति पश्य</string>
 </resources>

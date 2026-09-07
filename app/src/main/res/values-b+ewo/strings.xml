@@ -199,4 +199,5 @@
         <item quantity="many">dibulu %d</item>
         <item quantity="other">dibulu %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">vɔ́gɔ́ ai mvus, wa yen aval misikèl mi ngul mi kabɔ</string>
 </resources>

@@ -185,4 +185,5 @@
         <item quantity="one">%d session</item>
         <item quantity="other">%d sessions</item>
     </plurals>
+    <string name="pair_charge_calibrating">continue to dey listen make you see how one charge dey change</string>
 </resources>

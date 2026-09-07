@@ -185,4 +185,5 @@
         <item quantity="one">%d tasrtiut</item>
         <item quantity="other">%d tasrtiutin</item>
     </plurals>
+    <string name="pair_charge_calibrating">kemmel ad tsslid akken ad tẓred amek tettbeddil twinest n uccenṭi</string>
 </resources>

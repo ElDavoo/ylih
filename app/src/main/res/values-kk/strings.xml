@@ -185,4 +185,5 @@
         <item quantity="other">%d сеанс</item>
     </plurals>
     <string name="edit_failed">өзгеріс сақталмады</string>
+    <string name="pair_charge_calibrating">тыңдай беріңіз, бір зарядтың қалай өзгеретінін көресіз</string>
 </resources>

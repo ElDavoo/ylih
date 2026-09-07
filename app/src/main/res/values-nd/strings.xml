@@ -185,4 +185,5 @@
         <item quantity="one">%d umsebenzi</item>
         <item quantity="other">%d umsebenzi</item>
     </plurals>
+    <string name="pair_charge_calibrating">qhubeka ulalele ubone ukuthi ukugcwalisa kutshintsha njani</string>
 </resources>

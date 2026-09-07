@@ -193,4 +193,5 @@
     <plurals name="session_count">
         <item quantity="other">%d 次連線</item>
     </plurals>
+    <string name="pair_charge_calibrating">繼續使用，就能看到一次充電的變化</string>
 </resources>

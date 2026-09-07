@@ -103,6 +103,7 @@
     <string name="pair_charge_watched">wedi’i wylio</string>
     <string name="pair_vs_new">o’i gymharu â newydd</string>
     <string name="pair_cycle_number">cylch %1$d</string>
+    <string name="pair_charge_calibrating">dal ati i wrando i weld sut mae gwefr yn newid</string>
     <string name="pair_rename_title">ailenwi pâr</string>
     <string name="pair_rename_label">enw</string>
     <string name="pair_retire_title">tynnu’r pâr hwn ymaith</string>

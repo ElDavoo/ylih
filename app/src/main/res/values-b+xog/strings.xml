@@ -185,4 +185,5 @@
         <item quantity="one">%d okukola</item>
         <item quantity="other">%d okukola</item>
     </plurals>
+    <string name="pair_charge_calibrating">weyongere okuwuliriza olabe engeri amaani gye gakyukamu</string>
 </resources>

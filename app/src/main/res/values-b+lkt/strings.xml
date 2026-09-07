@@ -181,4 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">owótakhta %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">nayáȟʼuŋ yo, na wóiyokipȟaŋ kiŋ tókheča kiŋ waŋyáŋka nuŋwé</string>
 </resources>

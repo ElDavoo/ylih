@@ -181,4 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">%d အခွင်းအရောင်များ</item>
     </plurals>
+    <string name="pair_charge_calibrating">ဆက်နားထောင်ပါ၊ အားသွင်းတစ်ကြိမ်ဘယ်လိုပြောင်းလဲသလဲ မြင်ရပါမယ်</string>
 </resources>

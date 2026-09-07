@@ -189,4 +189,5 @@
         <item quantity="other">%d सेसान</item>
     </plurals>
     <string name="edit_failed">आ बादाला साम्भाळा आ सिलि</string>
+    <string name="pair_charge_calibrating">विण्डिते मण्डु, चार्ज चक्र केत्ला मरुतेरि हिनि उड़ा</string>
 </resources>

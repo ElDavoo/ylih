@@ -185,4 +185,5 @@
         <item quantity="one">kipindi %d</item>
         <item quantity="other">vipindi %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">endelea kusikiliza ili uone jinsi chaji inavyobadilika</string>
 </resources>

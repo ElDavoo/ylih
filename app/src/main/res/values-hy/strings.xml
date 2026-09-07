@@ -185,4 +185,5 @@
         <item quantity="other">%d սեսիա</item>
     </plurals>
     <string name="edit_failed">փոփոխությունը չհաջողվեց պահել</string>
+    <string name="pair_charge_calibrating">շարունակիր լսել՝ տեսնելու, թե ինչպես է փոխվում մեկ լիցքը</string>
 </resources>

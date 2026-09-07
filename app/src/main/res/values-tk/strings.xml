@@ -185,4 +185,5 @@
         <item quantity="one">%d session</item>
         <item quantity="other">%d sessions</item>
     </plurals>
+    <string name="pair_charge_calibrating">diňlemegi dowam et, zarýadyň nähili üýtgeýändigini görersiň</string>
 </resources>

@@ -185,4 +185,5 @@
         <item quantity="other">%d samvet</item>
     </plurals>
     <string name="edit_failed">badlaav save nahi ho saka</string>
+    <string name="pair_charge_calibrating">sunte rahiye aur dekhiye ki ek charge kaise badalta hai</string>
 </resources>

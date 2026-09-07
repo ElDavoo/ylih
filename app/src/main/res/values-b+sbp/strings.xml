@@ -189,4 +189,5 @@
         <item quantity="many">%d kusava</item>
         <item quantity="other">%d kusava</item>
     </plurals>
+    <string name="pair_charge_calibrating">endelela kupulikisya kuti ulole ingufu ndavule sishanduka</string>
 </resources>

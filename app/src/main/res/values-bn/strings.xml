@@ -195,4 +195,5 @@
         <item quantity="one">%d সেশন</item>
         <item quantity="other">%d সেশন</item>
     </plurals>
+    <string name="pair_charge_calibrating">শুনতে থাকুন, দেখুন একটি চার্জ কীভাবে বদলায়</string>
 </resources>

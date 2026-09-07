@@ -181,4 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">%d 個節段</item>
     </plurals>
+    <string name="pair_charge_calibrating">繼續聽落去，就睇到一次充電點樣變</string>
 </resources>

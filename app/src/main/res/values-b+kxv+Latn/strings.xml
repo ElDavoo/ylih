@@ -189,4 +189,5 @@
         <item quantity="many">%d sesan</item>
         <item quantity="other">%d sesan</item>
     </plurals>
+    <string name="pair_charge_calibrating">vinḍite manḍu, charj chakra ketla maruteri hini uḍa</string>
 </resources>

@@ -189,4 +189,5 @@
         <item quantity="one">%d a ka ti</item>
         <item quantity="other">%d a ka ti</item>
     </plurals>
+    <string name="pair_charge_calibrating">yi si nu, a wu na ka sikili tɛ wu lɛbi</string>
 </resources>

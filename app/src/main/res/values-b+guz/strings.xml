@@ -189,4 +189,5 @@
         <item quantity="other">ichambire %d</item>
     </plurals>
     <string name="edit_failed">okoika omogendererwo gotachete</string>
+    <string name="pair_charge_calibrating">gwatia kogoka, orore buna amanga akoreka</string>
 </resources>

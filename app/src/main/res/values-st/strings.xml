@@ -185,4 +185,5 @@
         <item quantity="one">seboka se %d</item>
         <item quantity="other">liboka tse %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">tsoela pele o mamela hore o bone kamoo ho tjhaja ho fetohang</string>
 </resources>

@@ -185,4 +185,5 @@
         <item quantity="one">iseshini engu-%d</item>
         <item quantity="other">amaseshini angu-%d</item>
     </plurals>
+    <string name="pair_charge_calibrating">qhubeka ulalele ukuze ubone ukuthi ukushaja kushintsha kanjani</string>
 </resources>

@@ -185,4 +185,5 @@
         <item quantity="one">%d సెషన్</item>
         <item quantity="other">%d సెషన్‌లు</item>
     </plurals>
+    <string name="pair_charge_calibrating">వినడం కొనసాగించండి, ఒక ఛార్జ్ ఎలా మారుతుందో చూడండి</string>
 </resources>

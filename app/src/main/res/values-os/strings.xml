@@ -185,4 +185,5 @@
         <item quantity="one">%d сесси</item>
         <item quantity="other">%d сесси</item>
     </plurals>
+    <string name="pair_charge_calibrating">хъусын дарддæр дæр, æмæ фендзынæ, зарядбæттæн куыд ивы</string>
 </resources>

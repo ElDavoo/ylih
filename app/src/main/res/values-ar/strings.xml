@@ -215,4 +215,5 @@
         <item quantity="many">%d جلسة</item>
         <item quantity="other">%d جلسة</item>
     </plurals>
+    <string name="pair_charge_calibrating">واصل الاستماع لترى كيف تتغيّر الشحنة</string>
 </resources>

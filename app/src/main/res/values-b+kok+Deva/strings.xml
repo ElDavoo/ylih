@@ -185,4 +185,5 @@
         <item quantity="other">%d सेशन</item>
     </plurals>
     <string name="edit_failed">बदल जतन करूंक जालो ना</string>
+    <string name="pair_charge_calibrating">आयकत रावा आनी पळय एक चार्ज कसो बदलता</string>
 </resources>

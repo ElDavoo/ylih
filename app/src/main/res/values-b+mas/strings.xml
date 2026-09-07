@@ -185,4 +185,5 @@
         <item quantity="one">enkata %d</item>
         <item quantity="other">inkata %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">ining’o aitoki, inyorrayie enkijape aitobirie</string>
 </resources>

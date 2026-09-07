@@ -235,6 +235,60 @@ class PairDetailScreenTest {
             "the whole list was searched and there is no charge section in it",
             runCatching { scrollTo(text(R.string.pair_charge_cycles)) }.isFailure,
         )
+        // Not even the "keep listening" line: a pair that will never report a level would carry it
+        // for ever, which is the permanent apology the absent section exists to avoid.
+        assertTrue(
+            "the whole list was searched and the calibrating note is not in it",
+            runCatching { scrollTo(text(R.string.pair_charge_calibrating)) }.isFailure,
+        )
+    }
+
+    /**
+     * A headset that reports its battery but has not yet drained a hundred points has the tiles and
+     * no chart, since a series of one bar says nothing. The line says what fills the gap.
+     */
+    @Test
+    fun `a pair still on its first charge cycle says so instead of drawing a chart`() {
+        val pairId = seedPair()
+        runBlocking {
+            val session = db.sessionDao().getAll().first()
+            fun reading(at: Long, level: Int) = runBlocking {
+                db.batterySampleDao().insert(
+                    BatterySampleEntity(
+                        sessionId = session.id,
+                        pairId = pairId,
+                        at = at,
+                        level = level,
+                    ),
+                )
+            }
+            reading(now - 3 * day, 100)
+            reading(now - 3 * day + 4 * hour, 40)
+        }
+
+        show(pairId)
+        compose.waitUntil(timeoutMillis = 10_000) {
+            runCatching { scrollTo(text(R.string.pair_charge_calibrating)) }.isSuccess
+        }
+
+        // The section itself is there, tiles and all — the note replaces the chart, not the figures.
+        scrollTo(text(R.string.pair_charge_cycles))
+    }
+
+    @Test
+    fun `the calibrating note goes once there are cycles to compare`() {
+        val pairId = seedPair()
+        seedBatteryReadings()
+
+        show(pairId)
+        compose.waitUntil(timeoutMillis = 10_000) {
+            runCatching { scrollTo(text(R.string.pair_charge_cycles)) }.isSuccess
+        }
+
+        assertTrue(
+            "the whole list was searched and the calibrating note is not in it",
+            runCatching { scrollTo(text(R.string.pair_charge_calibrating)) }.isFailure,
+        )
     }
 
     /** One session per cycle, a hundred points each, so [count] cycles complete. */

@@ -195,4 +195,5 @@
     <plurals name="session_count">
         <item quantity="other">%dセッション</item>
     </plurals>
+    <string name="pair_charge_calibrating">使い続けると、1回の充電がどう変わるかがわかります</string>
 </resources>

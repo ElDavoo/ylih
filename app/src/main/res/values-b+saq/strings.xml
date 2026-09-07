@@ -185,4 +185,5 @@
         <item quantity="one">%d a-karata</item>
         <item quantity="other">%d a-karata</item>
     </plurals>
+    <string name="pair_charge_calibrating">ining’o aitoki, inyorrayie nkere aitobirie</string>
 </resources>

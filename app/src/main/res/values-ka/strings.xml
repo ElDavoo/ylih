@@ -185,4 +185,5 @@
         <item quantity="other">%d სესიები</item>
     </plurals>
     <string name="edit_failed">ცვლილების შენახვა ვერ მოხერხდა</string>
+    <string name="pair_charge_calibrating">განაგრძე მოსმენა, რომ ნახო როგორ იცვლება ერთი დამუხტვა</string>
 </resources>

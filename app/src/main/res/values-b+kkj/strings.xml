@@ -185,4 +185,5 @@
         <item quantity="other">%d ndə fə</item>
     </plurals>
     <string name="edit_failed">pɛ mɛ nɛ bo</string>
+    <string name="pair_charge_calibrating">yúʼ ngɔ́, wo bɛ́ jɛ́nɛ ndé sikɛl mɛ ngbala mɛ tɔ́ŋgɔ</string>
 </resources>

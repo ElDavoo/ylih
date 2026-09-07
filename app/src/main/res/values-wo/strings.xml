@@ -181,4 +181,5 @@
     <plurals name="session_count">
         <item quantity="other">%d sikasiit</item>
     </plurals>
+    <string name="pair_charge_calibrating">wéy ci déggloo ngir gis naka la wërndalu sarse di soppiku</string>
 </resources>

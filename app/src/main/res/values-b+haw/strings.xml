@@ -185,4 +185,5 @@
         <item quantity="other">nā hoʻomaka %d</item>
     </plurals>
     <string name="edit_failed">hiki ʻole ke mālama i ka hoʻololi</string>
+    <string name="pair_charge_calibrating">e hoʻomau i ka hoʻolohe i ʻike ʻoe i ka loli ʻana o ka hoʻopiha</string>
 </resources>

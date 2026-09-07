@@ -185,4 +185,5 @@
         <item quantity="one">%d ilortariaq</item>
         <item quantity="other">%d ilortariaq</item>
     </plurals>
+    <string name="pair_charge_calibrating">tusarnaajuarit kaajallanneq qanoq allanngortartoq takusinnaaniassagakku</string>
 </resources>

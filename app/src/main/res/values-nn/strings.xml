@@ -97,6 +97,7 @@
     <string name="pair_charge_watched">observert</string>
     <string name="pair_vs_new">mot då dei var nye</string>
     <string name="pair_cycle_number">syklus %1$d</string>
+    <string name="pair_charge_calibrating">høyr vidare for å sjå korleis ei lading endrar seg</string>
     <string name="pair_rename_title">endr namn på par</string>
     <string name="pair_rename_label">namn</string>
     <string name="pair_retire_title">pensjonere dette paret</string>

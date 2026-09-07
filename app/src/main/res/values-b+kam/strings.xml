@@ -189,4 +189,5 @@
         <item quantity="other">%d mulunde</item>
     </plurals>
     <string name="edit_failed">kwikĩa ũalyũku kwaema</string>
+    <string name="pair_charge_calibrating">endeea kwithukiisya nĩ kana wone ũndũ vinya ũkũalyũka</string>
 </resources>

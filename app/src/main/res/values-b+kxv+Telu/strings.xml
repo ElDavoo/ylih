@@ -189,4 +189,5 @@
         <item quantity="other">%d సేసాన</item>
     </plurals>
     <string name="edit_failed">ఆ బాదాలా సామ్భాళా ఆ సిలి</string>
+    <string name="pair_charge_calibrating">విణ్డితే మణ్డు, చార్జ చక్ర కేత్లా మరుతేరి హిని ఉడా</string>
 </resources>

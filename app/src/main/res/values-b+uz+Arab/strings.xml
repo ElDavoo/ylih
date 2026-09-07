@@ -185,4 +185,5 @@
         <item quantity="one">%d سیانس</item>
         <item quantity="other">%d سیانس</item>
     </plurals>
+    <string name="pair_charge_calibrating">تینگلشدە داوام ایتینگ، بیر ذریادنینگ قندی اوزگرگنی نی کورینگ</string>
 </resources>

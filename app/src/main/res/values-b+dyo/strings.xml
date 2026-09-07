@@ -199,4 +199,5 @@
         <item quantity="many">%d diñun</item>
         <item quantity="other">%d diñun</item>
     </plurals>
+    <string name="pair_charge_calibrating">kaanuŋ nabuŋ ba bu je nan sikili su kaarj sujaŋ</string>
 </resources>

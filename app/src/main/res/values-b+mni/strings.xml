@@ -189,4 +189,5 @@
         <item quantity="many">সেসন %d</item>
         <item quantity="other">সেসন %d</item>
     </plurals>
+    <string name="pair_charge_calibrating">ꯇꯥꯗꯨꯅꯥ ꯂꯩꯌꯨ ꯑꯃꯁꯨꯡ ꯆꯥꯔꯖ ꯑꯃꯅꯥ ꯀꯔꯝꯅꯥ ꯍꯣꯡꯏ ꯍꯥꯌꯕꯗꯨ ꯌꯦꯡꯉꯨ</string>
 </resources>
