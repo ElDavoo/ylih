@@ -694,9 +694,8 @@ classes cost one composition in the ordinary unit-test run and write nothing.
 These are *listing assets*, not golden-image tests: nothing is compared, and the only thing
 committed is `fastlane/metadata/android/en-US/images/` — F-Droid builds from a tag on this
 repository instead of taking an upload, so an image outside the repository does not exist for it.
-Those seven files are recorded from the **classic** flavor (`recordRoborazziClassicReleaseTest`), since
-that is the build F-Droid ships and its settings screen differs from the Play one; `docs/fdroid.md`
-has the copy commands. Everything else stays generated-only.
+Those seven files are recorded from the **classic** flavor (`recordRoborazziClassicReleaseTest`);
+`docs/fdroid.md` explains why and has the copy commands. Everything else stays generated-only.
 `DemoData.kt` writes through the DAOs rather than `SessionRepository`, deliberately — the
 repository's whole job is to refuse backdated history. Sizes come from Robolectric qualifiers
 (mdpi means 1dp = 1px).
@@ -829,8 +828,7 @@ These are easy to break and the failures are confusing:
   ```
 
   `app/src/androidTest` is the expensive half: it installs the minified APK on an emulator and
-  runs it. The script proves nothing was stripped or renamed; only that proves what survived
-  still works.
+  runs it — see Testing for what the two together do and do not prove.
 
 ## Room migrations
 

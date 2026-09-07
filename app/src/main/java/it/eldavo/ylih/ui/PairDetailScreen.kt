@@ -114,10 +114,10 @@ fun PairDetailScreen(
     val breakdown = remember(series) { dailyBreakdown(series.takeLast(PAIR_CHART_DAYS)) }
     val chartMax = remember(series) { chartMaxMs(series.takeLast(PAIR_CHART_DAYS)) }
     // Newest first, like the day list, and numbered from the oldest so that a run of them reads as
-    // the history it is — cycle 137 stays cycle 137 however few of them are listed. Only the most
-    // recent are: a pair worn daily for a decade has some three thousand cycles, and a list of
-    // those would bury the session list under it and never end. The chart carries the whole
-    // lifetime, which is where the shape is read anyway.
+    // the history it is — cycle 137 stays cycle 137 however few of them are listed (see
+    // PAIR_CYCLE_ROWS for why only the most recent are). The chart carries the whole lifetime — a
+    // pair worn daily for a decade is some three thousand cycles — which is where the shape is
+    // read anyway.
     val cycleRows = remember(charge) {
         charge?.cycles.orEmpty().withIndex().reversed().take(PAIR_CYCLE_ROWS)
     }

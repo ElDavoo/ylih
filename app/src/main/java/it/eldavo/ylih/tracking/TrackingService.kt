@@ -297,10 +297,8 @@ class TrackingService : LifecycleService() {
     }
 
     /**
-     * `connectedDevice` requires holding a Bluetooth permission on Android 14+. The classic
-     * flavor also declares `specialUse`, which covers someone who wants wired headphones
-     * tracked but denied Bluetooth; the Play flavor does not, so there
-     * [TrackingController.detailedTrackingSupported] keeps the service from being started at all.
+     * Mirrors the permission check [TrackingController.detailedTrackingSupported] already made
+     * before allowing this service to start, so as not to declare a type it does not hold.
      */
     private fun foregroundServiceType(): Int {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) return 0

@@ -145,10 +145,10 @@ Two details specific to F-Droid:
 
 ### The images are committed, and that is a deliberate reversal
 
-`docs/play-store.md` used to say nothing generated is committed, because Play takes the images by
-upload and a Gradle task reproduces them exactly. F-Droid has no upload: an image that is not in
-the repository does not exist. So `fastlane/metadata/android/en-US/images/` is checked in — 628 KB
-for the icon, the feature graphic and five phone screenshots.
+Play takes the images by upload and a Gradle task reproduces them exactly, so nothing generated is
+committed there. F-Droid has no upload: an image that is not in the repository does not exist. So
+`fastlane/metadata/android/en-US/images/` is checked in — 628 KB for the icon, the feature graphic
+and five phone screenshots.
 
 They are regenerated from the **classic** flavor, since that is the build F-Droid ships and its
 settings screen differs from the Play one:
@@ -296,8 +296,7 @@ same commit produce a byte-identical APK:
 ```
 
 Every zip entry carries one fixed timestamp rather than the build clock. Dropping the debug-key
-fallback is what made this possible at all — that key is generated per machine, so no two
-machines could ever have agreed.
+fallback (section 2) is what made this possible at all.
 
 R8 runs on the release build (see the `optimization` block in `app/build.gradle.kts`) and does
 not threaten this: it renames deterministically from the input program, and the R8 that runs is

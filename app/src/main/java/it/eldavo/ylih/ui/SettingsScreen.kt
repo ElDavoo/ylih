@@ -77,13 +77,9 @@ fun SettingsScreen(
     // Non-null while the notification explainer is up, holding the permission it is about.
     var askNotifications by remember { mutableStateOf<String?>(null) }
 
-    // Turning detailed tracking on is the moment the notification permission starts to mean
-    // anything: it is what creates the foreground service, and that service's notification is the
-    // only thing in the app that permission governs. Asked here rather than on the first run, so
-    // the reason is in front of the user instead of months behind them.
-    //
-    // The setting is written either way and does not wait for an answer — the service runs and
-    // records without the permission, Android simply does not draw its notification.
+    // Detailed tracking is what makes the notification permission matter at all —
+    // NotificationPermissionDialog's KDoc has why it is asked here, on every switch-on, rather
+    // than once. The setting itself is written either way and does not wait for an answer.
     fun setDetailed(enabled: Boolean) {
         viewModel.setDetailedTracking(enabled)
         if (enabled) askNotifications = notificationPermissionToAsk(context)
@@ -431,8 +427,8 @@ fun SettingsScreen(
         NotificationPermissionDialog(
             permission = permission,
             onDone = { askNotifications = null },
-            // The service is already up and posted its notification while it had nowhere to put
-            // it, so a grant shows nothing until something restarts it.
+            // See the launcher callback in NotificationPermissionDialog.kt for why a grant needs
+            // this repair rather than showing the notification on its own.
             onPermissionResult = viewModel::syncWithSystem,
         )
     }

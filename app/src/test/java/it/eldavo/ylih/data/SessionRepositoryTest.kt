@@ -439,11 +439,9 @@ class SessionRepositoryTest {
 
     /**
      * With no session there is nothing to file against, and a reading that outlived its session
-     * would let two of them be subtracted across a gap nothing watched.
-     */
-    /**
-     * The `false` is the contract the receiver's retry is built on: it means "ask again", because
-     * the first reading of a session routinely arrives before the session itself does.
+     * would let two of them be subtracted across a gap nothing watched. The `false` is the
+     * contract the receiver's retry is built on: it means "ask again", because the first reading
+     * of a session routinely arrives before the session itself does.
      */
     @Test
     fun `a battery reading with no session open is refused and says so`() = runTest {

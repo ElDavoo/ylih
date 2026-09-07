@@ -117,8 +117,7 @@ android {
         }
 
         // Everything `release` is, plus the one thing a test run needs and a shipped build must
-        // not have. R8 is only worth testing if the tests run against what R8 produced, and
-        // `testBuildType` is the only way to point androidTest at a minified build.
+        // not have.
         //
         // Why not point it straight at `release`: AGP binds the *whole* test suite to
         // testBuildType, unit tests included, and the Compose tests use

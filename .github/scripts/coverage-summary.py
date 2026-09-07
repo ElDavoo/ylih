@@ -90,13 +90,7 @@ def pct(covered, total):
 
 
 def tally(root, ours):
-    """Totals over authored code, the same over everything else, and the per-package split.
-
-    Instructions and branches come off the classes, because that is the granularity a generated
-    class can be told apart at. Lines come off the source files instead: JaCoCo counts a line
-    once however many classes were compiled out of it, and summing the classes would count the
-    lines of every Compose lambda again for each one.
-    """
+    """Totals over authored code, the same over everything else, and the per-package split."""
     mine, theirs, packages = {}, {}, {}
     for package in root.findall("package"):
         name = package.get("name")

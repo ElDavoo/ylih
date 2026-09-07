@@ -48,11 +48,8 @@ object AudioDevices {
     private const val ANONYMISED_SUFFIX = "00:00"
 
     /**
-     * Both platform views of a headset have to produce the same key, or one pair's hours end up
-     * split across two rows.
-     *
-     * They do not report the same address: `AudioDeviceInfo.getAddress()` hands back a
-     * partially redacted MAC (`XX:XX:XX:XX:5E:C2`) while the ACL broadcast reports the full
+     * The two platform views do not report the same address: `AudioDeviceInfo.getAddress()`
+     * hands back a partially redacted MAC (`XX:XX:XX:XX:5E:C2`) while the ACL broadcast reports the full
      * `80:C3:BA:A6:5E:C2` — observed on Android 16. The last two octets are the only part both
      * APIs disclose, so that is what identifies the device. Two paired headsets would have to
      * collide on the final 16 bits of their MAC to be confused for each other.

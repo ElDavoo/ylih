@@ -69,10 +69,9 @@ internal fun navPredictivePopExit(swipeEdge: Int): ExitTransition = navPopExit()
 
 // The bar fades and does not scale. It trades places with the pair page's own bar and has to hold
 // its height for as long as the screen behind it is still drawn — see the comment at its
-// AnimatedVisibility — so scaling it would bring back the jerk in the content underneath that
-// holding the height exists to prevent. It reads the same spec as the destinations, which is the
-// whole reason this file exists: AnimatedVisibility gives the height back when its own exit ends,
-// and on the shared duration that is the instant the page underneath has finished going.
+// AnimatedVisibility for how — so scaling it would bring back the jerk in the content underneath
+// that holding the height exists to prevent. It reads the same spec as the destinations, which is
+// the whole reason this file exists.
 internal fun barEnter(): EnterTransition = fadeIn(navSpec)
 
 internal fun barExit(): ExitTransition = fadeOut(navSpec)

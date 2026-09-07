@@ -43,9 +43,7 @@ jobs:
     # Also what stops this running twice. The push below arrives as a `synchronize` event whose
     # actor is the token's owner rather than Dependabot, so the second run is skipped before it
     # costs anything — and a later Dependabot rebase, which drops our commit, is an actor match
-    # again and regenerates.
-    # actor is load-bearing here, not a stand-in for the PR
-    # author: the comment above turns on it being the token's owner on our own second run.
+    # again and regenerates. `actor`, not the PR author, is what this depends on.
     if: github.actor == 'dependabot[bot]'  # zizmor: ignore[bot-conditions]
     runs-on: ubuntu-latest
 

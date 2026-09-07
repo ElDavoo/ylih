@@ -71,10 +71,7 @@ suspend fun refreshWidgets(context: Context) {
  */
 abstract class YlihWidget : GlanceAppWidget() {
 
-    /**
-     * Not open: a widget composed for a fixed bucket leaves a band of empty background at every
-     * size between two of them, which is what kept the providers' resize ranges narrow.
-     */
+    /** Not open — see [fits] for why a fixed bucket kept the providers' resize ranges narrow. */
     final override val sizeMode = SizeMode.Exact
 
     final override suspend fun provideGlance(context: Context, id: GlanceId) {

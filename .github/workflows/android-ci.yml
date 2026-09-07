@@ -166,10 +166,7 @@ jobs:
       # 96.0 — so it catches a regression without tracking noise. Line is one number for both
       # flavors and so has to clear the lower of them: classic measures 98.9 against play's 99.1,
       # for the minSdk 26 reason CLAUDE.md sets out. Branch is held further back still, at 70
-      # against an actual 77.0, deliberately: the Compose compiler emits a $changed bitmask branch
-      # for every composable parameter and no test drives those, so the number moves when a
-      # composable gains an argument rather than when testing gets worse, and a floor set just
-      # under it would report that as a coverage failure. See the script's docstring.
+      # against an actual 77.0 — deliberately loose, for the reason the script's docstring gives.
       - name: Report coverage (${{ matrix.flavor }})
         if: always()
         run: >

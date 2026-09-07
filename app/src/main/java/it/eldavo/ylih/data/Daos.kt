@@ -253,10 +253,9 @@ interface BatterySampleDao {
      * Every reading a pair has ever produced, oldest first — the pair page's charge cycles are a
      * lifetime figure, so unlike the charts there is no window to bound this to.
      *
-     * Off `battery_samples` alone, never joined to `sessions`, which is why [BatterySampleEntity]
-     * carries `pairId` at all: a Room flow observes every table its query names, and the heartbeat
-     * writes to `sessions` once a minute. `index_battery_samples_pairId_at` covers both the filter
-     * and the order, so there is no temp B-tree either.
+     * Off `battery_samples` alone, never joined to `sessions` — see [BatterySampleEntity.pairId]
+     * for why. `index_battery_samples_pairId_at` covers both the filter and the order, so there is
+     * no temp B-tree either.
      */
     @Query("SELECT * FROM battery_samples WHERE pairId = :pairId ORDER BY at")
     fun observeForPair(pairId: Long): Flow<List<BatterySampleEntity>>

@@ -100,7 +100,6 @@ class StatsScreenTest {
         )
     }
 
-    /** No `listState`: the default is what every caller but [YlihNavHost] uses. */
     /**
      * @param settled something the screen only shows once every flow it reads has arrived.
      *

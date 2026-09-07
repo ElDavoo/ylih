@@ -121,9 +121,9 @@ from the API and runs after both, so it is indifferent to which came first.
 
 ## Setup
 
-None of this works until all six are done. All six are done on `ElDavoo/ylih` as of
-2026-08-26; what follows is the record of what was set and why, for the next repository or the
-next time one of them is quietly turned off.
+None of this works until all six are done — as of 2026-08-26 they are, on `ElDavoo/ylih`; what
+follows is the record of what was set and why, for the next repository or the next time one of
+them is quietly turned off.
 
 **1. A pull-request token.** Create a fine-grained PAT scoped to this repository only, with
 *Contents: read and write*, *Pull requests: read and write*, *Issues: read and write* and
@@ -152,8 +152,8 @@ is what lets your own issues skip the wait. So a token stored on the environment
 empty string in every job that needs it, and the pipeline fails at `actions/checkout` for
 everybody.
 
-This was the state the repository was actually in on the first day, and it is worth knowing that
-the failure looks nothing like a permissions problem.
+This was the state the repository was actually in on the first day, and the failure looks nothing
+like a permissions problem.
 
 Nothing is lost by keeping it at repository level. The security property that matters is
 ordering — no runner starts before you approve — and that comes from the gate job, not from

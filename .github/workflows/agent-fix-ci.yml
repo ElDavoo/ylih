@@ -8,10 +8,6 @@ name: Agent · fix CI
 # is also what makes it safe to give it secrets: the version of this file that executes is the
 # one on main, never the one on the branch being fixed.
 
-# workflow_run is the trigger this needs, not a convenience: the job reads the failed run's
-# logs, which a check on the pull request cannot reach. It runs the workflow file from main
-# rather than the branch under test -- see the comment above -- so the branch cannot rewrite
-# what executes here.
 on:  # zizmor: ignore[dangerous-triggers]
   workflow_run:
     workflows: ["Android CI"]

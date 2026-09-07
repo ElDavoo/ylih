@@ -63,11 +63,9 @@ store screenshot is not worth introducing one.
   circular mask, and Play wants a full square it rounds off itself.
 
 The screenshots are captured with the app's ordinary theme, dynamic colours included. On
-Robolectric those resolve to the AOSP default palette, which is coherent and representative.
-Pinning the hand-written `LightColors`/`DarkColors` in `ui/theme/Theme.kt` was tried and looks
-worse: those schemes set only `primary`, `secondary` and `tertiary`, so every container role falls
-back to Material 3's default purple under a blue primary. Worth fixing one day as a full tonal
-palette; not worth faking in a screenshot.
+Robolectric those resolve to the AOSP default palette, which is coherent and representative of a
+real phone on a stock wallpaper — a truer picture than pinning the app's own `LightColors`/
+`DarkColors` in `ui/theme/Theme.kt` would give.
 
 Nothing generated is committed *for Play*, which takes the images by upload and so has no reason
 to carry binaries a Gradle task reproduces exactly. The one exception is
