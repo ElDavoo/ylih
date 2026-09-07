@@ -17,10 +17,16 @@ import androidx.compose.animation.scaleOut
  * edits one remembers the other; one spec read from both places makes it literal.
  */
 
-// The duration is shared by the alpha and the scale of every transition below, and that sharing is
-// the point: a scale that outlives its fade ends by snapping out of existence, which is what the
-// pop used to do. 700ms is the number these transitions have always run at; only the shape changed.
+// 700ms is the number these transitions have always run at, and it is the scale that spends all of
+// it. The alpha does not: a predictive-back gesture *seeks* the pop by finger progress rather than
+// playing it, so a fade spread evenly over the whole timeline is still most of the way opaque where
+// a real drag ends, and the release has almost nothing left of the duration to dispose of it in —
+// the page simply disappeared, which is #40. Front-loading the alpha means the page is already
+// transparent at the point the gesture hands over, whatever the commit then chooses to do with the
+// remainder. The scale keeps the full duration and the pop stays the exact mirror of the push.
 internal const val NAV_MOTION_MS = 700
+internal const val NAV_FADE_MS = 400
+internal const val NAV_FADE_DELAY_MS = NAV_MOTION_MS - NAV_FADE_MS
 
 // A screen that is further away, and a screen that is closer than the one in front of the user.
 // Forward navigation grows the arriving page from AWAY while the leaving one swells past TOWARD;
@@ -31,21 +37,29 @@ internal const val NAV_SCALE_TOWARD = 1.05f
 
 private val navSpec = tween<Float>(durationMillis = NAV_MOTION_MS)
 
+// The leaving page fades first and the arriving one last, so the two are never both half-drawn over
+// each other, and neither outlives the scale it rides on: the delay plus the fade is the duration.
+private val fadeOutSpec = tween<Float>(durationMillis = NAV_FADE_MS)
+private val fadeInSpec = tween<Float>(durationMillis = NAV_FADE_MS, delayMillis = NAV_FADE_DELAY_MS)
+
 internal fun navEnter(): EnterTransition =
-    fadeIn(navSpec) + scaleIn(navSpec, initialScale = NAV_SCALE_AWAY)
+    fadeIn(fadeInSpec) + scaleIn(navSpec, initialScale = NAV_SCALE_AWAY)
 
 internal fun navExit(): ExitTransition =
-    fadeOut(navSpec) + scaleOut(navSpec, targetScale = NAV_SCALE_TOWARD)
+    fadeOut(fadeOutSpec) + scaleOut(navSpec, targetScale = NAV_SCALE_TOWARD)
 
 internal fun navPopEnter(): EnterTransition =
-    fadeIn(navSpec) + scaleIn(navSpec, initialScale = NAV_SCALE_TOWARD)
+    fadeIn(fadeInSpec) + scaleIn(navSpec, initialScale = NAV_SCALE_TOWARD)
 
 internal fun navPopExit(): ExitTransition =
-    fadeOut(navSpec) + scaleOut(navSpec, targetScale = NAV_SCALE_AWAY)
+    fadeOut(fadeOutSpec) + scaleOut(navSpec, targetScale = NAV_SCALE_AWAY)
 
 // The bar fades and does not scale. It trades places with the pair page's own bar and has to hold
-// its height for the whole exit — see the comment at its AnimatedVisibility — so scaling it would
-// bring back the jerk in the content underneath that holding the height exists to prevent.
-internal fun barEnter(): EnterTransition = fadeIn(navSpec)
+// its height for as long as the screen behind it is still drawn — see the comment at its
+// AnimatedVisibility — so scaling it would bring back the jerk in the content underneath that
+// holding the height exists to prevent. It reads the same two fade specs as the destinations, which
+// is the whole reason this file exists: AnimatedVisibility gives the height back when its own exit
+// ends, and on the shortened alpha that is the instant the content underneath reaches zero anyway.
+internal fun barEnter(): EnterTransition = fadeIn(fadeInSpec)
 
-internal fun barExit(): ExitTransition = fadeOut(navSpec)
+internal fun barExit(): ExitTransition = fadeOut(fadeOutSpec)
