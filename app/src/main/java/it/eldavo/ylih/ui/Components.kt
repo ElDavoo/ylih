@@ -46,17 +46,17 @@ fun SectionHeader(text: String, modifier: Modifier = Modifier) {
 }
 
 /**
- * Reports a finger arriving on and leaving a pill, so [StatRow] can move the row around it. It is a
- * `pointerInput` and not a `clickable`, because `clickable` would add a button role and an activate
- * action: TalkBack would then announce every figure on the stats screen as a button, and
- * double-tapping one would do nothing. A bare gesture detector adds no semantics at all, so the tile
- * keeps the one merged description it already has.
+ * Reports a finger arriving on and leaving a pill, so [StatRow] can move the row around it.
  *
- * The haptic waits for a *completed* tap, and that is the one decision here that is not cosmetic.
- * Both screens showing these tiles are `LazyColumn`s, so a scroll that happens to start on a tile
- * arrives as a press — ticking on touch-down would buzz every time the list was dragged from a
- * figure, which on the stats screen is most of the screen. `tryAwaitRelease` returns false once the
- * scroll has taken the gesture over, so the row settles back and says nothing.
+ * A `pointerInput` and not a `clickable`: `clickable` adds a button role and an activate action, so
+ * TalkBack would announce every figure on the stats screen as a button that does nothing when
+ * double-tapped. A bare gesture detector adds no semantics, leaving the tile its one merged
+ * description.
+ *
+ * The haptic waits for a *completed* tap. Both screens here are `LazyColumn`s, so a scroll starting
+ * on a tile arrives as a press, and ticking on touch-down would buzz every time the list was
+ * dragged from a figure — most of the stats screen. `tryAwaitRelease` returns false once the scroll
+ * has taken the gesture, so the row settles back and says nothing.
  */
 @Composable
 private fun Modifier.pressReporting(onPressed: (Boolean) -> Unit): Modifier {
@@ -115,22 +115,21 @@ private val PILL_GAP = 8.dp
 /** No pill is being held. */
 private const val NO_PILL = -1
 
-// How much of the row the pressed pill takes from the ones beside it. Material's own ButtonGroup
-// uses 0.15, but its items are single-line labels that cannot wrap; these carry a figure over a
-// label, and a two-pill row would hand the whole of it to one neighbour — enough, in some of the 77
-// languages, to wrap a label and jog the row's height for the length of a press.
+// How much of the row the pressed pill takes from the ones beside it. Material's ButtonGroup uses
+// 0.15, but its items are single-line labels that cannot wrap; these carry a figure over a label,
+// and a two-pill row hands the whole of it to one neighbour — enough, in some of the 77 languages,
+// to wrap a label and jog the row's height for the length of a press.
 private const val PILL_PRESS_EXPANSION = 0.10f
 
 /**
- * A row of pills, laid out as one group the way a Material 3 Expressive `ButtonGroup` is: the pill
- * under the finger widens by taking width *from its neighbours* rather than growing over them, so
- * pressing one figure visibly moves the ones beside it and the row's own width never changes. That
- * shared width is the whole gesture — a pill on its own has nothing to take from and so does not
- * move, which is what a `ButtonGroup` of one does too.
+ * A row of pills laid out as one group, the way a Material 3 Expressive `ButtonGroup` is: the
+ * pressed pill widens by taking width *from its neighbours* rather than growing over them, so the
+ * row moves around it and its own width never changes. That shared width is the whole gesture — a
+ * pill on its own has nothing to take from and does not move, as a `ButtonGroup` of one does not.
  *
- * It is a `Layout` rather than a `Row` of animated `weight`s because the shares are read here, in
- * the measure block: a weight is a composition-phase argument, so animating one would recompose
- * every pill in the row on every frame of the spring instead of only re-measuring them.
+ * A `Layout` rather than a `Row` of animated `weight`s, so the shares are read in the measure
+ * block: a weight is a composition-phase argument, so animating one would recompose every pill on
+ * every frame of the spring instead of only re-measuring it.
  */
 @Composable
 fun StatRow(tiles: List<Pair<String, String>>, modifier: Modifier = Modifier) {
@@ -145,8 +144,8 @@ fun StatRow(tiles: List<Pair<String, String>>, modifier: Modifier = Modifier) {
                 else -> 1f - PILL_PRESS_EXPANSION / others
             },
             // A spatial spec, not an effects one: expressive's spatial springs are underdamped and
-            // overshoot, which is what makes this read as a squeeze rather than as a resize. The
-            // effects springs are critically damped and would only slide the edges over and stop.
+            // overshoot, which reads as a squeeze rather than a resize. The effects springs are
+            // critically damped and would only slide the edges over.
             animationSpec = MaterialTheme.motionScheme.fastSpatialSpec(),
             label = "pillShare",
         )
