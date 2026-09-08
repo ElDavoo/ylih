@@ -1,13 +1,12 @@
 name: Agent · fix
 
-# The shared fix stage, called by agent-fix-ci.yml (a red Android CI run) and by
-# agent-review.yml (a review that requested changes). One implementation, two callers: the two
-# legs differ only in what context they hand over, and a change to how fixing works should not
-# have to be made twice. See docs/agent-pipeline.md.
+# The shared fix stage, called by agent-fix-ci.yml (a red Android CI run) and agent-review.yml
+# (changes requested). One implementation, two callers: the legs differ only in the context
+# handed over, so fixing itself needs one edit, not two. See docs/agent-pipeline.md.
 #
-# There is no loop anywhere in this pipeline. This workflow pushes one commit and returns; the
-# push re-triggers Android CI and the review stage, and whichever of them is still unhappy calls
-# back here. The round counter is what makes that terminate.
+# No loop lives in this pipeline: this workflow pushes one commit and returns. The push
+# re-triggers Android CI and the review stage, and whichever is still unhappy calls back here.
+# The round counter makes that terminate.
 
 on:
   workflow_call:
@@ -33,7 +32,7 @@ on:
         required: true
         type: string
 
-    # Named rather than inherited, so a caller hands over these two and nothing else.
+    # Named, not inherited, so a caller hands over these two and nothing else.
     secrets:
       AGENT_PUSH_TOKEN:
         required: true
@@ -42,8 +41,8 @@ on:
 
 permissions:
   contents: read
-  # The action fetches a GitHub OIDC token on every run, including the OAuth path, and
-  # fails after three retries without this. claude.yml has carried it since day one.
+  # The action fetches a GitHub OIDC token every run, including the OAuth path, and fails after
+  # three retries without this — claude.yml has carried it since day one.
   id-token: write
   issues: write
   pull-requests: write
@@ -64,19 +63,18 @@ jobs:
     needs: [gate]
     if: always() && needs.gate.result != 'failure' && needs.gate.result != 'cancelled'
     runs-on: ubuntu-latest
-    # Raised with the turn budgets below. See agent-implement.yml: a job the timeout kills skips
-    # its stall record, and the retry sweep only ever sees stages that got to write one.
+    # Raised with the turn budgets below; see agent-implement.yml — a job the timeout kills
+    # skips its stall record, and the retry sweep only sees stages that wrote one.
     timeout-minutes: 120
-    # Per issue, and deliberately *not* the pipeline-wide `agent-pipeline` group the other stages
-    # took. This is a reusable workflow, so it runs inside its caller's run -- and the caller
-    # already holds `agent-pipeline`. Asking for the same group here would queue this job behind
-    # a slot its own parent is holding and never let go of, which is a deadlock until the run
-    # times out. Serialising against the rest of the pipeline is the caller's job; this group
-    # only has to keep the two callers off each other.
+    # Per issue, and not the pipeline-wide `agent-pipeline` group the other stages took: this
+    # reusable workflow runs inside its caller's run, which already holds `agent-pipeline`.
+    # Requesting the same group here would queue this job behind a slot its own parent holds and
+    # never releases — a deadlock until the run times out. Serialising against the rest of the
+    # pipeline is the caller's job; this group only keeps the two callers off each other.
     #
-    # Both can fire for the same branch at once -- a red CI run and a review that requested
-    # changes are independent events and routinely arrive together. Without this they race, and
-    # the second push is rejected as a non-fast-forward. Queued rather than cancelled, because a
+    # Both can fire for the same branch at once: a red CI run and a review requesting changes are
+    # independent events that routinely arrive together. Without this they'd race, and the
+    # second push would be rejected as a non-fast-forward. Queued rather than cancelled, since a
     # fix cancelled mid-push leaves the branch half-written.
     concurrency:
       group: agent-fix-${{ inputs.issue }}
@@ -84,7 +82,7 @@ jobs:
 
     steps:
       - name: Checkout the agent branch
-        # the PAT below is what pushes this branch, so it has to persist.
+        # the PAT below pushes this branch, so it has to persist.
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7  # zizmor: ignore[artipacked]
         with:
           token: ${{ secrets.AGENT_PUSH_TOKEN }}
@@ -103,9 +101,9 @@ jobs:
             *,agent:stop,*|*,agent:stuck,*) echo "::notice::Stopped by label" ; exit 1 ;;
           esac
 
-      # Rounds are counted in pushes by the agent, deliberately, not in CI runs. The instrumented
-      # matrix is the one job here that fails for reasons unrelated to the diff, and a flaky
-      # emulator must not be able to spend the budget of a branch that was fine.
+      # Rounds are counted in agent pushes, not CI runs: the instrumented matrix is the one job
+      # here that fails for reasons unrelated to the diff, and a flaky emulator must not spend
+      # the budget of a branch that was fine.
       - name: Count the round
         id: round
         run: |
@@ -120,8 +118,8 @@ jobs:
           else                         echo "escalate=false" >> "$GITHUB_OUTPUT"; fi
           echo "fix round $round"
 
-      # Drafting is not cosmetic: it disarms auto-merge, which is exactly the property wanted at
-      # the moment the loop admits it cannot converge.
+      # Drafting is not cosmetic: it disarms auto-merge, exactly what's wanted the moment the
+      # loop admits it can't converge.
       - name: Give up
         if: steps.round.outputs.stuck == 'true'
         env:
@@ -132,8 +130,8 @@ jobs:
           PAYLOAD: ${{ inputs.payload }}
         run: |
           set -euo pipefail
-          # Markdown fences and inline code are written as %s arguments rather than inline, so
-          # that nothing in this script is a backtick shellcheck has to reason about.
+          # Markdown fences and inline code are passed as %s arguments rather than inlined, so no
+          # backtick in this script is one shellcheck has to reason about.
           tick='`'
           fence='~~~'
           {
@@ -204,10 +202,10 @@ jobs:
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash"
             --disallowedTools "Bash(gh:*),Bash(curl:*),Bash(wget:*),Bash(nc:*),Bash(ssh:*),Bash(scp:*),Bash(git push:*),Bash(git remote:*),Bash(git config:*),WebFetch,WebSearch"
 
-      # Round 9. Handed the whole history rather than the latest failure, told the approach is
-      # not working, and allowed to revert -- because the way these loops actually fail is an
-      # agent applying variations of a fix that never addressed the cause, and eight rounds of
-      # that look exactly like eight rounds of progress from inside any single round.
+      # Round 9: handed the whole history rather than the latest failure, told the approach isn't
+      # working, and allowed to revert — because these loops actually fail when an agent applies
+      # variations of a fix that never addressed the cause, and eight such rounds look like eight
+      # rounds of progress from inside any single one.
       - name: Fix (escalation round)
         id: escalate
         if: steps.round.outputs.stuck != 'true' && steps.round.outputs.escalate == 'true'
@@ -255,9 +253,9 @@ jobs:
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash"
             --disallowedTools "Bash(gh:*),Bash(curl:*),Bash(wget:*),Bash(nc:*),Bash(ssh:*),Bash(scp:*),Bash(git push:*),Bash(git remote:*),Bash(git config:*),WebFetch,WebSearch"
 
-      # Exactly one of the two fix steps runs; the other is skipped, and a skipped step's
-      # outcome is 'skipped', never 'failure'. So testing for 'failure' on both is the whole
-      # condition — no need to know which round this was.
+      # Exactly one of the two fix steps runs; the other is skipped, and a skipped step's outcome
+      # is 'skipped', never 'failure' — so testing both for 'failure' is the whole condition,
+      # with no need to know which round this was.
       - name: Record a stall
         if: steps.fix.outcome == 'failure' || steps.escalate.outcome == 'failure'
         uses: ./.github/actions/agent-stall
@@ -299,11 +297,10 @@ jobs:
           # none of these subjects reach main.
           git commit -m "fix round ${ROUND} (${REASON})"
 
-          # Rebase onto current main before pushing, for the reason spelled out in
-          # agent-implement.yml: a branch whose workflow files differ from the default branch
-          # cannot be pushed by a token without `workflow` scope, and main moving during a run
-          # is enough to cause that. Rebasing also keeps the round counter honest, since it
-          # counts commits in origin/main..HEAD.
+          # Rebase onto current main before pushing — see agent-implement.yml: a branch whose
+          # workflow files differ from the default branch can't be pushed by a token without
+          # `workflow` scope, and main moving during a run is enough to cause that. Rebasing
+          # also keeps the round counter honest, since it counts commits in origin/main..HEAD.
           git fetch --quiet origin main
           git rebase origin/main
           git push --force-with-lease origin "HEAD:agent/issue-${ISSUE}"

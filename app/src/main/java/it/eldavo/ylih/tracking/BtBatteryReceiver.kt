@@ -14,17 +14,15 @@ import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.launch
 
 /**
- * Files the headset's own battery level, which is how charge cycles are counted at all.
+ * Files the headset's own battery level; this is how charge cycles get counted at all.
  *
- * Shaped like [BtConnectionReceiver] because it arrives on the same terms — see [BatteryBroadcast]
- * for why a hidden action can be relied on here — and it is a manifest receiver for the same
- * reason: the headphones report their battery a handful of times per discharge, at moments nothing
- * of this app would otherwise be awake for.
+ * Shaped like [BtConnectionReceiver] — arrives on the same terms (see [BatteryBroadcast] for why
+ * a hidden action can be relied on) — and is a manifest receiver for the same reason: headphones
+ * report battery only a handful of times per discharge, when nothing else of this app is awake.
  *
- * It deliberately tells [TrackingController] nothing. A battery reading changes no figure any
- * widget shows, and the heartbeat exists to bound a missed disconnect rather than to follow the
- * battery — re-enqueuing it here would write to WorkManager's database for a number nobody is
- * looking at.
+ * It tells [TrackingController] nothing, on purpose. A battery reading changes no figure any
+ * widget shows, and the heartbeat bounds a missed disconnect rather than follows the battery —
+ * re-enqueuing it here would write to WorkManager's database for a number nobody reads.
  */
 class BtBatteryReceiver : BroadcastReceiver() {
 
@@ -34,17 +32,17 @@ class BtBatteryReceiver : BroadcastReceiver() {
             BatteryBroadcast.EXTRA_BATTERY_LEVEL,
             BatteryBroadcast.LEVEL_ABSENT,
         )
-        // Cheap enough to leave to the repository, and refused here as well so that a disconnect —
-        // which broadcasts "unknown" for every device every time — does not wake a coroutine and
-        // three queries to decide it had nothing to say.
+        // Cheap enough to leave to the repository, refused here too so a disconnect — which
+        // broadcasts "unknown" for every device every time — does not wake a coroutine and three
+        // queries just to learn it had nothing to say.
         if (level !in 0..100) return
         val device = IntentCompat.getParcelableExtra(
             intent,
             BluetoothDevice.EXTRA_DEVICE,
             BluetoothDevice::class.java,
         ) ?: return
-        // The same filter sessions go through, so a watch, a car stereo or a speaker announcing its
-        // battery is dropped here rather than opening a row for a device the app does not track.
+        // The same filter sessions go through, so a watch, car stereo or speaker announcing its
+        // battery is dropped here instead of opening a row for an untracked device.
         val identity = AudioDevices.identityOf(device) ?: return
 
         val container = (context.applicationContext as YlihApp).container
@@ -70,28 +68,26 @@ class BtBatteryReceiver : BroadcastReceiver() {
         const val TAG = "BtBatteryReceiver"
 
         /**
-         * How long to give a connect that is still being written. Measured at 68 ms on the phone
-         * below; two seconds is generous enough to cover a cold process opening Room for the first
-         * time, and short enough to stay well inside the `goAsync` window, which allows ten.
+         * How long to give a connect still being written. Measured at 68 ms on the phone below;
+         * two seconds covers a cold process opening Room for the first time, and stays well
+         * inside the `goAsync` window, which allows ten.
          */
         const val SESSION_SETTLE_MS = 2_000L
 
         /**
-         * Files [level], and asks a second time if the session it belongs to has not been written
-         * yet.
+         * Files [level], retrying once if the session it belongs to has not been written yet.
          *
-         * The first reading of a session normally arrives *before* the session does, and losing it
-         * would be losing the one reading many headsets ever send. Measured on a Mi 10T running
-         * Android 16: ACL_CONNECTED at 08:20:52.721, this broadcast at 08:20:53.131, and
-         * [BtConnectionReceiver]'s own row at 08:20:53.199 — 68 ms too late, and the reading was
-         * dropped. The two receivers race by construction, since that one reads the tracking mode
-         * before it writes and both hand their work to the same scope.
+         * The first reading of a session normally arrives *before* the session does, often the
+         * only reading a headset ever sends. Measured on a Mi 10T running Android 16:
+         * ACL_CONNECTED at 08:20:52.721, this broadcast at 08:20:53.131, and
+         * [BtConnectionReceiver]'s own row at 08:20:53.199 — 68 ms too late, so the reading was
+         * dropped. The two receivers race by construction: that one reads the tracking mode
+         * before writing, and both hand their work to the same scope.
          *
-         * A reading that still finds no session after the retry belongs to a device this app does
-         * not track, and is meant to be dropped.
+         * A reading still finding no session after the retry belongs to an untracked device and
+         * is dropped.
          *
-         * [settleMs] is a parameter so the retry can be driven in virtual time; nothing in the app
-         * passes it.
+         * [settleMs] lets the retry run in virtual time; nothing in the app passes it explicitly.
          */
         internal suspend fun recordWithRetry(
             repository: SessionRepository,

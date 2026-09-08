@@ -22,17 +22,17 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
 /**
- * The stats screen's lifetime figures are read off the per-pair aggregate now instead of off every
- * session ever recorded, and this is the test that says the swap changed nothing.
+ * The stats screen's lifetime figures now read off the per-pair aggregate instead of every
+ * session ever recorded; this test says the swap changed nothing.
  *
- * `Stats.summarize` over a `List<Span>` is the definition — it is the older, simpler code, and it
- * is what the screen showed before. `summarizeLifetime` is an implementation of it in SQL plus a
- * little arithmetic, and the two are asserted equal, field for field, over the same database. The
- * point is not that either is right in isolation but that no lifetime total moved, which is the
- * one thing this app is not allowed to get wrong.
+ * `Stats.summarize` over a `List<Span>` is the definition — the older, simpler code, what the
+ * screen showed before. `summarizeLifetime` implements it in SQL plus a little arithmetic, and
+ * the two are asserted equal, field for field, over the same database. The point isn't that
+ * either is right in isolation, but that no lifetime total moved — the one thing this app must
+ * not get wrong.
  *
- * Every awkward case the aggregate has to reproduce is seeded below: an open session and a closed
- * one, measured and unmeasured, playback that overruns the span it was measured in, a pair with no
+ * Every awkward case the aggregate must reproduce is seeded below: an open session and a closed
+ * one, measured and unmeasured, playback overrunning the span it was measured in, a pair with no
  * sessions at all, and a retired pair.
  */
 @RunWith(RobolectricTestRunner::class)
@@ -150,9 +150,9 @@ class SummarizeLifetimeTest {
     }
 
     /**
-     * The watcher banks playback in slices, so a clock step between two of them can credit more
-     * than the span is long. `Stats.durationMs` clamps it; the SQL has to clamp it identically or
-     * a lifetime playback total drifts above the connected time that contains it.
+     * The watcher banks playback in slices, so a clock step between two can credit more than the
+     * span is long. `Stats.durationMs` clamps it; the SQL must clamp it identically or a lifetime
+     * playback total drifts above the connected time that contains it.
      */
     @Test
     fun `playback that overruns its own session is clamped the same way in both`() = runTest {
@@ -186,7 +186,7 @@ class SummarizeLifetimeTest {
         assertAgree("a realistic tree")
     }
 
-    /** The figures being compared are not all zero, or the equality above proves nothing. */
+    /** The figures compared aren't all zero, or the equality above proves nothing. */
     @Test
     fun `the fixture actually produces figures`() = runTest {
         val p = pair("bt:AA:AA")

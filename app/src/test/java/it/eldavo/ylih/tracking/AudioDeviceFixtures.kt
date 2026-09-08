@@ -13,10 +13,10 @@ const val ROLE_SINK = 2
 /**
  * Builds the [AudioDeviceInfo] the audio stack would hand back for a connected output.
  *
- * `AudioDeviceInfoBuilder` never sets the underlying port's role, so everything it builds
- * reports `isSink == false` and [AudioDevices.identityOf] returns before it looks at the type at
- * all. It also offers no way to set the name or the address, which are the two fields an
- * identity is actually made of — hence reaching into the port directly.
+ * `AudioDeviceInfoBuilder` never sets the underlying port's role, so everything it builds reports
+ * `isSink == false` and [AudioDevices.identityOf] returns before checking the type at all. It also
+ * offers no way to set the name or address, the two fields an identity is made of — hence
+ * reaching into the port directly.
  */
 fun outputDevice(
     type: Int,

@@ -4,8 +4,8 @@ import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.GlanceAppWidgetReceiver
 
 /**
- * One `AppWidgetProvider` per widget, kept together the way `tracking/` keeps its receivers: they
- * are three lines each and there is nothing to say about one that is not true of the others.
+ * One `AppWidgetProvider` per widget, kept together like `tracking/`'s receivers: three lines each,
+ * nothing true of one that isn't true of the others.
  *
  * These are what the manifest names, and what `appwidget-provider` meta-data hangs off.
  */

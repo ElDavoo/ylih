@@ -15,11 +15,11 @@ import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
 
 /**
- * The notification permission does not exist below Android 13, and asking for one that does not
- * exist is a prompt that never appears and a switch that waits for an answer it will never get.
- * So which SDK the app is on decides whether there is anything to ask at all, and that decision
- * is a plain function precisely so it can be checked on both sides of the line rather than only
- * on whichever the test runner happens to default to.
+ * The notification permission doesn't exist below Android 13, and asking for one that doesn't
+ * exist is a prompt that never appears and a switch waiting for an answer it will never get. So
+ * which SDK the app is on decides whether there's anything to ask at all, and that decision is a
+ * plain function precisely so it can be checked on both sides of the line, not only on whichever
+ * the test runner defaults to.
  */
 @RunWith(RobolectricTestRunner::class)
 class PermissionRationaleTest {

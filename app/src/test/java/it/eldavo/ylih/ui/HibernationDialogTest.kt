@@ -40,7 +40,7 @@ class HibernationDialogTest {
         shadowOf(app.packageManager).setAutoRevokeWhitelisted(!hibernating)
         runBlocking {
             // Strictly after the welcome: the gate reads both, and onboarding still open would
-            // hide the prompt for a reason that has nothing to do with what is under test.
+            // hide the prompt for a reason unrelated to what's under test.
             settings.setOnboardingDone(true)
             settings.setHibernationAsked(asked)
         }

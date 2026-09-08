@@ -1,55 +1,52 @@
 #!/usr/bin/env python3
-"""Check that R8 ran and left the classes nothing in this repository can reach statically.
+"""Check that R8 ran and left intact the classes nothing here can reach statically.
 
-Unit tests never see minified code: they run on the JVM against unshrunk classes, so R8 is not
-part of any test the build has. That leaves the one failure mode R8 actually has here silent —
-a class reached only by name, stripped or renamed, which compiles and tests green and then fails
-on a device.
+Unit tests run on the JVM against unshrunk classes, so R8 is never part of any test the build
+has. That leaves R8's one real failure mode silent here — a class reached only by name, stripped
+or renamed, which compiles and tests green and then fails on a device.
 
-Two invariants, both read out of R8's own mapping.txt:
+Two invariants, both read from R8's mapping.txt:
 
 1. R8 ran at all. AGP writes mapping.txt only when the release build is optimized, so its absence
-   means someone turned the `optimization` block back off — which is what Play Console complains
-   about ("No R8 metadata included") and what quietly re-inflates the APK from 2.8 MB to 11.5 MB.
+   means the `optimization` block got turned back off — what Play Console complains about
+   ("No R8 metadata included") and what quietly re-inflates the APK from 2.8 MB to 11.5 MB.
 
 2. Every class below survived shrinking *and* kept its exact name. Renaming is the subtler half:
    a renamed class is still in the APK, so nothing crashes at install time, and the damage shows
-   up only when something outside the APK tries to name it.
+   only when something outside the APK tries to name it.
 
-The one that is genuinely load-bearing is HeartbeatWorker. WorkManager stores the worker's class
-name as a string in its own database, so a heartbeat enqueued by one version is instantiated by
-name after the update. Rename the class between versions and the work does not crash — it fails
-to instantiate, and the heartbeat that bounds the damage of a missed disconnect silently stops
-for exactly the installs that already had one scheduled. It is kept today by androidx.work's
-consumer rules, which is a library's decision rather than ours: a dependency bump can change it,
-and this check is what would notice.
+The load-bearing one is HeartbeatWorker. WorkManager stores the worker's class name as a string
+in its own database and instantiates it by name after an update. Rename it between versions and
+the work doesn't crash — it fails to instantiate, and the heartbeat bounding a missed disconnect
+silently stops for installs that already had one scheduled. It's kept today by androidx.work's
+consumer rules, a library decision rather than ours, so a dependency bump could change it and
+this check would notice.
 
-Room's YlihDatabase_Impl is the same shape of dependency on a consumer rule — Room derives the
-impl's name from the @Database class and loads it reflectively, so both names have to hold.
+Room's YlihDatabase_Impl depends on a consumer rule the same way: Room derives the impl's name
+from the @Database class and loads it reflectively, so both names have to hold.
 
-The three GlanceAppWidget subclasses are the case that proved the point. Glance identifies a
-widget by its class's canonical name and persists that name per receiver, so when R8 merged the
-three — they are identical in shape, differing only in which composable they name — all three
-receivers recorded one provider, and every widget on a home screen drew whichever had refreshed
-last. Nothing crashed, and nothing but this file can see it: a merged class works perfectly, it
-just answers to one name where the app needs three. They are kept by our own rule, not a
-library's, in app/src/main/keepRules/glance-widgets.keep.
+The three GlanceAppWidget subclasses proved the point. Glance identifies a widget by its class's
+canonical name and persists that name per receiver, so when R8 merged the three — identical in
+shape, differing only in which composable they name — all three receivers recorded one provider,
+and every widget on a home screen drew whichever had refreshed last. Nothing crashed and nothing
+but this file could see it: a merged class works fine, it just answers to one name where the app
+needs three. They're kept by our own rule, not a library's, in
+app/src/main/keepRules/glance-widgets.keep.
 
-The manifest components are cheaper insurance. AAPT2 generates keep rules for anything named in
-the merged manifest, so they should never move; they are listed because "should never" is worth
-asserting when the cost is one line.
+The manifest components are cheaper insurance: AAPT2 generates keep rules for anything named in
+the merged manifest, so they should never move — asserted anyway, since the cost is one line.
 
-The third invariant is about the *resource* shrinker, which runs beside R8 and has the same blind
-spot. A resource nothing references from code is kept only if some other resource or the manifest
-points at it, and the home-screen widgets are a chain of exactly that: the manifest names
-`res/xml/widget_*_info.xml`, which names the preview PNG and the description string, and none of
-it appears in any `R.` field. Break a link and the build still succeeds — the widget picker just
+The third invariant covers the *resource* shrinker, which runs beside R8 with the same blind
+spot: a resource nothing references from code survives only if another resource or the manifest
+points at it. The home-screen widgets are exactly that chain — the manifest names
+`res/xml/widget_*_info.xml`, which names the preview PNG and the description string, neither
+appearing in any `R.` field. Break a link and the build still succeeds; the widget picker just
 shows a blank tile. `resources.txt` records the shrinker's own verdict per resource, so the check
-is to read it back.
+reads it back.
 
-Not checked here, because it does not depend on R8: the JSON export keys. kotlinx.serialization
+Not checked here, because it doesn't depend on R8: the JSON export keys. kotlinx.serialization
 bakes descriptor element names into the generated serializer as string constants at compile time,
-so obfuscating the Kotlin properties cannot move them — verified by finding `formatVersion`,
+so obfuscating the Kotlin properties can't move them — verified by finding `formatVersion`,
 `disconnectedAt` and `retireReason` as literals in the optimized dex.
 
 Usage: r8-keep-check.py [app/build/outputs/mapping/classicRelease]
@@ -123,7 +120,7 @@ KEEP_RESOURCES = {
 }
 
 # A class line in mapping.txt: `<original> -> <obfuscated>:` at column 0. Members are indented,
-# so anchoring at the start is what keeps this from matching a method whose name contains one.
+# so anchoring at the start keeps this from matching a method whose name contains one.
 CLASS_LINE = re.compile(r"^(\S+) -> (\S+):$", re.M)
 
 # A resources.txt line: `<type>:<name>:<id> reachable from …`, or `… is not reachable.`

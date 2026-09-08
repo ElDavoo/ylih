@@ -17,11 +17,11 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
 /**
- * The database is built with no fallback and history is never allowed to be lost, so the schema
- * Room validates an existing file against has to match the entities exactly. Which check runs
- * depends on where the file came from: one Room wrote carries an identity hash it compares, while
- * one restored from a backup has no such bookkeeping and is validated column by column instead.
- * Both openings happen for real here, because a fresh create exercises neither.
+ * The database is built with no fallback and history must never be lost, so the schema Room
+ * validates an existing file against has to match the entities exactly. Which check runs depends
+ * on where the file came from: one Room wrote carries an identity hash it compares, while one
+ * restored from a backup has no such bookkeeping and is validated column by column instead. Both
+ * openings happen for real here, since a fresh create exercises neither.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
@@ -84,9 +84,9 @@ class YlihDatabaseTest {
     /**
      * A `ylih.db` copied back from a file-manager backup has the tables but none of Room's own
      * bookkeeping, so Room validates it column by column instead of trusting an identity hash.
-     * That path is the one thing standing between a restored file and years of silently wrong
-     * totals, and the DDL below is what the committed schema says version 1 looks like — if an
-     * entity changes without a version bump and a migration, this is where it surfaces.
+     * That path is what stands between a restored file and years of silently wrong totals, and
+     * the DDL below is what the committed schema says version 1 looks like — an entity changed
+     * without a version bump and a migration surfaces here.
      */
     @Test
     fun `a database Room did not create is checked against the entities before it is trusted`() =
@@ -119,9 +119,9 @@ class YlihDatabaseTest {
     @Test
     fun `a database whose columns have drifted is refused rather than silently repaired`() {
         SQLiteDatabase.openOrCreateDatabase(context.getDatabasePath("ylih.db"), null).use { drifted ->
-            // The drift is created rather than carved out of a correct schema: `ALTER TABLE ...
-            // DROP COLUMN` needs SQLite 3.35, and the version Robolectric runs against on CI is
-            // older than that, so the statement is a syntax error there while it works locally.
+            // The drift is created rather than carved from a correct schema: `ALTER TABLE ...
+            // DROP COLUMN` needs SQLite 3.35, older than the version Robolectric runs against on
+            // CI, so the statement is a syntax error there while it works locally.
             SCHEMA_V1.forEach { statement -> drifted.execSQL(statement.withoutPlayingMs()) }
             drifted.version = 1
         }

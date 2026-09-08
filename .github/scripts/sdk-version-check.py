@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 """Assert that the Android SDK versions agree everywhere they are written down.
 
-`compileSdk` and `buildToolsVersion` live in `app/build.gradle.kts`, and the same two numbers are
-repeated in `flake.nix` (which pins the dev shell's SDK) and across the workflows (which install
-and cache it). `gradle/libs.versions.toml` says "keep in sync" and nothing checked that anyone had.
+`compileSdk` and `buildToolsVersion` live in `app/build.gradle.kts`, and the same two numbers
+repeat in `flake.nix` (which pins the dev shell's SDK) and across the workflows (which install and
+cache it). `gradle/libs.versions.toml` says "keep in sync", but nothing checked that anyone had.
 
-Bumping one and not the others does not fail loudly: the build asks AGP to download whatever it is
+Bumping one and not the others doesn't fail loudly: the build asks AGP to download whatever's
 missing, so a stale workflow pin quietly costs a download per run instead of a cache hit, and a
-stale `flake.nix` leaves the dev shell building against a different platform than CI does. This
-takes a second and says which file disagrees.
+stale `flake.nix` leaves the dev shell building against a different platform than CI. This takes
+a second and says which file disagrees.
 
-The F-Droid workflow is exempt on purpose: it names the versions in order to assert that they are
-*absent*, because its buildserver preinstalls nothing past 33 and the whole point of that job is
-that AGP fetches them itself. See docs/fdroid.md §2.
+The F-Droid workflow is exempt on purpose: it names the versions to assert they're *absent*,
+since its buildserver preinstalls nothing past 33 and the job's whole point is that AGP fetches
+them itself. See docs/fdroid.md §2.
 
     python3 .github/scripts/sdk-version-check.py
 """
@@ -25,8 +25,8 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 
-# Files that must agree, and how to read the two versions out of each. A file that mentions
-# neither is a file that has stopped being part of this, and is reported rather than skipped.
+# Files that must agree, and how to read the two versions out of each. A file naming neither has
+# stopped being part of this, and is reported rather than skipped.
 SOURCES = [
     "app/build.gradle.kts",
     "flake.nix",

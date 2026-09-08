@@ -25,9 +25,9 @@ import java.time.LocalDate
  * Whether the live timer is drawn at a given size.
  *
  * It arrives through `AndroidRemoteViews`, and nothing can see inside one of those — the Glance
- * node matchers [WidgetsTest] uses find a leaf with no text and no children. So this composes the
- * widget the way the launcher will, into a `RemoteViews`, and then inflates it and looks for the
- * Chronometer itself. It is the only assertion in the suite that reaches past Glance's own tree.
+ * node matchers [WidgetsTest] uses find a leaf with no text and no children. So this composes
+ * the widget as the launcher will, into a `RemoteViews`, then inflates it and looks for the
+ * Chronometer itself — the only assertion in the suite that reaches past Glance's own tree.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
@@ -46,8 +46,8 @@ class WidgetChronometerTest {
     @Test
     fun `a narrow widget drops it rather than ellipsising a sentence into nothing`() {
         // "connected for 1:23:45" under a pair's name is a sentence, not a figure. Two cells
-        // across truncates it to a word and a half, and the row's colour already says which pair
-        // is the one that is on.
+        // across truncates it to a word and a half, and the row's colour already says which
+        // pair is on.
         assertNull(chronometer(DpSize(cells(2), cells(2))))
     }
 
@@ -60,10 +60,10 @@ class WidgetChronometerTest {
 
     @Test
     fun `a pair that disconnects loses its timer on a view the launcher reuses`() {
-        // A launcher does not re-inflate a widget it already has: AppWidgetHostView recycles the
+        // A launcher doesn't re-inflate a widget it already has: AppWidgetHostView recycles the
         // view and reapplies the new RemoteViews onto it. A tree that changed shape lands one
         // view's action on another, throws, and leaves the launcher showing what it had — with a
-        // Chronometer the system goes on ticking, counting a session that ended. This is the
+        // Chronometer the system keeps ticking, counting a session that ended. This is the
         // regression: it fails with "FrameLayout doesn't have method: setMaxLines" if the
         // connected and disconnected rows stop composing to the same shape.
         val view = compose(openSince = now - hour).apply(app, FrameLayout(app))

@@ -33,9 +33,9 @@ import org.robolectric.annotation.Config
 import java.time.Duration
 
 /**
- * The service is the only thing in the app that ever sees a wired plug or measures playback, and
- * it is the one component that keeps running while nobody is looking — so what matters is that
- * the audio callbacks reach the database and that the minute tick keeps the session alive.
+ * The only thing that sees a wired plug or measures playback, and the one component that keeps
+ * running unwatched — audio callbacks must reach the database, and the minute tick must keep the
+ * session alive.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
@@ -54,21 +54,20 @@ class TrackingServiceTest {
     fun setUp() = runBlocking {
         // syncWithSystem() reaches WorkManager, whose androidx.startup initializer never runs here.
         WorkManagerTestInitHelper.initializeTestWorkManager(app)
-        // Without `specialUse` the Play build needs Bluetooth access before it will run the
-        // service at all, and this test is about what the service does, not about that rule.
+        // Without `specialUse` Play needs Bluetooth access to run the service; this test is
+        // about the service, not that rule.
         shadowOf(app).grantPermissions(Manifest.permission.BLUETOOTH_CONNECT)
         db.deviceDao().deleteAll()
-        // The service only ever runs in detailed mode; with the setting off its first sync would
-        // close, as untracked, every session its own audio callback had just opened.
+        // The service only runs in detailed mode; off, its first sync would close as untracked
+        // every session its own audio callback just opened.
         app.container.settings.setDetailedTracking(true)
         shadowOf(audioManager).setOutputDevices(emptyList())
-        // `TrackingController.bootAt()` is the wall clock minus SystemClock.elapsedRealtime(), and
-        // only the first of those two moves on its own here: Robolectric's elapsed clock starts at
-        // zero and advances only when a test idles the looper forward. So the fake phone reads as
-        // having booted a moment ago, and that moment creeps forward in real time — a session
-        // opened 30 ms before a reconcile looks pre-boot to it, is closed as RECOVERED, and the
-        // reconnect grace then refuses to reopen it. On a busy machine that is most of a test.
-        // Booting an hour ago puts every session this class opens comfortably after it.
+        // `TrackingController.bootAt()` is the wall clock minus SystemClock.elapsedRealtime().
+        // Robolectric's elapsed clock starts at zero and only advances when a test idles the
+        // looper, so the fake phone reads as booted a moment ago and that moment creeps forward
+        // in real time: a session opened 30 ms before a reconcile then looks pre-boot, gets
+        // closed as RECOVERED, and the reconnect grace refuses to reopen it — on a busy machine,
+        // most of a test. Booting an hour ago puts every session here comfortably after it.
         shadowOf(Looper.getMainLooper()).idleFor(Duration.ofHours(1))
         controller = Robolectric.buildService(TrackingService::class.java)
     }
@@ -94,8 +93,7 @@ class TrackingServiceTest {
 
     /**
      * The first sync finishes on Room's threads, and only then does the tick loop reach its
-     * `delay`. Idling the looper forward before that steps straight over the tick, which is
-     * scheduled against the clock as it is when the loop finally gets there.
+     * `delay`. Idling the looper before that steps over the tick.
      */
     private fun awaitFirstSync() {
         settle("the first sync") {
@@ -110,11 +108,11 @@ class TrackingServiceTest {
         outputDevice(AudioDeviceInfo.TYPE_WIRED_HEADPHONES, productName = "Plugged in")
 
     /**
-     * A Bluetooth output that is not headphones, for the ignore list to be about something.
+     * A Bluetooth output that isn't headphones, giving the ignore list something to be about.
      *
-     * The audio stack's view of a device carries no class, so [AudioDevices.identityOf] cannot tell
-     * this from a headset the way the ACL broadcast's view can — which is exactly why unticking it
-     * in settings is the only thing that keeps it out, and why it still reaches the service.
+     * The audio stack's device view carries no class, so [AudioDevices.identityOf] can't tell it
+     * from a headset the way the ACL broadcast's view can — it still reaches the service, and
+     * unticking it in settings is the only way to keep it out.
      */
     private fun speaker() =
         outputDevice(AudioDeviceInfo.TYPE_BLUETOOTH_A2DP, "XX:XX:XX:XX:11:22", "Kitchen speaker")
@@ -155,8 +153,8 @@ class TrackingServiceTest {
         ?.extras?.getCharSequence("android.text")?.toString()
 
     /**
-     * The notification carries how long the pair has been connected, and that runs on the wall
-     * clock rather than the looper's, so the assertion is on everything around the duration.
+     * The notification's duration runs on the wall clock, not the looper's, so this asserts
+     * everything around it.
      */
     private fun assertNotificationReads(plural: Int, count: Int) {
         val blank = "\u0000"
@@ -170,12 +168,11 @@ class TrackingServiceTest {
     }
 
     /**
-     * Like [settle], but moving the clock a tick on every round.
+     * Like [settle], but moving the clock a tick each round.
      *
-     * The tick loop is armed asynchronously: it starts once the open-session flow reports there
-     * is something to watch, which is a Room invalidation behind the write that opened the
-     * session. A single clock jump that lands before the loop reaches its `delay` would schedule
-     * the tick past the moment we had just advanced to, and nothing would ever come due.
+     * The tick loop arms asynchronously once the open-session flow reports something to watch — a
+     * Room invalidation behind the write that opened the session. A clock jump before the loop
+     * reaches its `delay` would schedule the tick past the new moment, so nothing comes due.
      */
     private fun settleAcrossTicks(what: String, until: () -> Boolean) {
         repeat(500) {
@@ -189,11 +186,10 @@ class TrackingServiceTest {
     /**
      * Reads [value] once the service has stopped changing it.
      *
-     * A [settle] returns on the first moment its condition holds, which for anything the service
-     * does in more than one step is the middle of the story — the notification, the heartbeat and
-     * the widgets all land behind the write that prompted them. Nothing here moves the clock and
-     * the watcher only banks on a tick or an edge, so a value that has held across several drained
-     * rounds is not going to move again.
+     * [settle] returns the first moment its condition holds, mid-story for anything done in
+     * several steps — the notification, heartbeat and widgets land behind the write that
+     * prompted them. Nothing here moves the clock, and the watcher only banks on a tick or an
+     * edge, so an unchanged value across several drained rounds will not move again.
      */
     private fun <T> settled(what: String, value: () -> T): T {
         var last = value()
@@ -210,8 +206,8 @@ class TrackingServiceTest {
     }
 
     /**
-     * [PlaybackWatcher] measures wall-clock milliseconds, which idling the looper does not move —
-     * so a slice of real time has to pass before a tick has anything to credit.
+     * [PlaybackWatcher] measures wall-clock ms, which idling the looper doesn't move, so real
+     * time must pass before a tick has anything to credit.
      */
     private fun playFor(realMillis: Long) {
         Thread.sleep(realMillis)
@@ -292,9 +288,9 @@ class TrackingServiceTest {
     }
 
     /**
-     * The tick idles while nothing is connected, and what wakes it is the open-session flow
-     * rather than this service's own audio callback — so a session the manifest Bluetooth
-     * receiver opened, which the service never saw arrive, is still kept alive by it.
+     * The tick idles while nothing is connected; the open-session flow wakes it, not the audio
+     * callback — so a session the manifest Bluetooth receiver opened, unseen by the service, is
+     * still kept alive.
      */
     @Test
     fun `a session the service never saw open is heartbeaten all the same`() {
@@ -318,14 +314,14 @@ class TrackingServiceTest {
         disconnect(buds())
         settle("the session to close") { sessions().single().disconnectedAt != null }
 
-        // The close reaches the notification a Room round trip after it reaches the table, so
-        // reading the text straight after the session closed reads what the connect had posted.
+        // The close reaches the notification a Room round trip after the table, so reading the
+        // text right after the session closed reads what the connect had posted.
         settle("the notification to go idle") {
             notificationText() == app.getString(R.string.notification_idle)
         }
 
-        // Nothing is connected: a tick here would heartbeat an empty table and re-post an
-        // unchanged notification, which is the wakeup a minute this loop exists to avoid.
+        // Nothing connected: a tick would heartbeat an empty table and re-post an unchanged
+        // notification — the wasted wakeup this loop avoids.
         val quiet = sessions().single().heartbeatAt
         shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(5 * TICK))
         assertEquals(app.getString(R.string.notification_idle), notificationText())
@@ -378,14 +374,13 @@ class TrackingServiceTest {
     }
 
     /**
-     * A wired plug event reaches nothing but this service — no manifest receiver, no worker — so
-     * the sessions it writes itself are the ones that used to land unannounced: the app and the
-     * notification changed and the home-screen widgets kept the previous figures until something
-     * unrelated happened to redraw them.
+     * A wired plug event reaches only this service — no manifest receiver, no worker — so its own
+     * sessions used to land unannounced: app and notification changed, but home-screen widgets
+     * kept stale figures until something unrelated redrew them.
      *
-     * The redraw itself is a Glance call into the launcher's process and nothing here hosts a
-     * widget, so what this asserts on is the other half of the same announcement — the heartbeat
-     * that only exists while a session is open, and that a plug event was equally not scheduling.
+     * The redraw is a Glance call into the launcher's process, which nothing here hosts, so this
+     * asserts the other half instead — the heartbeat that exists only while a session is open,
+     * which a plug event equally wasn't scheduling.
      */
     @Test
     fun `a session the service opened itself is announced like any other`() {
@@ -410,11 +405,11 @@ class TrackingServiceTest {
     }
 
     /**
-     * Plays for a slice that only the *next* edge can bank.
+     * Plays for a slice only the *next* edge can bank.
      *
-     * The watcher measures wall-clock milliseconds, so real time has to pass; idling the looper
-     * without moving it forward is what keeps a tick from banking the slice first, which is the
-     * whole point — each of the three tests below is about an edge that used to drop it.
+     * The watcher measures wall-clock ms, so real time must pass; idling the looper without
+     * moving it forward stops a tick from banking the slice first — the point, since the three
+     * tests below are each about an edge that used to drop it.
      */
     private fun playUntickedFor(realMillis: Long) {
         Thread.sleep(realMillis)
@@ -435,9 +430,9 @@ class TrackingServiceTest {
         settle("the session to open") { sessions().isNotEmpty() }
         val atLastTick = creditedAtLastTick()
 
-        // onDestroy is the only thing that can bank this slice, and the write it launches has to
-        // outlive the lifecycle scope the same method cancels — launched on that scope it started,
-        // suspended on the database and was cancelled, so every service stop lost the part-minute.
+        // Only onDestroy can bank this slice, and the write it launches must outlive the
+        // lifecycle scope that same method cancels — every stop used to launch, suspend on the
+        // database, then get cancelled, losing the part-minute.
         playUntickedFor(50)
         stop()
 
@@ -449,10 +444,10 @@ class TrackingServiceTest {
     }
 
     /**
-     * The watcher's own callback edge, and the only credit here that nothing can wait for: it
-     * fires whenever any app on the phone changes a player, from a handler rather than from a
-     * coroutine, so it banks on the app-lifetime scope instead of the service's. Music simply
-     * stopping is enough — no tick, no plug event, nothing else running.
+     * The watcher's own callback edge — the only credit here nothing waits for. It fires whenever
+     * any app changes a player, from a handler rather than a coroutine, banking on the
+     * app-lifetime scope instead of the service's. Music stopping alone is enough: no tick, no
+     * plug event.
      */
     @Test
     fun `music stopping banks what was played without waiting for a tick`() {
@@ -460,16 +455,16 @@ class TrackingServiceTest {
         start()
         connect(buds())
         // The *notification*, not the row. `playbackTargetKey` is assigned after `onConnected`
-        // returns, and the row exists before that — so a callback landing in between would find
-        // no target and drop its slice, which on a loaded machine is most of the window. The
-        // notification is refreshed after the whole loop, so it is proof the assignment happened.
+        // returns, but the row exists earlier — a callback landing in between finds no target and
+        // drops its slice, most of the window on a loaded machine. The notification refreshes
+        // after the whole loop, proving the assignment happened.
         settle("the connect to be finished with") {
             notificationText() != app.getString(R.string.notification_idle) && sessions().isNotEmpty()
         }
 
         playUntickedFor(50)
         // Nothing playing anywhere: the callback ends the span and hands back the whole slice,
-        // floor or no floor, which is the branch `MIN_BANKED_SLICE_MS` must never swallow.
+        // floor or no floor — the branch `MIN_BANKED_SLICE_MS` must never swallow.
         shadowOf(audioManager).setIsMusicActive(false)
         shadowOf(audioManager).setActivePlaybackConfigurationsFor(emptyList(), true)
 
@@ -487,8 +482,8 @@ class TrackingServiceTest {
         settle("the session to open") { sessions().isNotEmpty() }
         val atLastTick = creditedAtLastTick()
 
-        // Playback is credited to whatever session the pair has *open*, so banking this slice
-        // after the disconnect found nothing to write it to and dropped it on the floor.
+        // Playback is credited to whatever session the pair has *open*, so this slice, banked
+        // after the disconnect, used to find nothing to write it to and drop on the floor.
         playUntickedFor(50)
         disconnect(buds())
         settle("the session to close") { sessions().single().disconnectedAt != null }
@@ -505,8 +500,8 @@ class TrackingServiceTest {
         settle("the first session to open") { sessions().isNotEmpty() }
         val atLastTick = creditedAtLastTick()
 
-        // A second pair plugged in without unplugging the first. The slice since the last tick was
-        // played on the buds; moving the target used to discard it rather than credit it.
+        // A second pair plugged in without unplugging the first. The slice since the last tick
+        // was played on the buds; moving the target used to discard rather than credit it.
         playUntickedFor(50)
         connect(wired())
         settle("the second session to open") { sessions().size == 2 }
@@ -517,13 +512,12 @@ class TrackingServiceTest {
     }
 
     /**
-     * The other half of the swap above, which is where the target used to be stranded.
+     * The other half of the swap above, where the target used to be stranded.
      *
-     * Unplugging the pair that holds it left it cleared with nothing to take over, so a pair that
-     * had never gone anywhere stopped being measured — silently, with its session still open and
-     * its connected time still counting. Nothing would say so again either: the audio callback only
-     * reports *changes* after its first delivery, so the buds were unmeasured until they were
-     * disconnected and reconnected.
+     * Unplugging the pair that held it left the target cleared with nothing to take over, so a
+     * pair that went nowhere stopped being measured — silently, session still open, connected
+     * time still counting. The audio callback reports only *changes* after its first delivery, so
+     * the buds stayed unmeasured until disconnected and reconnected.
      */
     @Test
     fun `unplugging one of two pairs leaves the other still measured`() {
@@ -537,9 +531,9 @@ class TrackingServiceTest {
         disconnect(wired())
         settle("the wired session to close") { sessions().count { it.disconnectedAt != null } == 1 }
 
-        // The one still open is the buds', by position rather than by index: the two connects can
-        // land in the same millisecond, and `getAll` orders by `connectedAt`, so `first()` is a
-        // coin toss between them.
+        // The one still open is the buds', by state rather than index: the two connects can land
+        // in the same millisecond, and `getAll` orders by `connectedAt`, making `first()` a coin
+        // toss between them.
         val buds = { sessions().single { it.disconnectedAt == null } }
         val onBuds = settled("what the buds hold once the wired pair is gone") { buds().playingMs!! }
         playUntickedFor(50)
@@ -548,9 +542,8 @@ class TrackingServiceTest {
 
     /**
      * A device unticked in Settings › devices opens no session, so it has nothing to be credited —
-     * and taking the playback target anyway left whatever *was* playing unmeasured for as long as
-     * it stayed connected. A car stereo, which is the case the ignore list is written for, holds it
-     * for a whole drive.
+     * taking the playback target anyway left whatever *was* playing unmeasured for as long as it
+     * stayed connected. A car stereo — the case the ignore list is for — holds it a whole drive.
      */
     @Test
     fun `a device the user ignores does not take playback off the pair that is playing`() {
@@ -559,8 +552,8 @@ class TrackingServiceTest {
         start()
         connect(buds())
         settle("the session to open") { sessions().isNotEmpty() }
-        // Proof the buds are being measured at all before the speaker arrives; without it this
-        // could pass on a service that never credited anything.
+        // Proves the buds are measured before the speaker arrives; without it, this could pass
+        // on a service that never credited anything.
         creditedAtLastTick()
 
         connect(speaker())
@@ -570,9 +563,9 @@ class TrackingServiceTest {
             settled("the session count") { sessions().size },
         )
 
-        // Read *after* the speaker is on, not before: the connect banks the slice accrued up to
-        // that moment to the buds either way, so a baseline taken earlier is cleared by the very
-        // edge this test is about and the assertion passes without measuring anything.
+        // Read *after* the speaker is on, not before: the connect banks the accrued slice to the
+        // buds either way, so an earlier baseline is cleared by the edge this test is about, and
+        // the assertion would pass without measuring anything.
         val onBuds = settled("what the buds hold once the speaker is on") {
             sessions().single().playingMs!!
         }
@@ -585,8 +578,8 @@ class TrackingServiceTest {
     @Test
     fun `a foreground start the platform refuses stops the service rather than waiting to be killed`() {
         // A service that never reaches startForeground is killed with an ANR-shaped crash a few
-        // seconds later. Standing down deliberately loses detailed tracking until the next sync,
-        // which is the recoverable half of a bad situation.
+        // seconds later. Standing down loses detailed tracking until the next sync — the
+        // recoverable half.
         shadowOf(service).setThrowInStartForeground(
             IllegalStateException("startForeground not allowed"),
         )

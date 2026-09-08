@@ -14,12 +14,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
 /*
- * One tonal palette, seeded from the cyan-blue the launcher icon is drawn on. The tone numbers in
- * the names are Material's: 40/90/10 carry a light scheme, 80/30/90 the dark one.
+ * One tonal palette, seeded from the cyan-blue the launcher icon is drawn on. Tone numbers in the
+ * names are Material's: 40/90/10 for the light scheme, 80/30/90 for the dark.
  *
- * This used to be three colours passed to `lightColorScheme()`, which quietly left every
- * container role at Material's default purple — a blue app with lilac chips. Roles come in sets;
- * overriding one member of a set and not the rest is what produced that.
+ * Used to be three colours passed to `lightColorScheme()`, which quietly left every container
+ * role at Material's default purple — a blue app with lilac chips. Roles come in sets; overriding
+ * one member and not the rest produced that.
  */
 private val Primary10 = Color(0xFF001E2C)
 private val Primary20 = Color(0xFF00344B) // also @color/ic_launcher_background
@@ -43,8 +43,8 @@ private val Tertiary80 = Color(0xFFCBC1E9)
 private val Tertiary90 = Color(0xFFE7DEFF)
 
 // Not private: the home-screen widgets have their own theme entry point (glance's GlanceTheme
-// cannot be nested inside this one) and it wraps these two schemes, so the app and the widgets
-// cannot end up on different palettes.
+// can't nest inside this one) and wrap these two schemes, so app and widgets can't end up on
+// different palettes.
 internal val LightColors = lightColorScheme(
     primary = Primary40,
     onPrimary = Color.White,
@@ -115,9 +115,9 @@ internal val DarkColors = darkColorScheme(
 fun YlihTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     /**
-     * Off for the Play listing screenshots only. Dynamic colour resolves to whatever the user's
-     * wallpaper says, and under Robolectric that is the AOSP default — nobody's real phone. The
-     * store images show the palette above, which is the app's own identity.
+     * Off only for the Play listing screenshots. Dynamic colour resolves to the user's wallpaper,
+     * and under Robolectric that's the AOSP default — nobody's real phone. The store images show
+     * the palette above, the app's own identity.
      */
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit,
@@ -134,9 +134,9 @@ fun YlihTheme(
 
     MaterialExpressiveTheme(
         colorScheme = colors,
-        // The expressive scheme is springier and slightly overshoots. It is the whole point of
-        // the M3 Expressive update, and it costs nothing here because every animation in the app
-        // is a component default.
+        // The expressive scheme is springier and slightly overshoots — the whole point of the M3
+        // Expressive update — and costs nothing here, since every animation in the app is a
+        // component default.
         motionScheme = MotionScheme.expressive(),
         content = content,
     )

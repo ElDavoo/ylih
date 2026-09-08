@@ -33,15 +33,15 @@ import java.util.Locale
  *
  *     ./gradlew :app:recordRoborazziPlayReleaseTest
  *
- * Outside a record task Roborazzi's capture calls do nothing, so this costs one composition in the
- * ordinary unit-test run and produces no files.
+ * Outside a record task Roborazzi's capture calls do nothing, so this costs one composition in
+ * the ordinary unit-test run and writes no files.
  *
  * The screen is 1080x1920: Play wants phone screenshots at a 9:16 ratio, and a Pixel-shaped
  * 1080x2400 is taller than that.
  *
- * Every label is looked up as a resource rather than typed in, so one implementation serves every
- * language the app ships — see the subclasses at the bottom. The JVM default locale is set to
- * match the resource qualifier because `ui/Format.kt` puts each duration and date through
+ * Every label is looked up as a resource rather than typed in, so one implementation serves
+ * every shipped language — see the subclasses below. The JVM default locale is set to match the
+ * resource qualifier, since `ui/Format.kt` puts each duration and date through
  * `Locale.getDefault()`, which no resource qualifier reaches.
  *
  * See docs/play-store.md for what happens to these files.
@@ -63,7 +63,7 @@ abstract class StoreScreenshots(
         app = ApplicationProvider.getApplicationContext()
 
         // Ungranted Bluetooth makes the Play build render a red "detailed tracking unavailable"
-        // block in Settings — a true state, but not the one to put in front of a reviewer.
+        // block in Settings — true, but not what to put in front of a reviewer.
         shadowOf(app as Application).grantPermissions(
             Manifest.permission.BLUETOOTH_CONNECT,
             Manifest.permission.POST_NOTIFICATIONS,
@@ -73,13 +73,13 @@ abstract class StoreScreenshots(
             app.container.database.deviceDao().deleteAll()
             DemoData.seed(app.container.database, System.currentTimeMillis())
             // Wired headphones and the playback share only exist in detailed mode, and the demo
-            // data has both, so the settings shot has to agree with the stats shot.
+            // data has both, so the settings shot must agree with the stats shot.
             app.container.settings.setDetailedTracking(true)
             // Otherwise every shot is taken through the first-run welcome dialog.
             app.container.settings.setOnboardingDone(true)
-            // And the hibernation prompt is the next thing that opens over the app once the
-            // welcome is out of the way — Robolectric reports hibernation as ENABLED, so every
-            // shot would otherwise be of that dialog rather than of the screen behind it.
+            // The hibernation prompt opens next once the welcome is dismissed — Robolectric
+            // reports hibernation as ENABLED, so every shot would otherwise show that dialog
+            // instead of the screen behind it.
             app.container.settings.setHibernationAsked(true)
         }
     }
@@ -136,9 +136,9 @@ abstract class StoreScreenshots(
         compose.onAllNodesWithText(ANCHOR)[0].performClick()
         awaitText(string(R.string.pair_lifetime))
         // The section is below the daily chart and the sessions, so the unscrolled pair shot
-        // cannot show it — and it is the one thing on that page a battery-stats screen has no
+        // can't show it — and it's the one thing on that page a battery-stats screen has no
         // answer for, so it gets a frame of its own.
-        // The page is a LazyColumn, so the section is not in the semantics tree at all until it is
+        // The page is a LazyColumn, so the section is absent from the semantics tree until
         // scrolled to — waiting for its text would time out rather than find it.
         compose.onAllNodes(hasScrollAction())[0]
             .performScrollToNode(hasText(string(R.string.pair_charge_cycles)))
@@ -147,9 +147,8 @@ abstract class StoreScreenshots(
 
     private fun showApp() {
         compose.setContent {
-            // Deliberately the app's normal theme, dynamic colours and all: on Robolectric those
-            // resolve to the AOSP default palette, which is coherent and is what a phone on a
-            // stock wallpaper shows.
+            // The app's normal theme, dynamic colours and all: on Robolectric those resolve to
+            // the AOSP default palette, coherent and what a phone on a stock wallpaper shows.
             YlihTheme {
                 YlihNavHost()
             }
@@ -179,12 +178,12 @@ abstract class StoreScreenshots(
 /*
  * One concrete class per Play listing language, generated from the language list — the resource
  * qualifier picks the translation, the language tag localises what `ui/Format.kt` puts through
- * `Locale.getDefault()`, and the last argument names the output directory, which must match the
+ * `Locale.getDefault()`, and the last argument names the output directory, matching the
  * `fastlane/metadata/android/` directory for the same listing.
  *
- * Three of the qualifiers use Android's legacy language codes: `in` for Indonesian, `iw` for
- * Hebrew. The resource directories are named the same way, so they agree; the JVM tags next to
- * them are the modern ones, which is what `Locale.forLanguageTag` expects.
+ * Three qualifiers use Android's legacy language codes: `in` for Indonesian, `iw` for Hebrew.
+ * Resource directories keep those names; the JVM tags beside them are the modern ones
+ * `Locale.forLanguageTag` expects.
  */
 
 @RunWith(RobolectricTestRunner::class)
@@ -407,8 +406,8 @@ class VietnameseStoreScreenshots : StoreScreenshots(Locale.forLanguageTag("vi-VN
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
 @Config(
     sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE],
-    // The translation lives in values-b+zh+Hans, which serves every Simplified locale rather
-    // than China alone; naming the script here does not depend on zh-CN implying Hans.
+    // The translation lives in values-b+zh+Hans, serving every Simplified locale rather than
+    // China alone; naming the script here doesn't depend on zh-CN implying Hans.
     qualifiers = "b+zh+Hans-w360dp-h640dp-xxhdpi",
 )
 class SimplifiedChineseStoreScreenshots : StoreScreenshots(Locale.forLanguageTag("zh-CN"), "zh-CN")

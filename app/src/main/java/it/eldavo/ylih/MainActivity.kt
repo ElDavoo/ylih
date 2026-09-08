@@ -24,16 +24,16 @@ class MainActivity : ComponentActivity() {
      * Pair ids arriving from a home-screen widget tap.
      *
      * Conflated and consumed once: a rotation must not replay the tap that started the activity,
-     * and a second tap on a different row while the app is already open must re-navigate rather
-     * than stack another copy of it — which is what `singleTop` plus [onNewIntent] arrange.
+     * and a second tap on a different row while the app is open must re-navigate rather than stack
+     * another copy — what `singleTop` plus [onNewIntent] arrange.
      */
     private val openPair = Channel<Long>(Channel.CONFLATED)
 
     /**
-     * Hoisted to a field rather than built in [setContent].
+     * Hoisted to a field, not built in [setContent].
      *
      * `receiveAsFlow()` allocates a new object every call, and the content lambda runs on every
-     * recomposition — so the `LaunchedEffect` keyed on it downstream restarted each time,
+     * recomposition — so the downstream `LaunchedEffect` keyed on it restarted each time,
      * cancelling and re-collecting the channel. A `trySend` landing in that window is dropped, and
      * a conflated channel keeps nothing to redeliver: a widget tap that opened nothing.
      */
@@ -47,8 +47,8 @@ class MainActivity : ComponentActivity() {
 
     /**
      * Below Android 13 the app carries its own language setting, and a context only ever gets one
-     * configuration — the one it is attached with. Recreating the activity is what applies a
-     * change; see [AppLocale].
+     * configuration — the one it's attached with. Recreating the activity applies a change; see
+     * [AppLocale].
      */
     override fun attachBaseContext(newBase: Context) {
         super.attachBaseContext(AppLocale.wrap(newBase))
@@ -58,19 +58,18 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         // Only on a genuinely new launch: after a rotation the same intent is still attached, and
-        // acting on it again would drag the user back out of wherever they had navigated to.
+        // acting on it again would drag the user back out of wherever they'd navigated to.
         if (savedInstanceState == null) intent?.let(::offerPair)
         setContent {
             YlihTheme {
                 YlihNavHost(openPair = openPairFlow)
             }
         }
-        // The first run asks for Bluetooth itself, on a page that says what it is for, so doing it
-        // here as well would put a second prompt behind the one the user just answered. What is
-        // left for this to cover is every launch after that: an install upgraded from a version
-        // that asked in one unexplained batch, and a permission denied once that the user may
-        // since have changed their mind about. Android stops showing the prompt after two
-        // refusals, so this cannot nag.
+        // The first run asks for Bluetooth itself, on a page that says why, so asking here too
+        // would stack a second prompt behind the one just answered. What's left to cover is every
+        // later launch: an install upgraded from a version that asked in one unexplained batch,
+        // and a permission denied once that the user may since have reconsidered. Android stops
+        // showing the prompt after two refusals, so this can't nag.
         lifecycleScope.launch {
             if (container().settings.onboardingDoneNow()) requestMissingPermissions()
         }
@@ -96,9 +95,9 @@ class MainActivity : ComponentActivity() {
     private fun container() = (application as YlihApp).container
 
     /**
-     * Bluetooth only. Notifications are asked for by the detailed-tracking switch, which is the
-     * one thing in the app that posts one — asking here would be asking every install for a
-     * permission most of them never give anything to use.
+     * Bluetooth only. Notifications are asked for by the detailed-tracking switch, the one thing
+     * in the app that posts one — asking here would ask every install for a permission most never
+     * give anything to use.
      */
     private fun requestMissingPermissions() {
         val wanted = buildList {

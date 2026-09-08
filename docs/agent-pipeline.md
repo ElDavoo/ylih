@@ -1,8 +1,7 @@
 # The agent pipeline
 
-An issue filed here is planned, implemented, reviewed and merged without anyone touching it.
-This document is what it does, what you have to set up before it can, and which parts are
-load-bearing enough that changing them will break it quietly.
+An issue filed here is planned, implemented, reviewed and merged without anyone touching it. This
+document covers what it does, what to set up first, and which parts break quietly if changed.
 
 ## The shape
 
@@ -27,150 +26,130 @@ a queued turn displaced ──► agent:planned, no PR ──► agent-retry.yml
 agent:stop on issue or PR ──► agent-stop.yml ──► cancels runs, drafts the PR
 ```
 
-Nothing in it is a loop. Every file reacts to one event and returns; the cycle exists because a
-push re-triggers CI and review, and each of them can call the fix stage. What terminates it is
-the round counter in `agent-fix.yml`, not a condition anyone waits on.
+Nothing here loops. Every file reacts to one event and returns; a push re-triggers CI and review,
+and either can call the fix stage. The round counter in `agent-fix.yml` terminates the cycle, not
+a waited-on condition.
 
-The stages are separate workflow runs rather than jobs in one run for two reasons: the approval
-gate for an outside issue has to sit on each stage independently, and a stage that fails can be
-re-dispatched from the Actions tab without paying for the ones before it.
+Stages are separate workflow runs, not jobs in one run: the approval gate for an outside issue
+sits on each stage independently, and a failed stage can be re-dispatched from the Actions tab
+without repaying the ones before it.
 
 ## One agent at a time
 
-Every stage that runs Claude names the same concurrency group, `agent-pipeline`, and none of them
-cancels in progress. So the pipeline is a single file: plan, implement, review and both fix
-stages queue behind one another across issues as much as within one, and two agents never run at
-once no matter how many issues are open.
+Every stage that runs Claude names the same concurrency group, `agent-pipeline`, and none cancels
+in progress: plan, implement, review and both fix stages queue behind one another across issues as
+much as within one, so two agents never run at once no matter how many issues are open.
 
-**This is a token budget, not a correctness rule.** The subscription window is about five hours.
-Three agent runs sharing one window spend it three times as fast without any of them getting
-further, and what that looked like here was every stage stopping at its turn limit at the same
-moment — a window that bought several half-finished branches instead of one merged pull request.
-Serialised, the same window pays for runs that finish. The turn limits were doubled at the same
-time (implement 300, fix 240, escalation 400, Dependabot fix 240) and every stage pinned to
-`--model opus --effort medium`, which only makes sense once the window is not being split.
+**A token budget, not a correctness rule.** The subscription window is about five hours; three runs
+sharing it spend it three times as fast without getting further — here every stage hit its turn
+limit at once, buying several half-finished branches instead of one merged PR. Serialised, the same
+window pays for runs that finish. Turn limits doubled with it (implement 300, fix 240, escalation
+400, Dependabot fix 240), every stage pinned to `--model opus --effort medium` — sensible only once
+the window isn't split.
 
-Job timeouts moved with the turn limits — 60 minutes to 120 wherever the budget doubled — and
-that pairing is load-bearing rather than housekeeping. A job the timeout kills skips every
-remaining step, *including* the stall record, so the retry sweep never learns the stage stopped
-and the issue sits looking planned and idle. A turn limit reached is the failure that gets
-retried; a wall-clock timeout is the one that does not.
+Job timeouts moved with the turn limits (60 to 120 minutes wherever the budget doubled), and the
+pairing matters: a job the timeout kills skips every remaining step, *including* the stall record,
+so the retry sweep never learns the stage stopped and the issue sits looking planned and idle. A
+turn limit reached gets retried; a wall-clock timeout does not.
 
-Two consequences worth knowing:
+Two consequences:
 
-**`agent-fix.yml` is deliberately not in the group.** It is a reusable workflow, so it runs
-inside its caller's run — and the caller already holds `agent-pipeline`. Asking for the same
-group from a job inside that run queues it behind a slot its own parent is holding and will not
-release, which deadlocks until the run times out. Serialising the fix stage against the rest of
-the pipeline is the caller's job; the per-issue group it keeps only has to hold its two callers
-off each other. `agent-fix-ci.yml` therefore declares the group at *workflow* level, not on the
+**`agent-fix.yml` is not in the group.** As a reusable workflow it runs inside its caller's run,
+which already holds `agent-pipeline`; asking for the same group from a job inside that run would
+queue behind a slot its own parent holds and won't release — a deadlock until the run times out.
+Serialising the fix stage is the caller's job; the per-issue group only has to hold its two
+callers off each other. So `agent-fix-ci.yml` declares the group at *workflow* level, not on the
 job that calls the fix stage.
 
-**GitHub's queue depth for a group is one.** A group holds one run in flight and exactly one
-pending; a *third* arrival cancels the pending one rather than lining up behind it, and does so
-before that run's first step, so nothing it would have written gets written. Filing issues a few
-minutes apart avoids it entirely. When it does happen:
+**GitHub's queue depth for a group is one.** A group holds one run in flight and one pending; a
+*third* arrival cancels the pending one before its first step rather than lining up behind
+it — nothing it would have written gets written. Filing issues a few minutes apart avoids it. When
+it happens:
 
-- the **implement** stage is recovered. It swaps `agent:planned` for `agent:working` only once
-  its pull request exists, so an open issue still labelled `agent:planned` with no branch of its
-  own is exactly the signature of a turn that never came — which is what `agent-retry.yml`'s
-  second sweep looks for, and what turns the group from a serial drop into a serial queue.
-- the **plan** stage is not. A plan that never ran leaves nothing behind to sweep for, so a
-  displaced one has to be re-run from the Actions tab.
+- **implement** recovers: it swaps `agent:planned` for `agent:working` only once its PR exists, so
+  `agent:planned` with no branch signals a dropped turn — what `agent-retry.yml`'s second sweep
+  looks for, turning the drop into a queue.
+- **plan** does not: a plan that never ran leaves nothing to sweep for, so a displaced one needs a
+  manual re-run from the Actions tab.
 
-**A run whose jobs would all skip still queues for the group**, which is the second thing that
-crowds that one pending slot and the one that showed up first. `agent-fix-ci.yml` holds the group
-from its first job — it has to, because the stage it calls is a reusable workflow and so runs
-inside this run — and `workflow_run` fires it for every Android CI run, including the one per
-push to `main`. The run queued before anything evaluated its jobs' conditions, and only then did
-`context` skip. Observed as run 33992872153: queued behind the implement stage, `head_branch`
-`main`, nothing to do. Long enough in that slot to displace a pending `Agent · review`, whose
-check would then never report. It now filters on `branches: ['agent/issue-*']` at the trigger, so
-no run is created at all; the trigger cannot filter on conclusion, so a *green* CI run on an
-agent branch still arrives and still skips, which is rare and only while the branch is being
-worked on anyway.
+**A run whose jobs all skip still queues for the group.** `agent-fix-ci.yml` holds the group from
+its first job (it must — the stage it calls is a reusable workflow running inside this run), and
+`workflow_run` fires it for every Android CI run, including pushes to `main`; a run queues before
+its jobs' conditions are evaluated, and only then skips. Run 33992872153 queued behind the
+implement stage with `head_branch` `main` and nothing to do — long enough to displace a pending
+`Agent · review`, whose check then never reported. It now filters on `branches: ['agent/issue-*']`
+at the trigger, so no run is created at all; since the trigger can't filter on conclusion, a
+*green* CI run on an agent branch still arrives and skips, rare and only mid-work.
 
-`Claude Code Review` joined the group too, and stopped running on agent branches at the same
-time. Agent pull requests are opened with `AGENT_PUSH_TOKEN`, so their author is you, so that
-workflow used to fire on every one of them alongside `Agent · review` — two Claude reviewers on
-the same diff for one verdict, and `Agent · review` runs the same plugin itself, so nothing was
-lost by dropping the second copy. Under a serial group it also cost more than tokens: two
-arrivals per push meant the waiting one was routinely displaced, and half the time the one
-displaced was the merge gate, whose check then never reports and leaves auto-merge waiting on it
-forever.
+`Claude Code Review` joined the group too and stopped running on agent branches at the same time.
+Agent PRs are opened with `AGENT_PUSH_TOKEN`, so their author is you — that workflow used to fire
+alongside `Agent · review`, two Claude reviewers on one diff for one verdict, and since both run
+the same plugin, dropping the second copy lost nothing. Under a serial group it cost more than
+tokens: two arrivals per push routinely displaced the waiting one, half the time the merge gate,
+leaving auto-merge waiting forever.
 
-**Excluding it in the job's `if:` did not stop it queueing** — the same trap as above, found the
-same way. Runs 33997122850 and 34009431987, both on `agent/issue-32`, ended `cancelled` rather
-than `skipped`; the same workflow on a Dependabot branch skipped in five seconds, because it
-reached a free slot instead of a pending one. `agent-fix-ci.yml`'s answer does not transfer:
-`pull_request`'s `branches:` filter matches the **base** branch, and every agent pull request
-targets `main`, so there is no head-branch filter to write. What works instead is moving
-`concurrency:` off the workflow and onto the job, because a job skipped by its `if:` never asks
-for the group at all. That is only available to a workflow that calls no reusable workflow —
-which is exactly the constraint that pins the group at workflow level in `agent-fix-ci.yml`, so
-the two files now sit on opposite sides of it for one reason. **A run that ends `cancelled` where
-you expected `skipped` is this.**
+**Excluding it in the job's `if:` did not stop it queueing** — found the same way. Runs 33997122850
+and 34009431987, both on `agent/issue-32`, ended `cancelled` rather than `skipped`; the same
+workflow on a Dependabot branch skipped in five seconds, reaching a free slot instead of a pending
+one. `agent-fix-ci.yml`'s fix doesn't transfer, since `pull_request`'s `branches:` filter matches
+the **base** branch and every agent PR targets `main`, leaving no head-branch filter to write.
+Instead: move `concurrency:` off the workflow onto the job, since a job skipped by its `if:` never
+asks for the group — which only works for a workflow calling no reusable workflow, the same
+constraint that pins the group at workflow level in `agent-fix-ci.yml`, so the two files sit on
+opposite sides of it. **A run ending `cancelled` where you expected `skipped` is this.**
 
-**The review's verdict pass runs before its inline pass**, and the order is the point. The two are
-independent — the verdict re-reads the diff rather than the comments — but the verdict is the one
-that fails the run, and a failed run discards what the inline pass already spent. Run
-33997123035 is the case: 6m43s on the inline pass, which posted nothing, then the verdict lost in
-ten seconds, and the retry re-ran both from the top. In the current order a stall costs ten
-seconds of the window. `Capture the findings for the fix stage` reads the inline comments back
-from the API and runs after both, so it is indifferent to which came first.
+**The review's verdict pass runs before its inline pass, on purpose.** The two are
+independent — the verdict re-reads the diff, not the comments — but the verdict fails the run, and
+a failed run discards what the inline pass already spent. Run 33997123035: 6m43s on the inline
+pass, which posted nothing, then the verdict lost in ten seconds, and the retry re-ran both from
+the top; in this order a stall costs ten seconds of the window. `Capture the findings for the fix
+stage` reads inline comments back from the API and runs after both, indifferent to order.
 
 ## Setup
 
-None of this works until all six are done — as of 2026-08-26 they are, on `ElDavoo/ylih`; what
-follows is the record of what was set and why, for the next repository or the next time one of
-them is quietly turned off.
+None of this works until all six are done — as of 2026-08-26 they are, on `ElDavoo/ylih`. Below is
+what was set and why, for the next repository or the next time one is quietly turned off.
 
 **1. A pull-request token.** Create a fine-grained PAT scoped to this repository only, with
 *Contents: read and write*, *Pull requests: read and write*, *Issues: read and write* and
 *Actions: read and write*. Store it as an **Actions** secret named `AGENT_PUSH_TOKEN`.
 
-Not for permissions — for triggering. A branch pushed with `GITHUB_TOKEN` **starts no workflow
-runs at all**, so Android CI would never run on the pull request and the armed auto-merge would
-wait forever for a check that cannot arrive. This is the same trap `CLAUDE.md` documents for
-`DEPENDABOT_PUSH_TOKEN`, arrived at from the other direction. `gh workflow run` has the same
-problem, which is why the plan stage dispatches with the PAT too.
+Not for permissions but triggering: `GITHUB_TOKEN` **starts no workflow runs at all**, so Android
+CI would never run on the pull request and the armed auto-merge would wait forever for a check
+that can't arrive — the same trap `CLAUDE.md` documents for `DEPENDABOT_PUSH_TOKEN`, from the other
+direction. `gh workflow run` has the same problem, so the plan stage dispatches with the PAT too.
 
 **2. The approval environment.** Settings → Environments → New environment → `agent-approval`.
 Tick *Required reviewers* and add yourself. Save.
 
-Any job carrying `environment: agent-approval` now queues instead of running, and shows as
-"Review pending deployments" on the run page with an Approve/Reject button. It waits 30 days.
-The queue happens **before the job's first step** — no checkout, no prompt, no token — which is
-the entire security argument for letting a public issue tracker drive this at all.
+Any job carrying `environment: agent-approval` now queues instead of running, shown as "Review
+pending deployments" on the run page with an Approve/Reject button, and waits 30 days. The queue
+happens **before the job's first step** — no checkout, no prompt, no token — the whole security
+argument for letting a public issue tracker drive this at all.
 
-**`AGENT_PUSH_TOKEN` must be a repository secret, not a secret on this environment.** The
-tempting hardening — scope the token to `agent-approval` so an unapproved job cannot read it —
-does not work here, and fails silently rather than loudly. An environment secret is readable
-only by a job that declares that environment, and the job that declares it is the *gate*, which
-does nothing but wait. The jobs that use the token carry no `environment:` key, by design: that
-is what lets your own issues skip the wait. So a token stored on the environment resolves to an
-empty string in every job that needs it, and the pipeline fails at `actions/checkout` for
-everybody.
+**`AGENT_PUSH_TOKEN` must be a repository secret, not a secret on this environment.** The tempting
+hardening — scoping the token to `agent-approval` so an unapproved job can't read it — fails
+silently: an environment secret is readable only by a job declaring that environment, and that job
+is the *gate*, which does nothing but wait. Jobs using the token carry no `environment:` key by
+design, so your own issues skip the wait — meaning a token stored on the environment resolves to an
+empty string wherever needed, and the pipeline fails at `actions/checkout` for everybody. That was
+the repository's actual state on day one, and the failure looks nothing like a permissions problem.
 
-This was the state the repository was actually in on the first day, and the failure looks nothing
-like a permissions problem.
-
-Nothing is lost by keeping it at repository level. The security property that matters is
-ordering — no runner starts before you approve — and that comes from the gate job, not from
-where the secret lives.
+Nothing is lost keeping it at repository level: the security property that matters is ordering —
+no runner starts before you approve — which comes from the gate job, not from where the secret
+lives.
 
 **3. Let Actions approve.** Settings → Actions → General → tick *Allow GitHub Actions to create
-and approve pull requests*. The review stage submits its approval with `GITHUB_TOKEN`, which is
-blocked from approving by default.
+and approve pull requests*. The review stage submits its approval with `GITHUB_TOKEN`, blocked
+from approving by default.
 
 **4. Squash message.** Settings → General → Pull Requests → *Default commit message* →
 **"Pull request title and description"**. Also tick *Allow auto-merge*.
 
-This is what keeps ten fix rounds out of `main`'s history. The default squash message
-concatenates every commit on the branch, so without this the wall of `fix round 7 (ci)` subjects
-lands in one commit instead of nine — tidier, but no more readable. With it, the squash commit is
-exactly the pull request title and body, which the review stage rewrites at approval time to
-describe what actually landed rather than what was originally planned.
+This keeps ten fix rounds out of `main`'s history. The default squash message concatenates every
+commit on the branch, so without it a wall of `fix round 7 (ci)` subjects lands in one commit
+instead of nine. With it, the squash commit is exactly the PR title and body, which the review
+stage rewrites at approval time to describe what landed rather than what was planned.
 
 **5. Labels.**
 
@@ -184,31 +163,28 @@ gh label create 'agent:working' --color fbca04 --description "Being implemented"
 ```
 
 **6. The `main protection` ruleset.** A *ruleset*, not legacy branch protection — the
-`/branches/main/protection` endpoint 404s on this repository, which is expected and not a sign
-anything is missing. Read it with:
+`/branches/main/protection` endpoint 404s here, as expected. Read it with:
 
 ```sh
 gh api repos/ElDavoo/ylih/rulesets/19763281
 ```
 
-It must carry both of these, and the second is the one easy to leave out:
+It must carry both of these, the second easy to leave out:
 
 - `required_status_checks` over every Android CI context, spelled exactly as the jobs report
-  them — the matrix legs are `build (classic, Classic)` and `build (play, Play)`, not
-  `build (classic)`, and there are three `instrumented` legs. `listing` matters more than it
-  looks: it is where actionlint runs, so it is the check that catches a broken agent workflow.
+  them — matrix legs are `build (classic, Classic)` and `build (play, Play)`, not
+  `build (classic)`, plus three `instrumented` legs. `listing` matters most: actionlint runs
+  there, so it's the check that catches a broken agent workflow.
 - a `pull_request` rule with `required_approving_review_count: 1`.
 
-**Without the approval rule the review stage is decorative.** Auto-merge waits for whatever the
-ruleset requires and nothing else, so a pull request would merge on green CI alone and the
-reviewer's verdict would never be consulted. The repository was in exactly that state when this
-pipeline was first set up.
+**Without the approval rule the review stage is decorative:** auto-merge waits only for whatever
+the ruleset requires, so a PR would merge on green CI alone with the reviewer's verdict never
+consulted — the repository's actual state at first.
 
-`dismiss_stale_reviews_on_push` is on, so an approval does not carry across a later fix round —
-the review stage re-runs on every `synchronize` and re-approves, which is what makes that safe.
+`dismiss_stale_reviews_on_push` is on, so an approval doesn't carry across a later fix round; the
+review stage re-runs and re-approves on every `synchronize`, which makes that safe.
 
-The admin bypass actor stays: it is what keeps this from gating your own direct pushes to
-`main`.
+The admin bypass actor stays, so this doesn't gate your own direct pushes to `main`.
 
 ## The two identities, and why there are two
 
@@ -217,15 +193,13 @@ The admin bypass actor stays: it is what keeps this from gating your own direct 
 | plan, implement, fix | `AGENT_PUSH_TOKEN` | you |
 | review | `GITHUB_TOKEN` | `github-actions[bot]` |
 
-They have to differ. GitHub refuses to let an identity approve its own pull request, so if the
-same token opened the PR and submitted the review, the approval would be rejected and nothing
-would ever merge. The implementer is the one that must be the PAT (see setup step 1), so the
-reviewer is the one that gets `GITHUB_TOKEN`.
+They have to differ: GitHub refuses to let an identity approve its own pull request, so if one
+token both opened the PR and submitted the review, the approval would be rejected and nothing
+would merge. The implementer must be the PAT (setup step 1), so the reviewer gets `GITHUB_TOKEN`.
 
-**The one assumption not yet verified in production:** that an approval from
-`github-actions[bot]` satisfies branch protection's "require 1 approval". If it turns out not
-to, the fix is to give the review stage its own identity — a GitHub App installed on the repo —
-and leave everything else as it is.
+**Not yet verified in production:** that an approval from `github-actions[bot]` satisfies branch
+protection's "require 1 approval". If not, the fix is giving the review stage its own identity —
+a GitHub App installed on the repo — and leaving everything else as is.
 
 ## Controls
 
@@ -239,216 +213,199 @@ and leave everything else as it is.
 | pick a stuck one back up | remove the label, re-run **Agent · implement** | any time |
 | jump the queue | run **Agent · retry** by hand from the Actions tab | when nothing is running |
 
-`no-agent` only works applied at creation, because `agent-plan.yml` fires on `issues: opened` and
-a label added a second later loses the race. That is what the issue template is for, and it is
-why `agent:stop` exists as the escape hatch that always works — it both blocks every stage from
-starting and cancels what is already running.
+`no-agent` only works applied at creation: `agent-plan.yml` fires on `issues: opened`, and a label
+added a second later loses the race — hence the issue template, and why `agent:stop` is the escape
+hatch that always works, blocking every stage from starting and cancelling whatever's running.
 
-There is a cap of **3 open agent pull requests**. Past that the plan stage declines with a
-comment rather than queueing, because the failure mode worth designing against is an evening of
-issue filing turning into twelve branches and twelve CI matrices. It is a cap on work in flight,
-not on work in progress — the concurrency group above already means only one of those three is
-ever being worked on.
+There's a cap of **3 open agent pull requests**; past that the plan stage declines with a comment
+rather than queueing, guarding against an evening of issue filing turning into twelve branches and
+twelve CI matrices. It caps work in flight, not in progress — the concurrency group already means
+only one of those three is ever being worked on.
 
 ## The rounds
 
-Fix rounds are counted in **pushes by the agent**, not in CI runs. The `instrumented` matrix is
-the one job in this repository that fails for reasons unrelated to the diff, and a flaky emulator
-must not be able to spend the budget of a branch that was fine.
+Fix rounds are counted in **pushes by the agent**, not CI runs: the `instrumented` matrix is the
+one job here that fails for reasons unrelated to the diff, and a flaky emulator must not spend the
+budget of a branch that was fine.
 
 - **1–8** — ordinary: read the failure, fix the cause.
-- **9** — escalation. Handed the full attempt history (`git log -p`) rather than the latest
-  failure, told explicitly that eight plausible-looking failures are evidence about the
-  *diagnosis*, and permitted to `git revert` and take a different route. It runs with a larger
-  turn budget. This exists because the way these loops actually fail is an agent applying
-  variations of a fix that never addressed the cause, and from inside any single round that is
-  indistinguishable from progress.
-- **10** — last ordinary round. On failure: draft the PR, label `agent:stuck`, and comment with
-  every round's subject and the final failure.
+- **9** — escalation. Handed the full attempt history (`git log -p`) instead of the latest
+  failure, told that eight plausible-looking failures are evidence about the *diagnosis*, and
+  permitted to `git revert` and take a different route, with a larger turn budget. These loops
+  fail by an agent applying variations of a fix that never addressed the cause —
+  indistinguishable from progress inside any single round.
+- **10** — last ordinary round. On failure: draft the PR, label `agent:stuck`, comment with every
+  round's subject and the final failure.
 
-Drafting is not cosmetic — it disarms auto-merge, which is precisely what you want at the moment
-the loop admits it is lost.
+Drafting isn't cosmetic — it disarms auto-merge, exactly what's wanted the moment the loop admits
+it's lost.
 
 ## When a stage stops before it finishes
 
-A Claude run can end without finishing — a usage limit is the common one, a cancelled runner or
-a GitHub incident the rest. Left alone this is the worst failure the pipeline has, and not
-because anything breaks.
+A Claude run can end without finishing — a usage limit is the common cause, a cancelled runner or
+GitHub incident the rest.
 
-Nothing corrupt ever reaches the branch: the commit and push steps come *after* the Claude step
-in every stage, so a run that dies leaves the working tree in the runner and the branch exactly
-as it was. The problem is the opposite. The pipeline advances on events, and a stage that never
-pushed emits none — so no CI run follows, no review follows, and nothing calls the fix stage
-again. The round counter does not move either, deliberately: it counts pushes, so a run that
-pushed nothing spends nothing, and the branch therefore never reaches round 10 and never gets
-drafted or labelled `agent:stuck`. It would simply go quiet, with auto-merge still armed and a
-red X in a tab nobody is watching — which is the one place this pipeline exists so you do not
-have to look.
+Nothing corrupt reaches the branch: the commit and push steps come *after* the Claude step in
+every stage, so a dying run leaves the working tree in the runner and the branch exactly as it was.
+The problem is the opposite: the pipeline advances on events, and a stage that never pushed emits
+none, so no CI run follows, no review follows, and nothing calls the fix stage again. The round
+counter doesn't move either — it counts pushes, so a run that pushed nothing spends nothing, and
+the branch never reaches round 10 or gets drafted or labelled `agent:stuck`. It would simply go
+quiet, auto-merge still armed, a red X in a tab nobody's watching.
 
-Two halves close it, and they are separate because a workflow cannot wake itself up.
+Two mechanisms close this, since a workflow can't wake itself up.
 
-**Detection, inside the stage.** Every Claude step is `continue-on-error`, so a failed run
-becomes a value rather than a dead job. `.github/actions/agent-stall` then labels the issue and
-pull request `agent:stalled` and comments with a machine-readable marker naming the run, and the
-step after it exits non-zero so everything downstream is skipped by the implicit `success()`.
+**Detection, inside the stage.** Every Claude step is `continue-on-error`, so a failed run becomes
+a value rather than a dead job. `.github/actions/agent-stall` labels the issue and pull request
+`agent:stalled`, comments with a machine-readable marker naming the run, and exits non-zero so
+everything downstream is skipped by the implicit `success()`.
 
 The condition tests `steps.<id>.outcome`, not `.conclusion`: `continue-on-error` rewrites
-`conclusion` to `success`, and `outcome` is what actually happened. It also checks the action's
-*own* `conclusion` output, which is a different thing that happens to share the name.
+`conclusion` to `success`, while `outcome` is what actually happened. It also checks the action's
+*own* `conclusion` output, a different thing that happens to share the name.
 
-`continue-on-error` is what makes the guard necessary. Without the `exit 1` the commit and push
-steps would run after a half-finished Claude run and push whatever was left on disk — so the
-guard is not tidiness, it is the thing that preserves the property in the first paragraph.
+`continue-on-error` is what makes the guard necessary: without the `exit 1`, the commit and push
+steps would run after a half-finished Claude run and push whatever was left on disk.
 
-**Retry, from outside.** `agent-retry.yml` runs on a schedule, finds `agent:stalled`, and
-re-runs the recorded run. Re-running the run rather than dispatching the stage afresh is the
-only handle that works for all four stages: the plan stage runs against `main` with no branch to
-find it by, and the fix stage is a reusable workflow that cannot be dispatched at all.
+**Retry, from outside.** `agent-retry.yml` runs on a schedule, finds `agent:stalled`, and re-runs
+the recorded run — the only handle that works for all four stages, since the plan stage runs
+against `main` with no branch to find it by, and the fix stage is a reusable workflow that can't
+be dispatched at all.
 
-It sweeps **every five hours**, matching the window a usage limit resets on. Hourly would spend
-a stage's worth of tokens four times over discovering the limit is still in force. After three
-stalls — about fifteen hours — it stops calling it a usage window and hands the branch over as
-`agent:stuck`, because past that point retrying forever hides a real failure behind a label that
-looks like it is being handled.
+It sweeps **every five hours**, matching the window a usage limit resets on; hourly would spend a
+stage's worth of tokens four times over discovering the limit still holds. After three stalls —
+about fifteen hours — it stops treating it as a usage window and hands the branch over as
+`agent:stuck`, since retrying forever hides a real failure behind a label that looks handled.
 
-The `session_id` output is worth knowing about here and is not yet used: a retry could
-`--resume` the stalled session rather than re-deriving the diagnosis. Worth adding if stalls
-turn out to be common.
+The `session_id` output is unused so far: a retry could `--resume` the stalled session instead of
+re-deriving the diagnosis, worth adding if stalls turn out common.
 
-**The same workflow drains the queue.** A run displaced out of the concurrency group is a
-different failure from a stalled one and needs a different handle: it was cancelled before its
-first step, so there is no stall marker to find and nothing to re-run. `agent-retry.yml`'s second
-sweep recognises the shape it leaves behind instead — an open issue still labelled
-`agent:planned`, with none of the kill-switch labels and no open `agent/issue-N` pull request —
-and dispatches **Agent · implement** for the oldest one. One issue per sweep, and only when no
-pipeline run is in flight, since starting two would undo the thing the group exists for.
+**The same workflow drains the queue.** A run displaced out of the concurrency group needs a
+different handle: it was cancelled before its first step, so there's no stall marker to find and
+nothing to re-run. `agent-retry.yml`'s second sweep recognises that shape instead — an open issue
+still labelled `agent:planned`, none of the kill-switch labels, no open `agent/issue-N` pull
+request — and dispatches **Agent · implement** for the oldest one. One issue per sweep, only when
+no pipeline run is in flight, since starting two would undo the point of the group.
 
-Re-dispatching is safe by construction rather than by luck: the implement stage resets its branch
-from `main` before it writes anything, and it re-reads the plan from the issue body rather than
-from the dispatch inputs, so the sweep does not have to carry a title or body and cannot land the
-wrong plan or half of one. A redundant dispatch costs a run and rebuilds the same branch.
+Re-dispatching is safe by construction: the implement stage resets its branch from `main` before
+writing anything, and re-reads the plan from the issue body rather than the dispatch inputs, so the
+sweep needn't carry a title or body and can't land the wrong plan or half of one. A redundant
+dispatch just costs a run rebuilding the same branch.
 
-It is bounded at three starts, the same budget the stall loop gets, and counted the same way —
-`<!-- agent-queued -->` in a `github-actions[bot]` comment, authorship-filtered because an issue
-comment is world-writable. The bound matters because `agent:planned` with no pull request is not
-*only* what a displaced run leaves behind: a run that reached "nothing was changed, no pull
-request to open" leaves exactly the same trace, and will leave it again on every sweep. Unbounded
-that is a whole run spent every five hours forever, which is worse than the case `MAX_RETRIES`
-already guards, since a stall costs a stopped run and this costs a complete one.
+It's bounded at three starts, the same budget the stall loop gets, counted the same way —
+`<!-- agent-queued -->` in a `github-actions[bot]` comment, authorship-filtered since an issue
+comment is world-writable. The bound matters because a run that reached "nothing was changed, no
+pull request to open" leaves the same `agent:planned`-with-no-PR trace on every sweep. Unbounded,
+that's a whole run spent every five hours forever — worse than the case `MAX_RETRIES` already
+guards, since a stall costs a stopped run and this costs a complete one.
 
-The sweep names the six workflows in the group explicitly when it asks whether anything is
-running, because the API does not report which concurrency group a run holds. `Agent · fix` is
-absent from that list on purpose — a reusable workflow has no runs of its own, and its caller's
-name is what appears. Getting the list wrong is wasteful rather than dangerous: a missed name
-starts a run that then queues behind the one already going.
+The sweep names the six workflows in the group explicitly, since the API doesn't report which
+concurrency group a run holds. `Agent · fix` is absent from that list — a reusable workflow has no
+runs of its own; its caller's name appears instead. Getting the list wrong is wasteful, not
+dangerous: a missed name starts a run that queues behind the one already going.
 
 ## What the plan stage does with an awkward issue
 
-There is no refusal verdict. Every issue that reaches the plan stage is planned and handed to
-implement — an issue you relabel or reopen is not silently dropped, which is what the earlier
-`implementable: false` answer made possible. A vague request is planned at its narrowest useful
-reading, with the reading stated; a part that cannot be done unattended is written into the
-plan's "out of scope" section with the reason, rather than sinking the whole issue with it.
+There's no refusal verdict: every issue that reaches the plan stage is planned and handed to
+implement, so an issue you relabel or reopen isn't silently dropped, unlike the earlier
+`implementable: false` answer. A vague request is planned at its narrowest useful reading, with
+that reading stated; a part that can't be done unattended goes into the plan's "out of scope"
+section with the reason, rather than sinking the whole issue.
 
-One limit is still routed around rather than attempted, because it is mechanical and the branch
-would fail at the very end instead of at the start: `.github/workflows/` and `.github/actions/`
-cannot be pushed by a token without `workflow` scope.
+One limit is still routed around, since it's mechanical and would otherwise fail the branch at the
+end instead of the start: `.github/workflows/` and `.github/actions/` can't be pushed by a token
+without `workflow` scope.
 
-Adding a dependency is planned for rather than refused. Every artifact the build downloads is
-pinned by a SHA-256 in `gradle/verification-metadata.xml`, so a new one is rejected before
-anything compiles — the implement stage regenerates it, over the whole task set and with
-`--refresh-dependencies`, the same way `dependabot-verification-metadata.yml` does. A runner is
-the right place for that and not a compromise: it sets none of the dev shell's
-`aapt2FromMavenOverride`, so it resolves `com.android.tools.build:aapt2` and records the two
-artifacts a local regeneration silently leaves out.
+Adding a dependency is planned for, not refused. Every build artifact is pinned by a SHA-256 in
+`gradle/verification-metadata.xml`, so a new one is rejected before anything compiles — the
+implement stage regenerates it, over the whole task set and with `--refresh-dependencies`, the
+same way `dependabot-verification-metadata.yml` does. A runner is the right place for that: it sets
+none of the dev shell's `aapt2FromMavenOverride`, so it resolves `com.android.tools.build:aapt2`
+and records the two artifacts a local regeneration silently leaves out.
 
-What used to be a decline is now a plan you can read and edit before implement gets to it — the
-areas `CLAUDE.md` says want a human (a Room migration, a new locale, signing and release, the
-tracking accuracy rules, `SessionRepository`'s invariants, the device-identity keying) are still
-areas to read the plan carefully on, and the review stage and CI are what stand behind it.
+What used to be a decline is now a plan readable and editable before implement gets to it. Areas
+`CLAUDE.md` flags for a human (a Room migration, a new locale, signing and release, the tracking
+accuracy rules, `SessionRepository`'s invariants, device-identity keying) still need a careful
+read of the plan, with the review stage and CI standing behind it.
 
 ## Prompt injection
 
 Issue and comment bodies are attacker-controlled — this is a public tracker. Three things stand
-between that and the repository, in descending order of how much they actually buy:
+between that and the repository, in descending order of how much they buy:
 
-1. **The environment gate, plus the check that makes it mean something.** An outside issue does
-   not reach a prompt until you approve it. On its own that holds the *run*, not the *text*: the
-   plan becomes the issue body, an author can edit their own issue at any time, and approving and
-   then being rewritten is a short path from a comment box to an agent holding a push token. So
-   the implement stage also asks who last edited the body, and proceeds only if that was the plan
-   stage or someone with write access.
+1. **The environment gate, plus the check that makes it mean something.** An outside issue doesn't
+   reach a prompt until you approve it — but that gates the *run*, not the *text*: the plan is the
+   issue body, an author can edit it any time, and approving then getting rewritten is a short path
+   from a comment box to a push token. So the implement stage also checks who last edited the body,
+   proceeding only if that was the plan stage or someone with write access.
 
-   It deliberately does not pin a hash at approval. The gate exists so you can read the plan and
-   change it, and a pin taken before your edit would refuse your own work. A body is a full
-   replacement, so the last writer owns all of it — which makes "who wrote it last" both the
-   simpler question and the right one. Edit the plan as much as you like, before or after
-   approving; what is refused is a body last touched by someone who could not have pushed the
-   change themselves. The identity comes from GraphQL `userContentEdits`, sorted by timestamp
-   rather than trusted to arrive in order, and `__typename` is what distinguishes the Actions app
-   from a human account holding the same login — GraphQL reports it without the `[bot]` suffix
-   REST uses.
+   No hash is pinned at approval: the gate exists so you can read and change the plan, and a pin
+   taken before your edit would refuse your own work. A body is a full replacement, so the last
+   writer owns all of it — "who wrote it last" is the simpler question and the right one. Edit the
+   plan as much as you like, before or after approving; what's refused is a body last touched by
+   someone who couldn't have pushed the change themselves. The identity comes from GraphQL
+   `userContentEdits`, sorted by timestamp rather than trusted to arrive in order, with `__typename`
+   distinguishing the Actions app from a human account sharing its login — GraphQL omits the
+   `[bot]` suffix REST uses.
 
    This is the real mitigation; the other two are defence in depth.
-2. **Framing.** Every prompt that carries reported text delimits it and says plainly that it is
-   data describing a request, not instructions — and the plan stage is told that text shaped like
-   an instruction *to it* is itself grounds to decline.
-3. **Tool policy.** The plan and review stages are held read-only — `Write` and `Edit` are on
-   their deny list, so they return a verdict and the workflow's own shell steps act on it. No
-   stage but the plan one can dispatch another workflow.
+2. **Framing.** Every prompt carrying reported text delimits it and states plainly it's data
+   describing a request, not instructions — the plan stage is told that text shaped like an
+   instruction *to it* is itself grounds to decline.
+3. **Tool policy.** The plan and review stages are read-only — `Write` and `Edit` are on their deny
+   list — so they return a verdict and the workflow's own shell steps act on it. No stage but plan
+   can dispatch another workflow.
 
 ### What the tool lists are and are not
 
-The two writing stages get broad `Bash` with a deny list, rather than an enumerated allow list.
-That is deliberate on both counts.
+The two writing stages get broad `Bash` with a deny list, rather than an enumerated allow list,
+deliberate on both counts.
 
-Enumerating was worse than it looked. Every command an agent reaches for and does not have —
-`rg`, `jq`, `find`, `wc` — costs turns out of a budget that has to cover a feature, its tests
-and a bulk string edit. And restricting `sed` while granting `Write` and `Edit` prevents
-nothing: the capability is already there by a shorter route.
+Enumerating was worse than it looked: every command an agent reaches for and lacks — `rg`, `jq`,
+`find`, `wc` — costs turns out of a budget covering a feature, its tests and a bulk string edit. And
+restricting `sed` while granting `Write` and `Edit` prevents nothing, since the capability is
+already there by a shorter route.
 
-So the deny list targets the things that are not reachable another way: `gh` and the other
-token-bearing commands, the network (`curl`, `wget`, `nc`, `ssh`, `WebFetch`, `WebSearch`), and
-`git push`/`git remote`, since the workflow owns the push and an agent pushing on its own would
-bypass the round counter.
+So the deny list targets things not reachable another way: `gh` and other token-bearing commands,
+the network (`curl`, `wget`, `nc`, `ssh`, `WebFetch`, `WebSearch`), and `git push`/`git remote`,
+since the workflow owns the push and an agent pushing on its own would bypass the round counter.
 
-**None of this is a sandbox, and it should not be read as one.** The implement stage runs
-`./gradlew`, and the agent can edit the build scripts that Gradle executes — so anything the
-runner can do, a determined agent can do, deny list or not. That is not a flaw to be closed; it
-is what "an agent that builds and tests this app" means. `actions/checkout` also leaves the push
-token in `.git/config` by default, which `Read` reaches without any shell at all.
+**None of this is a sandbox.** The implement stage runs `./gradlew`, and the agent can edit the
+build scripts Gradle executes — so anything the runner can do, a determined agent can, deny list or
+not. That's not a flaw to close; it's what "an agent that builds and tests this app" means.
+`actions/checkout` also leaves the push token in `.git/config` by default, which `Read` reaches
+without a shell.
 
-The controls that actually bound this are elsewhere and are the ones worth maintaining: the
-approval gate on outside issues, the review stage, Android CI, and the PAT's own scope — it is
-limited to this repository and deliberately has no Workflows permission, so an agent cannot
-rewrite the gates that judge it.
+The controls that actually bound this sit elsewhere: the approval gate on outside issues, the
+review stage, Android CI, and the PAT's own scope — limited to this repository, with no Workflows
+permission, so an agent can't rewrite the gates that judge it.
 
 Untrusted text always moves through the environment (`env:`), never interpolated into a `run:`
-block. An issue body containing shell metacharacters is ordinary, and interpolating one into a
-script is how that becomes arbitrary code on a runner holding a push token.
+block: an issue body with shell metacharacters is ordinary, and interpolating one into a script is
+how that becomes arbitrary code on a runner holding a push token.
 
 **What none of this stops, stated plainly:** once you approve an outside issue, auto-merge is
-armed for it exactly as it is for your own, and the resulting code can reach `main` without
-anyone reading the diff. The approval gates *intent*, not output. Android CI is a strong gate but
-it is not an adversary model — nothing in lint or coverage objects to a plausible change that
-quietly alters what `reconcile` counts. If that trade stops looking right, the smallest fix is to
-skip the `Arm auto-merge` step when `inputs.author != 'ElDavoo'`: same pipeline, outside issues
-land at green-and-approved awaiting your click.
+armed exactly as for your own, and the resulting code can reach `main` without anyone reading the
+diff. The approval gates *intent*, not output. Android CI is a strong gate but not an adversary
+model — nothing in lint or coverage objects to a plausible change that quietly alters what
+`reconcile` counts. If that trade stops looking right, the smallest fix is skipping the `Arm
+auto-merge` step when `inputs.author != 'ElDavoo'`: same pipeline, outside issues land
+green-and-approved awaiting your click.
 
 ## Testing
 
-There is nothing to unit test — these are workflows, and the only way to run one is to run it.
-What stands in for tests:
+There's nothing to unit test — these are workflows, and the only way to run one is to run it. What
+stands in for tests:
 
 - `actionlint` runs in the `listing` job of `android-ci.yml` on every push. It type-checks every
-  `${{ }}` against the event payload and runs shellcheck over each `run:` block, and it is not
-  optional: it is what caught that ` #` in a plain YAML scalar starts a comment, which had been
-  silently truncating three `run:` values to an unterminated quote.
-- The gate pattern — `needs: [gate]` with `always() && result != 'failure' && != 'cancelled'` —
-  is the one piece of logic here subtle enough to fail silently. Without `always()` a *skipped*
-  gate skips the guarded job too, which is the path your own issues take, so the pipeline would
-  do nothing at all for you and work fine for everyone else. Worth proving once by temporarily
-  inverting the `if:` so one of your own issues takes the gated path.
+  `${{ }}` against the event payload and runs shellcheck over each `run:` block — not optional: it
+  caught ` #` starting a comment in a plain YAML scalar, which had silently truncated three `run:`
+  values to an unterminated quote.
+- The gate pattern — `needs: [gate]` with `always() && result != 'failure' && != 'cancelled'` — is
+  the one piece of logic here subtle enough to fail silently. Without `always()` a *skipped* gate
+  skips the guarded job too, the path your own issues take, so the pipeline would do nothing for
+  you while working fine for everyone else. Worth proving once by temporarily inverting the `if:`
+  so one of your own issues takes the gated path.
 
 Run the linter locally the same way CI does:
 

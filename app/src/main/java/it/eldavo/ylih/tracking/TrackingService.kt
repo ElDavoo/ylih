@@ -38,8 +38,8 @@ import kotlinx.coroutines.sync.withLock
 
 /**
  * Runs only in "detailed tracking" mode. Wired plug events are never delivered to a manifest
- * receiver, so observing them at all requires a live process — that is the entire reason this
- * service (and its notification) exists. While it is up it also measures playback time.
+ * receiver, so observing them needs a live process — why this service (and its notification)
+ * exists. While up it also measures playback time.
  */
 class TrackingService : LifecycleService() {
 
@@ -48,43 +48,39 @@ class TrackingService : LifecycleService() {
     private val handler = Handler(Looper.getMainLooper())
 
     /**
-     * The keys with a session open, oldest first — playback is credited to the last of them.
+     * The keys with a session open, oldest first — playback credits to the last.
      *
-     * A list rather than the single "most recently connected" key it used to be, because that key
-     * was a latch with two ways of being stranded, and a stranded one stops playback being measured
-     * at all while the session it belongs to goes on looking perfectly normal. A pair connecting
-     * took it *whether or not a session had been opened for it*, so an ignored device — a car
-     * stereo, the thing the ignore list is for — held it for the whole drive and credited every
-     * slice to a pair that has no open session to write to. And the pair holding it disconnecting
-     * cleared it with nothing to take over, so unplugging wired headphones while Bluetooth ones
-     * were still on left them unmeasured until they were disconnected and reconnected: the audio
-     * callback only reports *changes* after the first delivery, so nothing would say so again.
+     * A list, not the single "most recently connected" key it used to be: that key was a latch
+     * that could strand. Connecting took it whether or not a session opened, so an ignored
+     * device — a car stereo, what the ignore list is for — held it for the whole drive, crediting
+     * every slice to a pair with no open session. Disconnecting the holder cleared it with
+     * nothing to take over, so unplugging wired headphones while Bluetooth ones stayed on left
+     * them unmeasured until reconnected — the audio callback reports only *changes*.
      *
-     * Keeping the whole set makes both cases the same one line — a key is in here exactly while it
-     * has a session to credit, and the newest one that still does is the target.
+     * The set fixes both: a key stays while it has a session to credit, and the newest is the
+     * target.
      */
     private val playbackTargets = mutableListOf<String>()
     private val playbackTargetKey: String? get() = playbackTargets.lastOrNull()
     private var playbackWatcher: PlaybackWatcher? = null
 
     /**
-     * Applies the audio callbacks in the order they arrived.
+     * Applies the audio callbacks in arrival order.
      *
-     * Each callback launched its own coroutine and every one of them suspends on the database, so
-     * a connect and the disconnect right behind it interleaved: the disconnect dropped the pair
-     * from [playbackTargets] and closed its session while the connect was still suspended inside
-     * `onConnected`, and the connect then appended that pair again on its way out. The unplugged
-     * pair stayed the playback target, and a slice is credited to whatever session that pair has
-     * *open* — none — so every later slice was dropped. Nothing surfaced it: the session stayed
-     * open and the notification still read "playing" while the pair that really was connected
-     * quietly stopped accruing, until some later plug event happened to move the target off it.
+     * Each callback launched its own coroutine and suspended on the database, so a connect and
+     * the disconnect right behind it could interleave: the disconnect dropped the pair from
+     * [playbackTargets] and closed its session while the connect still suspended inside
+     * `onConnected`, then re-appended the pair. The unplugged pair stayed the playback target
+     * with no open session to credit, so later slices were silently dropped — the notification
+     * kept reading "playing" while the connected pair stopped accruing, until a later plug event
+     * moved the target off it.
      */
     private val deviceEvents = Mutex()
 
     /**
-     * What the notification already reads, so text that has not changed is not posted again.
-     * Beyond the wakeup it saves, the notification is dismissible on Android 13+, and re-posting
-     * it would keep putting back something the user had just swiped away.
+     * What the notification already reads, so unchanged text is not reposted. Beyond saving a
+     * wakeup, the notification is dismissible on Android 13+, and reposting would restore
+     * something the user just swiped away.
      */
     private var postedText: String? = null
 
@@ -101,8 +97,8 @@ class TrackingService : LifecycleService() {
     }
 
     /**
-     * The notification is the one piece of the app that speaks outside the activity, so it follows
-     * the same in-app language below Android 13 rather than reverting to the system one.
+     * The notification is the one piece of the app that speaks outside the activity, so below
+     * Android 13 it follows the in-app language rather than reverting to the system one.
      */
     override fun attachBaseContext(newBase: Context) {
         super.attachBaseContext(AppLocale.wrap(newBase))
@@ -112,9 +108,9 @@ class TrackingService : LifecycleService() {
         super.onCreate()
         container = (application as YlihApp).container
 
-        // No ensureChannel here: YlihApp.onCreate has already run in this process and made it.
-        // Creating it on the line above this call is exactly the ordering that broke detailed
-        // tracking for anyone who had denied the notification permission.
+        // No ensureChannel here: YlihApp.onCreate already made it in this process. Creating it
+        // on the line above this call is the ordering that broke detailed tracking for anyone
+        // who denied the notification permission.
         startForegroundCompat(getString(R.string.notification_starting))
 
         playbackWatcher = PlaybackWatcher(audioManager, container.clock) { deltaMs ->
@@ -124,12 +120,11 @@ class TrackingService : LifecycleService() {
 
         lifecycleScope.launch {
             container.trackingController.syncWithSystem()
-            // Detailed tracking is a setting, not a state: this service is up whether or not
-            // anything is plugged in, and a tick with nothing connected heartbeats an empty
-            // table and re-posts an unchanged notification. So the loop only runs while a
-            // session is open — for most days a couple of hours rather than all of them.
-            // Reading that from the open-session flow rather than from our own device callback
-            // is what keeps a session the Bluetooth receiver opened heartbeaten too.
+            // Detailed tracking is a setting, not a state: this service runs whether or not
+            // anything is plugged in, and an idle tick would heartbeat an empty table and repost
+            // an unchanged notification. The loop runs only while a session is open — most days
+            // a couple of hours, not all. Reading from the open-session flow, not the device
+            // callback, also heartbeats sessions the Bluetooth receiver opened.
             container.repository.observeOpenSessions()
                 .map { it.isNotEmpty() }
                 .distinctUntilChanged()
@@ -156,10 +151,9 @@ class TrackingService : LifecycleService() {
         val now = container.clock.now()
         audioManager.unregisterAudioDeviceCallback(deviceCallback)
         // On `container.scope`, not `lifecycleScope`: `super.onDestroy()` below dispatches
-        // ON_DESTROY and so cancels the latter, and this write's first suspension point is the
-        // database — a coroutine launched here on the lifecycle scope started, suspended, and was
-        // cancelled before it ever reached the table, so every service stop silently dropped the
-        // slice that had accrued since the last tick.
+        // ON_DESTROY and cancels it, and the write's first suspension point is the database —
+        // a coroutine on the lifecycle scope would start, suspend, and be cancelled before
+        // reaching the table, silently dropping the slice since the last tick.
         val key = playbackTargetKey
         val remaining = playbackWatcher?.stop(now) ?: 0L
         if (key != null) {
@@ -187,23 +181,22 @@ class TrackingService : LifecycleService() {
         val now = container.clock.now()
         for (identity in identities.filter { it.kind in kinds }) {
             if (connected) {
-                // Banked before the target moves, while [playbackTargetKey] still names the
-                // pair the audio was actually played on. Swapping headphones mid-song used to
-                // `rebase` here, which dropped that time rather than crediting it. The same
-                // call starts the clock where audio is already running — a service start, or
-                // that same swap — rather than leaving it to the first tick.
+                // Banked before the target moves, while [playbackTargetKey] still names the pair
+                // that played it. Swapping headphones mid-song used to `rebase` here, dropping
+                // that time instead of crediting it. The call also starts the clock where audio
+                // is already running — a service start, or that same swap — instead of waiting
+                // for the first tick.
                 creditAccrued(playbackWatcher?.refresh(now) ?: 0L)
                 // Only a device that got a session becomes the target: `onConnected` returns
-                // null for one the user has ignored, and there is nothing to credit those.
+                // null for an ignored one, and there is nothing to credit those.
                 if (container.repository.onConnected(identity, now, measurePlayback = true) != null) {
                     playbackTargets.remove(identity.key)
                     playbackTargets += identity.key
                 }
             } else {
                 if (playbackTargetKey == identity.key) {
-                    // Before the close, and waited for: playback is credited to whatever
-                    // session the pair has *open*, so a slice banked after the disconnect finds
-                    // nothing to write to. That silently cost every session its last part-minute.
+                    // Before the close, and waited for: a slice banked after disconnect finds
+                    // no open session to write to, costing each session its last part-minute.
                     creditAccrued(playbackWatcher?.refresh(now) ?: 0L)
                 }
                 // Dropped rather than cleared, so whatever else is still connected takes over.
@@ -212,8 +205,8 @@ class TrackingService : LifecycleService() {
             }
         }
         refreshNotification()
-        // Wired plug events reach nothing but this service, so this is the only place that can
-        // tell the home screen a session just opened or closed.
+        // Wired plug events reach only this service, the one place that can tell the home
+        // screen a session opened or closed.
         container.trackingController.onSessionsChanged()
     }
 
@@ -222,10 +215,9 @@ class TrackingService : LifecycleService() {
         val open = container.repository.heartbeat(now)
         creditAccrued(playbackWatcher?.refresh(now) ?: 0L)
         refreshNotification(open)
-        // A minute's worth of playback is a figure the widgets have no other way to learn: the
-        // Chronometer counts connected time, and in playback-only mode that is not what the totals
-        // show. This runs only while a session is open, which is the only time it would change
-        // anything.
+        // A minute of playback is a figure widgets have no other way to learn: the Chronometer
+        // counts connected time, not playback-only totals. Runs only while a session is open,
+        // the only time it would change anything.
         container.trackingController.onFiguresChanged()
     }
 
@@ -238,9 +230,9 @@ class TrackingService : LifecycleService() {
     /**
      * Credits a slice the watcher's own callback banked, which nothing can wait for.
      *
-     * On `container.scope` rather than `lifecycleScope` for the same reason [onDestroy] is: the
-     * lifecycle scope dies with the service, and the write's first suspension point is the
-     * database. Nothing here closes a session, so there is no ordering to keep either.
+     * On `container.scope` rather than `lifecycleScope`, as in [onDestroy]: the lifecycle scope
+     * dies with the service, and the write's first suspension point is the database. Nothing
+     * here closes a session, so there's no ordering to keep.
      */
     private fun creditFromCallback(deltaMs: Long) {
         val key = playbackTargetKey ?: return
@@ -268,10 +260,9 @@ class TrackingService : LifecycleService() {
     }
 
     /**
-     * Posts [text], unless it is already what the notification says.
-     *
-     * A refusal stops the service rather than letting it be killed for never calling
-     * startForeground; nothing downstream needs to know, so this reports nothing.
+     * Posts [text] unless it already matches. A refusal stops the service rather than letting it
+     * be killed for never calling startForeground; nothing downstream needs to know, so this
+     * reports nothing.
      */
     private fun startForegroundCompat(text: String) {
         if (text == postedText) return
@@ -284,21 +275,20 @@ class TrackingService : LifecycleService() {
             )
             postedText = text
         } catch (e: RuntimeException) {
-            // Narrow on purpose. The refusals this is written for are all RuntimeExceptions —
-            // SecurityException where the service type's permission is missing,
-            // ForegroundServiceStartNotAllowedException outside an allowed window,
-            // InvalidForegroundServiceTypeException, IllegalStateException — and every one of them
-            // means the same thing: detailed tracking cannot run right now. Catching Throwable
-            // would fold an error out of `trackingNotification` into the same silent `stopSelf`,
-            // which is the shape of failure the Notifications KDoc records as painful to find.
+            // Narrow on purpose: the refusals here are all RuntimeExceptions — SecurityException
+            // (missing service-type permission), ForegroundServiceStartNotAllowedException,
+            // InvalidForegroundServiceTypeException, IllegalStateException — each meaning
+            // detailed tracking cannot run right now. Catching Throwable would
+            // fold an error from `trackingNotification` into the same silent `stopSelf`, the
+            // failure shape the Notifications KDoc records as painful to find.
             Log.e(TAG, "Foreground start refused; detailed tracking cannot run", e)
             stopSelf()
         }
     }
 
     /**
-     * Mirrors the permission check [TrackingController.detailedTrackingSupported] already made
-     * before allowing this service to start, so as not to declare a type it does not hold.
+     * Mirrors [TrackingController.detailedTrackingSupported]'s check, so as not to declare a
+     * type it lacks.
      */
     private fun foregroundServiceType(): Int {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) return 0

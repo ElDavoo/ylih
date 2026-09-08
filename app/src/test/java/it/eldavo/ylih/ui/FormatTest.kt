@@ -14,12 +14,11 @@ import org.robolectric.annotation.Config
 
 /**
  * Every formatter here goes through `Locale.getDefault()`, which no resource qualifier reaches —
- * the same trap `StoreScreenshots` has to work around. Pinning the locale is therefore part of
- * the test rather than an incidental setup detail.
+ * the same trap `StoreScreenshots` works around. Pinning the locale is part of the test, not
+ * incidental setup.
  *
- * Under Robolectric rather than as a plain JVM test, because the durations come from
- * `android.icu` — which is the point of them: the units are CLDR's, in every language the app
- * ships, and not something anyone here has to translate.
+ * Under Robolectric rather than a plain JVM test, because the durations come from `android.icu`:
+ * the units are CLDR's, in every shipped language, and not something anyone here translates.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
@@ -48,9 +47,9 @@ class FormatTest {
     }
 
     /**
-     * The whole reason these go through ICU. "h", "m" and "s" are English, and a screen reader
-     * says them aloud in all 77 languages; CLDR has the abbreviation each language actually uses,
-     * and the ordering and separators that go with it.
+     * Why these go through ICU: "h", "m" and "s" are English, and a screen reader would say them
+     * aloud in all 77 languages; CLDR has the abbreviation each language actually uses, plus the
+     * ordering and separators that go with it.
      */
     @Test
     fun `every language gets its own units, not English ones`() {
@@ -92,8 +91,8 @@ class FormatTest {
     }
 
     /**
-     * The chart axis used to be a hardcoded `d/M`, which is the wrong order in a good number of
-     * the languages this app ships. Two locales that disagree about it is the whole assertion.
+     * The chart axis used to be a hardcoded `d/M`, the wrong order in many shipped languages. Two
+     * locales that disagree about it is the whole assertion.
      */
     @Test
     fun `the chart axis follows the locale rather than one fixed order`() {
@@ -110,9 +109,9 @@ class FormatTest {
     }
 
     /**
-     * The day list names its older rows by weekday, and that name comes out of CLDR rather than
-     * out of a resource — so it is the one piece of the row nobody has to translate, and the one
-     * that cannot go stale when a language is added.
+     * The day list names its older rows by weekday, and that name comes from CLDR rather than a
+     * resource — the one piece of the row nobody translates, and one that cannot go stale when a
+     * language is added.
      */
     @Test
     fun `the weekday comes from the locale, not from an English abbreviation`() {
@@ -134,10 +133,10 @@ class FormatTest {
     }
 
     /**
-     * The price a pair was bought for is typed once and then re-read every time the dialog is
-     * opened, so the two directions have to agree exactly. They used to disagree twice over: the
-     * field was filled from `cents / 100`, which dropped the minor units, and the answer was
-     * parsed as a Double, which lost a cent to binary rounding.
+     * The price a pair was bought for is typed once and re-read every time the dialog opens, so
+     * the two directions must agree exactly. They used to disagree twice over: the field was
+     * filled from `cents / 100`, dropping the minor units, and the answer was parsed as a
+     * Double, losing a cent to binary rounding.
      */
     @Test
     fun `a price survives being written into the field and read back`() {
@@ -151,7 +150,7 @@ class FormatTest {
         assertEquals(1_299L, parsePriceCents("12.99"))
         assertEquals(1_299L, parsePriceCents(" 12,99 "))
         assertEquals(12_300L, parsePriceCents("123"))
-        // Rounded rather than truncated, so half a cent does not quietly disappear.
+        // Rounded rather than truncated, so half a cent doesn't quietly disappear.
         assertEquals(1_300L, parsePriceCents("12.995"))
     }
 

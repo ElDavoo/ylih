@@ -25,7 +25,7 @@ enum class Hibernation {
  * What the platform will admit about hibernation, and where the user can change it.
  *
  * It cannot be changed from code — the whole point of hibernation is that an app cannot opt
- * itself out — so the app's job here is to report accurately and hand over the screen that can.
+ * itself out — so this only reports accurately and hands over the screen that can.
  */
 object Restrictions {
 
@@ -65,7 +65,7 @@ object Restrictions {
 
     /**
      * The system screen where hibernation can be turned off, or null where there is none. Which
-     * screen that is differs by platform version, which is the whole reason for [IntentCompat].
+     * screen that is differs by platform version, which is why [IntentCompat] exists.
      */
     fun settingsIntent(context: Context): Intent? = runCatching {
         IntentCompat.createManageUnusedAppRestrictionsIntent(context, context.packageName)

@@ -29,10 +29,10 @@ class HeartbeatWorker(
             // Rethrows only a cancellation of this worker's own job; Room reports a transaction it
             // could not start the same way, and that one is a failure to retry. See Cancellation.kt.
             currentCoroutineContext().ensureActive()
-            // This is the only thing watching an open session when the service is dead, so a pass
-            // that failed and said nothing is the worst outcome available. Retry rather than
-            // report failure: a transient SecurityException from the audio stack, or a database
-            // busy for a moment, costs one interval instead of a whole period.
+            // This is the only thing watching an open session when the service is dead, so
+            // failing silently is the worst outcome. Retry rather than fail: a transient
+            // SecurityException from the audio stack, or a momentarily busy database, costs one
+            // interval instead of a whole period.
             Log.e(TAG, "Heartbeat sync failed", e)
             Result.retry()
         }

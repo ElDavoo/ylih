@@ -37,8 +37,8 @@ import androidx.compose.ui.test.onRoot
 
 /**
  * The two non-screenshot images the Play Console demands: a 512x512 icon and a 1024x500 feature
- * graphic. Both are rendered from `@mipmap/ic_launcher` itself rather than redrawn, so the
- * carefully solved geometry in `ic_launcher_foreground.xml` cannot drift out of the store listing.
+ * graphic. Both render from `@mipmap/ic_launcher` itself rather than being redrawn, so the
+ * geometry in `ic_launcher_foreground.xml` cannot drift out of the store listing.
  *
  * Exact pixel sizes come from the Robolectric qualifiers: at mdpi one dp is one pixel, so a
  * `w512dp-h512dp-mdpi` screen is a 512x512 canvas.
@@ -69,8 +69,8 @@ class StoreGraphics {
             Row(
                 modifier = Modifier.fillMaxSize().background(BRAND).padding(horizontal = 96.dp),
                 verticalAlignment = Alignment.CenterVertically,
-                // Play crops the feature graphic differently across its surfaces, so the whole
-                // lockup is centred rather than left-aligned against one edge.
+                // Play crops the feature graphic differently across surfaces, so the lockup is
+                // centred rather than left-aligned.
                 horizontalArrangement = Arrangement.spacedBy(56.dp, Alignment.CenterHorizontally),
             ) {
                 // The background layer is already the surrounding colour, so only the artwork
@@ -99,8 +99,8 @@ class StoreGraphics {
      * Mastodon. GitHub recommends 1280x640 and crops anything else, so the size is exact rather
      * than a scaled feature graphic.
      *
-     * It cannot be set from the API: the upload lives only in the repository settings page, so
-     * this writes a file for a human to attach. The committed copy is `docs/img/social-preview.png`.
+     * Cannot be set from the API: the upload lives only in the repository settings page, so this
+     * writes a file for a human to attach. Committed copy: `docs/img/social-preview.png`.
      */
     @Test
     @Config(qualifiers = "en-rUS-w1280dp-h640dp-land-mdpi")
@@ -109,8 +109,8 @@ class StoreGraphics {
             Column(
                 modifier = Modifier.fillMaxSize().background(BRAND).padding(horizontal = 112.dp),
                 verticalArrangement = Arrangement.Center,
-                // Every surface that shows this card crops it slightly differently, so the lockup
-                // is centred rather than set against the left edge — as the feature graphic is.
+                // Every surface crops this card slightly differently, so the lockup is centred
+                // rather than set against the left edge, as the feature graphic is.
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 Row(
@@ -151,11 +151,11 @@ class StoreGraphics {
     /**
      * Draws the adaptive icon's own layers instead of the drawable itself. Drawing the
      * `AdaptiveIconDrawable` would apply the platform's circular mask, and Play expects a full
-     * square it can round off in its own way.
+     * square it can round off itself.
      *
-     * The layers live on a 108dp canvas of which only the middle 72dp is ever visible; scaling by
-     * 108/72 and centring crops that bleed away, so the artwork fills the square the way a store
-     * icon should instead of floating at half size.
+     * The layers live on a 108dp canvas of which only the middle 72dp is visible; scaling by
+     * 108/72 and centring crops that bleed away, so the artwork fills the square instead of
+     * floating at half size.
      */
     @Composable
     private fun LauncherArt(modifier: Modifier, withBackground: Boolean) {

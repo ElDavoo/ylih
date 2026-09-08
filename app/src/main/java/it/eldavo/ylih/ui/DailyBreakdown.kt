@@ -24,33 +24,32 @@ import java.time.LocalDate
 /**
  * The days a breakdown lists, newest first.
  *
- * The chart draws this same window, and a bar is a proportion rather than a figure: "how long did
- * I listen yesterday" is a question about a figure, and no bar can be read to a tenth of an hour.
+ * The chart draws this same window, but a bar is a proportion, not a figure: "how long did I
+ * listen yesterday" asks for a figure, and no bar reads to a tenth of an hour.
  *
- * Only the leading run of empty days is dropped. An install a fortnight old would otherwise open
- * on sixteen rows of nothing, which reads as history that was lost rather than as history that was
- * never recorded. A zero *inside* the window is a real answer — it is the day nothing was played —
- * and so is a zero today, which is why the recent end is left whole however empty it is.
+ * Only the leading run of empty days is dropped — a fortnight-old install would otherwise open on
+ * sixteen rows of nothing, reading as lost history rather than history never recorded. A zero
+ * *inside* the window is a real answer (the day nothing was played), and so is a zero today, so
+ * the recent end stays whole however empty.
  */
 internal fun dailyBreakdown(series: List<Pair<LocalDate, Long>>): List<Pair<LocalDate, Long>> =
     series.dropWhile { it.second == 0L }.asReversed()
 
 /**
- * How little of the width a day that was listened to at all may take.
+ * How little width a day listened to at all may take.
  *
- * Twenty minutes against a ten-hour day is a third of a pixel, and a bar that rounds away says
- * "nothing" about a day that was not nothing. The chart clamps its own bars for the same reason.
+ * Twenty minutes against a ten-hour day is a third of a pixel, and a bar rounded away says
+ * "nothing" about a day that wasn't. The chart clamps its own bars for the same reason.
  */
 private const val MIN_BAR_FRACTION = 0.02f
 
 private val BAR_HEIGHT = 6.dp
 
 /**
- * One day: what day it was, how long it came to, and how that compares with the busiest day on
- * screen.
+ * One day: which day, how long, and how that compares to the busiest day on screen.
  *
- * [maxMs] is what the longest bar means, and comes from [chartMaxMs] — the same scale the chart
- * above the list is drawn to, so that a day is the same size in both and never divides by zero.
+ * [maxMs] is what the longest bar means, from [chartMaxMs] — the same scale the chart above draws
+ * to, so a day is sized the same in both and never divides by zero.
  */
 @Composable
 fun DailyBreakdownRow(
@@ -70,9 +69,9 @@ fun DailyBreakdownRow(
 /**
  * One labelled figure with a bar under it, drawn against the scale the chart above uses.
  *
- * Shared with the pair page's charge cycles, which are the same shape of thing read the same way —
- * a figure, and how it compares with the largest on screen. What differs between the two is only
- * what the row is *called*, which is why that is all this takes.
+ * Shared with the pair page's charge cycles — same shape of thing, read the same way: a figure
+ * and how it compares to the largest on screen. Only what the row is *called* differs, so that's
+ * all this takes.
  */
 @Composable
 internal fun BreakdownRow(
@@ -86,8 +85,8 @@ internal fun BreakdownRow(
     Column(
         modifier
             .fillMaxWidth()
-            // Merged, and read title-first, for the reason `StatTile` is: the texts are one
-            // figure, and unmerged they arrive as "3.4 h" and then the day it belongs to.
+            // Merged and read title-first, like `StatTile`: the texts are one figure, and
+            // unmerged they'd arrive as "3.4 h" then the day it belongs to.
             .semantics(mergeDescendants = true) {
                 val name = listOfNotNull(title, subtitle).joinToString(" · ")
                 contentDescription = "$name: $value"
@@ -133,10 +132,10 @@ internal fun BreakdownRow(
 /**
  * "today", "yesterday", or the weekday and the date.
  *
- * The two relative names are the point of the list: the question it exists to answer is "how much
- * did I listen yesterday", and working out which date that was is exactly the arithmetic a reader
- * should not be left to do. Older days carry their weekday as well, because a run of dates is read
- * for its weekly shape and a date on its own does not say whether it was a working day.
+ * The two relative names are the list's whole point: it answers "how much did I listen
+ * yesterday", and working out which date that was is arithmetic a reader shouldn't have to do.
+ * Older days carry their weekday too, since a run of dates is read for its weekly shape, and a
+ * date alone doesn't say whether it was a working day.
  */
 @Composable
 internal fun dayName(date: LocalDate, today: LocalDate): String = when (date) {

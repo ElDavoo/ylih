@@ -31,9 +31,8 @@
         sdkPath = "${androidSdk.androidsdk}/libexec/android-sdk";
         jdk = pkgs.jdk21;
 
-        # Google Play Console CLI. Not in nixpkgs, and its own installer writes into
-        # the home directory, so pin the upstream release binary instead — it is a
-        # static Go build and needs no patching.
+        # Google Play Console CLI. Not in nixpkgs, and its own installer writes into $HOME, so pin
+        # the upstream release binary instead — a static Go build needing no patching.
         gplayVersion = "0.8.0";
         gplayAssets = {
           x86_64-linux = {
@@ -73,8 +72,8 @@
             pkgs.git
             # gplay's own setup would curl gcloud into $HOME; take it from nixpkgs.
             pkgs.google-cloud-sdk
-            # The F-Droid recipe is submitted as a merge request against fdroiddata, which is
-            # on GitLab — so `gh` cannot open it and this can. See docs/fdroid.md §5.
+            # The F-Droid recipe is submitted as a merge request against fdroiddata, on GitLab —
+            # `gh` can't open it, this can. See docs/fdroid.md §5.
             pkgs.glab
           ] ++ gplay;
 
@@ -84,13 +83,13 @@
             export ANDROID_SDK_ROOT="$ANDROID_HOME"
             export PATH="$ANDROID_HOME/platform-tools:$PATH"
 
-            # AGP downloads its own aapt2 from Maven; that binary is dynamically linked
-            # and only runs on NixOS when programs.nix-ld is enabled. Pointing it at the
-            # SDK's own (patched) aapt2 makes the shell work either way.
+            # AGP downloads its own aapt2 from Maven; that binary is dynamically linked and only
+            # runs on NixOS with programs.nix-ld enabled. Pointing it at the SDK's own patched
+            # aapt2 makes the shell work either way.
             export GRADLE_OPTS="-Dorg.gradle.project.android.aapt2FromMavenOverride=$ANDROID_HOME/build-tools/${buildToolsVersion}/aapt2 ''${GRADLE_OPTS:-}"
 
-            # gplay self-updates in place on startup, which cannot work from the
-            # read-only store — the version above is the pin.
+            # gplay self-updates in place on startup, which can't work from the read-only
+            # store — the version above is the pin.
             export GPLAY_NO_UPDATE=1
 
             echo "ylih dev shell"

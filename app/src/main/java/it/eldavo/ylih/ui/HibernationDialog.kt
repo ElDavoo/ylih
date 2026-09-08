@@ -15,12 +15,12 @@ import it.eldavo.ylih.R
 /**
  * Asked once, after the welcome, and only where the platform admits it hibernates apps.
  *
- * Hibernation is the one restriction that no amount of care in this app can work around: after a
- * few unopened months Android takes the Bluetooth permission back and the broadcasts stop, so the
- * pair that was quietly accumulating hours simply stops accumulating them. Nothing here can opt
- * out — only the user can, on a system screen — which is why this asks rather than fixes.
+ * Hibernation is the one restriction no care in this app can work around: after a few unopened
+ * months Android revokes the Bluetooth permission and the broadcasts stop, so a pair quietly
+ * accumulating hours just stops. Nothing here can opt out — only the user can, on a system
+ * screen — so this asks rather than fixes.
  *
- * Unlike the welcome, tapping outside dismisses it: by now there is a whole app behind it, and
+ * Unlike the welcome, tapping outside dismisses it: there's a whole app behind it by now, and
  * "not now" is a real answer.
  */
 @Composable

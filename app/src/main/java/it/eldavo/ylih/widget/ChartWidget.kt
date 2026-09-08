@@ -46,8 +46,8 @@ class ChartWidget : YlihWidget() {
 internal fun ChartContent(context: Context, data: WidgetData) {
     val size = LocalSize.current
     val labelled = size.height >= cells(2)
-    // Three captions on one line need the width of about four cells; below that the two dates are
-    // the pair that says what the bars span, so the tallest-day figure is the one to drop.
+    // Three captions on one line need about four cells' width; below that, drop the tallest-day
+    // figure and keep the two dates the bars span.
     val wide = size.width >= cells(4)
     val maxMs = chartMaxMs(data.series)
     val bars = remember(data.series, size, labelled) {
@@ -72,8 +72,8 @@ internal fun ChartContent(context: Context, data: WidgetData) {
         Image(
             provider = ImageProvider(bars),
             contentDescription = context.getString(R.string.stats_daily_hours_30),
-            // The bitmap is drawn at the size bucket, not at the widget's real size, so it is
-            // stretched rather than letterboxed into whatever the launcher actually gave us.
+            // Drawn at the size bucket, not the widget's real size, so it stretches — not
+            // letterboxes — into whatever size the launcher gave.
             contentScale = ContentScale.FillBounds,
             modifier = GlanceModifier.fillMaxWidth().defaultWeight(),
         )
@@ -104,14 +104,13 @@ private fun ChartLabel(text: String) {
 /**
  * Draws the app's own bars into a bitmap.
  *
- * Glance has no Canvas, and its layout hands out equal weights only, so proportional bar heights
- * cannot be expressed in Glance at all. Drawing [drawDailyBars] into an off-screen bitmap keeps
- * one source of truth for the geometry — the chart on the stats screen and the one on the home
- * screen are the same code.
+ * Glance has no Canvas and only equal weights, so proportional bar heights can't be expressed in
+ * it. Drawing [drawDailyBars] into an off-screen bitmap keeps one source of truth: the
+ * stats-screen and home-screen charts are the same code.
  *
- * The cost is that a bitmap bakes its colours: flipping dark mode leaves stale bars until the next
- * widget update lands. Everything Glance itself draws below API 31 has the same problem, and the
- * alternative — Boxes sized in dp — loses the rounded track and needs API 31 for its corners.
+ * The cost: a bitmap bakes its colours, so flipping dark mode leaves stale bars until the next
+ * update — true of everything Glance draws below API 31. The alternative, Boxes sized in dp,
+ * loses the rounded track and needs API 31 for corners.
  */
 private fun renderBars(
     series: List<Pair<LocalDate, Long>>,
@@ -121,12 +120,11 @@ private fun renderBars(
     barColor: Color,
     trackColor: Color,
 ): Bitmap {
-    // Two pixels per dp rather than the device's density: the bars are flat rectangles, nobody
-    // can see the difference, and a RemoteViews carrying a full-density bitmap is a megabyte the
-    // launcher has to be handed on every update. Now that the widget can be dragged to the width
-    // of a tablet, the ceiling is reached by scaling both sides by the same factor rather than by
-    // clamping each: the bitmap is stretched to the real size on the way in, so an aspect ratio
-    // clamped on one axis only would draw bars of the wrong width.
+    // Two pixels per dp, not device density: the bars are flat rectangles, so nobody can tell, and
+    // a full-density bitmap in a RemoteViews costs a megabyte per update. The widget can be dragged
+    // to tablet width, so the ceiling scales both sides by the same factor rather than clamping
+    // each — the bitmap stretches to the real size on the way in, so clamping one axis only would
+    // draw bars the wrong width.
     val scale = minOf(PX_PER_DP, MAX_PX / maxOf(widthDp, heightDp, 1f))
     val width = (widthDp * scale).toInt().coerceAtLeast(1)
     val height = (heightDp * scale).toInt().coerceAtLeast(1)

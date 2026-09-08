@@ -14,9 +14,9 @@ data class Span(
 /**
  * What the totals are counting.
  *
- * [PLAYBACK] answers "how long did I actually listen", which only a session recorded while
- * detailed tracking was on can answer at all — `playingMs` is null for every other one, and those
- * are left out rather than counted as zero.
+ * [PLAYBACK] answers "how long did I actually listen" — only a session recorded while detailed
+ * tracking was on can answer that. `playingMs` is null for every other one, left out rather than
+ * counted as zero.
  */
 enum class Counting { CONNECTED, PLAYBACK }
 
@@ -50,9 +50,9 @@ object Stats {
     }
 
     /**
-     * Spans that can answer the question [counting] asks. A session recorded in Bluetooth-only
-     * mode has no playback figure at all, and treating that as "zero minutes listened" would drag
-     * down the average and move the first-seen date to something that never happened.
+     * Spans that can answer what [counting] asks. A session recorded in Bluetooth-only mode has no
+     * playback figure, and treating that as "zero minutes listened" would drag down the average
+     * and move the first-seen date to something that never happened.
      */
     private fun counted(spans: List<Span>, counting: Counting): List<Span> = when (counting) {
         Counting.CONNECTED -> spans
@@ -76,9 +76,9 @@ object Stats {
             longestMs = durations.max(),
             averageMs = total / relevant.size,
             playingMs = relevant.sumOf { it.playingMs ?: 0L },
-            // The filter is redundant when counting playback — `counted` has already dropped every
-            // span without a figure — and load-bearing when counting connected time, where
-            // `relevant` is everything and this must be only what was actually measured.
+            // Redundant when counting playback — `counted` already dropped every span without a
+            // figure — and load-bearing when counting connected time, where `relevant` is
+            // everything and this must be only what was measured.
             measuredMs = relevant.filter { it.playingMs != null }.sumOf { durationMs(it, now) },
             firstAt = relevant.minOf { it.startAt },
             lastAt = relevant.maxOf { it.endAt ?: now },
@@ -87,15 +87,14 @@ object Stats {
     }
 
     /**
-     * Splits spans across local midnights so a session that runs overnight is credited to both
-     * days. Uses [ZoneId] arithmetic rather than fixed 24 h blocks, so DST days (23 h / 25 h)
-     * bucket correctly.
+     * Splits spans across local midnights so an overnight session is credited to both days. Uses
+     * [ZoneId] arithmetic rather than fixed 24 h blocks, so DST days (23 h / 25 h) bucket correctly.
      *
-     * [from] drops whatever a caller cannot display. Every caller here wants a window — thirty
-     * days, fourteen, one — and without a floor this walked the entire history a day at a time
-     * per span and then threw all but the tail away, so the cost of drawing one month grew with
-     * every month ever recorded. A span is skipped whole when it ended before the window, and one
-     * that straddles the edge starts its walk at [from] rather than at its own beginning.
+     * [from] drops whatever a caller can't display. Every caller wants a window — thirty days,
+     * fourteen, one — and without a floor this walked the entire history a day at a time per span,
+     * then threw away all but the tail, so drawing one month grew costlier with every month ever
+     * recorded. A span is skipped whole if it ended before the window; one straddling the edge
+     * starts its walk at [from], not its own beginning.
      */
     fun dailyMs(
         spans: List<Span>,
@@ -111,17 +110,17 @@ object Stats {
             if (connected <= 0 || credit <= 0) continue
             val end = (span.endAt ?: now).coerceAtLeast(span.startAt)
             if (end < from) continue
-            // Clamped, not skipped: a session that started before the window and ended inside it
-            // still owns the part that falls in, and the rate below is a per-millisecond one.
+            // Clamped, not skipped: a session starting before the window and ending inside it
+            // still owns the part that falls in, and the rate below is per-millisecond.
             var cursor = maxOf(span.startAt, from)
             var day = Instant.ofEpochMilli(cursor).atZone(zone).toLocalDate()
             while (cursor < end) {
                 val nextMidnight = day.plusDays(1).atStartOfDay(zone).toInstant().toEpochMilli()
                 val sliceEnd = minOf(end, nextMidnight)
                 if (sliceEnd <= cursor) break // clock skew guard; never loop forever
-                // Only one playback total is stored per session, never *when* inside it the
-                // audio ran, so an overnight session spreads its playback evenly over the days
-                // it covers. Counting connected time, credit == connected and this is exact.
+                // Only one playback total is stored per session, never *when* the audio ran, so
+                // an overnight session spreads its playback evenly across the days it covers.
+                // Counting connected time, credit == connected and this is exact.
                 out[day] = (out[day] ?: 0L) + (sliceEnd - cursor) * credit / connected
                 cursor = sliceEnd
                 day = day.plusDays(1)
@@ -156,9 +155,9 @@ object Stats {
     /**
      * Total over the last [days] local days, today included.
      *
-     * For a caller that wants one window. A screen showing several of them should build the
-     * longest series once and sum its tails — `ui/Components.kt`'s `WindowStatRow` — because
-     * every call here walks the history again to answer the same question.
+     * For a caller wanting one window. A screen showing several should build the longest series
+     * once and sum its tails — `ui/Components.kt`'s `WindowStatRow` — since every call here
+     * re-walks the history to answer the same question.
      */
     fun recentMs(
         spans: List<Span>,

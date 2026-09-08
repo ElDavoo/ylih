@@ -106,8 +106,8 @@ class JsonBackupTest {
                 endReason = null,
             ),
         )
-        // Charge cycles are worked out from these and from nothing else, so a backup that drops
-        // them restores a pair whose battery history starts again from today.
+        // Charge cycles are worked out from these and nothing else, so a backup that drops them
+        // restores a pair whose battery history starts again from today.
         target.batterySampleDao().insert(
             BatterySampleEntity(sessionId = openId, pairId = pairId, at = now - hour, level = 90),
         )
@@ -119,7 +119,7 @@ class JsonBackupTest {
     /**
      * Every other assertion here decodes the export before looking at it, and decoding refills
      * `formatVersion` from its default — so an export that never wrote the key read exactly like
-     * one that did, which is how shipping without it went unnoticed. This one reads the text.
+     * one that did, which is how shipping without it went unnoticed. This test reads the text.
      */
     @Test
     fun `the exported document carries its format version as text`() = runTest {
@@ -192,8 +192,8 @@ class JsonBackupTest {
 
     /**
      * The field arrived with a default rather than a format bump, exactly as `settings` did, so a
-     * file written by the build before charge cycles existed still restores its history — it simply
-     * has no readings in it.
+     * file written before charge cycles existed still restores its history — just with no
+     * readings in it.
      */
     @Test
     fun `a backup written before battery readings existed still imports`() = runTest {
@@ -215,7 +215,7 @@ class JsonBackupTest {
 
     /**
      * The settings are five flags and a language tag, and losing them on a new phone means the
-     * restored history is suddenly counting something else — playback rather than connected time,
+     * restored history suddenly counts something else — playback rather than connected time,
      * say — with nothing to explain why the totals moved.
      */
     @Test
@@ -236,7 +236,7 @@ class JsonBackupTest {
 
     /**
      * The field arrived after the format did, so a file written by an older build has no settings
-     * at all — and must leave the ones on the phone alone rather than clearing them, which is what
+     * at all — and must leave the phone's own alone rather than clearing them, which is what
      * every backup did before this existed.
      */
     @Test

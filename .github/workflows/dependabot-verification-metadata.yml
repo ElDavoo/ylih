@@ -5,26 +5,26 @@ name: Dependabot verification metadata
 # fails with "Dependency verification failed ... checksums are missing" before it compiles a line.
 # See dependabot/feedback#908 for the open request; until it lands, this workflow is the answer.
 #
-# It regenerates the metadata on the PR branch and pushes it back, which turns a PR that always
-# fails into one that Android CI can actually judge — and that dependabot-auto-merge.yml can then
-# merge on its own.
+# It regenerates the metadata on the PR branch and pushes it back, turning a PR that always
+# fails into one Android CI can actually judge — one dependabot-auto-merge.yml can then merge on
+# its own.
 #
 # Two things about it are load-bearing:
 #
-#   * It must push with something other than GITHUB_TOKEN. A push made with GITHUB_TOKEN creates
+#   * It must push with something other than GITHUB_TOKEN: a push made with GITHUB_TOKEN creates
 #     no new workflow runs, so the metadata commit would land on the PR, move the head SHA, and
-#     leave that SHA with no checks at all — which auto-merge waits on forever. The token below
-#     has to belong to a GitHub App or a user, and it has to be stored as a **Dependabot** secret
-#     (Settings -> Secrets and variables -> Dependabot), not an Actions one: a workflow run
-#     triggered by Dependabot sees only that store, and its GITHUB_TOKEN is read-only whatever the
+#     leave that SHA with no checks — which auto-merge waits on forever. The token below must
+#     belong to a GitHub App or a user, and be stored as a **Dependabot** secret (Settings ->
+#     Secrets and variables -> Dependabot), not an Actions one: a workflow run triggered by
+#     Dependabot sees only that store, and its GITHUB_TOKEN is read-only whatever the
 #     permissions block says. Contents: write on this repository is all it needs.
 #
-#   * The regeneration happens here rather than in a nix dev shell on someone's machine, and that
-#     is an improvement rather than a compromise. flake.nix points aapt2FromMavenOverride at the
-#     SDK's own binary, so a local run never resolves com.android.tools.build:aapt2 and writes a
-#     file that is complete on NixOS and two artifacts short everywhere else. The F-Droid
-#     buildserver found that the hard way. A runner has no override, so what it records is what an
-#     ordinary build needs.
+#   * The regeneration happens here rather than in a nix dev shell on someone's machine — an
+#     improvement, not a compromise. flake.nix points aapt2FromMavenOverride at the SDK's own
+#     binary, so a local run never resolves com.android.tools.build:aapt2 and writes a file
+#     complete on NixOS and two artifacts short everywhere else. The F-Droid buildserver found
+#     that the hard way. A runner has no override, so what it records is what an ordinary build
+#     needs.
 
 on:
   pull_request:
@@ -41,9 +41,9 @@ concurrency:
 jobs:
   regenerate:
     # Also what stops this running twice. The push below arrives as a `synchronize` event whose
-    # actor is the token's owner rather than Dependabot, so the second run is skipped before it
-    # costs anything — and a later Dependabot rebase, which drops our commit, is an actor match
-    # again and regenerates. `actor`, not the PR author, is what this depends on.
+    # actor is the token's owner rather than Dependabot, so the second run skips before it costs
+    # anything — and a later Dependabot rebase, which drops our commit, is an actor match again
+    # and regenerates. This depends on `actor`, not the PR author.
     if: github.actor == 'dependabot[bot]'  # zizmor: ignore[bot-conditions]
     runs-on: ubuntu-latest
 
@@ -66,8 +66,8 @@ jobs:
           # The head branch itself, not the merge commit: this job commits to it.
           ref: ${{ github.event.pull_request.head.ref }}
           # The build below resolves and executes code from versions nobody has reviewed yet.
-          # Leaving no credential in .git/config keeps the push token out of its reach until the
-          # one step that needs it.
+          # Leaving no credential in .git/config keeps the push token out of reach until the one
+          # step that needs it.
           persist-credentials: false
 
       - name: Set up JDK 21
@@ -97,16 +97,15 @@ jobs:
         with:
           cache-read-only: true
 
-      # Over the whole CI task set, both flavors, because a configuration that is never resolved
+      # Over the whole CI task set, both flavors: a configuration that's never resolved
       # contributes no checksums — the first hand-written pass here missed the androidTest ones.
-      # And --refresh-dependencies is not optional: an artifact already in the local cache is not
+      # And --refresh-dependencies isn't optional: an artifact already in the local cache isn't
       # re-resolved and would be silently left out.
       #
       # continue-on-error on purpose. A bump that breaks the build — a Kotlin deprecation under
-      # allWarningsAsErrors is the usual one — still resolved everything it needed to before it
-      # failed, so the metadata it wrote is correct and worth pushing. Android CI on the new
-      # commit is what reports the real failure, and it reports it as the deprecation rather than
-      # as "checksums are missing".
+      # allWarningsAsErrors is the usual one — still resolved everything it needed before
+      # failing, so the metadata it wrote is correct and worth pushing. Android CI on the new
+      # commit reports the real failure, as the deprecation rather than "checksums are missing".
       - name: Regenerate the verification metadata
         id: regenerate
         continue-on-error: true
@@ -120,8 +119,8 @@ jobs:
           testPlayDebugUnitTest assemblePlayDebug assemblePlayRelease
           assemblePlayReleaseTestAndroidTest
 
-      # Nothing proves the file here, deliberately: generation and verification are different code
-      # paths, and the thing that walks the second one is the Android CI run this push triggers.
+      # Nothing proves the file here, on purpose: generation and verification are different code
+      # paths, and the Android CI run this push triggers is what walks the second one.
       - name: Commit and push the regenerated metadata
         env:
           TOKEN: ${{ secrets.DEPENDABOT_PUSH_TOKEN }}

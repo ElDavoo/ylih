@@ -48,9 +48,9 @@ import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
 
 /**
- * Settings is where the two irreversible things live — turning tracking modes on and replacing
- * the whole database from a file — so the interesting assertions are that the switches write
- * through and that an import is never one tap away.
+ * Settings holds the two irreversible actions — switching tracking modes and replacing the
+ * whole database from a file — so the key assertions are that switches write through and an
+ * import is never one tap away.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
@@ -74,8 +74,8 @@ class SettingsScreenTest {
         settings.setDetailedTracking(false)
         settings.setPlaybackOnly(false)
         settings.setAgentAccess(false)
-        // Left over, this would compose the whole screen in whichever language the last test
-        // picked — see the note on awaitDetailedTracking about why it is put back from here.
+        // Left over, this would compose the whole screen in whatever language the last test
+        // picked — see the note on awaitDetailedTracking for why it's reset here.
         settings.setLanguage(AppLocale.SYSTEM)
     }
 
@@ -107,9 +107,8 @@ class SettingsScreenTest {
     }
 
     /**
-     * Every write on this screen goes through the view model and finishes on Room's own threads,
-     * so a condition has to be re-checked as real time passes rather than only as the compose
-     * clock is advanced.
+     * Every write here goes through the view model and finishes on Room's own threads, so a
+     * condition must be re-checked as real time passes, not just as the compose clock advances.
      */
     private fun settle(what: String, until: () -> Boolean) {
         repeat(500) {
@@ -124,18 +123,18 @@ class SettingsScreenTest {
     /**
      * The picker intent, once the shadow has actually recorded the launch.
      *
-     * The `onClick` calls `launcher.launch(…)` outright, so this is not a coroutine waiting to be
-     * resumed — but `performClick()` returning is still not a guarantee that the resulting work has
-     * been drained off Robolectric's main looper, which is paused and idled explicitly here. Read
-     * on the line after the click, `nextStartedActivityForResult` is therefore intermittently null,
-     * and the failure arrives as a bare `NullPointerException` on whichever line dereferences it,
-     * saying nothing about timing. It took the `play` job down twice in one day while `classic`
-     * passed the same commit, and it does not reproduce locally.
+     * `onClick` calls `launcher.launch(…)` outright, so this isn't a coroutine waiting to
+     * resume — but `performClick()` returning doesn't guarantee the resulting work has drained
+     * off Robolectric's main looper, which is paused and idled explicitly here. Read right after
+     * the click, `nextStartedActivityForResult` is intermittently null, and the failure is a bare
+     * `NullPointerException` wherever it's dereferenced, saying nothing about timing. It took the
+     * `play` job down twice in one day while `classic` passed the same commit, and does not
+     * reproduce locally.
      *
-     * [settle] is the fix because it idles that looper and lets real time pass, which is what the
-     * rest of this file already does for every other wait on this screen.
+     * [settle] fixes it by idling that looper and letting real time pass, as the rest of this
+     * file already does for every other wait here.
      *
-     * `nextStartedActivityForResult` removes what it returns, so it is safe to poll: null until the
+     * `nextStartedActivityForResult` removes what it returns, so polling is safe: null until the
      * launch lands, then the value exactly once.
      */
     private fun awaitStartedForResult(what: String): Intent {
@@ -153,11 +152,11 @@ class SettingsScreenTest {
         compose.onAllNodesWithText(value, substring = substring).fetchSemanticsNodes().size
 
     /**
-     * The setting has to be left as it was found *from inside the test body*: the write runs on
-     * the main thread the Compose rule owns, and a blocking write from `@After` would wait on a
-     * thread only the test body can still free.
+     * The setting must be reset *from inside the test body*: the write runs on the main thread
+     * the Compose rule owns, and a blocking write from `@After` would wait on a thread only the
+     * test body can free.
      *
-     * This waits for the stored value alone. Where the switch is asserted too, that needs
+     * This waits for the stored value alone. Where the switch is asserted too, use
      * [awaitToggleBesides] — reaching the store no longer means reaching the screen.
      */
     private fun awaitDetailedTracking(on: Boolean) {
@@ -180,35 +179,34 @@ class SettingsScreenTest {
 
     /** Settings is a plain scrolling column, so the target brings itself into view. */
     private fun scrollTo(value: String) {
-        // The static sections compose before Room has answered, so `show()` returning says
-        // nothing about a device row being on the screen yet; scrolling to one that is not there
-        // is what fails, and only on a machine slow enough for the query to lose the race.
+        // Static sections compose before Room answers, so `show()` returning says nothing about
+        // a device row being on screen yet; scrolling to one that isn't there is what fails, and
+        // only on a machine slow enough for the query to lose the race.
         settle("$value to be drawn") { nodeCount(value, substring = true) > 0 }
         compose.onAllNodesWithText(value, substring = true).onFirst().performScrollTo()
     }
 
     /**
-     * `isToggleable()` alone is ambiguous — there are two switches in the tracking section and a
-     * checkbox per known device, so the label is what tells them apart.
+     * `isToggleable()` alone is ambiguous — two switches live in the tracking section plus a
+     * checkbox per known device — so the label tells them apart.
      *
-     * The label is *on* the toggle rather than beside it. The whole row is the control now — one
-     * click target and one thing for a screen reader to announce, with its state, which is the
-     * shape the language dialog already used — so the row merges its labels and the toggleable
-     * node is the one carrying them.
+     * The label sits *on* the toggle, not beside it: the whole row is the control, one click
+     * target and one thing for a screen reader to announce with its state, the shape the
+     * language dialog already used. The row merges its labels onto the toggleable node.
      */
     private fun toggleMatcher(label: String) = isToggleable() and hasText(label)
 
     private fun toggleBesides(label: String) = compose.onNode(toggleMatcher(label))
 
     /**
-     * Waits for the *switch*, which the setting having reached its new value no longer implies.
+     * Waits for the *switch*, which the setting reaching its new value no longer implies.
      *
-     * A write finishes in SQLite and Room notifies the flow the screen is collecting only after
-     * it, so `detailedTrackingNow()` can already read the new value while the switch still draws
-     * the old one. Under DataStore the write and the emission were one in-memory update and there
-     * was no gap to lose: asserting the switch straight after [awaitDetailedTracking] was sound
-     * and stopped being sound when the settings moved into the database. It raced on a loaded CI
-     * runner, on one of the four variants, having passed locally on all four.
+     * A write finishes in SQLite, and Room notifies the flow the screen collects only after
+     * that, so `detailedTrackingNow()` can read the new value while the switch still draws the
+     * old one. Under DataStore, the write and the emission were one in-memory update with no gap
+     * to lose: asserting the switch right after [awaitDetailedTracking] was sound until settings
+     * moved into the database. It raced on a loaded CI runner, on one of four variants, after
+     * passing locally on all four.
      */
     private fun awaitToggleBesides(label: String, on: Boolean) {
         settle("the switch beside $label to read ${if (on) "on" else "off"}") {
@@ -243,9 +241,9 @@ class SettingsScreenTest {
         toggleBesides(label).performClick()
         awaitDetailedTracking(on = true)
 
-        // The setting does not wait on the answer: the service runs and records either way, and
-        // the permission only decides whether its notification is drawn. So the switch is already
-        // on behind the dialog.
+        // The setting doesn't wait on the answer: the service runs and records either way, and
+        // the permission only decides whether its notification draws. The switch is already on
+        // behind the dialog.
         awaitToggleBesides(label, on = true)
         settle("the notification explainer") { nodeCount(text(R.string.welcome_notifications_title)) > 0 }
         compose.onNodeWithText(text(R.string.welcome_notifications_without)).assertExists()
@@ -271,8 +269,7 @@ class SettingsScreenTest {
         )
 
         // The service is already up and posted its notification with nowhere to put it, so the
-        // grant has to reach syncWithSystem or nothing would appear until something else
-        // restarted it.
+        // grant must reach syncWithSystem or nothing appears until something else restarts it.
         compose.activity.activityResultRegistry.dispatchResult(request.requestCode, true)
         settle("the explainer to go") { nodeCount(text(R.string.welcome_notifications_title)) == 0 }
         awaitDetailedTracking(on = true)
@@ -317,8 +314,8 @@ class SettingsScreenTest {
             if (Distribution.HAS_SPECIAL_USE_FGS) 0 else 1,
             nodeCount(text(R.string.settings_detailed_unavailable)),
         )
-        // Saying so is only half of it. A switch left live beside the note would spring back on
-        // every tap, which reads as a bug in the app rather than a limit of the build.
+        // Saying so is only half of it: a switch left live beside the note would spring back on
+        // every tap, reading as a bug rather than a build limit.
         val switch = toggleBesides(text(R.string.settings_detailed_title))
         if (Distribution.HAS_SPECIAL_USE_FGS) {
             switch.assertIsEnabled()
@@ -345,9 +342,9 @@ class SettingsScreenTest {
 
     @Test
     fun `the assistant switch writes the setting through, both ways`() {
-        // Both directions, because they are not the same code path: turning it off is the one
-        // that has to reach the OS, since an app function left enabled is callable whatever this
-        // app's own table says.
+        // Both directions, since they're not the same code path: turning it off must reach the
+        // OS, because an app function left enabled is callable whatever this app's own table
+        // says.
         show()
 
         val label = text(R.string.settings_agent_title)
@@ -482,8 +479,8 @@ class SettingsScreenTest {
         show()
 
         if (Distribution.HAS_BATTERY_SHORTCUT) {
-            // The button itself, not the section header above it: a row added higher up the
-            // screen otherwise pushes it back out of the viewport and the tap lands on nothing.
+            // The button itself, not the section header: a row added higher up the screen would
+            // push it out of the viewport, landing the tap on nothing.
             scrollTo(text(R.string.settings_battery_button))
             compose.onNodeWithText(text(R.string.settings_battery_button)).performClick()
             assertEquals(
@@ -503,7 +500,7 @@ class SettingsScreenTest {
         show()
 
         // Read at compose time rather than typed in, so this fails if the reporting stops
-        // reflecting what the platform actually says about this app.
+        // matching what the platform actually says about this app.
         settle("the hibernation check to answer") {
             nodeCount(text(R.string.settings_hibernation_on)) > 0
         }

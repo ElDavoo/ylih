@@ -25,9 +25,9 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
 /**
- * The devices list is the app's front page, and the distinction it draws — in use above, retired
- * below — is the whole reason a pair has a generation at all: retiring freezes a total instead of
- * deleting it, so a retired pair must still be visible and still carry its hours.
+ * The devices list is the app's front page. Its distinction — in use above, retired below — is
+ * why a pair has a generation at all: retiring freezes a total instead of deleting it, so a
+ * retired pair must stay visible and still carry its hours.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
@@ -103,7 +103,7 @@ class DevicesScreenTest {
                 )
             }
         }
-        // The summaries arrive from Room a frame or two after the first composition.
+        // Summaries arrive from Room a frame or two after the first composition.
         compose.waitUntil(timeoutMillis = 10_000, condition = until)
     }
 
@@ -113,9 +113,9 @@ class DevicesScreenTest {
         compose.onAllNodesWithText(value, substring = substring).fetchSemanticsNodes().size
 
     /**
-     * The chips are informational and carry the card's own action, so four buttons per pair all
-     * doing the same thing is what a screen reader used to hear. Their semantics are cleared and
-     * what they say is gathered into the card's description, which is where this looks.
+     * The chips are informational and carry the card's own action, so a screen reader used to
+     * hear four buttons per pair all doing the same thing. Their semantics are now cleared and
+     * gathered into the card's description — where this looks.
      */
     private fun describedCount(value: String): Int = compose
         .onAllNodesWithContentDescription(value, substring = true)

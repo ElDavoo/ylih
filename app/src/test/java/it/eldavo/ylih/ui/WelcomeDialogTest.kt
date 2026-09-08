@@ -24,9 +24,9 @@ import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
 
 /**
- * The welcome is shown once and never again, which is exactly the kind of thing that can stop
- * working without anyone noticing. What it says on the way through matters as much: the Bluetooth
- * page is the only place the app ever explains why it is asking.
+ * The welcome is shown once and never again — exactly the kind of thing that can stop working
+ * without anyone noticing. What it says on the way through matters as much: the Bluetooth page
+ * is the only place the app ever explains why it's asking.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
@@ -55,14 +55,14 @@ class WelcomeDialogTest {
         val intro = app.getString(R.string.welcome_title)
         compose.waitUntil(timeoutMillis = 10_000) { nodeCount(intro) > 0 }
 
-        // The intro does not finish the run any more — there is a page after it, so the button
-        // that used to say "get started" has to say so.
+        // The intro no longer finishes the run — there's a page after it, so the button that used
+        // to say "get started" must say so.
         compose.onNodeWithText(app.getString(R.string.welcome_next)).performClick()
 
         val bluetooth = app.getString(R.string.welcome_bluetooth_title)
         compose.waitUntil(timeoutMillis = 10_000) { nodeCount(bluetooth) > 0 }
-        // Both outcomes are spelled out, which is the whole reason this page exists rather than
-        // the system prompt arriving on its own.
+        // Both outcomes are spelled out — the whole reason this page exists rather than the
+        // system prompt arriving on its own.
         compose.onNodeWithText(app.getString(R.string.welcome_bluetooth_with)).assertExists()
         compose.onNodeWithText(app.getString(R.string.welcome_bluetooth_without)).assertExists()
 

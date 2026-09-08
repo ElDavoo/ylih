@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Validate translations against the English base.
 
-Lint enforces that every string exists in every locale; it cannot see whether the
-text was ever translated, nor whether a format specifier survived the round trip.
-This checks both, plus the two typography rules lint does enforce, so a translation
-edit can be verified without a 90-second Gradle run.
+Lint enforces that every string exists in every locale, but not whether the text was
+ever translated or a format specifier survived the round trip. This checks both, plus
+the two typography rules lint also enforces, so an edit can be verified without a
+90-second Gradle run.
 
 Usage:  check-translations.py [values-xx ...]     (default: every locale)
 """
@@ -17,8 +17,8 @@ import xml.etree.ElementTree as ET
 REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 RES = os.path.join(REPO, "app/src/main/res")
 
-# Latin technical tokens the house style deliberately leaves as-is, so being
-# identical to English is not evidence they were skipped.
+# Latin technical tokens house style leaves as-is; matching English isn't evidence
+# they were skipped.
 LOANWORDS = {"stats_pair_row", "kind_usb", "kind_bluetooth", "kind_ble", "devices_recent"}
 
 FMT = re.compile(r"%(?:\d+\$)?[-#+ 0,(]*\d*(?:\.\d+)?[a-zA-Z]")
@@ -42,12 +42,11 @@ def specs(text):
 
 
 def committed_quantities(folder):
-    """The plural quantity set as last committed.
+    """Plural quantity set as last committed.
 
-    The CLDR categories a language takes are not ours to choose — lint (MissingQuantity) already
-    holds each file to them. What an edit can do is quietly drop one while rewording, so the
-    useful question is whether this edit changed the set, which HEAD answers without a snapshot
-    file to keep in step.
+    Lint (MissingQuantity) already holds each file to the CLDR categories a language
+    takes; an edit can still quietly drop one while rewording. HEAD answers whether this
+    edit changed the set, with no snapshot file to keep in sync.
     """
     path = f"app/src/main/res/{folder}/strings.xml"
     show = subprocess.run(["git", "show", f"HEAD:{path}"],
@@ -101,8 +100,8 @@ def check(folder, base_s, base_p):
             if specs(txt) != want_spec:
                 errors.append(f"{k}[{q}]: format specifiers {want_spec} -> {specs(txt)}")
 
-    # Only the values, never the whole file: lint reads string content, so an apostrophe inside
-    # an XML comment ("Types d'appareil") is not a finding and must not be reported as one.
+    # Only the values, not the whole file: lint reads string content, so an apostrophe in an
+    # XML comment ("Types d'appareil") is not a finding.
     values = list(s.values()) + [t for q in p.values() for t in q.values()]
     quotes = sum(v.count("'") for v in values)
     if quotes:

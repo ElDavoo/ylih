@@ -73,13 +73,13 @@ class MainActivityTest {
     }
 
     /**
-     * A widget row's tap arriving at an activity that is already up.
+     * A widget row's tap arriving at an activity that's already up.
      *
-     * `singleTop` means the launcher hands it to [MainActivity.onNewIntent] rather than stacking a
-     * second copy, and the pair id reaches the NavHost through a conflated channel. The flow over
-     * that channel is a field rather than something `setContent` builds, because `receiveAsFlow()`
-     * allocates a new object per call and the `LaunchedEffect` keyed on it would restart — losing
-     * whatever a `trySend` had just conflated into it.
+     * `singleTop` means the launcher hands it to [MainActivity.onNewIntent] rather than stacking
+     * a second copy, and the pair id reaches the NavHost through a conflated channel. The flow
+     * over that channel is a field rather than something `setContent` builds, because
+     * `receiveAsFlow()` allocates a new object per call and the `LaunchedEffect` keyed on it
+     * would restart — losing whatever a `trySend` had just conflated into it.
      */
     @Test
     fun `a widget tap arriving at an open activity is carried through`() {
@@ -95,8 +95,8 @@ class MainActivityTest {
             shadowOf(Looper.getMainLooper()).idle()
 
             // `setIntent` is the load-bearing half: `onCreate` acts on the attached intent only
-            // when there is no saved state, so an intent left unreplaced would be re-read as the
-            // launch intent after a rotation and drag the user back out of wherever they had gone.
+            // when there's no saved state, so an intent left unreplaced would be re-read as the
+            // launch intent after a rotation and drag the user back out of wherever they'd gone.
             assertEquals(
                 42L,
                 activity.intent.getLongExtra(MainActivity.EXTRA_PAIR_ID, -1L),
@@ -119,7 +119,7 @@ class MainActivityTest {
 
             // And it stays that way when the welcome finishes. The welcome's own Bluetooth page
             // raised that prompt, with a reason attached; a second one from here would land
-            // behind the answer the user had just given to the first.
+            // behind the answer the user just gave the first.
             runBlocking { app.container.settings.setOnboardingDone(true) }
             shadowOf(Looper.getMainLooper()).idle()
             assertNull(

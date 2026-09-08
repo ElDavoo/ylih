@@ -77,16 +77,16 @@ fun SettingsScreen(
     // Non-null while the notification explainer is up, holding the permission it is about.
     var askNotifications by remember { mutableStateOf<String?>(null) }
 
-    // Detailed tracking is what makes the notification permission matter at all —
-    // NotificationPermissionDialog's KDoc has why it is asked here, on every switch-on, rather
-    // than once. The setting itself is written either way and does not wait for an answer.
+    // Detailed tracking is what makes the notification permission matter — see
+    // NotificationPermissionDialog's KDoc for why it's asked here, on every switch-on, rather than
+    // once. The setting is written either way and doesn't wait for an answer.
     fun setDetailed(enabled: Boolean) {
         viewModel.setDetailedTracking(enabled)
         if (enabled) askNotifications = notificationPermissionToAsk(context)
     }
 
-    // The write goes through the settings table and the new configuration is only readable once
-    // it has landed: restarting any earlier reattaches the activity with the language it already had.
+    // The write goes through the settings table and the new configuration is readable only once
+    // it lands: restarting earlier reattaches the activity with the language it already had.
     LaunchedEffect(pendingLanguage, language) {
         if (pendingLanguage != null && pendingLanguage == language) {
             pendingLanguage = null
@@ -114,9 +114,9 @@ fun SettingsScreen(
         val detailedSupported by viewModel.detailedTrackingSupported.collectAsStateWithLifecycle()
         SectionHeader(stringResource(R.string.settings_tracking))
         Row(
-            // toggleable rather than clickable, with the switch along for the ride — the same
-            // shape LanguageRow below already uses, and for the same reason: one click target and
-            // one thing for a screen reader to announce, with its state, rather than two.
+            // toggleable, not clickable, with the switch along for the ride — the same shape
+            // LanguageRow below uses, for the same reason: one click target and one thing for a
+            // screen reader to announce, with its state, not two.
             modifier = Modifier
                 .fillMaxWidth()
                 .toggleable(
@@ -153,10 +153,10 @@ fun SettingsScreen(
                 onCheckedChange = null,
             )
         }
-        // Playback is only ever measured by the foreground service, so on a build that cannot run
-        // it the choice would be between real hours and a column of zeroes. Offering it once the
-        // service is possible, rather than once it is running, keeps history recorded earlier
-        // readable after detailed tracking is switched back off.
+        // Playback is only measured by the foreground service, so on a build that can't run it
+        // the choice would be real hours vs. a column of zeroes. Offering it once the service is
+        // possible, not once it's running, keeps history recorded earlier readable after detailed
+        // tracking is switched back off.
         if (detailedSupported || detailed) {
             Row(
                 modifier = Modifier
@@ -190,8 +190,8 @@ fun SettingsScreen(
         HorizontalDivider()
 
         // Android 13 took per-app language over: the generated locale config puts ylih in
-        // Settings > System > Languages there, and a second switch inside the app would be a
-        // second answer to the same question. Below 13 there is no such setting to defer to.
+        // Settings > System > Languages there, and a second switch here would be a second answer
+        // to the same question. Below 13 there's no such setting to defer to.
         if (AppLocale.NEEDS_IN_APP_PICKER) {
             SectionHeader(stringResource(R.string.settings_language))
             Row(
@@ -247,9 +247,9 @@ fun SettingsScreen(
         }
 
         SectionHeader(stringResource(R.string.settings_data))
-        // In the data section rather than beside the tracking modes: this changes nothing about
-        // what is recorded, only who else may read it. Off until it is turned on, and off is the
-        // state the app functions actually ship in — see `agent/YlihAppFunctions.kt`.
+        // In the data section, not beside the tracking modes: this changes nothing about what's
+        // recorded, only who else may read it. Off until turned on, and off is the state the app
+        // functions ship in — see `agent/YlihAppFunctions.kt`.
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -278,8 +278,8 @@ fun SettingsScreen(
         // ButtonGroupScope is not a composable scope, so the labels are resolved out here.
         val exportLabel = stringResource(R.string.settings_export)
         val importLabel = stringResource(R.string.settings_import)
-        // A ButtonGroup rather than two loose buttons: these are one choice with two answers, and
-        // Expressive's group squashes its neighbours as you press, which reads as exactly that.
+        // A ButtonGroup, not two loose buttons: these are one choice with two answers, and
+        // Expressive's group squashes its neighbours as you press, reading as exactly that.
         ButtonGroup(
             modifier = Modifier.padding(horizontal = 16.dp),
             overflowIndicator = {},
@@ -313,7 +313,7 @@ fun SettingsScreen(
         Spacer(Modifier.height(8.dp))
         if (Distribution.HAS_BATTERY_SHORTCUT) {
             // Filled, like the export/import group above: ButtonGroup's items are always a filled
-            // Button, so an outlined one here read as a different kind of control rather than a
+            // Button, so an outlined one here read as a different kind of control, not a
             // lower-priority one.
             Button(
                 onClick = {
@@ -360,10 +360,10 @@ fun SettingsScreen(
                 style = MaterialTheme.typography.bodySmall,
                 modifier = Modifier.padding(horizontal = 16.dp),
             )
-            // Still offered once exempt: the exemption is the user's to withdraw, and a button
-            // that vanishes on success leaves no way back to the screen that set it.
-            // Remembered: this resolves an activity through PackageManager, and YlihNavHost's
-            // copy of the same call already knew to.
+            // Still offered once exempt: withdrawing the exemption is the user's choice, and a
+            // button that vanishes on success leaves no way back to the screen that set it.
+            // Remembered: this resolves an activity through PackageManager, as YlihNavHost's copy
+            // of the same call already does.
             remember(context) { Restrictions.settingsIntent(context) }?.let { intent ->
                 Spacer(Modifier.height(8.dp))
                 Button(
@@ -435,9 +435,9 @@ fun SettingsScreen(
 }
 
 /**
- * Applying a language means rebuilding every context that was created under the old one, and the
- * activity is the only one alive by then. Hoisted into a parameter so a test can watch for the
- * restart rather than have its own activity torn down mid-composition.
+ * Applying a language means rebuilding every context created under the old one, and the activity
+ * is the only one alive by then. Hoisted into a parameter so a test can watch for the restart
+ * instead of having its own activity torn down mid-composition.
  */
 @Composable
 fun rememberActivityRestart(): () -> Unit {
@@ -490,8 +490,8 @@ private fun LanguageRow(label: String, selected: Boolean, onClick: () -> Unit) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            // selectable rather than clickable, with the radio button along for the ride: one
-            // click target and one thing for a screen reader to announce, not two.
+            // selectable, not clickable, with the radio button along for the ride: one click
+            // target and one thing for a screen reader to announce, not two.
             .selectable(selected = selected, role = Role.RadioButton, onClick = onClick)
             // A RadioButton with a null onClick brings no minimum touch target of its own, which
             // left these rows about 32dp tall — in a dialog listing seventy-seven of them.

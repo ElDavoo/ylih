@@ -1,7 +1,7 @@
 # Submitting ylih to Google Play
 
-Everything the Play Console asks for, prepared in advance. The listing text lives under
-`fastlane/metadata/android/en-US/`; the images are generated from the app itself.
+Everything Play Console asks for, prepared in advance: listing text lives under
+`fastlane/metadata/android/en-US/`, images generated from the app.
 
 ## 1. Build the artifacts
 
@@ -10,16 +10,14 @@ Everything the Play Console asks for, prepared in advance. The listing text live
 ./gradlew recordRoborazziPlayReleaseTest     # app/build/outputs/play-listing/playReleaseTest/*.png
 ```
 
-Tagging a release runs both in CI (`.github/workflows/android-release.yml`) and attaches the
-images as the `play-listing-assets` artifact, so the images always match the version being
-shipped. The AAB must be the **play** flavor: the classic APK declares the `specialUse`
-foreground-service type, which is exactly what the store build drops.
+A tag runs both in CI (`.github/workflows/android-release.yml`) and attaches the images as
+`play-listing-assets` for that version. The AAB must be **play** — the classic APK declares
+`specialUse`, dropped by the store build.
 
 Release signing reads `ANDROID_SIGNING_KEYSTORE_PATH`, `ANDROID_SIGNING_STORE_PASSWORD`,
-`ANDROID_SIGNING_KEY_ALIAS` and `ANDROID_SIGNING_KEY_PASSWORD`. Without them the build produces an
-**unsigned** artifact, which Play rejects just as surely as a debug-signed one — check the signer
-before uploading. (It used to fall back to the debug key; F-Droid builds this same source with no
-keystore at all, and unsigned is the output that leaves it something clean to sign.)
+`ANDROID_SIGNING_KEY_ALIAS` and `ANDROID_SIGNING_KEY_PASSWORD`. Without them the build is
+**unsigned**, rejected like debug-signed — check the signer before uploading. (It used to fall
+back to the debug key; F-Droid builds with no keystore, so unsigned keeps it signable.)
 
 ## 2. The generated images
 
@@ -31,55 +29,48 @@ keystore at all, and unsigned is the output that leaves it something clean to si
 | `feature-graphic-1024x500.png` | 1024×500 | Feature graphic (all languages) |
 | `social-preview-1280x640.png` | 1280×640 | Not a Play field — GitHub's social preview, see below |
 
-They are produced on the JVM by `app/src/test/java/it/eldavo/ylih/listing/`, using Roborazzi over
-Robolectric's native graphics — there is no emulator anywhere in this project's toolchain, and a
-store screenshot is not worth introducing one.
+Produced on the JVM by `app/src/test/java/it/eldavo/ylih/listing/`, via Roborazzi over
+Robolectric's native graphics — no emulator needed.
 
-- `DemoData.kt` seeds a plausible year of listening, anchored to the moment of recording, so the
-  screenshots never show stale dates. It writes through the DAOs rather than `SessionRepository`,
-  because the repository exists precisely to refuse backdated history.
-- `StoreGraphics.kt` also writes `social-preview-1280x640.png`, which no store asks for: it is the
-  card GitHub unfurls into Google, Slack and Mastodon. GitHub has no API for it — the upload lives
-  only in *Settings → General → Social preview* — so the committed copy at
-  `docs/img/social-preview.jpg` is what a human attaches there, and re-recording is only half the
-  job until that upload happens. It is committed as JPEG rather than as the PNG the record task
-  writes because GitHub's uploader showed the PNG as a blank card — the file itself is a valid,
-  fully opaque 1280x640, so convert rather than redraw:
+- `DemoData.kt` seeds a plausible year of listening anchored to the recording moment, avoiding
+  stale-looking dates. It writes through the DAOs, not `SessionRepository`, which refuses
+  backdated history.
+- `StoreGraphics.kt` also writes `social-preview-1280x640.png` — not a Play field, but the card
+  GitHub unfurls into Google, Slack and Mastodon. GitHub has no API for it, only *Settings →
+  General → Social preview*, so `docs/img/social-preview.jpg` must be uploaded there by hand after
+  re-recording. Committed as JPEG, not the record task's PNG, because GitHub's uploader showed the
+  PNG blank despite it being valid and opaque — convert rather than redraw:
 
   ```sh
   magick app/build/outputs/play-listing/classicReleaseTest/social-preview-1280x640.png \
       -alpha remove -alpha off -quality 92 -sampling-factor 4:4:4 docs/img/social-preview.jpg
   ```
-- `StoreScreenshots.kt` captures the four screens plus a dark-mode shot at 1080×1920 — Play's 9:16
-  phone ratio. A Pixel-shaped 1080×2400 is taller than 9:16, which is why the qualifier sets the
-  size by hand. The class is abstract with one subclass per listing language, each setting a
-  resource qualifier *and* `Locale.setDefault` — the qualifier localises the strings, the JVM
-  locale localises the numbers and dates that `ui/Format.kt` formats through
-  `Locale.getDefault()`. Adding a language to the store means adding one subclass and one
-  `fastlane/metadata/android/<locale>/` directory.
-- `StoreGraphics.kt` renders `@mipmap/ic_launcher`'s own layers rather than redrawing the artwork,
-  so the geometry solved in `ic_launcher_foreground.xml` cannot drift out of the listing. It draws
-  the layers instead of the drawable because `AdaptiveIconDrawable.draw()` applies the platform's
-  circular mask, and Play wants a full square it rounds off itself.
+- `StoreScreenshots.kt` captures the four screens plus a dark-mode shot at 1080×1920, Play's 9:16
+  phone ratio. A Pixel-shaped 1080×2400 is taller, so the qualifier sets the size by hand. It's
+  abstract with one subclass per listing language, each setting a resource qualifier (for strings)
+  *and* `Locale.setDefault` (for what `ui/Format.kt` formats via `Locale.getDefault()`). A new
+  language needs one subclass plus a `fastlane/metadata/android/<locale>/` directory.
+- `StoreGraphics.kt` renders `@mipmap/ic_launcher`'s own layers, not the artwork, so
+  `ic_launcher_foreground.xml`'s geometry can't drift from the listing:
+  `AdaptiveIconDrawable.draw()` applies the platform's circular mask to the drawable, while Play
+  wants a full square it rounds off itself.
 
-The screenshots are captured with the app's ordinary theme, dynamic colours included. On
-Robolectric those resolve to the AOSP default palette, which is coherent and representative of a
-real phone on a stock wallpaper — a truer picture than pinning the app's own `LightColors`/
-`DarkColors` in `ui/theme/Theme.kt` would give.
+Screenshots use the app's ordinary theme, dynamic colours included; on Robolectric these resolve
+to the AOSP default palette — closer to a real phone on stock wallpaper than pinning
+`LightColors`/`DarkColors` from `ui/theme/Theme.kt` would be.
 
-Nothing generated is committed *for Play*, which takes the images by upload and so has no reason
-to carry binaries a Gradle task reproduces exactly. The one exception is
-`fastlane/metadata/android/en-US/images/`, which is checked in for F-Droid: F-Droid has no upload
-step and reads the images out of the repository or shows none at all. Those are recorded from the
-**classic** flavor, because that is the build F-Droid ships and its settings screen differs from
-this one. See [`fdroid.md`](fdroid.md).
+Nothing generated is committed for Play — it takes images by upload, so there's no reason to
+carry binaries a Gradle task reproduces. The exception is
+`fastlane/metadata/android/en-US/images/`, checked in for F-Droid: no upload step there, so it
+shows nothing without a repository image. Recorded from the **classic** flavor, which F-Droid
+ships and whose settings screen differs from this one — see [`fdroid.md`](fdroid.md).
 
 ## 3. Store listing
 
-Listing text lives in `fastlane/metadata/android/<locale>/`, currently 26 locales. Screenshots are
-rendered for 29 (`cs-CZ`, `el-GR` and `iw-IL` have images but no listing copy yet — either write
-it or drop those three `StoreScreenshots` subclasses before submitting). Add each non-English
-listing in Play Console under *Store presence → Main store listing → Manage translations*.
+Listing text lives in `fastlane/metadata/android/<locale>/`, 26 locales; screenshots render for
+29 (`cs-CZ`, `el-GR`, `iw-IL` have images but no listing copy — write it, or drop those three
+`StoreScreenshots` subclasses before submitting). Add each non-English listing in Play Console
+under *Store presence → Main store listing → Manage translations*.
 
 | Field | Value |
 |---|---|
@@ -93,63 +84,57 @@ listing in Play Console under *Store presence → Main store listing → Manage 
 | Website | https://github.com/ElDavoo/ylih |
 | Privacy policy | `PRIVACY.md`, served over HTTPS — see "Blockers" |
 
-The launcher label stays `ylih`; the store title spells the name out in full — "ylih - your life
-in headphones", the same phrase the app's own top bar uses, which is where the four-letter word
-comes from. It is exactly 30 characters, Play's limit, so there is no room to add to it. Each
-translated `title.txt` is that same tagline in its own language rather than a transliteration, and
-the per-locale limit is Play's 30, not the 50 that `listing-metadata-check.py` enforces for
-F-Droid — check any new title against 30 by hand.
+The launcher label stays `ylih`; the store title spells it out as "ylih - your life in
+headphones" — the app's top-bar phrase and the source of the four-letter name — at exactly 30
+characters, Play's limit, with no room to spare. Each translated `title.txt` is the same tagline
+in its own language, not a transliteration. Play's 30-character limit is stricter than the 50
+`listing-metadata-check.py` enforces for F-Droid — check new titles against 30 by hand.
 
 ## 4. Data safety form
 
-The honest answers are all the same answer.
-
 - **Does your app collect or share any of the required user data types?** No.
-- **Is all of the user data collected by your app encrypted in transit?** Not applicable — no
-  data is transmitted. The app declares no `INTERNET` permission.
+- **Is all of the user data collected by your app encrypted in transit?** N/A — nothing is
+  transmitted; the app declares no `INTERNET` permission.
 - **Do you provide a way for users to request that their data is deleted?** Yes: uninstalling
-  removes everything, and pairs can be deleted individually in the app. Nothing is stored
-  off-device, so there is nothing else to delete.
-- **Data types:** none. Device identifiers are *not* collected in Play's sense — the last two
-  octets of a headset's address are stored locally and never leave the device.
+  removes everything, and pairs can be deleted individually. Nothing is stored off-device.
+- **Data types:** none. Device identifiers aren't collected in Play's sense — a headset address's
+  last two octets stay local and never leave the device.
 
-If the review pushes back, the argument is in the manifest: there is no `INTERNET` permission,
-so no data can be transmitted.
+If review pushes back, the manifest is the argument: no `INTERNET` permission, so nothing can be
+transmitted.
 
 ## 5. Foreground service declaration
 
-The `play` flavor declares one foreground service type, `connectedDevice`, used only when the
-user turns on detailed tracking. Play requires a written justification and often a demo video.
+The `play` flavor declares one foreground service type, `connectedDevice`, used only with detailed
+tracking on. Play requires a written justification and often a demo video.
 
-> **What the service does.** It measures how long headphones stay connected, and how much of that
-> time audio was actually playing. It runs only while the user has explicitly enabled "Detailed
-> tracking" in the app's settings, and it shows a permanent, silent, minimum-priority notification
-> the entire time it is running.
+> **What the service does.** Measures how long headphones stay connected and how much of that time
+> audio played. Runs only with "Detailed tracking" enabled in settings, showing a permanent,
+> silent, minimum-priority notification throughout.
 >
 > **Why a foreground service is required.** Android delivers wired-headphone plug events
-> (`ACTION_HEADSET_PLUG`) only to a receiver registered at runtime by a live process; they cannot
-> be received by a manifest receiver. Measuring playback likewise requires observing audio state
-> continuously. Neither is possible without a running process.
+> (`ACTION_HEADSET_PLUG`) only to a runtime-registered receiver in a live process, not a manifest
+> one; measuring playback also needs continuous audio-state observation — neither works without a
+> running process.
 >
-> **Why no other type fits.** The service tracks the connection state of an audio output device,
-> which is what `connectedDevice` describes.
+> **Why no other type fits.** The service tracks an audio output device's connection state, which
+> is what `connectedDevice` describes.
 >
-> **Alternatives considered.** Bluetooth headphones are tracked with no service at all, via a
-> manifest receiver on the ACL connect/disconnect broadcasts — that is the app's default mode, and
-> it is why this service is optional rather than always-on. WorkManager was rejected because plug
-> events are instantaneous and a deferred job cannot observe them.
+> **Alternatives considered.** Bluetooth headphones need no service — a manifest receiver on the
+> ACL connect/disconnect broadcasts handles them, the app's default and why this service is
+> optional. WorkManager was rejected: plug events are instantaneous and a deferred job can't
+> observe them.
 
-The sideloaded `classic` build additionally declares `specialUse`, for a user who wants wired
-headphones tracked but has denied Bluetooth access — Android 14+ ties `connectedDevice` to holding
-a Bluetooth permission. That type needs case-by-case approval, so the Play build does without it,
-and `SettingsScreen` explains the restriction to the user. Do not add `specialUse` to the store
-build without expecting review questions.
+The sideloaded `classic` build also declares `specialUse`, for a user tracking wired headphones
+with Bluetooth access denied — Android 14+ ties `connectedDevice` to a Bluetooth permission. That
+type needs case-by-case approval, so the Play build omits it and `SettingsScreen` explains the
+restriction; adding `specialUse` to the store build would invite review questions.
 
 ## 6. Content rating
 
 Answer "no" throughout: no violence, sexuality, profanity, controlled substances, gambling,
-user-generated content, user interaction, location sharing, or digital purchases. The expected
-outcome is "Everyone" / PEGI 3.
+user-generated content, user interaction, location sharing, or digital purchases. Expected
+outcome: "Everyone" / PEGI 3.
 
 ## 7. App content declarations
 
@@ -159,30 +144,28 @@ outcome is "Everyone" / PEGI 3.
 - **News app:** no.
 - **COVID-19 / health:** no.
 - **Government app:** no.
-- **Financial features:** none. The price field is a number the user types for their own
+- **Financial features:** none — the price field is a number the user types for their own
   cost-per-hour arithmetic; no payment is processed.
-- **Data deletion:** the in-app path is Settings and uninstall, per the Data safety section.
-- **App access:** all functionality is available without logging in. There are no accounts, so
-  there are no credentials to hand review. Say so explicitly rather than leaving it blank — an
-  unanswered App access form blocks the submission on its own.
-- **Advertising ID:** no. The app declares no `AD_ID` permission and pulls in no ads,
-  analytics or attribution SDK; answering "yes" here would fail review against the manifest.
+- **Data deletion:** the in-app path is Settings and uninstall, per Data safety.
+- **App access:** everything works without logging in — no accounts, no credentials to hand
+  review. Say so explicitly: an unanswered App access form blocks submission on its own.
+- **Advertising ID:** no. No `AD_ID` permission and no ads, analytics or attribution SDK;
+  answering "yes" would fail review against the manifest.
 - **Photos and videos / other restricted permissions:** none requested.
 
-One thing to have ready if review reads the manifest: the merged manifest does contain
-`ACCESS_NETWORK_STATE`, added by `androidx.work:work-runtime`, not by this app. It reads
-connectivity state and cannot transmit anything; `INTERNET` is still absent, so the listing's
-"no internet permission" claim holds exactly as written.
+The manifest does contain `ACCESS_NETWORK_STATE`, added by `androidx.work:work-runtime`, not this
+app; it reads connectivity state and can't transmit anything. `INTERNET` is still absent, so "no
+internet permission" holds.
 
 ## 8. Blockers that cannot be closed from this repository
 
-1. **A public HTTPS URL for the privacy policy.** Play will not accept a submission without one.
-   The repository is now public, so `https://github.com/ElDavoo/ylih/blob/main/PRIVACY.md` is a
-   usable URL; a GitHub Pages copy reads better if it is worth the setup.
-2. **The upload keystore.** It must exist, be registered with Play App Signing, and be present in
-   the repository secrets the release workflow reads.
-3. **A demo video** for the foreground-service declaration, if review asks for one. It has to show
-   a real device, so it cannot be generated here.
+1. **A public HTTPS URL for the privacy policy.** Play requires one; the repository is public, so
+   `https://github.com/ElDavoo/ylih/blob/main/PRIVACY.md` works, though a GitHub Pages copy would
+   read better if worth the setup.
+2. **The upload keystore.** Must exist, be registered with Play App Signing, and sit in the
+   repository secrets the release workflow reads.
+3. **A demo video** for the foreground-service declaration, if review asks — must show a real
+   device, so it can't be generated here.
 
 ## 9. Pre-flight checklist
 

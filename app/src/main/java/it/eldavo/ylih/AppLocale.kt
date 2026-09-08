@@ -16,8 +16,8 @@ import java.util.Locale
  *
  * From API 33 the platform owns this: the locale config generated from the values-* folders puts
  * the app under Settings > System > Languages, and the choice made there is remembered per app.
- * Below that nothing does — the system language is the only language an app gets — so ylih stores
- * a tag itself and applies it to every context it creates.
+ * Below that, nothing does — the system language is the only one an app gets — so ylih stores a
+ * tag itself and applies it to every context it creates.
  */
 object AppLocale {
 
@@ -33,11 +33,10 @@ object AppLocale {
     /**
      * Every language the app has resources for, as BCP 47 tags.
      *
-     * Read out of the locale config AGP generates from the values-* folders, which is the same
-     * list the system reads on Android 13+: the in-app picker and the system one therefore cannot
-     * drift apart, and a new translation folder needs no further wiring here either. The resource
-     * name is AGP's, so a rename on its side fails the compile rather than silently emptying the
-     * picker.
+     * Read out of the locale config AGP generates from the values-* folders, the same list the
+     * system reads on Android 13+: the in-app picker and the system one can't drift apart, and a
+     * new translation folder needs no further wiring here. The resource name is AGP's, so a rename
+     * on its side fails the compile rather than silently emptying the picker.
      */
     fun supportedTags(context: Context): List<String> {
         val parser = context.resources.getXml(R.xml._generated_res_locale_config)
@@ -59,8 +58,8 @@ object AppLocale {
         supportedTags(context).sortedWith(compareBy(Collator.getInstance()) { displayName(it) })
 
     /**
-     * How a language names itself. A picker in the current language would be unreadable to the
-     * person looking for the one they can actually read.
+     * How a language names itself: a picker in the current language would be unreadable to someone
+     * looking for the one they can actually read.
      */
     fun displayName(tag: String): String =
         Locale.forLanguageTag(tag).let { it.getDisplayName(it) }
@@ -68,19 +67,19 @@ object AppLocale {
     /**
      * Applies the stored language to a base context on its way into [Context.attachBaseContext].
      *
-     * The configuration has to be settled before a single resource is resolved, so there is no
-     * suspension point to wait at and the read has to block. It reads a `SharedPreferences` mirror
-     * of the row rather than the row, because on a cold start this is the *first* database access
-     * in the process: it would open Room, and on an upgrade run the migration, on the main thread
-     * before the first frame. The database stays the source of truth — [remember] writes this copy
-     * beside every language change, and a process that has never seen one falls back to the query
-     * once and then caches it, so an install upgraded into this loses nothing.
+     * The configuration must settle before any resource resolves, so there's no suspension point
+     * to wait at and the read must block. It reads a `SharedPreferences` mirror of the row, not the
+     * row itself, because on a cold start this is the *first* database access in the process: it
+     * would open Room, and on an upgrade run the migration, on the main thread before the first
+     * frame. The database stays the source of truth — [remember] writes this copy beside every
+     * language change, and a process that's never seen one falls back to the query once and caches
+     * it, so an install upgraded into this loses nothing.
      */
     fun wrap(base: Context): Context {
         if (!NEEDS_IN_APP_PICKER) return base
         SettingsStore.cachedLanguage(base)?.let { return apply(base, it) }
         // No mirror yet: an install upgraded into having one. Pay the blocking read once, then
-        // seed it so no later launch has to.
+        // seed it so no later launch must.
         val stored = runBlocking { SettingsStore(base).languageNow() }
         SettingsStore.cacheLanguage(base, stored)
         return apply(base, stored)
@@ -89,8 +88,8 @@ object AppLocale {
     /**
      * [wrap] for a caller that can suspend.
      *
-     * A home-screen widget is composed inside a coroutine and has no `attachBaseContext` to sit
-     * in, so it has neither the reason nor the excuse to block on the database.
+     * A home-screen widget composes inside a coroutine and has no `attachBaseContext` to sit in,
+     * so it has no reason or excuse to block on the database.
      */
     suspend fun wrapSuspending(base: Context): Context {
         if (!NEEDS_IN_APP_PICKER) return base
@@ -101,8 +100,8 @@ object AppLocale {
     fun apply(base: Context, tag: String): Context {
         val locale = if (tag == SYSTEM) systemLocale() else Locale.forLanguageTag(tag)
         // ui/Format.kt puts every date and duration through Locale.getDefault(), which a
-        // configuration override does not reach. Set here rather than at the call sites so a
-        // formatter added later cannot forget.
+        // configuration override doesn't reach. Set here, not at the call sites, so a formatter
+        // added later can't forget.
         Locale.setDefault(locale)
         if (tag == SYSTEM) return base
         val config = Configuration(base.resources.configuration)

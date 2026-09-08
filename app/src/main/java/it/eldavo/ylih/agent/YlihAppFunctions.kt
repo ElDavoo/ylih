@@ -19,24 +19,23 @@ import kotlin.math.roundToLong
 /**
  * The questions an on-device agent may ask about this app's history.
  *
- * Read-only by construction: nothing an agent calls reaches a write, so the funnel every other
- * source goes through — `SessionRepository` — is not one of them. The figures are the ones
- * `widget/WidgetData.kt` already assembles, because a widget is the same problem as an agent (a
- * caller that cannot see the UI and needs the numbers only) and that code is windowed, Glance-free
- * and pinned by `WidgetDataTest`. A third query path onto the same figures would be a third place
- * for them to disagree.
+ * Read-only by construction: nothing an agent calls reaches a write, so `SessionRepository` — the
+ * funnel every other source goes through — is not one of them. The figures come from
+ * `widget/WidgetData.kt`, since a widget is the same problem as an agent (a caller that can't see
+ * the UI and needs only the numbers) and that code is windowed, Glance-free and pinned by
+ * `WidgetDataTest`. A third query path onto the same figures would be a third place for them to
+ * disagree.
  *
  * KSP turns this into `YlihAppFunctionService` plus the schema XML in `assets/`; the manifest names
  * the generated class, which is why `app/src/main/keepRules/app-functions.keep` holds it to its own
  * name. The KDoc on each function below is not documentation for us — `isDescribedByKDoc = true`
- * makes it the text the agent reads to decide what the function is for, so it is written for a
- * caller who cannot see the code.
+ * makes it the text the agent reads to decide what the function does, so it's written for a caller
+ * who can't see the code.
  *
  * Every function ships **disabled**. `isEnabled` is the compile-time default baked into that
- * schema, and false is what makes the settings switch an opt-in rather than a gesture: shipped
- * enabled, the functions would be callable in the window between install and the user first opening
- * settings, and disabling them at first run would be a race against an agent that had already
- * indexed the app.
+ * schema, and false makes the settings switch an opt-in rather than a gesture: shipped enabled, the
+ * functions would be callable in the window between install and first opening settings, and
+ * disabling them at first run would race an agent that had already indexed the app.
  */
 @RequiresApi(Build.VERSION_CODES.BAKLAVA)
 @AppFunctionServiceEntryPoint(
@@ -77,14 +76,14 @@ abstract class YlihAppFunctions : AppFunctionService() {
 }
 
 /*
- * The two answers themselves, outside the service.
+ * The two answers, outside the service.
  *
  * Nothing that runs on a framework older than Android 17 can instantiate [YlihAppFunctions] — its
- * superclass is not there to load — and the unit suite is exactly that, so a mapping written
- * inside the class is a mapping no test can call. Out here it is ordinary code over an
- * [AppContainer], which is what lets `YlihAppFunctionsTest` assert that the hours an agent is
- * handed are the hours the app itself would show. Same bargain as `WidgetData.kt`, and for the
- * same reason: the caller is a renderer nobody can run from a test.
+ * superclass isn't there to load — and the unit suite is exactly that, so a mapping written inside
+ * the class is one no test can call. Out here it's ordinary code over an [AppContainer], which lets
+ * `YlihAppFunctionsTest` assert that the hours an agent gets are the hours the app itself would
+ * show. Same bargain as `WidgetData.kt`, for the same reason: the caller is a renderer nobody can
+ * run from a test.
  */
 
 internal suspend fun headphoneHours(container: AppContainer, zone: ZoneId): HeadphoneHours {
@@ -114,7 +113,7 @@ internal suspend fun listeningTotals(container: AppContainer, zone: ZoneId): Lis
 
 /**
  * Milliseconds as hours to one decimal — the same resolution `ui/Format.kt` shows on screen, so an
- * agent cannot quote a figure the user would not recognise from the app.
+ * agent can't quote a figure the user wouldn't recognise from the app.
  */
 private fun Long.toHours(): Double = (coerceAtLeast(0) / 360_000.0).roundToLong() / 10.0
 
@@ -157,15 +156,15 @@ class ListeningTotals(
 )
 
 /**
- * Pushes the user's answer onto the OS index, which is where "off" has to be true rather than in
- * the app's own table.
+ * Pushes the user's answer onto the OS index, where "off" has to be true, not just in the app's
+ * own table.
  *
  * Called from `SettingsStore.setAgentAccess`, so the stored row and the platform state move
- * together instead of being two things a later caller could leave disagreeing.
+ * together rather than being two things a later caller could leave disagreeing.
  *
- * Below Android 17 there is no service to enable — the generated one is declared
+ * Below Android 17 there's no service to enable — the generated one is declared
  * `android:enabled="@bool/enablePlatformAppFunctionService"`, which the library resolves to false
- * there — so this is a no-op and the stored row simply waits for an OS that has app functions.
+ * there — so this no-ops and the stored row just waits for an OS with app functions.
  */
 suspend fun pushAgentAccess(context: Context, enabled: Boolean) {
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.BAKLAVA) return
@@ -175,9 +174,9 @@ suspend fun pushAgentAccess(context: Context, enabled: Boolean) {
     } else {
         AppFunctionManager.APP_FUNCTION_STATE_DISABLED
     }
-    // Named here rather than at file scope so the version check above covers them: the generated
+    // Named here, not at file scope, so the version check above covers them: the generated
     // companion belongs to a class that only exists on Android 17, and lint reads the guard.
-    // Adding a function to [YlihAppFunctions] means adding it to this list.
+    // Adding a function to [YlihAppFunctions] means adding it here too.
     val ids = listOf(
         YlihAppFunctionService.FUNCTION_ID_GET_HEADPHONE_HOURS,
         YlihAppFunctionService.FUNCTION_ID_GET_LISTENING_TOTALS,

@@ -18,15 +18,15 @@ object Notifications {
      * Creates the tracking channel at process start.
      *
      * This used to run in [TrackingService.onCreate], on the line above the `startForeground`
-     * that needs it. With the notification permission denied, creating the channel there was
-     * observed to silently do nothing, so `startForeground` threw a moment later; the service
-     * caught that and stopped itself, and every retry ran the same two calls to the same result
-     * — detailed tracking died the instant it was switched on.
+     * that needs it. With the notification permission denied, creating the channel there
+     * silently did nothing, so `startForeground` threw a moment later; the service caught that
+     * and stopped itself, and every retry repeated the same two calls with the same result —
+     * detailed tracking died the instant it was switched on.
      *
-     * Creating it here instead fixes that: the service starts and runs whether or not the
-     * notification is allowed to be drawn. It also moves the permission ask to the switch that
-     * turns detailed tracking on rather than to first run — that ask is now about visibility,
-     * not about whether tracking works.
+     * Creating it here fixes that: the service starts and runs whether or not the notification
+     * may be drawn. It also moves the permission ask to the switch that turns detailed tracking
+     * on rather than to first run, so that ask is now about visibility, not about whether
+     * tracking works.
      */
     fun ensureChannelAtStartup(context: Context) {
         ensureChannel(context)

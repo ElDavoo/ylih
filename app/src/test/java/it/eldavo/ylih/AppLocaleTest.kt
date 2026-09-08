@@ -63,10 +63,10 @@ class AppLocaleTest {
     /**
      * Chinese is one language and two scripts, and the translations live in `values-b+zh+Hans`
      * and `values-b+zh+Hant`. They also existed as `values-zh-rCN` and `values-zh-rTW`, holding a
-     * second, different translation — so China and Taiwan were served wording that no other
-     * Chinese region got, and the Traditional file carried mainland vocabulary. Nothing in the
-     * build reports a locale translated twice, so this pins the shape that replaced it: one
-     * folder per script, each actually reachable.
+     * second, different translation — so China and Taiwan got wording no other Chinese region
+     * did, and the Traditional file carried mainland vocabulary. Nothing in the build reports a
+     * locale translated twice, so this pins the shape that replaced it: one folder per script,
+     * each reachable.
      */
     @Test
     fun `both chinese scripts are offered and reach their own translation`() {
@@ -118,11 +118,11 @@ class AppLocaleTest {
 
     /**
      * `wrap` runs in `attachBaseContext`, which has no suspension point and comes before the
-     * process may touch the database — so on a cold start reading the row there would open Room,
-     * and run any pending migration, on the main thread before the first frame. It reads a
+     * process may touch the database — so on a cold start, reading the row there would open Room
+     * and run any pending migration on the main thread before the first frame. It reads a
      * `SharedPreferences` mirror instead, and the pair only stays honest if the write keeps them
-     * in step. Both halves are asserted here: that the mirror follows the row, and that an install
-     * which predates the mirror still gets its language.
+     * in step. Both halves are asserted here: that the mirror follows the row, and that an
+     * install predating the mirror still gets its language.
      */
     @Test
     fun `the language is mirrored beside the row that wrap cannot afford to read`() {

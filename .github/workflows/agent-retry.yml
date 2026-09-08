@@ -1,28 +1,28 @@
 name: Agent · retry
 
-# Picks up work the pipeline dropped, in two sweeps: stages that stopped before they finished,
-# and stages whose turn in the queue never came.
+# Picks up work the pipeline dropped, in two sweeps: stages that stopped before finishing, and
+# stages whose turn in the queue never came.
 #
-# A workflow cannot wake itself up, which is why this is scheduled and not something the stalled
-# stage arranges for itself. GitHub has no delay primitive, and sleeping inside the stalled job
-# would hold a runner for the whole wait.
+# A workflow can't wake itself up, so this is scheduled rather than arranged by the stalled
+# stage itself. GitHub has no delay primitive, and sleeping inside the stalled job would hold a
+# runner for the whole wait.
 #
-# Every five hours rather than hourly, because the failure this mostly exists for is a Claude
-# usage limit, and those reset on a window of about that length. Retrying sooner would spend a
-# stage's worth of tokens discovering the limit is still in force, and each discovery costs a
-# runner and a queue slot.
+# Every five hours rather than hourly: the failure this mostly exists for is a Claude usage
+# limit, which resets on a window about that length. Retrying sooner would spend a stage's worth
+# of tokens discovering the limit still holds, and each discovery costs a runner and a queue
+# slot.
 #
-# The first sweep re-runs the recorded run rather than dispatching a stage afresh. That is the
-# only handle that works for all four: the plan stage runs against main with no branch to find it
-# by, and the fix stage is a reusable workflow that cannot be dispatched at all. The run id
-# travels in the marker that .github/actions/agent-stall writes into its comment.
+# The first sweep re-runs the recorded run rather than dispatching a stage afresh — the only
+# handle that works for all four: the plan stage runs against main with no branch to find it by,
+# and the fix stage is a reusable workflow that can't be dispatched at all. The run id travels
+# in the marker .github/actions/agent-stall writes into its comment.
 #
-# The second sweep exists because the pipeline now runs one stage at a time -- see the
-# `agent-pipeline` concurrency group in agent-plan.yml -- and GitHub's queue for a group holds
-# exactly one pending run. A third arrival cancels the second rather than lining up behind it,
-# and it does so before that run's first step, so there is no stall marker for the first sweep to
-# find. This one recognises the shape such a run leaves behind instead, and is what turns the
-# group from a serial drop into a serial queue.
+# The second sweep exists because the pipeline now runs one stage at a time (the
+# `agent-pipeline` concurrency group in agent-plan.yml), and GitHub's queue for a group holds
+# exactly one pending run. A third arrival cancels the second rather than queuing, before that
+# run's first step, so there's no stall marker for the first sweep to find. This sweep
+# recognises the shape such a run leaves behind instead, turning the group from a serial drop
+# into a serial queue.
 
 on:
   schedule:
@@ -49,9 +49,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
-          # Three retries is fifteen hours of trying. Past that the cause is not a usage window,
-          # and continuing to re-run it forever would hide a real failure behind a label that
-          # looks like it is being handled.
+          # Three retries is fifteen hours of trying. Past that the cause isn't a usage window,
+          # and re-running forever would hide a real failure behind a label that looks handled.
           MAX_RETRIES: '3'
         run: |
           set -euo pipefail
@@ -75,28 +74,28 @@ jobs:
             # Only the bot's own comments. A marker is an instruction to this workflow, and an
             # issue comment is world-writable: on a public repository anyone can post
             # `<!-- agent-stall run=N stage=X -->`, and `last` wins. Unfiltered, that hands a
-            # commenter two things. A novel stage name resets the attempt count to one, so the
-            # sweep re-runs on a five-hour cadence forever -- an unbounded spend of Actions
-            # minutes and Claude tokens from a comment box. And the run id is passed to
-            # `gh run rerun` under a token with `actions: write`, which turns "which run" into
-            # the commenter's choice among every run in the repository, including privileged
-            # ones like Agent · implement that hold the push PAT.
+            # commenter two things: a novel stage name resets the attempt count to one, so the
+            # sweep re-runs on a five-hour cadence forever — an unbounded spend of Actions
+            # minutes and Claude tokens from a comment box — and the run id passes to
+            # `gh run rerun` under a token with `actions: write`, turning "which run" into the
+            # commenter's choice among every run in the repository, including privileged ones
+            # like Agent · implement that hold the push PAT.
             #
-            # `github-actions[bot]` is the identity every stall comment is posted under, because
-            # the stall action posts with GITHUB_TOKEN. It cannot be impersonated: `[` and `]`
-            # are not legal in a GitHub username, so no human account can hold that login, and
-            # user.type confirms it. gh issue view does not expose either field -- it reports the
-            # login as plain `github-actions` -- so this goes through the REST API instead.
+            # `github-actions[bot]` is the identity every stall comment posts under, since the
+            # stall action posts with GITHUB_TOKEN. It can't be impersonated: `[` and `]` aren't
+            # legal in a GitHub username, so no human account can hold that login, and user.type
+            # confirms it. gh issue view exposes neither field — it reports the login as plain
+            # `github-actions` — so this goes through the REST API instead.
             comments=$(gh api --paginate --slurp "repos/${GITHUB_REPOSITORY}/issues/${issue}/comments" \
               | jq -c '[.[] | .[]
                         | select(.user.login == "github-actions[bot]" and .user.type == "Bot")
                         | .body]')
-            # capture emits nothing for a comment with no marker, so this is the list of stalls
-            # in order. The last one is what to re-run; the count is of that stage's stalls only,
-            # because every stage writes here and a flat count of the pile measures how eventful
-            # the issue was rather than whether anything is repeating. `stage` is optional in the
-            # pattern so markers written before it existed still parse -- they group together as
-            # the empty stage, which is the old behaviour for the old markers and nothing else.
+            # capture emits nothing for a comment with no marker, so this is the ordered list of
+            # stalls. The last is what to re-run; the count is of that stage's stalls only, since
+            # every stage writes here and a flat count of the pile measures how eventful the
+            # issue was, not whether anything is repeating. `stage` is optional in the pattern so
+            # markers written before it existed still parse — they group as the empty stage, the
+            # old behaviour for old markers.
             markers=$(jq -c '[.[] | capture("<!-- agent-stall run=(?<id>[0-9]+)(?: stage=(?<stage>[a-z-]+))? -->")]' <<<"$comments")
             run_id=$(jq -r 'last.id // empty' <<<"$markers")
             stage=$(jq -r 'last.stage // ""' <<<"$markers")
@@ -110,12 +109,12 @@ jobs:
             fi
 
             # Belt and braces on top of the authorship filter above: a marker selects among this
-            # pipeline's own runs, and cannot name anything else. `gh run rerun` under
+            # pipeline's own runs and can't name anything else. `gh run rerun` under
             # `actions: write` would otherwise re-run any run in the repository, and re-running a
-            # privileged one is not a no-op -- Agent · implement replays with the push PAT and
-            # force-pushes its branch, so a replay of an old run rewinds that branch to whatever
-            # it built then. The reusable fix workflow has no runs of its own; its markers name
-            # the caller, which is why only the five caller names are listed.
+            # privileged one is not a no-op — Agent · implement replays with the push PAT and
+            # force-pushes its branch, so replaying an old run rewinds that branch to whatever it
+            # built then. The reusable fix workflow has no runs of its own; its markers name the
+            # caller, which is why only the five caller names are listed.
             wf=$(gh run view "$run_id" --json workflowName --jq .workflowName 2>/dev/null || true)
             case "$wf" in
               'Agent · plan'|'Agent · implement'|'Agent · review'|'Agent · fix CI'|'Agent · fix') ;;
@@ -145,16 +144,15 @@ jobs:
             fi
 
             # Cleared before the re-run, not after: if the retry stalls too, the stall action
-            # adds the label back and writes a fresh marker, and that is what the count above
-            # reads next time.
+            # adds the label back and writes a fresh marker, which is what the count above reads
+            # next time.
             gh issue edit "$issue" --remove-label 'agent:stalled'
             [ -n "$pr" ] && gh pr edit "$pr" --remove-label 'agent:stalled'
 
             echo "re-running run $run_id — ${stage:-unnamed} stage, stall $attempts of $MAX_RETRIES"
             if ! gh run rerun "$run_id" --failed 2>&1; then
-              # A run older than GitHub's re-run window, or one whose branch has gone. Nothing
-              # here can recover that, and saying so is better than a label that implies a
-              # retry is coming.
+              # A run older than GitHub's re-run window, or one whose branch is gone. Nothing
+              # here can recover that, and saying so beats a label implying a retry is coming.
               gh issue edit "$issue" --add-label 'agent:stuck'
               gh issue comment "$issue" --body "Could not re-run the stalled run ($run_id) — it is likely outside GitHub's re-run window. Re-dispatch the stage by hand from the Actions tab."
             fi
@@ -162,48 +160,48 @@ jobs:
             echo "::endgroup::"
           done
 
-      # The queue draining. An issue displaced out of the concurrency group leaves no marker, so
+      # The queue draining. An issue displaced from the concurrency group leaves no marker, so
       # this looks for its signature instead: the implement stage swaps `agent:planned` for
       # `agent:working` only once its pull request exists, so an open issue still labelled
-      # `agent:planned` with no branch of its own is one whose turn never came.
+      # `agent:planned` with no branch is one whose turn never came.
       #
-      # Re-dispatching is safe by construction rather than by luck. The stage resets its branch
-      # from main before it writes anything, and it re-reads the plan from the issue body rather
-      # than from the dispatch inputs -- which is why the two optional inputs are left off here
-      # and the stage falls back to the issue title. So a redundant dispatch costs a run and
-      # rebuilds the same branch; it cannot land the wrong plan or half of one.
+      # Re-dispatching is safe by construction, not by luck. The stage resets its branch from
+      # main before writing anything, and re-reads the plan from the issue body rather than the
+      # dispatch inputs — why the two optional inputs are left off here, falling back to the
+      # issue title. So a redundant dispatch costs a run and rebuilds the same branch; it can't
+      # land the wrong plan or half of one.
       #
-      # One issue per sweep, and only when nothing else is running. Starting two would undo the
-      # thing this exists to serve, and the same five-hour cadence that suits a usage window
-      # suits a queue whose items take the better part of an hour.
+      # One issue per sweep, only when nothing else is running: starting two would undo what
+      # this exists to serve, and the same five-hour cadence that suits a usage window suits a
+      # queue whose items take the better part of an hour.
       - name: Start the next issue whose turn never came
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
-          # The PAT, not GITHUB_TOKEN: a workflow dispatched with GITHUB_TOKEN does not run at
-          # all. Same trap as agent-plan.yml's hand-over step, and the reason this sweep would
+          # The PAT, not GITHUB_TOKEN: a workflow dispatched with GITHUB_TOKEN doesn't run at
+          # all — same trap as agent-plan.yml's hand-over step, and why this sweep would
           # otherwise look like it worked while nothing started.
           DISPATCH_TOKEN: ${{ secrets.AGENT_PUSH_TOKEN }}
           # Three starts from the queue, the same budget the stall loop gets and for the same
-          # reason. Declared again here rather than hoisted to the job: the two counts are
-          # independent, and one of them moving because the other was retuned is not wanted.
+          # reason. Declared again here rather than hoisted to the job, since the two counts are
+          # independent and neither should move because the other was retuned.
           MAX_RETRIES: '3'
         run: |
           set -euo pipefail
 
           # Every workflow in the `agent-pipeline` group, named rather than pattern-matched: the
-          # API does not report which group a run holds, and `Agent · fix` never appears here at
-          # all because a reusable workflow has no runs of its own -- its caller's name is what
-          # shows. Getting this list wrong is not dangerous, only wasteful: a missed name starts
-          # a run that then queues behind the one already going.
+          # API doesn't report which group a run holds, and `Agent · fix` never appears here
+          # since a reusable workflow has no runs of its own — its caller's name shows instead.
+          # Getting this list wrong isn't dangerous, only wasteful: a missed name starts a run
+          # that then queues behind the one already going.
           #
-          # 200 rather than a page, because this reads the recent list and filters it client-side
-          # rather than asking for a status the API can filter on -- gh takes one --status at a
-          # time and there are three that are not "completed", counting the `waiting` a run sits
-          # in while an approval gate holds it. An implement stage now has a two-hour timeout,
-          # and Android CI can easily push it past the first sixty entries in that time.
-          # shellcheck disable=SC2016  # $w is a jq variable and has to reach jq unexpanded;
-          # double quotes here would substitute it away before jq ever saw it.
+          # 200 rather than a page: this reads the recent list and filters client-side rather
+          # than a status the API can filter on — gh takes one --status at a time, and three
+          # aren't "completed", counting the `waiting` a run sits in while an approval gate holds
+          # it. An implement stage now has a two-hour timeout, and Android CI can easily push it
+          # past the first sixty entries in that time.
+          # shellcheck disable=SC2016  # $w is a jq variable that must reach jq unexpanded;
+          # double quotes here would substitute it away before jq saw it.
           busy=$(gh run list --limit 200 --json workflowName,status --jq '
             [ .[] | select(.status != "completed")
                   | select(.workflowName as $w
@@ -215,9 +213,9 @@ jobs:
             exit 0
           fi
 
-          # Oldest first, so a displaced issue is not overtaken by every issue filed after it.
-          # The label filters are the same kill switches every other stage honours, plus
-          # agent:stalled, which belongs to the sweep above rather than to this one.
+          # Oldest first, so a displaced issue isn't overtaken by every issue filed after it. The
+          # label filters are the same kill switches every other stage honours, plus
+          # agent:stalled, which belongs to the sweep above, not this one.
           waiting=$(gh issue list --state open --label 'agent:planned' --limit 100 \
                       --json number,labels --jq '
                       [ .[] | select([.labels[].name]
@@ -230,9 +228,9 @@ jobs:
             exit 0
           fi
 
-          # Belt and braces on the label. A pull request already open for the branch means the
-          # stage did reach the end and the label is simply stale, which is not this sweep's to
-          # fix and definitely not its to force-push over.
+          # Belt and braces on the label: a pull request already open for the branch means the
+          # stage did reach the end and the label is just stale — not this sweep's to fix, and
+          # definitely not its to force-push over.
           pr=$(gh pr list --head "agent/issue-${waiting}" --state open --json number --jq '.[0].number // empty')
           if [ -n "$pr" ]; then
             echo "issue $waiting already has PR #$pr — stale label, leaving alone"
@@ -240,13 +238,13 @@ jobs:
           fi
 
           # Bounded, for the same reason the stall loop above is. `agent:planned` with no pull
-          # request is not only what a displaced run leaves behind -- it is also what a run that
-          # got all the way to "nothing was changed, no pull request to open" leaves behind, and
-          # that one will leave it again on every sweep. Unbounded, this would restart such an
-          # issue every five hours forever, which is the failure the stall loop's MAX_RETRIES
-          # exists to stop and would be worse here: a stall costs a stopped run, this costs a
-          # whole one. Same authorship filter as above, and for the same reason -- the marker is
-          # an instruction to this workflow and an issue comment is world-writable.
+          # request isn't only what a displaced run leaves behind — a run that reached "nothing
+          # was changed, no pull request to open" leaves the same thing, and leaves it again on
+          # every sweep. Unbounded, this would restart such an issue every five hours forever —
+          # the failure MAX_RETRIES exists to stop, and worse here since a stall costs a stopped
+          # run while this costs a whole one. Same authorship filter as above and for the same
+          # reason: the marker is an instruction to this workflow, and an issue comment is
+          # world-writable.
           started=$(gh api --paginate "repos/${GITHUB_REPOSITORY}/issues/${waiting}/comments" \
                       --jq '[.[] | select(.user.login == "github-actions[bot]" and .user.type == "Bot")
                                  | .body | select(test("<!-- agent-queued -->"))] | length')
@@ -260,10 +258,10 @@ jobs:
           author=$(gh issue view "$waiting" --json author --jq .author.login)
           echo "pipeline idle — starting issue $waiting (filed by $author)"
 
-          # The marker goes down before the dispatch, not after. A dispatch that succeeds and a
-          # run that then fails to record anything is the case this is counting; recording it
-          # afterwards would miss exactly that, and a `gh workflow run` that fails is visible in
-          # this job's own log anyway.
+          # The marker goes down before the dispatch, not after: a dispatch that succeeds but a
+          # run that then fails to record anything is the case this counts, and recording it
+          # afterwards would miss exactly that. A `gh workflow run` that fails is visible in this
+          # job's own log anyway.
           gh issue comment "$waiting" --body "Starting this now — the pipeline runs one agent at a time and this one's turn had not come. <!-- agent-queued -->"
           GH_TOKEN="$DISPATCH_TOKEN" gh workflow run agent-implement.yml \
             -f issue="$waiting" -f author="$author"

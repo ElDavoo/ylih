@@ -29,20 +29,20 @@ import org.junit.runner.RunWith
 /**
  * The only tests in this project that run the code the user actually gets.
  *
- * Everything under `src/test` runs on the JVM against unshrunk classes, so R8 never executes for
- * it: a class that shrinking removed or renamed still passes every unit test in the build and
- * then fails on a device. `testBuildType = "release"` points this source set at the minified,
- * resource-shrunk APK instead, which is why these tests earn an emulator in CI.
+ * `src/test` runs on the JVM against unshrunk classes, so R8 never executes: a class shrinking
+ * removed or renamed still passes every unit test and then fails on a device. `testBuildType =
+ * "release"` points this source set at the minified, resource-shrunk APK instead, earning it an
+ * emulator in CI.
  *
- * So the rule for what belongs here is narrow. Not "an integration test" — a thing that is
- * *only* true of the shipped artifact. Everything below is reached by a name rather than by a
- * symbol the compiler could check, which is exactly what R8 is free to rewrite:
+ * The rule for what belongs here: not "an integration test" but a thing true only of the shipped
+ * artifact — reached by a name rather than a symbol the compiler could check, which R8 is free
+ * to rewrite:
  *
  * - Room loads `YlihDatabase_Impl` reflectively, from a name it derives from the @Database class.
  * - WorkManager instantiates workers from a class name it stored in its own database.
  * - kotlinx.serialization maps JSON keys through a generated descriptor.
  * - A launcher instantiates a home-screen widget's receiver from the name in the manifest.
- * - Compose and the activity are simply the largest thing R8 rewrites in this app.
+ * - Compose and the activity are the largest thing R8 rewrites in this app.
  *
  * `.github/scripts/r8-keep-check.py` asserts the same classes survive by reading R8's mapping
  * file. That check is static and runs on every push; this one needs a device and proves the
@@ -54,11 +54,11 @@ class MinifiedReleaseTest {
     /**
      * Only the permissions that exist on the device this is running on.
      *
-     * `BLUETOOTH_CONNECT` arrived in API 31 and `POST_NOTIFICATIONS` in API 33, and asking for one
-     * that does not exist fails the *grant* rather than being ignored — which fails every test in
-     * the class before a line of it runs, with "Failed to grant permissions, see logcat". Asking
-     * unconditionally was fine while this only ever ran on API 34; it is what the minSdk leg found
-     * the first time it ran.
+     * `BLUETOOTH_CONNECT` arrived in API 31 and `POST_NOTIFICATIONS` in API 33; asking for one
+     * that doesn't exist fails the *grant* rather than being ignored, failing every test in the
+     * class before a line runs, with "Failed to grant permissions, see logcat". Asking
+     * unconditionally was fine while this only ran on API 34; the minSdk leg found this the
+     * first time it ran.
      */
     @get:Rule
     val permissions: GrantPermissionRule = GrantPermissionRule.grant(
@@ -76,9 +76,8 @@ class MinifiedReleaseTest {
 
     /**
      * Room's generated implementation is found by name — `YlihDatabase` + `_Impl` — so shrinking
-     * it away or renaming it fails at the first database access rather than at build time. This
-     * opens the real database the app opens, not an in-memory one, because the reflective lookup
-     * is the thing under test.
+     * or renaming it fails at the first database access rather than at build time. This opens the
+     * real database, not an in-memory one, because the reflective lookup is what's under test.
      */
     @Test
     fun roomOpensAndTheRepositoryRoundTripsASession() = runBlocking {
@@ -111,15 +110,15 @@ class MinifiedReleaseTest {
     }
 
     /**
-     * WorkManager stores a worker's class name as a string in its own database and instantiates
-     * it by that name after the process — or the app version — has changed. This walks the same
-     * path its default `WorkerFactory` walks, so a rename between releases shows up here instead
-     * of as heartbeats that silently stop for installs that already had one scheduled.
+     * WorkManager stores a worker's class name as a string and instantiates it by that name after
+     * the process — or app version — has changed. This walks the same path its default
+     * `WorkerFactory` walks, so a rename between releases shows up here rather than as heartbeats
+     * silently stopping for installs that already had one scheduled.
      */
     @Test
     fun workManagerCanStillReachItsWorkersByName() {
-        // Both of them: the heartbeat, whose loss is a session that runs forever, and the widget
-        // rollover, whose loss is a home screen stuck on yesterday's figures.
+        // The heartbeat, whose loss is a session that runs forever, and the widget rollover,
+        // whose loss is a home screen stuck on yesterday's figures.
         for (name in listOf(
             "it.eldavo.ylih.tracking.HeartbeatWorker",
             "it.eldavo.ylih.widget.WidgetRolloverWorker",
@@ -130,8 +129,8 @@ class MinifiedReleaseTest {
                 "$name is no longer a ListenableWorker, so WorkManager could not run it",
                 ListenableWorker::class.java.isAssignableFrom(clazz),
             )
-            // The two-argument constructor is what WorkerFactory reflects for; R8 removing it as
-            // unused would leave the class present and the worker still unrunnable.
+            // WorkerFactory reflects for the two-argument constructor; R8 removing it as unused
+            // would leave the class present and the worker unrunnable.
             val constructor =
                 clazz.getDeclaredConstructor(Context::class.java, WorkerParameters::class.java)
             assertNotNull(constructor)
@@ -139,10 +138,9 @@ class MinifiedReleaseTest {
     }
 
     /**
-     * kotlinx.serialization bakes the JSON key names into a generated descriptor at compile time,
-     * so obfuscating the Kotlin properties should not move them — which is the whole reason a
-     * backup taken from one release imports into the next. "Should not" is worth executing once
-     * against the minified build.
+     * kotlinx.serialization bakes JSON key names into a generated descriptor at compile time, so
+     * obfuscating the Kotlin properties should not move them — why a backup from one release
+     * imports into the next. Worth executing "should not" once against the minified build.
      */
     @Test
     fun jsonBackupRoundTripsThroughTheMinifiedSerializers() = runBlocking {
@@ -156,8 +154,8 @@ class MinifiedReleaseTest {
         assertTrue("export produced no sessions key", exported.contains("\"sessions\""))
 
         val before = db.sessionDao().getAll().size
-        // import replaces the whole database with the file's contents; feeding it what was just
-        // exported is therefore an identity, which is what makes this safe to run on a device.
+        // import replaces the whole database with the file's contents, so feeding it what was
+        // just exported is an identity — safe to run on a device.
         JsonBackup.import(db, exported)
         assertEquals(before, db.sessionDao().getAll().size)
     }
@@ -170,10 +168,10 @@ class MinifiedReleaseTest {
      *
      * Only the classes are checked here. The widgets' resources are reached by name too —
      * `previewImage` and `description` are named only from `res/xml/widget_*_info.xml` — but a
-     * test APK cannot ask about them: `R$drawable` is inlined away in the app it is testing, so
-     * naming a resource from here is a `ClassNotFoundException` rather than an assertion.
-     * `.github/scripts/r8-keep-check.py` reads the shrinker's own verdict on them instead, which
-     * also means it runs on both flavors without an emulator.
+     * test APK can't ask about them: `R$drawable` is inlined away in the app under test, so
+     * naming a resource from here is a `ClassNotFoundException`, not an assertion.
+     * `.github/scripts/r8-keep-check.py` reads the shrinker's verdict on them instead, and runs
+     * on both flavors without an emulator.
      */
     @Test
     fun theWidgetReceiversAreStillReachableByName() {

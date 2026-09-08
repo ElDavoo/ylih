@@ -47,8 +47,8 @@ data class WidgetData(
 /**
  * Reads the whole widget picture off the database, once.
  *
- * Deliberately free of Glance, so it is testable the way `Stats.kt` is — a widget's rendered
- * output only exists inside the launcher, and none of the arithmetic here should need one.
+ * Free of Glance, so it's testable like `Stats.kt`: a widget's rendered output only exists inside
+ * the launcher, and none of the arithmetic here needs one.
  */
 @VisibleForTesting
 internal suspend fun loadWidgetData(
@@ -59,20 +59,19 @@ internal suspend fun loadWidgetData(
 /**
  * The same picture, re-read whenever anything it is drawn from changes.
  *
- * A widget collects this *inside its composition* rather than reading it once on the way in, and
- * that is not a refinement — it is what makes a pushed refresh able to show anything new at all.
- * [YlihWidget] is where that is spelled out.
+ * A widget collects this *inside its composition*, not as a one-time read on the way in — that's
+ * what lets a pushed refresh show anything new. See [YlihWidget].
  *
- * [zone] has no default, unlike the two entry points that wrap it: both of those already resolve
- * one, so a default here would only be a second place for the phone's real zone to come from.
+ * [zone] has no default, unlike the two entry points wrapping it: both already resolve one, so a
+ * default here would just be a second source for the phone's real zone.
  */
 fun widgetDataFlow(
     container: AppContainer,
     zone: ZoneId,
 ): Flow<WidgetData> = combine(
     container.repository.observeSummaries(),
-    // The widgets honour playback-only mode exactly as the app and the notification do; a home
-    // screen showing a different number from the app it came from would be the worst of both.
+    // Widgets honour playback-only mode exactly as the app and notification do; a home screen
+    // showing a different number than the app it came from would be the worst of both.
     container.settings.playbackOnly,
 ) { summaries, playbackOnly ->
     widgetData(
@@ -95,16 +94,16 @@ private suspend fun widgetData(
     val series = Stats.dailySeries(spans, zone, now, WIDGET_DAYS, counting)
     return WidgetData(
         rows = summaries
-            // Retired pairs are frozen for good and would crowd the live ones out of a widget
-            // three rows tall. The app is where the museum lives.
+            // Retired pairs are frozen for good and would crowd live ones out of a widget three
+            // rows tall. The app is where the museum lives.
             .filter { it.retiredAt == null }
             .map { WidgetRow(it.pairId, it.label, it.countedMs(now, counting), it.openSince) }
             .sortedWith(
                 compareByDescending<WidgetRow> { it.openSince != null }
                     .thenByDescending { it.lifetimeMs },
             ),
-        // Retired pairs *are* in the grand total: it is the same lifetime figure the stats
-        // screen puts at the top, and hours do not stop having happened.
+        // Retired pairs *are* in the grand total: it's the same lifetime figure atop the stats
+        // screen, and hours don't stop having happened.
         totalMs = summaries.sumOf { it.countedMs(now, counting) },
         todayMs = Stats.recentMs(spans, zone, now, 1, counting),
         weekMs = Stats.recentMs(spans, zone, now, 7, counting),
@@ -118,25 +117,25 @@ private suspend fun widgetData(
 /**
  * Everything a widget draws: the figures, and the context that resolves them into words.
  *
- * A flow of *both* rather than a reading of both, because a Glance composition outlives the call
- * that started it — [YlihWidget] is where that is spelled out. The language belongs in here for the
- * same reason the figures do: it can change under a live composition too, and a value that only the
- * next session would pick up is exactly the trap this shape exists to close.
+ * A flow of *both*, not a one-time read of both, because a Glance composition outlives the call
+ * that started it — see [YlihWidget]. The language belongs here for the same reason the figures do:
+ * it can change under a live composition too, and this shape closes exactly the trap of a value
+ * only the next session would pick up.
  *
- * The localised context is the part that is easy to drop — below Android 13 the app's language is
- * its own setting, so the context Glance hands in is not the one that resolves the app's strings,
- * or the `Locale` `ui/Format.kt` reads for a decimal separator. A widget that forgot this would
- * quietly be in the system language.
+ * The localised context is easy to drop: below Android 13 the app's language is its own setting,
+ * so the context Glance hands in resolves neither the app's strings nor the `Locale`
+ * `ui/Format.kt` reads for a decimal separator. Skipping it would silently leave a widget in the
+ * system language.
  */
 fun widgetContentFlow(
     context: Context,
     zone: ZoneId = ZoneId.systemDefault(),
 ): Flow<Pair<Context, WidgetData>> {
     val container = (context.applicationContext as YlihApp).container
-    // distinctUntilChanged because every SettingsStore flow is a map over the whole settings
-    // table, so a write to any other setting reaches this one — and each emission here costs a
-    // 30-day re-read of the session table. The store dedupes for the same reason; this is the
-    // point where getting it wrong would be expensive rather than merely noisy.
+    // distinctUntilChanged because every SettingsStore flow maps over the whole settings table, so
+    // a write to any other setting reaches this one, and each emission costs a 30-day re-read of
+    // the session table. The store dedupes for the same reason — wrong here is expensive, not
+    // just noisy.
     val language = container.settings.language.distinctUntilChanged()
     return widgetDataFlow(container, zone).combine(language) { data, _ ->
         AppLocale.wrapSuspending(context) to data
@@ -155,8 +154,8 @@ internal fun windowStart(now: Long, zone: ZoneId): Long =
  * The next instant at which every window above answers a different question — see [WidgetRolloverWorker].
  *
  * `atStartOfDay(zone)` rather than `+ 24h`, for the reason `Stats.dailyMs` gives: a DST day is 23
- * or 25 hours long, and on the spring-forward day midnight itself may not exist, where this hands
- * back the first instant that does.
+ * or 25 hours long, and on the spring-forward day midnight itself may not exist — this hands back
+ * the first instant that does.
  */
 internal fun nextLocalMidnight(now: Long, zone: ZoneId): Long =
     Instant.ofEpochMilli(now).atZone(zone).toLocalDate()
@@ -168,10 +167,9 @@ internal fun nextLocalMidnight(now: Long, zone: ZoneId): Long =
 /**
  * What a `Chronometer` must count up from to show the age of a session opened at [openSince].
  *
- * Chronometer works in `SystemClock.elapsedRealtime()`, which bears no relation to wall time, so
- * the conversion happens here — and here rather than inline in the widget because nothing can see
- * inside an `AndroidRemoteViews`, which makes this the only part of the live timer a test can
- * reach.
+ * Chronometer works in `SystemClock.elapsedRealtime()`, unrelated to wall time, so the conversion
+ * happens here rather than inline in the widget: nothing can see inside an `AndroidRemoteViews`,
+ * so this is the only part of the live timer a test can reach.
  */
 fun chronometerBase(openSince: Long, now: Long, elapsedRealtime: Long): Long =
     elapsedRealtime - (now - openSince).coerceAtLeast(0L)

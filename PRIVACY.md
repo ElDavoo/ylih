@@ -4,71 +4,67 @@ Last updated: 5 September 2026
 
 ## The short version
 
-ylih does not collect, transmit, or share any data. It has no internet permission, so it is not
-merely a promise — the app is technically incapable of sending anything anywhere.
+ylih collects, transmits, and shares no data. It has no internet permission, so this isn't a
+promise — the app can't send anything anywhere.
 
 ## What the app stores
 
 Everything ylih records is written to a database on your device and stays there:
 
-- the identity Android reports for each audio device it sees (a name such as
-  "WH-1000XM4", the connection type, and the last two octets of the hardware address);
-- one row per connection, holding when it started, when it ended, and why it ended;
+- the identity Android reports for each audio device (a name such as "WH-1000XM4", the
+  connection type, and the last two octets of the hardware address);
+- one row per connection: when it started, when it ended, and why;
 - optionally, how much of that connected time was playing audio;
-- anything you type in yourself, such as a pair's name, the price you paid, or the reason you
-  retired it.
+- anything you type in, such as a pair's name, its price, or why you retired it.
 
-No account is required, and there is nothing to sign in to.
+No account, no sign-in.
 
 ## What the app does not do
 
-- No data is sent off the device. The app declares no `INTERNET` permission.
-- No analytics, crash reporting, advertising, or tracking of any kind.
-- No third-party SDKs that collect data.
-- Nothing is sold or shared with anyone.
-- No location data is collected. Bluetooth access is used only to be told that a headset
-  connected or disconnected and to read its name; it is never used to determine your location.
+- No data leaves the device. The app declares no `INTERNET` permission.
+- No analytics, crash reporting, advertising, or tracking.
+- No data-collecting third-party SDKs.
+- Nothing is sold or shared.
+- No location data. Bluetooth access only learns that a headset connected or disconnected and
+  reads its name — never to locate you.
 
 ## Permissions and why they exist
 
 | Permission | Why |
 |---|---|
-| Nearby devices (`BLUETOOTH_CONNECT`) | To receive Bluetooth connect and disconnect events and read a headset's name. Without it, the app's core function does not work. |
-| Notifications (`POST_NOTIFICATIONS`) | Only to show the silent notification that optional detailed tracking requires. |
-| Run at startup (`RECEIVE_BOOT_COMPLETED`) | To close sessions that a shutdown never reported, so a reboot does not corrupt your totals. |
-| Foreground service | Only while optional detailed tracking is enabled. Android delivers wired-headphone plug events only to an app that is already running. |
+| Nearby devices (`BLUETOOTH_CONNECT`) | Receives Bluetooth connect/disconnect events and reads a headset's name — without it the app can't work. |
+| Notifications (`POST_NOTIFICATIONS`) | Shows the silent notification detailed tracking requires. |
+| Run at startup (`RECEIVE_BOOT_COMPLETED`) | Closes sessions a shutdown never reported, so a reboot doesn't corrupt your totals. |
+| Foreground service | Used only when detailed tracking is on — Android delivers wired-headphone plug events only to an already-running app. |
 
 ## Your data, in your hands
 
 - **Export.** Settings → Export writes your entire history as readable JSON to a file you choose.
 - **Import.** Settings → Import replaces the stored data with a backup.
-- **Deletion.** Deleting a pair inside the app deletes its sessions. Uninstalling the app deletes
-  everything, unless you tick "keep app data" in Android's uninstall dialog — then it stays on the
-  phone for a reinstall, and clearing the app's storage in Settings removes it. Because nothing is
-  ever uploaded, there is no copy anywhere else for us to delete.
-- **Backup.** Android's own backup system is enabled, so your history can be restored to a new
-  phone. That transfer is handled by Android and your Google account settings, not by ylih.
+- **Deletion.** Deleting a pair deletes its sessions. Uninstalling deletes everything unless you
+  tick "keep app data", which keeps it for a reinstall until you clear storage in Settings.
+  Nothing is uploaded, so there's no copy elsewhere to delete.
+- **Backup.** Android's own backup system is enabled, so history can be restored to a new phone —
+  handled by Android and your Google account settings, not by ylih.
 
 ## Assistants (Android 17 and later)
 
-Android 17 lets an app publish read-only functions that an on-device assistant can call. ylih
-publishes two: lifetime hours per pair, and listening totals for today, the last seven days and the
-last thirty. Both ship **disabled** — that is recorded in the app's own function schema, so the
-system does not offer them to anything until you switch "assistant access" on in Settings, and
-switching it off disables them with the system rather than only inside ylih.
+Android 17 lets apps publish read-only functions an on-device assistant can call. ylih publishes
+two: lifetime hours per pair, and listening totals for today, seven days and thirty days. Both
+ship **disabled** in the schema, so the system offers them to nothing until you turn on
+"assistant access" in Settings; turning it off removes them from the system too.
 
-Neither function can change or delete anything, and neither exposes anything beyond the hours
-described above. What an assistant does with figures you have given it is governed by that
-assistant and not by ylih, which is why this is off unless you ask for it.
+Neither function can change or delete anything, or expose more than those hours. What an
+assistant does with figures you've given it is up to that assistant, not ylih — why access stays
+off by default.
 
 ## Children
 
-ylih is not directed at children and collects no data from anyone, of any age.
+ylih is not directed at children and collects no data from anyone of any age.
 
 ## Changes
 
-If this policy ever changes, the new version will be published at this address and the date at
-the top will be updated.
+If this policy changes, the new version is published at this address with an updated date above.
 
 ## Contact
 

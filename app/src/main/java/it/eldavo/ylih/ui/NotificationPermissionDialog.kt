@@ -14,18 +14,17 @@ import androidx.compose.ui.res.stringResource
 import it.eldavo.ylih.R
 
 /**
- * Asks for the notification permission at the moment it starts to matter: detailed tracking has
- * just been switched on, and that is the only thing in the app with a notification to post.
+ * Asks for the notification permission the moment it matters: detailed tracking has just been
+ * switched on, the only thing in the app with a notification to post.
  *
- * Deliberately raised on every switch-on rather than once, because the answer is cheap to change
- * and the cost of getting it wrong is silent — a user who declined months ago and has since
- * wondered why detailed tracking shows no sign of running gets asked again the next time they
- * turn it on. Android stops showing the system prompt after two refusals, so this cannot become
- * nagging on its own: past that point the dialog is an explanation with a button that does
- * nothing, which is why it says what the state means either way rather than only what to tap.
+ * Raised on every switch-on rather than once: the answer is cheap to change and getting it wrong
+ * is silent — a user who declined months ago, wondering why tracking shows no sign of running,
+ * gets asked again next time. Android stops showing the system prompt after two refusals, so
+ * this can't nag on its own — past that point the dialog is an explanation with a dead button,
+ * so it states what the outcome means either way, not just what to tap.
  *
- * Detailed tracking is already on by the time this appears, and stays on whatever the answer:
- * without the permission the service still runs and still records, Android just does not draw
+ * Detailed tracking is already on by the time this appears and stays on regardless of the
+ * answer: without the permission the service still runs and records, Android just won't draw
  * its notification.
  *
  * @param permission the name to ask for, resolved by [notificationPermissionToAsk] so the API-33
@@ -40,9 +39,9 @@ internal fun NotificationPermissionDialog(
     val launcher = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission(),
     ) {
-        // Granted, the service has to be told: it is already running and posted its notification
-        // while it had nowhere to put it, so nothing would show until something else restarted
-        // it. syncWithSystem is the entry point for exactly this kind of repair.
+        // Granted, the service must be told: it's already running and posted its notification
+        // with nowhere to put it, so nothing shows until something restarts it. syncWithSystem is
+        // the entry point for this repair.
         onPermissionResult()
         onDone()
     }

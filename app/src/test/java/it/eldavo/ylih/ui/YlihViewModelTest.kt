@@ -63,8 +63,8 @@ class YlihViewModelTest {
 
     @Before
     fun setUp() {
-        // syncWithSystem() reaches WorkManager, whose androidx.startup initializer does not run
-        // under Robolectric. This has to happen before Dispatchers.setMain: the helper's own
+        // syncWithSystem() reaches WorkManager, whose androidx.startup initializer doesn't run
+        // under Robolectric. This must happen before Dispatchers.setMain: the helper's own
         // initialisation goes through the main dispatcher, and on a test dispatcher it never
         // completes, leaving WorkManager looking uninitialised at the first getInstance().
         WorkManagerTestInitHelper.initializeTestWorkManager(app)
@@ -168,8 +168,8 @@ class YlihViewModelTest {
     @Test
     fun `a document the picker no longer opens is named in the failure`() = runTest {
         // A provider that has lost the file answers null rather than throwing, and both halves of
-        // backup have to notice: a restore that quietly did nothing reads exactly like a restore
-        // of an empty backup.
+        // backup must notice: a restore that quietly did nothing reads exactly like a restore of
+        // an empty backup.
         seed()
         registerGoneProvider()
         resolver.registerOutputStreamSupplier(uri) { null }

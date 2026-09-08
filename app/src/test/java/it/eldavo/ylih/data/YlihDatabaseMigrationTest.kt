@@ -16,18 +16,16 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
 /**
- * The database is built with no fallback and the app's whole premise is that history is never
- * lost, so a migration that is merely *nearly* right is a crash on launch for everyone who already
- * has data — and a destructive fallback would be worse, because it would launch fine and lose
- * years of it.
+ * The database has no fallback and history must never be lost, so a migration that is merely
+ * *nearly* right crashes on launch for everyone with data — a destructive fallback would be worse,
+ * launching fine while losing years of it.
  *
- * These go through `YlihDatabase.open`, the real opener, rather than through Room's
- * `MigrationTestHelper`: the helper reads the exported schemas from the APK's assets, and the only
- * way to put them there is to ship every schema this app has ever had inside the app. Opening for
- * real gets the check anyway and gets a better one. Room compares the migrated database against
- * the identity hash compiled into `YlihDatabase` and refuses a mismatch, so a `settings` table
- * created one way here and declared another way in `Entities.kt` fails these tests exactly as it
- * would fail on a phone.
+ * These go through `YlihDatabase.open`, the real opener, rather than Room's
+ * `MigrationTestHelper`: the helper reads exported schemas from the APK's assets, which requires
+ * shipping every schema the app has ever had. Opening for real gets the same check and a better
+ * one — Room compares the migrated database against the identity hash compiled into
+ * `YlihDatabase` and refuses a mismatch, so a `settings` table created one way here and declared
+ * another in `Entities.kt` fails exactly as it would on a phone.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
@@ -41,8 +39,8 @@ class YlihDatabaseMigrationTest {
     }
 
     /**
-     * The reason the settings table arrived as a migration rather than as a destructive fallback.
-     * Every column read back is one the app would show as a lifetime figure.
+     * Why the settings table is a migration, not a destructive fallback: every column read back
+     * is a lifetime figure the app shows.
      */
     @Test
     fun `an install from version 1 keeps its history`() {
@@ -70,8 +68,8 @@ class YlihDatabaseMigrationTest {
                 assertEquals(2, pair.generation)
 
                 val session = db.sessionDao().getAll().single()
-                // An hour connected, fifteen minutes of it playing — the two figures the app
-                // exists to report, carried across intact.
+                // An hour connected, fifteen minutes playing — the two figures the app reports,
+                // carried across intact.
                 assertEquals(3_600_000L, session.disconnectedAt!! - session.connectedAt)
                 assertEquals(900_000L, session.playingMs)
 
@@ -83,13 +81,12 @@ class YlihDatabaseMigrationTest {
     }
 
     /**
-     * 2 to 3 adds an index and nothing else, so "the history survived" does not show it landed.
+     * 2 to 3 adds an index and nothing else, so "the history survived" doesn't show it landed.
      *
-     * Room validates the schema on open, so a *missing* or misnamed index already fails every test
-     * in this class. What it cannot catch is an index that exists and is never chosen, so this
-     * asks SQLite directly. `openFor` is the query the repository asks most — every connect,
-     * every disconnect, every playback credit — and without this index it walks every session the
-     * pair has ever had.
+     * Room validates the schema on open, so a *missing* or misnamed index already fails every
+     * test here. What it can't catch is an index that exists but is never chosen, so this asks
+     * SQLite directly. `openFor` is the repository's most frequent query — every connect,
+     * disconnect and playback credit — and without this index it walks every session the pair had.
      */
     @Test
     fun `after migrating, the open-session lookup is an index search rather than a walk`() {
@@ -125,8 +122,8 @@ class YlihDatabaseMigrationTest {
     }
 
     /**
-     * The settings table has to arrive empty rather than seeded: every default lives in Kotlin, so
-     * a row that exists means the user chose it — see [SettingsStore].
+     * The settings table must arrive empty, not seeded: every default lives in Kotlin, so a row
+     * that exists means the user chose it — see [SettingsStore].
      */
     @Test
     fun `an upgraded install starts with every setting at its default`() {
@@ -146,7 +143,7 @@ class YlihDatabaseMigrationTest {
         }
     }
 
-    /** And is writable afterwards, which the schema check on its own does not show. */
+    /** And is writable afterwards, which the schema check alone does not show. */
     @Test
     fun `an upgraded install can store a setting`() {
         writeVersion1Database {}
@@ -168,9 +165,9 @@ class YlihDatabaseMigrationTest {
     /**
      * The newest migration's table, written to rather than merely validated.
      *
-     * Room's identity check compares columns and indices; it says nothing about whether the foreign
-     * key really cascades, and the cascade is what keeps a deleted session from leaving readings
-     * behind that the next pair's charge cycles would subtract across.
+     * Room's identity check compares columns and indices, not whether the foreign key really
+     * cascades — and the cascade keeps a deleted session from leaving readings the next pair's
+     * charge cycles would subtract across.
      */
     @Test
     fun `an upgraded install can record a battery level`() {
@@ -208,10 +205,10 @@ class YlihDatabaseMigrationTest {
     }
 
     /**
-     * The guard on the guard: the fixture below is written by hand, and a hand-written fixture is
-     * a thing that can quietly stop resembling what version 1 shipped. Checked against the
-     * committed `1.json` rather than against itself, because a fixture that agrees only with its
-     * own constants would let every test above pass while migrating a schema no install ever had.
+     * The guard on the guard: the fixture below is hand-written and can quietly stop resembling
+     * what version 1 shipped. Checked against the committed `1.json` rather than against itself —
+     * a fixture agreeing only with its own constants would let every test above pass while
+     * migrating a schema no install ever had.
      */
     @Test
     fun `the fixture matches the committed version 1 schema`() {
@@ -225,8 +222,8 @@ class YlihDatabaseMigrationTest {
         val expected = mutableListOf<String>()
         for (i in 0 until entities.length()) {
             val entity = entities.getJSONObject(i)
-            // The exported SQL writes the table name as a placeholder; nothing else about it is
-            // allowed to differ, so everything past this substitution is compared verbatim.
+            // The exported SQL writes the table name as a placeholder; everything past this
+            // substitution is compared verbatim.
             fun resolve(sql: String) = sql.replace("\${TABLE_NAME}", entity.getString("tableName"))
             expected += resolve(entity.getString("createSql"))
             val indices = entity.optJSONArray("indices")
@@ -235,7 +232,7 @@ class YlihDatabaseMigrationTest {
             }
         }
 
-        // room_master_table is Room's own bookkeeping and is not an entity, so it is not exported.
+        // room_master_table is Room's own bookkeeping, not an entity, so it is not exported.
         assertEquals(expected.sorted(), VERSION_1_SCHEMA.drop(1).sorted())
     }
 
@@ -254,7 +251,7 @@ class YlihDatabaseMigrationTest {
                 assertTrue(it.moveToFirst())
                 assertEquals(VERSION_1_IDENTITY_HASH, it.getString(0))
             }
-            // The tables the migrations add must not be there yet, or nothing above is a migration.
+            // Tables the migrations add must not be there yet, or nothing above is a migration.
             db.rawQuery(
                 "SELECT name FROM sqlite_master WHERE type = 'table' " +
                     "AND name IN ('settings', 'battery_samples')",
@@ -271,10 +268,9 @@ class YlihDatabaseMigrationTest {
         YlihDatabase.open(context, NAME)
 
     /**
-     * Writes the schema `app/schemas/it.eldavo.ylih.data.YlihDatabase/1.json` describes, by hand
-     * and including `room_master_table`: without the identity hash Room treats the file as one it
-     * has never seen and rebuilds it, which would make every test here pass without migrating
-     * anything.
+     * Writes the schema `app/schemas/it.eldavo.ylih.data.YlihDatabase/1.json` describes, by hand,
+     * including `room_master_table`: without the identity hash Room treats the file as unseen and
+     * rebuilds it, letting every test here pass without migrating anything.
      */
     private fun writeVersion1Database(fill: SQLiteDatabase.() -> Unit) {
         SQLiteDatabase.openOrCreateDatabase(context.getDatabasePath(NAME), null).use { db ->

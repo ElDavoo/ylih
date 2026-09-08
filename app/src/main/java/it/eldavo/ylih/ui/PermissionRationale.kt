@@ -18,10 +18,9 @@ import androidx.core.content.ContextCompat
 /**
  * The body of a permission explainer: what the permission is for, and what happens either way.
  *
- * Both outcomes get the same shape deliberately, so that declining reads as a choice with a known
- * result rather than as the option that quietly breaks something. The "with it" / "without it"
- * wording lives inside each string rather than being prefixed here, because a language that puts
- * it anywhere but the front needs it to.
+ * Both outcomes get the same shape, so declining reads as a choice with a known result rather
+ * than one that quietly breaks something. The "with it" / "without it" wording lives inside each
+ * string rather than being prefixed here, since a language may put it anywhere but the front.
  */
 @Composable
 internal fun PermissionRationale(
@@ -44,10 +43,10 @@ internal fun granted(context: Context, permission: String) =
     ContextCompat.checkSelfPermission(context, permission) == PackageManager.PERMISSION_GRANTED
 
 /**
- * `POST_NOTIFICATIONS` if this install could still usefully be asked for it, and null otherwise.
+ * `POST_NOTIFICATIONS` if this install could still usefully be asked for it, else null.
  *
- * Returning the permission name rather than a boolean keeps every mention of an API-33 constant
- * behind the one SDK check on a minSdk-26 build, which is also the only shape lint accepts for it.
+ * Returning the name, not a boolean, keeps every mention of the API-33 constant behind the one
+ * SDK check on a minSdk-26 build — the only shape lint accepts for it.
  */
 internal fun notificationPermissionToAsk(context: Context): String? =
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&

@@ -37,9 +37,9 @@ import java.util.concurrent.atomic.AtomicBoolean
 
 /**
  * In the default mode these two receivers *are* the app: nothing of ours is resident, so a
- * broadcast that does not reach the database is a pair of headphones whose hours are lost. They
- * are dispatched here through the real manifest filters rather than called directly, because
- * `goAsync()` is what keeps the process alive long enough for Room to finish.
+ * broadcast that misses the database is a pair of headphones whose hours are lost. Dispatched
+ * here through the real manifest filters rather than called directly, since `goAsync()` keeps
+ * the process alive long enough for Room to finish.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
@@ -66,8 +66,8 @@ class ReceiversTest {
     ): BluetoothDevice = adapter.getRemoteDevice(address).also { shadowOf(it).setName(name) }
 
     /**
-     * `BluetoothClass` has no public constructor in the SDK, and the class bits are the only
-     * thing that tells a car stereo from a headset. `0x0420` is AUDIO_VIDEO / CAR_AUDIO.
+     * `BluetoothClass` has no public constructor in the SDK, and the class bits are the only way
+     * to tell a car stereo from a headset. `0x0420` is AUDIO_VIDEO / CAR_AUDIO.
      */
     private fun carStereo(): BluetoothDevice = headset(name = "Golf").also {
         shadowOf(it).setBluetoothClass(
@@ -97,10 +97,10 @@ class ReceiversTest {
 
     /**
      * `goAsync()` borrows the process from Android and hands back a token; returning it in a
-     * `finally` is the only reason a receiver that failed is a lost session rather than a
-     * process Android complains about and eventually stops trusting. An ordered broadcast is
-     * what makes that observable — the result receiver runs only once every receiver has
-     * finished, so this timing out *is* the assertion that the token leaked.
+     * `finally` is why a failed receiver costs a lost session rather than a process Android
+     * eventually stops trusting. An ordered broadcast makes that observable — the result receiver
+     * runs only once every receiver has finished, so timing out *is* the assertion that the token
+     * leaked.
      */
     private fun broadcastAndAwaitFinish(action: String, device: BluetoothDevice? = null) {
         val intent = Intent(action)
@@ -127,9 +127,8 @@ class ReceiversTest {
     }
 
     /**
-     * Also the proof that the ordered broadcast reached the manifest receiver at all: with
-     * nothing to observe in a database that is closed, a dispatch that quietly went nowhere
-     * would finish just as promptly.
+     * Also proves the broadcast reached the manifest receiver: a dispatch going nowhere would
+     * finish just as promptly, with nothing to observe.
      */
     private fun assertFailureWasLoggedBy(tag: String) {
         assertTrue(
@@ -140,10 +139,10 @@ class ReceiversTest {
 
     /**
      * What the audio stack reports while the headset is on. Opening a session schedules the
-     * heartbeat, and under the test scheduler that worker starts the moment it is enqueued —
-     * against the real container — so it reconciles the row the broadcast has just written
-     * against this list. Left empty, it reads as a pair that is already gone again, which is
-     * what made these tests pass or fail on how fast the rest of the JVM was.
+     * heartbeat, and under the test scheduler that worker starts the moment it's enqueued —
+     * against the real container — reconciling the row the broadcast just wrote against this
+     * list. Left empty, it reads as a pair already gone again, which used to make these tests
+     * pass or fail on the JVM's speed.
      */
     private fun listHeadsetAsConnected() {
         shadowOf(audioManager).setOutputDevices(
@@ -216,8 +215,8 @@ class ReceiversTest {
 
     @Test
     fun `a disconnect broadcast closes the session the connect opened`() {
-        // Still listed as connected, so the close under test is the broadcast's and not a
-        // reconcile deciding the pair had vanished.
+        // Still listed as connected, so the close under test is the broadcast's, not a reconcile
+        // deciding the pair had vanished.
         listHeadsetAsConnected()
         broadcast(BluetoothDevice.ACTION_ACL_CONNECTED, headset())
         settle("the session to open") { sessions().isNotEmpty() }
@@ -289,8 +288,8 @@ class ReceiversTest {
     @Test
     fun `a connect the database cannot record costs one session, not the process`() {
         // Nothing of the app is resident in this mode, so the receiver is the only thing that can
-        // put the process back. Closing the database is the cheapest honest way to make the work
-        // it hands to the background scope throw.
+        // start the process. Closing the database is the cheapest honest way to make the work it
+        // hands the background scope throw.
         db.close()
 
         broadcastAndAwaitFinish(BluetoothDevice.ACTION_ACL_CONNECTED, headset())
@@ -325,9 +324,9 @@ class ReceiversTest {
     private fun batterySamples() = runBlocking { db.batterySampleDao().getAll() }
 
     /**
-     * The battery broadcast is `@SystemApi` and so is named by its string here as it is in the
-     * app — dispatched through the real manifest filter, because a receiver the merged manifest
-     * does not carry is a feature that works in a test and nowhere else.
+     * The battery broadcast is `@SystemApi`, named by its string here as in the app — dispatched
+     * through the real manifest filter, since a receiver missing from the merged manifest is a
+     * feature that works in a test and nowhere else.
      */
     @Test
     fun `battery levels reported during a session become charge-cycle readings`() {
@@ -350,9 +349,9 @@ class ReceiversTest {
         broadcast(BluetoothDevice.ACTION_ACL_CONNECTED, headset())
         settle("the session to open") { sessions().isNotEmpty() }
 
-        // -1 is BATTERY_LEVEL_UNKNOWN, which the stack broadcasts for every device on every
-        // disconnect; -100 is BATTERY_LEVEL_BLUETOOTH_OFF. Taken at face value the first is a
-        // drop of the whole battery into nothing.
+        // -1 is BATTERY_LEVEL_UNKNOWN, broadcast for every device on every disconnect; -100 is
+        // BATTERY_LEVEL_BLUETOOTH_OFF. At face value the first is a drop of the whole battery into
+        // nothing.
         broadcastBattery(-1)
         broadcastBattery(-100)
         broadcastBattery(70)

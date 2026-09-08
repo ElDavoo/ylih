@@ -1,54 +1,51 @@
 name: Agent · plan
 
-# First stage of the issue -> merged PR pipeline. docs/agent-pipeline.md is the whole picture;
-# this file refines a filed issue into a plan, rewrites the issue body to *be* that plan, and
+# First stage of the issue -> merged PR pipeline; docs/agent-pipeline.md has the whole picture.
+# This file refines a filed issue into a plan, rewrites the issue body to *be* that plan, and
 # dispatches agent-implement.yml.
 #
-# It fires on `opened` and must never fire on `edited`. The job's entire output is a rewritten
-# issue body, so an `edited` trigger would re-plan its own writing, forever, at a token cost.
+# Fires on `opened`, never on `edited`: the job's entire output is a rewritten issue body, so an
+# `edited` trigger would re-plan its own writing forever, at a token cost.
 #
-# The stage is read-only over the repository on purpose: Claude is given no write tool at all
-# and returns the plan as structured output, and the shell steps below are what edit the issue.
-# That way
-# the one stage which reads attacker-authored text from a public issue tracker cannot act on it.
+# The stage is read-only over the repository on purpose: Claude gets no write tool and returns
+# the plan as structured output; the shell steps below edit the issue. That way the one stage
+# reading attacker-authored text from a public issue tracker cannot act on it.
 
 on:
   issues:
     types: [opened]
 
-# Granted per job rather than here: a workflow-level block hands the same token to the gate
-# as to the stage that runs the agent, and the gate exists precisely to decide whether the
-# agent should run at all.
+# Granted per job rather than here: a workflow-level block would give the gate the same token
+# as the agent stage, and the gate exists precisely to decide whether the agent runs at all.
 permissions: {}
 
-# One group for the whole pipeline rather than one per issue, and never cancelling. Every stage
-# that runs Claude names this same group, so at most one of them is ever in flight -- plan,
-# implement, review and both fix stages queue behind each other across issues as much as within
-# one. This comment is the canonical copy; the other stages point back at it.
+# One group for the whole pipeline, not one per issue, and never cancelling. Every stage that
+# runs Claude names this same group, so at most one is ever in flight — plan, implement, review
+# and both fix stages queue behind each other across issues as much as within one. This comment
+# is the canonical copy; the other stages point back at it.
 #
-# It is a token budget rather than a correctness rule. The subscription window is about five
-# hours, and three agent runs sharing one spend it three times as fast without any of them
-# getting further: what that looked like here was every stage stopping at its turn limit at
-# once, so a window bought several half-finished branches instead of one merged pull request.
-# Serialised, the same window pays for runs that finish.
+# It's a token budget, not a correctness rule. The subscription window is about five hours, and
+# three agent runs sharing one spend it three times as fast without any getting further: here
+# that meant every stage stopping at its turn limit at once, so a window bought several
+# half-finished branches instead of one merged pull request. Serialised, the same window pays
+# for runs that finish.
 #
-# The cost is GitHub's queue depth, which is one. A group holds one run in flight and exactly one
-# pending, and a *third* arrival cancels the pending one rather than lining up behind it -- before
-# its first step, so nothing it would have written gets written. For the implement stage that
-# loss is recovered: it leaves the issue labelled `agent:planned` with no pull request, which is
-# the signature agent-retry.yml's second sweep looks for. For this stage it is not, because a
-# plan that never ran leaves nothing behind to sweep for, and a displaced run has to be re-run
-# from the Actions tab. Filing issues a few minutes apart rather than in a batch avoids it.
+# The cost is GitHub's queue depth of one: a group holds one run in flight and one pending, and
+# a *third* arrival cancels the pending one rather than queuing — before its first step, so
+# nothing it would have written gets written. For the implement stage that loss is recovered: it
+# leaves the issue labelled `agent:planned` with no pull request, the signature
+# agent-retry.yml's second sweep looks for. Not for this stage — a plan that never ran leaves
+# nothing to sweep for, and a displaced run must be re-run from the Actions tab. Filing issues a
+# few minutes apart, not in a batch, avoids it.
 concurrency:
   group: agent-pipeline
   cancel-in-progress: false
 
 jobs:
   # Issues you open run unattended. Anyone else's queue here until you press Approve on the
-  # `agent-approval` environment -- and the queue happens before this job's first step, so at
-  # the moment you are asked, no runner has checked anything out and no issue text has reached
-  # a prompt. That ordering is the entire security argument for the pipeline; see
-  # docs/agent-pipeline.md.
+  # `agent-approval` environment — before this job's first step, so at the moment you're asked,
+  # no runner has checked anything out and no issue text has reached a prompt. That ordering is
+  # the whole security argument for the pipeline; see docs/agent-pipeline.md.
   gate:
     permissions:
       contents: read
@@ -71,9 +68,9 @@ jobs:
       id-token: write
       issues: write
     needs: [gate]
-    # `always()` is load-bearing and not decoration: without it a *skipped* gate skips this job
-    # too, and skipped is exactly the path your own issues take. A rejected deployment fails the
-    # gate, which must stop the pipeline -- hence checking the result explicitly rather than
+    # `always()` is load-bearing, not decoration: without it a *skipped* gate skips this job too,
+    # and skipped is exactly the path your own issues take. A rejected deployment fails the gate,
+    # which must stop the pipeline — hence checking the result explicitly rather than
     # `!cancelled()`, which would let a rejection through.
     if: >-
       always()
@@ -90,9 +87,9 @@ jobs:
         with:
           persist-credentials: false
 
-      # A cap on work in flight, not on work queued. Three open agent PRs is already more diff
-      # than one person reviews in an evening, and the failure mode this exists for is a bad
-      # afternoon of issue filing turning into twelve branches and twelve CI matrices.
+      # A cap on work in flight, not on work queued: three open agent PRs is already more diff
+      # than one person reviews in an evening, and this guards against a bad afternoon of issue
+      # filing turning into twelve branches and twelve CI matrices.
       - name: Check how much is already in flight
         id: capacity
         env:
@@ -106,7 +103,7 @@ jobs:
 
       - name: Decline when at capacity
         # fromJSON, not a bare comparison: `>=` between two strings casts both to numbers only
-        # by luck of them being numeric, and silently answers false when it does not.
+        # by luck, and silently answers false when they aren't.
         if: fromJSON(steps.capacity.outputs.open) >= 3
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -119,11 +116,11 @@ jobs:
 
       - name: Plan the work
         id: plan
-        # A run that does not finish must be recorded rather than crash the job, so the stall
-        # step below can turn it into a label and a comment. The steps after that one are
-        # skipped for free: it exits non-zero, and every later step is `if: success()` by
-        # default. `outcome` is checked rather than `conclusion` because continue-on-error
-        # rewrites `conclusion` to success — outcome is what actually happened.
+        # A run that doesn't finish must be recorded rather than crash the job, so the stall
+        # step below can turn it into a label and a comment. Later steps skip for free: it exits
+        # non-zero and every later step is `if: success()` by default. `outcome` is checked
+        # rather than `conclusion`, since continue-on-error rewrites `conclusion` to success —
+        # outcome is what actually happened.
         continue-on-error: true
         uses: anthropics/claude-code-action@d75b94d5ad426cb8546e6628b6f5f19b84e5cce1 # v1
         with:
@@ -199,10 +196,10 @@ jobs:
         run: exit 1
 
       # Unpacked here, in jq, rather than with fromJSON() inside each `if:`. fromJSON on an
-      # empty string does not evaluate to false — it fails template evaluation outright, with
-      # "Error reading JToken from JsonReader", and it does so even when the step would have
-      # been skipped anyway. So a stalled Claude run took every step below it down with a parse
-      # error rather than skipping cleanly. Plain string outputs cannot do that.
+      # empty string doesn't evaluate to false — it fails template evaluation outright, with
+      # "Error reading JToken from JsonReader", even when the step would have been skipped
+      # anyway. So a stalled Claude run took every step below it down with a parse error instead
+      # of skipping cleanly. Plain string outputs can't do that.
       - name: Unpack the plan
         run: |
           set -euo pipefail
@@ -213,9 +210,9 @@ jobs:
           OUT: ${{ steps.plan.outputs.structured_output }}
 
       # The issue body is replaced by the plan, with the text as filed preserved verbatim
-      # underneath it. Overwriting outright would lose the provenance of the request -- on an
-      # outside issue that is the very text you approved against, and a later reader could not
-      # tell what was asked from what the agent decided it meant.
+      # underneath. Overwriting outright would lose the request's provenance — on an outside
+      # issue that's the very text you approved against, and a later reader couldn't tell what
+      # was asked from what the agent decided it meant.
       - name: Rewrite the issue as the plan
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -225,10 +222,9 @@ jobs:
         run: |
           set -euo pipefail
 
-          # Everything untrusted moves through the environment or a file, never through the
-          # script text: an issue body containing shell metacharacters is ordinary, and
-          # interpolating one into a `run:` block is how that becomes arbitrary code on a
-          # runner holding a token.
+          # Everything untrusted moves through the environment or a file, never through script
+          # text: an issue body with shell metacharacters is ordinary, and interpolating one
+          # into a `run:` block is how that becomes arbitrary code on a runner holding a token.
           {
             cat /tmp/plan-body.md
             printf '\n'
@@ -243,8 +239,8 @@ jobs:
 
       - name: Hand over to the implement stage
         env:
-          # The PAT, not GITHUB_TOKEN: a workflow dispatched with GITHUB_TOKEN does not run at
-          # all. Same family of trap as the push token in dependabot-verification-metadata.yml.
+          # The PAT, not GITHUB_TOKEN: a workflow dispatched with GITHUB_TOKEN doesn't run at
+          # all — same trap as the push token in dependabot-verification-metadata.yml.
           GH_TOKEN: ${{ secrets.AGENT_PUSH_TOKEN }}
           ISSUE: ${{ github.event.issue.number }}
           AUTHOR: ${{ github.event.issue.user.login }}

@@ -57,11 +57,10 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
     /**
      * [now] rounded down to the minute, for every figure derived from the whole history.
      *
-     * Nothing that reads this can show a per-second change: `formatHours` rounds to a tenth of an
-     * hour, which is six minutes, and the day buckets move by the hour. But keying them on [now]
-     * meant re-summarising and re-bucketing every session ever recorded sixty times a minute, on
-     * the main thread, on three screens — a cost that grows for as long as the app is used. The
-     * live "connected for …" lines still read [now]; they are the only thing on screen that is
+     * Nothing here shows a per-second change: `formatHours` rounds to a tenth of an hour (six
+     * minutes), and day buckets move by the hour. Keying on [now] instead meant re-summarising
+     * and re-bucketing every session sixty times a minute, on the main thread, on three screens,
+     * growing with app use. Live "connected for …" lines still read [now]; they're the only thing
      * meant to move every second.
      */
     val nowMinute: StateFlow<Long> = now
@@ -99,26 +98,24 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
     /**
-     * Null until the stored tag arrives. The settings screen restarts the activity when this
-     * changes, so it must not see the default before the stored tag arrives.
+     * Null until the stored tag arrives — the settings screen restarts the activity when this
+     * changes, so it must not see the default first.
      */
     val language: StateFlow<String?> = container.settings.language
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
     /**
-     * The sessions the charts can actually draw: the last [WINDOW_DAYS] days, plus whatever is
-     * still open.
+     * The sessions the charts can draw: the last [WINDOW_DAYS] days, plus whatever is still open.
      *
-     * This used to be the whole table, twice — an `observeAllSessions()` per shape. Room's
-     * invalidation is table-granular and the service writes a heartbeat to `sessions` once a
-     * minute, so every one of those minutes re-ran `SELECT * FROM sessions ORDER BY connectedAt`
-     * over a table that grows for as long as the app is used: a scan and a sort of the lot,
-     * measured at 26 ms against 22,000 rows, to redraw a thirty-day chart and produce lifetime
-     * figures SQL had already grouped. The lifetime figures come off the aggregate now
-     * (`summarizeLifetime`) and this covers the windows, which is all a chart can show.
+     * Used to be the whole table, twice — an `observeAllSessions()` per shape. Room's invalidation
+     * is table-granular and the service writes a heartbeat to `sessions` once a minute, so every
+     * minute re-ran `SELECT * FROM sessions ORDER BY connectedAt` over a growing table: a scan and
+     * sort of the lot, measured at 26 ms against 22,000 rows, just to redraw a thirty-day chart and
+     * produce figures SQL had already grouped. Lifetime figures now come off the aggregate
+     * (`summarizeLifetime`); this covers the windows, all a chart can show.
      *
-     * A day of slack past the window so that a bucket on the boundary is whole, and re-read
-     * whenever the table changes because the window's own edge moves with the clock.
+     * A day of slack past the window keeps a boundary bucket whole, and it re-reads on every table
+     * change since the window's edge moves with the clock.
      */
     private val recentSessions: SharedFlow<List<SessionEntity>> = container.repository
         .observeRecentSessions { container.clock.now() - (WINDOW_DAYS + 1) * DAY_MS }
@@ -136,14 +133,13 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
     /**
      * Snackbar text, over a buffered channel rather than a `SharedFlow`.
      *
-     * The UI collects this under `repeatOnLifecycle`, so there are stretches with no collector at
-     * all — and a `MutableSharedFlow` with `replay = 0` drops what it emits when nobody is
-     * listening, which is precisely those stretches. A channel buffers instead, so a message
-     * raised while the activity is stopped is waiting when it comes back. Raising the replay to 1
-     * would be the other way to survive that, and it would re-show the last message on every
-     * return to STARTED, rotation included.
+     * The UI collects this under `repeatOnLifecycle`, so there are stretches with no collector,
+     * and a `MutableSharedFlow` with `replay = 0` drops what it emits with nobody listening. A
+     * channel buffers instead, so a message raised while the activity is stopped is waiting when
+     * it returns. Raising the replay to 1 would also survive that, but would re-show the last
+     * message on every return to STARTED, rotation included.
      *
-     * Consume-once, and nothing enforces a single collector: a second one would take messages from
+     * Consume-once, and nothing enforces a single collector — a second would steal messages from
      * the first. There is one, in `YlihNavHost`.
      */
     private val messageChannel = Channel<String>(Channel.BUFFERED)
@@ -157,16 +153,16 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
     /**
      * This pair's charge cycles, worked out off the main thread.
      *
-     * The readings themselves are unwindowed, unlike [recentSessions], because charge cycles are a
-     * lifetime figure: the question is what a charge bought when the pair was new against what it
-     * buys now, and a thirty-day window cannot ask it. That makes the walk over them the one piece
-     * of arithmetic in this app whose cost grows without bound — measured at 173 ms for a million
-     * readings — so it belongs here rather than in a `remember` on the pair page, where it used to
-     * sit keyed on the minute clock and so re-ran on the main thread every sixty seconds.
+     * The readings are unwindowed, unlike [recentSessions]: charge cycles are a lifetime figure —
+     * what a charge bought when the pair was new against what it buys now, which a thirty-day
+     * window can't ask. That makes the walk over them the one calculation here whose cost grows
+     * without bound (measured at 173 ms for a million readings), so it lives here rather than in
+     * a `remember` on the pair page, where it used to sit keyed on the minute clock and re-run on
+     * the main thread every sixty seconds.
      *
-     * The sessions are reduced to their spans *before* [distinctUntilChanged], which is what keeps
-     * the heartbeat out of this: it writes to `sessions` once a minute and moves nothing this
-     * summary reads, so the spans compare equal and nothing recomputes.
+     * Sessions are reduced to spans *before* [distinctUntilChanged], keeping the heartbeat out of
+     * this: it writes to `sessions` once a minute but moves nothing this summary reads, so the
+     * spans compare equal and nothing recomputes.
      */
     fun chargeSummary(pairId: Long): Flow<ChargeSummary> {
         val spans = container.repository.observeSessionsFor(pairId)
@@ -182,11 +178,11 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
     /**
      * False on the Play build until Bluetooth access is granted — see `Distribution`.
      *
-     * State rather than a function call, for two reasons. It reaches `checkSelfPermission`, a
-     * binder round-trip, and the settings screen was making it on every recomposition. And the
-     * answer *changes*: granting Bluetooth from the prompt that screen raises flips it, and a
-     * function read during composition gives nothing to recompose on, so the row stayed disabled
-     * until something unrelated redrew it. [refreshCapabilities] is what re-asks.
+     * State, not a function call, for two reasons: it reaches `checkSelfPermission`, a binder
+     * round-trip the settings screen made on every recomposition; and the answer *changes* —
+     * granting Bluetooth from the prompt that screen raises flips it, and a function read during
+     * composition gives nothing to recompose on, so the row stayed disabled until something
+     * unrelated redrew it. [refreshCapabilities] re-asks.
      */
     private val _detailedTrackingSupported =
         MutableStateFlow(container.trackingController.detailedTrackingSupported())
@@ -208,15 +204,15 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
     /**
      * Runs a foreground edit and tells the home screen about it afterwards.
      *
-     * The background sources are covered by `TrackingController.onDataChanged`; these are the
-     * writes that never reach it. [setPlaybackOnly] is in here as well even though it touches no
-     * session — it changes what every widget *counts*, and it is a settings write, so nothing
-     * watching the database would ever notice.
+     * `TrackingController.onDataChanged` covers background sources; these are the writes that
+     * never reach it. [setPlaybackOnly] is here too even though it touches no session — it changes
+     * what every widget *counts*, and as a settings write nothing watching the database would
+     * otherwise notice.
      *
      * Every caller is a database write, and an exception escaping `viewModelScope.launch` reaches
-     * the default handler and takes the process with it — so a failed delete crashed the app
-     * rather than saying so. It reports through the same channel `exportTo` and `importFrom`
-     * already use; the redraw still runs, because whatever did land needs showing.
+     * the default handler and takes the process with it — a failed delete used to crash the app
+     * instead of reporting it. It now reports through the same channel `exportTo`/`importFrom`
+     * use; the redraw still runs, since whatever did land needs showing.
      */
     private fun mutate(block: suspend () -> Unit) = viewModelScope.launch {
         runCatchingCancellable { block() }
@@ -229,10 +225,10 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     /**
-     * Not a [mutate]: this moves no figure any widget shows. It is reported the same way, though,
-     * because the write reaches the platform as well as the table — see
-     * `SettingsStore.setAgentAccess` — and a refusal there must say so rather than leave the switch
-     * looking like it took.
+     * Not a [mutate]: this moves no figure any widget shows. Reported the same way regardless,
+     * since the write reaches the platform as well as the table (see
+     * `SettingsStore.setAgentAccess`), and a refusal there must say so rather than leave the
+     * switch looking like it took.
      */
     fun setAgentAccess(enabled: Boolean) = viewModelScope.launch {
         runCatchingCancellable { container.settings.setAgentAccess(enabled) }
@@ -282,8 +278,8 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
     fun setDeviceIgnored(deviceId: Long, ignored: Boolean) = mutate {
         container.repository.setDeviceIgnored(deviceId, ignored)
         // Ignoring closes the open session itself. Un-ignoring has nothing to reopen from — the
-        // device is connected right now but no event will say so again — so without this, tracking
-        // resumed only whenever something else happened to sync, up to fifteen minutes later.
+        // device is connected but no event will say so again — so without this, tracking resumed
+        // only when something else happened to sync, up to fifteen minutes later.
         if (!ignored) container.trackingController.syncWithSystem()
     }
 
@@ -318,16 +314,16 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
 
     companion object {
         /**
-         * Builds the view model from the *owner's* application rather than from the one
+         * Builds the view model from the *owner's* application, not the one
          * `AndroidViewModelFactory` happens to hold.
          *
-         * That factory is a process-wide singleton pinned to the first `Application` it ever saw,
-         * which is invisible in an app — there is only ever one — and wrong under Robolectric,
-         * where every test builds a fresh one. The view model then reads a container, and so a
-         * database, belonging to a previous test: the welcome and hibernation prompts read the
-         * answers given to an earlier test's dialog and never appeared. Nothing caught it until
-         * the settings moved out of DataStore, whose own store is a per-property singleton and
-         * so handed the stale application the same data anyway.
+         * That factory is a process-wide singleton pinned to the first `Application` it ever saw —
+         * invisible in an app, where there's only ever one, but wrong under Robolectric, where
+         * every test builds a fresh one. The view model then reads a container, and so a database,
+         * belonging to a previous test: welcome and hibernation prompts read an earlier test's
+         * answers and never appeared. Nothing caught it until settings moved out of DataStore,
+         * whose own per-property-singleton store handed the stale application the same data
+         * anyway.
          */
         val Factory: ViewModelProvider.Factory = viewModelFactory {
             initializer { YlihViewModel(checkNotNull(this[APPLICATION_KEY])) }
@@ -351,10 +347,10 @@ fun SessionEntity.toSpan(): Span = Span(connectedAt, disconnectedAt, playingMs)
 fun BatterySampleEntity.toReading(): Reading = Reading(sessionId, at, level)
 
 /**
- * The lifetime figure a pair's card and the ranking show, straight off the aggregate rather than
- * off its sessions. `closedMs` is finished sessions only, so connected time has to add the open
- * one's live tail; the playback sum already includes it, because the watcher banks playback into
- * the open session as it goes.
+ * The lifetime figure a pair's card and the ranking show, off the aggregate, not its sessions.
+ * `closedMs` is finished sessions only, so connected time adds the open one's live tail; the
+ * playback sum already includes it, since the watcher banks playback into the open session as it
+ * goes.
  */
 fun PairSummary.countedMs(now: Long, counting: Counting): Long = when (counting) {
     Counting.CONNECTED -> closedMs + (openSince?.let { now - it } ?: 0L)
@@ -362,23 +358,23 @@ fun PairSummary.countedMs(now: Long, counting: Counting): Long = when (counting)
 }
 
 /**
- * The stats screen's headline block, out of the per-pair aggregates rather than out of every
- * session ever recorded.
+ * The stats screen's headline block, off the per-pair aggregates, not every session ever
+ * recorded.
  *
  * `Stats.summarize` answers the same question from a `List<Span>`, and did until this existed —
- * which meant `SELECT * FROM sessions` on every invalidation of a table the heartbeat writes to
- * once a minute, growing for as long as the app is used, to produce figures SQL had already
- * grouped. The two must agree exactly, and `SummarizeLifetimeTest` is what says they do;
- * treat that test as the definition and this as an implementation of it.
+ * meaning `SELECT * FROM sessions` on every invalidation of a table the heartbeat writes to once
+ * a minute, growing with app use, to produce figures SQL had already grouped. The two must agree
+ * exactly; `SummarizeLifetimeTest` says they do — treat that test as the definition and this as
+ * an implementation of it.
  *
- * Each pair contributes its finished sessions from SQL and its open one from here, because
- * clamping an open session's playback needs `now`. A pair holds at most one open session, which is
- * what makes that a single term rather than a scan.
+ * Each pair contributes its finished sessions from SQL and its open one from here, since clamping
+ * an open session's playback needs `now`. A pair holds at most one open session, so that's a
+ * single term, not a scan.
  */
 fun List<PairSummary>.summarizeLifetime(now: Long, counting: Counting): Summary {
     val openConnected = { it: PairSummary -> it.openSince?.let { at -> (now - at).coerceAtLeast(0) } }
-    // The open session counts here only if it can answer the question being asked: under playback
-    // that means it is measuring, which is exactly what a non-null `openPlayingMs` says.
+    // The open session counts here only if it can answer the question asked: under playback that
+    // means it is measuring, which is what a non-null `openPlayingMs` says.
     val openCounted = { it: PairSummary ->
         when (counting) {
             Counting.CONNECTED -> openConnected(it)
@@ -414,8 +410,8 @@ fun List<PairSummary>.summarizeLifetime(now: Long, counting: Counting): Summary 
             mapNotNull(openCounted).maxOrNull() ?: 0L,
         ),
         averageMs = total / sessions,
-        // Unclamped, like `Stats.summarize`: this is what the watcher banked, and the row it
-        // appears in reads it against `measuredMs` as a share.
+        // Unclamped, like `Stats.summarize`: what the watcher banked, read against `measuredMs`
+        // as a share in the row it appears in.
         playingMs = sumOf { it.playingMs },
         measuredMs = sumOf {
             it.measuredPlaybackMs + (if (it.openPlayingMs != null) openConnected(it) ?: 0L else 0L)

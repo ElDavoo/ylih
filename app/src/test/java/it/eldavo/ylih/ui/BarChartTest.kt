@@ -21,14 +21,14 @@ import org.robolectric.annotation.GraphicsMode
 import java.time.LocalDate
 
 /**
- * The chart is a hand-drawn Canvas rather than a charting dependency, so nothing but a real
- * draw exercises it — hence native graphics and a capture. What is asserted is the part a
- * reader relies on: the span it covers and the scale its tallest bar means.
+ * The chart is a hand-drawn Canvas rather than a charting dependency, so only a real draw
+ * exercises it — hence native graphics and a capture. Asserted: what a reader relies on, the
+ * span it covers and the scale its tallest bar means.
  *
- * The axis labels are drawn but deliberately hidden from the semantics tree — a Canvas has nothing
- * inside it to describe itself, so the whole chart carries one description and three loose
- * fragments after it would only repeat the same figures out of order. Hence `useUnmergedTree` for
- * what is on screen, and a separate assertion for what a screen reader is told.
+ * The axis labels are drawn but hidden from the semantics tree — a Canvas has nothing inside it
+ * to describe itself, so the whole chart carries one description; three loose fragments after it
+ * would only repeat the same figures out of order. Hence `useUnmergedTree` for what's on screen,
+ * and a separate assertion for what a screen reader is told.
  */
 @RunWith(RobolectricTestRunner::class)
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
@@ -64,7 +64,7 @@ class BarChartTest {
 
     /**
      * The app's whole visualisation used to be an empty leaf to TalkBack: a bare Canvas with no
-     * semantics at all, and three tiny axis labels beside it. This is the line it reads now.
+     * semantics, and three tiny axis labels beside it. This is the line it reads now.
      */
     @Test
     fun `the chart tells a screen reader what it is a chart of`() {
@@ -108,8 +108,8 @@ class BarChartTest {
     }
 
     /**
-     * The cycle chart draws the same bars against a different axis — an ordinal rather than a date
-     * — because the only thing it is read for is whether the bars get shorter.
+     * The cycle chart draws the same bars against a different axis — ordinal rather than date —
+     * since it's only ever read for whether the bars get shorter.
      */
     @Test
     fun `the cycle chart is labelled with its span and its best cycle`() {
@@ -132,9 +132,9 @@ class BarChartTest {
     }
 
     /**
-     * A pair worn daily for a decade is some three thousand charge cycles, and three thousand bars
-     * on a phone is a bar narrower than a pixel drawn three thousand times a frame. Averaging runs
-     * of them keeps the only thing the chart is read for — whether the bars are getting shorter.
+     * A pair worn daily for a decade is some three thousand charge cycles — three thousand bars
+     * on a phone is a bar narrower than a pixel, drawn three thousand times a frame. Averaging
+     * runs of them keeps the only thing the chart is read for: whether bars get shorter.
      */
     @Test
     fun `more cycles than there are bars are averaged into the bars there are`() {

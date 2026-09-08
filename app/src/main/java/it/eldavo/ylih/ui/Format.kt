@@ -22,16 +22,14 @@ private const val HOUR = 60 * MINUTE
 /**
  * "3h 7m" / "12m" / "45s" — for live timers and session rows, in the reader's own units.
  *
- * The units come from CLDR through ICU rather than from string resources. They are the same
- * abbreviations the platform's own clock and battery screens use, in all 77 languages, and there
- * is nothing here for anyone to translate: "3t 7min" in Finnish, "3小时7分钟" in Chinese, and the
- * right ordering and separator in Arabic and Hebrew, none of which a `"%dh %02dm"` could reach.
+ * Units come from CLDR via ICU, not string resources: the same abbreviations the platform's clock
+ * and battery screens use, in all 77 languages — "3t 7min" in Finnish, "3小时7分钟" in Chinese, and
+ * correct ordering and separator in Arabic and Hebrew, none reachable by `"%dh %02dm"`. That was
+ * the old format string, so every language read the English "h", "m" and "s" — spoken aloud by a
+ * screen reader.
  *
- * It used to be exactly that format string, so every language read the English "h", "m" and "s" —
- * and a screen reader said them aloud.
- *
- * The zero padding goes with it: ICU has no notion of it, and the alternative was giving up the
- * localisation to keep a live timer one character steadier as it crosses 9 to 10 minutes.
+ * Zero padding went with it: ICU has no notion of it, and the alternative was giving up
+ * localisation just to keep a live timer's width steady crossing 9 to 10 minutes.
  */
 fun formatDurationShort(ms: Long): String {
     val safe = ms.coerceAtLeast(0)
@@ -46,13 +44,12 @@ fun formatHours(ms: Long): String =
     formatters().hours(ms.coerceAtLeast(0) / HOUR.toDouble())
 
 /**
- * The three localized formatters, built once per locale rather than once per call.
+ * The three localized formatters, built once per locale rather than per call.
  *
- * `ofLocalizedDateTime` resolves a pattern out of the CLDR resource bundle every time it is
- * asked, and the session list calls two of them per row — so a pair with three hundred sessions
- * was building six hundred formatters for every repaint. They are immutable and thread-safe once
- * built; the cache key is the locale, because `AppLocale` can change it under a running process
- * and every one of these reads `Locale.getDefault()`.
+ * `ofLocalizedDateTime` resolves a pattern from the CLDR bundle on every call, and the session
+ * list calls two per row — three hundred sessions built six hundred formatters per repaint.
+ * Immutable and thread-safe once built; cached by locale, since `AppLocale` can change it
+ * mid-process and each formatter reads `Locale.getDefault()`.
  */
 private class Formatters(val locale: Locale) {
 
@@ -72,21 +69,21 @@ private class Formatters(val locale: Locale) {
         .withLocale(locale)
 
     /**
-     * The abbreviated day of the week, out of CLDR — the same reason the units go through ICU. An
-     * `EEE` pattern resolves against the locale's own data, so there is no English "Mon" leaking into
-     * every other language, and nothing here for anyone to translate.
+     * The abbreviated day of the week, out of CLDR — same reason the units go through ICU. An
+     * `EEE` pattern resolves against the locale's own data, so no English "Mon" leaks into other
+     * languages, and nothing here needs translating.
      */
     val weekday: DateTimeFormatter = DateTimeFormatter.ofPattern("EEE", locale)
 
     /**
-     * The chart's axis labels: the locale's own short date with the year taken out.
+     * The chart's axis labels: the locale's own short date with the year stripped out.
      *
-     * It used to be a hardcoded `d/M`, which put the day first in all 77 languages — wrong for
-     * en-US, ja and hu among others. There is no "day and month" style in `java.time`, and the
-     * skeleton API that would give one (`DateFormat.getBestDateTimePattern`) is Android's, which
-     * this file cannot reach: it is read by plain JVM tests. So the short pattern is asked for and
-     * the year field stripped along with whatever separator it brought — `dd/MM/y` becomes
-     * `dd/MM`, `M/d/yy` becomes `M/d`, `y/MM/dd` becomes `MM/dd`.
+     * Used to be hardcoded `d/M`, putting the day first in all 77 languages — wrong for en-US, ja
+     * and hu among others. `java.time` has no "day and month" style, and the skeleton API that
+     * would give one (`DateFormat.getBestDateTimePattern`) is Android's, unreachable here since
+     * plain JVM tests read this file. So the short pattern is asked for and the year field
+     * stripped with whatever separator it brought — `dd/MM/y` becomes `dd/MM`, `M/d/yy` becomes
+     * `M/d`, `y/MM/dd` becomes `MM/dd`.
      */
     val dayLabel: DateTimeFormatter = DateTimeFormatter.ofPattern(
         DateTimeFormatterBuilder
@@ -103,12 +100,12 @@ private val YEAR_FIELD = Regex("[^\\p{L}]*[yu]+[^\\p{L}]*")
 /**
  * Every `android.icu` type in this file, in one place.
  *
- * A class rather than a few free functions so that nothing outside can name a `MeasureUnit`, and
- * so the two `MeasureFormat`s are built once per locale beside the formatters that use them.
+ * A class, not free functions, so nothing outside can name a `MeasureUnit`, and the two
+ * `MeasureFormat`s build once per locale alongside the formatters using them.
  *
- * NARROW rather than SHORT because these sit in chips, cards and a headline where "3h 7m" belongs
- * and "3 hrs, 7 mins" does not. Two formats because the whole-unit durations want no decimals and
- * the lifetime headline wants exactly one.
+ * NARROW, not SHORT: these sit in chips, cards and a headline, where "3h 7m" belongs and
+ * "3 hrs, 7 mins" doesn't. Two formats — whole-unit durations want no decimals, the lifetime
+ * headline wants exactly one.
  */
 private class IcuUnits(locale: Locale) {
 
@@ -165,22 +162,21 @@ fun formatMoney(cents: Long): String =
     String.format(Locale.getDefault(), "%,.2f", cents / 100.0)
 
 /**
- * [formatMoney] without the grouping separators, for the field that has to be read back.
+ * [formatMoney] without grouping separators, for a field that has to be read back.
  *
- * Grouping is what makes a price ambiguous to re-parse: an Italian install writes 1234.56 as
- * "1.234,56", and there is no honest way to tell that apart from someone typing "1.234" meaning
- * one and a bit. Without it there is only ever one separator in the string, so [parsePriceCents]
- * can take either character to mean the decimal point and the field round-trips whatever this put
- * in it.
+ * Grouping makes a price ambiguous to re-parse: an Italian install writes 1234.56 as "1.234,56",
+ * indistinguishable from someone typing "1.234" meaning one and a bit. Without it only one
+ * separator ever appears, so [parsePriceCents] can take either character as the decimal point and
+ * round-trip.
  */
 fun formatPriceInput(cents: Long): String =
     String.format(Locale.getDefault(), "%.2f", cents / 100.0)
 
 /**
- * Reads a typed price back into minor units, or null for anything that is not one.
+ * Reads a typed price back into minor units, or null for anything that isn't one.
  *
- * `BigDecimal` rather than a `Double`: "12.99" is 12.989999999999998 as a Double, and truncating
- * that after multiplying by a hundred stored 1298 — a cent less than was typed, every time.
+ * `BigDecimal` rather than `Double`: "12.99" is 12.989999999999998 as a Double, and truncating
+ * that after multiplying by a hundred stored 1298 — a cent short, every time.
  */
 fun parsePriceCents(text: String): Long? {
     val normalised = text.trim().replace(',', '.')
@@ -193,9 +189,9 @@ fun parsePriceCents(text: String): Long? {
 /**
  * Charge cycles, to a tenth.
  *
- * One decimal because that is what the underlying readings support: a headset reporting over HFP
- * moves in twenty-five-point steps, so a hundredth of a cycle would be precision the number does
- * not have. Whole cycles would be worse still — the figure would sit at "1" for months.
+ * One decimal because that's what the readings support: a headset reporting over HFP moves in
+ * twenty-five-point steps, so a hundredth would be false precision. Whole cycles would be worse —
+ * the figure would sit at "1" for months.
  */
 fun formatCycles(value: Double): String =
     String.format(Locale.getDefault(), "%.1f", value.coerceAtLeast(0.0))

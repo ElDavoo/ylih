@@ -10,11 +10,11 @@ import it.eldavo.ylih.data.DeviceIdentity
 import it.eldavo.ylih.data.DeviceKind
 
 /**
- * Turns the platform's two different views of a headphone — [AudioDeviceInfo] from the audio
- * stack and [BluetoothDevice] from the ACL broadcast — into one stable identity.
+ * Turns the platform's two views of a headphone — [AudioDeviceInfo] from the audio stack,
+ * [BluetoothDevice] from the ACL broadcast — into one stable identity.
  *
- * Both views of the same Bluetooth headset yield the same `bt:<MAC>` key, so the receiver and
- * the service can never open two sessions for one pair.
+ * Both yield the same `bt:<MAC>` key for the same Bluetooth headset, so the receiver and the
+ * service never open two sessions for one pair.
  */
 object AudioDevices {
 
@@ -35,24 +35,20 @@ object AudioDevices {
     private val MAC_SUFFIX = Regex("[0-9A-F]{2}:[0-9A-F]{2}")
 
     /**
-     * What the last two octets of `02:00:00:00:00:00` come to.
-     *
-     * That is the address `BluetoothDevice.getAddress()` hands an app without BLUETOOTH_CONNECT
-     * from API 31, and taken at face value it keys *every* headset to `bt:00:00` — one pair, with
-     * everyone's hours in it. Not reachable today, because receiving the ACL broadcast that
-     * carries the device needs the same permission, and the audio stack's redaction keeps these
-     * two octets rather than zeroing them (`XX:XX:XX:XX:5E:C2`, which is why they are the key at
-     * all). One line to refuse it anyway, since the cost of being wrong is every pair's history
-     * merged into one and nothing to unpick it with afterwards.
+     * The last two octets of `02:00:00:00:00:00`, the address `BluetoothDevice.getAddress()`
+     * gives an app without BLUETOOTH_CONNECT from API 31 — which at face value would key every
+     * headset to `bt:00:00`, merging everyone's hours. Not reachable today: the ACL broadcast
+     * needs the same permission, and the audio stack's redaction keeps these two octets instead
+     * of zeroing them (`XX:XX:XX:XX:5E:C2`, why they're the key at all). Refused anyway in one
+     * line: being wrong here merges every pair's history with no way to unpick it.
      */
     private const val ANONYMISED_SUFFIX = "00:00"
 
     /**
-     * The two platform views do not report the same address: `AudioDeviceInfo.getAddress()`
-     * hands back a partially redacted MAC (`XX:XX:XX:XX:5E:C2`) while the ACL broadcast reports the full
-     * `80:C3:BA:A6:5E:C2` — observed on Android 16. The last two octets are the only part both
-     * APIs disclose, so that is what identifies the device. Two paired headsets would have to
-     * collide on the final 16 bits of their MAC to be confused for each other.
+     * The two views report different addresses: `AudioDeviceInfo.getAddress()` gives a partially
+     * redacted MAC (`XX:XX:XX:XX:5E:C2`), the ACL broadcast the full `80:C3:BA:A6:5E:C2` (Android
+     * 16). The last two octets are the only part both disclose, so they identify the device; two
+     * paired headsets would need to collide on the final 16 bits to be confused.
      */
     fun bluetoothKey(address: String?, name: String?): String? {
         val suffix = address
@@ -116,10 +112,10 @@ object AudioDevices {
                     name = name.ifEmpty { "USB headphones" },
                 )
 
-            // SCO alongside A2DP because a headset that carries calls but not media — a mono
-            // call headset, or one whose media profile has not come up yet — is only ever
-            // reported as SCO. Leaving it out made it invisible to [currentHeadphones], so
-            // `reconcile` closed a session that was still live at its last heartbeat.
+            // SCO alongside A2DP: a headset carrying calls but not media — a mono call headset,
+            // or one whose media profile hasn't come up yet — reports only as SCO. Omitting it
+            // made it invisible to [currentHeadphones], so `reconcile` closed a session still
+            // live at its last heartbeat.
             AudioDeviceInfo.TYPE_BLUETOOTH_A2DP, AudioDeviceInfo.TYPE_BLUETOOTH_SCO ->
                 bluetoothIdentity(address, name, DeviceKind.BLUETOOTH)
 

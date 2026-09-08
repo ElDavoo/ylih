@@ -30,9 +30,9 @@ import org.robolectric.annotation.Config
 
 /**
  * The stats page is the one screen that answers the question the app was written for, and it
- * answers it twice — connected time or measured playback. Whichever it is counting, it has to
- * say so: a lifetime headline that halved overnight with no explanation would read as lost
- * history, which is the one thing this app must never look like it has done.
+ * answers it twice — connected time or measured playback — and must say which: a lifetime
+ * headline that halved overnight with no explanation would read as lost history, the one thing
+ * this app must never look like it has done.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
@@ -103,10 +103,10 @@ class StatsScreenTest {
     /**
      * @param settled something the screen only shows once every flow it reads has arrived.
      *
-     * The headline alone is not that. It is a figure, and the same figure appears in the window
+     * The headline alone isn't that: it's a figure, and the same figure appears in the window
      * tiles beside it, so `nodeCount` can be satisfied by a tile drawn from a *different* setting
      * than the one under test — the spans, the counting mode and the summaries each land on their
-     * own frame. A test whose subject is the counting mode has to wait for the counting mode.
+     * own frame. A test whose subject is the counting mode must wait for the counting mode.
      */
     private fun show(totalHeadline: String, settled: String? = null) {
         val viewModel = YlihViewModel(app)
@@ -147,9 +147,9 @@ class StatsScreenTest {
     }
 
     /**
-     * The chart can only ever show a shape. The list under it is where "how much did I listen
-     * yesterday" is actually answered, and the day it answers for has to be named — a reader
-     * counting bars backwards from the right-hand edge is the work this exists to remove.
+     * The chart can only ever show a shape. The list under it answers "how much did I listen
+     * yesterday", and the day it answers for must be named — a reader counting bars backwards
+     * from the right-hand edge is the work this exists to remove.
      */
     @Test
     fun `the day list names yesterday and reaches back to the first day recorded`() {

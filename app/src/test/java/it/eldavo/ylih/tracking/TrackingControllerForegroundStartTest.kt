@@ -25,9 +25,9 @@ import org.robolectric.annotation.Config
 
 /**
  * What happens when the platform refuses to start the service at all. Separate from
- * [TrackingControllerTest] because it runs on a different SDK level, and mixing the two inside one
+ * [TrackingControllerTest] because it runs on a different SDK level, and mixing the two in one
  * class puts two Robolectric sandboxes — and so two WorkManager singletons — behind test methods
- * that share a class.
+ * sharing a class.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.S])
@@ -67,7 +67,7 @@ class TrackingControllerForegroundStartTest {
     fun `a foreground start the system refuses is deferred rather than crashed`() {
         // Android 12+ refuses background foreground-service starts outside a handful of allowed
         // windows, and a manifest receiver waking on a connect is exactly that case. Losing the
-        // service until the next sync is recoverable; taking the receiver down with it is not.
+        // service until the next sync is recoverable; taking down the receiver with it is not.
         val controller = controllerThatCannotStart(
             ForegroundServiceStartNotAllowedException("not allowed"),
         )

@@ -14,10 +14,10 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
 /**
- * The static palette is only ever chosen with dynamic colour switched off, which in practice is
- * the Play listing screenshots alone — so nothing else in the suite would notice it rotting.
- * It once set `primary`/`secondary`/`tertiary` and nothing else, which left every container role
- * at Material's default purple: roles come in sets, and that is what these assertions pin.
+ * The static palette is only ever chosen with dynamic colour off, in practice the Play listing
+ * screenshots alone — so nothing else in the suite would notice it rotting. It once set only
+ * `primary`/`secondary`/`tertiary`, leaving every container role at Material's default purple:
+ * roles come in sets, and that's what these assertions pin.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])

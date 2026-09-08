@@ -14,13 +14,12 @@ import java.util.Random
 /**
  * The database behind the Play listing screenshots.
  *
- * It is written straight through the DAOs rather than through `SessionRepository`, on purpose:
- * the repository's job is to reconcile against the wall clock and it would refuse to backdate a
- * year of history. Nothing here has to survive those invariants, it only has to look like a
- * plausible year of listening — so the rows are laid down directly.
+ * Written straight through the DAOs rather than `SessionRepository`: the repository reconciles
+ * against the wall clock and would refuse to backdate a year of history. Nothing here needs
+ * those invariants, only a plausible year of listening, so the rows are laid down directly.
  *
- * Everything is anchored to the moment the screenshots are taken, so the listing never shows a
- * "last seen" date from whenever the images happened to be recorded.
+ * Everything anchors to the moment the screenshots are taken, so the listing never shows a
+ * "last seen" date from whenever the images were recorded.
  */
 object DemoData {
 
@@ -41,8 +40,8 @@ object DemoData {
         val sessions = db.sessionDao()
         val samples = db.batterySampleDao()
 
-        // The headline device: two generations of the same headphones, which is the one thing
-        // this app does that a battery-stats screen cannot.
+        // The headline device: two generations of the same headphones, the one thing this app
+        // does that a battery-stats screen cannot.
         val overEar = devices.insert(
             DeviceEntity(
                 deviceKey = "bt:4c:2f",
@@ -104,22 +103,22 @@ object DemoData {
             PairEntity(
                 deviceId = wired,
                 // A renamed pair: the device identity stays the generic thing Android reports,
-                // because it cannot tell two wired sets apart. Showing both in the listing makes
-                // the distinction visible — and keeps an English UI phrase out of the Italian
-                // screenshots, where "Wired headphones" would read as a missed translation.
+                // since it can't tell two wired sets apart. Showing both makes the distinction
+                // visible, and keeps "Wired headphones" out of the Italian screenshots, where
+                // it'd read as a missed translation.
                 label = "Sennheiser HD 25",
                 generation = 1,
                 startedAt = now - 38 * DAY,
             ),
         )
 
-        // Generation 1 wore out; generation 2 is the daily driver. Playback is only measured on
-        // the two devices a detailed-tracking user would have had switched on for.
+        // Generation 1 wore out; generation 2 is the daily driver. Playback is measured only on
+        // the two devices a detailed-tracking user would have switched on.
         //
-        // Battery is reported by the two Bluetooth pairs and by neither of the others: a wired set
-        // has no battery to report, and generation 1 is retired, so its page is the frozen-totals
-        // one. The declining figures are the point — a pair whose charge still buys what it did
-        // when new says nothing about battery health, and that is the screen being advertised.
+        // Battery is reported by the two Bluetooth pairs, not the others: a wired set has no
+        // battery, and generation 1 is retired, so its page is the frozen-totals one. The
+        // declining figures are the point — a pair whose charge still buys what it did when new
+        // says nothing about battery health, the screen being advertised.
         generate(sessions, samples, retired, now, zone, random, from = 430, to = 139, perDay = 1.6, playback = false)
         generate(
             sessions, samples, current, now, zone, random,
@@ -143,7 +142,7 @@ object DemoData {
                 heartbeatAt = now,
             ),
         )
-        // And it is draining while the screenshot is taken, the way an open session on a phone is.
+        // Draining while the screenshot is taken, as an open session on a phone would be.
         drain(samples, live, current, now - (83 * MINUTE), now, hoursPerCharge = 21.0, from = 68)
     }
 
@@ -153,7 +152,7 @@ object DemoData {
     /**
      * Lays down listening sessions between two day offsets. [perDay] is an average rather than a
      * count — real listening is lumpy, and a flat two-sessions-every-day makes the daily bar
-     * chart look like a test fixture, which is exactly what a store screenshot must not do.
+     * chart look like a test fixture, which a store screenshot must not do.
      */
     private suspend fun generate(
         sessions: it.eldavo.ylih.data.SessionDao,
@@ -169,8 +168,8 @@ object DemoData {
         battery: Battery? = null,
     ) {
         val today = ZonedDateTime.ofInstant(java.time.Instant.ofEpochMilli(now), zone).toLocalDate()
-        // Carried across sessions, because a battery is: what a session starts at is what the last
-        // one left, unless the pair was charged in between.
+        // Carried across sessions: what a session starts at is what the last one left, unless
+        // the pair was charged in between.
         var level = 100
         for (daysAgo in from downTo to) {
             val date = today.minusDays(daysAgo.toLong())
@@ -192,22 +191,22 @@ object DemoData {
                         pairId = pairId,
                         connectedAt = start,
                         disconnectedAt = end,
-                        // Headphones spend real time round a neck doing nothing; that gap is the
-                        // whole reason playback measurement exists.
+                        // Headphones spend real time round a neck doing nothing; that gap is why
+                        // playback measurement exists.
                         playingMs = if (playback) (length * (55 + random.nextInt(40)) / 100) else null,
                         heartbeatAt = end,
                         endReason = EndReason.DISCONNECTED,
                     ),
                 )
                 if (battery != null) {
-                    // The charge lasts less as the pair ages, which is the whole shape the cycle
-                    // chart exists to show. Interpolated over the range being generated rather
-                    // than modelled: a store screenshot has to be plausible, not simulated.
+                    // The charge lasts less as the pair ages — the shape the cycle chart exists to
+                    // show. Interpolated over the range rather than modelled: a store screenshot
+                    // must be plausible, not simulated.
                     val worn = (from - daysAgo).toDouble() / (from - to).coerceAtLeast(1)
                     val hours = battery.newHours + (battery.wornHours - battery.newHours) * worn
                     level = drain(samples, sessionId, pairId, start, end, hours, level)
-                    // Put on charge when it gets low, which is when a person does it. Never
-                    // mid-session, so no reading pair ever straddles a charge.
+                    // Put on charge when it gets low, as a person would. Never mid-session, so
+                    // no reading pair ever straddles a charge.
                     if (level <= 8 + random.nextInt(22)) level = 100
                 }
                 cursor = end + (40 + random.nextInt(220)).toLong() * MINUTE
@@ -218,11 +217,11 @@ object DemoData {
     /**
      * Writes one session's worth of battery readings and returns the level it ended on.
      *
-     * Readings come in [STEP_POINTS] steps rather than per point, which is both what most headsets
-     * actually report and what keeps this to a few hundred rows a pair: these classes are seeded
-     * once per test in the ordinary unit-test run too, not only when recording. The first reading
-     * is at the connect, because that is when most headsets report — the case `BtBatteryReceiver`
-     * retries for.
+     * Readings come in [STEP_POINTS] steps rather than per point — both what most headsets
+     * actually report and what keeps this to a few hundred rows a pair, since these classes seed
+     * once per test in the ordinary unit-test run too, not only when recording. The first
+     * reading is at the connect, since that's when most headsets report — the case
+     * `BtBatteryReceiver` retries for.
      */
     private suspend fun drain(
         samples: it.eldavo.ylih.data.BatterySampleDao,

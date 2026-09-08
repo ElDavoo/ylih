@@ -31,9 +31,9 @@ import it.eldavo.ylih.R
 /**
  * One page of the first run.
  *
- * [permission] is what the page exists to ask for, and null on the intro, which asks for nothing.
- * Carrying it here rather than deriving it at the button keeps every mention of a permission
- * constant inside the one SDK-guarded place that decided the page was needed at all.
+ * [permission] is what the page asks for, null on the intro, which asks for nothing. Carrying it
+ * here rather than deriving it at the button keeps every mention of a permission constant inside
+ * the one SDK-guarded place that decided the page was needed.
  */
 internal data class WelcomePage(val kind: Kind, val permission: String? = null) {
     internal enum class Kind { INTRO, BLUETOOTH }
@@ -42,15 +42,15 @@ internal data class WelcomePage(val kind: Kind, val permission: String? = null) 
 /**
  * The pages this install actually needs.
  *
- * Bluetooth gets a page where the platform has it to grant and the install does not already hold
- * it, rather than being shown and then sitting in front of a system prompt that never appears. So
- * the first run is one page below Android 12 and two above it.
+ * Bluetooth gets a page only where the platform has it to grant and the install doesn't already
+ * hold it, rather than being shown and then sitting in front of a system prompt that never
+ * appears. So the first run is one page below Android 12 and two above it.
  *
- * Notifications are deliberately not here. Nothing in the app reads that permission except the
- * foreground service's notification, and that service only exists once detailed tracking is
- * turned on — which most installs never do. Asking on the first run would be asking for something
- * the user may never need, in the one moment they have least context for answering, so the ask
- * lives on the switch that creates the need instead. See [SettingsScreen].
+ * Notifications aren't here: nothing reads that permission except the foreground service's
+ * notification, and that service only exists once detailed tracking is on — which most installs
+ * never do. Asking on first run would ask for something the user may never need, at the moment
+ * they have least context to answer, so the ask lives on the switch that creates the need
+ * instead. See [SettingsScreen].
  */
 internal fun welcomePages(context: Context): List<WelcomePage> = buildList {
     add(WelcomePage(WelcomePage.Kind.INTRO))
@@ -64,16 +64,15 @@ internal fun welcomePages(context: Context): List<WelcomePage> = buildList {
 /**
  * First-run explainer, one page at a time.
  *
- * An app whose whole promise is a number years from now has to say so before it asks for
- * anything, or the permission prompt is the first thing a new install ever says. That is why the
- * intro comes first; it is also why Bluetooth gets a page of its own rather than arriving as a
- * system prompt behind a single "get started". A prompt with no reason attached is answered by
- * habit, and the answer to this one is the difference between the app working and the app
- * recording nothing for years.
+ * An app whose whole promise is a number years from now must say so before asking for anything,
+ * or the permission prompt is the first thing a new install sees. That's why the intro comes
+ * first, and why Bluetooth gets its own page rather than a system prompt behind a single "get
+ * started" — a prompt with no reason attached is answered by habit, and the answer here is the
+ * difference between the app working and recording nothing for years.
  *
- * The permission page therefore says what the permission is for and what happens either way, and
- * raises the system prompt itself — so the reason is the last thing read before the choice is
- * made. Declining is a first-class answer: it advances like any other.
+ * So the permission page says what the permission is for and what happens either way, then
+ * raises the system prompt itself, so the reason is the last thing read before the choice.
+ * Declining is a first-class answer: it advances like any other.
  *
  * @param onDismiss finishes the first run; the last page's button is what reaches it.
  * @param onPermissionResult a permission was answered, either way — the tracking machinery should
@@ -82,8 +81,8 @@ internal fun welcomePages(context: Context): List<WelcomePage> = buildList {
 @Composable
 fun WelcomeDialog(onDismiss: () -> Unit, onPermissionResult: () -> Unit = {}) {
     val context = LocalContext.current
-    // Decided once and then left alone. Recomputing would drop the Bluetooth page out of the list
-    // the instant it was granted, taking the page the user is looking at with it.
+    // Decided once, then left alone: recomputing would drop the Bluetooth page from the list the
+    // instant it's granted, taking the page the user is looking at with it.
     val pages = remember(context) { welcomePages(context) }
     var index by rememberSaveable { mutableIntStateOf(0) }
     val page = pages.getOrElse(index) { pages.first() }
@@ -95,25 +94,23 @@ fun WelcomeDialog(onDismiss: () -> Unit, onPermissionResult: () -> Unit = {}) {
     val launcher = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission(),
     ) {
-        // Granted or denied, the page has said its piece and there is nothing to add: the system
-        // refuses a second prompt for the same permission anyway, and the app explains the state
-        // it ended up in from here on.
+        // Granted or denied, the page has said its piece: the system refuses a second prompt for
+        // the same permission anyway, and the app explains the resulting state from here on.
         onPermissionResult()
         advance()
     }
 
     AlertDialog(
-        // Back steps back rather than dismissing, since the permission page is the whole point of
-        // splitting the first run up and a stray back press should not skip past it. On the first
-        // page there is nothing behind it to go to, which is the same reason a tap outside is
-        // ignored.
+        // Back steps back, not dismiss: the permission page is the whole point of splitting up
+        // the first run, and a stray back press shouldn't skip it. Nothing's behind the first
+        // page either, which is also why a tap outside is ignored.
         onDismissRequest = { if (index > 0) index-- },
         properties = DialogProperties(dismissOnClickOutside = false),
         title = {
             Column {
-                // Only worth saying where there is more than one page, which below Android 12
-                // there is not. It is here so the permission page reads as part of something with
-                // an end, rather than as an app that has started making demands.
+                // Only worth saying where there's more than one page (not below Android 12): it
+                // makes the permission page read as part of something with an end, not an app
+                // suddenly making demands.
                 if (pages.size > 1) {
                     Text(
                         stringResource(R.string.welcome_step, index + 1, pages.size),
@@ -157,8 +154,8 @@ fun WelcomeDialog(onDismiss: () -> Unit, onPermissionResult: () -> Unit = {}) {
             }
         },
         dismissButton = {
-            // Nothing to decline on the intro, so no second button there at all rather than one
-            // that means the same as the first.
+            // Nothing to decline on the intro, so no second button there at all, rather than one
+            // meaning the same as the first.
             if (page.permission != null) {
                 TextButton(onClick = ::advance) {
                     Text(stringResource(R.string.action_not_now))

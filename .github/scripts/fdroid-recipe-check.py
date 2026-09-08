@@ -1,18 +1,16 @@
 #!/usr/bin/env python3
 """Check metadata/it.eldavo.ylih.yml against the source it claims to build.
 
-`fdroid lint` validates the recipe as a document — field names, category names, YAML style. It
-has no idea whether the recipe still describes *this* repository, and that is the drift that
-actually happens: a versionCode bumped in build.gradle.kts with no matching build entry, a
-`commit:` naming a hash no tag points at, a changelog file that F-Droid will look for and not find.
-Those all fail in fdroiddata, days later, where the feedback loop is a merge request rather than
-a job log.
+`fdroid lint` validates the recipe as a document — field names, category names, YAML style — but
+has no idea whether it still describes *this* repository. That drift happens in practice: a
+versionCode bumped in build.gradle.kts with no matching build entry, a `commit:` naming a hash no
+tag points at, a changelog file F-Droid will look for and not find. All of these fail in
+fdroiddata days later, where the feedback loop is a merge request rather than a job log.
 
-The one asymmetry worth stating: the recipe is allowed to lag the source. Between bumping
-versionCode and tagging the release there is no build entry for the new version, and that is the
-normal state of a release PR rather than an error. So the checks below run from the recipe
-outwards -- every build entry must describe something real -- and never demand a build entry for
-whatever build.gradle.kts currently says.
+One asymmetry: the recipe may lag the source. Between bumping versionCode and tagging the release
+there is no build entry for the new version -- the normal state of a release PR, not an error. So
+the checks run from the recipe outwards -- every build entry must describe something real -- and
+never demand a build entry for whatever build.gradle.kts currently says.
 """
 
 import re
@@ -30,8 +28,8 @@ def fail(problems, msg):
 def peel_tag(root, tag):
     """The commit `tag` points at, or None if this checkout has no such tag.
 
-    `^{}` peels an annotated tag down to its commit, which is what a recipe's `commit:` has to
-    hold -- the tag object's own hash would name something F-Droid cannot check out as a tree.
+    `^{}` peels an annotated tag down to its commit, which a recipe's `commit:` must hold -- the
+    tag object's own hash names something F-Droid cannot check out as a tree.
     """
     result = subprocess.run(
         ["git", "-C", str(root), "rev-parse", "-q", "--verify", f"refs/tags/{tag}^{{}}"],
@@ -51,7 +49,7 @@ def main():
     problems = []
 
     # F-Droid extracts versionName/versionCode with a regex and cannot evaluate anything
-    # computed, so read them the same blunt way rather than by running Gradle.
+    # computed, so read them the same blunt way instead of running Gradle.
     src_code = re.search(r"^\s*versionCode = (\d+)$", gradle, re.M)
     src_name = re.search(r'^\s*versionName = "([^"]+)"$', gradle, re.M)
     if not src_code or not src_name:
@@ -61,8 +59,8 @@ def main():
         return 1
     src_code, src_name = int(src_code.group(1)), src_name.group(1)
 
-    # Scoped to the productFlavors block: signingConfigs uses create("release") too, and a
-    # flavor list that quietly contains "release" would accept a recipe naming a build type.
+    # Scoped to the productFlavors block: signingConfigs also uses create("release"), and an
+    # unscoped flavor list would quietly accept a recipe naming a build type.
     flavors_block = re.search(r"^(\s*)productFlavors\s*\{$(.*?)^\1\}$", gradle, re.M | re.S)
     flavors = set(re.findall(r'create\("(\w+)"\)', flavors_block.group(2))) if flavors_block else set()
     if not flavors:
@@ -76,12 +74,11 @@ def main():
         vname, vcode = build.get("versionName"), build.get("versionCode")
         where = f"build {vname} ({vcode})"
 
-        # `commit:` holds the tag's full hash rather than the tag name -- an F-Droid reviewer
-        # asked for that, because a tag can be moved afterwards and a hash cannot. So the naming
-        # convention this used to check by string comparison has to be *resolved* instead: the
-        # hash must be the one v<versionName> currently points at. UpdateCheckMode is
-        # `Tags ^v[0-9.]+$` and the release asset is named after the tag too, so all three still
-        # hang off that one name even though the recipe no longer spells it.
+        # `commit:` holds the tag's full hash, not the tag name -- an F-Droid reviewer required
+        # it, since a tag can move but a hash can't. So this has to *resolve* the hash rather
+        # than string-compare it: it must be the one v<versionName> currently points at.
+        # UpdateCheckMode (`Tags ^v[0-9.]+$`) and the release asset name hang off that same tag
+        # name too, even though the recipe no longer spells it out.
         commit = str(build.get("commit") or "")
         if not re.fullmatch(r"[0-9a-f]{40}", commit):
             fail(problems, f"{where}: commit is {build.get('commit')!r}, expected the full "
@@ -99,15 +96,15 @@ def main():
         if build.get("subdir") != "app":
             fail(problems, f"{where}: subdir is {build.get('subdir')!r}, expected 'app'")
 
-        # `gradle: [classic]` is what makes fdroidserver run assembleClassicRelease; a flavor
-        # that no longer exists fails as a missing task, which reads as a Gradle bug.
+        # `gradle: [classic]` makes fdroidserver run assembleClassicRelease; a flavor that no
+        # longer exists fails as a missing task, which reads as a Gradle bug.
         for flavor in build.get("gradle") or []:
             if flavor not in flavors:
                 fail(problems, f"{where}: gradle flavor {flavor!r} is not a productFlavor in "
                                f"app/build.gradle.kts (has: {', '.join(sorted(flavors))})")
 
-        # A changelog only appears once F-Droid has built that versionCode, and en-US is the
-        # fallback for every other locale, so it is the one that has to exist.
+        # A changelog only appears once F-Droid has built that versionCode; en-US is the
+        # fallback for every other locale, so it's the one that must exist.
         changelog = root / "fastlane/metadata/android/en-US/changelogs" / f"{vcode}.txt"
         if not changelog.exists():
             fail(problems, f"{where}: {changelog.relative_to(root)} is missing")
@@ -125,8 +122,8 @@ def main():
             fail(problems, f"CurrentVersion is {recipe.get('CurrentVersion')!r}, expected "
                            f"{latest['versionName']!r} (the newest Builds entry)")
 
-    # Reproducible builds: both fields have to be present, or absent, together. One without the
-    # other is not a half-configuration, it is a verification that cannot run.
+    # Reproducible builds: both fields must be present, or absent, together. One without the
+    # other isn't a half-configuration -- it's a verification that can't run.
     binaries = recipe.get("Binaries")
     keys = recipe.get("AllowedAPKSigningKeys")
     if bool(binaries) != bool(keys):
@@ -139,8 +136,8 @@ def main():
                            "characters (the SHA-256 of the signing certificate, no colons)")
 
     if binaries:
-        # %v expands to versionName. The release workflow builds the asset name from the tag,
-        # which is 'v' + versionName, so the URL has to spell that prefix out itself.
+        # %v expands to versionName. The release workflow builds the asset name from the tag
+        # ('v' + versionName), so the URL must spell that prefix out itself.
         if "%v" not in binaries:
             fail(problems, "Binaries: has no %v, so every version would be verified against the "
                            "same downloaded APK")

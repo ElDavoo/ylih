@@ -39,18 +39,18 @@ import java.util.Locale
  *
  * Unlike the Play listing images beside these, the output is **committed**: `previewImage` is
  * referenced from `res/xml/widget_*_info.xml`, so it has to exist in the tree for the build to
- * compile at all. Nothing in CI regenerates or compares them, which means a widget redesign leaves
- * a stale picture in the picker until someone re-runs the line above.
+ * compile. Nothing in CI regenerates or compares them, so a widget redesign leaves a stale
+ * picture in the picker until someone re-runs the line above.
  *
- * Roborazzi's captures are inert outside a record task, so in the ordinary unit-test run this class
- * costs three compositions and writes nothing.
+ * Roborazzi's captures are inert outside a record task, so in the ordinary unit-test run this
+ * class costs three compositions and writes nothing.
  *
  * Each widget is photographed at the size a launcher will actually hand it — [placed], not the
  * `cells()` minimum the provider declares. The minimum is a floor for resizing; advertising the
- * widget at it would show three rows crammed into the space of two. The qualifiers say the same
- * size again because the capture is of the whole screen, and xhdpi rather than the listing
- * generators' mdpi because these are drawn once and then scaled by whatever launcher shows them,
- * so twice the pixels costs nothing and survives that scaling.
+ * widget at it would show three rows crammed into the space of two. The qualifiers repeat the
+ * same size because the capture is of the whole screen, and xhdpi rather than the listing
+ * generators' mdpi because these are drawn once and scaled by whatever launcher shows them, so
+ * twice the pixels costs nothing and survives that scaling.
  */
 @RunWith(RobolectricTestRunner::class)
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
@@ -63,10 +63,10 @@ class WidgetPreviews {
     private val app: YlihApp = ApplicationProvider.getApplicationContext()
 
     /**
-     * Its own container, on a stopped clock. The listing screenshots anchor DemoData to the moment
-     * they are taken so a "last seen" date is never stale, but these files are committed, and a
-     * story that moves with the calendar would rewrite three PNGs on every re-record — with the
-     * timer, the day labels and the totals all different and none of it a change anyone made.
+     * Its own container, on a stopped clock. The listing screenshots anchor DemoData to the
+     * moment they're taken so a "last seen" date is never stale, but these files are committed,
+     * and a story that moves with the calendar would rewrite three PNGs on every re-record — the
+     * timer, day labels and totals all different, none of it a change anyone made.
      */
     private val container = AppContainer(app) { NOW }
 
@@ -113,12 +113,12 @@ class WidgetPreviews {
     }
 
     /**
-     * Composes the widget the way the launcher will — into a `RemoteViews` — and then inflates it.
+     * Composes the widget as the launcher will — into a `RemoteViews` — and then inflates it.
      * Rendering the Glance composables directly would photograph something no phone ever shows;
      * everything that can go wrong with a widget goes wrong in the translation to `RemoteViews`.
      *
-     * It is hosted inside the Compose rule's activity only because Roborazzi captures a view
-     * through its window, and a bare inflated view has none.
+     * Hosted inside the Compose rule's activity only because Roborazzi captures a view through
+     * its window, and a bare inflated view has none.
      */
     private fun capture(name: String, size: DpSize, content: @Composable () -> Unit) {
         val remoteViews = runBlocking {

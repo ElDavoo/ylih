@@ -1,37 +1,34 @@
 #!/usr/bin/env python3
 """Turn a JaCoCo report.xml into a readable summary.
 
-Printed to stdout and, when running under Actions, appended to the job summary so the number
-shows on the workflow run page without opening the HTML artifact. Deliberately not a third-party
-action: this needs no token, no network and no service that gets to see the repository.
+Printed to stdout and appended to the job summary under Actions, so the number shows on the
+workflow run page without opening the HTML artifact. Not a third-party action: no token, no
+network, no service that sees the repository.
 
-The report covers more than this repository wrote. Room's KSP output (`*Dao_Impl`, roughly a
-fifth of the instructions) lands in it, and so do the stdlib and coroutines sources that get
-inlined into our classes and attributed to our packages — `SafeCollector.common.kt`, `Emitters.kt`,
-`LazyDsl.kt`, `Comparisons.kt`. None of that is code anyone here can write a test *for*, and it
-answers to whoever generated it, so the headline number is taken over the classes whose source
-file actually exists under the source tree. What was dropped is printed underneath rather than
-quietly left out; AGP's coverage task has no exclusion setting, so the full report on disk still
-has everything.
+The report covers more than this repository wrote: Room's KSP output (`*Dao_Impl`, roughly a
+fifth of the instructions), plus stdlib and coroutines sources the compiler inlines into our
+classes and attributes to our packages — `SafeCollector.common.kt`, `Emitters.kt`, `LazyDsl.kt`,
+`Comparisons.kt`. Nobody here can test that, so the headline number counts only classes whose
+source file exists under the source tree. What's dropped is printed underneath rather than
+hidden; AGP's coverage task has no exclusion setting, so the report on disk still has everything.
 
-`--min-<metric>=N` turns the summary into a gate: the run fails if that counter, over the authored
+`--min-<metric>=N` turns the summary into a gate: the run fails if that counter, over authored
 code, falls below N percent. CI sets instruction 95 and line 98, each a little under where the
-suite actually sits, so the gate catches a regression rather than tracking noise. Line is one
-number for both flavors and so has to clear the lower of them: `classic` measures 98.9 against
-`play`'s 99.1, for the minSdk 26 reason CLAUDE.md sets out at the coverage gate.
+suite sits, so the gate catches a regression rather than noise. Line is one number for both
+flavors and must clear the lower: `classic` measures 98.9 against `play`'s 99.1, for the minSdk 26
+reason CLAUDE.md gives at the coverage gate.
 
-Branch is set differently and is the one to understand before touching these numbers. It sits at
-77.0 but is gated at 70, a deliberately loose floor, because the counter does not measure what
-the other two do: the Compose compiler emits a `$changed`/default-argument bitmask branch for
-every composable parameter and no test drives those, which is where about two thirds of the
-missed branches are. The number therefore moves when a composable gains an argument, not when
-testing gets worse — so a floor set just under it would report ordinary UI work as a coverage
-failure. 70 leaves roughly eighty missed branches of headroom, enough that a breach means
-something real. Raising it toward the other two would mean writing tests for compiler-generated
-dispatch; if it ever fails, check what it failed *on* before adding tests to appease it.
+Branch is gated differently. It sits at 77.0 but is gated at 70, deliberately loose: the counter
+doesn't measure what the other two do, since the Compose compiler emits a `$changed`/
+default-argument bitmask branch per composable parameter that no test drives — about two thirds
+of the missed branches. It moves when a composable gains an argument, not when testing gets
+worse, so a floor just under it would flag ordinary UI work as a regression. 70 leaves roughly
+eighty missed branches of headroom, enough that a breach means something real. Raising it would
+mean testing compiler-generated dispatch; if it fails, check what it failed *on* before adding
+tests to appease it.
 
-Method and class are left ungated deliberately. At ~95% they sit six classes above a 90 floor,
-close enough that ordinary work trips them without coverage having actually regressed.
+Method and class are ungated: at ~95% they sit six classes above a 90 floor, close enough that
+ordinary work would trip them without coverage actually regressing.
 
 Usage: coverage-summary.py <report.xml> [label] [--sources=DIR] [--min-instruction=N ...]
 """
@@ -40,17 +37,17 @@ import os
 import sys
 import xml.etree.ElementTree as ET
 
-# Ordered as they are worth reading: the totals people quote first, the rest for detail.
+# Ordered by reading priority: the totals people quote first, the rest for detail.
 COUNTERS = ("INSTRUCTION", "LINE", "BRANCH", "METHOD", "CLASS")
 
 DEFAULT_SOURCES = "app/src"
 
-# Floors arrive as --min-<metric>=N, so the set that is gated is whatever CI passes rather than
-# something baked in here. See the module docstring for what the numbers mean.
+# Floors arrive as --min-<metric>=N: what's gated is whatever CI passes, not anything baked in
+# here. See the module docstring for what the numbers mean.
 MIN_PREFIX = "--min-"
 
-# A line belongs to its source file, not to each of the classes compiled out of it; taking LINE
-# off the classes would count a file once per Compose lambda it contains.
+# A line belongs to its source file, not each class compiled from it; taking LINE from the
+# classes would count a file once per Compose lambda it contains.
 FROM_CLASS = ("INSTRUCTION", "BRANCH", "METHOD", "CLASS")
 FROM_SOURCEFILE = ("LINE",)
 
@@ -60,8 +57,8 @@ MARKER = os.sep + "java" + os.sep
 def authored(sources):
     """Every `<package>/<file.kt>` with a file behind it, across all source sets.
 
-    Keyed the way JaCoCo names things — its `package` is a slash-separated path and its
-    `sourcefilename` is a bare file name — so a lookup needs no guessing at variant directories.
+    Keyed the way JaCoCo names things — `package` is a slash-separated path, `sourcefilename` a
+    bare file name — so a lookup needs no guessing at variant directories.
     """
     found = set()
     for root, _, files in os.walk(sources):
@@ -126,10 +123,10 @@ def table(totals, floors):
 
 
 def breaches(totals, floors):
-    """Gated counters that fall below their floor, as ready-made messages.
+    """Gated counters below their floor, as ready-made messages.
 
-    A gated counter with nothing in it fails rather than passes: a report with no instructions to
-    cover means the run measured nothing, and a gate must not read that as success.
+    A gated counter with nothing in it fails rather than passes: no instructions to cover means
+    the run measured nothing, which a gate must not read as success.
     """
     problems = []
     for name, floor in floors.items():
@@ -137,8 +134,8 @@ def breaches(totals, floors):
         if not total:
             problems.append(f"{name.lower()} coverage is missing from the report entirely")
         elif 100.0 * covered / total < floor:
-            # Spell out the budget: "below 75%" is far less actionable than the count of misses
-            # that would have been allowed, which is what tells you how far off the change is.
+            # Spell out the budget: "below 75%" is less actionable than the miss count the floor
+            # allowed, which shows how far off the change is.
             allowed = int(total * (100.0 - floor) / 100.0)
             problems.append(
                 f"{name.lower()} coverage is {pct(covered, total)}, below the {floor:g}% floor — "
@@ -157,8 +154,8 @@ def main():
         elif arg.startswith(MIN_PREFIX):
             name, _, value = arg[len(MIN_PREFIX):].partition("=")
             metric = name.upper()
-            # A typo in a floor's name would otherwise disable that gate silently, which is the
-            # one failure mode a coverage gate must not have.
+            # A typo in a floor's name would otherwise disable that gate silently, the one
+            # failure mode a coverage gate must not have.
             if metric not in COUNTERS:
                 sys.exit(f"{arg}: no such counter; expected one of "
                          f"{', '.join(c.lower() for c in COUNTERS)}")
@@ -183,7 +180,7 @@ def main():
     lines = [f"### coverage — {label}", ""] + table(mine, floors)
 
     lines += ["", "| package | instructions | lines |", "| --- | ---: | ---: |"]
-    # Biggest packages first: a 0% package of twelve instructions is not the interesting one.
+    # Biggest packages first: a 0% package of twelve instructions isn't the interesting one.
     for name in sorted(packages, key=lambda n: -packages[n].get("INSTRUCTION", (0, 0))[1]):
         counts = packages[name]
         instr = counts.get("INSTRUCTION", (0, 0))

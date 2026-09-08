@@ -59,8 +59,8 @@ class SessionRepositoryTest {
 
     @Test
     fun `a caller that names no time gets the clock the repository was built with`() = runTest {
-        // The receivers pass a timestamp captured before `goAsync`, because the work runs later
-        // than the event; everything else lets these default, and both routes have to agree.
+        // Receivers pass a timestamp captured before `goAsync`, since the work runs late; both
+        // routes must agree.
         repository.onConnected(buds)
         assertEquals(clockNow, sessions().single().connectedAt)
 
@@ -83,7 +83,7 @@ class SessionRepositoryTest {
 
     @Test
     fun `built without one, the clock is the wall clock`() = runTest {
-        // How AppContainer builds it in production; only the tests ever inject time.
+        // What AppContainer uses in production; only tests inject time.
         val before = System.currentTimeMillis()
 
         SessionRepository(db).onConnected(buds)
@@ -119,7 +119,7 @@ class SessionRepositoryTest {
 
     @Test
     fun `a connect on top of a stale open session splits instead of stretching it`() = runTest {
-        // Connected, then nothing of ours ran for hours — no disconnect was ever recorded.
+        // Connected, then nothing ran for hours — no disconnect was recorded.
         repository.onConnected(buds, at = clockNow - 5 * hour)
         repository.heartbeat(at = clockNow - 4 * hour)
 
@@ -163,7 +163,7 @@ class SessionRepositoryTest {
     @Test
     fun `a session left open by a reboot is closed at its heartbeat, never across the downtime`() =
         runTest {
-            // Connected 14 h ago, last heartbeat 13 h ago; the phone booted 12 h ago.
+            // Connected 14 h ago, last heartbeat 13 h ago; phone booted 12 h ago.
             repository.onConnected(buds, at = clockNow - 14 * hour)
             repository.heartbeat(at = clockNow - 13 * hour)
 
@@ -192,8 +192,8 @@ class SessionRepositoryTest {
     @Test
     fun `process death without a reboot keeps a live session open`() = runTest {
         repository.onConnected(buds, at = clockNow - 2 * hour)
-        // Inside the unwatched ceiling: a gap this short is Doze holding the heartbeat back, or
-        // the process dying and coming back, and the headphones really were on throughout.
+        // Inside the unwatched ceiling: a gap this short is Doze or a process restart, not a real
+        // disconnect.
         repository.heartbeat(at = clockNow - hour)
 
         repository.reconcile(connected = listOf(buds), now = clockNow, bootAt = bootAt)
@@ -204,13 +204,11 @@ class SessionRepositoryTest {
     }
 
     /**
-     * The other side of the rule above, and the one that stops a lifetime total from quietly
-     * gaining a day.
+     * Stops a lifetime total from quietly gaining a day.
      *
-     * A force-stop, or a battery manager that starves the heartbeat worker, leaves a session open
-     * with nothing watching it. Reconnecting the app later found the same headphones connected and
-     * stretched the session across the whole gap — and defeated the split `openSession` would
-     * otherwise have done, because heartbeating to `now` first made the session look fresh.
+     * A force-stop or a starved heartbeat worker leaves a session open, unwatched. Reconnecting
+     * later found the same headphones connected and stretched the session across the whole gap:
+     * heartbeating to `now` first defeated the split `openSession` otherwise does.
      */
     @Test
     fun `a still-connected session nobody watched for too long is split, not stretched`() = runTest {
@@ -244,7 +242,7 @@ class SessionRepositoryTest {
         repository.onConnected(buds, at = clockNow - hour)
         repository.onDisconnected(buds.key, at = clockNow)
 
-        // The audio device list still lists the headset for a moment after the ACL broadcast.
+        // The audio device list still shows the headset briefly after the ACL broadcast.
         repository.reconcile(connected = listOf(buds), now = clockNow + 1_000, bootAt = bootAt)
 
         assertEquals(1, sessions().size)
@@ -253,9 +251,9 @@ class SessionRepositoryTest {
 
     @Test
     fun `the grace window only looks forward, never back over a clock correction`() = runTest {
-        // The window exists to absorb a device list that lags a disconnect by a moment. A
-        // connect dated *before* that disconnect is the clock having been put back instead, and
-        // swallowing it would drop a real session on the floor.
+        // The window absorbs a device list lagging a disconnect by a moment. A connect dated
+        // *before* it means the clock went back instead — swallowing it would drop a real
+        // session.
         repository.onConnected(buds, at = clockNow - hour)
         repository.onDisconnected(buds.key, at = clockNow)
 
@@ -313,9 +311,9 @@ class SessionRepositoryTest {
 
     @Test
     fun `a fallback that has not been watching closes at the proof, not at now`() = runTest {
-        // The other caller: bluetooth access was revoked, so the service died — most likely with
-        // the whole process, hours ago. "Now" is when we noticed, not when the plug came out, and
-        // counting the difference would invent listening time out of a permission change.
+        // Bluetooth access was revoked, so the service died — likely with the whole process,
+        // hours ago. "Now" is when this was noticed, not when the plug came out; counting the
+        // gap would invent listening time from a permission change.
         repository.onConnected(wired, at = clockNow - 5 * hour, measurePlayback = true)
         repository.onConnected(buds, at = clockNow - 5 * hour, measurePlayback = true)
         repository.heartbeat(at = clockNow - 4 * hour)
@@ -348,9 +346,9 @@ class SessionRepositoryTest {
     }
 
     /**
-     * The three ways there is nowhere to put a slice. The watcher credits whatever
-     * `playbackTargetKey` last named, and the service can outlive every one of them — the pair can
-     * be retired, the device forgotten by an import, the session closed by anything else.
+     * The watcher credits whatever `playbackTargetKey` last named, and the service can outlive
+     * it: the pair retired, the device forgotten by an import, or the session closed some other
+     * way.
      */
     @Test
     fun `playback with no open session to credit is dropped rather than resurrecting one`() = runTest {
@@ -366,9 +364,9 @@ class SessionRepositoryTest {
     }
 
     /**
-     * The watcher banks a slice from a coroutine launched behind the one that closed the session,
-     * so this is the ordering the service is written to avoid and the database has to refuse
-     * anyway: credited here, the stored playback would exceed the span it was measured inside.
+     * A slice from a coroutine launched behind the one that closed the session — an ordering the
+     * service avoids, and the database refuses anyway: crediting it would push playback past the
+     * span it measured.
      */
     @Test
     fun `playback credited after the disconnect is refused rather than backdated`() = runTest {
@@ -382,10 +380,9 @@ class SessionRepositoryTest {
     }
 
     /**
-     * `kind` decides which tracking mode can see a session at all — `trackedKinds` filters on it,
-     * and so does `closeSessionsForKinds` — so a stale one leaves a session neither can reach. It
-     * used to be written only alongside a name change, which the same headset reported by two
-     * platform views does not necessarily bring.
+     * `kind` gates `trackedKinds` and `closeSessionsForKinds`, so a stale value leaves a session
+     * unreachable by either. It used to be written only alongside a name change, which the same
+     * headset does not always bring across its two platform views.
      */
     @Test
     fun `a device that changes kind under the same name is corrected`() = runTest {
@@ -438,10 +435,9 @@ class SessionRepositoryTest {
     }
 
     /**
-     * With no session there is nothing to file against, and a reading that outlived its session
-     * would let two of them be subtracted across a gap nothing watched. The `false` is the
-     * contract the receiver's retry is built on: it means "ask again", because the first reading
-     * of a session routinely arrives before the session itself does.
+     * A reading outliving its session would subtract two readings across an unwatched gap.
+     * `false` is the contract the receiver's retry relies on — "ask again" — since a session's
+     * first reading often arrives before it does.
      */
     @Test
     fun `a battery reading with no session open is refused and says so`() = runTest {
@@ -464,8 +460,8 @@ class SessionRepositoryTest {
     }
 
     /**
-     * The stack re-announces the level it already reported when another source of it appears. A
-     * second row would put a segment of no drain in the middle of a discharge.
+     * A level is re-announced when another source appears; a second row would insert a no-drain
+     * segment mid-discharge.
      */
     @Test
     fun `the same level reported twice is recorded once`() = runTest {
@@ -490,8 +486,8 @@ class SessionRepositoryTest {
     }
 
     /**
-     * -1 is "unknown" and -100 is "Bluetooth is off", and the first of those is broadcast on every
-     * disconnect. Stored at face value that is a drop of the whole battery into nothing.
+     * -1 is "unknown", broadcast on every disconnect; -100 is "Bluetooth is off". At face value
+     * that reads as the whole battery dropping to nothing.
      */
     @Test
     fun `a level outside a percentage is not a reading`() = runTest {
@@ -544,26 +540,23 @@ class SessionRepositoryTest {
     /**
      * The retry [BtBatteryReceiver] wraps every reading in, ordered by the repository's own mutex.
      *
-     * On a phone this is the ordinary case rather than a rare one: the battery broadcast arrives
-     * about 400 ms after ACL_CONNECTED and beat the app's own session row by 68 ms when it was
-     * measured. Many headsets report their battery only at connect, so a reading dropped here is
-     * that pair's charge cycles gone entirely.
+     * Not rare on a phone: measured, the battery broadcast arrived ~400 ms after ACL_CONNECTED,
+     * beating the app's own session row by 68 ms. Many headsets report battery only at connect,
+     * so a dropped reading here loses that pair's charge cycles entirely.
      *
-     * Driving the retry by the clock instead — advance a second, write the connect, advance past
-     * the settle — reads as deterministic and is not. `runTest`'s own runner advances virtual time
-     * to whatever task is scheduled next every time the test body parks on a dispatcher that is not
-     * the test one, and every Room call parks on Room's transaction executor. Land the retry's
-     * `delay` inside one of those windows and the runner fires the second attempt before the connect
-     * below has been written: both attempts find no session, nothing is recorded, and the assertion
-     * reads `expected:<[70]> but was:<[]>`. That is what turned up red on #42, having passed
-     * hundreds of runs first.
+     * Driving the retry by the clock — advance a second, write the connect, advance past the
+     * settle — looks deterministic and isn't: `runTest`'s runner advances virtual time to whatever
+     * is next scheduled whenever the test body parks on a non-test dispatcher, and every Room call
+     * parks on Room's transaction executor. A `delay` landing in that window lets the runner fire
+     * the retry before the connect is written, so both attempts find no session and nothing is
+     * recorded — `expected:<[70]> but was:<[]>`, which failed #42's build after hundreds of green
+     * runs.
      *
-     * `UNDISPATCHED` is what closes it. The first attempt takes the mutex before `launch` returns —
-     * `Mutex.lock` does not suspend when the mutex is free — so the connect queues behind it, and
-     * the retry, which locks again only after its delay, queues behind the connect. Nothing then
-     * depends on the clock, which is free to run away as far as it likes. The one thing this asks
-     * of the reader is that **nothing may suspend between the launch and the connect**: a yield
-     * there is a window for the retry to fire against a mutex the connect has not reached yet.
+     * `UNDISPATCHED` fixes it: the first attempt takes the mutex before `launch` returns
+     * (`Mutex.lock` doesn't suspend when free), so the connect queues behind it and the retry,
+     * locking again only after its delay, queues behind the connect. The clock then runs free.
+     * **Nothing may suspend between the launch and the connect**: a yield there lets the retry
+     * fire against a mutex the connect hasn't reached yet.
      */
     @OptIn(ExperimentalCoroutinesApi::class)
     @Test
@@ -576,8 +569,8 @@ class SessionRepositoryTest {
 
         assertEquals(listOf(70), batterySamples().map { it.level })
         assertEquals(sessions().single().id, batterySamples().single().sessionId)
-        // The settle is the only thing scheduled on this clock, so having spent it is proof the
-        // first attempt was refused — otherwise the test would pass while pinning nothing.
+        // The settle is the only thing scheduled on this clock, so spending it proves the first
+        // attempt was refused.
         assertEquals(
             "the reading landed on the retry, not on a first attempt that found the session",
             BtBatteryReceiver.SESSION_SETTLE_MS,
@@ -609,7 +602,7 @@ class SessionRepositoryTest {
             listOf(90, 60),
             repository.observeBatterySamples(pairId).first().map { it.level },
         )
-        // `pairId` is carried on the reading as well as reachable through its session, so that the
+        // `pairId` is carried on the reading rather than reached only via its session, so the
         // read above never joins `sessions` — see BatterySampleEntity. The two must agree.
         for (sample in batterySamples()) {
             assertEquals(

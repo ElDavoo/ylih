@@ -25,12 +25,12 @@ import org.robolectric.annotation.GraphicsMode
 
 /**
  * The day list is what the chart above it cannot be: a bar is a proportion, and "how long did I
- * listen yesterday" is a question about a figure. So what is pinned here is the two things a
- * reader takes from it — which day a row is, and that the bar beside the figure means something.
+ * listen yesterday" is a question about a figure. Pinned here: which day a row is, and that the
+ * bar beside the figure means something.
  *
- * Native graphics because the bars are real fills rather than semantics: nothing in the tree says
- * how wide one is, and a day that was listened to and a day that was not are the same node with a
- * different number in it.
+ * Native graphics because the bars are real fills rather than semantics: nothing in the tree
+ * says how wide one is, and a day that was listened to and one that wasn't are the same node
+ * with a different number in it.
  */
 @RunWith(RobolectricTestRunner::class)
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
@@ -59,9 +59,9 @@ class DailyBreakdownTest {
     }
 
     /**
-     * The old end only. An install a fortnight old would otherwise open on sixteen rows of nothing,
-     * which reads as history that was lost — the one thing this app must never look like it has
-     * done — while a zero between two days that were listened to is a real answer.
+     * The old end only. A fortnight-old install would otherwise open on sixteen rows of nothing,
+     * which reads as lost history — the one thing this app must never look like — while a zero
+     * between two days that were listened to is a real answer.
      */
     @Test
     fun `empty days before the first one recorded are dropped, and the ones after are not`() {
@@ -86,8 +86,8 @@ class DailyBreakdownTest {
     }
 
     private fun show(vararg rows: Pair<LocalDate, Long>): Color {
-        // A Color is a value class, so this cannot be `lateinit`. It is read out of the theme
-        // rather than written as a literal, so the assertion cannot drift from what is drawn.
+        // A Color is a value class, so this cannot be `lateinit`. Read out of the theme rather
+        // than written as a literal, so the assertion cannot drift from what is drawn.
         var primary = Color.Unspecified
         compose.setContent {
             YlihTheme {
@@ -111,8 +111,8 @@ class DailyBreakdownTest {
 
         compose.onNodeWithText(text(R.string.stats_today), useUnmergedTree = true).assertExists()
         compose.onNodeWithText(text(R.string.stats_yesterday), useUnmergedTree = true).assertExists()
-        // Everything older carries its weekday as well as its date: a run of dates is read for its
-        // weekly shape, and a date on its own does not say whether it was a working day.
+        // Everything older carries its weekday as well as its date: a run of dates is read for
+        // its weekly shape, and a date alone doesn't say whether it was a working day.
         val older = today.minusDays(2)
         compose.onNodeWithText(
             "${formatWeekday(older)} · ${formatDayLabel(older)}",
@@ -121,8 +121,8 @@ class DailyBreakdownTest {
     }
 
     /**
-     * The day and the figure are one thing to hear. Unmerged they arrive as "3 h" and then the day
-     * it belongs to, which is the wrong way round — the same reason `StatTile` merges.
+     * The day and the figure are one thing to hear. Unmerged they arrive as "3 h" then the day it
+     * belongs to — the wrong way round, the same reason `StatTile` merges.
      */
     @Test
     fun `a row reads to a screen reader as one figure, day first`() {
@@ -149,8 +149,8 @@ class DailyBreakdownTest {
     }
 
     /**
-     * Twenty minutes against a ten-hour day is a third of a pixel, and a bar that rounds away says
-     * "nothing" about a day that was not nothing.
+     * Twenty minutes against a ten-hour day is a third of a pixel, and a bar that rounds away
+     * says "nothing" about a day that wasn't.
      */
     @Test
     fun `a day too short to draw is still drawn`() {

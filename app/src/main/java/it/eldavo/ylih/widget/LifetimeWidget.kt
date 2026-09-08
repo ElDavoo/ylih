@@ -28,12 +28,11 @@ import it.eldavo.ylih.stats.Counting
 import it.eldavo.ylih.ui.formatHours
 
 /**
- * Lifetime hours per pair, connected pair first and with a live timer on it.
+ * Lifetime hours per pair, connected pair first, with a live timer on it.
  *
- * This is the widget the app exists for: the number it spends years accumulating, on the home
- * screen, where it can be read without opening anything. The ticking timer does a second job — in
- * Bluetooth-only mode nothing of the app is resident and there is no notification, so it is the
- * only ambient sign that background tracking is alive at all.
+ * This is the widget the app exists for: the number it spends years accumulating, readable without
+ * opening anything. The ticking timer does a second job — in Bluetooth-only mode nothing of the app
+ * is resident and there's no notification, so it's the only ambient sign tracking is alive.
  */
 class LifetimeWidget : YlihWidget() {
 
@@ -46,14 +45,13 @@ class LifetimeWidget : YlihWidget() {
 @Composable
 internal fun LifetimeContent(context: Context, data: WidgetData) {
     val size = LocalSize.current
-    // One row is the connected pair, because the list is sorted to put it first. That is the
-    // whole content of the shortest widget: a lifetime total with no context is a wall of
-    // numbers, and the connected pair is the one changing.
+    // One row is the connected pair, since the list is sorted to put it first — the whole content
+    // of the shortest widget, since a lifetime total with no context is a wall of numbers and the
+    // connected pair is the one changing.
     val header = size.height >= cells(2)
     val rows = lifetimeRows(size.height.value, header)
     // The phrase under a connected pair's name is a sentence, not a number, and at a couple of
-    // cells across it is ellipsised into nothing useful. The row's own colour already says which
-    // pair is on.
+    // cells wide it ellipsises into nothing useful; the row's colour already says which pair is on.
     val timers = size.width >= cells(3)
     WidgetRoot(context) {
         if (header) {
@@ -74,9 +72,9 @@ internal fun LifetimeContent(context: Context, data: WidgetData) {
             val shown = data.rows.take(rows)
             val stretch = lifetimeStretches(size.height.value, header, shown.size)
             shown.forEach { PairRow(context, it, data.now, timers, stretch) }
-            // Always emitted, so the number of children does not depend on the number of pairs —
-            // see [ConnectedFor] for what a shape that moves costs. Weightless when the rows are
-            // stretching, where it has no height to take and nothing to do but hold the place.
+            // Always emitted, so child count doesn't depend on pair count — see [ConnectedFor] for
+            // what a moving shape costs. Weightless while rows stretch, where it has no height to
+            // take and only holds the place.
             Spacer(if (stretch) GlanceModifier.height(0.dp) else GlanceModifier.defaultWeight())
         }
     }
@@ -89,10 +87,10 @@ private fun lifetimeFree(heightDp: Float, header: Boolean): Float =
 /**
  * How many pairs a widget [heightDp] tall can list.
  *
- * [ROW_DP] is what a row needs rather than what it gets — a row with room to spare takes it. The
- * ceiling exists because a `RemoteViews` is an IPC payload: every row carries a `PendingIntent`
- * and possibly a Chronometer, and a launcher that lets a widget be dragged to the full height of
- * the screen would otherwise build one out of forty of them.
+ * [ROW_DP] is what a row needs, not what it gets — a row with room to spare takes it. The ceiling
+ * exists because a `RemoteViews` is an IPC payload: every row carries a `PendingIntent` and
+ * possibly a Chronometer, and a widget dragged to full screen height would otherwise build one
+ * from forty of them.
  */
 internal fun lifetimeRows(heightDp: Float, header: Boolean): Int =
     fits(lifetimeFree(heightDp, header), ROW_DP, max = MAX_ROWS)
@@ -101,10 +99,10 @@ internal fun lifetimeRows(heightDp: Float, header: Boolean): Int =
  * Whether [pairs] rows should share the whole height between them, or take a settled one and leave
  * the rest at the bottom.
  *
- * Sharing it out is right up to a point: rows crammed at the top with a band of empty background
- * underneath look broken rather than roomy. Past [ROOMY_ROW_DP] apiece it stops being right —
- * three pairs spread evenly down a widget five cells tall sit a row's own height apart, which
- * reads as a list with holes in it rather than a short list.
+ * Sharing it out works up to a point: rows crammed at the top with empty background below look
+ * broken, not roomy. Past [ROOMY_ROW_DP] apiece it stops working — three pairs spread evenly down a
+ * widget five cells tall sit a row's own height apart, reading as a list with holes, not a short
+ * list.
  */
 internal fun lifetimeStretches(heightDp: Float, header: Boolean, pairs: Int): Boolean =
     pairs * ROOMY_ROW_DP >= lifetimeFree(heightDp, header)
@@ -159,17 +157,17 @@ private fun ColumnScope.PairRow(
 /**
  * The live element, handed to the system rather than repainted.
  *
- * `devices_connected_for` is used as the Chronometer's own format string. Passing the phrase in
- * rather than putting a separate "connected" label beside the timer is what keeps it grammatical
- * in the languages that put the duration first, and it is already a format string everywhere else
- * in the app, so lint holds all 77 translations to the same placeholder.
+ * `devices_connected_for` is the Chronometer's own format string. Passing the phrase in, not a
+ * separate "connected" label, keeps it grammatical in languages that put the duration first, and
+ * it's already a format string elsewhere in the app, so lint holds all 77 translations to the same
+ * placeholder.
  *
- * A disconnected row hides the timer rather than leaving it out, because a launcher does not
- * re-inflate a widget it already has: `AppWidgetHostView` recycles the view and *reapplies* the new
- * `RemoteViews` onto it. Reapplying a tree of a different shape lands a `TextView`'s action on
- * whatever now sits at that position, which throws and leaves the launcher showing the half-updated
- * view it already had — with a `Chronometer` the system goes on ticking, counting a session that
- * ended minutes ago. Composing the same shape either way is what makes an update land at all.
+ * A disconnected row hides the timer rather than omitting it: a launcher doesn't re-inflate a
+ * widget it already has — `AppWidgetHostView` recycles the view and *reapplies* the new
+ * `RemoteViews` onto it. Reapplying a tree of different shape lands a `TextView`'s action on
+ * whatever now sits at that position, throwing and leaving the launcher showing the half-updated
+ * view — with a `Chronometer` the system keeps ticking, counting a session that ended minutes ago.
+ * Composing the same shape either way lets an update land.
  */
 @Composable
 private fun ConnectedFor(context: Context, openSince: Long?, now: Long) {

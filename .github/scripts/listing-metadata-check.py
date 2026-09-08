@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
 """Check fastlane/metadata against the store character limits.
 
-Both stores read the same directory, and both silently truncate rather than reject: an
-over-long summary simply arrives on f-droid.org and Play with the end missing, and nobody
-notices until someone reads their own listing in a language they do not speak. The limits
-below are F-Droid's (fdroidserver's `char_limits` default, which Play matches), so the
-tighter of the two is what gets enforced.
+Both stores read the same directory and both truncate silently rather than reject: an over-long
+summary arrives on f-droid.org and Play with the end missing, unnoticed until someone reads their
+own listing in a language they don't speak. The limits below are F-Droid's (fdroidserver's
+`char_limits` default, which Play matches), so the tighter of the two applies.
 
-The other half of the job is the changelog filename: F-Droid only shows `<versionCode>.txt`
-if that versionCode is one it has actually built, so a file named for the wrong number is
-not an error anywhere -- it is just a changelog that never appears.
+The other half: F-Droid only shows `<versionCode>.txt` if that versionCode is one it has actually
+built, so a changelog named for the wrong number isn't an error anywhere — it just never appears.
 
 Usage: listing-metadata-check.py [fastlane/metadata/android] [expected versionCode]
 """
@@ -29,16 +27,15 @@ CHANGELOG_LIMIT = 500
 
 # The summary is the one field where the two stores disagree, so it gets its own rules.
 #
-# F-Droid's inclusion guide asks for "less than 80 characters, no trailing dot"; Play's 80 is
-# inclusive and it has no opinion about punctuation. Nothing else here would ever catch the
-# difference: fdroidserver lints both of those against the recipe's YAML `Summary:` field, and
-# this app deliberately does not set one -- F-Droid reads the summary out of this directory
-# instead -- so its own check has nothing to look at and stays silent.
+# F-Droid's inclusion guide asks for "fewer than 80 characters, no trailing dot"; Play's 80 is
+# inclusive and has no opinion about punctuation. fdroidserver's own check lints the recipe's
+# YAML `Summary:` field, which this app doesn't set — it reads the summary from this directory
+# instead — so nothing else here catches the difference.
 SUMMARY = "short_description.txt"
 SUMMARY_LIMIT = 79
 
 # `.` is what the guide says; the other two are the same sentence terminator in Devanagari and
-# in the CJK scripts, and a reviewer reading a translation would call them the same thing.
+# CJK scripts, which a reviewer reading a translation would call the same thing.
 TERMINAL_PUNCTUATION = ".。।"
 
 # F-Droid falls back to en-US for any locale that is missing text, so that one has to be whole.
@@ -64,8 +61,8 @@ def check(root: Path, version_code: int | None) -> list[str]:
         for name, limit in LIMITS.items():
             path = locale / name
             if not path.is_file():
-                # Only the fallback locale has to be complete; a partial translation is
-                # legitimate and F-Droid fills the gaps from en-US.
+                # Only the fallback locale must be complete; a partial translation is legitimate,
+                # since F-Droid fills the gaps from en-US.
                 if locale.name == FALLBACK_LOCALE:
                     problems.append(f"{rel}/{name}: missing from the fallback locale")
                 continue

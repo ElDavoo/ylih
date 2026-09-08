@@ -9,14 +9,14 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 
 /**
- * Two-mode switch described in the README: Bluetooth tracking needs nothing running, while
- * wired and playback tracking require the foreground service.
+ * Two-mode switch described in the README: Bluetooth tracking needs nothing running; wired and
+ * playback tracking need the foreground service.
  *
- * Backed by a table in the app's own Room database rather than by DataStore, which is not a
- * storage decision — either would do for six flags — but a dependency one. DataStore ships a
- * prebuilt `libdatastore_shared_counter.so` per ABI, and that file is the only thing in this app
- * whose bytes depend on whether the machine that built it had an NDK to strip with; it is why
- * `app/build.gradle.kts` had to pin `keepDebugSymbols`. Room was already here.
+ * Backed by a table in the app's own Room database rather than DataStore — not a storage
+ * decision (either would do for six flags) but a dependency one. DataStore ships a prebuilt
+ * `libdatastore_shared_counter.so` per ABI, the only file in this app whose bytes depend on
+ * whether the build machine had an NDK to strip with; that's why `app/build.gradle.kts` had to
+ * pin `keepDebugSymbols`. Room was already here.
  */
 class SettingsStore(
     private val dao: SettingsDao,
@@ -27,10 +27,9 @@ class SettingsStore(
     /**
      * For a caller holding only a context — `AppLocale.wrap`, and the tests.
      *
-     * It goes through the container rather than opening its own database on purpose. Room's
-     * invalidation tracker only notifies observers attached to the instance that did the write,
-     * so a second instance over the same file would leave these flows deaf to every setting the
-     * app changes.
+     * Goes through the container rather than opening its own database: Room's invalidation
+     * tracker only notifies observers attached to the instance that did the write, so a second
+     * instance over the same file would leave these flows deaf to every setting change.
      */
     constructor(context: Context) : this(
         (context.applicationContext as YlihApp).container.database.settingsDao(),
@@ -51,16 +50,16 @@ class SettingsStore(
     val onboardingDone: Flow<Boolean> = boolean(ONBOARDING_DONE)
 
     /**
-     * Whether the one-off "let ylih keep its permissions" prompt has been answered. Asked once and
-     * never again either way: the same request lives in settings for anyone who said no, and an
-     * app that nags about a system setting is an app people force-stop.
+     * Whether the one-off "let ylih keep its permissions" prompt has been answered. Asked once,
+     * never again either way: the request stays in settings for anyone who said no, since an app
+     * that nags about a system setting gets force-stopped.
      */
     val hibernationAsked: Flow<Boolean> = boolean(HIBERNATION_ASKED)
 
     /**
      * Report listening time rather than connected time. Purely a way of reading the same history
-     * — nothing about what is recorded changes — so it is never forced off, and a mode that
-     * cannot measure playback simply leaves it out of the settings screen.
+     * — nothing recorded changes — so it's never forced off; a mode that can't measure playback
+     * just leaves it out of the settings screen.
      */
     val playbackOnly: Flow<Boolean> = boolean(PLAYBACK_ONLY)
 
@@ -68,7 +67,7 @@ class SettingsStore(
      * Whether an on-device assistant may call this app's app functions — see
      * `agent/YlihAppFunctions.kt`.
      *
-     * A new row in a key/value table, so no schema version and no migration: `SettingEntity` is
+     * A new row in a key/value table needs no schema version or migration: `SettingEntity` is
      * what makes a new setting cost nothing.
      */
     val agentAccess: Flow<Boolean> = boolean(AGENT_ACCESS)
@@ -96,10 +95,10 @@ class SettingsStore(
     /**
      * Writes the row *and* the platform state it stands for.
      *
-     * The two together rather than the row alone, for the same reason [setLanguage] mirrors its
-     * value: the stored answer is the source of truth and the OS index is a projection of it, and
-     * a projection that only some callers remember to update is one that drifts. `false` here has
-     * to reach the OS — an app function left enabled is callable whatever this table says.
+     * Both together, for the same reason [setLanguage] mirrors its value: the row is the source
+     * of truth and the OS index is a projection, and a projection only some callers remember to
+     * update is one that drifts. `false` here must reach the OS — an app function left enabled is
+     * callable whatever this table says.
      */
     suspend fun setAgentAccess(enabled: Boolean) {
         put(AGENT_ACCESS, enabled.toString())
@@ -113,10 +112,10 @@ class SettingsStore(
     /**
      * Writes the row, and the copy of it that `AppLocale.wrap` reads.
      *
-     * The mirror lives here rather than at the call site so that it cannot be forgotten: the row
-     * is the source of truth, but `attachBaseContext` has to settle the configuration before the
-     * process may touch the database, and on a cold start reading it there would open Room — and
-     * run any pending migration — on the main thread before the first frame.
+     * The mirror lives here, not at the call site, so it can't be forgotten: the row is the
+     * source of truth, but `attachBaseContext` must settle the configuration before the process
+     * may touch the database, and reading it there on a cold start would open Room — and run any
+     * pending migration — on the main thread before the first frame.
      */
     suspend fun setLanguage(tag: String) {
         put(LANGUAGE, tag)

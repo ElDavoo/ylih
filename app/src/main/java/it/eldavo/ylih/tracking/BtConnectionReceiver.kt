@@ -45,10 +45,10 @@ class BtConnectionReceiver : BroadcastReceiver() {
                     container.trackingController.onSessionClosed()
                 }
             } catch (e: Exception) {
-                // Rethrows only if *this* coroutine was cancelled, which means the scope is going
+                // Rethrows only if *this* coroutine was cancelled, meaning the scope is going
                 // away. Room cancels the continuation to report a transaction it could not start
-                // — a closed database — so a cancellation with the job still active is a genuine
-                // failure wearing the wrong clothes, and belongs in the log like any other.
+                // (a closed database), so a cancellation with the job still active is a genuine
+                // failure and belongs in the log like any other.
                 currentCoroutineContext().ensureActive()
                 Log.e(TAG, "Failed to record ${identity.key}", e)
             } finally {

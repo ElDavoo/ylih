@@ -8,10 +8,10 @@ import org.xmlpull.v1.XmlPullParser
  * The sizes a launcher will let someone drag a widget to, read out of its own
  * `res/xml/widget_*_info.xml`.
  *
- * Shared rather than copied because two tests ask the same question of the same file and must not
- * answer it differently: [WidgetProvidersTest] checks that every size in the range has a layout to
- * fill it, and [WidgetReapplyTest] checks that every size can be redrawn onto every other. A copy
- * of this arithmetic in each is a copy that can end up sweeping a range the other does not.
+ * Shared rather than copied because two tests ask the same question of the same file and must
+ * answer it identically: [WidgetProvidersTest] checks that every size in the range has a layout
+ * to fill it, and [WidgetReapplyTest] checks that every size can be redrawn onto every other. A
+ * copy of this arithmetic in each could end up sweeping a range the other doesn't.
  */
 internal object ProviderSizes {
 

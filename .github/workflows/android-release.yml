@@ -20,9 +20,9 @@ jobs:
 
     env:
       RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
-      # The `secrets` context is not available in a step-level `if:`, which makes the whole
+      # The `secrets` context isn't available in a step-level `if:`, which makes the whole
       # workflow file invalid rather than just skipping the step. Lifting it into `env` here
-      # gives the steps below something they are allowed to test.
+      # gives the steps below something they're allowed to test.
       KEYSTORE_BASE64: ${{ secrets.ANDROID_SIGNING_KEYSTORE_BASE64 }}
 
     steps:
@@ -41,9 +41,9 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@40fd30fb8d7440372e1316f5d1809ec01dcd3699 # v4
 
-      # No caching in the release job, deliberately, and it is the one job where the minutes are
-      # worth spending. A cache is writable by any workflow run on any branch, so a PR that never
-      # merges can still put bytes in it -- and here those bytes would end up inside a signed APK
+      # No caching in the release job on purpose — the one job where the minutes are worth
+      # spending. A cache is writable by any workflow run on any branch, so a PR that never
+      # merges can still put bytes in it, and here those bytes would end up inside a signed APK
       # that goes to F-Droid. CI caches as before; releases are rare and now build from scratch.
       - name: Install Android SDK components
         run: sdkmanager "platform-tools" "platforms;android-37.0" "build-tools;37.0.0"
@@ -69,8 +69,8 @@ jobs:
         run: ./gradlew --no-daemon --stacktrace clean assembleClassicRelease bundlePlayRelease
 
       # F-Droid's AllowedAPKSigningKeys wants the SHA-256 of the signing certificate as lowercase
-      # hex with no colons, which is exactly what apksigner prints. Emitting it here means the
-      # recipe can be filled in from a job log rather than from whoever is holding the keystore.
+      # hex with no colons — exactly what apksigner prints. Emitting it here lets the recipe be
+      # filled in from a job log rather than from whoever holds the keystore.
       - name: Signing certificate fingerprint
         if: ${{ env.KEYSTORE_BASE64 != '' }}
         run: |
@@ -80,15 +80,14 @@ jobs:
           echo "apk=${apk:-<none>} apksigner=${apksigner:-<none>}"
           "$apksigner" verify --print-certs "$apk" | tee /tmp/certs.txt
           # Every line naming a certificate digest, not `Signer #1` specifically: build-tools
-          # 37.0.0's apksigner labels the signer by the scheme that carries it ("V2 Signer:",
-          # and "V3 Signer:" where a v3 block exists) and prints one line per scheme. They all
-          # name the same certificate, so the fingerprint is whatever they agree on.
+          # 37.0.0's apksigner labels the signer by the scheme carrying it ("V2 Signer:", "V3
+          # Signer:" where a v3 block exists) and prints one line per scheme. All name the same
+          # certificate, so the fingerprint is whatever they agree on.
           digest=$(sed -n 's/.*certificate SHA-256 digest: //p' /tmp/certs.txt | sort -u)
-          # An empty digest means the pattern has drifted from apksigner's output rather than
-          # that the APK is unsigned — apksigner would have exited non-zero for that. More than
-          # one means the schemes disagree, which AllowedAPKSigningKeys cannot express. Fail on
-          # either, because a silently wrong fingerprint is one that gets noticed at
-          # verification time.
+          # An empty digest means the pattern drifted from apksigner's output, not that the APK
+          # is unsigned — apksigner would exit non-zero for that. More than one means the
+          # schemes disagree, which AllowedAPKSigningKeys can't express. Fail on either: a
+          # silently wrong fingerprint is one noticed at verification time.
           if [ "$(printf '%s' "$digest" | grep -c .)" != 1 ]; then
             echo "::error::expected exactly one certificate SHA-256 in apksigner output (see above)"
             exit 1
@@ -97,7 +96,7 @@ jobs:
 
       # Screenshots, the 512px icon and the feature graphic, rendered on the JVM by Roborazzi —
       # no emulator involved. Generated from the tagged commit so the store listing can never
-      # show a version other than the one being released. See docs/play-store.md.
+      # show a version other than the one released. See docs/play-store.md.
       - name: Generate Play listing assets
         run: ./gradlew --no-daemon --stacktrace recordRoborazziPlayReleaseTest
 
@@ -133,9 +132,9 @@ jobs:
           sha256sum dist/* > dist/SHA256SUMS.txt
 
       - name: Publish GitHub release
-        # zizmor: ignore[superfluous-actions] -- `gh release create` is indeed the same idea, but
-        # this step creates-or-updates and takes asset globs, and hand-rolling that in the one
-        # workflow that signs and publishes is a worse trade than the dependency.
+        # zizmor: ignore[superfluous-actions] -- `gh release create` is the same idea, but this
+        # step creates-or-updates and takes asset globs; hand-rolling that in the one workflow
+        # that signs and publishes is a worse trade than the dependency.
         uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3  # zizmor: ignore[superfluous-actions]
         with:
           tag_name: ${{ env.RELEASE_TAG }}

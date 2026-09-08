@@ -41,10 +41,9 @@ import org.robolectric.shadows.ShadowSystemClock
 import java.time.Duration
 
 /**
- * The policy layer: which of the two tracking modes is actually running, and whether the
- * database still agrees with what is plugged in. `syncWithSystem()` is called from five places
- * and is the app's only repair mechanism, so what it does to a database that has drifted is
- * the interesting part.
+ * The policy layer: which of the two tracking modes is running, and whether the database still
+ * agrees with what is plugged in. `syncWithSystem()` is called from five places and is the app's
+ * only repair mechanism, so what it does to a drifted database is the interesting part.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
@@ -70,18 +69,17 @@ class TrackingControllerTest {
     @Before
     fun setUp() = runBlocking {
         // The heartbeat is enqueued and cancelled on WorkManager's own threads, so reading the
-        // unique work's state straight after asking for a change otherwise races the worker that
-        // the enqueue starts — which showed up as this class passing or failing on what ran
-        // before it in the same JVM.
+        // unique work's state right after asking for a change races the worker the enqueue
+        // starts — this class used to pass or fail on what ran before it in the same JVM.
         //
-        // Synchronous executors are not enough on their own: the test scheduler starts the
-        // heartbeat the moment it is enqueued, and the real HeartbeatWorker is a CoroutineWorker,
-        // so its body runs on Dispatchers.Default whatever executor is installed — against the
-        // real container rather than this test's database. CI caught that work reaching a
-        // terminal state before cancelUniqueWork got to it, which made the cancel a no-op and
-        // left the work reading as still scheduled. What this class asserts is which work the
-        // controller schedules, never what the worker does (ReceiversTest covers that), so the
-        // worker is replaced by a plain one that finishes inline on the synchronous executor.
+        // Synchronous executors alone are not enough: the test scheduler starts the heartbeat the
+        // moment it is enqueued, and the real HeartbeatWorker is a CoroutineWorker, so its body
+        // runs on Dispatchers.Default whatever executor is installed — against the real container,
+        // not this test's database. CI caught that work reaching a terminal state before
+        // cancelUniqueWork got to it, making the cancel a no-op that left the work reading as still
+        // scheduled. This class only asserts which work the controller schedules, never what the
+        // worker does (ReceiversTest covers that), so the worker is replaced by a plain one that
+        // finishes inline on the synchronous executor.
         WorkManagerTestInitHelper.initializeTestWorkManager(
             context,
             Configuration.Builder().setWorkerFactory(InertWorkers).build(),
@@ -97,8 +95,8 @@ class TrackingControllerTest {
             settings,
             onDataChanged = { dataChanges++ },
         ) { clockNow }
-        // The preferences file is a real one and the DataStore behind it is a process
-        // singleton, so a setting written by one test method is still there in the next.
+        // The preferences file is real and the DataStore behind it is a process singleton, so a
+        // setting written by one test method is still there in the next.
         settings.setDetailedTracking(false)
     }
 
@@ -177,8 +175,8 @@ class TrackingControllerTest {
         controller.syncWithSystem()
         val lastProof = clockNow
 
-        // Whatever happened in the following hour, we were not watching, so it is not listening
-        // time — the session is closed back at the last heartbeat rather than stretched to now.
+        // Whatever happened in the following hour, nothing was watching, so it is not listening
+        // time — the session closes at the last heartbeat rather than stretching to now.
         advance(hour)
         connect()
         controller.syncWithSystem()
@@ -212,8 +210,8 @@ class TrackingControllerTest {
                 db.deviceDao().getAll().map { it.deviceKey }.toSet(),
             )
             assertNotNull("the foreground service does the watching now", startedService())
-            // The service is the better watcher, not a guaranteed one: an OEM battery manager
-            // that kills it must not leave this mode with nothing at all behind it.
+            // The service is a better watcher, not a guaranteed one: an OEM battery manager
+            // killing it must not leave this mode with nothing behind it.
             assertTrue("the heartbeat backs up the service too", heartbeatScheduled())
             // Only the service can measure playback, so only it opts sessions into it.
             assertTrue(db.sessionDao().getAll().all { it.playingMs != null })
@@ -249,8 +247,8 @@ class TrackingControllerTest {
 
         assertEquals(Distribution.HAS_SPECIAL_USE_FGS, accepted)
         assertEquals(Distribution.HAS_SPECIAL_USE_FGS, settings.detailedTrackingNow())
-        // Refusing has to be all or nothing: a service started behind a setting that was never
-        // written would go on running with nothing on screen admitting it.
+        // Refusing has to be all or nothing: a service started behind a setting never written
+        // would run on with nothing on screen admitting it.
         assertEquals(Distribution.HAS_SPECIAL_USE_FGS, startedService() != null)
     }
 
@@ -258,8 +256,8 @@ class TrackingControllerTest {
     fun `a detailed-tracking setting restored from another phone is honoured or given up`() =
         runTest {
             // Preferences come back from Android's own backup, so the flag can land on a build
-            // that cannot act on it — no permission was ever granted here. An open wired session
-            // that nothing is watching would count until the end of time.
+            // that cannot act on it — no permission was ever granted here. An unwatched open wired
+            // session would otherwise count until the end of time.
             shadowOf(context).denyPermissions(Manifest.permission.BLUETOOTH_CONNECT)
             connect(wired())
             repository.onConnected(
@@ -292,8 +290,8 @@ class TrackingControllerTest {
     @Test
     fun `losing bluetooth access mid-flight retires the wired sessions rather than stretching them`() =
         runTest {
-            // Only reachable on a build without specialUse: the setting stays on but the
-            // service can no longer legally start, so wired sessions would run forever.
+            // Reachable only on a build without specialUse: the setting stays on but the service
+            // can no longer legally start, so wired sessions would run forever.
             if (Distribution.HAS_SPECIAL_USE_FGS) return@runTest
 
             enableDetailedTracking()
@@ -302,8 +300,8 @@ class TrackingControllerTest {
             val lastProof = clockNow
 
             // The permission went, and the service went with it — probably along with the whole
-            // process, and long before we were woken up to notice. The hour in between is not
-            // listening time, so the session ends back where we last had evidence of it.
+            // process, long before anything was woken up to notice. The hour in between is not
+            // listening time, so the session ends where the evidence last put it.
             advance(hour)
             shadowOf(context).denyPermissions(Manifest.permission.BLUETOOTH_CONNECT)
             controller.syncWithSystem()
@@ -351,9 +349,9 @@ class TrackingControllerTest {
 
     @Test
     fun `every entry point tells the home screen something changed`() = runTest {
-        // All four background write sources converge here, so this is the app's only chance to
-        // notice. Miss one and a widget sits on a stale figure until something else happens to
-        // redraw it — which, with updatePeriodMillis at 0, may be never.
+        // All four background write sources converge here, the app's only chance to notice. Miss
+        // one and a widget sits on a stale figure until something else redraws it — which, with
+        // updatePeriodMillis at 0, may be never.
         controller.syncWithSystem()
         assertEquals("the repair path, called from boot, onStart, the worker and the service", 1, dataChanges)
 
@@ -363,8 +361,8 @@ class TrackingControllerTest {
         controller.onSessionClosed()
         assertEquals(3, dataChanges)
 
-        // What the service calls for the sessions it writes itself — a wired plug reaches nothing
-        // else — and for the playback its minute tick has just credited.
+        // What the service calls for sessions it writes itself — a wired plug reaches nothing
+        // else — and for playback its minute tick just credited.
         controller.onSessionsChanged()
         assertEquals(4, dataChanges)
 
@@ -376,8 +374,8 @@ class TrackingControllerTest {
     fun `a redraw leaves the background machinery alone`() = runTest {
         // onFiguresChanged runs once a minute for as long as a pair is connected, so it must be
         // the cheap one: no WorkManager write, only the redraw. Closing the session behind the
-        // controller's back is what makes the difference visible — onSessionsChanged would notice
-        // and cancel the heartbeat, and this must not.
+        // controller's back makes the difference visible — onSessionsChanged would notice and
+        // cancel the heartbeat, and this must not.
         connect(buds())
         controller.syncWithSystem()
         assertTrue(heartbeatScheduled())

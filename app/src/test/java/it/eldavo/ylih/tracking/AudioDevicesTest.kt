@@ -67,9 +67,9 @@ class AudioDevicesTest {
 
     @Test
     fun `a redacted and a full address describe the same headset`() {
-        // Caught on a real Android 16 device: AudioDeviceInfo.getAddress() redacts the first
-        // four octets while the ACL broadcast reports the whole MAC, and the app recorded the
-        // one pair of headphones twice.
+        // Caught on a real Android 16 device: AudioDeviceInfo.getAddress() redacts the first four
+        // octets while the ACL broadcast reports the whole MAC, so the app recorded the one pair
+        // of headphones twice.
         assertEquals(
             AudioDevices.bluetoothKey("80:C3:BA:A6:5E:C2", name),
             AudioDevices.bluetoothKey("XX:XX:XX:XX:5E:C2", name),
@@ -94,9 +94,9 @@ class AudioDevicesTest {
 
     /**
      * `02:00:00:00:00:00` is what `BluetoothDevice.getAddress()` hands an app without
-     * BLUETOOTH_CONNECT from API 31. Its last two octets are a valid-looking pair, so taken at
-     * face value it keys every headset on the phone to `bt:00:00` — one pair holding everyone's
-     * hours, and no way to unpick it afterwards. The name is the honest answer instead.
+     * BLUETOOTH_CONNECT from API 31. Its last two octets look valid, so at face value it keys
+     * every headset on the phone to `bt:00:00` — one pair holding everyone's hours, unpickable
+     * afterwards. The name is the honest answer instead.
      */
     @Test
     fun `the anonymised address is refused rather than made everyone's key`() {
@@ -141,9 +141,9 @@ class AudioDevicesTest {
 
     @Test
     fun `a headset that only carries calls is the same pair as one that carries media`() {
-        // A mono call headset never appears as A2DP, and a stereo one is SCO for as long as its
-        // media profile takes to come up. Dropping SCO made those invisible to the audio-stack
-        // view, so the next reconcile closed a live session at its last heartbeat.
+        // A mono call headset never appears as A2DP, and a stereo one is SCO until its media
+        // profile comes up. Dropping SCO made those invisible to the audio-stack view, so the
+        // next reconcile closed a live session at its last heartbeat.
         assertEquals(
             DeviceIdentity("bt:5E:C2", DeviceKind.BLUETOOTH, name),
             AudioDevices.identityOf(
@@ -205,8 +205,8 @@ class AudioDevicesTest {
 
     @Test
     fun `wired headphones the platform will not name still get a label`() {
-        // Android reports no product name for most analogue plugs, so the fallback is the only
-        // thing the card is ever drawn with.
+        // Android reports no product name for most analogue plugs, so the fallback is all the
+        // card is ever drawn with.
         ShadowBuild.setModel("")
 
         assertEquals(
@@ -270,7 +270,7 @@ class AudioDevicesTest {
     @Test
     fun `a bluetooth device that reports no class at all is given the benefit of the doubt`() {
         // Some headsets answer the class query with nothing; refusing those would lose sessions
-        // for a real pair of headphones.
+        // for a real headset.
         val device = remoteDevice(mac)
         shadowOf(device).setName(name)
 
@@ -288,9 +288,9 @@ class AudioDevicesTest {
 
     @Test
     fun `a headset the app may no longer ask about is still counted`() {
-        // Revoking BLUETOOTH_CONNECT makes every guarded getter throw. Each one is wrapped
-        // separately so that costs the *name*, not the identity: resolving to null here would
-        // start the pair's lifetime again from zero the next time it connected.
+        // Revoking BLUETOOTH_CONNECT makes every guarded getter throw. Each is wrapped separately
+        // so that costs only the *name*, not the identity: resolving to null here would restart
+        // the pair's lifetime from zero on its next connect.
         val device = bluetoothDevice()
         shadowOf(device).setShouldThrowSecurityExceptions(true)
 
@@ -304,8 +304,8 @@ class AudioDevicesTest {
     @Test
     @Config(shadows = [ShadowAddresslessBluetoothDevice::class])
     fun `a device the app cannot read at all is skipped rather than crashed`() {
-        // The other half of the same promise: with nothing identifiable left there is no session
-        // to record, and a manifest receiver that threw here would take the broadcast down.
+        // The other half of the same promise: with nothing identifiable left, there is no session
+        // to record, and a manifest receiver throwing here would take the broadcast down.
         val device = bluetoothDevice()
         shadowOf(device).setShouldThrowSecurityExceptions(true)
 
@@ -316,7 +316,7 @@ class AudioDevicesTest {
     @Config(sdk = [Build.VERSION_CODES.O_MR1])
     fun `before android 9 the audio stack discloses no address at all`() {
         // AudioDeviceInfo.getAddress() only exists from API 28, so on older installs the product
-        // name is the whole of a Bluetooth output's identity.
+        // name is a Bluetooth output's whole identity.
         assertEquals(
             "bt:name:$name",
             AudioDevices.identityOf(
@@ -333,7 +333,7 @@ class AudioDevicesTest {
                 outputDevice(AudioDeviceInfo.TYPE_BUILTIN_SPEAKER, productName = "Speaker"),
                 outputDevice(AudioDeviceInfo.TYPE_WIRED_HEADPHONES, productName = "Plugged in"),
                 outputDevice(AudioDeviceInfo.TYPE_BLUETOOTH_A2DP, redactedMac, name),
-                // The same headset again as an LE output and as a call route, both of which real
+                // The same headset again as an LE output and a call route, both of which real
                 // phones list alongside the A2DP one. Three rows, one pair.
                 outputDevice(AudioDeviceInfo.TYPE_BLE_HEADSET, redactedMac, name),
                 outputDevice(AudioDeviceInfo.TYPE_BLUETOOTH_SCO, redactedMac, name),
@@ -362,8 +362,8 @@ class AudioDevicesTest {
 
 /**
  * `setShouldThrowSecurityExceptions` covers the getters [ShadowBluetoothDevice] implements
- * itself, but not `getAddress()` — and the address is what decides whether a device can be
- * identified at all once the name has gone with it.
+ * itself, but not `getAddress()` — and the address decides whether a device can be identified at
+ * all once the name has gone with it.
  */
 @Implements(BluetoothDevice::class)
 class ShadowAddresslessBluetoothDevice : ShadowBluetoothDevice() {

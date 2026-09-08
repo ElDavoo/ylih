@@ -14,9 +14,9 @@ import it.eldavo.ylih.ui.theme.LightColors
 /**
  * The app's palette, translated into what Glance understands.
  *
- * `GlanceTheme` cannot be nested inside `YlihTheme` — a widget is composed in this process but
- * laid out in the launcher's, so there is no Compose UI tree to inherit from — but it can be fed
- * the very same two schemes, which is what stops the home screen and the app drifting apart.
+ * `GlanceTheme` can't nest inside `YlihTheme` — a widget composes in this process but lays out in
+ * the launcher's, so there's no Compose UI tree to inherit from — but it can take the same two
+ * schemes, keeping the home screen and app from drifting apart.
  */
 @Composable
 fun WidgetTheme(content: @Composable () -> Unit) {
@@ -37,10 +37,9 @@ private val YlihGlanceColors = ColorProviders(light = LightColors, dark = DarkCo
 /**
  * The accent the Chronometer and the chart bars are drawn in.
  *
- * Resolved here rather than through [GlanceTheme] because neither of those is Glance: one is a
- * raw `RemoteViews`, the other a bitmap. Below API 31 that also means the value is baked at
- * update time — but so is everything else Glance draws below 31, which resolves its own day/night
- * colours the same way.
+ * Resolved here, not through [GlanceTheme], because neither the Chronometer (raw `RemoteViews`)
+ * nor the chart (a bitmap) is Glance. Below API 31 the value bakes in at update time, like
+ * everything else Glance draws there, resolving day/night the same way.
  */
 internal fun accentColor(context: Context): Color = Color(ContextCompat.getColor(context, R.color.widget_accent))
 

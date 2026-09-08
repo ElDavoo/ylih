@@ -39,9 +39,9 @@ class ComponentsTest {
     val compose = createComposeRule()
 
     /**
-     * The kinds are what a pair's card and its page call the thing being worn, and the `when` that
-     * maps them is the sort of list a new kind gets added to without a new string — which shows up
-     * as two kinds sharing a name rather than as a crash.
+     * The kinds are what a pair's card and page call the thing being worn. The `when` mapping
+     * them is a list a new kind can be added to without a new string — that shows up as two
+     * kinds sharing a name rather than as a crash.
      */
     @Test
     fun `every kind of output has a name of its own`() {

@@ -51,9 +51,9 @@ private const val PAIR_CHART_DAYS = 14
 /**
  * How many charge cycles are listed under the chart of them.
  *
- * A cap rather than the lot, and for a reason the day list does not have: the days are already
- * bounded by their window, while cycles accumulate for the life of the pair. Listing every one
- * would put an unbounded scroll between the chart and the sessions below it.
+ * A cap, not the lot — unlike the day list, already bounded by its window, cycles accumulate for
+ * the life of the pair. Listing every one would put an unbounded scroll between the chart and the
+ * sessions below it.
  */
 private const val PAIR_CYCLE_ROWS = 12
 
@@ -67,11 +67,11 @@ fun PairDetailScreen(
     contentPadding: PaddingValues,
     onBack: () -> Unit,
 ) {
-    // Remembered because these are functions rather than properties: each call builds a new Flow,
-    // and `collectAsStateWithLifecycle` keys its collection on the instance it was handed. Without
-    // this both Room subscriptions were torn down and re-established on every recomposition — at
-    // least once a minute, since the body below reads the minute clock, and again on every write
-    // that moves the summary. MainActivity's `openPairFlow` records the same trap.
+    // Remembered because these are functions, not properties: each call builds a new Flow, and
+    // `collectAsStateWithLifecycle` keys collection on the instance handed to it. Without this both
+    // Room subscriptions were torn down and rebuilt on every recomposition — at least once a
+    // minute, since the body reads the minute clock, and again on every write that moves the
+    // summary. MainActivity's `openPairFlow` has the same trap.
     val summaryFlow = remember(pairId) { viewModel.summary(pairId) }
     val sessionsFlow = remember(pairId) { viewModel.sessions(pairId) }
     val chargeFlow = remember(pairId) { viewModel.chargeSummary(pairId) }
@@ -79,9 +79,9 @@ fun PairDetailScreen(
     val sessions by sessionsFlow.collectAsStateWithLifecycle(initialValue = emptyList())
     val charge by chargeFlow.collectAsStateWithLifecycle(initialValue = null)
     val spansByPair by viewModel.spansByPair.collectAsStateWithLifecycle()
-    // Two clocks: [liveNow] drives the "connected for …" line and the open session's row, which
-    // are the only things here meant to move every second. Everything else is derived from this
-    // pair's whole history and reads the minute clock — see YlihViewModel.nowMinute.
+    // Two clocks: [liveNow] drives the "connected for …" line and the open session's row, the only
+    // things meant to move every second. Everything else derives from this pair's history and
+    // reads the minute clock — see YlihViewModel.nowMinute.
     val liveNow by viewModel.now.collectAsStateWithLifecycle()
     val now by viewModel.nowMinute.collectAsStateWithLifecycle()
     val counting by viewModel.counting.collectAsStateWithLifecycle()
@@ -94,30 +94,29 @@ fun PairDetailScreen(
     var deleting by remember { mutableStateOf(false) }
 
     val current = summary
-    // Off the aggregate, not out of every session this pair has ever had. `Stats.summarize` answers
-    // the same question from a `List<Span>` and is what stood here — which meant re-summarising the
-    // pair's whole history on the main thread every minute, for a figure SQL had already grouped
-    // and a cost that grows for as long as the pair is used. `SummarizeLifetimeTest` is what says
-    // the two agree; the stats and devices screens moved this way already.
+    // Off the aggregate, not every session this pair ever had. `Stats.summarize` answers the same
+    // question from a `List<Span>` and used to stand here, re-summarising the pair's whole history
+    // on the main thread every minute — a figure SQL had already grouped, at a cost that grows for
+    // as long as the pair is used. `SummarizeLifetimeTest` proves the two agree; stats and devices
+    // already moved this way.
     val stats = remember(current, now, counting) {
         listOfNotNull(current).summarizeLifetime(now, counting)
     }
-    // The thirty-day window, which is the same one the devices screen reads for its cards. A chart
-    // cannot draw more than it holds, and unlike this pair's history the window is bounded.
+    // The thirty-day window the devices screen reads for its cards. A chart can't draw more than
+    // it holds, and unlike this pair's history the window is bounded.
     val spans = spansByPair[pairId].orEmpty()
     val series = remember(spans, now, counting, zone) {
         Stats.dailySeries(spans, zone, now, days = WINDOW_DAYS, counting = counting)
     }
-    // The same 14-day tail the chart draws, not the 30-day series it's cut from — so the list
-    // below the chart and the chart itself agree on both which days appear and what scale they're
-    // drawn to, the way StatsScreen's chart and list agree over the full 30 days.
+    // The same 14-day tail the chart draws, not the 30-day series it's cut from, so the list below
+    // and the chart agree on which days appear and what scale they draw to — as StatsScreen's
+    // chart and list agree over the full 30 days.
     val breakdown = remember(series) { dailyBreakdown(series.takeLast(PAIR_CHART_DAYS)) }
     val chartMax = remember(series) { chartMaxMs(series.takeLast(PAIR_CHART_DAYS)) }
-    // Newest first, like the day list, and numbered from the oldest so that a run of them reads as
-    // the history it is — cycle 137 stays cycle 137 however few of them are listed (see
-    // PAIR_CYCLE_ROWS for why only the most recent are). The chart carries the whole lifetime — a
-    // pair worn daily for a decade is some three thousand cycles — which is where the shape is
-    // read anyway.
+    // Newest first like the day list, numbered from the oldest so a run reads as the history it
+    // is — cycle 137 stays cycle 137 however few are listed (PAIR_CYCLE_ROWS caps it to the most
+    // recent). The chart carries the whole lifetime — ~3,000 cycles for a pair worn daily for a
+    // decade — which is where the shape is read anyway.
     val cycleRows = remember(charge) {
         charge?.cycles.orEmpty().withIndex().reversed().take(PAIR_CYCLE_ROWS)
     }
@@ -183,8 +182,8 @@ fun PairDetailScreen(
                     val generation = current?.generation ?: 1
                     Text(
                         listOfNotNull(
-                            // The headline is no longer a lifetime when it counts playback, and
-                            // this line is the only place on the screen that can say which.
+                            // The headline stops being a lifetime figure when it counts playback,
+                            // and this line is the only place that says which.
                             if (counting == Counting.PLAYBACK) {
                                 stringResource(R.string.stats_playback_only_note)
                             } else {
@@ -269,8 +268,8 @@ fun PairDetailScreen(
 
                     Spacer(Modifier.height(24.dp))
                     val chartLabel = stringResource(R.string.pair_daily_hours_14)
-                    // A heading, because it titles the day list below the chart as well as the
-                    // chart itself — the same one section StatsScreen makes of its own pair.
+                    // A heading: it titles the day list below the chart as well as the chart
+                    // itself — one section, as StatsScreen makes of its own.
                     Text(
                         chartLabel,
                         style = MaterialTheme.typography.titleSmallEmphasized,
@@ -285,17 +284,17 @@ fun PairDetailScreen(
                     )
                 }
             }
-            // The days themselves, under the chart of them and inside the same heading — the
-            // pattern StatsScreen.kt uses for its own chart and list.
+            // The days, under the chart of them and inside the same heading — the pattern
+            // StatsScreen.kt uses for its own chart and list.
             breakdown.firstOrNull()?.first?.let { today ->
                 items(breakdown, key = { "day:${it.first}" }) { (date, ms) ->
                     DailyBreakdownRow(date = date, ms = ms, maxMs = chartMax, today = today)
                 }
             }
-            // Absent until the headphones have actually reported their battery. Plenty never do —
-            // the level reaches Android over HFP, Apple's vendor command or BLE's battery service,
-            // and a headset that speaks none of them can say nothing here. An empty section
-            // explaining that would be a permanent apology on every pair that has one.
+            // Absent until the headphones report a battery level. Plenty never do — the level
+            // reaches Android over HFP, Apple's vendor command or BLE's battery service, and a
+            // headset speaking none of them says nothing here. An empty section explaining that
+            // would be a permanent apology on every pair that has one.
             charge?.takeIf { it.hasData }?.let { cycles ->
                 item { ChargeCyclesHeader(cycles) }
                 items(cycleRows, key = { "cycle:${it.index}" }) { (index, cycle) ->
@@ -309,8 +308,8 @@ fun PairDetailScreen(
             }
             item { SectionHeader(stringResource(R.string.pair_sessions)) }
             items(sessions, key = { it.id }) { session ->
-                // The live clock only for the one session that is still running; a closed row's
-                // duration does not depend on the time and would recompose every second for nothing.
+                // The live clock only for the still-running session; a closed row's duration
+                // doesn't depend on the time and would recompose every second for nothing.
                 SessionRow(
                     session = session,
                     now = if (session.disconnectedAt == null) liveNow else now,
@@ -345,9 +344,9 @@ fun PairDetailScreen(
     if (editingPurchase && current != null) {
         TextFieldDialog(
             title = stringResource(R.string.pair_price_title),
-            // The whole price, not `cents / 100`: integer division dropped the minor units, so a
-            // pair bought for 123.45 opened the dialog reading "123" and confirming it unchanged
-            // rewrote the price as 123.00.
+            // The whole price, not `cents / 100`: integer division dropped minor units, so a pair
+            // bought for 123.45 opened the dialog reading "123", and confirming it unchanged
+            // rewrote it as 123.00.
             initial = current.priceCents?.let { formatPriceInput(it) }.orEmpty(),
             label = stringResource(R.string.pair_price_label),
             supporting = stringResource(R.string.pair_price_supporting),
@@ -386,10 +385,10 @@ fun PairDetailScreen(
 }
 
 /**
- * The charge-cycle block: what a charge is currently worth, and the chart of what it used to be.
+ * The charge-cycle block: what a charge is worth now, and the chart of what it used to be.
  *
- * The heading titles the chart *and* the cycles listed under it — they are one section, the way the
- * day list under the chart above is — so there is no `SectionHeader` between them.
+ * The heading titles the chart *and* the cycles under it — one section, like the day list under
+ * the chart above — so there's no `SectionHeader` between them.
  */
 @Composable
 private fun ChargeCyclesHeader(charge: ChargeSummary) {
@@ -410,8 +409,8 @@ private fun ChargeCyclesHeader(charge: ChargeSummary) {
             stringResource(R.string.pair_charge_watched) to formatHours(charge.countedMs),
         )
         // Two rows of two once the comparison has something to say, rather than four tiles crushed
-        // into one row — "vs when new" is a long label and the figures beside it are not short.
-        // Until then it is the three-tile row every other block on this screen uses.
+        // into one row — "vs when new" is a long label with figures that aren't short. Until then
+        // it's the three-tile row every other block here uses.
         if (tiles.size == 4) {
             StatRow(tiles.take(2))
             Spacer(Modifier.height(8.dp))
@@ -419,13 +418,12 @@ private fun ChargeCyclesHeader(charge: ChargeSummary) {
         } else {
             StatRow(tiles)
         }
-        // Only once there is more than one bar to compare. A single cycle drawn full height says
-        // "this is the tallest one" about a series of one, which is the reading it is least able
-        // to support — the figures above already report it.
+        // Only once there's more than one bar to compare: a single cycle drawn full height says
+        // "this is the tallest one" about a series of one — the figures above already report it.
         if (charge.cycles.size > 1) {
             Spacer(Modifier.height(16.dp))
-            // Every cycle the pair has ever been through, averaged into at most [MAX_CYCLE_BARS]
-            // bars so that a decade of them still draws — and still reads — in one screen width.
+            // Every cycle the pair has been through, averaged into at most [MAX_CYCLE_BARS] bars
+            // so a decade of them still draws, and reads, in one screen width.
             val bars = remember(charge) {
                 bucketedBars(charge.cycles.map { it.countedMs }, MAX_CYCLE_BARS)
             }
@@ -436,9 +434,9 @@ private fun ChargeCyclesHeader(charge: ChargeSummary) {
                 lastLabel = stringResource(R.string.pair_cycle_number, charge.cycles.size),
             )
         } else {
-            // Bound to the chart's own condition rather than to `versusNew == null`, which today
-            // is the same case: this line stands where the chart will stand, so what it promises
-            // has to arrive at the moment the chart does, whatever else changes about the tiles.
+            // Bound to the chart's own condition, not `versusNew == null` (the same case today):
+            // this line stands where the chart will, so its promise arrives exactly when the
+            // chart does, whatever else changes about the tiles.
             Spacer(Modifier.height(8.dp))
             Text(
                 stringResource(R.string.pair_charge_calibrating),

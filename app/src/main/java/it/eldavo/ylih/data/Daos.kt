@@ -101,21 +101,21 @@ interface PairDao {
     /**
      * Every pair with its totals, or just one when [pairId] is given.
      *
-     * One query with an optional filter rather than two near-identical ones. They were the same
-     * twenty-two lines twice over, differing only by the `WHERE`, so any change to the arithmetic
-     * had to be made in both by hand — and a projection this size is exactly where that goes
-     * unnoticed. The `ORDER BY` is wasted work on a single row and cheaper than a third copy.
+     * One query with an optional filter, not two near-identical ones: they were the same
+     * twenty-two lines twice over, differing only in the `WHERE`, so any arithmetic change had to
+     * be made in both — exactly where drift goes unnoticed on a projection this size. The
+     * `ORDER BY` wastes work on a single row but is cheaper than a third copy.
      *
-     * The columns past `longestMs` exist so that the stats screen's lifetime figures can be read
-     * from here rather than by loading every session ever recorded — see `summarizeLifetime`. They
-     * cost nothing: this already groups over the same rows.
+     * The columns past `longestMs` let the stats screen's lifetime figures be read from here
+     * instead of loading every session ever recorded (see `summarizeLifetime`), at no extra cost
+     * since this already groups over the same rows.
      *
-     * Playback is clamped per session, `MIN(playingMs, disconnectedAt - connectedAt)`, because the
-     * watcher banks in slices and a clock step between two of them can credit more playback than
-     * the span it was measured in is long. `Stats.durationMs` does the same clamp, and the two have
-     * to agree — `SummarizeLifetimeTest` is what holds them to it. The open session is left
-     * to Kotlin throughout: clamping it needs `now`, which SQL has no notion of, and a pair can
-     * only ever have one, so `openPlayingMs` is an aggregate over a single row.
+     * Playback is clamped per session, `MIN(playingMs, disconnectedAt - connectedAt)`: the
+     * watcher banks in slices, and a clock step between two of them can credit more playback than
+     * the measured span is long. `Stats.durationMs` applies the same clamp, and
+     * `SummarizeLifetimeTest` holds the two to agreement. The open session is left to Kotlin:
+     * clamping it needs `now`, which SQL has no notion of, and since a pair has only one,
+     * `openPlayingMs` is an aggregate over a single row.
      */
     @Query(
         """
@@ -190,9 +190,9 @@ interface SessionDao {
     /**
      * `disconnectedAt IS NULL` for the same reason [close] and [heartbeat] carry it: playback is
      * credited from a coroutine launched behind the watcher's own edge, so a disconnect can land
-     * first. Without the guard that slice is banked onto a session that had already ended, and the
-     * stored `playingMs` then exceeds the span it was measured inside — invisible, because
-     * `Stats.durationMs` clamps it at read time, and wrong on disk forever.
+     * first. Without the guard, that slice banks onto an already-ended session, and the stored
+     * `playingMs` exceeds its measured span — invisible, since `Stats.durationMs` clamps it at
+     * read time, but wrong on disk forever.
      */
     @Query(
         "UPDATE sessions SET playingMs = IFNULL(playingMs, 0) + :deltaMs " +
@@ -212,20 +212,20 @@ interface SessionDao {
     /**
      * Everything that can contribute to a window opening at [from]: still running, or finished
      * inside it. A session that both started and ended before the window contributes nothing and
-     * is dropped, so what a widget refresh carries into memory and bucketing stays bounded however
-     * long the table gets.
+     * is dropped, so what a widget refresh loads and buckets stays bounded however long the table
+     * gets.
      *
-     * It bounds the rows examined too, which is not obvious from the shape of it. The `OR` looks
-     * like a scan and is not: SQLite plans it as a MULTI-INDEX OR and satisfies both arms from
-     * `index_sessions_disconnectedAt`, the `IS NULL` half included, because an index stores nulls
-     * and that is an equality search against one. Measured over 22,000 sessions — ten years at six
-     * a day — the plan is the same with or without ANALYZE, 648 rows come back, and it runs about
-     * thirty times cheaper than the unbounded `observeAll` beside it.
+     * It also bounds the rows examined, though the shape doesn't show it: the `OR` looks like a
+     * scan but isn't — SQLite plans it as a MULTI-INDEX OR, satisfying both arms from
+     * `index_sessions_disconnectedAt` (the `IS NULL` half included, since an index stores nulls
+     * and that's an equality search against one). Measured over 22,000 sessions — ten years at
+     * six a day — the plan is the same with or without ANALYZE, 648 rows come back, and it runs
+     * about thirty times cheaper than the unbounded `observeAll` beside it.
      *
-     * What is left is `USE TEMP B-TREE FOR ORDER BY`, and that sorts the rows returned rather than
-     * the table. A `(disconnectedAt, connectedAt)` index does not remove it — results arriving from
-     * two index searches have to be merged, so no single index can supply the order — so there is
-     * no migration here that would buy anything.
+     * What remains is `USE TEMP B-TREE FOR ORDER BY`, sorting the rows returned rather than the
+     * table. A `(disconnectedAt, connectedAt)` index wouldn't remove it: results from two index
+     * searches must be merged, so no single index can supply the order, and no migration here
+     * would help.
      */
     @Query(
         "SELECT * FROM sessions WHERE disconnectedAt IS NULL OR disconnectedAt >= :from " +
@@ -250,11 +250,11 @@ interface BatterySampleDao {
     suspend fun insert(sample: BatterySampleEntity): Long
 
     /**
-     * Every reading a pair has ever produced, oldest first — the pair page's charge cycles are a
-     * lifetime figure, so unlike the charts there is no window to bound this to.
+     * Every reading a pair has ever produced, oldest first — charge cycles are a lifetime figure,
+     * so unlike the charts there's no window to bound this to.
      *
      * Off `battery_samples` alone, never joined to `sessions` — see [BatterySampleEntity.pairId]
-     * for why. `index_battery_samples_pairId_at` covers both the filter and the order, so there is
+     * for why. `index_battery_samples_pairId_at` covers both the filter and the order, so there's
      * no temp B-tree either.
      */
     @Query("SELECT * FROM battery_samples WHERE pairId = :pairId ORDER BY at")
@@ -267,18 +267,18 @@ interface BatterySampleDao {
 @Dao
 interface SettingsDao {
     /**
-     * The whole table at once, never one setting at a time, and that is a correctness requirement
-     * rather than an optimisation for a table of five rows.
+     * The whole table at once, never one setting at a time — a correctness requirement, not an
+     * optimisation, even for a table of five rows.
      *
-     * Room's generated code prepares a statement per execution, but `androidx.sqlite` hands back a
-     * statement **cached on the connection and keyed by the SQL text**, so every flow over
-     * `WHERE key = ?` shares one statement. Collect several of them at once — which the view model
-     * does, one `stateIn` per setting — and they bind their keys over each other: the observed
-     * failure was `hibernation_asked` reading `onboarding_done`'s value, which suppressed the
-     * hibernation prompt entirely. A query with no arguments has nothing to rebind.
+     * Room prepares a statement per execution, but `androidx.sqlite` hands back a statement
+     * **cached on the connection and keyed by SQL text**, so every flow over `WHERE key = ?`
+     * shares one statement. Collect several at once — as the view model does, one `stateIn` per
+     * setting — and they bind their keys over each other: the observed failure was
+     * `hibernation_asked` reading `onboarding_done`'s value, suppressing the hibernation prompt
+     * entirely. A query with no arguments has nothing to rebind.
      *
-     * A missing row rather than a `null` value is what lets [SettingsStore] keep every default in
-     * Kotlin instead of seeding rows at first run.
+     * A missing row rather than `null` is what lets [SettingsStore] keep every default in Kotlin
+     * instead of seeding rows at first run.
      */
     @Query("SELECT * FROM settings")
     fun observeAll(): Flow<List<SettingEntity>>

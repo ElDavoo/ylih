@@ -32,12 +32,11 @@ class TrackingController(
     private val repository: SessionRepository,
     private val settings: SettingsStore,
     /**
-     * Poked once every write has landed, so the home-screen widgets can redraw.
+     * Poked once every write lands, so home-screen widgets can redraw.
      *
-     * Injected rather than calling Glance from here for the same reason [clock] is injected: it
-     * keeps the policy layer testable without a launcher. It sits *before* [clock] deliberately —
-     * that leaves the trailing-lambda call the tests use binding to the clock, where a default on
-     * the clock instead would silently hand them the wall clock.
+     * Injected rather than calling Glance directly, like [clock], to keep this layer testable
+     * without a launcher. It sits *before* [clock] so trailing-lambda tests bind the clock — a
+     * default on the clock instead would silently hand them the wall clock.
      */
     private val onDataChanged: suspend () -> Unit = {},
     private val clock: Clock,
@@ -45,24 +44,22 @@ class TrackingController(
     private val audioManager: AudioManager = context.getSystemService(AudioManager::class.java)
 
     /**
-     * Wall-clock instant the phone booted; sessions are never counted across it.
+     * Wall-clock instant the phone booted; sessions never count across it.
      *
-     * Latched for the life of the process rather than recomputed. Both halves move — the wall
-     * clock steps whenever the phone is corrected, most commonly by the NTP sync that lands a
-     * minute or two after a boot with no network, while `elapsedRealtime` does not — so a fresh
-     * subtraction drags the answer forward with the correction. `reconcile` treats this as hard
-     * truth: a session legitimately opened after the boot then reads as `connectedAt < bootAt`
-     * and is force-closed as RECOVERED while the headphones are still on.
+     * Latched for the process's life, not recomputed: the wall clock steps when the phone is
+     * corrected — typically an NTP sync a minute or two after a no-network boot — while
+     * `elapsedRealtime` does not, so a fresh subtraction would drag the answer forward each time.
+     * `reconcile` treats this as hard truth: a session opened after boot would otherwise read
+     * `connectedAt < bootAt` and get force-closed as RECOVERED while the headphones are still on.
      */
     val bootAt: Long by lazy { clock.now() - SystemClock.elapsedRealtime() }
 
     /**
      * Whether the foreground service can legally start right now.
      *
-     * On Android 14+ the `connectedDevice` service type requires holding a Bluetooth
-     * permission. The classic flavor also declares `specialUse` and so is never blocked; the
-     * Play flavor drops that type, which means detailed tracking there needs Bluetooth access
-     * even when the user only cares about wired headphones.
+     * On Android 14+ the `connectedDevice` service type needs a Bluetooth permission. The
+     * classic flavor also declares `specialUse` and is never blocked; the Play flavor drops that
+     * type, so detailed tracking there needs Bluetooth access even for wired-only users.
      */
     fun detailedTrackingSupported(): Boolean =
         Distribution.HAS_SPECIAL_USE_FGS ||
@@ -75,24 +72,24 @@ class TrackingController(
             PackageManager.PERMISSION_GRANTED
 
     /**
-     * Re-reads what is actually connected and repairs the database, then makes sure the right
-     * background machinery is running. Safe to call as often as we like.
+     * Re-reads what is connected, repairs the database, then makes sure the right background
+     * machinery is running. Safe to call as often as needed.
      *
-     * On IO because two of its six callers are not. `AudioManager.getDevices`,
-     * `checkSelfPermission` and `WorkManager.getInstance` are all binder round-trips, and
-     * `TrackingService.onCreate` and the view model both call this from `Dispatchers.Main`. Room
-     * dispatches its own work, so the database was never the problem; the IPC was.
+     * On IO because two of six callers are not: `AudioManager.getDevices`, `checkSelfPermission`
+     * and `WorkManager.getInstance` are binder round-trips, and `TrackingService.onCreate` and
+     * the view model call this from `Dispatchers.Main`. Room dispatches its own work, so the IPC
+     * was the problem, not the database.
      */
     suspend fun syncWithSystem(): Unit = withContext(Dispatchers.IO) {
         val requested = settings.detailedTrackingNow()
         val detailed = requested && detailedTrackingSupported()
         if (requested && !detailed) {
-            // Bluetooth access was revoked after the fact on a build without `specialUse`:
-            // fall back to Bluetooth-only rather than leaving wired sessions running forever.
-            // The service died with the permission, most likely along with the whole process, so
-            // nothing has watched that session since — hence `stillLive = false`, which ends it at
-            // its last heartbeat rather than crediting the unwatched gap. That end time is a
-            // guess, which is what RECOVERED means to the session list.
+            // Bluetooth access was revoked after the fact on a build without `specialUse`: fall
+            // back to Bluetooth-only rather than leave wired sessions running forever. The service
+            // likely died with the permission and the whole process, so nothing has watched that
+            // session since — hence `stillLive = false`, ending it at its last heartbeat rather
+            // than crediting the unwatched gap. That guessed end time is what RECOVERED means to
+            // the session list.
             repository.closeSessionsForKinds(
                 setOf(DeviceKind.WIRED, DeviceKind.USB),
                 reason = EndReason.RECOVERED,
@@ -135,15 +132,14 @@ class TrackingController(
     }
 
     /**
-     * The bookkeeping that follows any session write: the heartbeat exists only while something is
+     * The bookkeeping after any session write: the heartbeat exists only while something is
      * open, and the home screen has no other way to find out.
      *
-     * Separate from [onSessionOpened] for the caller that is already the service — [TrackingService]
-     * writes wired connects and disconnects itself, and routing those through `onSessionOpened`
-     * would have it ask the platform to start the service it is running in. Before this existed
-     * they went unannounced, so plugging headphones in with detailed tracking on changed the app
-     * and the notification while the widgets kept yesterday's figures until something else
-     * happened to refresh them.
+     * Separate from [onSessionOpened] because [TrackingService] writes wired connects and
+     * disconnects itself, and routing those through `onSessionOpened` would ask the platform to
+     * start a service it's already running in. Before this existed they went unannounced:
+     * plugging in headphones with detailed tracking on updated the app and notification while
+     * widgets kept yesterday's figures until something else refreshed them.
      */
     suspend fun onSessionsChanged() {
         updateHeartbeatWork()
@@ -151,9 +147,9 @@ class TrackingController(
     }
 
     /**
-     * A figure changed but the set of open sessions did not — the service's own minute tick, where
-     * playback has accrued. Deliberately does not touch the heartbeat: re-enqueuing the periodic
-     * work every minute would write to WorkManager's database for nothing.
+     * A figure changed but the set of open sessions did not — the service's own minute tick,
+     * where playback accrued. Does not touch the heartbeat: re-enqueuing the periodic work every
+     * minute would write to WorkManager's database for nothing.
      */
     suspend fun onFiguresChanged() {
         onDataChanged()
@@ -164,8 +160,8 @@ class TrackingController(
         try {
             ContextCompat.startForegroundService(context, intent)
         } catch (e: Exception) {
-            // Android 12+ refuses background FGS starts outside the allowed windows; the next
-            // boot, app launch or heartbeat pass will bring it up instead.
+            // Android 12+ refuses background FGS starts outside allowed windows; the next boot,
+            // app launch or heartbeat pass brings it up instead.
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
                 e is android.app.ForegroundServiceStartNotAllowedException
             ) {
@@ -182,16 +178,14 @@ class TrackingController(
 
     /**
      * A missed ACL_DISCONNECTED (link loss, battery death, force-stop) would leave a session open
-     * forever, so a 15-minute periodic check bounds that error. It only exists while a session is
-     * actually open.
+     * forever, so a 15-minute periodic check bounds that. Exists only while a session is open.
      *
-     * It runs in *both* modes. Detailed tracking's foreground service is the better watcher while
-     * it is alive, but an OEM battery manager that kills it would otherwise leave that mode with
-     * no safety net at all — strictly worse than the mode with no service. Against a service
-     * already ticking every minute the marginal cost is nothing, and the worker's `syncWithSystem`
-     * attempts `startService()` as well, so it doubles as the thing that brings a killed service
-     * back; on Android 12+ that start may be refused from a worker and merely logged, but the
-     * reconcile lands either way.
+     * Runs in both modes. Detailed tracking's foreground service is the better watcher while
+     * alive, but an OEM battery manager killing it leaves that mode with no safety net — worse
+     * than no service. Against a service ticking every minute the marginal cost is nothing, and
+     * the worker's `syncWithSystem` also attempts `startService()`, doubling as what brings a
+     * killed service back; on Android 12+ that start may be refused from a worker and merely
+     * logged, but the reconcile lands either way.
      */
     private suspend fun updateHeartbeatWork() {
         val workManager = WorkManager.getInstance(context)

@@ -24,9 +24,9 @@ class SettingsStoreTest {
 
     /**
      * Pins the failure that made the welcome and hibernation prompts vanish: collected together,
-     * the flows handed each other's values, and a `false` read as the `true` sitting in the next
-     * row. Every setting here is deliberately given a different value from its neighbours, because
-     * a fixture where they agree cannot tell a crossed read from a correct one.
+     * the flows handed each other's values, and a `false` read as the `true` in the next row.
+     * Every setting here gets a different value from its neighbours, since a fixture where they
+     * agree cannot tell a crossed read from a correct one.
      */
     @Test
     fun `settings collected together keep their own values`() = runBlocking {
@@ -78,8 +78,8 @@ class SettingsStoreTest {
     @Test
     fun `a setting never written falls back to its default`() = runBlocking {
         assertEquals(false, settings.onboardingDoneNow())
-        // The one that has to be false unwritten: the app functions ship disabled, and a stored
-        // row that read `true` on a fresh install would be a promise the OS index never made.
+        // Must be false unwritten: app functions ship disabled, and a stored `true` on a fresh
+        // install would be a promise the OS index never made.
         assertEquals(false, settings.agentAccessNow())
         assertEquals("", settings.languageNow())
     }

@@ -44,9 +44,9 @@ import java.io.IOException
 import java.io.OutputStream
 
 /**
- * The shell that puts the three tabs and the pair page in front of the user. What it owns that
- * the screens do not is the back stack, and the one thing that can go wrong there is a route
- * argument: `pair/{pairId}` is a string until something parses it.
+ * The shell that puts the three tabs and the pair page in front of the user. It owns the back
+ * stack, which the screens don't, and the one thing that can go wrong there is a route argument:
+ * `pair/{pairId}` is a string until something parses it.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
@@ -74,13 +74,13 @@ class YlihNavHostTest {
 
     private fun show() {
         // Built here rather than left to `viewModel()`: without an activity the store owner is
-        // process-wide, so the second test in this class would inherit the first one's view model
-        // — and with it Room flows still bound to the database instance that test had.
+        // process-wide, so the second test in this class would inherit the first one's view
+        // model — and its Room flows bound to that test's database instance.
         viewModel = YlihViewModel(app)
         compose.setContent {
             nav = rememberNavController()
-            // The system back button reaches the app through this, and the tabs put a handler of
-            // their own on it. Held so a test can press back without an activity to press it on.
+            // The system back button reaches the app through this, and the tabs add their own
+            // handler to it. Held so a test can press back without an activity to press it on.
             back = checkNotNull(LocalOnBackPressedDispatcherOwner.current).onBackPressedDispatcher
             YlihTheme { YlihNavHost(viewModel = viewModel, navController = nav) }
         }
@@ -99,17 +99,17 @@ class YlihNavHostTest {
     }
 
     /**
-     * Waits for a string only one of the three tabs draws. Which tab is showing is not a route any
-     * more — the tabs are pages of a pager — so what the user can see is the only honest answer,
-     * and a page the pager has scrolled away from is not composed at all.
+     * Waits for a string only one of the three tabs draws. Which tab is showing isn't a route
+     * anymore — the tabs are pages of a pager — so what the user can see is the only honest
+     * answer, and a page scrolled away from isn't composed at all.
      */
     private fun awaitTab(@StringRes title: Int) {
         compose.waitUntil(timeoutMillis = 10_000) { nodeCount(text(title)) > 0 }
     }
 
     /**
-     * Drags the pager. It is found by the one thing on screen that scrolls sideways — the lists
-     * inside the tabs all scroll vertically — rather than by the root, which a swipe would hand to
+     * Drags the pager, found by the one thing on screen that scrolls sideways — the tabs' own
+     * lists all scroll vertically — rather than by the root, which a swipe would hand to
      * whichever composition happened to be on top.
      */
     private fun swipe(direction: TouchInjectionScope.() -> Unit) {
@@ -169,8 +169,8 @@ class YlihNavHostTest {
 
     @Test
     fun `the tabs are a swipe apart in both directions`() {
-        // The reason they are a pager at all. A tap could be served by anything; only pages laid
-        // out side by side can be dragged between, which is what the nav bar cannot offer.
+        // The reason they're a pager at all: a tap could be served by anything, but only pages
+        // laid out side by side can be dragged between, which the nav bar can't offer.
         show()
 
         swipe { swipeLeft() }
@@ -213,9 +213,9 @@ class YlihNavHostTest {
 
     @Test
     fun `the pair page shrinks on its way out rather than only fading`() {
-        // The pop a button press runs. Asserted by geometry rather than by the spec, the way the
-        // rail and the bar are told apart: the spec is a constant, this is the animation actually
-        // running on the page. The gesture is a different animation entirely — see below.
+        // The pop a button press runs. Asserted by geometry, not by spec — as the rail and bar
+        // are told apart: the spec is a constant, this is the animation actually running. The
+        // gesture is a different animation entirely — see below.
         val label = "ACCENTUM Plus"
         seedPair(label)
         show()
@@ -226,8 +226,8 @@ class YlihNavHostTest {
         compose.waitForIdle()
 
         // boundsInRoot rather than the unclipped Dp bounds: those are the node's own layout size,
-        // which a graphics layer does not touch. These go through localToRoot, so the scale the
-        // transition is running is in them.
+        // untouched by a graphics layer. These go through localToRoot, so they carry the
+        // transition's scale.
         val backArrow = { compose.onNodeWithContentDescription(text(R.string.pair_back)) }
         val atRest = backArrow().fetchSemanticsNode().boundsInRoot
 
@@ -246,15 +246,15 @@ class YlihNavHostTest {
 
     @Test
     fun `a back gesture held halfway runs the app's own pop and not the library's`() {
-        // navigation-compose 2.10 seeks a gesture through predictivePopExitTransition rather than
-        // through popExitTransition, so a NavHost that names only the second gets the library's
-        // first: a bare scaleOut(0.7f) with no alpha on it at all. That is what "no fade going
-        // back" meant, and why moving the alpha around on popExit twice never changed it.
+        // navigation-compose 2.10 seeks a gesture through predictivePopExitTransition, not
+        // popExitTransition, so a NavHost naming only the second gets the library's first: a bare
+        // scaleOut(0.7f) with no alpha at all. That's what "no fade going back" meant, and why
+        // moving the alpha around on popExit twice never changed it.
         //
-        // Told apart by geometry, because a transition's alpha is not in the semantics tree but the
-        // scale riding beside it is, and the two scales are far apart: ours never takes the page
-        // below NAV_SCALE_AWAY, and the library's is all but at 0.7 by this point in the drag.
-        // NavMotionTest pins that the transition this proves is wired up carries a fade.
+        // Told apart by geometry: a transition's alpha isn't in the semantics tree, but the scale
+        // riding beside it is, and the two scales are far apart — ours never takes the page below
+        // NAV_SCALE_AWAY, the library's is all but at 0.7 by this point in the drag. NavMotionTest
+        // pins that the transition this proves is wired up carries a fade.
         val label = "ACCENTUM Plus"
         seedPair(label)
         show()
@@ -268,8 +268,8 @@ class YlihNavHostTest {
         val atRest = backArrow().fetchSemanticsNode().boundsInRoot
 
         // Nothing hand-driven here, unlike the pop above: a gesture is *seeked* by finger progress
-        // rather than played, so the page holds still at 0.9 of the way through for as long as the
-        // finger does and the composition goes idle with it part-drawn.
+        // rather than played, so the page holds at 0.9 for as long as the finger does, and the
+        // composition goes idle part-drawn.
         compose.runOnUiThread {
             back.dispatchOnBackStarted(BackEventCompat(0f, 0f, 0f, BackEventCompat.EDGE_LEFT))
             back.dispatchOnBackProgressed(BackEventCompat(0f, 0f, 0.9f, BackEventCompat.EDGE_LEFT))
@@ -311,8 +311,8 @@ class YlihNavHostTest {
 
     @Test
     fun `a pair route carrying something that is not an id goes straight back`() {
-        // Not reachable by tapping — every caller builds the route from a Long. It is the route
-        // argument being a string that makes the guard necessary at all.
+        // Not reachable by tapping — every caller builds the route from a Long. The route
+        // argument being a string is what makes the guard necessary at all.
         show()
 
         compose.runOnUiThread { nav.navigate("pair/deleted-while-in-the-back-stack") }
@@ -340,9 +340,9 @@ class YlihNavHostTest {
     fun `a wide window moves the tabs to a rail down the side`() {
         // At targetSdk 37 the platform stops honouring orientation and resizability limits above
         // 600dp, so a tablet gets this layout whether or not it was designed for. A bottom bar an
-        // arm's reach from the content is what that looks like undesigned; the rail is the fix,
-        // and its geometry is the only thing that tells the two apart — the bar and the rail draw
-        // the same three labels.
+        // arm's reach from the content is what undesigned looks like; the rail is the fix, and
+        // its geometry is the only thing telling the two apart — bar and rail draw the same
+        // three labels.
         show()
 
         val bounds = tabBounds()

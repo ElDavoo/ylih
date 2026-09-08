@@ -1,46 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Lint runs with checkAllWarnings + warningsAsErrors, so every check that is off by default is
-  on and every warning fails the build. The exceptions below are the checks that cannot hold in
-  this project; each one needs a reason, not a baseline file. There is deliberately no
-  lint-baseline.xml — a baseline hides findings instead of deciding about them.
+  Lint runs with checkAllWarnings + warningsAsErrors, so every check off by default is on and
+  every warning fails the build. The exceptions below are checks that can't hold here; each
+  needs a reason, not a baseline. There is no lint-baseline.xml — a baseline hides findings
+  instead of deciding about them.
 -->
 <lint>
 
-    <!-- Reaches out to Maven Central on every run, so the build result depends on the network and
-         on what was published that day. The versions here are also pinned on purpose: kotlin/ksp
-         must stay equal and follow KSP's release cadence, and material3 is held ahead of the
-         Compose BOM. See the comments in gradle/libs.versions.toml. -->
+    <!-- Reaches Maven Central on every run, so the result depends on the network and what was
+         published that day. Versions here are pinned on purpose: kotlin/ksp must stay equal and
+         follow KSP's release cadence, and material3 is held ahead of the Compose BOM. See
+         gradle/libs.versions.toml. -->
     <issue id="NewerVersionAvailable" severity="ignore" />
     <issue id="GradleDependency" severity="ignore" />
 
-    <!-- The same check for the wrapper rather than the dependencies, and off for the same reason
-         twice over. It failed the build the day Gradle 9.7.0 was published, having passed on the
-         identical commit the day before — a green tree turning red on someone else's release is
-         precisely what these checks cannot be allowed to do here. And the wrapper is the most
-         deliberately pinned line in the repository: gradle-wrapper.properties carries a
-         hand-maintained distributionSha256Sum, and F-Droid builds through gradlew-fdroid, which
-         will only fetch a version its gradle-transparency-log has recorded. Upgrading is a
-         change with two other edits attached, never something to be prompted into mid-release. -->
+    <!-- Same check for the wrapper, off for the same reason twice over. It failed the build the
+         day Gradle 9.7.0 was published, having passed on the identical commit the day before — a
+         green tree turning red on someone else's release is what these checks must not do here.
+         The wrapper is the most deliberately pinned line in the repo: gradle-wrapper.properties
+         carries a hand-maintained distributionSha256Sum, and F-Droid builds through
+         gradlew-fdroid, which only fetches a version its gradle-transparency-log has recorded.
+         Upgrading always comes with two other edits, never a mid-release prompt. -->
     <issue id="AndroidGradlePluginVersion" severity="ignore" />
 
     <!-- 77 translations of a ~150-string vocabulary. Two distinct keys landing on the same word in
-         some language ("headphones" as both a tab label and a fallback title) is ordinary, and the
-         keys still have to stay separate because other languages do distinguish them. -->
+         some language ("headphones" as both a tab label and a fallback title) is ordinary; the
+         keys stay separate because other languages do distinguish them. -->
     <issue id="DuplicateStrings" severity="ignore" />
 
     <!-- The widget picker previews are generated, not drawn: WidgetPreviews records them with
-         Roborazzi, which writes PNG and only PNG. Converting them by hand after every re-record is
-         a step that gets skipped, and the whole folder is under 45 kB — the saving WebP is asking
-         for here is a few kilobytes in exchange for a stale-image failure mode. Scoped to that
-         folder so a hand-drawn asset elsewhere still gets the advice. -->
+         Roborazzi, which writes PNG only. Converting by hand after every re-record is a step that
+         gets skipped, and the folder is under 45 kB — the WebP saving is a few kilobytes against a
+         stale-image failure mode. Scoped to that folder so a hand-drawn asset elsewhere still gets
+         flagged. -->
     <issue id="ConvertToWebp">
         <ignore regexp="src/main/res/drawable-nodpi/" />
     </issue>
 
-    <!-- The unit tests are Robolectric tests: they run against the compile SDK on the JVM, so the
-         minSdk 26 floor these checks enforce does not apply to them. It still applies to
-         everything in src/main, which is where these checks earn their keep. -->
+    <!-- Unit tests run against the compile SDK on the JVM under Robolectric, so the minSdk 26
+         floor these checks enforce doesn't apply to them. It still applies to src/main, where
+         these checks earn their keep. -->
     <issue id="NewApi">
         <ignore regexp="src/test/" />
     </issue>
@@ -48,17 +47,17 @@
         <ignore regexp="src/test/" />
     </issue>
 
-    <!-- ReceiversTest dispatches the battery broadcast through the real manifest filter, because a
-         receiver the merged manifest does not carry is a feature that works in a test and nowhere
-         else. Lint sees an implicit intent matching a non-exported component of ours and says to
-         make it explicit — which is right for an intent an app really sends, and would defeat the
-         only thing this test is for.
+    <!-- ReceiversTest dispatches the battery broadcast through the real manifest filter, since a
+         receiver the merged manifest doesn't carry is a feature that only works in a test. Lint
+         sees an implicit intent matching a non-exported component of ours and says to make it
+         explicit — right for an intent the app really sends, but that would defeat the point of
+         this test.
 
-         The neighbouring ACL_CONNECTED tests do exactly the same and are not flagged: lint exempts
-         broadcasts it knows the system protects, and it does not know this one because the constant
-         is @SystemApi. It *is* a <protected-broadcast>, so the premise of the check does not hold
-         here either. Scoped to the one file, since an implicit intent anywhere else is still worth
-         being told about. See tracking/BatteryBroadcast.kt. -->
+         The neighbouring ACL_CONNECTED tests do the same and aren't flagged: lint exempts
+         broadcasts it knows the system protects, and doesn't know this one because the constant is
+         @SystemApi. It *is* a <protected-broadcast>, so the check's premise doesn't hold here
+         either. Scoped to this file, since an implicit intent elsewhere is still worth flagging.
+         See tracking/BatteryBroadcast.kt. -->
     <issue id="UnsafeImplicitIntentLaunch">
         <ignore regexp="src/test/java/it/eldavo/ylih/tracking/ReceiversTest.kt" />
     </issue>

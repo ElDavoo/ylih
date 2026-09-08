@@ -106,18 +106,16 @@ data class PairEntity(
         Index(value = ["pairId", "connectedAt"]),
         Index("disconnectedAt"),
         /**
-         * "Has this pair got a session open?" — `openFor`, and `lastDisconnectAt` beside it.
+         * Answers "has this pair got a session open?" (`openFor`, and `lastDisconnectAt`).
          *
-         * Without `disconnectedAt` in an index alongside `pairId`, SQLite finds the pair from the
-         * composite above and then walks every session that pair has ever had, checking each one.
-         * That is O(the pair's whole history) on the query the repository asks most: every connect
-         * and disconnect, and every playback credit — which is the minute tick plus every callback
-         * edge, and those fire whenever any app on the phone starts or stops a player.
+         * Without `disconnectedAt` indexed alongside `pairId`, SQLite finds the pair via the
+         * composite above then walks every session it has ever had: O(the pair's whole history)
+         * on the query the repository asks most — the minute tick plus every playback callback
+         * edge, firing whenever any app on the phone starts or stops a player.
          *
-         * Measured over 22,000 sessions with 80% of them on one pair, which is what a person
-         * actually accumulates: 2.5 ms to 0.003 ms, with the connect/disconnect write going from
-         * 0.006 ms to 0.007 ms. The point is the shape rather than the milliseconds — O(log n)
-         * instead of O(n), on a table this app intends to keep for decades.
+         * Measured over 22,000 sessions, 80% on one pair (what a person actually accumulates):
+         * 2.5 ms to 0.003 ms, and the connect/disconnect write only rose from 0.006 to 0.007 ms.
+         * What matters is the shape — O(log n) instead of O(n) — on a table meant to last decades.
          */
         Index(value = ["pairId", "disconnectedAt"]),
     ],
@@ -137,21 +135,19 @@ data class SessionEntity(
 /**
  * One battery level, as the headset reported it partway through a session.
  *
- * Keyed on the *session* rather than on the pair, which is what makes "only drain we actually
- * watched" a property of the schema instead of a rule someone has to remember: two readings can
- * only be subtracted when they belong to the same row here, and a gap in which the headphones were
- * charged is indistinguishable from one in which they were not. The cascade is the other half —
+ * Keyed on the *session*, not the pair — that makes "only drain we actually watched" a schema
+ * property rather than a rule to remember: two readings subtract only within the same row, and a
+ * charged-partway gap is indistinguishable from one that wasn't. The cascade is the other half:
  * deleting a session, retiring a pair or importing over the lot takes the readings with it.
  *
- * How often a row lands is entirely up to the headphones, and the answer is usually "often". Most
- * report through HFP 1.7's battery-level HF indicator, `AT+BIEV=2,<0-100>`, which carries a real
- * percentage — observed on an ACCENTUM Plus as `EVENT_TYPE_BIEV valInt=2, valInt2=50`. BLE's
- * battery service is the same resolution and Apple's `AT+IPHONEACCEV` moves in tens.
+ * Row frequency is up to the headphones, usually "often". Most report through HFP 1.7's
+ * battery-level HF indicator, `AT+BIEV=2,<0-100>`, a real percentage — observed on an ACCENTUM
+ * Plus as `EVENT_TYPE_BIEV valInt=2, valInt2=50`. BLE's battery service matches that resolution;
+ * Apple's `AT+IPHONEACCEV` moves in tens.
  *
  * The five-step `+CIND` indicator the stack widens to 0 / 13 / 38 / 63 / 88 / 100 is *not* this
  * path: `batteryChargeIndicatorToPercentage` is reached only from `onAgBatteryLevelChanged`, the
- * HFP **client** role, where the phone is the headset rather than the audio gateway. No pair of
- * headphones takes it.
+ * HFP **client** role — phone as headset, not audio gateway — which no headphone pair takes.
  */
 @Entity(
     tableName = "battery_samples",
@@ -169,14 +165,13 @@ data class BatterySampleEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val sessionId: Long,
     /**
-     * The pair the session belongs to, carried here as well.
+     * The pair the session belongs to, carried here too.
      *
-     * Redundant — it is `sessions.pairId` for [sessionId], and a session never changes pair — and
-     * worth it for one reason: reading a pair's history through a join makes Room's flow observe
-     * `sessions` too, and the heartbeat writes to that table once a minute. Measured over 400,000
-     * readings, that re-ran a 3.5-second query every minute for as long as the pair page was open.
-     * Off this column the same read is an index scan of `(pairId, at)` with no join and no sort,
-     * and it re-runs only when a reading actually lands.
+     * Redundant — it's `sessions.pairId` for [sessionId], and a session never changes pair — but
+     * worth it: a join to read a pair's history makes Room's flow also observe `sessions`, which
+     * the heartbeat writes every minute. Measured over 400,000 readings, that re-ran a 3.5-second
+     * query every minute the pair page stayed open. This column instead makes the read an index
+     * scan of `(pairId, at)` — no join, no sort — re-running only when a reading lands.
      */
     val pairId: Long,
     val at: Long,

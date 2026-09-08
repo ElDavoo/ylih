@@ -1,30 +1,30 @@
 # What F-Droid will do to this repository, run here instead of finding out in a merge request.
 #
 # `metadata/it.eldavo.ylih.yml` is a copy of a file that lives in fdroiddata, and nothing in the
-# ordinary build reads it, so it is the one part of this repository with no compiler behind it.
+# ordinary build reads it, so it's the one part of this repository with no compiler behind it.
 # The feedback loop for getting it wrong is a merge request review measured in days. These jobs
 # close that loop by running fdroidserver's own tools — the same readmeta/lint/scanner/build/verify
-# it runs — rather than an approximation of them.
+# it runs — rather than an approximation.
 #
-# Three differences from a real buildserver run are worth knowing, because they bound what a pass
-# here proves. The buildserver is Debian trixie with `default-jdk-headless`, and `build` below uses
-# Ubuntu's packaged OpenJDK rather than Temurin to get closer to that, but it is not the same
-# image. It builds in a VM with no network for parts of the build. And its Android SDK is
-# provisioned to let AGP download what `compileSdk` asks for, which `build` reproduces by
-# deliberately *not* preinstalling platform 37 / build-tools 37.0.0 — see docs/fdroid.md §2.
+# Three differences from a real buildserver run bound what a pass here proves. The buildserver
+# is Debian trixie with `default-jdk-headless`, and `build` below uses Ubuntu's packaged OpenJDK
+# rather than Temurin to get closer, but it's not the same image. It builds in a VM with no
+# network for parts of the build. And its Android SDK is provisioned to let AGP download what
+# `compileSdk` asks for, which `build` reproduces by *not* preinstalling platform 37 /
+# build-tools 37.0.0 — see docs/fdroid.md §2.
 name: F-Droid
 
 on:
-  # Path-filtered, unlike android-ci.yml, because two of the three jobs below clone the commit the
-  # recipe names rather than the commit under test: on a pull request that touches neither the
-  # recipe nor the toolchain, they would spend twenty minutes recomputing a constant. The paths
-  # are the ones that can change the answer -- the recipe and its checks, the version and flavors
-  # F-Droid reads out of build.gradle.kts, the listing files it serves, the repositories the
-  # scanner allowlists, the Gradle version, which gradlew-fdroid has to know a checksum for, and
-# the dependency verification metadata, which fails the build F-Droid runs if it is incomplete.
+  # Path-filtered, unlike android-ci.yml: two of the three jobs below clone the commit the recipe
+  # names rather than the commit under test, so a pull request touching neither the recipe nor
+  # the toolchain would spend twenty minutes recomputing a constant. The paths are the ones that
+  # can change the answer — the recipe and its checks, the version and flavors F-Droid reads out
+  # of build.gradle.kts, the listing files it serves, the repositories the scanner allowlists,
+  # the Gradle version gradlew-fdroid needs a checksum for, and the dependency verification
+  # metadata, which fails the build F-Droid runs if incomplete.
   #
   # The two lists are duplicated rather than shared through a YAML anchor: GitHub's workflow
-  # parser does not support anchors, however happily every other YAML tool reads them.
+  # parser doesn't support anchors, however happily every other YAML tool reads them.
   push:
     branches:
       - main
@@ -34,9 +34,9 @@ on:
       - ".github/scripts/fdroid-*"
       - "app/build.gradle.kts"
       - "settings.gradle.kts"
-      # The file Dependabot edits, and where AGP, Kotlin, KSP and every library version live —
-      # so the PRs most likely to break a reproducible build. It fired on those only by accident
-      # before, because a version bump also rewrites the verification metadata below.
+      # The file Dependabot edits, where AGP, Kotlin, KSP and every library version live — so the
+      # PRs most likely to break a reproducible build. It fired on those only by accident before,
+      # since a version bump also rewrites the verification metadata below.
       - "gradle/libs.versions.toml"
       - "gradle/wrapper/gradle-wrapper.properties"
       - "gradle/verification-metadata.xml"
@@ -54,8 +54,8 @@ on:
       - "gradle/verification-metadata.xml"
       - "fastlane/**"
   # Nothing here has to change for the answer to change: fdroidserver moves, gradlew-fdroid's
-  # checksum log moves, and the released APK either still reproduces or quietly stops doing so.
-  # The weekly run is the only thing that would notice.
+  # checksum log moves, and the released APK either still reproduces or quietly stops. The
+  # weekly run is the only thing that would notice.
   schedule:
     - cron: "17 5 * * 1"
   workflow_dispatch:
@@ -79,9 +79,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Tags and all, because the recipe check resolves each build entry's `commit:` against the
-      # tag it should be — a shallow clone has neither the tag nor the object. 101 commits and
-      # 6 MB, so the whole history costs less than the fetch that would replace it.
+      # Tags and all: the recipe check resolves each build entry's `commit:` against the tag it
+      # should be, and a shallow clone has neither the tag nor the object. 101 commits and 6 MB,
+      # so the whole history costs less than the fetch that would replace it.
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
@@ -98,7 +98,7 @@ jobs:
 
       # fdroidserver only runs from a directory shaped like fdroiddata, and `fdroid build` reads
       # the metadata file's own commit timestamp for SOURCE_DATE_EPOCH, so it has to be a git
-      # repository too — not a detail, it is a hard crash otherwise.
+      # repository too — skip that and it's a hard crash.
       - name: Assemble an fdroiddata-shaped directory
         run: .github/scripts/fdroid-workdir.sh "$RUNNER_TEMP/fdroiddata"
 
@@ -106,9 +106,9 @@ jobs:
         working-directory: ${{ runner.temp }}/fdroiddata
         run: fdroid readmeta
 
-      # `fdroid lint` exits 0 even when it has findings — fdroiddata's own CI reads its output, so
-      # so does this. Any line that is not the apksigner warning (there is no SDK in this job) is
-      # a finding.
+      # `fdroid lint` exits 0 even when it has findings — fdroiddata's own CI reads its output,
+      # so this does too. Any line that isn't the apksigner warning (no SDK in this job) is a
+      # finding.
       - name: fdroid lint
         working-directory: ${{ runner.temp }}/fdroiddata
         run: |
@@ -125,11 +125,11 @@ jobs:
           echo "fdroid lint is clean"
 
       # fdroiddata's own pipeline runs `fdroid rewritemeta` over every recipe a merge request
-      # touches and fails on any diff, so the file has to already *be* the canonical form — byte
+      # touches and fails on any diff, so the file must already *be* the canonical form — byte
       # for byte, not merely the same data. This step used to compare the parsed YAML instead,
       # which let the recipe carry a header of comments explaining itself: rewritemeta deletes
       # every comment, and comparing dictionaries never saw it. The merge request pipeline did,
-      # and the reasoning lives in docs/fdroid.md now, where nothing rewrites it.
+      # and the reasoning now lives in docs/fdroid.md, where nothing rewrites it.
       - name: fdroid rewritemeta is a no-op
         working-directory: ${{ runner.temp }}/fdroiddata
         run: |
@@ -175,11 +175,11 @@ jobs:
         working-directory: ${{ runner.temp }}/fdroiddata
         run: fdroid scanner --verbose it.eldavo.ylih
 
-  # The build itself, through fdroidserver rather than through Gradle directly, so that the
-  # source preparation F-Droid does happens too: the Gradle wrapper is deleted and replaced with
+  # The build itself, through fdroidserver rather than Gradle directly, so the source
+  # preparation F-Droid does happens too: the Gradle wrapper is deleted and replaced with
   # gradlew-fdroid, signingConfigs are stripped out of build.gradle.kts, and debuggable flags are
   # removed. Then `fdroid verify` downloads the published APK and compares it with what was just
-  # built, which is the reproducible-builds check the recipe is asking F-Droid to run.
+  # built — the reproducible-builds check the recipe asks F-Droid to run.
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 60
@@ -208,11 +208,11 @@ jobs:
       - name: Install fdroidserver
         run: pip install "fdroidserver==${FDROIDSERVER_VERSION}"
 
-      # The Android SDK with *no* platform 37 and no build-tools 37.0.0. The recipe deliberately
-      # carries no `sudo: sdkmanager ...` line and relies on AGP downloading them itself, which
-      # is an assumption about a buildserver nobody here can log into. Leaving them out is how
-      # that assumption gets tested; if AGP's auto-download breaks, this job fails and the
-      # F-Droid build would have failed the same way.
+      # The Android SDK with *no* platform 37 and no build-tools 37.0.0. The recipe carries no
+      # `sudo: sdkmanager ...` line on purpose and relies on AGP downloading them itself, an
+      # assumption about a buildserver nobody here can log into. Leaving them out is how that
+      # assumption gets tested; if AGP's auto-download breaks, this job fails and the F-Droid
+      # build would have failed the same way.
       - name: Set up Android SDK
         uses: android-actions/setup-android@40fd30fb8d7440372e1316f5d1809ec01dcd3699 # v4
 
@@ -226,12 +226,12 @@ jobs:
           echo "GRADLE_USER_HOME=$RUNNER_TEMP/fdroiddata/gradle-home" >> "$GITHUB_ENV"
 
       # With Binaries: set, `fdroid build` downloads the published APK and compares it against
-      # what it just built as part of the build, so a build that succeeds and an APK that
-      # reproduces are not two separate results here — this step fails for either.
-      # `fdroid build` exits 0 whether or not it built anything: a failure is a log line reading
-      # "1 build failed" and nothing else. This step read green through a build that failed on
-      # dependency verification, and the fdroiddata merge request pipeline — which asserts the
-      # outcome — is what noticed. So assert it here: no failure line, and an APK on disk.
+      # what it just built, so a build that succeeds and an APK that reproduces aren't two
+      # separate results here — this step fails for either. `fdroid build` exits 0 whether or
+      # not it built anything: a failure is a log line reading "1 build failed" and nothing
+      # else. This step read green through a build that failed on dependency verification, and
+      # the fdroiddata merge request pipeline — which asserts the outcome — is what noticed. So
+      # assert it here: no failure line, and an APK on disk.
       - name: fdroid build
         working-directory: ${{ runner.temp }}/fdroiddata
         run: |
@@ -244,7 +244,7 @@ jobs:
           ls -l unsigned/*.apk
 
       # apksigner lives in build-tools, which nothing installed — so if this finds it, AGP really
-      # did download build-tools 37.0.0 during the build, which is the assumption above holding.
+      # did download build-tools 37.0.0 during the build, confirming the assumption above.
       # `fdroid verify` needs it to compare signatures.
       - name: Confirm AGP downloaded the SDK it needs, and put apksigner on PATH
         run: |
@@ -263,22 +263,22 @@ jobs:
       #
       # The APK it compares against is the one in *F-Droid's own repo* — it fetches
       # f-droid.org/repo/<package>_<versionCode>.apk and falls back to /archive — not the one
-      # `Binaries:` names. ylih has not been published there yet, so that download can only 404,
+      # `Binaries:` names. ylih hasn't been published there yet, so that download can only 404,
       # and fdroidserver reports the 404 as "NOT verified". Read literally that says the release
-      # stopped reproducing, which is the opposite of what happened, so the two cases are told
-      # apart here: a 404 from f-droid.org means there is nothing to compare against yet and is
-      # not a failure, anything else is.
+      # stopped reproducing, the opposite of what happened, so the two cases are told apart here:
+      # a 404 from f-droid.org means there's nothing to compare against yet and isn't a failure;
+      # anything else is.
       #
-      # This does not leave the reproducibility claim unchecked. `Binaries:` is set, so the
-      # `fdroid build` step above already downloaded the release asset and compared it, and that
-      # step fails if it disagrees — which is the check that can actually be made before F-Droid
-      # publishes anything. Once it does, this step starts comparing too and the skip stops firing.
+      # This doesn't leave the reproducibility claim unchecked. `Binaries:` is set, so the
+      # `fdroid build` step above already downloaded the release asset and compared it, failing
+      # if it disagrees — the check that can actually be made before F-Droid publishes anything.
+      # Once it does, this step starts comparing too and the skip stops firing.
       #
       # Either way it verifies the *released tag*, not this commit, so on a pull request it says
-      # nothing about the change under review. Whether the published release still reproduces is
-      # not a given: what a machine strips out of a prebuilt .so depends on whether it has an NDK,
-      # so this can fail on the difference between two build machines rather than on anything in
-      # the source. See docs/fdroid.md §6.
+      # nothing about the change under review. Whether the published release still reproduces
+      # isn't a given: what a machine strips out of a prebuilt .so depends on whether it has an
+      # NDK, so this can fail on the difference between two build machines rather than anything
+      # in the source. See docs/fdroid.md §6.
       - name: fdroid verify
         working-directory: ${{ runner.temp }}/fdroiddata
         run: |

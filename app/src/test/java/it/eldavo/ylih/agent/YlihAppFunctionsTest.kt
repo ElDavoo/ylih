@@ -29,15 +29,14 @@ import java.time.ZoneId
  * What this app promises an on-device agent, read back out of the build rather than off the
  * source.
  *
- * The functions themselves cannot be called from here: the generated service extends a platform
- * class that only exists on Android 17, and the unit suite runs against an older framework — so a
- * test that instantiated it would fail on the class loader rather than on anything this
- * repository wrote. What *is* reachable is everything the OS reads before it ever binds the
- * service, and that is where the decisions live: the schema KSP wrote into `assets/`, the
- * `<service>` element that points at it, and the app-level metadata beside it. The one that
- * matters most is `enabledByDefault`, because it is the difference between an opt-in and a
- * gesture — shipped `true`, every function would be callable in the window between install and
- * the user first opening settings.
+ * The functions cannot be called from here: the generated service extends a platform class that
+ * only exists on Android 17, and the unit suite runs against an older framework, so instantiating
+ * it would fail on the class loader rather than on anything this repository wrote. What *is*
+ * reachable is everything the OS reads before binding the service: the schema KSP wrote into
+ * `assets/`, the `<service>` element pointing at it, and the app-level metadata beside it. The
+ * one that matters most is `enabledByDefault` — the difference between an opt-in and a gesture,
+ * since shipped `true` every function would be callable between install and the user first
+ * opening settings.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
@@ -46,9 +45,8 @@ class YlihAppFunctionsTest {
     private val app: YlihApp = ApplicationProvider.getApplicationContext()
     private val context: Context get() = app
 
-    // Fixed zone and wall clock, as in WidgetDataTest: every window here is bucketed by local
-    // midnight, so a test borrowing the machine's zone would pass or fail depending on where it
-    // ran.
+    // Fixed zone and wall clock, as in WidgetDataTest: every window is bucketed by local
+    // midnight, so a test borrowing the machine's zone would pass or fail by where it ran.
     private val zone: ZoneId = ZoneId.of("Europe/Rome")
     private val clockNow: Long =
         LocalDate.of(2026, 3, 18).atTime(15, 0).atZone(zone).toInstant().toEpochMilli()
@@ -65,11 +63,11 @@ class YlihAppFunctionsTest {
     /**
      * The schema KSP wrote, off the classpath rather than off `AssetManager`.
      *
-     * The processor emits it as a *java* resource whose path happens to start `assets/`, which is
-     * what puts it under `assets/` in the packaged APK and so in front of the platform's asset
-     * manager on a device. Robolectric's asset manager reads the merged `src/main/assets` tree
-     * instead, which the generated file never passes through — so the classloader is the one view
-     * of it a unit test has.
+     * The processor emits it as a *java* resource whose path starts `assets/`, which lands it
+     * under `assets/` in the packaged APK and in front of the platform's asset manager on a
+     * device. Robolectric's asset manager reads the merged `src/main/assets` tree instead, which
+     * the generated file never passes through, so the classloader is the only view a unit test
+     * has.
      */
     private val schema: String by lazy {
         checkNotNull(javaClass.classLoader?.getResourceAsStream(SCHEMA_ASSET)) {
@@ -79,9 +77,9 @@ class YlihAppFunctionsTest {
 
     @Test
     fun `the hours an agent is handed are the ones the app itself would show`() = runTest {
-        // The point of routing both functions through widgetDataFlow rather than opening a third
-        // query path: an agent quoting a different number from the screen is worse than an agent
-        // that cannot answer. The expectations here are WidgetDataTest's own.
+        // Both functions route through widgetDataFlow rather than a third query path: an agent
+        // quoting a different number from the screen is worse than one that cannot answer. The
+        // expectations here are WidgetDataTest's own.
         val veteran = seedPair("Sennheiser HD 25")
         seedSession(veteran, from = clockNow - 200 * DAY, to = clockNow - 200 * DAY + 100 * HOUR)
         val newcomer = seedPair("Galaxy Buds3 Pro")
@@ -115,8 +113,8 @@ class YlihAppFunctionsTest {
 
     @Test
     fun `playback-only mode reaches the agent too`() = runTest {
-        // The app, the notification and the widgets all honour it; an agent quoting connected
-        // hours while every screen showed playback hours would be the worst of both.
+        // The app, notification and widgets all honour it; an agent quoting connected hours
+        // while every screen shows playback hours would be the worst of both.
         val pair = seedPair("Galaxy Buds3 Pro")
         seedSession(pair, from = clockNow - 10 * HOUR, to = clockNow, playingMs = 3 * HOUR)
         container.settings.setPlaybackOnly(true)
@@ -127,8 +125,8 @@ class YlihAppFunctionsTest {
 
     @Test
     fun `every function ships disabled`() {
-        // One <enabledByDefault> per function, and every one of them false. Asserted as a count
-        // rather than by name so that adding a function without thinking about this fails here.
+        // One <enabledByDefault> per function, all false. Asserted as a count rather than by
+        // name so a new function that skips this fails here.
         val flags = ENABLED_BY_DEFAULT.findAll(schema).map { it.groupValues[1] }.toList()
         assertEquals("one enabledByDefault per function", 2, flags.size)
         assertEquals(
@@ -152,9 +150,9 @@ class YlihAppFunctionsTest {
 
     @Test
     fun `the KDoc is what the agent is told`() {
-        // isDescribedByKDoc = true is the whole reason those comments are written for a caller
-        // who cannot see the code. If it were ever dropped the build would still pass, the
-        // functions would still work, and an agent would be handed two names and no description.
+        // isDescribedByKDoc = true is why those comments are written for a caller who can't see
+        // the code. Dropped, the build would still pass and the functions would still work —
+        // but an agent would get two names and no description.
         val descriptions = DESCRIPTION.findAll(schema).map { it.groupValues[1] }.toList()
         assertTrue("a description per function, at least", descriptions.size >= 2)
         assertTrue(
@@ -173,9 +171,8 @@ class YlihAppFunctionsTest {
         // does not exist until KSP has run, and its name is the only thing connecting the two.
         val service = context.packageManager
             // MATCH_DISABLED_COMPONENTS because it *is* disabled here: the element carries the
-            // library's `enablePlatformAppFunctionService` boolean, which is false below
-            // Android 17 precisely so that an OS with no app functions never binds a class it
-            // cannot even load.
+            // library's `enablePlatformAppFunctionService` boolean, false below Android 17 so an
+            // OS with no app functions never binds a class it can't load.
             .getPackageInfo(
                 context.packageName,
                 PackageManager.GET_SERVICES or PackageManager.MATCH_DISABLED_COMPONENTS,
@@ -194,9 +191,9 @@ class YlihAppFunctionsTest {
 
     @Test
     fun `the app-level metadata says the same thing to the agent and to the user`() {
-        // What an agent is told before it looks at any one function. The user-visible half is a
-        // resource on purpose and is the settings row's own sentence: the promise made by the
-        // switch and the promise shown by whatever asks for it have to be one promise.
+        // What an agent is told before it looks at any one function. The user-visible half is the
+        // settings row's own sentence: the promise the switch makes and the promise shown to
+        // whatever asks for it must be one promise.
         val parser = context.resources.getXml(R.xml.app_metadata)
         while (parser.eventType != XmlPullParser.START_TAG) parser.next()
 
@@ -212,9 +209,9 @@ class YlihAppFunctionsTest {
 
     @Test
     fun `pushing the switch below android 17 changes nothing and throws nothing`() {
-        // The platform has no app functions here, so there is no id to enable and the stored row
-        // is simply waiting for an OS that has one. Silence is the correct behaviour; a throw
-        // would surface as a snackbar on a settings screen the user cannot do anything about.
+        // The platform has no app functions here, so there's no id to enable and the stored row
+        // just waits for an OS that has one. Silence is correct; a throw would surface as a
+        // snackbar on a settings screen the user can't do anything about.
         runBlocking {
             pushAgentAccess(context, enabled = true)
             pushAgentAccess(context, enabled = false)

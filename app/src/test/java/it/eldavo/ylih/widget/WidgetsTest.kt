@@ -26,13 +26,13 @@ import java.time.LocalDate
 /**
  * What each widget puts on screen at each of the sizes it declares.
  *
- * The size buckets are the whole of a Glance widget's layout logic — nothing else decides how many
- * rows a lifetime widget draws or whether the chart gets its labels — so every bucket is composed
- * here and asked what it rendered. The figures themselves are [WidgetDataTest]'s problem; this
- * builds [WidgetData] by hand so that a change in the arithmetic cannot quietly rewrite what these
+ * The size buckets are the whole of a Glance widget's layout logic — nothing else decides how
+ * many rows a lifetime widget draws or whether the chart gets its labels — so every bucket is
+ * composed here and asked what it rendered. The figures are [WidgetDataTest]'s problem; this
+ * builds [WidgetData] by hand so a change in the arithmetic can't quietly rewrite what these
  * assert.
  *
- * Labels are looked up as resources rather than typed in, the way the listing generators do it, so
+ * Labels are looked up as resources rather than typed in, as the listing generators do it, so
  * these keep passing when the English wording changes and fail when a string is dropped.
  */
 @RunWith(RobolectricTestRunner::class)
@@ -111,9 +111,9 @@ class WidgetsTest {
         // The tap is on the row, so each is found by the label it contains rather than by being it.
         onNode(hasStartActivityClickAction(intentFor(7L)) and rowFor("Galaxy Buds3 Pro")).assertExists()
         onNode(hasStartActivityClickAction(intentFor(8L)) and rowFor("Sony WH-1000XM4")).assertExists()
-        // Two rows, two intents, and they have to differ somewhere a PendingIntent actually
-        // compares — which is never the extras. Were the data URIs equal, this would find four
-        // rows carrying pair 7's intent and every one of them would open pair 7.
+        // Two rows, two intents, and they must differ somewhere a PendingIntent actually
+        // compares — never the extras. Equal data URIs would find four rows carrying pair 7's
+        // intent, and every one would open pair 7.
         onAllNodes(hasStartActivityClickAction(intentFor(7L))).assertCountEquals(1)
     }
 
@@ -160,7 +160,7 @@ class WidgetsTest {
     fun `a tall activity widget keeps all four windows by using a second line`() =
         runGlanceAppWidgetUnitTest {
             setContext(context)
-            // Two cells across is half of what the one-line layout needs for four figures; the
+            // Two cells across is half what the one-line layout needs for four figures; the
             // second line is what lets this shape carry them at all, and until the provider
             // allowed a vertical drag it was a shape nobody could ask for.
             setAppWidgetSize(DpSize(cells(2), cells(2)))
@@ -220,8 +220,8 @@ class WidgetsTest {
             setAppWidgetSize(DpSize(cells(2), cells(2)))
             provideComposable { ChartContent(context, data()) }
 
-            // Three captions on one line need about four cells. The two dates are the pair that
-            // says what the bars span, so they are the pair that stays.
+            // Three captions on one line need about four cells. The two dates say what the bars
+            // span, so they're the pair that stays.
             onNode(hasText(context.getString(R.string.chart_max, formatHours(3 * hour))))
                 .assertDoesNotExist()
             onNode(hasText(context.getString(R.string.stats_daily_hours_30))).assertExists()
@@ -231,8 +231,8 @@ class WidgetsTest {
     fun `a chart with no history still draws`() = runGlanceAppWidgetUnitTest {
         setContext(context)
         setAppWidgetSize(DpSize(cells(4), cells(2)))
-        // What a fresh install has. The day labels come off the ends of the series, so an empty
-        // one is where this reaches for a date that is not there.
+        // What a fresh install has. Day labels come off the ends of the series, so an empty one
+        // is where this reaches for a date that isn't there.
         provideComposable { ChartContent(context, data(series = emptyList())) }
 
         onNode(hasText(context.getString(R.string.stats_daily_hours_30))).assertExists()
@@ -241,10 +241,10 @@ class WidgetsTest {
     @Test
     fun `each widget class draws its own content`() {
         // Content is all a YlihWidget subclass writes — everything else about getting figures on
-        // screen is final on the base class — so this is the whole of what one can get wrong, and
+        // screen is final on the base class — so this is the whole of what can go wrong, and
         // three classes this similar are exactly where a copy-paste survives review. Composed
-        // through the widget rather than through the composable it names, which is the only way
-        // round that tells the two apart.
+        // through the widget rather than the composable it names, the only way to tell the two
+        // apart.
         assertDraws(R.string.nav_headphones) { LifetimeWidget().Content(context, data()) }
         assertDraws(R.string.stats_today) { ActivityWidget().Content(context, data()) }
         assertDraws(R.string.stats_daily_hours_30) { ChartWidget().Content(context, data()) }

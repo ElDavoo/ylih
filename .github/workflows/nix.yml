@@ -1,13 +1,12 @@
 name: Nix dev shell
 
-# The Android SDK closure is around a gigabyte, so the expensive part only runs when the flake
-# itself changes (plus a weekly canary) rather than on every push.
+# The Android SDK closure is ~1GB, so the expensive part runs only on flake changes, plus a
+# weekly canary.
 #
-# The trigger deliberately carries no `paths:` filter even though the work is path-conditional. A
-# path-filtered workflow does not report a neutral check on the runs it skips — it reports nothing
-# at all — so `devshell` could never become a required check without blocking every PR that leaves
-# the flake alone. Instead the job always runs and decides for itself whether there is work to do,
-# which costs a checkout on unrelated PRs and reports a green `devshell` either way.
+# No `paths:` filter despite path-conditional work: a path-filtered workflow reports nothing, not
+# even neutral, on skipped runs, so `devshell` could never be a required check without blocking
+# flake-untouched PRs. It always runs and decides for itself — a checkout on unrelated PRs, green
+# either way.
 on:
   push:
     branches:
@@ -40,14 +39,14 @@ jobs:
         run: |
           set -euo pipefail
 
-          # The weekly canary and a manual dispatch are the whole point of running unconditionally.
+          # Why this runs unconditionally: the weekly canary and manual dispatch.
           if [ "$EVENT" != "pull_request" ] && [ "$EVENT" != "push" ]; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
-          # A branch's first push reports an all-zero `before`, and a force-push can leave a base
-          # that is no longer an ancestor. Neither can be diffed, so build rather than assume.
+          # A first push reports an all-zero `before`; a force-push can leave a base that's no
+          # longer an ancestor. Neither diffs, so build rather than assume.
           if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ] \
              || ! git cat-file -e "$BASE^{commit}" 2>/dev/null; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -73,7 +72,7 @@ jobs:
       - name: Enter dev shell
         if: steps.flake.outputs.changed == 'true'
         run: |
-          # The quoting is the point: $ANDROID_HOME must expand inside the dev shell, not here.
+          # $ANDROID_HOME must expand inside the dev shell, not here.
           # shellcheck disable=SC2016
           nix develop --command bash -c '
             set -euo pipefail

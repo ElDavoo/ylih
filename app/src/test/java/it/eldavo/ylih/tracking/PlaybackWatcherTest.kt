@@ -34,9 +34,9 @@ class PlaybackWatcherTest {
 
     /**
      * What the callback stamps its slices with. Every other path here is handed an instant by its
-     * caller, so before the watcher took a clock this one read the wall and a slice measured
-     * between the two meant nothing — which is why the callback could only ever be asked whether
-     * it was playing, never what it banked.
+     * caller; before the watcher took a clock this one read the wall, so a slice measured between
+     * the two meant nothing — the callback could only ever be asked whether it was playing, never
+     * what it banked.
      */
     private var clockNow = 0L
     private val watcher = PlaybackWatcher(audioManager, Clock { clockNow }) { credited += it }
@@ -51,8 +51,8 @@ class PlaybackWatcherTest {
 
     /**
      * [PlaybackWatcher.refresh] and [PlaybackWatcher.stop] hand their slice back rather than
-     * pushing it, so that the service can credit it *before* closing the session it belongs to.
-     * These stand in for that caller; [credited] is what the phone's database would hold.
+     * pushing it, so the service can credit it *before* closing the session it belongs to. These
+     * stand in for that caller; [credited] is what the phone's database would hold.
      */
     private fun refresh(now: Long, minSliceMs: Long = 0L) {
         credited += watcher.refresh(now, minSliceMs)
@@ -152,9 +152,9 @@ class PlaybackWatcherTest {
      * What swapping headphones mid-song looks like from here.
      *
      * The service banks at the moment the new pair connects and credits the slice to the old one,
-     * then keeps the clock running for the new one. This used to `rebase` instead — the same reset
-     * of the clock, but throwing the slice away rather than handing it back — so the pair just
-     * taken off silently lost everything it had played since the last tick.
+     * then keeps the clock running for the new one. This used to `rebase` instead — the same clock
+     * reset, but throwing the slice away rather than handing it back — so the pair just taken off
+     * silently lost everything played since the last tick.
      */
     @Test
     fun `banking at a swap credits the pair that was playing and keeps the clock running`() {
@@ -183,8 +183,8 @@ class PlaybackWatcherTest {
      *
      * [PlaybackWatcher.refresh] and [PlaybackWatcher.stop] return their slice so the service can
      * credit it before closing a session; the callback has no caller to hand anything to and so
-     * calls `onDelta` itself. That is the path a process death loses time on, and it went untested
-     * for a value until the watcher took a clock.
+     * calls `onDelta` itself. That is the path a process death loses time on, untested for a value
+     * until the watcher took a clock.
      */
     @Test
     fun `a callback edge banks the slice it measured`() {

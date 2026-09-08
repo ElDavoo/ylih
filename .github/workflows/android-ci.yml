@@ -6,10 +6,10 @@ on:
       - main
       - master
   pull_request:
-  # A run that was never created cannot be re-run, and Actions does not backfill. The outage on
+  # A run that was never created can't be re-run, and Actions doesn't backfill. The outage on
   # 2026-08-06 swallowed run creation for a push to main outright — no queued run, no failed run,
-  # nothing — which left no way to ask for the checks again short of pushing a commit that changed
-  # nothing. `android-release.yml` had this trigger and was recoverable; this one did not.
+  # nothing — leaving no way to ask for the checks again short of an empty commit.
+  # `android-release.yml` had this trigger and was recoverable; this one wasn't.
   workflow_dispatch:
 
 permissions:
@@ -20,9 +20,9 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Store listing text is the one part of the app that no compiler or lint check reads, and
-  # both F-Droid and Play truncate it silently rather than rejecting it. Cheap to check, and
-  # it needs no JDK or SDK, so it runs on its own rather than twice inside the flavor matrix.
+  # Store listing text is the one part of the app no compiler or lint check reads, and both
+  # F-Droid and Play truncate it silently rather than reject it. Cheap to check and needs no JDK
+  # or SDK, so it runs on its own rather than twice inside the flavor matrix.
   listing:
     runs-on: ubuntu-latest
 
@@ -38,17 +38,17 @@ jobs:
           fastlane/metadata/android
           "$(sed -n 's/^ *versionCode = \([0-9]*\)$/\1/p' app/build.gradle.kts)"
 
-      # The other thing nothing reads: compileSdk and buildToolsVersion are written down in five
-      # files and only a comment asked anyone to keep them in step. Bumping one and not the rest
-      # does not fail — AGP downloads what is missing — it just quietly costs a download per run.
+      # The other thing nothing reads: compileSdk and buildToolsVersion are written in five
+      # files, kept in step only by a comment asking. Bumping one and not the rest doesn't fail
+      # — AGP downloads what's missing — it just quietly costs a download per run.
       - name: Check the SDK versions agree everywhere
         run: python3 .github/scripts/sdk-version-check.py
 
       # The agent pipeline is six workflow files whose only test is running them, and a mistake
-      # in one is discovered by an issue quietly doing nothing. actionlint is the closest thing
-      # to a compiler they have: it type-checks every ${{ }} expression against the event
-      # payload, and runs shellcheck over each `run:` block — which is how the truncation an
-      # unquoted ` #` causes in a plain YAML scalar was caught here rather than at 2am.
+      # in one surfaces as an issue quietly doing nothing. actionlint is the closest thing to a
+      # compiler they have: it type-checks every ${{ }} expression against the event payload and
+      # runs shellcheck over each `run:` block — how the truncation an unquoted ` #` causes in a
+      # plain YAML scalar was caught here rather than at 2am.
       #
       # Downloaded rather than taken from an action, and pinned by checksum, for the reason
       # CLAUDE.md gives for the Gradle distribution and the dependency metadata: an unverified
@@ -65,10 +65,10 @@ jobs:
           tar -xzf /tmp/actionlint.tar.gz -C /tmp actionlint
           /tmp/actionlint -color
 
-          # zizmor covers what actionlint has no opinion about: unpinned actions, permissions
-          # wider than a job needs, credentials left in .git/config, caches a release should not
-          # trust. --offline because the online audits agree here and a gate that needs a token
-          # and the network fails for reasons of its own.
+          # zizmor covers what actionlint has no opinion on: unpinned actions, permissions wider
+          # than a job needs, credentials left in .git/config, caches a release shouldn't trust.
+          # --offline since the online audits agree here, and a gate needing a token and the
+          # network fails for reasons of its own.
           curl -fsSL -o /tmp/zizmor.tar.gz \
             https://github.com/zizmorcore/zizmor/releases/download/v1.29.0/zizmor-x86_64-unknown-linux-gnu.tar.gz
           echo "${ZIZMOR_SHA256}  /tmp/zizmor.tar.gz" | sha256sum -c -
@@ -132,19 +132,19 @@ jobs:
           restore-keys: |
             robolectric-${{ runner.os }}-
 
-      # Lint is ReleaseTest because that is where `testBuildType` puts src/androidTest, so it is
+      # Lint is ReleaseTest because that's where `testBuildType` puts src/androidTest, so it's
       # the variant whose lint sees both test source sets. The two assemble tasks are Debug and
-      # Release: those are the artifacts anyone ships or installs.
+      # Release: the artifacts anyone ships or installs.
       #
       # create<Variant>UnitTestCoverageReport runs the unit tests and then the JaCoCo report over
-      # them, so it stands in for test<Variant>ReleaseTestUnitTest rather than adding a second run.
+      # them, standing in for test<Variant>ReleaseTestUnitTest rather than adding a second run.
       #
-      # The suite then runs a second time on debug, which it can since
+      # The suite then runs a second time on debug, possible since
       # android.onlyEnableUnitTestForTheTestedBuildType went off. Not a duplicate: the build type
       # is a compile-time input like any other, and debug differs by BuildConfig.DEBUG, the
       # .debug applicationId suffix and an unshrunk resource table. Uninstrumented, so it costs
       # the run but not the JaCoCo overhead, and the coverage gate below still reads exactly one
-      # report — the releaseTest one — rather than trying to reconcile two.
+      # report — the releaseTest one — rather than reconciling two.
       - name: Build and test (${{ matrix.flavor }})
         run: >
           ./gradlew --no-daemon --stacktrace
@@ -155,18 +155,18 @@ jobs:
           assemble${{ matrix.variant }}Release
 
       # The release build is the only one R8 touches, and no test in the suite runs minified
-      # code — so this is the only place a stripped or renamed reflective entry point can be
-      # caught before a device finds it. Reads the mapping.txt the assemble step just wrote.
+      # code — so this is the only place a stripped or renamed reflective entry point is caught
+      # before a device finds it. Reads the mapping.txt the assemble step just wrote.
       - name: Check R8 keep invariants (${{ matrix.flavor }})
         run: >
           python3 .github/scripts/r8-keep-check.py
           app/build/outputs/mapping/${{ matrix.flavor }}Release
 
-      # Also the gate. Instruction sits just under where the suite actually is — classic measures
-      # 96.0 — so it catches a regression without tracking noise. Line is one number for both
-      # flavors and so has to clear the lower of them: classic measures 98.9 against play's 99.1,
-      # for the minSdk 26 reason CLAUDE.md sets out. Branch is held further back still, at 70
-      # against an actual 77.0 — deliberately loose, for the reason the script's docstring gives.
+      # Also the gate. Instruction sits just under where the suite actually is — classic
+      # measures 96.0 — so it catches a regression without tracking noise. Line is one number
+      # for both flavors and must clear the lower: classic measures 98.9 against play's 99.1,
+      # for the minSdk 26 reason CLAUDE.md sets out. Branch is held further back, at 70 against
+      # an actual 77.0 — loose on purpose, for the reason the script's docstring gives.
       - name: Report coverage (${{ matrix.flavor }})
         if: always()
         run: >
@@ -193,18 +193,18 @@ jobs:
 
   # The only job that runs the code a user actually gets. Unit tests execute on the JVM against
   # unshrunk classes, so R8 never runs for them; the releaseTest build type is release plus the
-  # test manifest, so androidTest installs a genuinely minified, resource-shrunk APK — which
-  # needs a real Android runtime. Hence an emulator, and hence a job of its own: it is far slower
-  # than the rest of CI and fails for its own reasons.
+  # test manifest, so androidTest installs a genuinely minified, resource-shrunk APK — needing a
+  # real Android runtime. Hence an emulator, and a job of its own: far slower than the rest of
+  # CI and failing for its own reasons.
   #
-  # Run twice, against the same source set. `releaseTest` is the one that matters and `debug` is
+  # Run twice against the same source set. `releaseTest` is the one that matters and `debug` is
   # its control: identical tests against an unminified build, so a failure in one and not the
-  # other says which half is broken without anyone having to bisect keep rules to find out.
-  # Both halves of that distinction showed up the day this landed — two linkage errors that only
-  # existed minified, and a backup missing its formatVersion in every build ever made. Six
-  # minutes, in parallel with the minified leg, to never have to guess.
+  # other says which half is broken without bisecting keep rules. Both halves of that
+  # distinction showed up the day this landed — two linkage errors that only existed minified,
+  # and a backup missing its formatVersion in every build ever made. Six minutes, in parallel
+  # with the minified leg, to never have to guess.
   #
-  # Only the classic flavor. The flavors differ by compile-time constants in Distribution.kt and
+  # Only the classic flavor: the flavors differ by compile-time constants in Distribution.kt and
   # one manifest overlay, not by anything R8 sees, so running both would double the slowest job
   # in the workflow to re-test identical shrinking.
   instrumented:
@@ -225,9 +225,9 @@ jobs:
             variant: Debug
             apiLevel: 34
             label: unminified
-          # And once at the minSdk floor, which is the only place the app's own API-26 branches
-          # run on a device: the unit tests cannot, because Robolectric runs against the compile
-          # SDK, which is why lint.xml exempts src/test from NewApi.
+          # And once at the minSdk floor, the only place the app's own API-26 branches run on a
+          # device: unit tests can't, since Robolectric runs against the compile SDK, why
+          # lint.xml exempts src/test from NewApi.
           - buildType: releaseTest
             variant: ReleaseTest
             apiLevel: 26
@@ -276,15 +276,15 @@ jobs:
           sudo udevadm trigger --name-match=kvm
 
       # releaseTest inherits release's signing config, and a release build with no
-      # ANDROID_SIGNING_* in the environment is deliberately left unsigned — that is what keeps
-      # the F-Droid build reproducible, see docs/fdroid.md — while an unsigned APK will not
-      # install. So the job makes a key it throws away. AGP signs the androidTest APK with the
-      # tested variant's config, so both sides match and the instrumentation is allowed to attach
-      # to the app's process; the real signing key is never involved.
+      # ANDROID_SIGNING_* in the environment is left unsigned on purpose — what keeps the
+      # F-Droid build reproducible, see docs/fdroid.md — while an unsigned APK won't install. So
+      # the job makes a key it throws away. AGP signs the androidTest APK with the tested
+      # variant's config, so both sides match and the instrumentation can attach to the app's
+      # process; the real signing key is never involved.
       #
       # Unconditional rather than skipped on the debug leg, which signs itself with AGP's debug
       # key and never reads these: one step that always runs beats a conditional whose two sides
-      # would then have to be kept in step with each other.
+      # would then have to be kept in step.
       - name: Generate a throwaway signing key
         run: |
           keytool -genkeypair \
@@ -322,18 +322,18 @@ jobs:
   # One stable check for this whole workflow to hang the branch ruleset off.
   #
   # The ruleset required six of these contexts by name -- `build (classic, Classic)`,
-  # `instrumented (minified, minSdk)` and the rest -- all of which are matrix `include` entries.
-  # That drifts silently in both directions: drop a variant and every PR waits forever on a
-  # context nothing reports any more, indistinguishable from CI being slow; add one and it is
-  # not required, so a PR failing only the new variant still merges. `needs` follows the matrix
-  # on its own, so this name is the only thing the ruleset has to know.
+  # `instrumented (minified, minSdk)` and the rest -- all matrix `include` entries. That drifts
+  # silently both ways: drop a variant and every PR waits forever on a context nothing reports
+  # any more, indistinguishable from slow CI; add one and it's not required, so a PR failing
+  # only the new variant still merges. `needs` follows the matrix on its own, so this name is
+  # the only thing the ruleset has to know.
   #
-  # `devshell` stays separately required: it lives in nix.yml and `needs` cannot cross
-  # workflows. It is a single job with a fixed name and no matrix, so it cannot drift.
+  # `devshell` stays separately required: it lives in nix.yml and `needs` can't cross workflows.
+  # It's a single job with a fixed name and no matrix, so it can't drift.
   #
   # `if: always()` is load-bearing. Without it this job is skipped whenever anything it needs
   # fails, and GitHub reads a skipped required check as satisfied -- turning the gate into a
-  # no-op exactly when it is supposed to bite.
+  # no-op exactly when it's supposed to bite.
   all-green:
     if: always()
     needs: [listing, build, instrumented]

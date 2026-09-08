@@ -25,13 +25,12 @@ object JsonBackup {
 
     @Serializable
     data class Backup(
-        // The default is what lets a file written before this annotation existed still import,
-        // so it cannot go away — but a default is exactly what kotlinx.serialization omits when
-        // encoding, and omitting this one left every exported backup with no version in it at
-        // all. import()'s `formatVersion <= FORMAT_VERSION` guard then read every file as
-        // version 1 whatever wrote it, which is the one thing the field is for. Encode it
-        // always; the remaining defaults below are optional fields where absent and null mean
-        // the same thing.
+        // The default lets a file written before this annotation existed still import, so it
+        // can't go away — but kotlinx.serialization omits defaults when encoding, which left
+        // every exported backup with no version at all. import()'s
+        // `formatVersion <= FORMAT_VERSION` guard then read every file as version 1 regardless of
+        // what wrote it, defeating the field's one purpose. Encode it always; the remaining
+        // defaults below are optional fields where absent and null mean the same thing.
         @OptIn(ExperimentalSerializationApi::class)
         @EncodeDefault
         val formatVersion: Int = FORMAT_VERSION,
@@ -40,9 +39,9 @@ object JsonBackup {
         val pairs: List<Pair>,
         val sessions: List<Session>,
         /**
-         * Absent in a file written before this field existed, which is why it has a default: an
-         * older backup restores its history and leaves the current settings alone, which is the
-         * behaviour every backup had until now.
+         * Absent in a file written before this field existed, hence the default: an older backup
+         * restores its history and leaves current settings alone, the behaviour every backup had
+         * until now.
          */
         val settings: List<Setting> = emptyList(),
         /** Defaulted for the same reason [settings] is: an older file simply has no readings. */
@@ -98,9 +97,9 @@ object JsonBackup {
     /**
      * The whole database as JSON.
      *
-     * One transaction, because three separate reads are three different instants: a connect
-     * landing between the second and the third writes a session whose pair is not in the snapshot,
-     * and the file that produces fails to import on the foreign key it dangles.
+     * One transaction: three separate reads are three different instants, and a connect landing
+     * between the second and third writes a session whose pair isn't in the snapshot — producing
+     * a file that fails to import on the dangling foreign key.
      */
     suspend fun export(db: YlihDatabase, now: Long): String = db.withTransaction {
         val devices = db.deviceDao().getAll()

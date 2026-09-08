@@ -6,9 +6,8 @@ data class Reading(val sessionId: Long, val at: Long, val level: Int)
 /**
  * A hundred percentage points of drain, and the listening they bought.
  *
- * A charge cycle here is *a hundred points used*, not a discharge from full: five 100 → 80 evenings
- * are one cycle, which is both how battery wear is actually counted and the definition the feature
- * was asked for with.
+ * A cycle is *a hundred points used*, not a discharge from full: five 100 → 80 evenings are one
+ * cycle — how battery wear is counted, and the definition the feature asked for.
  */
 data class Cycle(val startAt: Long, val endAt: Long, val countedMs: Long)
 
@@ -27,9 +26,8 @@ data class ChargeSummary(
     val hasData: Boolean get() = pointsDrained > 0
 
     /**
-     * Time one full cycle buys, over every point observed rather than over the completed cycles
-     * alone. A pair one and four fifths of the way through its second cycle would otherwise report
-     * from its first one for months, and the whole point of the figure is that it moves.
+     * Time one full cycle buys, over every point observed, not just completed cycles — else a pair
+     * 1.8 cycles in would report its first cycle for months.
      */
     val msPerCycle: Long
         get() = if (pointsDrained <= 0) 0L else countedMs * POINTS_PER_CYCLE / pointsDrained
@@ -38,15 +36,14 @@ data class ChargeSummary(
 
     /**
      * What a charge buys now against what it bought when the pair was new, as a fraction — 0.53
-     * meaning "a bit over half of what it managed then". Null until two cycles have completed,
-     * which is the same point the chart appears.
+     * meaning "a bit over half of what it managed then". Null until two cycles complete, the same
+     * point the chart appears.
      *
-     * Deliberately not the literal last cycle over the literal first. A single cycle is one
-     * fortnight of however the headphones happened to be used, and on coarse readings — a headset
-     * that reports in twenty-five point steps gives four segments to a discharge — one unlucky
-     * pair of cycles moves this figure further than a year of real wear does. Both ends are
-     * averaged over [comparisonWindow] instead, which is the same arithmetic with the noise taken
-     * out, and which reduces to exactly "last against first" when that is all there is.
+     * Not literal last-over-first: a cycle is one fortnight of however the headphones were used,
+     * and on coarse readings — a headset reporting in 25-point steps gives four segments per
+     * discharge — one unlucky pair of cycles can move this further than a year of real wear. Both
+     * ends are averaged over [comparisonWindow] instead, the same arithmetic with the noise
+     * removed, reducing to "last against first" when that's all there is.
      */
     val versusNew: Double?
         get() {
@@ -58,11 +55,11 @@ data class ChargeSummary(
         }
 
     /**
-     * Cycles averaged at each end for [versusNew]: a quarter of them, and never more than five.
+     * Cycles averaged at each end for [versusNew]: a quarter of them, capped at five.
      *
-     * A quarter rather than a fixed number so that a young pair is not asked for history it has
-     * not got — at four cycles this is 1, and the comparison is the plain one. The two ends can
-     * never overlap, since twice a quarter is half.
+     * A quarter rather than a fixed number so a young pair isn't asked for history it lacks — at
+     * four cycles this is 1, a plain comparison. The two ends never overlap, since twice a quarter
+     * is half.
      */
     val comparisonWindow: Int
         get() = (cycles.size / 4).coerceIn(1, MAX_COMPARISON_CYCLES)
@@ -76,13 +73,13 @@ const val POINTS_PER_CYCLE = 100
 
 /**
  * Charge cycles out of battery readings — pure functions over [Reading] and [Span], decoupled from
- * Room the way [Stats] is, so the arithmetic runs as a plain JVM test.
+ * Room like [Stats], so this runs as a plain JVM test.
  *
- * The rule the whole file rests on: **a drop counts only between two readings taken inside one
- * session.** Then the points drained and the listening credited cover exactly the same stretches of
- * time, and the ratio between them means something. Counting a drop across a gap would break that
- * twice over — there is no listening to attach to it, and a headset charged partway through the gap
- * reports a level that makes the drain look smaller than it was, with nothing to say so.
+ * The file's rule: **a drop counts only between two readings taken inside one session.** Then the
+ * points drained and the listening credited cover the same stretch of time, so their ratio means
+ * something. Counting a drop across a gap breaks that twice: there's no listening to attach it to,
+ * and a headset charged partway through the gap reports a level that makes the drain look smaller
+ * than it was, with nothing to say so.
  */
 object Charge {
 
@@ -109,8 +106,8 @@ object Charge {
         val cycles = mutableListOf<Cycle>()
         var totalPoints = 0
         var totalMs = 0L
-        // The cycle being filled: null start until the first points land in it, so a cycle begins
-        // where drain begins rather than where the previous one happened to end.
+        // The cycle being filled: null start until the first points land, so a cycle begins where
+        // drain begins, not where the previous one ended.
         var bucketStart: Long? = null
         var bucketPoints = 0
         var bucketMs = 0L
@@ -124,9 +121,9 @@ object Charge {
             var remainingMs = segment.creditMs
             var remainingSpan = segment.endAt - segment.startAt
 
-            // A segment can be a hundred points on its own — a headset that reports once at 100 and
-            // next at 0 — so this fills a bucket rather than assuming it only tops one up. It can
-            // never run more than twice: a hundred points is the most one segment can carry.
+            // A segment can be a hundred points on its own (a headset reporting 100 then 0), so
+            // this fills a bucket instead of assuming it only tops one up. Runs at most twice,
+            // since a hundred points is the most one segment can carry.
             while (bucketPoints + remainingPoints >= POINTS_PER_CYCLE) {
                 val take = POINTS_PER_CYCLE - bucketPoints
                 val takeMs = remainingMs * take / remainingPoints
@@ -164,10 +161,9 @@ object Charge {
     /**
      * The drops, oldest first.
      *
-     * Readings are grouped by session before being paired up, which is what enforces the rule at
-     * the top of this file: the last reading of one session and the first of the next are never
-     * adjacent. A level going *up* is a charge — it ends one run and starts another, and carries no
-     * drain of its own.
+     * Readings are grouped by session before pairing, enforcing the file's rule: the last reading of
+     * one session and the first of the next are never adjacent. A level going *up* is a charge — it
+     * ends one run and starts another, with no drain of its own.
      */
     private fun segments(
         readings: List<Reading>,
@@ -178,10 +174,9 @@ object Charge {
         val out = mutableListOf<Segment>()
         for ((sessionId, group) in readings.groupBy { it.sessionId }) {
             val span = spans[sessionId]
-            // Under PLAYBACK a session that never measured playback cannot answer the question at
-            // all, so its drain leaves both sides of the ratio — the same choice `Stats.counted`
-            // makes, and for the same reason: crediting it zero minutes would read as a battery
-            // that gave nothing back.
+            // Under PLAYBACK a session that never measured playback can't answer, so its drain
+            // drops from both sides of the ratio — `Stats.counted` makes the same choice: crediting
+            // it zero minutes would read as a battery giving nothing back.
             val rate = playbackRate(span, now, counting) ?: continue
             val sorted = group.sortedBy { it.at }
             for (i in 1 until sorted.size) {
@@ -190,8 +185,8 @@ object Charge {
                 val points = from.level - to.level
                 if (points <= 0) continue
                 val elapsed = to.at - from.at
-                // A backwards step is a corrected clock rather than a stretch of listening; the
-                // drain is real but nothing can be credited to it, so neither side counts it.
+                // A backwards step is a corrected clock, not listening; the drain is real but
+                // nothing credits to it, so neither side counts it.
                 if (elapsed <= 0) continue
                 out += Segment(
                     startAt = from.at,
@@ -205,13 +200,13 @@ object Charge {
     }
 
     /**
-     * How much counted time a millisecond of a session is worth, as numerator over denominator so
-     * the arithmetic stays in Long.
+     * How much counted time a millisecond of session is worth, as numerator over denominator so the
+     * arithmetic stays in Long.
      *
-     * Playback is stored as one total per session and never as *when* inside it the audio ran, so a
-     * stretch of the session gets its share of that total — the same even spread [Stats.dailyMs]
-     * makes when an overnight session is split across midnight. Null means this session cannot
-     * answer, and its drain is dropped.
+     * Playback is stored as one total per session, never *when* the audio ran, so a stretch of the
+     * session gets its share of that total — the same even spread [Stats.dailyMs] uses splitting an
+     * overnight session across midnight. Null means the session can't answer, so its drain is
+     * dropped.
      */
     private fun playbackRate(span: Span?, now: Long, counting: Counting): Pair<Long, Long>? =
         when (counting) {

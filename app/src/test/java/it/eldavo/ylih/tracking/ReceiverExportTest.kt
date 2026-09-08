@@ -15,18 +15,18 @@ import org.robolectric.annotation.Config
 /**
  * Pins `android:exported` on the three manifest receivers, because nothing else can.
  *
- * The Bluetooth stack is a separate app (uid 1002), and an implicit broadcast from another app does
- * not resolve a non-exported component of ours — AMS drops it before the `BroadcastRecord` exists.
- * So `exported="false"` on either Bluetooth receiver silently deletes Bluetooth-only tracking, the
- * default mode, and charge cycles with it. That attribute has now been wrong in two shipped builds
- * in opposite directions, which is why it is worth a test rather than a comment.
+ * The Bluetooth stack is a separate app (uid 1002), and an implicit broadcast from another app
+ * does not resolve a non-exported component of ours — AMS drops it before the `BroadcastRecord`
+ * exists. So `exported="false"` on either Bluetooth receiver silently deletes Bluetooth-only
+ * tracking, the default mode, and charge cycles with it. That attribute has been wrong in two
+ * shipped builds, in opposite directions — worth a test rather than a comment.
  *
- * What makes it invisible everywhere else is that no other test can see it. [ReceiversTest]
- * dispatches through the real manifest filters and passes either way, because Robolectric hands the
- * intent to the receiver itself rather than running AMS's resolution; on a device the failure is not
- * an exception but a broadcast that never arrives, and the app carries on looking healthy — with
- * detailed tracking on, `TrackingService.syncWithSystem()` reconciles the same sessions into place
- * a minute later. So the attribute is asserted here directly, off the merged manifest.
+ * No other test can see it. [ReceiversTest] dispatches through the real manifest filters and
+ * passes either way, because Robolectric hands the intent to the receiver directly rather than
+ * running AMS's resolution; on a device the failure is not an exception but a broadcast that never
+ * arrives, and the app carries on looking healthy — with detailed tracking on,
+ * `TrackingService.syncWithSystem()` reconciles the same sessions into place a minute later. So
+ * the attribute is asserted here directly, off the merged manifest.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
@@ -61,10 +61,10 @@ class ReceiverExportTest {
 
     @Test
     fun `the boot receiver is not exported`() {
-        // The contrast that explains the two above: BOOT_COMPLETED and MY_PACKAGE_REPLACED come
-        // from system_server (uid 1000), which is exempt from the export check, so this one loses
-        // nothing by staying closed. It is the sender's uid that decides, not the flags or the
-        // receiver permission — those are identical across all three broadcasts.
+        // The contrast with the two above: BOOT_COMPLETED and MY_PACKAGE_REPLACED come from
+        // system_server (uid 1000), exempt from the export check, so this one loses nothing by
+        // staying closed. The sender's uid decides, not the flags or receiver permission — those
+        // are identical across all three broadcasts.
         assertFalse(
             "BootReceiver has no reason to be reachable by other apps",
             exportedOf(BootReceiver::class.java),

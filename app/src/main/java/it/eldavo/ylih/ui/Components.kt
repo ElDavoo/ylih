@@ -201,10 +201,10 @@ fun List<Pair<LocalDate, Long>>.tailMs(days: Int): Long = takeLast(days).sumOf {
 /**
  * Today, the last seven days and the last thirty, all read off one [WINDOW_DAYS]-day series.
  *
- * The stats screen and the pair page showed exactly this, and each built it from three separate
- * `Stats.recentMs` calls — every one of which bucketed the entire history from scratch, keyed on a
- * clock ticking once a second. Three walks became one, and the series is `remember`ed by its
- * callers so it is not rebuilt for a figure that changes by the hour.
+ * The stats screen and pair page both showed this, each built from three separate `Stats.recentMs`
+ * calls that bucketed the entire history from scratch, keyed on a clock ticking once a second.
+ * Three walks became one; the series is `remember`ed by its callers so it isn't rebuilt for a
+ * figure that changes hourly.
  */
 @Composable
 fun WindowStatRow(series: List<Pair<LocalDate, Long>>, modifier: Modifier = Modifier) {

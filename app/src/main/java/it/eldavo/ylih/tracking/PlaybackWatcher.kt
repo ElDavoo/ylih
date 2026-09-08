@@ -7,26 +7,26 @@ import android.os.Handler
 import it.eldavo.ylih.data.Clock
 
 /**
- * Measures how much of a connected span is *actual playback*.
+ * Measures how much of a connected span is actual playback.
  *
- * Driven by [AudioManager.AudioPlaybackCallback] edges — the callback delivers the list of
- * currently active players, which is all we need since the per-player details are anonymised
- * for apps without MODIFY_AUDIO_ROUTING. [AudioManager.isMusicActive] is polled on every tick
- * as a safety net in case a player never shows up in that list.
+ * Driven by [AudioManager.AudioPlaybackCallback] edges: the callback delivers the active-player
+ * list, all this needs since per-player details are anonymised for apps without
+ * MODIFY_AUDIO_ROUTING. [AudioManager.isMusicActive] is polled every tick as a safety net in
+ * case a player never shows up there.
  *
- * Constructed only by [TrackingService], so it is alive only while detailed tracking is. Nothing
- * else measures playback, which is why a session's `playingMs` is null wherever the service never
- * ran rather than zero — the two mean different things to the stats.
+ * Constructed only by [TrackingService], so it lives only while detailed tracking does. Nothing
+ * else measures playback, so a session's `playingMs` is null where the service never ran,
+ * rather than zero — the two mean different things to the stats.
  */
 class PlaybackWatcher(
     private val audioManager: AudioManager,
     /**
      * The same clock the service stamps everything else with.
      *
-     * Injected rather than read from the wall, because this class holds a *pair* of instants — the
-     * one banked in [playingSince] and the one a slice is measured to — and mixing two sources
-     * between them gives a difference that means nothing. In the app they are the same clock either
-     * way; what it buys is a test that can bank a callback's slice without sleeping through it.
+     * Injected rather than read from the wall: this class holds a *pair* of instants — the one
+     * banked in [playingSince] and the one a slice is measured to — and mixing sources between
+     * them gives a difference that means nothing. In the app they are the same clock either way;
+     * the payoff is a test that can bank a callback's slice without sleeping through it.
      */
     private val clock: Clock = Clock.Wall,
     private val onDelta: (Long) -> Unit,
@@ -57,16 +57,16 @@ class PlaybackWatcher(
     /**
      * Re-evaluates playback state and banks the time accumulated so far.
      *
-     * [minSliceMs] leaves a slice shorter than that accruing instead of banking it. The callback
-     * fires whenever *any* app on the phone changes a player — a chime, an ad, a video starting
-     * in something else entirely — so without a floor a talkative phone turns each of those into
-     * a database write while music plays. Nothing is lost by waiting: the slice keeps accruing,
-     * and the edges that actually end a span ([update], [stop]) always credit it in full.
+     * [minSliceMs] leaves a shorter slice accruing rather than banking it. The callback fires
+     * whenever *any* app on the phone changes a player — a chime, an ad, a video starting
+     * elsewhere — so without a floor a talkative phone turns each into a database write while
+     * music plays. Nothing is lost by waiting: the slice keeps accruing, and the edges that end a
+     * span ([update], [stop]) always credit it in full.
      *
      * @return the milliseconds banked by this call, zero if none. Handed back rather than pushed
-     *   through [onDelta] because the caller that matters is about to close the session this
-     *   belongs to: playback is credited by *open* session, so the write has to happen — and be
-     *   waited for — before the disconnect, which only a value the caller can suspend on allows.
+     *   through [onDelta] because the caller is about to close the session this belongs to:
+     *   playback is credited by *open* session, so the write must happen — and be waited for —
+     *   before the disconnect, which only a value the caller can suspend on allows.
      */
     fun refresh(now: Long, minSliceMs: Long = 0L): Long {
         val active = configsActive || audioManager.isMusicActive
@@ -105,8 +105,8 @@ class PlaybackWatcher(
     private companion object {
         /**
          * Below this a still-playing refresh leaves the slice where it is. Well under the
-         * service's tick, which passes no floor, so what a process death can cost is still one
-         * tick's worth and no more.
+         * service's tick, which passes no floor, so a process death still costs at most one
+         * tick's worth.
          */
         const val MIN_BANKED_SLICE_MS = 30_000L
 

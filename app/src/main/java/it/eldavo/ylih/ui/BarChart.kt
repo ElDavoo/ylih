@@ -33,9 +33,9 @@ fun DailyBarChart(
     series: List<Pair<LocalDate, Long>>,
     modifier: Modifier = Modifier,
     /**
-     * What the chart is of, for a screen reader. A `Canvas` has nothing inside it to describe
-     * itself, so without this the app's whole visualisation reads as an empty leaf and TalkBack
-     * gets three tiny axis labels and nothing else.
+     * What the chart is of, for a screen reader. A `Canvas` has nothing to describe itself, so
+     * without this it reads as an empty leaf and TalkBack gets three tiny axis labels and nothing
+     * else.
      */
     label: String? = null,
     barColor: Color = MaterialTheme.colorScheme.primary,
@@ -46,8 +46,8 @@ fun DailyBarChart(
     val last = series.lastOrNull()?.first
     val peak = stringResource(R.string.chart_max, formatHours(maxMs))
     val total = formatHours(series.sumOf { it.second })
-    // Assembled from strings that already exist in all 77 languages rather than adding one more
-    // for a line only a screen reader hears; the separator follows the app bar's own house style.
+    // Assembled from strings that already exist in all 77 languages, rather than adding one more
+    // for a line only a screen reader hears; separator matches the app bar's house style.
     val description = remember(label, first, last, peak, total) {
         listOfNotNull(
             label,
@@ -66,8 +66,8 @@ fun DailyBarChart(
             drawDailyBars(series, maxMs, barColor, trackColor)
         }
         Spacer(Modifier.height(4.dp))
-        // Merged away from the screen reader: the description above already carries the range and
-        // the peak, and three loose fragments after it would only repeat them out of order.
+        // Merged away from the screen reader: the description above already carries range and
+        // peak; three loose fragments after it would just repeat them out of order.
         Row(Modifier.fillMaxWidth().clearAndSetSemantics { }) {
             Text(
                 text = first?.let { formatDayLabel(it) }.orEmpty(),
@@ -93,9 +93,9 @@ fun DailyBarChart(
 /**
  * The same bars, one per completed charge cycle instead of one per day.
  *
- * A separate composable rather than a parameter on [DailyBarChart] because the axis is a different
- * kind of thing: days carry dates, cycles carry an ordinal, and a cycle is only ever read against
- * the ones on either side of it — the whole question being whether the bars get shorter.
+ * A separate composable, not a parameter on [DailyBarChart]: the axis differs in kind — days carry
+ * dates, cycles carry an ordinal — and a cycle is read only against its neighbours, i.e. whether
+ * the bars get shorter.
  */
 @Composable
 fun CycleBarChart(
@@ -122,8 +122,8 @@ fun CycleBarChart(
             drawBars(values, maxMs, barColor, trackColor)
         }
         Spacer(Modifier.height(4.dp))
-        // Merged away for the reason DailyBarChart's own axis row is: the description above already
-        // says the range and the peak.
+        // Merged away as in DailyBarChart's axis row: the description above already says the
+        // range and peak.
         Row(Modifier.fillMaxWidth().clearAndSetSemantics { }) {
             Text(
                 text = firstLabel,
@@ -157,17 +157,16 @@ internal fun barMaxMs(values: List<Long>): Long =
 /**
  * At most [max] bars, by averaging runs of consecutive values when there are more.
  *
- * A pair used daily for a decade is some three thousand charge cycles, and three thousand bars on a
- * phone is a bar narrower than a pixel drawn three thousand times a frame — the chart stops being
- * readable long before it stops being drawable. Averaging keeps the shape, which is the only thing
- * this chart is read for: whether the bars are getting shorter. The figures above it stay exact,
- * because they are counted rather than drawn.
+ * A pair used daily for a decade is ~3,000 charge cycles — narrower on a phone than a pixel drawn
+ * 3,000 times a frame, so the chart stops being readable before it stops being drawable.
+ * Averaging keeps the shape, the only thing read here: whether bars get shorter. The figures
+ * above it stay exact, since they're counted rather than drawn.
  */
 internal fun bucketedBars(values: List<Long>, max: Int): List<Long> {
     require(max > 0) { "max must be positive" }
     if (values.size <= max) return values
-    // Rounded up, so the result can never exceed [max]; the last bucket may be short and is still
-    // an average of what is in it.
+    // Rounded up, so the result can never exceed [max]; the last bucket may be short but is still
+    // an average of what's in it.
     val size = (values.size + max - 1) / max
     return values.chunked(size) { run -> run.sum() / run.size }
 }
@@ -175,9 +174,9 @@ internal fun bucketedBars(values: List<Long>, max: Int): List<Long> {
 /**
  * The bars themselves, in whatever [DrawScope] is handed to them.
  *
- * Pulled out of the Canvas above so the home-screen chart widget can draw the same geometry into
- * a bitmap: Glance has no Canvas of its own, and its layout gives equal weights only, so
- * proportional bar heights cannot be expressed there at all.
+ * Pulled out of the Canvas above so the widget can draw the same geometry into a bitmap: Glance
+ * has no Canvas of its own, and its layout gives only equal weights, so proportional bar heights
+ * can't be expressed there.
  */
 internal fun DrawScope.drawDailyBars(
     series: List<Pair<LocalDate, Long>>,
@@ -187,11 +186,11 @@ internal fun DrawScope.drawDailyBars(
 ) = drawBars(series.map { it.second }, maxMs, barColor, trackColor)
 
 /**
- * The geometry, with nothing left of what the bars are *of*.
+ * The geometry, stripped of what the bars are *of*.
  *
- * The daily chart, the widget's bitmap and the charge-cycle chart all draw exactly this; keeping it
- * keyless is what stops a second copy of the arithmetic appearing the moment something is charted
- * against an axis that is not a date.
+ * The daily chart, the widget's bitmap and the charge-cycle chart all draw this; keeping it
+ * keyless stops a second copy of the arithmetic appearing the moment something charts against a
+ * non-date axis.
  */
 internal fun DrawScope.drawBars(
     values: List<Long>,

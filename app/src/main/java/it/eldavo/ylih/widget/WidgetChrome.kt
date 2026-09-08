@@ -26,8 +26,8 @@ import it.eldavo.ylih.MainActivity
 import it.eldavo.ylih.R
 
 /**
- * A launcher grid measurement in the dp `minWidth`/`minHeight` are expressed in: 70 per cell,
- * less the 30 of inter-cell gap that does not belong to the widget.
+ * A launcher grid measurement in the dp `minWidth`/`minHeight` use: 70 per cell minus the 30 of
+ * inter-cell gap that isn't the widget's.
  */
 internal fun cells(count: Int): Dp = (70 * count - 30).dp
 
@@ -40,12 +40,10 @@ internal const val HEADER_DP = 19f
 /**
  * How many [each]-dp items fit in [available] dp, clamped to a sane range.
  *
- * The three widgets size themselves off the launcher's real measurements rather than off a handful
- * of `SizeMode.Responsive` buckets, so this is the arithmetic all of them do: every widget is
- * `SizeMode.Exact` and lays itself out for whatever it was actually given. Buckets were the reason
- * a widget dragged to a size between two of them drew the smaller layout and left a band of empty
- * background — and the reason the providers could not offer more than a couple of sizes without
- * some size having no layout at all.
+ * All three widgets size off the launcher's real measurements, not `SizeMode.Responsive` buckets:
+ * every widget is `SizeMode.Exact` and lays out for whatever size it's given. Buckets drew the
+ * smaller layout for a size between two of them, leaving a band of empty background and capping
+ * how many sizes a provider could offer.
  */
 internal fun fits(available: Float, each: Float, max: Int): Int =
     (available / each).toInt().coerceIn(1, max)
@@ -88,9 +86,8 @@ internal fun WidgetHeader(context: Context, title: String, playbackOnly: Boolean
 /** A figure over its caption. The unit the activity widget is built out of. */
 @Composable
 internal fun WidgetTile(value: String, label: String, modifier: GlanceModifier = GlanceModifier) {
-    // The gap belongs to the tile rather than to a Spacer between tiles: a caption that fills its
-    // whole share of the row otherwise runs straight into the next one with nothing between them,
-    // and "all headphonestoday" is what that reads as.
+    // The gap belongs to the tile, not a Spacer between tiles: a caption filling its whole share of
+    // the row otherwise runs straight into the next, reading as "all headphonestoday".
     Column(modifier.padding(end = 8.dp)) {
         Text(
             text = value,
@@ -115,8 +112,8 @@ internal fun openPair(context: Context, pairId: Long): Action = openIntent(conte
 
 /**
  * Every tap target gets its own `data` URI. A `PendingIntent` is told apart by action, data, type,
- * component and categories and never by its extras, so without this the eight rows of a tall
- * lifetime widget would collapse into one intent and all open the same pair.
+ * component and categories, never extras — without this all eight rows of a tall lifetime widget
+ * would open the same pair.
  */
 private fun openIntent(context: Context, pairId: Long?): Action =
     actionStartActivity(

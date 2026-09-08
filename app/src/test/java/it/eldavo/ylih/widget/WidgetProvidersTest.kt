@@ -20,14 +20,14 @@ import it.eldavo.ylih.R
 /**
  * That the two halves of a widget's declaration agree.
  *
- * A Glance widget says how big it can be twice: in `res/xml/widget_*_info.xml`, which is what the
- * launcher enforces when someone drags the handles, and in `sizeMode`, which is what the layout
- * code is prepared for. Nothing makes them agree. These used to be `SizeMode.Responsive` sets, and
- * a widget dragged to a size between two buckets drew the smaller layout with a band of empty
- * background under it — so the providers could not offer a wide resize range without offering
- * sizes no layout had been written for. Every widget is now `SizeMode.Exact` and sizes itself off
- * the launcher's real measurements, which is what lets the range below be as wide as the platform
- * will honour; the sweep is what keeps the arithmetic honest across all of it.
+ * A Glance widget says how big it can be twice: in `res/xml/widget_*_info.xml`, which the
+ * launcher enforces when someone drags the handles, and in `sizeMode`, which the layout code is
+ * prepared for. Nothing makes them agree. These used to be `SizeMode.Responsive` sets, and a
+ * widget dragged between two buckets drew the smaller layout with a band of empty background
+ * under it — so the providers couldn't offer a wide resize range without offering sizes no
+ * layout had been written for. Every widget is now `SizeMode.Exact` and sizes itself off the
+ * launcher's real measurements, letting the range below be as wide as the platform will honour;
+ * the sweep keeps the arithmetic honest across all of it.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
@@ -59,10 +59,10 @@ class WidgetProvidersTest {
         // The one thing a widget must not do is read its figures once: Glance runs provideGlance
         // only to *start a session*, and the composition then lives for about 45 seconds, so a
         // widget holding what it loaded redraws those same numbers at every refresh arriving in
-        // that window — which is how a connect used to reach the home screen a minute late.
-        // YlihWidget closes that by making provideGlance final, and this reads the merged manifest
-        // rather than the three receivers by name so that a fourth widget cannot be added by
-        // another door and quietly reintroduce it.
+        // that window — how a connect used to reach the home screen a minute late. YlihWidget
+        // closes that by making provideGlance final, and this reads the merged manifest rather
+        // than the three receivers by name, so a fourth widget can't sneak in another door and
+        // quietly reintroduce it.
         val receivers = context.packageManager
             .getPackageInfo(context.packageName, PackageManager.GET_RECEIVERS)
             .receivers
@@ -137,7 +137,7 @@ class WidgetProvidersTest {
         assertEquals(listOf(2, 2), activityGrid(640f, 640f))
     }
 
-    /** That the provider offers a range at all, in both directions, and does not contradict itself. */
+    /** That the provider offers a range in both directions, without contradicting itself. */
     private fun assertResizable(providerInfo: Int) {
         val dimen = providerDimens(providerInfo)
         val name = context.resources.getResourceEntryName(providerInfo)
@@ -156,8 +156,8 @@ class WidgetProvidersTest {
             dimen("minResizeHeight") <= dimen("minHeight"),
         )
         // Five cells is a phone's home screen filled edge to edge; a tablet's grid is wider still,
-        // and the launcher clamps whatever is declared here down to the real one. Anything less is
-        // a widget that cannot be made as big as the screen it is on.
+        // and the launcher clamps whatever is declared here down to the real one. Anything less
+        // is a widget that can't be made as big as the screen it's on.
         assertTrue(
             "$name cannot be dragged to ${FULL_GRID_DP}dp, which is a phone screen across",
             dimen("maxResizeWidth") >= FULL_GRID_DP && dimen("maxResizeHeight") >= FULL_GRID_DP,

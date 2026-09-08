@@ -39,9 +39,8 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
 /**
- * The pair page is where a decade of history is read and where it can be destroyed, so both
- * halves matter: that the numbers reach the screen, and that the menu writes what it says it
- * writes.
+ * The pair page reads a decade of history and can destroy it, so both matter: the numbers
+ * reaching the screen, and the menu writing what it says.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
@@ -140,11 +139,11 @@ class PairDetailScreenTest {
                 )
             }
         }
-        // The stats header is drawn on the first composition, before Room has answered, so
-        // waiting for a label in it waits for nothing — everything that comes *from* the pair
-        // (its name, generation, price, the retired note) lands a frame or more later, and on a
-        // slow machine that was long enough for the assertions below to run against the empty
-        // page. The title is the one thing on the screen that says the summary has not arrived.
+        // The stats header draws on the first composition, before Room answers, so waiting on a
+        // label in it waits for nothing — the pair's own data (name, generation, price, retired
+        // note) lands a frame or more later, and on a slow machine that was long enough for the
+        // assertions below to run against the empty page. The title is what says the summary
+        // has not arrived.
         compose.waitUntil(timeoutMillis = 10_000) {
             if (known) {
                 nodeCount(text(R.string.pair_fallback_title)) == 0
@@ -181,10 +180,9 @@ class PairDetailScreenTest {
     /**
      * The row naming cycle [number], reporting [ms].
      *
-     * Matched on its text rather than on its description, which is what tells it apart from the
-     * chart above it: the chart describes its own axis as "cycle 1 – cycle 2 · 5.0h max" — so it
-     * answers to the same names — but its labels are cleared from the semantics tree and it has no
-     * text at all.
+     * Matched on text, not description — that's what tells it apart from the chart above, which
+     * answers to the same names ("cycle 1 – cycle 2 · 5.0h max") but has its labels cleared from
+     * the semantics tree and no text at all.
      */
     private fun assertCycleRow(number: Int, ms: Long) {
         val name = text(R.string.pair_cycle_number, number)
@@ -197,8 +195,8 @@ class PairDetailScreenTest {
 
     /**
      * Two full cycles over the three sessions [seedPair] writes: sixty points in the first four
-     * hours, forty in the next one — which completes the first hundred — and a hundred more in the
-     * last hour. Six hours of listening for two cycles, so a charge is worth three.
+     * hours, forty in the next (completing the first hundred), and a hundred more in the last
+     * hour. Six hours of listening for two cycles, so a charge is worth three.
      */
     private fun seedBatteryReadings() = runBlocking {
         val sessions = db.sessionDao().getAll()
@@ -217,12 +215,12 @@ class PairDetailScreenTest {
     }
 
     /**
-     * Battery is the one thing here the headphones have to volunteer — it reaches Android over
-     * HFP, Apple's vendor command or BLE's battery service, and plenty of headsets speak none of
-     * them. A pair that has never reported one gets no section rather than an empty one.
+     * Battery is the one figure headphones have to volunteer — it reaches Android over HFP,
+     * Apple's vendor command or BLE's battery service, and plenty of headsets speak none of
+     * them. A pair that never reported one gets no section rather than an empty one.
      *
-     * Asserted by scrolling rather than by counting nodes: the list composes what is on screen, so
-     * "no node with this text" is true of every section below the fold and would pass whatever the
+     * Asserted by scrolling, not by counting nodes: the list composes only what's on screen, so
+     * "no node with this text" is true of every section below the fold regardless of what the
      * screen did.
      */
     @Test
@@ -235,8 +233,8 @@ class PairDetailScreenTest {
             "the whole list was searched and there is no charge section in it",
             runCatching { scrollTo(text(R.string.pair_charge_cycles)) }.isFailure,
         )
-        // Not even the "keep listening" line: a pair that will never report a level would carry it
-        // for ever, which is the permanent apology the absent section exists to avoid.
+        // Not even the "keep listening" line: a pair that never reports a level would carry it
+        // forever, which the absent section exists to avoid.
         assertTrue(
             "the whole list was searched and the calibrating note is not in it",
             runCatching { scrollTo(text(R.string.pair_charge_calibrating)) }.isFailure,
@@ -244,8 +242,8 @@ class PairDetailScreenTest {
     }
 
     /**
-     * A headset that reports its battery but has not yet drained a hundred points has the tiles and
-     * no chart, since a series of one bar says nothing. The line says what fills the gap.
+     * A headset that reports battery but hasn't yet drained a hundred points gets the tiles and
+     * no chart — a series of one bar says nothing. The line fills the gap.
      */
     @Test
     fun `a pair still on its first charge cycle says so instead of drawing a chart`() {
@@ -313,9 +311,9 @@ class PairDetailScreenTest {
     }
 
     /**
-     * Cycles accumulate for the life of the pair — daily use for a decade is some three thousand —
-     * and the day list above them is bounded by its window while these are not. Listing every one
-     * would put an unbounded scroll between the chart and the sessions underneath it.
+     * Cycles accumulate for the pair's whole life — daily use for a decade is ~3,000 — and unlike
+     * the day list above, they have no window. Listing every one would put an unbounded scroll
+     * between the chart and the sessions below it.
      */
     @Test
     fun `only the most recent charge cycles are listed, however many there are`() {
@@ -327,8 +325,8 @@ class PairDetailScreenTest {
             runCatching { scrollTo(text(R.string.pair_charge_cycles)) }.isSuccess
         }
 
-        // The newest is listed and the oldest is not, and the sessions below stay reachable.
-        // Exactly, not by substring: "cycle 1" is a substring of "cycle 19", which *is* listed.
+        // The newest is listed, the oldest is not, and the sessions below stay reachable. Exact
+        // match, not substring: "cycle 1" is a substring of "cycle 19", which *is* listed.
         scrollToExact(text(R.string.pair_cycle_number, 30))
         assertTrue(
             "the whole list was searched and cycle 1 is not in it",
@@ -343,8 +341,8 @@ class PairDetailScreenTest {
         seedBatteryReadings()
 
         show(pairId)
-        // The readings arrive from Room a frame or more after the summary does, so the section
-        // may not be in the list yet on the first attempt.
+        // Readings arrive from Room a frame or more after the summary, so the section may not
+        // be in the list yet on the first attempt.
         compose.waitUntil(timeoutMillis = 10_000) {
             runCatching { scrollTo(text(R.string.pair_charge_cycles)) }.isSuccess
         }
@@ -366,9 +364,8 @@ class PairDetailScreenTest {
             "${text(R.string.pair_vs_new)}: ${formatPercent(0.2)}",
         ).assertExists()
 
-        // One row per completed cycle, and the shape of the two is the whole point of the section:
-        // five of the six hours went to the first, one to the second — the same battery buying
-        // less than it used to.
+        // One row per completed cycle; the shape of the two is the point of the section: five of
+        // the six hours went to the first, one to the second — the same battery buying less.
         assertCycleRow(number = 1, ms = 5 * hour)
         assertCycleRow(number = 2, ms = hour)
     }
@@ -397,15 +394,15 @@ class PairDetailScreenTest {
     }
 
     /**
-     * That both sources of a figure on this page are wired up, which one assertion can cover
-     * because they have to agree.
+     * Both sources of a figure on this page are wired up; one assertion covers this because they
+     * must agree.
      *
-     * The headline is read off the per-pair aggregate (`summarizeLifetime`) and the today/7/30 row
-     * off the thirty-day window (`spansByPair`) — neither is derived from this pair's own session
-     * list any more, because doing that re-summarised a decade of history on the main thread every
-     * minute. The seeded pair has four hours, one hour and an hour still running, all inside the
-     * last week, so every one of those figures is the same six hours. Drop either wiring and the
-     * count falls to one: an empty window still leaves the headline right.
+     * The headline reads the per-pair aggregate (`summarizeLifetime`); the today/7/30 row reads
+     * the thirty-day window (`spansByPair`). Neither derives from this pair's own session list
+     * anymore, because that re-summarised a decade of history on the main thread every minute.
+     * The seeded pair has four hours, one hour and an hour still running, all within the last
+     * week, so every figure is the same six hours. Drop either wiring and the count falls to
+     * one: an empty window still leaves the headline right.
      */
     @Test
     fun `the headline and the recent windows are the same six hours`() {
@@ -560,8 +557,8 @@ class PairDetailScreenTest {
 
     @Test
     fun `counting playback, the headline stops calling itself a lifetime`() {
-        // The figure above this line changes meaning with the mode, and this is the only place on
-        // the page that can say which of the two the reader is looking at.
+        // The figure above changes meaning with the mode; this is the only place on the page
+        // that says which of the two the reader is looking at.
         runBlocking { app.container.settings.setPlaybackOnly(true) }
         val pairId = seedPair()
 
@@ -583,9 +580,8 @@ class PairDetailScreenTest {
     }
 
     /**
-     * The chart can only show a shape; the list under it is where "how much did I listen
-     * yesterday, on this pair" is actually answered, mirroring `StatsScreenTest`'s equivalent
-     * assertion for the all-pairs chart.
+     * The chart shows only a shape; the list under it answers "how much did I listen yesterday,
+     * on this pair" — mirroring `StatsScreenTest`'s equivalent assertion for the all-pairs chart.
      */
     @Test
     fun `the daily breakdown names yesterday and reaches back to the first day recorded`() {
@@ -604,20 +600,20 @@ class PairDetailScreenTest {
     }
 
     /**
-     * Unlike the stats screen's own chart, this one must not fold in every other pair's history.
-     * A second pair's session lands on the same calendar day as one of this pair's own, and that
-     * day's row has to keep showing this pair's hour alone — the sum of the two is exactly what a
-     * `spansByPair` lookup gone wrong (reading every pair's spans instead of just this one's)
-     * would produce, and nothing else on the page would catch that.
+     * Unlike the stats screen's chart, this one must not fold in every other pair's history. A
+     * second pair's session lands on the same calendar day as one of this pair's own, and that
+     * day's row must keep showing this pair's hour alone — the sum of both is exactly what a
+     * `spansByPair` lookup gone wrong (reading every pair's spans, not just this one's) would
+     * produce, and nothing else on the page would catch it.
      */
     @Test
     fun `the daily breakdown is scoped to this pair, not every pair`() {
         val pairId = seedPair()
         val zone = ZoneId.systemDefault()
-        // Anchored to local noon on a day of its own, five days back, rather than to a fixed
-        // offset from `now` the way `seedPair()`'s own sessions are: a session an hour long can
-        // straddle midnight and split across two days depending on what time of day the suite
-        // happens to run, which would make the exact-hour assertion below flaky.
+        // Anchored to local noon five days back, rather than to a fixed offset from `now` as
+        // `seedPair()`'s sessions are: an hour-long session can straddle midnight and split
+        // across two days depending on when the suite runs, which would make the exact-hour
+        // assertion below flaky.
         val fifthDayNoon = LocalDate.now(zone).minusDays(5).atTime(12, 0)
             .atZone(zone).toInstant().toEpochMilli()
         runBlocking {

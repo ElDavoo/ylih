@@ -7,9 +7,9 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 /**
- * A charge cycle is a hundred percentage points used, and the hours it bought are what say whether
- * the battery is getting worse. Both halves of that ratio have to come from the same stretches of
- * time or the figure means nothing, which is what most of this file is about.
+ * A charge cycle is a hundred percentage points used; the hours it bought say whether the
+ * battery is worsening. Both halves of that ratio must come from the same stretches of time or
+ * the figure is meaningless — the subject of most of this file.
  */
 class ChargeTest {
 
@@ -58,9 +58,9 @@ class ChargeTest {
     }
 
     /**
-     * The rule the whole file rests on. Between these two readings the headphones were off the
-     * phone: nobody knows whether they were charged in that gap, and there is certainly no
-     * listening to credit it with.
+     * The rule the whole file rests on: between these two readings the headphones were off the
+     * phone, so nobody knows whether they charged in that gap, and there's no listening to
+     * credit it with.
      */
     @Test
     fun `a drop across a session boundary is not drain`() {
@@ -141,9 +141,9 @@ class ChargeTest {
     }
 
     /**
-     * A session recorded in Bluetooth-only mode has no playback figure at all. Crediting it zero
-     * would read as a charge that gave nothing back, so its drain leaves the denominator too — the
-     * same choice `Stats.counted` makes.
+     * A session in Bluetooth-only mode has no playback figure. Crediting it zero would read as a
+     * charge that gave nothing back, so its drain leaves the denominator too — the same choice
+     * `Stats.counted` makes.
      */
     @Test
     fun `counting playback drops a session that never measured it`() {
@@ -206,8 +206,8 @@ class ChargeTest {
 
     /**
      * A clock corrected backwards mid-session leaves a reading dated before the one it followed.
-     * The drain is real, but there is no stretch of time to credit it to, so neither side takes it
-     * — the alternative is a negative number of hours dragging the whole ratio down.
+     * The drain is real but there's no stretch of time to credit it to, so neither side takes it
+     * — the alternative is negative hours dragging the whole ratio down.
      */
     @Test
     fun `a backwards clock step is dropped from both sides`() {
@@ -270,9 +270,9 @@ class ChargeTest {
     }
 
     /**
-     * The reason this is not the literal last cycle over the literal first: one unlucky pair of
-     * cycles would say the battery had collapsed, when averaging both ends says it has barely
-     * moved. Eight cycles average two at each end.
+     * Why this is not the literal last cycle over the literal first: one unlucky pair of cycles
+     * would say the battery had collapsed, when averaging both ends says it has barely moved.
+     * Eight cycles average two at each end.
      */
     @Test
     fun `both ends are averaged, so one odd cycle does not decide the figure`() {
@@ -310,7 +310,7 @@ class ChargeTest {
     @Test
     fun `a session with no span at all still counts its connected time`() {
         // Belt and braces: nothing deletes a session out from under its readings, but the maths
-        // must not silently drop drain if something ever does.
+        // must not silently drop drain if that ever changes.
         val summary = summarize(
             listOf(reading(7, 0, 80), reading(7, 1, 70)),
             spans = emptyMap(),

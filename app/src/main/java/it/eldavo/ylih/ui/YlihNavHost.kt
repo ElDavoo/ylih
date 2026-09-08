@@ -84,37 +84,32 @@ private val destinations = listOf(
 private const val TAB_DEVICES = 0
 private const val TAB_STATS = 1
 
-// The three tabs are one destination between them, not three. They used to be a destination each,
-// which is what made moving between them a navigation and left them with no gesture: a NavHost
-// swaps its content on a click and a back stack, and there is nothing to drag. As pages of a pager
-// they are laid out side by side, so the swipe is the layout rather than an animation bolted onto
-// it — the screen follows the finger and can be caught halfway or thrown back.
+// The three tabs are one destination: as separate routes, switching had no gesture (a NavHost
+// swaps content on click). As pager pages they lay out side by side, so the swipe is the layout
+// itself — the screen follows the finger.
 private const val TABS_ROUTE = "tabs"
 private const val PAIR_ROUTE = "pair/{pairId}"
 
-// What is left in the back stack is the pair page, and it both scales and fades: the spec lives in
-// NavMotion.kt, which says why it is one spec and why the bar reads the fade of it alone. The
-// NavHost gets all six of its transitions passed explicitly rather than inheriting
-// navigation-compose's defaults — an inherited default is a shape and a number that can change
-// under us in a dependency bump, and the bar has no way to follow it; NavMotion.kt has the incident
-// that made this not hypothetical. The bar's own fade is keyed on the route, which flips only when
-// a pop commits, so it plays once the gesture is released rather than during it.
+// The pair page, left in the back stack, scales and fades — NavMotion.kt has the spec and why the
+// bar reads only its fade. All six transitions are passed explicitly rather than inherited, since
+// navigation-compose's defaults can change under a dependency bump with no way for the bar to
+// follow (NavMotion.kt has the incident). The bar's fade keys on the route, which flips only when
+// a pop commits, so it plays once the gesture releases, not during it.
 
 /**
  * How wide a screen's content is ever allowed to get.
  *
- * At `targetSdk 37` the platform ignores orientation and resizability restrictions on anything
- * wider than 600dp, so a tablet gets the phone layout stretched across it — lists of a dozen words
- * on a line, which nobody reads twice. This is a ceiling and not a size: it is above every phone
- * width there is, so the phone layout cannot be changed by it.
+ * At `targetSdk 37` the platform ignores orientation/resizability restrictions above 600dp,
+ * stretching the phone layout across a tablet — lists of a dozen words on a line, unreadable
+ * twice. A ceiling, not a size: above every phone width, so it can't affect phone layout.
  */
 private val CONTENT_MAX_WIDTH = 640.dp
 
 /**
- * Centres a screen and stops it stretching, at the one place all four of them flow through.
+ * Centres a screen and stops it stretching, at the one place all four flow through.
  *
- * Each screen still takes its own `contentPadding` and scroll state; none of them knows this
- * exists, which is why it is here rather than four times over.
+ * Each screen still takes its own `contentPadding` and scroll state; none knows this exists, so it
+ * lives here once rather than four times over.
  */
 @Composable
 private fun ContentWidth(content: @Composable () -> Unit) {
@@ -128,15 +123,15 @@ private fun ContentWidth(content: @Composable () -> Unit) {
 fun YlihNavHost(
     viewModel: YlihViewModel = viewModel(factory = YlihViewModel.Factory),
     /**
-     * Hoisted only so a test can reach a destination the UI has no way of asking for. A route
-     * argument is a string, so the pair route has to cope with one that is not a number, and
-     * every button that navigates there builds it from a Long.
+     * Hoisted only so a test can reach a destination the UI has no way to ask for. A route
+     * argument is a string, so the pair route must cope with a non-number one, and every button
+     * that navigates there builds it from a Long.
      */
     navController: NavHostController = rememberNavController(),
     /**
-     * Pair ids tapped on a home-screen widget. The activity hoists this for the same reason it
-     * hoists [navController]: the widget knows which pair it means, and this is the seam that
-     * carries that through without the NavHost having to read an Intent.
+     * Pair ids tapped on a home-screen widget. The activity hoists this like [navController]: the
+     * widget knows which pair it means, and this seam carries that through without the NavHost
+     * reading an Intent.
      */
     openPair: Flow<Long> = emptyFlow(),
 ) {
@@ -144,43 +139,40 @@ fun YlihNavHost(
     val currentRoute = backStackEntry?.destination?.route
     val snackbarHostState = remember { SnackbarHostState() }
 
-    // Scroll state is hoisted so the app bar can ask whether the screen in front of the user
-    // actually scrolls. Without that check a short screen still collapses the bar: a LazyColumn
-    // dispatches its overscroll up the nested-scroll chain even when there is nothing to scroll,
-    // so a drag on the devices list with two pairs on it shrinks the title for no reason.
+    // Hoisted so the app bar can ask whether the screen in front actually scrolls — without it, a
+    // short screen still collapses the bar, since a LazyColumn dispatches overscroll up the chain
+    // with nothing to scroll (e.g. a two-pair devices list).
     val devicesListState = rememberLazyListState()
     val statsListState = rememberLazyListState()
     val settingsScrollState = rememberScrollState()
 
-    // Hoisted above the NavHost rather than remembered inside the tabs destination: the pair page
-    // is a push, so the tabs leave the composition while it is open, and a pager state remembered
-    // down there would hand the user back the first tab on the way out.
+    // Hoisted above the NavHost, not remembered inside the tabs destination: the pair page is a
+    // push, so tabs leave the composition while it's open, and a state remembered there would hand
+    // back the first tab on return.
     val pagerState = rememberPagerState(pageCount = { destinations.size })
     val scope = rememberCoroutineScope()
 
-    // A tablet or an unfolded foldable, at Material's own medium-width breakpoint. Read through
-    // currentWindowAdaptiveInfoV2 rather than currentWindowAdaptiveInfo: the latter is deprecated
-    // in this version of the adaptive library — it cannot see the large and extra-large classes —
-    // and a deprecation fails the build here.
+    // A tablet or unfolded foldable, at Material's medium-width breakpoint. Uses
+    // currentWindowAdaptiveInfoV2, not currentWindowAdaptiveInfo: the latter is deprecated here (it
+    // can't see the large/extra-large classes), and a deprecation fails this build.
     val wide = currentWindowAdaptiveInfoV2().windowSizeClass
         .isWidthAtLeastBreakpoint(WindowSizeClass.WIDTH_DP_MEDIUM_LOWER_BOUND)
 
-    // One lambda for both the bar and the rail: they are the same control drawn twice, and a
-    // second copy of "come back to the tabs and show me this one" is a second thing to get wrong.
+    // One lambda for both bar and rail: same control drawn twice, so one place to get "come back to
+    // the tabs and show this" right.
     val selectTab: (Int) -> Unit = { page ->
-        // The bar is still there on the pair page, where a tap means both things at once. A no-op
-        // on the tabs themselves, which is where the tap usually comes from.
+        // Still there on the pair page, where a tap means both things at once; a no-op on the tabs
+        // themselves, where the tap usually comes from.
         navController.popBackStack(TABS_ROUTE, inclusive = false)
         scope.launch { pagerState.animateScrollToPage(page) }
     }
     val tabSelected: (Int) -> Boolean = { page ->
-        // Nothing is selected while the pair page is up, as when each tab was a route of its own
-        // and none of them was the current one.
+        // Nothing selected while the pair page is up, as when each tab was its own route.
         currentRoute == TABS_ROUTE && pagerState.currentPage == page
     }
 
-    // `currentPage` rather than `settledPage`: it flips at the halfway point of a drag, which is
-    // the moment the screen the question is about becomes the one in front of the user.
+    // currentPage, not settledPage: it flips at the drag's halfway point, when the screen becomes
+    // the one in front of the user.
     val activeScrollState: ScrollableState? = when {
         currentRoute != TABS_ROUTE -> null
         pagerState.currentPage == TAB_DEVICES -> devicesListState
@@ -200,32 +192,30 @@ fun YlihNavHost(
         canScroll = { allowCollapse.value },
     )
 
-    // The verdict is only ever taken with the bar fully open, and then latched for the whole
-    // gesture. Collapsing the bar hands its height back to the content, so a screen that only
-    // just overflows stops overflowing halfway through the collapse; sampling canScroll live
-    // makes the bar fight itself and snap back — settings did exactly that.
+    // Taken only with the bar fully open, then latched for the gesture: collapsing hands the bar's
+    // height back to the content, so a screen that only just overflows stops overflowing
+    // mid-collapse, and sampling canScroll live would make the bar fight itself and snap back —
+    // settings did exactly that.
     //
-    // Through snapshotFlow rather than a SideEffect. A SideEffect body is not a snapshot observer,
-    // so reading the two values there registered no dependency that could schedule a recomposition:
-    // the latch only ever re-ran when this function recomposed for some unrelated reason, a route
-    // change or a page flip. A list that grew past the fold while the user sat on it — a pair
-    // connects, a chip appears — left the bar refusing to collapse until something else happened.
+    // Through snapshotFlow, not SideEffect: a SideEffect body isn't a snapshot observer, so reading
+    // the two values there registered no dependency — the latch only re-ran on some unrelated
+    // recomposition (a route change, a page flip), so a list that grew past the fold mid-session (a
+    // pair connects, a chip appears) left the bar stuck refusing to collapse.
     LaunchedEffect(scrollBehavior) {
         snapshotFlow { (scrollBehavior.state.heightOffset == 0f) to canScroll }
             .collect { (expanded, scrollable) -> if (expanded) allowCollapse.value = scrollable }
     }
 
-    // Back off a tab returns to the first one, which is what the back stack used to do for free:
-    // every tab was navigated to with popUpTo(start), so the headphones tab sat underneath the
-    // other two. Left enabled on the pair page this would swallow the pop that closes it — the
-    // NavHost registers its own handler after this one and so wins, but only while it has
-    // something to pop, which on the tabs alone it does not.
+    // Back off a tab returns to the first, which the back stack used to do for free (every tab
+    // navigated via popUpTo(start), so headphones sat underneath). Left enabled on the pair page
+    // this would swallow its pop — the NavHost's own handler registers after this one and wins, but
+    // only while it has something to pop, which the tabs alone don't.
     BackHandler(enabled = currentRoute == TABS_ROUTE && pagerState.currentPage != TAB_DEVICES) {
         scope.launch { pagerState.animateScrollToPage(TAB_DEVICES) }
     }
 
-    // Under repeatOnLifecycle, like every other flow the UI reads — a message emitted while the
-    // activity is stopped was otherwise consumed by a host nobody could see and then discarded.
+    // Under repeatOnLifecycle like every flow the UI reads, or a message emitted while the activity
+    // is stopped is consumed by a host nobody sees, then lost.
     val lifecycleOwner = LocalLifecycleOwner.current
     LaunchedEffect(lifecycleOwner) {
         viewModel.messages
@@ -241,9 +231,9 @@ fun YlihNavHost(
         }
     }
 
-    // The rail sits beside the Scaffold rather than inside it: Scaffold has no side slot, and a
-    // rail put in the content lambda would leave the Scaffold computing its insets and its
-    // bottom-bar padding for the full window rather than for the width the content actually gets.
+    // The rail sits beside the Scaffold, not inside it: Scaffold has no side slot, and a rail in
+    // the content lambda would make it compute insets and bottom-bar padding for the full window,
+    // not the narrower content width.
     Row(Modifier.fillMaxSize()) {
         if (wide) {
             WideNavigationRail {
@@ -253,8 +243,8 @@ fun YlihNavHost(
                         onClick = { selectTab(page) },
                         icon = { Icon(destination.icon, contentDescription = null) },
                         label = { Text(stringResource(destination.label)) },
-                        // Collapsed: three destinations with one-word labels do not need the
-                        // expanded rail's width, and expanding it is a control of its own.
+                        // Collapsed: three one-word labels don't need the expanded rail's width,
+                        // and expanding it would be a control of its own.
                         railExpanded = false,
                     )
                 }
@@ -262,11 +252,11 @@ fun YlihNavHost(
         }
         Scaffold(
             // Nested scroll on the Scaffold is enough: the LazyColumns inside each screen dispatch
-            // their scroll up to it.
+            // scroll up to it.
             modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-            // enableEdgeToEdge is on, and the rail consumes the start and vertical bars itself.
-            // Left at the default the Scaffold would consume the start inset a second time and pad
-            // the content away from a rail that had already made room for it.
+            // enableEdgeToEdge is on and the rail already consumes the start and vertical bars; at
+            // the default the Scaffold would consume the start inset again and pad content away
+            // from a rail that already made room for it.
             contentWindowInsets = if (wide) {
                 ScaffoldDefaults.contentWindowInsets
                     .only(WindowInsetsSides.End + WindowInsetsSides.Vertical)
@@ -275,17 +265,16 @@ fun YlihNavHost(
             },
             snackbarHost = { SnackbarHost(snackbarHostState) },
             topBar = {
-                // Pair detail brings its own app bar with a back arrow, so the app-level one is
-                // only for the three tabs.
+                // Pair detail brings its own app bar with a back arrow, so the app-level one is only
+                // for the tabs.
                 //
-                // Fading rather than swapping it: the route flips the moment navigate() is called,
-                // so dropping the bar on `currentRoute` alone made it vanish a beat before the
-                // screen it belongs to had finished crossfading — and took its height with it,
-                // jerking the list underneath upwards mid-animation. AnimatedVisibility holds the
-                // height until its own exit ends — which the shared spec puts at the moment the
-                // screen underneath has finished fading — and hands it back at the start of the
-                // enter, so the two bars trade places in step. Tab-to-tab keeps the
-                // bar untouched, which is the point of hoisting it here.
+                // Fading rather than swapping: the route flips the instant navigate() runs, so
+                // dropping the bar on `currentRoute` alone made it vanish a beat before the
+                // crossfading screen finished, taking its height and jerking the list upward
+                // mid-animation. AnimatedVisibility holds the height until its own exit ends (the
+                // shared spec puts that at the moment the screen finishes fading) and returns it at
+                // the enter's start, so the two bars trade places in step. Hoisting it here keeps it
+                // untouched tab-to-tab.
                 AnimatedVisibility(
                     visible = currentRoute != PAIR_ROUTE,
                     enter = barEnter(),
@@ -296,19 +285,16 @@ fun YlihNavHost(
                             Text(
                                 text = stringResource(R.string.app_title),
                                 maxLines = 1,
-                                // The name fits one line at the size the bar would give it in no
-                                // language — 30 characters in English, 40 in Cebuano — so it is
-                                // shrunk until it does, rather than wrapped onto a second line or
-                                // ellipsised to "ylih - your life in…".
+                                // Fits one line at the bar's own size in no language (30 characters
+                                // in English, 40 in Cebuano), so it shrinks rather than wrapping or
+                                // ellipsising to "ylih - your life in…".
                                 //
-                                // The ceiling is whatever style the bar provided rather than a
-                                // number of our own: the flexible bar interpolates that as it
-                                // collapses, so binding to it keeps the collapse animation driving
-                                // the size and leaves this only ever taking away. 14sp is a floor
-                                // and not a size anything is expected to reach — English and
-                                // Polish, the longest of the languages the store screenshots cover,
-                                // both settle near the ceiling — so that a language nobody here
-                                // reads gets a smaller title instead of a clipped one.
+                                // The ceiling is the bar's own style, not ours: the flexible bar
+                                // interpolates it while collapsing, so binding to it keeps the
+                                // animation driving the size. 14sp is a floor, not an expected size —
+                                // English and Polish, the longest store-screenshot languages, both
+                                // settle near the ceiling — so an unread language gets a smaller
+                                // title instead of a clipped one.
                                 autoSize = TextAutoSize.StepBased(
                                     minFontSize = 14.sp,
                                     maxFontSize = LocalTextStyle.current.fontSize,
@@ -320,11 +306,11 @@ fun YlihNavHost(
                 }
             },
             bottomBar = {
-                // Nothing at all when the rail is up: the same three destinations down both edges
-                // of the screen would be one control drawn twice.
+                // Nothing when the rail is up: the same three destinations down both edges would be
+                // one control drawn twice.
                 if (!wide) {
                     // Expressive's shorter bar: the active item gets a filled pill that springs
-                    // into place rather than the old static indicator.
+                    // into place rather than a static indicator.
                     ShortNavigationBar {
                         destinations.forEachIndexed { page, destination ->
                             ShortNavigationBarItem(
@@ -345,9 +331,9 @@ fun YlihNavHost(
                 exitTransition = { navExit() },
                 popEnterTransition = { navPopEnter() },
                 popExitTransition = { navPopExit() },
-                // A back *gesture* is seeked through these two rather than through the pair above,
-                // and they are only ours if they are named — left unnamed, a NavHost silently takes
-                // the library's own. NavMotion.kt has why that matters.
+                // A back *gesture* is seeked through these two, not the pair above, and they're
+                // only ours if named — left unnamed, a NavHost silently takes the library's own.
+                // NavMotion.kt has why that matters.
                 predictivePopEnterTransition = { navPredictivePopEnter(it) },
                 predictivePopExitTransition = { navPredictivePopExit(it) },
             ) {
@@ -355,9 +341,9 @@ fun YlihNavHost(
                     HorizontalPager(
                         state = pagerState,
                         modifier = Modifier.fillMaxSize(),
-                        // A page is a whole screen and lays itself out from the top; the default
-                        // centres one that does not fill the height, which the settings column does
-                        // not until it has enough rows in it.
+                        // A page is a whole screen laid out from the top; the default centres one
+                        // that doesn't fill the height, which settings doesn't until it has enough
+                        // rows.
                         verticalAlignment = Alignment.Top,
                     ) { page ->
                         ContentWidth {
@@ -385,8 +371,8 @@ fun YlihNavHost(
                 composable(PAIR_ROUTE) { entry ->
                     val pairId = entry.arguments?.getString("pairId")?.toLongOrNull()
                     if (pairId == null) {
-                        // In an effect, not in the composition body: popping the back stack while
-                        // it is being composed is a side effect on the thing doing the composing.
+                        // In an effect, not the composition body: popping the back stack while it
+                        // composes is a side effect on the thing doing the composing.
                         LaunchedEffect(entry) { navController.popBackStack() }
                     } else {
                         ContentWidth {
@@ -403,8 +389,8 @@ fun YlihNavHost(
         }
     }
 
-    // Outside the Scaffold: a dialog is not laid out by it, and the welcome has to sit above the
-    // whole app, tabs included.
+    // Outside the Scaffold: a dialog isn't laid out by it, and the welcome must sit above the whole
+    // app, tabs included.
     val onboardingDone by viewModel.onboardingDone.collectAsStateWithLifecycle()
     if (onboardingDone == false) {
         WelcomeDialog(
@@ -413,7 +399,7 @@ fun YlihNavHost(
         )
     }
 
-    // Strictly after the welcome, and never beside it: the first run already spends one dialog
+    // Strictly after the welcome, never beside it: the first run already spends one dialog
     // explaining the app, and two stacked would be a wall to dismiss before seeing anything.
     val hibernationAsked by viewModel.hibernationAsked.collectAsStateWithLifecycle()
     if (onboardingDone == true && hibernationAsked == false) {
@@ -421,8 +407,8 @@ fun YlihNavHost(
         val hibernation by produceState(Hibernation.UNAVAILABLE, context) {
             value = Restrictions.hibernation(context)
         }
-        // Nothing to ask for where the platform does not hibernate apps, or where the user has
-        // already exempted ylih — and asking anyway would spend the one prompt on a no-op.
+        // Nothing to ask where the platform doesn't hibernate apps, or the user already exempted
+        // ylih — asking anyway would spend the one prompt on a no-op.
         if (hibernation == Hibernation.ENABLED) {
             val intent = remember(context) { Restrictions.settingsIntent(context) }
             HibernationDialog(

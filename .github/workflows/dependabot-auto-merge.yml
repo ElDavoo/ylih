@@ -4,21 +4,22 @@ name: Dependabot auto-merge
 # merge only happens once every required check on the PR is green, which is what makes this
 # safe — the Android CI matrix is the gate, not this workflow.
 #
-# A gradle PR cannot go green on its own: Dependabot bumps libs.versions.toml and leaves
+# A gradle PR can't go green on its own: Dependabot bumps libs.versions.toml and leaves
 # gradle/verification-metadata.xml alone, so the build refuses the new artifacts as unverified.
-# `dependabot-verification-metadata.yml` is what pushes the regenerated checksums onto the branch;
-# that push re-runs Android CI, and this auto-merge is then waiting for a run that can pass.
+# `dependabot-verification-metadata.yml` pushes the regenerated checksums onto the branch; that
+# push re-runs Android CI, and this auto-merge waits for a run that can pass.
+#
 # pull_request_target is required, not incidental: Dependabot's own pull_request events hand the
-# job a read-only token, so it could not arm anything. What makes the trigger dangerous elsewhere
-# is checking out and running the PR's code with a write token -- this workflow never checks the
-# PR out at all, and runs nothing from it.
+# job a read-only token, so it couldn't arm anything. What makes the trigger dangerous elsewhere
+# is checking out and running the PR's code with a write token — this workflow never checks the
+# PR out, and runs nothing from it.
 on:  # zizmor: ignore[dangerous-triggers]
   pull_request_target:
   # GitHub turns auto-merge back off by itself when the base branch moves under a PR, and the
-  # pull_request_target run that armed it finished long before that -- leaving the PR green,
+  # pull_request_target run that armed it finished long before that — leaving the PR green,
   # mergeable and armed by nobody, which looks exactly like CI still running. Two Dependabot PRs
-  # touching one file is enough to trigger it: the second is disarmed the moment the first merges.
-  # Every push to main re-arms whatever is still open, which is the only thing that closes that
+  # touching one file is enough to trigger it: the second is disarmed the moment the first
+  # merges. Every push to main re-arms whatever is still open, the only thing that closes that
   # window.
   push:
     branches: [main]
@@ -33,19 +34,19 @@ concurrency:
   group: dependabot-auto-merge
   cancel-in-progress: false
 
-# Every Dependabot PR, with no exception for major bumps, and that is a deliberate reversal.
-# The exception used to read `update-type != 'version-update:semver-major'`, on the reasoning that
-# Compose, AGP and material3 are pinned against each other and a major is worth a changelog. What
-# it actually did was skip every nix PR forever: dependabot/fetch-metadata is handed two git
-# commit hashes for a flake.lock bump — `e5bdc4a` to `ffb3c9b7…` — cannot read either as semver,
-# and falls back to reporting semver-major. PR #15 sat green and unmerged for that reason, with
-# the job reporting success because the step it was meant to run had simply been skipped.
+# Every Dependabot PR, with no exception for major bumps — a deliberate reversal. The exception
+# used to read `update-type != 'version-update:semver-major'`, reasoning that Compose, AGP and
+# material3 are pinned against each other and a major is worth a changelog. What it actually did
+# was skip every nix PR forever: dependabot/fetch-metadata is handed two git commit hashes for a
+# flake.lock bump — `e5bdc4a` to `ffb3c9b7…` — can't read either as semver, and falls back to
+# reporting semver-major. PR #15 sat green and unmerged for that reason, the job reporting
+# success because the step it was meant to run had simply been skipped.
 #
-# A guard that cannot tell a nixpkgs hash from an AGP 10 is not a guard, and there is no version
-# string in a flake.lock for a better one to read. So the gate is CI and only CI — which here
+# A guard that can't tell a nixpkgs hash from an AGP 10 is not a guard, and there's no version
+# string in a flake.lock for a better one to read. So the gate is CI and only CI — here that
 # means lint as a hard error, a coverage floor, R8 keep invariants and the instrumented suite on
 # three emulators. Bringing the exception back means restoring the two steps below this comment
-# from git history, and would want a per-ecosystem condition rather than the bare one.
+# from git history, wanting a per-ecosystem condition rather than the bare one.
 jobs:
   auto-merge:
     if: github.event_name == 'push' || github.event.pull_request.user.login == 'dependabot[bot]'
@@ -83,17 +84,17 @@ jobs:
               continue
             fi
 
-            # GitHub refuses enablePullRequestAutoMerge on a PR that is already mergeable with every
-            # required check green -- "Pull request is in clean status" -- because there is nothing
-            # left to wait for. A run that lands after CI has finished hits that, and PR #15 hit it
-            # from the other direction: two days green, and the one command that would have merged
-            # it could no longer be asked for. Merging outright is the same outcome auto-merge would
-            # have reached a moment earlier.
+            # GitHub refuses enablePullRequestAutoMerge on a PR already mergeable with every
+            # required check green — "Pull request is in clean status" — since there's nothing
+            # left to wait for. A run landing after CI has finished hits that, and PR #15 hit it
+            # from the other direction: two days green, and the one command that would have
+            # merged it could no longer be asked for. Merging outright is the same outcome
+            # auto-merge would have reached a moment earlier.
             #
-            # Matched on the message rather than falling back on any failure, deliberately. A bare
-            # `|| gh pr merge` would turn every other reason auto-merge can be refused -- a
-            # permission, a protection rule -- into an immediate merge of a PR whose checks nobody
-            # waited for, which is the one thing this workflow must never do.
+            # Matched on the message rather than falling back on any failure, on purpose: a bare
+            # `|| gh pr merge` would turn every other reason auto-merge can be refused — a
+            # permission, a protection rule — into an immediate merge of a PR whose checks nobody
+            # waited for, the one thing this workflow must never do.
             #
             # A conflicted PR is skipped rather than fatal: on the push path one PR that needs a
             # rebase would otherwise abort the loop before the others are armed.

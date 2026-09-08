@@ -37,8 +37,8 @@ fun StatsScreen(
 ) {
     val spans by viewModel.recentSpans.collectAsStateWithLifecycle()
     val summaries by viewModel.summaries.collectAsStateWithLifecycle()
-    // The minute clock, not the second one: every figure below is derived from the whole history
-    // and none of them can display a change faster than that. See YlihViewModel.nowMinute.
+    // The minute clock, not the second: every figure below derives from the whole history and
+    // none can change faster than that. See YlihViewModel.nowMinute.
     val now by viewModel.nowMinute.collectAsStateWithLifecycle()
     val counting by viewModel.counting.collectAsStateWithLifecycle()
     val zone = remember { ZoneId.systemDefault() }
@@ -87,8 +87,8 @@ fun StatsScreen(
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
-                // Without this the headline just quietly shrinks, and a lifetime total that
-                // dropped by half with no explanation is exactly what this app must never do.
+                // Without this the headline quietly shrinks — a lifetime total dropping by half
+                // with no explanation is exactly what this app must never do.
                 if (counting == Counting.PLAYBACK) {
                     Text(
                         stringResource(R.string.stats_playback_only_note),
@@ -124,9 +124,8 @@ fun StatsScreen(
                 }
                 Spacer(Modifier.height(24.dp))
                 val chartLabel = stringResource(R.string.stats_daily_hours_30)
-                // A heading rather than a caption, because it now titles the day list below the
-                // chart as well: it is what a screen reader jumps to, the way it does the
-                // `SectionHeader` under it.
+                // A heading, not a caption: it now titles the day list below the chart too, and
+                // is what a screen reader jumps to, like the `SectionHeader` under it.
                 Text(
                     chartLabel,
                     style = MaterialTheme.typography.titleSmallEmphasized,
@@ -137,15 +136,15 @@ fun StatsScreen(
                 Spacer(Modifier.height(16.dp))
             }
         }
-        // The days themselves, under the chart of them and inside the same heading: no section of
-        // their own, because "daily hours (30 days)" is what both of them are.
+        // The days, under the chart of them and inside the same heading: no section of their own,
+        // since "daily hours (30 days)" is what both are.
         //
         // Newest first with only the old end trimmed, so the head of the list is the series' own
         // last day — today, without a second reading of a clock the series has already read.
         breakdown.firstOrNull()?.first?.let { today ->
-            // Keyed by the date as text, not as an epoch day: the pair rows below are keyed by a
-            // database id and a lazy list holds one namespace, in which 20,000-and-something would
-            // eventually be both.
+            // Keyed by the date as text, not an epoch day: the pair rows below key on a database
+            // id, and a lazy list holds one namespace, in which 20,000-and-something would
+            // eventually collide.
             items(breakdown, key = { "day:${it.first}" }) { (date, ms) ->
                 DailyBreakdownRow(date = date, ms = ms, maxMs = chartMax, today = today)
             }
@@ -182,10 +181,10 @@ fun StatsScreen(
 }
 
 /**
- * A share, through the locale's own percent format rather than a `%` glued on the end.
+ * A share, through the locale's own percent format, not a `%` glued on the end.
  *
- * That matters more than it looks: Arabic writes the sign with its own directional marks, Russian
- * and Finnish put a space before it, and several locales use different digits entirely.
+ * Matters more than it looks: Arabic writes the sign with its own directional marks, Russian and
+ * Finnish put a space before it, and several locales use different digits entirely.
  */
 internal fun percent(part: Long, whole: Long): String =
     if (whole <= 0) {

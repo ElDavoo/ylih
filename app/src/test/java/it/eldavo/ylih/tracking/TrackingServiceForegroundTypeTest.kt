@@ -22,11 +22,11 @@ import org.robolectric.annotation.Config
 
 /**
  * Which foreground-service type the service claims decides whether Android lets it run at all,
- * and the answer differs by flavor *and* by release — which is exactly the combination nobody
- * checks by hand. [it.eldavo.ylih.DistributionTest] pins what the manifest declares; this pins
- * what the service actually asks for.
+ * and the answer differs by flavor *and* release — exactly the combination nobody checks by hand.
+ * [it.eldavo.ylih.DistributionTest] pins what the manifest declares; this pins what the service
+ * actually asks for.
  *
- * Separate from [TrackingServiceTest] because these run across several SDK levels, and that one
+ * Separate from [TrackingServiceTest] because these run across several SDK levels, while that one
  * grants the Bluetooth permission its whole setup depends on.
  */
 @RunWith(RobolectricTestRunner::class)
@@ -64,7 +64,7 @@ class TrackingServiceForegroundTypeTest {
     fun `denied bluetooth costs the classic build its type but not its service`() {
         // From Android 14 `connectedDevice` requires a Bluetooth permission. Someone who only
         // wants wired headphones tracked should not have to grant Bluetooth to get it, which is
-        // the entire reason the sideloaded build also declares `specialUse`.
+        // why the sideloaded build also declares `specialUse`.
         shadowOf(app).denyPermissions(Manifest.permission.BLUETOOTH_CONNECT)
 
         assertEquals(

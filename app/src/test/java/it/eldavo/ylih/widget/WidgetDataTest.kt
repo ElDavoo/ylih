@@ -32,10 +32,10 @@ import java.time.ZoneId
  * What the home-screen widgets are allowed to say.
  *
  * Rendered widget output only exists inside a launcher, so everything worth pinning was kept out
- * of Glance and lives in `WidgetData.kt`; this is the test that holds it. The rules it protects
- * are the ones a wrong widget would break loudest: a connected pair has to be visible first, a
- * retired pair must not vanish from the lifetime total, playback-only mode has to reach the home
- * screen too, and the 30-day window must not quietly drop a session that is still running.
+ * of Glance and lives in `WidgetData.kt`; this is the test that holds it. The rules it protects:
+ * a connected pair must be visible first, a retired pair must not vanish from the lifetime
+ * total, playback-only mode must reach the home screen too, and the 30-day window must not
+ * quietly drop a session that's still running.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
@@ -56,8 +56,8 @@ class WidgetDataTest {
 
     @Before
     fun setUp() = runTest {
-        // Its own container rather than the app's, because only an injected clock makes any of
-        // this repeatable. The database and the settings underneath are still the real ones, and
+        // Its own container rather than the app's, since only an injected clock makes this
+        // repeatable. The database and settings underneath are still the real ones, and
         // Robolectric hands them on between test methods, so both are cleared here.
         container = AppContainer(app) { clockNow }
         container.database.deviceDao().deleteAll()
@@ -130,7 +130,7 @@ class WidgetDataTest {
         val pair = seedPair("Sennheiser HD 25")
         val ancient = seedSession(pair, from = clockNow - 40 * day, to = clockNow - 40 * day + 5 * hour)
         val recent = seedSession(pair, from = clockNow - 3 * day, to = clockNow - 3 * day + 2 * hour)
-        // Started before the window and never closed: the reason the query cannot simply compare
+        // Started before the window and never closed: why the query can't simply compare
         // connectedAt, and the case a widget gets wrong by showing nothing while a pair is on.
         val stillOn = seedPair("Galaxy Buds3 Pro")
         val running = seedSession(stillOn, from = clockNow - 60 * day, to = null)
@@ -179,15 +179,15 @@ class WidgetDataTest {
 
     @Test
     fun `a widget reads the app's own container`() = runTest {
-        // What provideGlance calls, and the only part of it a test can reach. A broadcast-woken
-        // process has nothing but the Application to find the database through, so reaching it
-        // through YlihApp rather than through anything Glance hands in is the whole point.
+        // What provideGlance calls, and the only part a test can reach. A broadcast-woken process
+        // has nothing but the Application to find the database through, so reaching it via
+        // YlihApp rather than anything Glance hands in is the whole point.
         val (_, data) = widgetContentFlow(app).first()
 
         assertEquals(WIDGET_DAYS, data.series.size)
         // Two wall-clock readings either side of a database read, so a second boundary can fall
-        // between them; what matters is that the figure is the app's own clock rather than
-        // something the widget invented.
+        // between them; what matters is that the figure is the app's own clock, not something
+        // the widget invented.
         assertTrue(
             "${data.now} is not a reading of the app's clock",
             app.container.clock.now() - data.now in 0..5_000,
@@ -197,14 +197,13 @@ class WidgetDataTest {
     @Test
     fun `a widget's figures keep arriving after it has been composed`() = runBlocking {
         // The one thing a widget cannot do is read its figures once. Glance runs provideGlance to
-        // *start a session* and then keeps that composition alive for about 45 seconds; an
-        // updateAll arriving inside that window recomposes what is already there rather than
-        // loading it again. Figures passed in as a parameter therefore cannot change while a
-        // session lives, so every push that landed in one faithfully redrew the numbers it already
-        // had — which is how connecting headphones reached the home screen a minute late, on the
-        // service tick that was finally late enough to find no session running and have to start
-        // another. Real threads and real time, because Room's invalidation is what delivers the
-        // second reading and it is not on this test's dispatcher.
+        // *start a session* and keeps that composition alive for about 45 seconds; an updateAll
+        // arriving inside that window recomposes what's already there rather than reloading.
+        // Figures passed in as a parameter can't change while a session lives, so every push
+        // landing in one faithfully redrew stale numbers — which is how connecting headphones
+        // reached the home screen a minute late, on the service tick finally late enough to find
+        // no session running and start another. Real threads and real time, because Room's
+        // invalidation delivers the second reading and it's not on this test's dispatcher.
         val pair = seedPair("Galaxy Buds3 Pro")
         val seen = Channel<WidgetData>(Channel.UNLIMITED)
         val collecting = launch(Dispatchers.IO) { widgetDataFlow(container, zone).collect(seen::send) }
@@ -273,7 +272,7 @@ class WidgetDataTest {
 
     private suspend fun load() = loadWidgetData(container, zone)
 
-    /** Generous, because it is waiting on Room's own executor rather than on anything here. */
+    /** Generous: it waits on Room's own executor, not on anything here. */
     private suspend fun next(channel: Channel<WidgetData>): WidgetData =
         withTimeout(10_000) { channel.receive() }
 

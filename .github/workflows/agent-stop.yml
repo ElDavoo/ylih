@@ -2,13 +2,13 @@ name: Agent · stop
 
 # The kill switch. Labelling an issue or a pull request `agent:stop` halts the pipeline for it.
 #
-# Two halves are needed and neither is enough alone: every other agent workflow refuses to start
-# while the label is present, and this one cancels what is already running. The label alone
-# cannot stop a fix round that is thirty minutes into a Gradle build.
+# Two halves are needed, neither enough alone: every other agent workflow refuses to start while
+# the label is present, and this one cancels what's already running. The label alone can't stop
+# a fix round thirty minutes into a Gradle build.
 #
-# The opt-out label (`no-agent`) is not this. It only works applied at creation — a label added
-# after the fact loses the race with the `issues: opened` trigger — which is why the issue
-# template carries it and why this file exists as the escape hatch that always works.
+# The opt-out label (`no-agent`) is not this: it only works applied at creation, since one added
+# after the fact loses the race with the `issues: opened` trigger. That's why the issue template
+# carries it, and why this file is the escape hatch that always works.
 
 on:
   issues:
@@ -50,9 +50,9 @@ jobs:
           BRANCH: ${{ steps.ctx.outputs.branch }}
         run: |
           set -euo pipefail
-          # Best effort, and branch-scoped: a plan stage that has not opened a branch yet runs
-          # against main and cannot be told apart from any other run here. That window is
-          # seconds to a couple of minutes, and the label still stops every stage after it.
+          # Best effort, and branch-scoped: a plan stage that hasn't opened a branch yet runs
+          # against main and can't be told apart from any other run here. That window is seconds
+          # to a couple of minutes, and the label still stops every stage after it.
           ids=$(gh run list --branch "$BRANCH" --limit 50 \
                   --json databaseId,status \
                   --jq '.[] | select(.status == "in_progress" or .status == "queued") | .databaseId')
@@ -65,9 +65,9 @@ jobs:
             gh run cancel "$id" || true
           done
 
-      # Drafting disarms auto-merge. That is the point of doing it here rather than only
-      # labelling: the label stops the pipeline, and the draft stops the merge that a
-      # already-green run could otherwise still complete.
+      # Drafting disarms auto-merge — the point of doing it here rather than only labelling:
+      # the label stops the pipeline, and the draft stops the merge an already-green run could
+      # otherwise still complete.
       - name: Draft the pull request
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

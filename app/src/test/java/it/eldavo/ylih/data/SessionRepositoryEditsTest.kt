@@ -18,9 +18,9 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
 /**
- * The half of [SessionRepository] the UI drives — renaming, pricing, deleting and the observed
- * aggregate the two list screens are drawn from. `SessionRepositoryTest` covers the tracking
- * invariants; this covers what a person can do to the record afterwards.
+ * The half of [SessionRepository] the UI drives — renaming, pricing, deleting, and the aggregate
+ * the two list screens observe. `SessionRepositoryTest` covers tracking invariants; this covers
+ * what a person can do to the record afterward.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
@@ -107,8 +107,8 @@ class SessionRepositoryEditsTest {
 
     @Test
     fun `retiring with a blank reason records no reason at all`() = runTest {
-        // The reason is free text and the field is nullable, so whitespace has to land as null
-        // rather than as a reason that renders an empty line on the pair's page forever.
+        // The reason is free text and nullable, so whitespace must land as null, not as a reason
+        // that renders an empty line on the pair's page forever.
         repository.onConnected(buds, at = clockNow - hour)
         val pairId = onlyPairId()
 
@@ -122,7 +122,7 @@ class SessionRepositoryEditsTest {
     @Test
     fun `disconnecting a device whose pair was retired is a no-op`() = runTest {
         // Retiring closes the open session and leaves no active pair, so the ACL_DISCONNECTED
-        // that follows the user pulling the buds out has nothing left to close.
+        // from pulling the buds out has nothing left to close.
         repository.onConnected(buds, at = clockNow - hour)
         repository.retirePair(onlyPairId(), reason = null, at = clockNow)
         val before = db.sessionDao().getAll()
@@ -134,8 +134,8 @@ class SessionRepositoryEditsTest {
 
     @Test
     fun `a device that comes back nameless keeps the name it already had`() = runTest {
-        // Names arrive from a permission-guarded call, so the same headset can report a good
-        // name once and nothing at all the next time. Overwriting would blank the card.
+        // Names arrive from a permission-guarded call, so the same headset can report a good name
+        // once and nothing the next time. Overwriting would blank the card.
         repository.onConnected(buds, at = clockNow - hour)
 
         repository.onConnected(buds.copy(name = ""), at = clockNow)
@@ -321,8 +321,8 @@ class SessionRepositoryEditsTest {
 
     @Test
     fun `reconcile skips a pair whose device row has gone`() = runTest {
-        // Deleting the device cascades the pair away while the session row survives only if
-        // something upstream detached it; reconcile must walk past that rather than throw.
+        // Deleting the device cascades the pair away; the session row survives only if something
+        // upstream detached it, and reconcile must skip it rather than throw.
         repository.onConnected(buds, at = clockNow - hour)
         val session = db.sessionDao().getAll().single()
         db.pairDao().delete(session.pairId)
