@@ -186,4 +186,5 @@
         <item quantity="other">%d ସେସନ</item>
     </plurals>
     <string name="pair_charge_calibrating">ଶୁଣିବା ଜାରି ରଖନ୍ତୁ ଓ ଦେଖନ୍ତୁ ବ୍ୟାଟେରୀ ଆୟୁ କିପରି ବଦଳେ</string>
+    <string name="pair_charge_caveat">ହେଡସେଟ କେବଳ ଗୋଟିଏ ବ୍ୟାଟେରୀ ସ୍ତର ଜଣାଏ, ତେଣୁ ଭିନ୍ନ ଚାର୍ଜ ଥିବା ଇୟରବଡ ଏହି ସଂଖ୍ୟାଗୁଡ଼ିକୁ ବିକୃତ କରିପାରେ।</string>
 </resources>

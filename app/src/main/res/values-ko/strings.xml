@@ -193,4 +193,5 @@
         <item quantity="other">%d개 세션</item>
     </plurals>
     <string name="pair_charge_calibrating">계속 들으면 배터리 수명이 어떻게 달라지는지 볼 수 있어요</string>
+    <string name="pair_charge_caveat">헤드셋은 배터리 잔량을 하나만 알려주기 때문에, 좌우 충전량이 다른 이어버드면 이 수치가 어긋날 수 있어요.</string>
 </resources>

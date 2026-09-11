@@ -186,4 +186,5 @@
         <item quantity="other">%d جلسې</item>
     </plurals>
     <string name="pair_charge_calibrating">اورېدلو ته دوام ورکړه چې وګورې د بیٹرۍ عمر څنګه بدلېږي</string>
+    <string name="pair_charge_caveat">هډسټ یوازې د بېټرۍ یوه کچه راپوروي، نو هغه غوږۍ چې بېل بېل چارج لري دا شمېرې خرابولی شي.</string>
 </resources>

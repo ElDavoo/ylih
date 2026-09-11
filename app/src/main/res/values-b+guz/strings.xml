@@ -190,4 +190,5 @@
     </plurals>
     <string name="edit_failed">okoika omogendererwo gotachete</string>
     <string name="pair_charge_calibrating">gwatia kogoka, orore buna obogima bwa betire bokoreka</string>
+    <string name="pair_charge_caveat">amatwi gakwana ekeng’ana kemo kionyene kia betire, aseigo amatwi are na chaji etakoyangana nigo nigoita ebibaro ebi.</string>
 </resources>

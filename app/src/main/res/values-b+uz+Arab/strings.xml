@@ -186,4 +186,5 @@
         <item quantity="other">%d سیانس</item>
     </plurals>
     <string name="pair_charge_calibrating">تینگلشدە داوام ایتینگ، باتاریا عمرینینگ قندی اوزگرگنی نی کورینگ</string>
+    <string name="pair_charge_caveat">هدست فقط بیر باتاریا درجه سی نی کورسه‌تدی، شونینگ اوچون هر خیل چارجلی قولاقچینلر بو رقملر نی بوزیشی ممکن.</string>
 </resources>

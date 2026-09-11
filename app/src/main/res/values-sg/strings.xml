@@ -182,4 +182,5 @@
         <item quantity="other">%d gbalá</item>
     </plurals>
     <string name="pair_charge_calibrating">ngbâa ti mä ti bâ tongana nyen fini ti battery ayeke gbian</string>
+    <string name="pair_charge_caveat">kua ti mê afa gï ndö ti battery oko, tongaso amê use so ngangü ti ala ayeke nde alingbi ti buba awüngö so.</string>
 </resources>

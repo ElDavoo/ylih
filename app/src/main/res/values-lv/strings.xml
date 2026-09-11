@@ -98,6 +98,7 @@
     <string name="pair_vs_new">salīdzinot ar jaunām</string>
     <string name="pair_cycle_number">%1$d. cikls</string>
     <string name="pair_charge_calibrating">klausies vēl, lai redzētu, kā mainās akumulatora darbības laiks</string>
+    <string name="pair_charge_caveat">austiņas ziņo tikai vienu akumulatora līmeni, tāpēc atšķirīgi uzlādētas austiņas var izkropļot šos skaitļus.</string>
     <string name="pair_rename_title">pārdēvēt pāri</string>
     <string name="pair_rename_label">nosaukums</string>
     <string name="pair_retire_title">nodot šo pāri pensijā</string>

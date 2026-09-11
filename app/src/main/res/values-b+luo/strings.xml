@@ -190,4 +190,5 @@
         <item quantity="other">kinde %d</item>
     </plurals>
     <string name="pair_charge_calibrating">dhi nyime winjo mondo ine kaka ngima mar batri lokore</string>
+    <string name="pair_charge_caveat">thuond it wacho mana rapim achiel mar batri, omiyo thuond it man gi teko mopogore nyalo ketho kwan gi.</string>
 </resources>

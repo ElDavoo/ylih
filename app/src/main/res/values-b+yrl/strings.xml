@@ -190,4 +190,5 @@
         <item quantity="other">%d apigara</item>
     </plurals>
     <string name="pair_charge_calibrating">reasenduri ne yuiri, remaã taá battery sikuiri umukameẽ</string>
+    <string name="pair_charge_caveat">yapisá miri usuaxara yepé bateria sikuiri anhu, aramé mukũi yapisá bateria amu waá umukatiri kuá papasawa.</string>
 </resources>

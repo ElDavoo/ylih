@@ -104,6 +104,7 @@
     <string name="pair_vs_new">по сравнению с новыми</string>
     <string name="pair_cycle_number">цикл %1$d</string>
     <string name="pair_charge_calibrating">слушайте дальше, чтобы увидеть, как меняется ресурс батареи</string>
+    <string name="pair_charge_caveat">наушники сообщают только один уровень заряда, поэтому наушники с разным зарядом могут искажать эти цифры.</string>
     <string name="pair_rename_title">переименовать пару</string>
     <string name="pair_rename_label">имя</string>
     <string name="pair_retire_title">списать эту пару</string>

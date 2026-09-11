@@ -105,6 +105,7 @@
     <string name="pair_vs_new">par rapport au neuf</string>
     <string name="pair_cycle_number">cycle %1$d</string>
     <string name="pair_charge_calibrating">continue d’écouter pour voir comment l’autonomie de la batterie évolue</string>
+    <string name="pair_charge_caveat">un casque ne rapporte qu’un seul niveau de batterie, donc des écouteurs chargés différemment peuvent fausser ces chiffres.</string>
     <string name="pair_rename_title">renommer la paire</string>
     <string name="pair_rename_label">nom</string>
     <string name="pair_retire_title">retirer cette paire</string>

@@ -182,4 +182,5 @@
         <item quantity="other">%d 個節段</item>
     </plurals>
     <string name="pair_charge_calibrating">繼續聽落去，就睇到電池續航點樣變</string>
+    <string name="pair_charge_caveat">耳機淨係報一個電量，所以左右電量唔同嘅耳塞會令呢啲數字唔準。</string>
 </resources>

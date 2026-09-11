@@ -186,4 +186,5 @@
         <item quantity="other">%d seаnsle</item>
     </plurals>
     <string name="pair_charge_calibrating">tinglashda davom eting, batareya umri qanday o’zgarishini ko’ring</string>
+    <string name="pair_charge_caveat">quloqchin faqat bitta batareya darajasini bildiradi, shuning uchun har xil zaryadli quloqchinlar bu raqamlarni buzishi mumkin.</string>
 </resources>

@@ -200,4 +200,5 @@
         <item quantity="other">%d sɔŋ</item>
     </plurals>
     <string name="pair_charge_calibrating">ke nɔgɔl, u ga tehe lelaa ŋgu battery i nkeenge</string>
+    <string name="pair_charge_caveat">battery i nkeenge wɔ́ŋ i ntehe; ibale mangen ma nlɔl, mandaŋ ma ma nyamlana.</string>
 </resources>

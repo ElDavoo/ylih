@@ -186,4 +186,5 @@
         <item quantity="other">%d ਸੈਸ਼ਨ</item>
     </plurals>
     <string name="pair_charge_calibrating">ਸੁਣਦੇ ਰਹੋ ਅਤੇ ਵੇਖੋ ਕਿ ਬੈਟਰੀ ਦੀ ਉਮਰ ਕਿਵੇਂ ਬਦਲਦੀ ਹੈ</string>
+    <string name="pair_charge_caveat">ਹੈੱਡਸੈੱਟ ਸਿਰਫ਼ ਇੱਕ ਬੈਟਰੀ ਪੱਧਰ ਦੱਸਦਾ ਹੈ, ਇਸ ਲਈ ਵੱਖਰੇ ਚਾਰਜ ਵਾਲੇ ਈਅਰਬਡ ਇਹ ਅੰਕੜੇ ਵਿਗਾੜ ਸਕਦੇ ਹਨ।</string>
 </resources>

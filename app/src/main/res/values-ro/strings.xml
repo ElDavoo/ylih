@@ -105,6 +105,7 @@
     <string name="pair_vs_new">față de noi</string>
     <string name="pair_cycle_number">ciclul %1$d</string>
     <string name="pair_charge_calibrating">ascultă în continuare ca să vezi cum se schimbă durata bateriei</string>
+    <string name="pair_charge_caveat">o pereche de căști raportează un singur nivel al bateriei, așa că două căști încărcate diferit pot denatura aceste cifre.</string>
     <string name="pair_rename_title">redenumește perechea</string>
     <string name="pair_rename_label">nume</string>
     <string name="pair_retire_title">retrage această pereche</string>

@@ -104,6 +104,7 @@
     <string name="pair_vs_new">võrreldes uuega</string>
     <string name="pair_cycle_number">tsükkel %1$d</string>
     <string name="pair_charge_calibrating">kuula edasi, et näha, kuidas aku kestvus muutub</string>
+    <string name="pair_charge_caveat">peakomplekt teatab ainult ühe akutaseme, seega võivad erineva laetusega kõrvaklapid neid arve moonutada.</string>
     <string name="pair_rename_title">nimeta paar ümber</string>
     <string name="pair_rename_label">nimi</string>
     <string name="pair_retire_title">pensioneeri see paar</string>

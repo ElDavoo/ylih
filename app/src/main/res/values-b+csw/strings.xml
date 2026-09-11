@@ -196,4 +196,5 @@
         <item quantity="other">%d ᐊᑎᐦᒐᒧᕽᐊᓇ</item>
     </plurals>
     <string name="pair_charge_calibrating">ᐋᔭᒥᐦᑖ ᒥᓇ ᑭᐦᒋ ᐊᐧᐸᐦᑕᒪᐣ ᑖᓂᓯ ᐊᔅᑭᐦᐁᐧᐃᐣ ᐱᒫᑎᓯᐃᐧᐣ ᐁ ᒣᔅᑲᒋᐸᔨᐠ</string>
+    <string name="pair_charge_caveat">ᐁ ᐯᐦᑖᑯᓯᐟ ᐯᔭᒃ ᐱᑯ ᐊᔅᑭᐦᐁᐧᐃᐣ ᑭᑎᓯᓇᐦᐊᒻ, ᐁᑯᔑ ᐱᑐᔥ ᐁ ᐃᑕᐧᐃᑭᐣ ᑭᐦᒋᐦᑖᐃᐧᓇ ᐅᐦᐃ ᐊᑭᑕᓱᐃᐧᓇ ᑭ ᒪᔦᐧᔨᒋᑳᑌᐧᐊ.</string>
 </resources>

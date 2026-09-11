@@ -190,4 +190,5 @@
         <item quantity="other">%d kusava</item>
     </plurals>
     <string name="pair_charge_calibrating">endelela kupulikisya kuti ulole ubwumi bwa betri ndavule bushanduka</string>
+    <string name="pair_charge_caveat">ifilolelo fikulongela ubwingi bumo bwa betri, hangi ifilolelo ifili nu betri ufyanyilanile fingasangalasya inamba isi.</string>
 </resources>

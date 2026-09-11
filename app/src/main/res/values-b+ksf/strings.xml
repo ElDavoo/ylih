@@ -190,4 +190,5 @@
     </plurals>
     <string name="edit_failed">á bɛ́ nde sá</string>
     <string name="pair_charge_calibrating">wókii nyɔ, u yén lɛ́ ndáá battery yé mbaŋ</string>
+    <string name="pair_charge_caveat">battery yé mbaŋ wúmɔ́ u yén; lɛ́ ndáá mátú má ndáá, námbá má ndáá.</string>
 </resources>

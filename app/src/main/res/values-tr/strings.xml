@@ -105,6 +105,7 @@
     <string name="pair_vs_new">yeniyken hâline göre</string>
     <string name="pair_cycle_number">döngü %1$d</string>
     <string name="pair_charge_calibrating">pil ömrünün nasıl değiştiğini görmek için dinlemeye devam et</string>
+    <string name="pair_charge_caveat">kulaklık tek bir pil seviyesi bildirir, bu yüzden farklı şarjdaki kulak içiler bu sayıları bozabilir.</string>
     <string name="pair_rename_title">çifti yeniden adlandır</string>
     <string name="pair_rename_label">ad</string>
     <string name="pair_retire_title">bu çifti emekliye ayır</string>

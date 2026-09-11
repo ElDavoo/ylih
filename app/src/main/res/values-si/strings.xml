@@ -186,4 +186,5 @@
         <item quantity="other">%d සැසිකරණ</item>
     </plurals>
     <string name="pair_charge_calibrating">දිගටම අහන්න, බැටරි ආයුෂ වෙනස් වන ආකාරය බලන්න</string>
+    <string name="pair_charge_caveat">හෙඩ්සෙට් එකක් දක්වන්නේ එක් බැටරි මට්ටමක් පමණයි, එම නිසා වෙනස් චාජ් ඇති කන් බඩ් මේ සංඛ්‍යා විකෘති කරන්න පුළුවන්.</string>
 </resources>

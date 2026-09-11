@@ -190,4 +190,5 @@
     </plurals>
     <string name="edit_failed">आ बादाला साम्भाळा आ सिलि</string>
     <string name="pair_charge_calibrating">विण्डिते मण्डु, बेट्रि जिवोन केत्ला मरुतेरि हिनि उड़ा</string>
+    <string name="pair_charge_caveat">हेड्सेट् ओरि बेट्रि मान् मस्के हिनिदेरि, आदिङ्ग भिन्न चार्ज् मन्दि कन्सु ई अन्क बिगाड् किहितेरि.</string>
 </resources>

@@ -186,4 +186,5 @@
     </plurals>
     <string name="edit_failed">ફેરફાર સાચવી શકાયો નથી</string>
     <string name="pair_charge_calibrating">સાંભળતા રહો અને જુઓ કે બેટરી આયુષ્ય કેવી રીતે બદલાય છે</string>
+    <string name="pair_charge_caveat">હેડસેટ ફક્ત એક જ બેટરી સ્તર જણાવે છે, તેથી અલગ અલગ ચાર્જવાળા ઇયરબડ આ આંકડા બગાડી શકે છે.</string>
 </resources>

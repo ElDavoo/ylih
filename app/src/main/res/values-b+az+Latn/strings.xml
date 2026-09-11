@@ -196,4 +196,5 @@
         <item quantity="other">%d seans</item>
     </plurals>
     <string name="pair_charge_calibrating">dinləməyə davam et ki, batareya ömrünün necə dəyişdiyini görəsən</string>
+    <string name="pair_charge_caveat">qulaqlıq yalnız bir batareya səviyyəsi bildirir, ona görə fərqli şarjlı qulaqcıqlar bu rəqəmləri təhrif edə bilər.</string>
 </resources>

@@ -196,4 +196,5 @@
         <item quantity="other">%d সেশন</item>
     </plurals>
     <string name="pair_charge_calibrating">শুনি থাকক আৰু চাওক ব্যাটাৰীৰ আয়ু কেনেকৈ সলনি হয়</string>
+    <string name="pair_charge_caveat">হেডছেটে কেৱল এটা বেটাৰী স্তৰ জনায়, সেয়েহে বেলেগ বেলেগ চাৰ্জ থকা ইয়াৰবাডে এই সংখ্যাবোৰ বিকৃত কৰিব পাৰে।</string>
 </resources>

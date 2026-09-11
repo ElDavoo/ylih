@@ -190,4 +190,5 @@
         <item quantity="other">%d جلسات</item>
     </plurals>
     <string name="pair_charge_calibrating">گوش هاکردن ره ادامه هاده تا بوینی باتری عمر چتی عوض وونه</string>
+    <string name="pair_charge_caveat">هدست فقط ی باتری سطح ره گزارش هاکنه، پس جور به جور شارژ دارنه گوشی‌ئون این عددون ره کج هاکنن.</string>
 </resources>

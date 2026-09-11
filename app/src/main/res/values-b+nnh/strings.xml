@@ -186,4 +186,5 @@
         <item quantity="other">%d kə</item>
     </plurals>
     <string name="pair_charge_calibrating">yúʼ ntsé, ó bɛ́ yɛ́n mbé mfɔ́ batteri ó nzé</string>
+    <string name="pair_charge_caveat">batteri ó nzé ŋgé mó ó bɛ́ yɛ́n; mbé ntsé ó nzé, nàmbà ó nzé.</string>
 </resources>

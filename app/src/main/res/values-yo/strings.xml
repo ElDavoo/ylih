@@ -182,4 +182,5 @@
         <item quantity="other">%d isèwa</item>
     </plurals>
     <string name="pair_charge_calibrating">máa fetísílẹ̀ lọ láti rí bí ìwàláàyè bátìrì ṣe ń yípadà</string>
+    <string name="pair_charge_caveat">agbọ́hùn máa ń jábọ̀ ìwọ̀n bátìrì kan ṣoṣo, nítorí náà agbọ́hùn etí tí agbára wọn yàtọ̀ lè ba àwọn nọ́mbà wọ̀nyí jẹ́.</string>
 </resources>

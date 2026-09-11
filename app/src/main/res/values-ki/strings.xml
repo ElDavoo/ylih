@@ -190,4 +190,5 @@
     </plurals>
     <string name="edit_failed">kũiga ũgarũrũku gũtiahotekire</string>
     <string name="pair_charge_calibrating">thikĩrĩria ũrĩ na mbere nĩguo wone ũrĩa muoyo wa baterĩ ũgarũrũkaga</string>
+    <string name="pair_charge_caveat">matũ ma gũthikĩrĩria monanagia gĩthimi kĩmwe kĩa baterĩ, nĩ ũndũ ũcio matũ marĩ na hinya mũtiganu no mathũkie namba ici.</string>
 </resources>

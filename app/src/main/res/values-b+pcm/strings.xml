@@ -186,4 +186,5 @@
         <item quantity="other">%d sessions</item>
     </plurals>
     <string name="pair_charge_calibrating">continue to dey listen make you see how di battery life dey change</string>
+    <string name="pair_charge_caveat">headset dey report only one battery level, so earbuds wey get different charge fit spoil dis figures.</string>
 </resources>

@@ -190,4 +190,5 @@
         <item quantity="other">%d ସେସାନ</item>
     </plurals>
     <string name="pair_charge_calibrating">ୱିଣ୍ଡିତେ ମଣ୍ଡୁ, ବେଟ୍ରି ଜିୱୋନ କେତ୍ଲା ମରୁତେରି ହିନି ଉଡ଼ା</string>
+    <string name="pair_charge_caveat">ହେଡ୍ସେଟ୍ ଓରି ବେଟ୍ରି ମାନ୍ ମସ୍କେ ହିନିଦେରି, ଆଦିଙ୍ଗ ଭିନ୍ନ ଚାର୍ଜ୍ ମନ୍ଦି କନ୍ସୁ ଈ ଅନ୍କ ବିଗାଡ୍ କିହିତେରି.</string>
 </resources>

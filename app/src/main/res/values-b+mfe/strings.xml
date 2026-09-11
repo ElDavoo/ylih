@@ -190,4 +190,5 @@
         <item quantity="other">%d sesion</item>
     </plurals>
     <string name="pair_charge_calibrating">kontign ekoute pou to trouv kouma lavi batri la sanze</string>
+    <string name="pair_charge_caveat">enn kas-lekout montre zis enn nivo batri, alor de zorey ki pena mem sarz kapav fos sa bann sif-la.</string>
 </resources>

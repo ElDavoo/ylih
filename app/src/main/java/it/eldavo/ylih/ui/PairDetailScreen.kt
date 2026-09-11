@@ -444,6 +444,15 @@ private fun ChargeCyclesHeader(charge: ChargeSummary) {
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
         }
+        // Outside the branch above, so it stands under a drawn chart as well as under the
+        // calibrating line: a two-bud pair worn one bud at a time reports whichever bud is in the
+        // ear, and swapping to the emptier one arrives as a drop no reading can tell from drain.
+        Spacer(Modifier.height(8.dp))
+        Text(
+            stringResource(R.string.pair_charge_caveat),
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
     }
 }
 

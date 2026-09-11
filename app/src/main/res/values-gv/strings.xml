@@ -98,6 +98,7 @@
     <string name="pair_vs_new">noi rish noa</string>
     <string name="pair_cycle_number">cruinnagh %1$d</string>
     <string name="pair_charge_calibrating">cum ort geaishtagh dy akin kys ta bea yn battery caghlaa</string>
+    <string name="pair_charge_caveat">cha nel claare-chione cur magh agh un keim vattery, myr shen foddee cleayshyn lesh lught elley ny earrooyn shoh y hyndaa.</string>
     <string name="pair_rename_title">cur ennym noa paart</string>
     <string name="pair_rename_label">ennym</string>
     <string name="pair_retire_title">shoh kiart er paart shoh</string>

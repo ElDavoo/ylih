@@ -186,4 +186,5 @@
         <item quantity="other">%d bilakisi</item>
     </plurals>
     <string name="pair_charge_calibrating">kobanda koyoka lisusu mpo omona ndenge bomoi ya moteka ebongwanaka</string>
+    <string name="pair_charge_caveat">ekutolo ezali koloba se nivo moko ya batri, yango wana bakutolo oyo bazali na charge ekeseni ekoki kobebisa mituya oyo.</string>
 </resources>

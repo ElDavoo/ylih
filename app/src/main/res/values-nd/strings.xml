@@ -186,4 +186,5 @@
         <item quantity="other">%d umsebenzi</item>
     </plurals>
     <string name="pair_charge_calibrating">qhubeka ulalele ubone ukuthi impilo ye-battery itshintsha njani</string>
+    <string name="pair_charge_caveat">i-headset ibika izinga elilodwa le-battery, ngakho ama-earbud ale-charge etshiyeneyo angonakalisa lezi zibalo.</string>
 </resources>

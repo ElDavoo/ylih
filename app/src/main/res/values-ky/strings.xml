@@ -186,4 +186,5 @@
     </plurals>
     <string name="edit_failed">өзгөртүү сакталган жок</string>
     <string name="pair_charge_calibrating">уга бериңиз, батареянын ресурсу кантип өзгөрөрүн көрөсүз</string>
+    <string name="pair_charge_caveat">кулакчын бир гана батарея деңгээлин билдирет, ошондуктан заряды ар башка кулакчындар бул сандарды бурмалашы мүмкүн.</string>
 </resources>

@@ -190,4 +190,5 @@
         <item quantity="other">%d सत्र</item>
     </plurals>
     <string name="pair_charge_calibrating">सुनैत रहू आ देखू जे बैटरी आयु कोना बदलैत अछि</string>
+    <string name="pair_charge_caveat">हेडसेट मात्र एकटा बैटरी स्तर बतबैत अछि, तेँ अलग-अलग चार्ज वला इयरबड ई आँकड़ा बिगाड़ि सकैत अछि।</string>
 </resources>

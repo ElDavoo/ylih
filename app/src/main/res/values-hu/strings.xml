@@ -105,6 +105,7 @@
     <string name="pair_vs_new">az újhoz képest</string>
     <string name="pair_cycle_number">%1$d. ciklus</string>
     <string name="pair_charge_calibrating">hallgasd tovább, és látod, hogyan változik az akkumulátor élettartama</string>
+    <string name="pair_charge_caveat">a fejhallgató csak egy akkumulátorszintet jelez, így az eltérően feltöltött fülhallgatók eltorzíthatják ezeket a számokat.</string>
     <string name="pair_rename_title">pár átnevezése</string>
     <string name="pair_rename_label">név</string>
     <string name="pair_retire_title">pár kivonása</string>

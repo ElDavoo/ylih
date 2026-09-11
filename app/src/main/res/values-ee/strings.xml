@@ -196,4 +196,5 @@
         <item quantity="other">%d nusẽ wo</item>
     </plurals>
     <string name="pair_charge_calibrating">yi edzi nàse eye nàkpɔ ale si battery ƒe agbe trɔna</string>
+    <string name="pair_charge_caveat">tosẽnu ɖeka ko ƒe battery ƒe agbɔsɔsɔ tosẽnua gblɔna, eya ta tosẽnu siwo ƒe ŋusẽ to vovo ate ŋu agblẽ xexlẽdzesi siawo.</string>
 </resources>

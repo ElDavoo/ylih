@@ -186,4 +186,5 @@
         <item quantity="other">inkata %d</item>
     </plurals>
     <string name="pair_charge_calibrating">ining’o aitoki, inyorrayie enkishui e betri aitobirie</string>
+    <string name="pair_charge_caveat">enkiyiaa naa eitobirie enkishui e betri nabo, peeitu ilkiyiaa loo nkoitoi naaku keyieu aitobirie inamba kuna.</string>
 </resources>

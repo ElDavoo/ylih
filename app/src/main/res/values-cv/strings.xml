@@ -190,4 +190,5 @@
         <item quantity="other">%d сеанс</item>
     </plurals>
     <string name="pair_charge_calibrating">малалла итлӗр, батарея пурнӑҫӗ мӗнле улшӑннине куратӑр</string>
+    <string name="pair_charge_caveat">наушниксем пӗр батарея шайне кӑна пӗлтереҫҫӗ, ҫавӑнпа тӗрлӗ зарядлӑ наушниксем ку хисепсене пӑсма пултараҫҫӗ.</string>
 </resources>

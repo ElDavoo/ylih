@@ -182,4 +182,5 @@
         <item quantity="other">owótakhta %d</item>
     </plurals>
     <string name="pair_charge_calibrating">nayáȟʼuŋ yo, na okʼóheyaŋ wiconi kiŋ tókheča kiŋ waŋyáŋka nuŋwé</string>
+    <string name="pair_charge_caveat">nakʼíŋpi kiŋ waŋžíla wiyúta kiŋ oyákapi, hecha nuŋǧé kiŋ tókheča woókʼiŋ yuhápi kiŋ lená wóyawa kiŋ šičáya káǧapi.</string>
 </resources>

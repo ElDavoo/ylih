@@ -182,4 +182,5 @@
         <item quantity="other">%d sési</item>
     </plurals>
     <string name="pair_charge_calibrating">teruskeun ngadangukeun pikeun ningali kumaha umur batré robah</string>
+    <string name="pair_charge_caveat">headset ngan ngalaporkeun hiji tingkat batré, jadi earbud nu muatanana béda bisa nyieun angka ieu méncéng.</string>
 </resources>

@@ -190,4 +190,5 @@
     </plurals>
     <string name="edit_failed">kwikĩa ũalyũku kwaema</string>
     <string name="pair_charge_calibrating">endeea kwithukiisya nĩ kana wone ũndũ thayũ wa batiri ũkũalyũka</string>
+    <string name="pair_charge_caveat">matu maasyokasya kĩpimo kimwe kya batiri, kwoou matu maĩ na nguu mbithanĩtye no mathũkye mbalany’o ithi.</string>
 </resources>

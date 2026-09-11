@@ -186,4 +186,5 @@
         <item quantity="other">%d a-karata</item>
     </plurals>
     <string name="pair_charge_calibrating">ining’o aitoki, inyorrayie nkishui e battery aitobirie</string>
+    <string name="pair_charge_caveat">nkiyiaa naitobirie nkishui e battery nabo, kore nkiyiaa naapa nkoitoi naaku keyie aitobirie namba kuna.</string>
 </resources>

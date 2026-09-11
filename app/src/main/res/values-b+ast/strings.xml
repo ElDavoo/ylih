@@ -104,6 +104,7 @@
     <string name="pair_vs_new">frente a nueves</string>
     <string name="pair_cycle_number">ciclu %1$d</string>
     <string name="pair_charge_calibrating">sigui escuchando pa ver cómo camuda la duración de la batería</string>
+    <string name="pair_charge_caveat">unos auriculares informen d’un solu nivel de batería, asina que dos auriculares con carga distinta puen falsiar estes cifres.</string>
     <string name="pair_rename_title">renombrar par</string>
     <string name="pair_rename_label">nome</string>
     <string name="pair_retire_title">xubildar esta par</string>

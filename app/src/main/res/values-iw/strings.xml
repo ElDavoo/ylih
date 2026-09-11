@@ -202,4 +202,5 @@
         <item quantity="other">%d מפגשים</item>
     </plurals>
     <string name="pair_charge_calibrating">המשיכו להאזין כדי לראות איך חיי הסוללה משתנים</string>
+    <string name="pair_charge_caveat">אוזניות מדווחות על רמת סוללה אחת בלבד, ולכן אוזניות עם טעינה שונה עלולות לעוות את המספרים האלה.</string>
 </resources>

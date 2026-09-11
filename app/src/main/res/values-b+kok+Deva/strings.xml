@@ -186,4 +186,5 @@
     </plurals>
     <string name="edit_failed">बदल जतन करूंक जालो ना</string>
     <string name="pair_charge_calibrating">आयकत रावा आनी पळय बॅटरी आयुश्य कशें बदलता</string>
+    <string name="pair_charge_caveat">हेडसेट फकत एकूच बॅटरी पातळी सांगता, देखून वेगवेगळो चार्ज आशिल्ले इयरबड हे आंकडे बिघडोवंक शकतात.</string>
 </resources>

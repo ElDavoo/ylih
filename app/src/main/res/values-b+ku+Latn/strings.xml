@@ -186,4 +186,5 @@
     </plurals>
     <string name="edit_failed">guherîn nehat tomarkirin</string>
     <string name="pair_charge_calibrating">guhdarî bike da ku bibînî jiyana bateryê çawa diguhere</string>
+    <string name="pair_charge_caveat">hedset tenê astek batarî ragihîne, loma guhikên bi barkirinên cuda dikarin van hejmaran xelet bikin.</string>
 </resources>

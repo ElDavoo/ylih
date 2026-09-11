@@ -186,4 +186,5 @@
         <item quantity="other">mutendera %d</item>
     </plurals>
     <string name="pair_charge_calibrating">weeyongere okuwuliriza olabe engeri obulamu bwa bateri bwe bukyuka</string>
+    <string name="pair_charge_caveat">ebiwulira biraga ekigero kimu kyokka ekya bateeri, n’olwekyo ebiwulira ebirina amaanyi ag’enjawulo bisobola okwonoona ebibalo bino.</string>
 </resources>

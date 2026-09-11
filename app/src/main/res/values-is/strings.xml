@@ -98,6 +98,7 @@
     <string name="pair_vs_new">miðað við ný</string>
     <string name="pair_cycle_number">lota %1$d</string>
     <string name="pair_charge_calibrating">haltu áfram að hlusta til að sjá hvernig ending rafhlöðunnar breytist</string>
+    <string name="pair_charge_caveat">heyrnartól gefa aðeins upp eitt rafhlöðustig, svo eyrnatól með ólíka hleðslu geta skekkt þessar tölur.</string>
     <string name="pair_rename_title">endurnefna par</string>
     <string name="pair_rename_label">nafn</string>
     <string name="pair_retire_title">starfslok fyrir þetta par</string>

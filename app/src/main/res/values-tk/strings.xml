@@ -186,4 +186,5 @@
         <item quantity="other">%d sessions</item>
     </plurals>
     <string name="pair_charge_calibrating">diňlemegi dowam et, batareýa ömrüniň nähili üýtgeýändigini görersiň</string>
+    <string name="pair_charge_caveat">nauşnik diňe bir batareýa derejesini habar berýär, şonuň üçin dürli zarýadly gulaklyklar bu sanlary ýoýup biler.</string>
 </resources>

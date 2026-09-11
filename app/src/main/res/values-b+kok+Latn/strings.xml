@@ -186,4 +186,5 @@
     </plurals>
     <string name="edit_failed">badal jatan korunk zalo na</string>
     <string name="pair_charge_calibrating">aikot ravat ani polloi battery ayushya koxem bodolta</string>
+    <string name="pair_charge_caveat">headset fokot ekuch battery patoll sangta, dekhun vegvegllo charge axille earbud he ankdde bighddonvk xoktat.</string>
 </resources>

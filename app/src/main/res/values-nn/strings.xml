@@ -98,6 +98,7 @@
     <string name="pair_vs_new">mot då dei var nye</string>
     <string name="pair_cycle_number">syklus %1$d</string>
     <string name="pair_charge_calibrating">høyr vidare for å sjå korleis batterilevetida endrar seg</string>
+    <string name="pair_charge_caveat">eit headset melder berre eitt batterinivå, så øyreproppar med ulik lading kan forvrengje desse tala.</string>
     <string name="pair_rename_title">endr namn på par</string>
     <string name="pair_rename_label">namn</string>
     <string name="pair_retire_title">pensjonere dette paret</string>

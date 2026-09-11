@@ -98,6 +98,7 @@
     <string name="pair_vs_new">comparate a nove</string>
     <string name="pair_cycle_number">cyclo %1$d</string>
     <string name="pair_charge_calibrating">continua a ascoltar pro vider como le duration del batteria cambia</string>
+    <string name="pair_charge_caveat">un auricular reporta un sol nivello de batteria, dunque auriculares con cargas differente pote falsar iste numeros.</string>
     <string name="pair_rename_title">renominar parea</string>
     <string name="pair_rename_label">nomine</string>
     <string name="pair_retire_title">retira iste parea</string>

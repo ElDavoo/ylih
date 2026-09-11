@@ -104,6 +104,7 @@
     <string name="pair_vs_new">u odnosu na nove</string>
     <string name="pair_cycle_number">ciklus %1$d</string>
     <string name="pair_charge_calibrating">slušaj dalje da vidiš kako se trajanje baterije mijenja</string>
+    <string name="pair_charge_caveat">slušalice javljaju samo jedan nivo baterije, pa bubice s različitom napunjenošću mogu iskriviti ove brojke.</string>
     <string name="pair_rename_title">preimenovaj paru</string>
     <string name="pair_rename_label">ime</string>
     <string name="pair_retire_title">povuci ovu paru u penziju</string>

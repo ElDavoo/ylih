@@ -195,4 +195,5 @@
         <item quantity="other">%d ስብሰባ</item>
     </plurals>
     <string name="pair_charge_calibrating">ማዳመጥዎን ይቀጥሉ፣ የባትሪው ዕድሜ እንዴት እንደሚለወጥ ያያሉ</string>
+    <string name="pair_charge_caveat">ማዳመጫው አንድ የባትሪ መጠን ብቻ ነው የሚያሳየው፣ ስለዚህ የተለያየ ኃይል ያላቸው የጆሮ ማዳመጫዎች እነዚህን ቁጥሮች ሊያዛቡ ይችላሉ።</string>
 </resources>

@@ -190,4 +190,5 @@
     </plurals>
     <string name="edit_failed">barmayyan mana gani</string>
     <string name="pair_charge_calibrating">ma hangan koyne ka di battery fundu ga bare mate</string>
+    <string name="pair_charge_caveat">hangarey ga battery fundu folloŋ hinne cebe, woodin se hanga hinka kaŋ gaabi ga waani care ga lambaw woone yaŋ sara.</string>
 </resources>

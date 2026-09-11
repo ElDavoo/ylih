@@ -105,6 +105,7 @@
     <string name="pair_vs_new">порівняно з новими</string>
     <string name="pair_cycle_number">цикл %1$d</string>
     <string name="pair_charge_calibrating">слухайте далі, щоб побачити, як змінюється ресурс акумулятора</string>
+    <string name="pair_charge_caveat">навушники повідомляють лише один рівень заряду, тож навушники з різним зарядом можуть спотворити ці цифри.</string>
     <string name="pair_rename_title">перейменувати пару</string>
     <string name="pair_rename_label">назва</string>
     <string name="pair_retire_title">списати цю пару</string>

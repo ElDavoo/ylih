@@ -186,4 +186,5 @@
         <item quantity="other">%d सत्रहरू</item>
     </plurals>
     <string name="pair_charge_calibrating">सुन्दै गर्नुहोस् र हेर्नुहोस् ब्याटरीको आयु कसरी बदलिन्छ</string>
+    <string name="pair_charge_caveat">हेडसेटले एउटै मात्र ब्याट्री स्तर बताउँछ, त्यसैले फरक चार्ज भएका इयरबडले यी अङ्क बिगार्न सक्छन्।</string>
 </resources>

@@ -190,4 +190,5 @@
         <item quantity="other">ebise %d</item>
     </plurals>
     <string name="pair_charge_calibrating">yendelela okhuwulila okhole olole shinga obulamu bwe betri bukalukhana</string>
+    <string name="pair_charge_caveat">ebietwi biboolanga engeri ndala yonyene ye betri, kho ebietwi ebili ne amaani kakabukhana binyala okhufunaka ebibalo bino.</string>
 </resources>

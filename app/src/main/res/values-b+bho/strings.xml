@@ -196,4 +196,5 @@
         <item quantity="other">%d सत्र</item>
     </plurals>
     <string name="pair_charge_calibrating">सुनत रहीं आ देखीं कि बैटरी के उमिर कइसे बदलेले</string>
+    <string name="pair_charge_caveat">हेडसेट खाली एगो बैटरी लेवल बतावेला, एह से अलग-अलग चार्ज वाला इयरबड ई आँकड़ा बिगाड़ सकेला।</string>
 </resources>

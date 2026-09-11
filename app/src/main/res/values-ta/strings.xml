@@ -186,4 +186,5 @@
         <item quantity="other">%d அமர்வுகள்</item>
     </plurals>
     <string name="pair_charge_calibrating">தொடர்ந்து கேளுங்கள், பேட்டரி ஆயுள் எப்படி மாறுகிறது என்று பாருங்கள்</string>
+    <string name="pair_charge_caveat">ஹெட்செட் ஒரே ஒரு பேட்டரி அளவைத்தான் தெரிவிக்கும், அதனால் வெவ்வேறு சார்ஜ் உள்ள இயர்பட்கள் இந்த எண்களைத் திரிக்கலாம்.</string>
 </resources>

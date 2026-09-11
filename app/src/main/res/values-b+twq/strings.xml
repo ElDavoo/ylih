@@ -190,4 +190,5 @@
         <item quantity="other">%d kaari</item>
     </plurals>
     <string name="pair_charge_calibrating">ma hangan koyne ka di batari fundu ga bare mate</string>
+    <string name="pair_charge_caveat">hangarey ga batari fundu folloŋ hinne cebe, woodin se hanga hinka kaŋ gaabi ga waani care ga lambaw woone yaŋ sara.</string>
 </resources>

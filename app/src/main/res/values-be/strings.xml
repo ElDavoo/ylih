@@ -104,6 +104,7 @@
     <string name="pair_vs_new">у параўнанні з новымі</string>
     <string name="pair_cycle_number">цыкл %1$d</string>
     <string name="pair_charge_calibrating">слухайце далей, каб убачыць, як мяняецца рэсурс батарэі</string>
+    <string name="pair_charge_caveat">навушнікі паведамляюць толькі адзін узровень зараду, таму навушнікі з розным зарадам могуць сказіць гэтыя лічбы.</string>
     <string name="pair_rename_title">перайменаваць пару</string>
     <string name="pair_rename_label">імя</string>
     <string name="pair_retire_title">выключыце гэту пару</string>

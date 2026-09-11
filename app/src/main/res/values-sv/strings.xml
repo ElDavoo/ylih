@@ -105,6 +105,7 @@
     <string name="pair_vs_new">mot när de var nya</string>
     <string name="pair_cycle_number">cykel %1$d</string>
     <string name="pair_charge_calibrating">fortsätt lyssna för att se hur batteritiden förändras</string>
+    <string name="pair_charge_caveat">ett headset rapporterar bara en batterinivå, så öronsnäckor med olika laddning kan förvränga de här siffrorna.</string>
     <string name="pair_rename_title">byt namn på par</string>
     <string name="pair_rename_label">namn</string>
     <string name="pair_retire_title">pensionera detta par</string>

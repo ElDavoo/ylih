@@ -186,4 +186,5 @@
         <item quantity="other">%d ምስጃት</item>
     </plurals>
     <string name="pair_charge_calibrating">ምስማዕ ቀጽል፣ ዕድመ ባትሪ ከመይ ከም ዝቕየር ክትርኢ ኢኻ</string>
+    <string name="pair_charge_caveat">ሄድሰት ሓደ ናይ ባትሪ ደረጃ ጥራይ እዩ ዝሕብር፣ ስለዚ ዝተፈላለየ ቻርጅ ዘለዎም ናይ እዝኒ ሰማዕቲ ነዚ ቁጽርታት ክጎድእዎ ይኽእሉ።</string>
 </resources>

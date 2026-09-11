@@ -186,4 +186,5 @@
         <item quantity="other">%d ಸೆಶನ್</item>
     </plurals>
     <string name="pair_charge_calibrating">ಕೇಳುತ್ತಿರಿ, ಬ್ಯಾಟರಿ ಬಾಳಿಕೆ ಹೇಗೆ ಬದಲಾಗುತ್ತದೆ ಎಂದು ನೋಡಿ</string>
+    <string name="pair_charge_caveat">ಹೆಡ್‌ಸೆಟ್ ಒಂದೇ ಬ್ಯಾಟರಿ ಮಟ್ಟವನ್ನು ತಿಳಿಸುತ್ತದೆ, ಹಾಗಾಗಿ ಬೇರೆ ಬೇರೆ ಚಾರ್ಜ್ ಇರುವ ಇಯರ್‌ಬಡ್‌ಗಳು ಈ ಅಂಕಿಗಳನ್ನು ಹಾಳು ಮಾಡಬಹುದು.</string>
 </resources>

@@ -98,6 +98,7 @@
     <string name="pair_vs_new">glede na nove</string>
     <string name="pair_cycle_number">cikel %1$d</string>
     <string name="pair_charge_calibrating">poslušaj naprej in videl boš, kako se trajanje baterije spreminja</string>
+    <string name="pair_charge_caveat">slušalke javijo samo eno raven baterije, zato lahko ušesni slušalki z različno napolnjenostjo popačita te številke.</string>
     <string name="pair_rename_title">preimenuj par</string>
     <string name="pair_rename_label">ime</string>
     <string name="pair_retire_title">upokoji ta par</string>

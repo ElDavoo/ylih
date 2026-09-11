@@ -186,4 +186,5 @@
         <item quantity="other">%d سیشنز</item>
     </plurals>
     <string name="pair_charge_calibrating">سنتے رہیں تاکہ دیکھ سکیں کہ بیٹری کی عمر کیسے بدلتی ہے</string>
+    <string name="pair_charge_caveat">ہیڈ سیٹ صرف ایک بیٹری لیول بتاتا ہے، اس لیے مختلف چارج والے ایئربڈز ان اعداد کو بگاڑ سکتے ہیں۔</string>
 </resources>

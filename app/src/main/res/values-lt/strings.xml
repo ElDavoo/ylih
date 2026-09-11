@@ -98,6 +98,7 @@
     <string name="pair_vs_new">palyginti su naujomis</string>
     <string name="pair_cycle_number">ciklas %1$d</string>
     <string name="pair_charge_calibrating">klausykis toliau, kad pamatytum, kaip keičiasi baterijos veikimo laikas</string>
+    <string name="pair_charge_caveat">ausinės praneša tik vieną baterijos lygį, todėl skirtingai įkrautos ausinės gali iškraipyti šiuos skaičius.</string>
     <string name="pair_rename_title">pervadinti pora</string>
     <string name="pair_rename_label">vardas</string>
     <string name="pair_retire_title">pensija sia pora</string>

@@ -186,4 +186,5 @@
         <item quantity="other">%d socodka</item>
     </plurals>
     <string name="pair_charge_calibrating">sii wad dhegeysiga si aad u aragto sida cimriga bateriga u beddelmo</string>
+    <string name="pair_charge_caveat">hedhsedhku wuxuu soo sheegaa hal heer oo bateri ah, sidaas darteed dhegaha leh caabuq kala duwan way qalloocin karaan tiradan.</string>
 </resources>

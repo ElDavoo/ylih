@@ -190,4 +190,5 @@
         <item quantity="other">%d sessions</item>
     </plurals>
     <string name="pair_charge_calibrating">kuldâl viehis, te uáináh maht batereja pissomâš nubástuvá</string>
+    <string name="pair_charge_caveat">peljuseh tieđettih tastoo ohtâ batereja tääsi, tastko jieŋgâlágán lâduin peljuseh pyehtih vyerrid täid loguid.</string>
 </resources>

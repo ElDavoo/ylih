@@ -182,4 +182,5 @@
         <item quantity="other">%d sesi</item>
     </plurals>
     <string name="pair_charge_calibrating">terus dengar untuk lihat bagaimana hayat bateri berubah</string>
+    <string name="pair_charge_caveat">set kepala hanya melaporkan satu tahap bateri, jadi fon telinga dengan cas berbeza boleh memesongkan angka ini.</string>
 </resources>

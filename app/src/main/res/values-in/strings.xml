@@ -193,4 +193,5 @@
         <item quantity="other">%d sesi</item>
     </plurals>
     <string name="pair_charge_calibrating">terus dengarkan untuk melihat bagaimana daya tahan baterai berubah</string>
+    <string name="pair_charge_caveat">headset hanya melaporkan satu level baterai, jadi earbud dengan daya berbeda bisa membuat angka ini melenceng.</string>
 </resources>

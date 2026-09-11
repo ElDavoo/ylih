@@ -186,4 +186,5 @@
         <item quantity="other">amaseshini angu-%d</item>
     </plurals>
     <string name="pair_charge_calibrating">qhubeka ulalele ukuze ubone ukuthi impilo yebhethri ishintsha kanjani</string>
+    <string name="pair_charge_caveat">ihedisethi ibika izinga elilodwa lebhethri, ngakho ama-earbud anokushaja okwehlukene angawasontela lawa manani.</string>
 </resources>

@@ -186,4 +186,5 @@
         <item quantity="other">%d okukola</item>
     </plurals>
     <string name="pair_charge_calibrating">weyongere okuwuliriza olabe engeri obulamu bw’essente gye bukyukamu</string>
+    <string name="pair_charge_caveat">ebiwulira biraga ekigero kimu kyokka ekya bateeri, kale ebiwulira ebirina amaanyi ag’enjawulo bisobola okwonoona ebibalo bino.</string>
 </resources>

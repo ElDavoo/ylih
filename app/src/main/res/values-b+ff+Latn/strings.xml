@@ -196,4 +196,5 @@
         <item quantity="other">%d sekkuuji</item>
     </plurals>
     <string name="pair_charge_calibrating">jokku heɗugol ngam yi’de no nguurndam battery waylotoo</string>
+    <string name="pair_charge_caveat">hedeset nden holla tan tolno battery gooto, ɗum jaŋtinta nowrooji ɗi njogii semmbe ceertuɗi mbaawi bonnude limle ɗee.</string>
 </resources>

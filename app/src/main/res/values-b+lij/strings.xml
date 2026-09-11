@@ -98,6 +98,7 @@
     <string name="pair_vs_new">rispetto a neuve</string>
     <string name="pair_cycle_number">ciclo %1$d</string>
     <string name="pair_charge_calibrating">continua a sentî pe vedde comme a cangia a duâ da bateria</string>
+    <string name="pair_charge_caveat">e cheuffie dan solo un livello de bateria, quindi orichin con carega diferente pêuan falsâ sti numeri.</string>
     <string name="pair_rename_title">cambya nome a-a pâriggia</string>
     <string name="pair_rename_label">nome</string>
     <string name="pair_retire_title">ritira tia pâriggia</string>

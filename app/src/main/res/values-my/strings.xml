@@ -182,4 +182,5 @@
         <item quantity="other">%d အခွင်းအရောင်များ</item>
     </plurals>
     <string name="pair_charge_calibrating">ဆက်နားထောင်ပါ၊ ဘက်ထရီသက်တမ်း ဘယ်လိုပြောင်းလဲသလဲ မြင်ရပါမယ်</string>
+    <string name="pair_charge_caveat">နားကြပ်က ဘက်ထရီအဆင့်တစ်ခုတည်းသာ ပြပါတယ်၊ ဒါကြောင့် အားမတူတဲ့ နားကြပ်နှစ်ဖက်က ဒီကိန်းဂဏန်းတွေကို မှားစေနိုင်ပါတယ်။</string>
 </resources>

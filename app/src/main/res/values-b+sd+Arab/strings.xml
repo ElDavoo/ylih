@@ -186,4 +186,5 @@
         <item quantity="other">%d سيشنز</item>
     </plurals>
     <string name="pair_charge_calibrating">ٻڌندا رهو ته ڏسو ته بيٽري جي عمر ڪيئن بدلجي ٿي</string>
+    <string name="pair_charge_caveat">هيڊسيٽ صرف بيٽري جي هڪ سطح ٻڌائي ٿو، ان ڪري مختلف چارج وارا ڪن وارا اِهي انگ خراب ڪري سگهن ٿا.</string>
 </resources>

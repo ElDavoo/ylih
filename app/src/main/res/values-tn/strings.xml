@@ -186,4 +186,5 @@
         <item quantity="other">%d dikhutshane</item>
     </plurals>
     <string name="pair_charge_calibrating">tswelela go reetsa gore o bone kafa botshelo jwa bathari bo fetogang ka teng</string>
+    <string name="pair_charge_caveat">hedisete e bega seelo se le sengwe fela sa bathari, ka jalo di-earbud tse di nang le tjhaje e e farologaneng di ka senya dipalo tse.</string>
 </resources>

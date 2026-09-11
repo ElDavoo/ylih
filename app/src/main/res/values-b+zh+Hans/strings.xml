@@ -193,4 +193,5 @@
         <item quantity="other">%d 次连接</item>
     </plurals>
     <string name="pair_charge_calibrating">继续使用，就能看到电池续航的变化</string>
+    <string name="pair_charge_caveat">耳机只上报一个电量，所以左右电量不同的耳塞会让这些数字失真。</string>
 </resources>

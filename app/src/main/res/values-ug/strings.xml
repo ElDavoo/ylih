@@ -186,4 +186,5 @@
         <item quantity="other">%d سەئاي</item>
     </plurals>
     <string name="pair_charge_calibrating">ئاڭلاشنى داۋاملاشتۇرۇڭ، باتارېيە ئۆمرىنىڭ قانداق ئۆزگىرىدىغانلىقىنى كۆرىسىز</string>
+    <string name="pair_charge_caveat">قۇلاقلىق پەقەت بىرلا باتارېيە دەرىجىسىنى مەلۇم قىلىدۇ، شۇڭا توك مىقدارى ئوخشاش بولمىغان قۇلاقچىلار بۇ سانلارنى خاتا كۆرسىتىشى مۇمكىن.</string>
 </resources>

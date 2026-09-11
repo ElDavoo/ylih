@@ -192,4 +192,5 @@
         <item quantity="other">jiginna sutu %d</item>
     </plurals>
     <string name="pair_charge_calibrating">tila ka lamɛnni kɛ walasa ka batiri sii yɛlɛmani ye</string>
+    <string name="pair_charge_caveat">tulomafɔlan bɛ batiri hakɛ kelen dɔrɔn fɔ, o de kosɔn tulomafɔlan minnu fanga tɛ kelen ye, olu bɛ se ka jatebɔ ninnu tiɲɛ.</string>
 </resources>

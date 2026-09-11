@@ -190,4 +190,5 @@
         <item quantity="other">%d wātū</item>
     </plurals>
     <string name="pair_charge_calibrating">kia mau tonu te whakarongo kia kite koe i te panoni o te roanga o te pākahiko</string>
+    <string name="pair_charge_caveat">kotahi anake te taumata pākahiko ka whakaaturia e te pūwhakarongo, nō reira ka taea e ngā taringa rerekē te kaha te whakapōrearea i ēnei tatauranga.</string>
 </resources>

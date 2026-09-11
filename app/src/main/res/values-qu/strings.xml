@@ -190,4 +190,5 @@
         <item quantity="other">%d rimay</item>
     </plurals>
     <string name="pair_charge_calibrating">uyarispa kachkay, bateria kawsaynin imayna tikrakusqanta rikunaykipaq</string>
+    <string name="pair_charge_caveat">audifonoqa huk bateria kaqllatam willan, chaymi mana kikin bateriayuq audifonokuna kay yupaykunata pantachinman.</string>
 </resources>

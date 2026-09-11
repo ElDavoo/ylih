@@ -196,4 +196,5 @@
         <item quantity="other">%dセッション</item>
     </plurals>
     <string name="pair_charge_calibrating">使い続けると、バッテリーの持ちの変化がわかります</string>
+    <string name="pair_charge_caveat">ヘッドセットはバッテリー残量を一つしか通知しないため、左右で残量が違うイヤホンではこの数値がずれることがあります。</string>
 </resources>

@@ -196,4 +196,5 @@
         <item quantity="other">%d সেশন</item>
     </plurals>
     <string name="pair_charge_calibrating">শুনতে থাকুন, দেখুন ব্যাটারির আয়ু কীভাবে বদলায়</string>
+    <string name="pair_charge_caveat">হেডসেট একটাই ব্যাটারি লেভেল জানায়, তাই আলাদা চার্জের ইয়ারবাড এই সংখ্যাগুলো এলোমেলো করে দিতে পারে।</string>
 </resources>

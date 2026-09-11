@@ -190,4 +190,5 @@
         <item quantity="other">%d ǃares</item>
     </plurals>
     <string name="pair_charge_calibrating">ǃaruǀî ǁnâu re, battery ûib mâti ra ǀkharaǀkharasen ǃkhaisa mû</string>
+    <string name="pair_charge_caveat">ǂganǃgâ-ūdaob ge ǀgui battery ǀgaiba ǀguiba ra ǂanǂan, ǁnā-amaga ǀgoraǀgorasa ǀgaiba ūhâ ǂgaeǃnâ-ūdana nē ǃgôana a ǂkhabaǂkhaba ǁkhā.</string>
 </resources>

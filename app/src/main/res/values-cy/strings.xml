@@ -104,6 +104,7 @@
     <string name="pair_vs_new">o’i gymharu â newydd</string>
     <string name="pair_cycle_number">cylch %1$d</string>
     <string name="pair_charge_calibrating">dal ati i wrando i weld sut mae oes y batri yn newid</string>
+    <string name="pair_charge_caveat">un lefel batri yn unig mae clustffonau’n ei rhoi, felly gall clustffonau â gwefr wahanol ystumio’r ffigurau hyn.</string>
     <string name="pair_rename_title">ailenwi pâr</string>
     <string name="pair_rename_label">enw</string>
     <string name="pair_retire_title">tynnu’r pâr hwn ymaith</string>

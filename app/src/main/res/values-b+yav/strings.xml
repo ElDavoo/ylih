@@ -190,4 +190,5 @@
         <item quantity="other">%d muanda</item>
     </plurals>
     <string name="pair_charge_calibrating">wókii nyɔ́ɔ, u yén lɛ́ ndáá battery mʉ́ mbaŋ</string>
+    <string name="pair_charge_caveat">battery mʉ́ mbaŋ wúmɔ́ u yén; lɛ́ ndáá mátú má ndáá, námbá má ndáá.</string>
 </resources>

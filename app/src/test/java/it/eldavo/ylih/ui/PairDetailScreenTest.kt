@@ -239,6 +239,12 @@ class PairDetailScreenTest {
             "the whole list was searched and the calibrating note is not in it",
             runCatching { scrollTo(text(R.string.pair_charge_calibrating)) }.isFailure,
         )
+        // Nor the unequal-buds caveat: it is a caveat on figures, so it cannot leak onto a pair
+        // that has none.
+        assertTrue(
+            "the whole list was searched and the battery caveat is not in it",
+            runCatching { scrollTo(text(R.string.pair_charge_caveat)) }.isFailure,
+        )
     }
 
     /**
@@ -271,6 +277,26 @@ class PairDetailScreenTest {
 
         // The section itself is there, tiles and all — the note replaces the chart, not the figures.
         scrollTo(text(R.string.pair_charge_cycles))
+        // And the unequal-buds caveat stands beside the calibrating line rather than instead of
+        // it: the two are one block of small print in this state.
+        scrollTo(text(R.string.pair_charge_caveat))
+    }
+
+    /**
+     * The other half of "always there": the caveat is not riding on the calibrating branch, so it
+     * survives the state change that takes the calibrating line away.
+     */
+    @Test
+    fun `the battery caveat stands under a drawn chart too`() {
+        val pairId = seedPair()
+        seedBatteryReadings()
+
+        show(pairId)
+        compose.waitUntil(timeoutMillis = 10_000) {
+            runCatching { scrollTo(text(R.string.pair_charge_cycles)) }.isSuccess
+        }
+
+        scrollTo(text(R.string.pair_charge_caveat))
     }
 
     @Test
