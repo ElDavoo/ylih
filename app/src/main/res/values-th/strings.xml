@@ -194,4 +194,5 @@
         <item quantity="other">%d ช่วงการใช้งาน</item>
     </plurals>
     <string name="pair_charge_calibrating">ฟังต่อไปเพื่อดูว่าอายุแบตเตอรี่เปลี่ยนไปอย่างไร</string>
+    <string name="pair_charge_caveat">หูฟังรายงานระดับแบตเตอรี่เพียงค่าเดียว หูฟังสองข้างที่แบตไม่เท่ากันจึงทำให้ตัวเลขเหล่านี้คลาดเคลื่อนได้</string>
 </resources>

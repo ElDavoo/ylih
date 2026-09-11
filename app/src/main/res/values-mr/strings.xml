@@ -186,4 +186,5 @@
         <item quantity="other">%d सत्रं</item>
     </plurals>
     <string name="pair_charge_calibrating">ऐकत राहा आणि पाहा बॅटरी आयुष्य कसे बदलते</string>
+    <string name="pair_charge_caveat">हेडसेट फक्त एकच बॅटरी पातळी सांगतो, त्यामुळे वेगवेगळ्या चार्जचे इयरबड ही आकडेवारी बिघडवू शकतात.</string>
 </resources>

@@ -190,4 +190,5 @@
         <item quantity="other">ikathi %d</item>
     </plurals>
     <string name="pair_charge_calibrating">ntthikelelaka wiriyana wira mmone moota ukumi wa bateria onivirela</string>
+    <string name="pair_charge_caveat">iphoni sa nkhuru sinnihimya ekeekhai emoharu ya bateria, tivonto makhuru arina ekuru sohiyana anwerya othanana inamba iya.</string>
 </resources>

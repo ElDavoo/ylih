@@ -186,4 +186,5 @@
     </plurals>
     <string name="edit_failed">ba a iya ajiye canjin ba</string>
     <string name="pair_charge_calibrating">ci gaba da sauraro don ganin yadda rayuwar bateri ke canjawa</string>
+    <string name="pair_charge_caveat">belun kunne yana bayar da matakin baturi guda ɗaya kawai, don haka belun kunne masu caji daban-daban na iya ɓata waɗannan lambobi.</string>
 </resources>

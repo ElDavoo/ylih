@@ -98,6 +98,7 @@
     <string name="pair_vs_new">tsjin nij oer</string>
     <string name="pair_cycle_number">syklus %1$d</string>
     <string name="pair_charge_calibrating">bliuw harkjen om te sjen hoe’t de batterijduer feroaret</string>
+    <string name="pair_charge_caveat">in headset jout mar ien batterijnivo troch, dus earkes mei ferskillende lading kinne dizze sifers ferfalskje.</string>
     <string name="pair_rename_title">dit pear omneame</string>
     <string name="pair_rename_label">namme</string>
     <string name="pair_retire_title">dit pear ôfskied</string>

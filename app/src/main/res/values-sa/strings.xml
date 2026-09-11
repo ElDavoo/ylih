@@ -190,4 +190,5 @@
         <item quantity="other">%d सत्राणि</item>
     </plurals>
     <string name="pair_charge_calibrating">श्रवणं कुरु, विद्युत्कोशायुः कथं परिवर्तते इति पश्य</string>
+    <string name="pair_charge_caveat">श्रवणयन्त्रं एकमेव विद्युत्कोशस्तरं सूचयति, अतः भिन्नभारयुक्ताः कर्णयन्त्राः एतान् अङ्कान् विकृतान् कर्तुं शक्नुवन्ति।</string>
 </resources>

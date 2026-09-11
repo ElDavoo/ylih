@@ -98,6 +98,7 @@
     <string name="pair_vs_new">rispeto a nove</string>
     <string name="pair_cycle_number">ciclo %1$d</string>
     <string name="pair_charge_calibrating">continua a scoltar par védar come che canbia la durada de la bateria</string>
+    <string name="pair_charge_caveat">le cufie le da un solo livel de bataria, quindi auricolari con carega difarente i pol falsar sti numari.</string>
     <string name="pair_rename_title">rinomina la para</string>
     <string name="pair_rename_label">nome</string>
     <string name="pair_retire_title">manda sto para in pensione</string>

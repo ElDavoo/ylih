@@ -98,6 +98,7 @@
     <string name="pair_vs_new">w porōwnaniu z nowymi</string>
     <string name="pair_cycle_number">cykel %1$d</string>
     <string name="pair_charge_calibrating">suchej dalij, coby uwidzieć, jak sie mynio czas bateryje</string>
+    <string name="pair_charge_caveat">suchowki dowajōm ino jedyn poziōm bateryje, tōż suchowki z inkszym naladowaniym mogōm skrziwić te liczby.</string>
     <string name="pair_rename_title">przemianuj pora</string>
     <string name="pair_rename_label">miano</string>
     <string name="pair_retire_title">dej pynzyjo tymu pora</string>

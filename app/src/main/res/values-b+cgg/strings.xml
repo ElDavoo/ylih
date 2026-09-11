@@ -196,4 +196,5 @@
         <item quantity="other">okussozo %d</item>
     </plurals>
     <string name="pair_charge_calibrating">gumizamu kuhurikiiza oreebe oku obwomeezi bwa batireeri buhindukira</string>
+    <string name="pair_charge_caveat">ebihurikiiza nibyoreka ekipimo kimwe kya batireeri, n’ahabw’ekyo ebihurikiiza ebiine amaani agatarikushushana nibibaasa kwonona embaro ezi.</string>
 </resources>

@@ -186,4 +186,5 @@
         <item quantity="other">%d tasrtiutin</item>
     </plurals>
     <string name="pair_charge_calibrating">kemmel ad tsslid akken ad tẓred amek tettbeddil tudert n umdu</string>
+    <string name="pair_charge_caveat">isfilan smaln ghir yan uswir n umdu, ghikan isfilan s ccarj imxalafn zmrn ad sxsrn izwilan agi.</string>
 </resources>

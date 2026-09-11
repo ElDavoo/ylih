@@ -98,6 +98,7 @@
     <string name="pair_vs_new">in cunfrontu a nois</string>
     <string name="pair_cycle_number">tzìclu %1$d</string>
     <string name="pair_charge_calibrating">sighi a ascurtare pro bìdere comente càmbiat sa durada de sa baterìa</string>
+    <string name="pair_charge_caveat">sas cùffias donant isceti unu livellu de batteria, duncas origras cun càrriga diferente podent falsare custos nùmeros.</string>
     <string name="pair_rename_title">bennomine para</string>
     <string name="pair_rename_label">nòmine</string>
     <string name="pair_retire_title">pensiona custa para</string>

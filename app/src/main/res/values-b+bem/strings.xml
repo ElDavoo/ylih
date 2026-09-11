@@ -196,4 +196,5 @@
         <item quantity="other">%d ifikapililo</item>
     </plurals>
     <string name="pair_charge_calibrating">twalilileni ukumfwa pa kuti mumone ifyo ubumi bwa batadi bwaaluka</string>
+    <string name="pair_charge_caveat">amatwi ya kuumfwa yalanga ubwingi bumo bwa batadi, e ico amatwi yakwata amaka yapusana yanga onaula ino mibalo.</string>
 </resources>

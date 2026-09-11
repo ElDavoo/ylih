@@ -182,4 +182,5 @@
         <item quantity="other">%d ເຊດຊັນ</item>
     </plurals>
     <string name="pair_charge_calibrating">ຟັງຕໍ່ໄປເພື່ອເບິ່ງວ່າອາຍຸແບັດປ່ຽນແປງແນວໃດ</string>
+    <string name="pair_charge_caveat">ຫູຟັງລາຍງານລະດັບແບັດພຽງຄ່າດຽວ ດັ່ງນັ້ນຫູຟັງສອງເບື້ອງທີ່ມີແບັດຕ່າງກັນອາດເຮັດໃຫ້ຕົວເລກເຫຼົ່ານີ້ຄາດເຄື່ອນ.</string>
 </resources>

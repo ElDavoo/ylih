@@ -186,4 +186,5 @@
         <item quantity="other">%d magawo</item>
     </plurals>
     <string name="pair_charge_calibrating">pitirizani kubvesera toera muone kuti umoyo wa bettery usacinja tani</string>
+    <string name="pair_charge_caveat">aphoni a nkhutu asapangiza basi ntundu ubodzi wa bateria, natenepa makutu ali na mphambvu zakusiyana anakwanisa kuipisa manyerero awa.</string>
 </resources>

@@ -186,4 +186,5 @@
         <item quantity="other">%d ilortariaq</item>
     </plurals>
     <string name="pair_charge_calibrating">tusarnaajuarit tamaassap inuunera qanoq allanngortartoq takusinnaaniassagakku</string>
+    <string name="pair_charge_caveat">tusarnaarut ataatsimik taarsiussamik nalunaarpoq, taamaattumik siutitigut tusarnaarutit assigiinngitsumik tarrisaqartut kisitsisit makku eqqunngitsuliortissinnaavaat.</string>
 </resources>

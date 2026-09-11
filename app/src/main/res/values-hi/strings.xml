@@ -199,4 +199,5 @@
         <item quantity="other">%d सत्र</item>
     </plurals>
     <string name="pair_charge_calibrating">सुनते रहें और देखें कि बैटरी लाइफ कैसे बदलती है</string>
+    <string name="pair_charge_caveat">हेडसेट सिर्फ़ एक बैटरी लेवल बताता है, इसलिए अलग-अलग चार्ज वाले इयरबड ये आंकड़े बिगाड़ सकते हैं।</string>
 </resources>

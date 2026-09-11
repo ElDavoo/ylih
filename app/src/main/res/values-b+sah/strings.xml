@@ -182,4 +182,5 @@
         <item quantity="other">%d сессия</item>
     </plurals>
     <string name="pair_charge_calibrating">истэ туруҥ, батарея ресурса хайдах уларыйарын көрүөҥ</string>
+    <string name="pair_charge_caveat">нааушник биир эрэ батарея таһымын этэр, онон араас зарядтаах нааушниктар бу ахсааннары алҕаһатыахтарын сөп.</string>
 </resources>

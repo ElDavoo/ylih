@@ -186,4 +186,5 @@
     </plurals>
     <string name="edit_failed">hiki ʻole ke mālama i ka hoʻololi</string>
     <string name="pair_charge_calibrating">e hoʻomau i ka hoʻolohe i ʻike ʻoe i ka loli ʻana o ke ola o ka pila</string>
+    <string name="pair_charge_caveat">hōʻike ka pepeiao hoʻolohe i hoʻokahi wale nō pae pila, no laila hiki i nā pepeiao ʻokoʻa ka piha ke hoʻopohihihi i kēia mau helu.</string>
 </resources>

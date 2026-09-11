@@ -200,4 +200,5 @@
         <item quantity="other">dibulu %d</item>
     </plurals>
     <string name="pair_charge_calibrating">vɔ́gɔ́ ai mvus, wa yen aval ényiŋ bateri a kabɔ</string>
+    <string name="pair_charge_caveat">bateri a ntehe éyoŋ wɔ́ɔ́; nge mə́lo mə́ ntɔlɔ, mimbu mi a bíbí.</string>
 </resources>

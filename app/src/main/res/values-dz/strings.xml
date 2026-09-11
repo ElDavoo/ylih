@@ -195,4 +195,5 @@
         <item quantity="other">གླེང་སྟེགས་ %d</item>
     </plurals>
     <string name="pair_charge_calibrating">ཉན་བཞིན་སྡོད་གནང་། ཕོ་ཕན་གྱི་ཚེ་ཚད་ག་དེ་སྦེ་འགྱུར་བ་མཐོང་འོང་</string>
+    <string name="pair_charge_caveat">ཨིར་བཌ་ཀྱིས་ཕོ་ཕན་གྱི་ཚད་གཅིག་རྐྱངམ་ཅིག་སྟོནམ་ལས། གློག་ཚད་མ་འདྲ་བའི་ཨིར་བཌ་གིས་ཨང་གྲངས་འདི་ཚུ་ནོར་བཅུག་འོང་།</string>
 </resources>

@@ -190,4 +190,5 @@
         <item quantity="other">%d seih</item>
     </plurals>
     <string name="pair_charge_calibrating">laebae dingqnyi bae ndaej raen denhciz souhmingh bienq baenzlawz</string>
+    <string name="pair_charge_caveat">rwzgyaeng dan naeuz aen denhciz suijbingz ndeu, ndigah song aen rwzgyaeng denhciz mbouj doengz ndaej hawj gij soq neix loeng.</string>
 </resources>

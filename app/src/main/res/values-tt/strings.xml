@@ -190,4 +190,5 @@
         <item quantity="other">%d сессия</item>
     </plurals>
     <string name="pair_charge_calibrating">тыңлавыгызны дәвам итегез, батарея ресурсының ничек үзгәрүен күрерсез</string>
+    <string name="pair_charge_caveat">колаклык бер генә батарея дәрәҗәсен хәбәр итә, шуңа күрә төрле корылышлы колаклыклар бу саннарны бозарга мөмкин.</string>
 </resources>

@@ -186,4 +186,5 @@
     </plurals>
     <string name="edit_failed">badlaav save nahi ho saka</string>
     <string name="pair_charge_calibrating">sunte rahiye aur dekhiye ki bateri life kaise badalti hai</string>
+    <string name="pair_charge_caveat">hedset sirf ek bateri level batata hai, isliye alag-alag charge wale earbud ye aankde bigaad sakte hain.</string>
 </resources>

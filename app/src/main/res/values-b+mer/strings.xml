@@ -190,4 +190,5 @@
         <item quantity="other">magita %d</item>
     </plurals>
     <string name="pair_charge_calibrating">thikĩrĩria ũrĩ na mbere nĩguo wone ũrĩa muoyo jwa betiri jũgarũrũkaga</string>
+    <string name="pair_charge_caveat">matũ ja gũthikĩrĩria monanagia gĩthimi kĩmwe kĩa betiri, kwou matũ jarĩ na inya itigacanĩte no jathũkie namba iji.</string>
 </resources>

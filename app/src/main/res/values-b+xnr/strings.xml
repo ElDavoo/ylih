@@ -190,4 +190,5 @@
         <item quantity="other">%d सत्र</item>
     </plurals>
     <string name="pair_charge_calibrating">सुणदे रैओ ते दिक्खो जे बैटरी दी उमर किञा बदलदी ऐ</string>
+    <string name="pair_charge_caveat">हेडसेट सिर्फ इक्क बैटरी लेवल दस्सदा ऐ, इस्सै लेई बक्ख-बक्ख चार्ज आले इयरबड इन्हां अंकड़ें गी बिगाड़ी सकदे न।</string>
 </resources>

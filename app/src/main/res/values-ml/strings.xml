@@ -186,4 +186,5 @@
         <item quantity="other">%d സെഷനുകൾ</item>
     </plurals>
     <string name="pair_charge_calibrating">കേട്ടുകൊണ്ടിരിക്കൂ, ബാറ്ററി ആയുസ്സ് എങ്ങനെ മാറുന്നു എന്ന് കാണാം</string>
+    <string name="pair_charge_caveat">ഹെഡ്‌സെറ്റ് ഒരൊറ്റ ബാറ്ററി നില മാത്രമേ അറിയിക്കൂ, അതിനാൽ വ്യത്യസ്ത ചാർജുള്ള ഇയർബഡുകൾ ഈ കണക്കുകൾ തെറ്റിക്കാം.</string>
 </resources>

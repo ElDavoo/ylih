@@ -182,4 +182,5 @@
         <item quantity="other">%d សម័យ</item>
     </plurals>
     <string name="pair_charge_calibrating">បន្តស្តាប់ ដើម្បីមើលថាអាយុថ្មប្រែប្រួលយ៉ាងណា</string>
+    <string name="pair_charge_caveat">កាស់រាយការណ៍កម្រិតថ្មតែមួយប៉ុណ្ណោះ ដូច្នេះកាស់ត្រចៀកដែលមានថ្មខុសគ្នាអាចធ្វើឱ្យលេខទាំងនេះខុស។</string>
 </resources>

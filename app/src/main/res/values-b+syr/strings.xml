@@ -186,4 +186,5 @@
         <item quantity="other">%d ܡܘܬܒܐ</item>
     </plurals>
     <string name="pair_charge_calibrating">ܗܘܝ ܫܡܥ ܬܘܒ ܕܬܚܙܐ ܐܝܟܢܐ ܡܫܬܚܠܦܝܢ ܚܝ̈ܐ ܕܒܛܪܝܐ</string>
+    <string name="pair_charge_caveat">ܡܫܡܥܢܐ ܡܚܘܐ ܚܕܐ ܕܪܓܐ ܕܒܛܪܝܐ ܒܠܚܘܕ܆ ܡܛܠ ܗܢܐ ܡܫܡ̈ܥܢܐ ܕܐܕ̈ܢܐ ܕܐܝܬ ܠܗܘܢ ܚܝܠܐ ܦܪܝܫܐ ܡܨܝܢ ܕܢܚܒܠܘܢ ܗܠܝܢ ܡܢܝܢ̈ܐ.</string>
 </resources>

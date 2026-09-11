@@ -104,6 +104,7 @@
     <string name="pair_vs_new">mót nýggjum</string>
     <string name="pair_cycle_number">syklus %1$d</string>
     <string name="pair_charge_calibrating">lurta víðari fyri at síggja, hvussu batterílivitíðin broytist</string>
+    <string name="pair_charge_caveat">eitt hoyritól melda bert eitt batterístøði, so kunnu oyratelefonir við ymiskari løðing skeivleiða hesi tølini.</string>
     <string name="pair_rename_title">endurnefna pair</string>
     <string name="pair_rename_label">navn</string>
     <string name="pair_retire_title">útfasa hesa pair</string>

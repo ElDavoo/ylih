@@ -200,4 +200,5 @@
         <item quantity="other">búŋ %d</item>
     </plurals>
     <string name="pair_charge_calibrating">yúʼ ntsùŋ, wò ke yeŋ ǹdzə̀ baterì tsə̀ kaʼ</string>
+    <string name="pair_charge_caveat">baterì tsə̀ kaʼ mɔ́ wò ke yeŋ; ǹdzə̀ tsə̀ ke bà, nàmbà zə̀ ke nyàm.</string>
 </resources>

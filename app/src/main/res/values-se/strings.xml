@@ -190,4 +190,5 @@
         <item quantity="other">%d vahkka</item>
     </plurals>
     <string name="pair_charge_calibrating">guldal viidáseappot vai oainnát mo battery bistin rievdá</string>
+    <string name="pair_charge_caveat">belljosat dieđihit dušše ovtta battery dási, danne sáhttet sierra láduin belljosat boasttut dahkat dáid loguid.</string>
 </resources>

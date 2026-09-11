@@ -190,4 +190,5 @@
         <item quantity="other">%d musala</item>
     </plurals>
     <string name="pair_charge_calibrating">tungunuka kuteleja bwa kumona mushindu muoyo wa batiri udi ushintuluka</string>
+    <string name="pair_charge_caveat">tuluwa tudi tuamba mushindu umue wa batiri, ke bualu kayi tuluwa tudi ne bukole bushilangane tudi mua kunyanga mibalu eyi.</string>
 </resources>

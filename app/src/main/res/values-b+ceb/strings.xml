@@ -196,4 +196,5 @@
         <item quantity="other">%d ka session</item>
     </plurals>
     <string name="pair_charge_calibrating">padayon sa pagpaminaw aron makita kon giunsa pagbag-o sa kinabuhi sa baterya</string>
+    <string name="pair_charge_caveat">ang headset nagtaho lang og usa ka lebel sa baterya, mao nga ang mga earbud nga lahi og charge makatuis niini nga mga numero.</string>
 </resources>

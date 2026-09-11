@@ -186,4 +186,5 @@
     </plurals>
     <string name="edit_failed">pɛ mɛ nɛ bo</string>
     <string name="pair_charge_calibrating">yúʼ ngɔ́, wo bɛ́ jɛ́nɛ ndé ngbala batiri tɔ́ŋgɔ</string>
+    <string name="pair_charge_caveat">batiri tɔ́ŋgɔ mɔ́ wo bɛ́ jɛ́nɛ; ndé ngbala tɔ́ŋgɔ ndé nzé, nàmbà má nzé.</string>
 </resources>

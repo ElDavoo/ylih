@@ -196,4 +196,5 @@
         <item quantity="other">%d na session</item>
     </plurals>
     <string name="pair_charge_calibrating">magpatuloy sa pakikinig para makita kung paano nagbabago ang tagal ng baterya</string>
+    <string name="pair_charge_caveat">isang antas lang ng baterya ang iniuulat ng headset, kaya ang mga earbud na magkaibang charge ay puwedeng magpabaluktot sa mga numerong ito.</string>
 </resources>

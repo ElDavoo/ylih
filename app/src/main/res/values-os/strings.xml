@@ -186,4 +186,5 @@
         <item quantity="other">%d сесси</item>
     </plurals>
     <string name="pair_charge_calibrating">хъусын дарддæр дæр, æмæ фендзынæ, батарейы цард куыд ивы</string>
+    <string name="pair_charge_caveat">наушниктæ æрмæст иу батарейы æмвæзад æвдисынц, уымæ гæсгæ хицæн зарядимæ наушниктæ ацы нымæцтæ фæрæдийын кæнынц.</string>
 </resources>

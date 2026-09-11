@@ -193,4 +193,5 @@
         <item quantity="other">%d phiên</item>
     </plurals>
     <string name="pair_charge_calibrating">hãy nghe tiếp để thấy thời lượng pin thay đổi thế nào</string>
+    <string name="pair_charge_caveat">tai nghe chỉ báo một mức pin, nên hai bên tai nghe sạc khác nhau có thể làm sai lệch các con số này.</string>
 </resources>

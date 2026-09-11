@@ -98,6 +98,7 @@
     <string name="pair_vs_new">oproti novým</string>
     <string name="pair_cycle_number">cyklus %1$d</string>
     <string name="pair_charge_calibrating">počúvaj ďalej a uvidíš, ako sa výdrž batérie mení</string>
+    <string name="pair_charge_caveat">slúchadlá hlásia len jednu úroveň batérie, takže slúchadlá s rôznym nabitím môžu tieto čísla skresliť.</string>
     <string name="pair_rename_title">premenovať pár</string>
     <string name="pair_rename_label">meno</string>
     <string name="pair_retire_title">vyradiť tento pár</string>

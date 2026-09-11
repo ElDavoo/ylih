@@ -186,4 +186,5 @@
         <item quantity="other">fotoana %d</item>
     </plurals>
     <string name="pair_charge_calibrating">mihainoa hatrany mba hahitanao ny fiovan’ny faharetan’ny bateria</string>
+    <string name="pair_charge_caveat">tsy manambara afa-tsy tahan’ny bateria iray ihany ny fihainoana, ka ny sofina roa tsy mitovy fiampiana dia mety hanova ireo isa ireo.</string>
 </resources>

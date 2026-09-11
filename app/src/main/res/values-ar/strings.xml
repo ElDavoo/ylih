@@ -216,4 +216,5 @@
         <item quantity="other">%d جلسة</item>
     </plurals>
     <string name="pair_charge_calibrating">واصل الاستماع لترى كيف يتغيّر عمر البطارية</string>
+    <string name="pair_charge_caveat">تُبلّغ السماعة عن مستوى بطارية واحد فقط، لذا قد تشوّه سماعتان بشحنتين مختلفتين هذه الأرقام.</string>
 </resources>

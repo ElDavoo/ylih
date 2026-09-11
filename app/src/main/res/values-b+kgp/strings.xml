@@ -190,4 +190,5 @@
     </plurals>
     <string name="edit_failed">tũ ki han mũ tũ</string>
     <string name="pair_charge_calibrating">ẽ ke tugnĩn, jé batéria rĩnrĩn tỹ ke mũ ver</string>
+    <string name="pair_charge_caveat">kanhkã tỹ batéria rĩnrĩn pir mũ vẽnhkagta, hã kỹ batéria si nĩ ki numeru ag tỹ há tũ nĩ.</string>
 </resources>

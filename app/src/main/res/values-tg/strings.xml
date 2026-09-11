@@ -190,4 +190,5 @@
         <item quantity="other">%d ҷаласа</item>
     </plurals>
     <string name="pair_charge_calibrating">гӯш карданро идома диҳед, то бинед умри батарея чӣ гуна тағйир меёбад</string>
+    <string name="pair_charge_caveat">гӯшмонак танҳо як сатҳи батареяро хабар медиҳад, барои ҳамин гӯшмонакҳои дорои заряди гуногун ин рақамҳоро вайрон карда метавонанд.</string>
 </resources>

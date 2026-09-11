@@ -186,4 +186,5 @@
         <item quantity="other">vipindi %d</item>
     </plurals>
     <string name="pair_charge_calibrating">endelea kusikiliza ili uone jinsi maisha ya betri yanavyobadilika</string>
+    <string name="pair_charge_caveat">vipokea sauti hutoa kiwango kimoja tu cha betri, hivyo vipokea sauti vyenye chaji tofauti vinaweza kupotosha takwimu hizi.</string>
 </resources>

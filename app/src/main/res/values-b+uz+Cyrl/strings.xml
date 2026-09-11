@@ -186,4 +186,5 @@
         <item quantity="other">%d сеансле</item>
     </plurals>
     <string name="pair_charge_calibrating">тинглашда давом этинг, батарея умри қандай ўзгаришини кўрасиз</string>
+    <string name="pair_charge_caveat">қулоқчин фақат битта батарея даражасини билдиради, шунинг учун ҳар хил зарядли қулоқчинлар бу рақамларни бузиши мумкин.</string>
 </resources>

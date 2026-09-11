@@ -182,4 +182,5 @@
     </plurals>
     <string name="edit_failed">enweghị ike ịchekwa mgbanwe ahụ</string>
     <string name="pair_charge_calibrating">gaa n’ihu na-ege ntị ka ị hụ ka ndụ batrị si agbanwe</string>
+    <string name="pair_charge_caveat">ekwentị ntị na-akọ naanị otu ọkwa batrị, ya mere ntị abụọ nwere chaji dị iche nwere ike imebi ọnụọgụgụ ndị a.</string>
 </resources>

@@ -200,4 +200,5 @@
         <item quantity="other">%d diñun</item>
     </plurals>
     <string name="pair_charge_calibrating">kaanuŋ nabuŋ ba bu je nan bujaŋ bu battery sujaŋ</string>
+    <string name="pair_charge_caveat">kasak ka battery kayoken kan ni jaŋ, bare kuyeen ku battery kusumaakumi ku nan buñaŋen bu jaŋumi.</string>
 </resources>

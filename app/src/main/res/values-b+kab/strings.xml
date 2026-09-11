@@ -186,4 +186,5 @@
     </plurals>
     <string name="edit_failed">ur yezmir ara ad isekles asnifel</string>
     <string name="pair_charge_calibrating">kemmel asmuzget iwakken ad twaliḍ amek tettbeddil tudert n ubatri</string>
+    <string name="pair_charge_caveat">tinesmawin ttazenent kan yiwen n uswir n ubatri, ihi tinesmawin i gesɛan ccarj yemxalafen zemrent ad sfesdent izuyaz-agi.</string>
 </resources>

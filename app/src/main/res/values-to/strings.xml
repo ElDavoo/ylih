@@ -182,4 +182,5 @@
         <item quantity="other">tukituki %d</item>
     </plurals>
     <string name="pair_charge_calibrating">hokohoko atu hoʻo fanongo ke ke sio ki he liliu ʻo e moʻui ʻo e paini</string>
+    <string name="pair_charge_caveat">ʻoku fakahā ʻe he telefoni telinga ha tuʻunga paini pē ʻe taha, ko ia ʻe lava ke ueʻi kovi ʻe ha ongo telinga kehekehe hono fakafonu ʻa e ngaahi fika ni.</string>
 </resources>

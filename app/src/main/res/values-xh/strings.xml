@@ -186,4 +186,5 @@
         <item quantity="other">%d session</item>
     </plurals>
     <string name="pair_charge_calibrating">qhubeka umamele ukuze ubone ukuba ubomi bebhetri butshintsha njani</string>
+    <string name="pair_charge_caveat">ihedisethi ixela inqanaba elinye lebhetri, ngoko ii-earbud ezineetshaji ezahlukeneyo zinokuwagqwetha la manani.</string>
 </resources>

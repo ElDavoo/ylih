@@ -190,4 +190,5 @@
         <item quantity="other">%d sesan</item>
     </plurals>
     <string name="pair_charge_calibrating">vinḍite manḍu, beṭri jivon ketla maruteri hini uḍa</string>
+    <string name="pair_charge_caveat">heḍseṭ ori beṭri man maske hinideri, adiŋga bhinna carj mandi kansu i anka bigaḍ kihiteri.</string>
 </resources>

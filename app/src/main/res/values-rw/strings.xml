@@ -190,4 +190,5 @@
         <item quantity="other">%d isiganiro</item>
     </plurals>
     <string name="pair_charge_calibrating">komeza kumva kugira ngo urebe uko ubuzima bwa bateri buhinduka</string>
+    <string name="pair_charge_caveat">amakariso atangaza urwego rumwe rwa bateri, bityo amatwi afite ingufu zitandukanye ashobora kwangiza iyi mibare.</string>
 </resources>

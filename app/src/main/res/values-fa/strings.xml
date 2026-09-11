@@ -196,4 +196,5 @@
         <item quantity="other">%d جلسه</item>
     </plurals>
     <string name="pair_charge_calibrating">به شنیدن ادامه بده تا ببینی عمر باتری چطور تغییر می‌کند</string>
+    <string name="pair_charge_caveat">هدست فقط یک سطح باتری را گزارش می‌دهد، پس ایرفون‌هایی با شارژ متفاوت می‌توانند این اعداد را نادرست کنند.</string>
 </resources>

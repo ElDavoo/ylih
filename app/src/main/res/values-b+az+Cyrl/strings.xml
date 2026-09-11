@@ -196,4 +196,5 @@
         <item quantity="other">%d сеанс</item>
     </plurals>
     <string name="pair_charge_calibrating">динләмәјә давам ет ки, батареја өмрүнүн неҹә дәјишдијини ҝөрәсән</string>
+    <string name="pair_charge_caveat">гулаглыг јалныз бир батареја сәвијјәси билдирир, она ҝөрә фәргли шарјлы гулагҹыглар бу рәгәмләри тәһриф едә биләр.</string>
 </resources>

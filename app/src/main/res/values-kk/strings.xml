@@ -186,4 +186,5 @@
     </plurals>
     <string name="edit_failed">өзгеріс сақталмады</string>
     <string name="pair_charge_calibrating">тыңдай беріңіз, батарея ресурсының қалай өзгеретінін көресіз</string>
+    <string name="pair_charge_caveat">құлаққап бір ғана батарея деңгейін хабарлайды, сондықтан заряды әртүрлі құлаққаптар бұл сандарды бұрмалауы мүмкін.</string>
 </resources>

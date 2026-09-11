@@ -182,4 +182,5 @@
     </plurals>
     <string name="edit_failed">ka konsigi salva mudansa</string>
     <string name="pair_charge_calibrating">kontinua ta obi pa bu odja modi durason di batéria ta muda</string>
+    <string name="pair_charge_caveat">un fone ta mostra sô un nivel di batéria, nton dôs fone ku karga diferenti podi dana kes númeru li.</string>
 </resources>

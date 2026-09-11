@@ -186,4 +186,5 @@
     </plurals>
     <string name="edit_failed">փոփոխությունը չհաջողվեց պահել</string>
     <string name="pair_charge_calibrating">շարունակիր լսել՝ տեսնելու, թե ինչպես է փոխվում մարտկոցի կյանքը</string>
+    <string name="pair_charge_caveat">ականջակալը հաղորդում է մարտկոցի միայն մեկ մակարդակ, ուստի տարբեր լիցքով ականջակալները կարող են խեղաթյուրել այս թվերը։</string>
 </resources>

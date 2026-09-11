@@ -186,4 +186,5 @@
         <item quantity="other">%d సెషన్‌లు</item>
     </plurals>
     <string name="pair_charge_calibrating">వినడం కొనసాగించండి, బ్యాటరీ జీవితకాలం ఎలా మారుతుందో చూడండి</string>
+    <string name="pair_charge_caveat">హెడ్‌సెట్ ఒకే బ్యాటరీ స్థాయిని మాత్రమే తెలుపుతుంది, అందుకే వేర్వేరు చార్జ్ ఉన్న ఇయర్‌బడ్‌లు ఈ లెక్కలను తప్పు చేయవచ్చు.</string>
 </resources>

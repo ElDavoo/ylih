@@ -186,4 +186,5 @@
         <item quantity="other">%d mipikiso</item>
     </plurals>
     <string name="pair_charge_calibrating">rambai muchiteerera kuti muone kuti upenyu hwebattery hunochinja sei</string>
+    <string name="pair_charge_caveat">hedhiseti inotaura chikamu chimwe chete chebhatiri, saka ma-earbud ane chaji yakasiyana anogona kukanganisa nhamba idzi.</string>
 </resources>

@@ -98,6 +98,7 @@
     <string name="pair_vs_new">en congual cun nov</string>
     <string name="pair_cycle_number">ciclus %1$d</string>
     <string name="pair_charge_calibrating">tadla ad ascultar per vesair co che la durada da la bataria sa mida</string>
+    <string name="pair_charge_caveat">ina cuffia annunzia mo in nivel da batteria, uschia pon auriculars cun differenta chargia sfalsar quests dumbers.</string>
     <string name="pair_rename_title">renumner pair</string>
     <string name="pair_rename_label">num</string>
     <string name="pair_retire_title">pensiunar questa pair</string>

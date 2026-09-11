@@ -186,4 +186,5 @@
         <item quantity="other">liboka tse %d</item>
     </plurals>
     <string name="pair_charge_calibrating">tsoela pele o mamela hore o bone kamoo bophelo ba betri bo fetohang</string>
+    <string name="pair_charge_caveat">hedsethe e tlaleha boemo bo le bong feela ba betri, kahoo di-earbud tse nang le tjhaje e fapaneng di ka senya dipalo tsena.</string>
 </resources>

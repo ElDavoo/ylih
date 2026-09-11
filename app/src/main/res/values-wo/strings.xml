@@ -182,4 +182,5 @@
         <item quantity="other">%d sikasiit</item>
     </plurals>
     <string name="pair_charge_calibrating">wéy ci déggloo ngir gis naka la dundu batere di soppiku</string>
+    <string name="pair_charge_caveat">nopp yi benn niwo batere rekk lañuy joxe, kon nopp yu am charge yu wuute mën nañu yàq limu yi.</string>
 </resources>

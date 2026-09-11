@@ -186,4 +186,5 @@
     </plurals>
     <string name="edit_failed">ცვლილების შენახვა ვერ მოხერხდა</string>
     <string name="pair_charge_calibrating">განაგრძე მოსმენა, რომ ნახო როგორ იცვლება ბატარეის რესურსი</string>
+    <string name="pair_charge_caveat">ყურსასმენი მხოლოდ ერთ ბატარეის დონეს გადმოსცემს, ამიტომ სხვადასხვა დამუხტულობის ყურსასმენებმა შეიძლება ეს ციფრები დაამახინჯოს.</string>
 </resources>

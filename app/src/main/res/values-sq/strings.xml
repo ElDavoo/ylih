@@ -98,6 +98,7 @@
     <string name="pair_vs_new">krahasuar me të reja</string>
     <string name="pair_cycle_number">cikli %1$d</string>
     <string name="pair_charge_calibrating">vazhdo të dëgjosh për të parë si ndryshon jetëgjatësia e baterisë</string>
+    <string name="pair_charge_caveat">kufjet raportojnë vetëm një nivel baterie, prandaj kufjet me ngarkesa të ndryshme mund t’i shtrembërojnë këto shifra.</string>
     <string name="pair_rename_title">riemëro palën</string>
     <string name="pair_rename_label">emri</string>
     <string name="pair_retire_title">pensionojeni këtë palë</string>

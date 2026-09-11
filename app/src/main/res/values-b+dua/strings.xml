@@ -200,4 +200,5 @@
         <item quantity="other">%d isela</item>
     </plurals>
     <string name="pair_charge_calibrating">tatane senga, o me je lambe ne ngiña battery e mabelane</string>
+    <string name="pair_charge_caveat">battery e mɔ́ ndé e malee; yete matoi ma si mala bwam, myango mina mi malea.</string>
 </resources>

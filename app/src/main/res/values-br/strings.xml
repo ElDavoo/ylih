@@ -104,6 +104,7 @@
     <string name="pair_vs_new">e-keñver nevez</string>
     <string name="pair_cycle_number">kelc’hiad %1$d</string>
     <string name="pair_charge_calibrating">dalc’h da selaou evit gwelet penaos e cheñch buhez ar vaterienn</string>
+    <string name="pair_charge_caveat">ur c’hlevell ne ro nemet ul live batiri, setu e c’hall skouarnelloù karget disheñvel falsaat ar sifroù-mañ.</string>
     <string name="pair_rename_title">adenvel ur parol</string>
     <string name="pair_rename_label">anv</string>
     <string name="pair_retire_title">digemer ar parol-mañ</string>

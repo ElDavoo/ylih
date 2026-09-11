@@ -200,4 +200,5 @@
         <item quantity="other">mahinda %d</item>
     </plurals>
     <string name="pair_charge_calibrating">thĩkĩrĩria ũrĩ na mbere nĩguo wone ũrĩa muoyo wa kĩruta ũgarũrũkaga</string>
+    <string name="pair_charge_caveat">matũ ma gũthikĩrĩria monanagia gĩthimi kĩmwe kĩa kĩruta, nĩ ũndũ ũcio matũ marĩ na hinya ũtarĩ ũmwe no mathũkie namba ici.</string>
 </resources>

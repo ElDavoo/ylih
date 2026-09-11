@@ -98,6 +98,7 @@
     <string name="pair_vs_new">rispiet a gnûfs</string>
     <string name="pair_cycle_number">cicli %1$d</string>
     <string name="pair_charge_calibrating">continue a scoltâ par viodi cemût che e cambie la durade de batarie</string>
+    <string name="pair_charge_caveat">une cufie e da dome un nivel di batarie, cussì che orelins cun cjarie diferente a puedin falsâ chescj numars.</string>
     <string name="pair_rename_title">ribate non a cheste cuglia</string>
     <string name="pair_rename_label">non</string>
     <string name="pair_retire_title">pensionâ cheste cuglia</string>

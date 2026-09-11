@@ -182,4 +182,5 @@
     </plurals>
     <string name="edit_failed">owahan ora bisa disimpen</string>
     <string name="pair_charge_calibrating">terusna ngrungokake kanggo ndeleng owahé umur batrai</string>
+    <string name="pair_charge_caveat">headset mung ngabari siji level baterai, dadi earbud kanthi daya beda bisa nggawe angka iki mlèsèt.</string>
 </resources>

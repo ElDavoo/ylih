@@ -186,4 +186,5 @@
         <item quantity="other">%d хуралдаан</item>
     </plurals>
     <string name="pair_charge_calibrating">сонсоод байгаарай, батарейн ажиллах хугацаа хэрхэн өөрчлөгдөхийг харна</string>
+    <string name="pair_charge_caveat">чихэвч зөвхөн нэг батарейн түвшинг мэдээлдэг тул цэнэг нь өөр өөр чихэвчнүүд эдгээр тоог гуйвуулж болно.</string>
 </resources>

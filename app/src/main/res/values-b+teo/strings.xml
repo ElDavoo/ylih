@@ -186,4 +186,5 @@
         <item quantity="other">apakio %d</item>
     </plurals>
     <string name="pair_charge_calibrating">kitupokinos ainingokin, kanu ijenu ai eyongete aijar naka ebateri</string>
+    <string name="pair_charge_caveat">ebateri elimu bon ejenari itwi, kwape itwi lu emamamak apedorosi aingaren namba lu.</string>
 </resources>

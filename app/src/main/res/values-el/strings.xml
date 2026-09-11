@@ -104,6 +104,7 @@
     <string name="pair_vs_new">έναντι καινούριων</string>
     <string name="pair_cycle_number">κύκλος %1$d</string>
     <string name="pair_charge_calibrating">συνέχισε να ακούς για να δεις πώς αλλάζει η διάρκεια της μπαταρίας</string>
+    <string name="pair_charge_caveat">τα ακουστικά αναφέρουν μία μόνο στάθμη μπαταρίας, οπότε δύο ακουστικά με διαφορετική φόρτιση μπορεί να αλλοιώσουν αυτά τα νούμερα.</string>
     <string name="pair_rename_title">μετονομασία ζευγαριού</string>
     <string name="pair_rename_label">όνομα</string>
     <string name="pair_retire_title">απόσυρση αυτού του ζευγαριού</string>

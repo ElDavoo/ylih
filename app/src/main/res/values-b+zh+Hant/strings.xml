@@ -194,4 +194,5 @@
         <item quantity="other">%d 次連線</item>
     </plurals>
     <string name="pair_charge_calibrating">繼續使用，就能看到電池續航的變化</string>
+    <string name="pair_charge_caveat">耳機只回報一個電量，所以左右電量不同的耳塞會讓這些數字失真。</string>
 </resources>

@@ -196,4 +196,5 @@
         <item quantity="other">%d сессияр</item>
     </plurals>
     <string name="pair_charge_calibrating">ладогӀа тӀаьхьа а, батареян дахар муха хийцало гуш</string>
+    <string name="pair_charge_caveat">наушникаша цхьа заряд бен ца хоуьйту, цундела тайп-тайпана заряд йолчу наушникаша хӀара терахьаш талха тарло.</string>
 </resources>
