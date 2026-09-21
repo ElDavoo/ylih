@@ -78,6 +78,36 @@ class SettingsStore(
      */
     val language: Flow<String> = text(LANGUAGE).map { it ?: "" }
 
+    /**
+     * Where and how often ylih writes a backup by itself, and how the last attempt went — see
+     * `export/AutoBackup.kt`. One flow rather than four: the settings screen draws all of it as
+     * one block, and the worker reads it as one decision.
+     */
+    val autoBackup: Flow<AutoBackupState> = all.map(::autoBackupOf).distinctUntilChanged()
+
+    suspend fun autoBackupNow(): AutoBackupState =
+        autoBackupOf(dao.getAll().associate { it.key to it.value })
+
+    /**
+     * Points automatic backups at [uri], a tree the caller already holds a persisted grant on, or
+     * turns them off with `null`.
+     *
+     * Clears the error either way: it described a folder that is no longer the one in use. The
+     * last success is kept, since the backup it names still exists wherever it was written.
+     */
+    suspend fun setAutoBackupFolder(uri: String?) {
+        put(AUTO_BACKUP_URI, uri.orEmpty())
+        put(AUTO_BACKUP_ERROR, "")
+    }
+
+    suspend fun setAutoBackupEvery(days: Int) = put(AUTO_BACKUP_EVERY_DAYS, days.toString())
+
+    /** The outcome of one run: [error] null for a backup written at [at]. */
+    suspend fun recordAutoBackup(at: Long, error: AutoBackupError?) {
+        if (error == null) put(AUTO_BACKUP_LAST_OK, at.toString())
+        put(AUTO_BACKUP_ERROR, error?.name.orEmpty())
+    }
+
     suspend fun detailedTrackingNow(): Boolean = booleanNow(DETAILED_TRACKING)
 
     suspend fun onboardingDoneNow(): Boolean = booleanNow(ONBOARDING_DONE)
@@ -139,6 +169,17 @@ class SettingsStore(
 
     private suspend fun put(key: String, value: String) = dao.put(SettingEntity(key, value))
 
+    // An empty value stands for an absent row: the table has no delete, and turning backups off
+    // has to un-set a folder.
+    private fun autoBackupOf(rows: Map<String, String>) = AutoBackupState(
+        folder = rows[AUTO_BACKUP_URI]?.takeIf { it.isNotEmpty() },
+        everyDays = rows[AUTO_BACKUP_EVERY_DAYS]?.toIntOrNull()
+            ?.takeIf { it in AUTO_BACKUP_INTERVALS }
+            ?: DEFAULT_AUTO_BACKUP_EVERY_DAYS,
+        lastOkAt = rows[AUTO_BACKUP_LAST_OK]?.toLongOrNull(),
+        error = AutoBackupError.entries.firstOrNull { it.name == rows[AUTO_BACKUP_ERROR] },
+    )
+
     companion object {
         /** The mirror of [setLanguage], or null where this process has never seen one written. */
         fun cachedLanguage(context: Context): String? = context.applicationContext
@@ -161,8 +202,44 @@ class SettingsStore(
         const val PLAYBACK_ONLY = "playback_only_stats"
         const val AGENT_ACCESS = "agent_access"
         const val LANGUAGE = "language"
+        const val AUTO_BACKUP_URI = "auto_backup_uri"
+        const val AUTO_BACKUP_EVERY_DAYS = "auto_backup_every_days"
+        const val AUTO_BACKUP_LAST_OK = "auto_backup_last_ok"
+        const val AUTO_BACKUP_ERROR = "auto_backup_error"
+
+        /**
+         * The rows describing this device's backup folder rather than the user's history or
+         * preferences, and so left out of a JSON backup both ways — see `JsonBackup`.
+         */
+        val DEVICE_LOCAL_KEYS = setOf(
+            AUTO_BACKUP_URI,
+            AUTO_BACKUP_EVERY_DAYS,
+            AUTO_BACKUP_LAST_OK,
+            AUTO_BACKUP_ERROR,
+        )
+
+        /** Offered in settings; anything else read from the table is treated as the default. */
+        val AUTO_BACKUP_INTERVALS = listOf(1, 7, 30)
+        const val DEFAULT_AUTO_BACKUP_EVERY_DAYS = 7
     }
 }
+
+/** What went wrong with the last automatic backup — each is a different thing to tell the user. */
+enum class AutoBackupError {
+    /** The folder is gone or ylih's grant on it is: nothing but choosing a folder again fixes it. */
+    ACCESS_LOST,
+
+    /** The folder was there but the file couldn't be written, say a full disk. May pass by itself. */
+    WRITE_FAILED,
+}
+
+data class AutoBackupState(
+    /** The tree URI backups are written under, or null while automatic backups are off. */
+    val folder: String?,
+    val everyDays: Int,
+    val lastOkAt: Long?,
+    val error: AutoBackupError?,
+)
 
 /** Device kinds each mode is able to observe. */
 fun trackedKinds(detailedTracking: Boolean): Set<DeviceKind> =

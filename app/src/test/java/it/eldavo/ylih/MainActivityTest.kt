@@ -107,6 +107,20 @@ class MainActivityTest {
     }
 
     @Test
+    fun `a tap on the backup-failed notification is carried through the same way`() {
+        runBlocking { app.container.settings.setOnboardingDone(true) }
+
+        Robolectric.buildActivity(
+            MainActivity::class.java,
+            Intent(app, MainActivity::class.java).putExtra(MainActivity.EXTRA_OPEN_SETTINGS, true),
+        ).setup().use { controller ->
+            shadowOf(Looper.getMainLooper()).idle()
+
+            assertFalse(controller.get().isFinishing)
+        }
+    }
+
+    @Test
     fun `a first run leaves the asking to the welcome`() {
         runBlocking { app.container.settings.setOnboardingDone(false) }
 

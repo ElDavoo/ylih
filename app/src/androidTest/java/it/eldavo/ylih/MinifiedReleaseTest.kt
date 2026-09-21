@@ -118,10 +118,12 @@ class MinifiedReleaseTest {
     @Test
     fun workManagerCanStillReachItsWorkersByName() {
         // The heartbeat, whose loss is a session that runs forever, and the widget rollover,
-        // whose loss is a home screen stuck on yesterday's figures.
+        // whose loss is a home screen stuck on yesterday's figures, and the automatic backup,
+        // whose loss is backups the settings screen says are on and never happen.
         for (name in listOf(
             "it.eldavo.ylih.tracking.HeartbeatWorker",
             "it.eldavo.ylih.widget.WidgetRolloverWorker",
+            "it.eldavo.ylih.export.AutoBackupWorker",
         )) {
             val clazz = Class.forName(name)
 

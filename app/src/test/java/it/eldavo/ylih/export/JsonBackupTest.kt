@@ -10,6 +10,7 @@ import it.eldavo.ylih.data.EndReason
 import it.eldavo.ylih.data.PairEntity
 import it.eldavo.ylih.data.SessionEntity
 import it.eldavo.ylih.data.SettingEntity
+import it.eldavo.ylih.data.SettingsStore
 import it.eldavo.ylih.data.YlihDatabase
 import kotlinx.coroutines.test.runTest
 import kotlinx.serialization.json.Json
@@ -229,6 +230,41 @@ class JsonBackupTest {
         try {
             JsonBackup.import(restored, payload)
             assertEquals(db.settingsDao().getAll(), restored.settingsDao().getAll())
+        } finally {
+            restored.close()
+        }
+    }
+
+    /**
+     * The automatic-backup rows name a folder through a grant only the writing phone holds.
+     * Carried in a file they'd point the restoring phone at a folder it can't open — and restoring
+     * one of its own automatic backups would repoint its backups at wherever that file came from.
+     */
+    @Test
+    fun `the backup folder stays on the phone it was chosen on, both ways`() = runTest {
+        seed(db)
+        db.settingsDao().put(SettingEntity(SettingsStore.AUTO_BACKUP_URI, "content://elsewhere/tree/a"))
+        db.settingsDao().put(SettingEntity(SettingsStore.AUTO_BACKUP_ERROR, "ACCESS_LOST"))
+        db.settingsDao().put(SettingEntity("language", "it"))
+        val payload = JsonBackup.export(db, now)
+        assertTrue("a file never carries it", "content://elsewhere" !in payload)
+
+        // Even a file that does carry them, from some other writer, doesn't reach the table.
+        val foreign = payload.replace(
+            "\"settings\": [",
+            "\"settings\": [{\"key\": \"${SettingsStore.AUTO_BACKUP_URI}\", \"value\": \"content://x\"},",
+        )
+        val restored = newDatabase()
+        try {
+            restored.settingsDao().put(SettingEntity(SettingsStore.AUTO_BACKUP_URI, "content://here/tree/b"))
+            JsonBackup.import(restored, foreign)
+            assertEquals(
+                listOf(
+                    SettingEntity(SettingsStore.AUTO_BACKUP_URI, "content://here/tree/b"),
+                    SettingEntity("language", "it"),
+                ),
+                restored.settingsDao().getAll().sortedBy { it.key },
+            )
         } finally {
             restored.close()
         }

@@ -83,6 +83,7 @@ private val destinations = listOf(
 
 private const val TAB_DEVICES = 0
 private const val TAB_STATS = 1
+private const val TAB_SETTINGS = 2
 
 // The three tabs are one destination: as separate routes, switching had no gesture (a NavHost
 // swaps content on click). As pager pages they lay out side by side, so the swipe is the layout
@@ -134,6 +135,8 @@ fun YlihNavHost(
      * reading an Intent.
      */
     openPair: Flow<Long> = emptyFlow(),
+    /** Taps on the backup-failed notification, carried in the same way as [openPair]. */
+    openSettings: Flow<Unit> = emptyFlow(),
 ) {
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = backStackEntry?.destination?.route
@@ -229,6 +232,10 @@ fun YlihNavHost(
             // the same detail screen behind the back button.
             navController.navigate("pair/$pairId") { launchSingleTop = true }
         }
+    }
+
+    LaunchedEffect(openSettings) {
+        openSettings.collect { selectTab(TAB_SETTINGS) }
     }
 
     // The rail sits beside the Scaffold, not inside it: Scaffold has no side slot, and a rail in

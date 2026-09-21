@@ -31,8 +31,10 @@ import it.eldavo.ylih.BuildConfig
 import it.eldavo.ylih.Distribution
 import it.eldavo.ylih.R
 import it.eldavo.ylih.YlihApp
+import it.eldavo.ylih.data.AutoBackupError
 import it.eldavo.ylih.data.DeviceEntity
 import it.eldavo.ylih.data.DeviceKind
+import it.eldavo.ylih.export.FakeDocumentsProvider
 import it.eldavo.ylih.ui.theme.YlihTheme
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
@@ -42,6 +44,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import org.junit.rules.TemporaryFolder
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.Shadows.shadowOf
@@ -77,7 +80,11 @@ class SettingsScreenTest {
         // Left over, this would compose the whole screen in whatever language the last test
         // picked — see the note on awaitDetailedTracking for why it's reset here.
         settings.setLanguage(AppLocale.SYSTEM)
+        settings.setAutoBackupFolder(null)
     }
+
+    @get:Rule
+    val tmp = TemporaryFolder()
 
     private fun seedDevice(name: String = "ACCENTUM Plus", ignored: Boolean = false): Long =
         runBlocking {
@@ -552,5 +559,145 @@ class SettingsScreenTest {
             text(R.string.settings_about_body, BuildConfig.VERSION_NAME, Distribution.ID),
         ).assertExists()
         assertFalse(BuildConfig.VERSION_NAME.isEmpty())
+    }
+
+    private fun awaitBackupFolder(folder: String?) {
+        settle("the backup folder to be $folder") {
+            runBlocking { settings.autoBackupNow().folder } == folder
+        }
+    }
+
+    /** Switches automatic backups on through the picker, answering it with the fake folder. */
+    private fun enableBackupsThroughPicker(): String {
+        val label = text(R.string.settings_auto_backup_title)
+        scrollTo(label)
+        toggleBesides(label).performClick()
+        val started = awaitStartedForResult("the folder picker to be launched")
+        assertEquals(Intent.ACTION_OPEN_DOCUMENT_TREE, started.action)
+        shadowOf(compose.activity).receiveResult(
+            started,
+            Activity.RESULT_OK,
+            Intent().setData(FakeDocumentsProvider.treeUri),
+        )
+        val folder = FakeDocumentsProvider.treeUri.toString()
+        awaitBackupFolder(folder)
+        return label
+    }
+
+    @Test
+    fun `switching automatic backups on is choosing a folder`() {
+        FakeDocumentsProvider.install(tmp.root)
+        show()
+
+        val label = enableBackupsThroughPicker()
+
+        awaitToggleBesides(label, on = true)
+        // A grant the app will still hold after a reboot, or the first scheduled run would fail.
+        assertTrue(
+            app.contentResolver.persistedUriPermissions
+                .any { it.uri == FakeDocumentsProvider.treeUri && it.isWritePermission },
+        )
+        settle("the folder to be named") { nodeCount(FakeDocumentsProvider.ROOT_NAME) > 0 }
+        settle("the status to say nothing is written yet") {
+            nodeCount(text(R.string.settings_auto_backup_none)) > 0
+        }
+
+        toggleBesides(label).performClick()
+        awaitBackupFolder(null)
+        awaitToggleBesides(label, on = false)
+        settle("the grant to be released") { app.contentResolver.persistedUriPermissions.isEmpty() }
+    }
+
+    @Test
+    fun `cancelling the folder picker leaves automatic backups off`() {
+        show()
+
+        val label = text(R.string.settings_auto_backup_title)
+        scrollTo(label)
+        toggleBesides(label).performClick()
+        val started = awaitStartedForResult("the folder picker to be launched")
+        shadowOf(compose.activity).receiveResult(started, Activity.RESULT_CANCELED, null)
+
+        awaitToggleBesides(label, on = false)
+        assertEquals(null, runBlocking { settings.autoBackupNow().folder })
+    }
+
+    @Test
+    fun `the interval is picked from a list and written through`() {
+        FakeDocumentsProvider.install(tmp.root)
+        show()
+        enableBackupsThroughPicker()
+
+        scrollTo(text(R.string.settings_auto_backup_every))
+        compose.onNodeWithText(text(R.string.settings_auto_backup_every)).performClick()
+        settle("the interval dialog to open") {
+            nodeCount(text(R.string.settings_auto_backup_monthly)) > 0
+        }
+        compose.onNodeWithText(text(R.string.settings_auto_backup_monthly)).performClick()
+
+        settle("the interval to be a month") {
+            runBlocking { settings.autoBackupNow().everyDays } == 30
+        }
+    }
+
+    @Test
+    fun `the interval dialog can be dismissed without changing anything`() {
+        FakeDocumentsProvider.install(tmp.root)
+        show()
+        enableBackupsThroughPicker()
+
+        scrollTo(text(R.string.settings_auto_backup_every))
+        compose.onNodeWithText(text(R.string.settings_auto_backup_every)).performClick()
+        settle("the interval dialog to open") {
+            nodeCount(text(R.string.settings_auto_backup_daily)) > 0
+        }
+        compose.onNode(hasAnyAncestor(isDialog()) and hasText(text(R.string.action_cancel)))
+            .performClick()
+
+        settle("the dialog to close") { nodeCount(text(R.string.settings_auto_backup_daily)) == 0 }
+        assertEquals(7, runBlocking { settings.autoBackupNow().everyDays })
+    }
+
+    @Test
+    fun `tapping the folder row asks for a folder again`() {
+        FakeDocumentsProvider.install(tmp.root)
+        show()
+        enableBackupsThroughPicker()
+
+        // Not scrollTo(): "folder" is also a substring of the switch's own description. The wait is
+        // still needed — the stored folder reaches the row only once the view model's flow emits,
+        // and a loaded CI runner lost that race.
+        val folder = text(R.string.settings_auto_backup_folder)
+        settle("the folder row to be drawn") { nodeCount(folder) == 1 }
+        compose.onNodeWithText(folder)
+            .performScrollTo()
+            .performClick()
+
+        assertEquals(
+            Intent.ACTION_OPEN_DOCUMENT_TREE,
+            awaitStartedForResult("the folder picker to reopen").action,
+        )
+    }
+
+    @Test
+    fun `the status line says what the last run found`() {
+        FakeDocumentsProvider.install(tmp.root)
+        show()
+        enableBackupsThroughPicker()
+
+        runBlocking { settings.recordAutoBackup(1_700_000_000_000L, null) }
+        settle("the last backup to be shown") {
+            nodeCount(text(R.string.settings_auto_backup_last, formatDateTime(1_700_000_000_000L))) > 0
+        }
+
+        runBlocking { settings.recordAutoBackup(1_700_000_000_000L, AutoBackupError.WRITE_FAILED) }
+        settle("the write failure to be shown") {
+            nodeCount(text(R.string.settings_auto_backup_write_failed)) > 0
+        }
+
+        runBlocking { settings.recordAutoBackup(1_700_000_000_000L, AutoBackupError.ACCESS_LOST) }
+        settle("the lost folder to be shown") {
+            nodeCount(text(R.string.settings_auto_backup_access_lost)) > 0
+        }
     }
 }

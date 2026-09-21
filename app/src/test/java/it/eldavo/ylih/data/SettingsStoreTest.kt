@@ -4,6 +4,7 @@ import android.os.Build
 import androidx.test.core.app.ApplicationProvider
 import it.eldavo.ylih.YlihApp
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
@@ -82,5 +83,34 @@ class SettingsStoreTest {
         // install would be a promise the OS index never made.
         assertEquals(false, settings.agentAccessNow())
         assertEquals("", settings.languageNow())
+        assertEquals(
+            AutoBackupState(folder = null, everyDays = 7, lastOkAt = null, error = null),
+            settings.autoBackupNow(),
+        )
+    }
+
+    @Test
+    fun `automatic backups read back what was written, and off is off`() = runBlocking {
+        settings.setAutoBackupFolder("content://docs/tree/a")
+        settings.setAutoBackupEvery(30)
+        settings.recordAutoBackup(1_000L, null)
+        settings.recordAutoBackup(2_000L, AutoBackupError.WRITE_FAILED)
+
+        assertEquals(
+            // A failure keeps the last success: that backup still exists.
+            AutoBackupState("content://docs/tree/a", 30, 1_000L, AutoBackupError.WRITE_FAILED),
+            settings.autoBackup.first(),
+        )
+
+        settings.setAutoBackupFolder(null)
+        val off = settings.autoBackupNow()
+        assertEquals(null, off.folder)
+        assertEquals("the error was about a folder no longer in use", null, off.error)
+    }
+
+    @Test
+    fun `an interval the settings never offer reads as the default`() = runBlocking {
+        settings.setAutoBackupEvery(3)
+        assertEquals(7, settings.autoBackupNow().everyDays)
     }
 }

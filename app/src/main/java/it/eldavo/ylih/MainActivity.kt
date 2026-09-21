@@ -39,6 +39,10 @@ class MainActivity : ComponentActivity() {
      */
     private val openPairFlow = openPair.receiveAsFlow()
 
+    /** Taps on the backup-failed notification, consumed once like [openPair] and for its reasons. */
+    private val openSettings = Channel<Unit>(Channel.CONFLATED)
+    private val openSettingsFlow = openSettings.receiveAsFlow()
+
     private val permissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
             // Denied Bluetooth just means no Bluetooth tracking; the UI explains the state.
@@ -59,10 +63,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         // Only on a genuinely new launch: after a rotation the same intent is still attached, and
         // acting on it again would drag the user back out of wherever they'd navigated to.
-        if (savedInstanceState == null) intent?.let(::offerPair)
+        if (savedInstanceState == null) intent?.let(::offer)
         setContent {
             YlihTheme {
-                YlihNavHost(openPair = openPairFlow)
+                YlihNavHost(openPair = openPairFlow, openSettings = openSettingsFlow)
             }
         }
         // The first run asks for Bluetooth itself, on a page that says why, so asking here too
@@ -78,7 +82,7 @@ class MainActivity : ComponentActivity() {
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         setIntent(intent)
-        offerPair(intent)
+        offer(intent)
     }
 
     override fun onStart() {
@@ -87,9 +91,10 @@ class MainActivity : ComponentActivity() {
         container().scope.launch { container().trackingController.syncWithSystem() }
     }
 
-    private fun offerPair(intent: Intent) {
+    private fun offer(intent: Intent) {
         val pairId = intent.getLongExtra(EXTRA_PAIR_ID, NO_PAIR)
         if (pairId != NO_PAIR) openPair.trySend(pairId)
+        if (intent.getBooleanExtra(EXTRA_OPEN_SETTINGS, false)) openSettings.trySend(Unit)
     }
 
     private fun container() = (application as YlihApp).container
@@ -111,6 +116,9 @@ class MainActivity : ComponentActivity() {
     companion object {
         /** Set by the lifetime widget's rows; opens that pair's detail screen. */
         const val EXTRA_PAIR_ID = "it.eldavo.ylih.PAIR_ID"
+
+        /** Set by the backup-failed notification; opens settings, where the fix is. */
+        const val EXTRA_OPEN_SETTINGS = "it.eldavo.ylih.OPEN_SETTINGS"
 
         private const val NO_PAIR = -1L
     }
