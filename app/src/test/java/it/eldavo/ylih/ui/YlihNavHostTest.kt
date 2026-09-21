@@ -30,6 +30,9 @@ import it.eldavo.ylih.data.DeviceKind
 import it.eldavo.ylih.data.PairEntity
 import it.eldavo.ylih.data.SessionEntity
 import it.eldavo.ylih.ui.theme.YlihTheme
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.emptyFlow
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
@@ -72,7 +75,7 @@ class YlihNavHostTest {
         app.container.settings.setOnboardingDone(true)
     }
 
-    private fun show() {
+    private fun show(openSettings: Flow<Unit> = emptyFlow()) {
         // Built here rather than left to `viewModel()`: without an activity the store owner is
         // process-wide, so the second test in this class would inherit the first one's view
         // model — and its Room flows bound to that test's database instance.
@@ -82,7 +85,7 @@ class YlihNavHostTest {
             // The system back button reaches the app through this, and the tabs add their own
             // handler to it. Held so a test can press back without an activity to press it on.
             back = checkNotNull(LocalOnBackPressedDispatcherOwner.current).onBackPressedDispatcher
-            YlihTheme { YlihNavHost(viewModel = viewModel, navController = nav) }
+            YlihTheme { YlihNavHost(viewModel = viewModel, navController = nav, openSettings = openSettings) }
         }
         compose.waitUntil(timeoutMillis = 10_000) { route() == TABS_ROUTE }
     }
@@ -182,6 +185,13 @@ class YlihNavHostTest {
         awaitTab(R.string.stats_title)
 
         assertEquals("and none of it is a navigation", TABS_ROUTE, route())
+    }
+
+    @Test
+    fun `the backup-failed notification lands on settings, where the fix is`() {
+        show(openSettings = flowOf(Unit))
+
+        awaitTab(R.string.settings_detailed_title)
     }
 
     @Test

@@ -19,6 +19,7 @@ import it.eldavo.ylih.data.EndReason
 import it.eldavo.ylih.data.SessionRepository
 import it.eldavo.ylih.data.SettingsStore
 import it.eldavo.ylih.data.trackedKinds
+import it.eldavo.ylih.export.scheduleAutoBackup
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.util.concurrent.TimeUnit
@@ -105,6 +106,7 @@ class TrackingController(
         )
         if (detailed) startService() else stopService()
         updateHeartbeatWork()
+        scheduleAutoBackup(context, settings)
         onDataChanged()
     }
 

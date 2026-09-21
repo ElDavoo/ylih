@@ -64,6 +64,9 @@ KEEP_BY_NAME = {
     "it.eldavo.ylih.widget.WidgetRolloverWorker":
         "same route as HeartbeatWorker: WorkManager stores this name, and a rename leaves the "
         "widgets' dated figures with nothing to roll them over at midnight",
+    "it.eldavo.ylih.export.AutoBackupWorker":
+        "same route again: a rename stops automatic backups already scheduled, with the settings "
+        "screen still saying they're on",
     "it.eldavo.ylih.data.YlihDatabase":
         "Room derives the generated implementation's name from this class",
     "it.eldavo.ylih.data.YlihDatabase_Impl":

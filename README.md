@@ -53,6 +53,11 @@ Your history lives in a database on the phone. Settings → Export writes it out
 Import puts it back. Android's own backup carries years of history to a new phone — the system
 copies the file, not the app sending it. Uninstalling offers to keep the data.
 
+**Automatic backups** write that same file into a folder you pick — daily, weekly or monthly —
+keeping the latest ten. The folder can be anywhere the system file picker reaches, a synced cloud
+folder included; ylih itself still sends nothing. If the folder goes away, a notification says so
+once rather than failing quietly for months.
+
 **Assistants, only if you ask.** Android 17 lets an app offer read-only questions to an on-device
 assistant. ylih offers two — lifetime hours per pair, and today / 7-day / 30-day totals — shipped
 switched off: until you enable Settings → assistant access, the system doesn't list them. Neither

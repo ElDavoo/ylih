@@ -8,6 +8,7 @@ import it.eldavo.ylih.data.EndReason
 import it.eldavo.ylih.data.PairEntity
 import it.eldavo.ylih.data.SessionEntity
 import it.eldavo.ylih.data.SettingEntity
+import it.eldavo.ylih.data.SettingsStore
 import it.eldavo.ylih.data.YlihDatabase
 import kotlinx.serialization.EncodeDefault
 import kotlinx.serialization.ExperimentalSerializationApi
@@ -106,7 +107,9 @@ object JsonBackup {
         val pairs = db.pairDao().getAll()
         val sessions = db.sessionDao().getAll()
         val batterySamples = db.batterySampleDao().getAll()
+        // Not the automatic-backup rows: see import() for why a file must never carry them.
         val settings = db.settingsDao().getAll()
+            .filterNot { it.key in SettingsStore.DEVICE_LOCAL_KEYS }
         json.encodeToString(
             Backup(
                 exportedAt = now,
@@ -202,8 +205,15 @@ object JsonBackup {
             // Not cleared first, unlike the tables above: a file written before settings were
             // carried has none, and wiping them would silently reset the tracking mode and the
             // language of anyone restoring an older backup.
+            //
+            // The automatic-backup rows are skipped, as export skips them: they name a folder
+            // through a grant held by the phone that wrote the file, which this one never had.
+            // Restored, they would point the next run at a folder it can't open — and restoring an
+            // automatic backup would repoint this phone's backups at wherever it was written.
             val settingsDao = db.settingsDao()
-            backup.settings.forEach { settingsDao.put(SettingEntity(it.key, it.value)) }
+            backup.settings
+                .filterNot { it.key in SettingsStore.DEVICE_LOCAL_KEYS }
+                .forEach { settingsDao.put(SettingEntity(it.key, it.value)) }
         }
         return backup.sessions.size
     }

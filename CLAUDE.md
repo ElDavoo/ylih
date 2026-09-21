@@ -311,6 +311,41 @@ percent per step and a cycle a day that's ~36,500 rows a year, so a decade is a 
 background thread when a reading lands. If that stops being acceptable, the answer is a rolled-up
 `cycles` table, not a window.
 
+### Automatic backups
+
+`export/AutoBackup.kt` writes the manual export's JSON (`AutoBackup.payload`, shared with
+`YlihViewModel.exportTo` so the two can't diverge) into a folder the user picked, on a
+`PeriodicWorkRequest` of 1, 7 or 30 days (#48). Borrowed from Aegis's `VaultBackupManager`, with
+one deliberate difference:
+
+- **Periodic, not on change.** Aegis backs up on every vault write; a connected pair heartbeats
+  every minute, so that would be a file a minute.
+- **A persisted `DocumentsContract` tree grant, no storage permission**, called directly rather
+  than through `androidx.documentfile` — four calls don't earn a dependency and the
+  verification-metadata regeneration it drags in. Query with the **Bundle overload**:
+  `DocumentsProvider` throws on the selection-string one, which is also the one Robolectric
+  forwards, so the tests catch a regression.
+- **Timestamped files, never one overwritten**, so a write that dies midway can't take the last
+  good backup with it; a failed write deletes its partial file. Pruning keeps the newest
+  `AutoBackup.KEPT`, runs only after a success, and only touches names matching ylih's own
+  pattern — the folder is the user's.
+- **The grant is checked first**, against `persistedUriPermissions`. Android's own backup restores
+  the settings row but never the grant, so a restored phone reads "backups on" with nothing
+  behind it. `syncWithSystem` re-arms the work with `KEEP` for the same reason (WorkManager's
+  database may not have come back either); the first run then reports `ACCESS_LOST`.
+- **The notification fires on the change to failing, not on every failed run**: the stored
+  error is that memory. `ACCESS_LOST` returns `success()` from the worker, since retrying can't
+  bring a grant back; `WRITE_FAILED` retries. Its `PendingIntent` needs a request code of its
+  own — extras don't tell `PendingIntent`s apart, so sharing the tracking notification's 0 with
+  `FLAG_UPDATE_CURRENT` would rewrite that one to open settings too.
+- **The four `auto_backup_*` rows are `SettingsStore.DEVICE_LOCAL_KEYS`, dropped from JSON both
+  ways.** They name a grant only the writing phone holds; imported, they'd point this phone at a
+  folder it can't open, or repoint its backups at wherever the restored file came from.
+
+`AutoBackupWorker` is reached by name like the other two workers, so it's in
+`r8-keep-check.py` and `MinifiedReleaseTest`. Tests drive a real `DocumentsProvider` over a temp
+dir (`FakeDocumentsProvider` in `src/test`), registered through `Robolectric.buildContentProvider`.
+
 ### App functions, the agent surface
 
 `agent/YlihAppFunctions.kt` is an abstract `AppFunctionService` from which

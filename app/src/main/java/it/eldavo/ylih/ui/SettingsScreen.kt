@@ -53,6 +53,8 @@ import it.eldavo.ylih.AppLocale
 import it.eldavo.ylih.BuildConfig
 import it.eldavo.ylih.R
 import it.eldavo.ylih.Distribution
+import it.eldavo.ylih.data.AutoBackupError
+import it.eldavo.ylih.data.SettingsStore
 import it.eldavo.ylih.stats.Counting
 import it.eldavo.ylih.tracking.Hibernation
 import it.eldavo.ylih.tracking.Restrictions
@@ -72,7 +74,9 @@ fun SettingsScreen(
     val language by viewModel.language.collectAsStateWithLifecycle()
     val agentAccess by viewModel.agentAccess.collectAsStateWithLifecycle()
     var confirmImport by remember { mutableStateOf<android.net.Uri?>(null) }
+    val autoBackup by viewModel.autoBackup.collectAsStateWithLifecycle()
     var pickingLanguage by remember { mutableStateOf(false) }
+    var pickingInterval by remember { mutableStateOf(false) }
     var pendingLanguage by remember { mutableStateOf<String?>(null) }
     // Non-null while the notification explainer is up, holding the permission it is about.
     var askNotifications by remember { mutableStateOf<String?>(null) }
@@ -98,6 +102,12 @@ fun SettingsScreen(
         ActivityResultContracts.CreateDocument("application/json"),
     ) { uri -> uri?.let(viewModel::exportTo) }
 
+    // No starting folder: the picker opens wherever it last was, which for most people is where
+    // they'd want backups anyway.
+    val folderLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.OpenDocumentTree(),
+    ) { tree -> tree?.let(viewModel::chooseAutoBackupFolder) }
+
     val importLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.OpenDocument(),
     ) { uri -> confirmImport = uri }
@@ -115,7 +125,7 @@ fun SettingsScreen(
         SectionHeader(stringResource(R.string.settings_tracking))
         Row(
             // toggleable, not clickable, with the switch along for the ride — the same shape
-            // LanguageRow below uses, for the same reason: one click target and one thing for a
+            // ChoiceRow below uses, for the same reason: one click target and one thing for a
             // screen reader to announce, with its state, not two.
             modifier = Modifier
                 .fillMaxWidth()
@@ -275,6 +285,68 @@ fun SettingsScreen(
             Spacer(Modifier.width(12.dp))
             Switch(checked = agentAccess, onCheckedChange = null)
         }
+        val backupFolder = autoBackup?.state?.folder
+        Row(
+            // Switching on *is* choosing a folder: a switch that turned on with nowhere to write
+            // would be a promise nothing keeps. Cancelling the picker leaves it off.
+            modifier = Modifier
+                .fillMaxWidth()
+                .toggleable(
+                    value = backupFolder != null,
+                    role = Role.Switch,
+                    onValueChange = { on ->
+                        if (on) folderLauncher.launch(null) else viewModel.disableAutoBackup()
+                    },
+                )
+                .padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Column(Modifier.weight(1f)) {
+                Text(
+                    stringResource(R.string.settings_auto_backup_title),
+                    style = MaterialTheme.typography.bodyLarge,
+                )
+                Text(
+                    stringResource(R.string.settings_auto_backup_body),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+            Spacer(Modifier.width(12.dp))
+            Switch(checked = backupFolder != null, onCheckedChange = null)
+        }
+        autoBackup?.takeIf { backupFolder != null }?.let { backup ->
+            ValueRow(
+                title = stringResource(R.string.settings_auto_backup_folder),
+                value = backup.folderName.orEmpty(),
+                onClick = { folderLauncher.launch(null) },
+            )
+            ValueRow(
+                title = stringResource(R.string.settings_auto_backup_every),
+                value = intervalLabel(backup.state.everyDays),
+                onClick = { pickingInterval = true },
+            )
+            val error = backup.state.error
+            Text(
+                when {
+                    error == AutoBackupError.ACCESS_LOST ->
+                        stringResource(R.string.settings_auto_backup_access_lost)
+                    error == AutoBackupError.WRITE_FAILED ->
+                        stringResource(R.string.settings_auto_backup_write_failed)
+                    backup.state.lastOkAt != null ->
+                        stringResource(R.string.settings_auto_backup_last, formatDateTime(backup.state.lastOkAt))
+                    else -> stringResource(R.string.settings_auto_backup_none)
+                },
+                style = MaterialTheme.typography.bodySmall,
+                color = if (error != null) {
+                    MaterialTheme.colorScheme.error
+                } else {
+                    MaterialTheme.colorScheme.onSurfaceVariant
+                },
+                modifier = Modifier.padding(horizontal = 16.dp),
+            )
+            Spacer(Modifier.height(16.dp))
+        }
         // ButtonGroupScope is not a composable scope, so the labels are resolved out here.
         val exportLabel = stringResource(R.string.settings_export)
         val importLabel = stringResource(R.string.settings_import)
@@ -423,6 +495,32 @@ fun SettingsScreen(
         )
     }
 
+    if (pickingInterval) {
+        AlertDialog(
+            onDismissRequest = { pickingInterval = false },
+            title = { Text(stringResource(R.string.settings_auto_backup_every)) },
+            text = {
+                Column {
+                    SettingsStore.AUTO_BACKUP_INTERVALS.forEach { days ->
+                        ChoiceRow(
+                            label = intervalLabel(days),
+                            selected = autoBackup?.state?.everyDays == days,
+                            onClick = {
+                                pickingInterval = false
+                                viewModel.setAutoBackupEvery(days)
+                            },
+                        )
+                    }
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = { pickingInterval = false }) {
+                    Text(stringResource(R.string.action_cancel))
+                }
+            },
+        )
+    }
+
     askNotifications?.let { permission ->
         NotificationPermissionDialog(
             permission = permission,
@@ -464,14 +562,14 @@ private fun LanguageDialog(current: String, onPick: (String) -> Unit, onDismiss:
             // 77 translations and counting, so the list is lazy and scrolls inside the dialog.
             LazyColumn {
                 item {
-                    LanguageRow(
+                    ChoiceRow(
                         label = stringResource(R.string.settings_language_system),
                         selected = current == AppLocale.SYSTEM,
                         onClick = { onPick(AppLocale.SYSTEM) },
                     )
                 }
                 items(tags) { tag ->
-                    LanguageRow(
+                    ChoiceRow(
                         label = AppLocale.displayName(tag),
                         selected = current == tag,
                         onClick = { onPick(tag) },
@@ -486,7 +584,7 @@ private fun LanguageDialog(current: String, onPick: (String) -> Unit, onDismiss:
 }
 
 @Composable
-private fun LanguageRow(label: String, selected: Boolean, onClick: () -> Unit) {
+private fun ChoiceRow(label: String, selected: Boolean, onClick: () -> Unit) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -494,7 +592,7 @@ private fun LanguageRow(label: String, selected: Boolean, onClick: () -> Unit) {
             // target and one thing for a screen reader to announce, not two.
             .selectable(selected = selected, role = Role.RadioButton, onClick = onClick)
             // A RadioButton with a null onClick brings no minimum touch target of its own, which
-            // left these rows about 32dp tall — in a dialog listing seventy-seven of them.
+            // left these rows about 32dp tall — in the language dialog, seventy-seven of them.
             .heightIn(min = 48.dp)
             .padding(vertical = 6.dp),
         verticalAlignment = Alignment.CenterVertically,
@@ -504,3 +602,30 @@ private fun LanguageRow(label: String, selected: Boolean, onClick: () -> Unit) {
         Text(label, style = MaterialTheme.typography.bodyLarge)
     }
 }
+
+/** A setting whose value is picked somewhere else: the row names it, and a tap goes to change it. */
+@Composable
+private fun ValueRow(title: String, value: String, onClick: () -> Unit) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(onClick = onClick)
+            .padding(horizontal = 16.dp, vertical = 12.dp),
+    ) {
+        Text(title, style = MaterialTheme.typography.bodyLarge)
+        Text(
+            value,
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+    }
+}
+
+@Composable
+private fun intervalLabel(days: Int): String = stringResource(
+    when (days) {
+        1 -> R.string.settings_auto_backup_daily
+        30 -> R.string.settings_auto_backup_monthly
+        else -> R.string.settings_auto_backup_weekly
+    },
+)

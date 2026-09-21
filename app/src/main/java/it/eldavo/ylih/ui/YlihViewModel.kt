@@ -1,8 +1,12 @@
 package it.eldavo.ylih.ui
 
 import android.app.Application
+import android.content.Intent
 import android.net.Uri
+import android.provider.DocumentsContract
+import android.util.Log
 import androidx.annotation.StringRes
+import androidx.core.net.toUri
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
@@ -11,12 +15,17 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import it.eldavo.ylih.R
 import it.eldavo.ylih.YlihApp
+import androidx.work.ExistingPeriodicWorkPolicy
+import it.eldavo.ylih.data.AutoBackupState
 import it.eldavo.ylih.data.BatterySampleEntity
 import it.eldavo.ylih.data.DeviceEntity
 import it.eldavo.ylih.data.PairSummary
 import it.eldavo.ylih.data.SessionEntity
+import it.eldavo.ylih.export.AutoBackup
 import it.eldavo.ylih.export.JsonBackup
+import it.eldavo.ylih.export.scheduleAutoBackup
 import it.eldavo.ylih.runCatchingCancellable
+import it.eldavo.ylih.tracking.Notifications
 import it.eldavo.ylih.stats.Charge
 import it.eldavo.ylih.stats.ChargeSummary
 import it.eldavo.ylih.stats.Counting
@@ -88,6 +97,25 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
     /** Whether an on-device assistant may read these figures — see `agent/YlihAppFunctions.kt`. */
     val agentAccess: StateFlow<Boolean> = container.settings.agentAccess
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), false)
+
+    /**
+     * Automatic backups as settings draws them. The folder's name is asked of its provider — a
+     * binder call into another app — so it's resolved here, off the main thread, rather than in
+     * composition.
+     */
+    val autoBackup: StateFlow<AutoBackupUi?> = container.settings.autoBackup
+        .map { state ->
+            AutoBackupUi(
+                state = state,
+                folderName = state.folder?.toUri()?.let { tree ->
+                    AutoBackup.folderName(app.contentResolver, tree)
+                        // Unnamed, or gone: the document id is at least the path the user chose.
+                        ?: DocumentsContract.getTreeDocumentId(tree)
+                },
+            )
+        }
+        .flowOn(Dispatchers.IO)
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
     /** Null until the stored answer arrives, so the welcome does not flash on every later launch. */
     val onboardingDone: StateFlow<Boolean?> = container.settings.onboardingDone
@@ -235,6 +263,54 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
             .onFailure { messageChannel.send(it.message ?: string(RES_EDIT_FAILED)) }
     }
 
+    /**
+     * Points automatic backups at a folder just picked, turning them on if they were off.
+     *
+     * The grant is taken before the row is written, so a setting never names a folder ylih can't
+     * write to; the previous folder's is released after, since grants are capped per app and an
+     * old one would never be used again. `REPLACE` makes the first backup land now, in the new
+     * folder, rather than a period from now.
+     */
+    fun chooseAutoBackupFolder(tree: Uri) = viewModelScope.launch {
+        runCatchingCancellable {
+            val app = getApplication<Application>()
+            app.contentResolver.takePersistableUriPermission(tree, TREE_GRANT)
+            val previous = container.settings.autoBackupNow().folder
+            container.settings.setAutoBackupFolder(tree.toString())
+            if (previous != null && previous != tree.toString()) releaseGrant(previous.toUri())
+            scheduleAutoBackup(app, container.settings, ExistingPeriodicWorkPolicy.REPLACE)
+        }.onFailure { messageChannel.send(it.message ?: string(RES_EDIT_FAILED)) }
+    }
+
+    fun disableAutoBackup() = viewModelScope.launch {
+        val app = getApplication<Application>()
+        val previous = container.settings.autoBackupNow().folder
+        container.settings.setAutoBackupFolder(null)
+        previous?.let { releaseGrant(it.toUri()) }
+        scheduleAutoBackup(app, container.settings)
+        // Whatever it said about a folder no longer in use has stopped being true.
+        Notifications.cancelBackupFailed(app)
+    }
+
+    /** `UPDATE`, not `REPLACE`: the next backup moves by the new interval rather than running now. */
+    fun setAutoBackupEvery(days: Int) = viewModelScope.launch {
+        container.settings.setAutoBackupEvery(days)
+        scheduleAutoBackup(
+            getApplication<Application>(),
+            container.settings,
+            ExistingPeriodicWorkPolicy.UPDATE,
+        )
+    }
+
+    // A grant the user already revoked from the system settings is no longer ours to release.
+    private fun releaseGrant(tree: Uri) {
+        try {
+            getApplication<Application>().contentResolver.releasePersistableUriPermission(tree, TREE_GRANT)
+        } catch (e: SecurityException) {
+            Log.w(TAG, "No grant left to release on $tree", e)
+        }
+    }
+
     fun setLanguage(tag: String) = viewModelScope.launch {
         container.settings.setLanguage(tag)
     }
@@ -285,11 +361,9 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
 
     fun exportTo(uri: Uri) = viewModelScope.launch {
         runCatchingCancellable {
-            val payload = container.repository.withWriteLock {
-                JsonBackup.export(container.database, container.clock.now())
-            }
+            val payload = AutoBackup.payload(container)
             getApplication<Application>().contentResolver.openOutputStream(uri)?.use {
-                it.write(payload.toByteArray())
+                it.write(payload)
             } ?: error(string(RES_COULD_NOT_OPEN, uri))
         }.onSuccess { messageChannel.send(string(RES_EXPORT_OK)) }
             .onFailure { messageChannel.send(it.message ?: string(RES_EXPORT_FAILED)) }
@@ -337,10 +411,18 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
         private val RES_COULD_NOT_OPEN = R.string.error_could_not_open
         private val RES_DETAILED_NEEDS_BLUETOOTH = R.string.detailed_needs_bluetooth
 
+        private const val TREE_GRANT =
+            Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+
+        private const val TAG = "YlihViewModel"
+
         private const val MINUTE_MS = 60_000L
         private const val DAY_MS = 24 * 60 * MINUTE_MS
     }
 }
+
+/** [AutoBackupState] with the one thing it can't hold itself: what the folder is called. */
+data class AutoBackupUi(val state: AutoBackupState, val folderName: String?)
 
 fun SessionEntity.toSpan(): Span = Span(connectedAt, disconnectedAt, playingMs)
 
