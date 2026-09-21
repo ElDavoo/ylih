@@ -1,6 +1,6 @@
 [versions]
 # Keep buildTools/compileSdk in sync with flake.nix and .github/workflows/*.yml
-agp = "9.4.0"
+agp = "9.4.1"
 # AGP 9 compiles Kotlin itself and rejects the standalone kotlin-android plugin. The Kotlin
 # Gradle plugin these two pull onto the buildscript classpath overrides AGP's own, so they must
 # stay equal: KSP has no release for Kotlin 2.4.x yet, pinning Kotlin here rather than at the
