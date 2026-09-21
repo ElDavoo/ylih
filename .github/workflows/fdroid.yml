@@ -214,7 +214,7 @@ jobs:
       # assumption gets tested; if AGP's auto-download breaks, this job fails and the F-Droid
       # build would have failed the same way.
       - name: Set up Android SDK
-        uses: android-actions/setup-android@40fd30fb8d7440372e1316f5d1809ec01dcd3699 # v4
+        uses: android-actions/setup-android@be39fa834029ff78f1a44aa3bb0819b8fc2bd8fd # v4
 
       # The Gradle home the script writes the daemon/toolchain settings into, matching what the
       # buildserver puts in ~/.gradle. Set here rather than in the job's `env:` because
