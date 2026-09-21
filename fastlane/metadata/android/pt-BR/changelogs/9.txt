@@ -1,0 +1,2 @@
+• Backups automáticos em uma pasta que você escolher: diários, semanais ou mensais
+• Um aviso na página do par quando um fone de dois lados pode distorcer os números da bateria

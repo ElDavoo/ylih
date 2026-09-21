@@ -1,0 +1,2 @@
+• Seçtiğin bir klasöre otomatik yedekler: günlük, haftalık veya aylık
+• İki kulaklıklı bir setin pil rakamlarını çarpıtabileceği durumlarda çift sayfasında bir uyarı

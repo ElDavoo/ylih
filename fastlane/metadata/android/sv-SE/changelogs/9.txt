@@ -1,0 +1,2 @@
+• Automatiska säkerhetskopior till en mapp du väljer: dagligen, varje vecka eller varje månad
+• En notis på parsidan när ett headset med två öronsnäckor kan snedvrida batterisiffrorna
