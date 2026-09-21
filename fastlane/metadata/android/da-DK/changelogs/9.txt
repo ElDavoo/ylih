@@ -1,0 +1,2 @@
+• Automatiske sikkerhedskopier til en mappe, du vælger: dagligt, ugentligt eller månedligt
+• En advarsel på parsiden, når et headset med to øretelefoner kan forvrænge batteritallene
