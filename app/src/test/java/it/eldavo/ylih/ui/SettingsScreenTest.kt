@@ -664,8 +664,12 @@ class SettingsScreenTest {
         show()
         enableBackupsThroughPicker()
 
-        // Not scrollTo(): "folder" is also a substring of the switch's own description.
-        compose.onNodeWithText(text(R.string.settings_auto_backup_folder))
+        // Not scrollTo(): "folder" is also a substring of the switch's own description. The wait is
+        // still needed — the stored folder reaches the row only once the view model's flow emits,
+        // and a loaded CI runner lost that race.
+        val folder = text(R.string.settings_auto_backup_folder)
+        settle("the folder row to be drawn") { nodeCount(folder) == 1 }
+        compose.onNodeWithText(folder)
             .performScrollTo()
             .performClick()
 
