@@ -1,0 +1,3 @@
+• Mere pålidelig Bluetooth-sporing uden tomme sessioner
+• Batteriniveauet går ikke længere tabt, når hovedtelefonerne forbindes
+• To unødvendige tilladelser er fjernet

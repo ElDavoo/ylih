@@ -1,0 +1,3 @@
+• Rastreamento Bluetooth mais confiável, sem sessões vazias
+• O nível de bateria não se perde mais ao conectar os fones
+• Duas permissões desnecessárias removidas

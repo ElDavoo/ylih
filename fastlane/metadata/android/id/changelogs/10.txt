@@ -1,0 +1,3 @@
+• Pelacakan Bluetooth lebih andal, tanpa sesi kosong lagi
+• Level baterai tidak lagi terlewat saat headphone terhubung
+• Dua izin yang tidak diperlukan dihapus

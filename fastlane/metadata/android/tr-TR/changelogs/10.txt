@@ -1,0 +1,3 @@
+• Daha güvenilir Bluetooth takibi, artık boş oturum yok
+• Kulaklık bağlanırken pil seviyesi artık kaçırılmıyor
+• Gereksiz iki izin kaldırıldı

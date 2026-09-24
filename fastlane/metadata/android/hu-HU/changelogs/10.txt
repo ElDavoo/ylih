@@ -1,0 +1,3 @@
+• Megbízhatóbb Bluetooth-követés, üres munkamenetek nélkül
+• Csatlakozáskor már nem vész el a fejhallgató töltöttségi szintje
+• Két szükségtelen engedély eltávolítva

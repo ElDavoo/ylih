@@ -1,0 +1,3 @@
+• Pålitligare Bluetooth-spårning, utan tomma sessioner
+• Batterinivån går inte längre förlorad när hörlurarna ansluts
+• Två onödiga behörigheter borttagna

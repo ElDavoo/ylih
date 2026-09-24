@@ -1,0 +1,3 @@
+• Bardziej niezawodne śledzenie Bluetooth, bez pustych sesji
+• Poziom baterii nie ginie już przy łączeniu słuchawek
+• Usunięto dwa niepotrzebne uprawnienia

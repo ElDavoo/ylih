@@ -1,0 +1,3 @@
+• More reliable Bluetooth tracking, with no more empty sessions
+• Battery level is no longer missed when headphones connect
+• Two unneeded permissions removed

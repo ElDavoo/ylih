@@ -1,0 +1,3 @@
+• Theo dõi Bluetooth ổn định hơn, không còn phiên trống
+• Không còn bỏ lỡ mức pin khi tai nghe kết nối
+• Gỡ bỏ hai quyền không cần thiết

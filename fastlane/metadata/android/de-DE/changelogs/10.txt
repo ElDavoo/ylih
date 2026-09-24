@@ -1,0 +1,3 @@
+• Zuverlässigeres Bluetooth-Tracking, ohne leere Sitzungen
+• Der Akkustand geht beim Verbinden der Kopfhörer nicht mehr verloren
+• Zwei unnötige Berechtigungen entfernt

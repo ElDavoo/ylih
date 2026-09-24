@@ -1,0 +1,3 @@
+• Urmărire Bluetooth mai fiabilă, fără sesiuni goale
+• Nivelul bateriei nu se mai pierde la conectarea căștilor
+• Două permisiuni inutile eliminate

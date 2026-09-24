@@ -1,0 +1,3 @@
+• Tracciamento Bluetooth più affidabile, senza più sessioni vuote
+• Il livello della batteria non va più perso quando le cuffie si connettono
+• Rimossi due permessi non necessari

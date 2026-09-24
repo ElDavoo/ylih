@@ -1,0 +1,3 @@
+• Luotettavampi Bluetooth-seuranta ilman tyhjiä sessioita
+• Akun varaus ei enää jää kirjaamatta, kun kuulokkeet yhdistetään
+• Kaksi tarpeetonta käyttöoikeutta poistettu

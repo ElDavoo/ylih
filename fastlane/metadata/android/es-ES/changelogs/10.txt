@@ -1,0 +1,3 @@
+• Seguimiento Bluetooth más fiable, sin sesiones vacías
+• El nivel de batería ya no se pierde al conectar los auriculares
+• Eliminados dos permisos innecesarios
