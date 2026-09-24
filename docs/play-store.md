@@ -153,9 +153,9 @@ outcome: "Everyone" / PEGI 3.
   answering "yes" would fail review against the manifest.
 - **Photos and videos / other restricted permissions:** none requested.
 
-The manifest does contain `ACCESS_NETWORK_STATE`, added by `androidx.work:work-runtime`, not this
-app; it reads connectivity state and can't transmit anything. `INTERNET` is still absent, so "no
-internet permission" holds.
+The merged manifest carries no network permission at all: `androidx.work:work-runtime` contributes
+`ACCESS_NETWORK_STATE`, and the app's manifest strips it (#58), since no work here has a network
+constraint.
 
 ## 8. Blockers that cannot be closed from this repository
 

@@ -6,6 +6,7 @@ import android.os.Build
 import androidx.test.core.app.ApplicationProvider
 import it.eldavo.ylih.tracking.TrackingService
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -38,6 +39,19 @@ class DistributionTest {
             "connectedDevice is what both flavors rely on",
             "android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" in declared,
         )
+    }
+
+    @Test
+    fun `neither flavor requests a network permission`() {
+        val declared = context.packageManager
+            .getPackageInfo(context.packageName, PackageManager.GET_PERMISSIONS)
+            .requestedPermissions
+            .orEmpty()
+            .toList()
+
+        // work-runtime re-adds ACCESS_NETWORK_STATE through the merge unless the manifest strips it.
+        assertFalse("android.permission.ACCESS_NETWORK_STATE" in declared)
+        assertFalse("android.permission.INTERNET" in declared)
     }
 
     @Test
