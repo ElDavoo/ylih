@@ -42,15 +42,16 @@ class DistributionTest {
     }
 
     @Test
-    fun `neither flavor requests a network permission`() {
+    fun `neither flavor requests the permissions work-runtime would add`() {
         val declared = context.packageManager
             .getPackageInfo(context.packageName, PackageManager.GET_PERMISSIONS)
             .requestedPermissions
             .orEmpty()
             .toList()
 
-        // work-runtime re-adds ACCESS_NETWORK_STATE through the merge unless the manifest strips it.
+        // work-runtime re-adds these two through the merge unless the manifest strips them.
         assertFalse("android.permission.ACCESS_NETWORK_STATE" in declared)
+        assertFalse("android.permission.WAKE_LOCK" in declared)
         assertFalse("android.permission.INTERNET" in declared)
     }
 

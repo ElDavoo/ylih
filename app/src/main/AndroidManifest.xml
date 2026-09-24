@@ -16,10 +16,15 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
 
-    <!-- work-runtime brings this in for network constraints, and no work here has one (#58).
-         Adding one would need this line gone: JobScheduler refuses such a job without it. -->
+    <!-- work-runtime brings both in, for work nothing here asks for (#58). NETWORK_STATE serves
+         network constraints; JobScheduler refuses such a job without it. WAKE_LOCK serves
+         setForeground and, below Android 12, expedited work; without it WorkManager's wake lock
+         throws at runtime. Either kind of work needs its line gone first. -->
     <uses-permission
         android:name="android.permission.ACCESS_NETWORK_STATE"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.WAKE_LOCK"
         tools:node="remove" />
 
     <uses-feature

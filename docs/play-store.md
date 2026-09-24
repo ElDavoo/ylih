@@ -154,8 +154,8 @@ outcome: "Everyone" / PEGI 3.
 - **Photos and videos / other restricted permissions:** none requested.
 
 The merged manifest carries no network permission at all: `androidx.work:work-runtime` contributes
-`ACCESS_NETWORK_STATE`, and the app's manifest strips it (#58), since no work here has a network
-constraint.
+`ACCESS_NETWORK_STATE` and `WAKE_LOCK`, and the app's manifest strips both (#58), since no work here
+has a network constraint or runs in the foreground.
 
 ## 8. Blockers that cannot be closed from this repository
 
