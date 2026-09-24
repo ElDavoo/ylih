@@ -178,7 +178,14 @@ object Charge {
             // drops from both sides of the ratio — `Stats.counted` makes the same choice: crediting
             // it zero minutes would read as a battery giving nothing back.
             val rate = playbackRate(span, now, counting) ?: continue
-            val sorted = group.sortedBy { it.at }
+            // A reading past the session's recorded end came from time the session doesn't
+            // credit: a connect the audio list never confirmed is closed back at `connectedAt`
+            // after collecting readings for a heartbeat interval, and a missed disconnect closes
+            // at the last heartbeat. Its drain would buy hours the lifetime total doesn't hold.
+            // Only the end is checked — the connect's own reading can be dated a moment before
+            // the session row it retried its way into.
+            val end = span?.endAt
+            val sorted = group.filter { end == null || it.at <= end }.sortedBy { it.at }
             for (i in 1 until sorted.size) {
                 val from = sorted[i - 1]
                 val to = sorted[i]

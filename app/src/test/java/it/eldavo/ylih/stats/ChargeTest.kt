@@ -75,6 +75,32 @@ class ChargeTest {
     }
 
     @Test
+    fun `a reading past its session's recorded end is outside it`() {
+        // Filed while the session was open, then the session closed earlier than the reading —
+        // a connect the audio list never confirmed, closed back at connectedAt.
+        val summary = summarize(
+            listOf(reading(1, 1, 90), reading(1, 2, 80), reading(1, 5, 60)),
+            spans = mapOf(1L to span(0, 3)),
+        )
+
+        // 90 → 80 inside the session; 80 → 60 reaches past its end at hour 3.
+        assertEquals(10, summary.pointsDrained)
+        assertEquals(hour, summary.countedMs)
+    }
+
+    @Test
+    fun `a reading dated just before its session still counts`() {
+        // The connect's own reading, dated when its broadcast arrived, can land a moment ahead of
+        // the session row its retry found.
+        val summary = summarize(
+            listOf(Reading(1, start - 500, 90), reading(1, 1, 80)),
+            spans = mapOf(1L to span(0, 2)),
+        )
+
+        assertEquals(10, summary.pointsDrained)
+    }
+
+    @Test
     fun `a hundred points is one cycle whatever it took to get there`() {
         // Five evenings of twenty points each, an hour apiece.
         val readings = (0L until 5L).flatMap {

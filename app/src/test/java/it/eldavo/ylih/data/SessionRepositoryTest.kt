@@ -2,6 +2,9 @@ package it.eldavo.ylih.data
 
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
+import it.eldavo.ylih.stats.Charge
+import it.eldavo.ylih.stats.Reading
+import it.eldavo.ylih.stats.Span
 import it.eldavo.ylih.tracking.BtBatteryReceiver
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -284,6 +287,37 @@ class SessionRepositoryTest {
         val session = sessions().single()
         assertEquals(clockNow, session.disconnectedAt)
         assertEquals(EndReason.RECOVERED, session.endReason)
+    }
+
+    @Test
+    fun `the connect's own battery reading lands on the session a settling reconcile spared`() =
+        runTest {
+            // The reading most headsets send only at connect arrived ~550 ms after the ACL on the
+            // phone — after the phantom close, so it used to find no session and be dropped.
+            repository.onConnected(buds, at = clockNow)
+            repository.reconcile(connected = emptyList(), now = clockNow + 150, bootAt = bootAt)
+
+            assertTrue(repository.recordBatteryLevel(buds.key, 70, at = clockNow + 550))
+            assertEquals(sessions().single().id, db.batterySampleDao().getAll().single().sessionId)
+        }
+
+    @Test
+    fun `drain read during a connect the audio list never confirms is not counted`() = runTest {
+        // The settle window keeps such a session open long enough to collect readings, then it
+        // closes at connectedAt, crediting no hours. Its drain must not buy hours either.
+        repository.onConnected(buds, at = clockNow)
+        repository.reconcile(connected = emptyList(), now = clockNow + 150, bootAt = bootAt)
+        repository.recordBatteryLevel(buds.key, 80, at = clockNow + 1_000)
+        repository.recordBatteryLevel(buds.key, 75, at = clockNow + 10 * 60_000)
+        repository.reconcile(connected = emptyList(), now = clockNow + 15 * 60_000, bootAt = bootAt)
+
+        val summary = Charge.summarize(
+            readings = db.batterySampleDao().getAll().map { Reading(it.sessionId, it.at, it.level) },
+            spans = sessions().associate { it.id to Span(it.connectedAt, it.disconnectedAt, it.playingMs) },
+            now = clockNow + 15 * 60_000,
+        )
+        assertEquals(0, summary.pointsDrained)
+        assertEquals(0L, summary.countedMs)
     }
 
     @Test
