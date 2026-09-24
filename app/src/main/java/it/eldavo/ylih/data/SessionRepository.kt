@@ -189,6 +189,13 @@ class SessionRepository(
                     stillConnected && now - lastKnownAlive <= UNWATCHED_SESSION_MS ->
                         sessions.heartbeat(session.id, now)
 
+                    // Absent, but opened moments ago: the audio list trails ACL_CONNECTED by the
+                    // time A2DP takes to come up, so absence isn't evidence yet. Left untouched,
+                    // not heartbeaten — if the headset never appears, the next pass closes it at
+                    // `connectedAt`, crediting nothing it didn't see.
+                    !stillConnected && now - session.connectedAt in 0 until LISTING_SETTLE_MS ->
+                        Unit
+
                     // Still connected but unwatched far longer than the system would defer the
                     // heartbeat — a force-stop, or a process killed for memory. The headphones
                     // may have come off and back on; the gap goes uncredited. Closing at the last
@@ -380,6 +387,17 @@ class SessionRepository(
     private companion object {
         /** How long after a disconnect a reconcile refuses to re-open the same pair. */
         const val RECONNECT_GRACE_MS = 30_000L
+
+        /**
+         * How long after a connect a reconcile won't read a missing headset as gone.
+         *
+         * [RECONNECT_GRACE_MS]'s mirror image: that one absorbs the audio list lagging a
+         * disconnect, this one the list lagging a connect. Measured on a phone, A2DP reached
+         * CONNECTED a second after the ACL, while the heartbeat enqueued by the connect had
+         * already reconciled at 150 ms. A minute leaves room for a slow profile handshake; the
+         * cost of a longer window is only that a connect never confirmed closes one pass later.
+         */
+        const val LISTING_SETTLE_MS = 60_000L
 
         /**
          * An open session whose last heartbeat is older than this can't be the connection just

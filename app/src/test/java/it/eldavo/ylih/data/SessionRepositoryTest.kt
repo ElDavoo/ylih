@@ -249,6 +249,43 @@ class SessionRepositoryTest {
         assertNotNull(sessions().single().disconnectedAt)
     }
 
+    /**
+     * The phantom RECOVERED row nearly every connect left, seen on a phone (Android 17).
+     *
+     * ACL_CONNECTED opens the session; the heartbeat that open enqueues runs its first period at
+     * once, and its reconcile read the audio device list ~150 ms after the ACL came up — A2DP
+     * reached CONNECTED a second later. The session closed at its own `connectedAt`, and the
+     * reconcile that did see the headset was then refused by the reconnect grace, so in
+     * Bluetooth-only mode the pair went unrecorded until something else happened to reconcile.
+     */
+    @Test
+    fun `a reconcile the audio list has not caught up with does not close a fresh connect`() =
+        runTest {
+            repository.onConnected(buds, at = clockNow)
+
+            repository.reconcile(connected = emptyList(), now = clockNow + 150, bootAt = bootAt)
+            repository.reconcile(connected = listOf(buds), now = clockNow + 1_500, bootAt = bootAt)
+
+            val session = sessions().single()
+            assertEquals("the connect's own session carries on", clockNow, session.connectedAt)
+            assertNull(session.disconnectedAt)
+            assertEquals(clockNow + 1_500, session.heartbeatAt)
+        }
+
+    @Test
+    fun `a fresh connect the audio list never shows still closes, crediting nothing`() = runTest {
+        // Left alone rather than heartbeaten while it settles, so a connect the audio stack never
+        // confirms ends where it began — as before, one heartbeat later.
+        repository.onConnected(buds, at = clockNow)
+        repository.reconcile(connected = emptyList(), now = clockNow + 150, bootAt = bootAt)
+
+        repository.reconcile(connected = emptyList(), now = clockNow + 15 * 60_000, bootAt = bootAt)
+
+        val session = sessions().single()
+        assertEquals(clockNow, session.disconnectedAt)
+        assertEquals(EndReason.RECOVERED, session.endReason)
+    }
+
     @Test
     fun `the grace window only looks forward, never back over a clock correction`() = runTest {
         // The window absorbs a device list lagging a disconnect by a moment. A connect dated
