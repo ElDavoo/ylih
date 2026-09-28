@@ -7,7 +7,7 @@ agp = "9.4.1"
 # newest release.
 kotlin = "2.4.20"
 ksp = "2.3.12"
-coreKtx = "1.19.0"
+coreKtx = "1.19.1"
 lifecycle = "2.11.0"
 activityCompose = "1.13.0"
 composeBom = "2026.09.00"
@@ -34,9 +34,9 @@ material3Adaptive = "1.3.0"
 # changed package and entry-point rules changed between alpha10 and alpha11 -- and a weekly
 # grouped PR dragging in a breaking alpha takes every unrelated bump down with it.
 appfunctions = "1.0.0-alpha11"
-navigationCompose = "2.10.1"
+navigationCompose = "2.10.2"
 room = "2.8.5"
-work = "2.11.2"
+work = "2.12.0"
 # The home-screen widgets. Stable on purpose, two years older than everything around it:
 # 1.2.0-rc01 and the 1.3.0 alphas are the only newer releases and neither is out of pre-release.
 # If a Kotlin or Compose bump ever fails this on allWarningsAsErrors, move to 1.2.0-rc01 rather
@@ -53,12 +53,12 @@ androidxTestJunit = "1.3.0"
 androidxTestRunner = "1.7.0"
 # Renders real Compose UI on the JVM through Robolectric's native graphics — how the Play listing
 # screenshots are generated with no emulator in the toolchain.
-roborazzi = "1.74.0"
+roborazzi = "1.75.0"
 # Drives android.testCoverage.jacocoVersion; AGP's bundled default predates JDK 21 class files.
 jacoco = "0.8.13"
 # Build classpath only, never shipped: AGP signs APKs with Bouncy Castle and still asks for
 # 1.80.2, and the advisories behind Dependabot alerts #49 and #50 are fixed only in 1.85.
-bouncycastle = "1.85"
+bouncycastle = "1.86.1"
 
 [libraries]
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
