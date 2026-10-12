@@ -168,7 +168,9 @@ class StatsScreenTest {
 
     @Test
     fun `measured playback earns its own row only while the headline is connected time`() {
-        show(totalHeadline = formatHours(5 * hour))
+        // The headline's figure is also a window tile drawn from the spans, so it can arrive
+        // before the per-pair summaries this block is gated on.
+        show(totalHeadline = formatHours(5 * hour), settled = text(R.string.stats_measured_span))
 
         // One pair recorded playback, so the measured-span block is drawn at all.
         compose.onNodeWithText(text(R.string.stats_measured_span)).assertExists()
