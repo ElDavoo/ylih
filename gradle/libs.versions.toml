@@ -5,7 +5,7 @@ agp = "9.4.1"
 # Gradle plugin these two pull onto the buildscript classpath overrides AGP's own, so they must
 # stay equal: KSP has no release for Kotlin 2.4.x yet, pinning Kotlin here rather than at the
 # newest release.
-kotlin = "2.4.20"
+kotlin = "2.4.21"
 ksp = "2.3.12"
 coreKtx = "1.19.1"
 lifecycle = "2.11.0"
@@ -58,7 +58,7 @@ roborazzi = "1.76.0"
 jacoco = "0.8.13"
 # Build classpath only, never shipped: AGP signs APKs with Bouncy Castle and still asks for
 # 1.80.2, and the advisories behind Dependabot alerts #49 and #50 are fixed only in 1.85.
-bouncycastle = "1.86.1"
+bouncycastle = "1.86.2"
 
 [libraries]
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
