@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">a níe kóm a mbwé a bluetooth a níe: app ánda a súk a connectedDevice service type, kóm android 14+ a níe a bluetooth mbwé.</string>
     <string name="settings_playback_only_title">a tem muak o</string>
     <string name="settings_playback_only_body">ndé a súk a tem a muak a súk a búe a tem a súk. muanda a rek a ndé ndonga a búe a muak; na muanda a níe o.</string>
+    <string name="settings_apps_title">kóm app</string>
+    <string name="settings_apps_body">kóm ndap a app, súk a kóm a rek a o ká yúʼ — a app a súk ndonga a bi bouton a headset. app a súk o bé á súk ye. android kóm a notification, a kóm a lɛ́ŋ notification; ylih a lɛ́ŋ app a súk.</string>
     <string name="settings_language">kóm</string>
     <string name="settings_language_system">kóm a android</string>
     <string name="settings_devices">a device</string>

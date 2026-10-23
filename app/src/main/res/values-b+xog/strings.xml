@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">tewali ya mu nnaku okukoma ku bluetooth: pulogiramu eno yetegeka kasiya ka connectedDevice, android 14+ esuumufu layisensi ya bluetooth.</string>
     <string name="settings_playback_only_title">obala saawa z’okukubaganya</string>
     <string name="settings_playback_only_body">okubalirira obala saawa ng’okukubaganya kwe kwaka, ssomo okukomekawo. okukola okukolebwa n’okuteekawo okw’omulala gwetegeke kubalirira; ekiya kya sibo.</string>
+    <string name="settings_apps_title">ggyamu apu</string>
+    <string name="settings_apps_body">ggyako akabonero ku apu era eiraka lyayo tirikyabalibwa nga okuwuliriza — nga apu ekuba obucyecye okukwata obutuuso bwa headset. apu zirabika wano nga zimaze okukuba ekintu. android kino ekiyeta okutuuka ku bubaka era yeekengesa nti kisobola okusoma obubaka; ylih esoma bwoki apu ekuba.</string>
     <string name="settings_language">olulimi</string>
     <string name="settings_language_system">olulimi lw’android</string>
     <string name="settings_devices">mirimu</string>

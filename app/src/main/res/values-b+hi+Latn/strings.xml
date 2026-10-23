@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth pāhuñch detē tak upalbdh nahī: yaih niirmāṇ keval connectedDevice sēvā ghatīt kartā hai, jo android 14+ bluetooth anumati ke sāth bāndhā hai.</string>
     <string name="settings_playback_only_title">keval chalnā kī gintī karein</string>
     <string name="settings_playback_only_body">ānkre khar chalnā kā samay gintī kartē hain nā ki judā kā samay. keval vistarit pratīkshan ke sāth rekord kē gē samvet chalnā māpē jayā; bāḳī bhāg chhod dijye.</string>
+    <string name="settings_apps_title">apps ko bahar rakhen</string>
+    <string name="settings_apps_body">kisi app ka nishaan hataayen aur uski awaaz sunne mein nahin gini jaayegi — jaise headset ke button pakadne ke liye khaamoshi bajaane wala app. apps yahaan tab dikhte hain jab ve kuch baja chuke hon. android ise notification access kehta hai aur chetaavni deta hai ki isse notification padhe ja sakte hain; ylih sirf yeh padhta hai ki kaun sa app baj raha hai.</string>
     <string name="settings_language">bhāshā</string>
     <string name="settings_language_system">system bhāshā</string>
     <string name="settings_devices">upskaran</string>

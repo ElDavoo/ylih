@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth ирӗкӗсӗр ӗҫлемест: ҫак пуххи connectedDevice служба тӗсне ҫеҫ пӗлтерет, android 14+ ӑна bluetooth ирӗкӗпе ҫыхӑнтарать.</string>
     <string name="settings_playback_only_title">янӑравне ҫеҫ шутла</string>
     <string name="settings_playback_only_body">статистика ҫыхӑну вӑхӑчӗ вырӑнне сасӑ чӑннипе янӑранӑ вӑхӑта шутлать. янӑрава тӗплӗ сӑнавпа ҫырнӑ сеанссенче ҫеҫ виҫнӗ; ыттисене шутламаҫҫӗ.</string>
+    <string name="settings_apps_title">приложенисене кӑларасси</string>
+    <string name="settings_apps_body">приложени паллине илсе пӑрахӑр, унӑн сасси итлени шутне кӗмӗ — сӑмахран, гарнитура кнопкисене тытма шӑплӑх калакан приложени. приложенисем мӗн те пулин каласан кунта курӑнаҫҫӗ. android ҫакна пӗлтерӳсене кӗме май тесе калать тата вӑл пӗлтерӳсене вулама пултарать тесе асӑрхаттарать; ylih хӑш приложени каланине ҫеҫ вулать.</string>
     <string name="settings_language">чӗлхе</string>
     <string name="settings_language_system">системӑн чӗлхи</string>
     <string name="settings_devices">хатӗрсем</string>

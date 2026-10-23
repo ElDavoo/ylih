@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">gũtirĩ nginya rũtha rwa bluetooth rũheanwo: mwako ũyũ ũmenyithagia mũthemba wa connectedDevice ũiki, ũrĩa android 14+ ĩoheaga na rũtha rwa bluetooth.</string>
     <string name="settings_playback_only_title">tara gũina kwiki</string>
     <string name="settings_playback_only_body">namba itaraga ĩgita rĩrĩa mũgambo waina na ma handũ ha ĩgita rĩa kũunganĩrwo. magita marĩa maandĩkirwo kũrũmĩrĩra kũrĩa kwĩgereire kũrĩ kũhingũre moiki nĩmathimire gũina; marĩa mangĩ nĩmatigagwo.</string>
+    <string name="settings_apps_title">ruta apu</string>
+    <string name="settings_apps_body">ruta kĩmenyithia kĩa apu na mũgambo jwayo jũtikatarwa ta gũthikĩria ringĩ — ta apu ĩrĩa ĩgũũgamba kĩmira nĩgetha ĩnyite thwici cia headset. apu ciumagĩra aa nyuma ya kũgamba kĩndũ. android ĩĩtaga ũũ gũkinya mĩmenyithia na ĩkaheana mũkaana atĩ no ĩthome mĩmenyithia; ylih ĩthomaga apu ĩrĩa ĩgũũgamba ĩrĩ aaki.</string>
     <string name="settings_language">rũthiomi</string>
     <string name="settings_language_system">rũthiomi rwa sistimu</string>
     <string name="settings_devices">indo</string>

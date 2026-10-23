@@ -131,6 +131,8 @@
     <string name="settings_detailed_unavailable">bluetooth erişimi verilene kadar kullanılamaz: bu sürüm yalnızca connectedDevice servis türünü bildirir; android 14+ bunu bir bluetooth iznine bağlar.</string>
     <string name="settings_playback_only_title">yalnızca çalmayı say</string>
     <string name="settings_playback_only_body">istatistikler bağlı kalınan süre yerine sesin gerçekten çaldığı süreyi sayar. çalmayı yalnızca ayrıntılı takip açıkken kaydedilen oturumlar ölçtü; geri kalanlar dışarıda bırakılır.</string>
+    <string name="settings_apps_title">uygulamaları hariç tut</string>
+    <string name="settings_apps_body">bir uygulamanın işaretini kaldırın, sesi artık dinleme sayılmaz — örneğin kulaklık düğmelerini yakalamak için sessizlik çalan bir uygulama. uygulamalar bir şey çaldıktan sonra burada görünür. android buna bildirim erişimi der ve bildirimleri okuyabileceği konusunda uyarır; ylih yalnızca hangi uygulamanın çaldığını okur.</string>
     <string name="settings_language">dil</string>
     <string name="settings_language_system">sistem dili</string>
     <string name="settings_devices">cihazlar</string>

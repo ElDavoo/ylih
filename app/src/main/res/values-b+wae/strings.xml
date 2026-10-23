@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">nit verfügbor bis bluetooth zugriff gwert: däs build säit numme d’connectedDevice service typ, wo android 14+ an i bluetooth erlaubniss bindet.</string>
     <string name="settings_playback_only_title">numme playback zäale</string>
     <string name="settings_playback_only_body">statistika zäale d’zytt wo audio grad lauft, statt d’zytt verbunde. numme sessiona wo dermi detailliert verfolgig gmaissa wernd, playback; d’rest wernd glaa.</string>
+    <string name="settings_apps_title">apps üssnä</string>
+    <string name="settings_apps_body">nim bi ere app ds häkli wäg, und ira ton zellt nümme als losä — öppa bi eire, wa stilli abspillt, fer d headset-taschte abzfa. apps chome, sobald schi öppis abgspillt hein. android seit däm zuegriff uf mitteilige und warnt, dass mu dermit mitteilige cha läse; ylih list numme, weli app grad spillt.</string>
     <string name="settings_language">sproch</string>
     <string name="settings_language_system">system sproch</string>
     <string name="settings_devices">apparata</string>

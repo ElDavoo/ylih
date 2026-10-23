@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">nav pieejams, kamēr netiek piešķirta bluetooth piekļuve: šis būvējums deklarē tikai connectedDevice pakalpojuma tipu, ko android 14+ sasaista ar bluetooth atļauju.</string>
     <string name="settings_playback_only_title">skaitīt tikai atskaņošanu</string>
     <string name="settings_playback_only_body">statistika skaita laiku, kad audio patiešām skanēja, nevis savienojuma laiku. tikai sesijas, kas pierakstītas ar ieslēgtu detalizēto izsekošanu, mērīja atskaņošanu; pārējās tiek izlaistas.</string>
+    <string name="settings_apps_title">izslēgt lietotnes</string>
+    <string name="settings_apps_body">noņem atzīmi lietotnei, un tās skaņa vairs netiks skaitīta kā klausīšanās — piemēram, lietotnei, kas atskaņo klusumu, lai notvertu austiņu pogas. lietotnes parādās, kad tās kaut ko ir atskaņojušas. android to sauc par piekļuvi paziņojumiem un brīdina, ka tā ļauj lasīt paziņojumus; ylih nolasa tikai, kura lietotne atskaņo.</string>
     <string name="settings_language">valoda</string>
     <string name="settings_language_system">sistēmas valoda</string>
     <string name="settings_devices">ierīces</string>

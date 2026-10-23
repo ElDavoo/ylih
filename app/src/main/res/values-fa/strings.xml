@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">در دسترس نیست تا زمانی که دسترسی bluetooth اعطا شود: این ساخت فقط نوع سرویس connectedDevice را اعلام می‌کند، که android 14+ آن را به اجازه bluetooth وابسته می‌کند.</string>
     <string name="settings_playback_only_title">فقط پخش شمرده شود</string>
     <string name="settings_playback_only_body">آمار به‌جای زمان اتصال، زمانی را می‌شمارد که صدا واقعاً پخش می‌شده است. فقط جلسه‌هایی که با پیگیری دقیق روشن ضبط شده‌اند پخش را اندازه گرفته‌اند؛ بقیه کنار گذاشته می‌شوند.</string>
+    <string name="settings_apps_title">کنار گذاشتن برنامه‌ها</string>
+    <string name="settings_apps_body">تیک یک برنامه را بردارید تا صدایش دیگر گوش‌دادن حساب نشود — مثلاً برنامه‌ای که برای گرفتن دکمه‌های هدست سکوت پخش می‌کند. برنامه‌ها پس از اینکه چیزی پخش کنند اینجا ظاهر می‌شوند. android این را دسترسی به اعلان‌ها می‌نامد و هشدار می‌دهد که می‌تواند اعلان‌ها را بخواند؛ ylih فقط می‌خواند کدام برنامه در حال پخش است.</string>
     <string name="settings_language">زبان</string>
     <string name="settings_language_system">زبان سیستم</string>
     <string name="settings_devices">دستگاه‌ها</string>

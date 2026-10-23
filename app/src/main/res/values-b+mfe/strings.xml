@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">pa disponib ziska akse bluetooth done: sa version la deklar zis tip servis connectedDevice, ki android 14+ atas ar enn permision bluetooth.</string>
     <string name="settings_playback_only_title">kont zis lamizik</string>
     <string name="settings_playback_only_body">statistik kont letan ki odio ti pe zwe vremem olie letan konekte. zis bann sesion anrezistre ar swivi detaye alime ti mezir lamizik; lezot pa konte.</string>
+    <string name="settings_apps_title">eskli bann aplikasion</string>
+    <string name="settings_apps_body">tir mark lor enn aplikasion ek so son pa pou kont koum ekout ankor — par egzanp enn ki zwe silans pou atrap bann bouton ekouter. bann aplikasion aparet isi apre ki zot finn zwe kiksoz. android apel sa akse bann notifikasion ek averti ki li kapav lir bann notifikasion; ylih lir zis ki aplikasion pe zwe.</string>
     <string name="settings_language">lang</string>
     <string name="settings_language_system">lang sistem</string>
     <string name="settings_devices">aparey</string>

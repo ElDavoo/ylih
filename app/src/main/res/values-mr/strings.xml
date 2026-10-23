@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ब्लूटूथ प्रवेश मिळेपर्यंत उपलब्ध नाही: ही आवृत्ती फक्त connectedDevice सेवा प्रकार जाहीर करते, जो android 14+ ब्लूटूथ परवानगीशी जोडतं.</string>
     <string name="settings_playback_only_title">फक्त प्लेबॅक मोजा</string>
     <string name="settings_playback_only_body">जोडलेल्या वेळाऐवजी ऑडिओ प्रत्यक्षात वाजत असलेला वेळ आकडेवारी मोजते. फक्त तपशीलवार ट्रॅकिंग चालू असताना नोंदवलेल्या सत्रांनीच प्लेबॅक मोजला आहे; बाकीची वगळली जातात.</string>
+    <string name="settings_apps_title">ॲप्स वगळा</string>
+    <string name="settings_apps_body">एखाद्या ॲपची खूण काढा आणि त्याचा आवाज यापुढे ऐकणे म्हणून मोजला जाणार नाही — उदा. हेडसेटची बटणे पकडण्यासाठी शांतता वाजवणारे ॲप. ॲप्स काहीतरी वाजवल्यानंतर इथे दिसतात. android याला सूचना ॲक्सेस म्हणतो आणि ते सूचना वाचू शकते असा इशारा देतो; ylih फक्त कोणते ॲप वाजत आहे ते वाचते.</string>
     <string name="settings_language">भाषा</string>
     <string name="settings_language_system">सिस्टमची भाषा</string>
     <string name="settings_devices">उपकरणं</string>

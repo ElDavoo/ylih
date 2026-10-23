@@ -1,7 +1,11 @@
 package it.eldavo.ylih.ui
 
+import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.provider.Settings
+import android.util.Log
 import androidx.activity.compose.LocalActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -48,6 +52,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import it.eldavo.ylih.AppLocale
 import it.eldavo.ylih.BuildConfig
@@ -57,6 +62,7 @@ import it.eldavo.ylih.data.AutoBackupError
 import it.eldavo.ylih.data.SettingsStore
 import it.eldavo.ylih.stats.Counting
 import it.eldavo.ylih.tracking.Hibernation
+import it.eldavo.ylih.tracking.MediaSessions
 import it.eldavo.ylih.tracking.Restrictions
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
@@ -195,6 +201,63 @@ fun SettingsScreen(
                     checked = counting == Counting.PLAYBACK,
                     onCheckedChange = null,
                 )
+            }
+        }
+        // Only the running service measures playback, so with it off there is nothing to leave
+        // out. The switch stands for a system grant rather than a setting of ours, so a tap goes
+        // to the screen that owns it either way, as switching backups on goes to a folder picker.
+        if (detailed) {
+            val sessionAccess by viewModel.sessionAccess.collectAsStateWithLifecycle()
+            val playbackApps by viewModel.playbackApps.collectAsStateWithLifecycle()
+            LifecycleResumeEffect(viewModel) {
+                viewModel.refreshSessionAccess()
+                onPauseOrDispose {}
+            }
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .toggleable(
+                        value = sessionAccess,
+                        role = Role.Switch,
+                        onValueChange = { openSessionAccess(context) },
+                    )
+                    .padding(16.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Column(Modifier.weight(1f)) {
+                    Text(
+                        stringResource(R.string.settings_apps_title),
+                        style = MaterialTheme.typography.bodyLarge,
+                    )
+                    Text(
+                        stringResource(R.string.settings_apps_body),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+                Spacer(Modifier.width(12.dp))
+                Switch(checked = sessionAccess, onCheckedChange = null)
+            }
+            // Hidden without the grant rather than greyed: nothing could act on a ticked box, and
+            // an unticked one would promise a difference the watcher has no way to make.
+            if (sessionAccess) {
+                playbackApps.forEach { app ->
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .toggleable(
+                                value = !app.excluded,
+                                role = Role.Checkbox,
+                                onValueChange = { viewModel.setAppExcluded(app.packageName, !it) },
+                            )
+                            .padding(horizontal = 16.dp, vertical = 10.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Checkbox(checked = !app.excluded, onCheckedChange = null)
+                        Spacer(Modifier.width(8.dp))
+                        Text(app.label, style = MaterialTheme.typography.bodyLarge)
+                    }
+                }
             }
         }
         HorizontalDivider()
@@ -531,6 +594,35 @@ fun SettingsScreen(
         )
     }
 }
+
+/**
+ * The system screen for `SessionAccessService`'s grant: a page of its own from Android 11, the
+ * list of every listener before that. Either can be missing — low-RAM builds ship no
+ * notification-listener settings at all — and a tap that opens nothing beats a crash.
+ */
+private fun openSessionAccess(context: Context) {
+    val pages = buildList {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            add(
+                Intent(Settings.ACTION_NOTIFICATION_LISTENER_DETAIL_SETTINGS).putExtra(
+                    Settings.EXTRA_NOTIFICATION_LISTENER_COMPONENT_NAME,
+                    MediaSessions.listener(context).flattenToString(),
+                ),
+            )
+        }
+        add(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS))
+    }
+    for (page in pages) {
+        try {
+            context.startActivity(page)
+            return
+        } catch (e: ActivityNotFoundException) {
+            Log.w(TAG, "No screen for ${page.action}", e)
+        }
+    }
+}
+
+private const val TAG = "SettingsScreen"
 
 /**
  * Applying a language means rebuilding every context created under the old one, and the activity

@@ -21,7 +21,8 @@ Every connect and disconnect gets a timestamp, automatically, forever, on your p
   same model starts at zero.
 - **Every session, kept for good** — start, end, duration.
 - **Listening time, not just connected time** (optional), so headphones worn around your neck
-  don't count as listening.
+  don't count as listening — nor does an app you untick, like one playing silence to catch
+  headset buttons.
 - **Cost per hour**, if you tell it what you paid. It goes down every time you wear them.
 - **Hours per charge**, if your headphones report battery — and how that's changed since new. A
   charge cycle is 100% of battery used, however many part-charges it took. Pairs that don't

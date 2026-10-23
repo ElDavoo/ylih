@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth berelmeli</string>
     <string name="settings_playback_only_title">diňe oynatmak wagty</string>
     <string name="settings_playback_only_body">statistika oynatmak wagtyny hasaplaýar</string>
+    <string name="settings_apps_title">programmalary aýyr</string>
+    <string name="settings_apps_body">programmanyň belgisini aýyryň, onuň sesi indi diňlemek hasaplanmaz — meselem, gulakçynyň düwmelerini tutmak üçin ümsümlik oýnadýan programma. programmalar bir zat oýnadandan soň şu ýerde peýda bolýar. android muny bildirişlere elýeterlilik diýip atlandyrýar we onuň bildirişleri okap biljekdigini duýdurýar; ylih diňe haýsy programmanyň oýnaýandygyny okaýar.</string>
     <string name="settings_language">dil</string>
     <string name="settings_language_system">enjam dili</string>
     <string name="settings_devices">enjamlar</string>

@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth anumati sili kaam aa sili: ii bild kevala connectedDevice sevaa toḍenu, aane android 14+ aa-ki bluetooth anumati-ṭene juḍenu.</string>
     <string name="settings_playback_only_title">kevala baja ganḍu</string>
     <string name="settings_playback_only_body">lekha juḍa veḷa badale saccaka baja aate veḷa ganḍenu. baja kevala puura lekha manḍa sesan-ṭe maapa aate; baaki bahaara manḍenu.</string>
+    <string name="settings_apps_title">ap-ka bahaara iḍu</string>
+    <string name="settings_apps_body">ap-na cinha veṭṭa iḍu, aaṭene aa-na baja vinḍi lekha aa sili — ie: headset baṭan pattenba cup baja kiyi ap. ap-ka ebe-i baja kiteri, ide tonḍenu. android iidi-ki khabar access inḍenu, khabar vaacunk hini inḍenu; ylih ebe ap baja manḍenu adi saccaka vaacinu.</string>
     <string name="settings_language">bhaasa</string>
     <string name="settings_language_system">sisṭam bhaasa</string>
     <string name="settings_devices">jinis</string>

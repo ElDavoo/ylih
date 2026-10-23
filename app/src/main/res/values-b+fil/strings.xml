@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">hindi available hanggang ang bluetooth access ay ibigay: ang build na ito ay nag-declare lamang ng connectedDevice service type, na ang android 14+ ay nakatali sa bluetooth permission.</string>
     <string name="settings_playback_only_title">bilangin lang ang pagtugtog</string>
     <string name="settings_playback_only_body">binibilang ng istatistika ang oras na talagang tumutugtog ang audio sa halip na ang oras na nakakonekta. ang mga sesyon lang na naitala habang naka-on ang detalyadong pagsubaybay ang may sukat ng pagtugtog; ang iba ay hindi isinasama.</string>
+    <string name="settings_apps_title">huwag isama ang mga app</string>
+    <string name="settings_apps_body">alisan ng tsek ang isang app at hindi na mabibilang na pakikinig ang tunog nito — halimbawa, isang nagpapatugtog ng katahimikan para mahuli ang mga button ng headset. lumalabas dito ang mga app kapag may napatugtog na sila. tinatawag ito ng android na access sa notification at nagbababala na nababasa nito ang mga notification; ang binabasa lang ng ylih ay kung aling app ang tumutugtog.</string>
     <string name="settings_language">wika</string>
     <string name="settings_language_system">wika ng system</string>
     <string name="settings_devices">mga device</string>

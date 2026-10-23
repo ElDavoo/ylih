@@ -129,6 +129,8 @@
     <string name="settings_detailed_unavailable">no disponible fins que es concedeixi accés bluetooth: aquesta versió només declara el tipus de servei connectedDevice, que android 14+ vincula a un permís bluetooth.</string>
     <string name="settings_playback_only_title">compta només la reproducció</string>
     <string name="settings_playback_only_body">les estadístiques compten el temps que l’àudio s’estava reproduint de debò en lloc del temps connectat. només les sessions enregistrades amb el seguiment detallat activat van mesurar la reproducció; la resta queden fora.</string>
+    <string name="settings_apps_title">excloure apps</string>
+    <string name="settings_apps_body">desmarca una app i el seu so deixa de comptar com a escolta — per exemple, una que reprodueix silenci per captar els botons dels auriculars. les apps apareixen quan han reproduït alguna cosa. android ho anomena accés a les notificacions i avisa que pot llegir-les; ylih només llegeix quina app reprodueix.</string>
     <string name="settings_language">idioma</string>
     <string name="settings_language_system">idioma del sistema</string>
     <string name="settings_devices">dispositius</string>

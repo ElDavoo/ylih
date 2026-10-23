@@ -130,6 +130,8 @@
     <string name="settings_detailed_unavailable">nedostupné, dokud nepovolíš přístup k bluetooth: tato verze deklaruje jen typ služby connectedDevice, který android 14+ váže na oprávnění bluetooth.</string>
     <string name="settings_playback_only_title">počítat jen přehrávání</string>
     <string name="settings_playback_only_body">statistiky počítají čas, kdy zvuk skutečně hrál, místo času připojení. přehrávání změřily jen relace zaznamenané při zapnutém podrobném sledování; ostatní se vynechají.</string>
+    <string name="settings_apps_title">vynechat aplikace</string>
+    <string name="settings_apps_body">odškrtni aplikaci a její zvuk se přestane počítat jako poslech — třeba té, která přehrává ticho, aby zachytila tlačítka náhlavní soupravy. aplikace se objeví, jakmile něco přehrají. android tomu říká přístup k oznámením a varuje, že umožňuje oznámení číst; ylih čte jen to, která aplikace hraje.</string>
     <string name="settings_language">jazyk</string>
     <string name="settings_language_system">jazyk systému</string>
     <string name="settings_devices">zařízení</string>

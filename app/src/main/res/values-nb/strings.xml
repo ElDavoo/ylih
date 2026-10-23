@@ -133,6 +133,8 @@
     <string name="settings_detailed_unavailable">utilgjengelig til bluetooth-tilgang er gitt: denne utgaven deklarerer bare tjenestetypen connectedDevice, som android 14+ knytter til en bluetooth-tillatelse.</string>
     <string name="settings_playback_only_title">tell bare avspilling</string>
     <string name="settings_playback_only_body">statistikken teller tiden lyden faktisk spilte i stedet for tiden tilkoblet. bare økter som ble registrert med detaljert sporing på, målte avspilling; resten holdes utenfor.</string>
+    <string name="settings_apps_title">utelat apper</string>
+    <string name="settings_apps_body">fjern haken for en app, så teller ikke lyden dens lenger som lytting — for eksempel en som spiller stillhet for å fange knappene på headsettet. apper dukker opp når de har spilt noe. android kaller dette varseltilgang og advarer om at den kan lese varsler; ylih leser bare hvilken app som spiller.</string>
     <string name="settings_language">språk</string>
     <string name="settings_language_system">systemspråk</string>
     <string name="settings_devices">enheter</string>

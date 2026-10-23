@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">no disponibil fina che l’accèss bluetooth no vegn concedù: sto costruì gnent’altrament a diserara gnent’che il serviss connectedDevice, che android 14+ l’ha ligàa al permess bluetooth.</string>
     <string name="settings_playback_only_title">cunt gnent’che la reproduzion</string>
     <string name="settings_playback_only_body">statisteghe a cunta el temp che l’audio l’era verament en reproduzion invezi che el temp ligàa. gnent’che sessiun registrada cun registrazion detaliada ativa a misuran la reproduzion; al rest a vegn lasàa fora.</string>
+    <string name="settings_apps_title">esclud i app</string>
+    <string name="settings_apps_body">tö via la crus a ’n’app e ’l sò sun el cunta pü ’me scolt — per esempi vüna che la sona el silenzi per ciapà i butun di cüfi. i app i se vedun dopu che i hann sunaa quaicoss. android el ciama quest acess a i notifich e ’l avisa che ’l po lesej; ylih el les dumà quala app la sta sunand.</string>
     <string name="settings_language">lenga</string>
     <string name="settings_language_system">lenga dal sistema</string>
     <string name="settings_devices">dispositiv</string>

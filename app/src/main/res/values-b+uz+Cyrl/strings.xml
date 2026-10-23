@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth рухсати берилмагунча ишламайди: ушбу қурилма фақат connectedDevice хизмат турини эълон қилади, android 14+ эса уни bluetooth рухсати билан боғлайди.</string>
     <string name="settings_playback_only_title">фақат чоён вақтини саноқлаш</string>
     <string name="settings_playback_only_body">статистика уланиш вақти ўрнига фақат чоён вақтини саноқлайди. батафсил қўнун билан қайд этилган сеансле фақат.</string>
+    <string name="settings_apps_title">иловаларни чиқариб ташлаш</string>
+    <string name="settings_apps_body">иловадан белгини олиб ташланг, унинг овози энди тинглаш ҳисобланмайди — масалан, гарнитура тугмаларини ушлаш учун жимликни ижро этадиган илова. иловалар бирор нарса ижро этгандан кейин шу ерда пайдо бўлади. android буни билдиришномаларга кириш деб атайди ва у билдиришномаларни ўқий олиши ҳақида огоҳлантиради; ylih фақат қайси илова ижро этаётганини ўқийди.</string>
     <string name="settings_language">тил</string>
     <string name="settings_language_system">тизимнинг тили</string>
     <string name="settings_devices">қўрилмалар</string>

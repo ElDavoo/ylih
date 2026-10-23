@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">недостаје док се не дода bluetooth приступ: ово издање само декларише тип услуге connectedDevice, коју android 14+ везује за bluetooth дозволу.</string>
     <string name="settings_playback_only_title">брои само плејбек</string>
     <string name="settings_playback_only_body">статистика брои време када је аудио заиста пушташ уместо времена повезивања. само сесије забележене са детаљним праћењем укљученим мерено плејбек; остатак је изостављен.</string>
+    <string name="settings_apps_title">изостави апликације</string>
+    <string name="settings_apps_body">одштиклирај апликацију и њен звук се више не рачуна као слушање — на пример оне која пушта тишину да би хватала тастере слушалица. апликације се појављују кад нешто пусте. android то зове приступ обавештењима и упозорава да омогућава читање обавештења; ylih чита само која апликација свира.</string>
     <string name="settings_language">језик</string>
     <string name="settings_language_system">језик система</string>
     <string name="settings_devices">уређаји</string>

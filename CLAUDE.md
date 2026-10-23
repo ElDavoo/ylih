@@ -311,6 +311,46 @@ percent per step and a cycle a day that's ~36,500 rows a year, so a decade is a 
 background thread when a reading lands. If that stops being acceptable, the answer is a rolled-up
 `cycles` table, not a window.
 
+### Leaving apps out of playback
+
+Issue #69: Automate holds a silent stream open to catch headset buttons, and `PlaybackWatcher`
+counted it as listening all day. The watcher can't tell apps apart by itself, since the playback
+callback hands an app without `MODIFY_AUDIO_ROUTING` only anonymised configs: no uid, no package.
+That permission and `MEDIA_CONTENT_CONTROL` are both signature-only, so **no build can have
+them** — the split is not classic vs play. The one per-app account open to us is media sessions,
+through `MediaSessionManager.getActiveSessions(listener)`, which a notification listener the user
+enabled unlocks. Play asks no declaration for one; the sideloaded build has the harder time, since
+Android 13+ greys the toggle out for an APK installed from a browser until "allow restricted
+settings".
+
+- **`tracking/SessionAccessService.kt` exists to be granted, never to run.** The platform checks
+  the grant, not a binding, so it reads no notification. Bound, it would keep the process alive
+  and end Bluetooth-only mode's idleness: `default_autobind_listenerservice=false` stops that from
+  Android 14 (`META_DATA_DEFAULT_AUTOBIND` is API 34), and `onListenerConnected` calls
+  `requestUnbind()` below it. Exported, guarded by `BIND_NOTIFICATION_LISTENER_SERVICE`; the grant
+  is stored against its component name, hence its line in `r8-keep-check.py`.
+- **A session is a claim, not a measurement, so it can only subtract.** `isListening` is the
+  whole rule: with no left-out app claiming playback it is exactly the old one, so nobody who never
+  grants or unticks sees a change. Otherwise each left-out app is taken to account for one
+  media-like player, and time counts when something is plainly left over — another app claiming
+  playback, or more players than the left-out apps explain. The `isMusicActive` safety net can't
+  say whose music is active, so it no longer counts on its own while a left-out app plays. Claims
+  are counted in apps (two sessions are not two players) and cast sessions are ignored.
+- **Only apps seen claiming playback are offered** (`SettingsStore.seenApps`), since anything else
+  couldn't be told apart even if listed. The watcher hands each new one over once; settings also
+  records what is playing as it resumes, the moment a user back from granting expects the app to
+  be there. Both package rows are portable and travel in a JSON backup.
+- **The grant changes on a screen nothing hears back from**, so `MediaSessions.resync()` runs on
+  every tick: a grant given mid-session is picked up, and a revoked one — after which the
+  listener goes quiet rather than failing — drops the claims instead of freezing the last ones.
+- **Unverified: whether Automate's session ever reports `STATE_PLAYING`.** Media buttons route by
+  which uid last played audio, not by session state, so it needn't. If it doesn't, it never
+  appears in the list, and nothing available to a third-party app can attribute that stream.
+
+`MediaSessionsTest` swaps in `ShadowGatedMediaSessionManager`, since Robolectric's never refuses
+a caller and the no-grant branch is the one that matters. `executeOnPlaybackStateChanged` posts
+through the callback's handler, so a test asserting an edge has to idle the looper first.
+
 ### Automatic backups
 
 `export/AutoBackup.kt` writes the manual export's JSON (`AutoBackup.payload`, shared with

@@ -95,6 +95,10 @@ KEEP_BY_NAME = {
         "same route as LifetimeWidget",
     "it.eldavo.ylih.widget.ChartWidget":
         "same route as LifetimeWidget",
+    "it.eldavo.ylih.tracking.SessionAccessService":
+        "named in the merged manifest, and the system stores the user's notification-access grant "
+        "against this component name — renamed between versions, the grant stops applying and "
+        "every app the user left out quietly counts as listening again",
     "it.eldavo.ylih.agent.YlihAppFunctionService":
         "named in the merged manifest, and it is the only thing that names the KSP-generated app "
         "function service at all — renamed, it still installs and the OS simply never binds it, "

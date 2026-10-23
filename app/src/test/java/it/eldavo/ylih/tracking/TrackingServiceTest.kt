@@ -3,6 +3,10 @@ package it.eldavo.ylih.tracking
 import android.Manifest
 import android.media.AudioDeviceInfo
 import android.media.AudioManager
+import android.media.session.MediaController
+import android.media.session.MediaSession
+import android.media.session.MediaSessionManager
+import android.media.session.PlaybackState
 import android.os.Build
 import android.os.Looper
 import androidx.test.core.app.ApplicationProvider
@@ -15,6 +19,7 @@ import it.eldavo.ylih.data.DeviceEntity
 import it.eldavo.ylih.data.DeviceIdentity
 import it.eldavo.ylih.data.DeviceKind
 import it.eldavo.ylih.data.SessionEntity
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Assert.assertEquals
@@ -30,6 +35,7 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.Shadows.shadowOf
 import org.robolectric.android.controller.ServiceController
 import org.robolectric.annotation.Config
+import org.robolectric.shadows.PlaybackInfoBuilder
 import java.time.Duration
 
 /**
@@ -163,8 +169,31 @@ class TrackingServiceTest {
         val actual = notificationText()
         assertTrue(
             "\"$actual\" does not read like \"$prefix…$suffix\"",
-            actual != null && actual.startsWith(prefix) && actual.endsWith(suffix),
+            notificationReads(plural, count),
         )
+    }
+
+    private fun notificationReads(plural: Int, count: Int): Boolean {
+        val blank = "\u0000"
+        val (prefix, suffix) = app.resources.getQuantityString(plural, count, count, blank)
+            .split(blank)
+        val actual = notificationText()
+        return actual != null && actual.startsWith(prefix) && actual.endsWith(suffix)
+    }
+
+    /** Another app's media session, saying it is playing. */
+    private fun playing(packageName: String) {
+        val controller = MediaController(app, MediaSession(app, packageName).sessionToken)
+        shadowOf(controller).setPackageName(packageName)
+        shadowOf(controller).setPlaybackInfo(
+            PlaybackInfoBuilder.newBuilder()
+                .setVolumeType(MediaController.PlaybackInfo.PLAYBACK_TYPE_LOCAL)
+                .build(),
+        )
+        shadowOf(controller).setPlaybackState(
+            PlaybackState.Builder().setState(PlaybackState.STATE_PLAYING, 0L, 1f).build(),
+        )
+        shadowOf(app.getSystemService(MediaSessionManager::class.java)).addController(controller)
     }
 
     /**
@@ -575,6 +604,37 @@ class TrackingServiceTest {
         }
     }
 
+    /**
+     * #69 end to end: an app the user leaves out claims playback, and the running service stops
+     * crediting it — through settings, its row and the watcher, with no restart in between.
+     */
+    @Test
+    fun `an app left out in settings stops counting while the service runs`() {
+        shadowOf(audioManager).setIsMusicActive(true)
+        start()
+        connect(buds())
+        settle("the connect to be finished with") {
+            notificationText() != app.getString(R.string.notification_idle) && sessions().isNotEmpty()
+        }
+        playing(AUTOMATE)
+        settle("the app to be offered in settings") {
+            runBlocking { app.container.settings.seenApps.first() } == setOf(AUTOMATE)
+        }
+
+        runBlocking { app.container.settings.setAppExcluded(AUTOMATE, excluded = true) }
+        settleAcrossTicks("the notification to stop saying playing") {
+            notificationReads(R.plurals.notification_active, count = 1) &&
+                !notificationReads(R.plurals.notification_active_playing, count = 1)
+        }
+        val heldBack = settled("what the buds hold once it is left out") {
+            sessions().single().playingMs!!
+        }
+        playFor(50)
+        playFor(50)
+
+        assertEquals("the silent stream is no longer listening", heldBack, sessions().single().playingMs)
+    }
+
     @Test
     fun `a foreground start the platform refuses stops the service rather than waiting to be killed`() {
         // A service that never reaches startForeground is killed with an ANR-shaped crash a few
@@ -593,5 +653,7 @@ class TrackingServiceTest {
     private companion object {
         /** One service tick, plus enough to be sure the delayed coroutine has come due. */
         const val TICK = 61_000L
+
+        const val AUTOMATE = "com.llamalab.automate"
     }
 }

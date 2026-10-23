@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ǃaba bluetooth ǃou: build hara connectedDevice.</string>
     <string name="settings_playback_only_title">ǃara tsi ǁau</string>
     <string name="settings_playback_only_body">stats ǃara tsi hara, ǃao ǃoa. ǃares hara ǃuma, ǂone ǃaba.</string>
+    <string name="settings_apps_title">ǃaba ǃgâ app-n</string>
+    <string name="settings_apps_body">ǃaba ǂkhanis app ǃnâ, os ǁîb ǂgaob ǃgôagu tama ǂgai — app ǃnâ ǃaoi ǃnôa ǃkhō headset ǃgôaga. app-n nē ǃnâ ǃhū ǁkhāb ǃaoi xūna. android ge ǁnāti ǂgai notification ǃkhaisa, os ǂâi ǁî ga notification ǃnāsen; ylih ǃnāsen app ǀguitsâ ǃaoi xūna.</string>
     <string name="settings_language">tsi</string>
     <string name="settings_language_system">tsi ti system</string>
     <string name="settings_devices">hara ǂoha</string>

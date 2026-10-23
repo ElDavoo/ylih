@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ama riqiwan bluetooth rimaywan: ylih connectedDevice allincha.</string>
     <string name="settings_playback_only_title">rigay yupay</string>
     <string name="settings_playback_only_body">estadistica rigay oras. rimay kuskunchay detalle rikuq alli. aswan rimay manam.</string>
+    <string name="settings_apps_title">app nisqakunata hawaman churay</string>
+    <string name="settings_apps_body">huk app nisqamanta marcata qichuy, chaymantaqa uyarisqanqa manaña uyariy hina yupasqachu kanqa — ahinataq huk app chunniqta tocaq headset botonkunata hapinanpaq. appkunaqa imatapas tocaspa kaypi rikhurinku. android kayta willakuykunaman yaykuy nispa sutichan, willakuykunata ñawinchayta atinmanmi nispa willan; ylih ñawinchanllan mayqin app tocachkasqanta.</string>
     <string name="settings_language">rimay</string>
     <string name="settings_language_system">sistema rimay</string>
     <string name="settings_devices">llamkaykunak</string>
