@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">chan eil ri fhaighinn gus an thig inntrigeadh bluetooth a bhronnadh: cha nochd an togail seo ach an seòrsa seirbhis connectedDevice, a bhios ceangailte aig android 14+ ri cead bluetooth.</string>
     <string name="settings_playback_only_title">cunnt cluich a-mhàin</string>
     <string name="settings_playback_only_body">staitisteg cunnt an ùine a bha fuaim a’ cluich gu fìrinneach an àite an ùine ceangail. seiseanan a-mhàin clàraichte leis a’ chiad-fhiosrachadh mion-fhiosrachaidh air a thomhas cluich; an còrr air fhàgail.</string>
+    <string name="settings_apps_title">fàg aplacaidean às</string>
+    <string name="settings_apps_body">thoir an t-strìochag far aplacaid agus cha tèid a fuaim a chunntadh mar èisteachd tuilleadh — mar eisimpleir, tè a chluicheas sàmhchair gus putanan a’ headset a ghlacadh. nochdaidh aplacaidean an seo nuair a bhios iad air rudeigin a chluich. canaidh android cothrom air brathan ris agus bheir e rabhadh gun urrainn dha brathan a leughadh; chan leugh ylih ach dè an aplacaid a tha a’ cluich.</string>
     <string name="settings_language">cànan</string>
     <string name="settings_language_system">cànan an t-siostaim</string>
     <string name="settings_devices">innealan</string>

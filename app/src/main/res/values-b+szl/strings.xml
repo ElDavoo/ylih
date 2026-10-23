@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">niydostympne, aż dostymp do bluetooth bydzie dany: ta wersyjo deklaruje ino typ serwisu connectedDevice, kery android 14+ wiōnże ze zwolyniym bluetooth.</string>
     <string name="settings_playback_only_title">licz ino granie</string>
     <string name="settings_playback_only_body">statystyka liczy czas, kej dźwiynk naprowdy grał, a niy czas połōnczynio. ino sesyje zapisane z włōnczōnym dokładnym śledzyniym mierzyły granie; reszta je pōminiynto.</string>
+    <string name="settings_apps_title">pōminyć aplikacyje</string>
+    <string name="settings_apps_body">ôdznacz aplikacyjo, a jeji klang przestanie sie liczyć za suchanie — na przikłod tako, kero puszczo cisza, coby chytać knefle suchawek. aplikacyje pokazujōm sie, jak coś puszczōm. android nazywo to dostympym do powiadōmiyń i ôstrzego, iże to może czytać powiadōmiynia; ylih czyto ino, kero aplikacyjo grŏ.</string>
     <string name="settings_language">godka</string>
     <string name="settings_language_system">godka systymu</string>
     <string name="settings_devices">urzōndzynia</string>

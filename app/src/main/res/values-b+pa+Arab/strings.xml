@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">بلوٹتھ پہنچ ملن تیکر دستیاب نہیں: ایہ بلڈ صرف connectedDevice سروس قسم دا اعلان کردا اے، جیہنوں android 14+ بلوٹتھ اجازت نال جوڑدا اے۔</string>
     <string name="settings_playback_only_title">صرف پلے بیک گنو</string>
     <string name="settings_playback_only_body">اعداد و شمار جُڑے رہن دے ویلے دی تھاں اوہ ویلا گنندے نیں جدوں آڈیو سچ مچ وج ریا سی۔ صرف اوہ سیشن جیہڑے تفصیلی ٹریکنگ چالو ہون ویلے درج ہوئے، پلے بیک ماپدے نیں؛ باقی چھڈ دتے جاندے نیں۔</string>
+    <string name="settings_apps_title">ایپاں باہر رکھو</string>
+    <string name="settings_apps_body">کسے ایپ دا نشان ہٹاؤ تے اوہدی آواز ہُن سُنن وچ نہیں گنی جاوے گی — جیویں ہیڈسیٹ دے بٹن پھڑن لئی چُپ وجاؤن والی ایپ۔ ایپاں کجھ وجاؤن توں بعد ایتھے دسدیاں نیں۔ android ایہنوں اطلاع تک رسائی آکھدا اے تے خبردار کردا اے کہ ایہ اطلاعاں پڑھ سکدی اے؛ ylih صرف ایہ پڑھدا اے کہ کیہڑی ایپ وج رہی اے۔</string>
     <string name="settings_language">بولی</string>
     <string name="settings_language_system">سسٹم دی بولی</string>
     <string name="settings_devices">ڈیوائس</string>

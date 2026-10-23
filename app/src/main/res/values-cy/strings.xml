@@ -130,6 +130,8 @@
     <string name="settings_detailed_unavailable">dim ar gael nes y rhoddif mynediad bluetooth: mae’r adeilad hwn yn unig yn datgan y math gwasanaeth connectedDevice, y mae android 14+ yn ei chlymu i ganiatad bluetooth.</string>
     <string name="settings_playback_only_title">cyfrif chwarae yn unig</string>
     <string name="settings_playback_only_body">mae’r ystadegau’n cyfrif yr amser roedd y sain yn chwarae go iawn yn lle’r amser wedi’i gysylltu. dim ond sesiynau a gofnodwyd gyda thracio manwl ymlaen a fesurodd y chwarae; caiff y gweddill eu gadael allan.</string>
+    <string name="settings_apps_title">gadael apiau allan</string>
+    <string name="settings_apps_body">dad-diciwch ap a bydd ei sain yn peidio â chyfrif fel gwrando — er enghraifft ap sy’n chwarae tawelwch i ddal botymau’r clustffonau. mae apiau’n ymddangos yma unwaith y byddan nhw wedi chwarae rhywbeth. mae android yn galw hyn yn fynediad at hysbysiadau ac yn rhybuddio y gall ddarllen hysbysiadau; dim ond pa ap sy’n chwarae y mae ylih yn ei ddarllen.</string>
     <string name="settings_language">iaith</string>
     <string name="settings_language_system">iaith y system</string>
     <string name="settings_devices">dyfeisiau</string>

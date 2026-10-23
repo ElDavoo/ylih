@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth ఆనుమాతి సిలి కామ ఆ సిలి: ఈ బిల్ద కేవాలా connectedDevice సేవా తోడేను, ఆనే android 14+ ఆ-కి bluetooth ఆనుమాతి-టేనే జుడేను.</string>
     <string name="settings_playback_only_title">కేవాలా బాజా గాణ్డు</string>
     <string name="settings_playback_only_body">లేఖా జుడా వేళా బాదాలే సాచ్చాకా బాజా ఆతే వేళా గాణ్డేను. బాజా కేవాలా పూరా లేఖా మాణ్డా సేసాన-టే మాపా ఆతే; బాకి బాహారా మాణ్డేను.</string>
+    <string name="settings_apps_title">ఆప-కా బాహారా ఇడు</string>
+    <string name="settings_apps_body">ఆప-నా చిన్హా వేట్టా ఇడు, ఆటేనే ఆ-నా బాజా విణ్డి లేఖా ఆ సిలి — ఈ: హేడసేట బటన పట్టేనబా చుప బాజా కియి ఆప. ఆప-కా ఏబే-ఇ బాజా కిటేరి, ఇదే తోణ్డేను. android ఈది-కి ఖాబార ఏక్సేస ఇణ్డేను, ఖాబార వాచుంక హిని ఇణ్డేను; ylih ఏబే ఆప బాజా మాణ్డేను అది సాచ్చాకా వాచిను.</string>
     <string name="settings_language">భాసా</string>
     <string name="settings_language_system">సిస్టామ భాసా</string>
     <string name="settings_devices">జినిస</string>

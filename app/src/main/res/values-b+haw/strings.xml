@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ʻaʻole ʻike a hiki ka bluetooth hoʻoonui: kēia hōʻike wale nō i hoʻololi ʻia connectedDevice mea, āpau hoʻoʻo android 14+ i ka bluetooth kuleana.</string>
     <string name="settings_playback_only_title">helu i ka hoʻolauʻe wale ʻo ia</string>
     <string name="settings_playback_only_body">nā helu e hoʻololi i ka manawa kani e hoʻolauʻe ana i ʻoiaʻiʻo ʻae i ka manawa hoʻopili. ʻoiaʻiʻo, nā hoʻomaka i helu ʻia me ka hoʻololi ʻike ʻiʻi i hoʻomaka ʻia nā mea; ʻo nā mea ʻē aʻe e huela.</string>
+    <string name="settings_apps_title">waiho i nā polokalamu ma waho</string>
+    <string name="settings_apps_body">wehe i ka māka o kekahi polokalamu a ʻaʻole e helu hou ʻia kona leo he hoʻolohe — e like me ka polokalamu e hoʻokani ana i ka mālie e hopu ai i nā pihi o ka pepeiao leo. ʻike ʻia nā polokalamu ma ʻaneʻi ma hope o ko lākou hoʻokani ʻana i kekahi mea. kapa ʻo android i kēia he komo i nā hoʻolaha a hoʻomaopopo ʻo ia e hiki iā ia ke heluhelu i nā hoʻolaha; heluhelu wale ʻo ylih i ka polokalamu e hoʻokani ana.</string>
     <string name="settings_language">ka ʻōlelo</string>
     <string name="settings_language_system">ka ʻōlelo ʻōnaehana</string>
     <string name="settings_devices">nā hoʻolohe leo</string>

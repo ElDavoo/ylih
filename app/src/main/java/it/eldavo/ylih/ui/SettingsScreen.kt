@@ -1,7 +1,11 @@
 package it.eldavo.ylih.ui
 
+import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.provider.Settings
+import android.util.Log
 import androidx.activity.compose.LocalActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -48,6 +52,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import it.eldavo.ylih.AppLocale
 import it.eldavo.ylih.BuildConfig
@@ -57,6 +62,7 @@ import it.eldavo.ylih.data.AutoBackupError
 import it.eldavo.ylih.data.SettingsStore
 import it.eldavo.ylih.stats.Counting
 import it.eldavo.ylih.tracking.Hibernation
+import it.eldavo.ylih.tracking.MediaSessions
 import it.eldavo.ylih.tracking.Restrictions
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
@@ -84,9 +90,16 @@ fun SettingsScreen(
     // Detailed tracking is what makes the notification permission matter — see
     // NotificationPermissionDialog's KDoc for why it's asked here, on every switch-on, rather than
     // once. The setting is written either way and doesn't wait for an answer.
+    //
+    // Switching off strands notification access: leaving apps out needs the running service, and
+    // only the system screen can take the grant back, so that is where switching off leads.
     fun setDetailed(enabled: Boolean) {
         viewModel.setDetailedTracking(enabled)
-        if (enabled) askNotifications = notificationPermissionToAsk(context)
+        if (enabled) {
+            askNotifications = notificationPermissionToAsk(context)
+        } else if (MediaSessions.accessGranted(context)) {
+            openSessionAccess(context)
+        }
     }
 
     // The write goes through the settings table and the new configuration is readable only once
@@ -195,6 +208,66 @@ fun SettingsScreen(
                     checked = counting == Counting.PLAYBACK,
                     onCheckedChange = null,
                 )
+            }
+        }
+        // Only the running service measures playback, so with it off there is nothing to leave
+        // out. The switch stands for a system grant rather than a setting of ours, so a tap goes
+        // to the screen that owns it either way, as switching backups on goes to a folder picker.
+        // It outlives detailed tracking while the grant does. Switching tracking off leads to the
+        // system screen, but backing out of it keeps the grant, and hiding the one way back would
+        // leave notification access held for nothing, out of sight.
+        val sessionAccess by viewModel.sessionAccess.collectAsStateWithLifecycle()
+        LifecycleResumeEffect(viewModel) {
+            viewModel.refreshSessionAccess()
+            onPauseOrDispose {}
+        }
+        if (detailed || sessionAccess) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .toggleable(
+                        value = sessionAccess,
+                        role = Role.Switch,
+                        onValueChange = { openSessionAccess(context) },
+                    )
+                    .padding(16.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Column(Modifier.weight(1f)) {
+                    Text(
+                        stringResource(R.string.settings_apps_title),
+                        style = MaterialTheme.typography.bodyLarge,
+                    )
+                    Text(
+                        stringResource(R.string.settings_apps_body),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+                Spacer(Modifier.width(12.dp))
+                Switch(checked = sessionAccess, onCheckedChange = null)
+            }
+            // Hidden without the grant or the service rather than greyed: nothing could act on a
+            // ticked box, and an unticked one would promise a difference nothing is there to make.
+            if (detailed && sessionAccess) {
+                val playbackApps by viewModel.playbackApps.collectAsStateWithLifecycle()
+                playbackApps.forEach { app ->
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .toggleable(
+                                value = !app.excluded,
+                                role = Role.Checkbox,
+                                onValueChange = { viewModel.setAppExcluded(app.packageName, !it) },
+                            )
+                            .padding(horizontal = 16.dp, vertical = 10.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Checkbox(checked = !app.excluded, onCheckedChange = null)
+                        Spacer(Modifier.width(8.dp))
+                        Text(app.label, style = MaterialTheme.typography.bodyLarge)
+                    }
+                }
             }
         }
         HorizontalDivider()
@@ -531,6 +604,35 @@ fun SettingsScreen(
         )
     }
 }
+
+/**
+ * The system screen for `SessionAccessService`'s grant: a page of its own from Android 11, the
+ * list of every listener before that. Either can be missing — low-RAM builds ship no
+ * notification-listener settings at all — and a tap that opens nothing beats a crash.
+ */
+private fun openSessionAccess(context: Context) {
+    val pages = buildList {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            add(
+                Intent(Settings.ACTION_NOTIFICATION_LISTENER_DETAIL_SETTINGS).putExtra(
+                    Settings.EXTRA_NOTIFICATION_LISTENER_COMPONENT_NAME,
+                    MediaSessions.listener(context).flattenToString(),
+                ),
+            )
+        }
+        add(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS))
+    }
+    for (page in pages) {
+        try {
+            context.startActivity(page)
+            return
+        } catch (e: ActivityNotFoundException) {
+            Log.w(TAG, "No screen for ${page.action}", e)
+        }
+    }
+}
+
+private const val TAG = "SettingsScreen"
 
 /**
  * Applying a language means rebuilding every context created under the old one, and the activity

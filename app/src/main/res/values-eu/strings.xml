@@ -131,6 +131,8 @@
     <string name="settings_detailed_unavailable">disponible ez dela bitartean bluetooth sarbidea baimendu arte: eraikian hau connectedDevice zerbitzuaren mota bakarrik deklaratzen du, android 14+ bluetooth baimena lekutzen duena.</string>
     <string name="settings_playback_only_title">zenbatu erreprodukzioa bakarrik</string>
     <string name="settings_playback_only_body">estatistikek audioa benetan erreproduzitzen egon den denbora zenbatzen dute, konektatuta egon den denboraren ordez. zenbaketa zehatza piztuta zegoela grabatutako saioek bakarrik neurtu zuten erreprodukzioa; gainerakoak kanpoan geratzen dira.</string>
+    <string name="settings_apps_title">aplikazioak baztertu</string>
+    <string name="settings_apps_body">kendu marka aplikazio bati eta haren soinua ez da gehiago entzunalditzat hartuko — adibidez, entzungailuen botoiak harrapatzeko isiltasuna erreproduzitzen duena. aplikazioak zerbait erreproduzitu ondoren agertzen dira. android-ek jakinarazpenetarako sarbidea deitzen dio, eta jakinarazpenak irakur ditzakeela ohartarazten du; ylih-ek zein aplikazio ari den erreproduzitzen baino ez du irakurtzen.</string>
     <string name="settings_language">hizkuntza</string>
     <string name="settings_language_system">sistemaren hizkuntza</string>
     <string name="settings_devices">gailuak</string>

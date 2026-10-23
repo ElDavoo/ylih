@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">cha nel bree derrey ta curragh bluetooth currit: shoh build agh coontey ny connectedDevice sharvish seose, ta android 14+ ceangal da curragh bluetooth.</string>
     <string name="settings_playback_only_title">countaghey cleayshagh agh</string>
     <string name="settings_playback_only_body">stats countaghey yn straid fuaase va cleayshagh rere dy row kiart. agh fondaghyn kiart currit lesh cummal boghtey soilshagh cleayshagh roonsit; ta’n sneck lhag.</string>
+    <string name="settings_apps_title">faagail app magh</string>
+    <string name="settings_apps_body">goaill yn cowrey jeh app as cha bee y sheean eck coontit myr eaishtagh ny sodjey — myr sampleyr, app ta cloie tostid dy ghreimmey cramman y headset. ta app jeant soilshagh ayns shoh lurg daue cloie red ennagh. ta android genmys shoh roshtyn er fograghyn as caghtey dy vod eh fograghyn y lhaih; cha nel ylih lhaih agh quoi yn app ta cloie.</string>
     <string name="settings_language">chainle</string>
     <string name="settings_language_system">chainle eaghtyr</string>
     <string name="settings_devices">troggal</string>

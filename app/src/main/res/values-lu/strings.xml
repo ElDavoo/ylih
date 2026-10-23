@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">itakusi kumbi munanyaka</string>
     <string name="settings_playback_only_title">salisha isikiwelo</string>
     <string name="settings_playback_only_body">mfumo isalisha bulumi</string>
+    <string name="settings_apps_title">katula apu</string>
+    <string name="settings_apps_body">katula kiyukeno pa apu ne diyi dyayo kedyakubadilwa bwa kutega matwi dikwabo — pamo bwa apu ilela kitulumuka mwanda wa kukwata mabutone a headset. apu imwekanga pano kupwa kwa kulela kintu. android itela kino kufika ku misapu kadi itebya amba ikokeja kutanga misapu; ylih itanga enka apu ilela.</string>
     <string name="settings_language">lulimi</string>
     <string name="settings_language_system">lulimi lyasisteme</string>
     <string name="settings_devices">muntu</string>

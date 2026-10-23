@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ਬਲੂਟੁੱਥ ਪਹੁੰਚ ਮਿਲਣ ਤੱਕ ਉਪਲਬਧ ਨਹੀਂ: ਇਹ ਬਿਲਡ ਸਿਰਫ਼ connectedDevice ਸੇਵਾ ਕਿਸਮ ਐਲਾਨਦਾ ਹੈ, ਜਿਸ ਨੂੰ android 14+ ਬਲੂਟੁੱਥ ਇਜਾਜ਼ਤ ਨਾਲ ਜੋੜਦਾ ਹੈ।</string>
     <string name="settings_playback_only_title">ਸਿਰਫ਼ ਪਲੇਬੈਕ ਗਿਣੋ</string>
     <string name="settings_playback_only_body">ਅੰਕੜੇ ਜੁੜੇ ਰਹਿਣ ਦੇ ਸਮੇਂ ਦੀ ਥਾਂ ਉਹ ਸਮਾਂ ਗਿਣਦੇ ਹਨ ਜਦੋਂ ਆਡੀਓ ਸੱਚਮੁੱਚ ਵੱਜ ਰਿਹਾ ਸੀ। ਸਿਰਫ਼ ਉਹ ਸੈਸ਼ਨ ਜੋ ਵਿਸਤ੍ਰਿਤ ਟਰੈਕਿੰਗ ਚਾਲੂ ਹੋਣ ਵੇਲੇ ਦਰਜ ਹੋਏ, ਪਲੇਬੈਕ ਮਾਪਦੇ ਹਨ; ਬਾਕੀ ਛੱਡ ਦਿੱਤੇ ਜਾਂਦੇ ਹਨ।</string>
+    <string name="settings_apps_title">ਐਪਾਂ ਬਾਹਰ ਰੱਖੋ</string>
+    <string name="settings_apps_body">ਕਿਸੇ ਐਪ ਦਾ ਨਿਸ਼ਾਨ ਹਟਾਓ ਅਤੇ ਉਸਦੀ ਆਵਾਜ਼ ਹੁਣ ਸੁਣਨ ਵਿੱਚ ਨਹੀਂ ਗਿਣੀ ਜਾਵੇਗੀ — ਜਿਵੇਂ ਹੈੱਡਸੈੱਟ ਦੇ ਬਟਨ ਫੜਨ ਲਈ ਚੁੱਪ ਵਜਾਉਣ ਵਾਲੀ ਐਪ। ਐਪਾਂ ਕੁਝ ਵਜਾਉਣ ਤੋਂ ਬਾਅਦ ਇੱਥੇ ਦਿਸਦੀਆਂ ਹਨ। android ਇਸਨੂੰ ਸੂਚਨਾ ਪਹੁੰਚ ਕਹਿੰਦਾ ਹੈ ਅਤੇ ਚੇਤਾਵਨੀ ਦਿੰਦਾ ਹੈ ਕਿ ਇਹ ਸੂਚਨਾਵਾਂ ਪੜ੍ਹ ਸਕਦੀ ਹੈ; ylih ਸਿਰਫ਼ ਇਹ ਪੜ੍ਹਦਾ ਹੈ ਕਿ ਕਿਹੜੀ ਐਪ ਵੱਜ ਰਹੀ ਹੈ।</string>
     <string name="settings_language">ਭਾਸ਼ਾ</string>
     <string name="settings_language_system">ਸਿਸਟਮ ਦੀ ਭਾਸ਼ਾ</string>
     <string name="settings_devices">ਡਿਵਾਈਸ</string>

@@ -36,5 +36,6 @@ Ayarlar → Dışa Aktar, tüm geçmişini okunabilir JSON olarak yazar; İçe A
 • Yakındaki cihazlar (bluetooth): bağlantı olaylarını almak ve bir kulaklığın adını okumak için gerekir. Bu izin olmadan bluetooth takibi hiç çalışamaz.
 • Bildirimler: yalnızca ayrıntılı takip bildirimi için.
 • Başlangıçta çalıştır: kapanışın hiç bildirmediği oturumları kapatmak için.
+• Bildirim erişimi (isteğe bağlı): yalnızca bazı uygulamaları çalma süresinin dışında bırakmak için. ylih hangi uygulamanın çaldığını okur, bildirimlerini asla okumaz.
 
 MIT lisansıyla açık kaynak.

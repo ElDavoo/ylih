@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">ntumi nkɔ so akosi sɛ wɔde connectedDevice osuoabɔ nyeε: sikakorabɛ yi na ɔkɔ ne connectedDevice osuoabɔ ara, na android 14+ de ɛne bluetooth kyɛ.</string>
     <string name="settings_playback_only_title">kan adedie nkoaa</string>
     <string name="settings_playback_only_body">akontabuo no kan berɛ a adedie kɔɔ so ampa, na ɛnyɛ berɛ a wɔakyekyere. mmerɛ a wɔde akontabuo a ɔkɔ ɔ mu twerɛeɛ nko ara na wɔsusuu adedie; nkaeɛ no wɔgyaw.</string>
+    <string name="settings_apps_title">yi apps fi mu</string>
+    <string name="settings_apps_body">yi nsɛnkyerɛnne fi app bi so na ne nnyigyei rennkan sɛ tie bio — sɛ app a ɛbɔ komm de kyere headset mmɔtom. apps pue wɔ ha bere a wɔabɔ biribi awie. android frɛ eyi nkra ho kwan na ɔbɔ kɔkɔ sɛ ebetumi akenkan nkra; ylih kenkan app a ɛrebɔ no nko ara.</string>
     <string name="settings_language">kasa</string>
     <string name="settings_language_system">sistem kasa</string>
     <string name="settings_devices">asua</string>

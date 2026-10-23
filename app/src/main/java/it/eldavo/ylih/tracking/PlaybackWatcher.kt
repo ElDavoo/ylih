@@ -12,7 +12,9 @@ import it.eldavo.ylih.data.Clock
  * Driven by [AudioManager.AudioPlaybackCallback] edges: the callback delivers the active-player
  * list, all this needs since per-player details are anonymised for apps without
  * MODIFY_AUDIO_ROUTING. [AudioManager.isMusicActive] is polled every tick as a safety net in
- * case a player never shows up there.
+ * case a player never shows up there. The one thing that does name an app is a media session,
+ * read where the user granted it, so time an app they left out claims can be subtracted — see
+ * [isListening].
  *
  * Constructed only by [TrackingService], so it lives only while detailed tracking does. Nothing
  * else measures playback, so a session's `playingMs` is null where the service never ran,
@@ -29,16 +31,24 @@ class PlaybackWatcher(
      * the payoff is a test that can bank a callback's slice without sleeping through it.
      */
     private val clock: Clock = Clock.Wall,
+    /** Who says they are playing, for [excluded] to act on; null counts every app, as before. */
+    private val sessions: MediaSessions? = null,
+    /** Apps seen playing, each handed over once per watcher, for settings to offer leaving out. */
+    private val onPlayingApps: (Set<String>) -> Unit = {},
     private val onDelta: (Long) -> Unit,
 ) {
-    private var configsActive = false
+    private var mediaLikePlayers = 0
     private var playingSince: Long? = null
+    private val reportedApps = mutableSetOf<String>()
+
+    /** Apps whose playback is not listening — see [isListening]. */
+    var excluded: Set<String> = emptySet()
 
     val isPlaying: Boolean get() = playingSince != null
 
     private val callback = object : AudioManager.AudioPlaybackCallback() {
         override fun onPlaybackConfigChanged(configs: MutableList<AudioPlaybackConfiguration>) {
-            configsActive = configs.any { it.audioAttributes.isMediaLike() }
+            mediaLikePlayers = configs.count { it.audioAttributes.isMediaLike() }
             // The one edge that cannot be waited for, so the one that still has to push.
             onDelta(refresh(clock.now(), minSliceMs = MIN_BANKED_SLICE_MS))
         }
@@ -46,12 +56,20 @@ class PlaybackWatcher(
 
     fun start(handler: Handler) {
         audioManager.registerAudioPlaybackCallback(callback, handler)
+        // A session's state is an edge like a player's, and cannot be waited for either.
+        sessions?.start(handler) { onDelta(refresh(clock.now(), minSliceMs = MIN_BANKED_SLICE_MS)) }
     }
 
     /** @return the last slice, for the caller to credit — see [refresh]. */
     fun stop(now: Long): Long {
         audioManager.unregisterAudioPlaybackCallback(callback)
+        sessions?.stop()
         return update(active = false, now = now)
+    }
+
+    /** Picks up a session-access grant given or taken away since [start]; see [MediaSessions.resync]. */
+    fun resyncSessions() {
+        sessions?.resync()
     }
 
     /**
@@ -69,7 +87,13 @@ class PlaybackWatcher(
      *   before the disconnect, which only a value the caller can suspend on allows.
      */
     fun refresh(now: Long, minSliceMs: Long = 0L): Long {
-        val active = configsActive || audioManager.isMusicActive
+        val claimed = sessions?.playing(excluded) ?: SessionPlayback.NONE
+        if (!reportedApps.containsAll(claimed.packages)) {
+            reportedApps += claimed.packages
+            onPlayingApps(reportedApps.toSet())
+        }
+        val audible = mediaLikePlayers > 0 || audioManager.isMusicActive
+        val active = isListening(mediaLikePlayers, audible, claimed)
         val since = playingSince
         if (active && since != null) {
             // Still playing: bank the elapsed slice so long sessions are credited as they go.
@@ -119,3 +143,24 @@ class PlaybackWatcher(
         )
     }
 }
+
+/**
+ * Whether what is sounding counts as listening, once the sessions have had their say.
+ *
+ * With no left-out app claiming playback this is the rule the watcher always had, so nobody who
+ * never grants session access, or never unticks an app, sees anything change. Otherwise the
+ * players are anonymous and the claims are only claims, so the left-out apps are taken to account
+ * for one media-like player each, and time counts when something is plainly left over: another
+ * app saying it is playing too, or more players than the left-out apps explain. A left-out app
+ * playing beside something with no session and a player that isn't media-like still loses that
+ * time — the one case nothing available here can tell apart.
+ *
+ * Built for #69: Automate holding a silent stream open to catch headset buttons, counted as
+ * listening all day.
+ */
+internal fun isListening(mediaLikePlayers: Int, audible: Boolean, claimed: SessionPlayback): Boolean =
+    audible && (
+        claimed.excluded == 0 ||
+            claimed.others > 0 ||
+            mediaLikePlayers > claimed.excluded
+        )

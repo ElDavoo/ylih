@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth hinna kaata no: sanda ga connectedDevice jerre sutu filla, android 14+ bluetooth hinna toodu borey.</string>
     <string name="settings_playback_only_title">warey sanda joysu</string>
     <string name="settings_playback_only_body">bayni ga warey sanda duusu kaata haani borey. dunsee jerre dunsee sanda wayante warey borey; taaga koy aloku.</string>
+    <string name="settings_apps_title">app yo kaa taray</string>
+    <string name="settings_apps_body">app foo tammaasa kaa, a jinde si ga baaru hanga jeeri koyne — sanda app kaŋ ga dangay kar zama a ma headset butɔŋey di. app yo ga bangay neewo nda i na haya foo kar. android ga ne woo se bangandiyo duuyan, a ga ci kaŋ a ga hin ka bangandiyo caw; ylih ga app kaŋ go ga kar hinne caw.</string>
     <string name="settings_language">dongo</string>
     <string name="settings_language_system">dongo ayuka</string>
     <string name="settings_devices">gara</string>

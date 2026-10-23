@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">onverfügbar bis bluetooth zougang ginn: dëst bauen deklaréiert just de connectedDevice service type, wat androide 14+ op ee bluetooth erlabnis verbitt.</string>
     <string name="settings_playback_only_title">zielen nëmmen spillback</string>
     <string name="settings_playback_only_body">statistiken zielen d’zäit audio tatsächlech gespillt gëtt amplaz vun der zäit verbonnen. nëmmen sessioune registréiert mat detailléiert verfolgung op gemooss spillback; de rescht ginn verlongen.</string>
+    <string name="settings_apps_title">apps ausschléissen</string>
+    <string name="settings_apps_body">huel den haken bei enger app ewech, an hire klang zielt net méi als nolauschteren — zum beispill eng, déi stëllt ofspillt, fir d’knäppercher vum headset ofzefänken. apps erschéngen, soubal se eppes ofgespillt hunn. android nennt dat zougrëff op notifikatiounen a warnt, datt en notifikatioune liese kann; ylih liest just, wéi eng app spillt.</string>
     <string name="settings_language">sprooch</string>
     <string name="settings_language_system">systemsprach</string>
     <string name="settings_devices">apparater</string>

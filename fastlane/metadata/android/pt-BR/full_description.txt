@@ -36,5 +36,6 @@ PERMISSÕES
 • Dispositivos próximos (Bluetooth): necessário para receber eventos de conexão e ler o nome de um fone. Sem ela, o rastreamento por bluetooth simplesmente não funciona.
 • Notificações: só para a notificação do rastreamento detalhado.
 • Executar na inicialização: para fechar sessões que o desligamento nunca informou.
+• Acesso a notificações (opcional): só para deixar apps fora do tempo de reprodução. O ylih lê qual app está tocando, nunca as suas notificações.
 
 Código aberto sob a licença MIT.

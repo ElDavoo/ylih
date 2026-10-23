@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth ଆନୁମାତି ସିଲି କାମ ଆ ସିଲି: ଈ ବିଲ୍ଦ କେୱାଲା connectedDevice ସେୱା ତୋଡ଼େନୁ, ଆନେ android 14+ ଆ-କି bluetooth ଆନୁମାତି-ଟେନେ ଜୁଡ଼େନୁ.</string>
     <string name="settings_playback_only_title">କେୱାଲା ବାଜା ଗାଣ୍ଡ଼ୁ</string>
     <string name="settings_playback_only_body">ଲେଖା ଜୁଡ଼ା ୱେଳା ବାଦାଲେ ସାଚ୍ଚାକା ବାଜା ଆତେ ୱେଳା ଗାଣ୍ଡ଼େନୁ. ବାଜା କେୱାଲା ପୂରା ଲେଖା ମାଣ୍ଡ଼ା ସେସାନ-ଟେ ମାପା ଆତେ; ବାକି ବାହାରା ମାଣ୍ଡ଼େନୁ.</string>
+    <string name="settings_apps_title">ଆପ-କା ବାହାରା ଇଡୁ</string>
+    <string name="settings_apps_body">ଆପ-ନା ଚିନ୍ହା ୱେଟ୍ଟା ଇଡୁ, ଆଟେନେ ଆ-ନା ବାଜା ୱିଣ୍ଡି ଲେଖା ଆ ସିଲି — ଈ: ହେଡସେଟ ବଟନ ପଟ୍ଟେନବା ଚୁପ ବାଜା କିୟି ଆପ. ଆପ-କା ଏବେ-ଇ ବାଜା କିଟେରି, ଇଦେ ତୋଣ୍ଡେନୁ. android ଈଦି-କି ଖାବାର ଏକ୍ସେସ ଇଣ୍ଡେନୁ, ଖାବାର ୱାଚୁଂକ ହିନି ଇଣ୍ଡେନୁ; ylih ଏବେ ଆପ ବାଜା ମାଣ୍ଡେନୁ ଅଦି ସାଚ୍ଚାକା ୱାଚିନୁ.</string>
     <string name="settings_language">ଭାସା</string>
     <string name="settings_language_system">ସିସ୍ଟାମ ଭାସା</string>
     <string name="settings_devices">ଜିନିସ</string>

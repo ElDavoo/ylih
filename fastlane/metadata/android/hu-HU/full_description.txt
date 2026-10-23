@@ -36,5 +36,6 @@ ENGEDÉLYEK
 • A közeli eszközök (bluetooth): szükséges a kapcsolódási események fogadásához és a fejhallgató nevének kiolvasásához. Nélküle a bluetooth-követés egyáltalán nem működhet.
 • Értesítések: csak a részletes követés értesítéséhez.
 • Indítás rendszerindításkor: hogy le tudja zárni azokat a munkameneteket, amiket a leállás sosem jelentett.
+• Értesítésekhez való hozzáférés (opcionális): csak ahhoz, hogy alkalmazásokat kihagyj a lejátszási időből. A ylih azt olvassa ki, melyik alkalmazás játszik le, az értesítéseidet soha.
 
 Nyílt forráskódú, MIT licenc alatt.
