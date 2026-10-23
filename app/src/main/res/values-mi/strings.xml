@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">kāore e wātea kia tukuna rā anō te urunga bluetooth: ka whakapuaki anake tēnei hanga i te momo ratonga connectedDevice, e herea ana e android 14+ ki tētahi whakaaetanga bluetooth.</string>
     <string name="settings_playback_only_title">tatau i te whakatangi anake</string>
     <string name="settings_playback_only_body">ka tatau ngā tatauranga i te wā i tino tangi te oro, kaua ko te wā i hono ai. ko ngā wātū anake i tuhia me te aroturuki taipitopito e kā ana i ine i te whakatangi; ka waihotia ngā toenga.</string>
+    <string name="settings_apps_title">waiho taupānga ki waho</string>
+    <string name="settings_apps_body">tangohia te tohu i tētahi taupānga, ā, kua kore tōna oro e kiia hei whakarongo — hei tauira he taupānga e whakatangi ana i te wahangūtanga kia hopu ai i ngā pātene o te taringa whakarongo. ka puta ngā taupānga ki konei ina oti i a rātou tētahi mea te whakatangi. ka kīia tēnei e android he urunga ki ngā whakamōhiotanga, ā, ka whakatūpato ka taea e ia te pānui whakamōhiotanga; ko te taupānga e whakatangi ana anake te mea ka pānuitia e ylih.</string>
     <string name="settings_language">reo</string>
     <string name="settings_language_system">reo pūnaha</string>
     <string name="settings_devices">pūrere</string>

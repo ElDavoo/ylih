@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth рөхсәт ләззым</string>
     <string name="settings_playback_only_title">тик уйнау вакыты</string>
     <string name="settings_playback_only_body">статистика уйнау вакыты</string>
+    <string name="settings_apps_title">кушымталарны чыгару</string>
+    <string name="settings_apps_body">кушымтаның билгесен алыгыз, аның тавышы башка тыңлау дип саналмас — мәсәлән, гарнитура төймәләрен тоту өчен тынлык уйната торган кушымта. кушымталар нәрсәдер уйнаткач монда күренә. android моны белдерүләргә керү дип атый һәм ул белдерүләрне укый ала дип кисәтә; ylih бары тик кайсы кушымта уйнаганын гына укый.</string>
     <string name="settings_language">тел</string>
     <string name="settings_language_system">систем теле</string>
     <string name="settings_devices">җәһәз</string>

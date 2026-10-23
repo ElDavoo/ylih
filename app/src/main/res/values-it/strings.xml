@@ -130,6 +130,8 @@
     <string name="settings_detailed_unavailable">non disponibile finché non concedi l’accesso al bluetooth: questa build dichiara solo il tipo di servizio connectedDevice, che android 14+ lega a un permesso bluetooth.</string>
     <string name="settings_playback_only_title">conta solo la riproduzione</string>
     <string name="settings_playback_only_body">le statistiche contano il tempo in cui l’audio stava davvero suonando invece del tempo di connessione. solo le sessioni registrate con il tracciamento dettagliato attivo hanno misurato la riproduzione; le altre restano fuori.</string>
+    <string name="settings_apps_title">escludi app</string>
+    <string name="settings_apps_body">togli la spunta a un’app e il suo suono smette di contare come ascolto — per esempio una che riproduce silenzio per intercettare i tasti delle cuffie. le app compaiono dopo aver riprodotto qualcosa. android lo chiama accesso alle notifiche e avverte che può leggerle; ylih legge solo quale app sta riproducendo.</string>
     <string name="settings_language">lingua</string>
     <string name="settings_language_system">lingua di sistema</string>
     <string name="settings_devices">dispositivi</string>

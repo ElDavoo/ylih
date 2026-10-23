@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth ruhsati berilmasa onergana yoq. ushbu quruллma faqat connectedDevice xizmatini elоn qiladi.</string>
     <string name="settings_playback_only_title">faqat choyon vaqtini sanоqlash</string>
     <string name="settings_playback_only_body">statistika ulanish vaqti orniga faqat choyon vaqtini sanоqlaydi. batafsil qonun bilan qayd etilgan seansle faqat.</string>
+    <string name="settings_apps_title">ilovalarni chiqarib tashlash</string>
+    <string name="settings_apps_body">ilovadan belgini olib tashlang, uning ovozi endi tinglash hisoblanmaydi — masalan, garnitura tugmalarini ushlash uchun jimlikni ijro etadigan ilova. ilovalar biror narsa ijro etgandan keyin shu yerda paydo bo‘ladi. android buni bildirishnomalarga kirish deb ataydi va u bildirishnomalarni o‘qiy olishi haqida ogohlantiradi; ylih faqat qaysi ilova ijro etayotganini o‘qiydi.</string>
     <string name="settings_language">til</string>
     <string name="settings_language_system">tizimning tili</string>
     <string name="settings_devices">qurilmalar</string>

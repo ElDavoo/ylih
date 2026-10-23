@@ -131,6 +131,8 @@
     <string name="settings_detailed_unavailable">otillgängligt tills bluetoothåtkomst har beviljats: den här versionen deklarerar bara tjänsttypen connectedDevice, som android 14+ kopplar till en bluetoothbehörighet.</string>
     <string name="settings_playback_only_title">räkna bara uppspelning</string>
     <string name="settings_playback_only_body">statistiken räknar tiden då ljudet faktiskt spelade i stället för tiden ansluten. bara sessioner som spelades in med detaljerad spårning påslagen har mätt uppspelning; resten lämnas utanför.</string>
+    <string name="settings_apps_title">utelämna appar</string>
+    <string name="settings_apps_body">avmarkera en app så räknas dess ljud inte längre som lyssning — till exempel en som spelar tystnad för att fånga headsetets knappar. appar visas när de har spelat något. android kallar detta aviseringsåtkomst och varnar för att den kan läsa aviseringar; ylih läser bara vilken app som spelar.</string>
     <string name="settings_language">språk</string>
     <string name="settings_language_system">systemspråk</string>
     <string name="settings_devices">enheter</string>

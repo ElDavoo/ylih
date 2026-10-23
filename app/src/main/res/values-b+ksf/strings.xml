@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ndap chi i-ba kilo bu bluetooth i-bu: nde yi gbin service type chi-connectedDevice yak, nde android 14+ i-ka bu bluetooth.</string>
     <string name="settings_playback_only_title">kont yak ma-playing</string>
     <string name="settings_playback_only_body">takwimu i-kont maa chi udio chi-ta halisi mamba chi-zu. nkpoong yak i-kanam kwa ka-tracking ka-nkpoong gbin ma-playing; zek i-ba futa.</string>
+    <string name="settings_apps_title">bak app</string>
+    <string name="settings_apps_body">bak ndap app, gbin chi bo ka ta yak ŋwaʼ — ka app chi a ŋgaʼ mfamba kwa ku-bak bouton headset. app chi i-zu fɛ́ ndɛ i-ta chi. android yak nda notification, i-ta ŋwaʼ notification; ylih ŋwaʼ app chi i-ta.</string>
     <string name="settings_language">lugha</string>
     <string name="settings_language_system">lugha ya system</string>
     <string name="settings_devices">simu</string>

@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">tidak tersedia sehingga akses bluetooth diberikan: binaan ini hanya mengisytiharkan jenis perkhidmatan connectedDevice, yang android 14+ kaitkan dengan kebenaran bluetooth.</string>
     <string name="settings_playback_only_title">kira main balik sahaja</string>
     <string name="settings_playback_only_body">statistik mengira masa audio benar-benar dimainkan dan bukan masa disambungkan. hanya sesi yang direkod dengan penjejakan terperinci dihidupkan mengukur main balik; selebihnya ditinggalkan.</string>
+    <string name="settings_apps_title">kecualikan apl</string>
+    <string name="settings_apps_body">nyahtanda apl dan bunyinya tidak lagi dikira sebagai mendengar — contohnya apl yang memainkan senyap untuk menangkap butang set kepala. apl muncul selepas ia memainkan sesuatu. android memanggil ini akses pemberitahuan dan memberi amaran bahawa ia boleh membaca pemberitahuan; ylih hanya membaca apl mana yang sedang dimainkan.</string>
     <string name="settings_language">bahasa</string>
     <string name="settings_language_system">bahasa sistem</string>
     <string name="settings_devices">peranti</string>

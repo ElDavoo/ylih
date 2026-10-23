@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth dondo alaafi</string>
     <string name="settings_playback_only_title">walli nda kul</string>
     <string name="settings_playback_only_body">jandi walli nda kul</string>
+    <string name="settings_apps_title">app yo kaa taray</string>
+    <string name="settings_apps_body">app foo tammaasa kaa, a jinda si ga lasaabu sanda hanga jeeri — sanda app kaŋ ga dangay kar se ka headset butɔnyo di. app yo ga bangay noŋ wo nda i kar hay foo. android ga ne woo se bangandi duuyan, a ga ci kaŋ a ga hin ka bangandi caw; ylih ga app kaŋ go ga kar hinne caw.</string>
     <string name="settings_language">kooy</string>
     <string name="settings_language_system">fondi kooy</string>
     <string name="settings_devices">gara</string>

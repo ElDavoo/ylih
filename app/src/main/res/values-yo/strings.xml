@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ti a ko ba gba ẹsẹ bluetooth: app yii ko sọ lẹ connectedDevice service type, eyiti android 14+ ba tẹ si ẹsẹ bluetooth.</string>
     <string name="settings_playback_only_title">ka isalaye nikan</string>
     <string name="settings_playback_only_body">iwe ka ise ti isalaye naa ṣiṣẹ dipo ise ti ba wa ninu. isèwa kan lo lokan isalaye pelu akiwé akiyesi; iyoku ko ni akiyesi.</string>
+    <string name="settings_apps_title">yọ àwọn ìṣàfilọ́lẹ̀ kúrò</string>
+    <string name="settings_apps_body">yọ àmì kúrò lára ìṣàfilọ́lẹ̀ kan, ohùn rẹ̀ kò ní kà sí gbígbọ́ mọ́ — bí ìṣàfilọ́lẹ̀ tó ń ṣe ìdákẹ́jẹ́ láti mú àwọn bọ́tìnnì agbekọ́rí. àwọn ìṣàfilọ́lẹ̀ máa ń hàn níbí lẹ́yìn tí wọ́n bá ti ṣe nǹkan. android pè é ní ìwọlé sí ìfitónilétí, ó sì kìlọ̀ pé ó lè ka àwọn ìfitónilétí; ylih ń ka ìṣàfilọ́lẹ̀ tó ń ṣiṣẹ́ nìkan.</string>
     <string name="settings_language">ede</string>
     <string name="settings_language_system">ede android</string>
     <string name="settings_devices">awon igwe</string>

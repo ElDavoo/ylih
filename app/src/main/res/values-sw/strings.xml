@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">haipatikani hadi ufikiaji wa bluetooth utolewe: toleo hili hutangaza aina ya huduma ya connectedDevice pekee, ambayo android 14+ huifunga na ruhusa ya bluetooth.</string>
     <string name="settings_playback_only_title">hesabu uchezaji pekee</string>
     <string name="settings_playback_only_body">takwimu huhesabu muda ambao sauti ilikuwa ikicheza kweli badala ya muda wa kuunganishwa. vipindi vilivyorekodiwa na ufuatiliaji wa kina ukiwa umewashwa pekee ndivyo vilipima uchezaji; vingine huachwa nje.</string>
+    <string name="settings_apps_title">acha programu nje</string>
+    <string name="settings_apps_body">ondoa alama kwenye programu na sauti yake haitahesabiwa tena kama kusikiliza — kwa mfano programu inayocheza ukimya ili kunasa vitufe vya vipokea sauti. programu huonekana hapa baada ya kucheza kitu. android huita hii ufikiaji wa arifa na huonya kuwa inaweza kusoma arifa; ylih husoma tu ni programu gani inacheza.</string>
     <string name="settings_language">lugha</string>
     <string name="settings_language_system">lugha ya mfumo</string>
     <string name="settings_devices">vifaa</string>

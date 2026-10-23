@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ayifumanekiyo kuze kube kuthunyelwe i-bluetooth: le building itsho nje iconnectedDevice service type, yo andoido 14+ ibophele ibluetooth permission.</string>
     <string name="settings_playback_only_title">ubala ixesha lokudlala kuphela</string>
     <string name="settings_playback_only_body">isitayistiki sibala ixesha lokudlala ngokwenene kunokuba ixhume. iisession eziqaliwe kunye nokufikelela inkcazo kugqithisele kulinganiswa; abaye bakuba ekunene balahla.</string>
+    <string name="settings_apps_title">khupha ii-app</string>
+    <string name="settings_apps_body">susa uphawu kwi-app kwaye isandi sayo asisayi kubalwa njengokuphulaphula — njenge-app edlala ukuthula ukuze ibambe amaqhosha e-headset. ii-app zivela apha emva kokuba zidlale into. i-android ibiza oku ngokuba kukufikelela kwizaziso kwaye ilumkisa ukuba ingafunda izaziso; i-ylih ifunda kuphela ukuba yeyiphi i-app edlalayo.</string>
     <string name="settings_language">ulwimi</string>
     <string name="settings_language_system">ulwimi lesistimu</string>
     <string name="settings_devices">isixhobo</string>

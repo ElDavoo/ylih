@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">ba ga kaa sanda bluetooth ka haya ne: sanda kabu ga connectedDevice gaskuya gonda haali, android 14+ ga bluetooth haya ga kirey ne.</string>
     <string name="settings_playback_only_title">ido hinne cindi</string>
     <string name="settings_playback_only_body">hisaabey ga alwaati kaŋ jinde goono ga ido cimi cindi, manti alwaati kaŋ i margu. sessiyon kaŋ i hantum hangarey gara ganda go ga tunandi hinne no ka ido neesi; cindey i g’i naŋ.</string>
+    <string name="settings_apps_title">app yaŋ kaa taray</string>
+    <string name="settings_apps_body">app foo tammaasa kaa, a jinda si ga ŋwaaru sanda hangan koyne — sanda app kaŋ ga dangay kar zama a ma headset butɔŋey di. app yaŋ ga bangay neewo d’i na hayfoo kar. android ga ne woo se bangandiyaŋ duuyan, a ga ci kaŋ a ga hin ka bangandiyaŋ caw; ylih ga app kaŋ go ga kar hinne caw.</string>
     <string name="settings_language">sanni</string>
     <string name="settings_language_system">sistem sanni</string>
     <string name="settings_devices">borey</string>

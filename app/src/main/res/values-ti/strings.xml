@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ብሉቱዝ ኣይምገናን</string>
     <string name="settings_playback_only_title">ምስጅ ሰዓት ብቻ</string>
     <string name="settings_playback_only_body">ስታት ሰዓት ምስጅ ብ ብቻ</string>
+    <string name="settings_apps_title">ኣፕሊኬሽናት ኣውጽእ</string>
+    <string name="settings_apps_body">ምልክት ናይ ሓደ ኣፕሊኬሽን ኣልግስ፣ ድምጹ ድማ ደጊም ከም ምስማዕ ኣይቍጸርን — ንኣብነት ናይ ሰምዒ መልጎማት ንምሓዝ ስቕታ ዘጻውት ኣፕሊኬሽን። ኣፕሊኬሽናት ገለ ነገር ምስ ኣጻወቱ ኣብዚ ይርኣዩ። android እዚ ናይ መፍለጢ ምብጻሕ ይብሎ፣ መፍለጥታት ከንብብ ከም ዝኽእል ድማ የጠንቅቕ፤ ylih እቲ ዝጻወት ዘሎ ኣፕሊኬሽን ጥራይ የንብብ።</string>
     <string name="settings_language">ቋንቋ</string>
     <string name="settings_language_system">ቋንቋ ስራሕ</string>
     <string name="settings_devices">መወከሲ</string>

@@ -21,7 +21,8 @@ import org.robolectric.annotation.Config
 @Config(sdk = [Build.VERSION_CODES.UPSIDE_DOWN_CAKE])
 class SettingsStoreTest {
 
-    private val settings = (ApplicationProvider.getApplicationContext() as YlihApp).container.settings
+    private val app = ApplicationProvider.getApplicationContext() as YlihApp
+    private val settings = app.container.settings
 
     /**
      * Pins the failure that made the welcome and hibernation prompts vanish: collected together,
@@ -112,5 +113,54 @@ class SettingsStoreTest {
     fun `an interval the settings never offer reads as the default`() = runBlocking {
         settings.setAutoBackupEvery(3)
         assertEquals(7, settings.autoBackupNow().everyDays)
+    }
+
+    @Test
+    fun `apps are left out and let back in one at a time`() = runBlocking {
+        settings.setAppExcluded("com.llamalab.automate", excluded = true)
+        settings.setAppExcluded("org.example.noise", excluded = true)
+        settings.setAppExcluded("org.example.noise", excluded = false)
+
+        assertEquals(setOf("com.llamalab.automate"), settings.excludedApps.first())
+    }
+
+    @Test
+    fun `apps seen playing are only ever added to`() = runBlocking {
+        settings.recordSeenApps(setOf("com.spotify.music"))
+        settings.recordSeenApps(setOf("com.llamalab.automate"))
+        settings.recordSeenApps(emptySet())
+
+        assertEquals(setOf("com.spotify.music", "com.llamalab.automate"), settings.seenApps.first())
+    }
+
+    /**
+     * Settings reports what is playing every time it comes to the front. Rewriting an unchanged
+     * row each time would re-run every settings observer in the app for nothing.
+     */
+    @Test
+    fun `reporting apps already seen writes nothing`() = runBlocking {
+        settings.recordSeenApps(setOf("com.spotify.music", "com.llamalab.automate"))
+        val emissions = mutableListOf<Map<String, String>>()
+        val collector = launch {
+            app.container.database.settingsDao().observeAll()
+                .collect { rows -> emissions += rows.associate { it.key to it.value } }
+        }
+        while (emissions.isEmpty()) delay(10)
+
+        settings.recordSeenApps(setOf("com.spotify.music"))
+        delay(200)
+        collector.cancel()
+
+        assertEquals(1, emissions.size)
+    }
+
+    @Test
+    fun `the same apps always read back as the same row`() = runBlocking {
+        // Sorted, so the row's own distinctUntilChanged sees an unchanged set as unchanged.
+        settings.recordSeenApps(setOf("b.app", "a.app"))
+        assertEquals(
+            "a.app,b.app",
+            app.container.database.settingsDao().getAll().single { it.key == SettingsStore.SEEN_APPS }.value,
+        )
     }
 }
