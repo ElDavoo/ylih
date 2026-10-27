@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">babu sai a buɗe bluetooth: jiyya ne ya aika connectedDevice nau’i ne kawai, wanda android 14+ ke rike da bluetooth izini.</string>
     <string name="settings_playback_only_title">ƙidaya wasa kaɗai</string>
     <string name="settings_playback_only_body">lissafin ƙidaya lokaci sauti a wasa da gaske a maimakon lokaci haɗe. sai zaman da aka riƙa tare binciken zuriya wasa; sauran ake ajiye.</string>
+    <string name="settings_apps_title">cire manhajoji</string>
+    <string name="settings_apps_body">cire alamar manhaja kuma ba za a ƙara ƙirga sautinta a matsayin saurare ba — kamar manhajar da ke kunna shiru don kama maɓallan belun kunne. manhajoji suna bayyana a nan bayan sun kunna wani abu. android tana kiran wannan damar shiga sanarwa kuma tana gargaɗin cewa za ta iya karanta sanarwa; ylih tana karanta manhajar da ke kunnawa kawai.</string>
     <string name="settings_language">harshe</string>
     <string name="settings_language_system">harshen tsarin</string>
     <string name="settings_devices">na’ura</string>

@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">بلیو ٹوتھ رسائی کی ضرورت ہے</string>
     <string name="settings_playback_only_title">صرف پلے بیک وقت</string>
     <string name="settings_playback_only_body">اعدادوشمار صرف پلے بیک وقت شمار کرتے ہیں</string>
+    <string name="settings_apps_title">ایپس کو باہر رکھیں</string>
+    <string name="settings_apps_body">کسی ایپ کا نشان ہٹائیں اور اس کی آواز اب سننے میں شمار نہیں ہوگی — جیسے ہیڈسیٹ کے بٹن پکڑنے کے لیے خاموشی بجانے والی ایپ۔ ایپس کچھ بجانے کے بعد یہاں دکھائی دیتی ہیں۔ android اسے اطلاعات تک رسائی کہتا ہے اور خبردار کرتا ہے کہ یہ اطلاعات پڑھ سکتی ہے؛ ylih صرف یہ پڑھتا ہے کہ کون سی ایپ بج رہی ہے۔</string>
     <string name="settings_language">زبان</string>
     <string name="settings_language_system">سسٹم زبان</string>
     <string name="settings_devices">آلات</string>

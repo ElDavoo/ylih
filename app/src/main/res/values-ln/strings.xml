@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">te na motema ata bluetooth te: bilakisi oyo te ya komanda kina se ya connectedDevice, oyo android 14+ ezali na bluetooth.</string>
     <string name="settings_playback_only_title">mbalá somi kina ko</string>
     <string name="settings_playback_only_body">statistike ezali kobakala motema oyo somi esali verament invezi de motema oyo kovanda. kina se bilakisi eleki na kosala kya koa kya makingi eleki somi; mosusu ezali lasama.</string>
+    <string name="settings_apps_title">longola ba application</string>
+    <string name="settings_apps_body">longola elembo na application moko mpe lokito na yango ekotangama lisusu te lokola koyoka — lokola application oyo ebetaka kimya mpo na kokanga babouton ya casque. ba application emonanaka awa soki ebeti eloko. android ebengaka yango nzela ya koyeba ba notification mpe ekebisaka ete ekoki kotánga ba notification; ylih etángaka kaka application nini ezali kobeta.</string>
     <string name="settings_language">lokota</string>
     <string name="settings_language_system">lokota ya sisitimu</string>
     <string name="settings_devices">bilokolo</string>

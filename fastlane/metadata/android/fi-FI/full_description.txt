@@ -36,5 +36,6 @@ KÄYTTÖOIKEUDET
 • Lähellä olevat laitteet (bluetooth): tarvitaan yhteystapahtumien vastaanottamiseen ja kuulokkeiden nimen lukemiseen. Ilman sitä bluetooth-seuranta ei toimi lainkaan.
 • Ilmoitukset: vain tarkan seurannan ilmoitusta varten.
 • Käynnistys laitteen käynnistyessä: sulkee sessiot, joista sammutus ei koskaan ilmoittanut.
+• Ilmoitusten käyttöoikeus (valinnainen): vain sovellusten jättämiseen pois toistoajasta. ylih lukee, mikä sovellus toistaa, ei koskaan ilmoituksiasi.
 
 Avoin lähdekoodi, MIT-lisenssi.

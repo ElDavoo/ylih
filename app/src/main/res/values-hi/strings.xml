@@ -131,6 +131,8 @@
     <string name="settings_detailed_unavailable">ब्लूटूथ की अनुमति मिलने तक उपलब्ध नहीं: यह बिल्ड सिर्फ connectedDevice सेवा प्रकार घोषित करता है, जिसे android 14+ ब्लूटूथ अनुमति से जोड़ता है।</string>
     <string name="settings_playback_only_title">सिर्फ़ प्लेबैक गिनें</string>
     <string name="settings_playback_only_body">आँकड़े कनेक्ट रहने के समय की जगह ऑडियो के असल में चलने का समय गिनते हैं। सिर्फ़ वे सेशन जो विस्तृत ट्रैकिंग चालू रहते रिकॉर्ड हुए, उनमें प्लेबैक मापा गया; बाक़ी छोड़ दिए जाते हैं।</string>
+    <string name="settings_apps_title">ऐप्स को बाहर रखें</string>
+    <string name="settings_apps_body">किसी ऐप का निशान हटाएँ और उसकी आवाज़ सुनने में नहीं गिनी जाएगी — जैसे कोई ऐप जो हेडसेट के बटन पकड़ने के लिए खामोशी बजाता है। ऐप्स यहाँ तब दिखते हैं जब वे कुछ बजा चुके हों। android इसे सूचना ऐक्सेस कहता है और चेतावनी देता है कि इससे सूचनाएँ पढ़ी जा सकती हैं; ylih सिर्फ़ यह पढ़ता है कि कौन-सा ऐप बज रहा है।</string>
     <string name="settings_language">भाषा</string>
     <string name="settings_language_system">सिस्टम की भाषा</string>
     <string name="settings_devices">डिवाइस</string>

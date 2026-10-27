@@ -36,5 +36,6 @@ BEHÖRIGHETER
 • Enheter i närheten (bluetooth): krävs för att ta emot anslutningshändelser och läsa ett headsets namn. Utan den kan bluetoothspårning inte fungera alls.
 • Aviseringar: endast för aviseringen om detaljerad spårning.
 • Kör vid start: för att stänga sessioner som avstängningen aldrig rapporterade.
+• Åtkomst till aviseringar (valfritt): endast för att utesluta appar från uppspelningstiden. ylih läser vilken app som spelar, aldrig dina aviseringar.
 
 Öppen källkod under MIT-licensen.

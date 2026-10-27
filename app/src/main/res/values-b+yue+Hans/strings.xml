@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">未可用，直到授予蓝牙访问权限：呢个版本净系声明咗 connectedDevice 服务类型，安卓 14+ 会将佢与蓝牙权限关联。</string>
     <string name="settings_playback_only_title">净系计数播放</string>
     <string name="settings_playback_only_body">统计计数实际播放音频嘅时间，而唔系连接时间。净系有使用详细追踪记录嘅节段先至测量播放时间；其他嘅被排除。</string>
+    <string name="settings_apps_title">排除应用</string>
+    <string name="settings_apps_body">剔走某个应用，佢嘅声就唔再计做收听——例如为咗截耳机掣而播静音嘅应用。应用播过嘢之后就会喺度出现。android 叫呢样做通知存取权，仲会警告佢可以读通知；ylih 净系读边个应用喺度播。</string>
     <string name="settings_language">语言</string>
     <string name="settings_language_system">系统语言</string>
     <string name="settings_devices">设备</string>

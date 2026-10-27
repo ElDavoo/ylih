@@ -36,5 +36,6 @@ MACHTIGINGEN
 • Apparaten in de buurt (bluetooth): nodig om verbindingsgebeurtenissen te ontvangen en de naam van een koptelefoon te lezen. Zonder deze machtiging kan bluetooth-tracking helemaal niet werken.
 • Meldingen: alleen voor de melding van gedetailleerd bijhouden.
 • Uitvoeren bij opstarten: om sessies af te sluiten die het afsluiten nooit heeft gemeld.
+• Toegang tot meldingen (optioneel): alleen om apps buiten de afspeeltijd te houden. ylih leest welke app afspeelt, nooit je meldingen.
 
 Open source onder de MIT-licentie.

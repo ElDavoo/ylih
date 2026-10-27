@@ -7,6 +7,8 @@ import it.eldavo.ylih.agent.pushAgentAccess
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 
 /**
  * Two-mode switch described in the README: Bluetooth tracking needs nothing running; wired and
@@ -79,6 +81,19 @@ class SettingsStore(
     val language: Flow<String> = text(LANGUAGE).map { it ?: "" }
 
     /**
+     * Apps whose playback does not count as listening, by package name — see
+     * `tracking/MediaSessions.kt`. Portable, unlike the backup folder below: a package name means
+     * the same app on the next phone, so these travel in a JSON backup.
+     */
+    val excludedApps: Flow<Set<String>> = text(EXCLUDED_APPS).map(::packagesOf)
+
+    /**
+     * Apps ever seen claiming playback: the ones settings offers to leave out, since an app that
+     * never says it is playing could not be told apart even if it were listed.
+     */
+    val seenApps: Flow<Set<String>> = text(SEEN_APPS).map(::packagesOf)
+
+    /**
      * Where and how often ylih writes a backup by itself, and how the last attempt went — see
      * `export/AutoBackup.kt`. One flow rather than four: the settings screen draws all of it as
      * one block, and the worker reads it as one decision.
@@ -135,6 +150,21 @@ class SettingsStore(
         pushAgentAccess(appContext, enabled)
     }
 
+    suspend fun setAppExcluded(packageName: String, excluded: Boolean) = packageRows.withLock {
+        val current = packagesOf(textNow(EXCLUDED_APPS))
+        put(EXCLUDED_APPS, packagesRow(if (excluded) current + packageName else current - packageName))
+    }
+
+    /**
+     * Adds to [seenApps], writing only when something is new — settings reports what is playing
+     * every time it comes to the front, and an unchanged row rewritten each time would wake every
+     * settings observer for nothing.
+     */
+    suspend fun recordSeenApps(packageNames: Set<String>) = packageRows.withLock {
+        val current = packagesOf(textNow(SEEN_APPS))
+        if (!current.containsAll(packageNames)) put(SEEN_APPS, packagesRow(current + packageNames))
+    }
+
     suspend fun setOnboardingDone(done: Boolean) = put(ONBOARDING_DONE, done.toString())
 
     suspend fun setHibernationAsked(asked: Boolean) = put(HIBERNATION_ASKED, asked.toString())
@@ -169,6 +199,19 @@ class SettingsStore(
 
     private suspend fun put(key: String, value: String) = dao.put(SettingEntity(key, value))
 
+    /**
+     * Held across each read-modify-write of a package row. The service and the settings screen
+     * both add to [seenApps], from different scopes, and the table has no way to append.
+     */
+    private val packageRows = Mutex()
+
+    // A package name cannot hold a comma, so one is a safe separator — and sorted, so the same set
+    // always reads back as the same row and `distinctUntilChanged` can see it hasn't moved.
+    private fun packagesOf(row: String?): Set<String> =
+        row.orEmpty().split(',').filter { it.isNotEmpty() }.toSet()
+
+    private fun packagesRow(packages: Set<String>): String = packages.sorted().joinToString(",")
+
     // An empty value stands for an absent row: the table has no delete, and turning backups off
     // has to un-set a folder.
     private fun autoBackupOf(rows: Map<String, String>) = AutoBackupState(
@@ -202,6 +245,8 @@ class SettingsStore(
         const val PLAYBACK_ONLY = "playback_only_stats"
         const val AGENT_ACCESS = "agent_access"
         const val LANGUAGE = "language"
+        const val EXCLUDED_APPS = "playback_excluded_apps"
+        const val SEEN_APPS = "playback_seen_apps"
         const val AUTO_BACKUP_URI = "auto_backup_uri"
         const val AUTO_BACKUP_EVERY_DAYS = "auto_backup_every_days"
         const val AUTO_BACKUP_LAST_OK = "auto_backup_last_ok"

@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">تر هغه وخت دستیاب نشته چې بلوټوث رسائی ورکړی شي: دا جوړه یوازې connectedDevice خدمت قسم اعلان کوي، کوم اندروید 14+ د بلوټوث اجازت سره تي کوي.</string>
     <string name="settings_playback_only_title">یوازې چلاوي شمار کړئ</string>
     <string name="settings_playback_only_body">احصائیه د متصل وخت پرځای آڈیو چلاوي شمار کول. یوازې جلسې د تفصيلی تعقیب سره ثبت شوې اندازه شدې چلاوي؛ باقي نه شو.</string>
+    <string name="settings_apps_title">اپلیکیشنونه بهر کړئ</string>
+    <string name="settings_apps_body">د یوه اپلیکیشن نښه لرې کړئ او غږ به یې نور د اورېدو په توګه ونه شمېرل شي — د بېلګې په توګه هغه اپلیکیشن چې د هېډسېټ تڼۍ نیولو لپاره چوپتیا غږوي. اپلیکیشنونه وروسته له دې چې څه وغږوي دلته ښکاري. android دې ته د خبرتیاوو لاسرسی وايي او خبرداری ورکوي چې خبرتیاوې لوستلی شي؛ ylih یوازې دا لولي چې کوم اپلیکیشن غږېږي.</string>
     <string name="settings_language">ژبه</string>
     <string name="settings_language_system">سسټم ژبه</string>
     <string name="settings_devices">وسایل</string>

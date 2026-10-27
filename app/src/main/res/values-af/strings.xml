@@ -130,6 +130,8 @@
     <string name="settings_detailed_unavailable">onbeskikbaar totdat bluetooth-toegang verleen word: hierdie bou verklaar slegs die connectedDevice-dienstipe, wat android 14+ aan ’n bluetooth-toestemming bind.</string>
     <string name="settings_playback_only_title">tel net terugspeel</string>
     <string name="settings_playback_only_body">statistieke tel die tyd wat klank werklik gespeel het, nie die tyd gekoppel nie. net sessies wat met gedetailleerde opvolging aan opgeneem is, het terugspeel gemeet; die res word weggelaat.</string>
+    <string name="settings_apps_title">laat toepassings uit</string>
+    <string name="settings_apps_body">ontmerk ’n toepassing en sy klank tel nie meer as luister nie — byvoorbeeld een wat stilte speel om kopstelknoppies te vang. toepassings verskyn sodra hulle iets gespeel het. android noem dit kennisgewingtoegang en waarsku dat dit kennisgewings kan lees; ylih lees net watter toepassing speel.</string>
     <string name="settings_language">taal</string>
     <string name="settings_language_system">stelseltaal</string>
     <string name="settings_devices">toestelle</string>

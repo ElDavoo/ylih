@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">հասանելի չէ, մինչ bluetooth թույլտվություն տրվի. այս տարբերակն ունի միայն connectedDevice ծառայության տեսակը, որը android 14+ կապում է bluetooth թույլտվության հետ</string>
     <string name="settings_playback_only_title">հաշվել միայն հատոկ</string>
     <string name="settings_playback_only_body">վիճակագրությունը հաշվում է ձայն գործակցման ժամանակ, բայց ոչ միացման: միայն մանրամասն հետևմամբ հատկացված սեսիաներ չափել հատոկ; մնացածը բաց թողնված են</string>
+    <string name="settings_apps_title">բացառել հավելվածները</string>
+    <string name="settings_apps_body">հանիր հավելվածի նշումը, և նրա ձայնն այլևս չի հաշվվի որպես լսում — օրինակ՝ մի հավելվածի, որը լռություն է նվագարկում՝ ականջակալի կոճակները որսալու համար։ հավելվածները հայտնվում են, երբ ինչ-որ բան են նվագարկել։ android-ը սա անվանում է ծանուցումների հասանելիություն և զգուշացնում, որ այն կարող է կարդալ ծանուցումները. ylih-ը կարդում է միայն, թե որ հավելվածն է նվագարկում։</string>
     <string name="settings_language">լեզու</string>
     <string name="settings_language_system">համակարգի լեզու</string>
     <string name="settings_devices">սարքեր</string>

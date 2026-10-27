@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">bluetooth иҹазәси вериләнә гәдәр мөвҹуд дејил: бу гурғу јалныз ҹоннеҹтедДевиҹе хидмәт типини елан едир, андроид 14+ буну bluetooth иҹазәсинә бағлајыр.</string>
     <string name="settings_playback_only_title">јалныз охутманы сај</string>
     <string name="settings_playback_only_body">статистика гошулма вахты әвәзинә сәсин һәгигәтән охундуғу вахты сајыр. јалныз әтрафлы изләмә ачыг икән гејдә алынан сессијалар охутманы өлчүб; галанлары чыхарылыр.</string>
+    <string name="settings_apps_title">тәтбигләри истисна ет</string>
+    <string name="settings_apps_body">тәтбигин ишарәсини ҝөтүрүн, онун сәси артыг динләмә сајылмајаҹаг — мәсәлән, гулаглығын дүјмәләрини тутмаг үчүн сүкут сәсләндирән тәтбиг. тәтбигләр нәсә сәсләндирдикдән сонра бурада ҝөрүнүр. android буну билдириш ҝириши адландырыр вә онун билдиришләри охуја биләҹәји барәдә хәбәрдарлыг едир; ylih јалныз һансы тәтбигин сәсләндирдијини охујур.</string>
     <string name="settings_language">дил</string>
     <string name="settings_language_system">систем дили</string>
     <string name="settings_devices">ҹиһазлар</string>

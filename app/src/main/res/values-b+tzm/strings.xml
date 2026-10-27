@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth ur yufan</string>
     <string name="settings_playback_only_title">awick nkul</string>
     <string name="settings_playback_only_body">tisqifin waqt awick nkul</string>
+    <string name="settings_apps_title">kkes isnasn</string>
+    <string name="settings_apps_body">kkes ticreḍt ɣef usnas, imesli-nns ur da ittwaḥsab d asmesli — am usnas lli itteɣrin tasusmi bac ad yamẓ tiqeffalin n tmeẓẓuɣt. isnasn ttbanen-d da ɣikad sɣrn kra. android isemma-as anekcum ɣer ilɣa d ad iwelleh is izmer ad iɣer ilɣa; ylih iɣerra ɣas manwa asnas lli itteɣrin.</string>
     <string name="settings_language">tutlayt</string>
     <string name="settings_language_system">tutlayt n usasf</string>
     <string name="settings_devices">inagrawen</string>

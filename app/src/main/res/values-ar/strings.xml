@@ -130,6 +130,8 @@
     <string name="settings_detailed_unavailable">غير متاح حتى يُمنح الوصول إلى bluetooth: يعلن هذا الإصدار فقط عن نوع الخدمة connectedDevice، الذي يربطه android 14 وما بعده بإذن bluetooth.</string>
     <string name="settings_playback_only_title">احتساب التشغيل فقط</string>
     <string name="settings_playback_only_body">تحتسب الإحصاءات الوقت الذي كان الصوت يعمل فيه فعلاً بدلاً من وقت الاتصال. الجلسات المسجّلة أثناء تفعيل التتبع التفصيلي وحدها قاست التشغيل، أما البقية فتُستبعد.</string>
+    <string name="settings_apps_title">استبعاد تطبيقات</string>
+    <string name="settings_apps_body">ألغِ تحديد تطبيق فيتوقف احتساب صوته استماعًا — مثل تطبيق يشغّل صمتًا لالتقاط أزرار سماعة الرأس. تظهر التطبيقات هنا بعد أن تشغّل شيئًا. يسمّي android هذا الوصول إلى الإشعارات ويحذّر من أنه يتيح قراءة الإشعارات؛ لا يقرأ ylih سوى التطبيق الذي يشغّل الصوت.</string>
     <string name="settings_language">اللغة</string>
     <string name="settings_language_system">لغة النظام</string>
     <string name="settings_devices">الأجهزة</string>

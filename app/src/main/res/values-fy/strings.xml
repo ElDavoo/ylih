@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">net beskikber oant bluetooth-tagong waard jûn: dit bouwsel deklarearret allinnich it connectedDevice-tsjinst-type, dat android 14+ oan in bluetooth-berjochting bindt.</string>
     <string name="settings_playback_only_title">allinnich ôfspeel telle</string>
     <string name="settings_playback_only_body">statistiken telle de tiid dat de audio wirklik ôfspiele waard ynstee fan de tiid ferbûn. allinnich sesjes registrearre mei detaillearre spanning oan gementen ôfspeel; de rest wurde efterlaten.</string>
+    <string name="settings_apps_title">apps útslute</string>
+    <string name="settings_apps_body">wiskje it fakje by in app út en it lûd dêrfan telt net mear as harkjen — bygelyks in app dy’t stilte ôfspilet om de knoppen fan de headset op te fangen. apps ferskine sa gau’t se wat ôfspile hawwe. android neamt dit tagong ta notifikaasjes en warskôget dat dy notifikaasjes lêze kin; ylih lêst allinne hokker app der spilet.</string>
     <string name="settings_language">taal</string>
     <string name="settings_language_system">systeem-taal</string>
     <string name="settings_devices">apparaten</string>

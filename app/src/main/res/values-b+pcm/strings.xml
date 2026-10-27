@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">e no dey available until you give bluetooth access: dis build only dey declare connectedDevice service type, wey android 14+ tie to bluetooth permission.</string>
     <string name="settings_playback_only_title">count only wetin play</string>
     <string name="settings_playback_only_body">stats dey count di time wey audio really dey play instead of di time wey e connect. na only session wey dem record wen detailed tracking dey on measure playback; di rest dem leave am out.</string>
+    <string name="settings_apps_title">comot some apps</string>
+    <string name="settings_apps_body">comot di mark for one app and im sound no go count as listening again — like app wey dey play silence to catch headset button. apps dey show for here after dem don play something. android dey call am notification access and e dey warn say e fit read notification; ylih only dey read which app dey play.</string>
     <string name="settings_language">language</string>
     <string name="settings_language_system">di system language</string>
     <string name="settings_devices">devices</string>
