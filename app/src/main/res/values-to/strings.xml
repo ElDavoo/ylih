@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth ʻe ʻuhinga</string>
     <string name="settings_playback_only_title">meʻa talinga noka fonuʻi</string>
     <string name="settings_playback_only_body">lolotonga kakato e taimi talinga noka</string>
+    <string name="settings_apps_title">tuku ki tuʻa ʻa e ngaahi ʻapi</string>
+    <string name="settings_apps_body">toʻo ʻa e fakaʻilonga mei ha ʻapi pea ʻe ʻikai toe lau hono leʻo ko e fanongo — hangē ko ha ʻapi ʻoku ne tā ʻa e fakalongolongo ke puke ʻa e ngaahi meʻa lomiʻi ʻo e meʻa fanongo. ʻoku hā mai ʻa e ngaahi ʻapi ʻi heni hili ʻenau tā ha meʻa. ʻoku ui ʻe android ʻeni ko e hū ki he ngaahi fakatokanga pea ʻoku ne fakatokanga ʻe lava ke ne lau ʻa e ngaahi fakatokanga; ʻoku lau pē ʻe ylih ʻa e ʻapi ʻoku tā.</string>
     <string name="settings_language">lea</string>
     <string name="settings_language_system">lea ʻa e meʻa fai</string>
     <string name="settings_devices">fakamea</string>

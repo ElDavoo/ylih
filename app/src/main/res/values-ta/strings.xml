@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">புளூடூத் அணுகல் வழங்கப்படும் வரை கிடைக்காது: இந்தப் பதிப்பு connectedDevice சேவை வகையை மட்டுமே அறிவிக்கிறது, அதை android 14+ புளூடூத் அனுமதியுடன் இணைக்கிறது.</string>
     <string name="settings_playback_only_title">ஒலிபரப்பை மட்டும் எண்ணு</string>
     <string name="settings_playback_only_body">இணைந்திருந்த நேரத்திற்குப் பதிலாக ஒலி உண்மையில் இயங்கிய நேரத்தைப் புள்ளிவிவரம் எண்ணுகிறது. விரிவான கண்காணிப்பு இயக்கப்பட்டிருந்தபோது பதிவான அமர்வுகள் மட்டுமே ஒலிபரப்பை அளந்தன; மற்றவை விடப்படுகின்றன.</string>
+    <string name="settings_apps_title">ஆப்ஸைத் தவிர்</string>
+    <string name="settings_apps_body">ஒரு ஆப்ஸின் தேர்வை நீக்கினால் அதன் ஒலி இனி கேட்டலாகக் கணக்கிடப்படாது — எடுத்துக்காட்டாக, ஹெட்செட் பொத்தான்களைப் பிடிக்க மௌனத்தை இயக்கும் ஆப்ஸ். ஆப்ஸ் ஏதாவது இயக்கிய பிறகு இங்கே தோன்றும். android இதை அறிவிப்பு அணுகல் என்று அழைத்து, அது அறிவிப்புகளைப் படிக்கலாம் என்று எச்சரிக்கிறது; எந்த ஆப்ஸ் இயங்குகிறது என்பதை மட்டுமே ylih படிக்கிறது.</string>
     <string name="settings_language">மொழி</string>
     <string name="settings_language_system">சிஸ்டம் மொழி</string>
     <string name="settings_devices">சாதனங்கள்</string>

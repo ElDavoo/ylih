@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">bluetooth অ্যাক্সেস প্রদান না হোৱা পৰ্যন্ত উপলব্ধ নহয়: এই বিল্ড কেৱল connectedDevice সেবা প্ৰকাৰ ঘোষণা কৰে, যি android 14+ bluetooth অনুমতিত বান্ধে।</string>
     <string name="settings_playback_only_title">কেৱল প্লেবেক গণনা কৰক</string>
     <string name="settings_playback_only_body">পৰিসংখ্যাই সংযোগ থকা সময়ৰ সলনি অডিঅ’ প্ৰকৃততে বাজি থকা সময় গণনা কৰে। কেৱল বিস্তৃত ট্ৰেকিং অন থকা অৱস্থাত ৰেকৰ্ড হোৱা ছেছনেহে প্লেবেক জুখিছিল; বাকীবোৰ বাদ দিয়া হয়।</string>
+    <string name="settings_apps_title">এপ বাদ দিয়ক</string>
+    <string name="settings_apps_body">এটা এপৰ টিক আঁতৰাওক আৰু ইয়াৰ শব্দ আৰু শুনা বুলি গণনা নহ’ব — যেনে হেডছেটৰ বুটাম ধৰিবলৈ নিস্তব্ধতা বজোৱা এপ। এপবোৰে কিবা বজোৱাৰ পিছত ইয়াত দেখা দিয়ে। android এ ইয়াক জাননী এক্সেছ বুলি কয় আৰু সতৰ্ক কৰে যে ই জাননী পঢ়িব পাৰে; ylih এ কেৱল কোনটো এপ বাজি আছে সেয়া পঢ়ে।</string>
     <string name="settings_language">ভাষা</string>
     <string name="settings_language_system">ছিষ্টেমৰ ভাষা</string>
     <string name="settings_devices">ডিভাইস</string>

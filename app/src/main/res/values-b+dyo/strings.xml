@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">anaa bayandi jabe bluetooth ba bukandu ba: build yi ma caani connectedDevice ba gani, android 14+ ma gani a bluetooth ba bukandu.</string>
     <string name="settings_playback_only_title">furak caani ɔrɔ</string>
     <string name="settings_playback_only_body">furakaŋ e furak waktu bu caani ecaan bare, bare waktu bu tayoy. sesyoŋ su e sikat na tayoy ba bu coñon ɔrɔ su e waray caani; su siyaŋ su e bɔ.</string>
+    <string name="settings_apps_title">nofandi app</string>
+    <string name="settings_apps_body">nofandi bu sibti bu app, se kaan ab ma kaanuŋ nabuŋ — be app ba kaanuŋ mujaam di jaw butoŋ ba headset. app eya eŋ yi bu tayoy waray. android kaan ati notification, nan kaanuŋ notification; ylih kaanuŋ app ba tayoy.</string>
     <string name="settings_language">kalanŋ</string>
     <string name="settings_language_system">kalanŋ ka sistem</string>
     <string name="settings_devices">yindoo</string>

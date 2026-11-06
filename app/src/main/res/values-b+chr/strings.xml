@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">ᎤᏁᎩᏰᏒ bluetooth ᎨᎮᎵᏍᎬ ᎠᏂᏜᎩ ᎢᎦᎳ: ᏕᎦᏚ ᏄᏤ connectedDevice ᏕᏓᎳᎵ ᎦᏴ ᏥᏟ, android 14+ ᏰᎩᏁ bluetooth ᎨᎮᎵᏍᎬ ᎨᏒ.</string>
     <string name="settings_playback_only_title">ᎾᎪᎾᏓ ᎤᏩᏒ ᎠᏎᏍᏗ</string>
     <string name="settings_playback_only_body">ᏗᎦᏎᏍᏗ ᏓᏎᏍᎦ ᎢᎪᎯᏛ ᎾᎪᎾᏓ ᎤᏙᎯᏳᏒ ᎨᏒᎢ, ᎥᏝ ᎢᎪᎯᏛ ᏗᎧᏁᏤᎸᎯ ᏱᎩ. ᏰᎩᏂᏃᎩ ᏚᏐᏕ ᎠᎧᎵᎢ ᎨᏒ ᏥᏓᏥᏲᏒ ᎤᏩᏒ ᏚᏟᎶᏒ ᎾᎪᎾᏓ; ᎠᏂᏐᎢ ᎨᏥᏯᏙᎸᎯ.</string>
+    <string name="settings_apps_title">ᏗᏓᏁᏟᏴᏍᏙᏗ ᏙᏱᏗᏢ ᏩᏂᏴ</string>
+    <string name="settings_apps_body">ᏗᏓᏁᏟᏴᏍᏙᏗ ᎤᏰᎸᏗ ᎯᏁᏍᏓᏗ, ᎾᏍᎩᏃ ᎧᏁᎬ ᎥᏝ ᎠᏛᎪᏗ ᏱᏚᏎᎪ — ᎾᏍᎩᏯ ᏗᏓᏁᏟᏴᏍᏙᏗ ᏅᏬᏘ ᏗᎦᏃᏗᏍᎩ ᏗᏓᏂᏱᏍᎩ ᎤᎵᏍᏛᎢ. ᏗᏓᏁᏟᏴᏍᏙᏗ ᎠᏂ ᏓᎾᏄᎪᎪ ᎪᎱᏍᏗ ᎠᏂᎦᏃᏗᏍᎬ. android ᎯᎠ ᏓᏃᎮᏍᎬ ᎦᏬᏂᎯᏍᏗ ᎠᏗᏍᎪ ᎠᎴ ᎠᏎᎵᏙᎲ ᏓᏃᎮᏍᎬ ᎬᏩᎪᎵᏰᏗ; ylih ᎤᏩᏒ ᎠᎪᎵᏰᏍᎪ ᎦᏙ ᏗᏓᏁᏟᏴᏍᏙᏗ ᎦᏃᏗᏍᎬ.</string>
     <string name="settings_language">ᎦᏬᏂᎯᏍᏗ</string>
     <string name="settings_language_system">ᏙᏦᎵ ᎦᏬᏂᎯᏍᏗ</string>
     <string name="settings_devices">ᏙᏦᎵ</string>

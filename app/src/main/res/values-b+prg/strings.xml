@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">neprieinama kol bluetooth access duotas: tis build tik deklaruota connectedDevice serviso tipas, kuris android 14+ sety bluetooth laiby.</string>
     <string name="settings_playback_only_title">skaityti tik dirba</string>
     <string name="settings_playback_only_body">statistikans skaityti audijas skaitytas vieta iš konnektay laiko. tik sesijas sēmaytas su detalize skaitunas on mety dirba; likti palikt iš.</string>
+    <string name="settings_apps_title">izdāt appins</string>
+    <string name="settings_apps_body">atzīmāis appi bhe tenesses skanis ni pērtenti kāigi klausīsnā — per pazinnan app, kas grāi tīlin, kāi pagaūtwei headset knopins. appins pagērdai, kāigi tennei wissan grāijai. android tenti kēlsi prēigautin ēn signālans bhe isspāndi, kāi tennan mazi signālans skaitītwei; ylih skaita tēr, kawīds app grāi.</string>
     <string name="settings_language">kalba</string>
     <string name="settings_language_system">sistemos kalba</string>
     <string name="settings_devices">prietaisai</string>

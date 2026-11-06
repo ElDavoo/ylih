@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">onbeschieker bet bluetooth-tillang gegeaven wodt: dit build deklariert alenks de connectedDevice-sörtwus, wat android 14+ an en bluetooth-erlaubnis bindt.</string>
     <string name="settings_playback_only_title">tellen avenks avspeel</string>
     <string name="settings_playback_only_body">statistik tellen de tiet, audio aktual avspeel, statt de verbunnenheid-tiet. alenks sitzungen, protokolleert mit detaljert protokollering an, metten avspeel; de rest leavt utenbi.</string>
+    <string name="settings_apps_title">apps utnehmen</string>
+    <string name="settings_apps_body">nimm bi en app dat häkchen weg, un ehr klang tellt nich mehr as tohören — to’n bispeel een, de stillte afspeelt, üm de knööp vun’t headset aftofangen. apps duukt op, sodraa se wat afspeelt hebbt. android nöömt dat togriep op narichten un warnt, dat he narichten lesen kann; ylih leest blots, welk app jüst speelt.</string>
     <string name="settings_language">spraak</string>
     <string name="settings_language_system">systeem-spraak</string>
     <string name="settings_devices">toestellen</string>

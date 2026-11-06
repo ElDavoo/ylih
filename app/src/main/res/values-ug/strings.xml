@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth رۇخسەتىنى چېكىش كېرەك</string>
     <string name="settings_playback_only_title">پىسىق ۋاقتى بىلى</string>
     <string name="settings_playback_only_body">ئېلان پىسىق ۋاقتى بىلى</string>
+    <string name="settings_apps_title">ئەپلەرنى چىقىرىۋېتىش</string>
+    <string name="settings_apps_body">بىر ئەپنىڭ بەلگىسىنى ئېلىۋېتىڭ، ئۇنىڭ ئاۋازى ئەمدى ئاڭلاش ھېسابلانمايدۇ — مەسىلەن، قۇلاقلىق كۇنۇپكىلىرىنى تۇتۇش ئۈچۈن جىمجىتلىق قويىدىغان ئەپ. ئەپلەر بىرەر نەرسە قويغاندىن كېيىن بۇ يەردە كۆرۈنىدۇ. android بۇنى ئۇقتۇرۇش زىيارىتى دەپ ئاتايدۇ ۋە ئۇنىڭ ئۇقتۇرۇشلارنى ئوقۇيالايدىغانلىقىنى ئاگاھلاندۇرىدۇ؛ ylih پەقەت قايسى ئەپنىڭ قويۇۋاتقانلىقىنىلا ئوقۇيدۇ.</string>
     <string name="settings_language">تىل</string>
     <string name="settings_language_system">سىستېما تىلى</string>
     <string name="settings_devices">ئۈسكۈنە</string>

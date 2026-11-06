@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">no disponibil fintant che l’acès bluetooth no ven jât: cheste build e declare dome il servicj connectedDevice, ce che android 14+ al coleghe a une lasse bluetooth.</string>
     <string name="settings_playback_only_title">conte dome la riproduzion</string>
     <string name="settings_playback_only_body">lis statistichis a contin il timp che l’audio al stuvave riprodot inveze dal timp contat. dome lis sessions registradis cu il seguiment detaiât ative a mesurin la riproduzion; i restons a vegnin scjelts.</string>
+    <string name="settings_apps_title">escludi aplicazions</string>
+    <string name="settings_apps_body">gjave il segn a une aplicazion e il so sun nol conte plui come scolte — par esempli une che e sune cidin par cjapâ i botons des cufiis. lis aplicazions a comparissin dopo vê sunât alc. android lu clame acès aes notifichis e al visie che al pues leilis; ylih al lei dome cuale aplicazion che e sune.</string>
     <string name="settings_language">lenghe</string>
     <string name="settings_language_system">lenghe dal sisteme</string>
     <string name="settings_devices">dispozitifs</string>

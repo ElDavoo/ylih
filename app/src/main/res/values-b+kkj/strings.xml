@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth kə ŋka kaːnà: sanda a connectedDevice jəre tú, android 14+ bluetooth kə tùː.</string>
     <string name="settings_playback_only_title">ŋɡə nta sɛn</string>
     <string name="settings_playback_only_body">ŋɡa fə wé kə wa kə ŋɡə ta sɛn. ndə fə jə́ŋɡa tú a ŋɡə ndə fə; mbɔ koy.</string>
+    <string name="settings_apps_title">makɔ́ŋ app</string>
+    <string name="settings_apps_body">makɔ́ŋ ndap app, ŋka kɛn ndə fə ŋwàʼ yúʼ — kaa app ŋka kùn silaka ndə fə ŋkwà headset. app taːn nta ŋgɛ́ ndá fɔ́n. android kə tàm notification, ndə fə ŋwàʼ notification; ylih ŋwàʼ app ŋka kùn.</string>
     <string name="settings_language">dɔmɔ</string>
     <string name="settings_language_system">dɔmɔ sistɛm</string>
     <string name="settings_devices">gara</string>

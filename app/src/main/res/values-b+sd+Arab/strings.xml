@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">دستياب نہ آهي جڏهن تائين بلوٽوٿ رسائي منظور نہ ٿي: هن تعمير ۾ صرف منسلک ڊيوائس سروس قسم اعلان ڪوشش جو هو آهي، جيڪا android 14+ بلوٽوٿ اجازت سے ڳنڌيل آهي.</string>
     <string name="settings_playback_only_title">صرف پلے بيڪ شمار ڪريو</string>
     <string name="settings_playback_only_body">اعدادوشمار وقت کي شمار ڪري ٿا جڏهن آڊيو واقعي چل رهيو ڇو جڏهن جڙيل وقت جي جاء تي. صرف تفصيلي ٽريکنگ سان ريکارڊ شدہ سيشنز ۾ پلے بيڪ ماپيو؛ باقي باہر رکيا ويندا.</string>
+    <string name="settings_apps_title">ايپس کي ٻاهر رکو</string>
+    <string name="settings_apps_body">ڪنهن ايپ جو نشان هٽايو ۽ ان جو آواز وري ٻڌڻ ۾ نه ڳڻيو ويندو — جيئن هيڊسيٽ جا بٽڻ پڪڙڻ لاءِ خاموشي وڄائيندڙ ايپ. ايپس ڪجهه وڄائڻ کانپوءِ هتي ڏسڻ ۾ اينديون آهن. android ان کي اطلاعن تائين رسائي سڏي ٿو ۽ خبردار ڪري ٿو ته اها اطلاعون پڙهي سگهي ٿي؛ ylih رڳو اهو پڙهي ٿو ته ڪهڙي ايپ وڄي رهي آهي.</string>
     <string name="settings_language">ٻولي</string>
     <string name="settings_language_system">سسٽم جي ٻولي</string>
     <string name="settings_devices">ڈيوائس</string>

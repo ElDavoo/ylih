@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">nẽ muña bluetooth ã pukapika kuá rema o: app a connectedDevice service type piri sapekaí, kumé android 14+ bluetooth ã pukapika rupí.</string>
     <string name="settings_playback_only_title">i yaskuari puxipoã reteita</string>
     <string name="settings_playback_only_body">retapihaka i yaskuari ayura tukura i apigara ayura rupí. apigara retama i pukapika tukura ayura ã; iyoku nẽ ayura o.</string>
+    <string name="settings_apps_title">aspé apikasãu-itá</string>
+    <string name="settings_apps_body">rerasuí sinaá apikasãu suí, aé usasemu nti-ana upapari wasu yasenduwa — mayé apikasãu upuraseisá kirirí arama upisika butãu-itá. apikasãu-itá usikié kuá upuraseisá rikuera. android usenũi kuá yamunhã sikué kuxiyara ãti umbeú, aé upurandu u-leri umbeú-itá; ylih uleri aé apikasãu upuraseisá.</string>
     <string name="settings_language">tamba</string>
     <string name="settings_language_system">tamba android</string>
     <string name="settings_devices">igwe-itá</string>

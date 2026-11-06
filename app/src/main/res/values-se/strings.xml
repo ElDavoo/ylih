@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ii geavahallat jus bluetooth maiddáhttu ii leat lokteme: dát build maiddáhtte dan connectedDevice serviidiga, mii android 14+ maŋŋel bluetooth maiddáhttu.</string>
     <string name="settings_playback_only_title">maiddáhte maiddáhttamearri maŋŋebargga</string>
     <string name="settings_playback_only_body">dieđut maiddáhte ahte geažes audio lei maiddáhtan maŋŋebargga cealkame vahkka. seavvi vahkka maiddáhttugovvame detaljalaš maiddáhttugoahtan maiddáhttamearri; maŋŋebargga leat maŋŋel.</string>
+    <string name="settings_apps_title">spiehkas appaid</string>
+    <string name="settings_apps_body">váldde mearkka eret appas, ja dan jietna ii šat rehkenasto guldaleapmin — ovdamearkka dihte app mii čuojaha jaskatvuođa vai gávnnašii oaivetelefuvnna boaluid. appat bohtet oidnosii go leat čuojahan juoidá. android gohčoda dán dieđáhusaid beassanvuoigatvuohtan ja várrehuvvá ahte dat sáhttá lohkat dieđáhusaid; ylih lohká dušše makkár app čuojaha.</string>
     <string name="settings_language">giella</string>
     <string name="settings_language_system">sisdoallu giella</string>
     <string name="settings_devices">reaidu</string>

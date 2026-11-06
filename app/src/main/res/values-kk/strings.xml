@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth рұқсаты берілгенге дейін қолжетімсіз: бұл құрылым connectedDevice қызмет түрін ғана орнатады, android 14+ bluetooth рұқсатына байланыстырады.</string>
     <string name="settings_playback_only_title">тек ойнау санап отыр</string>
     <string name="settings_playback_only_body">статистика қосылған уақыт орнына аудио ойнаған уақытын санап отыр. тек егжей-тегжейлі бақылауда жазылған сеанстар өлшенген ойнау; қалғандары сыртталады.</string>
+    <string name="settings_apps_title">қолданбаларды шығару</string>
+    <string name="settings_apps_body">қолданбаның белгісін алып тастасаңыз, оның дыбысы бұдан былай тыңдау болып саналмайды — мысалы, гарнитура түймелерін ұстау үшін үнсіздік ойнататын қолданба. қолданбалар бір нәрсе ойнатқаннан кейін осында шығады. android мұны хабарландыруларға кіру деп атайды және ол хабарландыруларды оқи алатынын ескертеді; ylih тек қай қолданба ойнап тұрғанын оқиды.</string>
     <string name="settings_language">тіл</string>
     <string name="settings_language_system">жүйелік тіл</string>
     <string name="settings_devices">құрылғылар</string>

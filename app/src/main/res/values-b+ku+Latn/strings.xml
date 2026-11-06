@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">heta mafî bluetooth dayîne. vî çêker tenê qad kî connectedDevice tê nîşan dide, ku android 14+ bi mafî bluetooth girê dike.</string>
     <string name="settings_playback_only_title">tenê lêxistinê jimartî bike</string>
     <string name="settings_playback_only_body">statîstîk dema ku deng rast tê lêxistin, ne dema girê. tenê danefînî ku bi guhdariya bilalî ve hatine tomar kirin lêxistinê jêhatî ne; ên din jê dikevin dûr.</string>
+    <string name="settings_apps_title">sepanan derxe</string>
+    <string name="settings_apps_body">nîşana sepanekê rake û dengê wê êdî wek guhdarîkirin nayê hesibandin — wek mînak sepaneke ku bêdengiyê lê dide da ku bişkokên guhsazê bigire. sepan piştî ku tiştek lêxistin li vir xuya dibin. android ji vê re gihîştina agahdariyan dibêje û hişyar dike ku ew dikare agahdariyan bixwîne; ylih tenê dixwîne ka kîjan sepan lê dide.</string>
     <string name="settings_language">ziman</string>
     <string name="settings_language_system">ziman ya pergalê</string>
     <string name="settings_devices">cihê</string>

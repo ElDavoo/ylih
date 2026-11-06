@@ -129,6 +129,8 @@
     <string name="settings_detailed_unavailable">在授予蓝牙权限之前不可用:此版本只声明了 connectedDevice 服务类型,而 android 14 及以上系统要求该类型必须具有蓝牙权限。</string>
     <string name="settings_playback_only_title">只计播放时长</string>
     <string name="settings_playback_only_body">统计以音频真正播放的时长计算，而不是连接时长。只有在开启详细追踪时记录的会话测量了播放，其余会话不计入。</string>
+    <string name="settings_apps_title">排除应用</string>
+    <string name="settings_apps_body">取消勾选某个应用，它的声音就不再计为收听——例如为了截获耳机按键而播放静音的应用。应用播放过内容后会出现在这里。android 称之为通知使用权，并会警告它可以读取通知；ylih 只读取正在播放的是哪个应用。</string>
     <string name="settings_language">语言</string>
     <string name="settings_language_system">系统语言</string>
     <string name="settings_devices">设备</string>

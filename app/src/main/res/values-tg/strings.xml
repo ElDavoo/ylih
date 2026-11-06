@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">то додани дастрасии bluetooth дастнорас: ин сохт танҳо навъи хидмати connectedDevice-ро эълон мекунад, ки android 14+ онро ба иҷозати bluetooth мепайвандад.</string>
     <string name="settings_playback_only_title">танҳо пахшро ҳисоб кунед</string>
     <string name="settings_playback_only_body">омор ба ҷои вақти пайвастшавӣ вақти воқеан садо доштани аудиоро ҳисоб мекунад. танҳо ҷаласаҳое, ки бо пайгирии муфассали фаъол сабт шудаанд, пахшро чен кардаанд; боқимонда ба ҳисоб гирифта намешаванд.</string>
+    <string name="settings_apps_title">истисно кардани барномаҳо</string>
+    <string name="settings_apps_body">аломати барномаро гиред ва садои он дигар ҳамчун гӯш кардан ҳисоб намешавад — масалан, барномае, ки барои дастгир кардани тугмаҳои гарнитура хомӯширо пахш мекунад. барномаҳо пас аз пахш кардани чизе дар ин ҷо пайдо мешаванд. android инро дастрасӣ ба огоҳиномаҳо меномад ва огоҳ мекунад, ки он метавонад огоҳиномаҳоро хонад; ylih танҳо мехонад, ки кадом барнома пахш мекунад.</string>
     <string name="settings_language">забон</string>
     <string name="settings_language_system">забони система</string>
     <string name="settings_devices">дастгоҳҳо</string>

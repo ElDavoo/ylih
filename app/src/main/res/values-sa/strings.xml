@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth प्रवेशं विना अनुपलब्धम् — इयं रचना केवलं connectedDevice सेवाप्रकारं घोषयति, यम् android 14+ bluetooth अनुमत्या सह बध्नाति।</string>
     <string name="settings_playback_only_title">केवलं वादनं गण्यताम्</string>
     <string name="settings_playback_only_body">साङ्ख्यिकी संयोगकालस्य स्थाने वस्तुतः ध्वनिवादनस्य कालं गणयति। केवलं विस्तृतेन अनुसरणेन लिखितानि सत्राणि वादनं मापितवन्ति; इतराणि त्यज्यन्ते।</string>
+    <string name="settings_apps_title">अनुप्रयोगान् बहिः कुरु</string>
+    <string name="settings_apps_body">कस्यचित् अनुप्रयोगस्य चिह्नम् अपनय, ततः तस्य ध्वनिः श्रवणत्वेन न गण्यते — यथा शिरःश्रवणयन्त्रस्य गुण्डिकाः ग्रहीतुं मौनं वादयन् अनुप्रयोगः। अनुप्रयोगाः किमपि वादयित्वा अत्र दृश्यन्ते। android एतत् सूचनाप्रवेशः इति वदति, सूचनाः पठितुं शक्नोति इति च सावधानं करोति; ylih केवलं कः अनुप्रयोगः वादयति इति पठति।</string>
     <string name="settings_language">भाषा</string>
     <string name="settings_language_system">प्रणालीभाषा</string>
     <string name="settings_devices">उपकरणानि</string>

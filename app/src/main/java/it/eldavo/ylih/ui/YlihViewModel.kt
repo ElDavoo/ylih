@@ -1,8 +1,11 @@
 package it.eldavo.ylih.ui
 
 import android.app.Application
+import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.provider.DocumentsContract
 import android.util.Log
 import androidx.annotation.StringRes
@@ -25,6 +28,7 @@ import it.eldavo.ylih.export.AutoBackup
 import it.eldavo.ylih.export.JsonBackup
 import it.eldavo.ylih.export.scheduleAutoBackup
 import it.eldavo.ylih.runCatchingCancellable
+import it.eldavo.ylih.tracking.MediaSessions
 import it.eldavo.ylih.tracking.Notifications
 import it.eldavo.ylih.stats.Charge
 import it.eldavo.ylih.stats.ChargeSummary
@@ -51,6 +55,7 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.shareIn
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class YlihViewModel(app: Application) : AndroidViewModel(app) {
     private val container = (app as YlihApp).container
@@ -97,6 +102,29 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
     /** Whether an on-device assistant may read these figures — see `agent/YlihAppFunctions.kt`. */
     val agentAccess: StateFlow<Boolean> = container.settings.agentAccess
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), false)
+
+    /**
+     * Whether the user granted the session access leaving apps out needs — see
+     * `tracking/SessionAccessService.kt`. State rather than a call for
+     * [detailedTrackingSupported]'s reasons: the answer changes on a system screen, and
+     * [refreshSessionAccess] re-asks when settings comes back from it.
+     */
+    private val _sessionAccess = MutableStateFlow(MediaSessions.accessGranted(app))
+    val sessionAccess: StateFlow<Boolean> = _sessionAccess.asStateFlow()
+
+    /**
+     * The apps settings can offer to leave out: every one seen playing, plus any left out that this
+     * phone never saw — a list restored from another. Labels are asked of the package manager, a
+     * binder call per app, so off the main thread like [autoBackup]'s folder name.
+     */
+    val playbackApps: StateFlow<List<PlaybackApp>> =
+        combine(container.settings.seenApps, container.settings.excludedApps) { seen, excluded ->
+            (seen + excluded)
+                .map { PlaybackApp(it, appLabel(app, it), excluded = it in excluded) }
+                .sortedBy { it.label.lowercase() }
+        }
+            .flowOn(Dispatchers.IO)
+            .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
 
     /**
      * Automatic backups as settings draws them. The folder's name is asked of its provider — a
@@ -311,6 +339,25 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
+    /**
+     * Re-reads the grant and records whatever is playing right now, each time settings comes to
+     * the front. Coming back from granting is when the user expects the app they meant to leave
+     * out to be listed, and the service may be a minute from its next tick, or not running.
+     */
+    fun refreshSessionAccess() = viewModelScope.launch {
+        val app = getApplication<Application>()
+        _sessionAccess.value = MediaSessions.accessGranted(app)
+        val playing = withContext(Dispatchers.IO) { MediaSessions.playingNow(app) }
+        runCatchingCancellable { container.settings.recordSeenApps(playing) }
+            .onFailure { Log.w(TAG, "Could not record the apps playing", it) }
+    }
+
+    /** Not a [mutate]: no figure moves until the app next plays. */
+    fun setAppExcluded(packageName: String, excluded: Boolean) = viewModelScope.launch {
+        runCatchingCancellable { container.settings.setAppExcluded(packageName, excluded) }
+            .onFailure { messageChannel.send(it.message ?: string(RES_EDIT_FAILED)) }
+    }
+
     fun setLanguage(tag: String) = viewModelScope.launch {
         container.settings.setLanguage(tag)
     }
@@ -423,6 +470,29 @@ class YlihViewModel(app: Application) : AndroidViewModel(app) {
 
 /** [AutoBackupState] with the one thing it can't hold itself: what the folder is called. */
 data class AutoBackupUi(val state: AutoBackupState, val folderName: String?)
+
+/** One row of settings' list of apps that may be left out. */
+data class PlaybackApp(val packageName: String, val label: String, val excluded: Boolean)
+
+/**
+ * The name an app goes by, or its package name where this one cannot see it: visibility reaches
+ * launcher apps only (the manifest's `<queries>`), and an app may be uninstalled since.
+ *
+ * Not private: [YlihViewModel.playbackApps] calls it from a lambda, which a private top-level
+ * function would reach through a synthetic accessor (lint's SyntheticAccessor).
+ */
+internal fun appLabel(context: Context, packageName: String): String = try {
+    val packages = context.packageManager
+    val info = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        packages.getApplicationInfo(packageName, PackageManager.ApplicationInfoFlags.of(0))
+    } else {
+        @Suppress("DEPRECATION")
+        packages.getApplicationInfo(packageName, 0)
+    }
+    packages.getApplicationLabel(info).toString()
+} catch (e: PackageManager.NameNotFoundException) {
+    packageName
+}
 
 fun SessionEntity.toSpan(): Span = Span(connectedAt, disconnectedAt, playingMs)
 

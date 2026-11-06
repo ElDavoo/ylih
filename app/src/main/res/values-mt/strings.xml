@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">mhux disponibbli sal-ħadd li tintgħata aċċess bluetooth: il-build din issolwi jiddikjara l-type ta’ servizz connectedDevice biss, li android 14+ jgħoqqdu ma’ permission ta’ bluetooth.</string>
     <string name="settings_playback_only_title">għodd biss il-playback</string>
     <string name="settings_playback_only_body">stats tgħodd il-ħin li l-awdjo verament kien sejjer minflok il-ħin li kien qabbad. sessions biss rrekordjati b’tracking dettaljat fuq imkejjel playback; ir-resto jiġu ħallija.</string>
+    <string name="settings_apps_title">eskludi apps</string>
+    <string name="settings_apps_body">neħħi l-marka minn app u l-ħoss tagħha ma jibqax jgħodd bħala smigħ — pereżempju waħda li ddoqq is-skiet biex taqbad il-buttuni tal-headset. l-apps jidhru ladarba jkunu daqqew xi ħaġa. android isejjaħ dan aċċess għan-notifiki u jwissi li jista’ jaqra n-notifiki; ylih jaqra biss liema app qed iddoqq.</string>
     <string name="settings_language">lingwa</string>
     <string name="settings_language_system">lingwa tas-sistema</string>
     <string name="settings_devices">apparati</string>

@@ -3,6 +3,10 @@ package it.eldavo.ylih.tracking
 import android.content.Context
 import android.media.AudioAttributes
 import android.media.AudioManager
+import android.media.session.MediaController
+import android.media.session.MediaSession
+import android.media.session.MediaSessionManager
+import android.media.session.PlaybackState
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
@@ -16,6 +20,7 @@ import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
+import org.robolectric.shadows.PlaybackInfoBuilder
 
 /**
  * Playback time is the number that separates "the headphones were on my desk, connected" from
@@ -247,5 +252,195 @@ class PlaybackWatcherTest {
         // ...but a chime over the top of music does not end the music either.
         report(AudioAttributes.USAGE_MEDIA, AudioAttributes.USAGE_NOTIFICATION)
         assertTrue(watcher.isPlaying)
+    }
+
+    // --- leaving apps out (#69) ---------------------------------------------------------------
+
+    private val sessionManager = context.getSystemService(MediaSessionManager::class.java)
+    private var seenApps = emptySet<String>()
+    private val sessionWatcher = PlaybackWatcher(
+        audioManager,
+        Clock { clockNow },
+        sessions = MediaSessions(sessionManager, MediaSessions.listener(context)),
+        onPlayingApps = { seenApps = it },
+    ) { credited += it }
+
+    /**
+     * A media session as another app would publish one. The audio it stands for is reported
+     * separately, through [report] — on a phone the two arrive unlinked, which is the whole
+     * difficulty.
+     */
+    private fun session(
+        packageName: String,
+        state: Int = PlaybackState.STATE_PLAYING,
+        playbackType: Int = MediaController.PlaybackInfo.PLAYBACK_TYPE_LOCAL,
+    ): MediaController {
+        val controller = MediaController(context, MediaSession(context, packageName).sessionToken)
+        shadowOf(controller).setPackageName(packageName)
+        shadowOf(controller).setPlaybackInfo(
+            PlaybackInfoBuilder.newBuilder().setVolumeType(playbackType).build(),
+        )
+        setState(controller, state)
+        shadowOf(sessionManager).addController(controller)
+        return controller
+    }
+
+    private fun setState(controller: MediaController, state: Int) {
+        val playbackState = PlaybackState.Builder().setState(state, 0L, 1f).build()
+        shadowOf(controller).setPlaybackState(playbackState)
+        shadowOf(controller).executeOnPlaybackStateChanged(playbackState)
+    }
+
+    private fun sessionRefresh(now: Long) {
+        credited += sessionWatcher.refresh(now)
+    }
+
+    @Test
+    fun `with nothing left out the sessions change nothing`() {
+        // The promise to everyone who never touches the list: the same rule as before.
+        sessionWatcher.start(Handler(Looper.getMainLooper()))
+        session(AUTOMATE)
+        report(AudioAttributes.USAGE_MEDIA)
+
+        clockNow += 10_000
+        sessionRefresh(clockNow)
+
+        assertTrue(sessionWatcher.isPlaying)
+        assertEquals(10_000L, credited)
+    }
+
+    @Test
+    fun `an app left out playing alone is not listening`() {
+        // #69 itself: Automate holding a silent stream open to catch headset buttons.
+        sessionWatcher.excluded = setOf(AUTOMATE)
+        sessionWatcher.start(Handler(Looper.getMainLooper()))
+        session(AUTOMATE)
+        report(AudioAttributes.USAGE_MEDIA)
+
+        clockNow += 600_000
+        sessionRefresh(clockNow)
+
+        assertFalse(sessionWatcher.isPlaying)
+        assertEquals(0L, credited)
+    }
+
+    @Test
+    fun `the poll does not count what an app left out is playing either`() {
+        // isMusicActive is the safety net for players the callback list never shows, and it
+        // cannot say whose music is active — it must not let the silent stream back in.
+        sessionWatcher.excluded = setOf(AUTOMATE)
+        sessionWatcher.start(Handler(Looper.getMainLooper()))
+        session(AUTOMATE)
+        shadowAudio.setIsMusicActive(true)
+
+        clockNow += 60_000
+        sessionRefresh(clockNow)
+
+        assertEquals(0L, credited)
+    }
+
+    @Test
+    fun `music beside an app left out still counts`() {
+        sessionWatcher.excluded = setOf(AUTOMATE)
+        sessionWatcher.start(Handler(Looper.getMainLooper()))
+        session(AUTOMATE)
+        session(SPOTIFY)
+        // Spotify's own player need not be media-like for its claim to count.
+        report(AudioAttributes.USAGE_MEDIA)
+
+        sessionRefresh(clockNow)
+        clockNow += 30_000
+        sessionRefresh(clockNow)
+
+        assertEquals(30_000L, credited)
+    }
+
+    @Test
+    fun `more players than the apps left out explain still count`() {
+        // A game publishes no session, so only the count of players can say it is there.
+        sessionWatcher.excluded = setOf(AUTOMATE)
+        sessionWatcher.start(Handler(Looper.getMainLooper()))
+        session(AUTOMATE)
+        report(AudioAttributes.USAGE_MEDIA, AudioAttributes.USAGE_GAME)
+
+        sessionRefresh(clockNow)
+        clockNow += 20_000
+        sessionRefresh(clockNow)
+
+        assertEquals(20_000L, credited)
+    }
+
+    @Test
+    fun `a paused app or one casting elsewhere says nothing about these headphones`() {
+        sessionWatcher.excluded = setOf(AUTOMATE)
+        sessionWatcher.start(Handler(Looper.getMainLooper()))
+        session(AUTOMATE, state = PlaybackState.STATE_PAUSED)
+        session("com.example.cast", playbackType = MediaController.PlaybackInfo.PLAYBACK_TYPE_REMOTE)
+        report(AudioAttributes.USAGE_MEDIA)
+
+        sessionRefresh(clockNow)
+        clockNow += 15_000
+        sessionRefresh(clockNow)
+
+        assertEquals("nothing left out claims to be playing here, so the rule is the old one", 15_000L, credited)
+        assertEquals(emptySet<String>(), seenApps)
+    }
+
+    @Test
+    fun `an app left out starting to play banks the music before it`() {
+        // A session's state is an edge the watcher has to push, like a player's.
+        sessionWatcher.excluded = setOf(AUTOMATE)
+        sessionWatcher.start(Handler(Looper.getMainLooper()))
+        val automate = session(AUTOMATE, state = PlaybackState.STATE_PAUSED)
+        report(AudioAttributes.USAGE_MEDIA)
+        assertEquals(0L, credited)
+
+        clockNow += 45_000
+        setState(automate, PlaybackState.STATE_PLAYING)
+        shadowOf(Looper.getMainLooper()).idle()
+
+        assertEquals("the 45 s before it took over were listening", 45_000L, credited)
+        assertFalse(sessionWatcher.isPlaying)
+    }
+
+    @Test
+    fun `apps seen playing are handed over once each`() {
+        val handed = mutableListOf<Set<String>>()
+        val watcher = PlaybackWatcher(
+            audioManager,
+            Clock { clockNow },
+            sessions = MediaSessions(sessionManager, MediaSessions.listener(context)),
+            onPlayingApps = { handed += it },
+        ) {}
+        watcher.start(Handler(Looper.getMainLooper()))
+        session(SPOTIFY)
+        watcher.refresh(clockNow)
+        watcher.refresh(clockNow)
+        session(AUTOMATE)
+        watcher.refresh(clockNow)
+
+        assertEquals(listOf(setOf(SPOTIFY), setOf(SPOTIFY, AUTOMATE)), handed.distinct())
+        assertEquals("an unchanged set is not reported again", 2, handed.size)
+    }
+
+    @Test
+    fun `the rule, in full`() {
+        val none = SessionPlayback.NONE
+        val automate = SessionPlayback(excluded = 1, others = 0, packages = setOf(AUTOMATE))
+        val both = SessionPlayback(excluded = 1, others = 1, packages = setOf(AUTOMATE, SPOTIFY))
+
+        assertFalse("silence is never listening", isListening(0, audible = false, claimed = none))
+        assertFalse(isListening(1, audible = false, claimed = automate))
+        assertTrue("no claims: the old rule", isListening(1, audible = true, claimed = none))
+        assertTrue(isListening(0, audible = true, claimed = none))
+        assertFalse("only the app left out", isListening(1, audible = true, claimed = automate))
+        assertFalse(isListening(0, audible = true, claimed = automate))
+        assertTrue("one player over", isListening(2, audible = true, claimed = automate))
+        assertTrue("another app says it is playing", isListening(1, audible = true, claimed = both))
+    }
+
+    private companion object {
+        const val AUTOMATE = "com.llamalab.automate"
+        const val SPOTIFY = "com.spotify.music"
     }
 }

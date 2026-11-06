@@ -3,11 +3,20 @@ package it.eldavo.ylih.ui
 import android.Manifest
 import android.app.Activity
 import android.content.Intent
+import android.content.ComponentName
+import android.content.IntentFilter
+import android.content.pm.ApplicationInfo
+import android.content.pm.PackageInfo
+import android.media.session.MediaController
+import android.media.session.MediaSession
+import android.media.session.MediaSessionManager
+import android.media.session.PlaybackState
 import android.os.Build
 import android.os.Looper
 import android.provider.Settings
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.ui.test.assertIsEnabled
+import androidx.compose.ui.test.assertIsOn
 import androidx.compose.ui.test.assertIsNotEnabled
 import androidx.compose.ui.test.assertIsOff
 import androidx.compose.ui.test.hasAnyAncestor
@@ -25,6 +34,7 @@ import androidx.compose.ui.test.performScrollTo
 import androidx.core.net.toUri
 import androidx.test.core.app.ApplicationProvider
 import androidx.activity.ComponentActivity
+import androidx.lifecycle.Lifecycle
 import androidx.work.testing.WorkManagerTestInitHelper
 import it.eldavo.ylih.AppLocale
 import it.eldavo.ylih.BuildConfig
@@ -34,8 +44,12 @@ import it.eldavo.ylih.YlihApp
 import it.eldavo.ylih.data.AutoBackupError
 import it.eldavo.ylih.data.DeviceEntity
 import it.eldavo.ylih.data.DeviceKind
+import it.eldavo.ylih.data.SettingEntity
+import it.eldavo.ylih.data.SettingsStore
 import it.eldavo.ylih.export.FakeDocumentsProvider
+import it.eldavo.ylih.tracking.MediaSessions
 import it.eldavo.ylih.ui.theme.YlihTheme
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -49,6 +63,7 @@ import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
+import org.robolectric.shadows.PlaybackInfoBuilder
 
 /**
  * Settings holds the two irreversible actions — switching tracking modes and replacing the
@@ -81,6 +96,34 @@ class SettingsScreenTest {
         // picked — see the note on awaitDetailedTracking for why it's reset here.
         settings.setLanguage(AppLocale.SYSTEM)
         settings.setAutoBackupFolder(null)
+        // The package rows have no clear of their own; an empty value is an empty list.
+        db.settingsDao().put(SettingEntity(SettingsStore.EXCLUDED_APPS, ""))
+        db.settingsDao().put(SettingEntity(SettingsStore.SEEN_APPS, ""))
+        grantSessionAccess(false)
+    }
+
+    /** What the system's notification-access switch writes, read back by `MediaSessions`. */
+    private fun grantSessionAccess(granted: Boolean) {
+        Settings.Secure.putString(
+            app.contentResolver,
+            "enabled_notification_listeners",
+            if (granted) MediaSessions.listener(app).flattenToString() else "",
+        )
+    }
+
+    /** Another app's media session, saying it is playing. */
+    private fun playing(packageName: String) {
+        val controller = MediaController(app, MediaSession(app, packageName).sessionToken)
+        shadowOf(controller).setPackageName(packageName)
+        shadowOf(controller).setPlaybackInfo(
+            PlaybackInfoBuilder.newBuilder()
+                .setVolumeType(MediaController.PlaybackInfo.PLAYBACK_TYPE_LOCAL)
+                .build(),
+        )
+        shadowOf(controller).setPlaybackState(
+            PlaybackState.Builder().setState(PlaybackState.STATE_PLAYING, 0L, 1f).build(),
+        )
+        shadowOf(app.getSystemService(MediaSessionManager::class.java)).addController(controller)
     }
 
     @get:Rule
@@ -699,5 +742,223 @@ class SettingsScreenTest {
         settle("the lost folder to be shown") {
             nodeCount(text(R.string.settings_auto_backup_access_lost)) > 0
         }
+    }
+
+    @Test
+    fun `with detailed tracking off there is no app to leave out`() {
+        // Only the service measures playback, so the list would change nothing.
+        show()
+
+        assertEquals(0, nodeCount(text(R.string.settings_apps_title)))
+    }
+
+    @Test
+    fun `switching detailed tracking off leads to taking notification access back`() {
+        // Leaving apps out needs the service, so with it off the grant does nothing — and only
+        // the system screen can revoke it.
+        grantSessionAccess(true)
+        runBlocking { settings.setDetailedTracking(true) }
+        show()
+
+        val label = text(R.string.settings_detailed_title)
+        awaitToggleBesides(label, on = true)
+        toggleBesides(label).performClick()
+        awaitDetailedTracking(on = false)
+
+        val started = shadowOf(app).nextStartedActivity
+        assertEquals(Settings.ACTION_NOTIFICATION_LISTENER_DETAIL_SETTINGS, started.action)
+        assertEquals(
+            MediaSessions.listener(app).flattenToString(),
+            started.getStringExtra(Settings.EXTRA_NOTIFICATION_LISTENER_COMPONENT_NAME),
+        )
+    }
+
+    @Test
+    fun `switching detailed tracking off without the grant goes nowhere`() {
+        runBlocking { settings.setDetailedTracking(true) }
+        show()
+
+        val label = text(R.string.settings_detailed_title)
+        awaitToggleBesides(label, on = true)
+        toggleBesides(label).performClick()
+        awaitDetailedTracking(on = false)
+
+        assertEquals("nothing to take back", null, shadowOf(app).nextStartedActivity)
+    }
+
+    @Test
+    fun `a grant left behind by detailed tracking stays in sight until revoked`() {
+        // Backing out of the system screen keeps the grant. Hidden with the rest, the switch
+        // would leave it held for nothing with no way back to it.
+        grantSessionAccess(true)
+        runBlocking { settings.recordSeenApps(setOf("com.llamalab.automate")) }
+        show()
+
+        val label = text(R.string.settings_apps_title)
+        scrollTo(label)
+        awaitToggleBesides(label, on = true)
+        assertEquals("nothing runs to act on the list", 0, nodeCount("com.llamalab.automate"))
+
+        toggleBesides(label).performClick()
+        assertEquals(
+            Settings.ACTION_NOTIFICATION_LISTENER_DETAIL_SETTINGS,
+            shadowOf(app).nextStartedActivity.action,
+        )
+    }
+
+    @Test
+    fun `the apps switch stands for the system grant and opens its page`() {
+        runBlocking { settings.setDetailedTracking(true) }
+        show()
+
+        val label = text(R.string.settings_apps_title)
+        scrollTo(label)
+        toggleBesides(label).assertIsOff().performClick()
+
+        val started = shadowOf(app).nextStartedActivity
+        assertEquals(Settings.ACTION_NOTIFICATION_LISTENER_DETAIL_SETTINGS, started.action)
+        assertEquals(
+            "the page for this app's listener, not every app's",
+            MediaSessions.listener(app).flattenToString(),
+            started.getStringExtra(Settings.EXTRA_NOTIFICATION_LISTENER_COMPONENT_NAME),
+        )
+    }
+
+    @Test
+    fun `where the page of its own is missing the list of listeners opens instead`() {
+        // Some builds have no per-listener page; low-RAM ones have neither, and must not crash.
+        shadowOf(app).checkActivities(true)
+        val listSettings = ComponentName("com.android.settings", "NotificationAccessSettings")
+        shadowOf(app.packageManager).addActivityIfNotPresent(listSettings)
+        shadowOf(app.packageManager).addIntentFilterForActivity(
+            listSettings,
+            IntentFilter(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS).apply {
+                addCategory(Intent.CATEGORY_DEFAULT)
+            },
+        )
+        runBlocking { settings.setDetailedTracking(true) }
+        show()
+
+        val label = text(R.string.settings_apps_title)
+        scrollTo(label)
+        toggleBesides(label).performClick()
+
+        assertEquals(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS, shadowOf(app).nextStartedActivity.action)
+    }
+
+    @Test
+    fun `with no page for the grant at all the tap opens nothing and nothing breaks`() {
+        shadowOf(app).checkActivities(true)
+        runBlocking { settings.setDetailedTracking(true) }
+        show()
+
+        val label = text(R.string.settings_apps_title)
+        scrollTo(label)
+        toggleBesides(label).performClick()
+
+        assertEquals(null, shadowOf(app).nextStartedActivity)
+    }
+
+    @Test
+    fun `an app seen playing can be left out, and let back in`() {
+        grantSessionAccess(true)
+        runBlocking {
+            settings.setDetailedTracking(true)
+            settings.recordSeenApps(setOf("com.llamalab.automate"))
+        }
+        show()
+
+        // Not a launcher app this phone can see, so it goes by its package name.
+        scrollTo("com.llamalab.automate")
+        awaitToggleBesides(text(R.string.settings_apps_title), on = true)
+        toggleBesides("com.llamalab.automate").assertIsOn().performClick()
+        settle("the app to be left out") {
+            runBlocking { settings.excludedApps.first() } == setOf("com.llamalab.automate")
+        }
+        awaitToggleBesides("com.llamalab.automate", on = false)
+
+        toggleBesides("com.llamalab.automate").performClick()
+        settle("the app to be let back in") {
+            runBlocking { settings.excludedApps.first() }.isEmpty()
+        }
+    }
+
+    @Test
+    fun `an app is listed by the name it goes by`() {
+        shadowOf(app.packageManager).installPackage(
+            PackageInfo().apply {
+                packageName = "com.spotify.music"
+                applicationInfo = ApplicationInfo().apply {
+                    packageName = "com.spotify.music"
+                    nonLocalizedLabel = "Spotify"
+                }
+            },
+        )
+        grantSessionAccess(true)
+        runBlocking {
+            settings.setDetailedTracking(true)
+            settings.recordSeenApps(setOf("com.spotify.music"))
+        }
+        show()
+
+        scrollTo("Spotify")
+        assertEquals(0, nodeCount("com.spotify.music"))
+    }
+
+    @Test
+    fun `without the grant the list stays hidden, since nothing could act on it`() {
+        runBlocking {
+            settings.setDetailedTracking(true)
+            settings.recordSeenApps(setOf("com.llamalab.automate"))
+        }
+        show()
+
+        scrollTo(text(R.string.settings_apps_title))
+        assertEquals(0, nodeCount("com.llamalab.automate"))
+    }
+
+    @Test
+    fun `coming back from the system screen shows the grant and what is playing`() {
+        runBlocking { settings.setDetailedTracking(true) }
+        show()
+        scrollTo(text(R.string.settings_apps_title))
+        awaitToggleBesides(text(R.string.settings_apps_title), on = false)
+
+        // What the user does on the system screen: switch access on, with Automate running.
+        compose.activityRule.scenario.moveToState(Lifecycle.State.STARTED)
+        grantSessionAccess(true)
+        playing("com.llamalab.automate")
+        compose.activityRule.scenario.moveToState(Lifecycle.State.RESUMED)
+
+        awaitToggleBesides(text(R.string.settings_apps_title), on = true)
+        settle("the app playing to be listed") { nodeCount("com.llamalab.automate") > 0 }
+        assertEquals(setOf("com.llamalab.automate"), runBlocking { settings.seenApps.first() })
+    }
+
+    @Test
+    @Config(sdk = [Build.VERSION_CODES.Q])
+    fun `below android 11 the switch opens the list of every listener`() {
+        // Android 10 has no page per listener, and names apps through the pre-13 label call.
+        shadowOf(app.packageManager).installPackage(
+            PackageInfo().apply {
+                packageName = "com.llamalab.automate"
+                applicationInfo = ApplicationInfo().apply {
+                    packageName = "com.llamalab.automate"
+                    nonLocalizedLabel = "Automate"
+                }
+            },
+        )
+        grantSessionAccess(true)
+        runBlocking {
+            settings.setDetailedTracking(true)
+            settings.recordSeenApps(setOf("com.llamalab.automate"))
+        }
+        show()
+
+        scrollTo("Automate")
+        val label = text(R.string.settings_apps_title)
+        toggleBesides(label).performClick()
+
+        assertEquals(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS, shadowOf(app).nextStartedActivity.action)
     }
 }

@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ܠܐ ܡܬܡܨܝܢܐ ܥܕܡܐ ܕܡܬܝܗܒܐ ܡܥܠܢܘܬܐ ܕbluetooth: ܗܢܐ ܒܢܝܢܐ ܡܟܪܙ ܒܠܚܘܕ ܙܢܐ ܕܬܫܡܫܬܐ connectedDevice، ܕandroid 14+ ܐܣܪ ܠܗ ܥܡ ܫܘܠܛܢܐ ܕbluetooth.</string>
     <string name="settings_playback_only_title">ܡܢܝ ܒܠܚܘܕ ܙܡܪܐ</string>
     <string name="settings_playback_only_body">ܡܢܝܢܐ ܡܢܐ ܙܒܢܐ ܕܩܠܐ ܗܘܐ ܙܡܪ ܫܪܝܪܐܝܬ ܚܠܦ ܙܒܢܐ ܕܚܘܝܕܐ. ܒܠܚܘܕ ܡܘܬܒܐ ܕܐܬܟܬܒܘ ܥܡ ܥܩܒܬܐ ܡܦܪܫܬܐ ܡܦܠܚܬܐ ܡܫܚܘ ܙܡܪܐ؛ ܫܪܟܐ ܡܫܬܒܩ.</string>
+    <string name="settings_apps_title">ܐܦܩ ܐܦ̈ܐ</string>
+    <string name="settings_apps_body">ܐܥܒܪ ܢܝܫܐ ܡܢ ܐܦܐ ܘܩܠܗ ܠܐ ܢܬܡܢܐ ܬܘܒ ܐܝܟ ܫܡܥܐ — ܐܝܟ ܐܦܐ ܕܙܡܪ ܫܬܝܩܘܬܐ ܕܢܐܚܘܕ ܩܦܬܐ ܕܡܫܡܥܢܝܬܐ. ܐܦ̈ܐ ܡܬܚܙܝܢ ܗܪܟܐ ܒܬܪ ܕܙܡܪܘ ܡܕܡ. android ܩܪܐ ܠܗܕܐ ܡܛܝܘܬܐ ܠܡܘܕܥܢܘܬ̈ܐ ܘܡܙܗܪ ܕܡܨܝܐ ܠܡܩܪܐ ܡܘܕܥܢܘܬ̈ܐ؛ ylih ܩܪܐ ܒܠܚܘܕ ܐܝܢܐ ܐܦܐ ܙܡܪܐ.</string>
     <string name="settings_language">ܠܫܢܐ</string>
     <string name="settings_language_system">ܠܫܢܐ ܕܣܘܣܛܡܐ</string>
     <string name="settings_devices">ܡܐܢܐ</string>

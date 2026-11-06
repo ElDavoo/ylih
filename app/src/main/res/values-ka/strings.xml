@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">მიუწვდომელია, სანამ bluetooth წვდომა არ მინიჭებულია: ეს კომპილაცია მხოლოდ აცხადებს დაკავშირებული მოწყობილობის სერვის ტიპი, რომელიც android 14+ უკავშირდება bluetooth უფლებას.</string>
     <string name="settings_playback_only_title">დაკვდების დათვლა მხოლოდ</string>
     <string name="settings_playback_only_body">სტატისტიკა დაკვდების რეალური დროის დათვლა დაკავშირებული დროის ნაცვლად. სესიები მხოლოდ დეტალური მეთოდით გაზომილი დაკვდება; დანარჩენი დატოვებული.</string>
+    <string name="settings_apps_title">აპების გამორიცხვა</string>
+    <string name="settings_apps_body">მოხსენით მონიშვნა აპს და მისი ხმა აღარ ჩაითვლება მოსმენად — მაგალითად, აპი, რომელიც სიჩუმეს უკრავს ყურსასმენის ღილაკების დასაჭერად. აპები აქ ჩნდება, როცა რამეს დაუკრავენ. android ამას შეტყობინებებზე წვდომას უწოდებს და აფრთხილებს, რომ მას შეუძლია შეტყობინებების წაკითხვა; ylih კითხულობს მხოლოდ იმას, რომელი აპი უკრავს.</string>
     <string name="settings_language">ენა</string>
     <string name="settings_language_system">სისტემის ენა</string>
     <string name="settings_devices">მოწყობილობები</string>

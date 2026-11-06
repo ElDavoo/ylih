@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ayitholakali kuze kunikwe ukufinyelela ku-bluetooth: lolu hlelo lumemezela kuphela uhlobo lwesevisi i-connectedDevice, i-android 14+ eluhlanganisa nemvume ye-bluetooth.</string>
     <string name="settings_playback_only_title">bala ukudlala kuphela</string>
     <string name="settings_playback_only_body">izibalo zibala isikhathi umsindo obudlala ngempela esikhundleni sesikhathi sokuxhumeka. amaseshini aqoshwe nokulandelela okuningiliziwe kuvuliwe kuphela akale ukudlala; asele ashiywa ngaphandle.</string>
+    <string name="settings_apps_title">khipha izinhlelo zokusebenza</string>
+    <string name="settings_apps_body">susa uphawu kuhlelo lokusebenza futhi umsindo walo ngeke usabalwa njengokulalela — njengohlelo oludlala ukuthula ukuze lubambe izinkinobho ze-headset. izinhlelo zivela lapha uma sezidlale okuthile. i-android ibiza lokhu ngokuthi ukufinyelela kwezaziso futhi ixwayisa ukuthi ingafunda izaziso; i-ylih ifunda kuphela ukuthi yiluphi uhlelo oludlalayo.</string>
     <string name="settings_language">ulimi</string>
     <string name="settings_language_system">ulimi lwesistimu</string>
     <string name="settings_devices">amadivayisi</string>

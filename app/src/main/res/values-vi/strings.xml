@@ -129,6 +129,8 @@
     <string name="settings_detailed_unavailable">chưa dùng được cho đến khi quyền truy cập bluetooth được cấp: bản build này chỉ khai báo loại dịch vụ connectedDevice, mà android 14 trở lên gắn với một quyền bluetooth.</string>
     <string name="settings_playback_only_title">chỉ tính phát lại</string>
     <string name="settings_playback_only_body">thống kê tính thời gian âm thanh thực sự phát thay vì thời gian kết nối. chỉ những phiên được ghi khi bật theo dõi chi tiết mới đo được phát lại; phần còn lại bị bỏ qua.</string>
+    <string name="settings_apps_title">loại trừ ứng dụng</string>
+    <string name="settings_apps_body">bỏ chọn một ứng dụng thì âm thanh của nó không còn được tính là nghe nữa — chẳng hạn ứng dụng phát im lặng để bắt các nút tai nghe. ứng dụng xuất hiện ở đây sau khi đã phát gì đó. android gọi đây là quyền truy cập thông báo và cảnh báo rằng nó có thể đọc thông báo; ylih chỉ đọc ứng dụng nào đang phát.</string>
     <string name="settings_language">ngôn ngữ</string>
     <string name="settings_language_system">ngôn ngữ hệ thống</string>
     <string name="settings_devices">thiết bị</string>

@@ -32,6 +32,17 @@
         android:required="false" />
 
     <!--
+      Names the apps seen playing in settings' list of apps to leave out. Launcher apps only, not
+      QUERY_ALL_PACKAGES: one with no launcher icon is listed by its package name instead.
+    -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
+
+    <!--
       hasFragileUserData puts a "keep app data" checkbox in the system's uninstall dialog (API 29+,
       hence the targetApi — minSdk is 26 and lint would otherwise call the attribute unused). It is
       the one way history survives a deliberate uninstall and reinstall on the same phone: cloud
@@ -70,6 +81,31 @@
             android:name=".tracking.TrackingService"
             android:exported="false"
             android:foregroundServiceType="connectedDevice" />
+
+        <!--
+          Never runs, and reads no notification: it exists so the user can grant notification
+          access, the one grant open to an app like this that lets MediaSessionManager say which
+          app is playing — see tracking/SessionAccessService.kt. Both builds carry it, so it stays
+          out of the classic overlay. The system checks the grant rather than a binding, so the
+          listener asks not to be bound at all (honoured from Android 14; below that it unbinds
+          itself on connecting).
+
+          Exported because the binder is the system, and guarded by
+          BIND_NOTIFICATION_LISTENER_SERVICE, which only the system holds — so exporting opens it
+          to nobody else, and whether Settings can list it never rests on how a non-exported
+          component resolves for its uid.
+        -->
+        <service
+            android:name=".tracking.SessionAccessService"
+            android:exported="true"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.service.notification.default_autobind_listenerservice"
+                android:value="false" />
+        </service>
 
         <!--
           What an on-device agent may ask this app, and how much of it. Nothing here differs

@@ -130,6 +130,8 @@
     <string name="settings_detailed_unavailable">ne disponebla antaŭ ol bluetooth-aliro estas donita: ĉi tiu bildaĵo deklaras nur la connectedDevice-servottipo, kiun android 14+ ligas al bluetooth-permeso.</string>
     <string name="settings_playback_only_title">kalkuli nur ludadon</string>
     <string name="settings_playback_only_body">la statistikoj kalkulas la tempon dum kiu la sono vere ludis anstataŭ la konektitan tempon. nur seancoj registritaj kun detala spurado ŝaltita mezuris la ludadon; la ceteraj estas ellasitaj.</string>
+    <string name="settings_apps_title">ekskludi aplikaĵojn</string>
+    <string name="settings_apps_body">malmarku aplikaĵon kaj ĝia sono ne plu kalkuliĝas kiel aŭskultado — ekzemple unu, kiu ludas silenton por kapti la butonojn de la kapaŭdilo. aplikaĵoj aperas post kiam ili ludis ion. android nomas tion aliro al sciigoj kaj avertas, ke ĝi povas legi sciigojn; ylih legas nur, kiu aplikaĵo ludas.</string>
     <string name="settings_language">lingvo</string>
     <string name="settings_language_system">sistema lingvo</string>
     <string name="settings_devices">aparatoj</string>

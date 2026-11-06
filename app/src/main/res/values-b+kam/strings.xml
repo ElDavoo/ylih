@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">isyaa kila ikilumbu kya bluetooth isyaa ikyaa: muundwa iino asuula lindi lya connectedDevice, ndi yoyo android 14+ yisya kwa ikilumbu kya bluetooth.</string>
     <string name="settings_playback_only_title">amba kimu kya kwinjala</string>
     <string name="settings_playback_only_body">misalyo ambile munenyu wa kwinjala kwa sika kuuta munenyu wa kinyaa. mulunde weka wandululwe nayo kwandula kwa kina onsyaa kwinjala; kinema kyonyu kyasyaulwa.</string>
+    <string name="settings_apps_title">uta apu</string>
+    <string name="settings_apps_body">uta kĩmanyĩsyo kĩa apu na mũthangũ wayo ndũkatalwa ta kwĩthukĩĩsya ingĩ — ta apu ĩvũũaa kĩkiĩ nĩkana ĩkwate mbatani sya headset. apu nĩsyumbukaa vaa ĩtina wa kũvũũa kĩndũ. android nĩyĩtaa ũũ kũvika ndũmĩlĩlo na ĩkaminya kana nĩĩtonya kũsoma ndũmĩlĩlo; ylih ĩsomaa apu ĩla ĩũvũũa yĩka.</string>
     <string name="settings_language">limi</string>
     <string name="settings_language_system">limi lya simu</string>
     <string name="settings_devices">kidonge</string>

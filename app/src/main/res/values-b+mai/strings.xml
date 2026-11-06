@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ब्लूटूथ पहुँच भेटबा धरि उपलब्ध नहि: ई निर्माण खाली connectedDevice सेवा प्रकार घोषित करैत अछि, जकरा android 14+ ब्लूटूथ अनुमतिसँ जोड़ैत अछि।</string>
     <string name="settings_playback_only_title">खाली बजनाइ गनू</string>
     <string name="settings_playback_only_body">जुड़ल रहबाक समयक बदला आँकड़ा ओ समय गनैत अछि जखन ऑडियो साँचहुँ बाजि रहल छल। खाली ओ सत्र जे विस्तृत ट्रैकिंग चालू रहितो अभिलेखित भेल, बजनाइ मापलक; बाँकी छूटि जाइत अछि।</string>
+    <string name="settings_apps_title">ऐप बाहर राखू</string>
+    <string name="settings_apps_body">कोनो ऐपक निशान हटाउ आ ओकर आवाज सुनबामे नहि गानल जाएत — जेना हेडसेटक बटन पकड़बाक लेल चुप्पी बजबैत ऐप। ऐप किछु बजेलाक बाद एतय देखाइत अछि। android एकरा सूचना पहुँच कहैत अछि आ चेतबैत अछि जे ई सूचना पढ़ि सकैत अछि; ylih मात्र ई पढ़ैत अछि जे कोन ऐप बाजि रहल अछि।</string>
     <string name="settings_language">भाषा</string>
     <string name="settings_language_system">सिस्टमक भाषा</string>
     <string name="settings_devices">यंत्र</string>

@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">तब तक उपलब्ध नइखे जब तक bluetooth अनुमति न दिहल जाय: ई संस्करण सिर्फ connectedDevice सेवा प्रकार घोषित करेला, जे android 14+ bluetooth अनुमति से जोड़ेला।</string>
     <string name="settings_playback_only_title">खाली प्लेबैक गिनीं</string>
     <string name="settings_playback_only_body">आँकड़ा जुड़ल रहे के समय के जगह ऑडियो सचमुच बजे के समय गिनेला। खाली ऊ सेशन जे विस्तृत ट्रैकिंग चालू रहते रिकॉर्ड भइल, ऊहे प्लेबैक नापले; बाकी छोड़ दिहल जाला।</string>
+    <string name="settings_apps_title">ऐप बाहर राखीं</string>
+    <string name="settings_apps_body">कवनो ऐप के निशान हटाईं त ओकर आवाज सुनल में ना गिनाई — जइसे हेडसेट के बटन पकड़े खातिर चुप्पी बजावे वाला ऐप। ऐप तब इहाँ लउकेला जब ऊ कुछ बजा चुकल होखे। android एकरा के सूचना पहुँच कहेला आ चेतावेला कि ई सूचना पढ़ सकेला; ylih बस ई पढ़ेला कि कवन ऐप बाजत बा।</string>
     <string name="settings_language">भाषा</string>
     <string name="settings_language_system">सिस्टम के भाषा</string>
     <string name="settings_devices">उपकरण</string>

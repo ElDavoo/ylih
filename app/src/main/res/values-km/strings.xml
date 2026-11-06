@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">មិនឈានដល់រហូតទាល់តែលិខិត bluetooth ត្រូវបានផ្តល់ឱ្យ៖ ក្រុមបង្កើត connectedDevice សេវាកម្មប្រភេទគត់ ដែល android 14+ ភ្ជាប់ទៅលិខិត។</string>
     <string name="settings_playback_only_title">រាប់តែលេងប៉ុណ្ណា</string>
     <string name="settings_playback_only_body">ស្ថិតិរាប់ពេលលេងបានលេងជំនួសឱ្យពេលលេង។ សម័យដែលកត់ត្របានលេងតែប៉ុណ្ណាឯកសារលម្អិត។ នៅសល់ក្នុងគម្រោង។</string>
+    <string name="settings_apps_title">ដកកម្មវិធីចេញ</string>
+    <string name="settings_apps_body">ដោះសញ្ញាធីកពីកម្មវិធីមួយ ហើយសំឡេងរបស់វានឹងលែងរាប់ជាការស្ដាប់ទៀត — ឧទាហរណ៍ កម្មវិធីដែលចាក់ភាពស្ងាត់ដើម្បីចាប់ប៊ូតុងកាស។ កម្មវិធីលេចឡើងនៅទីនេះបន្ទាប់ពីវាបានចាក់អ្វីមួយ។ android ហៅវាថាការចូលប្រើការជូនដំណឹង ហើយព្រមានថាវាអាចអានការជូនដំណឹងបាន; ylih អានតែកម្មវិធីណាដែលកំពុងចាក់ប៉ុណ្ណោះ។</string>
     <string name="settings_language">ភាសា</string>
     <string name="settings_language_system">ភាសាប្រព័ន្ធ</string>
     <string name="settings_devices">ឧបករណ៍</string>

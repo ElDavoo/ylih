@@ -133,6 +133,8 @@
     <string name="settings_detailed_unavailable">nicht verfügbar, solange kein bluetooth-Zugriff erteilt ist: diese Version meldet nur den Diensttyp connectedDevice, den android 14+ an eine bluetooth-Berechtigung knüpft.</string>
     <string name="settings_playback_only_title">nur Wiedergabe zählen</string>
     <string name="settings_playback_only_body">die Statistik zählt die Zeit, in der wirklich Audio lief, statt der verbundenen Zeit. nur Sitzungen, die mit eingeschaltetem detailliertem Tracking aufgezeichnet wurden, haben die Wiedergabe gemessen; der Rest bleibt außen vor.</string>
+    <string name="settings_apps_title">apps ausnehmen</string>
+    <string name="settings_apps_body">entferne den haken bei einer app, und ihr ton zählt nicht mehr als zuhören — etwa bei einer, die stille abspielt, um headset-tasten abzufangen. apps erscheinen, sobald sie etwas abgespielt haben. android nennt das benachrichtigungszugriff und warnt, dass damit benachrichtigungen gelesen werden können; ylih liest nur, welche app gerade spielt.</string>
     <string name="settings_language">Sprache</string>
     <string name="settings_language_system">Systemsprache</string>
     <string name="settings_devices">Geräte</string>

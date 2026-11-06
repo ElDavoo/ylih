@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">tekikola okutuusa layini y’okubluutusi ekirizibwe: okukola oku kwokka ekikubaganya ekka eby’okukufa okwa connectedDevice, ekya android 14+ yeneeza ku layini y’okubluutusi.</string>
     <string name="settings_playback_only_title">kubaganya omusolo gwa okukubaganya gyokka</string>
     <string name="settings_playback_only_body">data ekubaganya omusolo gwa okukubaganya amakakasa mu kifo ky’omusolo gwa kwatanganyizibwa. mutendera gyokka ogwe nakikumbilwa okukikumbila okuzigazi okuweddwa okukubaganya omusolo; emizira gyegiriza.</string>
+    <string name="settings_apps_title">ggyamu apps</string>
+    <string name="settings_apps_body">ggyako akabonero ku app era eddoboozi lyayo teriribalibwa nga okuwuliriza nate — nga app ekuba obusirifu okukwata obutuuso bwa headset. apps zirabika wano nga zimaze okukuba ekintu. android kino ekiyita okutuuka ku bubaka era erabula nti kisobola okusoma obubaka; ylih esoma kyokka app ekuba.</string>
     <string name="settings_language">olulimi</string>
     <string name="settings_language_system">olulimi lwa sisitimu</string>
     <string name="settings_devices">evayisi</string>

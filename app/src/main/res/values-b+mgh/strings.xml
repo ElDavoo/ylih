@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">khenivareya mpaka olattela bluetooth ovahiwe: eversau ela ennihimya ekaaru ya connectedDevice paahi, yeeyo android 14+ onnilattanya ni ruhusa ya bluetooth.</string>
     <string name="settings_playback_only_title">ohesabu oiwelela paahi</string>
     <string name="settings_playback_only_body">mahesabu annihesabu okathi audio waavaraka ekekhai ohiya okathi wa olattaniwa. ikathi salepiwa ni olipelela wootepa woovara paahi sapima oiwelela; ikina sinnihiyiwa.</string>
+    <string name="settings_apps_title">muhiyeke apu</string>
+    <string name="settings_apps_body">mukumihe enaano ya apu nto ninnu naya khinnalekela othuweliwa ntoko wiriyana — ntoko apu enipiha ekhwa wira ekhuuraka mapatau a headset. apu sinnooneya va okathi siipinhe etthu. android enniihana ela ophiyeriwa wa mihupi nto ennilopola wira enniwerya osoma mihupi; ylih ennisoma apu enipiha paahi.</string>
     <string name="settings_language">nttaava</string>
     <string name="settings_language_system">nttaava na esistema</string>
     <string name="settings_devices">itthu</string>

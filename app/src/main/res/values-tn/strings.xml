@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth o tlhoka</string>
     <string name="settings_playback_only_title">ho kopang nako fela</string>
     <string name="settings_playback_only_body">dikgetsi di akanya nako ya ho kopang</string>
+    <string name="settings_apps_title">tlogela diaplikeishene kwa ntle</string>
+    <string name="settings_apps_body">ntsha letshwao mo aplikeisheneng mme modumo wa yone ga o kitla o balwa jaaka go reetsa gape — jaaka aplikeishene e e tshamekang khutso go tshwara dikonopo tsa headset. diaplikeishene di bonala fa di sena go tshameka sengwe. android e bitsa se phitlhelelo ya dikitsiso mme e tlhagisa gore e ka bala dikitsiso; ylih e bala fela gore ke aplikeishene efe e e tshamekang.</string>
     <string name="settings_language">puo</string>
     <string name="settings_language_system">puo ya pholofotholo</string>
     <string name="settings_devices">dithuso</string>

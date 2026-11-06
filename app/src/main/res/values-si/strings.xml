@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">බ්ලූටූත් ප්‍රවේශ අවසර තෙක්: එම නිර්මිතයි connectedDevice සේවා පෝරාබඩුවතා, ඔබ android 14+ බ්ලූටූත් අවසරවලට ගසයි.</string>
     <string name="settings_playback_only_title">ධ්‍රැවීකරණ ගිණුම</string>
     <string name="settings_playback_only_body">සංඛ්‍යා ධ්‍වනි ප්‍රශස්තිකරණ සිවිල් වෙනුවට ගිණුම කරයි. විස්තරිත ලුහුබැඳීම සඳහා ධ්‍වනි ප්‍රශස්තිකරණ ගිණුම සැසිකරණ; අනෙක සිරුර පිටතට ඉතිරි.</string>
+    <string name="settings_apps_title">යෙදුම් ඉවත් කරන්න</string>
+    <string name="settings_apps_body">යෙදුමක සලකුණ ඉවත් කළ විට එහි ශබ්දය තවදුරටත් සවන්දීමක් ලෙස ගණන් නොගැනේ — උදාහරණයක් ලෙස හෙඩ්සෙට් බොත්තම් අල්ලා ගැනීමට නිශ්ශබ්දතාව වාදනය කරන යෙදුමක්. යෙදුම් යමක් වාදනය කළ පසු මෙහි පෙන්වයි. android මෙය දැනුම්දීම් ප්‍රවේශය ලෙස හඳුන්වන අතර එයට දැනුම්දීම් කියවිය හැකි බව අනතුරු අඟවයි; ylih කියවන්නේ වාදනය වන්නේ කුමන යෙදුමද යන්න පමණි.</string>
     <string name="settings_language">භාෂාව</string>
     <string name="settings_language_system">පද්ධති භාෂාව</string>
     <string name="settings_devices">උපකරණ</string>
