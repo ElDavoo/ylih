@@ -33,7 +33,7 @@ jobs:
           ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
 
       - name: Set up JDK 21
-        uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        uses: actions/setup-java@77dd5b2ce225ea11469928ac317850245a74ae78 # v6.2.0
         with:
           distribution: temurin
           java-version: "21"
@@ -135,7 +135,7 @@ jobs:
         # zizmor: ignore[superfluous-actions] -- `gh release create` is the same idea, but this
         # step creates-or-updates and takes asset globs; hand-rolling that in the one workflow
         # that signs and publishes is a worse trade than the dependency.
-        uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3  # zizmor: ignore[superfluous-actions]
+        uses: softprops/action-gh-release@8a0cd651e5b2365bd640854a3fa5dfc70e4875f3 # v3  # zizmor: ignore[superfluous-actions]
         with:
           tag_name: ${{ env.RELEASE_TAG }}
           files: |
