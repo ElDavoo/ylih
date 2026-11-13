@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ur ay-tettwili ara alamma anekcum i ublutuṛt uɣal-d. aseqwas-a ay-ḍeqqaq useqwas n imaḍen ay-yettwasɛen, d android 14+ ay-d-xles akesrum n ublutuṛt.</string>
     <string name="settings_playback_only_title">ḥseb tira kan</string>
     <string name="settings_playback_only_body">taktiwin ay-ḥsebent waktiɛa n tira tiggutt d ugar n waktiɛa n usqamu. tirkutin kan ay-teskesdin ubbar umḍiq ay-tsuḥṛen tira; wayeḍ akk ay-ttwaggẓen.</string>
+    <string name="settings_apps_title">kkes isnasen</string>
+    <string name="settings_apps_body">kkes tacreḍt ɣef usnas, imesli-ines ur yettwaḥsab ara d asmeẓẓi — am usnas i yesseɣriten tasusmi akken ad yeṭṭef tiqeffalin n tqecwalt. isnasen ttbanen-d dagi mi ara sɣerten kra. android isemma-yas anekcum ɣer yilɣa yerna yettwali-d belli yezmer ad iɣer ilɣa; ylih iɣerru kan anwa asnas i d-yesseɣriten.</string>
     <string name="settings_language">tutlayt</string>
     <string name="settings_language_system">tutlayt n unagraw</string>
     <string name="settings_devices">imaḍen</string>

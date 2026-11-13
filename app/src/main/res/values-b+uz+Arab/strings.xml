@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth رسایسى چاھادو</string>
     <string name="settings_playback_only_title">پویش وقتی بیلاند</string>
     <string name="settings_playback_only_body">تاتسٻی پویش وقتی بیلاند</string>
+    <string name="settings_apps_title">ایلاوه‌لرنی چیقریب تشلش</string>
+    <string name="settings_apps_body">ایلاوه‌دن بېلگینی آلیب تشلنگ، اونینگ آوازی اېندی تینگلش حسابلنمیدی — مثلاً، گارنیتورا توگمه‌لرینی اوشلش اوچون جیملیکنی ایجرا اېته‌دیگن ایلاوه. ایلاوه‌لر بیرار نرسه ایجرا اېتگندن کېیین شو یېرده پیدا بوله‌دی. android بونی بیلدیریش‌نامه‌لرگه کیریش دېب اته‌یدی و او بیلدیریش‌نامه‌لرنی اوقی آلیشی حقیده آگاهلنتیره‌دی؛ ylih فقط قیسی ایلاوه ایجرا اېته‌یاتگنینی اوقی‌دی.</string>
     <string name="settings_language">تیل</string>
     <string name="settings_language_system">سیستما تیلى</string>
     <string name="settings_devices">ۆسکونا</string>

@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth ikkinnguttaq atanngillaq: siullerni app-imi connectedDevice taarserneq taassumagit android 14+ bluetooth ikkinnguttaq-imi.</string>
     <string name="settings_playback_only_title">atorni tamaani tamarumik</string>
     <string name="settings_playback_only_body">tamaglareeq atorni tamaani sapaaq assinasutaq, pium atorni tamaanittua. ilortariaq ilortariassutaq annertuugujoq-imi tamaani assinasutaarneri; atuma taqallerpok.</string>
+    <string name="settings_apps_title">atuutsitat peeruk</string>
+    <string name="settings_apps_body">atuutsitap nalunaaqutaa peeruk, nipaalu tusarnaarnertut naatsorsorneqarunnaassaaq — assersuutigalugu atuutsitaq nipaatsumik nipilersortoq headsetip toortagaanik pigisaqarniarluni. atuutsitat sumik nipilersorsimagaangata maani takkuttarput. android-ip tamanna nalunaarutinut iserfiusinnaatitaaneq taasarpaa nalunaarutinillu atuarsinnaanera mianersoqqussutigalugu; ylih-ip atuutsitaq sorleq nipilersortoq kisiat atuartarpaa.</string>
     <string name="settings_language">oqaasei</string>
     <string name="settings_language_system">oqaasei system-imi</string>
     <string name="settings_devices">apparaatit</string>

@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth दी पहुँच बिना नीं चलदी: ऐ बिल्ड सिर्फ connectedDevice सेवा दस्सदा ऐ, ते android 14+ उसी bluetooth दी इजाज़ता कन्ने बन्नी दिंदा ऐ।</string>
     <string name="settings_playback_only_title">सिर्फ बजणा गिनो</string>
     <string name="settings_playback_only_body">आंकड़े जुड़े रैहणे दे समें दी थाह ओह समां गिनगे जदुं सच्चीं आवाज़ बजा दी ही। सिर्फ विस्तृत ट्रैकिंग कन्ने लिखे गेदे सत्रें च बजणा नापेया गेया; बाकी छड्डी दित्ते जांदे।</string>
+    <string name="settings_apps_title">ऐप बाहर रखा</string>
+    <string name="settings_apps_body">कुसी ऐपे दा निशान हटाऐ ता तिसदी आवाज सुणने च नीं गिणी जाणी — जियां हैडसेटे दे बटन पकड़ने ताईं चुप्प बजाणे आळी ऐप। ऐप किछ बजाणे परंत इत्थू दिखदियां। android इसजो सूचना पहुंच गलांदा ते चेतांदा कि एह सूचनां पढ़ी सकदी; ylih सिर्फ एह पढ़दा कि कुण जेही ऐप बजा दी।</string>
     <string name="settings_language">भाषा</string>
     <string name="settings_language_system">सिस्टम दी भाषा</string>
     <string name="settings_devices">उपकरण</string>

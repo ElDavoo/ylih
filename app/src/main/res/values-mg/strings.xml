@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">tsy azo ampiasaina raha tsy nomena ny fidirana amin’ny bluetooth: ity dikan-teny ity dia manambara ny karazana serivisy connectedDevice ihany, izay ampifandraisin’ny android 14+ amin’ny alalana bluetooth.</string>
     <string name="settings_playback_only_title">isao ny famerenana ihany</string>
     <string name="settings_playback_only_body">ny antontan-isa dia manisa ny fotoana tena nandehanan’ny feo fa tsy ny fotoana nifandraisana. ny fotoana voarakitra tamin’ny fanaraha-maso antsipiriany ihany no nandrefy ny famerenana; ny sisa dia tsy tafiditra.</string>
+    <string name="settings_apps_title">avelao any ivelany ny rindranasa</string>
+    <string name="settings_apps_body">esory ny marika amin’ny rindranasa iray dia tsy hisaina ho fihainoana intsony ny feony — ohatra, rindranasa mandefa fahanginana mba hisambotra ireo bokotry ny fihainoana. miseho eto ny rindranasa rehefa avy nandefa zavatra. ny android dia miantso izany hoe fidirana amin’ny fampandrenesana ary mampitandrina fa afaka mamaky fampandrenesana izy; ny ylih dia mamaky fotsiny hoe rindranasa inona no mandeha.</string>
     <string name="settings_language">fiteny</string>
     <string name="settings_language_system">fitenin’ny rafitra</string>
     <string name="settings_devices">fitaovana</string>

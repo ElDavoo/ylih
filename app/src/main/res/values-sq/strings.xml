@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">jo i disponueshëm derisa të jepet akses bluetooth: ky ndërtim vetëm deklaroi llojin e shërbimit connectedDevice, të cilën android 14+ e lidh me një leje bluetooth.</string>
     <string name="settings_playback_only_title">numëro vetëm riprodhimin</string>
     <string name="settings_playback_only_body">statistika numëron kohën kur audio ishte përfundimisht duke luajtur në vend se koha e lidhur. vetëm seancat e regjistruara me gjurmim të detajuar matur riprodhim; pjesa tjetër lihet jashtë.</string>
+    <string name="settings_apps_title">përjashto aplikacione</string>
+    <string name="settings_apps_body">hiq shenjën nga një aplikacion dhe tingulli i tij nuk llogaritet më si dëgjim — për shembull, një që luan heshtje për të kapur butonat e kufjeve. aplikacionet shfaqen pasi kanë luajtur diçka. android e quan këtë qasje te njoftimet dhe paralajmëron se mund t’i lexojë njoftimet; ylih lexon vetëm cili aplikacion po luan.</string>
     <string name="settings_language">gjuha</string>
     <string name="settings_language_system">gjuha e sistemit</string>
     <string name="settings_devices">pajisjet</string>

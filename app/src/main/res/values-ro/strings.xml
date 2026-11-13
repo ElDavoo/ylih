@@ -131,6 +131,8 @@
     <string name="settings_detailed_unavailable">indisponibil până nu acorzi acces la bluetooth: această versiune declară doar tipul de serviciu connectedDevice, pe care android 14+ îl leagă de o permisiune bluetooth.</string>
     <string name="settings_playback_only_title">numără doar redarea</string>
     <string name="settings_playback_only_body">statisticile numără timpul în care sunetul chiar a rulat, în loc de timpul conectat. doar sesiunile înregistrate cu urmărirea detaliată activată au măsurat redarea; restul sunt lăsate deoparte.</string>
+    <string name="settings_apps_title">exclude aplicații</string>
+    <string name="settings_apps_body">debifează o aplicație și sunetul ei nu mai contează ca ascultare — de exemplu, una care redă liniște ca să prindă butoanele căștilor. aplicațiile apar după ce au redat ceva. android numește asta acces la notificări și avertizează că poate citi notificările; ylih citește doar ce aplicație redă.</string>
     <string name="settings_language">limbă</string>
     <string name="settings_language_system">limba sistemului</string>
     <string name="settings_devices">dispozitive</string>

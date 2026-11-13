@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">no ye disponibile fintant che i permessi de bluetooth no xe dadi: sto compilo solamante dichiara il tipo de servissio connectedDevice, che android 14+ collega a un permesso de bluetooth.</string>
     <string name="settings_playback_only_title">conta solamante la riprodussione</string>
     <string name="settings_playback_only_body">le statistiche contano il tempo che l’audio xe stado veramente in riprodussione invesse del tempo colegao. solamante le sessioni registrade con el tracciamento detajao ativo midassion la riprodussione; i altri no xe contai.</string>
+    <string name="settings_apps_title">escludi le app</string>
+    <string name="settings_apps_body">cava el segno a na app e el so son no’l conta pì come scolto — par esempio una che la sona el silensio par ciapar i botoni de le cufie. le app le se vede dopo che le ga sonà calcossa. android el ciama sto qua acesso a le notifiche e el avisa che el pol lexerle; ylih el lexe solo che app la xe drio sonar.</string>
     <string name="settings_language">lengua</string>
     <string name="settings_language_system">lengua del sistema</string>
     <string name="settings_devices">dispositivi</string>

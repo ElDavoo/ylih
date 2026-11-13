@@ -129,6 +129,8 @@
     <string name="settings_detailed_unavailable">블루투스 접근 권한을 허용해야 사용할 수 있습니다: 이 빌드는 connectedDevice 서비스 유형만 선언하며, android 14 이상에서는 이를 블루투스 권한과 연결합니다.</string>
     <string name="settings_playback_only_title">재생 시간만 계산</string>
     <string name="settings_playback_only_body">통계가 연결 시간 대신 실제로 오디오가 재생된 시간을 계산합니다. 재생을 측정한 것은 상세 추적을 켠 상태로 기록된 세션뿐이며, 나머지는 제외됩니다.</string>
+    <string name="settings_apps_title">앱 제외</string>
+    <string name="settings_apps_body">앱의 체크를 해제하면 그 소리는 더 이상 청취로 계산되지 않습니다. 예를 들어 헤드셋 버튼을 가로채려고 무음을 재생하는 앱이 그렇습니다. 앱은 무언가를 재생한 뒤에 표시됩니다. android는 이를 알림 접근 권한이라고 부르며 알림을 읽을 수 있다고 경고하지만, ylih는 어떤 앱이 재생 중인지만 읽습니다.</string>
     <string name="settings_language">언어</string>
     <string name="settings_language_system">시스템 언어</string>
     <string name="settings_devices">기기</string>

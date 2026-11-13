@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ବ୍ଲୁଟୁଥ ଆକ୍ସେସ ମିଳିବା ପର୍ଯ୍ୟନ୍ତ ଉପଲବ୍ଧ ନୁହେଁ: ଏହି ବିଲ୍ଡ କେବଳ connectedDevice ସେବା ପ୍ରକାର ଘୋଷଣା କରେ, ଯାହାକୁ android 14+ ବ୍ଲୁଟୁଥ ଅନୁମତି ସହ ଯୋଡ଼େ।</string>
     <string name="settings_playback_only_title">କେବଳ ପ୍ଲେବ୍ୟାକ ଗଣନ୍ତୁ</string>
     <string name="settings_playback_only_body">ସଂଯୁକ୍ତ ସମୟ ବଦଳରେ ପରିସଂଖ୍ୟାନ ସେହି ସମୟ ଗଣେ ଯେତେବେଳେ ଅଡିଓ ପ୍ରକୃତରେ ବାଜୁଥିଲା। କେବଳ ବିସ୍ତୃତ ଟ୍ରାକିଂ ଚାଲୁ ଥିବାବେଳେ ରେକର୍ଡ ହୋଇଥିବା ସେସନ ପ୍ଲେବ୍ୟାକ ମାପିଛନ୍ତି; ବାକି ଛାଡ଼ିଦିଆଯାଏ।</string>
+    <string name="settings_apps_title">ଆପ୍ ବାଦ୍ ଦିଅନ୍ତୁ</string>
+    <string name="settings_apps_body">କୌଣସି ଆପ୍‌ର ଚିହ୍ନ ହଟାନ୍ତୁ ଏବଂ ଏହାର ଶବ୍ଦ ଆଉ ଶୁଣିବା ଭାବେ ଗଣାଯିବ ନାହିଁ — ଯେପରି ହେଡସେଟ୍ ବଟନ୍ ଧରିବା ପାଇଁ ନୀରବତା ବଜାଉଥିବା ଆପ୍। ଆପ୍‌ଗୁଡ଼ିକ କିଛି ବଜାଇବା ପରେ ଏଠାରେ ଦେଖାଯାଏ। android ଏହାକୁ ବିଜ୍ଞପ୍ତି ଆକ୍ସେସ୍ କହେ ଏବଂ ଚେତାଏ ଯେ ଏହା ବିଜ୍ଞପ୍ତି ପଢ଼ିପାରେ; ylih କେବଳ କେଉଁ ଆପ୍ ବାଜୁଛି ତାହା ପଢ଼େ।</string>
     <string name="settings_language">ଭାଷା</string>
     <string name="settings_language_system">ସିଷ୍ଟମର ଭାଷା</string>
     <string name="settings_devices">ଉପକରଣ</string>

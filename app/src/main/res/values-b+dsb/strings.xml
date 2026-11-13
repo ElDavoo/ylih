@@ -130,6 +130,8 @@
     <string name="settings_detailed_unavailable">njejo dostupny, dokad bluetooth-towědnosć njejo dana: toś ta wersija jano connectedDevice-tšyp słužby prokljamujaš, što android 14+ na bluetooth-towědnosć wěžujaš.</string>
     <string name="settings_playback_only_title">jano wótwóźenje liczyś</string>
     <string name="settings_playback_only_body">statistika licy cas, gaž zuk napšawdu grajašo, město casa zwězanja. jano pósejźenja, kótarež su se z zapinjonym detalnym slepom nagrawali, su wótwóźenje měrili; te druge se wuwóstaju.</string>
+    <string name="settings_apps_title">nałoženja wuzamknuś</string>
+    <string name="settings_apps_body">wótwóliś nałoženje a jogo zuk wěcej njeliči ako słuchanje — na pśikład take, kótarež grajo śišynu, aby kłapy słuchadłow lapało. nałoženja se pokazuju, gaž su něco grali. android to pomjenujo pśistup k powěźeńkam a warnujo, až móžo powěźeńki cytaś; ylih cyta jano, kótare nałoženje grajo.</string>
     <string name="settings_language">rěc</string>
     <string name="settings_language_system">rěc systema</string>
     <string name="settings_devices">napšada</string>

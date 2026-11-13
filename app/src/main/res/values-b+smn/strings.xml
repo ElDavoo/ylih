@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">majje siihtá bluetooth turvva maandukam: tánná build jus kahttim connectedDevice seavvi typan, mainna android 14+ čoakcu bluetooth turvvaa.</string>
     <string name="settings_playback_only_title">luoigat juohke kuullamin</string>
     <string name="settings_playback_only_body">statistihkah luoigá kuullamin-aiges oai čulhkan-aiges. jus sessions pándooshtam detaljálâš sieđemužžan pealdin mieltaj kuullamin; seakke jäá eres.</string>
+    <string name="settings_apps_title">kuođe appeid olgos</string>
+    <string name="settings_apps_body">vädi merkkâ eret appâst, já tast jienâ ij šat lovottuu kuldâlmin — ovdâmerkkân app mii čuojât jaskâdvuođâ vâi koškâlmii oovdâkuulân pottuneid. appeh puátih oinusân ko láá čuojâttâm maidnii. android kočoo taam tiäđáttâsâi pääsi já várrut ete tot puáhtá luuhâđ tiäđáttâsâid; ylih luhá tuše mii app čuojât.</string>
     <string name="settings_language">gielâ</string>
     <string name="settings_language_system">system gielâ</string>
     <string name="settings_devices">laittá</string>

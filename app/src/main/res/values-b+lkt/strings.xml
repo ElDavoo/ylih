@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth iyówahi kiŋ yušte hecʼó iyókhiyah: oyáte kiŋ connectedDevice wokhódukta wopʼe ghe, android 14+ bluetooth iyówahi kiŋ kʼóta.</string>
     <string name="settings_playback_only_title">niyowápi ghe</string>
     <string name="settings_playback_only_body">owótakhta niyowápi owaŋkó owaŋkʻu kiŋ. owótakhta óspeya yukhá owótakhta ghe niyowápi akʼákhta; hecʼón oyúta.</string>
+    <string name="settings_apps_title">app kiŋ tȟaŋkál ehpéya</string>
+    <string name="settings_apps_body">app waŋ tókȟeča kiŋ yuslá na hoȟ kiŋ naȟʼúŋ héčha síŋ yawápi kte šni — app waŋ héčha iníla ólowaŋ ečhúŋ yeló headset ničʼíyapi kiŋ yuŋháŋ. app kiŋ táku waŋ ólowaŋ ečhúŋpi hehaŋ lél tȟáwa. android lé wóyakapi kiŋ ektá ípi ečhíyapi na wóyakapi kiŋ owápi okíhi kéyapi; ylih app tuktél ólowaŋ ečhúŋ kiŋ ečhéla yawá.</string>
     <string name="settings_language">oleakhta</string>
     <string name="settings_language_system">sisitiemu oleakhta</string>
     <string name="settings_devices">wópʼe</string>

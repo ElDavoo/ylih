@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">silidikidwa mpaka bluetooth kulowerengedwa: izi kumbuyo kumanyalitsa kusanthula kwa connectedDevice, iyo android 14+ yalumikitsa ku bluetooth chiloleza.</string>
     <string name="settings_playback_only_title">werengetsa kumdandalira kawiri</string>
     <string name="settings_playback_only_body">mbalaka iwerengetsa nthawi iyo mawu akumdandalira moyo m’malo mwa nthawi yovankha. magawo anapakini ndi kumva mwambiri vuto kukayangʼanira kumdandalira; zina zisiyidwa.</string>
+    <string name="settings_apps_title">chosani maapp</string>
+    <string name="settings_apps_body">chosani chizindikiro pa app ndipo phokoso lace nee linadzaerengwa ninga kubvesera — ninga app inaimba cete toera kubata mabatani a headset. maapp anaoneka pano angamala kuimba cinthu. android isacemera ici kufika ku mapanga, isachenjeza kuti inakwanisa kuleri mapanga; ylih isaleri basi app inaimba.</string>
     <string name="settings_language">chilankhulo</string>
     <string name="settings_language_system">chilankhulo cha dongosolo</string>
     <string name="settings_devices">mapangaliro</string>

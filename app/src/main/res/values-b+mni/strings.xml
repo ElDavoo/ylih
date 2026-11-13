@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ব্লুটুথ য়ৌবা পীদ্রিফাওবা ফংদে: বিল্ড অসিনা connectedDevice সার্ভিস মখল খক্তা লাউথোকই, মদুবু android 14+ না ব্লুটুথ অয়াবগা শম্নহল্লি.</string>
     <string name="settings_playback_only_title">প্লেবেক খক্তা মশিং থিয়ু</string>
     <string name="settings_playback_only_body">শম্নবা মতমগী মহুত্তা অডিও অশেংবা মওংদা চৎলম্বা মতম অদু মশিংনা থিই. অকুপ্পা ইশিনবা ওন তৌদুনা ইশিনখিবা সেসনশিং খক্তনা প্লেবেক চাংয়েংখি; অতোপ্পশিংদি থাদোকখি.</string>
+    <string name="settings_apps_title">এপশিং থাদোকউ</string>
+    <string name="settings_apps_body">এপ অমগী মচিন লৌথোকপদি মসিগী খোনজেল অদু তাবা হায়না মশিং থীদ্রে — হেদসেটকী বতন ফাবগীদমক্তা অচাউবা তাংবা থম্বা এপ অদুগুম্বা। এপশিং অসি করিগুম্বা অমা শাবা মতুংদা মফম অসিদা উই। android না মসিবু নোতিফিকেসন এক্সেস হায়রি অমসুং মসিনা নোতিফিকেসনশিং পাবা য়াই হায়না চেকশিনহল্লি; ylih না কনাগী এপ শাদুনা লৈবগে হায়বা খক্তমক পাই।</string>
     <string name="settings_language">লোল</string>
     <string name="settings_language_system">সিস্টেমগী লোল</string>
     <string name="settings_devices">ডিভাইসশিং</string>

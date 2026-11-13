@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">تا زمانی که دسترسی بلوتوث اعطا شود در دسترس نیست: این ساخت فقط نوع سرویس connectedDevice را اعلام می کند که android 14+ به دسترسی بلوتوث مرتبط است.</string>
     <string name="settings_playback_only_title">فقط پخش را شمارش کن</string>
     <string name="settings_playback_only_body">آمار وقتی را که صدا در حال پخش بود در نظر می گیرد نه وقتی متصل بود. فقط جلساتی که با پیگیری تفصیلی در اندازه گیری پخش ضبط شد؛ بقیه حذف می شود.</string>
+    <string name="settings_apps_title">برنامه‌ئون ره کنار بیشتن</string>
+    <string name="settings_apps_body">تیک یه برنامه ره هاکنین تا وه صدا دیگه گوش هدائن حساب نَووه — مثلاً برنامه‌ای که سکوت پخش کانده تا دکمه‌ئون هدست ره بیره. برنامه‌ئون بعد از اینکه یه چی پخش هاکردنه این‌جه دیار وونّه. android این ره دسترسی به اعلان‌ئون گانده و هشدار دنه که اعلان‌ئون ره تونده بخونه؛ ylih فقط خوندنه کاموم برنامه پخش کانده.</string>
     <string name="settings_language">زبان</string>
     <string name="settings_language_system">زبان سیستم</string>
     <string name="settings_devices">دستگاه ها</string>

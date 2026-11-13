@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">nije dostupno dok se ne odobri pristup bluetooth: ova verzija samo deklarira vrstu servisa connectedDevice, koju android 14+ veže na dozvolu bluetooth.</string>
     <string name="settings_playback_only_title">brojaj samo reprodukciju</string>
     <string name="settings_playback_only_body">statistika broji vrijeme tijekom kojeg se zvuk zapravo reproducirao umjesto vremena povezivanja. samo sesije zabilježene s detaljnim praćenjem uključenim mjere reprodukciju; ostale se ostavljaju.</string>
+    <string name="settings_apps_title">izostavi aplikacije</string>
+    <string name="settings_apps_body">odznači aplikaciju i njezin se zvuk više ne broji kao slušanje — primjerice one koja pušta tišinu kako bi hvatala tipke slušalica. aplikacije se pojavljuju kad nešto puste. android to zove pristupom obavijestima i upozorava da omogućuje čitanje obavijesti; ylih čita samo koja aplikacija svira.</string>
     <string name="settings_language">jezik</string>
     <string name="settings_language_system">sistemski jezik</string>
     <string name="settings_devices">uređaji</string>

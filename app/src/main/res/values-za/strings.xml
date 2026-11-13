@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bun youq, kboq youq bluetooth doengz: app youq connectedDevice service, android 14+ youq bluetooth doengz.</string>
     <string name="settings_playback_only_title">gunz o</string>
     <string name="settings_playback_only_body">gunz gunz seih gunz, bun seih gunz. seih youq seih gunz o; seih bun youq.</string>
+    <string name="settings_apps_title">dawz app okdaeuj</string>
+    <string name="settings_apps_body">aeu geiq geiz app ndeu deuz, sing de couh mbouj suenq guh dingq lo — lumj app baenz cuengq sing caem bae ciep gaiq naenx huzdingq. app cuengq gijmaz le couh okyienh youq neix. android heuh neix guh haeujdaengz dunghcih caemh daezsingj de ndaej doeg dunghcih; ylih dan doeg app lawz youq cuengq.</string>
     <string name="settings_language">haeq</string>
     <string name="settings_language_system">haeq android</string>
     <string name="settings_devices">seuj</string>

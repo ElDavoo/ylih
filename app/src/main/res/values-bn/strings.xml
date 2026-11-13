@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">bluetooth অ্যাক্সেস দেওয়া না হওয়া পর্যন্ত উপলব্ধ নয়: এই বিল্ড শুধুমাত্র connectedDevice সেবা প্রকার ঘোষণা করে, যা android 14+ একটি bluetooth অনুমতির সাথে বাঁধে।</string>
     <string name="settings_playback_only_title">শুধু প্লেব্যাক গুনুন</string>
     <string name="settings_playback_only_body">পরিসংখ্যান সংযুক্ত থাকার সময়ের বদলে অডিও আসলে যতক্ষণ চলেছে তা গোনে। শুধু বিস্তারিত ট্র্যাকিং চালু রেখে রেকর্ড হওয়া সেশনেই প্লেব্যাক মাপা হয়েছে; বাকিগুলো বাদ যায়।</string>
+    <string name="settings_apps_title">অ্যাপ বাদ দিন</string>
+    <string name="settings_apps_body">কোনো অ্যাপের টিক তুলে দিন, তার শব্দ আর শোনা হিসেবে গোনা হবে না — যেমন হেডসেটের বোতাম ধরতে নীরবতা বাজানো কোনো অ্যাপ। অ্যাপগুলো কিছু বাজানোর পরে এখানে দেখা যায়। android একে বিজ্ঞপ্তি অ্যাক্সেস বলে এবং সতর্ক করে যে এটি বিজ্ঞপ্তি পড়তে পারে; ylih শুধু পড়ে কোন অ্যাপ বাজছে।</string>
     <string name="settings_language">ভাষা</string>
     <string name="settings_language_system">সিস্টেমের ভাষা</string>
     <string name="settings_devices">ডিভাইস</string>

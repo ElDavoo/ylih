@@ -36,5 +36,6 @@ PERMESSI
 • Dispositivi nelle vicinanze (bluetooth): serve a ricevere gli eventi di connessione e a leggere il nome delle cuffie. Senza, il tracciamento bluetooth non può funzionare.
 • Notifiche: solo per la notifica del tracciamento dettagliato.
 • Avvio automatico: per chiudere le sessioni che lo spegnimento non ha mai segnalato.
+• Accesso alle notifiche (opzionale): solo per escludere delle app dal tempo di riproduzione. ylih legge quale app sta riproducendo, mai le tue notifiche.
 
 Open source con licenza MIT.

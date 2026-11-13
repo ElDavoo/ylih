@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth sogandá jiraw: app yî connectedDevice tî ko, android 14+ bluetooth sogandá tî ko.</string>
     <string name="settings_playback_only_title">timá kûê gbalá</string>
     <string name="settings_playback_only_body">zali ro timá kûê gbalá, ti tangâ. gbalá zali ro timá tî gbalá; ganda tî sô.</string>
+    <string name="settings_apps_title">zia ambeni application na gigi</string>
+    <string name="settings_apps_body">zi tënë ti ndo ti mbeni application, na go ti ni ayeke dîko ni mo mä ni pëpe — tongana application so asara kpo ti gbu abouton ti casque. aapplication ayeke sigigi ge na pekoni ti so ala sara mbeni ye. android atene so lege ti mû anotification na lo kpengba so lo lingbi ti diko anotification; ylih adiko gi application so ayeke sara ye.</string>
     <string name="settings_language">lingala</string>
     <string name="settings_language_system">dijis lingala</string>
     <string name="settings_devices">dijis</string>

@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">a ma se se dɔrɔn ka bluetooth sigida wɛrɛ: aparatigi yen connectedDevice sɛrvi jɔ dafa dɔ, android 14+ bi bluetooth sigida ma jɛ ka cogo.</string>
     <string name="settings_playback_only_title">taara dɔrɔn jate</string>
     <string name="settings_playback_only_body">jatebɔ bɛ waati min na kumakan tun bɛ taara tiɲɛ na, o de jate, sigi waati tɛ. sɛgɛsɛgɛli minnu sɛbɛnna duuma surun bɛ senkan, olu dɔrɔn ye taara suman; tɔw bɛ bɔ.</string>
+    <string name="settings_apps_title">app dɔw bɔ a la</string>
+    <string name="settings_apps_body">taamasiyɛn bɔ app dɔ kan, a mankan tɛna jate lamɛnni ye tugun — i n’a fɔ app min bɛ makun fɔ walasa ka headset butɔnw minɛ. app dɔw bɛ bɔ yan u ni fɛn dɔ fɔ kɔfɛ. android b’a wele ko kunnafonidi sɔrɔli ani a b’a lasɔmi ko a bɛ se ka kunnafonidiw kalan; ylih bɛ app min bɛ fɔli kɛ dɔrɔn kalan.</string>
     <string name="settings_language">kan</string>
     <string name="settings_language_system">sistɛmu kan</string>
     <string name="settings_devices">aparatigi</string>

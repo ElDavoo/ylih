@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">બ્લુટૂથ ઍક્સેસ આધુનિક આપતા પર ઉપલબ્ધ નથી: આ બિલ્ડ માત્ર connectedDevice સેવા પ્રકાર જાહેર કરે છે, જે android 14+ બ્લુટૂથ પરવાનગીને બાંધે છે.</string>
     <string name="settings_playback_only_title">માત્ર પ્લેબેક ગણો</string>
     <string name="settings_playback_only_body">આંકડાઓ સમય ગણે છે જ્યાં ઓડિયો વાસ્તવમાં વાગ્યું હતું અલ્ટર્નેટિવ જોડાણ સમય માટે. માત્ર વિગતવાર ટ્રેકિંગ સાથે રેકોર્ડ સત્રો માપ પ્લેબેક; બાકીને બહાર મૂકવામાં આવે છે.</string>
+    <string name="settings_apps_title">ઍપ્સ બાકાત રાખો</string>
+    <string name="settings_apps_body">કોઈ ઍપનું ચિહ્ન હટાવો અને તેનો અવાજ હવે સાંભળવામાં ગણાશે નહીં — જેમ કે હેડસેટનાં બટન પકડવા માટે મૌન વગાડતી ઍપ. ઍપ્સ કંઈક વગાડ્યા પછી અહીં દેખાય છે. android આને સૂચના ઍક્સેસ કહે છે અને ચેતવે છે કે તે સૂચનાઓ વાંચી શકે છે; ylih ફક્ત એ વાંચે છે કે કઈ ઍપ વાગી રહી છે.</string>
     <string name="settings_language">ભાષા</string>
     <string name="settings_language_system">સિસ્ટમ ભાષા</string>
     <string name="settings_devices">ડિવાઇસેસ</string>

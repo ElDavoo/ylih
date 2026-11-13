@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth-ы барӕй дарддӕр нӕ кусы: ацы амал ӕрмӕст connectedDevice хуызы кусӕг ӕвдисы, ӕмӕ android 14+ уый bluetooth-ы бариме сбӕтты.</string>
     <string name="settings_playback_only_title">ӕрмӕст хъусын нымай</string>
     <string name="settings_playback_only_body">статистикӕ баст уӕвыны рӕстӕджы бӕсты ӕцӕгӕй хъуысгӕ рӕстӕг нымайдзӕн. хъусын ӕрмӕст арфдӕр цӕстдардимӕ фыст сесситы барст ӕрцыд; иннӕтӕ ныууадзгӕ цӕуынц.</string>
+    <string name="settings_apps_title">программӕтӕ сисын</string>
+    <string name="settings_apps_body">программӕйӕн йӕ нысан айс, ӕмӕ йӕ хъӕлӕс хъусыныл нал нымад уыдзӕн — зӕгъӕм, гарнитурӕйы ӕфтауӕнтӕ ахсынӕн ӕнӕдзургӕ чи цӕгъды, ахӕм программӕ. программӕтӕ исты куы ныццӕгъдой, уӕд ам фӕзынынц. android ай хоны фехъусынтӕм бацӕуын ӕмӕ фӕдзӕхсы, ӕмӕ фехъусынтӕ кӕсын йӕ бон у; ylih ӕрмӕст кӕсы, кӕцы программӕ цӕгъды, уый.</string>
     <string name="settings_language">ӕвзаг</string>
     <string name="settings_language_system">системӕйы ӕвзаг</string>
     <string name="settings_devices">аппарӕттӕ</string>

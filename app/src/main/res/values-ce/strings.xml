@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">bluetooth боьлу-норма йалех йаьсса далаза магӏалам. мындара сборка connectedDevice сервис төр огӏуььча, а-дан android 14+ bluetooth боьлу-норма вогӏуьйча.</string>
     <string name="settings_playback_only_title">ловзадар бен ма лара</string>
     <string name="settings_playback_only_body">статистико лору аз бакъдолуш ловзийна хан, хӀоттийна хан яц. омара дӏаяьллер деллачу хенахь язйина сессеш бен ловзадар ца дийцина; кхин йолчарна тӀера дӏаоьху.</string>
+    <string name="settings_apps_title">программаш дӀаяхар</string>
+    <string name="settings_apps_body">программин билгало дӀаяккха, цуьнан аз ладогӀарах лорур дац — масала, гарнитуран нуьйдаш леца тийналла лоькхуш йолу программа. программаш цхьаъ лоькхушшехь кхузахь гуш хуьлу. android цунах хаамашка кхачар олу, иза хаамаш еша мега аьлла дӀахьедар до; ylih еша хӀун программа лоькхуш ю бен.</string>
     <string name="settings_language">мотт</string>
     <string name="settings_language_system">системин мотт</string>
     <string name="settings_devices">устройстваш</string>

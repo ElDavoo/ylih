@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">o nweghị mma ruo ịnụ bluetooth a kwere: isigwe a na-akọ naanị ụdị ọrụ jikọchara ngosi, nke android 14+ na-ejikọ n’ịnụ bluetooth.</string>
     <string name="settings_playback_only_title">gụọ naanị omume</string>
     <string name="settings_playback_only_body">ọkọ ihe omume na-agụ oge ụda na-eme karịa oge jikọchara. naanị oge omume edekọ na nhazi ihe omume anya akaụkwụ atụnyere omume; ndị ọzọ ka a hapụrụ.</string>
+    <string name="settings_apps_title">wepụ ngwa ụfọdụ</string>
+    <string name="settings_apps_body">wepụ akara n’ngwa ma ụda ya agaghị agụ dị ka ige ntị ọzọ — dịka ngwa na-akpọ ịgbachi nkịtị iji jide bọtịnụ ekweisi. ngwa na-apụta ebe a mgbe ha kpọchara ihe. android na-akpọ nke a ohere ịnweta ọkwa ma na-adọ aka na ntị na ọ nwere ike ịgụ ọkwa; ylih na-agụ naanị ngwa na-akpọ.</string>
     <string name="settings_language">asụsụ</string>
     <string name="settings_language_system">asụsụ sistemu</string>
     <string name="settings_devices">ngosi ọrụ</string>

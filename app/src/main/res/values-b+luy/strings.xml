@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">shibulaho okhula obwiyangu bwe bluetooth bubuhanwe: omukanda kuno kubolanga butswa omutu kwe connectedDevice, android 14+ akwatania nende obwiyangu bwe bluetooth.</string>
     <string name="settings_playback_only_title">bala okhwimba butswa</string>
     <string name="settings_playback_only_body">tsinamba tsibalanga ebise omwimbo kwari nikwimba khukhwene khubwene bwe ebise bikwatane. ebise ebiandikwa nende okhulondelela okhwimanyisia nikhuli khusima nibyo bienyene byapima okhwimba; ebindi bilekhwa.</string>
+    <string name="settings_apps_title">rusia apps</string>
+    <string name="settings_apps_body">rusia eshimanyisio khu app ne omwoyo kwayo shikwabalwa nga khuhulila tawe — nga app eyikhupa obukhiri khukhwamba amabatani ka headset. apps zibonekhana halano nizimalile khukhupa eshindu. android ilanga eshi okhutukha khu bimanyisio, nilasia mbu inyala khusoma ebimanyisio; ylih isoma butswa app eyikhupa.</string>
     <string name="settings_language">olulimi</string>
     <string name="settings_language_system">olulimi lwe sistemu</string>
     <string name="settings_devices">ebindu</string>

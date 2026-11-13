@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">nó ta disponívil até asésu bluetooth ta tha dadu: sta bersõ sómente ta deklarà tipu servisu connectedDevice, ke android 14+ ta atá ku lisénsa bluetooth.</string>
     <string name="settings_playback_only_title">kunta sómente toka</string>
     <string name="settings_playback_only_body">stadístika ta kunta tempu som ta tha toka realmente invéz di tempu konektádu. sómente sésõis rrijistrádu nason rrijistru ditilyadu ta mididu toka; restanti ta tha skalidu fora.</string>
+    <string name="settings_apps_title">eskluí aplikasons</string>
+    <string name="settings_apps_body">tra marka di un aplikason i si som ka ta konta más komu skuta — pur izenplu un ki ta toka siléntsiu pa pega butons di fonis. aplikasons ta aparese li dipôs di es toka kalker kuza. android ta txoma kel-li asesu a notifikasons i ta avisa ma el pode le notifikasons; ylih ta le só kal aplikason ki sta ta toka.</string>
     <string name="settings_language">língu</string>
     <string name="settings_language_system">língu di sistema</string>
     <string name="settings_devices">dispusitivus</string>

@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ntihabwa kugeza ubwumvire bwa bluetooth budatanzwe: iri banki rigucira ubwumvire bwa connectedDevice, ikintu android 14+ iguhuza ku bwumvire bwa bluetooth.</string>
     <string name="settings_playback_only_title">kubara amwiceka gusa</string>
     <string name="settings_playback_only_body">ibaruhuuko bayubara igihe cyamwiceka aho cyo gufitanya. isiganiro rimenyeshwa hamwe na kurikira no mu mahoro yibwabukishije amwiceka gusa; ibindi bipwibwa.</string>
+    <string name="settings_apps_title">kuramwo porogarama</string>
+    <string name="settings_apps_body">kuraho akamenyetso kuri porogarama kandi ijwi ryayo ntirizosubira guharurwa nk’ukwumviriza — nka porogarama icuranga agacerere kugira ifate utubuto twa headset. porogarama ziboneka ngaha zimaze gucuranga ikintu. android ibita uburenganzira bwo gushika ku bimenyeshwa kandi ihanura ko bushobora gusoma ibimenyeshwa; ylih isoma gusa porogarama iriko icuranga.</string>
     <string name="settings_language">imvugo</string>
     <string name="settings_language_system">imvugo y’igenga</string>
     <string name="settings_devices">inyaburuko</string>

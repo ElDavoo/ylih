@@ -130,6 +130,8 @@
     <string name="settings_detailed_unavailable">недаступна, пакуль не даозвілены доступ да bluetooth: гэта зборка толькі абвяшчае тып сервісу connectedDevice, які android 14+ прывязваеце да дазвол bluetooth.</string>
     <string name="settings_playback_only_title">лічыць толькі прайграванне</string>
     <string name="settings_playback_only_body">статыстыка лічыць час, калі гук сапраўды граў, а не час падлучэння. толькі сеансы, запісаныя з уключаным падрабязным адсочваннем, вымералі прайграванне; астатнія не ўлічваюцца.</string>
+    <string name="settings_apps_title">выключыць праграмы</string>
+    <string name="settings_apps_body">здымі адзнаку з праграмы, і яе гук перастане лічыцца праслухоўваннем — напрыклад, праграмы, што грае цішыню, каб лавіць кнопкі гарнітуры. праграмы з’яўляюцца тут, калі нешта прайгралі. android называе гэта доступам да апавяшчэнняў і папярэджвае, што ён дазваляе чытаць апавяшчэнні; ylih чытае толькі, якая праграма грае.</string>
     <string name="settings_language">мова</string>
     <string name="settings_language_system">мова сістэмы</string>
     <string name="settings_devices">прыстасаванні</string>

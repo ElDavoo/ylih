@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth wanakuwezesha - app iyi ndi connectedDevice serikali, android 14+ inaomba bluetooth wanakuwezesha.</string>
     <string name="settings_playback_only_title">kukamatwa kwa amakoya tu</string>
     <string name="settings_playback_only_body">amakoni yoste amakoya ndiikasava mara ngu. kusava kulingana na-anzia kukamatwa amakoya; isuusu-isuusu kufutwa.</string>
+    <string name="settings_apps_title">kusenga apu</string>
+    <string name="settings_apps_body">kusenga ikimanyilo ku apu nalisasi lyake lyisi kubalwa ngati kupulika — ngati apu jino jikuteenda ulupyelela kukwata amabatani gha headset. apu syikuboneka apa pano syamalile kuteenda ikintu. android jikukwiita ihi ukufika ku malumbilo, jikukunjilila kuti jikwaghala kusoma amalumbilo; ylih jikusoma apu jino jikuteenda jene.</string>
     <string name="settings_language">ndimi</string>
     <string name="settings_language_system">ndimi ya system</string>
     <string name="settings_devices">igana</string>

@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">marake komu kumbi rutegezo rwa bluetooth rigarigire: rigata rogogobanega kaka connectedDevice ire yowokoragurira, ni ge android 14+ igarigira rutegezo rwa bluetooth.</string>
     <string name="settings_playback_only_title">igara magaketi gatagato</string>
     <string name="settings_playback_only_body">istati igara echunge chikochongire komu marake echunge chigomeke. ichambire kiga iguratire rikararibiryire ichongia magaketi; ekembe igoriyeke.</string>
+    <string name="settings_apps_title">rusia apu</string>
+    <string name="settings_apps_body">rusia ekemanyererio ase apu na omoboro oyio tobaroa buna okoigweera kegima — buna apu eria ekobwata obokei koibwata ebituni bia headset. apu nigorora aa ekero yarenga ekeagera ekendo. android neboroka eke okogenda ase ebimanyererio na nerenga erinde ngoria nebabwatia gosoma ebimanyererio; ylih nesoma apu eria ekobwata eyeng’ina.</string>
     <string name="settings_language">runda</string>
     <string name="settings_language_system">runda rwa sisitemu</string>
     <string name="settings_devices">ichire</string>

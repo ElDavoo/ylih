@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">mele gbe o va se bluetooth tɔ na: programa sia gblɔ connectedDevice ŋutsu ko, si android 14+ fi bluetooth tɔ ŋu.</string>
     <string name="settings_playback_only_title">bu ŋu sua ko</string>
     <string name="settings_playback_only_body">akɔntabubuwo bua ɣeyiɣi si me ŋu la nɔ suam ŋutɔ, ke menye ɣeyiɣi si wode dɔa ŋu o. ɣeyiɣi siwo wolé esime ŋkɔŋkɔ geɖea nɔ dɔ wɔm ko dzidze ŋu sua; wogblẽa mamlɛawo ɖi.</string>
+    <string name="settings_apps_title">ɖe app aɖewo ɖa</string>
+    <string name="settings_apps_body">ɖe dzesi ɖa le app aɖe ŋu eye womagaxlẽ eƒe gbeɖiɖi abe toɖoɖo ene o — abe app si ƒoa ɖoɖoezizi be yeaxɔ headset ƒe asidzedzeƒewo ene. apps dzena le afi sia ne wo ƒo nane vɔ. android yɔa esia be gbeƒãɖeɖewo gbɔ yiyi eye wòxlɔ̃a nu be ate ŋu axlẽ gbeƒãɖeɖewo; ylih xlẽa app si le ƒoƒom ko.</string>
     <string name="settings_language">gbe</string>
     <string name="settings_language_system">sistem ƒe gbe</string>
     <string name="settings_devices">nyawo</string>

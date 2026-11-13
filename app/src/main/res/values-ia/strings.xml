@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">indisponibile usque accesso bluetooth se concede: iste compilatione solmente declara le tipo de servicio connectedDevice, que android 14+ conecta a permission bluetooth</string>
     <string name="settings_playback_only_title">conta solmente audio</string>
     <string name="settings_playback_only_body">statisticas conta le tempore quando audio se audiva realmente in locum de tempore de connexion. solmente sessionnes registrate con traccia detalliat activate mesura audio; le resto es omisate</string>
+    <string name="settings_apps_title">excluder applicationes</string>
+    <string name="settings_apps_body">dismarca un application e su sono non plus conta como ascolta — per exemplo un que reproduce silentio pro capturar le buttones del auriculares. le applicationes appare hic post haber reproducite alique. android appella isto accesso al notificationes e avisa que illo pote leger notificationes; ylih lege solmente qual application reproduce.</string>
     <string name="settings_language">lingua</string>
     <string name="settings_language_system">lingua de systema</string>
     <string name="settings_devices">apparatos</string>

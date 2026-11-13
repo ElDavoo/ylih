@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ಬ್ಲೂಟೂತ್ ಪ್ರವೇಶ ಅನುಮತಿ ತನಕ ಲಭ್ಯವಿಲ್ಲ: ಈ ಬಿಲ್ಡ್ connectedDevice ಸೇವೆ ಪ್ರಕಾರ ಘೋಷಿತ ಮಾತ್ರ ಏಕೆಂದರೆ android 14+ ಬ್ಲೂಟೂತ್ ಪ್ರವೇಶ ರಾಯಲಟಿ.</string>
     <string name="settings_playback_only_title">ಪ್ಲೇಬ್ಯಾಕ್ ಮಾತ್ರ ಎಣಿಸಿ</string>
     <string name="settings_playback_only_body">ಅಂಕಿ ಆಡಿಯೋ ಸರಿಸಿ ಲೌಡ್ತೊಂದೆ ಮಾಪನ ಸಂಪರ್ಕ ಸಮಯ. ವಿವರವಾದ ಟ್ರ್ಯಾಕಿಂಗ್ ಅನುಮತಿ ಸೆಶನ್ ಮಾತ್ರ ಪ್ಲೇಬ್ಯಾಕ್ ಅಳತೆ; ಉಳಿದ ಬಿಟ್ಟುಕೊಡಿ.</string>
+    <string name="settings_apps_title">ಆ್ಯಪ್‌ಗಳನ್ನು ಹೊರಗಿಡಿ</string>
+    <string name="settings_apps_body">ಒಂದು ಆ್ಯಪ್‌ನ ಗುರುತು ತೆಗೆಯಿರಿ, ಅದರ ಧ್ವನಿಯನ್ನು ಇನ್ನು ಆಲಿಸುವಿಕೆ ಎಂದು ಎಣಿಸಲಾಗುವುದಿಲ್ಲ — ಉದಾಹರಣೆಗೆ ಹೆಡ್‌ಸೆಟ್ ಬಟನ್‌ಗಳನ್ನು ಹಿಡಿಯಲು ಮೌನವನ್ನು ಪ್ಲೇ ಮಾಡುವ ಆ್ಯಪ್. ಆ್ಯಪ್‌ಗಳು ಏನನ್ನಾದರೂ ಪ್ಲೇ ಮಾಡಿದ ನಂತರ ಇಲ್ಲಿ ಕಾಣಿಸುತ್ತವೆ. android ಇದನ್ನು ಅಧಿಸೂಚನೆ ಪ್ರವೇಶ ಎನ್ನುತ್ತದೆ ಮತ್ತು ಅದು ಅಧಿಸೂಚನೆಗಳನ್ನು ಓದಬಹುದು ಎಂದು ಎಚ್ಚರಿಸುತ್ತದೆ; ylih ಯಾವ ಆ್ಯಪ್ ಪ್ಲೇ ಆಗುತ್ತಿದೆ ಎಂಬುದನ್ನು ಮಾತ್ರ ಓದುತ್ತದೆ.</string>
     <string name="settings_language">ಭಾಷೆ</string>
     <string name="settings_language_system">ವ್ಯವಸ್ಥೆ ಭಾಷೆ</string>
     <string name="settings_devices">ಸಾಧನ</string>

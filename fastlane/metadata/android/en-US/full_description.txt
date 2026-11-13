@@ -36,5 +36,6 @@ PERMISSIONS
 • Nearby devices (Bluetooth): required to receive connection events and read a headset's name. Without it, Bluetooth tracking cannot work at all.
 • Notifications: only for the detailed-tracking notification.
 • Run at startup: to close sessions the shutdown never reported.
+• Notification access (optional): only to leave apps out of playback time. ylih reads which app is playing, never your notifications.
 
 Open source under the MIT licence.

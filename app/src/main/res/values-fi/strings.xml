@@ -131,6 +131,8 @@
     <string name="settings_detailed_unavailable">ei käytettävissä ennen kuin bluetooth-oikeus on myönnetty: tämä versio ilmoittaa vain connectedDevice-palvelutyypin, jonka android 14+ sitoo bluetooth-oikeuteen.</string>
     <string name="settings_playback_only_title">laske vain toisto</string>
     <string name="settings_playback_only_body">tilastot laskevat ajan, jolloin ääntä todella toistettiin, yhdistettynä olon sijaan. vain istunnot, jotka tallennettiin tarkan seurannan ollessa päällä, mittasivat toiston; loput jätetään pois.</string>
+    <string name="settings_apps_title">jätä sovelluksia pois</string>
+    <string name="settings_apps_body">poista sovelluksen valinta, niin sen ääntä ei enää lasketa kuunteluksi — esimerkiksi sovellus, joka toistaa hiljaisuutta siepatakseen kuulokkeiden painikkeet. sovellukset näkyvät täällä, kun ne ovat toistaneet jotain. android kutsuu tätä ilmoitusten käyttöoikeudeksi ja varoittaa, että se voi lukea ilmoituksia; ylih lukee vain, mikä sovellus toistaa.</string>
     <string name="settings_language">kieli</string>
     <string name="settings_language_system">järjestelmän kieli</string>
     <string name="settings_devices">laitteet</string>

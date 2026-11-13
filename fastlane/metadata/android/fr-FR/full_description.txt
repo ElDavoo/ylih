@@ -36,5 +36,6 @@ PERMISSIONS
 • Appareils à proximité (bluetooth) : nécessaire pour recevoir les événements de connexion et lire le nom d'un casque. Sans elle, le suivi bluetooth ne peut pas fonctionner du tout.
 • Notifications : uniquement pour la notification du suivi détaillé.
 • Exécution au démarrage : pour clore les sessions que l'extinction n'a jamais signalées.
+• Accès aux notifications (optionnel) : uniquement pour exclure des applis du temps de lecture. ylih lit quelle appli est en lecture, jamais vos notifications.
 
 Open source sous licence MIT.

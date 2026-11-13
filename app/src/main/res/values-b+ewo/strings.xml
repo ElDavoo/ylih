@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">a kɔ mɔ ndung manda, e mɔ permission ye bluetooth: sɔnda ane atɔmba nsibidi ye connectedDevice kumene a lone, android 14+ a bɔtɔ eve ti permission ye bluetooth.</string>
     <string name="settings_playback_only_title">lañ minkolo mi wulu etam</string>
     <string name="settings_playback_only_body">mimfeg mi lañ ntsogan minkolo mi nga wulu benyo, ke ntsogan ya nkobo. bibok bi nga tili ye tiyo ye a vul e bo etam bi nga leŋ minkolo; bifé bi ne osu.</string>
+    <string name="settings_apps_title">bɔkɔ app</string>
+    <string name="settings_apps_body">bɔkɔ nnem app, mvɔg yé ane ki tara ndi vɔ́gɔ́ — ane app a nyɔ́ŋ mvɛ́ ndi a bi bibutɔŋ bi headset. app a ne yen va ntɔ́ɔ́ a manɛ kɔ́mɔ́ ajɔ́. android a lɔ́ŋ nala zen notification, a kaŋ na a ne laŋ notification; ylih a laŋ fe app a nyɔ́ŋ.</string>
     <string name="settings_language">nkobo</string>
     <string name="settings_language_system">nkobo sistɛm</string>
     <string name="settings_devices">zindong</string>

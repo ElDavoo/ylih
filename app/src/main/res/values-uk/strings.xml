@@ -131,6 +131,8 @@
     <string name="settings_detailed_unavailable">недоступно, доки не надано доступ до bluetooth: ця збірка оголошує лише тип служби connectedDevice, який android 14+ прив’язує до дозволу bluetooth.</string>
     <string name="settings_playback_only_title">рахувати лише відтворення</string>
     <string name="settings_playback_only_body">статистика рахує час, коли звук справді грав, а не час підключення. відтворення виміряли лише сеанси, записані з увімкненим детальним відстеженням; решта не враховується.</string>
+    <string name="settings_apps_title">виключити застосунки</string>
+    <string name="settings_apps_body">зніми позначку із застосунку, і його звук перестане зараховуватися як прослуховування — наприклад, застосунку, що відтворює тишу, аби перехоплювати кнопки гарнітури. застосунки з’являються тут, коли щось відтворять. android називає це доступом до сповіщень і попереджає, що він дозволяє читати сповіщення; ylih читає лише, який застосунок грає.</string>
     <string name="settings_language">мова</string>
     <string name="settings_language_system">мова системи</string>
     <string name="settings_devices">пристрої</string>
