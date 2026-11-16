@@ -202,7 +202,7 @@ jobs:
         # without it, the commit and push steps below would run after a half-finished Claude
         # run and push whatever was left on disk.
         continue-on-error: true
-        uses: anthropics/claude-code-action@61a9c274fa7110a66dfafc1bbbced03833eb25fe # v1
+        uses: anthropics/claude-code-action@4d75e5f390ee76b2e09c1980ecc99ff3a2e088c8 # v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           prompt: |
