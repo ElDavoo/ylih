@@ -43,22 +43,22 @@ work = "2.12.0"
 # than pinning the compiler back — don't "fix" this to a stable that doesn't exist.
 glance = "1.1.1"
 coroutines = "1.11.0"
-serialization = "1.12.0"
+serialization = "1.13.0"
 junit = "4.13.2"
 robolectric = "4.17"
-mockk = "1.14.11"
+mockk = "1.14.12"
 androidxTestCore = "1.7.0"
 # The instrumented suite, which exists only to run the R8-minified build on a device.
 androidxTestJunit = "1.3.0"
 androidxTestRunner = "1.7.0"
 # Renders real Compose UI on the JVM through Robolectric's native graphics — how the Play listing
 # screenshots are generated with no emulator in the toolchain.
-roborazzi = "1.77.0"
+roborazzi = "1.79.0"
 # Drives android.testCoverage.jacocoVersion; AGP's bundled default predates JDK 21 class files.
 jacoco = "0.8.13"
 # Build classpath only, never shipped: AGP signs APKs with Bouncy Castle and still asks for
 # 1.80.2, and the advisories behind Dependabot alerts #49 and #50 are fixed only in 1.85.
-bouncycastle = "1.86.2"
+bouncycastle = "1.87"
 
 [libraries]
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
