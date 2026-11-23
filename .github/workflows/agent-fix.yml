@@ -165,7 +165,7 @@ jobs:
         id: fix
         if: steps.round.outputs.stuck != 'true' && steps.round.outputs.escalate != 'true'
         continue-on-error: true
-        uses: anthropics/claude-code-action@4d75e5f390ee76b2e09c1980ecc99ff3a2e088c8 # v1
+        uses: anthropics/claude-code-action@c84e279f859e2591391e95bd309286eb111c345f # v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           prompt: |
@@ -210,7 +210,7 @@ jobs:
         id: escalate
         if: steps.round.outputs.stuck != 'true' && steps.round.outputs.escalate == 'true'
         continue-on-error: true
-        uses: anthropics/claude-code-action@4d75e5f390ee76b2e09c1980ecc99ff3a2e088c8 # v1
+        uses: anthropics/claude-code-action@c84e279f859e2591391e95bd309286eb111c345f # v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           prompt: |
