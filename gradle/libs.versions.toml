@@ -1,16 +1,16 @@
 [versions]
 # Keep buildTools/compileSdk in sync with flake.nix and .github/workflows/*.yml
-agp = "9.5.1"
+agp = "9.5.2"
 # AGP 9 compiles Kotlin itself and rejects the standalone kotlin-android plugin. The Kotlin
 # Gradle plugin these two pull onto the buildscript classpath overrides AGP's own, so they must
 # stay equal: KSP has no release for Kotlin 2.4.x yet, pinning Kotlin here rather than at the
 # newest release.
 kotlin = "2.4.21"
-ksp = "2.3.13"
+ksp = "2.3.14"
 coreKtx = "1.19.1"
 lifecycle = "2.11.0"
 activityCompose = "1.13.0"
-composeBom = "2026.09.00"
+composeBom = "2026.11.01"
 # Ahead of the BOM on purpose: Material 3 Expressive's components (ShortNavigationBar,
 # ButtonGroup, MaterialShapes, LoadingIndicator) land in 1.5.0-alpha, while the BOM still pins
 # the 1.4.0 stable carrying only the Expressive theme. This drags compose runtime/foundation/ui
@@ -45,7 +45,7 @@ glance = "1.1.1"
 coroutines = "1.11.0"
 serialization = "1.13.0"
 junit = "4.13.2"
-robolectric = "4.17"
+robolectric = "4.18.1"
 mockk = "1.14.12"
 androidxTestCore = "1.7.0"
 # The instrumented suite, which exists only to run the R8-minified build on a device.
