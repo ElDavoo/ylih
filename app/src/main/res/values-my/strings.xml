@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth ခွင့်ပြုချက် မရမချင်း အသုံးပြု၍ မရပါ — ဤ build သည် connectedDevice ဝန်ဆောင်မှုအမျိုးအစားကိုသာ ကြေညာပြီး၊ android 14+ က ၎င်းကို bluetooth ခွင့်ပြုချက်နှင့် ချိတ်ဆက်ထားပါသည်။</string>
     <string name="settings_playback_only_title">အသံချက်ချက်သည်တစ်ခုသာရေတွက်</string>
     <string name="settings_playback_only_body">စာရင်းအင်းတစ်ခုအားချိတ်ဆက်သည့်အချိန်အသံချက်ချက်အလုပ်လုပ်ခွင့်အတူတည်ဆိုသည့်အခွင်းအရောင်များသည်အသံချက်ချက်ရုံ အမှတ်တရစာရင်းပြုလုပ်သည်။ အများအားဖြင့်တည်ဆိုလုံးပြည့်ထည့်သွင်းမြည့်မည်။</string>
+    <string name="settings_apps_title">အက်ပ်များကို ချန်လှပ်ရန်</string>
+    <string name="settings_apps_body">အက်ပ်တစ်ခု၏ အမှန်ခြစ်ကို ဖြုတ်လိုက်လျှင် ၎င်း၏အသံကို နားထောင်ခြင်းအဖြစ် မရေတွက်တော့ပါ — ဥပမာ နားကြပ်ခလုတ်များကို ဖမ်းယူရန် တိတ်ဆိတ်မှုကို ဖွင့်ထားသော အက်ပ်။ အက်ပ်များသည် တစ်ခုခုဖွင့်ပြီးနောက် ဤနေရာတွင် ပေါ်လာသည်။ android က ၎င်းကို အကြောင်းကြားချက် အသုံးပြုခွင့်ဟု ခေါ်ပြီး အကြောင်းကြားချက်များကို ဖတ်နိုင်ကြောင်း သတိပေးသည်; ylih သည် မည်သည့်အက်ပ် ဖွင့်နေသည်ကိုသာ ဖတ်သည်။</string>
     <string name="settings_language">ဘာသာစကား</string>
     <string name="settings_language_system">စနစ်ဘာသာစကား</string>
     <string name="settings_devices">ဒီဗိုင်းများ</string>

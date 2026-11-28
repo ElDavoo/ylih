@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">a-tibo bluetooth kyy - tatyy billik connectedDevice o-karata, android 14+ a-tibo bluetooth.</string>
     <string name="settings_playback_only_title">a-muoma-reka e-karata</string>
     <string name="settings_playback_only_body">a-lakani a-muoma-reka a-karata mara. a-karata o-karata a-tibo e-karata-muuma - e-karata kyy.</string>
+    <string name="settings_apps_title">itiu apu</string>
+    <string name="settings_apps_body">itoroshi ng’eno te apu nemeibalunyie ng’oto enye ake ne aning’ — ana apu naishir nkirikiri pe eibung’a ibatani le headset. apu eidip ene ore etaa eishir ntoki. android eiteru ena nyorrata e lomon nado ealimu ajo eidim aisoma lomon; ylih eisoma ake apu naishir.</string>
     <string name="settings_language">o-leshon</string>
     <string name="settings_language_system">system o-leshon</string>
     <string name="settings_devices">o-karatai</string>

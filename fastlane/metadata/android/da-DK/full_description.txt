@@ -36,5 +36,6 @@ TILLADELSER
 • Enheder i nærheden (bluetooth): nødvendig for at modtage forbindelseshændelser og læse et headsets navn. Uden den kan bluetooth-sporing slet ikke fungere.
 • Notifikationer: kun til notifikationen for detaljeret sporing.
 • Kør ved opstart: for at lukke sessioner, som nedlukningen aldrig fik rapporteret.
+• Adgang til notifikationer (valgfrit): kun for at udelade apps fra afspilningstiden. ylih læser, hvilken app der afspiller, aldrig dine notifikationer.
 
 Open source under MIT-licensen.

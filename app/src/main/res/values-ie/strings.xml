@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">ne disponibel til bluetooth-acces es dat: ti build solmen declara li connectedDevice-servictype, quem android 14+ attachat a bluetooth-permission</string>
     <string name="settings_playback_only_title">conte solmen audition</string>
     <string name="settings_playback_only_body">statisticas conte li tempe dum audio verament audiet in loke de tempe connectat. solmen sessionnes recordat con detalliat tracta active mesurit audition; li rest es omissat</string>
+    <string name="settings_apps_title">excluder apps</string>
+    <string name="settings_apps_body">desmarca un app e su sono ne plu conta quam auscultation — por exemple un quel lude silentie por capter li botones del auriculares. apps aparit ci pos que ili ha ludet alquo. android nomina to accesse al notificationes e averte que it posse leer notificationes; ylih lee solmen quel app lude.</string>
     <string name="settings_language">linguage</string>
     <string name="settings_language_system">system-linguage</string>
     <string name="settings_devices">aparates</string>

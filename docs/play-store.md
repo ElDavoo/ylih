@@ -103,6 +103,13 @@ in its own language, not a transliteration. Play's 30-character limit is stricte
 If review pushes back, the manifest is the argument: no `INTERNET` permission, so nothing can be
 transmitted.
 
+**Notification access** (`SessionAccessService`, behind settings' "leave apps out") changes none of
+the answers above. It reads media sessions — which app says it is playing — never a notification,
+and keeps the package names on the device, so nothing is collected in Play's sense. A
+notification listener is not on Play's list of permissions that need a declaration, so there is no
+form for it; `PRIVACY.md` names it, since the system's grant dialog warns the user it could read
+notifications.
+
 ## 5. Foreground service declaration
 
 The `play` flavor declares one foreground service type, `connectedDevice`, used only with detailed
@@ -151,7 +158,9 @@ outcome: "Everyone" / PEGI 3.
   review. Say so explicitly: an unanswered App access form blocks submission on its own.
 - **Advertising ID:** no. No `AD_ID` permission and no ads, analytics or attribution SDK;
   answering "yes" would fail review against the manifest.
-- **Photos and videos / other restricted permissions:** none requested.
+- **Photos and videos / other restricted permissions:** none requested. Package visibility comes
+  from a `<queries>` launcher intent, used to name the apps seen playing, not from
+  `QUERY_ALL_PACKAGES`, so it needs no declaration either.
 
 The merged manifest carries no network permission at all: `androidx.work:work-runtime` contributes
 `ACCESS_NETWORK_STATE` and `WAKE_LOCK`, and the app's manifest strips both (#58), since no work here

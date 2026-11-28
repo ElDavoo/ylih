@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">durung ana nganti akses bluetooth dipareng: build iki mung nyatakna jenis layanan perangkat sing nyambung, sing android 14+ pasangna ing ijin bluetooth.</string>
     <string name="settings_playback_only_title">hitung mutar mung</string>
     <string name="settings_playback_only_body">statistik nitung wektu audio bener-bener mutar tinimbang wektu nyambung. sesi mung sing ditulis karo tracking detail nyala diukur playback; liyane kabeh ditinggal metu.</string>
+    <string name="settings_apps_title">kecualekake aplikasi</string>
+    <string name="settings_apps_body">busak centhangan aplikasi lan swarane ora diétung minangka ngrungokaké manèh — upamané aplikasi sing muter kasepèn kanggo nyekel tombol headset. aplikasi katon ing kéné sawisé muter apa waé. android nyebut iki akses notifikasi lan ngélingaké yèn iki bisa maca notifikasi; ylih mung maca aplikasi endi sing lagi muter.</string>
     <string name="settings_language">basa</string>
     <string name="settings_language_system">basa sistem</string>
     <string name="settings_devices">perangkat</string>

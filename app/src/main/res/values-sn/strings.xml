@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">hasisikiro kusvika bluetooth mvumo ipiwe: build iyi inoratidzira chete connectedDevice seavhi yakaita, izvo android 14+ inosungira nebluetooth mvumo.</string>
     <string name="settings_playback_only_title">verengeza kunhemutsa chete</string>
     <string name="settings_playback_only_body">mihlelo inorangarira mahora ekushanda sezvakaiitwa zvinoshanda. mipikiso chete inobhadharwa nokurangarira kwinzira panguva yokusumudzirwa kunhemutsa; zvimwe zvingasiiwa.</string>
+    <string name="settings_apps_title">bvisa maapp</string>
+    <string name="settings_apps_body">bvisa chiratidzo pa-app uye ruzha rwayo harusisina kuverengerwa sekuteerera — sei app inoridza runyararo kuti ibate mabhatani eheadset. maapp anoonekwa pano kana aridza chimwe chinhu. android inoti iyi kuwana zviziviso uye inoyambira kuti inogona kuverenga zviziviso; ylih inoverenga chete kuti ndeipi app iri kuridza.</string>
     <string name="settings_language">chirungu</string>
     <string name="settings_language_system">chirungu chehurongi</string>
     <string name="settings_devices">migadget</string>

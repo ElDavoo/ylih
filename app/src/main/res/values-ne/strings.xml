@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ब्लुटुथ पहुँच दिइसकेसम्म उपलब्ध छैन: यो निर्माण केवल connectedDevice सेवा प्रकार घोषणा गर्छ, जो android 14+ ब्लुटुथ अनुमति गर्दछ।</string>
     <string name="settings_playback_only_title">केवल प्लेब्याक गणना गर्नुहोस्</string>
     <string name="settings_playback_only_body">तथ्याङ्कहरू जोडिएको समय को सट्टामा अडियो वास्तवमा बजिरहेको समय गणना गर्छन्। केवल विस्तृत ट्र्याकिङ गरी प्लेब्याक नापिएको सत्रहरू; बाँकीहरू छोडिन्छन्।</string>
+    <string name="settings_apps_title">एपहरू बाहिर राख्नुहोस्</string>
+    <string name="settings_apps_body">कुनै एपको चिन्ह हटाउनुहोस् र त्यसको आवाज अब सुनाइमा गनिँदैन — जस्तै हेडसेटका बटन समात्न मौनता बजाउने एप। एपहरू केही बजाएपछि यहाँ देखिन्छन्। android यसलाई सूचना पहुँच भन्छ र यसले सूचनाहरू पढ्न सक्छ भनी चेतावनी दिन्छ; ylih ले कुन एप बजिरहेको छ भन्ने मात्र पढ्छ।</string>
     <string name="settings_language">भाषा</string>
     <string name="settings_language_system">प्रणाली भाषा</string>
     <string name="settings_devices">उपकरणहरू</string>

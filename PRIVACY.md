@@ -1,6 +1,6 @@
 # Privacy policy for ylih
 
-Last updated: 5 September 2026
+Last updated: 23 October 2026
 
 ## The short version
 
@@ -15,6 +15,8 @@ Everything ylih records is written to a database on your device and stays there:
   connection type, and the last two octets of the hardware address);
 - one row per connection: when it started, when it ended, and why;
 - optionally, how much of that connected time was playing audio;
+- optionally, the package names of apps seen playing audio, and of any you chose to leave out of
+  listening time;
 - anything you type in, such as a pair's name, its price, or why you retired it.
 
 No account, no sign-in.
@@ -36,6 +38,7 @@ No account, no sign-in.
 | Notifications (`POST_NOTIFICATIONS`) | Shows the silent notification detailed tracking requires. |
 | Run at startup (`RECEIVE_BOOT_COMPLETED`) | Closes sessions a shutdown never reported, so a reboot doesn't corrupt your totals. |
 | Foreground service | Used only when detailed tracking is on — Android delivers wired-headphone plug events only to an already-running app. |
+| Notification access (optional) | Only if you switch on "leave apps out": it is the one way Android lets an app ask *which* app is playing, so the ones you untick stop counting as listening. Android warns that this access can read notifications; ylih reads none of them, only the name of the app playing, and keeps that on the phone. |
 
 ## Your data, in your hands
 

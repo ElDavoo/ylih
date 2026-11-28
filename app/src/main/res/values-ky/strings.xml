@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth өтүнүчүсү берилгенге чейин жеткиликсиз: бул курамы connectedDevice кызмат түрүн гана декларациялайт, аны Android 14+ bluetooth уруксатына байланыштырат.</string>
     <string name="settings_playback_only_title">дөбөч гана эсептөө</string>
     <string name="settings_playback_only_body">Статистика туташкан убакыттын ордуна аудио чынында ойнотулгандыгын эсептейт. Детальдуу ээрчүү менен жазылган сеанстар гана ойнотууну өлчөйт; калган калтырылды.</string>
+    <string name="settings_apps_title">колдонмолорду чыгаруу</string>
+    <string name="settings_apps_body">колдонмонун белгисин алып салсаңыз, анын үнү мындан ары угуу деп эсептелбейт — мисалы, гарнитуранын баскычтарын кармоо үчүн жымжырттык ойноткон колдонмо. колдонмолор бир нерсе ойноткондон кийин бул жерде көрүнөт. android муну билдирмелерге кирүү деп атайт жана ал билдирмелерди окуй аларын эскертет; ylih кайсы колдонмо ойноп жатканын гана окуйт.</string>
     <string name="settings_language">тил</string>
     <string name="settings_language_system">система тили</string>
     <string name="settings_devices">түзмөгүлөр</string>

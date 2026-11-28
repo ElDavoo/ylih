@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">negalimas kol negrande bluetooth prieiga sia kūryba tik pasako</string>
     <string name="settings_playback_only_title">skaiciuot tik transliaciju</string>
     <string name="settings_playback_only_body">statistika skaiciuoja laika kada audio tikrai zaidele</string>
+    <string name="settings_apps_title">neįtraukti programų</string>
+    <string name="settings_apps_body">atžymėk programą ir jos garsas nebebus skaičiuojamas kaip klausymas — pavyzdžiui, programos, kuri groja tylą, kad pagautų ausinių mygtukus. programos atsiranda, kai ką nors pagroja. android tai vadina prieiga prie pranešimų ir įspėja, kad ji leidžia skaityti pranešimus; ylih skaito tik tai, kuri programa groja.</string>
     <string name="settings_language">kalba</string>
     <string name="settings_language_system">sistemos kalba</string>
     <string name="settings_devices">irenginiai</string>

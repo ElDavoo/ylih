@@ -130,6 +130,8 @@
     <string name="settings_detailed_unavailable">nun ta disponible hasta que se conceda accesu a bluetooth: esta compilación namái declara’l tipu de serviciu connectedDevice, que android 14+ enlaza a un permisu de bluetooth.</string>
     <string name="settings_playback_only_title">cuntar namás la reproducción</string>
     <string name="settings_playback_only_body">les estadístiques cunten el tiempu que l’audiu tuvo reproduciéndose de verdá en cuenta del tiempu coneutáu. namás les sesiones rexistraes col rastrexu detallau activáu midieron la reproducción; les demás quéden fuera.</string>
+    <string name="settings_apps_title">escluyir apps</string>
+    <string name="settings_apps_body">desmarca una app y el so soníu dexa de cuntar como escucha — por exemplu, una que reproduz silenciu pa garrar los botones de los auriculares. les apps apaecen cuando reproducieron daqué. android llama a esto accesu a los avisos y alvierte que pue lleelos; ylih namái llee qué app ta reproduciendo.</string>
     <string name="settings_language">llingua</string>
     <string name="settings_language_system">llingua del sistema</string>
     <string name="settings_devices">dispositivus</string>

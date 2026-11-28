@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">tidak tersedia sampai akses bluetooth diberikan: build ini hanya mendeklarasikan jenis layanan connectedDevice, yang di android 14+ terikat pada izin bluetooth.</string>
     <string name="settings_playback_only_title">hitung hanya pemutaran</string>
     <string name="settings_playback_only_body">statistik menghitung waktu saat audio benar-benar diputar, bukan waktu terhubung. hanya sesi yang direkam saat pelacakan detail aktif yang mengukur pemutaran; sisanya tidak disertakan.</string>
+    <string name="settings_apps_title">kecualikan aplikasi</string>
+    <string name="settings_apps_body">hapus centang sebuah aplikasi dan suaranya tidak lagi dihitung sebagai mendengarkan — misalnya aplikasi yang memutar keheningan untuk menangkap tombol headset. aplikasi muncul setelah memutar sesuatu. android menyebutnya akses notifikasi dan memperingatkan bahwa akses ini dapat membaca notifikasi; ylih hanya membaca aplikasi mana yang sedang memutar.</string>
     <string name="settings_language">bahasa</string>
     <string name="settings_language_system">bahasa sistem</string>
     <string name="settings_devices">perangkat</string>

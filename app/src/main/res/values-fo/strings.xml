@@ -130,6 +130,8 @@
     <string name="settings_detailed_unavailable">ótiliglig til bluetooth lov er givið: henda bygning segir bara connectedDevice tænastunáð, sum android 14+ bundnast til bluetooth lov.</string>
     <string name="settings_playback_only_title">tel bert spæling</string>
     <string name="settings_playback_only_body">hagtøl telja tíðina, tá ið ljóðið veruliga spældi, í staðin fyri tíðina sambundin. bert setur, sum vórðu skrásett við útbroytt fylgja tendrað, mátaðu spælingina; hini verða latin úti.</string>
+    <string name="settings_apps_title">útiloka appir</string>
+    <string name="settings_apps_body">tak krossin av einari app, og ljóðið frá henni telist ikki longur sum lurting — t.d. ein, ið spælir kvirru fyri at fanga knøttarnar á headsettinum. appir síggjast her, tá ið tær hava spælt okkurt. android kallar hetta atgongd til fráboðanir og ávarar um, at hon kann lesa fráboðanir; ylih lesur bert, hvør app spælir.</string>
     <string name="settings_language">mál</string>
     <string name="settings_language_system">mál kervisins</string>
     <string name="settings_devices">tækjir</string>

@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">ŋ fù zú bluetooth à dúm: app ìyà yí kó connectedDevice sèp nù, android 14+ à gó à bluetooth àdí.</string>
     <string name="settings_playback_only_title">kí à zán tsuŋ</string>
     <string name="settings_playback_only_body">tàten kí ǹkì à zán nò, à kì ǹkì à bɛ̀ nò bɔ̀. mbɨ̀ tàten à sù nò à kí à zán; à mɔ̀ɔ̀ à bɛ̀ nò.</string>
+    <string name="settings_apps_title">gó lɛ̀ app à sú</string>
+    <string name="settings_apps_body">zú ndap app ìkí, à nù yí kó ìkobò à tò ŋwàʼ ntsùŋ — kà app yí gó ìkobò ìkí ndzáʼ ŋ́ kpɛ̀ ìbɔ̀ headset. app à gó ŋ́ zán fɨ̀ à sú kà à ŋwàʼ. android yí sé nù yì sìnòte à kó à yúʼ sìnòte; ylih à gó yúʼ app yì à ŋwàʼ.</string>
     <string name="settings_language">langaj</string>
     <string name="settings_language_system">langaj sistɛm</string>
     <string name="settings_devices">divaïs</string>

@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ty ty pá até rẽ bluetooth ta ty dádu: versãu iã só ty nẽ tipu servisu connectedDevice, ke android 14+ ta ty rẽ bluetooth.</string>
     <string name="settings_playback_only_title">rẽ sómente kí</string>
     <string name="settings_playback_only_body">estad ta rẽ tempu som ta kí de tempu vũ. sómente té tẽ ukré nĩ tukré gĩ ta gẽ kí; jĩ ta ská fõ.</string>
+    <string name="settings_apps_title">app ag tỹ ke ge mũ</string>
+    <string name="settings_apps_body">app ũ ki marka tóg kãmũ, kar ẽg nĩgja ẽ tóg ẽ jé tũ nĩ — ũ app ũ tỹ ẽg mỹ kanhgóg nĩgja ẽ to headset tỹ botãw kri. app ag tóg ũ nỹ jé kãmũ kar ã ki ve nĩ. android tóg tag ki notifikasãw ki jun hã ra mẽ kar notifikasãw ag rã ke tũ nĩ ra mẽ; ylih tóg app ũ jé kãmũ ra hã ra rã.</string>
     <string name="settings_language">ling</string>
     <string name="settings_language_system">ling sistema</string>
     <string name="settings_devices">disositifu</string>

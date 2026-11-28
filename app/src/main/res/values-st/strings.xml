@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ha e fumanehe ho fihlela phihlello ea bluetooth e fanoe: kaho ena e phatlalatsa feela mofuta oa tšebeletso ea connectedDevice, oo android 14+ e o hokahanyang le tumello ea bluetooth.</string>
     <string name="settings_playback_only_title">bala ho bapala feela</string>
     <string name="settings_playback_only_body">lipalopalo li bala nako eo molumo o neng o bapala ka sebele ho e-na le nako ea ho hokahana. ke liboka feela tse ngotsoeng ka ho latela ka botlalo ho bulehile tse lekantseng ho bapala; tse ling li siuoa.</string>
+    <string name="settings_apps_title">tlohela lisebelisoa kantle</string>
+    <string name="settings_apps_body">tlosa letšoao sesebelisoeng ’me molumo oa sona o ke ke oa hlola o baloa e le ho mamela — joalo ka sesebelisoa se bapalang khutso ho tšoara likonopo tsa headset. lisebelisoa li hlaha mona ha li se li bapetse ho hong. android e bitsa sena phihlello ea litsebiso ’me e lemosa hore e ka bala litsebiso; ylih e bala feela hore na ke sesebelisoa sefe se bapalang.</string>
     <string name="settings_language">puo</string>
     <string name="settings_language_system">puo ea sistimi</string>
     <string name="settings_devices">lisebelisoa</string>

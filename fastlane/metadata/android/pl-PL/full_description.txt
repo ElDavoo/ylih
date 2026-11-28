@@ -36,5 +36,6 @@ UPRAWNIENIA
 • Urządzenia w pobliżu (bluetooth): wymagane do odbierania zdarzeń połączenia i odczytu nazwy słuchawek. Bez tego śledzenie bluetooth w ogóle nie może działać.
 • Powiadomienia: tylko dla notyfikacji szczegółowego śledzenia.
 • Uruchamianie przy starcie: aby zamykać sesje, o których zamknięcie systemu nigdy nie poinformowało.
+• Dostęp do powiadomień (opcjonalnie): tylko do wykluczania aplikacji z czasu odtwarzania. ylih odczytuje, która aplikacja odtwarza dźwięk, nigdy twoich powiadomień.
 
 Open source na licencji MIT.

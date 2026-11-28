@@ -130,6 +130,8 @@
     <string name="settings_detailed_unavailable">לא זמין עד שתינתן גישה ל-bluetooth: הגרסה הזאת מצהירה רק על סוג השירות connectedDevice, ש-android 14+ קושר להרשאת bluetooth.</string>
     <string name="settings_playback_only_title">לספור רק השמעה</string>
     <string name="settings_playback_only_body">הסטטיסטיקה סופרת את הזמן שבו האודיו באמת התנגן במקום את זמן החיבור. רק הפעלות שנרשמו כשמעקב מפורט היה פעיל מדדו השמעה; השאר נשארות בחוץ.</string>
+    <string name="settings_apps_title">השמטת אפליקציות</string>
+    <string name="settings_apps_body">בטלו את הסימון של אפליקציה והצליל שלה יפסיק להיחשב כהאזנה — למשל אפליקציה שמשמיעה שקט כדי לתפוס את כפתורי האוזניות. אפליקציות מופיעות כאן אחרי שהשמיעו משהו. android קורא לזה גישה להתראות ומזהיר שהיא מאפשרת לקרוא התראות; ylih קורא רק איזו אפליקציה מנגנת.</string>
     <string name="settings_language">שפה</string>
     <string name="settings_language_system">שפת המערכת</string>
     <string name="settings_devices">התקנים</string>

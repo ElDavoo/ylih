@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">dostopno, dokler ni odobren dostop bluetooth: ta gradnja samo izjavlja tip storitve connectedDevice, ki ga android 14+ veže na dovolenje bluetooth.</string>
     <string name="settings_playback_only_title">računa samo predvajanje</string>
     <string name="settings_playback_only_body">statistika računajo čas, ko je bil zvok dejansko predvajan, namesto časa priključka. samo seje beležene z omenjenim podrobnim slejenjem so merile predvajanje; ostalo je izpuščeno.</string>
+    <string name="settings_apps_title">izpusti aplikacije</string>
+    <string name="settings_apps_body">odkljukaj aplikacijo in njen zvok se ne šteje več za poslušanje — na primer takšne, ki predvaja tišino, da lovi gumbe slušalk. aplikacije se pojavijo, ko kaj predvajajo. android temu pravi dostop do obvestil in opozarja, da lahko bere obvestila; ylih bere le, katera aplikacija predvaja.</string>
     <string name="settings_language">jezik</string>
     <string name="settings_language_system">jezik sistema</string>
     <string name="settings_devices">naprave</string>

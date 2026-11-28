@@ -36,5 +36,6 @@ BERECHTIGUNGEN
 • Geräte in der Nähe (bluetooth): nötig, um Verbindungsereignisse zu empfangen und den Namen eines Kopfhörers zu lesen. Ohne diese Berechtigung kann bluetooth-Tracking überhaupt nicht funktionieren.
 • Benachrichtigungen: nur für die Benachrichtigung des detaillierten Trackings.
 • Beim Start ausführen: um Sitzungen zu schließen, die das Herunterfahren nie gemeldet hat.
+• Benachrichtigungszugriff (optional): nur, um Apps aus der Wiedergabezeit herauszunehmen. ylih liest, welche App gerade abspielt, niemals deine Benachrichtigungen.
 
 Open Source unter der MIT-Lizenz.

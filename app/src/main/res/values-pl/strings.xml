@@ -130,6 +130,8 @@
     <string name="settings_detailed_unavailable">niedostępne, dopóki nie przyznasz dostępu do bluetooth: ta wersja deklaruje tylko typ usługi connectedDevice, który android 14+ wiąże z uprawnieniem bluetooth.</string>
     <string name="settings_playback_only_title">licz tylko odtwarzanie</string>
     <string name="settings_playback_only_body">statystyki liczą czas, przez który dźwięk naprawdę grał, zamiast czasu połączenia. odtwarzanie zmierzyły tylko sesje zapisane przy włączonym szczegółowym śledzeniu; reszta jest pomijana.</string>
+    <string name="settings_apps_title">pomiń aplikacje</string>
+    <string name="settings_apps_body">odznacz aplikację, a jej dźwięk przestanie liczyć się jako słuchanie — na przykład taką, która odtwarza ciszę, by przechwytywać przyciski zestawu słuchawkowego. aplikacje pojawiają się, gdy coś odtworzą. android nazywa to dostępem do powiadomień i ostrzega, że pozwala on czytać powiadomienia; ylih czyta tylko, która aplikacja gra.</string>
     <string name="settings_language">język</string>
     <string name="settings_language_system">język systemu</string>
     <string name="settings_devices">urządzenia</string>

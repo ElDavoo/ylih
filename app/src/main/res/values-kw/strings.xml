@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">na hwer avorow bluetooth dreth a rowsys: build na heb a sonsy connectedDevice servij typ, neb android 14+ a ryssy bluetooth breudeur.</string>
     <string name="settings_playback_only_title">kemeres kontya play ha</string>
     <string name="settings_playback_only_body">statistegva kemeres kontya vro stereo a veu gwari yn seurt vro konnektet. only seshon reordys gans tregyans dewelys a dhro modul play; prest a addalwys.</string>
+    <string name="settings_apps_title">gasa appys yn-mes</string>
+    <string name="settings_apps_body">dilea an merk dhyworth app ha ny vydh y son niverys avel goslowes na fella — rag ensampel, app a wari taw rag kachya boteni an headset. appys a omdhiskwedh omma wosa gwari neppyth. android a’n gelow hedhas dhe gemennadow hag a warn y hyll redya kemennadow; ylih a red unnsel py app a wari.</string>
     <string name="settings_language">yeth</string>
     <string name="settings_language_system">yeth servij</string>
     <string name="settings_devices">trigger</string>

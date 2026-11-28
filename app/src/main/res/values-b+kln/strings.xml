@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">mibisitin chopiyek osae bluetooth chosindet: simu aap connectedDevice saina, ikicha android 14+ kwa bluetooth chosindet.</string>
     <string name="settings_playback_only_title">kotagit kogo tamanyi</string>
     <string name="settings_playback_only_body">sitaatistik kotagit kogo kotagit ari kotagit kosiyek. kotagit sitaatistik mabunyin kotagit kogo tamanyi; taata kibotiyek.</string>
+    <string name="settings_apps_title">ibu apps</string>
+    <string name="settings_apps_body">ibu ngelek kobo app ak momwaitos koyo bik ko kasit — ko app ne itoreech kebisiet si kenam batonik che headset. apps kobonu ko kogogoch kiy. android kokuren ni keror ab iyaninik ak kowechin kole imuchi kosom iyaninik; ylih kosome app ne itoreech kityo.</string>
     <string name="settings_language">lasa</string>
     <string name="settings_language_system">lasa system</string>
     <string name="settings_devices">simu</string>

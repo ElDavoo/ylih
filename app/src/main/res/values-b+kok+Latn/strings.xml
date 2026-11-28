@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth pravesh dilyas paryat uplabdh nahi: he build fukt connectedDevice sev prakhar ghodshit karte, je android 14+ bluetooth parvangi sodte.</string>
     <string name="settings_playback_only_title">fukt playback moj</string>
     <string name="settings_playback_only_body">ankde julem velh aitvj audio kharkhur vajt aslelem velh mojte. fukt tapshelvar tracking sah record kelem seshan molem playback; baaki vgleem jatam.</string>
+    <string name="settings_apps_title">apps bhair dovrat</string>
+    <string name="settings_apps_body">ekhadea appachi khun kadat ani tacho avaz atam aikop mhunn mezcho na — dekhik headsetachim battnnam dhorpak xantotai vazovpi app. apps kitem tori vazoilea uprant hanga distat. android haka suchovnni access mhunntta ani tem suchovnneo vachunk xokta oxi xittkavnni dita; ylih fokot khoincho app vazta tem vachta.</string>
     <string name="settings_language">bhasha</string>
     <string name="settings_language_system">system bhasha</string>
     <string name="settings_devices">device</string>

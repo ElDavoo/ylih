@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">బ్లూటూత్ యాక్సెస్ ఇచ్చే వరకు అందుబాటులో లేదు: ఈ బిల్డ్ connectedDevice సేవా రకాన్ని మాత్రమే ప్రకటిస్తుంది, దాన్ని android 14+ బ్లూటూత్ అనుమతితో ముడిపెడుతుంది.</string>
     <string name="settings_playback_only_title">ప్లేబ్యాక్ మాత్రమే లెక్కించు</string>
     <string name="settings_playback_only_body">కనెక్ట్ అయిన సమయానికి బదులు ఆడియో నిజంగా ప్లే అయిన సమయాన్ని గణాంకాలు లెక్కిస్తాయి. వివరణాత్మక ట్రాకింగ్ ఆన్‌లో ఉన్నప్పుడు నమోదైన సెషన్‌లు మాత్రమే ప్లేబ్యాక్‌ను కొలిచాయి; మిగిలినవి వదిలేయబడతాయి.</string>
+    <string name="settings_apps_title">యాప్‌లను మినహాయించు</string>
+    <string name="settings_apps_body">ఒక యాప్ టిక్ తీసేస్తే దాని శబ్దం ఇకపై వినడంగా లెక్కించబడదు — ఉదాహరణకు హెడ్‌సెట్ బటన్‌లను పట్టుకోవడానికి నిశ్శబ్దాన్ని ప్లే చేసే యాప్. యాప్‌లు ఏదైనా ప్లే చేసిన తర్వాత ఇక్కడ కనిపిస్తాయి. android దీన్ని నోటిఫికేషన్ యాక్సెస్ అంటుంది మరియు అది నోటిఫికేషన్‌లను చదవగలదని హెచ్చరిస్తుంది; ఏ యాప్ ప్లే అవుతోందో మాత్రమే ylih చదువుతుంది.</string>
     <string name="settings_language">భాష</string>
     <string name="settings_language_system">సిస్టమ్ భాష</string>
     <string name="settings_devices">పరికరాలు</string>

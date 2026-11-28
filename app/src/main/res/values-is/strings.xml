@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">ekki tiltækt þar til bluetooth aðgang er veitt: þetta build lýsir aðeins tengdu tækiþjónustutegund sem android 14+ tengir bluetooth heimildir.</string>
     <string name="settings_playback_only_title">talning eingöngu endurspilun</string>
     <string name="settings_playback_only_body">tölfræði teljandi tímann sem hljóð var í raun að spila í stað tímans tengdur. aðeins kjörur sem skráð voru með nákvæmri raktningu á endurspilun mælt; afgangurinn er skilinn eftir.</string>
+    <string name="settings_apps_title">undanskilja forrit</string>
+    <string name="settings_apps_body">taktu hakið af forriti og hljóð þess telst ekki lengur sem hlustun — til dæmis forrit sem spilar þögn til að grípa hnappa heyrnartólanna. forrit birtast hér þegar þau hafa spilað eitthvað. android kallar þetta tilkynningaaðgang og varar við að hann geti lesið tilkynningar; ylih les aðeins hvaða forrit er að spila.</string>
     <string name="settings_language">tungumál</string>
     <string name="settings_language_system">tungumál kerfis</string>
     <string name="settings_devices">tæki</string>

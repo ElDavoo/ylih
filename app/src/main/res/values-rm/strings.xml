@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">betg disponibel fin che l’access bluetooth n’es permettì: quella cumpilada declara mo il typ da service connectedDevice, tge che android 14+ conectescha a ina permissiun bluetooth.</string>
     <string name="settings_playback_only_title">cunta mo reproducziun</string>
     <string name="settings_playback_only_body">las statisticas cunteschen il temp che l’audio steva realmain reproducziun, betg il temp connectà. mo sessiuns registradas cun il tracciament detalià aviert han mesirà la reproducziun; las autras vegnan lasadas ora.</string>
+    <string name="settings_apps_title">excluder apps</string>
+    <string name="settings_apps_body">allontanescha il segn d’ina app e ses tun na dumbra betg pli sco tadlar — per exempel ina che suna silenzi per tschiffar ils buttuns dals auriculars. las apps cumparan cur ch’ellas han sunà insatge. android numna quai access a las notificaziuns ed avertescha ch’el po leger notificaziuns; ylih legia mo tge app che suna.</string>
     <string name="settings_language">lingua</string>
     <string name="settings_language_system">lingua dal sistem</string>
     <string name="settings_devices">apparats</string>

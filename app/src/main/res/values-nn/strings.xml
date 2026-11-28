@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">utilgjengelig inntil bluetooth tilgang er gitt: denne versjonen deklarerer berre connectedDevice teneste typen, som android 14+ binder til ein bluetooth løyve.</string>
     <string name="settings_playback_only_title">telja berre avspeling</string>
     <string name="settings_playback_only_body">statistikken teljar tida lyden var faktisk avspeling i stedet for tida kopla. berre øktar registrert med nøyaktig registrering på målt avspeling; resten er laten ut.</string>
+    <string name="settings_apps_title">utelat appar</string>
+    <string name="settings_apps_body">fjern haken for ein app, så tel ikkje lyden hennar lenger som lytting — til dømes ein som spelar stille for å fange knappane på hovudsettet. appar dukkar opp når dei har spelt noko. android kallar dette varseltilgang og åtvarar om at han kan lese varsel; ylih les berre kva app som spelar.</string>
     <string name="settings_language">språk</string>
     <string name="settings_language_system">system språk</string>
     <string name="settings_devices">einingar</string>

@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">metii te peeitu enkirroret e bluetooth eishoreki: enkibuild ena keitejo connectedDevice ake, na android 14+ keirurunye te nkirroret e bluetooth.</string>
     <string name="settings_playback_only_title">itoropiyian enkiyioo ake</string>
     <string name="settings_playback_only_body">iropiyian keitoropiyian enkata e nkiyioo te sii metii enkata e nkirurunyet. inkata naagilu te nkilepata sapuk naashakino ake nikitobira enkiyioo; kulie keitoroshi.</string>
+    <string name="settings_apps_title">itiu apps</string>
+    <string name="settings_apps_body">itoroshi eng’eno te app nimeibalunyie eng’oto enye ake ne aning’ — ana app naishir enkirikiri pe eibung’a ilbatani le headset. apps eidip ene ore etaa eishir intoki. android eiteru ena enyorrata e ilomon nado ealimu ajo eidim aisoma ilomon; ylih eisoma ake app naishir.</string>
     <string name="settings_language">enkutuk</string>
     <string name="settings_language_system">enkutuk e sistem</string>
     <string name="settings_devices">intokitin</string>

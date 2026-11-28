@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">bluetooth icazəsi verilənə qədər mövcud deyil: bu qurğu yalnız connectedDevice xidmət tipini elan edir, android 14+ bunu bluetooth icazəsinə bağlayır.</string>
     <string name="settings_playback_only_title">yalnız oxutmanı say</string>
     <string name="settings_playback_only_body">statistika qoşulma vaxtı əvəzinə səsin həqiqətən oxunduğu vaxtı sayır. yalnız ətraflı izləmə açıq ikən qeydə alınan sessiyalar oxutmanı ölçüb; qalanları çıxarılır.</string>
+    <string name="settings_apps_title">tətbiqləri istisna et</string>
+    <string name="settings_apps_body">tətbiqin işarəsini götürün, onun səsi artıq dinləmə sayılmayacaq — məsələn, qulaqlığın düymələrini tutmaq üçün sükut səsləndirən tətbiq. tətbiqlər nəsə səsləndirdikdən sonra burada görünür. android bunu bildiriş girişi adlandırır və onun bildirişləri oxuya biləcəyi barədə xəbərdarlıq edir; ylih yalnız hansı tətbiqin səsləndirdiyini oxuyur.</string>
     <string name="settings_language">dil</string>
     <string name="settings_language_system">sistem dili</string>
     <string name="settings_devices">cihazlar</string>

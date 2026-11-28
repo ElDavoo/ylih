@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">no disponibile fina che l’accesso bluetooth no vegn permessu: sta build a dichiara sóe o tipo de servisio connectedDevice, che android 14+ a leva a permiso bluetooth.</string>
     <string name="settings_playback_only_title">conta sóe riprodotio</string>
     <string name="settings_playback_only_body">statistiche a contann’o tempo che l’audio a l’era veramenti en riprodotio anziche-o tempo conligou. sóe sessioun registrâ co-o registraggio minuço attivô misuran o riprodotio; altre segnan lassâ fuvi.</string>
+    <string name="settings_apps_title">escludde app</string>
+    <string name="settings_apps_body">leva a crôxe a unn’app e o seu son o no conta ciù comme ascolto — pe exempio unn’app ch’a sêuna o silençio pe acciappâ i bottoin de cuffie. e app compâan apreuvo ch’an sunnou quarcosa. android o ciamma sto chi accesso a-e notifiche e o l’avvisa ch’o peu lezile; ylih o leze solo quæ app a sta sunnando.</string>
     <string name="settings_language">lengua</string>
     <string name="settings_language_system">lengua de sisitiema</string>
     <string name="settings_devices">dispositivi</string>

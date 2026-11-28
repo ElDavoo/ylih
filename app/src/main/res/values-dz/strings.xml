@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">bluetooth ལ་ལེབ་ལེབ་བྱིན་པའི་དུས་སུ་དེ་ཐུབ་ཀྱི་ཡིན་ གླེང་སྐོར་འདི་ནི་bluetooth དེའི་ལེབ་ལེབ་གདན་པའི་connectedDevice དེ་ལ་དབྱེ་བ་གནས་དུ་སྲིད་པས། </string>
     <string name="settings_playback_only_title">སྒྲ་གཏང་ནི་རྐྱངམ་ཅིག་རྩིས།</string>
     <string name="settings_playback_only_body">གྲངས་ཐོ་གིས་མཐུད་ཡོད་པའི་དུས་ཚོད་ཀྱི་ཚབ་ལུ་སྒྲ་ངོ་མ་གཏང་ཡོད་པའི་དུས་ཚོད་རྩིསཝ་ཨིན། ཞིབ་ཕྲ་གླེང་སྟེགས་ཁ་ཕྱེ་སྟེ་བཟུང་ཡོད་པའི་ལཱ་ཐེངས་ཚུ་རྐྱངམ་ཅིག་གིས་སྒྲ་གཏང་ནི་ཆ་ཚད་བཟུང་ནུག གཞན་ཚུ་བཞག་ནུག</string>
+    <string name="settings_apps_title">གློག་རིམ་ཕྱི་ཁར་བཞག</string>
+    <string name="settings_apps_body">གློག་རིམ་ཅིག་གི་རྟགས་བསལ་བ་ཅིན་ དེ་གི་སྒྲ་ཉན་ཚུལ་དུ་མི་རྩིས། དཔེར་ན་ གོ་སང་ཕོ་ཉའི་མཐེབ་གནོན་འཛིན་ནིའི་དོན་ལུ་ ཁུ་སིམ་གཏང་མི་གློག་རིམ། གློག་རིམ་ཚུ་ ག་ཅི་ཅིག་གཏང་ཞིནམ་ལས་ ནཱ་ལུ་མཐོང་། android གིས་འདི་ལུ་ བརྡ་བསྐུལ་འཛུལ་སྤྱོད་ཟེར་ཞིནམ་ལས་ བརྡ་བསྐུལ་ལྷག་ཚུགས་ཟེར་ ཉེན་བརྡ་བྱིན། ylih གིས་ གློག་རིམ་ག་གཏང་དོ་ག་དེ་རྐྱངམ་ཅིག་ལྷགཔ་ཨིན།</string>
     <string name="settings_language">སྐད་ཡིག</string>
     <string name="settings_language_system">རིམ་ལུགས་ཀྱི་སྐད་ཡིག</string>
     <string name="settings_devices">སྒྲིག་ཆས།</string>

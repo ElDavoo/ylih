@@ -36,5 +36,6 @@ TILLATELSER
 • Enheter i nærheten (bluetooth): kreves for å motta tilkoblingshendelser og lese navnet på et headset. Uten den kan ikke bluetooth-sporing fungere i det hele tatt.
 • Varsler: kun for varselet ved detaljert sporing.
 • Kjør ved oppstart: for å avslutte økter som nedstengingen aldri rapporterte.
+• Varseltilgang (valgfritt): kun for å holde apper utenfor avspillingstiden. ylih leser hvilken app som spiller, aldri varslene dine.
 
 Åpen kildekode under MIT-lisensen.

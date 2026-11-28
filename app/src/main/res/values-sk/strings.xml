@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">dostupné až po udelení bluetooth prístupu: tento build iba vyhlasuje typ služby connectedDevice, ktorý android 14+ viazal na povolenie bluetooth.</string>
     <string name="settings_playback_only_title">počítaj iba prehrávanie</string>
     <string name="settings_playback_only_body">štatistika počítajú čas, kedy sa audio skutočne prehrávalo namiesto času pripojeného. iba relácie zaznamenané s podrobným sledovaním zmeral prehrávanie; zvyšok je vynechaný.</string>
+    <string name="settings_apps_title">vynechať aplikácie</string>
+    <string name="settings_apps_body">odškrtni aplikáciu a jej zvuk sa prestane počítať ako počúvanie — napríklad takej, ktorá prehráva ticho, aby zachytila tlačidlá náhlavnej súpravy. aplikácie sa objavia, keď niečo prehrajú. android to nazýva prístup k upozorneniam a varuje, že umožňuje čítať upozornenia; ylih číta iba to, ktorá aplikácia hrá.</string>
     <string name="settings_language">jazyk</string>
     <string name="settings_language_system">jazyk systému</string>
     <string name="settings_devices">zariadenia</string>

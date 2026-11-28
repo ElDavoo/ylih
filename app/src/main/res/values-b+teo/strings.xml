@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">mam ejai kanu inyakinio aitodol naka bluetooth: ebuild lo elimokini bon connectedDevice, na erubunio android 14+ kosi apuwan naka bluetooth.</string>
     <string name="settings_playback_only_title">parasia bon aiperar</string>
     <string name="settings_playback_only_body">aparasia eparasiai apak na eperarit eŋer alosit kotoma apak naka arubun. apakio bon nuigirakinitos kosi aiŋisianakin naepolot naitodolikinit epimakis aiperar; luce etodolikinete.</string>
+    <string name="settings_apps_title">kalaunar apps</string>
+    <string name="settings_apps_body">kalaun aitodolikinet kama app ka emamei eporoto kece ekwanikinere ebe aiirar — ebe app na eirarit ailalak tetere kerem ebutonin lu headset. apps itodiaro neni kotoma aidaun kiirar ibore. android ekonyakinit ne aiwou kama aitodolikineta ka einakini aiboikin ebe epedori akisiom aitodolikineta; ylih esiomi bon app na eirarit.</string>
     <string name="settings_language">aŋajep</string>
     <string name="settings_language_system">aŋajep naka esistem</string>
     <string name="settings_devices">iboro</string>

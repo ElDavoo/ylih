@@ -127,6 +127,8 @@
     <string name="settings_detailed_unavailable">bluetooth ግቤት እስከተሰጠ ድረስ አይገኝም: ይህ ሙያ connectedDevice ዓይነት ብቻ ያወጣ, android 14+ በ bluetooth ግቤት ጠብቅ።</string>
     <string name="settings_playback_only_title">ማጫወትን ብቻ ቁጠር</string>
     <string name="settings_playback_only_body">ስታቲስቲክስ ኦዲዮ በትክክል የተጫወተበትን ጊዜ ይቆጥራል እንጂ የተገናኘበትን ጊዜ አይደለም። ዝርዝር ምልከታ በርቶ የተመዘገቡ ክፍለ ጊዜዎች ብቻ ማጫወትን ለክተዋል፤ የቀሩት ይተዋሉ።</string>
+    <string name="settings_apps_title">መተግበሪያዎችን አስወጣ</string>
+    <string name="settings_apps_body">የአንድ መተግበሪያ ምልክት አንሳ፣ ድምፁም ከእንግዲህ እንደ ማዳመጥ አይቆጠርም — ለምሳሌ የጆሮ ማዳመጫ አዝራሮችን ለመያዝ ዝምታ የሚያጫውት መተግበሪያ። መተግበሪያዎች አንድ ነገር ካጫወቱ በኋላ እዚህ ይታያሉ። android ይህንን የማሳወቂያ መዳረሻ ይለዋል እና ማሳወቂያዎችን ማንበብ እንደሚችል ያስጠነቅቃል፤ ylih የሚያነበው የትኛው መተግበሪያ እየተጫወተ እንዳለ ብቻ ነው።</string>
     <string name="settings_language">ቋንቋ</string>
     <string name="settings_language_system">የስርዓቱ ቋንቋ</string>
     <string name="settings_devices">መሳሪያ</string>

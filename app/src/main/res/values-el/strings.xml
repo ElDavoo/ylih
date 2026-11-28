@@ -130,6 +130,8 @@
     <string name="settings_detailed_unavailable">μη διαθέσιμο μέχρι να δοθεί πρόσβαση στο bluetooth: αυτή η έκδοση δηλώνει μόνο τον τύπο υπηρεσίας connectedDevice, τον οποίο το android 14+ συνδέει με άδεια bluetooth.</string>
     <string name="settings_playback_only_title">μέτρα μόνο την αναπαραγωγή</string>
     <string name="settings_playback_only_body">τα στατιστικά μετρούν τον χρόνο που ο ήχος έπαιζε πραγματικά αντί για τον χρόνο σύνδεσης. μόνο οι συνεδρίες που καταγράφηκαν με τη λεπτομερή καταγραφή ενεργή μέτρησαν την αναπαραγωγή· οι υπόλοιπες παραλείπονται.</string>
+    <string name="settings_apps_title">εξαίρεση εφαρμογών</string>
+    <string name="settings_apps_body">ξετσεκάρετε μια εφαρμογή και ο ήχος της παύει να μετράει ως ακρόαση — π.χ. μια που παίζει σιωπή για να πιάνει τα κουμπιά των ακουστικών. οι εφαρμογές εμφανίζονται μόλις παίξουν κάτι. το android το ονομάζει πρόσβαση στις ειδοποιήσεις και προειδοποιεί ότι μπορεί να τις διαβάζει· το ylih διαβάζει μόνο ποια εφαρμογή παίζει.</string>
     <string name="settings_language">γλώσσα</string>
     <string name="settings_language_system">γλώσσα συστήματος</string>
     <string name="settings_devices">συσκευές</string>

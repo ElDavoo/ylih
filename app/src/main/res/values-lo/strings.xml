@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ບໍ່ສາມາດຈົນ bluetooth ຮັບອະນຸຍາດ.</string>
     <string name="settings_playback_only_title">ນັບສະເພາະການຫຼິ້ນ</string>
     <string name="settings_playback_only_body">ສະຖິຕິຈະນັບເວລາທີ່ສຽງກຳລັງຫຼິ້ນຈິງ ແທນເວລາທີ່ເຊື່ອມຕໍ່. ມີແຕ່ເຊດຊັນທີ່ບັນທຶກດ້ວຍການຕິດຕາມລາຍລະອຽດເທົ່ານັ້ນທີ່ວັດແທກການຫຼິ້ນ; ສ່ວນທີ່ເຫຼືອຈະບໍ່ຖືກນັບ.</string>
+    <string name="settings_apps_title">ຍົກເວັ້ນແອັບ</string>
+    <string name="settings_apps_body">ເອົາເຄື່ອງໝາຍອອກຈາກແອັບ ແລ້ວສຽງຂອງມັນຈະບໍ່ນັບເປັນການຟັງອີກ — ເຊັ່ນ ແອັບທີ່ຫຼິ້ນຄວາມງຽບເພື່ອຈັບປຸ່ມຫູຟັງ. ແອັບຈະປາກົດຢູ່ນີ້ຫຼັງຈາກຫຼິ້ນບາງຢ່າງແລ້ວ. android ເອີ້ນສິ່ງນີ້ວ່າການເຂົ້າເຖິງການແຈ້ງເຕືອນ ແລະ ເຕືອນວ່າມັນອ່ານການແຈ້ງເຕືອນໄດ້; ylih ອ່ານພຽງແຕ່ວ່າແອັບໃດກຳລັງຫຼິ້ນ.</string>
     <string name="settings_language">ພາສາ</string>
     <string name="settings_language_system">ພາສາລະບົບ</string>
     <string name="settings_devices">ອຸປະກອນ</string>

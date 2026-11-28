@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ayatholakali kube i-bluetooth inike izintando: lokhu kukhanda kungetshengise kuphela inhlaka ye-connectedDevice, okwenza i-android 14+ uxhumeke emandleni e-bluetooth.</string>
     <string name="settings_playback_only_title">bala kuphela ukusosukelwa</string>
     <string name="settings_playback_only_body">amathathelo ethulela isikhathi esikukhuluma ngaso kunokuba isikhathi esishumelene. kuphela umsebenzi oqokululaziswe nokuqina okubalulekile kusosukelwa; okusele kususiwe.</string>
+    <string name="settings_apps_title">khipha ama-app</string>
+    <string name="settings_apps_body">susa uphawu ku-app njalo umsindo wayo kawusayikubalwa njengokulalela — njenge-app edlala ukuthula ukuze ibambe izinkinobho ze-headset. ama-app avela lapha esedlale okuthile. i-android ikubiza ngokuthi yikungena ezaziswini njalo iyaxwayisa ukuthi ingabala izaziso; i-ylih ibala kuphela ukuthi yiyiphi i-app edlalayo.</string>
     <string name="settings_language">ulimi</string>
     <string name="settings_language_system">ulimi lwe-system</string>
     <string name="settings_devices">izinkundla</string>

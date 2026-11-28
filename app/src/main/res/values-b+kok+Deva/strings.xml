@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ब्लूटूथ प्रवेश दिल्यापर्यंत उपलब्ध नाही: हे बिल्ड फक्त connectedDevice सेवा प्रकार घोषित करते, जे अ‍ॅण्ड्रॉइड 14+ ब्लूटूथ परवानगीशी जोडते.</string>
     <string name="settings_playback_only_title">फक्त प्लेबॅक मोजा</string>
     <string name="settings_playback_only_body">आंकडे जुळलेल्या वेळ ऐवजी ऑडियो खरोखर वाजत असलेल्या वेळ मोजते. फक्त तपशीलवार ट्रॅकिंगसह रेकॉर्ड केलेले सेशन मोजले प्लेबॅक; बाकीची वगळली जातात.</string>
+    <string name="settings_apps_title">ॲप्स भायर दवरात</string>
+    <string name="settings_apps_body">एखाद्या ॲपाची खूण काडात आनी ताचो आवाज आतां आयकप म्हूण मेजचो ना — देखीक हेडसेटाचीं बटणां धरपाक शांतताय वाजोवपी ॲप. ॲप्स कितें तरी वाजयल्या उपरांत हांगा दिसतात. android हाका सुचोवणी ॲक्सेस म्हणटा आनी तें सुचोवण्यो वाचूंक शकता अशी शिटकावणी दिता; ylih फकत खंयचें ॲप वाजता तें वाचता.</string>
     <string name="settings_language">भाषा</string>
     <string name="settings_language_system">सिस्टम भाषा</string>
     <string name="settings_devices">डिव्हाइस</string>

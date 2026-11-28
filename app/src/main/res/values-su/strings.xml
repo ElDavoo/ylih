@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">teu sadia nepi ka aksés bluetooth dibéré: build ieu ngan ngadéklarasikeun tipe layanan connectedDevice, nu ku android 14+ dihubungkeun jeung idin bluetooth.</string>
     <string name="settings_playback_only_title">ngan itung puteran</string>
     <string name="settings_playback_only_body">statistik ngitung waktu audio bener-bener disada tinimbang waktu nyambung. ngan sési nu kacatet ku palacakan lengkep hurung nu ngukur puteran; sésana teu diitung.</string>
+    <string name="settings_apps_title">kaluarkeun aplikasi</string>
+    <string name="settings_apps_body">pupus céntang hiji aplikasi sarta sorana moal diitung deui salaku ngadéngékeun — contona aplikasi anu muterkeun jempé pikeun nangkep tombol headset. aplikasi némbongan di dieu sanggeus muterkeun hiji hal. android nyebut ieu aksés béwara sarta ngingetkeun yén ieu bisa maca béwara; ylih ngan maca aplikasi mana anu keur muter.</string>
     <string name="settings_language">basa</string>
     <string name="settings_language_system">basa sistem</string>
     <string name="settings_devices">alat</string>

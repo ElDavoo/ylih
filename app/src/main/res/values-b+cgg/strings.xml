@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">ntakiboneka kuza kwoha ichaato ca bluetooth: akakakona guno kasigala kananga connectDevice ekika kya service, ekyuma ka android 14+ ekikwata ku ichaato ca bluetooth.</string>
     <string name="settings_playback_only_title">bara okusigira kwonka</string>
     <string name="settings_playback_only_body">ebibaruzo nibibara obwire amaraka gaabaire nigasigirwa buzima, ti obwire bw’okwehanguraho. sesyoni ezaandiikirwe okuwandika okukweru kuriho zonka nizo zaapimire okusigira; ezindi nizirekwa.</string>
+    <string name="settings_apps_title">iiha apps</string>
+    <string name="settings_apps_body">iihaho akamanyiso aha app kandi iraka ryayo tiriribarwa nk’okuhurikiza — nka app erikuteera obucureezi kukwata obutuuso bwa headset. apps nizireebeka aha zaaheza kuteera ekintu. android ekyeta eki okuhika aha bukweende kandi neekyengyesa ngu nikibaasa kushoma obukweende; ylih neeshoma app erikuteera yonka.</string>
     <string name="settings_language">orurimi</string>
     <string name="settings_language_system">orurimi rwa sisitemu</string>
     <string name="settings_devices">ekyuma</string>

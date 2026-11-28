@@ -8,6 +8,7 @@ import android.content.pm.ServiceInfo
 import android.media.AudioDeviceCallback
 import android.media.AudioDeviceInfo
 import android.media.AudioManager
+import android.media.session.MediaSessionManager
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
@@ -113,10 +114,34 @@ class TrackingService : LifecycleService() {
         // who denied the notification permission.
         startForegroundCompat(getString(R.string.notification_starting))
 
-        playbackWatcher = PlaybackWatcher(audioManager, container.clock) { deltaMs ->
+        playbackWatcher = PlaybackWatcher(
+            audioManager,
+            container.clock,
+            sessions = MediaSessions(
+                getSystemService(MediaSessionManager::class.java),
+                MediaSessions.listener(this),
+            ),
+            onPlayingApps = { apps ->
+                container.scope.launch { container.settings.recordSeenApps(apps) }
+            },
+        ) { deltaMs ->
             creditFromCallback(deltaMs)
         }.also { it.start(handler) }
         audioManager.registerAudioDeviceCallback(deviceCallback, handler)
+
+        lifecycleScope.launch {
+            container.settings.excludedApps.collect { apps ->
+                val watcher = playbackWatcher ?: return@collect
+                // Banked under the old list first: what played until this moment was judged by
+                // it, and switching first would re-judge the whole unbanked slice by the new one.
+                val now = container.clock.now()
+                creditAccrued(watcher.refresh(now))
+                watcher.excluded = apps
+                // Judged by the new list from this instant; nothing has accrued since the line
+                // above, so there is nothing to credit.
+                watcher.refresh(now)
+            }
+        }
 
         lifecycleScope.launch {
             container.trackingController.syncWithSystem()
@@ -213,6 +238,7 @@ class TrackingService : LifecycleService() {
     private suspend fun tick() {
         val now = container.clock.now()
         val open = container.repository.heartbeat(now)
+        playbackWatcher?.resyncSessions()
         creditAccrued(playbackWatcher?.refresh(now) ?: 0L)
         refreshNotification(open)
         // A minute of playback is a figure widgets have no other way to learn: the Chronometer

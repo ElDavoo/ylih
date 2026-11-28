@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">未可用，直到授予藍牙訪問權限：呢個版本淨係聲明咗 connectedDevice 服務類型，安卓 14+ 會將佢與藍牙權限關聯。</string>
     <string name="settings_playback_only_title">淨係計數播放</string>
     <string name="settings_playback_only_body">統計計數實際播放音頻嘅時間，而唔係連接時間。淨係有使用詳細追蹤記錄嘅節段先至測量播放時間；其他嘅被排除。</string>
+    <string name="settings_apps_title">排除應用</string>
+    <string name="settings_apps_body">剔走某個應用，佢嘅聲就唔再計做收聽——例如為咗截耳機掣而播靜音嘅應用。應用播過嘢之後就會喺度出現。android 叫呢樣做通知存取權，仲會警告佢可以讀通知；ylih 淨係讀邊個應用喺度播。</string>
     <string name="settings_language">語言</string>
     <string name="settings_language_system">系統語言</string>
     <string name="settings_devices">設備</string>

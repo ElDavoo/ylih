@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">ilinga ilambe ngaka bluetooth masolo osambé: likolo mota isela connectedDevice emoto moto, njiba android 14+ iya mbakara mi bluetooth masolo.</string>
     <string name="settings_playback_only_title">tanga mfane tɔ́</string>
     <string name="settings_playback_only_body">makwalɛ ma tanga póndá jita di ta di mafana mbale, esibe póndá a bwaba. mangenda ma tilabe na isela isoki mayale e busaka ma nde ma isi mfane; mape ma si tangabe.</string>
+    <string name="settings_apps_title">sumbela app</string>
+    <string name="settings_apps_body">sumbela dimbea la app, kingo lao e si mapo̱ e langabe̱ ka o̱ senga — ka app ye ná e nangea mumbo̱ ná e lo̱ngo̱ bo̱to̱n ba headset. app e ma bo̱la wa e sombwa lambo. android e mapo̱ nika njea na notification, e ma kalea ná e ma langa notification; ylih e langa nde app e nangea.</string>
     <string name="settings_language">eyala</string>
     <string name="settings_language_system">eyala a sistɛm</string>
     <string name="settings_devices">moto esuala</string>

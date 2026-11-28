@@ -36,5 +36,6 @@ PERMISOS
 • Dispositivos cercanos (bluetooth): necesario para recibir los eventos de conexión y leer el nombre de unos auriculares. Sin él, el seguimiento por bluetooth no puede funcionar en absoluto.
 • Notificaciones: solo para la notificación del seguimiento detallado.
 • Ejecutar al iniciar: para cerrar las sesiones que el apagado nunca notificó.
+• Acceso a notificaciones (opcional): solo para dejar apps fuera del tiempo de reproducción. ylih lee qué app está reproduciendo, nunca tus notificaciones.
 
 Código abierto bajo licencia MIT.

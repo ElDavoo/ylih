@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth хандалт олгох хүртэл боломжгүй: энэ хувилбар зөвхөн connectedDevice үйлчилгээний төрлийг зарладаг ба android 14+ үүнийг bluetooth зөвшөөрөлтэй холбодог.</string>
     <string name="settings_playback_only_title">зөвхөн тоглуулалтыг тоолох</string>
     <string name="settings_playback_only_body">холбогдсон хугацааны оронд аудио үнэхээр тоглож байсан хугацааг статистик тоолно. зөвхөн дэлгэрэнгүй хяналт асаалттай үед бүртгэгдсэн хуралдаанууд тоглуулалтыг хэмжсэн; бусад нь орхигдоно.</string>
+    <string name="settings_apps_title">аппуудыг хасах</string>
+    <string name="settings_apps_body">аппын тэмдгийг арилгавал түүний дуу цаашид сонсолтод тооцогдохгүй — жишээ нь чихэвчний товчлуурыг барихын тулд чимээгүй байдал тоглуулдаг апп. аппууд ямар нэг зүйл тоглуулсны дараа энд гарч ирнэ. android үүнийг мэдэгдлийн хандалт гэж нэрлэдэг бөгөөд мэдэгдэл уншиж чадна гэж анхааруулдаг; ylih зөвхөн аль апп тоглуулж байгааг уншина.</string>
     <string name="settings_language">хэл</string>
     <string name="settings_language_system">системийн хэл</string>
     <string name="settings_devices">төхөөрөмж</string>

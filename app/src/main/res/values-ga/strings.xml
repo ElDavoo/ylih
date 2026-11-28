@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">nach bhfuil ar fáil go dtí go dtabharfar rochtain bluetooth: ní fhógraíonn an thógáil seo ach an cineál seirbhíse connectedDevice, atá nasc android 14+ go cead bluetooth.</string>
     <string name="settings_playback_only_title">comhaireamh imirt amháin</string>
     <string name="settings_playback_only_body">staitisticí comhaireamh am fuaim a bhí á imirt i ndáiríribh in ionad an ama ceangailte. seisiúin amháin taifeadadh le taifeadadh mionsonraithe ar thomhaiste imirt; an chuid eile fágtha amach.</string>
+    <string name="settings_apps_title">fág aipeanna as</string>
+    <string name="settings_apps_body">bain an tic d’aip agus ní áireofar a fuaim mar éisteacht a thuilleadh — mar shampla, aip a sheinneann ciúnas chun cnaipí an chluasáin a ghabháil. taispeántar aipeanna anseo nuair a bheidh rud éigin seinnte acu. tugann android rochtain ar fhógraí air seo agus tugann sé rabhadh gur féidir leis fógraí a léamh; ní léann ylih ach cén aip atá ag seinm.</string>
     <string name="settings_language">teanga</string>
     <string name="settings_language_system">teanga an chórais</string>
     <string name="settings_devices">gléasanna</string>

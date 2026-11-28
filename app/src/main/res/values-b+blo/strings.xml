@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">a ma ka di ya kpo bluetooth a di ta ka: yi a bu ta tu a connectedDevice a ka ti na yi, yi android 14+ ta ko bluetooth a di na</string>
     <string name="settings_playback_only_title">a ka ti a na yi wu</string>
     <string name="settings_playback_only_body">a mma bi ta ka na sa a na yi a ko ya sa a ka ti. a ka ti a wo ka ti na wu wu a na yi; a se wu a yo</string>
+    <string name="settings_apps_title">ka app ɖe a ma</string>
+    <string name="settings_apps_body">a wu yi ka cɛ a app ɖe ma, a wu nu ka wu si a ma — a ka app ɖe a ka kpo nu kanɖe a si headset butɔn. app ɖe ya wu kpɛ ɖe a ma nɖe a ka kpo ti. android a ma ka nu kanɖe a cɛ, a wu kanɖe a ma nu; ylih a ka kanɖe app ɖe a kpo a ma.</string>
     <string name="settings_language">a ka yi</string>
     <string name="settings_language_system">a ka yi a fon wu</string>
     <string name="settings_devices">a ka wu</string>

@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">hindi available hanggang hindi ipagkaloob ang access sa bluetooth: ang build na ito ay nag-declare lamang ng connectedDevice service type, na ang android 14+ ay natatali sa isang bluetooth permission.</string>
     <string name="settings_playback_only_title">ihapa ang pagpatugtog lang</string>
     <string name="settings_playback_only_body">ang estadistika mag-ihap sa oras nga nagpatugtog gyud ang audio imbis sa oras nga konektado. ang mga sesyon lang nga narekord samtang naka-on ang detalyadong subaybay ang nakasukod sa pagpatugtog; ang uban dili apilon.</string>
+    <string name="settings_apps_title">ibulag ang mga app</string>
+    <string name="settings_apps_body">tangtangi ang tsek sa usa ka app ug ang tingog niini dili na maihap nga pagpaminaw — pananglitan, usa ka app nga nagpatugtog og kahilom aron masakpan ang mga buton sa headset. motungha dinhi ang mga app human sila makapatugtog og bisan unsa. gitawag kini sa android nga access sa notification ug nagpasidaan nga makabasa kini og mga notification; ang gibasa lang sa ylih mao kung unsang app ang nagpatugtog.</string>
     <string name="settings_language">pinulongan</string>
     <string name="settings_language_system">pinulongan sa sistema</string>
     <string name="settings_devices">mga device</string>

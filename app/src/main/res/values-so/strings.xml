@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">oo aan karbaasho ilaa bluetooth oggolaanshah la siiyo: adeegga waxaa lagu sheegaa connectedDevice nooca oo keliya, kaas oo android 14+ ay xidhaan bluetooth oggolaanshah.</string>
     <string name="settings_playback_only_title">tiri ciyaarta oo keliya</string>
     <string name="settings_playback_only_body">tilaamaha waxaa lagu tiri saacadaha ciyaarta lagula joogtay halka xidhka. socodka oo keliya lagula qoraa shaaca qoray ay joogtay ciyaarta; hadii kale waxaa lagu celine.</string>
+    <string name="settings_apps_title">ka saar abka qaar</string>
+    <string name="settings_apps_body">ka saar calaamadda abka oo codkiisu mar dambe looma tirin doono dhegeysi — sida ab ciyaaraya aamusnaan si uu u qabto badhamada headset-ka. abka halkan ayay ka muuqdaan marka ay wax ciyaaraan. android waxay tan ugu yeertaa helitaanka ogeysiisyada waxayna ka digtaa inay akhrin karto ogeysiisyada; ylih waxay akhridaa oo keliya abka hadda ciyaaraya.</string>
     <string name="settings_language">luqada</string>
     <string name="settings_language_system">luqada nidaamka</string>
     <string name="settings_devices">qalabka</string>

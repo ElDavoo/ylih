@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth көҥүлэ суох үлэлээбэт: бу тутуу connectedDevice эрэ сулууспа көрүҥүн биллэрэр, android 14+ онону bluetooth көҥүлүнэн ситимниир.</string>
     <string name="settings_playback_only_title">тыаһыыны эрэ ааҕар</string>
     <string name="settings_playback_only_body">статистика холбонуу кэмин оннугар тыас кырдьык тыаһаабыт кэмин ааҕыа. тыаһыы сиһилии кэтээһиннээх сессияларга эрэ кээмэйдэммит; атыттар аахсыллыбаттар.</string>
+    <string name="settings_apps_title">сыһыарыылары таһаарыы</string>
+    <string name="settings_apps_body">сыһыарыы бэлиэтин уһул, оччоҕо кини тыаһа салгыы истии быһыытынан ааҕыллыа суоҕа — холобур, гарнитура кнопкаларын тутаары чуумпуну оонньотор сыһыарыы. сыһыарыылар туох эмэ оонньоппуттарын кэннэ манна көстөллөр. android маны биллэриилэргэ киирии диэн ааттыыр уонна кини биллэриилэри ааҕыан сөп диэн сэрэтэр; ylih ханнык сыһыарыы оонньуурун эрэ ааҕар.</string>
     <string name="settings_language">тыл</string>
     <string name="settings_language_system">систиэмэ тыла</string>
     <string name="settings_devices">тэриллэр</string>

@@ -36,5 +36,6 @@ IZIN
 • Perangkat di sekitar (bluetooth): diperlukan untuk menerima peristiwa koneksi dan membaca nama headset. Tanpanya, pelacakan bluetooth sama sekali tidak bisa berjalan.
 • Notifikasi: hanya untuk notifikasi pelacakan detail.
 • Jalankan saat perangkat dinyalakan: untuk menutup sesi yang tidak pernah dilaporkan saat perangkat dimatikan.
+• Akses notifikasi (opsional): hanya untuk mengecualikan aplikasi dari waktu pemutaran. ylih membaca aplikasi mana yang sedang memutar, tidak pernah notifikasimu.
 
 Sumber terbuka dengan lisensi MIT.

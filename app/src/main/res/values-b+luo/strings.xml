@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">ok yudre nyaka chiw thuolo mar bluetooth: gedoni hulo mana kit tich mar connectedDevice, ma android 14+ twoyo gi thuolo mar bluetooth.</string>
     <string name="settings_playback_only_title">kwan mana wer</string>
     <string name="settings_playback_only_body">kwan kwano kinde ma wer ne wuok adier kar kinde mane otwe. mana kinde mane ondiki ka luwo matut ni otwe ema nopimo wer; mamoko iwe oko.</string>
+    <string name="settings_apps_title">wee apps oko</string>
+    <string name="settings_apps_body">gol ranyisi kuom app moro kendo dwonde ok nok kaka winjo kendo — kaka app ma goyo ling’ mondo omak nyiketni mag headset. apps nenore ka bang’ ka osegoyo gimoro. android luongo ma ni yo mar donjo e ranyisi kendo siemo ni nyalo somo ranyisi; ylih somo mana app ma goyo.</string>
     <string name="settings_language">dhok</string>
     <string name="settings_language_system">dhok mar sistem</string>
     <string name="settings_devices">gik moko</string>

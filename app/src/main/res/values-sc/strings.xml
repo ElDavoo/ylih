@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">no bìsìbile fintzas ca s’accèssu bluetooth no est permisu: custu build narat nara su tipu de servidu connectedDevice, chi android 14+ ligat a un permissu bluetooth.</string>
     <string name="settings_playback_only_title">conta nara sa riprodutzione</string>
     <string name="settings_playback_only_body">is statisticas contant sa tempada ca s’audio estava in riprodutzione in logu de sa tempada connetida. sa sessiones registradas cun tracciadura detallada acta misurant riprodutzione; is residas sunt lassadas fora.</string>
+    <string name="settings_apps_title">esclude aplicatziones</string>
+    <string name="settings_apps_body">boga su sinnu a un’aplicatzione e su sonu suo no contat prus comente ascurtu — pro esèmpiu una chi sonat su silèntziu pro aferrare sos butones de sas cufias. sas aplicatziones essint inoghe a pustis de àere sonadu calicuna cosa. android lu narat atzessu a sas notìficas e avisat chi las podet lèghere; ylih leghet isceti cale aplicatzione est sonende.</string>
     <string name="settings_language">lìngua</string>
     <string name="settings_language_system">lìngua de su sistema</string>
     <string name="settings_devices">dispositivus</string>

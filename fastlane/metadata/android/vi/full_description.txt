@@ -36,5 +36,6 @@ QUYỀN TRUY CẬP
 • Thiết bị lân cận (Bluetooth): cần thiết để nhận sự kiện kết nối và đọc tên của tai nghe. Nếu không có quyền này, việc theo dõi bluetooth hoàn toàn không hoạt động được.
 • Thông báo: chỉ dùng cho thông báo của chế độ theo dõi chi tiết.
 • Chạy khi khởi động: để đóng các phiên mà lần tắt máy trước đó không kịp báo lại.
+• Quyền truy cập thông báo (tùy chọn): chỉ để loại một số ứng dụng khỏi thời gian phát nhạc. ylih chỉ đọc ứng dụng nào đang phát, không bao giờ đọc thông báo của bạn.
 
 Mã nguồn mở theo giấy phép MIT.

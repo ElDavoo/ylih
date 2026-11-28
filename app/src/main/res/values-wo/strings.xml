@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">buuji mel ko bi ndax bluetooth am jëm: app bu mel connectedDevice sa, ko android 14+ mel bluetooth am jëm.</string>
     <string name="settings_playback_only_title">taalisiir rekk bu toowoole</string>
     <string name="settings_playback_only_body">taalisiir taatu jàngal gu toowoole bu dal nee jàngal jëm. sikasiit yu jot bu jarii gu dal ne ba; yi yu baax gu yaar.</string>
+    <string name="settings_apps_title">génne ay app</string>
+    <string name="settings_apps_body">far màndarga ci benn app te riitam du ñu ko waññi ni déglu ba pare — ni app buy tëgg noflaay ngir jàpp butoŋi casque bi. app yi dañuy feeñ fii su ñu tëggee dara. android dafa ko woowe jot ci yégle yi te di artu ne mën na jàng yégle yi; ylih dafay jàng rekk ban app moo ngi tëgg.</string>
     <string name="settings_language">kat</string>
     <string name="settings_language_system">kat android</string>
     <string name="settings_devices">mel yu</string>

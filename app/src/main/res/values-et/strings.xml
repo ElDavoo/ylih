@@ -130,6 +130,8 @@
     <string name="settings_detailed_unavailable">saadaval alles pärast bluetooth juurdepääsu andmist: see versioon kuulutab ainult connectedDevice teenuse tüüpi, mille android 14+ seob bluetooth loaga.</string>
     <string name="settings_playback_only_title">loe ainult taasesitust</string>
     <string name="settings_playback_only_body">statistika loeb aega, mil heli tegelikult mängis, ühendatud aja asemel. taasesitust mõõtsid ainult seansid, mis salvestati sisselülitatud detailse jälgimisega; ülejäänud jäetakse välja.</string>
+    <string name="settings_apps_title">jäta rakendused välja</string>
+    <string name="settings_apps_body">eemalda rakenduselt linnuke ja selle heli ei loeta enam kuulamiseks — näiteks rakendus, mis mängib vaikust, et peakomplekti nuppe püüda. rakendused ilmuvad siia, kui nad on midagi mänginud. android nimetab seda märguannete juurdepääsuks ja hoiatab, et see võimaldab märguandeid lugeda; ylih loeb ainult, milline rakendus mängib.</string>
     <string name="settings_language">keel</string>
     <string name="settings_language_system">süsteemi keel</string>
     <string name="settings_devices">seadmed</string>

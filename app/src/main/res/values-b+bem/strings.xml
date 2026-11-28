@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">palefwe pakali bluetooth ifuminile: nkola yino yatika ikulika connectedDevice shani walobo, ulo android 14+ ulitilakila bluetooth lumino.</string>
     <string name="settings_playback_only_title">penda fye ukusekesa</string>
     <string name="settings_playback_only_body">amapendo yapenda inshita iyo ukusekesa kwaliko cine, te nshita ya kwikatana. inshita fye isho shalembwa ne nshumu ifingilila shilipima ukusekesa; ishashele shilashiwa.</string>
+    <string name="settings_apps_title">fumyapo ama app</string>
+    <string name="settings_apps_body">fumyapo akashibilo pa app kabili icongo cayo tacakapendwe ukuba kukutika — nga app iilisha umutalalila pa kwikata amabatani ya headset. ama app yamoneka pano nga yalisha icintu. android yeta ici ukufika ku mashiwi ya kwishibisha kabili yasoka ati kuti yabelenga amashiwi ya kwishibisha; ylih ibelenga fye app iileisha.</string>
     <string name="settings_language">ululimi</string>
     <string name="settings_language_system">ululimi lwa sistemu</string>
     <string name="settings_devices">amalendo</string>

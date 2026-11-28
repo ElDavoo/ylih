@@ -36,5 +36,6 @@ PERMISIUNI
 • Dispozitive din apropiere (Bluetooth): necesară pentru a primi evenimentele de conectare și a citi numele unor căști. Fără ea, urmărirea bluetooth nu poate funcționa deloc.
 • Notificări: doar pentru notificarea urmăririi detaliate.
 • Rulare la pornire: pentru a închide sesiunile pe care oprirea nu le-a raportat niciodată.
+• Acces la notificări (opțional): doar pentru a exclude aplicații din timpul de redare. ylih citește ce aplicație redă, niciodată notificările tale.
 
 Open source, sub licența MIT.

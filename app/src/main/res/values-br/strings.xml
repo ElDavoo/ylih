@@ -130,6 +130,8 @@
     <string name="settings_detailed_unavailable">c’hortoz bi-se bluetooth da vezout graet kuzh: ar stajenn-mañ neus nemet sorzhioù connectedDevice, ar pezh a zo stag android 14+ d’ur retlaij bluetooth.</string>
     <string name="settings_playback_only_title">kontañ ar seniñ hepken</string>
     <string name="settings_playback_only_body">ar stadegoù a gont an amzer ma oa ar son o seniñ e gwirionez e-lec’h an amzer kevreet. n’eus nemet ar prantadoù enrollet gant an heuliadur en diwantet gweredekaet o deus muzuliet ar seniñ; ar re all a vez lezet er-maez.</string>
+    <string name="settings_apps_title">lezel arloadoù er-maez</string>
+    <string name="settings_apps_body">diaskit un arload ha ne vo ket kontet e son evel selaou ken — da skouer un arload a lenn didrouz evit tapout boutonoù ar c’hasketenn. an arloadoù a zeu war wel goude bezañ lennet un dra bennak. android a ra moned d’ar c’hemennoù eus kement-mañ hag a ziwall e c’hall lenn ar c’hemennoù; ylih ne lenn nemet peseurt arload a zo o lenn.</string>
     <string name="settings_language">yezh</string>
     <string name="settings_language_system">yezh ar reizhiad</string>
     <string name="settings_devices">tachenn</string>

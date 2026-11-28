@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">njejsna, dokelž se bluetooth přistup njedowa: tuta wersija jenož službu connectedDevice zwěšćo, kotruž android 14+ na bluetooth prawa swjaza</string>
     <string name="settings_playback_only_title">jenož wotehranje počítane</string>
     <string name="settings_playback_only_body">statistika počítaja čas wotehranja, njemjesta zwězkanja. jenož sesije nachwlowane z detaljnu nachwilu měrja wotehranje; ostatk so wuwopušćo</string>
+    <string name="settings_apps_title">aplikacije wuzamknyć</string>
+    <string name="settings_apps_body">wotznamjeń aplikaciju a jeje zwuk so hižo jako posłuchanje njeliči — na přikład tajku, kotraž ćišinu hraje, zo by tłóčatka słuchawkow łapała. aplikacije so zjewja, hdyž su něšto hrali. android to mjenuje přistup k zdźělenkam a warnuje, zo móže zdźělenki čitać; ylih čita jenož, kotra aplikacija hraje.</string>
     <string name="settings_language">rěč</string>
     <string name="settings_language_system">rěč systema</string>
     <string name="settings_devices">přistrojenja</string>

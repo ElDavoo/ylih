@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">ko kala walla hiji bluetooth permisyon ko-nafo: ful ngii ɗee ɓata connectedDevice gonngal duuɗe, ndi android 14+ joɓi e bluetooth permisyon.</string>
     <string name="settings_playback_only_title">limtu tan sekii</string>
     <string name="settings_playback_only_body">limlimte ɗe limta sahaa mo hito ngo sekii goonga, wanaa sahaa jokkondiral. kojolli ɗi winndaa e haasiraa jamano uddaa tan ɗi betii sekii; keddiiɗi ina acce.</string>
+    <string name="settings_apps_title">ittu jaaɓnirɗe</string>
+    <string name="settings_apps_body">itt maande jaaɓnirgal ngal, sawtu mayru waɗataa kadi heddagol — wano jaaɓnirgal ngal fiyata deeƴre ngam nanngude butonji headset. jaaɓnirɗe ina feeña ɗoo so ɗe fiyii huunde. android noddirta ɗum naatgol e tintine, ina reentina wonde ina waawi janngude tintine; ylih janngata tan jaaɓnirgal fiyoowal ngal.</string>
     <string name="settings_language">haala</string>
     <string name="settings_language_system">haala sistem</string>
     <string name="settings_devices">kuuseeje</string>

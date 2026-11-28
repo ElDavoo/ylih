@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">ku ka toʔ sa bluetooth permission ba dib: app ba dém connectedDevice so android 14+ ba sɔŋ bi bluetooth permission.</string>
     <string name="settings_playback_only_title">làŋ dɔ́ tɔ́</string>
     <string name="settings_playback_only_body">makidik ma làŋ nkɛ́ dɔ́ i bi hɔp, ha nkɛ́ i kɔblag bé. mahop ma ba tila ni sɔŋ bu dɔ́ ma nyɛn ma sɔŋ dɔ́; ma pɛ ma nlo bé.</string>
+    <string name="settings_apps_title">tɔ́p app</string>
+    <string name="settings_apps_body">tɔ́p yimbne i app, kiŋ yé i ga sɔŋ ki i emb bé — kiki app i nlémél ŋwas i gwel bihéga bi headset. app i nyí hana ngéda i nlémél jam. android i nséblana hala le njel i notification, i nkal le i nla añ notification; ylih i añ ndigi app i nlémél.</string>
     <string name="settings_language">hɔp</string>
     <string name="settings_language_system">hɔp sistɛm</string>
     <string name="settings_devices">kuɓ</string>

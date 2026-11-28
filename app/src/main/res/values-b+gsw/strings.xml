@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">nicht verfügbar, bis der bluetooth-zugriff gewährt wird: dieser build deklariert nur den connectedDevice-diensttyp, den android 14+ an eine bluetooth-berechtigung bindet.</string>
     <string name="settings_playback_only_title">nur wiedergabe zählen</string>
     <string name="settings_playback_only_body">statistiken zählen die zeit, in der audio tatsächlich abgespielt wurde, anstatt der verbundenen zeit. nur sitzungen mit detaillierter verfolgung gemessen wiedergabe; der rest wird weggelassen.</string>
+    <string name="settings_apps_title">apps usneh</string>
+    <string name="settings_apps_body">nimm bi ere app s häkli wäg, und ihre ton zellt nüme als zuelose — öppe bi eine, wo stilli abspillt, zum d headset-taschte abfange. apps tauched uf, sobald si öppis abgspillt händ. android säit däm benachrichtigungszuegriff und warnt, dass mer demit benachrichtigunge cha läse; ylih list nume, weli app grad spillt.</string>
     <string name="settings_language">sprache</string>
     <string name="settings_language_system">systemsprache</string>
     <string name="settings_devices">geräte</string>

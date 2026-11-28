@@ -122,6 +122,8 @@
     <string name="settings_detailed_unavailable">is erst möglich, wenn bluetooth-zugriff jenährt wid: häm build saat nor der connectedDevice-täßjis-typ, wat android 14+ mit en bluetooth-erlaubnis verbindet.</string>
     <string name="settings_playback_only_title">nor musik-zick zelle</string>
     <string name="settings_playback_only_body">statistik zelle de zick, woh musik wirklich jespeeld woode, nit de verbundungszick. nor sizzunge, die mit jenaue verfolgung jespeichert wääde, messte musik; de andere komme nit vor.</string>
+    <string name="settings_apps_title">apps ußnämme</string>
+    <string name="settings_apps_body">nemm dat höksche bei ener app fott, un ehre tun zällt nit mieh als zohüre — sujet wie en app, die stell avspillt, öm de knöpp vum headset affzefange. apps dauche op, wann se jet avjespillt han. android nennt dat zojreff op benachrichtijunge un warnt, dat mer domet benachrichtijunge lässe kann; ylih lis nur, wat för en app jrad spillt.</string>
     <string name="settings_language">sproch</string>
     <string name="settings_language_system">system-sproch</string>
     <string name="settings_devices">jeerät</string>

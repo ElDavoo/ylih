@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth fasal jiraw: ni app ra connectedDevice jara, android 14+ bluetooth fasal ga.</string>
     <string name="settings_playback_only_title">se karti kulu timide</string>
     <string name="settings_playback_only_body">tiliyali ra se karti ay timide jokere ay nda. timide kayey ga se karti timide; ganda kulu bay.</string>
+    <string name="settings_apps_title">app yaŋ kaa taray</string>
+    <string name="settings_apps_body">app foo tammaasa kaa, a jinde si ga lasaabu sanda hanga jeeri koyne — sanda app kaŋ ga dangay kar zama a ma headset butɔnyaŋ di. app yaŋ ga bangay neewo d’i na hay foo kar. android ga ne woo se bangandi duuyan, a ga ci kaŋ a ga hin ka bangandiyaŋ caw; ylih ga app kaŋ go ga kar hinne caw.</string>
     <string name="settings_language">jina</string>
     <string name="settings_language_system">dijis jina</string>
     <string name="settings_devices">dijis</string>

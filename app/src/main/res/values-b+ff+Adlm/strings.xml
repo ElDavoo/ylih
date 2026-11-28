@@ -128,6 +128,8 @@
     <string name="settings_detailed_unavailable">𞤲𞤣𞤭𞤤𞤼𞤢 𞤪𞤫𞤣𞤵 bluetooth 𞤸𞤫𞥅𞤱𞤯𞤮: 𞤼𞤢𞤪𞤵𞥅𞤶𞤭 𞤥𞤢𞥄 𞤧𞤫𞥅𞤤𞤭𞤼𞤮𞥅 𞤲𞤣𞤫 𞤷𞤮𞤲𞥆𞤫𞤷𞤼𞤫𞤣𞥆𞤫𞤾𞤭𞤷𞤫 𞤣𞤵𞤥𞤢𞤲, 𞤢𞤲𞤣𞤪𞤮𞤭𞤣 14+ 𞤺𞤮𞥅𞤼𞤮𞥅 𞤫 bluetooth 𞤶𞤵𞤥𞤲𞤭𞤼𞤮𞥅𞤪𞤫.</string>
     <string name="settings_playback_only_title">𞤤𞤭𞤥𞤼𞤵 𞤼𞤢𞤲 𞤸𞤵𞥅𞤤𞤲𞤣𞤫</string>
     <string name="settings_playback_only_body">𞤤𞤭𞤥𞤤𞤭𞤥𞤼𞤫 𞤯𞤫 𞤤𞤭𞤥𞤼𞤢 𞤧𞤢𞤸𞤢𞥄 𞤥𞤮 𞤸𞤭𞤼𞤮 𞤲𞤺𞤮 𞤸𞤵𞥅𞤤𞤭 𞤺𞤮𞥅𞤲𞤺𞤢, 𞤱𞤢𞤲𞤢𞥄 𞤧𞤢𞤸𞤢𞥄 𞤶𞤮𞤳𞥆𞤮𞤲𞤣𞤭𞤪𞤢𞤤. 𞤳𞤮𞤶𞤮𞤤𞥆𞤭 𞤯𞤭 𞤱𞤭𞤲𞤣𞤢𞥄 𞤫 𞤶𞤢𞤲𞤺𞤭𞤲𞤮𞤤 𞤷𞤢𞤪𞤥𞤭𞤲𞤮𞤪𞤫 𞤵𞤣𞥆𞤢𞥄 𞤼𞤢𞤲 𞤯𞤭 𞤦𞤫𞤼𞤭𞥅 𞤸𞤵𞥅𞤤𞤲𞤣𞤫; 𞤳𞤫𞤣𞥆𞤭𞥅𞤯𞤭 𞤭𞤲𞤢 𞤢𞤷𞥆𞤫.</string>
+    <string name="settings_apps_title">𞤭𞤼𞥆𞤵 𞤶𞤢𞥄𞤩𞤲𞤭𞤪𞤯𞤫</string>
+    <string name="settings_apps_body">𞤭𞤼𞥆 𞤥𞤢𞥄𞤲𞤣𞤫 𞤶𞤢𞥄𞤩𞤲𞤭𞤪𞤺𞤢𞤤 𞤲𞤺𞤢𞤤, 𞤧𞤢𞤱𞤼𞤵 𞤥𞤢𞤴𞤪𞤵 𞤱𞤢𞤯𞤢𞤼𞤢𞥄 𞤳𞤢𞤣𞤭 𞤸𞤫𞤣𞥆𞤢𞤺𞤮𞤤 — 𞤱𞤢𞤲𞤮 𞤶𞤢𞥄𞤩𞤲𞤭𞤪𞤺𞤢𞤤 𞤲𞤺𞤢𞤤 𞤬𞤭𞤴𞤢𞤼𞤢 𞤣𞤫𞥅𞤰𞤪𞤫 𞤲𞤺𞤢𞤥 𞤲𞤢𞤲𞥆𞤺𞤵𞤣𞤫 𞤦𞤵𞤼𞤮𞤲𞤶𞤭 headset. 𞤶𞤢𞥄𞤩𞤲𞤭𞤪𞤯𞤫 𞤭𞤲𞤢 𞤬𞤫𞥅𞤻𞤢 𞤯𞤮𞥅 𞤧𞤮 𞤯𞤫 𞤬𞤭𞤴𞤭𞥅 𞤸𞤵𞥅𞤲𞤣𞤫. android 𞤲𞤮𞤣𞥆𞤭𞤪𞤼𞤢 𞤯𞤵𞤥 𞤲𞤢𞥄𞤼𞤺𞤮𞤤 𞤫 𞤼𞤭𞤲𞤼𞤭𞤲𞤫, 𞤭𞤲𞤢 𞤪𞤫𞥅𞤲𞤼𞤭𞤲𞤢 𞤱𞤮𞤲𞤣𞤫 𞤭𞤲𞤢 𞤱𞤢𞥄𞤱𞤭 𞤶𞤢𞤲𞥆𞤺𞤵𞤣𞤫 𞤼𞤭𞤲𞤼𞤭𞤲𞤫; ylih 𞤶𞤢𞤲𞥆𞤺𞤢𞤼𞤢 𞤼𞤢𞤲 𞤶𞤢𞥄𞤩𞤲𞤭𞤪𞤺𞤢𞤤 𞤬𞤭𞤴𞤮𞥅𞤱𞤢𞤤 𞤲𞤺𞤢𞤤.</string>
     <string name="settings_language">𞤸𞤢𞥄𞤤𞤢</string>
     <string name="settings_language_system">𞤸𞤢𞥄𞤤𞤢 𞤧𞤭𞤧𞤼𞤫𞤥</string>
     <string name="settings_devices">𞤼𞤢𞤪𞤵𞥅𞤶𞤭</string>

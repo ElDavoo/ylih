@@ -120,6 +120,8 @@
     <string name="settings_detailed_unavailable">bluetooth आनुमाति सिलि काम आ सिलि: ई बिल्द केवाला connectedDevice सेवा तोडेनु, आने android 14+ आ-कि bluetooth आनुमाति-टेने जुडेनु.</string>
     <string name="settings_playback_only_title">केवाला बाजा गाण्डु</string>
     <string name="settings_playback_only_body">लेखा जुडा वेळा बादाले साच्चाका बाजा आते वेळा गाण्डेनु. बाजा केवाला पूरा लेखा माण्डा सेसान-टे मापा आते; बाकि बाहारा माण्डेनु.</string>
+    <string name="settings_apps_title">आप-का बाहारा इडु</string>
+    <string name="settings_apps_body">आप-ना चिन्हा वेट्टा इडु, आटेने आ-ना बाजा विण्डि लेखा आ सिलि — ई: हेडसेट बटन पट्टेनबा चुप बाजा कियि आप. आप-का एबे-इ बाजा किटेरि, इदे तोण्डेनु. android ईदि-कि खाबार एक्सेस इण्डेनु, खाबार वाचुंक हिनि इण्डेनु; ylih एबे आप बाजा माण्डेनु अदि साच्चाका वाचिनु.</string>
     <string name="settings_language">भासा</string>
     <string name="settings_language_system">सिस्टाम भासा</string>
     <string name="settings_devices">जिनिस</string>

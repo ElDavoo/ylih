@@ -224,6 +224,8 @@ class JsonBackupTest {
         seed(db)
         db.settingsDao().put(SettingEntity("detailed_tracking", "true"))
         db.settingsDao().put(SettingEntity("language", "it"))
+        // A package name means the same app on the next phone, unlike the backup folder below.
+        db.settingsDao().put(SettingEntity(SettingsStore.EXCLUDED_APPS, "com.llamalab.automate"))
         val payload = JsonBackup.export(db, now)
 
         val restored = newDatabase()
